@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>American Fork Police Department Accountability Project — Document Repository</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --navy: #17365d;
+      --blue: #245b94;
+      --red: #b3262e;
+      --ink: #1d2733;
+      --muted: #637083;
+      --line: #d8e0e8;
+      --surface: #ffffff;
+      --page: #f5f7fa;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
+
+    header {
+      border-top: 6px solid var(--red);
+      background: var(--navy);
+      color: white;
+    }
+
+    .header-inner,
+    main {
+      width: min(100% - 2rem, 860px);
+      margin-inline: auto;
+    }
+
+    .header-inner { padding: 1.75rem 0 1.5rem; }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.45rem, 4vw, 2.15rem);
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      margin: .45rem 0 0;
+      color: #dce9f7;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      font-weight: 600;
+    }
+
+    main { padding: 1.5rem 0 3rem; }
+
+    .tree {
+      margin: 0;
+      padding: .65rem;
+      list-style: none;
+      border: 1px solid var(--line);
+      border-radius: .4rem;
+      background: var(--surface);
+    }
+
+    .tree ul {
+      margin: .2rem 0 0 1.1rem;
+      padding-left: 1rem;
+      list-style: none;
+      border-left: 1px solid var(--line);
+    }
+
+    .tree-row,
+    summary {
+      display: flex;
+      align-items: center;
+      min-height: 2.6rem;
+      gap: .65rem;
+      padding: .45rem .55rem;
+      border-radius: .3rem;
+    }
+
+    summary {
+      cursor: pointer;
+      color: var(--navy);
+      font-weight: 650;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::before {
+      content: "▸";
+      width: .7rem;
+      color: var(--muted);
+      font-size: .8rem;
+      transition: transform .15s ease;
+    }
+
+    details[open] > summary::before { transform: rotate(90deg); }
+
+    a {
+      color: var(--blue);
+      font-weight: 550;
+      overflow-wrap: anywhere;
+      text-decoration-thickness: .08em;
+      text-underline-offset: .18em;
+    }
+
+    a:hover { color: var(--red); }
+
+    a:focus-visible,
+    summary:focus-visible {
+      outline: 3px solid #f2b9bd;
+      outline-offset: 2px;
+    }
+
+    .icon {
+      flex: 0 0 auto;
+      width: 1.25rem;
+      height: 1.25rem;
+      color: var(--blue);
+    }
+
+    .folder-icon { color: #c59624; }
+
+    @media (max-width: 520px) {
+      .header-inner,
+      main { width: min(100% - 1rem, 860px); }
+
+      .header-inner { padding: 1.35rem .25rem 1.2rem; }
+
+      main { padding-top: .75rem; }
+
+      .tree { padding: .35rem; }
+
+      .tree ul {
+        margin-left: .6rem;
+        padding-left: .65rem;
+      }
+
+      .tree-row,
+      summary { padding-inline: .35rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>American Fork Police Department Accountability Project</h1>
+      <p class="subtitle">Document Repository</p>
+    </div>
+  </header>
+
+  <main>
+    {% macro renderNodes(nodes) %}
+      {% for node in nodes %}
+        {% if node.type == "folder" %}
+          <li>
+            <details>
+              <summary>
+                <svg
+                  class="icon folder-icon"
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                >
+                  <path d="M2.75 6.5h7l2 2h9.5v11.75H2.75z"/>
+                  <path d="M2.75 6.5V4.75h7l2 2h9.5V8.5"/>
+                </svg>
+                {{ node.label }}
+              </summary>
+
+              <ul>
+                {{ renderNodes(node.contents) }}
+              </ul>
+            </details>
+          </li>
+        {% elseif node.type == "file" %}
+          <li class="tree-row">
+            <svg
+              class="icon"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <path d="M6.5 2.75h7L18.5 8v13.25h-12z"/>
+              <path d="M13.5 2.75V8h5"/>
+            </svg>
+
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="/records/{{ node.path }}"
+            >
+              {{ node.label }}
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    {% endmacro %}
+
+    <ul class="tree" aria-label="Document repository">
+      {{ renderNodes(repository.tree) }}
+    </ul>
+  </main>
+</body>
+</html>
