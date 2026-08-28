@@ -126,6 +126,12 @@
 
     .folder-icon { color: #c59624; }
 
+    .youtube-icon { color: #c5221f; }
+
+    .news-icon { color: #475569; }
+
+    .external-icon { color: var(--blue); }
+
     @media (max-width: 520px) {
       .header-inner,
       main { width: min(100% - 1rem, 860px); }
@@ -198,6 +204,84 @@
               target="_blank"
               rel="noopener noreferrer"
               href="/records/{{ node.path }}"
+            >
+              {{ node.label }}
+            </a>
+          </li>
+        {% elseif node.type == "youtube" %}
+          <li class="tree-row">
+            <svg
+              class="icon youtube-icon"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 12s0-4-1-5-2.5-1-8-1-7 0-8 1-1 5-1 5 0 4 1 5 2.5 1 8 1 7 0 8-1 1-5 1-5z"/>
+              <path d="m10 9 5 3-5 3z"/>
+            </svg>
+
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="{{ node.url }}"
+            >
+              {{ node.label }}
+            </a>
+          </li>
+        {% elseif node.type == "news" %}
+          <li class="tree-row">
+            <svg
+              class="icon news-icon"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 5.25h13.5v14H5.75A1.75 1.75 0 0 1 4 17.5z"/>
+              <path d="M17.5 8H20v9.5a1.75 1.75 0 0 1-1.75 1.75"/>
+              <path d="M7 8.25h4v3H7z"/>
+              <path d="M13 8.5h2"/>
+              <path d="M13 11h2"/>
+              <path d="M7 14.25h8"/>
+              <path d="M7 16.75h8"/>
+            </svg>
+
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="{{ node.url }}"
+            >
+              {{ node.label }}
+            </a>
+          </li>
+        {% elseif node.type == "external" %}
+          <li class="tree-row">
+            <svg
+              class="icon external-icon"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M13.5 5H19v5.5"/>
+              <path d="M19 5l-8 8"/>
+              <path d="M16.5 13v5.25A1.75 1.75 0 0 1 14.75 20h-9A1.75 1.75 0 0 1 4 18.25v-9A1.75 1.75 0 0 1 5.75 7H11"/>
+            </svg>
+
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="{{ node.url }}"
             >
               {{ node.label }}
             </a>
