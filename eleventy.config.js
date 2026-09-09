@@ -1,12 +1,12 @@
 import fs from "node:fs";
 
 export default function (eleventyConfig) {
-  eleventyConfig.addGlobalData("repository", () => {
-    const json = fs.readFileSync("./repository.json", "utf8");
+  eleventyConfig.addGlobalData("root", () => {
+    const json = fs.readFileSync("./src/_data/root.json", "utf8");
     return JSON.parse(json);
   });
 
-  eleventyConfig.addWatchTarget("./repository.json");
+  eleventyConfig.addWatchTarget("./src/_data/root.json");
 
   return {
     dir: {
