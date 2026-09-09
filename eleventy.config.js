@@ -1,12 +1,31 @@
 import fs from "node:fs";
 
+import { loadJsonFiles } from "./lib/data/load-json-files.js";
+import { buildByID } from "./lib/data/build-by-id.js";
+import { resolveRefs } from "./lib/data/resolve-refs.js";
+
 export default function (eleventyConfig) {
   eleventyConfig.addGlobalData("root", () => {
-    const json = fs.readFileSync("./root.json", "utf8");
-    return JSON.parse(json);
+    const loadedSourceFiles = loadJsonFiles("./data/sources");
+    const byID = buildByID(loadedSourceFiles);
+
+    let root;
+
+    try {
+      const json = fs.readFileSync("./root.json", "utf8");
+      root = JSON.parse(json);
+    } catch (error) {
+      throw new Error(
+        `Unable to load root.json: ${error.message}`,
+        { cause: error }
+      );
+    }
+
+    return resolveRefs(root, byID);
   });
 
   eleventyConfig.addWatchTarget("./root.json");
+  eleventyConfig.addWatchTarget("./data/sources");
 
   return {
     dir: {
