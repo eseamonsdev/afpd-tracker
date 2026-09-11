@@ -7,7 +7,12 @@ import { resolveRefs } from "./lib/data/resolve-refs.js";
 export default function (eleventyConfig) {
   eleventyConfig.addGlobalData("root", () => {
     const loadedSourceFiles = loadJsonFiles("./data/sources");
-    const byID = buildByID(loadedSourceFiles);
+    const loadedEntityFiles = loadJsonFiles("./data/entities");
+
+    const byID = buildByID([
+      ...loadedSourceFiles,
+      ...loadedEntityFiles
+    ]);
 
     let root;
 
@@ -26,6 +31,7 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addWatchTarget("./root.json");
   eleventyConfig.addWatchTarget("./data/sources");
+  eleventyConfig.addWatchTarget("./data/entities");
 
   return {
     dir: {
