@@ -1,4 +1,4 @@
-.PHONY: promote-staging
+.PHONY: promote-staging build
 
 promote-staging:
 	@test "$$(git branch --show-current)" = "staging" || \
@@ -11,3 +11,6 @@ promote-staging:
 	@echo "Promoting this staging commit:"
 	@git log -1 --oneline origin/staging
 	@git push --force-with-lease origin origin/staging:main
+
+build:
+	npm run build
