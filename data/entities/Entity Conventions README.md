@@ -60,7 +60,7 @@ Current person roles:
 
 ```text
 city-official
-law-enforcement-officer
+officer
 civilian
 civilian-employee
 ```
@@ -72,7 +72,7 @@ Example:
   "id": "entity-person-shawn-lott",
   "type": "person",
   "roles": [
-    "law-enforcement-officer"
+    "officer"
   ]
 }
 ```
