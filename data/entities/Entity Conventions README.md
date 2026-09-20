@@ -136,7 +136,7 @@ Example:
 ```json
 {
   "$ref": "entity-person-christian-connelly",
-  "$field": "post_discipline_sources",
+  "$path": ["post_discipline_sources"],
   "$spread": true
 }
 ```
