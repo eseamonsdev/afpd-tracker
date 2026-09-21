@@ -1,0 +1,19 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+{% set siteUrl = "https://afpd-tracker.ericseamonsdeveloper.workers.dev" %}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>{{ siteUrl | escape }}/</loc>
+  </url>
+  <url>
+    <loc>{{ siteUrl | escape }}/officers/</loc>
+  </url>
+  {% for officerPage in entities.byType["officer-page"] | sort(false, false, "name") %}
+  <url>
+    <loc>{{ (siteUrl ~ officerPage.url) | escape }}</loc>
+  </url>
+  {% endfor %}
+</urlset>
