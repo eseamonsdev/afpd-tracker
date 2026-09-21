@@ -4,5 +4,25 @@
       American Fork Police Department<br>
       Accountability Project
     </a>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a
+        href="/"
+        {% if page.url == "/" %}aria-current="page"{% endif %}
+      >
+        Document Repository
+      </a>
+
+      <a
+        href="/officers/"
+        {% if page.url == "/officers/" %}
+          aria-current="page"
+        {% elif page.url and page.url.indexOf("/officers/") == 0 %}
+          aria-current="location"
+        {% endif %}
+      >
+        Officers
+      </a>
+    </nav>
   </div>
 </header>
