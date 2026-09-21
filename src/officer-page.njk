@@ -5,11 +5,13 @@ pagination:
   alias: officerPage
 permalink: "{{ officerPage.url }}"
 ---
+{% from "document-tree.njk" import renderNodes %}
 {% set siteUrl = "https://afpd-tracker.ericseamonsdeveloper.workers.dev" %}
 {% set pageTitle = officerPage.name ~ " — Officer Records | AFPD Accountability Project" %}
 {% set defaultDescription = "Explore records related to " ~ officerPage.name ~ "’s service with the American Fork Police Department." %}
 {% set pageDescription = officerPage.seo_description or defaultDescription %}
 {% set canonicalUrl = siteUrl ~ officerPage.url %}
+{% set sections = officerPage.sections or [] %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -35,7 +37,12 @@ permalink: "{{ officerPage.url }}"
 
   <link rel="stylesheet" href="/css/site.css">
   <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/document-tree.css">
   <link rel="stylesheet" href="/css/officer-page.css">
+
+  {% if sections | length %}
+    <script src="/js/officer-tabs.js" defer></script>
+  {% endif %}
 </head>
 <body>
   {% include "header.njk" %}
@@ -49,6 +56,58 @@ permalink: "{{ officerPage.url }}"
       <p class="officer-category-label">OFFICER RECORDS</p>
       <h1>{{ officerPage.name | escape }}</h1>
     </div>
+
+    {% if sections | length %}
+      <div class="officer-sections" data-officer-sections>
+        <div
+          class="officer-section-tabs"
+          data-section-tabs
+          hidden
+        >
+          {% for section in sections %}
+            <button
+              class="officer-section-tab"
+              id="officer-tab-{{ loop.index }}"
+              type="button"
+              data-section-tab
+              aria-controls="officer-section-{{ loop.index }}"
+            >
+              {{ section.title | escape }}
+            </button>
+          {% endfor %}
+        </div>
+
+        {% for section in sections %}
+          <section
+            class="officer-section-panel"
+            id="officer-section-{{ loop.index }}"
+            aria-labelledby="officer-section-heading-{{ loop.index }}"
+            data-section-panel
+          >
+            <h2 id="officer-section-heading-{{ loop.index }}">
+              {{ section.title | escape }}
+            </h2>
+
+            {% if section.descriptions and section.descriptions | length %}
+              <div class="officer-section-descriptions">
+                {% for description in section.descriptions %}
+                  <p>{{ description | escape }}</p>
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            {% if section.contents and section.contents | length %}
+              <ul
+                class="tree"
+                aria-label="{{ section.title | escape }}"
+              >
+                {{ renderNodes(section.contents) }}
+              </ul>
+            {% endif %}
+          </section>
+        {% endfor %}
+      </div>
+    {% endif %}
   </main>
 </body>
 </html>
