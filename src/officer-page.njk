@@ -5,16 +5,29 @@ pagination:
   alias: officerPage
 permalink: "{{ officerPage.url }}"
 ---
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ officerPage.name | escape }}</title>
+  <title>{{ officerPage.name | escape }} — American Fork Police Department Accountability Project</title>
+
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/officer-page.css">
 </head>
 <body>
+  {% include "header.njk" %}
+
   <main>
-    <h1>{{ officerPage.name | escape }}</h1>
+    <a class="officer-back-link" href="/officers/">
+      ← All officers
+    </a>
+
+    <div class="page-heading">
+      <p class="officer-category-label">OFFICER RECORDS</p>
+      <h1>{{ officerPage.name | escape }}</h1>
+    </div>
   </main>
 </body>
 </html>
