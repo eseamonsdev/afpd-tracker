@@ -11,3 +11,103 @@
   font-weight: 700;
   letter-spacing: .12em;
 }
+
+.officer-sections {
+  min-width: 0;
+}
+
+.officer-sections [hidden] {
+  display: none !important;
+}
+
+.officer-section-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #d8e0e8;
+}
+
+.officer-section-tab {
+  max-width: 100%;
+  min-height: 44px;
+  padding: .7rem 1rem;
+  border: 1px solid #cbd6e2;
+  border-radius: 6px;
+  background: #fff;
+  color: #17365d;
+  font: inherit;
+  font-size: .92rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+
+.officer-section-tab:hover {
+  background: #eaf0f7;
+}
+
+.officer-section-tab[aria-selected="true"] {
+  border-color: #17365d;
+  background: #17365d;
+  color: #fff;
+}
+
+.officer-section-tab:focus-visible,
+.officer-section-panel:focus-visible {
+  outline: 3px solid #b3262e;
+  outline-offset: 3px;
+}
+
+.officer-section-panel {
+  min-width: 0;
+  margin-top: 1.25rem;
+  padding: 1.4rem;
+  border: 1px solid #d8e0e8;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.officer-section-panel h2 {
+  margin: 0 0 .9rem;
+  color: #17365d;
+  font-size: 1.2rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.officer-section-descriptions {
+  margin-bottom: 1.25rem;
+}
+
+.officer-section-descriptions p {
+  margin: 0;
+  color: #526175;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.officer-section-descriptions p + p {
+  margin-top: 1rem;
+}
+
+.officer-section-panel > :last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 580px) {
+  .officer-section-tabs {
+    gap: .4rem;
+  }
+
+  .officer-section-tab {
+    padding: .65rem .75rem;
+    font-size: .85rem;
+  }
+
+  .officer-section-panel {
+    padding: 1rem;
+  }
+}
