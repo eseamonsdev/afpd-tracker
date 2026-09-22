@@ -2,8 +2,11 @@ import fs from "node:fs";
 import { loadJsonFiles } from "./lib/data/load-json-files.js";
 import { buildByID } from "./lib/data/build-by-id.js";
 import { resolveRefs } from "./lib/data/resolve-refs.js";
+import { readCsv } from "./lib/data/read-csv.js";
 
 export default function (eleventyConfig) {
+  eleventyConfig.addFilter("readCsv", readCsv);
+
   eleventyConfig.addGlobalData("root", () => {
     const loadedSourceFiles = loadJsonFiles("./data/sources");
     const loadedEntityFiles = loadJsonFiles("./data/entities");
@@ -65,6 +68,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addWatchTarget("./root.json");
   eleventyConfig.addWatchTarget("./data/sources");
   eleventyConfig.addWatchTarget("./data/entities");
+  eleventyConfig.addWatchTarget("./public/records/**/*.csv");
 
   return {
     dir: {
