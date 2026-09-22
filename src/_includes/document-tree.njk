@@ -1,3 +1,5 @@
+{% from "csv-table.njk" import renderCsvTable %}
+
     {% macro renderIcon(type) %}
       {% if type == "file" %}
             <svg
@@ -102,6 +104,10 @@
                 {{ renderNodes(node.contents) }}
               </ul>
             </details>
+          </li>
+        {% elseif node.type == "file" and node.display == "table" %}
+          <li class="csv-tree-item">
+            {{ renderCsvTable(node) }}
           </li>
         {% elseif node.type == "file" or node.type == "youtube" or node.type == "news" or node.type == "external" or node.type == "audio" %}
           <li class="tree-row">
