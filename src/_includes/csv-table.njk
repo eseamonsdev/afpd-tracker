@@ -29,13 +29,11 @@
               <tr>
                 {% for cell in row %}
                   {% set columnName = (csv.headers[loop.index0] or "") | trim | lower %}
-                  <td>
-                    {% if columnName in currencyColumns %}
-                      {{ cell | formatCurrency | escape }}
-                    {% else %}
-                      {{ cell | escape }}
-                    {% endif %}
-                  </td>
+                  {% set displayValue = cell %}
+                  {% if columnName in currencyColumns %}
+                    {% set displayValue = cell | formatCurrency %}
+                  {% endif %}
+                  <td>{{ displayValue | escape }}</td>
                 {% endfor %}
               </tr>
             {% else %}
