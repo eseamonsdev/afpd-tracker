@@ -4,8 +4,35 @@ import { buildByID } from "./lib/data/build-by-id.js";
 import { resolveRefs } from "./lib/data/resolve-refs.js";
 import { readCsv } from "./lib/data/read-csv.js";
 
+const currencyFormatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2
+});
+
 export default function (eleventyConfig) {
   eleventyConfig.addFilter("readCsv", readCsv);
+
+  eleventyConfig.addFilter("formatCurrency", (value) => {
+    if (value === null || value === undefined) {
+      return "";
+    }
+
+    const text = String(value).trim();
+
+    if (text === "") {
+      return "";
+    }
+
+    const number = Number(text);
+
+    if (!Number.isFinite(number)) {
+      return value;
+    }
+
+    return currencyFormatter.format(number);
+  });
 
   eleventyConfig.addGlobalData("root", () => {
     const loadedSourceFiles = loadJsonFiles("./data/sources");
