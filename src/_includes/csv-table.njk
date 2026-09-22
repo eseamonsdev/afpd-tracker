@@ -1,0 +1,57 @@
+{% macro renderCsvTable(node) %}
+  {% set csv = node.path | readCsv %}
+  {% set tableLabel = node.label or "CSV records" %}
+
+  <div class="csv-record">
+    {% if csv.headers | length %}
+      <div
+        class="csv-table-scroll"
+        role="region"
+        aria-label="{{ tableLabel | escape }} — scrollable table"
+        tabindex="0"
+      >
+        <table class="csv-table">
+          <caption>{{ tableLabel | escape }}</caption>
+
+          <thead>
+            <tr>
+              {% for heading in csv.headers %}
+                <th scope="col">
+                  {{ (heading or ("Column " ~ loop.index)) | escape }}
+                </th>
+              {% endfor %}
+            </tr>
+          </thead>
+
+          <tbody>
+            {% for row in csv.rows %}
+              <tr>
+                {% for cell in row %}
+                  <td>{{ cell | escape }}</td>
+                {% endfor %}
+              </tr>
+            {% else %}
+              <tr>
+                <td colspan="{{ csv.headers | length }}">
+                  No data rows are available in this CSV.
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% else %}
+      <p class="csv-empty">This CSV is empty.</p>
+    {% endif %}
+
+    <p class="csv-download">
+      <a
+        href="{{ csv.downloadUrl | escape }}"
+        download
+        aria-label="Download CSV: {{ tableLabel | escape }}"
+      >
+        Download CSV
+      </a>
+    </p>
+  </div>
+{% endmacro %}
