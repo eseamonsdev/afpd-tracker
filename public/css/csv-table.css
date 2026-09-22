@@ -1,0 +1,95 @@
+.tree .csv-tree-item {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  padding: .45rem .55rem;
+}
+
+.csv-record {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.csv-table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid #d8e0e8;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.csv-table-scroll:focus-visible {
+  outline: 3px solid #b3262e;
+  outline-offset: 3px;
+}
+
+.csv-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #1d2733;
+  font-size: .9rem;
+  line-height: 1.5;
+}
+
+.csv-table caption {
+  padding: .8rem 1rem;
+  color: #17365d;
+  font-weight: 650;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.csv-table th,
+.csv-table td {
+  padding: .7rem 1rem;
+  border-bottom: 1px solid #e7ecf1;
+  text-align: left;
+  vertical-align: top;
+}
+
+.csv-table th {
+  border-top: 1px solid #d8e0e8;
+  background: #edf2f7;
+  color: #17365d;
+  font-weight: 650;
+}
+
+.csv-table td {
+  white-space: pre-wrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.csv-table tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.csv-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.csv-record .csv-download {
+  margin: .6rem 0 0;
+  font-size: .85rem;
+}
+
+.csv-record .csv-empty {
+  margin: 0;
+  color: #526175;
+}
+
+@media (max-width: 580px) {
+  .csv-table {
+    font-size: .85rem;
+  }
+
+  .csv-table th,
+  .csv-table td {
+    padding: .6rem .75rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .tree .csv-tree-item {
+    padding-inline: .35rem;
+  }
+}
