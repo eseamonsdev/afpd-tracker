@@ -5,9 +5,35 @@
       "type": "officer-page",
       "name": {
         "$ref": "entity-person-cameron-j-paul",
-        "$path": ["name"]
+        "$path": [
+          "name"
+        ]
       },
-      "url": "/officers/cameron-j-paul/"
+      "url": "/officers/cameron-j-paul/",
+      "sections": [
+        {
+          "title": "Overview",
+          "descriptions": [
+            "This page brings together available employment and compensation records related to Cameron J. Paul.",
+            "Select a section to explore the supporting documents and recordings."
+          ]
+        },
+        {
+          "title": "Employment",
+          "descriptions": [
+            "Available employment and public compensation records."
+          ],
+          "contents": [
+            {
+              "$ref": "entity-person-cameron-j-paul",
+              "$path": [
+                "employment-records"
+              ],
+              "$spread": true
+            }
+          ]
+        }
+      ]
     }
   ]
 }
