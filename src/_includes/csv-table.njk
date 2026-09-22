@@ -1,6 +1,7 @@
 {% macro renderCsvTable(node) %}
   {% set csv = node.path | readCsv %}
   {% set tableLabel = node.label or "CSV records" %}
+  {% set currencyColumns = ["wages", "benefits", "total"] %}
 
   <div class="csv-record">
     {% if csv.headers | length %}
@@ -27,7 +28,14 @@
             {% for row in csv.rows %}
               <tr>
                 {% for cell in row %}
-                  <td>{{ cell | escape }}</td>
+                  {% set columnName = (csv.headers[loop.index0] or "") | trim | lower %}
+                  <td>
+                    {% if columnName in currencyColumns %}
+                      {{ cell | formatCurrency | escape }}
+                    {% else %}
+                      {{ cell | escape }}
+                    {% endif %}
+                  </td>
                 {% endfor %}
               </tr>
             {% else %}
