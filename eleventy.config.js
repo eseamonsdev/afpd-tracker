@@ -14,6 +14,14 @@ const currencyFormatter = new Intl.NumberFormat("en-US", {
 export default function (eleventyConfig) {
   eleventyConfig.addFilter("readCsv", readCsv);
 
+  eleventyConfig.addFilter("publishedSections", (sections) => {
+    if (!Array.isArray(sections)) {
+      return [];
+    }
+
+    return sections.filter((section) => section?.published !== false);
+  });
+
   eleventyConfig.addFilter("formatCurrency", (value) => {
     if (value === null || value === undefined) {
       return "";
