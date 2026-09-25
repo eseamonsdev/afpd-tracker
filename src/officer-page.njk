@@ -11,7 +11,7 @@ permalink: "{{ officerPage.url }}"
 {% set defaultDescription = "Explore records related to " ~ officerPage.name ~ "’s service with the American Fork Police Department." %}
 {% set pageDescription = officerPage.seo_description or defaultDescription %}
 {% set canonicalUrl = siteUrl ~ officerPage.url %}
-{% set sections = officerPage.sections or [] %}
+{% set sections = officerPage.sections | publishedSections %}
 <!doctype html>
 <html lang="en">
 <head>
