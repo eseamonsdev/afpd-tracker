@@ -17,7 +17,7 @@ export default {
     ) {
       return Response.redirect(
         `${CANONICAL_ORIGIN}${url.pathname}${url.search}`,
-        302
+        301
       );
     }
 
