@@ -1,3 +1,40 @@
+.officer-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.officer-filters[hidden],
+.officer-list li[hidden] {
+  display: none;
+}
+
+.officer-filter {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface);
+  color: inherit;
+  font: inherit;
+  padding: 0.55rem 0.9rem;
+  cursor: pointer;
+}
+
+.officer-filter:hover {
+  background: #f1f5fa;
+}
+
+.officer-filter[aria-pressed="true"] {
+  background: #e7eff8;
+  border-color: #637083;
+  font-weight: 600;
+}
+
+.officer-filter:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
 .officer-list {
   margin: 0;
   padding: 0;
@@ -5,9 +42,10 @@
   border: 1px solid var(--line);
   border-radius: 6px;
   background: var(--surface);
+  overflow: hidden;
 }
 
-.officer-list li + li {
+.officer-list li:not([hidden]) ~ li:not([hidden]) {
   border-top: 1px solid #e7ecf1;
 }
 
