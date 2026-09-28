@@ -199,7 +199,7 @@ def person_fields(row, profile_ids):
         "roles": roles,
     }
     records = employment_records(row, base_id, profile_ids)
-    if records:
+    if records or "officer" in roles:
         desired["employment-records"] = records
     return folder, desired
 
