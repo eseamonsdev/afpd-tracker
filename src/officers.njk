@@ -28,6 +28,7 @@ permalink: /officers/
   <link rel="stylesheet" href="/css/site.css">
   <link rel="stylesheet" href="/css/header.css">
   <link rel="stylesheet" href="/css/officers.css">
+  <script src="/js/officer-list-filters.js" defer></script>
 </head>
 <body>
   {% include "header.njk" %}
@@ -35,15 +36,35 @@ permalink: /officers/
   <main>
     <div class="page-heading">
       <h1>Officers</h1>
-      <p>
+
+      <div class="officer-filters" role="group" aria-label="Filter officers" hidden>
+        <button
+          class="officer-filter"
+          type="button"
+          data-officer-filter="key"
+          aria-pressed="false"
+        >
+          Key Records
+        </button>
+        <button
+          class="officer-filter"
+          type="button"
+          data-officer-filter="all"
+          aria-pressed="false"
+        >
+          All
+        </button>
+      </div>
+
+      <p id="officer-list-description" aria-live="polite">
         Browse officers alphabetically by name.
         Select a name to explore the available records.
       </p>
     </div>
 
-    <ul class="officer-list" aria-label="Officers">
+    <ul class="officer-list" aria-label="Officers" aria-describedby="officer-list-description">
       {% for officerPage in entities.byType["officer-page"] | sort(false, false, "name") %}
-        <li>
+        <li data-key-records="{{ 'true' if officerPage['key-records'] == true else 'false' }}">
           <a href="{{ officerPage.url | escape }}">
             <span>{{ officerPage.name | escape }}</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
