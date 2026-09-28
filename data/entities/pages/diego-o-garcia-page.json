@@ -1,0 +1,38 @@
+{
+  "entities": [
+    {
+      "id": "entity-officer-page-diego-o-garcia",
+      "type": "officer-page",
+      "name": {
+        "$ref": "entity-person-diego-o-garcia",
+        "$path": [
+          "name"
+        ]
+      },
+      "url": "/officers/diego-o-garcia/",
+      "sections": [
+        {
+          "title": "Overview",
+          "descriptions": [
+            "This page brings together available employment and compensation records related to Diego O. Garcia."
+          ]
+        },
+        {
+          "title": "Employment",
+          "descriptions": [
+            "Officer Garcia began working for the American Fork Police Department on April 17, 2012."
+          ],
+          "contents": [
+            {
+              "$ref": "entity-person-diego-o-garcia",
+              "$path": [
+                "employment-records"
+              ],
+              "$spread": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

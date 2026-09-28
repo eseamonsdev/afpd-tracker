@@ -1,0 +1,38 @@
+{
+  "entities": [
+    {
+      "id": "entity-officer-page-kevin-doyl",
+      "type": "officer-page",
+      "name": {
+        "$ref": "entity-person-kevin-doyl",
+        "$path": [
+          "name"
+        ]
+      },
+      "url": "/officers/kevin-doyl/",
+      "sections": [
+        {
+          "title": "Overview",
+          "descriptions": [
+            "This page brings together available employment and compensation records related to Kevin Doyl."
+          ]
+        },
+        {
+          "title": "Employment",
+          "descriptions": [
+            "Officer Doyl began working for the American Fork Police Department on March 11, 2002."
+          ],
+          "contents": [
+            {
+              "$ref": "entity-person-kevin-doyl",
+              "$path": [
+                "employment-records"
+              ],
+              "$spread": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

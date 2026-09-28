@@ -1,0 +1,38 @@
+{
+  "entities": [
+    {
+      "id": "entity-officer-page-luke-a-sumbot",
+      "type": "officer-page",
+      "name": {
+        "$ref": "entity-person-luke-a-sumbot",
+        "$path": [
+          "name"
+        ]
+      },
+      "url": "/officers/luke-a-sumbot/",
+      "sections": [
+        {
+          "title": "Overview",
+          "descriptions": [
+            "This page brings together available employment and compensation records related to Luke A. Sumbot."
+          ]
+        },
+        {
+          "title": "Employment",
+          "descriptions": [
+            "Officer Sumbot began working for the American Fork Police Department on July 18, 2022."
+          ],
+          "contents": [
+            {
+              "$ref": "entity-person-luke-a-sumbot",
+              "$path": [
+                "employment-records"
+              ],
+              "$spread": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

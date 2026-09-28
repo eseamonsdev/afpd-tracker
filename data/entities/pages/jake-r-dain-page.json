@@ -1,0 +1,38 @@
+{
+  "entities": [
+    {
+      "id": "entity-officer-page-jake-r-dain",
+      "type": "officer-page",
+      "name": {
+        "$ref": "entity-person-jake-r-dain",
+        "$path": [
+          "name"
+        ]
+      },
+      "url": "/officers/jake-r-dain/",
+      "sections": [
+        {
+          "title": "Overview",
+          "descriptions": [
+            "This page brings together available employment and compensation records related to Jake R. Dain."
+          ]
+        },
+        {
+          "title": "Employment",
+          "descriptions": [
+            "Officer Dain worked for the American Fork Police Department from March 3, 2021 to August 12, 2021."
+          ],
+          "contents": [
+            {
+              "$ref": "entity-person-jake-r-dain",
+              "$path": [
+                "employment-records"
+              ],
+              "$spread": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

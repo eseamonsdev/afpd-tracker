@@ -1,0 +1,38 @@
+{
+  "entities": [
+    {
+      "id": "entity-officer-page-ethan-c-simmons",
+      "type": "officer-page",
+      "name": {
+        "$ref": "entity-person-ethan-c-simmons",
+        "$path": [
+          "name"
+        ]
+      },
+      "url": "/officers/ethan-c-simmons/",
+      "sections": [
+        {
+          "title": "Overview",
+          "descriptions": [
+            "This page brings together available employment and compensation records related to Ethan C. Simmons."
+          ]
+        },
+        {
+          "title": "Employment",
+          "descriptions": [
+            "Officer Simmons worked for the American Fork Police Department from March 20, 2023 to September 24, 2023."
+          ],
+          "contents": [
+            {
+              "$ref": "entity-person-ethan-c-simmons",
+              "$path": [
+                "employment-records"
+              ],
+              "$spread": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

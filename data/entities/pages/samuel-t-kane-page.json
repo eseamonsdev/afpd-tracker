@@ -1,0 +1,38 @@
+{
+  "entities": [
+    {
+      "id": "entity-officer-page-samuel-t-kane",
+      "type": "officer-page",
+      "name": {
+        "$ref": "entity-person-samuel-t-kane",
+        "$path": [
+          "name"
+        ]
+      },
+      "url": "/officers/samuel-t-kane/",
+      "sections": [
+        {
+          "title": "Overview",
+          "descriptions": [
+            "This page brings together available employment and compensation records related to Samuel T. Kane."
+          ]
+        },
+        {
+          "title": "Employment",
+          "descriptions": [
+            "Officer Kane worked for the American Fork Police Department from July 1, 2019 to February 11, 2020."
+          ],
+          "contents": [
+            {
+              "$ref": "entity-person-samuel-t-kane",
+              "$path": [
+                "employment-records"
+              ],
+              "$spread": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
