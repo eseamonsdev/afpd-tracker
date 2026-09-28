@@ -4,6 +4,8 @@ Run ``python scripts/create_person_files.py`` for scripts/src/officers.json, or
 ``python scripts/create_person_files.py civilians.json`` for another source.
 Each source has a top-level list (for example, ``{"officers": [...]}``) whose
 entries include ``base-id``, ``roles``, and ``name`` or ``*-name-label``.
+Missing NPI and Transparent Utah resources are added to their respective
+source JSON files, with each list sorted by ID.
 """
 
 import argparse
@@ -16,6 +18,8 @@ from urllib.parse import urlparse
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SOURCE_DIR = Path(__file__).resolve().parent / "src"
 PEOPLE_DIR = REPO_ROOT / "data/entities/people"
+NPI_FILE = REPO_ROOT / "data/sources/external/national-police-index.json"
+TRANSPARENT_UTAH_FILE = REPO_ROOT / "data/sources/file/transparent-utah.json"
 ROLE_FOLDERS = {
     "officer": "officers",
     "civilian": "civilians",
@@ -52,7 +56,101 @@ def npi_source_id(url, explicit_id=None):
     return f"national-police-index-{given}-{surname}"
 
 
-def employment_records(row, base_id):
+def prepare_npi_resources(people):
+    """Match existing profile URLs and prepare missing resources for the file."""
+    urls = [row.get("npi-profile-url", "") for row in people]
+    if any(not isinstance(url, str) for url in urls):
+        raise ValueError("npi-profile-url must be a string")
+    if not any(urls):
+        return {}, None
+
+    data = json.loads(NPI_FILE.read_text(encoding="utf-8"))
+    resources = data.get("resources")
+    if not isinstance(resources, list):
+        raise ValueError(f"{NPI_FILE}: expected a resources list")
+
+    by_id = {}
+    by_url = {}
+    for resource in resources:
+        if not isinstance(resource, dict) or not isinstance(resource.get("id"), str) or not isinstance(resource.get("url"), str):
+            raise ValueError(f"{NPI_FILE}: each resource needs an id and url")
+        resource_id, url = resource["id"], resource["url"]
+        if resource_id in by_id or url in by_url:
+            raise ValueError(f"{NPI_FILE}: duplicate resource id or URL: {resource_id}")
+        by_id[resource_id] = resource
+        by_url[url] = resource_id
+
+    profile_ids = {}
+    for row in people:
+        url = row.get("npi-profile-url", "")
+        if not url:
+            continue
+        proposed_id = npi_source_id(url, row.get("npi-source-id"))
+        if url in by_url:
+            existing_id = by_url[url]
+            if row.get("npi-source-id") and proposed_id != existing_id:
+                raise ValueError(f"{url}: npi-source-id differs from existing resource {existing_id}")
+            profile_ids[url] = existing_id
+            continue
+        if proposed_id in by_id:
+            raise ValueError(f"{url}: resource ID {proposed_id} already belongs to another URL; set npi-source-id")
+        resource = {
+            "id": proposed_id,
+            "type": "external",
+            "label": "National Police Index Profile",
+            "url": url,
+        }
+        resources.append(resource)
+        by_id[proposed_id] = resource
+        by_url[url] = proposed_id
+        profile_ids[url] = proposed_id
+
+    data["resources"] = sorted(resources, key=lambda resource: resource["id"])
+    return profile_ids, data
+
+
+def prepare_compensation_files(people):
+    """Add missing Transparent Utah CSV definitions without editing existing ones."""
+    requested = []
+    for row in people:
+        base_id = row.get("base-id")
+        exists = row.get("transparent-utah-csv-exists", False)
+        if not isinstance(exists, bool):
+            raise ValueError(f"{base_id}: transparent-utah-csv-exists must be true or false")
+        if exists:
+            requested.append(base_id)
+    if not requested:
+        return None
+
+    data = json.loads(TRANSPARENT_UTAH_FILE.read_text(encoding="utf-8"))
+    files = data.get("files")
+    if not isinstance(files, list):
+        raise ValueError(f"{TRANSPARENT_UTAH_FILE}: expected a files list")
+    ids = set()
+    for resource in files:
+        if not isinstance(resource, dict) or not isinstance(resource.get("id"), str):
+            raise ValueError(f"{TRANSPARENT_UTAH_FILE}: each file needs an id")
+        if resource["id"] in ids:
+            raise ValueError(f"{TRANSPARENT_UTAH_FILE}: duplicate ID {resource['id']}")
+        ids.add(resource["id"])
+
+    for base_id in requested:
+        resource_id = f"transparent-utah-{base_id}-public-compensation"
+        if resource_id in ids:
+            continue
+        files.append({
+            "id": resource_id,
+            "type": "file",
+            "label": "Transparent Utah Public Compensation Records",
+            "path": f"transparent-utah/{base_id}-transparent-utah-public-compensation.csv",
+        })
+        ids.add(resource_id)
+
+    data["files"] = sorted(files, key=lambda resource: resource["id"])
+    return data
+
+
+def employment_records(row, base_id, profile_ids):
     records = []
     csv_exists = row.get("transparent-utah-csv-exists", False)
     if not isinstance(csv_exists, bool):
@@ -67,11 +165,11 @@ def employment_records(row, base_id):
     if npi_url:
         if not isinstance(npi_url, str):
             raise ValueError(f"{base_id}: npi-profile-url must be a string")
-        records.append({"$ref": npi_source_id(npi_url, row.get("npi-source-id"))})
+        records.append({"$ref": profile_ids[npi_url]})
     return records
 
 
-def person_fields(row):
+def person_fields(row, profile_ids):
     base_id = row.get("base-id")
     if not isinstance(base_id, str) or not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", base_id):
         raise ValueError(f"Invalid base-id: {base_id!r}")
@@ -97,7 +195,7 @@ def person_fields(row):
         "name": name,
         "roles": roles,
     }
-    records = employment_records(row, base_id)
+    records = employment_records(row, base_id, profile_ids)
     if records:
         desired["employment-records"] = records
     return folder, desired
@@ -119,16 +217,35 @@ def existing_person_files():
 
 def create_person_files(source_file):
     people = read_people(source_file)
+    profile_ids, npi_data = prepare_npi_resources(people)
+    compensation_data = prepare_compensation_files(people)
     existing = existing_person_files()
     seen = set()
+    planned = []
     created = updated = unchanged = 0
 
     for row in people:
-        folder, desired = person_fields(row)
+        folder, desired = person_fields(row, profile_ids)
         entity_id = desired["id"]
         if entity_id in seen:
             raise ValueError(f"Duplicate base-id in {source_file}: {row['base-id']}")
         seen.add(entity_id)
+        planned.append((row, folder, desired))
+
+    if npi_data is not None:
+        content = json.dumps(npi_data, indent=2, ensure_ascii=False) + "\n"
+        if NPI_FILE.read_text(encoding="utf-8") != content:
+            NPI_FILE.write_text(content, encoding="utf-8")
+            print(f"Updated: {NPI_FILE.relative_to(REPO_ROOT)}")
+
+    if compensation_data is not None:
+        content = json.dumps(compensation_data, indent=2, ensure_ascii=False) + "\n"
+        if TRANSPARENT_UTAH_FILE.read_text(encoding="utf-8") != content:
+            TRANSPARENT_UTAH_FILE.write_text(content, encoding="utf-8")
+            print(f"Updated: {TRANSPARENT_UTAH_FILE.relative_to(REPO_ROOT)}")
+
+    for row, folder, desired in planned:
+        entity_id = desired["id"]
 
         path = existing.get(entity_id, PEOPLE_DIR / folder / f"{row['base-id']}.json")
         if path.exists():
