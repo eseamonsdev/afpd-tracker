@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="/css/site.css">
   <link rel="stylesheet" href="/css/header.css">
   <link rel="stylesheet" href="/css/officers.css">
+  <script src="/js/officer-list-filters.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -54,596 +55,616 @@
   <main>
     <div class="page-heading">
       <h1>Officers</h1>
-      <p>
+
+      <div class="officer-filters" role="group" aria-label="Filter officers" hidden>
+        <button
+          class="officer-filter"
+          type="button"
+          data-officer-filter="key"
+          aria-pressed="false"
+        >
+          Key Records
+        </button>
+        <button
+          class="officer-filter"
+          type="button"
+          data-officer-filter="all"
+          aria-pressed="false"
+        >
+          All
+        </button>
+      </div>
+
+      <p id="officer-list-description" aria-live="polite">
         Browse officers alphabetically by name.
         Select a name to explore the available records.
       </p>
     </div>
 
-    <ul class="officer-list" aria-label="Officers">
+    <ul class="officer-list" aria-label="Officers" aria-describedby="officer-list-description">
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/quinn-j-adamson/">
             <span>Adamson, Quinn J.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/christopher-slate-blackburn/">
             <span>Blackburn, Christopher Slate</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/cayden-j-boothe/">
             <span>Boothe, Cayden J.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/andrew-c-burdine/">
             <span>Burdine, Andrew C.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/carter-p-call/">
             <span>Call, Carter P.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/samuel-canizalez/">
             <span>Canizalez, Samuel</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/derek-t-cannon/">
             <span>Cannon, Derek T.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/andres-s-carter/">
             <span>Carter, Andres S.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/delton-l-choates/">
             <span>Choates, Delton L.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/jay-m-christensen/">
             <span>Christensen, Jay M.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/joshua-p-christensen/">
             <span>Christensen, Joshua P.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/christian-c-connelly/">
             <span>Connelly, Christian C.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/yahel-a-coral/">
             <span>Coral, Yahel A.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/brennan-cox/">
             <span>Cox, Brennan</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/philip-w-s-craig/">
             <span>Craig, Philip W. S.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/jake-r-dain/">
             <span>Dain, Jake R.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/s-scott-daughrity/">
             <span>Daughrity, S. Scott</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/kevin-doyl/">
             <span>Doyl, Kevin</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/darren-j-falslev/">
             <span>Falslev, Darren J.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/clint-b-farnsworth/">
             <span>Farnsworth, Clint B.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/stuart-d-fore/">
             <span>Fore, Stuart D.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/kolten-d-fraughton/">
             <span>Fraughton, Kolten D.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/diego-o-garcia/">
             <span>Garcia, Diego O.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/mitchell-r-godfrey/">
             <span>Godfrey, Mitchell R.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/david-gonzalez/">
             <span>Gonzalez, David</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/zachary-p-goodale/">
             <span>Goodale, Zachary P.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/hope-n-groesbeck/">
             <span>Groesbeck, Hope N.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/david-o-guerra/">
             <span>Guerra, David O.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/ashleigh-l-gutierrez/">
             <span>Gutierrez, Ashleigh L.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/jacob-w-hager/">
             <span>Hager, Jacob W.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/sammantha-j-halladay/">
             <span>Halladay, Sammantha J.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/christian-l-halverson/">
             <span>Halverson, Christian L.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/zackery-m-hansen/">
             <span>Hansen, Zackery M.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/steven-g-hawkins/">
             <span>Hawkins, Steven G.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/colby-a-heaton/">
             <span>Heaton, Colby A.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/joshua-m-jensen/">
             <span>Jensen, Joshua M.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/tanner-p-kahl/">
             <span>Kahl, Tanner P.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/samuel-t-kane/">
             <span>Kane, Samuel T.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/caleb-m-kinnaman/">
             <span>Kinnaman, Caleb M.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/bronson-t-kitchen/">
             <span>Kitchen, Bronson T.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/jake-d-laycock/">
             <span>Laycock, Jake D.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/shawn-e-lott/">
             <span>Lott, Shawn E.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/christopher-l-loveless/">
             <span>Loveless, Christopher L.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/austin-s-lunt/">
             <span>Lunt, Austin S.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/kelepi-makai/">
             <span>Makai, Kelepi</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/dustin-k-manis/">
             <span>Manis, Dustin K.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/kirienn-a-marrott/">
             <span>Marrott, Kirienn A.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/brandon-k-mason/">
             <span>Mason, Brandon K.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/cory-a-maxfield/">
             <span>Maxfield, Cory A.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/dennis-r-mcclellan/">
             <span>McClellan, Dennis R.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/jordan-d-mcomie/">
             <span>McOmie, Jordan D.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/greg-b-mecham/">
             <span>Mecham, Greg B.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/jennifer-a-miller/">
             <span>Miller, Jennifer A.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/carlos-t-mootz-de-arbeloa/">
             <span>Mootz De Arbeloa, Carlos T.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/brian-e-morgan/">
             <span>Morgan, Brian E.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/austin-w-murray/">
             <span>Murray, Austin W.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/jennifer-l-nakai/">
             <span>Nakai, Jennifer L.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/anthony-s-neil/">
             <span>Neil, Anthony S.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/wyatt-s-nicosia/">
             <span>Nicosia, Wyatt S.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/joseph-a-nordin/">
             <span>Nordin, Joseph A.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/trini-s-ochoa/">
             <span>Ochoa, Trini S.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/cameron-j-paul/">
             <span>Paul, Cameron J.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/reyna-v-pedro/">
             <span>Pedro, Reyna V.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/kyle-b-pitt/">
             <span>Pitt, Kyle B.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/dustin-r-renter/">
             <span>Renter, Dustin R.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/cole-g-richardson/">
             <span>Richardson, Cole G.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/colton-j-rothe/">
             <span>Rothe, Colton J.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/juan-manuel-salvatierra-villarroel/">
             <span>Salvatierra Villarroel, Juan Manuel</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/ethan-c-simmons/">
             <span>Simmons, Ethan C.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/j-tayler-somerville/">
             <span>Somerville, J. Tayler</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/kadance-n-st-peter/">
             <span>St. Peter, Kadance N.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/brennen-l-stimpson/">
             <span>Stimpson, Brennen L.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/adam-r-stowers/">
             <span>Stowers, Adam R.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/jaclyn-g-strong/">
             <span>Strong, Jaclyn G.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/luke-a-sumbot/">
             <span>Sumbot, Luke A.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/jaykob-p-thacker/">
             <span>Thacker, Jaykob P.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/bryce-tholl/">
             <span>Tholl, Bryce</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/spencer-tonga/">
             <span>Tonga, Spencer</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/mckay-a-valadez/">
             <span>Valadez, Mckay A.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/philip-e-valadez/">
             <span>Valadez, Philip E.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/jonathan-wagley/">
             <span>Wagley, Jonathan</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/seth-m-waite/">
             <span>Waite, Seth M.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/m-marquel-whetton/">
             <span>Whetton, M. Marquel</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-key-records="false">
           <a href="/officers/daniel-s-woodward/">
             <span>Woodward, Daniel S.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
