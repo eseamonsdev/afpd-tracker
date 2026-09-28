@@ -6,11 +6,13 @@ Each source has a top-level list (for example, ``{"officers": [...]}``) whose
 entries include ``base-id``, ``roles``, and ``name`` or ``*-name-label``.
 Missing NPI and Transparent Utah resources are added to their respective
 source JSON files, with each list sorted by ID.
+Officer entries also create or complete a page in data/entities/pages.
 """
 
 import argparse
 import json
 import re
+from datetime import date
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -18,6 +20,7 @@ from urllib.parse import urlparse
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SOURCE_DIR = Path(__file__).resolve().parent / "src"
 PEOPLE_DIR = REPO_ROOT / "data/entities/people"
+PAGES_DIR = REPO_ROOT / "data/entities/pages"
 NPI_FILE = REPO_ROOT / "data/sources/external/national-police-index.json"
 TRANSPARENT_UTAH_FILE = REPO_ROOT / "data/sources/file/transparent-utah.json"
 ROLE_FOLDERS = {
@@ -215,14 +218,115 @@ def existing_person_files():
     return found
 
 
+def existing_officer_pages():
+    """Find officer page entities even if their filenames have changed."""
+    found = {}
+    for path in PAGES_DIR.rglob("*.json"):
+        data = json.loads(path.read_text(encoding="utf-8"))
+        for entity in data.get("entities", []):
+            entity_id = entity.get("id")
+            if not entity_id or not entity_id.startswith("entity-officer-page-"):
+                continue
+            if entity_id in found:
+                raise ValueError(f"Duplicate entity ID {entity_id}: {found[entity_id]} and {path}")
+            found[entity_id] = path
+    return found
+
+
+def format_date(value, base_id, field):
+    if not value:
+        return None
+    if not isinstance(value, str):
+        raise ValueError(f"{base_id}: {field} must be an ISO date or empty")
+    try:
+        parsed = date.fromisoformat(value)
+    except ValueError as exc:
+        raise ValueError(f"{base_id}: invalid {field}: {value!r}") from exc
+    return f"{parsed:%B} {parsed.day}, {parsed.year}"
+
+
+def officer_page_fields(row, person):
+    """Build the defaults for an officer page; existing sections stay intact."""
+    if "officer" not in person["roles"]:
+        return None
+    base_id = row["base-id"]
+    label = person["name"]
+    if "," in label:
+        surname, given = (part.strip() for part in label.split(",", 1))
+        full_name = f"{given} {surname}"
+    else:
+        full_name = label
+        surname = label.split()[-1]
+
+    start = format_date(row.get("start-date"), base_id, "start-date")
+    end = format_date(row.get("end-date"), base_id, "end-date")
+    if start and end:
+        employment = f"Officer {surname} worked for the American Fork Police Department from {start} to {end}."
+    elif start:
+        employment = f"Officer {surname} began working for the American Fork Police Department on {start}."
+    elif end:
+        employment = f"Officer {surname} worked for the American Fork Police Department until {end}."
+    else:
+        employment = f"Employment dates for Officer {surname} are not yet available."
+
+    person_id = person["id"]
+    return {
+        "id": f"entity-officer-page-{base_id}",
+        "type": "officer-page",
+        "name": {"$ref": person_id, "$path": ["name"]},
+        "url": f"/officers/{base_id}/",
+        "sections": [
+            {
+                "title": "Overview",
+                "descriptions": [
+                    f"This page brings together available employment and compensation records related to {full_name}."
+                ],
+            },
+            {
+                "title": "Employment",
+                "descriptions": [employment],
+                "contents": [{"$ref": person_id, "$path": ["employment-records"], "$spread": True}],
+            },
+        ],
+    }
+
+
+def write_entity(path, entity_id, desired, entity_type):
+    """Fill absent top-level fields without replacing custom content."""
+    if path.exists():
+        data = json.loads(path.read_text(encoding="utf-8"))
+        matches = [e for e in data.get("entities", []) if e.get("id") == entity_id]
+        if len(matches) != 1:
+            raise ValueError(f"{path}: expected exactly one {entity_id} entity")
+        entity = matches[0]
+        if entity.get("type", entity_type) != entity_type:
+            raise ValueError(f"{path}: {entity_id} is not a {entity_type}")
+        missing = {key: value for key, value in desired.items() if key not in entity}
+        if not missing:
+            print(f"Unchanged: {path.relative_to(REPO_ROOT)}")
+            return "unchanged"
+        entity.update(missing)
+        action = "updated"
+    else:
+        data = {"entities": [desired]}
+        action = "created"
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    print(f"{action.title()}: {path.relative_to(REPO_ROOT)}")
+    return action
+
+
 def create_person_files(source_file):
     people = read_people(source_file)
     profile_ids, npi_data = prepare_npi_resources(people)
     compensation_data = prepare_compensation_files(people)
     existing = existing_person_files()
+    existing_pages = existing_officer_pages()
     seen = set()
     planned = []
-    created = updated = unchanged = 0
+    counts = {"created": 0, "updated": 0, "unchanged": 0}
+    page_counts = {"created": 0, "updated": 0, "unchanged": 0}
 
     for row in people:
         folder, desired = person_fields(row, profile_ids)
@@ -230,7 +334,8 @@ def create_person_files(source_file):
         if entity_id in seen:
             raise ValueError(f"Duplicate base-id in {source_file}: {row['base-id']}")
         seen.add(entity_id)
-        planned.append((row, folder, desired))
+        page = officer_page_fields(row, desired)
+        planned.append((row, folder, desired, page))
 
     if npi_data is not None:
         content = json.dumps(npi_data, indent=2, ensure_ascii=False) + "\n"
@@ -244,37 +349,23 @@ def create_person_files(source_file):
             TRANSPARENT_UTAH_FILE.write_text(content, encoding="utf-8")
             print(f"Updated: {TRANSPARENT_UTAH_FILE.relative_to(REPO_ROOT)}")
 
-    for row, folder, desired in planned:
+    for row, folder, desired, page in planned:
         entity_id = desired["id"]
-
         path = existing.get(entity_id, PEOPLE_DIR / folder / f"{row['base-id']}.json")
-        if path.exists():
-            data = json.loads(path.read_text(encoding="utf-8"))
-            matches = [e for e in data.get("entities", []) if e.get("id") == entity_id]
-            if len(matches) != 1:
-                raise ValueError(f"{path}: expected exactly one {entity_id} entity")
-            entity = matches[0]
-            if entity.get("type", "person") != "person":
-                raise ValueError(f"{path}: {entity_id} is not a person")
-            missing = {key: value for key, value in desired.items() if key not in entity}
-            if not missing:
-                unchanged += 1
-                print(f"Unchanged: {path.relative_to(REPO_ROOT)}")
-                continue
-            entity.update(missing)
-            updated += 1
-            action = "Updated"
-        else:
-            data = {"entities": [desired]}
+        action = write_entity(path, entity_id, desired, "person")
+        counts[action] += 1
+        if action == "created":
             existing[entity_id] = path
-            created += 1
-            action = "Created"
+        if page is not None:
+            page_id = page["id"]
+            page_path = existing_pages.get(page_id, PAGES_DIR / f"{row['base-id']}-page.json")
+            page_action = write_entity(page_path, page_id, page, "officer-page")
+            page_counts[page_action] += 1
+            if page_action == "created":
+                existing_pages[page_id] = page_path
 
-        path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-        print(f"{action}: {path.relative_to(REPO_ROOT)}")
-
-    print(f"Done: {created} created, {updated} updated, {unchanged} unchanged")
+    print(f"People: {counts['created']} created, {counts['updated']} updated, {counts['unchanged']} unchanged")
+    print(f"Officer pages: {page_counts['created']} created, {page_counts['updated']} updated, {page_counts['unchanged']} unchanged")
 
 
 def main():
