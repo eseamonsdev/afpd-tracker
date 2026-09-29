@@ -1,0 +1,32 @@
+---
+permalink: /police-encounters/
+---
+{% extends "site-page-layout.njk" %}
+{% set siteUrl = "https://afpd-accountability.com" -%}
+{% set pageTitle = "Police Encounters | AFPD Accountability Project" -%}
+{% set pageDescription = "Browse documented police encounters involving the American Fork Police Department and access available records and supporting documents." -%}
+{% set canonicalUrl = siteUrl ~ "/police-encounters/" -%}
+
+{% block pageAssets %}  <link rel="stylesheet" href="/css/officers.css">
+{% endblock %}
+
+{% block content %}
+    <div class="page-heading">
+      <h1>Police Encounters</h1>
+      <p>
+        Browse documented police encounters.
+        Select an encounter to explore the available records.
+      </p>
+    </div>
+
+    <ul class="officer-list" aria-label="Police encounters">
+      {% for policeEncounterPage in entities.byType["police-encounter-page"] | sort(false, false, "name") %}
+        <li>
+          <a href="{{ policeEncounterPage.url | escape }}">
+            <span>{{ policeEncounterPage.name | escape }}</span>
+            <span class="officer-list-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+{% endblock %}
