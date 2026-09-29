@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{{ pageTitle | escape }}</title>
+  <meta name="description" content="{{ pageDescription | escape }}">
+  <link rel="canonical" href="{{ canonicalUrl | escape }}">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AFPD Accountability Project">
+  <meta property="og:title" content="{{ pageTitle | escape }}">
+  <meta property="og:description" content="{{ pageDescription | escape }}">
+  <meta property="og:url" content="{{ canonicalUrl | escape }}">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ pageTitle | escape }}">
+  <meta name="twitter:description" content="{{ pageDescription | escape }}">
+
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/header.css">
+{% block pageAssets %}{% endblock %}</head>
+<body>
+  {% include "header.njk" %}
+
+  <main>{% block content %}{% endblock %}  </main>
+</body>
+</html>
