@@ -41,10 +41,18 @@ permalink: /officers/
         <button
           class="officer-filter"
           type="button"
-          data-officer-filter="key"
+          data-officer-filter="former"
           aria-pressed="false"
         >
-          Key Records
+          Former
+        </button>
+        <button
+          class="officer-filter"
+          type="button"
+          data-officer-filter="current"
+          aria-pressed="false"
+        >
+          Current
         </button>
         <button
           class="officer-filter"
@@ -53,6 +61,14 @@ permalink: /officers/
           aria-pressed="false"
         >
           All
+        </button>
+        <button
+          class="officer-filter"
+          type="button"
+          data-officer-filter="key"
+          aria-pressed="false"
+        >
+          Key Record
         </button>
       </div>
 
@@ -65,7 +81,10 @@ permalink: /officers/
 
     <ul class="officer-list" aria-label="Officers" aria-describedby="officer-list-description">
       {% for officerPage in entities.byType["officer-page"] | sort(false, false, "name") %}
-        <li data-key-records="{{ 'true' if officerPage['key-record'] == true else 'false' }}">
+        <li
+          data-key-records="{{ 'true' if officerPage['key-record'] == true else 'false' }}"
+          data-employment-status="{{ officerPage['employment-status'] | escape }}"
+        >
           <a href="{{ officerPage.url | escape }}">
             <span>{{ officerPage.name | escape }}</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
