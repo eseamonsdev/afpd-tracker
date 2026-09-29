@@ -389,4 +389,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-Interaction that followed is captured on office and running camera
