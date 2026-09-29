@@ -64,7 +64,7 @@ permalink: /officers/
 
     <ul class="officer-list" aria-label="Officers" aria-describedby="officer-list-description">
       {% for officerPage in entities.byType["officer-page"] | sort(false, false, "name") %}
-        <li data-key-records="{{ 'true' if officerPage['key-records'] == true else 'false' }}">
+        <li data-key-records="{{ 'true' if officerPage['key-record'] == true else 'false' }}">
           <a href="{{ officerPage.url | escape }}">
             <span>{{ officerPage.name | escape }}</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
