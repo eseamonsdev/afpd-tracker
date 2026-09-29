@@ -17,4 +17,13 @@ eleventyExcludeFromCollections: true
     <loc>{{ (siteUrl ~ officerPage.url) | escape }}</loc>
   </url>
   {% endfor %}
+
+  <url>
+    <loc>{{ siteUrl | escape }}/police-encounters/</loc>
+  </url>
+  {% for policeEncounterPage in entities.byType["police-encounter-page"] | sort(false, false, "name") %}
+  <url>
+    <loc>{{ (siteUrl ~ policeEncounterPage.url) | escape }}</loc>
+  </url>
+  {% endfor %}
 </urlset>
