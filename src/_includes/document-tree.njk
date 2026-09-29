@@ -80,6 +80,20 @@
       {% endif %}
     {% endmacro %}
 
+    {% macro renderTextSegment(segment) -%}
+      {%- if segment.format == "bold" -%}
+        <strong>{{ segment.text | escape }}</strong>
+      {%- elseif segment.format == "italic" -%}
+        <em>{{ segment.text | escape }}</em>
+      {%- elseif segment.format == "bold-italic" -%}
+        <strong><em>{{ segment.text | escape }}</em></strong>
+      {%- elseif segment.format == "link" -%}
+        <a href="{{ segment.url | escape }}">{{ segment.text | escape }}</a>
+      {%- else -%}
+        {{ segment.text | escape }}
+      {%- endif -%}
+    {%- endmacro %}
+
     {% macro renderNodes(nodes) %}
       {% for node in nodes %}
         {% if node.type == "folder" %}
@@ -104,6 +118,18 @@
                 {{ renderNodes(node.contents) }}
               </ul>
             </details>
+          </li>
+        {% elseif node.type == "text" %}
+          <li class="tree-text-item">
+            <p>{{ node.text_value | escape }}</p>
+          </li>
+        {% elseif node.type == "formatted-text" %}
+          <li class="tree-text-item">
+            <p>
+              {%- for segment in node.segments -%}
+                {{- renderTextSegment(segment) -}}
+              {%- endfor -%}
+            </p>
           </li>
         {% elseif node.type == "file" and node.display == "table" %}
           <li class="csv-tree-item">
