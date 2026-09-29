@@ -260,6 +260,7 @@ def officer_page_fields(row, person):
 
     start = format_date(row.get("start-date"), base_id, "start-date")
     end = format_date(row.get("end-date"), base_id, "end-date")
+    employment_status = "former" if end is not None else "current"
     if start and end:
         employment = f"Officer {surname} worked for the American Fork Police Department from {start} to {end}."
     elif start:
@@ -273,6 +274,7 @@ def officer_page_fields(row, person):
     return {
         "id": f"entity-officer-page-{base_id}",
         "type": "officer-page",
+        "employment-status": employment_status,
         "name": {"$ref": person_id, "$path": ["name"]},
         "url": f"/officers/{base_id}/",
         "sections": [
@@ -291,8 +293,8 @@ def officer_page_fields(row, person):
     }
 
 
-def write_entity(path, entity_id, desired, entity_type):
-    """Fill absent top-level fields without replacing custom content."""
+def write_entity(path, entity_id, desired, entity_type, managed_fields=()):
+    """Fill absent fields and refresh fields explicitly managed by the script."""
     if path.exists():
         data = json.loads(path.read_text(encoding="utf-8"))
         matches = [e for e in data.get("entities", []) if e.get("id") == entity_id]
@@ -301,11 +303,14 @@ def write_entity(path, entity_id, desired, entity_type):
         entity = matches[0]
         if entity.get("type", entity_type) != entity_type:
             raise ValueError(f"{path}: {entity_id} is not a {entity_type}")
-        missing = {key: value for key, value in desired.items() if key not in entity}
-        if not missing:
+        changes = {key: value for key, value in desired.items() if key not in entity}
+        for key in managed_fields:
+            if key in desired and entity.get(key) != desired[key]:
+                changes[key] = desired[key]
+        if not changes:
             print(f"Unchanged: {path.relative_to(REPO_ROOT)}")
             return "unchanged"
-        entity.update(missing)
+        entity.update(changes)
         action = "updated"
     else:
         data = {"entities": [desired]}
@@ -359,7 +364,13 @@ def create_person_files(source_file):
         if page is not None:
             page_id = page["id"]
             page_path = existing_pages.get(page_id, PAGES_DIR / f"{row['base-id']}-page.json")
-            page_action = write_entity(page_path, page_id, page, "officer-page")
+            page_action = write_entity(
+                page_path,
+                page_id,
+                page,
+                "officer-page",
+                managed_fields=("employment-status",),
+            )
             page_counts[page_action] += 1
             if page_action == "created":
                 existing_pages[page_id] = page_path
@@ -378,3 +389,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+Interaction that followed is captured on office and running camera
