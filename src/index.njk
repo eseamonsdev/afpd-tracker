@@ -1,20 +1,15 @@
-{% from "document-tree.njk" import renderNodes %}
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>American Fork Police Department Accountability Project — Document Repository</title>
+{% extends "site-page-layout.njk" %}
+{% from "document-tree.njk" import renderNodes -%}
+{% set siteUrl = "https://afpd-accountability.com" -%}
+{% set pageTitle = "American Fork Police Department Accountability Project — Document Repository" -%}
+{% set pageDescription = "Explore public records involving the American Fork Police Department by encounter, officer, or topic." -%}
+{% set canonicalUrl = siteUrl ~ "/" -%}
 
-  <link rel="stylesheet" href="/css/site.css">
-  <link rel="stylesheet" href="/css/header.css">
-  <link rel="stylesheet" href="/css/document-tree.css">
+{% block pageAssets %}  <link rel="stylesheet" href="/css/document-tree.css">
   <link rel="stylesheet" href="/css/csv-table.css">
-</head>
-<body>
-  {% include "header.njk" %}
+{% endblock %}
 
-  <main>
+{% block content %}
     <div class="page-heading">
       <h1>Document Repository</h1>
       <p>
@@ -26,6 +21,4 @@
     <ul class="tree" aria-label="Document repository">
       {{ renderNodes(root.tree) }}
     </ul>
-  </main>
-</body>
-</html>
+{% endblock %}
