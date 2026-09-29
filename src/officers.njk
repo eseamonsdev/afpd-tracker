@@ -1,39 +1,17 @@
 ---
 permalink: /officers/
 ---
+{% extends "site-page-layout.njk" %}
 {% set siteUrl = "https://afpd-tracker.ericseamonsdeveloper.workers.dev" -%}
 {% set pageTitle = "American Fork Police Officer Records | AFPD Accountability Project" -%}
 {% set pageDescription = "Browse American Fork police officers with available employment records, incident documents, and other sources." -%}
 {% set canonicalUrl = siteUrl ~ "/officers/" -%}
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{{ pageTitle | escape }}</title>
-  <meta name="description" content="{{ pageDescription | escape }}">
-  <link rel="canonical" href="{{ canonicalUrl | escape }}">
-
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="AFPD Accountability Project">
-  <meta property="og:title" content="{{ pageTitle | escape }}">
-  <meta property="og:description" content="{{ pageDescription | escape }}">
-  <meta property="og:url" content="{{ canonicalUrl | escape }}">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="{{ pageTitle | escape }}">
-  <meta name="twitter:description" content="{{ pageDescription | escape }}">
-
-  <link rel="stylesheet" href="/css/site.css">
-  <link rel="stylesheet" href="/css/header.css">
-  <link rel="stylesheet" href="/css/officers.css">
+{% block pageAssets %}  <link rel="stylesheet" href="/css/officers.css">
   <script src="/js/officer-list-filters.js" defer></script>
-</head>
-<body>
-  {% include "header.njk" %}
+{% endblock %}
 
-  <main>
+{% block content %}
     <div class="page-heading">
       <h1>Officers</h1>
 
@@ -92,6 +70,4 @@ permalink: /officers/
         </li>
       {% endfor %}
     </ul>
-  </main>
-</body>
-</html>
+{% endblock %}
