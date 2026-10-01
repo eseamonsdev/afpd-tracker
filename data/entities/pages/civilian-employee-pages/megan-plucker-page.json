@@ -1,0 +1,38 @@
+{
+  "entities": [
+    {
+      "id": "entity-civilian-employee-page-megan-plucker",
+      "type": "civilian-employee-page",
+      "name": {
+        "$ref": "entity-person-megan-plucker",
+        "$path": [
+          "name"
+        ]
+      },
+      "url": "/civilian-employees/megan-plucker/",
+      "sections": [
+        {
+          "title": "Overview",
+          "descriptions": [
+            "This page brings together available employment and compensation records related to Megan Plucker"
+          ]
+        },
+        {
+          "title": "Employment",
+          "descriptions": [
+            "Megan Plucker began working for the American Fork Police Department on [DATE]."
+          ],
+          "contents": [
+            {
+              "$ref": "entity-person-megan-plucker",
+              "$path": [
+                "employment-records"
+              ],
+              "$spread": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

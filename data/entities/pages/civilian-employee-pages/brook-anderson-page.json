@@ -1,0 +1,38 @@
+{
+  "entities": [
+    {
+      "id": "entity-civilian-employee-page-brook-anderson",
+      "type": "civilian-employee-page",
+      "name": {
+        "$ref": "entity-person-brook-anderson",
+        "$path": [
+          "name"
+        ]
+      },
+      "url": "/civilian-employees/brook-anderson/",
+      "sections": [
+        {
+          "title": "Overview",
+          "descriptions": [
+            "This page brings together available employment and compensation records related to Brook Anderson"
+          ]
+        },
+        {
+          "title": "Employment",
+          "descriptions": [
+            "Brook Anderson began working for the American Fork Police Department on [DATE]."
+          ],
+          "contents": [
+            {
+              "$ref": "entity-person-brook-anderson",
+              "$path": [
+                "employment-records"
+              ],
+              "$spread": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
