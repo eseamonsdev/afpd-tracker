@@ -1,0 +1,38 @@
+{
+  "entities": [
+    {
+      "id": "entity-civilian-employee-page-adam-s-ellison",
+      "type": "civilian-employee-page",
+      "name": {
+        "$ref": "entity-person-adam-s-ellison",
+        "$path": [
+          "name"
+        ]
+      },
+      "url": "/officers/adam-s-ellison/",
+      "sections": [
+        {
+          "title": "Overview",
+          "descriptions": [
+            "This page brings together available employment and compensation records related to Adam S. Ellison"
+          ]
+        },
+        {
+          "title": "Employment",
+          "descriptions": [
+            "Adam S. Ellison began working for the American Fork Police Department on [DATE]."
+          ],
+          "contents": [
+            {
+              "$ref": "entity-person-adam-s-ellison",
+              "$path": [
+                "employment-records"
+              ],
+              "$spread": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
