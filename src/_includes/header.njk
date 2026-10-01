@@ -34,6 +34,17 @@
       >
         Officers
       </a>
+
+      <a
+        href="/civilian-employees/"
+        {% if page.url == "/civilian-employees/" %}
+          aria-current="page"
+        {% elif page.url and page.url.indexOf("/civilian-employees/") == 0 %}
+          aria-current="location"
+        {% endif %}
+      >
+        Civilian Employees
+      </a>
     </nav>
   </div>
 </header>
