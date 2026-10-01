@@ -1,0 +1,38 @@
+{
+  "entities": [
+    {
+      "id": "entity-civilian-employee-page-kenneth-frost",
+      "type": "civilian-employee-page",
+      "name": {
+        "$ref": "entity-person-kenneth-frost",
+        "$path": [
+          "name"
+        ]
+      },
+      "url": "/civilian-employees/kenneth-frost/",
+      "sections": [
+        {
+          "title": "Overview",
+          "descriptions": [
+            "This page brings together available employment and compensation records related to Kenneth Frost"
+          ]
+        },
+        {
+          "title": "Employment",
+          "descriptions": [
+            "Kenneth Frost began working for the American Fork Police Department on [DATE]."
+          ],
+          "contents": [
+            {
+              "$ref": "entity-person-kenneth-frost",
+              "$path": [
+                "employment-records"
+              ],
+              "$spread": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
