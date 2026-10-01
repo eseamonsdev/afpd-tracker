@@ -1,0 +1,32 @@
+---
+permalink: /civilian-employees/
+---
+{% extends "site-page-layout.njk" %}
+{% set siteUrl = "https://afpd-accountability.com" -%}
+{% set pageTitle = "Civilian Employees | AFPD Accountability Project" -%}
+{% set pageDescription = "Browse civilian employees of the American Fork Police Department and explore available employment, compensation, and other records." -%}
+{% set canonicalUrl = siteUrl ~ "/civilian-employees/" -%}
+
+{% block pageAssets %}  <link rel="stylesheet" href="/css/officers.css">
+{% endblock %}
+
+{% block content %}
+    <div class="page-heading">
+      <h1>Civilian Employees</h1>
+      <p>
+        Browse civilian employees of the American Fork Police Department.
+        Select a person to explore their available records.
+      </p>
+    </div>
+
+    <ul class="officer-list" aria-label="Civilian employees">
+      {% for civilianEmployeePage in entities.byType["civilian-employee-page"] | sort(false, false, "name") %}
+        <li>
+          <a href="{{ civilianEmployeePage.url | escape }}">
+            <span>{{ civilianEmployeePage.name | escape }}</span>
+            <span class="officer-list-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+{% endblock %}
