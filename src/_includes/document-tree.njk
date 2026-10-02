@@ -102,7 +102,7 @@
       {%- elseif segment.format == "bold-italic" -%}
         <strong><em>{{ segment.text | escape }}</em></strong>
       {%- elseif segment.format == "link" -%}
-        <a target="_blank" rel="noopener noreferrer" href="{{ segment.url | escape }}">{{ segment.text | escape }}</a>
+        <a target="{% if segment["same-tab"] == true %}_self{% else %}_blank{% endif %}" rel="noopener noreferrer" href="{{ segment.url | escape }}">{{ segment.text | escape }}</a>
       {%- else -%}
         {{ segment.text | escape }}
       {%- endif -%}
@@ -154,7 +154,7 @@
             {{ renderIcon(node.type) }}
 
             <a
-              target="_blank"
+              target="{% if node["same-tab"] == true %}_self{% else %}_blank{% endif %}"
               rel="noopener noreferrer"
               href="{% if node.type == 'file' %}/records/{{ node.path | escape }}{% else %}{{ node.url | escape }}{% endif %}{{ (node.urlSuffix or '') | escape }}"
             >
