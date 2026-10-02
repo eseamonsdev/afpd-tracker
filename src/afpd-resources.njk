@@ -1,0 +1,35 @@
+---
+permalink: /afpd-resources/
+---
+{% extends "site-page-layout.njk" %}
+{% from "document-tree.njk" import renderNodes -%}
+{% set siteUrl = "https://afpd-accountability.com" -%}
+{% set pageTitle = "AFPD Resources | AFPD Accountability Project" -%}
+{% set pageDescription = "Find the American Fork Police Department policy manual, officer roster, and available training agendas." -%}
+{% set canonicalUrl = siteUrl ~ "/afpd-resources/" -%}
+
+{% block pageAssets %}  <link rel="stylesheet" href="/css/document-tree.css">
+  <link rel="stylesheet" href="/css/csv-table.css">
+{% endblock %}
+
+{% block content %}
+    <div class="page-heading">
+      <h1>AFPD Resources</h1>
+      <p>
+        Find department policies, the officer roster, and available training agendas.
+        These records provide context for the profiles and encounters documented on this site.
+      </p>
+    </div>
+
+    {% for section in entities.all["entity-page-afpd-resources"].sections %}
+      <section aria-labelledby="resource-heading-{{ loop.index }}">
+        <h2 id="resource-heading-{{ loop.index }}">{{ section.title | escape }}</h2>
+        {% for description in section.descriptions %}
+          <p>{{ description | escape }}</p>
+        {% endfor %}
+        <ul class="tree" aria-label="{{ section.title | escape }}">
+          {{ renderNodes(section.contents) }}
+        </ul>
+      </section>
+    {% endfor %}
+{% endblock %}

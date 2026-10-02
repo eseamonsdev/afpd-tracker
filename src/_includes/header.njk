@@ -10,7 +10,7 @@
         href="/"
         {% if page.url == "/" %}aria-current="page"{% endif %}
       >
-        Document Repository
+        Home
       </a>
 
       <a
@@ -44,6 +44,16 @@
         {% endif %}
       >
         Civilian Employees
+      </a>
+      <a
+        href="/afpd-resources/"
+        {% if page.url == "/afpd-resources/" %}
+          aria-current="page"
+        {% elif page.url and page.url.indexOf("/afpd-resources/") == 0 %}
+          aria-current="location"
+        {% endif %}
+      >
+        AFPD Resources
       </a>
     </nav>
   </div>
