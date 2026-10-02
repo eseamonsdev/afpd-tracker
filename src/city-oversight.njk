@@ -1,0 +1,35 @@
+---
+permalink: /city-oversight/
+---
+{% extends "site-page-layout.njk" %}
+{% from "document-tree.njk" import renderNodes -%}
+{% set siteUrl = "https://afpd-accountability.com" -%}
+{% set pageTitle = "City Oversight | AFPD Accountability Project" -%}
+{% set pageDescription = "Explore city council records related to oversight of the American Fork Police Department." -%}
+{% set canonicalUrl = siteUrl ~ "/city-oversight/" -%}
+
+{% block pageAssets %}  <link rel="stylesheet" href="/css/document-tree.css">
+  <link rel="stylesheet" href="/css/csv-table.css">
+{% endblock %}
+
+{% block content %}
+    <div class="page-heading">
+      <h1>City Oversight</h1>
+      <p>
+        Police accountability also means holding city leaders accountable for their decisions involving the department.
+        This page brings together records about how the city oversees, funds, and responds to issues involving the American Fork Police Department.
+      </p>
+    </div>
+
+    {% for section in entities.all["entity-page-city-oversight"].sections %}
+      <section aria-labelledby="oversight-heading-{{ loop.index }}">
+        <h2 id="oversight-heading-{{ loop.index }}">{{ section.title | escape }}</h2>
+        {% for description in section.descriptions %}
+          <p>{{ description | escape }}</p>
+        {% endfor %}
+        <ul class="tree" aria-label="{{ section.title | escape }}">
+          {{ renderNodes(section.contents) }}
+        </ul>
+      </section>
+    {% endfor %}
+{% endblock %}

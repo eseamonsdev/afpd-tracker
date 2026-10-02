@@ -56,6 +56,17 @@
       >
         Civilian Employees
       </a>
+
+      <a
+        href="/city-oversight/"
+        {% if page.url == "/city-oversight/" %}
+          aria-current="page"
+        {% elif page.url and page.url.indexOf("/city-oversight/") == 0 %}
+          aria-current="location"
+        {% endif %}
+      >
+        City Oversight
+      </a>
     </nav>
   </div>
 </header>
