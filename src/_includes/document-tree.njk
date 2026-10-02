@@ -102,7 +102,7 @@
       {%- elseif segment.format == "bold-italic" -%}
         <strong><em>{{ segment.text | escape }}</em></strong>
       {%- elseif segment.format == "link" -%}
-        <a href="{{ segment.url | escape }}">{{ segment.text | escape }}</a>
+        <a target="_blank" rel="noopener noreferrer" href="{{ segment.url | escape }}">{{ segment.text | escape }}</a>
       {%- else -%}
         {{ segment.text | escape }}
       {%- endif -%}
