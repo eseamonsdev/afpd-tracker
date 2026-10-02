@@ -21,7 +21,15 @@ permalink: /afpd-resources/
       </p>
     </div>
 
-    <ul class="tree" aria-label="AFPD resources">
-      {{ renderNodes(entities.all["entity-folder-tree-afpd-resources"].contents) }}
-    </ul>
+    {% for section in entities.all["entity-page-afpd-resources"].sections %}
+      <section aria-labelledby="resource-heading-{{ loop.index }}">
+        <h2 id="resource-heading-{{ loop.index }}">{{ section.title | escape }}</h2>
+        {% for description in section.descriptions %}
+          <p>{{ description | escape }}</p>
+        {% endfor %}
+        <ul class="tree" aria-label="{{ section.title | escape }}">
+          {{ renderNodes(section.contents) }}
+        </ul>
+      </section>
+    {% endfor %}
 {% endblock %}
