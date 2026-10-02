@@ -10,6 +10,10 @@ eleventyExcludeFromCollections: true
   </url>
 
   <url>
+    <loc>{{ siteUrl | escape }}/afpd-resources/</loc>
+  </url>
+
+  <url>
     <loc>{{ siteUrl | escape }}/officers/</loc>
   </url>
   {% for officerPage in entities.byType["officer-page"] | sort(false, false, "name") %}
