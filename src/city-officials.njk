@@ -8,20 +8,49 @@ permalink: /city-officials/
 {% set canonicalUrl = siteUrl ~ "/city-officials/" -%}
 
 {% block pageAssets %}  <link rel="stylesheet" href="/css/officers.css">
+  <script src="/js/city-official-list-filters.js" defer></script>
 {% endblock %}
 
 {% block content %}
     <div class="page-heading">
       <h1>City Officials</h1>
-      <p>
-        Browse American Fork city officials.
-        Select a person to explore their available records.
+
+      <div class="officer-filters city-official-filters" role="group" aria-label="Filter city officials" hidden>
+        <button
+          class="officer-filter"
+          type="button"
+          data-city-official-filter="current"
+          aria-pressed="false"
+        >
+          Current
+        </button>
+        <button
+          class="officer-filter"
+          type="button"
+          data-city-official-filter="former"
+          aria-pressed="false"
+        >
+          Former
+        </button>
+        <button
+          class="officer-filter"
+          type="button"
+          data-city-official-filter="all"
+          aria-pressed="false"
+        >
+          All
+        </button>
+      </div>
+
+      <p id="city-official-list-description" aria-live="polite">
+        Browse American Fork city officials. Select a person to explore their
+        available records.
       </p>
     </div>
 
-    <ul class="officer-list" aria-label="City officials">
+    <ul class="officer-list" aria-label="City officials" aria-describedby="city-official-list-description">
       {% for cityOfficialPage in entities.byType["city-official-page"] | sort(false, false, "name") %}
-        <li>
+        <li data-service-status="{{ cityOfficialPage['service-status'] | escape }}">
           <a href="{{ cityOfficialPage.url | escape }}">
             <span>{{ cityOfficialPage.name | escape }}</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
