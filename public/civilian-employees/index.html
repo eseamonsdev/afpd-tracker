@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="/css/site.css">
   <link rel="stylesheet" href="/css/header.css">
   <link rel="stylesheet" href="/css/officers.css">
+  <script src="/js/civilian-employee-list-filters.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -94,183 +95,211 @@
   <main>
     <div class="page-heading">
       <h1>Civilian Employees</h1>
-      <p>
-        Browse civilian employees of the American Fork Police Department.
-        Select a person to explore their available records.
+
+      <div class="officer-filters civilian-employee-filters" role="group" aria-label="Filter civilian employees" hidden>
+        <button
+          class="officer-filter"
+          type="button"
+          data-civilian-employee-filter="current"
+          aria-pressed="false"
+        >
+          Current
+        </button>
+        <button
+          class="officer-filter"
+          type="button"
+          data-civilian-employee-filter="former"
+          aria-pressed="false"
+        >
+          Former
+        </button>
+        <button
+          class="officer-filter"
+          type="button"
+          data-civilian-employee-filter="all"
+          aria-pressed="false"
+        >
+          All
+        </button>
+      </div>
+
+      <p id="civilian-employee-list-description" aria-live="polite">
+        Browse civilian employees of the American Fork Police Department. Select
+        a person to explore their available records.
       </p>
     </div>
 
-    <ul class="officer-list" aria-label="Civilian employees">
+    <ul class="officer-list" aria-label="Civilian employees" aria-describedby="civilian-employee-list-description">
       
-        <li>
+        <li data-service-status="current">
           <a href="/civilian-employees/brook-anderson/">
             <span>Anderson, Brooklann M.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="current">
           <a href="/civilian-employees/kara-blodgett/">
             <span>Blodgett, Kara</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="current">
           <a href="/civilian-employees/charlett-bridges/">
             <span>Bridges, Charlett</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="former">
           <a href="/civilian-employees/chandalyn-carr/">
             <span>Carr, Chandalyn</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="current">
           <a href="/civilian-employees/erin-m-chitty/">
             <span>Chitty, Erin M.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="current">
           <a href="/civilian-employees/beverly-r-davis/">
             <span>Davis, Beverly R.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="current">
           <a href="/civilian-employees/taylor-ellis/">
             <span>Ellis, Taylor</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="current">
           <a href="/civilian-employees/adam-s-ellison/">
             <span>Ellison, Adam S.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="current">
           <a href="/civilian-employees/jodi-a-frost/">
             <span>Frost, Jodi A.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="current">
           <a href="/civilian-employees/kenneth-r-frost/">
             <span>Frost, Kenneth R.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="current">
           <a href="/civilian-employees/marc-haddock/">
             <span>Haddock, Marc D.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="current">
           <a href="/civilian-employees/jarod-hill/">
             <span>Hill, Jarod G.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="current">
           <a href="/civilian-employees/kimberly-hodgkinson/">
             <span>Hodgkinson, Kimberly D.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="current">
           <a href="/civilian-employees/susan-manriquez/">
             <span>Manriquez, Susan</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="former">
           <a href="/civilian-employees/allison-p-matthews/">
             <span>Matthews, Allison P.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="current">
           <a href="/civilian-employees/linda-mccoy/">
             <span>McCoy, Linda G.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="current">
           <a href="/civilian-employees/brigette-nelson/">
             <span>Nelson, Brigette</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="current">
           <a href="/civilian-employees/suzanne-m-nordin/">
             <span>Nordin, Suzanne M.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="former">
           <a href="/civilian-employees/claire-r-pace/">
             <span>Pace, Claire R.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="former">
           <a href="/civilian-employees/megan-plucker/">
             <span>Plucker, Megan R.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="current">
           <a href="/civilian-employees/emiko-smith/">
             <span>Smith, Emiko L.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="current">
           <a href="/civilian-employees/jamie-l-stowers/">
             <span>Stowers, Jamie L.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="current">
           <a href="/civilian-employees/dawna-s-whiting/">
             <span>Whiting, Dawna S.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="current">
           <a href="/civilian-employees/addie-b-williams/">
             <span>Williams, Addie B.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="current">
           <a href="/civilian-employees/hallie-j-witt/">
             <span>Witt, Hallie J.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
