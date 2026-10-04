@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="/css/site.css">
   <link rel="stylesheet" href="/css/header.css">
   <link rel="stylesheet" href="/css/officers.css">
+  <script src="/js/city-official-list-filters.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -94,106 +95,134 @@
   <main>
     <div class="page-heading">
       <h1>City Officials</h1>
-      <p>
-        Browse American Fork city officials.
-        Select a person to explore their available records.
+
+      <div class="officer-filters city-official-filters" role="group" aria-label="Filter city officials" hidden>
+        <button
+          class="officer-filter"
+          type="button"
+          data-city-official-filter="current"
+          aria-pressed="false"
+        >
+          Current
+        </button>
+        <button
+          class="officer-filter"
+          type="button"
+          data-city-official-filter="former"
+          aria-pressed="false"
+        >
+          Former
+        </button>
+        <button
+          class="officer-filter"
+          type="button"
+          data-city-official-filter="all"
+          aria-pressed="false"
+        >
+          All
+        </button>
+      </div>
+
+      <p id="city-official-list-description" aria-live="polite">
+        Browse American Fork city officials. Select a person to explore their
+        available records.
       </p>
     </div>
 
-    <ul class="officer-list" aria-label="City officials">
+    <ul class="officer-list" aria-label="City officials" aria-describedby="city-official-list-description">
       
-        <li>
+        <li data-service-status="former">
           <a href="/city-officials/laurel-allman/">
             <span>Allman, Laurel J.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="former">
           <a href="/city-officials/kevin-j-barnes/">
             <span>Barnes, Kevin J.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="current">
           <a href="/city-officials/david-h-bunker/">
             <span>Bunker, David H.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="current">
           <a href="/city-officials/staci-carroll/">
             <span>Carroll, Staci V.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="former">
           <a href="/city-officials/barbara-christiansen/">
             <span>Christiansen, Barbara G.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="current">
           <a href="/city-officials/amanda-durrant/">
             <span>Durrant, Amanda</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="current">
           <a href="/city-officials/bradley-j-frost/">
             <span>Frost, Bradley J.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="current">
           <a href="/city-officials/tim-holley/">
             <span>Holley, Timothy A.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="current">
           <a href="/city-officials/ryan-hunter/">
             <span>Hunter, Ryan D.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="current">
           <a href="/city-officials/ernie-john/">
             <span>John, Ernest M.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="former">
           <a href="/city-officials/karen-kester/">
             <span>Kester, Karen</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="current">
           <a href="/city-officials/terilyn-lurker/">
             <span>Lurker, Terilyn</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="former">
           <a href="/city-officials/robert-e-shelton/">
             <span>Shelton, Robert E.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
       
-        <li>
+        <li data-service-status="current">
           <a href="/city-officials/clark-p-taylor/">
             <span>Taylor, Clark P.</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
