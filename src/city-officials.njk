@@ -1,0 +1,32 @@
+---
+permalink: /city-officials/
+---
+{% extends "site-page-layout.njk" %}
+{% set siteUrl = "https://afpd-accountability.com" -%}
+{% set pageTitle = "City Officials | AFPD Accountability Project" -%}
+{% set pageDescription = "Browse American Fork city officials and explore available employment, compensation, and other records." -%}
+{% set canonicalUrl = siteUrl ~ "/city-officials/" -%}
+
+{% block pageAssets %}  <link rel="stylesheet" href="/css/officers.css">
+{% endblock %}
+
+{% block content %}
+    <div class="page-heading">
+      <h1>City Officials</h1>
+      <p>
+        Browse American Fork city officials.
+        Select a person to explore their available records.
+      </p>
+    </div>
+
+    <ul class="officer-list" aria-label="City officials">
+      {% for cityOfficialPage in entities.byType["city-official-page"] | sort(false, false, "name") %}
+        <li>
+          <a href="{{ cityOfficialPage.url | escape }}">
+            <span>{{ cityOfficialPage.name | escape }}</span>
+            <span class="officer-list-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+{% endblock %}
