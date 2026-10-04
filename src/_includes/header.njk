@@ -58,6 +58,17 @@
       </a>
 
       <a
+        href="/city-officials/"
+        {% if page.url == "/city-officials/" %}
+          aria-current="page"
+        {% elif page.url and page.url.indexOf("/city-officials/") == 0 %}
+          aria-current="location"
+        {% endif %}
+      >
+        City Officials
+      </a>
+
+      <a
         href="/city-oversight/"
         {% if page.url == "/city-oversight/" %}
           aria-current="page"
