@@ -8,20 +8,49 @@ permalink: /civilian-employees/
 {% set canonicalUrl = siteUrl ~ "/civilian-employees/" -%}
 
 {% block pageAssets %}  <link rel="stylesheet" href="/css/officers.css">
+  <script src="/js/civilian-employee-list-filters.js" defer></script>
 {% endblock %}
 
 {% block content %}
     <div class="page-heading">
       <h1>Civilian Employees</h1>
-      <p>
-        Browse civilian employees of the American Fork Police Department.
-        Select a person to explore their available records.
+
+      <div class="officer-filters civilian-employee-filters" role="group" aria-label="Filter civilian employees" hidden>
+        <button
+          class="officer-filter"
+          type="button"
+          data-civilian-employee-filter="current"
+          aria-pressed="false"
+        >
+          Current
+        </button>
+        <button
+          class="officer-filter"
+          type="button"
+          data-civilian-employee-filter="former"
+          aria-pressed="false"
+        >
+          Former
+        </button>
+        <button
+          class="officer-filter"
+          type="button"
+          data-civilian-employee-filter="all"
+          aria-pressed="false"
+        >
+          All
+        </button>
+      </div>
+
+      <p id="civilian-employee-list-description" aria-live="polite">
+        Browse civilian employees of the American Fork Police Department. Select
+        a person to explore their available records.
       </p>
     </div>
 
-    <ul class="officer-list" aria-label="Civilian employees">
+    <ul class="officer-list" aria-label="Civilian employees" aria-describedby="civilian-employee-list-description">
       {% for civilianEmployeePage in entities.byType["civilian-employee-page"] | sort(false, false, "name") %}
-        <li>
+        <li data-service-status="{{ civilianEmployeePage['service-status'] | escape }}">
           <a href="{{ civilianEmployeePage.url | escape }}">
             <span>{{ civilianEmployeePage.name | escape }}</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
