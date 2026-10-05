@@ -138,7 +138,7 @@
             <p>{{ node.text_value | escape }}</p>
           </li>
         {% elseif node.type == "formatted-text" %}
-          <li class="tree-text-item">
+          <li class="tree-text-item{% if node['preserve-paragraphs'] %} tree-preserve-paragraphs{% endif %}">
             <p>
               {%- for segment in node.segments -%}
                 {{- renderTextSegment(segment) -}}
