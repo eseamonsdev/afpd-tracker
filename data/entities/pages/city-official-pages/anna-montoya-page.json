@@ -1,0 +1,54 @@
+{
+  "entities": [
+    {
+      "id": "entity-city-official-page-anna-montoya",
+      "type": "city-official-page",
+      "service-status": "current",
+      "name": {
+        "$ref": "entity-person-anna-montoya",
+        "$path": [
+          "name"
+        ]
+      },
+      "url": "/city-officials/anna-montoya/",
+      "sections": [
+        {
+          "title": "Overview",
+          "descriptions": [
+            "Anna Montoya is American Fork City’s Finance Director and Budget Officer. This page collects records about her role and council remarks concerning city finances, including public-safety funding."
+          ]
+        },
+        {
+          "title": "Employment",
+          "descriptions": [
+            "The city’s finance page identifies Montoya as Finance Director. June 2020 council minutes list her as Finance Officer, and June 2026 minutes list her as Finance Director."
+          ],
+          "contents": [
+            {
+              "$ref": "entity-person-anna-montoya",
+              "$path": [
+                "employment-records"
+              ],
+              "$spread": true
+            }
+          ]
+        },
+        {
+          "title": "City Official Remarks",
+          "descriptions": [
+            "The remarks below are presented as recorded in American Fork City Council meeting minutes."
+          ],
+          "contents": [
+            {
+              "$ref": "entity-city-official-remarks-anna-montoya",
+              "$path": [
+                "contents"
+              ],
+              "$spread": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
