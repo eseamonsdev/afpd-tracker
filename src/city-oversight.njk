@@ -28,7 +28,7 @@ permalink: /city-oversight/
         {% for description in section.descriptions %}
           <p>{{ description | escape }}</p>
         {% endfor %}
-        <ul class="tree" aria-label="{{ section.title | escape }}">
+        <ul class="tree city-oversight-tree" aria-label="{{ section.title | escape }}">
           {{ renderNodes(section.contents) }}
         </ul>
       </section>
