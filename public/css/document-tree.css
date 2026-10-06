@@ -114,3 +114,15 @@
 .tree-preserve-paragraphs > p {
   white-space: pre-line;
 }
+/* Keep consecutive public comments easy to scan without adding heavy cards. */
+.city-oversight-tree .tree-public-comment {
+  padding: .8rem .2rem;
+}
+
+.city-oversight-tree .tree-public-comment > p {
+  margin: 0;
+}
+
+.city-oversight-tree .tree-public-comment ~ .tree-public-comment {
+  border-top: 1px solid var(--line);
+}
