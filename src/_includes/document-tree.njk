@@ -112,7 +112,7 @@
       {% for node in nodes %}
         {% if node.type == "folder" %}
           <li>
-            <details>
+            <details{% if node.anchor %} id="{{ node.anchor | escape }}"{% endif %}>
               <summary>
                 <svg
                   class="icon folder-icon"
