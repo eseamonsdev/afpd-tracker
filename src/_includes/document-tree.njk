@@ -145,6 +145,10 @@
               {%- endfor -%}
             </p>
           </li>
+        {% elseif node.type == "heading" %}
+          <li class="tree-section-heading">
+            <h3>{{ node.text | escape }}</h3>
+          </li>
         {% elseif node.type == "file" and node.display == "table" %}
           <li class="csv-tree-item">
             {{ renderCsvTable(node) }}
