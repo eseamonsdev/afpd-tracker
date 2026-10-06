@@ -5,7 +5,12 @@
       "type": "officer-page",
       "key-record": true,
       "employment-status": "current",
-      "name": "Paul, Cameron J.",
+      "name": {
+        "$ref": "entity-person-cameron-j-paul",
+        "$path": [
+          "name"
+        ]
+      },
       "url": "/officers/cameron-j-paul/",
       "sections": [
         {
@@ -25,13 +30,11 @@
           ],
           "contents": [
             {
-              "$ref": "transparent-utah-paul-j-cameron-public-compensation",
-              "$override": {
-                "display": "table"
-              }
-            },
-            {
-              "$ref": "national-police-index-paul-cameron"
+              "$ref": "entity-person-cameron-j-paul",
+              "$path": [
+                "employment-records"
+              ],
+              "$spread": true
             }
           ]
         },
