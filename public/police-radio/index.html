@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Police Radio | AFPD Accountability Project</title>
+  <meta name="description" content="Browse recorded police radio calls by date and listen to individual clips.">
+  <link rel="canonical" href="https://afpd-accountability.com/police-radio/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AFPD Accountability Project">
+  <meta property="og:title" content="Police Radio | AFPD Accountability Project">
+  <meta property="og:description" content="Browse recorded police radio calls by date and listen to individual clips.">
+  <meta property="og:url" content="https://afpd-accountability.com/police-radio/">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Police Radio | AFPD Accountability Project">
+  <meta name="twitter:description" content="Browse recorded police radio calls by date and listen to individual clips.">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/header.css">
+
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/header.css">
+
+  <link rel="stylesheet" href="/css/police-radio.css">
+  <script src="/js/police-radio.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-title" href="/">
+      American Fork Police Department<br>
+      Accountability Project
+    </a>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a
+        href="/"
+
+      >
+        Home
+      </a>
+
+      <a
+        href="/afpd-resources/"
+
+      >
+        AFPD Resources
+      </a>
+
+      <a
+        href="/police-encounters/"
+
+      >
+        Police Encounters
+      </a>
+
+      <a
+        href="/officers/"
+
+      >
+        Officers
+      </a>
+
+      <a
+        href="/civilian-employees/"
+
+      >
+        Civilian Employees
+      </a>
+
+      <a
+        href="/city-officials/"
+
+      >
+        City Officials
+      </a>
+
+      <a
+        href="/city-oversight/"
+
+      >
+        City Oversight
+      </a>
+    </nav>
+  </div>
+</header>
+
+
+  <main>
+    <div class="page-heading">
+      <h1>Police Radio</h1>
+      <p>Select a day, then choose a clip to listen. Times shown in Mountain Time.</p>
+    </div>
+    <div class="radio-archive" id="radio-archive">
+      <div class="radio-date-selectors">
+        <label for="radio-month">Month
+          <select id="radio-month" disabled><option>Loading…</option></select>
+        </label>
+        <label for="radio-day">Day
+          <select id="radio-day" disabled><option>Loading…</option></select>
+        </label>
+      </div>
+      <section class="radio-player" aria-label="Audio player">
+        <div class="radio-player-heading">
+          <p id="radio-current">Choose a clip to listen</p>
+          <button id="radio-autoplay" type="button" aria-pressed="false">Autoplay: Off</button>
+        </div>
+        <div class="radio-playback">
+          <button id="radio-play" type="button" aria-label="Play selected clip" disabled>Play</button>
+          <div class="radio-progress">
+            <label class="radio-sr-only" for="radio-seek">Position in clip</label>
+            <input id="radio-seek" type="range" min="0" max="0" step="0.1" value="0" disabled>
+            <div class="radio-times"><span id="radio-elapsed">0:00</span><span id="radio-duration">0:00</span></div>
+          </div>
+        </div>
+        <p id="radio-player-message" role="status"></p>
+        <audio id="radio-audio" preload="metadata"></audio>
+      </section>
+      <p id="radio-status" role="status">Loading available dates…</p>
+      <section aria-label="Recorded clips" aria-busy="true" id="radio-clips-section">
+        <div class="radio-list-heading" aria-hidden="true"><span>Time</span><span>Duration</span></div>
+        <ol id="radio-clips" class="radio-clips"></ol>
+      </section>
+    </div>
+    <noscript><p>Please enable JavaScript to select dates and play recordings.</p></noscript>
+  </main>
+</body>
+</html>
