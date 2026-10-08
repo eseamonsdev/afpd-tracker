@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import { buildRadioIndex } from "./lib/build-radio-index.js";
 import { loadJsonFiles } from "./lib/data/load-json-files.js";
 import { buildByID } from "./lib/data/build-by-id.js";
 import { resolveRefs } from "./lib/data/resolve-refs.js";
@@ -12,6 +13,8 @@ const currencyFormatter = new Intl.NumberFormat("en-US", {
 });
 
 export default function (eleventyConfig) {
+  eleventyConfig.on("eleventy.before", () => buildRadioIndex());
+  eleventyConfig.addWatchTarget("./public/records/openmhz/**/calls.json");
   eleventyConfig.addFilter("readCsv", readCsv);
 
   eleventyConfig.addFilter("publishedSections", (sections) => {

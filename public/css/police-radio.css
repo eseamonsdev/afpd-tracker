@@ -1,0 +1,36 @@
+.radio-archive { max-width: 760px; }
+.radio-date-selectors { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem; }
+.radio-date-selectors label { display: grid; gap: .35rem; font-weight: 600; flex: 1; min-width: 200px; }
+.radio-archive select, .radio-archive button { font: inherit; }
+.radio-archive select { width: 100%; padding: .7rem; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--ink); }
+.radio-player { position: sticky; top: 1rem; z-index: 1; padding: 1rem; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); box-shadow: 0 3px 12px #17365d0d; }
+.radio-player-heading { display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin-bottom: 1rem; }
+.radio-player-heading p { margin: 0; font-weight: 600; color: var(--navy); }
+.radio-player button { cursor: pointer; border: 1px solid var(--line); border-radius: 6px; padding: .55rem .8rem; background: var(--page); color: var(--navy); white-space: nowrap; min-height: 44px; }
+.radio-player button[aria-pressed="true"] { background: var(--navy); color: white; border-color: var(--navy); }
+.radio-player button:disabled { cursor: default; opacity: .5; }
+.radio-playback { display: flex; align-items: center; gap: 1rem; }
+#radio-play { min-width: 78px; }
+.radio-progress { flex: 1; min-width: 0; }
+#radio-seek { width: 100%; margin: 0; accent-color: var(--blue); cursor: pointer; height: 24px; }
+#radio-seek:disabled { cursor: default; }
+.radio-times { display: flex; justify-content: space-between; color: var(--muted); font-size: .85rem; font-variant-numeric: tabular-nums; }
+#radio-player-message { margin: .6rem 0 0; color: var(--red); font-size: .9rem; }
+#radio-player-message:empty { display: none; }
+.radio-list-heading, .radio-clip { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.radio-list-heading { padding: .6rem 1rem; color: var(--muted); font-size: .85rem; }
+.radio-clips { list-style: none; margin: 0; padding: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--surface); }
+.radio-clips:empty { display: none; }
+.radio-clips li + li { border-top: 1px solid var(--line); }
+.radio-clip { width: 100%; text-align: left; border: 0; padding: .85rem 1rem; background: transparent; color: var(--ink); cursor: pointer; font-variant-numeric: tabular-nums; min-height: 48px; }
+.radio-clip:hover { background: var(--page); }
+.radio-clip[aria-current="true"] { background: #e8f0f8; color: var(--navy); box-shadow: inset 4px 0 var(--blue); font-weight: 650; }
+.radio-clip span:last-child { color: var(--muted); font-size: .9rem; }
+.radio-clip:focus-visible { outline-offset: -3px; }
+.radio-archive select:focus-visible, #radio-seek:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+.radio-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+@media (max-width: 580px) {
+  .radio-player { top: .5rem; }
+  .radio-player-heading { align-items: flex-start; flex-direction: column; }
+  .radio-date-selectors label { flex-basis: 100%; min-width: 0; }
+}
