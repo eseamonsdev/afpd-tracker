@@ -158,7 +158,7 @@
             {{ renderIcon(node.type) }}
 
             <a
-              target="{% if node["same-tab"] == true %}_self{% else %}_blank{% endif %}"
+              target="{% if node.type == "profile" or node["same-tab"] == true %}_self{% else %}_blank{% endif %}"
               rel="noopener noreferrer"
               href="{% if node.type == 'file' %}/records/{{ node.path | escape }}{% else %}{{ node.url | escape }}{% endif %}{{ (node.urlSuffix or '') | escape }}"
             >
