@@ -3,7 +3,12 @@
   const root = document.getElementById("radio-archive");
   if (!root) return;
   const get = (name) => document.getElementById(`radio-${name}`);
-  const month = get("month"), day = get("day"), audio = get("audio");
+  const month = get("month"), day = get("day");
+  let audio = get("audio"), nextAudio = document.createElement("audio");
+  audio.preload = nextAudio.preload = "auto";
+  nextAudio.hidden = true;
+  audio.after(nextAudio);
+  const players = [audio, nextAudio];
   const play = get("play"), seek = get("seek"), autoplay = get("autoplay");
   const list = get("clips"), section = get("clips-section"), status = get("status");
   const current = get("current"), message = get("player-message");
@@ -21,13 +26,41 @@
     return `${Math.floor(whole / 60)}:${String(whole % 60).padStart(2, "0")}`;
   };
   let days = [], calls = [], buttons = [], selected = -1, folder = "";
-  let auto = false, request = 0, controller;
+  let auto = false, request = 0, playbackRequest = 0, controller;
+
+  const clipSource = (index) => `${base}${encodeURIComponent(folder)}/${encodeURIComponent(calls[index].original_filename)}`;
+
+  function clearAudio(player) {
+    player.pause();
+    if (player.hasAttribute("src")) {
+      player.removeAttribute("src");
+      player.load();
+    }
+  }
+
+  function prepareNextClip() {
+    if (!auto || selected < 0 || !calls[selected + 1]) {
+      clearAudio(nextAudio);
+      return;
+    }
+    const source = clipSource(selected + 1);
+    if (nextAudio.getAttribute("src") === source) return;
+    clearAudio(nextAudio);
+    nextAudio.src = source;
+    nextAudio.load();
+  }
+
+  function updateDuration() {
+    if (selected < 0 || !Number.isFinite(audio.duration)) return;
+    seek.max = audio.duration;
+    seek.disabled = false;
+    get("duration").textContent = durationText(audio.duration);
+  }
 
   function resetPlayer() {
     selected = -1;
-    audio.pause();
-    audio.removeAttribute("src");
-    audio.load();
+    playbackRequest++;
+    players.forEach(clearAudio);
     play.disabled = true;
     seek.disabled = true;
     seek.value = 0;
@@ -41,11 +74,11 @@
   }
 
   async function startPlayback() {
-    const source = audio.getAttribute("src");
+    const player = audio, source = player.getAttribute("src"), token = playbackRequest;
     try {
-      await audio.play();
+      await player.play();
     } catch (error) {
-      if (source !== audio.getAttribute("src") || error.name === "AbortError") return;
+      if (token !== playbackRequest || player !== audio || source !== player.getAttribute("src") || error.name === "AbortError") return;
       message.textContent = "Playback could not start. Press Play to try again or choose another clip.";
     }
   }
@@ -53,7 +86,12 @@
   function chooseClip(index) {
     if (!calls[index]) return;
     if (buttons[selected]) buttons[selected].removeAttribute("aria-current");
+    playbackRequest++;
     audio.pause();
+    const source = clipSource(index);
+    const prepared = nextAudio.getAttribute("src") === source && !nextAudio.error;
+    if (prepared) [audio, nextAudio] = [nextAudio, audio];
+    clearAudio(nextAudio);
     selected = index;
     const call = calls[index];
     buttons[index].setAttribute("aria-current", "true");
@@ -64,9 +102,13 @@
     seek.value = 0;
     get("elapsed").textContent = "0:00";
     get("duration").textContent = durationText(call.displayed_seconds);
-    audio.src = `${base}${encodeURIComponent(folder)}/${encodeURIComponent(call.original_filename)}`;
     play.disabled = false;
-    audio.load();
+    if (!prepared) {
+      audio.src = source;
+      audio.load();
+    }
+    // A preloaded player may have fired loadedmetadata while it was inactive.
+    updateDuration();
     startPlayback();
   }
 
@@ -134,6 +176,7 @@
     auto = !auto;
     autoplay.setAttribute("aria-pressed", String(auto));
     autoplay.textContent = `Autoplay: ${auto ? "On" : "Off"}`;
+    if (!auto || !audio.paused) prepareNextClip();
   });
   play.addEventListener("click", () => {
     if (selected < 0) return;
@@ -146,29 +189,33 @@
   seek.addEventListener("input", () => {
     if (Number.isFinite(audio.duration)) audio.currentTime = Number(seek.value);
   });
-  audio.addEventListener("loadedmetadata", () => {
-    if (selected < 0 || !Number.isFinite(audio.duration)) return;
-    seek.max = audio.duration;
-    seek.disabled = false;
-    get("duration").textContent = durationText(audio.duration);
-  });
-  audio.addEventListener("timeupdate", () => {
-    seek.value = audio.currentTime;
-    get("elapsed").textContent = durationText(audio.currentTime);
-    seek.setAttribute("aria-valuetext", `${durationText(audio.currentTime)} of ${durationText(audio.duration)}`);
-  });
-  audio.addEventListener("play", () => {
-    play.textContent = "Pause"; play.setAttribute("aria-label", "Pause selected clip");
-  });
-  audio.addEventListener("pause", () => {
-    play.textContent = "Play"; play.setAttribute("aria-label", "Play selected clip");
-  });
-  audio.addEventListener("ended", () => {
-    if (auto && selected >= 0 && selected + 1 < calls.length) chooseClip(selected + 1);
-  });
-  audio.addEventListener("error", () => {
-    if (selected >= 0) message.textContent = "This clip could not be loaded. Choose another clip or press Play to retry.";
-  });
+  for (const player of players) {
+    const onActive = (event, handler) => player.addEventListener(event, () => {
+      if (player === audio) handler();
+    });
+    onActive("loadedmetadata", updateDuration);
+    // Start preloading after current playback begins so it gets network priority.
+    onActive("playing", prepareNextClip);
+    onActive("timeupdate", () => {
+      seek.value = audio.currentTime;
+      get("elapsed").textContent = durationText(audio.currentTime);
+      seek.setAttribute("aria-valuetext", `${durationText(audio.currentTime)} of ${durationText(audio.duration)}`);
+    });
+    onActive("play", () => {
+      if (audio.paused) return;
+      play.textContent = "Pause"; play.setAttribute("aria-label", "Pause selected clip");
+    });
+    onActive("pause", () => {
+      if (!audio.paused) return;
+      play.textContent = "Play"; play.setAttribute("aria-label", "Play selected clip");
+    });
+    onActive("ended", () => {
+      if (audio.ended && auto && selected >= 0 && selected + 1 < calls.length) chooseClip(selected + 1);
+    });
+    onActive("error", () => {
+      if (selected >= 0 && audio.error) message.textContent = "This clip could not be loaded. Choose another clip or press Play to retry.";
+    });
+  }
 
   async function initialize() {
     try {
