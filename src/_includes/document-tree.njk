@@ -145,6 +145,8 @@
               {%- endfor -%}
             </p>
           </li>
+        {% elseif node.type == "divider" %}
+          <li class="tree-divider"><hr></li>
         {% elseif node.type == "heading" %}
           <li class="tree-section-heading">
             <h3>{{ node.text | escape }}</h3>
