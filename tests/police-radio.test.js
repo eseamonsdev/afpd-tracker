@@ -51,7 +51,7 @@ class Element {
   add(option) { this.options.push(option); if (this.options.length === 1) this.value = option.value; }
 }
 
-async function playerFixture() {
+async function playerFixture(fixtureCalls) {
   const elements = new Map(["archive", "month", "day", "audio", "play", "seek", "autoplay",
     "clips", "clips-section", "status", "current", "player-message", "elapsed", "duration"]
     .map(name => [`radio-${name}`, new Element(name === "audio" ? "audio" : "div")]));
@@ -70,8 +70,8 @@ async function playerFixture() {
     document, Intl, Date, AbortController,
     Option: class { constructor(text, value) { this.text = text; this.value = value; } },
     fetch: async url => ({ ok: true, json: async () => url.endsWith("index.json")
-      ? { days: dates.map(date => ({ date, folder: date, count: 4 })) }
-      : { date: dates.find(date => url.includes(date)), calls: Array.from({ length: 4 }, (_, i) => ({
+      ? { days: dates.map(date => ({ date, folder: date, count: fixtureCalls?.length ?? 4 })) }
+      : { date: dates.find(date => url.includes(date)), calls: fixtureCalls ?? Array.from({ length: 4 }, (_, i) => ({
         epoch: 1789100000 + i * 10, displayed_seconds: 5, original_filename: `call-${i}.m4a`
       })) } })
   });
@@ -188,4 +188,33 @@ test("a rejected play request from a previous selection cannot overwrite the new
   await new Promise(resolve => setImmediate(resolve));
   assert.equal(f.get("player-message").textContent, "");
   assert.match(f.active().src, /call-1\.m4a$/);
+});
+
+
+test("September 18 autoplay survives a rejected handoff within the first ten clips", async () => {
+  const manifest = JSON.parse(readFileSync(new URL("../public/records/openmhz/openmhz-afpd-car-to-car-2026-09-18/calls.json", import.meta.url), "utf8"));
+  const calls = manifest.calls.sort((a, b) => a.epoch - b.epoch).slice(0, 20);
+  const f = await playerFixture(calls);
+  const [first, second] = f.players;
+  let rejected = false;
+  second.play = function () {
+    if (this.src.endsWith(calls[9].original_filename)) {
+      rejected = true;
+      return Promise.reject(Object.assign(new Error("Playback permission belongs to another element"), { name: "NotAllowedError" }));
+    }
+    return Element.prototype.play.call(this);
+  };
+  f.get("autoplay").click();
+  f.select(0);
+  for (let i = 0; i < calls.length; i++) {
+    await new Promise(resolve => setImmediate(resolve));
+    const player = f.active();
+    assert.ok(player, `clip ${i + 1} must be playing`);
+    assert.ok(player.src.endsWith(calls[i].original_filename));
+    assert.equal(f.get("player-message").textContent, "");
+    if (i >= 9) assert.equal(player, first, "retain the permitted player after recovery");
+    f.finish(player);
+  }
+  assert.equal(rejected, true);
+  assert.equal(f.active(), undefined, "stop normally at the end of the sequence");
 });

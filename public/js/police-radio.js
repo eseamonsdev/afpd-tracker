@@ -27,6 +27,7 @@
   };
   let days = [], calls = [], buttons = [], selected = -1, folder = "";
   let auto = false, request = 0, playbackRequest = 0, controller;
+  let lastPlayingAudio = null, keepPlaybackPlayer = false;
 
   const clipSource = (index) => `${base}${encodeURIComponent(folder)}/${encodeURIComponent(calls[index].original_filename)}`;
 
@@ -79,6 +80,21 @@
       await player.play();
     } catch (error) {
       if (token !== playbackRequest || player !== audio || source !== player.getAttribute("src") || error.name === "AbortError") return;
+      // Safari grants playback permission per media element. If it rejects a
+      // preloaded handoff, continue on the element that already played audio.
+      if (error.name === "NotAllowedError" && lastPlayingAudio && player !== lastPlayingAudio) {
+        keepPlaybackPlayer = true;
+        const fallback = lastPlayingAudio;
+        nextAudio = player;
+        audio = fallback;
+        playbackRequest++;
+        clearAudio(nextAudio);
+        audio.src = source;
+        audio.load();
+        updateDuration();
+        startPlayback();
+        return;
+      }
       message.textContent = "Playback could not start. Press Play to try again or choose another clip.";
     }
   }
@@ -89,7 +105,7 @@
     playbackRequest++;
     audio.pause();
     const source = clipSource(index);
-    const prepared = nextAudio.getAttribute("src") === source && !nextAudio.error;
+    const prepared = !keepPlaybackPlayer && nextAudio.getAttribute("src") === source && !nextAudio.error;
     if (prepared) [audio, nextAudio] = [nextAudio, audio];
     clearAudio(nextAudio);
     selected = index;
@@ -195,7 +211,10 @@
     });
     onActive("loadedmetadata", updateDuration);
     // Start preloading after current playback begins so it gets network priority.
-    onActive("playing", prepareNextClip);
+    onActive("playing", () => {
+      lastPlayingAudio = player;
+      prepareNextClip();
+    });
     onActive("timeupdate", () => {
       seek.value = audio.currentTime;
       get("elapsed").textContent = durationText(audio.currentTime);
