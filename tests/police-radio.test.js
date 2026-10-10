@@ -45,7 +45,7 @@ class Element {
     return Promise.resolve();
   }
   load() { this.loads++; this.duration = NaN; this.currentTime = 0; this.error = null; this.ended = false; }
-  after(element) { this.sibling = element; }
+  after(...elements) { this.sibling = elements[0]; this.afterElements = elements; }
   append(...children) {
     for (const child of children) this.children.push(...(child.tag === "fragment" ? child.children : [child]));
   }
@@ -93,6 +93,7 @@ async function playerFixture(fixtureCalls, hostname) {
   const debug = () => get("archive").children.find(el => el.id === "radio-debug-panel");
   const diagnostic = () => JSON.parse(debug().children[2].value);
   return { get, select, players, active, finish, debug, diagnostic,
+    live: () => players[0].afterElements?.find(el => el.id === "radio-debug-live"),
     advance: ms => { now += ms; timers.forEach(handler => handler()); }, windowListeners };
 }
 
@@ -253,12 +254,12 @@ test("staging detects playback stuck without an error and distinguishes loading"
   const f = await playerFixture(undefined, "afpd-tracker.ericseamonsdeveloper.workers.dev");
   f.get("autoplay").click(); f.select(0);
   f.advance(14000);
-  assert.equal(f.diagnostic().reason, "Playback time stopped progressing for 12 seconds");
+  assert.equal(f.diagnostic().reason, "Playback time stopped progressing for 10 seconds");
   assert.equal(f.diagnostic().autoplay, true);
   assert.equal(f.active(), f.players[0], "diagnostics must not pause or skip clips");
   f.select(1); f.active().readyState = 1;
   f.advance(14000);
-  assert.equal(f.diagnostic().reason, "Playback waiting for audio data for 12 seconds");
+  assert.equal(f.diagnostic().reason, "Playback waiting for audio data for 10 seconds");
 });
 
 test("staging detects unexpected pause and missing end event, but ignores intentional pauses", async () => {
@@ -286,4 +287,26 @@ test("staging records media and global errors, while completed sequences do not 
   f.get("autoplay").click(); f.select(3); f.debug().hidden = true; f.finish(f.active());
   f.advance(14000);
   assert.equal(f.debug().hidden, true, "end of day is not a stall");
+});
+
+
+test("staging records progress and replay attempts before a silent stall", async () => {
+  const f = await playerFixture(undefined, "staging-afpd-tracker.ericseamonsdeveloper.workers.dev");
+  f.get("autoplay").click(); f.select(0);
+  f.active().currentTime = 2; f.advance(5000);
+  assert.match(f.live().textContent, /Playing.*position 2.00s/);
+  f.finish(f.active()); f.active().currentTime = 1; f.advance(5000);
+  // Replay the earlier clip and simulate a silent freeze on its next handoff.
+  f.select(0); f.finish(f.active()); f.active().currentTime = 0;
+  f.advance(5000); f.advance(5000);
+  const r = f.diagnostic();
+  assert.equal(r.version, "radio-staging-debug-2");
+  assert.ok(r.requestedAt); assert.ok(r.lastPlayingAt);
+  assert.equal(r.reason, "Playback time stopped progressing for 10 seconds");
+  const beats = r.history.filter(x => x.event === "progress heartbeat");
+  assert.ok(beats.length >= 4);
+  assert.equal(beats.at(-1).secondsWithoutProgress, 10);
+  assert.equal(beats.at(-1).autoplay, true);
+  assert.ok(r.history.filter(x => x.event === "clip selected" && x.index === 0).length >= 2);
+  assert.match(f.live().textContent, /No progress.*no progress 10s.*autoplay on/);
 });
