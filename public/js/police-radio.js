@@ -35,10 +35,13 @@
     if (typeof window === "undefined" || !/(^|-)afpd-tracker\.ericseamonsdeveloper\.workers\.dev$/.test(window.location.hostname)) return null;
     const history = [];
     let expected = false, lastProgress = Date.now(), observedPlayer, observedTime = 0;
-    let lastProblem = "";
+    let lastProblem = "", lastHeartbeat = Date.now(), requestedAt = null, lastPlayingAt = null;
     const button = document.createElement("button");
     button.id = "radio-debug-open"; button.type = "button";
     button.textContent = "Staging diagnostics: show report";
+    const live = document.createElement("p");
+    live.id = "radio-debug-live"; live.textContent = "Diagnostics: ready";
+    live.style.cssText = "font:14px monospace;margin:8px 0;overflow-wrap:anywhere";
     const panel = document.createElement("section");
     panel.id = "radio-debug-panel"; panel.hidden = true;
     panel.setAttribute("role", "region"); panel.setAttribute("aria-label", "Playback diagnostics");
@@ -53,7 +56,7 @@
     const copy = document.createElement("button"); copy.type = "button"; copy.textContent = "Copy report";
     const close = document.createElement("button"); close.type = "button"; close.textContent = "Close";
     panel.append(title, instructions, report, copy, close);
-    audio.after(button); root.append(panel);
+    audio.after(button, live); root.append(panel);
     function state(player) {
       const buffered = [];
       for (let i = 0; i < (player.buffered?.length ?? 0); i++) buffered.push([player.buffered.start(i), player.buffered.end(i)]);
@@ -65,13 +68,13 @@
     }
     function record(event, detail = {}) {
       history.push({ at: new Date().toISOString(), event, selected: selected + 1, ...detail });
-      if (history.length > 80) history.shift();
+      if (history.length > 160) history.shift();
     }
     function show(reason) {
       title.textContent = `Playback diagnostic: ${reason}`;
-      report.value = JSON.stringify({ version: "radio-staging-debug-1", reason, at: new Date().toISOString(),
+      report.value = JSON.stringify({ version: "radio-staging-debug-2", reason, at: new Date().toISOString(),
         clip: current.textContent, selected: selected + 1, total: calls.length,
-        autoplay: auto, expectedPlayback: expected, visibility: document.visibilityState,
+        autoplay: auto, expectedPlayback: expected, requestedAt, lastPlayingAt, playbackRequest, visibility: document.visibilityState,
         userAgent: window.navigator.userAgent, idleSeconds: (Date.now() - lastProgress) / 1000,
         players: players.map(state), history: [...history] }, null, 2);
       panel.hidden = false;
@@ -82,8 +85,15 @@
       if (key !== lastProblem) { lastProblem = key; show(reason); }
     }
     function expectPlaying(value) {
-      if (value) lastProblem = "";
+      if (value) { lastProblem = ""; requestedAt = new Date().toISOString(); }
       expected = value; lastProgress = Date.now(); observedPlayer = audio; observedTime = audio.currentTime;
+      updateLive();
+    }
+    function updateLive() {
+      const idle = Math.max(0, (Date.now() - lastProgress) / 1000);
+      const phase = selected < 0 ? "Ready" : audio.error ? "Error" : audio.ended ? "Ended" :
+        audio.paused ? "Paused" : audio.readyState < 3 ? "Loading" : idle >= 5 ? "No progress" : "Playing";
+      live.textContent = `Diagnostics: ${phase} · ${current.textContent} · position ${audio.currentTime.toFixed(2)}s · no progress ${idle.toFixed(0)}s · autoplay ${auto ? "on" : "off"}`;
     }
     button.addEventListener("click", () => show("Manual report"));
     close.addEventListener("click", () => { panel.hidden = true; });
@@ -94,7 +104,9 @@
     for (const player of players) {
       for (const event of ["loadstart", "loadedmetadata", "canplay", "play", "playing", "waiting", "stalled", "suspend", "pause", "ended", "error", "abort", "emptied", "seeking", "seeked"]) {
         player.addEventListener(event, () => {
+          if (event === "playing" && player === audio) lastPlayingAt = new Date().toISOString();
           record(event, state(player));
+          updateLive();
           if (event === "error") problem(player === audio ? "Active media error" : "Preload media error", state(player));
         });
       }
@@ -110,13 +122,19 @@
       if (audio !== observedPlayer || audio.currentTime !== observedTime) {
         observedPlayer = audio; observedTime = audio.currentTime; lastProgress = Date.now();
       }
-      if (!expected || selected < 0 || document.visibilityState === "hidden" || Date.now() - lastProgress < 12000) return;
+      updateLive();
+      if (selected >= 0 && Date.now() - lastHeartbeat >= 5000) {
+        lastHeartbeat = Date.now();
+        record("progress heartbeat", { autoplay: auto, expectedPlayback: expected, visibility: document.visibilityState,
+          secondsWithoutProgress: (Date.now() - lastProgress) / 1000, playbackRequest, players: players.map(state) });
+      }
+      if (!expected || selected < 0 || document.visibilityState === "hidden" || Date.now() - lastProgress < 10000) return;
       if (audio.ended) {
         if (auto && calls[selected + 1]) problem("Clip ended but autoplay did not advance");
       } else if (audio.paused) problem("Unexpected pause while playback was requested");
-      else if (audio.readyState < 3) problem("Playback waiting for audio data for 12 seconds");
-      else problem("Playback time stopped progressing for 12 seconds");
-    }, 2000);
+      else if (audio.readyState < 3) problem("Playback waiting for audio data for 10 seconds");
+      else problem("Playback time stopped progressing for 10 seconds");
+    }, 1000);
     record("Diagnostics enabled");
     return { record, problem, expectPlaying };
   }
