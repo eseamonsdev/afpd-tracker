@@ -314,7 +314,7 @@ test("staging records progress and replay attempts before a silent stall", async
   assert.ok(r.history.some(x => x.event === "Clip switch pauses previous audio"));
   assert.ok(r.history.some(x => x.event === "Player cleared by application"));
   assert.equal(r.history.some(x => x.event === "User pressed Pause"), false);
-  assert.match(f.live().textContent, /No progress.*no progress 10s.*autoplay on/);
+  assert.match(f.live().textContent, /No progress.*last progress: 10s ago.*autoplay on/);
 });
 
 
