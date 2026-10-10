@@ -9,6 +9,8 @@ class Element {
   constructor(tag = "div") {
     this.tag = tag;
     this.attrs = new Map();
+    this.style = {};
+    this.readyState = 4;
     this.listeners = new Map();
     this.children = [];
     this.options = [];
@@ -51,13 +53,21 @@ class Element {
   add(option) { this.options.push(option); if (this.options.length === 1) this.value = option.value; }
 }
 
-async function playerFixture(fixtureCalls) {
+async function playerFixture(fixtureCalls, hostname) {
   const elements = new Map(["archive", "month", "day", "audio", "play", "seek", "autoplay",
     "clips", "clips-section", "status", "current", "player-message", "elapsed", "duration"]
     .map(name => [`radio-${name}`, new Element(name === "audio" ? "audio" : "div")]));
   const players = [elements.get("radio-audio")];
   const dates = ["2026-09-11", "2026-09-10"];
+  let now = Date.now();
+  const timers = [];
+  const windowListeners = new Map();
+  const window = hostname ? { location: { hostname }, navigator: { userAgent: "iPhone test" },
+    addEventListener: (name, handler) => windowListeners.set(name, handler),
+    setInterval: handler => timers.push(handler) } : undefined;
   const document = {
+    visibilityState: "visible",
+    addEventListener: () => {},
     getElementById: id => elements.get(id),
     createDocumentFragment: () => new Element("fragment"),
     createElement(tag) {
@@ -67,7 +77,7 @@ async function playerFixture(fixtureCalls) {
     }
   };
   vm.runInNewContext(source, {
-    document, Intl, Date, AbortController,
+    document, window, Intl, Date: class extends Date { static now() { return now; } }, AbortController,
     Option: class { constructor(text, value) { this.text = text; this.value = value; } },
     fetch: async url => ({ ok: true, json: async () => url.endsWith("index.json")
       ? { days: dates.map(date => ({ date, folder: date, count: fixtureCalls?.length ?? 4 })) }
@@ -80,7 +90,10 @@ async function playerFixture(fixtureCalls) {
   const select = i => get("clips").children[i].children[0].click();
   const active = () => players.find(player => !player.paused);
   const finish = player => { player.ended = true; player.paused = true; player.emit("ended"); };
-  return { get, select, players, active, finish };
+  const debug = () => get("archive").children.find(el => el.id === "radio-debug-panel");
+  const diagnostic = () => JSON.parse(debug().children[2].value);
+  return { get, select, players, active, finish, debug, diagnostic,
+    advance: ms => { now += ms; timers.forEach(handler => handler()); }, windowListeners };
 }
 
 test("autoplay hands off a prepared clip without reloading it and immediately prepares the following clip", async () => {
@@ -217,4 +230,60 @@ test("September 18 autoplay survives a rejected handoff within the first ten cli
   }
   assert.equal(rejected, true);
   assert.equal(f.active(), undefined, "stop normally at the end of the sequence");
+});
+
+
+test("diagnostics are disabled on production, even with the same player code", async () => {
+  const f = await playerFixture(undefined, "afpd-accountability.com");
+  assert.equal(f.debug(), undefined);
+});
+
+test("staging reports a rejected play request without changing playback state", async () => {
+  const f = await playerFixture(undefined, "afpd-tracker.ericseamonsdeveloper.workers.dev");
+  f.players[0].play = () => Promise.reject(Object.assign(new Error("Not allowed on this element"), { name: "NotAllowedError" }));
+  f.select(0);
+  await new Promise(resolve => setImmediate(resolve));
+  assert.equal(f.debug().hidden, false);
+  assert.equal(f.diagnostic().reason, "Play request rejected");
+  assert.equal(f.diagnostic().history.at(-1).name, "NotAllowedError");
+  assert.match(f.diagnostic().players[0].file, /call-0.m4a$/);
+});
+
+test("staging detects playback stuck without an error and distinguishes loading", async () => {
+  const f = await playerFixture(undefined, "afpd-tracker.ericseamonsdeveloper.workers.dev");
+  f.get("autoplay").click(); f.select(0);
+  f.advance(14000);
+  assert.equal(f.diagnostic().reason, "Playback time stopped progressing for 12 seconds");
+  assert.equal(f.diagnostic().autoplay, true);
+  assert.equal(f.active(), f.players[0], "diagnostics must not pause or skip clips");
+  f.select(1); f.active().readyState = 1;
+  f.advance(14000);
+  assert.equal(f.diagnostic().reason, "Playback waiting for audio data for 12 seconds");
+});
+
+test("staging detects unexpected pause and missing end event, but ignores intentional pauses", async () => {
+  const f = await playerFixture(undefined, "afpd-tracker.ericseamonsdeveloper.workers.dev");
+  f.get("autoplay").click(); f.select(0); f.active().pause();
+  f.advance(14000);
+  assert.equal(f.diagnostic().reason, "Unexpected pause while playback was requested");
+  f.select(1); f.active().ended = true; f.active().paused = true;
+  f.advance(14000);
+  assert.equal(f.diagnostic().reason, "Clip ended but autoplay did not advance");
+  f.select(2); f.debug().hidden = true; f.get("play").click();
+  f.advance(14000);
+  assert.equal(f.debug().hidden, true);
+});
+
+test("staging records media and global errors, while completed sequences do not trigger a popup", async () => {
+  const f = await playerFixture(undefined, "afpd-tracker.ericseamonsdeveloper.workers.dev");
+  f.select(0); f.active().error = { code: 3, message: "Decode error" }; f.active().emit("error");
+  assert.equal(f.diagnostic().reason, "Active media error");
+  assert.equal(f.diagnostic().players[0].error.code, 3);
+  f.windowListeners.get("error")({ message: "Unexpected JS error", filename: "police-radio.js", lineno: 99 });
+  assert.equal(f.diagnostic().reason, "JavaScript error");
+  f.windowListeners.get("unhandledrejection")({ reason: new Error("Unhandled failure") });
+  assert.equal(f.diagnostic().reason, "Unhandled promise rejection");
+  f.get("autoplay").click(); f.select(3); f.debug().hidden = true; f.finish(f.active());
+  f.advance(14000);
+  assert.equal(f.debug().hidden, true, "end of day is not a stall");
 });

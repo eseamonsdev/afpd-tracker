@@ -29,6 +29,97 @@
   let auto = false, request = 0, playbackRequest = 0, controller;
   let lastPlayingAudio = null, keepPlaybackPlayer = false;
 
+  // Temporary diagnostics only on staging and its Cloudflare branch previews.
+  const diagnostics = createDiagnostics();
+  function createDiagnostics() {
+    if (typeof window === "undefined" || !/(^|-)afpd-tracker\.ericseamonsdeveloper\.workers\.dev$/.test(window.location.hostname)) return null;
+    const history = [];
+    let expected = false, lastProgress = Date.now(), observedPlayer, observedTime = 0;
+    let lastProblem = "";
+    const button = document.createElement("button");
+    button.id = "radio-debug-open"; button.type = "button";
+    button.textContent = "Staging diagnostics: show report";
+    const panel = document.createElement("section");
+    panel.id = "radio-debug-panel"; panel.hidden = true;
+    panel.setAttribute("role", "region"); panel.setAttribute("aria-label", "Playback diagnostics");
+    panel.style.cssText = "position:fixed;bottom:12px;left:12px;right:12px;z-index:1000;background:#fff;color:#111;border:2px solid #963b00;border-radius:8px;padding:12px;max-height:55vh;overflow:auto;box-shadow:0 2px 12px #0005";
+    const title = document.createElement("p"); title.setAttribute("role", "status");
+    const instructions = document.createElement("p");
+    instructions.textContent = "Copy this report or take a screenshot. Playback continues while this panel is open.";
+    const report = document.createElement("textarea");
+    report.id = "radio-debug-report"; report.readOnly = true;
+    report.setAttribute("aria-label", "Playback diagnostic report");
+    report.style.cssText = "display:block;width:100%;height:180px;font:12px monospace;color:#111;background:#fff";
+    const copy = document.createElement("button"); copy.type = "button"; copy.textContent = "Copy report";
+    const close = document.createElement("button"); close.type = "button"; close.textContent = "Close";
+    panel.append(title, instructions, report, copy, close); root.append(button, panel);
+    function state(player) {
+      const buffered = [];
+      for (let i = 0; i < (player.buffered?.length ?? 0); i++) buffered.push([player.buffered.start(i), player.buffered.end(i)]);
+      return { player: players.indexOf(player), active: player === audio, file: player.getAttribute("src"),
+        time: player.currentTime, duration: Number.isFinite(player.duration) ? player.duration : null,
+        paused: player.paused, ended: player.ended, readyState: player.readyState,
+        networkState: player.networkState, buffered,
+        error: player.error ? { code: player.error.code, message: player.error.message } : null };
+    }
+    function record(event, detail = {}) {
+      history.push({ at: new Date().toISOString(), event, selected: selected + 1, ...detail });
+      if (history.length > 80) history.shift();
+    }
+    function show(reason) {
+      title.textContent = `Playback diagnostic: ${reason}`;
+      report.value = JSON.stringify({ version: "radio-staging-debug-1", reason, at: new Date().toISOString(),
+        clip: current.textContent, selected: selected + 1, total: calls.length,
+        autoplay: auto, expectedPlayback: expected, visibility: document.visibilityState,
+        userAgent: window.navigator.userAgent, idleSeconds: (Date.now() - lastProgress) / 1000,
+        players: players.map(state), history: [...history] }, null, 2);
+      panel.hidden = false;
+    }
+    function problem(reason, detail = {}) {
+      record(reason, detail);
+      const key = `${reason}:${selected}:${audio.getAttribute("src")}`;
+      if (key !== lastProblem) { lastProblem = key; show(reason); }
+    }
+    function expectPlaying(value) {
+      if (value) lastProblem = "";
+      expected = value; lastProgress = Date.now(); observedPlayer = audio; observedTime = audio.currentTime;
+    }
+    button.addEventListener("click", () => show("Manual report"));
+    close.addEventListener("click", () => { panel.hidden = true; });
+    copy.addEventListener("click", async () => {
+      try { await window.navigator.clipboard.writeText(report.value); copy.textContent = "Copied"; }
+      catch { report.focus(); report.select(); copy.textContent = "Select and copy the report"; }
+    });
+    for (const player of players) {
+      for (const event of ["loadstart", "loadedmetadata", "canplay", "play", "playing", "waiting", "stalled", "suspend", "pause", "ended", "error", "abort", "emptied", "seeking", "seeked"]) {
+        player.addEventListener(event, () => {
+          record(event, state(player));
+          if (event === "error") problem(player === audio ? "Active media error" : "Preload media error", state(player));
+        });
+      }
+    }
+    window.addEventListener("error", event => problem("JavaScript error", { message: event.message, file: event.filename, line: event.lineno, stack: event.error?.stack }));
+    window.addEventListener("unhandledrejection", event => problem("Unhandled promise rejection", { message: String(event.reason), stack: event.reason?.stack }));
+    document.addEventListener("visibilitychange", () => {
+      record("visibilitychange", { visibility: document.visibilityState });
+      // Background timer suspension is not evidence of a playback failure.
+      lastProgress = Date.now();
+    });
+    window.setInterval(() => {
+      if (audio !== observedPlayer || audio.currentTime !== observedTime) {
+        observedPlayer = audio; observedTime = audio.currentTime; lastProgress = Date.now();
+      }
+      if (!expected || selected < 0 || document.visibilityState === "hidden" || Date.now() - lastProgress < 12000) return;
+      if (audio.ended) {
+        if (auto && calls[selected + 1]) problem("Clip ended but autoplay did not advance");
+      } else if (audio.paused) problem("Unexpected pause while playback was requested");
+      else if (audio.readyState < 3) problem("Playback waiting for audio data for 12 seconds");
+      else problem("Playback time stopped progressing for 12 seconds");
+    }, 2000);
+    record("Diagnostics enabled");
+    return { record, problem, expectPlaying };
+  }
+
   const clipSource = (index) => `${base}${encodeURIComponent(folder)}/${encodeURIComponent(calls[index].original_filename)}`;
 
   function clearAudio(player) {
@@ -59,6 +150,7 @@
   }
 
   function resetPlayer() {
+    diagnostics?.expectPlaying(false);
     selected = -1;
     playbackRequest++;
     players.forEach(clearAudio);
@@ -76,9 +168,15 @@
 
   async function startPlayback() {
     const player = audio, source = player.getAttribute("src"), token = playbackRequest;
+    diagnostics?.expectPlaying(true);
+    diagnostics?.record("play request", { player: players.indexOf(player), source, token });
     try {
       await player.play();
+      diagnostics?.record("play promise resolved", { player: players.indexOf(player), source, token });
     } catch (error) {
+      const stale = token !== playbackRequest || player !== audio || source !== player.getAttribute("src");
+      diagnostics?.record("play promise rejected", { name: error.name, message: error.message, player: players.indexOf(player), source, token, stale });
+      if (!stale && error.name !== "AbortError") diagnostics?.problem("Play request rejected", { name: error.name, message: error.message });
       if (token !== playbackRequest || player !== audio || source !== player.getAttribute("src") || error.name === "AbortError") return;
       // Safari grants playback permission per media element. If it rejects a
       // preloaded handoff, continue on the element that already played audio.
@@ -109,6 +207,7 @@
     if (prepared) [audio, nextAudio] = [nextAudio, audio];
     clearAudio(nextAudio);
     selected = index;
+    diagnostics?.record("clip selected", { index, prepared });
     const call = calls[index];
     buttons[index].setAttribute("aria-current", "true");
     current.textContent = `${dateFormat.format(dateObject(day.value))} · ${timeFormat.format(new Date(call.epoch * 1000))}`;
@@ -171,6 +270,7 @@
       status.textContent = calls.length ? `${dateFormat.format(dateObject(entry.date))} · ${calls.length} clips` : "No clips available for this day.";
     } catch (error) {
       if (token !== request || error.name === "AbortError") return;
+      diagnostics?.problem("Day manifest failed", { message: error.message });
       calls = []; buttons = []; list.replaceChildren();
       status.textContent = "Unable to load this day. Select another day or reload the page to try again.";
     } finally {
@@ -190,6 +290,7 @@
   day.addEventListener("change", loadDay);
   autoplay.addEventListener("click", () => {
     auto = !auto;
+    diagnostics?.record("autoplay toggled", { enabled: auto });
     autoplay.setAttribute("aria-pressed", String(auto));
     autoplay.textContent = `Autoplay: ${auto ? "On" : "Off"}`;
     if (!auto || !audio.paused) prepareNextClip();
@@ -200,7 +301,11 @@
     if (audio.paused) {
       if (audio.error) audio.load();
       startPlayback();
-    } else audio.pause();
+    } else {
+      diagnostics?.expectPlaying(false);
+      diagnostics?.record("User pressed Pause");
+      audio.pause();
+    }
   });
   seek.addEventListener("input", () => {
     if (Number.isFinite(audio.duration)) audio.currentTime = Number(seek.value);
@@ -230,6 +335,7 @@
     });
     onActive("ended", () => {
       if (audio.ended && auto && selected >= 0 && selected + 1 < calls.length) chooseClip(selected + 1);
+      else if (audio.ended) diagnostics?.expectPlaying(false);
     });
     onActive("error", () => {
       if (selected >= 0 && audio.error) message.textContent = "This clip could not be loaded. Choose another clip or press Play to retry.";
@@ -257,7 +363,8 @@
       }
       month.disabled = false;
       populateDays();
-    } catch {
+    } catch (error) {
+      diagnostics?.problem("Archive index failed", { message: error.message });
       month.replaceChildren(new Option("Unavailable", ""));
       day.replaceChildren(new Option("Unavailable", ""));
       status.textContent = "Unable to load available dates. Reload the page to try again.";
