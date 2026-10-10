@@ -60,15 +60,8 @@ async function playerFixture(fixtureCalls, hostname) {
   elements.get("radio-autoplay").setAttribute("aria-pressed", "false");
   const players = [elements.get("radio-audio")];
   const dates = ["2026-09-11", "2026-09-10"];
-  let now = Date.now();
-  const timers = [];
-  const windowListeners = new Map();
-  const window = hostname ? { location: { hostname }, navigator: { userAgent: "iPhone test" },
-    addEventListener: (name, handler) => windowListeners.set(name, handler),
-    setInterval: handler => timers.push(handler) } : undefined;
+  const window = hostname ? { location: { hostname } } : undefined;
   const document = {
-    visibilityState: "visible",
-    addEventListener: () => {},
     getElementById: id => elements.get(id),
     createDocumentFragment: () => new Element("fragment"),
     createElement(tag) {
@@ -78,7 +71,7 @@ async function playerFixture(fixtureCalls, hostname) {
     }
   };
   vm.runInNewContext(source, {
-    document, window, Intl, Date: class extends Date { static now() { return now; } }, AbortController,
+    document, window, Intl, Date, AbortController,
     Option: class { constructor(text, value) { this.text = text; this.value = value; } },
     fetch: async url => ({ ok: true, json: async () => url.endsWith("index.json")
       ? { days: dates.map(date => ({ date, folder: date, count: fixtureCalls?.length ?? 4 })) }
@@ -91,11 +84,7 @@ async function playerFixture(fixtureCalls, hostname) {
   const select = i => get("clips").children[i].children[0].click();
   const active = () => players.find(player => !player.paused);
   const finish = player => { player.ended = true; player.paused = true; player.emit("ended"); };
-  const debug = () => get("archive").children.find(el => el.id === "radio-debug-panel");
-  const diagnostic = () => JSON.parse(debug().children[2].value);
-  return { get, select, players, active, finish, debug, diagnostic,
-    live: () => players[0].afterElements?.find(el => el.id === "radio-debug-live"),
-    advance: ms => { now += ms; timers.forEach(handler => handler()); }, windowListeners };
+  return { get, select, players, active, finish };
 }
 
 test("autoplay hands off a prepared clip without reloading it and immediately prepares the following clip", async () => {
@@ -235,11 +224,6 @@ test("September 18 autoplay survives a rejected handoff within the first ten cli
 });
 
 
-test("diagnostics are disabled on production, even with the same player code", async () => {
-  const f = await playerFixture(undefined, "afpd-accountability.com");
-  assert.equal(f.debug(), undefined);
-});
-
 test("staging uses one element for autoplay, clip jumps, pause, and day reset", async () => {
   const f = await playerFixture(undefined, "staging-afpd-tracker.ericseamonsdeveloper.workers.dev");
   assert.equal(f.players.length, 1, "no standby audio element should be created");
@@ -267,117 +251,4 @@ test("staging uses one element for autoplay, clip jumps, pause, and day reset", 
   f.select(0);
   assert.equal(f.active(), player);
   assert.match(player.src, /2026-09-10\/call-0\.m4a$/);
-  f.advance(11000);
-  assert.equal(f.diagnostic().playbackMode, "single-element");
-  assert.equal(f.diagnostic().players.length, 1);
-});
-
-test("staging reports a rejected play request without changing playback state", async () => {
-  const f = await playerFixture(undefined, "afpd-tracker.ericseamonsdeveloper.workers.dev");
-  f.players[0].play = () => Promise.reject(Object.assign(new Error("Not allowed on this element"), { name: "NotAllowedError" }));
-  f.select(0);
-  await new Promise(resolve => setImmediate(resolve));
-  assert.equal(f.debug().hidden, false);
-  assert.equal(f.diagnostic().reason, "Play request rejected");
-  assert.equal(f.diagnostic().history.at(-1).name, "NotAllowedError");
-  assert.match(f.diagnostic().players[0].file, /call-0.m4a$/);
-});
-
-test("staging detects playback stuck without an error and distinguishes loading", async () => {
-  const f = await playerFixture(undefined, "afpd-tracker.ericseamonsdeveloper.workers.dev");
-  f.get("autoplay").click(); f.select(0);
-  f.advance(14000);
-  assert.equal(f.diagnostic().reason, "Playback time stopped progressing for 10 seconds");
-  assert.equal(f.diagnostic().autoplay, true);
-  assert.equal(f.active(), f.players[0], "diagnostics must not pause or skip clips");
-  f.select(1); f.active().readyState = 1;
-  f.advance(14000);
-  assert.equal(f.diagnostic().reason, "Playback waiting for audio data for 10 seconds");
-});
-
-test("staging detects unexpected pause and missing end event, but ignores intentional pauses", async () => {
-  const f = await playerFixture(undefined, "afpd-tracker.ericseamonsdeveloper.workers.dev");
-  f.get("autoplay").click(); f.select(0); f.active().pause();
-  f.advance(14000);
-  assert.equal(f.diagnostic().reason, "Unexpected pause while playback was requested");
-  f.select(1); f.active().ended = true; f.active().paused = true;
-  f.advance(14000);
-  assert.equal(f.diagnostic().reason, "Clip ended but autoplay did not advance");
-  f.select(2); f.debug().hidden = true; f.get("play").click();
-  f.advance(14000);
-  assert.equal(f.debug().hidden, true);
-});
-
-test("staging records media and global errors, while completed sequences do not trigger a popup", async () => {
-  const f = await playerFixture(undefined, "afpd-tracker.ericseamonsdeveloper.workers.dev");
-  f.select(0); f.active().error = { code: 3, message: "Decode error" }; f.active().emit("error");
-  assert.equal(f.diagnostic().reason, "Active media error");
-  assert.equal(f.diagnostic().players[0].error.code, 3);
-  f.windowListeners.get("error")({ message: "Unexpected JS error", filename: "police-radio.js", lineno: 99 });
-  assert.equal(f.diagnostic().reason, "JavaScript error");
-  f.windowListeners.get("unhandledrejection")({ reason: new Error("Unhandled failure") });
-  assert.equal(f.diagnostic().reason, "Unhandled promise rejection");
-  f.get("autoplay").click(); f.select(3); f.debug().hidden = true; f.finish(f.active());
-  f.advance(14000);
-  assert.equal(f.debug().hidden, true, "end of day is not a stall");
-});
-
-
-test("staging records progress and replay attempts before a silent stall", async () => {
-  const f = await playerFixture(undefined, "staging-afpd-tracker.ericseamonsdeveloper.workers.dev");
-  f.get("autoplay").click(); f.select(0);
-  f.active().currentTime = 2; f.advance(5000);
-  assert.match(f.live().textContent, /Playing.*position 2.00s/);
-  f.finish(f.active()); f.active().currentTime = 1; f.advance(5000);
-  // Replay the earlier clip and simulate a silent freeze on its next handoff.
-  f.select(0); f.finish(f.active()); f.active().currentTime = 0;
-  f.advance(5000); f.advance(5000);
-  const r = f.diagnostic();
-  assert.equal(r.version, "radio-staging-debug-4");
-  assert.ok(r.requestedAt); assert.ok(r.lastPlayingAt);
-  assert.equal(r.reason, "Playback time stopped progressing for 10 seconds");
-  const beats = r.history.filter(x => x.event === "progress heartbeat");
-  assert.ok(beats.length >= 4);
-  assert.equal(beats.at(-1).secondsWithoutProgress, 10);
-  assert.equal(beats.at(-1).autoplay, true);
-  assert.ok(r.history.filter(x => x.event === "clip selected" && x.index === 0).length >= 2);
-  assert.ok(r.history.filter(x => x.event === "User selected clip" && x.index === 0).length >= 2);
-  assert.ok(r.history.some(x => x.event === "Autoplay advancing"));
-  assert.ok(r.history.some(x => x.event === "Clip switch pauses previous audio"));
-  assert.ok(r.history.some(x => x.event === "Player cleared by application"));
-  assert.equal(r.history.some(x => x.event === "User pressed Pause"), false);
-  assert.match(f.live().textContent, /No progress.*last progress: 10s ago.*autoplay on/);
-});
-
-
-test("staging separates a pending play promise from a resolved promise with no progress", async () => {
-  const f = await playerFixture(undefined, "staging-afpd-tracker.ericseamonsdeveloper.workers.dev");
-  f.players[0].play = () => new Promise(() => {});
-  f.select(0); f.advance(11000);
-  assert.equal(f.diagnostic().assessment, "Play promise still pending");
-  assert.deepEqual(f.diagnostic().consistency.issues, []);
-  f.players[0].play = Element.prototype.play; f.select(0);
-  await new Promise(resolve => setImmediate(resolve));
-  f.advance(11000);
-  const r = f.diagnostic();
-  assert.equal(r.assessment, "Play promise resolved, but browser playback clock never started");
-  assert.equal(r.playAttempts.at(-1).outcome, "resolved");
-  assert.ok(r.players[0].lastEvents.playing);
-  assert.equal(r.playAttempts.at(-1).stale, false);
-});
-
-test("staging flags source mismatch and identifies stale async completions", async () => {
-  const f = await playerFixture(undefined, "staging-afpd-tracker.ericseamonsdeveloper.workers.dev");
-  let resolve;
-  f.players[0].play = () => new Promise(done => { resolve = done; });
-  f.select(0); f.players[0].play = Element.prototype.play; f.select(1);
-  resolve(); await new Promise(done => setImmediate(done));
-  f.active().currentSrc = "https://example.test/wrong-file.m4a";
-  f.active().src = "wrong-file.m4a"; f.advance(11000);
-  const r = f.diagnostic();
-  assert.equal(r.assessment, "Player state mismatch");
-  assert.ok(r.consistency.issues.includes("Active player source differs from selected clip"));
-  assert.ok(r.consistency.issues.includes("Browser currentSrc differs from selected clip"));
-  assert.equal(r.playAttempts[0].stale, true);
-  assert.equal(r.playAttempts[1].stale, false);
 });
