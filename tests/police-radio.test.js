@@ -240,6 +240,38 @@ test("diagnostics are disabled on production, even with the same player code", a
   assert.equal(f.debug(), undefined);
 });
 
+test("staging uses one element for autoplay, clip jumps, pause, and day reset", async () => {
+  const f = await playerFixture(undefined, "staging-afpd-tracker.ericseamonsdeveloper.workers.dev");
+  assert.equal(f.players.length, 1, "no standby audio element should be created");
+  const player = f.players[0];
+  f.get("autoplay").click(); f.select(0);
+  for (let i = 1; i < 4; i++) {
+    f.finish(player);
+    assert.equal(f.active(), player);
+    assert.match(player.src, new RegExp(`call-${i}\\.m4a$`));
+  }
+  f.select(1);
+  assert.equal(f.active(), player);
+  assert.match(player.src, /call-1\.m4a$/);
+  f.get("play").click();
+  assert.equal(player.paused, true);
+  f.get("play").click();
+  assert.equal(f.active(), player);
+  f.get("autoplay").click();
+  f.finish(player);
+  assert.match(player.src, /call-1\.m4a$/, "autoplay off must not advance");
+  f.get("day").value = "2026-09-10"; f.get("day").emit("change");
+  await new Promise(resolve => setImmediate(resolve));
+  assert.equal(player.src, null);
+  assert.equal(player.paused, true);
+  f.select(0);
+  assert.equal(f.active(), player);
+  assert.match(player.src, /2026-09-10\/call-0\.m4a$/);
+  f.advance(11000);
+  assert.equal(f.diagnostic().playbackMode, "single-element");
+  assert.equal(f.diagnostic().players.length, 1);
+});
+
 test("staging reports a rejected play request without changing playback state", async () => {
   const f = await playerFixture(undefined, "afpd-tracker.ericseamonsdeveloper.workers.dev");
   f.players[0].play = () => Promise.reject(Object.assign(new Error("Not allowed on this element"), { name: "NotAllowedError" }));
@@ -301,7 +333,7 @@ test("staging records progress and replay attempts before a silent stall", async
   f.select(0); f.finish(f.active()); f.active().currentTime = 0;
   f.advance(5000); f.advance(5000);
   const r = f.diagnostic();
-  assert.equal(r.version, "radio-staging-debug-3");
+  assert.equal(r.version, "radio-staging-debug-4");
   assert.ok(r.requestedAt); assert.ok(r.lastPlayingAt);
   assert.equal(r.reason, "Playback time stopped progressing for 10 seconds");
   const beats = r.history.filter(x => x.event === "progress heartbeat");

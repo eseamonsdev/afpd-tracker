@@ -4,11 +4,17 @@
   if (!root) return;
   const get = (name) => document.getElementById(`radio-${name}`);
   const month = get("month"), day = get("day");
-  let audio = get("audio"), nextAudio = document.createElement("audio");
-  audio.preload = nextAudio.preload = "auto";
-  nextAudio.hidden = true;
-  audio.after(nextAudio);
-  const players = [audio, nextAudio];
+  // Staging experiment: one persistent playback element, without a standby
+  // element or preloaded handoff. Keep production behavior during the trial.
+  const singlePlayer = typeof window !== "undefined" && /(^|-)afpd-tracker\.ericseamonsdeveloper\.workers\.dev$/.test(window.location.hostname);
+  let audio = get("audio"), nextAudio = singlePlayer ? null : document.createElement("audio");
+  audio.preload = "auto";
+  if (nextAudio) {
+    nextAudio.preload = "auto";
+    nextAudio.hidden = true;
+    audio.after(nextAudio);
+  }
+  const players = nextAudio ? [audio, nextAudio] : [audio];
   const play = get("play"), seek = get("seek"), autoplay = get("autoplay");
   const list = get("clips"), section = get("clips-section"), status = get("status");
   const current = get("current"), message = get("player-message");
@@ -112,7 +118,7 @@
     function show(reason) {
       const checks = consistency();
       title.textContent = `Playback diagnostic: ${reason}`;
-      report.value = JSON.stringify({ version: "radio-staging-debug-3", reason, at: new Date().toISOString(),
+      report.value = JSON.stringify({ version: "radio-staging-debug-4", playbackMode: "single-element", reason, at: new Date().toISOString(),
         clip: current.textContent, selected: selected + 1, total: calls.length,
         autoplay: auto, expectedPlayback: expected, requestedAt, lastPlayingAt, playbackRequest, visibility: document.visibilityState,
         userAgent: window.navigator.userAgent, idleSeconds: (Date.now() - lastProgress) / 1000,
@@ -134,7 +140,7 @@
       const idle = Math.max(0, (Date.now() - lastProgress) / 1000);
       const phase = selected < 0 ? "Ready" : audio.error ? "Error" : audio.ended ? "Ended" :
         audio.paused ? "Paused" : audio.readyState < 3 ? "Loading" : idle >= 5 ? "No progress" : "Playing";
-      live.textContent = `Diagnostics: ${phase} · ${current.textContent} · position ${audio.currentTime.toFixed(2)}s · last progress: ${idle.toFixed(0)}s ago · autoplay ${auto ? "on" : "off"}`;
+      live.textContent = `Diagnostics (single element): ${phase} · ${current.textContent} · position ${audio.currentTime.toFixed(2)}s · last progress: ${idle.toFixed(0)}s ago · autoplay ${auto ? "on" : "off"}`;
     }
     button.addEventListener("click", () => show("Manual report"));
     close.addEventListener("click", () => { panel.hidden = true; });
@@ -187,6 +193,7 @@
   const clipSource = (index) => `${base}${encodeURIComponent(folder)}/${encodeURIComponent(calls[index].original_filename)}`;
 
   function clearAudio(player) {
+    if (!player) return;
     diagnostics?.record("Player cleared by application", { player: players.indexOf(player), active: player === audio, source: player.getAttribute("src") });
     player.pause();
     if (player.hasAttribute("src")) {
@@ -196,6 +203,7 @@
   }
 
   function prepareNextClip() {
+    if (singlePlayer) return;
     if (!auto || selected < 0 || !calls[selected + 1]) {
       clearAudio(nextAudio);
       return;
@@ -269,7 +277,7 @@
     diagnostics?.record("Clip switch pauses previous audio", { player: players.indexOf(audio), source: audio.getAttribute("src"), nextIndex: index });
     audio.pause();
     const source = clipSource(index);
-    const prepared = !keepPlaybackPlayer && nextAudio.getAttribute("src") === source && !nextAudio.error;
+    const prepared = !singlePlayer && !keepPlaybackPlayer && nextAudio.getAttribute("src") === source && !nextAudio.error;
     if (prepared) [audio, nextAudio] = [nextAudio, audio];
     clearAudio(nextAudio);
     selected = index;
