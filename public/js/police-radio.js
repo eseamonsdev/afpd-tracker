@@ -33,7 +33,8 @@
   const diagnostics = createDiagnostics();
   function createDiagnostics() {
     if (typeof window === "undefined" || !/(^|-)afpd-tracker\.ericseamonsdeveloper\.workers\.dev$/.test(window.location.hostname)) return null;
-    const history = [];
+    const history = [], playAttempts = [];
+    const lastEvents = players.map(() => ({}));
     let expected = false, lastProgress = Date.now(), observedPlayer, observedTime = 0;
     let lastProblem = "", lastHeartbeat = Date.now(), requestedAt = null, lastPlayingAt = null;
     const button = document.createElement("button");
@@ -57,25 +58,65 @@
     const close = document.createElement("button"); close.type = "button"; close.textContent = "Close";
     panel.append(title, instructions, report, copy, close);
     audio.after(button, live); root.append(panel);
+    function ranges(value) {
+      const result = [];
+      for (let i = 0; i < (value?.length ?? 0); i++) result.push([value.start(i), value.end(i)]);
+      return result;
+    }
     function state(player) {
-      const buffered = [];
-      for (let i = 0; i < (player.buffered?.length ?? 0); i++) buffered.push([player.buffered.start(i), player.buffered.end(i)]);
-      return { player: players.indexOf(player), active: player === audio, file: player.getAttribute("src"),
+      return { player: players.indexOf(player), active: player === audio, file: player.getAttribute("src"), currentSrc: player.currentSrc,
         time: player.currentTime, duration: Number.isFinite(player.duration) ? player.duration : null,
-        paused: player.paused, ended: player.ended, readyState: player.readyState,
-        networkState: player.networkState, buffered,
+        paused: player.paused, ended: player.ended, seeking: player.seeking, readyState: player.readyState,
+        networkState: player.networkState, playbackRate: player.playbackRate, muted: player.muted, volume: player.volume,
+        buffered: ranges(player.buffered), seekable: ranges(player.seekable), played: ranges(player.played),
+        decodedBytes: player.webkitAudioDecodedByteCount ?? null, lastEvents: { ...lastEvents[players.indexOf(player)] },
         error: player.error ? { code: player.error.code, message: player.error.message } : null };
     }
+    function consistency() {
+      const expectedSource = selected >= 0 && calls[selected] ? clipSource(selected) : null;
+      const highlighted = buttons.map((button, index) => button.getAttribute("aria-current") === "true" ? index : -1).filter(index => index >= 0);
+      const issues = [];
+      if (expectedSource && audio.getAttribute("src") !== expectedSource) issues.push("Active player source differs from selected clip");
+      if (expectedSource && audio.currentSrc && audio.readyState > 0 && !audio.currentSrc.endsWith(expectedSource)) issues.push("Browser currentSrc differs from selected clip");
+      if (selected >= 0 && (highlighted.length !== 1 || highlighted[0] !== selected)) issues.push("Highlighted clip differs from selected clip");
+      if (autoplay.getAttribute("aria-pressed") !== String(auto)) issues.push("Autoplay button differs from internal autoplay state");
+      if (players.filter(player => !player.paused && !player.ended && player.getAttribute("src")).length > 1) issues.push("Both audio players are unpaused");
+      return { issues, expectedSource, highlighted, activePlayer: players.indexOf(audio),
+        nextPlayer: players.indexOf(nextAudio), permittedPlayer: players.indexOf(lastPlayingAudio), keepPlaybackPlayer };
+    }
+    function assessment(checks) {
+      if (checks.issues.length) return "Player state mismatch";
+      const attempt = playAttempts.findLast(item => item.token === playbackRequest);
+      if (expected && attempt?.outcome === "pending") return "Play promise still pending";
+      if (expected && attempt?.outcome === "resolved" && !audio.paused && audio.readyState >= 3 && audio.currentTime === 0 && Date.now() - lastProgress >= 10000) return "Play promise resolved, but browser playback clock never started";
+      return "See playback events and progress snapshots";
+    }
     function record(event, detail = {}) {
+      if (event === "play request") {
+        playAttempts.push({ token: detail.token, player: detail.player, source: detail.source,
+          requestedAt: new Date().toISOString(), requestedMs: Date.now(), outcome: "pending" });
+        const attempt = playAttempts.at(-1);
+        for (const name of ["loadstart", "loadedmetadata", "canplay"]) {
+          const event = lastEvents[detail.player][name];
+          if (event?.source === detail.source) attempt[`${name}BeforePlayMs`] = Date.now() - Date.parse(event.at);
+        }
+        if (playAttempts.length > 40) playAttempts.shift();
+      } else if (event === "play promise resolved" || event === "play promise rejected") {
+        const attempt = playAttempts.findLast(item => item.token === detail.token);
+        if (attempt) Object.assign(attempt, { outcome: event.endsWith("resolved") ? "resolved" : "rejected", stale: detail.stale,
+          settledAt: new Date().toISOString(), settledAfterMs: Date.now() - attempt.requestedMs, errorName: detail.name, errorMessage: detail.message });
+      }
       history.push({ at: new Date().toISOString(), event, selected: selected + 1, ...detail });
       if (history.length > 160) history.shift();
     }
     function show(reason) {
+      const checks = consistency();
       title.textContent = `Playback diagnostic: ${reason}`;
-      report.value = JSON.stringify({ version: "radio-staging-debug-2", reason, at: new Date().toISOString(),
+      report.value = JSON.stringify({ version: "radio-staging-debug-3", reason, at: new Date().toISOString(),
         clip: current.textContent, selected: selected + 1, total: calls.length,
         autoplay: auto, expectedPlayback: expected, requestedAt, lastPlayingAt, playbackRequest, visibility: document.visibilityState,
         userAgent: window.navigator.userAgent, idleSeconds: (Date.now() - lastProgress) / 1000,
+        consistency: checks, assessment: assessment(checks), playAttempts: playAttempts.map(item => ({ ...item })),
         players: players.map(state), history: [...history] }, null, 2);
       panel.hidden = false;
     }
@@ -104,12 +145,16 @@
     for (const player of players) {
       for (const event of ["loadstart", "loadedmetadata", "canplay", "play", "playing", "waiting", "stalled", "suspend", "pause", "ended", "error", "abort", "emptied", "seeking", "seeked"]) {
         player.addEventListener(event, () => {
+          lastEvents[players.indexOf(player)][event] = { at: new Date().toISOString(), time: player.currentTime, source: player.getAttribute("src"), observedRequestToken: playbackRequest };
           if (event === "playing" && player === audio) lastPlayingAt = new Date().toISOString();
           record(event, state(player));
           updateLive();
           if (event === "error") problem(player === audio ? "Active media error" : "Preload media error", state(player));
         });
       }
+      player.addEventListener("timeupdate", () => {
+        lastEvents[players.indexOf(player)].timeupdate = { at: new Date().toISOString(), time: player.currentTime, source: player.getAttribute("src"), observedRequestToken: playbackRequest };
+      });
     }
     window.addEventListener("error", event => problem("JavaScript error", { message: event.message, file: event.filename, line: event.lineno, stack: event.error?.stack }));
     window.addEventListener("unhandledrejection", event => problem("Unhandled promise rejection", { message: String(event.reason), stack: event.reason?.stack }));
@@ -126,7 +171,7 @@
       if (selected >= 0 && Date.now() - lastHeartbeat >= 5000) {
         lastHeartbeat = Date.now();
         record("progress heartbeat", { autoplay: auto, expectedPlayback: expected, visibility: document.visibilityState,
-          secondsWithoutProgress: (Date.now() - lastProgress) / 1000, playbackRequest, players: players.map(state) });
+          secondsWithoutProgress: (Date.now() - lastProgress) / 1000, playbackRequest, consistency: consistency(), players: players.map(state) });
       }
       if (!expected || selected < 0 || document.visibilityState === "hidden" || Date.now() - lastProgress < 10000) return;
       if (audio.ended) {
@@ -192,7 +237,7 @@
     diagnostics?.record("play request", { player: players.indexOf(player), source, token });
     try {
       await player.play();
-      diagnostics?.record("play promise resolved", { player: players.indexOf(player), source, token });
+      diagnostics?.record("play promise resolved", { player: players.indexOf(player), source, token, stale: token !== playbackRequest || player !== audio || source !== player.getAttribute("src") });
     } catch (error) {
       const stale = token !== playbackRequest || player !== audio || source !== player.getAttribute("src");
       diagnostics?.record("play promise rejected", { name: error.name, message: error.message, player: players.indexOf(player), source, token, stale });

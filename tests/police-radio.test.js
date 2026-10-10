@@ -57,6 +57,7 @@ async function playerFixture(fixtureCalls, hostname) {
   const elements = new Map(["archive", "month", "day", "audio", "play", "seek", "autoplay",
     "clips", "clips-section", "status", "current", "player-message", "elapsed", "duration"]
     .map(name => [`radio-${name}`, new Element(name === "audio" ? "audio" : "div")]));
+  elements.get("radio-autoplay").setAttribute("aria-pressed", "false");
   const players = [elements.get("radio-audio")];
   const dates = ["2026-09-11", "2026-09-10"];
   let now = Date.now();
@@ -300,7 +301,7 @@ test("staging records progress and replay attempts before a silent stall", async
   f.select(0); f.finish(f.active()); f.active().currentTime = 0;
   f.advance(5000); f.advance(5000);
   const r = f.diagnostic();
-  assert.equal(r.version, "radio-staging-debug-2");
+  assert.equal(r.version, "radio-staging-debug-3");
   assert.ok(r.requestedAt); assert.ok(r.lastPlayingAt);
   assert.equal(r.reason, "Playback time stopped progressing for 10 seconds");
   const beats = r.history.filter(x => x.event === "progress heartbeat");
@@ -314,4 +315,37 @@ test("staging records progress and replay attempts before a silent stall", async
   assert.ok(r.history.some(x => x.event === "Player cleared by application"));
   assert.equal(r.history.some(x => x.event === "User pressed Pause"), false);
   assert.match(f.live().textContent, /No progress.*no progress 10s.*autoplay on/);
+});
+
+
+test("staging separates a pending play promise from a resolved promise with no progress", async () => {
+  const f = await playerFixture(undefined, "staging-afpd-tracker.ericseamonsdeveloper.workers.dev");
+  f.players[0].play = () => new Promise(() => {});
+  f.select(0); f.advance(11000);
+  assert.equal(f.diagnostic().assessment, "Play promise still pending");
+  assert.deepEqual(f.diagnostic().consistency.issues, []);
+  f.players[0].play = Element.prototype.play; f.select(0);
+  await new Promise(resolve => setImmediate(resolve));
+  f.advance(11000);
+  const r = f.diagnostic();
+  assert.equal(r.assessment, "Play promise resolved, but browser playback clock never started");
+  assert.equal(r.playAttempts.at(-1).outcome, "resolved");
+  assert.ok(r.players[0].lastEvents.playing);
+  assert.equal(r.playAttempts.at(-1).stale, false);
+});
+
+test("staging flags source mismatch and identifies stale async completions", async () => {
+  const f = await playerFixture(undefined, "staging-afpd-tracker.ericseamonsdeveloper.workers.dev");
+  let resolve;
+  f.players[0].play = () => new Promise(done => { resolve = done; });
+  f.select(0); f.players[0].play = Element.prototype.play; f.select(1);
+  resolve(); await new Promise(done => setImmediate(done));
+  f.active().currentSrc = "https://example.test/wrong-file.m4a";
+  f.active().src = "wrong-file.m4a"; f.advance(11000);
+  const r = f.diagnostic();
+  assert.equal(r.assessment, "Player state mismatch");
+  assert.ok(r.consistency.issues.includes("Active player source differs from selected clip"));
+  assert.ok(r.consistency.issues.includes("Browser currentSrc differs from selected clip"));
+  assert.equal(r.playAttempts[0].stale, true);
+  assert.equal(r.playAttempts[1].stale, false);
 });
