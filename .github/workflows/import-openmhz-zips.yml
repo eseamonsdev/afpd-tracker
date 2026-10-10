@@ -1,0 +1,86 @@
+name: Import OpenMHz ZIPs
+
+on:
+  push:
+    branches: [staging, main, setup-openmhz-zip-import]
+    paths:
+      - 'records-pending-review/openmhz-afpd-car-to-car-*.zip'
+      - '.github/workflows/import-openmhz-zips.yml'
+      - 'scripts/import_openmhz_zips.py'
+  workflow_dispatch:
+  schedule:
+    - cron: '0 7 * * *'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: openmhz-zip-import
+  cancel-in-progress: false
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Always consume the latest staging uploads. The setup branch bootstraps
+          # this permanent workflow and is included in its first import PR.
+          ref: ${{ github.ref_name == 'setup-openmhz-zip-import' && 'setup-openmhz-zip-import' || 'staging' }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Validate and extract pending ZIPs
+        id: import
+        run: |
+          python3 -m unittest discover -s tests -p 'test_openmhz_import.py'
+          python3 scripts/import_openmhz_zips.py --summary "$RUNNER_TEMP/openmhz-summary.json"
+          if git diff --quiet && test -z "$(git ls-files --others --exclude-standard public/records/openmhz)"; then
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+          else
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Verify archive and build site
+        if: steps.import.outputs.changed == 'true'
+        run: |
+          npm ci
+          node --test tests/police-radio.test.js
+          npm run build
+      - name: Publish one import branch and pull request
+        if: steps.import.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          source_sha=$(git rev-parse HEAD)
+          branch="import-openmhz-${source_sha:0:12}"
+          git switch -c "$branch"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- public/records/openmhz records-pending-review/openmhz-afpd-car-to-car-*.zip
+          git commit -m 'Import pending OpenMHz day ZIPs'
+          # A rerun of the same source commit reuses its existing branch and PR.
+          if ! git ls-remote --exit-code --heads origin "$branch" >/dev/null; then
+            git push origin "HEAD:$branch"
+          fi
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          rows = json.loads((Path(os.environ['RUNNER_TEMP']) / 'openmhz-summary.json').read_text())
+          body = 'Import uploaded OpenMHz ZIPs into the existing day folders, preserve audio bytes and metadata, and rebuild the radio index. Remove processed ZIPs after validation.\n\n'
+          body += '\n'.join(f"- {r['date']}: {r['audio_files']} audio files ({r['source_calls']} source calls)." for r in rows)
+          body += '\n\nValidation: importer tests, police radio tests, and production site build passed. The permanent importer workflow remains installed.\n'
+          (Path(os.environ['RUNNER_TEMP']) / 'openmhz-pr-body.md').write_text(body)
+          PY
+          pr=$(gh pr list --repo "$GITHUB_REPOSITORY" --head "$branch" --base staging --state all --json url --jq '.[0].url // empty')
+          if test -z "$pr"; then
+            if ! pr=$(gh pr create --repo "$GITHUB_REPOSITORY" --head "$branch" --base staging --title 'Import pending OpenMHz recordings' --body-file "$RUNNER_TEMP/openmhz-pr-body.md"); then
+              echo "Import branch is ready: https://github.com/$GITHUB_REPOSITORY/compare/staging...$branch" >> "$GITHUB_STEP_SUMMARY"
+              echo 'Enable Settings → Actions → General → Allow GitHub Actions to create and approve pull requests, then rerun this workflow.' >> "$GITHUB_STEP_SUMMARY"
+              exit 1
+            fi
+          fi
+          echo "Pull request: $pr" >> "$GITHUB_STEP_SUMMARY"
