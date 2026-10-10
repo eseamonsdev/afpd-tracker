@@ -142,6 +142,7 @@
   const clipSource = (index) => `${base}${encodeURIComponent(folder)}/${encodeURIComponent(calls[index].original_filename)}`;
 
   function clearAudio(player) {
+    diagnostics?.record("Player cleared by application", { player: players.indexOf(player), active: player === audio, source: player.getAttribute("src") });
     player.pause();
     if (player.hasAttribute("src")) {
       player.removeAttribute("src");
@@ -220,6 +221,7 @@
     if (!calls[index]) return;
     if (buttons[selected]) buttons[selected].removeAttribute("aria-current");
     playbackRequest++;
+    diagnostics?.record("Clip switch pauses previous audio", { player: players.indexOf(audio), source: audio.getAttribute("src"), nextIndex: index });
     audio.pause();
     const source = clipSource(index);
     const prepared = !keepPlaybackPlayer && nextAudio.getAttribute("src") === source && !nextAudio.error;
@@ -281,7 +283,10 @@
         duration.textContent = `${call.displayed_seconds} sec`;
         button.setAttribute("aria-label", `Play ${time.textContent}, ${call.displayed_seconds} seconds`);
         button.append(time, duration);
-        button.addEventListener("click", () => chooseClip(index));
+        button.addEventListener("click", () => {
+          diagnostics?.record("User selected clip", { index, filename: call.original_filename });
+          chooseClip(index);
+        });
         row.append(button); fragment.append(row);
         return button;
       });
@@ -353,7 +358,10 @@
       play.textContent = "Play"; play.setAttribute("aria-label", "Play selected clip");
     });
     onActive("ended", () => {
-      if (audio.ended && auto && selected >= 0 && selected + 1 < calls.length) chooseClip(selected + 1);
+      if (audio.ended && auto && selected >= 0 && selected + 1 < calls.length) {
+        diagnostics?.record("Autoplay advancing", { from: selected, to: selected + 1 });
+        chooseClip(selected + 1);
+      }
       else if (audio.ended) diagnostics?.expectPlaying(false);
     });
     onActive("error", () => {

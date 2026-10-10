@@ -308,5 +308,10 @@ test("staging records progress and replay attempts before a silent stall", async
   assert.equal(beats.at(-1).secondsWithoutProgress, 10);
   assert.equal(beats.at(-1).autoplay, true);
   assert.ok(r.history.filter(x => x.event === "clip selected" && x.index === 0).length >= 2);
+  assert.ok(r.history.filter(x => x.event === "User selected clip" && x.index === 0).length >= 2);
+  assert.ok(r.history.some(x => x.event === "Autoplay advancing"));
+  assert.ok(r.history.some(x => x.event === "Clip switch pauses previous audio"));
+  assert.ok(r.history.some(x => x.event === "Player cleared by application"));
+  assert.equal(r.history.some(x => x.event === "User pressed Pause"), false);
   assert.match(f.live().textContent, /No progress.*no progress 10s.*autoplay on/);
 });
