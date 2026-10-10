@@ -52,7 +52,8 @@
     report.style.cssText = "display:block;width:100%;height:180px;font:12px monospace;color:#111;background:#fff";
     const copy = document.createElement("button"); copy.type = "button"; copy.textContent = "Copy report";
     const close = document.createElement("button"); close.type = "button"; close.textContent = "Close";
-    panel.append(title, instructions, report, copy, close); root.append(button, panel);
+    panel.append(title, instructions, report, copy, close);
+    audio.after(button); root.append(panel);
     function state(player) {
       const buffered = [];
       for (let i = 0; i < (player.buffered?.length ?? 0); i++) buffered.push([player.buffered.start(i), player.buffered.end(i)]);
