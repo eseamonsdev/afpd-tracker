@@ -134,7 +134,7 @@
       const idle = Math.max(0, (Date.now() - lastProgress) / 1000);
       const phase = selected < 0 ? "Ready" : audio.error ? "Error" : audio.ended ? "Ended" :
         audio.paused ? "Paused" : audio.readyState < 3 ? "Loading" : idle >= 5 ? "No progress" : "Playing";
-      live.textContent = `Diagnostics: ${phase} · ${current.textContent} · position ${audio.currentTime.toFixed(2)}s · no progress ${idle.toFixed(0)}s · autoplay ${auto ? "on" : "off"}`;
+      live.textContent = `Diagnostics: ${phase} · ${current.textContent} · position ${audio.currentTime.toFixed(2)}s · last progress: ${idle.toFixed(0)}s ago · autoplay ${auto ? "on" : "off"}`;
     }
     button.addEventListener("click", () => show("Manual report"));
     close.addEventListener("click", () => { panel.hidden = true; });
