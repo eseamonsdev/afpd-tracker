@@ -304,8 +304,9 @@ test("staging prefetches the September 18 problem sequence on one player and sur
   assert.ok(f.revokedUrls.length > 0, "consumed Blob URLs should be released");
 });
 
-test("staging falls back to the original clip URL when byte prefetching fails", async () => {
-  const f = await playerFixture(undefined, "staging-afpd-tracker.ericseamonsdeveloper.workers.dev");
+test("production uses one player and falls back to the original clip URL when byte prefetching fails", async () => {
+  const f = await playerFixture(undefined, "afpd-accountability.com");
+  assert.equal(f.players.length, 1, "production should use the tested single-player path");
   const player = f.players[0];
   f.failedAudio.add("/records/openmhz/2026-09-11/call-1.m4a");
   f.get("autoplay").click();

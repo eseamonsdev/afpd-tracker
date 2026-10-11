@@ -6,7 +6,10 @@
   const month = get("month"), day = get("day");
   // Staging experiment: one persistent playback element, without a standby
   // element or preloaded handoff. Keep production behavior during the trial.
-  const singlePlayer = typeof window !== "undefined" && /(^|-)afpd-tracker\.ericseamonsdeveloper\.workers\.dev$/.test(window.location.hostname);
+  const singlePlayer = typeof window !== "undefined" && (
+    /(^|-)afpd-tracker\.ericseamonsdeveloper\.workers\.dev$/.test(window.location.hostname) ||
+    /(^|\.)afpd-accountability\.com$/.test(window.location.hostname)
+  );
   let audio = get("audio"), nextAudio = singlePlayer ? null : document.createElement("audio");
   audio.preload = "auto";
   if (nextAudio) {
