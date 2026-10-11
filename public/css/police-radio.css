@@ -24,7 +24,9 @@
 .radio-clips:empty { display: none; }
 .radio-clips li + li { border-top: 1px solid var(--line); }
 .radio-clip { width: 100%; text-align: left; border: 0; padding: .85rem 1rem; background: transparent; color: var(--ink); cursor: pointer; font-variant-numeric: tabular-nums; min-height: 48px; }
-.radio-clip:hover { background: var(--page); }
+@media (hover: hover) and (pointer: fine) {
+  .radio-clip:hover { background: var(--page); }
+}
 .radio-clip[aria-current="true"] { background: #e8f0f8; color: var(--navy); box-shadow: inset 4px 0 var(--blue); font-weight: 650; }
 .radio-clip span:last-child { color: var(--muted); font-size: .9rem; }
 .radio-clip:focus-visible { outline-offset: -3px; }
