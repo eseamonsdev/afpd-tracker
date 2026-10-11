@@ -34,6 +34,7 @@
   let days = [], calls = [], buttons = [], selected = -1, folder = "";
   let auto = false, request = 0, playbackRequest = 0, controller;
   let lastPlayingAudio = null, keepPlaybackPlayer = false;
+  let prefetchedClip = null, prefetchController = null, activeObjectUrl = null;
 
   const clipSource = (index) => `${base}${encodeURIComponent(folder)}/${encodeURIComponent(calls[index].original_filename)}`;
 
@@ -46,8 +47,49 @@
     }
   }
 
+  function clearPrefetchedClip() {
+    prefetchController?.abort();
+    prefetchController = null;
+    if (prefetchedClip?.url) URL.revokeObjectURL(prefetchedClip.url);
+    prefetchedClip = null;
+  }
+
+  function clearActiveObjectUrl() {
+    if (activeObjectUrl) URL.revokeObjectURL(activeObjectUrl);
+    activeObjectUrl = null;
+  }
+
+  async function prefetchNextClip() {
+    if (!auto || selected < 0 || !calls[selected + 1]) {
+      clearPrefetchedClip();
+      return;
+    }
+    const index = selected + 1;
+    const source = clipSource(index);
+    if (prefetchedClip?.source === source) return;
+    clearPrefetchedClip();
+    const prefetch = new AbortController();
+    const entry = { index, source, url: null };
+    prefetchController = prefetch;
+    prefetchedClip = entry;
+    try {
+      const response = await fetch(source, { signal: prefetch.signal });
+      if (!response.ok) throw new Error("Unable to preload clip");
+      const blob = await response.blob();
+      if (prefetch.signal.aborted || prefetchedClip !== entry || !auto || selected + 1 !== index || clipSource(index) !== source) return;
+      entry.url = URL.createObjectURL(blob);
+      prefetchController = null;
+    } catch (error) {
+      if (prefetchedClip === entry) prefetchedClip = null;
+      if (prefetchController === prefetch) prefetchController = null;
+    }
+  }
+
   function prepareNextClip() {
-    if (singlePlayer) return;
+    if (singlePlayer) {
+      prefetchNextClip();
+      return;
+    }
     if (!auto || selected < 0 || !calls[selected + 1]) {
       clearAudio(nextAudio);
       return;
@@ -67,6 +109,8 @@
   }
 
   function resetPlayer() {
+    clearPrefetchedClip();
+    clearActiveObjectUrl();
     selected = -1;
     playbackRequest++;
     players.forEach(clearAudio);
@@ -113,9 +157,17 @@
     playbackRequest++;
     audio.pause();
     const source = clipSource(index);
-    const prepared = !singlePlayer && !keepPlaybackPlayer && nextAudio.getAttribute("src") === source && !nextAudio.error;
-    if (prepared) [audio, nextAudio] = [nextAudio, audio];
+    const prefetched = singlePlayer && prefetchedClip?.source === source && prefetchedClip.url ? prefetchedClip : null;
+    const prepared = Boolean(prefetched) || (!singlePlayer && !keepPlaybackPlayer && nextAudio.getAttribute("src") === source && !nextAudio.error);
+    if (prepared && !singlePlayer) [audio, nextAudio] = [nextAudio, audio];
     clearAudio(nextAudio);
+    if (prefetched) {
+      prefetchedClip = null;
+      prefetchController = null;
+    } else {
+      clearPrefetchedClip();
+    }
+    clearActiveObjectUrl();
     selected = index;
     const call = calls[index];
     buttons[index].setAttribute("aria-current", "true");
@@ -127,7 +179,11 @@
     get("elapsed").textContent = "0:00";
     get("duration").textContent = durationText(call.displayed_seconds);
     play.disabled = false;
-    if (!prepared) {
+    if (prefetched) {
+      audio.src = prefetched.url;
+      activeObjectUrl = prefetched.url;
+      audio.load();
+    } else if (!prepared) {
       audio.src = source;
       audio.load();
     }

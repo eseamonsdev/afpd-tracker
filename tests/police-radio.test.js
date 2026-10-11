@@ -53,13 +53,15 @@ class Element {
   add(option) { this.options.push(option); if (this.options.length === 1) this.value = option.value; }
 }
 
-async function playerFixture(fixtureCalls, hostname) {
+async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11") {
   const elements = new Map(["archive", "month", "day", "audio", "play", "seek", "autoplay",
     "clips", "clips-section", "status", "current", "player-message", "elapsed", "duration"]
     .map(name => [`radio-${name}`, new Element(name === "audio" ? "audio" : "div")]));
   elements.get("radio-autoplay").setAttribute("aria-pressed", "false");
   const players = [elements.get("radio-audio")];
-  const dates = ["2026-09-11", "2026-09-10"];
+  const dates = [fixtureDate, "2026-09-10"];
+  const fetchedAudio = [], revokedUrls = [], objectSources = new Map(), failedAudio = new Set();
+  let objectNumber = 0;
   const window = hostname ? { location: { hostname } } : undefined;
   const document = {
     getElementById: id => elements.get(id),
@@ -72,19 +74,36 @@ async function playerFixture(fixtureCalls, hostname) {
   };
   vm.runInNewContext(source, {
     document, window, Intl, Date, AbortController,
+    URL: {
+      createObjectURL(blob) {
+        const url = `blob:test-${++objectNumber}`;
+        objectSources.set(url, blob.source);
+        return url;
+      },
+      revokeObjectURL(url) { revokedUrls.push(url); }
+    },
     Option: class { constructor(text, value) { this.text = text; this.value = value; } },
-    fetch: async url => ({ ok: true, json: async () => url.endsWith("index.json")
-      ? { days: dates.map(date => ({ date, folder: date, count: fixtureCalls?.length ?? 4 })) }
-      : { date: dates.find(date => url.includes(date)), calls: fixtureCalls ?? Array.from({ length: 4 }, (_, i) => ({
-        epoch: 1789100000 + i * 10, displayed_seconds: 5, original_filename: `call-${i}.m4a`
-      })) } })
+    fetch: async (url) => {
+      if (url.endsWith(".m4a")) {
+        fetchedAudio.push(url);
+        if (failedAudio.has(url)) return { ok: false };
+        return { ok: true, blob: async () => ({ source: url }) };
+      }
+      return { ok: true, json: async () => url.endsWith("index.json")
+        ? { days: dates.map(date => ({ date, folder: date, count: fixtureCalls?.length ?? 4 })) }
+        : { date: dates.find(date => url.includes(date)), calls: fixtureCalls ?? Array.from({ length: 4 }, (_, i) => ({
+          epoch: 1789100000 + i * 10, displayed_seconds: 5, original_filename: `call-${i}.m4a`
+        })) } };
+    }
   });
   await new Promise(resolve => setImmediate(resolve));
   const get = name => elements.get(`radio-${name}`);
   const select = i => get("clips").children[i].children[0].click();
   const active = () => players.find(player => !player.paused);
   const finish = player => { player.ended = true; player.paused = true; player.emit("ended"); };
-  return { get, select, players, active, finish };
+  return { get, select, players, active, finish, fetchedAudio, revokedUrls, failedAudio,
+    settle: () => new Promise(resolve => setImmediate(resolve)),
+    sourceFor: player => objectSources.get(player.src) ?? player.src };
 }
 
 test("autoplay hands off a prepared clip without reloading it and immediately prepares the following clip", async () => {
@@ -251,4 +270,49 @@ test("staging uses one element for autoplay, clip jumps, pause, and day reset", 
   f.select(0);
   assert.equal(f.active(), player);
   assert.match(player.src, /2026-09-10\/call-0\.m4a$/);
+});
+
+test("staging prefetches the September 18 problem sequence on one player and survives a backward jump", async () => {
+  const manifest = JSON.parse(readFileSync(new URL("../public/records/openmhz/openmhz-afpd-car-to-car-2026-09-18/calls.json", import.meta.url), "utf8"));
+  const calls = manifest.calls.sort((a, b) => a.epoch - b.epoch).slice(0, 15);
+  const f = await playerFixture(calls, "staging-afpd-tracker.ericseamonsdeveloper.workers.dev", "2026-09-18");
+  const player = f.players[0];
+  f.get("autoplay").click();
+  f.select(3);
+  await f.settle();
+  for (let index = 4; index <= 7; index++) {
+    assert.ok(f.fetchedAudio.at(-1).endsWith(calls[index].original_filename));
+    f.finish(player);
+    assert.equal(f.active(), player);
+    assert.ok(f.sourceFor(player).endsWith(calls[index].original_filename));
+    await f.settle();
+  }
+  assert.match(f.get("current").textContent, /5:08:32 AM$/);
+
+  f.select(5);
+  assert.equal(f.active(), player);
+  assert.ok(f.sourceFor(player).endsWith(calls[5].original_filename));
+  assert.match(f.get("current").textContent, /5:08:10 AM$/);
+  await f.settle();
+  f.finish(player);
+  assert.match(f.get("current").textContent, /5:08:26 AM$/);
+  await f.settle();
+  f.finish(player);
+  assert.match(f.get("current").textContent, /5:08:32 AM$/);
+  assert.equal(f.players.length, 1);
+  assert.equal(f.get("player-message").textContent, "");
+  assert.ok(f.revokedUrls.length > 0, "consumed Blob URLs should be released");
+});
+
+test("staging falls back to the original clip URL when byte prefetching fails", async () => {
+  const f = await playerFixture(undefined, "staging-afpd-tracker.ericseamonsdeveloper.workers.dev");
+  const player = f.players[0];
+  f.failedAudio.add("/records/openmhz/2026-09-11/call-1.m4a");
+  f.get("autoplay").click();
+  f.select(0);
+  await f.settle();
+  f.finish(player);
+  assert.equal(f.active(), player);
+  assert.match(player.src, /2026-09-11\/call-1\.m4a$/);
+  assert.equal(f.get("player-message").textContent, "");
 });
