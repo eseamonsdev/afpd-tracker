@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate and import flat OpenMHz day ZIPs without changing audio bytes."""
+"""Validate and import OpenMHz day ZIPs without changing audio bytes."""
 import argparse
 import hashlib
 import json
@@ -13,9 +13,10 @@ from datetime import date, datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-ZIP_NAME = re.compile(r"openmhz-afpd-car-to-car-(\d{4}-\d{2}-\d{2})\.zip")
-AUDIO_NAME = re.compile(r"dcfems-6001-(\d+)\.m4a")
+ZIP_NAME = re.compile(r"openmhz-afpd-(car-to-car|law-2)-(\d{4}-\d{2}-\d{2})\.zip")
+TALKGROUPS = {"car-to-car": 6001, "law-2": 5922}
 METADATA = {"calls.json", "rows.json", "download-checkpoint.json", "validation.json", "README.txt", "STATUS.txt"}
+OPTIONAL_METADATA = re.compile(r"[\w.-]+\.(?:json|txt)")
 MAX_BYTES = 1024 * 1024 * 1024
 
 
@@ -24,37 +25,44 @@ def validate_zip(archive, destination):
     match = ZIP_NAME.fullmatch(archive.name)
     if not match:
         raise ValueError(f"Unexpected ZIP name: {archive.name}")
-    day = match[1]
+    label, day = match.groups()
+    talkgroup = TALKGROUPS[label]
+    audio_name = re.compile(fr"dcfems-{talkgroup}-(\d+)\.m4a")
     date.fromisoformat(day)
     with zipfile.ZipFile(archive) as zipped:
         entries = zipped.infolist()
-        names = [item.filename for item in entries]
+        prefix = f"{archive.stem}/"
+        nested = all(item.filename.startswith(prefix) for item in entries)
+        names = [item.filename[len(prefix):] if nested else item.filename for item in entries]
         if len(names) != len(set(names)):
             raise ValueError(f"Duplicate ZIP members: {archive.name}")
         if sum(item.file_size for item in entries) > MAX_BYTES:
             raise ValueError(f"ZIP exceeds 1 GiB: {archive.name}")
-        for item in entries:
-            if (item.filename not in METADATA and not AUDIO_NAME.fullmatch(item.filename)) or stat.S_ISLNK(item.external_attr >> 16):
+        for item, name in zip(entries, names):
+            if (not name or "/" in name or name in {".", ".."}
+                    or (name not in METADATA and not OPTIONAL_METADATA.fullmatch(name)
+                        and not audio_name.fullmatch(name))
+                    or stat.S_ISLNK(item.external_attr >> 16)):
                 raise ValueError(f"Unsafe or unsupported ZIP member: {item.filename}")
         if not METADATA.issubset(names):
             raise ValueError(f"Missing metadata: {archive.name}")
-        files = {name: zipped.read(name) for name in names}
+        files = {name: zipped.read(item) for item, name in zip(entries, names)}
     data = json.loads(files["calls.json"])
     calls = data.get("calls")
     if (data.get("date") != day or data.get("timezone") != "America/Denver"
-            or data.get("system") != "dcfems" or data.get("talkgroup") != 6001
+            or data.get("system") != "dcfems" or data.get("talkgroup") != talkgroup
             or not isinstance(calls, list) or not calls or data.get("count") != len(calls)):
         raise ValueError(f"Invalid manifest: {archive.name}")
     unique, duplicates, seen_ids = {}, [], set()
     for call in calls:
         filename = call.get("original_filename", "")
-        match = AUDIO_NAME.fullmatch(filename)
+        match = audio_name.fullmatch(filename)
         epoch = call.get("epoch")
         seconds = call.get("displayed_seconds")
         if (not match or filename not in files or not isinstance(epoch, (int, float))
                 or not math.isfinite(epoch) or int(match[1]) != epoch
                 or not isinstance(seconds, (int, float)) or not math.isfinite(seconds) or seconds < 0
-                or call.get("talkgroup") != 6001 or not call.get("id") or call["id"] in seen_ids):
+                or call.get("talkgroup") != talkgroup or not call.get("id") or call["id"] in seen_ids):
             raise ValueError(f"Invalid call: {filename}")
         seen_ids.add(call["id"])
         if datetime.fromtimestamp(epoch, ZoneInfo("America/Denver")).date().isoformat() != day:
@@ -71,7 +79,7 @@ def validate_zip(archive, destination):
             duplicates.append(call)
         else:
             unique[filename] = call
-    if {name for name in files if AUDIO_NAME.fullmatch(name)} != set(unique):
+    if {name for name in files if audio_name.fullmatch(name)} != set(unique):
         raise ValueError(f"Unreferenced audio: {archive.name}")
     if duplicates:
         data["source_call_count"] = len(calls)
@@ -90,7 +98,10 @@ def validate_zip(archive, destination):
 def import_archives(root, summary):
     pending = root / "records-pending-review"
     target = root / "public/records/openmhz"
-    archives = sorted(p for p in pending.glob("openmhz-afpd-car-to-car-*.zip"))
+    archives = sorted(
+        [*pending.glob("openmhz-afpd-car-to-car-*.zip"),
+         *pending.glob("openmhz-afpd-law-2-*.zip")]
+    )
     # Validate the entire batch before any extraction or source deletion.
     validated = [(p, *validate_zip(p, target / p.stem)) for p in archives]
     results = []
@@ -99,7 +110,10 @@ def import_archives(root, summary):
         destination.mkdir(parents=True, exist_ok=True)
         for name, content in files.items():
             (destination / name).write_bytes(content)
-        results.append({"date": archive.stem[-10:], "audio_files": count, "source_calls": source_count})
+        label = ZIP_NAME.fullmatch(archive.name)[1]
+        results.append({"date": archive.stem[-10:], "label": label,
+                        "talkgroup": TALKGROUPS[label], "audio_files": count,
+                        "source_calls": source_count})
     if results:
         subprocess.run(["node", "--input-type=module", "-e", "import { buildRadioIndex } from './lib/build-radio-index.js'; buildRadioIndex();"], cwd=root, check=True)
         for archive, *_ in validated:

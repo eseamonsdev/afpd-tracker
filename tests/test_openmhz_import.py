@@ -77,6 +77,22 @@ class ImportTests(unittest.TestCase):
         self.assertEqual(normalized["duplicate_source_calls"][0]["id"], "alternate")
         self.assertEqual(normalized["source_call_count"], 2)
 
+    def test_law_2_archive_with_date_folder_is_supported(self):
+        self.archive = self.root / "openmhz-afpd-law-2-2026-09-15.zip"
+        self.filename = "dcfems-5922-1789453541.m4a"
+        self.call.update({"talkgroup": 5922, "original_filename": self.filename})
+        self.data.update({"talkgroup": 5922, "calls": [self.call]})
+        prefix = f"{self.archive.stem}/"
+        with zipfile.ZipFile(self.archive, "w") as z:
+            for name in importer.METADATA:
+                z.writestr(prefix + name, json.dumps(self.data) if name == "calls.json" else "{}")
+            z.writestr(prefix + "source-inventory.json", "{}")
+            z.writestr(prefix + self.filename, self.audio)
+        files, count, source_count = self.validate()
+        self.assertEqual((count, source_count), (1, 1))
+        self.assertIn("source-inventory.json", files)
+        self.assertEqual(files[self.filename], self.audio)
+
     def test_batch_validation_does_not_extract_or_delete_on_error(self):
         pending = self.root / "records-pending-review"
         pending.mkdir()

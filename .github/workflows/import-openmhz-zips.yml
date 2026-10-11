@@ -5,6 +5,7 @@ on:
     branches: [staging, main, setup-openmhz-zip-import]
     paths:
       - 'records-pending-review/openmhz-afpd-car-to-car-*.zip'
+      - 'records-pending-review/openmhz-afpd-law-2-*.zip'
       - '.github/workflows/import-openmhz-zips.yml'
       - 'scripts/import_openmhz_zips.py'
   workflow_dispatch:
@@ -60,7 +61,7 @@ jobs:
           git switch -c "$branch"
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- public/records/openmhz records-pending-review/openmhz-afpd-car-to-car-*.zip
+          git add -A -- public/records/openmhz records-pending-review
           git commit -m 'Import pending OpenMHz day ZIPs'
           # A rerun of the same source commit reuses its existing branch and PR.
           if ! git ls-remote --exit-code --heads origin "$branch" >/dev/null; then
@@ -71,7 +72,7 @@ jobs:
           from pathlib import Path
           rows = json.loads((Path(os.environ['RUNNER_TEMP']) / 'openmhz-summary.json').read_text())
           body = 'Import uploaded OpenMHz ZIPs into the existing day folders, preserve audio bytes and metadata, and rebuild the radio index. Remove processed ZIPs after validation.\n\n'
-          body += '\n'.join(f"- {r['date']}: {r['audio_files']} audio files ({r['source_calls']} source calls)." for r in rows)
+          body += '\n'.join(f"- {r['date']} — {r['label']} ({r['talkgroup']}): {r['audio_files']} audio files ({r['source_calls']} source calls)." for r in rows)
           body += '\n\nValidation: importer tests, police radio tests, and production site build passed. The permanent importer workflow remains installed.\n'
           (Path(os.environ['RUNNER_TEMP']) / 'openmhz-pr-body.md').write_text(body)
           PY

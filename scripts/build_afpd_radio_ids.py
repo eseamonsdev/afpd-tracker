@@ -29,7 +29,7 @@ def build(archive_dir, inventory):
             calls[(6001, call_id)] = ids
     data = json.loads(inventory.read_text())
     assert data["talkgroup"] == 6036
-    sources.append({"talkgroup": 6036, "path": "data/sources/openmhz/6036-inventory.json", "inventoried_at_utc": data["inventoried_at_utc"], "earliest_utc": data["earliest_utc"], "latest_utc": data["latest_utc"], "counts_by_mountain_date": data["counts_by_mountain_date"], "call_count": len(data["calls"])})
+    sources.append({"talkgroup": 6036, "path": "data/inventories/openmhz/6036-inventory.json", "inventoried_at_utc": data["inventoried_at_utc"], "earliest_utc": data["earliest_utc"], "latest_utc": data["latest_utc"], "counts_by_mountain_date": data["counts_by_mountain_date"], "call_count": len(data["calls"])})
     for call in data["calls"]:
         assert call["talkgroupNum"] == 6036
         calls[(6036, call["_id"])] = {str(s["src"]) for s in (call.get("srcList") or []) if s.get("src") is not None}
@@ -60,7 +60,7 @@ def build(archive_dir, inventory):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--archive-dir", type=Path, default=ROOT / "public/records/openmhz")
-    parser.add_argument("--inventory", type=Path, default=ROOT / "data/sources/openmhz/6036-inventory.json")
+    parser.add_argument("--inventory", type=Path, default=ROOT / "data/inventories/openmhz/6036-inventory.json")
     parser.add_argument("--output", type=Path, default=ROOT / "public/records/openmhz/afpd-radio-ids.json")
     args = parser.parse_args()
     result = build(args.archive_dir, args.inventory)
