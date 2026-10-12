@@ -1,0 +1,63 @@
+name: Download OpenMHz manifests
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [staging]
+    paths:
+      - 'records-pending-review/openmhz-manifests/*.json'
+      - 'scripts/download_openmhz_manifest.py'
+      - 'tests/test_openmhz_download.py'
+      - '.github/workflows/download-openmhz-manifests.yml'
+
+permissions:
+  contents: write
+
+# Share the archive writer lock with the existing importer.
+concurrency:
+  group: openmhz-zip-import
+  cancel-in-progress: false
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: staging
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify downloader safeguards
+        run: python3 -m unittest discover -s tests -p 'test_openmhz_download.py'
+      - name: Ensure audio validation tool is available
+        run: |
+          if ! command -v ffprobe >/dev/null; then
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
+      - name: Download and validate pending manifests
+        id: download
+        run: |
+          python3 scripts/download_openmhz_manifest.py --summary "$RUNNER_TEMP/openmhz-download-summary.json"
+          if git diff --quiet && test -z "$(git ls-files --others --exclude-standard public/records/openmhz)"; then
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+          else
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
+          fi
+          cat "$RUNNER_TEMP/openmhz-download-summary.json" >> "$GITHUB_STEP_SUMMARY"
+      - name: Build and verify archive
+        if: steps.download.outputs.changed == 'true'
+        run: |
+          npm ci
+          node --test tests/police-radio.test.js
+          npm run build
+      - name: Commit direct downloads to staging
+        if: steps.download.outputs.changed == 'true'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A -- public records-pending-review/openmhz-manifests
+          git commit -m 'Import browser-collected OpenMHz audio directly and rebuild site'
+          git push origin HEAD:staging

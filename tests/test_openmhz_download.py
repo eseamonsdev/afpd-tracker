@@ -1,0 +1,92 @@
+import importlib.util
+import io
+import json
+import tempfile
+import unittest
+from pathlib import Path
+from unittest.mock import Mock, patch
+
+spec = importlib.util.spec_from_file_location('downloader', Path(__file__).parents[1] / 'scripts/download_openmhz_manifest.py')
+module = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(module)
+
+
+def sample(epoch=1790755010, call_id='source-id'):
+    name = f'dcfems-6001-{epoch}.m4a'
+    return {'id': call_id, 'epoch': epoch, 'displayed_seconds': 3, 'talkgroup': 6001,
+            'original_filename': name, 'media_url': f'https://media2.openmhz.com/media/dcfems/6001/{name}'}
+
+
+def manifest(calls=None):
+    calls = [sample()] if calls is None else calls
+    return {'date': '2026-09-30', 'timezone': 'America/Denver', 'system': 'dcfems', 'talkgroup': 6001,
+            'coverage': 'partial', 'collected_through_utc': '2026-09-30T18:00:00Z',
+            'count': len(calls), 'calls': calls}
+
+
+class DownloadTest(unittest.TestCase):
+    def test_manifest_uses_mountain_date_and_cutoff(self):
+        self.assertEqual(module.validate_manifest(manifest()), '2026-09-30')
+        for field, value in [('epoch', 1790812800), ('talkgroup', 5922),
+                             ('media_url', 'https://example.com/audio.m4a'),
+                             ('original_filename', '../audio.m4a')]:
+            data = manifest()
+            data['calls'][0][field] = value
+            with self.subTest(field=field), self.assertRaises(ValueError):
+                module.validate_manifest(data)
+        data = manifest()
+        data['collected_through_utc'] = '2026-09-30T06:00:00Z'
+        with self.assertRaises(ValueError):
+            module.validate_manifest(data)
+        with self.assertRaises(ValueError):
+            module.validate_manifest(manifest([sample(), sample()]))
+        # 05:59 UTC is still the previous Mountain date.
+        with self.assertRaises(ValueError):
+            module.validate_manifest(manifest([sample(1790747940)]))
+
+    def test_pause_is_measured_from_previous_attempt_completion(self):
+        class Response(io.BytesIO):
+            headers = {'Content-Type': 'audio/mp4'}
+        downloader = module.Downloader()
+        downloader.opener = Mock()
+        downloader.opener.open.side_effect = [Response(b'0000ftyp0000'), Response(b'0000ftyp0000')]
+        with tempfile.TemporaryDirectory() as directory, patch.object(module.time, 'monotonic', side_effect=[10, 12, 20]), patch.object(module.time, 'sleep') as sleep:
+            downloader.download(sample()['media_url'], Path(directory) / 'one.m4a')
+            downloader.download(sample()['media_url'], Path(directory) / 'two.m4a')
+            sleep.assert_called_once_with(3)
+
+    def test_html_response_is_not_saved_as_audio(self):
+        class Response(io.BytesIO):
+            headers = {'Content-Type': 'text/html'}
+        downloader = module.Downloader()
+        downloader.opener = Mock()
+        downloader.opener.open.return_value = Response(b'<html>Denied</html>')
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / 'bad.m4a'
+            with self.assertRaises(ValueError):
+                downloader.download(sample()['media_url'], output)
+            self.assertFalse(output.exists())
+
+    def test_partial_day_extension_preserves_existing_calls(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            destination = root / 'public/records/openmhz/openmhz-afpd-car-to-car-2026-09-30'
+            destination.mkdir(parents=True)
+            original = sample()
+            (destination / original['original_filename']).write_bytes(b'0000ftyp0000')
+            (destination / 'calls.json').write_text(json.dumps(manifest()))
+            new = sample(1790755131, 'new-id')
+            source = root / '2026-09-30.json'
+            source.write_text(json.dumps(manifest([new])))
+            downloader = Mock()
+            downloader.download.side_effect = lambda url, dest: dest.write_bytes(b'0000ftyp0000')
+            with patch.object(module, 'inspect_audio', return_value={'sha256': 'test', 'size_bytes': 12, 'audio_duration_seconds': 3}):
+                result = module.import_manifest(root, source, downloader)
+            saved = json.loads((destination / 'calls.json').read_text())
+            self.assertEqual({c['id'] for c in saved['calls']}, {'source-id', 'new-id'})
+            self.assertEqual(result['downloaded'], 1)
+            self.assertEqual(saved['coverage'], 'partial')
+
+
+if __name__ == '__main__':
+    unittest.main()
