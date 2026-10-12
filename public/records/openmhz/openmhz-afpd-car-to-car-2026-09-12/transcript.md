@@ -86,7 +86,7 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **039 · 5:59:33 AM · 3 sec** — [Audio](dcfems-6001-1789214373.m4a) — [Chalks/Cox?] down here.
 
-**040 · 5:59:41 AM · 7 sec** — [Audio](dcfems-6001-1789214381.m4a) — They're transferring our girlfriend this morning to [Alta View?] Behavioral Unit.
+**040 · 5:59:41 AM · 7 sec** — [Audio](dcfems-6001-1789214381.m4a) — They're transferring our girlfriend this morning to Alta View Behavioral Unit.
 
 **041 · 5:59:49 AM · 2 sec** — [Audio](dcfems-6001-1789214389.m4a) — Does that make sense?
 
