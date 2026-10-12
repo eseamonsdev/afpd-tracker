@@ -13,6 +13,12 @@ const currencyFormatter = new Intl.NumberFormat("en-US", {
 });
 
 export default function (eleventyConfig) {
+  eleventyConfig.addFilter("formatArticleDate", (value) => {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(value || "")) return value || "";
+    return new Intl.DateTimeFormat("en-US", {
+      month: "long", day: "numeric", year: "numeric", timeZone: "UTC"
+    }).format(new Date(`${value}T00:00:00Z`));
+  });
   eleventyConfig.on("eleventy.before", () => buildRadioIndex());
   eleventyConfig.addWatchTarget("./public/records/openmhz/**/calls.json");
   eleventyConfig.addFilter("readCsv", readCsv);

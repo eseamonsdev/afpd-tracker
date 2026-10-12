@@ -16,7 +16,8 @@ permalink: "{{ policeEncounterPage.url }}"
 
 {% block pageAssets %}  <link rel="stylesheet" href="/css/document-tree.css">
   <link rel="stylesheet" href="/css/officer-page.css">
-  <link rel="stylesheet" href="/css/csv-table.css">
+  <link rel="stylesheet" href="/css/csv-table.css">{% for section in sections %}{% if section.display == "media-list" %}
+  <link rel="stylesheet" href="/css/media-coverage.css">{% endif %}{% endfor %}
 
   {% if sections | length %}
     <script src="/js/officer-tabs.js" defer></script>
@@ -72,13 +73,14 @@ permalink: "{{ policeEncounterPage.url }}"
               </div>
             {% endif %}
 
-            {% if section.contents and section.contents | length %}
+            {% if section.contents and section.contents | length %}{% if section.display == "media-list" %}
+              {% include "media-coverage.njk" %}{% else %}
               <ul
                 class="tree"
                 aria-label="{{ section.title | escape }}"
               >
                 {{ renderNodes(section.contents) }}
-              </ul>
+              </ul>{% endif %}
             {% endif %}
           </section>
         {% endfor %}

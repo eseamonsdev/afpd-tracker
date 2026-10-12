@@ -1,0 +1,17 @@
+<ul class="media-coverage-list" aria-label="{{ section.title | escape }}">
+  {% for article in section.contents %}
+    <li class="media-coverage-item">
+      <h3>
+        <a href="{{ article.url | escape }}" target="_blank" rel="noopener noreferrer">{{ article.label | escape }}</a>
+      </h3>
+      <p class="media-coverage-meta">
+        <span>{{ article.publisher | escape }}</span>
+        <span aria-hidden="true"> · </span>
+        <time datetime="{{ article.publishedDate | escape }}">{{ article.publishedDate | formatArticleDate | escape }}</time>
+      </p>
+      {% if article.description %}
+        <p class="media-coverage-description">{{ article.description | escape }}</p>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
