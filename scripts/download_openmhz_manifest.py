@@ -26,6 +26,33 @@ def write_json(path, data):
     path.write_text(json.dumps(data, indent=2) + '\n')
 
 
+def day_bounds(day):
+    start = datetime.combine(date.fromisoformat(day), day_time.min, MOUNTAIN)
+    return start, start + timedelta(days=1)
+
+
+def coverage_metadata(data, day):
+    coverage = data.get('coverage') or 'unknown'
+    if coverage not in ('complete', 'partial', 'unknown'):
+        raise ValueError('Invalid coverage status')
+    start, end = day_bounds(day)
+    value = data.get('collected_through_utc')
+    cutoff = datetime.fromisoformat(value.replace('Z', '+00:00')) if value else None
+    if cutoff is not None and (cutoff.tzinfo is None or not start <= cutoff <= end):
+        raise ValueError('Cutoff must include a timezone and be within the target day boundaries')
+    if coverage == 'complete':
+        if end > datetime.now(timezone.utc):
+            raise ValueError('Cannot mark an unfinished day complete')
+        if cutoff is not None and cutoff != end:
+            raise ValueError('Complete coverage must extend to the exclusive end of the day')
+        cutoff = end
+    elif coverage == 'partial' and (cutoff is None or cutoff == end):
+        raise ValueError('Partial coverage requires a cutoff within the target day')
+    if cutoff is not None and cutoff > datetime.now(timezone.utc) + timedelta(minutes=5):
+        raise ValueError('Cutoff cannot be in the future')
+    return coverage, cutoff
+
+
 def validate_call(call, day):
     epoch = call.get('epoch')
     seconds = call.get('displayed_seconds')
@@ -51,21 +78,18 @@ def validate_manifest(data):
     if not re.fullmatch(r'\d{4}-\d{2}-\d{2}', day):
         raise ValueError('Invalid date')
     date.fromisoformat(day)
-    cutoff = datetime.fromisoformat(data.get('collected_through_utc', '').replace('Z', '+00:00'))
-    if cutoff.tzinfo is None or cutoff.astimezone(MOUNTAIN).date().isoformat() != day:
-        raise ValueError('Cutoff must include a timezone and fall on the target Mountain date')
-    if cutoff > datetime.now(timezone.utc) + timedelta(minutes=5):
-        raise ValueError('Cutoff cannot be in the future')
+    _, cutoff = coverage_metadata(data, day)
     calls = data.get('calls')
     if (data.get('timezone') != 'America/Denver' or data.get('system') != 'dcfems'
-            or data.get('talkgroup') != 6001 or data.get('coverage') != 'partial'
+            or data.get('talkgroup') != 6001
             or not isinstance(calls, list) or not 0 < len(calls) <= MAX_CALLS
             or data.get('count') != len(calls)):
         raise ValueError('Invalid source manifest')
     ids = set()
     for call in calls:
         validate_call(call, day)
-        if call['id'] in ids or call['epoch'] > cutoff.timestamp():
+        if (call['id'] in ids or (cutoff is not None and call['epoch'] > cutoff.timestamp())
+                or call['epoch'] > datetime.now(timezone.utc).timestamp() + 300):
             raise ValueError('Duplicate ID or call after the collection cutoff')
         ids.add(call['id'])
     return day
@@ -127,7 +151,7 @@ def import_manifest(root, source, downloader):
     if old and (old.get('date') != day or old.get('talkgroup') != 6001):
         raise ValueError('Existing archive identity does not match')
     merged = {call['original_filename']: dict(call) for call in (old or {}).get('calls', [])}
-    ids = {call['id']: name for name, call in merged.items()}
+    ids = {call['id']: name for name, call in merged.items() if call.get('id')}
     downloaded = skipped = 0
     duplicates = list((old or {}).get('duplicate_source_calls', []))
     # Keep all changes temporary until every requested recording validates.
@@ -140,9 +164,12 @@ def import_manifest(root, source, downloader):
             previous = merged.get(name)
             audio = destination / name
             if previous and audio.exists():
-                inspect_audio(audio, previous)
+                checked = inspect_audio(audio, previous)
                 skipped += 1
-                if previous['id'] != incoming['id'] and not any(x['id'] == incoming['id'] for x in duplicates):
+                if not previous.get('id') or previous['id'] == incoming['id']:
+                    merged[name] = {**previous, **incoming, **checked}
+                    ids[incoming['id']] = name
+                elif not any(x.get('id') == incoming['id'] for x in duplicates):
                     duplicates.append(incoming)
                 continue
             audio = temp / name
@@ -155,23 +182,26 @@ def import_manifest(root, source, downloader):
             call['timestamp_utc'] = instant.isoformat().replace('+00:00', 'Z')
             call['timestamp_mountain'] = instant.astimezone(MOUNTAIN).strftime('%Y-%m-%d %H:%M:%S')
             call['talkgroup_name'] = 'American Fork PD Car to Car'
-            if previous and previous['id'] != call['id']:
+            if previous and previous.get('id') and previous['id'] != call['id']:
                 duplicates.append(call)
             else:
                 merged[name] = call
                 ids[call['id']] = name
-        calls = sorted(merged.values(), key=lambda call: (call['epoch'], call['id']))
+        calls = sorted(merged.values(), key=lambda call: (call['epoch'], call.get('id', '')))
         start = datetime.combine(date.fromisoformat(day), day_time.min, MOUNTAIN)
         result = dict(old or {})
         result.update(date=day, timezone='America/Denver', system='dcfems', talkgroup=6001,
                       count=len(calls), calls=calls,
                       start_utc=start.astimezone(timezone.utc).isoformat().replace('+00:00', 'Z'),
                       end_utc_exclusive=(start + timedelta(days=1)).astimezone(timezone.utc).isoformat().replace('+00:00', 'Z'))
-        result['coverage'] = (old or {}).get('coverage', 'partial') if old else 'partial'
-        cutoffs = [datetime.fromisoformat(data['collected_through_utc'].replace('Z', '+00:00'))]
-        if (old or {}).get('collected_through_utc'):
-            cutoffs.append(datetime.fromisoformat(old['collected_through_utc'].replace('Z', '+00:00')))
-        cutoff = max(cutoffs).astimezone(timezone.utc).isoformat().replace('+00:00', 'Z')
+        incoming_coverage, incoming_cutoff = coverage_metadata(data, day)
+        old_coverage, old_cutoff = coverage_metadata(old or {}, day)
+        statuses = (incoming_coverage, old_coverage)
+        result['coverage'] = next(status for status in ('complete', 'partial', 'unknown') if status in statuses)
+        if result['coverage'] != old_coverage:
+            result.pop('coverage_note', None)
+        cutoffs = [value for value in (incoming_cutoff, old_cutoff) if value is not None]
+        cutoff = max(cutoffs).astimezone(timezone.utc).isoformat().replace('+00:00', 'Z') if cutoffs else None
         result['collected_through_utc'] = cutoff
         if duplicates:
             result['duplicate_source_calls'] = duplicates
@@ -185,7 +215,7 @@ def import_manifest(root, source, downloader):
                    'skipped_existing': skipped, 'validated': True, 'coverage': result['coverage'],
                    'collected_through_utc': cutoff, 'minimum_pause_after_download_seconds': GAP_SECONDS})
         (destination / 'README.txt').write_text(f'OpenMHz AFPD car-to-car (6001), {day}, America/Denver.\n'
-            f'Coverage: {result["coverage"]}; collected through {cutoff}.\n'
+            f'Coverage: {result["coverage"]}; collected through {cutoff or "unknown"}.\n'
             'Source: OpenMHz (https://openmhz.com/). Original audio bytes retained.\n'
             'Downloaded directly from browser-collected URLs; no ZIP intermediate.\n')
     return {'date': day, 'count': len(calls), 'downloaded': downloaded, 'skipped_existing': skipped}

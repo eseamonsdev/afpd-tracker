@@ -25,6 +25,70 @@ def manifest(calls=None):
 
 
 class DownloadTest(unittest.TestCase):
+    def test_complete_day_and_legacy_metadata(self):
+        data = manifest()
+        data.update(coverage='complete', collected_through_utc='2026-10-01T06:00:00Z')
+        self.assertEqual(module.validate_manifest(data), data['date'])
+        data['collected_through_utc'] = '2026-09-30T18:00:00Z'
+        with self.assertRaises(ValueError):
+            module.validate_manifest(data)
+        data = manifest()
+        del data['coverage']
+        del data['collected_through_utc']
+        self.assertEqual(module.validate_manifest(data), data['date'])
+        self.assertEqual(module.coverage_metadata(data, data['date']), ('unknown', None))
+        data['coverage'] = 'invalid'
+        with self.assertRaises(ValueError):
+            module.validate_manifest(data)
+
+    def test_unfinished_complete_day_and_naive_cutoff_are_rejected(self):
+        data = manifest()
+        data['collected_through_utc'] = '2026-09-30T18:00:00'
+        with self.assertRaises(ValueError):
+            module.validate_manifest(data)
+        with self.assertRaises(ValueError):
+            module.coverage_metadata({'coverage': 'complete'}, '2999-01-01')
+
+    def test_complete_day_boundaries_follow_daylight_saving(self):
+        for day, hours in [('2025-03-09', 23), ('2025-11-02', 25)]:
+            start, end = module.day_bounds(day)
+            elapsed = end.timestamp() - start.timestamp()
+            self.assertEqual(elapsed, hours * 3600)
+            status, cutoff = module.coverage_metadata({'coverage': 'complete'}, day)
+            self.assertEqual(status, 'complete')
+            self.assertEqual(cutoff, end)
+
+    def test_completion_upgrade_and_partial_rerun_do_not_redownload(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            destination = root / 'public/records/openmhz/openmhz-afpd-car-to-car-2026-09-30'
+            destination.mkdir(parents=True)
+            original = sample()
+            (destination / original['original_filename']).write_bytes(b'0000ftyp0000')
+            # Old ZIP archives can lack IDs and coverage metadata.
+            old = manifest()
+            del old['calls'][0]['id']
+            del old['coverage']
+            del old['collected_through_utc']
+            (destination / 'calls.json').write_text(json.dumps(old))
+            source = root / '2026-09-30.json'
+            complete = manifest()
+            complete.update(coverage='complete', collected_through_utc='2026-10-01T06:00:00Z')
+            downloader = Mock()
+            with patch.object(module, 'inspect_audio', return_value={'sha256': 'test', 'size_bytes': 12, 'audio_duration_seconds': 3}):
+                for incoming in [complete, manifest()]:
+                    source.write_text(json.dumps(incoming))
+                    result = module.import_manifest(root, source, downloader)
+                    self.assertEqual(result['downloaded'], 0)
+                    self.assertEqual(result['skipped_existing'], 1)
+                    saved = json.loads((destination / 'calls.json').read_text())
+                    self.assertEqual(saved['coverage'], 'complete')
+                    self.assertEqual(saved['collected_through_utc'], '2026-10-01T06:00:00Z')
+                    self.assertEqual(saved['calls'][0]['id'], original['id'])
+                    validation = json.loads((destination / 'validation.json').read_text())
+                    self.assertEqual(validation['coverage'], saved['coverage'])
+            downloader.download.assert_not_called()
+
     def test_manifest_uses_mountain_date_and_cutoff(self):
         self.assertEqual(module.validate_manifest(manifest()), '2026-09-30')
         for field, value in [('epoch', 1790812800), ('talkgroup', 5922),
