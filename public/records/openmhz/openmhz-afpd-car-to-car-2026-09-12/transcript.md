@@ -124,7 +124,7 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **058 · 8:47:10 AM · 10 sec** — [Audio](dcfems-6001-1789224430.m4a) — Hey, I'm behind a good car. He's got warnings for assault on a PO. His notes say he always fights the police.
 
-**059 · 8:47:21 AM · 1 sec** — [Audio](dcfems-6001-1789224441.m4a) — [Where?]
+**059 · 8:47:21 AM · 1 sec** — [Audio](dcfems-6001-1789224441.m4a) — Where?
 
 **060 · 8:47:28 AM · 2 sec** — [Audio](dcfems-6001-1789224448.m4a) — We're turning west.
 
@@ -148,7 +148,7 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **070 · 8:48:14 AM · 5 sec** — [Audio](dcfems-6001-1789224494.m4a) — Copy. He very clearly does not want to get stopped. He's driving like an angel.
 
-**071 · 8:52:53 AM · 1 sec** — [Audio](dcfems-6001-1789224773.m4a) — I'm [West Main?].
+**071 · 8:52:53 AM · 1 sec** — [Audio](dcfems-6001-1789224773.m4a) — I'm West Main
 
 **072 · 8:52:57 AM · 4 sec** — [Audio](dcfems-6001-1789224777.m4a) — If all else fails, he didn't stop prior to the sidewalk.
 
@@ -162,11 +162,11 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **077 · 8:53:38 AM · 2 sec** — [Audio](dcfems-6001-1789224818.m4a) — Oh, he just passed me.
 
-**078 · 8:53:41 AM · 2 sec** — [Audio](dcfems-6001-1789224821.m4a) — [Stuck behind cars?]
+**078 · 8:53:41 AM · 2 sec** — [Audio](dcfems-6001-1789224821.m4a) — Stuck behind cars.
 
-**079 · 8:54:04 AM · 2 sec** — [Audio](dcfems-6001-1789224844.m4a) — Is anybody on [West State/Westgate?]?
+**079 · 8:54:04 AM · 2 sec** — [Audio](dcfems-6001-1789224844.m4a) — Is anybody on West State?
 
-**080 · 8:54:07 AM · 2 sec** — [Audio](dcfems-6001-1789224847.m4a) — [Hey/Dang?], you're way behind him.
+**080 · 8:54:07 AM · 2 sec** — [Audio](dcfems-6001-1789224847.m4a) — Dang, you're way behind him.
 
 **081 · 8:54:10 AM · 1 sec** — [Audio](dcfems-6001-1789224850.m4a) — Yeah, I got the light.
 
@@ -174,7 +174,7 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **083 · 8:54:18 AM · 4 sec** — [Audio](dcfems-6001-1789224858.m4a) — Are you on Main, or are you on 300 West?
 
-**084 · 8:54:24 AM · 1 sec** — [Audio](dcfems-6001-1789224864.m4a) — [Main?]
+**084 · 8:54:24 AM · 1 sec** — [Audio](dcfems-6001-1789224864.m4a) — On Main
 
 **085 · 8:54:26 AM · 4 sec** — [Audio](dcfems-6001-1789224866.m4a) — Copy. Try to get to State and go northbound [unclear ending].
 
