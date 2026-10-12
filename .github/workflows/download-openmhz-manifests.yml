@@ -7,7 +7,9 @@ on:
     paths:
       - 'records-pending-review/openmhz-manifests/*.json'
       - 'scripts/download_openmhz_manifest.py'
+      - 'scripts/normalize_openmhz_metadata.py'
       - 'tests/test_openmhz_download.py'
+      - 'tests/test_openmhz_metadata.py'
       - '.github/workflows/download-openmhz-manifests.yml'
 
 permissions:
@@ -30,7 +32,7 @@ jobs:
         with:
           node-version: '22'
       - name: Verify downloader safeguards
-        run: python3 -m unittest discover -s tests -p 'test_openmhz_download.py'
+        run: python3 -m unittest discover -s tests -p 'test_openmhz*.py'
       - name: Ensure audio validation tool is available
         run: |
           if ! command -v ffprobe >/dev/null; then
@@ -41,6 +43,7 @@ jobs:
         id: download
         run: |
           python3 scripts/download_openmhz_manifest.py --summary "$RUNNER_TEMP/openmhz-download-summary.json"
+          python3 scripts/normalize_openmhz_metadata.py --check
           if git diff --quiet && test -z "$(git ls-files --others --exclude-standard public/records/openmhz)"; then
             echo 'changed=false' >> "$GITHUB_OUTPUT"
           else

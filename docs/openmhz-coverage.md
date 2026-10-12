@@ -36,3 +36,39 @@ IDs and epochs: 992 source entries / 991 unique audio files on September 12, and
 359 source entries / 359 unique audio files on September 13. Both are now marked
 complete. Each folder's `source-verification.json` records comparison hashes and
 calls observed on both sides of the day boundaries. No audio was missing.
+
+## Current metadata format
+
+All Car-to-Car `calls.json` and `validation.json` files use `schema_version: 1`
+and share date, timezone, system, talkgroup, unique-audio count, source-call count,
+coverage, and collection cutoff fields. Call records include the original source
+ID, Unix epoch, normalized UTC/Mountain timestamps, original filename, source URL
+and label, actual size, SHA-256, measured audio duration, and whether the measured
+duration agrees with the source label within one second. Additional historical
+radio metadata and validation evidence remain available.
+
+`rows.json` follows the chronological unique-audio order in `calls.json`. When
+standardization changes an older source-row inventory, its original contents are
+preserved in `legacy-rows.json`. Alternate source entries for the same audio file
+remain in `duplicate_source_calls`; source-call count can exceed audio count.
+README files use the same format, with earlier notes preserved in `legacy-README.txt`.
+
+Historical downloaded/skipped counts and minimum download pauses are null when
+they were not recorded. Local metadata verification does not invent downloads or
+timing history. Existing recorded durations are reused only alongside matching
+audio checksums; missing measurements are filled using ffprobe. The September 24
+clip `dcfems-6001-1790298258.m4a` has a 9-second source label but a measured duration
+of 1.408 seconds. Its unchanged audio remains valid and the discrepancy is recorded
+in the call and validation metadata. Newly downloaded audio still must satisfy
+the normal duration check.
+
+Run `python3 scripts/normalize_openmhz_metadata.py` to standardize existing
+Car-to-Car metadata, or add `--check` to verify it without writing. The direct
+downloader checks this format before committing; the ZIP importer remains
+available and standardizes Car-to-Car metadata after extraction. Both workflows
+share the same archive writer lock. Coverage stays off the webpage.
+
+The AI task runs daily at 7:00 AM in `America/Denver`, starting October 13, 2026.
+It resolves the previous local calendar day when the run starts. The first run
+targets October 12 and extends its partial archive, skipping validated existing
+audio and refreshing the metadata after successful collection and validation.

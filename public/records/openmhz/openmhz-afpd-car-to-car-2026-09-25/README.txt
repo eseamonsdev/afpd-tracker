@@ -1,12 +1,9 @@
-OpenMHz American Fork PD Car to Car
-September 25, 2026 (America/Denver)
-System: dcfems. Talkgroup: 6001.
-
-255 source calls, 255 original-filename M4A files.
-Six-second breaks between every HTTP attempt.
-The day was inventoried by loading rows from its end until past the start boundary.
-All audio files passed ffprobe validation.
-
-calls.json: chronological call metadata, original URLs, Mountain/UTC timestamps, sizes, SHA-256 hashes and measured audio durations.
-rows.json: source inventory rows in newest-first display order.
-validation.json: verification results.
+OpenMHz AFPD Car-to-Car (6001), 2026-09-25, America/Denver.
+Metadata schema: 1.
+Coverage: complete; collected through 2026-09-26T06:00:00Z.
+255 unique audio files; 255 source call entries.
+Source: OpenMHz (https://openmhz.com/). Original audio bytes and filenames retained.
+calls.json: chronological call metadata, original source IDs/labels, timestamps and audio checks.
+rows.json: source labels in chronological unique-audio order.
+validation.json: coverage and audio-validation results, plus preserved historical evidence.
+Unix timestamps determine Mountain times; original browser labels may use another timezone.

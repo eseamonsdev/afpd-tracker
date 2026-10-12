@@ -34,11 +34,19 @@ jobs:
         with:
           node-version: '22'
           cache: npm
+      - name: Ensure audio validation tool is available
+        run: |
+          if ! command -v ffprobe >/dev/null; then
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
       - name: Validate and extract pending ZIPs
         id: import
         run: |
           python3 -m unittest discover -s tests -p 'test_openmhz_import.py'
           python3 scripts/import_openmhz_zips.py --summary "$RUNNER_TEMP/openmhz-summary.json"
+          # Preserve the ZIP entry point while keeping its output in the current format.
+          python3 scripts/normalize_openmhz_metadata.py
           if git diff --quiet && test -z "$(git ls-files --others --exclude-standard public/records/openmhz)"; then
             echo 'changed=false' >> "$GITHUB_OUTPUT"
           else

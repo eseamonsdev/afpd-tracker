@@ -12,7 +12,7 @@ import time
 import urllib.request
 from datetime import date, datetime, time as day_time, timedelta, timezone
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import parse_qs, urlparse
 from zoneinfo import ZoneInfo
 
 MOUNTAIN = ZoneInfo('America/Denver')
@@ -20,15 +20,40 @@ GAP_SECONDS = 5
 MAX_AUDIO_BYTES = 20 * 1024 * 1024
 MAX_CALLS = 5000
 MEDIA_HOSTS = {'media.openmhz.com', 'media2.openmhz.com'}
+SCHEMA_VERSION = 1
 
 
 def write_json(path, data):
     path.write_text(json.dumps(data, indent=2) + '\n')
 
 
+def archive_readme(data):
+    return (f'OpenMHz AFPD Car-to-Car (6001), {data["date"]}, America/Denver.\n'
+            f'Metadata schema: {SCHEMA_VERSION}.\n'
+            f'Coverage: {data["coverage"]}; collected through {data.get("collected_through_utc") or "unknown"}.\n'
+            f'{data["count"]} unique audio files; {data["source_call_count"]} source call entries.\n'
+            'Source: OpenMHz (https://openmhz.com/). Original audio bytes and filenames retained.\n'
+            'calls.json: chronological call metadata, original source IDs/labels, timestamps and audio checks.\n'
+            'rows.json: source labels in chronological unique-audio order.\n'
+            'validation.json: coverage and audio-validation results, plus preserved historical evidence.\n'
+            'Unix timestamps determine Mountain times; original browser labels may use another timezone.\n')
+
+
 def day_bounds(day):
     start = datetime.combine(date.fromisoformat(day), day_time.min, MOUNTAIN)
     return start, start + timedelta(days=1)
+
+
+def normalize_call_metadata(call, day):
+    result = dict(call)
+    if not result.get('id'):
+        result['id'] = parse_qs(urlparse(result.get('call_link', '')).query).get('call-id', [None])[0]
+    validate_call(result, day)
+    instant = datetime.fromtimestamp(result['epoch'], timezone.utc)
+    result['timestamp_utc'] = instant.isoformat().replace('+00:00', 'Z')
+    result['timestamp_mountain'] = instant.astimezone(MOUNTAIN).strftime('%Y-%m-%d %H:%M:%S')
+    result['talkgroup_name'] = 'American Fork PD Car to Car'
+    return result
 
 
 def coverage_metadata(data, day):
@@ -134,9 +159,17 @@ def inspect_audio(path, call):
                             '-of', 'default=noprint_wrappers=1:nokey=1', str(path)],
                            capture_output=True, text=True, check=True, timeout=30)
     duration = float(probe.stdout.strip())
-    if not math.isfinite(duration) or duration <= 0 or abs(duration - call['displayed_seconds']) > 1:
+    if not math.isfinite(duration) or duration <= 0:
         raise ValueError(f'Unexpected audio duration: {path.name}')
-    return {'size_bytes': len(content), 'sha256': digest, 'audio_duration_seconds': duration}
+    matches = abs(duration - call['displayed_seconds']) <= 1
+    # A documented source-label discrepancy does not invalidate unchanged,
+    # previously measured audio. New downloads must still match their labels.
+    saved_duration = call.get('audio_duration_seconds')
+    if not matches and not (call.get('sha256') == digest and isinstance(saved_duration, (int, float))
+                            and abs(saved_duration - duration) < 0.01):
+        raise ValueError(f'Unexpected audio duration: {path.name}')
+    return {'size_bytes': len(content), 'sha256': digest, 'audio_duration_seconds': duration,
+            'source_duration_matches': matches}
 
 
 def import_manifest(root, source, downloader):
@@ -154,6 +187,7 @@ def import_manifest(root, source, downloader):
     ids = {call['id']: name for name, call in merged.items() if call.get('id')}
     downloaded = skipped = 0
     duplicates = list((old or {}).get('duplicate_source_calls', []))
+    checked_audio = {}
     # Keep all changes temporary until every requested recording validates.
     with tempfile.TemporaryDirectory(prefix='openmhz-manifest-') as temp:
         temp = Path(temp)
@@ -165,6 +199,7 @@ def import_manifest(root, source, downloader):
             audio = destination / name
             if previous and audio.exists():
                 checked = inspect_audio(audio, previous)
+                checked_audio[name] = checked
                 skipped += 1
                 if not previous.get('id') or previous['id'] == incoming['id']:
                     merged[name] = {**previous, **incoming, **checked}
@@ -178,6 +213,7 @@ def import_manifest(root, source, downloader):
                 downloaded += 1
             call = dict(incoming)
             call.update(inspect_audio(audio, call))
+            checked_audio[name] = {key: call[key] for key in ('size_bytes', 'sha256', 'audio_duration_seconds', 'source_duration_matches') if key in call}
             instant = datetime.fromtimestamp(call['epoch'], timezone.utc)
             call['timestamp_utc'] = instant.isoformat().replace('+00:00', 'Z')
             call['timestamp_mountain'] = instant.astimezone(MOUNTAIN).strftime('%Y-%m-%d %H:%M:%S')
@@ -187,11 +223,21 @@ def import_manifest(root, source, downloader):
             else:
                 merged[name] = call
                 ids[call['id']] = name
-        calls = sorted(merged.values(), key=lambda call: (call['epoch'], call.get('id', '')))
+        calls = []
+        for name, entry in merged.items():
+            call = normalize_call_metadata(entry, day)
+            checked = checked_audio.get(name) or inspect_audio(destination / name, call)
+            checked_audio[name] = checked
+            call.update(checked)
+            calls.append(call)
+        calls.sort(key=lambda call: (call['epoch'], call['id']))
+        duplicates = [normalize_call_metadata(call, day) for call in duplicates]
+        for duplicate in duplicates:
+            duplicate.update(checked_audio[duplicate['original_filename']])
         start = datetime.combine(date.fromisoformat(day), day_time.min, MOUNTAIN)
         result = dict(old or {})
-        result.update(date=day, timezone='America/Denver', system='dcfems', talkgroup=6001,
-                      count=len(calls), calls=calls,
+        result.update(schema_version=SCHEMA_VERSION, date=day, timezone='America/Denver', system='dcfems', talkgroup=6001,
+                      count=len(calls), source_call_count=len(calls) + len(duplicates), calls=calls,
                       start_utc=start.astimezone(timezone.utc).isoformat().replace('+00:00', 'Z'),
                       end_utc_exclusive=(start + timedelta(days=1)).astimezone(timezone.utc).isoformat().replace('+00:00', 'Z'))
         incoming_coverage, incoming_cutoff = coverage_metadata(data, day)
@@ -211,13 +257,20 @@ def import_manifest(root, source, downloader):
             shutil.copyfile(audio, destination / audio.name)
         write_json(destination / 'calls.json', result)
         write_json(destination / 'rows.json', [call.get('row', '') for call in calls])
-        write_json(destination / 'validation.json', {'date': day, 'count': len(calls), 'downloaded': downloaded,
-                   'skipped_existing': skipped, 'validated': True, 'coverage': result['coverage'],
-                   'collected_through_utc': cutoff, 'minimum_pause_after_download_seconds': GAP_SECONDS})
-        (destination / 'README.txt').write_text(f'OpenMHz AFPD car-to-car (6001), {day}, America/Denver.\n'
-            f'Coverage: {result["coverage"]}; collected through {cutoff or "unknown"}.\n'
-            'Source: OpenMHz (https://openmhz.com/). Original audio bytes retained.\n'
-            'Downloaded directly from browser-collected URLs; no ZIP intermediate.\n')
+        validation_path = destination / 'validation.json'
+        validation = json.loads(validation_path.read_text()) if validation_path.exists() else {}
+        validation.update(schema_version=SCHEMA_VERSION, date=day, timezone='America/Denver', system='dcfems',
+                   talkgroup=6001, count=len(calls), source_call_count=result['source_call_count'], downloaded=downloaded,
+                   skipped_existing=skipped, validated=True, coverage=result['coverage'],
+                   collected_through_utc=cutoff, minimum_pause_after_download_seconds=GAP_SECONDS)
+        validation['source_duration_discrepancies'] = [call['original_filename'] for call in calls
+                                                      if not call.get('source_duration_matches', True)]
+        if result.get('coverage_note'):
+            validation['coverage_note'] = result['coverage_note']
+        else:
+            validation.pop('coverage_note', None)
+        write_json(validation_path, validation)
+        (destination / 'README.txt').write_text(archive_readme(result))
     return {'date': day, 'count': len(calls), 'downloaded': downloaded, 'skipped_existing': skipped}
 
 

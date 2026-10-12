@@ -1,5 +1,6 @@
 import importlib.util
 import io
+import hashlib
 import json
 import tempfile
 import unittest
@@ -25,6 +26,23 @@ def manifest(calls=None):
 
 
 class DownloadTest(unittest.TestCase):
+    def test_known_source_duration_discrepancy_requires_unchanged_measured_audio(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / sample()['original_filename']
+            content = b'0000ftyp0000'
+            path.write_bytes(content)
+            call = sample()
+            call['displayed_seconds'] = 9
+            probe = Mock(stdout='1.408')
+            with patch.object(module.subprocess, 'run', return_value=probe):
+                with self.assertRaises(ValueError):
+                    module.inspect_audio(path, call)
+                call.update(sha256=hashlib.sha256(content).hexdigest(), audio_duration_seconds=1.408)
+                self.assertFalse(module.inspect_audio(path, call)['source_duration_matches'])
+                call['audio_duration_seconds'] = 9
+                with self.assertRaises(ValueError):
+                    module.inspect_audio(path, call)
+
     def test_complete_day_and_legacy_metadata(self):
         data = manifest()
         data.update(coverage='complete', collected_through_utc='2026-10-01T06:00:00Z')
@@ -71,6 +89,7 @@ class DownloadTest(unittest.TestCase):
             del old['coverage']
             del old['collected_through_utc']
             (destination / 'calls.json').write_text(json.dumps(old))
+            (destination / 'validation.json').write_text(json.dumps({'source_verification_file': 'source-verification.json'}))
             source = root / '2026-09-30.json'
             complete = manifest()
             complete.update(coverage='complete', collected_through_utc='2026-10-01T06:00:00Z')
@@ -87,7 +106,37 @@ class DownloadTest(unittest.TestCase):
                     self.assertEqual(saved['calls'][0]['id'], original['id'])
                     validation = json.loads((destination / 'validation.json').read_text())
                     self.assertEqual(validation['coverage'], saved['coverage'])
+                    self.assertEqual(validation['schema_version'], 1)
+                    self.assertEqual(validation['source_verification_file'], 'source-verification.json')
+                    self.assertEqual(validation['timezone'], 'America/Denver')
+                    self.assertEqual(saved['schema_version'], 1)
+                    self.assertEqual(saved['source_call_count'], 1)
+                    self.assertEqual(saved['calls'][0]['timestamp_utc'], '2026-09-30T07:56:50Z')
+                    self.assertEqual(json.loads((destination / 'rows.json').read_text()), [''])
             downloader.download.assert_not_called()
+
+    def test_failed_extension_does_not_replace_metadata(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            destination = root / 'public/records/openmhz/openmhz-afpd-car-to-car-2026-09-30'
+            destination.mkdir(parents=True)
+            original = sample()
+            (destination / original['original_filename']).write_bytes(b'0000ftyp0000')
+            originals = {'calls.json': json.dumps(manifest()), 'rows.json': '["saved row"]',
+                         'validation.json': '{"validated":true}'}
+            for name, text in originals.items():
+                (destination / name).write_text(text)
+            new = sample(1790755131, 'new-id')
+            source = root / '2026-09-30.json'
+            source.write_text(json.dumps(manifest([original, new])))
+            downloader = Mock()
+            downloader.download.side_effect = lambda url, dest: dest.write_bytes(b'0000ftyp0000')
+            with patch.object(module, 'inspect_audio', side_effect=[{'size_bytes': 12, 'sha256': 'test', 'audio_duration_seconds': 3}, ValueError('Invalid audio')]):
+                with self.assertRaises(ValueError):
+                    module.import_manifest(root, source, downloader)
+            for name, text in originals.items():
+                self.assertEqual((destination / name).read_text(), text)
+            self.assertFalse((destination / new['original_filename']).exists())
 
     def test_manifest_uses_mountain_date_and_cutoff(self):
         self.assertEqual(module.validate_manifest(manifest()), '2026-09-30')
