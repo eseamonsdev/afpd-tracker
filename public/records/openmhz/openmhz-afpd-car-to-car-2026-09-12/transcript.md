@@ -96,13 +96,13 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **044 · 6:01:13 AM · 5 sec** — [Audio](dcfems-6001-1789214473.m4a) — You know, for that, your drink privileges have been revoked.
 
-**045 · 6:01:25 AM · 2 sec** — [Audio](dcfems-6001-1789214485.m4a) — [Oh, no?]
+**045 · 6:01:25 AM · 2 sec** — [Audio](dcfems-6001-1789214485.m4a) — Oh, no.
 
 **046 · 7:45:58 AM · 3 sec** — [Audio](dcfems-6001-1789220758.m4a) — Was it the silver Chrysler?
 
-**047 · 7:46:05 AM · 1 sec** — [Audio](dcfems-6001-1789220765.m4a) — [Affirmative?]
+**047 · 7:46:05 AM · 1 sec** — [Audio](dcfems-6001-1789220765.m4a) — Affirmative
 
-**048 · 8:13:54 AM · 2 sec** — [Audio](dcfems-6001-1789222434.m4a) — You looked a bit uncomfortable, [Joshua?].
+**048 · 8:13:54 AM · 2 sec** — [Audio](dcfems-6001-1789222434.m4a) — You looked a bit uncomfortable, Joshua.
 
 **049 · 8:14:05 AM · 1 sec** — [Audio](dcfems-6001-1789222445.m4a) — I hate this car.
 
@@ -110,7 +110,7 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **051 · 8:43:22 AM · 2 sec** — [Audio](dcfems-6001-1789224202.m4a) — Is the car wash open yet?
 
-**052 · 8:43:29 AM · 3 sec** — [Audio](dcfems-6001-1789224209.m4a) — Not a clue. [We just went to the complex?]
+**052 · 8:43:29 AM · 3 sec** — [Audio](dcfems-6001-1789224209.m4a) — Not a clue. We just went to the complex.
 
 **053 · 8:44:04 AM · 6 sec** — [Audio](dcfems-6001-1789224244.m4a) — I did wash my car at the complex, but I'm going to for sure need to have to wash it later, better.
 
