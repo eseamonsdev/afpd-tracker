@@ -29,3 +29,10 @@ their saved files do not establish independent full-day source completeness.
 October 12 retains its recorded partial coverage. Existing per-call records and
 audio-validation evidence are preserved; a metadata-only validation file does not
 claim that new audio validation was performed.
+
+September 12–13 were subsequently checked against the live OpenMHz archive UI on
+October 12, 2026. Both full-day source inventories exactly match the saved call
+IDs and epochs: 992 source entries / 991 unique audio files on September 12, and
+359 source entries / 359 unique audio files on September 13. Both are now marked
+complete. Each folder's `source-verification.json` records comparison hashes and
+calls observed on both sides of the day boundaries. No audio was missing.
