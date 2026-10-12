@@ -90,7 +90,7 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **041 · 5:59:49 AM · 2 sec** — [Audio](dcfems-6001-1789214389.m4a) — Does that make sense?
 
-**042 · 6:00:51 AM · 3 sec** — [Audio](dcfems-6001-1789214451.m4a) — Mr. [Mackay?] and [Mason?].
+**042 · 6:00:51 AM · 3 sec** — [Audio](dcfems-6001-1789214451.m4a) — Mr. Mackay? And Mason?
 
 **043 · 6:00:57 AM · 2 sec** — [Audio](dcfems-6001-1789214457.m4a) — I'm almost there in the city.
 
@@ -144,7 +144,7 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **068 · 8:48:04 AM · 5 sec** — [Audio](dcfems-6001-1789224484.m4a) — It's like a big white Sprinter van, kind of. It looks pretty ghetto.
 
-**069 · 8:48:10 AM · 4 sec** — [Audio](dcfems-6001-1789224490.m4a) — Copy. I'm at that gas station at [unclear], 100 North.
+**069 · 8:48:10 AM · 4 sec** — [Audio](dcfems-6001-1789224490.m4a) — Copy. I'm at that gas station at 101 East, 100 North.
 
 **070 · 8:48:14 AM · 5 sec** — [Audio](dcfems-6001-1789224494.m4a) — Copy. He very clearly does not want to get stopped. He's driving like an angel.
 
@@ -178,7 +178,7 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **085 · 8:54:26 AM · 4 sec** — [Audio](dcfems-6001-1789224866.m4a) — Copy. Try to get to State and go northbound [unclear ending].
 
-**086 · 8:54:32 AM · 1 sec** — [Audio](dcfems-6001-1789224872.m4a) — [Unclear acknowledgement.]
+**086 · 8:54:32 AM · 1 sec** — [Audio](dcfems-6001-1789224872.m4a) — Copy.
 
 **087 · 8:54:35 AM · 4 sec** — [Audio](dcfems-6001-1789224875.m4a) — He is about to pull up to State right now.
 
@@ -194,7 +194,7 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **093 · 8:55:49 AM · 4 sec** — [Audio](dcfems-6001-1789224949.m4a) — I might. Well, [I'll stop right here / I don't want to stop him right here?], actually.
 
-**094 · 8:56:00 AM · 3 sec** — [Audio](dcfems-6001-1789224960.m4a) — [If you're watching?], see if you can get plain view.
+**094 · 8:56:00 AM · 3 sec** — [Audio](dcfems-6001-1789224960.m4a) — If you're watching, see if you can get plain view.
 
 **095 · 8:56:28 AM · 3 sec** — [Audio](dcfems-6001-1789224988.m4a) — He's tripping though. He keeps looking back at me.
 
@@ -204,7 +204,7 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **098 · 8:57:06 AM · 9 sec** — [Audio](dcfems-6001-1789225026.m4a) — I'm going to pull up and just walk inside and get a drink or something, so it's not as suspicious, but he is going to Walmart, it looks like.
 
-**099 · 8:57:17 AM · 3 sec** — [Audio](dcfems-6001-1789225037.m4a) — [I'd call Andrea?] and see if she's in. [Have her watch him / I haven't watched him?]
+**099 · 8:57:17 AM · 3 sec** — [Audio](dcfems-6001-1789225037.m4a) — I'd call Andrea and see if she's in. Have her watch him.
 
 **100 · 8:57:21 AM · 2 sec** — [Audio](dcfems-6001-1789225041.m4a) — They are not in today.
 
@@ -212,19 +212,19 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **102 · 8:57:49 AM · 2 sec** — [Audio](dcfems-6001-1789225069.m4a) — Wonderful. I will intercept him.
 
-**103 · 8:57:52 AM · 3 sec** — [Audio](dcfems-6001-1789225072.m4a) — Copy. I'm going to pull off so he doesn't [see me following him?], so...
+**103 · 8:57:52 AM · 3 sec** — [Audio](dcfems-6001-1789225072.m4a) — Copy. I'm going to pull off so he doesn't see me following him, so...
 
-**104 · 8:57:58 AM · 9 sec** — [Audio](dcfems-6001-1789225078.m4a) — I'm parked by Chili's. I'm just going to hope that he passes me, so you should keep eyes on in case he doesn't [head?] this way.
+**104 · 8:57:58 AM · 9 sec** — [Audio](dcfems-6001-1789225078.m4a) — I'm parked by Chili's. I'm just going to hope that he passes me, so you should keep eyes on in case he doesn't head this way.
 
 **105 · 8:58:08 AM · 3 sec** — [Audio](dcfems-6001-1789225088.m4a) — Copy. I definitely lost sight.
 
-**106 · 8:58:26 AM · 2 sec** — [Audio](dcfems-6001-1789225106.m4a) — You can't [see him?] at all?
+**106 · 8:58:26 AM · 2 sec** — [Audio](dcfems-6001-1789225106.m4a) — You can't see him at all?
 
-**107 · 8:58:30 AM · 7 sec** — [Audio](dcfems-6001-1789225110.m4a) — Negative. I went behind [PetSmart?]; he was in front.
+**107 · 8:58:30 AM · 7 sec** — [Audio](dcfems-6001-1789225110.m4a) — Negative. I went behind the PetSmart; he was in front.
 
-**108 · 8:58:37 AM · 2 sec** — [Audio](dcfems-6001-1789225117.m4a) — [Bruh / we're out?]
+**108 · 8:58:37 AM · 2 sec** — [Audio](dcfems-6001-1789225117.m4a) — Bruh
 
-**109 · 8:58:39 AM · 2 sec** — [Audio](dcfems-6001-1789225119.m4a) — [I don't see him either / I don't see any of you there?]
+**109 · 8:58:39 AM · 2 sec** — [Audio](dcfems-6001-1789225119.m4a) — I don't see him either
 
 **110 · 8:58:43 AM · 9 sec** — [Audio](dcfems-6001-1789225123.m4a) — Silly boy, you said you were going to intercept him, so I thought you were right here. He pulled into the parking lot right here, though. He stopped in front of PetSmart in the parking lot.
 
@@ -234,9 +234,9 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **113 · 8:59:01 AM · 2 sec** — [Audio](dcfems-6001-1789225141.m4a) — You said back to Main.
 
-**114 · 8:59:06 AM · 3 sec** — [Audio](dcfems-6001-1789225146.m4a) — [I definitely meant State?], RIP.
+**114 · 8:59:06 AM · 3 sec** — [Audio](dcfems-6001-1789225146.m4a) — I definitely meant State, RIP.
 
-**115 · 8:59:13 AM · 2 sec** — [Audio](dcfems-6001-1789225153.m4a) — [Can you just park at PetSmart?]
+**115 · 8:59:13 AM · 2 sec** — [Audio](dcfems-6001-1789225153.m4a) — So you just park at PetSmart?
 
 **116 · 8:59:17 AM · 13 sec** — [Audio](dcfems-6001-1789225157.m4a) — Yeah, I don't have eyes on. Might be smart if somebody's on State, like across the street, where you can see him, but he's just parked in their parking lot. I think he's just [seeing if we're following him around?].
 

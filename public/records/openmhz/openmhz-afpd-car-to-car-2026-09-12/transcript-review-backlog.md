@@ -6,7 +6,7 @@ This running backlog contains unresolved bracketed wording, unclear speech, and 
 
 When a correction is applied to the transcript, remove that clip from this backlog. Keep skipped clips on the list. Use the current transcript wording for remaining entries. Preserve the existing transcript draft rules: a first correction to a previously unchanged clip belongs to the first revision; preserve another draft before revising an already corrected clip.
 
-**Pending clips: 359**
+**Pending clips: 346**
 
 **014 · 12:46:18 AM · 2 sec** — [Audio](dcfems-6001-1789195578.m4a) — [Unclear short transmission.]
 
@@ -18,39 +18,13 @@ When a correction is applied to the transcript, remove that clip from this backl
 
 **039 · 5:59:33 AM · 3 sec** — [Audio](dcfems-6001-1789214373.m4a) — [Chalks/Cox?] down here.
 
-**042 · 6:00:51 AM · 3 sec** — [Audio](dcfems-6001-1789214451.m4a) — Mr. [Mackay?] and [Mason?].
-
 **056 · 8:45:17 AM · 1 sec** — [Audio](dcfems-6001-1789224317.m4a) — [Unclear brief reply; possibly 'repeat.']
 
-**069 · 8:48:10 AM · 4 sec** — [Audio](dcfems-6001-1789224490.m4a) — Copy. I'm at that gas station at [unclear], 100 North.
-
 **085 · 8:54:26 AM · 4 sec** — [Audio](dcfems-6001-1789224866.m4a) — Copy. Try to get to State and go northbound [unclear ending].
-
-**086 · 8:54:32 AM · 1 sec** — [Audio](dcfems-6001-1789224872.m4a) — [Unclear acknowledgement.]
 
 **089 · 8:55:10 AM · 3 sec** — [Audio](dcfems-6001-1789224910.m4a) — [Unclear transmission; no reliable words recovered.]
 
 **093 · 8:55:49 AM · 4 sec** — [Audio](dcfems-6001-1789224949.m4a) — I might. Well, [I'll stop right here / I don't want to stop him right here?], actually.
-
-**094 · 8:56:00 AM · 3 sec** — [Audio](dcfems-6001-1789224960.m4a) — [If you're watching?], see if you can get plain view.
-
-**099 · 8:57:17 AM · 3 sec** — [Audio](dcfems-6001-1789225037.m4a) — [I'd call Andrea?] and see if she's in. [Have her watch him / I haven't watched him?]
-
-**103 · 8:57:52 AM · 3 sec** — [Audio](dcfems-6001-1789225072.m4a) — Copy. I'm going to pull off so he doesn't [see me following him?], so...
-
-**104 · 8:57:58 AM · 9 sec** — [Audio](dcfems-6001-1789225078.m4a) — I'm parked by Chili's. I'm just going to hope that he passes me, so you should keep eyes on in case he doesn't [head?] this way.
-
-**106 · 8:58:26 AM · 2 sec** — [Audio](dcfems-6001-1789225106.m4a) — You can't [see him?] at all?
-
-**107 · 8:58:30 AM · 7 sec** — [Audio](dcfems-6001-1789225110.m4a) — Negative. I went behind [PetSmart?]; he was in front.
-
-**108 · 8:58:37 AM · 2 sec** — [Audio](dcfems-6001-1789225117.m4a) — [Bruh / we're out?]
-
-**109 · 8:58:39 AM · 2 sec** — [Audio](dcfems-6001-1789225119.m4a) — [I don't see him either / I don't see any of you there?]
-
-**114 · 8:59:06 AM · 3 sec** — [Audio](dcfems-6001-1789225146.m4a) — [I definitely meant State?], RIP.
-
-**115 · 8:59:13 AM · 2 sec** — [Audio](dcfems-6001-1789225153.m4a) — [Can you just park at PetSmart?]
 
 **116 · 8:59:17 AM · 13 sec** — [Audio](dcfems-6001-1789225157.m4a) — Yeah, I don't have eyes on. Might be smart if somebody's on State, like across the street, where you can see him, but he's just parked in their parking lot. I think he's just [seeing if we're following him around?].
 
