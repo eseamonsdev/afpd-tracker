@@ -29,7 +29,10 @@ eleventyExcludeFromCollections: true
       <section class="radio-player" aria-label="Audio player">
         <div class="radio-player-heading">
           <p id="radio-current">Choose a clip to listen</p>
-          <button id="radio-autoplay" type="button" aria-pressed="false">Autoplay: Off</button>
+          <div class="radio-player-actions">
+            <button id="radio-show-current" type="button" aria-controls="radio-clips" disabled>Show Current Clip</button>
+            <button id="radio-autoplay" type="button" aria-pressed="false">Autoplay: Off</button>
+          </div>
         </div>
         <div class="radio-playback">
           <button id="radio-play" type="button" aria-label="Play selected clip" disabled>Play</button>

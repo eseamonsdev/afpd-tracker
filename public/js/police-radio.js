@@ -19,6 +19,7 @@
   }
   const players = nextAudio ? [audio, nextAudio] : [audio];
   const play = get("play"), seek = get("seek"), autoplay = get("autoplay");
+  const showCurrent = get("show-current");
   const list = get("clips"), section = get("clips-section"), status = get("status");
   const current = get("current"), message = get("player-message");
   const base = "/records/openmhz/";
@@ -118,6 +119,7 @@
     playbackRequest++;
     players.forEach(clearAudio);
     play.disabled = true;
+    if (showCurrent) showCurrent.disabled = true;
     seek.disabled = true;
     seek.value = 0;
     seek.max = 0;
@@ -182,6 +184,7 @@
     get("elapsed").textContent = "0:00";
     get("duration").textContent = durationText(call.displayed_seconds);
     play.disabled = false;
+    if (showCurrent) showCurrent.disabled = false;
     if (prefetched) {
       audio.src = prefetched.url;
       activeObjectUrl = prefetched.url;
@@ -257,6 +260,17 @@
   }
   month.addEventListener("change", populateDays);
   day.addEventListener("change", loadDay);
+  showCurrent?.addEventListener("click", () => {
+    const clip = buttons[selected];
+    if (!clip) return;
+    // Center in the space below the sticky player, leaving a little clearance.
+    clip.style.scrollMarginTop = `${showCurrent.closest(".radio-player").offsetHeight + 32}px`;
+    clip.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
+      block: "center",
+      inline: "nearest"
+    });
+  });
   autoplay.addEventListener("click", () => {
     auto = !auto;
     autoplay.setAttribute("aria-pressed", String(auto));
