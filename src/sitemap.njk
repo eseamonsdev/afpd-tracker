@@ -5,32 +5,9 @@ eleventyExcludeFromCollections: true
 <?xml version="1.0" encoding="UTF-8"?>
 {% set siteUrl = "https://afpd-accountability.com" %}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% for entry in collections.all | sitemapPages %}
   <url>
-    <loc>{{ siteUrl | escape }}/</loc>
+    <loc>{{ (siteUrl ~ entry.url) | escape }}</loc>
   </url>
-
-  <url>
-    <loc>{{ siteUrl | escape }}/afpd-resources/</loc>
-  </url>
-
-  <url>
-    <loc>{{ siteUrl | escape }}/officers/</loc>
-  </url>
-  {% for officerPage in entities.byType["officer-page"] | sort(false, false, "name") %}
-  <url>
-    <loc>{{ (siteUrl ~ officerPage.url) | escape }}</loc>
-  </url>
-  {% endfor %}
-
-  <url>
-    <loc>{{ siteUrl | escape }}/police-encounters/</loc>
-  </url>
-  {% for policeEncounterPage in entities.byType["police-encounter-page"] | sort(false, false, "name") %}
-  <url>
-    <loc>{{ (siteUrl ~ policeEncounterPage.url) | escape }}</loc>
-  </url>
-  {% endfor %}
-  <url>
-    <loc>{{ siteUrl | escape }}/city-oversight/</loc>
-  </url>
+{% endfor %}
 </urlset>

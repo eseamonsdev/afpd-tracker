@@ -13,6 +13,13 @@ const currencyFormatter = new Intl.NumberFormat("en-US", {
 });
 
 export default function (eleventyConfig) {
+  // Include generated HTML pages; templates may opt out with sitemap: false.
+  eleventyConfig.addFilter("sitemapPages", (pages) => {
+    return pages
+      .filter((page) => page.url && page.outputPath?.endsWith(".html") && page.data.sitemap !== false)
+      .sort((a, b) => a.url.localeCompare(b.url));
+  });
+
   eleventyConfig.addFilter("formatArticleDate", (value) => {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(value || "")) return value || "";
     return new Intl.DateTimeFormat("en-US", {
