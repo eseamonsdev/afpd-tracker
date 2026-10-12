@@ -8,9 +8,9 @@ All clock timestamps are **Mountain Daylight Time (America/Denver, UTC−06:00)*
 
 Each numbered line contains the clip’s clock timestamp, displayed length, a link to its original audio file, and the transcript.
 
-**001 · 12:16:10 AM · 3 sec** — [Audio](dcfems-6001-1789193770.m4a) — Look at my RP's name.
+**001 · 12:16:10 AM · 3 sec** — [Audio](dcfems-6001-1789193770.m4a) — So look at my RP's name.
 
-**002 · 12:16:26 AM · 2 sec** — [Audio](dcfems-6001-1789193786.m4a) — Call her and say, [malo e lelei?].
+**002 · 12:16:26 AM · 2 sec** — [Audio](dcfems-6001-1789193786.m4a) — Call her and say, malo e lelei.
 
 **003 · 12:16:38 AM · 6 sec** — [Audio](dcfems-6001-1789193798.m4a) — [Unclear opening] you're over in the corner over there. I just heard a bunch of noise. Maybe that's where it's coming from.
 
@@ -20,9 +20,9 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **006 · 12:16:52 AM · 4 sec** — [Audio](dcfems-6001-1789193812.m4a) — I don't know. That car might have just pulled up, though, too. So, who knows? I'll call her.
 
-**007 · 12:17:45 AM · 3 sec** — [Audio](dcfems-6001-1789193865.m4a) — Yeah, even with a good number, she doesn't answer, so let's [clear it/clear up?].
+**007 · 12:17:45 AM · 3 sec** — [Audio](dcfems-6001-1789193865.m4a) — Yeah, even with a good number, she doesn't answer, so let's clear up.
 
-**008 · 12:18:00 AM · 1 sec** — [Audio](dcfems-6001-1789193880.m4a) — [Sounds good?]
+**008 · 12:18:00 AM · 1 sec** — [Audio](dcfems-6001-1789193880.m4a) — Sounds good
 
 **009 · 12:18:21 AM · 3 sec** — [Audio](dcfems-6001-1789193901.m4a) — There's no way you can memorize how to spell all that.
 
@@ -36,9 +36,9 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **014 · 12:46:18 AM · 2 sec** — [Audio](dcfems-6001-1789195578.m4a) — [Unclear short transmission.]
 
-**015 · 12:46:22 AM · 3 sec** — [Audio](dcfems-6001-1789195582.m4a) — [Don't worry/Sorry?], I just [pulled in?].
+**015 · 12:46:22 AM · 3 sec** — [Audio](dcfems-6001-1789195582.m4a) — Don't worry, I just pulled in.
 
-**016 · 12:46:39 AM · 7 sec** — [Audio](dcfems-6001-1789195599.m4a) — Is this the same one we showed up to that she was like, [believed?] she was locked in or something?
+**016 · 12:46:39 AM · 7 sec** — [Audio](dcfems-6001-1789195599.m4a) — Is this the same one we showed up to that she was like, believed she was locked in or something?
 
 **017 · 12:46:56 AM · 5 sec** — [Audio](dcfems-6001-1789195616.m4a) — I don't see anything like that on the history of the address.
 
@@ -58,7 +58,7 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **025 · 3:15:13 AM · 5 sec** — [Audio](dcfems-6001-1789204513.m4a) — We're in the side parking lot of the Dan Peterson. You'll see our scene lights.
 
-**026 · 3:15:20 AM · 3 sec** — [Audio](dcfems-6001-1789204520.m4a) — [Dan Peterson, the elementary school?]
+**026 · 3:15:20 AM · 3 sec** — [Audio](dcfems-6001-1789204520.m4a) — Dan Peterson, the elementary school?
 
 **027 · 3:15:24 AM · 4 sec** — [Audio](dcfems-6001-1789204524.m4a) — Yeah, it's right across from the hospital to the north of it.
 
