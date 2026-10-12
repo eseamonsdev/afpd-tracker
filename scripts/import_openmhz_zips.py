@@ -44,7 +44,7 @@ def validate_zip(archive, destination):
                         and not audio_name.fullmatch(name))
                     or stat.S_ISLNK(item.external_attr >> 16)):
                 raise ValueError(f"Unsafe or unsupported ZIP member: {item.filename}")
-        if not METADATA.issubset(names):
+        if not (METADATA - {"STATUS.txt"}).issubset(names):
             raise ValueError(f"Missing metadata: {archive.name}")
         files = {name: zipped.read(item) for item, name in zip(entries, names)}
     data = json.loads(files["calls.json"])
