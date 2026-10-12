@@ -66,21 +66,21 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **029 · 3:18:01 AM · 2 sec** — [Audio](dcfems-6001-1789204681.m4a) — Hey Mitch, can you roll this way?
 
-**030 · 3:18:05 AM · 2 sec** — [Audio](dcfems-6001-1789204685.m4a) — [Yeah, I'm on my way?]
+**030 · 3:18:05 AM · 2 sec** — [Audio](dcfems-6001-1789204685.m4a) — Yeah, I'm on my way?
 
-**031 · 3:28:50 AM · 2 sec** — [Audio](dcfems-6001-1789205330.m4a) — [See you next week?]
+**031 · 3:28:50 AM · 2 sec** — [Audio](dcfems-6001-1789205330.m4a) — See you tonight?
 
 **032 · 3:28:55 AM · 1 sec** — [Audio](dcfems-6001-1789205335.m4a) — Thank you.
 
-**033 · 3:29:00 AM · 2 sec** — [Audio](dcfems-6001-1789205340.m4a) — [You're welcome?]
+**033 · 3:29:00 AM · 2 sec** — [Audio](dcfems-6001-1789205340.m4a) — You're welcome?
 
 **034 · 3:54:55 AM · 8 sec** — [Audio](dcfems-6001-1789206895.m4a) — Also side note, I'm about to go tell fire that it was Hawkins that requested medical, woke them up, and then cancelled on them.
 
 **035 · 3:55:06 AM · 3 sec** — [Audio](dcfems-6001-1789206906.m4a) — Make sure you say it's Hawkins with an H.
 
-**036 · 3:55:14 AM · 4 sec** — [Audio](dcfems-6001-1789206914.m4a) — You can say it was [Tonga?], because they already [hate me?].
+**036 · 3:55:14 AM · 4 sec** — [Audio](dcfems-6001-1789206914.m4a) — You can say it was Tonga, because they already hate me.
 
-**037 · 3:55:25 AM · 6 sec** — [Audio](dcfems-6001-1789206925.m4a) — Well, you could probably read the notes and see that. It says Hawkins. [I don't really know / well, they know?]
+**037 · 3:55:25 AM · 6 sec** — [Audio](dcfems-6001-1789206925.m4a) — Well, you could probably read the notes and see that. It says Hawkins. Well, they know.
 
 **038 · 3:58:40 AM · 9 sec** — [Audio](dcfems-6001-1789207120.m4a) — Oh, look at that, aggravated robbery and aggravated assault. That means we pursue!
 
