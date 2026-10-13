@@ -2,13 +2,13 @@
 
 Source: [Current transcript](transcript.md). Entries appear in clip order and retain their audio links.
 
-This running backlog contains unresolved bracketed wording and unclear transmissions. Clips 003, 004, 007, 010, 012, 013, 015, 018, 023, and 035 were corrected or approved by Eric and are excluded, including the confirmed `[static]` entries.
+This running backlog contains unresolved bracketed wording and unclear transmissions. Clips 003, 004, 007, 010, 012, 013, 015, 018, 023, 024, 027, 035, 062, 064, 117, 220, 224, 315, 343, 352, and 355 were corrected or approved by Eric and are excluded, including approved `[static]` and `[unclear acknowledgment]` entries.
 
 When Eric corrects or explicitly approves a clip, remove it from this backlog even if its approved wording retains brackets. Keep skipped clips pending and use the current transcript wording for remaining entries. Brackets describing confirmed sounds do not by themselves indicate pending review.
 
 Before changing a clip, preserve its previous wording in `transcript-drafts`: its original belongs in `transcript-draft-1.md`; an already corrected clip's next superseded revision belongs in draft 2, followed by successive numbered drafts. Draft 1 is a complete original snapshot; compare wording rather than treating presence there as evidence of a prior correction.
 
-**Pending clips: 153**
+**Pending clips: 142**
 
 **009 · 1:18:13 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788938293.m4a) — [Unclear opening, possibly ‘Hi, Ben.’] You're good.
 
@@ -16,11 +16,7 @@ Before changing a clip, preserve its previous wording in `transcript-drafts`: it
 
 **021 · 1:38:14 AM · 4 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939494.m4a) — Copy, it's going to be 485 East, 500 South, [Greg/Creek?].
 
-**024 · 1:38:31 AM · 11 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939511.m4a) — The suspect is going to be a [Zachary Vert?], 5'10", skinny build, white, brown hair, and has a little bit of facial hair.
-
 **025 · 1:39:28 AM · 7 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939568.m4a) — [Meekum?], could you actually roll down to the skate park and just get eyes on and see if there's anybody there?
-
-**027 · 1:39:47 AM · 7 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939587.m4a) — Hey, [Thomas?], are we... did you want me to look in the area with you, or did you want me to go over to the skate park with him?
 
 **029 · 1:40:18 AM · 7 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939618.m4a) — [Chokes?] is just wondering if he needed to come to the skate park, and I just said that I can handle a skate park myself. It's not very big.
 
@@ -49,10 +45,6 @@ Before changing a clip, preserve its previous wording in `transcript-drafts`: it
 **058 · 2:07:40 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788941260.m4a) — [Does it show that extra patrol still on your CAD?]
 
 **060 · 2:08:04 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788941284.m4a) — It shows me 10-8, so [that's all that matters?].
-
-**062 · 2:25:29 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788942329.m4a) — [Vert?], V-E-R-T.
-
-**064 · 2:25:45 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788942345.m4a) — [Unclear short reply.]
 
 **065 · 7:38:50 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788961130.m4a) — [Unclear short transmission.]
 
@@ -91,8 +83,6 @@ Before changing a clip, preserve its previous wording in `transcript-drafts`: it
 **110 · 12:53:02 PM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788979982.m4a) — [Luke, is the car there?]
 
 **111 · 12:53:06 PM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788979986.m4a) — [Unclear short reply.]
-
-**117 · 1:27:53 PM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788982073.m4a) — [This guy's had?] a lot of trespassings in the last couple of weeks.
 
 **120 · 1:28:16 PM · 6 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788982096.m4a) — He's from Virginia. He recently came to Utah. He's like [Sherwin?], something.
 
@@ -192,11 +182,7 @@ Before changing a clip, preserve its previous wording in `transcript-drafts`: it
 
 **219 · 2:00:59 PM · 5 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788984059.m4a) — Sounds good. Yeah, I don't think we have anything other than maybe [a C?].
 
-**220 · 2:01:10 PM · 7 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788984070.m4a) — In all these news articles I read about [him/them], it seems like a typical MO. [I don't see / I don't want to see?] anything of violent history yet.
-
 **223 · 2:04:27 PM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788984267.m4a) — [So we just want to leave / Are we going to leave?], or what?
-
-**224 · 2:04:32 PM · 7 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788984272.m4a) — No, we don't have much. He's just a mental patient. I'm trying to figure it out, but he knows he has [luggage?] up there.
 
 **230 · 2:24:30 PM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788985470.m4a) — All right, [Luke?], I'm two blocks out.
 
@@ -270,8 +256,6 @@ Before changing a clip, preserve its previous wording in `transcript-drafts`: it
 
 **313 · 4:50:31 PM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788994231.m4a) — That's all right. Like I said, [unclear ending].
 
-**315 · 4:50:57 PM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788994257.m4a) — He said [he/they] lived at 80 North, 400 East.
-
 **317 · 4:51:19 PM · 9 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788994279.m4a) — There's multiple different [addresses?]. That was a local file. The RO is at 272 North Center, and [in our notes it says she lives in PG?], so I don't even really know.
 
 **318 · 4:51:42 PM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788994302.m4a) — Hey, where did you guys take [one/your one?], anyway?
@@ -306,12 +290,7 @@ Before changing a clip, preserve its previous wording in `transcript-drafts`: it
 
 **342 · 9:12:22 PM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1789009942.m4a) — [Somerville/Summerville?], where are you parked?
 
-**343 · 9:12:31 PM · 6 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1789009951.m4a) — I'm on the west side of Building C. I'm actually parked pretty close [to you?]. I can see you now. I'm on the north side of the building right now.
-
 **347 · 10:56:33 PM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1789016193.m4a) — [Dog, you're 10-9?]
 
 **348 · 10:56:38 PM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1789016198.m4a) — [10-9?]
 
-**352 · 10:57:04 PM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1789016224.m4a) — [You'd better hurry?] They close in three minutes.
-
-**355 · 10:59:55 PM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1789016395.m4a) — [Over?]
