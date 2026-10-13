@@ -2,19 +2,15 @@
 
 Source: [Current transcript](transcript.md). Entries appear in clip order and retain their audio links.
 
-This running backlog contains unresolved bracketed wording and unclear transmissions. Clips 003, 004, 007, 010, 012, 013, and 035 were corrected or approved by Eric and are excluded, including the confirmed `[static]` entries.
+This running backlog contains unresolved bracketed wording and unclear transmissions. Clips 003, 004, 007, 010, 012, 013, 015, 018, and 035 were corrected or approved by Eric and are excluded, including the confirmed `[static]` entries.
 
 When Eric corrects or explicitly approves a clip, remove it from this backlog even if its approved wording retains brackets. Keep skipped clips pending and use the current transcript wording for remaining entries. Brackets describing confirmed sounds do not by themselves indicate pending review.
 
 Before changing a clip, preserve its previous wording in `transcript-drafts`: its original belongs in `transcript-draft-1.md`; an already corrected clip's next superseded revision belongs in draft 2, followed by successive numbered drafts. Draft 1 is a complete original snapshot; compare wording rather than treating presence there as evidence of a prior correction.
 
-**Pending clips: 156**
+**Pending clips: 154**
 
 **009 · 1:18:13 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788938293.m4a) — [Unclear opening, possibly ‘Hi, Ben.’] You're good.
-
-**015 · 1:25:52 AM · 5 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788938752.m4a) — [Fifth East / 50 East?], head south, just right across the street from Stonehenge.
-
-**018 · 1:30:57 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939057.m4a) — [Tonga, Cox?], you guys good?
 
 **019 · 1:37:50 AM · 19 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939470.m4a) — Hey, [could we get you in, Coach?] Could you also roll down here? The guy that I pink-sheeted at the skate park, we think that he may be in the area and slashed some tires. So [we/he?] may be looking for somebody that's knife-wielding. He was also suicidal.
 
