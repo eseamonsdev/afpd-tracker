@@ -38,13 +38,13 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **014 · 1:25:45 AM · 6 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788938745.m4a) — We're on 500 South, right across...
 
-**015 · 1:25:52 AM · 5 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788938752.m4a) — [Fifth East / 50 East?], head south, just right across the street from Stonehenge.
+**015 · 1:25:52 AM · 5 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788938752.m4a) — 50 East, head south, just right across the street from Stonehenge.
 
 **016 · 1:26:02 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788938762.m4a) — You out with her?
 
 **017 · 1:26:05 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788938765.m4a) — Yeah.
 
-**018 · 1:30:57 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939057.m4a) — [Tonga, Cox?], you guys good?
+**018 · 1:30:57 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939057.m4a) — Tonga, Cox, you guys good?
 
 **019 · 1:37:50 AM · 19 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939470.m4a) — Hey, [could we get you in, Coach?] Could you also roll down here? The guy that I pink-sheeted at the skate park, we think that he may be in the area and slashed some tires. So [we/he?] may be looking for somebody that's knife-wielding. He was also suicidal.
 
