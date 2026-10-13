@@ -6,27 +6,29 @@ All clock timestamps are **Mountain Daylight Time (America/Denver, UTC−06:00)*
 
 **Review draft.** Each clip was processed from its original audio and a filtered version, and checked in an adjacent-call context pass using Whisper small.en. All three recognition candidates were compared for every transcribed clip with neighboring calls. This is ASR-text reconciliation, not direct human listening. Brackets mark uncertain words, alternative readings, or unclear transmissions. Obvious spelling and transcription errors were normalized; uncertainty was retained for names, codes, numbers, and wording that could change meaning. Speaker identities were not inferred.
 
+**Reviewer edits and draft history.** Changes from the original wording preserved in `transcript-drafts/transcript-draft-1.md` were made or approved by Eric. Brackets can also describe identified sounds: `[static]` is a reviewer assessment; `[static?]` indicates uncertainty. Preserve the previous wording before each edit: a clip's original belongs in draft 1; its next superseded revision belongs in draft 2, and later revisions in successive numbered drafts. Draft 1 is a complete original snapshot; presence there alone does not mean a clip was edited. Compare the clip's wording with the current transcript to determine whether it has changed. Later drafts contain only clips revised again.
+
 Each numbered line contains the clip’s clock timestamp, displayed length, a link to its original audio file, and the transcript.
 
 **001 · 12:58:57 AM · 8 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788937137.m4a) — Why are the white cars parked in the front and the black cars parked on the side? It's kind of messed up.
 
 **002 · 1:09:54 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788937794.m4a) — Greg, you can tell him he can sit back in the vehicle.
 
-**003 · 1:17:13 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788938233.m4a) — [Unclear short transmission; filtered recognition repeated prompt text.]
+**003 · 1:17:13 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788938233.m4a) — [static]
 
-**004 · 1:17:15 AM · 15 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788938235.m4a) — If one of you guys have time, will you meet me at the address? Apartment Alpha 13. That's where the suspect lives. [So the suspect lives?] Holy moly. I'm gonna have a conversation with her.
+**004 · 1:17:15 AM · 15 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788938235.m4a) — If one of you guys have time, will you meet me at the address? Apartment Alpha 13. That's where the suspect lives. So the suspect lives... Holy moly. I'm gonna have a conversation with her.
 
 **005 · 1:17:35 AM · 13 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788938255.m4a) — I don't know all the full details, but I believe that might be hard-pressed since it's 1 a.m.
 
 **006 · 1:17:49 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788938269.m4a) — He called her and had a conversation with her. She knows I'm coming.
 
-**007 · 1:17:53 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788938273.m4a) — [The suspect, she answered?]
+**007 · 1:17:53 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788938273.m4a) — The suspect, she answered?
 
 **008 · 1:17:56 AM · 15 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788938276.m4a) — Yeah, I got the updated number from her ex, and it turns out she threatened to slash tires like a month ago or something. So I'm having them send the text messages to me. So it's... yeah.
 
 **009 · 1:18:13 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788938293.m4a) — [Unclear opening, possibly ‘Hi, Ben.’] You're good.
 
-**010 · 1:18:23 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788938303.m4a) — [On the list?]
+**010 · 1:18:23 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788938303.m4a) — On my way.
 
 **011 · 1:22:06 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788938526.m4a) — Where are you?
 
@@ -76,7 +78,7 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **034 · 1:45:26 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939926.m4a) — Affirm.
 
-**035 · 1:45:34 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939934.m4a) — [Unclear short transmission; filtered recognition repeated prompt text.]
+**035 · 1:45:34 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939934.m4a) — [static]
 
 **036 · 1:45:40 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939940.m4a) — Does he not have anywhere else he can go?
 
