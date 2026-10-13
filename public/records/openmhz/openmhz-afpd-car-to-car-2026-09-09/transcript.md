@@ -32,9 +32,9 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **011 · 1:22:06 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788938526.m4a) — Where are you?
 
-**012 · 1:22:13 AM · 11 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788938533.m4a) — I think I'm at the right one. Nope, I'm not. I'm at the other apartment complex. Dude, I hate this. [Let me show you the Sage Apartments?]
+**012 · 1:22:13 AM · 11 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788938533.m4a) — I think I'm at the right one. Nope, I'm not. I'm at the other apartment complex. Dude, I hate this. Let me [unclear] Sage Apartments.
 
-**013 · 1:25:40 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788938740.m4a) — [So/Sorry/Connor?], are you at A13?
+**013 · 1:25:40 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788938740.m4a) — [unclear name], are you at A13?
 
 **014 · 1:25:45 AM · 6 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788938745.m4a) — We're on 500 South, right across...
 
