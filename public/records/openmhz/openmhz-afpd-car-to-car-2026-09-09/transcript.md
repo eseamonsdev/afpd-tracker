@@ -54,7 +54,7 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **022 · 1:38:19 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939499.m4a) — Affirm, the Maple Village Apartments.
 
-**023 · 1:38:23 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939503.m4a) — [Just for me / It's for me / And for me?]
+**023 · 1:38:23 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939503.m4a) — 10-4 me
 
 **024 · 1:38:31 AM · 11 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939511.m4a) — The suspect is going to be a [Zachary Vert?], 5'10", skinny build, white, brown hair, and has a little bit of facial hair.
 
