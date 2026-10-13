@@ -21,7 +21,8 @@ def standardized_files(folder):
     day = data['date']
     validation_path = folder / 'validation.json'
     validation = json.loads(validation_path.read_text()) if validation_path.exists() else {}
-    reports = {item['filename']: item for item in validation.get('files', [])}
+    reports = {item.get('filename') or item['original_filename']: item
+               for item in validation.get('files', [])}
     checks = {}
     calls = []
     for entry in data['calls']:
