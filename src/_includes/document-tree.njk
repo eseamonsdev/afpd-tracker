@@ -164,7 +164,7 @@
               rel="noopener noreferrer"
               href="{% if node.type == 'file' %}/records/{{ node.path | escape }}{% else %}{{ node.url | escape }}{% endif %}{{ (node.urlSuffix or '') | escape }}"
             >
-              {% if node.type == "profile" and node.bold == true %}<strong>{{ node.label | escape }}</strong>{% else %}{{ node.label | escape }}{% endif %}
+              {{ node.label | escape }}
             </a>
           </li>
         {% endif %}
