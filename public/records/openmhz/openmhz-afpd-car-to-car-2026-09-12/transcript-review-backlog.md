@@ -6,7 +6,7 @@ This running backlog contains unresolved bracketed wording, unclear speech, and 
 
 When a correction is applied to the transcript, remove that clip from this backlog. Keep skipped clips on the list. Use the current transcript wording for remaining entries. Preserve the existing transcript draft rules: a first correction to a previously unchanged clip belongs to the first revision; preserve another draft before revising an already corrected clip.
 
-**Pending clips: 339**
+**Pending clips: 334**
 
 **018 · 1:15:43 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789197343.m4a) — Wow, [so he/we?] burned a Geo Metro.
 
@@ -43,16 +43,6 @@ When a correction is applied to the transcript, remove that clip from this backl
 **153 · 9:10:42 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225842.m4a) — Copy. [I'll go to / don't go to?] [location unclear].
 
 **154 · 9:11:26 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225886.m4a) — [Unclear transmission; recognition repeated prompt text.]
-
-**157 · 9:18:53 AM · 4 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226333.m4a) — [Call listing?] [last drug?] involvement was 2016.
-
-**158 · 9:19:34 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226374.m4a) — That just means [he hasn't been caught?].
-
-**160 · 9:19:43 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226383.m4a) — Any movement yet, [Mason?]?
-
-**170 · 9:21:05 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226465.m4a) — The license was [7 Lima 8 Charlie Echo?].
-
-**171 · 9:21:30 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226490.m4a) — [Copy?]
 
 **174 · 9:21:53 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226513.m4a) — [I see him?] in the back, digging through something.
 

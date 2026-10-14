@@ -320,13 +320,13 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **156 · 9:13:26 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226006.m4a) — Nope, still has not moved.
 
-**157 · 9:18:53 AM · 4 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226333.m4a) — [Call listing?] [last drug?] involvement was 2016.
+**157 · 9:18:53 AM · 4 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226333.m4a) — Call listing his last drug involvement was 2016.
 
-**158 · 9:19:34 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226374.m4a) — That just means [he hasn't been caught?].
+**158 · 9:19:34 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226374.m4a) — That just means he hasn't been caught.
 
 **159 · 9:19:38 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226378.m4a) — I don't disagree.
 
-**160 · 9:19:43 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226383.m4a) — Any movement yet, [Mason?]?
+**160 · 9:19:43 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226383.m4a) — Any movement yet, Mason?
 
 **161 · 9:19:59 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226399.m4a) — Mr. Mason?
 
@@ -346,9 +346,9 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **169 · 9:20:43 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226443.m4a) — It's either black or dark blue.
 
-**170 · 9:21:05 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226465.m4a) — The license was [7 Lima 8 Charlie Echo?].
+**170 · 9:21:05 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226465.m4a) — The license was 7 Lima 8 Charlie Echo.
 
-**171 · 9:21:30 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226490.m4a) — [Copy?]
+**171 · 9:21:30 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226490.m4a) — Copy.
 
 **172 · 9:21:43 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226503.m4a) — Also, I think that dude's in the back of the van.
 
