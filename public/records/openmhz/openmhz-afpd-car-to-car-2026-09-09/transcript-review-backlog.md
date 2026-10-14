@@ -8,33 +8,7 @@ When Eric corrects or explicitly approves a clip, remove it from this backlog ev
 
 Before changing a clip, preserve its previous wording in `transcript-drafts`: its original belongs in `transcript-draft-1.md`; an already corrected clip's next superseded revision belongs in draft 2, followed by successive numbered drafts. Draft 1 is a complete original snapshot; compare wording rather than treating presence there as evidence of a prior correction.
 
-**Pending clips: 137**
-
-**029 · 1:40:18 AM · 7 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939618.m4a) — [Chokes?] is just wondering if he needed to come to the skate park, and I just said that I can handle a skate park myself. It's not very big.
-
-**030 · 1:40:28 AM · 6 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939628.m4a) — [Copy?] You know, have him stick with me over here and kind of comb the area a little bit.
-
-**031 · 1:44:53 AM · 4 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939893.m4a) — [Meekum?], are you clear down there at the skate park?
-
-**040 · 1:48:26 AM · 13 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788940106.m4a) — If you want to hit [Lions?], or just drive around, I'm going to try to hit this business complex really quick. I don't think he crossed 500 East, but it's always a possibility.
-
-**041 · 1:48:40 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788940120.m4a) — [Unclear short reply.]
-
-**042 · 1:49:25 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788940165.m4a) — Hey, Mitch, did you already hit [Lions?]?
-
-**045 · 1:51:43 AM · 6 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788940303.m4a) — [I'm going to start clearing?] this trailer business south of Stonehenge.
-
-**048 · 1:52:04 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788940324.m4a) — [Unclear short reply, possibly ‘I'll head that way.’]
-
-**052 · 2:05:14 AM · 8 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788941114.m4a) — I've been all over up through [VASA?] and Del Taco and stuff like that. I haven't seen him.
-
-**054 · 2:05:30 AM · under 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788941130.m4a) — [Unclear very short transmission; original recognition repeated prompt text.]
-
-**057 · 2:06:18 AM · 4 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788941178.m4a) — Yeah, I have a feeling that we're gonna run into [him/them].
-
-**058 · 2:07:40 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788941260.m4a) — [Does it show that extra patrol still on your CAD?]
-
-**060 · 2:08:04 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788941284.m4a) — It shows me 10-8, so [that's all that matters?].
+**Pending clips: 124**
 
 **065 · 7:38:50 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788961130.m4a) — [Unclear short transmission.]
 

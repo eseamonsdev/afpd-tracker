@@ -66,11 +66,11 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **028 · 1:40:08 AM · 4 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939608.m4a) — I can handle the skate park. If he's there, I'll call out. It's pretty small.
 
-**029 · 1:40:18 AM · 7 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939618.m4a) — [Chokes?] is just wondering if he needed to come to the skate park, and I just said that I can handle a skate park myself. It's not very big.
+**029 · 1:40:18 AM · 7 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939618.m4a) — Chokes [reviewer note: referring to Officer Choates] is just wondering if he needed to come to the skate park, and I just said that I can handle a skate park myself. It's not very big.
 
-**030 · 1:40:28 AM · 6 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939628.m4a) — [Copy?] You know, have him stick with me over here and kind of comb the area a little bit.
+**030 · 1:40:28 AM · 6 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939628.m4a) — Copy. You know, have him stick with me over here and kind of comb the area a little bit.
 
-**031 · 1:44:53 AM · 4 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939893.m4a) — [Meekum?], are you clear down there at the skate park?
+**031 · 1:44:53 AM · 4 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939893.m4a) — Meekum, are you clear down there at the skate park?
 
 **032 · 1:44:57 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939897.m4a) — Yeah, me and Sergeant down here didn't see anything.
 
@@ -88,23 +88,23 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **039 · 1:48:19 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788940099.m4a) — Mr. Tonga, what areas are we going to be searching, me and you?
 
-**040 · 1:48:26 AM · 13 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788940106.m4a) — If you want to hit [Lions?], or just drive around, I'm going to try to hit this business complex really quick. I don't think he crossed 500 East, but it's always a possibility.
+**040 · 1:48:26 AM · 13 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788940106.m4a) — If you want to hit Lions, or just drive around, I'm going to try to hit this business complex really quick. I don't think he crossed 500 East, but it's always a possibility.
 
-**041 · 1:48:40 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788940120.m4a) — [Unclear short reply.]
+**041 · 1:48:40 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788940120.m4a) — [Unclear short reply]
 
-**042 · 1:49:25 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788940165.m4a) — Hey, Mitch, did you already hit [Lions?]?
+**042 · 1:49:25 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788940165.m4a) — Hey, Mitch, did you already hit Lions?
 
 **043 · 1:49:31 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788940171.m4a) — Greg was heading there.
 
 **044 · 1:51:16 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788940276.m4a) — Rotary is clear.
 
-**045 · 1:51:43 AM · 6 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788940303.m4a) — [I'm going to start clearing?] this trailer business south of Stonehenge.
+**045 · 1:51:43 AM · 6 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788940303.m4a) — I'm going to start clearing this trailer business south of Stonehenge.
 
 **046 · 1:51:54 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788940314.m4a) — I think he made it down to Maverik.
 
 **047 · 1:51:59 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788940319.m4a) — Definitely had time to.
 
-**048 · 1:52:04 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788940324.m4a) — [Unclear short reply, possibly ‘I'll head that way.’]
+**048 · 1:52:04 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788940324.m4a) — I'll head that way.
 
 **049 · 1:54:55 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788940495.m4a) — I'm not seeing anything.
 
@@ -112,23 +112,23 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **051 · 2:05:05 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788941105.m4a) — Definitely not here at Maverik.
 
-**052 · 2:05:14 AM · 8 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788941114.m4a) — I've been all over up through [VASA?] and Del Taco and stuff like that. I haven't seen him.
+**052 · 2:05:14 AM · 8 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788941114.m4a) — I've been all over up through VASA and Del Taco and stuff like that. I haven't seen him.
 
 **053 · 2:05:25 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788941125.m4a) — 7-Eleven area.
 
-**054 · 2:05:30 AM · under 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788941130.m4a) — [Unclear very short transmission; original recognition repeated prompt text.]
+**054 · 2:05:30 AM · under 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788941130.m4a) — [silent]
 
 **055 · 2:05:57 AM · 8 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788941157.m4a) — He definitely won't be hard to find. Usually during the daytime he's out here in this area a lot.
 
 **056 · 2:06:08 AM · 5 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788941168.m4a) — I think it's pretty reasonable to assume that he's our guy.
 
-**057 · 2:06:18 AM · 4 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788941178.m4a) — Yeah, I have a feeling that we're gonna run into [him/them].
+**057 · 2:06:18 AM · 4 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788941178.m4a) — Yeah, I have a feeling that we're gonna run into him.
 
-**058 · 2:07:40 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788941260.m4a) — [Does it show that extra patrol still on your CAD?]
+**058 · 2:07:40 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788941260.m4a) — Does it show that extra patrol still on your CAD?
 
 **059 · 2:07:46 AM · 4 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788941266.m4a) — Negative. I think she took it off.
 
-**060 · 2:08:04 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788941284.m4a) — It shows me 10-8, so [that's all that matters?].
+**060 · 2:08:04 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788941284.m4a) — It shows me 10-8, so that's all that matters.
 
 **061 · 2:25:24 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788942324.m4a) — What's Zachary's last name?
 
