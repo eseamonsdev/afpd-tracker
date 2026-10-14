@@ -2,25 +2,19 @@
 
 Source: [Current transcript](transcript.md). Entries appear in clip order and retain their audio links.
 
-This running backlog contains unresolved bracketed wording and unclear transmissions. Clips 003, 004, 007, 010, 012, 013, 015, 018, 019, 021, 023, 024, 027, 035, 062, 064, 117, 220, 224, 315, 343, 352, and 355 were corrected or approved by Eric and are excluded, including approved `[static]` and `[unclear acknowledgment]` entries.
+This running backlog contains unresolved bracketed wording and unclear transmissions. Clips 003, 004, 007, 009, 010, 012, 013, 015, 018, 019, 021, 023, 024, 025, 027, 035, 039, 062, 064, 117, 220, 224, 315, 343, 352, and 355 were corrected or approved by Eric and are excluded, including approved `[static]` and `[unclear acknowledgment]` entries.
 
 When Eric corrects or explicitly approves a clip, remove it from this backlog even if its approved wording retains brackets. Keep skipped clips pending and use the current transcript wording for remaining entries. Brackets describing confirmed sounds do not by themselves indicate pending review.
 
 Before changing a clip, preserve its previous wording in `transcript-drafts`: its original belongs in `transcript-draft-1.md`; an already corrected clip's next superseded revision belongs in draft 2, followed by successive numbered drafts. Draft 1 is a complete original snapshot; compare wording rather than treating presence there as evidence of a prior correction.
 
-**Pending clips: 140**
-
-**009 · 1:18:13 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788938293.m4a) — [Unclear opening, possibly ‘Hi, Ben.’] You're good.
-
-**025 · 1:39:28 AM · 7 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939568.m4a) — [Meekum?], could you actually roll down to the skate park and just get eyes on and see if there's anybody there?
+**Pending clips: 137**
 
 **029 · 1:40:18 AM · 7 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939618.m4a) — [Chokes?] is just wondering if he needed to come to the skate park, and I just said that I can handle a skate park myself. It's not very big.
 
 **030 · 1:40:28 AM · 6 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939628.m4a) — [Copy?] You know, have him stick with me over here and kind of comb the area a little bit.
 
 **031 · 1:44:53 AM · 4 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939893.m4a) — [Meekum?], are you clear down there at the skate park?
-
-**039 · 1:48:19 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788940099.m4a) — Mr. [Tonga?], what areas are we going to be searching, me and you?
 
 **040 · 1:48:26 AM · 13 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788940106.m4a) — If you want to hit [Lions?], or just drive around, I'm going to try to hit this business complex really quick. I don't think he crossed 500 East, but it's always a possibility.
 
