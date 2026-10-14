@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import { documentSitemapPaths } from "./lib/build-document-sitemap.js";
 import { buildRadioIndex } from "./lib/build-radio-index.js";
 import { loadJsonFiles } from "./lib/data/load-json-files.js";
 import { buildByID } from "./lib/data/build-by-id.js";
@@ -13,6 +14,8 @@ const currencyFormatter = new Intl.NumberFormat("en-US", {
 });
 
 export default function (eleventyConfig) {
+  eleventyConfig.addGlobalData("documentSitemapPaths", () => documentSitemapPaths());
+  eleventyConfig.addWatchTarget("./public/records/**/*.pdf");
   // Include generated HTML pages; templates may opt out with sitemap: false.
   eleventyConfig.addFilter("sitemapPages", (pages) => {
     return pages
