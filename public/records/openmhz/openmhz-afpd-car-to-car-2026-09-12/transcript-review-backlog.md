@@ -2,29 +2,15 @@
 
 Source: [Current transcript](transcript.md). Entries appear in clip order and retain their audio links.
 
-This running backlog contains unresolved bracketed wording, unclear speech, and transmissions with no reliable words or speech recovered. Previously reviewed entries are omitted; skipped entries remain pending. Entry 003 was reviewed and retained as supplied, including its unclear opening.
+This running backlog contains unresolved bracketed wording, unclear speech, and transmissions with no reliable words or speech recovered. Previously reviewed entries are omitted; skipped entries remain pending. Entry 003 was reviewed and retained as supplied, including its unclear opening. Entries 014, 022, 039, 056, 085, 089, and 093 were corrected or verified by Eric and are also omitted, including approved unclear/no-words annotations.
 
 When a correction is applied to the transcript, remove that clip from this backlog. Keep skipped clips on the list. Use the current transcript wording for remaining entries. Preserve the existing transcript draft rules: a first correction to a previously unchanged clip belongs to the first revision; preserve another draft before revising an already corrected clip.
 
-**Pending clips: 346**
-
-**014 · 12:46:18 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789195578.m4a) — [Unclear short transmission.]
+**Pending clips: 339**
 
 **018 · 1:15:43 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789197343.m4a) — Wow, [so he/we?] burned a Geo Metro.
 
 **019 · 1:15:52 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789197352.m4a) — That should not be considered [unclear].
-
-**022 · 1:16:28 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789197388.m4a) — [Unclear short transmission; possibly a question ending 'working for you?']
-
-**039 · 5:59:33 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789214373.m4a) — [Chalks/Cox?] down here.
-
-**056 · 8:45:17 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789224317.m4a) — [Unclear brief reply; possibly 'repeat.']
-
-**085 · 8:54:26 AM · 4 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789224866.m4a) — Copy. Try to get to State and go northbound [unclear ending].
-
-**089 · 8:55:10 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789224910.m4a) — [Unclear transmission; no reliable words recovered.]
-
-**093 · 8:55:49 AM · 4 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789224949.m4a) — I might. Well, [I'll stop right here / I don't want to stop him right here?], actually.
 
 **116 · 8:59:17 AM · 13 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225157.m4a) — Yeah, I don't have eyes on. Might be smart if somebody's on State, like across the street, where you can see him, but he's just parked in their parking lot. I think he's just [seeing if we're following him around?].
 
