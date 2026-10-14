@@ -2,19 +2,15 @@
 
 Source: [Current transcript](transcript.md). Entries appear in clip order and retain their audio links.
 
-This running backlog contains unresolved bracketed wording and unclear transmissions. Clips 003, 004, 007, 010, 012, 013, 015, 018, 023, 024, 027, 035, 062, 064, 117, 220, 224, 315, 343, 352, and 355 were corrected or approved by Eric and are excluded, including approved `[static]` and `[unclear acknowledgment]` entries.
+This running backlog contains unresolved bracketed wording and unclear transmissions. Clips 003, 004, 007, 010, 012, 013, 015, 018, 019, 021, 023, 024, 027, 035, 062, 064, 117, 220, 224, 315, 343, 352, and 355 were corrected or approved by Eric and are excluded, including approved `[static]` and `[unclear acknowledgment]` entries.
 
 When Eric corrects or explicitly approves a clip, remove it from this backlog even if its approved wording retains brackets. Keep skipped clips pending and use the current transcript wording for remaining entries. Brackets describing confirmed sounds do not by themselves indicate pending review.
 
 Before changing a clip, preserve its previous wording in `transcript-drafts`: its original belongs in `transcript-draft-1.md`; an already corrected clip's next superseded revision belongs in draft 2, followed by successive numbered drafts. Draft 1 is a complete original snapshot; compare wording rather than treating presence there as evidence of a prior correction.
 
-**Pending clips: 142**
+**Pending clips: 140**
 
 **009 · 1:18:13 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788938293.m4a) — [Unclear opening, possibly ‘Hi, Ben.’] You're good.
-
-**019 · 1:37:50 AM · 19 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939470.m4a) — Hey, [could we get you in, Coach?] Could you also roll down here? The guy that I pink-sheeted at the skate park, we think that he may be in the area and slashed some tires. So [we/he?] may be looking for somebody that's knife-wielding. He was also suicidal.
-
-**021 · 1:38:14 AM · 4 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939494.m4a) — Copy, it's going to be 485 East, 500 South, [Greg/Creek?].
 
 **025 · 1:39:28 AM · 7 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939568.m4a) — [Meekum?], could you actually roll down to the skate park and just get eyes on and see if there's anybody there?
 

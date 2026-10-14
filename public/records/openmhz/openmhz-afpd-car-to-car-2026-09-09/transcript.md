@@ -46,11 +46,11 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **018 · 1:30:57 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939057.m4a) — Tonga, Cox, you guys good?
 
-**019 · 1:37:50 AM · 19 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939470.m4a) — Hey, [could we get you in, Coach?] Could you also roll down here? The guy that I pink-sheeted at the skate park, we think that he may be in the area and slashed some tires. So [we/he?] may be looking for somebody that's knife-wielding. He was also suicidal.
+**019 · 1:37:50 AM · 19 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939470.m4a) — Hey, could, Mecham, could we get you and Choates? Could you also roll down here? The guy that I pink-sheeted at the skate park, we think that he may be in the area and slashed some tires. So we may be looking for somebody that's knife-wielding. He was also suicidal.
 
 **020 · 1:38:11 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939491.m4a) — Copy, I'm on my way.
 
-**021 · 1:38:14 AM · 4 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939494.m4a) — Copy, it's going to be 485 East, 500 South, [Greg/Creek?].
+**021 · 1:38:14 AM · 4 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939494.m4a) — Copy, it's going to be 485 East, 500 South, Greg.
 
 **022 · 1:38:19 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-09/dcfems-6001-1788939499.m4a) — Affirm, the Maple Village Apartments.
 
