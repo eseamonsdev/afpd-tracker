@@ -21,7 +21,10 @@
 
     {{ renderLatestUpdates(entities.all["entity-police-encounter-page-benjamin-paul-schneider"].sections[0].latestUpdates, false, true) }}
 
-    <ul class="tree" aria-label="Explore the project">
-      {{ renderNodes(root.tree) }}
-    </ul>
+    <section class="explore-project" aria-labelledby="explore-project-heading">
+      <h2 class="explore-project-heading" id="explore-project-heading">Explore the Project</h2>
+      <ul class="tree" aria-label="Explore the project">
+        {{ renderNodes(root.tree) }}
+      </ul>
+    </section>
 {% endblock %}
