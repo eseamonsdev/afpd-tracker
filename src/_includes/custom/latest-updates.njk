@@ -10,7 +10,7 @@
     {% for update in node.updates %}
       <li>
         <p class="latest-updates-meta">{{ (update.channel or update.publisher) | escape }}{% if update.publishedDate %} · <time datetime="{{ update.publishedDate | escape }}">{{ update.publishedDate | formatArticleDate | escape }}</time>{% endif %}</p>
-        <p class="latest-updates-title"><a href="{{ update.url | escape }}" target="_blank" rel="noopener noreferrer">{{ update.label | escape }}</a></p>
+        <p class="latest-updates-title">{% if update.url %}<a href="{{ update.url | escape }}" target="_blank" rel="noopener noreferrer">{{ update.label | escape }}</a>{% else %}{{ update.label | escape }}{% endif %}</p>
         {% if update.description %}<p class="latest-updates-description">{{ update.description | escape }}</p>{% endif %}
       </li>
     {% endfor %}
