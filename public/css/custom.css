@@ -64,3 +64,19 @@
   margin: 1.25rem 0 0;
 }
 
+/* Preserve the Overview layout when updates and introduction are tree nodes. */
+.officer-section-panel > .tree:has(> li > .latest-updates) {
+  padding-block: 0;
+}
+
+.tree > li:has(> .latest-updates) + .tree-text-item > p,
+.tree > li:has(> .latest-updates) + .tree-text-item + .tree-text-item > p {
+  margin: 0;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.tree > li:has(> .latest-updates) + .tree-text-item + .tree-text-item > p {
+  margin-top: 1rem;
+  margin-bottom: 1.25rem;
+}
