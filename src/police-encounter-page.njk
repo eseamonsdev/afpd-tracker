@@ -8,7 +8,6 @@ permalink: "{{ policeEncounterPage.url }}"
 ---
 {% extends "site-page-layout.njk" %}
 {% from "document-tree.njk" import renderNodes -%}
-{% from "latest-updates.njk" import renderLatestUpdates -%}
 {% set siteUrl = "https://afpd-accountability.com" -%}
 {% set pageTitle = policeEncounterPage.name ~ " — Police Encounter Records | AFPD Accountability Project" -%}
 {% set defaultDescription = "Explore records related to the documented police encounter involving " ~ policeEncounterPage.name ~ " and the American Fork Police Department." -%}
@@ -65,8 +64,7 @@ permalink: "{{ policeEncounterPage.url }}"
           >
             <h2 id="officer-section-heading-{{ loop.index }}">
               {{ section.title | escape }}
-            </h2>{% if section.latestUpdates and section.latestUpdates | length %}
-              {{ renderLatestUpdates(section.latestUpdates, true) }}{% endif %}
+            </h2>
 
             {% if section.descriptions and section.descriptions | length %}
               <div class="officer-section-descriptions">
