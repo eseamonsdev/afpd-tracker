@@ -11,7 +11,8 @@
       <li>
         <p class="latest-updates-meta">{{ (update.channel or update.publisher) | escape }}{% if update.publishedDate %} · <time datetime="{{ update.publishedDate | escape }}">{{ update.publishedDate | formatArticleDate | escape }}</time>{% endif %}</p>
         <p class="latest-updates-title">{% if update.url %}<a href="{{ update.url | escape }}" target="_blank" rel="noopener noreferrer">{{ update.label | escape }}</a>{% else %}{{ update.label | escape }}{% endif %}</p>
-        {% if update.description %}<p class="latest-updates-description">{{ update.description | escape }}</p>{% endif %}
+        {% if update.description %}<p class="latest-updates-description">{{ update.description | escape }}</p>{% endif %}{% if update.recordLinks and update.recordLinks | length %}
+        <p class="latest-updates-records"><strong>Court records:</strong> {% for record in update.recordLinks %}<a href="/records/{{ record.path | escape }}" target="_blank" rel="noopener noreferrer">{{ record.label | escape }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p>{% endif %}
       </li>
     {% endfor %}
   </ul>
