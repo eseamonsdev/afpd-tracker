@@ -110,7 +110,11 @@
 
     {% macro renderNodes(nodes) %}
       {% for node in nodes %}
-        {% if node.type == "folder" %}
+        {% if node.type == "custom" %}
+          <li class="tree-custom-item">
+            {% include node.template | customTemplatePath %}
+          </li>
+        {% elseif node.type == "folder" %}
           <li>
             <details{% if node.anchor %} id="{{ node.anchor | escape }}"{% endif %}>
               <summary>

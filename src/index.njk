@@ -1,6 +1,5 @@
 {% extends "site-page-layout.njk" %}
 {% from "document-tree.njk" import renderNodes -%}
-{% from "latest-updates.njk" import renderLatestUpdates -%}
 {% set siteUrl = "https://afpd-accountability.com" -%}
 {% set pageTitle = "American Fork Police Department Accountability Project — Home" -%}
 {% set pageDescription = "Explore public records involving the American Fork Police Department by encounter, officer, or topic." -%}
@@ -19,12 +18,7 @@
       </p>
     </div>
 
-    {{ renderLatestUpdates(entities.all["entity-police-encounter-page-benjamin-paul-schneider"].sections[0].latestUpdates, false, true) }}
-
-    <section class="explore-project" aria-labelledby="explore-project-heading">
-      <h2 class="explore-project-heading" id="explore-project-heading">Explore the Project</h2>
-      <ul class="tree" aria-label="Explore the project">
-        {{ renderNodes(root.tree) }}
-      </ul>
-    </section>
+    <ul class="tree home-tree" aria-label="Project updates and resources">
+      {{ renderNodes(root.tree) }}
+    </ul>
 {% endblock %}
