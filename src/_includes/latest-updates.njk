@@ -1,0 +1,16 @@
+{% macro renderLatestUpdates(updates, inOverview=false, showProfileLink=false) %}
+  <section class="latest-updates" aria-label="Latest updates">
+    {% if inOverview %}<h3 class="latest-updates-heading">Latest updates</h3>{% else %}<h2 class="latest-updates-heading">Latest updates</h2>{% endif %}
+    <p class="latest-updates-context">Federal lawsuit involving associates of Ben Schneider (Reckless Ben)</p>
+    <ul class="latest-updates-list">
+      {% for update in updates %}
+        <li>
+          <p class="latest-updates-meta">{{ (update.channel or update.publisher) | escape }}{% if update.publishedDate %} · <time datetime="{{ update.publishedDate | escape }}">{{ update.publishedDate | formatArticleDate | escape }}</time>{% endif %}</p>
+          <p class="latest-updates-title"><a href="{{ update.url | escape }}" target="_blank" rel="noopener noreferrer">{{ update.label | escape }}</a></p>
+          {% if update.description %}<p class="latest-updates-description">{{ update.description | escape }}</p>{% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+    {% if showProfileLink %}<p class="latest-updates-profile"><a href="/police-encounters/benjamin-paul-schneider/">View Ben Schneider’s profile and supporting records →</a></p>{% endif %}
+  </section>
+{% endmacro %}
