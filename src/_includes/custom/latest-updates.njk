@@ -13,7 +13,8 @@
         <p class="latest-updates-title">{% if update.url %}<a href="{{ update.url | escape }}" target="_blank" rel="noopener noreferrer">{{ update.label | escape }}</a>{% else %}{{ update.label | escape }}{% endif %}</p>
         {% if update.description %}<p class="latest-updates-description">{{ update.description | escape }}</p>{% endif %}{% if update.recordLinks and update.recordLinks | length %}
         <p class="latest-updates-records"><strong>Court records:</strong> {% for record in update.recordLinks %}<a href="/records/{{ record.path | escape }}" target="_blank" rel="noopener noreferrer">{{ record.label | escape }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p>{% endif %}
-      </li>
+{% if update.links and update.links | length %}        <p class="latest-updates-records">{% for link in update.links %}<a href="{{ link.url | escape }}" target="_blank" rel="noopener noreferrer">{{ link.label | escape }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p>
+{% endif %}      </li>
     {% endfor %}
   </ul>
   {% if node.profileLink %}<p class="latest-updates-profile"><a href="{{ node.profileLink.url | escape }}">{{ node.profileLink.label | escape }}</a></p>{% endif %}
