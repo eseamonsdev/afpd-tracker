@@ -1,6 +1,11 @@
 <section class="latest-updates" aria-label="{{ node.heading | escape }}">
   {% if node.headingLevel == 3 %}<h3 class="latest-updates-heading">{{ node.heading | escape }}</h3>{% else %}<h2 class="latest-updates-heading">{{ node.heading | escape }}</h2>{% endif %}
   {% if node.context %}<p class="latest-updates-context">{{ node.context | escape }}</p>{% endif %}
+  {% if node.recordLinks and node.recordLinks | length %}
+    <p class="latest-updates-records">
+      {% for record in node.recordLinks %}<a href="/records/{{ record.path | escape }}" target="_blank" rel="noopener noreferrer">{{ record.label | escape }}</a>{% if not loop.last %} · {% endif %}{% endfor %}
+    </p>
+  {% endif %}
   <ul class="latest-updates-list">
     {% for update in node.updates %}
       <li>
