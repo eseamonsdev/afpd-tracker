@@ -64,8 +64,7 @@ permalink: "{{ cityOfficialPage.url }}"
           >
             <h2 id="officer-section-heading-{{ loop.index }}">
               {{ section.title | escape }}
-            </h2>{% if section.title == "Overview" and cityOfficialPage.alternate_names %}
-              {{ renderAlternateNames(cityOfficialPage.alternate_names) }}{% endif %}
+            </h2>
 
             {% if section.descriptions and section.descriptions | length %}
               <div class="officer-section-descriptions">
@@ -82,7 +81,8 @@ permalink: "{{ cityOfficialPage.url }}"
               >
                 {{ renderNodes(section.contents) }}
               </ul>
-            {% endif %}
+            {% endif %}{% if section.title == "Overview" and cityOfficialPage.alternate_names %}
+              {{ renderAlternateNames(cityOfficialPage.alternate_names) }}{% endif %}
           </section>
         {% endfor %}
       </div>
