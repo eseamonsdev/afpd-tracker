@@ -52,7 +52,7 @@ permalink: /city-officials/
       {% for cityOfficialPage in entities.byType["city-official-page"] | sort(false, false, "name") %}
         <li data-service-status="{{ cityOfficialPage['service-status'] | escape }}">
           <a href="{{ cityOfficialPage.url | escape }}">
-            <span>{{ cityOfficialPage.name | escape }}</span>
+            <span>{{ (cityOfficialPage.directory_label or cityOfficialPage.name) | escape }}</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
