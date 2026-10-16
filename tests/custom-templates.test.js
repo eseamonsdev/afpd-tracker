@@ -12,13 +12,14 @@ function render(nodes) {
 
 test("custom tree nodes render their data, escape text, and work inside folders", () => {
   const html = render([{ type: "folder", label: "Updates", contents: [{
-    type: "custom", template: "latest-updates", heading: "News <unsafe>", headingLevel: 3,
+    type: "custom", template: "latest-updates", anchorId: 'updates"unsafe', heading: "News <unsafe>", headingLevel: 3,
     context: "Context <unsafe>", updates: [{ label: "Article <unsafe>", publisher: "Publisher", url: "https://example.com/", description: "Description <unsafe>" }]
   }] }]);
   assert.match(html, /<h3 class="latest-updates-heading">News &lt;unsafe&gt;<\/h3>/);
   assert.match(html, /Description &lt;unsafe&gt;/);
   assert.match(html, /https:\/\/example.com\//);
   assert.doesNotMatch(html, /<unsafe>/);
+  assert.match(html, /<li id="updates&quot;unsafe">/);
 });
 
 test("custom templates can render ordinary document-tree children", () => {

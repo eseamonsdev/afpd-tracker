@@ -1,0 +1,7 @@
+<section class="contact-section" aria-label="{{ node.heading | escape }}">
+  <h2 class="contact-heading">{{ node.heading | escape }}</h2>
+  {% for paragraph in node.paragraphs %}
+    <p>{{ paragraph | escape }}</p>
+  {% endfor %}
+  <p><a href="mailto:{{ node.email | escape }}">{{ node.email | escape }}</a></p>
+</section>

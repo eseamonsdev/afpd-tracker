@@ -21,9 +21,20 @@ and its styles to `public/css/custom.css`; no new page-template branch is needed
 Escape text and attribute values in custom templates. Custom includes may call
 `renderNodes(node.contents)` to render ordinary document-tree children.
 
-The shared Latest Updates object lives in
-`data/entities/custom/reckless-ben-latest-updates.json`. The homepage references
-it directly. The Ben Schneider Overview references it with a heading-level and
+Custom nodes may set `anchorId` to a unique, whitespace-free page anchor, such as
+`"anchorId": "contact"`. The shared renderer adds this escaped value as the HTML
+`id` on the custom node's list item, so links such as `href="#contact"` scroll to
+that section without JavaScript. Keep `anchorId` separate from the data object's
+`id`, which identifies it for `$ref` resolution. Existing folder nodes continue
+to use their `anchor` field. Anchor values must be unique within a rendered page.
+
+The homepage's `contact` custom node lives in `root.json`, after Explore the
+Project. Its heading, paragraphs, and email address are data fields rendered by
+`src/_includes/custom/contact.njk`.
+
+The homepage Latest Updates object lives in
+`data/entities/custom/home-latest-updates.json`. The Ben Schneider Overview references
+`data/entities/custom/reckless-ben-latest-updates.json` with a heading-level and
 profile-link override. Its article/video references resolve through the existing
 entity/source resolver. `explore-project` wraps the homepage resource links.
 

@@ -111,7 +111,7 @@
     {% macro renderNodes(nodes) %}
       {% for node in nodes %}
         {% if node.type == "custom" %}
-          <li>
+          <li{% if node.anchorId %} id="{{ node.anchorId | escape }}"{% endif %}>
             {% include node.template | customTemplatePath %}
           </li>
         {% elseif node.type == "folder" %}
