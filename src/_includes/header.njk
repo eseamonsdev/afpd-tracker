@@ -1,3 +1,6 @@
+{% macro navLink(url, label) -%}
+<a href="{{ url }}"{% if page.url == url %} aria-current="page"{% elif url != "/" and page.url and page.url.indexOf(url) == 0 %} aria-current="location"{% endif %}>{{ label }}</a>
+{%- endmacro -%}
 <header class="site-header">
   <div class="site-header-inner">
     <a class="site-title" href="/">
@@ -5,83 +8,24 @@
       Accountability Project
     </a>
 
-    <nav class="site-nav" aria-label="Main navigation">
-      <a
-        href="/"
-        {% if page.url == "/" %}aria-current="page"{% endif %}
-      >
-        Home
-      </a>
-
-      <a
-        href="/police-encounters/"
-        {% if page.url == "/police-encounters/" %}
-          aria-current="page"
-        {% elif page.url and page.url.indexOf("/police-encounters/") == 0 %}
-          aria-current="location"
-        {% endif %}
-      >
-        Police Encounters
-      </a>
-
-      <a
-        href="/officers/"
-        {% if page.url == "/officers/" %}
-          aria-current="page"
-        {% elif page.url and page.url.indexOf("/officers/") == 0 %}
-          aria-current="location"
-        {% endif %}
-      >
-        Officers
-      </a>
-
-      <a
-        href="/afpd-resources/"
-        {% if page.url == "/afpd-resources/" %}
-          aria-current="page"
-        {% elif page.url and page.url.indexOf("/afpd-resources/") == 0 %}
-          aria-current="location"
-        {% endif %}
-      >
-        AFPD Resources
-      </a>
-
-      <a
-        href="/civilian-employees/"
-        {% if page.url == "/civilian-employees/" %}
-          aria-current="page"
-        {% elif page.url and page.url.indexOf("/civilian-employees/") == 0 %}
-          aria-current="location"
-        {% endif %}
-      >
-        Civilian Employees
-      </a>
-
-      <a
-        href="/city-officials/"
-        {% if page.url == "/city-officials/" %}
-          aria-current="page"
-        {% elif page.url and page.url.indexOf("/city-officials/") == 0 %}
-          aria-current="location"
-        {% endif %}
-      >
-        City Officials
-      </a>
-
-      <a
-        href="/city-oversight/"
-        {% if page.url == "/city-oversight/" %}
-          aria-current="page"
-        {% elif page.url and page.url.indexOf("/city-oversight/") == 0 %}
-          aria-current="location"
-        {% endif %}
-      >
-        City Oversight
-      </a>
-
-      <a href="/police-radio/"{% if page.url == "/police-radio/" %} aria-current="page"{% elif page.url and page.url.indexOf("/police-radio/") == 0 %} aria-current="location"{% endif %}>
-        Police Radio
-      </a>
+    <button class="nav-toggle" type="button" aria-expanded="true" aria-controls="main-navigation" hidden>
+      <span aria-hidden="true">☰</span> Menu
+    </button>
+    <nav id="main-navigation" class="site-nav" aria-label="Main navigation">
+      {{ navLink("/", "Home") }}
+      {{ navLink("/police-encounters/", "Police Encounters") }}
+      <details class="personnel-nav">
+        <summary{% if page.url and (page.url.indexOf("/officers/") == 0 or page.url.indexOf("/civilian-employees/") == 0 or page.url.indexOf("/city-officials/") == 0) %} class="is-current-section"{% endif %}>Officers &amp; Personnel <span class="nav-chevron" aria-hidden="true"></span></summary>
+        <div class="personnel-links">
+          {{ navLink("/officers/", "Officers") }}
+          {{ navLink("/civilian-employees/", "Civilian Employees") }}
+          {{ navLink("/city-officials/", "City Officials") }}
+        </div>
+      </details>
+      {{ navLink("/afpd-resources/", "AFPD Resources") }}
+      {{ navLink("/city-oversight/", "City Oversight") }}
+      {{ navLink("/police-radio/", "Police Radio") }}
     </nav>
   </div>
 </header>
+<script src="/js/header.js" defer></script>

@@ -45,64 +45,27 @@
       Accountability Project
     </a>
 
-    <nav class="site-nav" aria-label="Main navigation">
-      <a
-        href="/"
-        
-      >
-        Home
-      </a>
-
-      <a
-        href="/police-encounters/"
-        
-      >
-        Police Encounters
-      </a>
-
-      <a
-        href="/officers/"
-        
-      >
-        Officers
-      </a>
-
-      <a
-        href="/afpd-resources/"
-        
-      >
-        AFPD Resources
-      </a>
-
-      <a
-        href="/civilian-employees/"
-        
-          aria-current="page"
-        
-      >
-        Civilian Employees
-      </a>
-
-      <a
-        href="/city-officials/"
-        
-      >
-        City Officials
-      </a>
-
-      <a
-        href="/city-oversight/"
-        
-      >
-        City Oversight
-      </a>
-
-      <a href="/police-radio/">
-        Police Radio
-      </a>
+    <button class="nav-toggle" type="button" aria-expanded="true" aria-controls="main-navigation" hidden>
+      <span aria-hidden="true">☰</span> Menu
+    </button>
+    <nav id="main-navigation" class="site-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/police-encounters/">Police Encounters</a>
+      <details class="personnel-nav">
+        <summary class="is-current-section">Officers &amp; Personnel <span class="nav-chevron" aria-hidden="true"></span></summary>
+        <div class="personnel-links">
+          <a href="/officers/">Officers</a>
+          <a href="/civilian-employees/" aria-current="page">Civilian Employees</a>
+          <a href="/city-officials/">City Officials</a>
+        </div>
+      </details>
+      <a href="/afpd-resources/">AFPD Resources</a>
+      <a href="/city-oversight/">City Oversight</a>
+      <a href="/police-radio/">Police Radio</a>
     </nav>
   </div>
 </header>
+<script src="/js/header.js" defer></script>
 
 
   <main>
