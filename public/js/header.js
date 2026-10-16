@@ -48,8 +48,13 @@
       hoverOpened = false;
     }
   });
-  personnel.addEventListener('focusout', event => {
-    if (!personnel.contains(event.relatedTarget)) closePersonnel();
+  // Touch browsers can blur the disclosure before dispatching a link's click.
+  // Only dismiss for keyboard focus departure after Tab has finished moving focus;
+  // pointer users dismiss through the outside-click handler below.
+  document.addEventListener('keyup', event => {
+    if (event.key === 'Tab' && !personnel.contains(document.activeElement)) {
+      closePersonnel();
+    }
   });
   document.addEventListener('click', event => {
     if (!personnel.contains(event.target)) closePersonnel();
