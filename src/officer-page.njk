@@ -8,8 +8,9 @@ permalink: "{{ officerPage.url }}"
 ---
 {% extends "site-page-layout.njk" %}
 {% from "document-tree.njk" import renderNodes -%}
-{% set siteUrl = "https://afpd-tracker.ericseamonsdeveloper.workers.dev" -%}
-{% set pageTitle = officerPage.name ~ " — Officer Records | AFPD Accountability Project" -%}
+{% from "profile-names.njk" import renderAlternateNames -%}
+{% set siteUrl = "https://afpd-accountability.com" -%}
+{% set pageTitle = officerPage.seo_title or (officerPage.name ~ " — Officer Records | AFPD Accountability Project") -%}
 {% set defaultDescription = "Explore records related to " ~ officerPage.name ~ "’s service with the American Fork Police Department." -%}
 {% set pageDescription = officerPage.seo_description or defaultDescription -%}
 {% set canonicalUrl = siteUrl ~ officerPage.url -%}
@@ -31,7 +32,7 @@ permalink: "{{ officerPage.url }}"
 
     <div class="page-heading">
       <p class="officer-category-label">OFFICER RECORDS</p>
-      <h1>{{ officerPage.name | escape }}</h1>
+      <h1>{{ (officerPage.display_name or officerPage.name) | escape }}</h1>
     </div>
 
     {% if sections | length %}
@@ -63,7 +64,9 @@ permalink: "{{ officerPage.url }}"
           >
             <h2 id="officer-section-heading-{{ loop.index }}">
               {{ section.title | escape }}
-            </h2>
+            </h2>{% if section.title == "Overview" and officerPage.alternate_names %}
+              {{ renderAlternateNames(officerPage.alternate_names) }}
+            {% endif %}
 
             {% if section.descriptions and section.descriptions | length %}
               <div class="officer-section-descriptions">

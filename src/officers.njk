@@ -55,16 +55,22 @@ permalink: /officers/
         pages contain only basic employment information. Select a name to view
         the available records.
       </p>
+      <div class="officer-search" hidden>
+        <label for="officer-name-search">Search officers by name</label>
+        <input id="officer-name-search" type="search" placeholder="Name or alternate name" autocomplete="off" aria-controls="officer-directory">
+      </div>
+      <p id="officer-search-status" role="status" hidden></p>
     </div>
 
-    <ul class="officer-list" aria-label="Officers" aria-describedby="officer-list-description">
+    <ul id="officer-directory" class="officer-list" aria-label="Officers" aria-describedby="officer-list-description">
       {% for officerPage in entities.byType["officer-page"] | sort(false, false, "name") %}
         <li
+          data-search-names="{{ officerPage.name | escape }} {{ (officerPage.search_names or []) | join(' ') | escape }}"
           data-key-records="{{ 'true' if officerPage['key-record'] == true else 'false' }}"
           data-employment-status="{{ officerPage['employment-status'] | escape }}"
         >
           <a href="{{ officerPage.url | escape }}">
-            <span>{{ officerPage.name | escape }}</span>
+            <span>{{ (officerPage.directory_label or officerPage.name) | escape }}</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>

@@ -8,6 +8,7 @@ permalink: "{{ civilianEmployeePage.url }}"
 ---
 {% extends "site-page-layout.njk" %}
 {% from "document-tree.njk" import renderNodes -%}
+{% from "profile-names.njk" import renderAlternateNames -%}
 {% set siteUrl = "https://afpd-accountability.com" -%}
 {% set pageTitle = civilianEmployeePage.name ~ " — Civilian Employee Records | AFPD Accountability Project" -%}
 {% set defaultDescription = "Explore available employment, compensation, and other records related to " ~ civilianEmployeePage.name ~ " and the American Fork Police Department." -%}
@@ -63,7 +64,9 @@ permalink: "{{ civilianEmployeePage.url }}"
           >
             <h2 id="officer-section-heading-{{ loop.index }}">
               {{ section.title | escape }}
-            </h2>
+            </h2>{% if section.title == "Overview" and civilianEmployeePage.alternate_names %}
+              {{ renderAlternateNames(civilianEmployeePage.alternate_names) }}
+            {% endif %}
 
             {% if section.descriptions and section.descriptions | length %}
               <div class="officer-section-descriptions">

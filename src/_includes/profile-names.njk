@@ -1,0 +1,3 @@
+{% macro renderAlternateNames(names) -%}
+  <p class="profile-alternate-names"><strong>Names used in records:</strong> {% for alternate in names %}<a href="{{ alternate.source_url | escape }}">{{ alternate.name | escape }}</a>{% if not loop.last %}; {% endif %}{% endfor %}.</p>
+{%- endmacro %}
