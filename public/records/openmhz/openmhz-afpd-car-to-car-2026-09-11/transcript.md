@@ -594,7 +594,7 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **293 · 3:46:05 PM · 4 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-11/dcfems-6001-1789163165.m4a) — [I really despise?] this stupid game of trying to find drugs.
 
-**294 · 3:50:06 PM · 8 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-11/dcfems-6001-1789163406.m4a) — Miss Ashley is just sitting in her car in the driveway of the corner house on Grant. [Unclear ending.]
+**294 · 3:50:06 PM · 8 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-11/dcfems-6001-1789163406.m4a) — Miss Ashlee is just sitting in her car in the driveway of the corner house on Grant. [Unclear ending.]
 
 **295 · 3:50:17 PM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-11/dcfems-6001-1789163417.m4a) — They leave and we stop them.
 
