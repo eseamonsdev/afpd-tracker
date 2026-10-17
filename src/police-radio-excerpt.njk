@@ -18,7 +18,10 @@ permalink: "/police-radio/excerpts/{{ excerptPage.excerpt.number }}/"
   <script src="/js/police-radio-excerpt.js" defer></script>
 {% endblock %}
 {% block content %}
-    <a class="excerpt-back-link" href="/police-radio/">← Full police radio archive</a>
+    <nav class="excerpt-back-links" aria-label="Radio navigation">
+      <a href="/police-radios-excerpts/">← All radio excerpts</a>
+      <a href="/police-radio/">Full police radio archive</a>
+    </nav>
     <div class="page-heading excerpt-heading">
       <h1>{{ title | escape }}</h1>
       {% if excerpt.subtitle %}<p class="excerpt-subtitle">{{ excerpt.subtitle | escape }}</p>{% endif %}

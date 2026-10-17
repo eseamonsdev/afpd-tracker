@@ -1,5 +1,14 @@
 /* Additions scoped to excerpt pages; the original archive stylesheet is unchanged. */
 .excerpt-back-link { display: inline-block; margin-bottom: 2rem; }
+.excerpt-back-links { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; margin-bottom: 2rem; }
+.excerpt-index { list-style: none; padding: 0; margin: 1.5rem 0 0; max-width: 760px; }
+.excerpt-index li + li { margin-top: 1rem; }
+.excerpt-index-link { display: grid; gap: .45rem; padding: 1.25rem; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); text-decoration: none; }
+.excerpt-index-title { color: var(--navy); font-size: 1.15rem; font-weight: 700; }
+.excerpt-index-subtitle { color: var(--ink); font-weight: 500; }
+.excerpt-index-duration { color: var(--muted); font-size: .9rem; font-weight: 400; font-variant-numeric: tabular-nums; }
+.excerpt-index-link:hover .excerpt-index-title { text-decoration: underline; }
+.excerpt-index-link:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
 .excerpt-heading h1, .excerpt-heading .excerpt-subtitle { text-align: center; }
 .excerpt-heading .excerpt-subtitle { margin-inline: auto; }
 .excerpt-subtitle { font-size: 1.2rem; font-weight: 600; }

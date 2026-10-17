@@ -1,0 +1,32 @@
+---
+permalink: /police-radios-excerpts/
+---
+{% extends "site-page-layout.njk" %}
+{% set pageTitle = "Police Radio Excerpts | AFPD Accountability Project" -%}
+{% set pageDescription = "Browse selected AFPD car-to-car radio discussions, organized into numbered excerpts with original timestamps." -%}
+{% set canonicalUrl = "https://afpd-accountability.com/police-radios-excerpts/" -%}
+{% block pageAssets %}
+  <link rel="stylesheet" href="/css/police-radio-excerpt.css">
+{% endblock %}
+{% block content %}
+    <a class="excerpt-back-link" href="/police-radio/">← Full police radio archive</a>
+    <div class="page-heading excerpt-heading">
+      <h1>Police Radio Excerpts</h1>
+      <p>Selected discussions from AFPD’s car-to-car radio talkgroup. Choose an excerpt to listen with original Mountain Time timestamps.</p>
+      <p>Audio lengths below are approximate totals in seconds, excluding the gaps between calls.</p>
+    </div>
+    <ul class="excerpt-index" aria-label="Police radio excerpts">
+    {% for excerptPage in entities.byType["police-radio-excerpt-page"] | sort(false, false, "excerpt.number") %}
+      {% set excerpt = excerptPage.excerpt | radioExcerpt %}
+      <li>
+        <a class="excerpt-index-link" href="/police-radio/excerpts/{{ excerpt.number }}/">
+          <span class="excerpt-index-title">Police Radio Excerpt #{{ excerpt.number }}</span>
+          {% if excerpt.subtitle %}<span class="excerpt-index-subtitle">{{ excerpt.subtitle | escape }}</span>{% endif %}
+          <span class="excerpt-index-duration">{{ excerpt.durationSeconds }} seconds · {{ excerpt.total }} clips</span>
+        </a>
+      </li>
+    {% else %}
+      <li class="excerpt-index-empty">No excerpts are available yet.</li>
+    {% endfor %}
+    </ul>
+{% endblock %}

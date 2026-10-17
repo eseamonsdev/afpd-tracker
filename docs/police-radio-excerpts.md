@@ -49,3 +49,24 @@ run cleanup. Use `make build` after deleting or renumbering page entities and
 include generated HTML deletions in the commit (`git add -A` after reviewing
 changes). Removing an excerpt's data entity also requires removing its page
 entity reference; dangling references intentionally fail the build.
+
+## Excerpt listing and additional selections
+
+`/police-radios-excerpts/` lists the page entities in excerpt-number order.
+Each entry shows the number, optional subtitle, and the sum of selected calls'
+rounded `displayed_seconds` (approximate audio duration, without transmission
+gaps). It uses the same range resolver as the player, so counts and durations
+stay synchronized. Removing a page entity also removes its listing on build.
+
+The September 12 starter selections were located using the draft transcript,
+not a new listening review. No transcript UI or legal findings are added.
+
+- #2: 489–566, 567–618, 620–671. Walmart observations, following a rideshare,
+  and subsequent camera review. Clip 619 is an unrelated drink announcement;
+  some other interspersed discussion remains for context.
+- #3: 672–675, 681–683, 687–689, 695–710, 716, 719–734, 735–741.
+  A woman looking for her car, including the reported reunion and a nearby
+  clarification that another exchange concerns a different woman.
+- #4: 877–901. Searching for a retail-theft/trespass suspect, including both
+  anticipated resistance and discussion of avoiding a confrontation in-store.
+- #5: 914–917. Reaction to someone photographing a traffic stop.
