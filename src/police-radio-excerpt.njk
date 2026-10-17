@@ -8,7 +8,7 @@ permalink: "/police-radio/excerpts/{{ excerptPage.excerpt.number }}/"
 ---
 {% extends "site-page-layout.njk" %}
 {% set excerpt = excerptPage.excerpt | radioExcerpt -%}
-{% set title = "Police Radio Excerpt " ~ excerpt.number -%}
+{% set title = "Police Radio Excerpt #" ~ excerpt.number -%}
 {% set pageTitle = title ~ " | AFPD Accountability Project" -%}
 {% set pageDescription = excerpt.subtitle or title -%}
 {% set canonicalUrl = "https://afpd-accountability.com/police-radio/excerpts/" ~ excerpt.number ~ "/" -%}
