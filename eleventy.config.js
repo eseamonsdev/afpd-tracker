@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import { cleanRadioExcerpts } from "./lib/clean-radio-excerpts.js";
 import { buildRadioExcerpt } from "./lib/build-radio-excerpt.js";
 import { customTemplatePath } from "./lib/custom-template-path.js";
 import { documentSitemapPaths } from "./lib/build-document-sitemap.js";
@@ -16,6 +17,7 @@ const currencyFormatter = new Intl.NumberFormat("en-US", {
 });
 
 export default function (eleventyConfig) {
+  eleventyConfig.on("eleventy.after", cleanRadioExcerpts);
   eleventyConfig.addFilter("radioExcerpt", buildRadioExcerpt);
   eleventyConfig.addFilter("customTemplatePath", customTemplatePath);
   eleventyConfig.addGlobalData("documentSitemapPaths", () => documentSitemapPaths());
@@ -103,6 +105,7 @@ export default function (eleventyConfig) {
 
     const all = Object.create(null);
     const byType = Object.create(null);
+    byType["police-radio-excerpt-page"] = [];
 
     for (const [id, entity] of Object.entries(entityByID)) {
       const resolvedEntity = resolveRefs(entity, byID);

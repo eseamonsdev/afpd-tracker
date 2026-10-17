@@ -40,3 +40,12 @@ not included. Section labels are organizational, not findings about legality.
 
 Run `make build` and `node --test tests/police-radio-excerpt.test.js tests/police-radio.test.js`.
 Commit the generated excerpt HTML and sitemap with the source changes.
+
+After each successful full filesystem build, obsolete numbered excerpt
+`index.html` files are removed automatically. This also works when the last
+excerpt page entity is removed. Other files, original recordings, and the full
+radio archive are preserved. Failed, incremental, and JSON-only builds do not
+run cleanup. Use `make build` after deleting or renumbering page entities and
+include generated HTML deletions in the commit (`git add -A` after reviewing
+changes). Removing an excerpt's data entity also requires removing its page
+entity reference; dangling references intentionally fail the build.
