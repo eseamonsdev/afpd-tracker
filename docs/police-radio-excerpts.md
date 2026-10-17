@@ -1,0 +1,42 @@
+# Police radio excerpts
+
+`src/police-radio-excerpt.njk` generates `/police-radio/excerpts/<number>/` from
+entities of type `police-radio-excerpt-page`. Each page's `excerpt` is a `$ref`
+to a `police-radio-excerpt` entity. The excerpt number supplies the title and URL;
+keep it stable and unique. The page entity lives under
+`data/entities/pages/police-radio-excerpt-pages/`, and its content lives under
+`data/entities/police-radio-excerpts/`.
+
+An excerpt has `number`, optional `subtitle` and `description`, and `sections`.
+Each section has an optional `title` and `description`, plus a `ranges` array:
+
+```json
+{
+  "date": "2026-09-12",
+  "first": "dcfems-6001-1789224430.m4a",
+  "last": "dcfems-6001-1789224494.m4a"
+}
+```
+
+Boundaries are inclusive original audio filenames, not mutable clip numbers.
+Omit `last` for a single call. Multiple ranges and dates can appear in one
+section; keep all selections chronological and nonoverlapping. The build
+resolves ranges against the corresponding `calls.json`, checks audio exists,
+and rejects missing boundaries, overlap, or reversed ordering. Clip numbers
+displayed on the page are derived from the full day's chronological manifest.
+
+Playback uses only `public/js/police-radio-excerpt.js`; it does not load or
+modify the original radio script. Existing radio CSS is reused unchanged;
+excerpt additions are scoped in `public/css/police-radio-excerpt.css`.
+Autoplay starts off and, when enabled, follows all selected calls across
+ranges and sections. A single audio element and next-clip byte prefetching
+preserve the original player's single-element approach. No transcript UI is
+included.
+
+Excerpt 1 contains September 12 morning calls 58–123, 130–163, and 172–230.
+The gate and Corolla exchanges in the two gaps are excluded. Later overlapping
+vehicle conversations remain for context; the possible afternoon follow-up is
+not included. Section labels are organizational, not findings about legality.
+
+Run `make build` and `node --test tests/police-radio-excerpt.test.js tests/police-radio.test.js`.
+Commit the generated excerpt HTML and sitemap with the source changes.

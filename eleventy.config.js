@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import { buildRadioExcerpt } from "./lib/build-radio-excerpt.js";
 import { customTemplatePath } from "./lib/custom-template-path.js";
 import { documentSitemapPaths } from "./lib/build-document-sitemap.js";
 import { buildRadioIndex } from "./lib/build-radio-index.js";
@@ -15,6 +16,7 @@ const currencyFormatter = new Intl.NumberFormat("en-US", {
 });
 
 export default function (eleventyConfig) {
+  eleventyConfig.addFilter("radioExcerpt", buildRadioExcerpt);
   eleventyConfig.addFilter("customTemplatePath", customTemplatePath);
   eleventyConfig.addGlobalData("documentSitemapPaths", () => documentSitemapPaths());
   eleventyConfig.addWatchTarget("./public/records/**/*.pdf");
