@@ -70,3 +70,16 @@ not a new listening review. No transcript UI or legal findings are added.
 - #4: 877–901. Searching for a retail-theft/trespass suspect, including both
   anticipated resistance and discussion of avoiding a confrontation in-store.
 - #5: 914–917. Reaction to someone photographing a traffic stop.
+
+## Enable or disable an excerpt page
+
+Set `"enabled": false` on a `police-radio-excerpt-page` entity to hide its page.
+Omitting `enabled` or setting it to `true` publishes it; other values fail the
+build. This setting belongs on the page entity, not the excerpt data entity.
+Disabled pages remain in `entities.all` but are excluded from the page-type
+collection used by pagination and the excerpts index. Their excerpt data and
+stable numbers are retained. A successful full `make build` removes their old
+numbered HTML pages and sitemap entries. The excerpts index remains, showing
+an empty-state message when all pages are disabled. Re-enable a page and run
+`make build` to restore its original URL. Deploy generated changes, including
+HTML deletions, for the setting to take effect on the hosted site.

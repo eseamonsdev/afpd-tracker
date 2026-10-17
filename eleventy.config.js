@@ -116,6 +116,15 @@ export default function (eleventyConfig) {
 
       const type = resolvedEntity.type;
 
+      // Keep disabled excerpt pages addressable in entities.all, but exclude
+      // them from pagination and the index. Cleanup removes their old HTML.
+      if (type === "police-radio-excerpt-page") {
+        if (resolvedEntity.enabled !== undefined && typeof resolvedEntity.enabled !== "boolean") {
+          throw new Error(`Excerpt page ${id}: enabled must be a boolean`);
+        }
+        if (resolvedEntity.enabled === false) continue;
+      }
+
       if (typeof type === "string" && type.length > 0) {
         if (!byType[type]) {
           byType[type] = [];
@@ -142,3 +151,4 @@ export default function (eleventyConfig) {
     htmlTemplateEngine: "njk"
   };
 }
+
