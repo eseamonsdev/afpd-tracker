@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import { profileAlternateNames } from "./lib/profile-alternate-names.js";
 import { cleanRadioExcerpts } from "./lib/clean-radio-excerpts.js";
 import { buildRadioExcerpt } from "./lib/build-radio-excerpt.js";
 import { customTemplatePath } from "./lib/custom-template-path.js";
@@ -17,6 +18,7 @@ const currencyFormatter = new Intl.NumberFormat("en-US", {
 });
 
 export default function (eleventyConfig) {
+  eleventyConfig.addFilter("profileAlternateNames", profileAlternateNames);
   eleventyConfig.on("eleventy.after", cleanRadioExcerpts);
   eleventyConfig.addFilter("radioExcerpt", buildRadioExcerpt);
   eleventyConfig.addFilter("customTemplatePath", customTemplatePath);

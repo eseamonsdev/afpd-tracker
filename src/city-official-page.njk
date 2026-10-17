@@ -9,6 +9,7 @@ permalink: "{{ cityOfficialPage.url }}"
 {% extends "site-page-layout.njk" %}
 {% from "document-tree.njk" import renderNodes -%}
 {% from "profile-names.njk" import renderAlternateNames -%}
+{% set alternateNames = cityOfficialPage | profileAlternateNames -%}
 {% set siteUrl = "https://afpd-accountability.com" -%}
 {% set pageTitle = cityOfficialPage.name ~ " — City Official Records | AFPD Accountability Project" -%}
 {% set defaultDescription = "Explore available employment, compensation, and other records related to " ~ cityOfficialPage.name ~ " and American Fork City." -%}
@@ -81,8 +82,8 @@ permalink: "{{ cityOfficialPage.url }}"
               >
                 {{ renderNodes(section.contents) }}
               </ul>
-            {% endif %}{% if section.title == "Overview" and cityOfficialPage.alternate_names %}
-              {{ renderAlternateNames(cityOfficialPage.alternate_names) }}{% endif %}
+            {% endif %}{% if section.title == "Overview" and (alternateNames | length) > 0 %}
+              {{ renderAlternateNames(alternateNames) }}{% endif %}
           </section>
         {% endfor %}
       </div>
