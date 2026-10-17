@@ -13,7 +13,7 @@ permalink: /police-radios-excerpts/
     <div class="page-heading excerpt-heading">
       <h1>Police Radio Excerpts</h1>
       <p>Selected discussions from AFPD’s car-to-car radio talkgroup. Choose an excerpt to listen with original Mountain Time timestamps.</p>
-      <p>Audio lengths below are approximate totals in seconds, excluding the gaps between calls.</p>
+      <p>Audio lengths below are approximate totals, excluding the gaps between calls.</p>
     </div>
     <ul class="excerpt-index" aria-label="Police radio excerpts">
     {% for excerptPage in entities.byType["police-radio-excerpt-page"] | sort(false, false, "excerpt.number") %}
@@ -22,7 +22,7 @@ permalink: /police-radios-excerpts/
         <a class="excerpt-index-link" href="/police-radio/excerpts/{{ excerpt.number }}/">
           <span class="excerpt-index-title">Police Radio Excerpt #{{ excerpt.number }}</span>
           {% if excerpt.subtitle %}<span class="excerpt-index-subtitle">{{ excerpt.subtitle | escape }}</span>{% endif %}
-          <span class="excerpt-index-duration">{{ excerpt.durationSeconds }} seconds · {{ excerpt.total }} clips</span>
+          <span class="excerpt-index-duration">{% if excerpt.durationSeconds > 60 %}{{ excerpt.duration | escape }}{% else %}{{ excerpt.durationSeconds }} sec{% endif %} · {{ excerpt.total }} clips</span>
         </a>
       </li>
     {% else %}
