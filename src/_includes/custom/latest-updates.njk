@@ -1,3 +1,4 @@
+{% from "document-tree.njk" import renderTextSegment %}
 <section class="latest-updates" aria-label="{{ node.heading | escape }}">
   {% if node.headingLevel == 3 %}<h3 class="latest-updates-heading">{{ node.heading | escape }}</h3>{% else %}<h2 class="latest-updates-heading">{{ node.heading | escape }}</h2>{% endif %}
   {% if node.context %}<p class="latest-updates-context">{{ node.context | escape }}</p>{% endif %}
@@ -11,7 +12,8 @@
       <li>
         <p class="latest-updates-meta">{{ (update.channel or update.publisher) | escape }}{% if update.publishedDate %} · <time datetime="{{ update.publishedDate | escape }}">{{ update.publishedDate | formatArticleDate | escape }}</time>{% endif %}</p>
         <p class="latest-updates-title">{% if update.url %}<a href="{{ update.url | escape }}" target="_blank" rel="noopener noreferrer">{{ update.label | escape }}</a>{% else %}{{ update.label | escape }}{% endif %}</p>
-        {% if update.description %}<p class="latest-updates-description">{{ update.description | escape }}</p>{% endif %}{% if update.recordLinks and update.recordLinks | length %}
+        {% if update.descriptionParagraphs %}{% for paragraph in update.descriptionParagraphs %}<p class="latest-updates-description">{% for segment in paragraph %}{{ renderTextSegment(segment) }}{% endfor %}</p>
+        {% endfor %}{% elif update.description %}<p class="latest-updates-description">{{ update.description | escape }}</p>{% endif %}{% if update.recordLinks and update.recordLinks | length %}
         <p class="latest-updates-records"><strong>Court records:</strong> {% for record in update.recordLinks %}<a href="/records/{{ record.path | escape }}" target="_blank" rel="noopener noreferrer">{{ record.label | escape }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p>{% endif %}
 {% if update.links and update.links | length %}        <p class="latest-updates-records">{% for link in update.links %}<a href="{{ link.url | escape }}" target="_blank" rel="noopener noreferrer">{{ link.label | escape }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p>
 {% endif %}      </li>
