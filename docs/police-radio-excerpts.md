@@ -52,7 +52,7 @@ entity reference; dangling references intentionally fail the build.
 
 ## Excerpt listing and additional selections
 
-`/police-radios-excerpts/` lists the page entities in excerpt-number order.
+`/police-radio-excerpts/` lists the page entities in excerpt-number order.
 Each entry shows the number, optional subtitle, and the sum of selected calls'
 rounded `displayed_seconds` (approximate audio duration, without transmission
 gaps). It uses the same range resolver as the player, so counts and durations
