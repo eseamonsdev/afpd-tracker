@@ -55,12 +55,16 @@ class Element {
 }
 
 
-async function fixture() {
+async function fixture(withTranscription = true) {
   const elements = new Map(["audio", "play", "seek", "autoplay", "show-current", "current", "player-message", "elapsed", "duration"].map(name => [name, new Element()]));
+  if (withTranscription) {
+    elements.set("transcription-toggle", new Element());
+    elements.set("transcription", new Element());
+  }
   const excerpt = buildRadioExcerpt(entity);
   const buttons = excerpt.sections.flatMap(s => s.ranges.flatMap(r => r.calls)).map(call => {
     const button = new Element();
-    button.dataset = { source: call.source, seconds: String(call.seconds), label: `Clip ${call.number}` };
+    button.dataset = { source: call.source, seconds: String(call.seconds), label: `Clip ${call.number}`, transcript: call.transcript };
     return button;
   });
   const root = { querySelector: id => elements.get(id.replace("#excerpt-", "")), querySelectorAll: () => buttons };
@@ -86,6 +90,44 @@ test("starter selects the intended calls and retains original archive numbering"
   assert.equal(excerpt.total, 159);
   assert.equal(excerpt.duration, "8 min 4 sec");
   assert.deepEqual(numbers, [...Array.from({length:66},(_,i)=>i+58), ...Array.from({length:34},(_,i)=>i+130), ...Array.from({length:59},(_,i)=>i+172)]);
+});
+
+test("transcription is opt-in per excerpt and rejects invalid configuration", () => {
+  const enabled = buildRadioExcerpt(entity);
+  assert.ok(enabled.sections[0].ranges[0].calls[0].transcript.length);
+  const disabled = buildRadioExcerpt({ ...entity, enableTranscription: false });
+  assert.equal(disabled.sections[0].ranges[0].calls[0].transcript, "");
+  assert.throws(() => buildRadioExcerpt({ ...entity, enableTranscription: "true" }), /must be a boolean/);
+});
+
+test("transcription follows selection and autoplay, handles missing text, and toggles off", async () => {
+  const f = await fixture();
+  const toggle = f.get("transcription-toggle"), panel = f.get("transcription");
+  assert.equal(panel.hidden, true);
+  toggle.click();
+  assert.equal(toggle.getAttribute("aria-pressed"), "true");
+  assert.match(panel.textContent, /Choose a clip/);
+  f.select(0);
+  assert.equal(panel.textContent, f.buttons[0].dataset.transcript);
+  f.buttons[1].dataset.transcript = "  ";
+  f.get("autoplay").click(); await f.settle(); f.finish();
+  assert.equal(panel.textContent, "[No transcription for clip]");
+  f.buttons[2].dataset.transcript = '<script>alert("test")</script>';
+  f.select(2);
+  assert.equal(panel.textContent, '<script>alert("test")</script>');
+  toggle.click();
+  assert.equal(panel.hidden, true);
+  assert.equal(panel.textContent, "");
+  f.select(3);
+  assert.equal(panel.hidden, true);
+  toggle.click();
+  assert.equal(panel.textContent, f.buttons[3].dataset.transcript);
+});
+
+test("excerpts without transcription controls retain normal playback", async () => {
+  const f = await fixture(false);
+  f.select(0);
+  assert.equal(f.audio.paused, false);
 });
 
 test("multiple ranges, single calls and optional headings work; bad ranges fail closed", () => {

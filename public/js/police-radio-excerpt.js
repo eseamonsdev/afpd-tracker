@@ -6,11 +6,30 @@
   const audio = get("audio"), play = get("play"), seek = get("seek");
   const autoplay = get("autoplay"), showCurrent = get("show-current");
   const message = get("player-message"), current = get("current");
+  const transcriptionToggle = get("transcription-toggle"), transcription = get("transcription");
+  let transcriptionOn = false;
   const buttons = Array.from(root.querySelectorAll("[data-excerpt-clip]"));
   // A single persistent element preserves Safari's user-granted playback permission.
   audio.preload = "auto";
   let selected = -1, auto = false, playbackRequest = 0;
   let prefetched = null, prefetchController = null, activeObjectUrl = null;
+  function updateTranscription() {
+    if (!transcriptionToggle || !transcription) return;
+    transcription.hidden = !transcriptionOn;
+    transcription.textContent = !transcriptionOn ? "" : selected < 0
+      ? "Choose a clip to see its transcription."
+      : buttons[selected].dataset.transcript?.trim() || "[No transcription for clip]";
+  }
+  if (transcriptionToggle && transcription) {
+    transcriptionToggle.disabled = false;
+    transcriptionToggle.addEventListener("click", () => {
+      transcriptionOn = !transcriptionOn;
+      transcriptionToggle.setAttribute("aria-pressed", String(transcriptionOn));
+      transcriptionToggle.textContent = `Transcription: ${transcriptionOn ? "On" : "Off"}`;
+      updateTranscription();
+    });
+    updateTranscription();
+  }
   const durationText = seconds => {
     const whole = Math.floor(Number.isFinite(seconds) ? Math.max(0, seconds) : 0);
     return `${Math.floor(whole / 60)}:${String(whole % 60).padStart(2, "0")}`;
@@ -69,6 +88,7 @@
     selected = index; activeObjectUrl = ready;
     button.setAttribute("aria-current", "true");
     current.textContent = button.dataset.label;
+    updateTranscription();
     message.textContent = "";
     seek.disabled = true; seek.max = 0; seek.value = 0;
     seek.setAttribute("aria-valuetext", "0:00");

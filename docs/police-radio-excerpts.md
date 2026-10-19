@@ -30,8 +30,8 @@ modify the original radio script. Existing radio CSS is reused unchanged;
 excerpt additions are scoped in `public/css/police-radio-excerpt.css`.
 Autoplay starts off and, when enabled, follows all selected calls across
 ranges and sections. A single audio element and next-clip byte prefetching
-preserve the original player's single-element approach. No transcript UI is
-included.
+preserve the original player's single-element approach. Optional transcription
+is scoped to excerpt pages.
 
 Excerpt 1 contains September 12 morning calls 58–123, 130–163, and 172–230.
 The gate and Corolla exchanges in the two gaps are excluded. Later overlapping
@@ -59,7 +59,7 @@ gaps). It uses the same range resolver as the player, so counts and durations
 stay synchronized. Removing a page entity also removes its listing on build.
 
 The September 12 starter selections were located using the draft transcript,
-not a new listening review. No transcript UI or legal findings are added.
+not a new listening review. No legal findings are added.
 
 - #2: 489–566, 567–618, 620–671. Walmart observations, following a rideshare,
   and subsequent camera review. Clip 619 is an unrelated drink announcement;
@@ -83,3 +83,16 @@ numbered HTML pages and sitemap entries. The excerpts index remains, showing
 an empty-state message when all pages are disabled. Re-enable a page and run
 `make build` to restore its original URL. Deploy generated changes, including
 HTML deletions, for the setting to take effect on the hosted site.
+
+## Optional transcription
+
+Set `"enableTranscription": true` on the excerpt data entity to include a
+Transcription: Off/On button in its player controls. It defaults to off; omit the
+field or set it to false to omit the button and transcript data. Nonboolean
+values fail the build. Only excerpt #1 currently enables this feature.
+
+When switched on, the panel shows the selected clip's `transcript` from its
+daily `calls.json` and updates on manual selection and autoplay. Missing or
+blank text displays `[No transcription for clip]`. Approved bracketed annotations
+are displayed as written. Text is escaped in HTML and inserted as plain text.
+The full-day radio page, script, and styles are unaffected.
