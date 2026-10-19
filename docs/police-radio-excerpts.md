@@ -89,7 +89,7 @@ HTML deletions, for the setting to take effect on the hosted site.
 Set `"enableTranscription": true` on the excerpt data entity to include a
 Transcription: Off/On button in its player controls. It defaults to off; omit the
 field or set it to false to omit the button and transcript data. Nonboolean
-values fail the build. Only excerpt #1 currently enables this feature.
+values fail the build. Excerpts #1 and #9 currently enable this feature.
 
 When switched on, the panel shows the selected clip's `transcript` from its
 daily `calls.json` and updates on manual selection and autoplay. Missing or

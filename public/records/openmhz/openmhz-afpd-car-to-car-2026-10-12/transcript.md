@@ -20,7 +20,7 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **006 · 1:07:18 AM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788838.m4a) — Yeah, [out of stage?]. Take me a minute.
 
-**007 · 1:07:29 AM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788849.m4a) — Did you just go through [an art die?], Cole?
+**007 · 1:07:29 AM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788849.m4a) — Did you just go through Art Dye, Cole?
 
 **008 · 1:07:34 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788854.m4a) — Yeah.
 
@@ -32,15 +32,15 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **012 · 1:07:51 AM · 5 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788871.m4a) — Have you tried the side closest to Lehi at Walmart?
 
-**013 · 1:07:56 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788876.m4a) — [Unclear brief transmission.]
+**013 · 1:07:56 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788876.m4a) — [static]
 
-**014 · 1:08:20 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788900.m4a) — No, but I'll probably hit that one.
+**014 · 1:08:20 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788900.m4a) — No, but I'll probably head that way.
 
 **015 · 1:08:23 AM · 4 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788903.m4a) — That's my honey hole, dude. I found lots of dope over there.
 
 **016 · 1:08:28 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788908.m4a) — [Unclear brief transmission.]
 
-**017 · 1:08:31 AM · 10 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788911.m4a) — Yeah, [I've also?] the [Cinemark?] parking lot, or at least that chunk of area right there. There's always someone sleeping there, I feel like.
+**017 · 1:08:31 AM · 10 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788911.m4a) — Yeah, I've also, the Cinemark parking lot, or at least that chunk of area right there. There's always someone sleeping there, I feel like.
 
 **018 · 1:09:07 AM · 5 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788947.m4a) — And the Speedway, like the Great Harvest parking lot by Speedway. There's always somebody sleeping there.
 
