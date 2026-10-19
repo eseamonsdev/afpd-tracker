@@ -6,7 +6,7 @@ This running backlog contains unresolved bracketed wording, unclear speech, and 
 
 When a correction is applied to transcript.md, remove that clip from this backlog. Keep skipped clips on the list. Use the current transcript wording for remaining entries. Commit corrections and use Git history to inspect earlier wording; no numbered radio drafts are needed.
 
-**Pending clips: 326**
+**Pending clips: 323**
 
 **018 · 1:15:43 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789197343.m4a) — Wow, [so he/we?] burned a Geo Metro.
 
@@ -15,12 +15,6 @@ When a correction is applied to transcript.md, remove that clip from this backlo
 **128 · 9:01:07 AM · 5 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225267.m4a) — Thank you. I know you're [unclear], so I'll just wait it out.
 
 **129 · 9:01:42 AM · 5 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225302.m4a) — [You can 10-22?]. The back gate's open, so I'm out. Thanks, anyways.
-
-**143 · 9:08:43 AM · 8 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225723.m4a) — Copy, [from Mason?]. We'll most likely have the best opportunity for a stop if he doesn't stop by the sidewalk or something.
-
-**144 · 9:08:54 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225734.m4a) — [Unclear acknowledgement.]
-
-**149 · 9:10:15 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225815.m4a) — [Unclear opening] give a [DOT?] when you have one.
 
 **150 · 9:10:19 AM · 5 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225819.m4a) — [Jake?], if you can maneuver yourself to go to the [AF side?], that would be great.
 

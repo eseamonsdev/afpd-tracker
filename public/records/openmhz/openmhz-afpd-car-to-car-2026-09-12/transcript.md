@@ -292,7 +292,7 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **142 · 9:08:31 AM · 8 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225711.m4a) — I'm going to leave. I think he's got eyes on me, so I'm about to pull out right now and leave, and I bet he'll leave soon.
 
-**143 · 9:08:43 AM · 8 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225723.m4a) — Copy, [from Mason?]. We'll most likely have the best opportunity for a stop if he doesn't stop by the sidewalk or something.
+**143 · 9:08:43 AM · 8 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225723.m4a) — Copy, from Mason, we'll most likely have the best opportunity for a stop if he doesn't stop by the sidewalk or something.
 
 **144 · 9:08:54 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225734.m4a) — [Unclear acknowledgement.]
 
@@ -304,7 +304,7 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **148 · 9:10:08 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225808.m4a) — I'm chilling out behind Barnes & Noble right now.
 
-**149 · 9:10:15 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225815.m4a) — [Unclear opening] give a [DOT?] when you have one.
+**149 · 9:10:15 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225815.m4a) — [Unclear opening] give a DOT when you have one.
 
 **150 · 9:10:19 AM · 5 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225819.m4a) — [Jake?], if you can maneuver yourself to go to the [AF side?], that would be great.
 
