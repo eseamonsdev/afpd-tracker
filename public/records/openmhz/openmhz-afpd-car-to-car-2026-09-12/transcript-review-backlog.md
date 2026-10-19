@@ -6,7 +6,7 @@ This running backlog contains unresolved bracketed wording, unclear speech, and 
 
 When a correction is applied to transcript.md, remove that clip from this backlog. Keep skipped clips on the list. Use the current transcript wording for remaining entries. Commit corrections and use Git history to inspect earlier wording; no numbered radio drafts are needed.
 
-**Pending clips: 323**
+**Pending clips: 312**
 
 **018 · 1:15:43 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789197343.m4a) — Wow, [so he/we?] burned a Geo Metro.
 
@@ -15,28 +15,6 @@ When a correction is applied to transcript.md, remove that clip from this backlo
 **128 · 9:01:07 AM · 5 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225267.m4a) — Thank you. I know you're [unclear], so I'll just wait it out.
 
 **129 · 9:01:42 AM · 5 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225302.m4a) — [You can 10-22?]. The back gate's open, so I'm out. Thanks, anyways.
-
-**150 · 9:10:19 AM · 5 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225819.m4a) — [Jake?], if you can maneuver yourself to go to the [AF side?], that would be great.
-
-**153 · 9:10:42 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225842.m4a) — Copy. [I'll go to / don't go to?] [location unclear].
-
-**154 · 9:11:26 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225886.m4a) — [Unclear transmission; recognition repeated prompt text.]
-
-**174 · 9:21:53 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226513.m4a) — [I see him?] in the back, digging through something.
-
-**175 · 9:22:29 AM · 6 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226549.m4a) — Sorry, are we calling it? [Unclear] this Vietnamese lady bugged me about her son's e-bike.
-
-**177 · 9:22:44 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226564.m4a) — [Unclear transmission; recognition repeated prompt text.]
-
-**178 · 9:22:47 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226567.m4a) — [Thank you?]
-
-**184 · 9:24:43 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226683.m4a) — Stand by, [I'm following a car?].
-
-**190 · 9:25:08 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226708.m4a) — [Yes, you are?]
-
-**194 · 9:25:43 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226743.m4a) — Jake, [did you go?] towards Lehi?
-
-**196 · 9:25:52 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226752.m4a) — [Did you go?] towards Lehi?
 
 **199 · 9:26:04 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226764.m4a) — [I'm going to take this drone out?]
 
