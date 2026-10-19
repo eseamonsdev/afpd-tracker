@@ -274,7 +274,7 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **133 · 1:46:46 PM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-09-17/dcfems-6001-1789674406.m4a) — Dude, that fraud was insane.
 
-**134 · 1:47:02 PM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-09-17/dcfems-6001-1789674422.m4a) — She'd lose like a million dollars.
+**134 · 1:47:02 PM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-09-17/dcfems-6001-1789674422.m4a) — She lose like a million dollars?
 
 **135 · 1:47:05 PM · 4 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-09-17/dcfems-6001-1789674425.m4a) — She lost $11,000 in Apple gift cards.
 
@@ -282,9 +282,9 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **137 · 1:47:23 PM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-09-17/dcfems-6001-1789674443.m4a) — No clue.
 
-**138 · 1:47:27 PM · 10 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-09-17/dcfems-6001-1789674447.m4a) — I once took a fraud for the mayor of [Sierra Hills / Cedar Hills?], not mayor, city council, unless the mayor is a [chick?], and she did the same thing, $20,000.
+**138 · 1:47:27 PM · 10 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-09-17/dcfems-6001-1789674447.m4a) — I once took a fraud for the mayor of Cedar Hills. Not mayor, city council, unless the mayor is a chick, and she did the same thing, $20,000.
 
-**139 · 1:47:43 PM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-09-17/dcfems-6001-1789674463.m4a) — [These people can vote? / unclear].
+**139 · 1:47:43 PM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-09-17/dcfems-6001-1789674463.m4a) — These people can vote?
 
 **140 · 1:47:46 PM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-09-17/dcfems-6001-1789674466.m4a) — These people can have children.
 
