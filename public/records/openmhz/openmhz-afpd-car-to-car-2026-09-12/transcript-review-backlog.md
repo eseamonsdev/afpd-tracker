@@ -6,13 +6,11 @@ This running backlog contains unresolved bracketed wording, unclear speech, and 
 
 When a correction is applied to transcript.md, remove that clip from this backlog. Keep skipped clips on the list. Use the current transcript wording for remaining entries. Commit corrections and use Git history to inspect earlier wording; no numbered radio drafts are needed.
 
-**Pending clips: 334**
+**Pending clips: 333**
 
 **018 · 1:15:43 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789197343.m4a) — Wow, [so he/we?] burned a Geo Metro.
 
 **019 · 1:15:52 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789197352.m4a) — That should not be considered [unclear].
-
-**116 · 8:59:17 AM · 13 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225157.m4a) — Yeah, I don't have eyes on. Might be smart if somebody's on State, like across the street, where you can see him, but he's just parked in their parking lot. I think he's just [seeing if we're following him around?].
 
 **118 · 8:59:42 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225182.m4a) — [Are you where you can see / are you where he can see you?]
 

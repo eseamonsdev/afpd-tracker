@@ -238,7 +238,7 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **115 · 8:59:13 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225153.m4a) — So you just park at PetSmart?
 
-**116 · 8:59:17 AM · 13 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225157.m4a) — Yeah, I don't have eyes on. Might be smart if somebody's on State, like across the street, where you can see him, but he's just parked in their parking lot. I think he's just [seeing if we're following him around?].
+**116 · 8:59:17 AM · 13 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225157.m4a) — Yeah, I don't have eyes on. Might be smart if somebody's on State, like across the street, where you can see him, but, yeah, he's just parked in their parking lot. I think he's just seeing if we're following him around.
 
 **117 · 8:59:39 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225179.m4a) — I have eyes on.
 
