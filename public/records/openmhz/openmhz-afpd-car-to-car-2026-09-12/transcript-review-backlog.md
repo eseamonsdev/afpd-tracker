@@ -6,29 +6,15 @@ This running backlog contains unresolved bracketed wording, unclear speech, and 
 
 When a correction is applied to transcript.md, remove that clip from this backlog. Keep skipped clips on the list. Use the current transcript wording for remaining entries. Commit corrections and use Git history to inspect earlier wording; no numbered radio drafts are needed.
 
-**Pending clips: 333**
+**Pending clips: 326**
 
 **018 · 1:15:43 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789197343.m4a) — Wow, [so he/we?] burned a Geo Metro.
 
 **019 · 1:15:52 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789197352.m4a) — That should not be considered [unclear].
 
-**118 · 8:59:42 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225182.m4a) — [Are you where you can see / are you where he can see you?]
-
-**119 · 8:59:52 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225192.m4a) — Yeah, next to Popeyes is [Jube Jones?].
-
-**122 · 9:00:14 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225214.m4a) — [Yeah, I can see him / I can do it?]
-
 **128 · 9:01:07 AM · 5 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225267.m4a) — Thank you. I know you're [unclear], so I'll just wait it out.
 
 **129 · 9:01:42 AM · 5 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225302.m4a) — [You can 10-22?]. The back gate's open, so I'm out. Thanks, anyways.
-
-**130 · 9:01:59 AM · 9 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225319.m4a) — The license is valid, insurance is valid, registration is valid, no [O-track?] number, [unclear ending].
-
-**134 · 9:03:27 AM · 8 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225407.m4a) — Yeah, I mean, [this thing is a decent stop?]. He's acting weird enough. He probably has something. It's probably just weed.
-
-**137 · 9:06:05 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225565.m4a) — [Does someone still have eyes on?]
-
-**141 · 9:08:24 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225704.m4a) — [What point should we level-one it?]
 
 **143 · 9:08:43 AM · 8 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789225723.m4a) — Copy, [from Mason?]. We'll most likely have the best opportunity for a stop if he doesn't stop by the sidewalk or something.
 
