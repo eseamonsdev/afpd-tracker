@@ -70,7 +70,7 @@ permalink: "{{ officerPage.url }}"
             {% if section.descriptions and section.descriptions | length %}
               <div class="officer-section-descriptions">
                 {% for description in section.descriptions %}
-                  <p>{{ description | escape }}</p>
+                  <p>{% if description.parts %}{% for part in description.parts %}{% if part.url %}<a href="{{ part.url | escape }}">{{ part.text | escape }}</a>{% else %}{{ part | escape }}{% endif %}{% endfor %}{% else %}{{ description | escape }}{% endif %}</p>
                 {% endfor %}
               </div>
             {% endif %}
