@@ -454,7 +454,7 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **223 · 9:33:51 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789227231.m4a) — Are we still waiting on this white van?
 
-**224 · 9:33:57 AM · 8 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789227237.m4a) — I'm just driving the parking lot, trying to find tweakers It's crazy it's conversation, and looking at the van a little bit too.
+**224 · 9:33:57 AM · 8 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789227237.m4a) — I'm just driving the parking lot, trying to find tweakers and looking at the van a little bit too.
 
 **225 · 9:34:43 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789227283.m4a) — There are some amazing cars today.
 
