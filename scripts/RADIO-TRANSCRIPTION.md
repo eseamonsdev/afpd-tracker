@@ -83,6 +83,15 @@ validation flags, corrections and unrelated metadata/audio must remain untouched
 Do not reintroduce reviewed entries into the backlog. Preserve superseded drafts
 before subsequent edits, following the target day's existing conventions.
 
+## Owner-directed transcript corrections
+
+Whenever Eric supplies a transcript correction, apply the exact approved wording
+in the requested draft and current transcript.md. Match the calls.json entry by
+its audio filename/epoch, update its transcript to the same wording, and set
+validated: true. This flag records Eric's verification, not automated ASR review.
+Remove the corrected clip from transcript-review-backlog.md if present. Preserve
+unrelated entries, metadata, existing user edits, and applicable draft history.
+
 ## Publication and verification
 
 Fetch staging immediately before publication. Reconcile concurrent changes;

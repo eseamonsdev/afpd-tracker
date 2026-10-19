@@ -124,7 +124,7 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **058 · 8:47:10 AM · 10 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789224430.m4a) — Hey, I'm behind a good car. He's got warnings for assault on a PO. His notes say he always fights the police.
 
-**059 · 8:47:21 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789224441.m4a) — [Where?]
+**059 · 8:47:21 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789224441.m4a) — Where?
 
 **060 · 8:47:28 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789224448.m4a) — We're turning west.
 
