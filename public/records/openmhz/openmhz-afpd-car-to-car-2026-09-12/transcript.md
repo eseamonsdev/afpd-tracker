@@ -168,7 +168,7 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **080 · 8:54:07 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789224847.m4a) — Dang, you're way behind him.
 
-**081 · 8:54:10 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789224850.m4a) — Yeah, I got the light.
+**081 · 8:54:10 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789224850.m4a) — Yeah, I got stuck at the light.
 
 **082 · 8:54:14 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789224854.m4a) — I'm at 300 West, Main.
 
