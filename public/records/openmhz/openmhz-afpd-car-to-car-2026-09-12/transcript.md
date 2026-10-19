@@ -128,7 +128,7 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **060 · 8:47:28 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789224448.m4a) — We're turning west.
 
-**061 · 8:47:35 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789224455.m4a) — Are you going to stop them?
+**061 · 8:47:35 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789224455.m4a) — You gonna stop him?
 
 **062 · 8:47:37 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789224457.m4a) — Yeah, if I can find a reason to.
 
