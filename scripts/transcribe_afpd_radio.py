@@ -165,10 +165,9 @@ def finalize(args):
         raise ValueError('Review must cover every unique filename exactly once')
     by_name = {e['filename']:e for e in entries}
     # This generator establishes a new day's initial documents. Existing days
-    # are edited separately under their reviewer/draft rules, never overwritten.
-    outputs = [folder/'transcript.md', folder/'transcript-review-backlog.md',
-               folder/'transcript-drafts/transcript-draft-1.md']
-    if any(p.exists() for p in outputs):
+    # are corrected in transcript.md with Git history, never overwritten by this generator.
+    outputs = [folder/'transcript.md', folder/'transcript-review-backlog.md']
+    if any(p.exists() for p in outputs) or (folder/'transcript-drafts').exists():
         raise ValueError('Transcript documents already exist; preserve and review them separately')
     lines = []; backlog = []; populated = 0
     for i,c in enumerate(data['calls'],1):
@@ -195,9 +194,8 @@ def finalize(args):
     intro+='Whisper small.en, three passes: original audio; filtered audio; original audio with up to three preceding calls within 60 seconds supplied as transcription-text context. All three outputs were reconciled using neighboring conversation. Brackets and review annotations retain uncertainty. This is automated ASR reconciliation, not direct-listening or user validation.\n\n'
     intro+='This run uses the reproducible settings standardized October 16, 2026 in scripts/radio-transcription-settings.json. The exact historical filter and context-gap settings were not recoverable; this preserves the established method with explicitly documented defaults.\n\n'
     transcript=intro+'\n\n'.join(lines)+'\n'
-    backlog_text=f'# {title} — Transcript review backlog\n\n**Pending clips: {len(backlog)}**\n\nUnresolved entries are withheld from newly populated calls.json transcript fields. Remove entries only after correction or explicit approval; preserve superseded wording under the established draft rules.\n\n'+'\n\n'.join(backlog)+'\n'
-    outputs[2].parent.mkdir(parents=True,exist_ok=True)
-    outputs[0].write_text(transcript);outputs[1].write_text(backlog_text);outputs[2].write_text(transcript)
+    backlog_text=f'# {title} — Transcript review backlog\n\n**Pending clips: {len(backlog)}**\n\nUnresolved entries are withheld from newly populated calls.json transcript fields. Remove entries only after correction or explicit approval; use Git history to inspect superseded wording.\n\n'+'\n\n'.join(backlog)+'\n'
+    outputs[0].write_text(transcript);outputs[1].write_text(backlog_text)
     write(folder/'calls.json',data)
     print(json.dumps({'date':args.date,'three_pass_clips':len(lines),'player_transcripts':populated,'review_backlog':len(backlog)}))
 

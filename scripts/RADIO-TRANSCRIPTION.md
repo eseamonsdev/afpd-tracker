@@ -43,7 +43,7 @@ The script resumes completed passes after verifying settings and audio hashes.
 `--clips 3,7,10` is calibration only; never use it to claim full-day completion.
 An unchanged fully completed day should be verified and skipped. If only some
 entries/documents exist, preserve them, resume missing ASR, and reconcile changes
-under existing draft conventions; the initial-day finalizer deliberately refuses
+using Git history to preserve earlier wording; the initial-day finalizer deliberately refuses
 to overwrite existing documents or populated/validated call objects.
 
 ## Reconciliation is required
@@ -76,27 +76,27 @@ Then establish the new day's artifacts:
 python scripts/transcribe_afpd_radio.py finalize --date YYYY-MM-DD --passes WORK_DIR/YYYY-MM-DD/passes.json --reviewed REVIEWED_JSON
 ```
 
-This writes transcript.md, transcript-review-backlog.md, an identical initial
-transcript-drafts/transcript-draft-1.md, and eligible calls.json transcript fields.
+This writes transcript.md, transcript-review-backlog.md, and eligible calls.json
+transcript fields. Radio transcripts use one continuously corrected transcript.md;
+do not create numbered radio transcript drafts. Git history preserves revisions.
 No newly automated entry gets validated:true. Existing approved bracketed wording,
 validation flags, corrections and unrelated metadata/audio must remain untouched.
-Do not reintroduce reviewed entries into the backlog. Preserve superseded drafts
-before subsequent edits, following the target day's existing conventions.
+Do not reintroduce reviewed entries into the backlog. Commit corrections so Git
+history preserves earlier wording.
 
 ## Owner-directed transcript corrections
 
-Keep transcript.md as the immutable original transcript as first saved. Apply
-Eric's approved corrections to transcript-drafts/transcript-draft-1.md (or the
-explicitly requested revision), not transcript.md. Draft one contains the full
-transcript with corrections. For another correction to previously revised wording,
-follow the day's draft-history rules; Eric may explicitly keep editorial or
-annotation changes in the same draft without creating another revision.
+Use transcript.md as the single current police-radio transcript. Apply Eric's
+exact approved corrections there, match the calls.json entry by audio
+filename/epoch, update its transcript to the same wording, and set validated: true.
+This flag records Eric's verification, not automated ASR review. Remove corrected
+clips from transcript-review-backlog.md and link its source to transcript.md.
+Preserve unrelated entries, metadata, and existing user edits. Commit changes;
+use Git history to recover originals and compare revisions instead of maintaining
+numbered radio drafts.
 
-Match the calls.json entry by its audio filename/epoch, update its transcript to
-the exact approved wording, and set validated: true. This flag records Eric's
-verification, not automated ASR review. Remove the corrected clip from
-transcript-review-backlog.md if present, and have the backlog link to the active
-corrected draft. Preserve unrelated entries, metadata, and existing user edits.
+The Chief Paul interview is a separate workflow: preserve its original app
+transcript and separately labeled revisions. Do not consolidate those files.
 
 ## Publication and verification
 

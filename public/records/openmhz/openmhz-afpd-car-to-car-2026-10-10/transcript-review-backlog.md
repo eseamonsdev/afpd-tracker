@@ -2,7 +2,7 @@
 
 **Pending clips: 213**
 
-Unresolved entries are withheld from newly populated calls.json transcript fields. Remove entries only after correction or explicit approval; preserve superseded wording under the established draft rules.
+Unresolved entries are withheld from newly populated calls.json transcript fields. Remove entries only after correction or explicit approval; use Git history to inspect superseded wording.
 
 **003 · 1:27:09 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-10/dcfems-6001-1791617229.m4a) — [Copy?]
 
