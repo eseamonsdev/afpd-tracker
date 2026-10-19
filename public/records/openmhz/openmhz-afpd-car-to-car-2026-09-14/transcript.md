@@ -4,7 +4,7 @@ Archive: [AFPD police radio](https://afpd-accountability.com/police-radio/). Tal
 
 All clock timestamps are **Mountain Daylight Time (America/Denver, UTC−06:00)**. Durations are the archive’s rounded displayed clip lengths; their sum is **15 minutes 15 seconds**.
 
-Each clip was processed from its original audio and a filtered version, then checked in an adjacent-call context pass using Whisper small.en. The three outputs were reconciled. Brackets mark uncertain words, alternative readings, or unclear transmissions. Obvious spelling errors and prompt hallucinations were removed; uncertainty was retained for names, codes, numbers, and wording that could change meaning. This is an ASR reconciliation, not direct-listening verification. Corrections have not yet been applied.
+Each clip was processed from its original audio and a filtered version, then checked in an adjacent-call context pass using Whisper small.en. The three outputs were reconciled. Brackets mark uncertain words, alternative readings, or unclear transmissions. Obvious spelling errors and prompt hallucinations were removed; uncertainty was retained for names, codes, numbers, and wording that could change meaning. This is an ASR reconciliation, not direct-listening verification. Clips 202–209 were corrected and verified by Eric Seamons; other clips retain their draft status.
 
 Each numbered line contains the clip’s clock timestamp, displayed length, a link to its original audio file, and the transcript.
 
@@ -410,21 +410,21 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **201 · 5:10:20 PM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-09-14/dcfems-6001-1789427420.m4a) — Copy, I'll clear it.
 
-**202 · 5:18:56 PM · 9 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-09-14/dcfems-6001-1789427936.m4a) — Might have a good car over here at Maverik East. Says he’s a—well, if I think it’s the same person—says he’s a gang member for the [Juggalos?].
+**202 · 5:18:56 PM · 9 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-09-14/dcfems-6001-1789427936.m4a) — Might have a good car over here at Maverik East. Says he’s a—well, if I think it’s the same person—says he’s a gang member for the Juggalos.
 
 **203 · 5:19:18 PM · 4 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-09-14/dcfems-6001-1789427958.m4a) — I just drove through there like three minutes ago. What car is it?
 
 **204 · 5:19:23 PM · 12 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-09-14/dcfems-6001-1789427963.m4a) — This is a black Audi S4. It kind of seemed to dodge me a little bit, but I was like super far back in traffic, so I couldn’t really catch up to it when that went past. Now I’m coming back, trying to see if it’s still there. The black Audi S4, like a 2013, cracked windshield.
 
-**205 · 5:19:39 PM · 4 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-09-14/dcfems-6001-1789427979.m4a) — He must have came in after me because there wasn't an Audi there when I went through.
+**205 · 5:19:39 PM · 4 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-09-14/dcfems-6001-1789427979.m4a) — Ah, he must have came in after me because there wasn't an Audi there when I went through.
 
-**206 · 5:21:46 PM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-09-14/dcfems-6001-1789428106.m4a) — I think I got the wrong guy.
+**206 · 5:21:46 PM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-09-14/dcfems-6001-1789428106.m4a) — [unclear] I think I got the wrong guy.
 
 **207 · 5:21:59 PM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-09-14/dcfems-6001-1789428119.m4a) — You don't think it's the RO?
 
-**208 · 5:22:04 PM · 10 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-09-14/dcfems-6001-1789428124.m4a) — Yeah, RO was a female, and it was like a younger male driver, so I looked up some involvement and I thought I got the right guy, but it doesn’t look like the same dude I [unclear] State, so.
+**208 · 5:22:04 PM · 10 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-09-14/dcfems-6001-1789428124.m4a) — Yeah, RO was a female, and it was like a younger male driver, so I looked up some involvement and I thought I got the right guy, but it doesn’t look like the same dude I saw [unclear] State, so.
 
-**209 · 5:22:17 PM · 8 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-09-14/dcfems-6001-1789428137.m4a) — I mean, [he / I?] could still be doing the same things as that other dude, though.
+**209 · 5:22:17 PM · 8 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-09-14/dcfems-6001-1789428137.m4a) — Oh, I mean, he could still be doing the same things as that other dude, though.
 
 **210 · 5:22:27 PM · 5 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-09-14/dcfems-6001-1789428147.m4a) — [Unclear beginning] parked there. [Unclear] in front of the store.
 
