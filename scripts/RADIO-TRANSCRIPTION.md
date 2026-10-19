@@ -85,12 +85,18 @@ before subsequent edits, following the target day's existing conventions.
 
 ## Owner-directed transcript corrections
 
-Whenever Eric supplies a transcript correction, apply the exact approved wording
-in the requested draft and current transcript.md. Match the calls.json entry by
-its audio filename/epoch, update its transcript to the same wording, and set
-validated: true. This flag records Eric's verification, not automated ASR review.
-Remove the corrected clip from transcript-review-backlog.md if present. Preserve
-unrelated entries, metadata, existing user edits, and applicable draft history.
+Keep transcript.md as the immutable original transcript as first saved. Apply
+Eric's approved corrections to transcript-drafts/transcript-draft-1.md (or the
+explicitly requested revision), not transcript.md. Draft one contains the full
+transcript with corrections. For another correction to previously revised wording,
+follow the day's draft-history rules; Eric may explicitly keep editorial or
+annotation changes in the same draft without creating another revision.
+
+Match the calls.json entry by its audio filename/epoch, update its transcript to
+the exact approved wording, and set validated: true. This flag records Eric's
+verification, not automated ASR review. Remove the corrected clip from
+transcript-review-backlog.md if present, and have the backlog link to the active
+corrected draft. Preserve unrelated entries, metadata, and existing user edits.
 
 ## Publication and verification
 
