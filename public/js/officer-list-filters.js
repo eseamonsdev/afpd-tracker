@@ -12,6 +12,7 @@ function normalizeName(value) {
 
 const descriptions = {
   key: "Officers with records relating to specific incidents or concerns involving the American Fork Police Department. These records are the primary focus of this site.",
+  forced: "Officers documented as having resigned in lieu of termination, or confirmed by department leadership or POST proceedings to have been required to resign.",
   all: "Browse all officers alphabetically by name. Select a name to explore the available records.",
   current: "Officers whose available employment records do not list an end date with the American Fork Police Department. Employment status reflects the most recent records available to this site.",
   former: "Officers whose available employment records list an end date with the American Fork Police Department.",
@@ -36,6 +37,8 @@ if (filters && description && buttons.length) {
         matchesFilter = true;
       } else if (filter === "key") {
         matchesFilter = officer.dataset.keyRecords === "true";
+      } else if (filter === "forced") {
+        matchesFilter = officer.dataset.forcedResignation === "true";
       } else {
         matchesFilter = officer.dataset.employmentStatus === filter;
       }
