@@ -144,7 +144,7 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **068 · 8:48:04 AM · 5 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789224484.m4a) — It's like a big white Sprinter van, kind of. It looks pretty ghetto.
 
-**069 · 8:48:10 AM · 4 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789224490.m4a) — Copy. I'm at that gas station at [unclear], 100 North.
+**069 · 8:48:10 AM · 4 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789224490.m4a) — Copy. I'm at that gas station at 101 East, 100 North.
 
 **070 · 8:48:14 AM · 5 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789224494.m4a) — Copy. He very clearly does not want to get stopped. He's driving like an angel.
 
