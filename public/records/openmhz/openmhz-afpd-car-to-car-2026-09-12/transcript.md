@@ -184,7 +184,7 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **088 · 8:55:02 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789224902.m4a) — He is northbound State.
 
-**089 · 8:55:10 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789224910.m4a) — [no words]
+**089 · 8:55:10 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789224910.m4a) — [silent]
 
 **090 · 8:55:35 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789224935.m4a) — You should have stopped him when you had the chance.
 
