@@ -3,7 +3,7 @@ permalink: /police-radio-excerpts/
 ---
 {% extends "site-page-layout.njk" %}
 {% set pageTitle = "Police Radio Excerpts | AFPD Accountability Project" -%}
-{% set pageDescription = "Browse selected AFPD car-to-car radio discussions, organized into numbered excerpts with original timestamps." -%}
+{% set pageDescription = "Browse selected AFPD car-to-car radio discussions with descriptive titles and original timestamps." -%}
 {% set canonicalUrl = "https://afpd-accountability.com/police-radio-excerpts/" -%}
 {% block pageAssets %}
   <link rel="stylesheet" href="/css/police-radio-excerpt.css">
@@ -19,9 +19,8 @@ permalink: /police-radio-excerpts/
     {% for excerptPage in entities.byType["police-radio-excerpt-page"] | sort(false, false, "excerpt.number") %}
       {% set excerpt = excerptPage.excerpt | radioExcerpt %}
       <li>
-        <a class="excerpt-index-link" href="/police-radio/excerpts/{{ excerpt.number }}/">
-          <span class="excerpt-index-title">Police Radio Excerpt #{{ excerpt.number }}</span>
-          {% if excerpt.subtitle %}<span class="excerpt-index-subtitle">{{ excerpt.subtitle | escape }}</span>{% endif %}
+        <a class="excerpt-index-link" href="{{ excerpt.url | escape }}">
+          <span class="excerpt-index-title">{{ excerpt.subtitle | escape }}</span>
           <span class="excerpt-index-duration">{% if excerpt.durationSeconds > 60 %}{{ excerpt.duration | escape }}{% else %}{{ excerpt.durationSeconds }} sec{% endif %} · {{ excerpt.total }} clips</span>
         </a>
       </li>

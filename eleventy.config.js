@@ -2,6 +2,7 @@ import fs from "node:fs";
 import { profileAlternateNames } from "./lib/profile-alternate-names.js";
 import { cleanRadioExcerpts } from "./lib/clean-radio-excerpts.js";
 import { buildRadioExcerpt } from "./lib/build-radio-excerpt.js";
+import { excerptUrl, validateRadioExcerptIdentities } from "./lib/radio-excerpt-identity.js";
 import { customTemplatePath } from "./lib/custom-template-path.js";
 import { documentSitemapPaths } from "./lib/build-document-sitemap.js";
 import { buildRadioIndex } from "./lib/build-radio-index.js";
@@ -21,6 +22,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("profileAlternateNames", profileAlternateNames);
   eleventyConfig.on("eleventy.after", cleanRadioExcerpts);
   eleventyConfig.addFilter("radioExcerpt", buildRadioExcerpt);
+  eleventyConfig.addFilter("excerptUrl", excerptUrl);
+  eleventyConfig.on("eleventy.before", () => validateRadioExcerptIdentities());
   eleventyConfig.addFilter("customTemplatePath", customTemplatePath);
   eleventyConfig.addGlobalData("documentSitemapPaths", () => documentSitemapPaths());
   eleventyConfig.addWatchTarget("./public/records/**/*.pdf");

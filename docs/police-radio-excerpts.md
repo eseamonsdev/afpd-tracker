@@ -1,13 +1,16 @@
 # Police radio excerpts
 
-`src/police-radio-excerpt.njk` generates `/police-radio/excerpts/<number>/` from
+`src/police-radio-excerpt.njk` generates `/police-radio/excerpts/<slug>/` from
 entities of type `police-radio-excerpt-page`. Each page's `excerpt` is a `$ref`
-to a `police-radio-excerpt` entity. The excerpt number supplies the title and URL;
-keep it stable and unique. The page entity lives under
+to a `police-radio-excerpt` entity. The descriptive `subtitle` supplies the public heading and listing title. Each
+excerpt has an explicit, permanent `slug` for its URL. Keep slugs unique and
+unchanged after publication, even when editing a title or reordering the list.
+The number remains a unique internal identifier and sort key; never reuse it. The page entity lives under
 `data/entities/pages/police-radio-excerpt-pages/`, and its content lives under
 `data/entities/police-radio-excerpts/`.
 
-An excerpt has `number`, optional `subtitle` and `description`, and `sections`.
+An excerpt has `number`, `slug`, descriptive `subtitle`, optional `description`,
+and `sections`.
 Each section has an optional `title` and `description`, plus a `ranges` array:
 
 ```json
@@ -41,11 +44,11 @@ not included. Section labels are organizational, not findings about legality.
 Run `make build` and `node --test tests/police-radio-excerpt.test.js tests/police-radio.test.js`.
 Commit the generated excerpt HTML and sitemap with the source changes.
 
-After each successful full filesystem build, obsolete numbered excerpt
+After each successful full filesystem build, obsolete excerpt
 `index.html` files are removed automatically. This also works when the last
 excerpt page entity is removed. Other files, original recordings, and the full
 radio archive are preserved. Failed, incremental, and JSON-only builds do not
-run cleanup. Use `make build` after deleting or renumbering page entities and
+run cleanup. Use `make build` after deleting or disabling page entities and
 include generated HTML deletions in the commit (`git add -A` after reviewing
 changes). Removing an excerpt's data entity also requires removing its page
 entity reference; dangling references intentionally fail the build.
@@ -53,7 +56,7 @@ entity reference; dangling references intentionally fail the build.
 ## Excerpt listing and additional selections
 
 `/police-radio-excerpts/` lists the page entities in excerpt-number order.
-Each entry shows the number, optional subtitle, and the sum of selected calls'
+Each entry shows the descriptive title and the sum of selected calls'
 rounded `displayed_seconds` (approximate audio duration, without transmission
 gaps). It uses the same range resolver as the player, so counts and durations
 stay synchronized. Removing a page entity also removes its listing on build.
@@ -78,8 +81,8 @@ Omitting `enabled` or setting it to `true` publishes it; other values fail the
 build. This setting belongs on the page entity, not the excerpt data entity.
 Disabled pages remain in `entities.all` but are excluded from the page-type
 collection used by pagination and the excerpts index. Their excerpt data and
-stable numbers are retained. A successful full `make build` removes their old
-numbered HTML pages and sitemap entries. The excerpts index remains, showing
+stable numbers and slugs are retained. A successful full `make build` removes their old
+excerpt HTML pages and sitemap entries. The excerpts index remains, showing
 an empty-state message when all pages are disabled. Re-enable a page and run
 `make build` to restore its original URL. Deploy generated changes, including
 HTML deletions, for the setting to take effect on the hosted site.
@@ -89,10 +92,23 @@ HTML deletions, for the setting to take effect on the hosted site.
 Set `"enableTranscription": true` on the excerpt data entity to include a
 Transcription: Off/On button in its player controls. It defaults to off; omit the
 field or set it to false to omit the button and transcript data. Nonboolean
-values fail the build. Excerpts #1 and #9 currently enable this feature.
+values fail the build. Excerpts #1, #5, and #9 currently enable this feature.
 
 When switched on, the panel shows the selected clip's `transcript` from its
 daily `calls.json` and updates on manual selection and autoplay. Missing or
 blank text displays `[No transcription for clip]`. Approved bracketed annotations
 are displayed as written. Text is escaped in HTML and inserted as plain text.
 The full-day radio page, script, and styles are unaffected.
+
+## Stable URLs
+
+Public headings and listing cards use descriptive titles without excerpt numbers.
+The fixed slug is independent of the title, visibility, and listing order. Do not
+regenerate it from a revised title or reuse a removed excerpt's slug or number.
+Each build validates unique slugs/numbers across every excerpt data entity,
+including disabled ones. Keep the excerpt data when disabling a page so its
+identity is reserved.
+
+Only descriptive URLs are published. Old numbered HTML pages and links are
+removed; no redirects, aliases, or compatibility routes are maintained. Hiding
+an excerpt removes its generated page and sitemap entry.

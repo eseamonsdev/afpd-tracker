@@ -4,14 +4,14 @@ pagination:
   data: entities.byType.police-radio-excerpt-page
   size: 1
   alias: excerptPage
-permalink: "/police-radio/excerpts/{{ excerptPage.excerpt.number }}/"
+permalink: "{{ excerptPage.excerpt | excerptUrl }}"
 ---
 {% extends "site-page-layout.njk" %}
 {% set excerpt = excerptPage.excerpt | radioExcerpt -%}
-{% set title = "Police Radio Excerpt #" ~ excerpt.number -%}
+{% set title = excerpt.subtitle -%}
 {% set pageTitle = title ~ " | AFPD Accountability Project" -%}
 {% set pageDescription = excerpt.subtitle or title -%}
-{% set canonicalUrl = "https://afpd-accountability.com/police-radio/excerpts/" ~ excerpt.number ~ "/" -%}
+{% set canonicalUrl = "https://afpd-accountability.com" ~ excerpt.url -%}
 {% block pageAssets %}
   <link rel="stylesheet" href="/css/police-radio.css">
   <link rel="stylesheet" href="/css/police-radio-excerpt.css">
@@ -24,7 +24,6 @@ permalink: "/police-radio/excerpts/{{ excerptPage.excerpt.number }}/"
     </nav>
     <div class="page-heading excerpt-heading">
       <h1>{{ title | escape }}</h1>
-      {% if excerpt.subtitle %}<p class="excerpt-subtitle">{{ excerpt.subtitle | escape }}</p>{% endif %}
       {% if excerpt.description %}<p>{{ excerpt.description | escape }}</p>{% endif %}
       <p>Audio from AFPD’s car-to-car radio talkgroup. Times shown in Mountain Time.</p>
     </div>

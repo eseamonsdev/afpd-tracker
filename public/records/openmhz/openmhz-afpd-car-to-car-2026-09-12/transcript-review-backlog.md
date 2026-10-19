@@ -6,7 +6,7 @@ This running backlog contains unresolved bracketed wording, unclear speech, and 
 
 When a correction is applied to transcript.md, remove that clip from this backlog. Keep skipped clips on the list. Use the current transcript wording for remaining entries. Commit corrections and use Git history to inspect earlier wording; no numbered radio drafts are needed.
 
-**Pending clips: 304**
+**Pending clips: 303**
 
 **018 · 1:15:43 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789197343.m4a) — Wow, [so he/we?] burned a Geo Metro.
 
@@ -553,8 +553,6 @@ When a correction is applied to transcript.md, remove that clip from this backlo
 **910 · 8:44:52 PM · 4 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789267492.m4a) — Hey, [Cox?], can I talk to you for a minute?
 
 **913 · 9:07:47 PM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789268867.m4a) — [Okay / We'll eat?]
-
-**916 · 9:22:32 PM · 6 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789269752.m4a) — I'm sure [he'll/they'll?] post it: 'Look at American Fork Police. They're just trying to screw people over.'
 
 **919 · 9:29:02 PM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789270142.m4a) — [I'm updating, yes? / I'm up King Yes?]
 

@@ -1838,7 +1838,7 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **915 · 9:22:29 PM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789269749.m4a) — It's because you have a nice car.
 
-**916 · 9:22:32 PM · 6 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789269752.m4a) — I'm sure [he'll/they'll?] post it: 'Look at American Fork Police. They're just trying to screw people over.'
+**916 · 9:22:32 PM · 6 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789269752.m4a) — I'm sure he'll post it: 'Look at American Fork Police. They're just trying to screw people over.'
 
 **917 · 9:22:43 PM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789269763.m4a) — Probably.
 
