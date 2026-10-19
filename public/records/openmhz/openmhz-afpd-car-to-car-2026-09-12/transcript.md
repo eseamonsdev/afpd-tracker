@@ -404,15 +404,15 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **198 · 9:26:00 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226760.m4a) — Copy.
 
-**199 · 9:26:04 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226764.m4a) — [I'm going to take this drone out?]
+**199 · 9:26:04 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226764.m4a) — [unclear]
 
 **200 · 9:26:12 AM · 4 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226772.m4a) — I don't know if it's the same guy, but there's somebody with a bunch of warrants.
 
-**201 · 9:26:26 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226786.m4a) — [Unclear transmission; no reliable words recovered.]
+**201 · 9:26:26 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226786.m4a) — [silent]
 
 **202 · 9:26:30 AM · 5 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226790.m4a) — I feel like we're sharks circling the water. We just need one thing to go right.
 
-**203 · 9:26:44 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226804.m4a) — Just about hit a [tweaker?] on a bike.
+**203 · 9:26:44 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226804.m4a) — Just about hit a tweaker on a bike.
 
 **204 · 9:27:07 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226827.m4a) — Hello.
 
@@ -428,7 +428,7 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **210 · 9:27:54 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226874.m4a) — He is cruising away.
 
-**211 · 9:27:59 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226879.m4a) — [Unclear brief question.]
+**211 · 9:27:59 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226879.m4a) — [Unclear]
 
 **212 · 9:28:01 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226881.m4a) — I'm still behind Barnes & Noble right now.
 
@@ -436,13 +436,13 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **214 · 9:28:19 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226899.m4a) — Well, I don't think you're going to get there before me now.
 
-**215 · 9:29:56 AM · 5 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226996.m4a) — Awesome, awesome, awesome, awesome, awesome, awesome, awesome. [Repetition count uncertain.]
+**215 · 9:29:56 AM · 5 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789226996.m4a) — Awesome, awesome, awesome, awesome, awesome, awesome, awesome, awesome.
 
 **216 · 9:30:05 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789227005.m4a) — I'm gonna frickin kill myself.
 
 **217 · 9:30:08 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789227008.m4a) — What?
 
-**218 · 9:30:11 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789227011.m4a) — [I lost it / I love it?]
+**218 · 9:30:11 AM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789227011.m4a) — I lost it
 
 **219 · 9:30:14 AM · 7 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789227014.m4a) — I just lost a good truck, too. I feel like Walmart's full of stuff right now, and I keep losing them all.
 
@@ -454,7 +454,7 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **223 · 9:33:51 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789227231.m4a) — Are we still waiting on this white van?
 
-**224 · 9:33:57 AM · 8 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789227237.m4a) — I'm just driving the parking lot, trying to find [tweakers?], and looking at the van a little bit too.
+**224 · 9:33:57 AM · 8 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789227237.m4a) — I'm just driving the parking lot, trying to find tweakers It's crazy it's conversation, and looking at the van a little bit too.
 
 **225 · 9:34:43 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789227283.m4a) — There are some amazing cars today.
 
@@ -462,7 +462,7 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **227 · 9:34:52 AM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789227292.m4a) — It's the weekend.
 
-**228 · 9:34:58 AM · 4 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789227298.m4a) — [Leave it to me to find / we need to find?] all these good cars and yield nothing.
+**228 · 9:34:58 AM · 4 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789227298.m4a) — Leave it to me to find all these good cars and yield nothing.
 
 **229 · 9:36:34 AM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789227394.m4a) — This white van dude is so sketchy.
 
