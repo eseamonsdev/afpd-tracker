@@ -1,0 +1,51 @@
+name: Build staging on request
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [staging]
+    paths:
+      - '.github/workflows/build-staging-on-request.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: staging
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm ci
+      - name: Run make build and commit generated changes to staging
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3; do
+            git fetch origin staging
+            # This isolated checkout contains only generated changes from this job.
+            # Rebuild on current staging if another writer advances it.
+            git reset --hard origin/staging
+            make build
+            git add -A -- public
+            git diff --cached --stat
+            if git diff --cached --quiet; then
+              echo 'make build succeeded; no generated changes to commit.' >> "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
+            git commit -m 'Rebuild generated site with make build'
+            if git push origin HEAD:staging; then
+              git log -1 --format='%H %s' >> "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
+          done
+          echo 'Staging changed during all three publication attempts.' >&2
+          exit 1
