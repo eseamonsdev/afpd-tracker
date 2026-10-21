@@ -1,15 +1,21 @@
 {% from "document-tree.njk" import renderTextSegment %}
 <section class="latest-updates" aria-label="{{ node.heading | escape }}">
-  {% if node.headingLevel == 3 %}<h3 class="latest-updates-heading">{{ node.heading | escape }}</h3>{% else %}<h2 class="latest-updates-heading">{{ node.heading | escape }}</h2>{% endif %}
-  {% if node.context %}<p class="latest-updates-context">{{ node.context | escape }}</p>{% endif %}
+  {% if not archiveMode %}{% if node.headingLevel == 3 %}<h3 class="latest-updates-heading">{{ node.heading | escape }}</h3>{% else %}<h2 class="latest-updates-heading">{{ node.heading | escape }}</h2>{% endif %}{% endif %}
+  {% if node.context and not archiveMode %}<p class="latest-updates-context">{{ node.context | escape }} <a href="/updates/">Read all updates</a></p>{% endif %}
   {% if node.recordLinks and node.recordLinks | length %}
     <p class="latest-updates-records">
       {% for record in node.recordLinks %}<a href="/records/{{ record.path | escape }}" target="_blank" rel="noopener noreferrer">{{ record.label | escape }}</a>{% if not loop.last %} · {% endif %}{% endfor %}
     </p>
   {% endif %}
-  <ul class="latest-updates-list">
+  {% if archiveMode %}
+  <div class="officer-filters" role="group" aria-label="Sort updates" data-updates-sort>
+    <button class="officer-filter" type="button" data-sort-order="latest" aria-pressed="true">Latest First</button>
+    <button class="officer-filter" type="button" data-sort-order="earliest" aria-pressed="false">Earliest First</button>
+  </div>
+  {% endif %}
+  <ul class="latest-updates-list"{% if archiveMode %} data-updates-list{% endif %}>
     {% for update in node.updates %}
-      <li>
+      <li{% if archiveMode %} data-update-date="{{ update.publishedDate | escape }}"{% endif %}>
         <p class="latest-updates-meta">{{ (update.channel or update.publisher) | escape }}{% if update.publishedDate %} · <time datetime="{{ update.publishedDate | escape }}">{{ update.publishedDate | formatArticleDate | escape }}</time>{% endif %}</p>
         <p class="latest-updates-title">{% if update.url %}<a href="{{ update.url | escape }}" target="_blank" rel="noopener noreferrer">{{ update.label | escape }}</a>{% else %}{{ update.label | escape }}{% endif %}</p>
         {% if update.descriptionParagraphs %}{% for paragraph in update.descriptionParagraphs %}<p class="latest-updates-description">{% for segment in paragraph %}{{ renderTextSegment(segment) }}{% endfor %}</p>
@@ -19,5 +25,5 @@
 {% endif %}      </li>
     {% endfor %}
   </ul>
-  {% if node.profileLink %}<p class="latest-updates-profile"><a href="{{ node.profileLink.url | escape }}">{{ node.profileLink.label | escape }}</a></p>{% endif %}
+  {% if node.profileLink and not archiveMode %}<p class="latest-updates-profile"><a href="{{ node.profileLink.url | escape }}">{{ node.profileLink.label | escape }}</a></p>{% endif %}
 </section>
