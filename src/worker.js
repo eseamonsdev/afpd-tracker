@@ -21,6 +21,18 @@ export default {
       );
     }
 
-    return env.ASSETS.fetch(request);
+    const response = await env.ASSETS.fetch(request);
+
+    if (
+      url.pathname.startsWith("/records/citizen-provided/daniel-sroka-meeting-transcript-drafts/") &&
+      url.pathname.endsWith(".txt") &&
+      response.headers.get("Content-Type")?.split(";")[0].trim() === "text/plain"
+    ) {
+      const encodedResponse = new Response(response.body, response);
+      encodedResponse.headers.set("Content-Type", "text/plain; charset=utf-8");
+      return encodedResponse;
+    }
+
+    return response;
   }
 };
