@@ -296,18 +296,18 @@ test("staging prefetches the September 18 problem sequence on one player and sur
     assert.ok(f.sourceFor(player).endsWith(calls[index].original_filename));
     await f.settle();
   }
-  assert.match(f.get("current").textContent, /5:08:32 AM$/);
+  assert.match(f.get("current").textContent, /5:08:32 AM · Clip 8$/);
 
   f.select(5);
   assert.equal(f.active(), player);
   assert.ok(f.sourceFor(player).endsWith(calls[5].original_filename));
-  assert.match(f.get("current").textContent, /5:08:10 AM$/);
+  assert.match(f.get("current").textContent, /5:08:10 AM · Clip 6$/);
   await f.settle();
   f.finish(player);
-  assert.match(f.get("current").textContent, /5:08:26 AM$/);
+  assert.match(f.get("current").textContent, /5:08:26 AM · Clip 7$/);
   await f.settle();
   f.finish(player);
-  assert.match(f.get("current").textContent, /5:08:32 AM$/);
+  assert.match(f.get("current").textContent, /5:08:32 AM · Clip 8$/);
   assert.equal(f.players.length, 1);
   assert.equal(f.get("player-message").textContent, "");
   assert.ok(f.revokedUrls.length > 0, "consumed Blob URLs should be released");

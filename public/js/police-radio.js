@@ -176,7 +176,7 @@
     selected = index;
     const call = calls[index];
     buttons[index].setAttribute("aria-current", "true");
-    current.textContent = `${dateFormat.format(dateObject(day.value))} · ${timeFormat.format(new Date(call.epoch * 1000))}`;
+    current.textContent = `${dateFormat.format(dateObject(day.value))} · ${timeFormat.format(new Date(call.epoch * 1000))} · Clip ${index + 1}`;
     message.textContent = "";
     seek.disabled = true;
     seek.max = 0;
@@ -234,10 +234,15 @@
         const time = document.createElement("time");
         time.dateTime = new Date(call.epoch * 1000).toISOString();
         time.textContent = timeFormat.format(new Date(call.epoch * 1000));
+        const label = document.createElement("span");
+        const number = document.createElement("span");
+        number.className = "radio-clip-number";
+        number.textContent = ` · ${index + 1}`;
+        label.append(time, number);
         const duration = document.createElement("span");
         duration.textContent = `${call.displayed_seconds} sec`;
-        button.setAttribute("aria-label", `Play ${time.textContent}, ${call.displayed_seconds} seconds`);
-        button.append(time, duration);
+        button.setAttribute("aria-label", `Play clip ${index + 1}, ${time.textContent}, ${call.displayed_seconds} seconds`);
+        button.append(label, duration);
         button.addEventListener("click", () => {
           chooseClip(index);
         });
