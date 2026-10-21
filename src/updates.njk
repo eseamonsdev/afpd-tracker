@@ -1,0 +1,23 @@
+---
+permalink: /updates/
+---
+{% extends "site-page-layout.njk" %}
+{% set siteUrl = "https://afpd-accountability.com" -%}
+{% set pageTitle = "All Updates | AFPD Accountability Project" -%}
+{% set pageDescription = "Browse all announcements and updates from the AFPD Accountability Project, newest or oldest first." -%}
+{% set canonicalUrl = siteUrl ~ "/updates/" -%}
+{% set node = entities.all["entity-custom-home-latest-updates"] -%}
+{% set archiveMode = true -%}
+
+{% block pageAssets %}  <link rel="stylesheet" href="/css/custom.css">
+  <link rel="stylesheet" href="/css/officers.css">
+  <script src="/js/updates-sort.js" defer></script>
+{% endblock %}
+
+{% block content %}
+  <div class="page-heading">
+    <h1>All Updates</h1>
+    <p>Browse all announcements and updates from the AFPD Accountability Project, including those currently shown on the homepage.</p>
+  </div>
+  {% include "custom/latest-updates.njk" %}
+{% endblock %}
