@@ -53,9 +53,10 @@ class Element {
   add(option) { this.options.push(option); if (this.options.length === 1) this.value = option.value; }
 }
 
-async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11", search = "") {
+async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11", search = "", transcriptEnabled = true) {
   const elements = new Map(["archive", "month", "day", "audio", "play", "seek", "autoplay",
-    "clips", "clips-section", "status", "current", "player-message", "elapsed", "duration"]
+    "clips", "clips-section", "status", "current", "player-message", "elapsed", "duration",
+    "transcript-toggle", "transcript", "transcript-status", "transcript-text", "transcript-availability"]
     .map(name => [`radio-${name}`, new Element(name === "audio" ? "audio" : "div")]));
   elements.get("radio-autoplay").setAttribute("aria-pressed", "false");
   const players = [elements.get("radio-audio")];
@@ -100,7 +101,7 @@ async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11",
       }
       return { ok: true, json: async () => url.endsWith("index.json")
         ? { days: dates.map(date => ({ date, folder: date, count: fixtureCalls?.length ?? 4 })) }
-        : { date: dates.find(date => url.includes(date)), calls: fixtureCalls ?? Array.from({ length: 4 }, (_, i) => ({
+        : { date: dates.find(date => url.includes(date)), enableTranscription: typeof transcriptEnabled === "function" ? transcriptEnabled(dates.find(date => url.includes(date))) : transcriptEnabled, calls: fixtureCalls ?? Array.from({ length: 4 }, (_, i) => ({
           epoch: 1789100000 + i * 10, displayed_seconds: 5, original_filename: `call-${i}.m4a`
         })) } };
     }
@@ -114,6 +115,92 @@ async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11",
     settle: () => new Promise(resolve => setImmediate(resolve)),
     sourceFor: player => objectSources.get(player.src) ?? player.src };
 }
+
+test("transcript panel follows manual selection, autoplay, day resets and visibility", async () => {
+  const calls = [
+    { epoch: 1789100000, displayed_seconds: 5, original_filename: "verified.m4a", transcript: "Reviewed [unclear] wording.", validated: true },
+    { epoch: 1789100010, displayed_seconds: 5, original_filename: "draft.m4a", transcript: "<b>Unverified draft</b>", validated: false }
+  ];
+  const f = await playerFixture(calls);
+  const toggle = f.get("transcript-toggle"), panel = f.get("transcript");
+  assert.equal(panel.hidden, true);
+  assert.equal(toggle.disabled, false);
+  toggle.click();
+  assert.equal(toggle.getAttribute("aria-pressed"), "true");
+  assert.equal(f.get("transcript-text").textContent, "Choose a clip to see its transcript.");
+  f.select(0);
+  assert.equal(f.get("transcript-text").textContent, calls[0].transcript);
+  assert.equal(f.get("transcript-status").textContent, "✓ Verified");
+  assert.equal(f.get("transcript-status").getAttribute("data-verified"), "true");
+  f.get("autoplay").click();
+  f.finish(f.active());
+  assert.equal(f.get("transcript-text").textContent, calls[1].transcript);
+  assert.equal(f.get("transcript-text").children.length, 0, "transcripts remain plain text");
+  assert.equal(f.get("transcript-status").textContent, "AI-generated · Unverified");
+  assert.equal(f.get("transcript-status").getAttribute("data-verified"), "false");
+  f.get("day").value = "2026-09-10";
+  f.get("day").emit("change");
+  await f.settle();
+  assert.equal(f.get("transcript-text").textContent, "Choose a clip to see its transcript.");
+  assert.equal(f.get("transcript-status").hidden, true);
+  toggle.click();
+  assert.equal(panel.hidden, true);
+  assert.equal(f.get("transcript-text").textContent, "");
+});
+
+test("missing, blank and malformed transcripts use the fallback without a review badge", async () => {
+  const values = [undefined, "", "  ", null, 17];
+  const f = await playerFixture(values.map((transcript, index) => ({
+    epoch: 1789100000 + index * 10, displayed_seconds: 5,
+    original_filename: `missing-${index}.m4a`, transcript, validated: true
+  })));
+  f.get("transcript-toggle").click();
+  values.forEach((_, index) => {
+    f.select(index);
+    assert.equal(f.get("transcript-text").textContent, "[no transcript available]");
+    assert.equal(f.get("transcript-status").hidden, true);
+    assert.ok(f.active(), "missing text must not block audio playback");
+  });
+});
+
+test("days without enabled transcripts hide the button and panel while audio still plays", async () => {
+  for (const flag of [false, null, "true"]) {
+    const f = await playerFixture([
+      { epoch: 1789100000, displayed_seconds: 5, original_filename: "hidden.m4a", transcript: "Existing text" }
+    ], undefined, "2026-09-11", "", flag);
+    assert.equal(f.get("transcript-toggle").hidden, true);
+    assert.equal(f.get("transcript-toggle").disabled, true);
+    assert.equal(f.get("transcript").hidden, true);
+    assert.equal(f.get("transcript-availability").hidden, false);
+    f.get("transcript-toggle").click();
+    f.select(0);
+    assert.equal(f.get("transcript").hidden, true);
+    assert.equal(f.get("transcript-text").textContent, "");
+    assert.ok(f.active());
+  }
+});
+
+test("switching days respects transcript availability and clears the previous clip text", async () => {
+  const f = await playerFixture([
+    { epoch: 1789100000, displayed_seconds: 5, original_filename: "draft.m4a", transcript: "First day's draft" }
+  ], undefined, "2026-09-11", "", date => date === "2026-09-11");
+  f.get("transcript-toggle").click();
+  f.select(0);
+  assert.equal(f.get("transcript-text").textContent, "First day's draft");
+  f.get("day").value = "2026-09-10";
+  f.get("day").emit("change");
+  await f.settle();
+  assert.equal(f.get("transcript-toggle").hidden, true);
+  assert.equal(f.get("transcript").hidden, true);
+  assert.equal(f.get("transcript-text").textContent, "");
+  f.get("day").value = "2026-09-11";
+  f.get("day").emit("change");
+  await f.settle();
+  assert.equal(f.get("transcript-toggle").hidden, false);
+  assert.equal(f.get("transcript-toggle").disabled, false);
+  assert.equal(f.get("transcript-availability").hidden, true);
+  assert.equal(f.get("transcript-text").textContent, "Choose a clip to see its transcript.");
+});
 
 test("autoplay hands off a prepared clip without reloading it and immediately prepares the following clip", async () => {
   const f = await playerFixture();

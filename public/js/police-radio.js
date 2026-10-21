@@ -22,6 +22,11 @@
   const showCurrent = get("show-current");
   const list = get("clips"), section = get("clips-section"), status = get("status");
   const current = get("current"), message = get("player-message");
+  const transcriptToggle = get("transcript-toggle"), transcript = get("transcript");
+  const transcriptStatus = get("transcript-status"), transcriptText = get("transcript-text");
+  const transcriptAvailability = get("transcript-availability");
+  let transcriptOn = false;
+  let transcriptAvailable = false;
   const base = "/records/openmhz/";
   const timeFormat = new Intl.DateTimeFormat("en-US", {
     timeZone: "America/Denver", hour: "numeric", minute: "2-digit", second: "2-digit"
@@ -41,6 +46,36 @@
   let prefetchedClip = null, prefetchController = null, activeObjectUrl = null;
 
   const clipSource = (index) => `${base}${encodeURIComponent(folder)}/${encodeURIComponent(calls[index].original_filename)}`;
+
+  function updateTranscript() {
+    if (!transcript || !transcriptStatus || !transcriptText) return;
+    if (transcriptToggle) {
+      transcriptToggle.hidden = !transcriptAvailable;
+      transcriptToggle.disabled = !transcriptAvailable;
+    }
+    const call = calls[selected];
+    const text = typeof call?.transcript === "string" ? call.transcript.trim() : "";
+    transcript.hidden = !transcriptAvailable || !transcriptOn;
+    transcriptText.textContent = transcript.hidden ? "" : !call
+      ? "Choose a clip to see its transcript."
+      : text || "[no transcript available]";
+    transcriptStatus.hidden = transcript.hidden || !call || !text;
+    transcriptStatus.textContent = transcriptStatus.hidden ? ""
+      : call.validated === true ? "✓ Verified" : "AI-generated · Unverified";
+    transcriptStatus.setAttribute("data-verified", String(call?.validated === true));
+    transcript.scrollTop = 0;
+  }
+
+  if (transcriptToggle) {
+    transcriptToggle.addEventListener("click", () => {
+      if (!transcriptAvailable) return;
+      transcriptOn = !transcriptOn;
+      transcriptToggle.setAttribute("aria-pressed", String(transcriptOn));
+      transcriptToggle.textContent = `Transcript: ${transcriptOn ? "On" : "Off"}`;
+      updateTranscript();
+    });
+    updateTranscript();
+  }
 
   function clearAudio(player) {
     if (!player) return;
@@ -113,6 +148,8 @@
   }
 
   function resetPlayer() {
+    transcriptAvailable = false;
+    if (transcriptAvailability) transcriptAvailability.hidden = true;
     clearPrefetchedClip();
     clearActiveObjectUrl();
     selected = -1;
@@ -128,6 +165,7 @@
     get("elapsed").textContent = "0:00";
     get("duration").textContent = "0:00";
     current.textContent = "Choose a clip to listen";
+    updateTranscript();
     message.textContent = "";
   }
 
@@ -177,6 +215,7 @@
     const call = calls[index];
     buttons[index].setAttribute("aria-current", "true");
     current.textContent = `${dateFormat.format(dateObject(day.value))} · ${timeFormat.format(new Date(call.epoch * 1000))} · Clip ${index + 1}`;
+    updateTranscript();
     message.textContent = "";
     seek.disabled = true;
     seek.max = 0;
@@ -226,6 +265,9 @@
         }
         return call;
       }).sort((a, b) => a.epoch - b.epoch);
+      transcriptAvailable = data.enableTranscription === true;
+      if (transcriptAvailability) transcriptAvailability.hidden = transcriptAvailable;
+      updateTranscript();
       const fragment = document.createDocumentFragment();
       buttons = calls.map((call, index) => {
         const row = document.createElement("li");

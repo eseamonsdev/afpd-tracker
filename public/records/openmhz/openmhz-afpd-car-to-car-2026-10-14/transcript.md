@@ -2,7 +2,7 @@
 
 Talkgroup **6001**; **278 clips**, in chronological archive order. All timestamps are Mountain Time (America/Denver).
 
-Whisper small.en, three passes: original audio; filtered audio; original audio with up to three preceding calls within 60 seconds supplied as transcription-text context. All three outputs were reconciled using neighboring conversation. Brackets and review annotations retain uncertainty or privacy redactions. Redacted entries are also withheld from player transcript fields. This is automated ASR reconciliation, not direct-listening or user validation.
+Whisper small.en, three passes: original audio; filtered audio; original audio with up to three preceding calls within 60 seconds supplied as transcription-text context. All three outputs were reconciled using neighboring conversation. Brackets and review annotations retain uncertainty or privacy redactions. Redacted entries retain their privacy markers in the unverified player transcripts. This is automated ASR reconciliation, not direct-listening or user validation.
 
 This run uses the reproducible settings standardized October 16, 2026 in scripts/radio-transcription-settings.json. The exact historical filter and context-gap settings were not recoverable; this preserves the established method with explicitly documented defaults.
 

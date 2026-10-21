@@ -2,7 +2,7 @@
 
 **Pending clips: 96**
 
-Unresolved entries are withheld from newly populated calls.json transcript fields. Remove entries only after correction or explicit approval; use Git history to inspect superseded wording.
+Unresolved entries are available in calls.json as unverified AI transcripts. They remain pending review. Remove entries only after correction or explicit approval; use Git history to inspect superseded wording.
 
 **003 · 12:44:05 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792478645.m4a) — [Proceeds authorized further? Exact wording unclear.]
 

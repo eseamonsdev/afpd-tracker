@@ -112,3 +112,20 @@ unavailable. Verify the final staging ref and saved files after publication.
 Report target date, clips processed, three-pass completion, player transcript
 count, backlog count, staging commit and failures. A queued run is not completion.
 The daily automation stays enabled after ordinary successful runs.
+
+## Full archive transcript review
+
+On `excerpts` and `staging`, the owner authorized publishing all existing
+`transcript.md` entries to their matching `calls.json` records, including
+bracketed uncertainty and privacy markers. Match by original audio filename,
+never by a guessed clip number. Preserve existing text and every validation flag.
+Only `validated: true` means Verified; other available text is AI-generated and
+Unverified. This publication does not validate entries or clear the review backlog.
+Each daily calls.json uses the boolean `enableTranscription`: true for days with
+available transcripts, false for days without them. The full player shows its
+transcript button only when this field is true. Within enabled days, missing,
+blank, or non-string transcript fields display `[no transcript available]`.
+Excerpt publication flags remain separate.
+
+Days with audio but no saved transcript are not automatically transcribed by
+this import. The ordinary daily transcription workflow above is unchanged.

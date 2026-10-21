@@ -17,6 +17,7 @@ permalink: /police-radio/
       <p>Audio from a car-to-car radio talkgroup used by the American Fork Police Department (AFPD).</p>
       <p><a href="/police-radio-excerpts/">Browse radio excerpts</a> for selected discussions, or explore the full archive below.</p>
       <p>Times shown in Mountain Time.</p>
+      <p class="radio-transcript-note">AI-generated transcripts may contain errors. Verified transcripts have been reviewed against the audio; unclear passages may remain marked.</p>
     </div>
     <div class="radio-archive" id="radio-archive">
       <div class="radio-date-selectors">
@@ -33,6 +34,7 @@ permalink: /police-radio/
           <div class="radio-player-actions">
             <button id="radio-show-current" type="button" aria-controls="radio-clips" disabled>Show Current Clip</button>
             <button id="radio-autoplay" type="button" aria-pressed="false">Autoplay: Off</button>
+            <button id="radio-transcript-toggle" type="button" aria-pressed="false" aria-controls="radio-transcript" hidden disabled>Transcript: Off</button>
           </div>
         </div>
         <div class="radio-playback">
@@ -44,6 +46,10 @@ permalink: /police-radio/
           </div>
         </div>
         <p id="radio-player-message" role="status"></p>
+        <div id="radio-transcript" class="radio-transcript" role="region" aria-label="Current clip transcript" aria-live="polite" aria-atomic="true" hidden>
+          <span id="radio-transcript-status" class="radio-transcript-status" hidden></span>
+          <p id="radio-transcript-text"></p>
+        </div>
         <audio id="radio-audio" preload="metadata"></audio>
       </section>
       <p class="radio-source-note">
@@ -52,6 +58,7 @@ permalink: /police-radio/
         This site is not affiliated with or endorsed by OpenMHz.
       </p>
       <p id="radio-status" role="status">Loading available dates…</p>
+      <p id="radio-transcript-availability" class="radio-transcript-note" hidden>Transcripts are not yet available for this day.</p>
       <section aria-label="Recorded clips" aria-busy="true" id="radio-clips-section">
         <div class="radio-list-heading" aria-hidden="true"><span>Time · archive clip</span><span>Duration</span></div>
         <ol id="radio-clips" class="radio-clips"></ol>
