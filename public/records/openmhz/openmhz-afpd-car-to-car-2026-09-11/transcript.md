@@ -700,7 +700,7 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **346 · 7:46:54 PM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-11/dcfems-6001-1789177614.m4a) — That’s so nice of them.
 
-**347 · 7:47:04 PM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-11/dcfems-6001-1789177624.m4a) — [Who are they playing?]
+**347 · 7:47:04 PM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-11/dcfems-6001-1789177624.m4a) — Who are they playing?
 
 **348 · 7:47:08 PM · 7 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-11/dcfems-6001-1789177628.m4a) — Layton. It was already eight-nothing when I left, [unclear phrase about AF]. I don’t know what it is now.
 
@@ -710,9 +710,9 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **351 · 7:47:49 PM · 2 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-11/dcfems-6001-1789177669.m4a) — I’ll show up in riot gear.
 
-**352 · 7:48:06 PM · 8 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-11/dcfems-6001-1789177686.m4a) — [Have you/I’ve?] seen those videos coming from Germany of all their officers in riot gear dealing with all these demonstrators? It’s pretty [awesome/awful?].
+**352 · 7:48:06 PM · 8 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-11/dcfems-6001-1789177686.m4a) — Have you seen those videos coming from Germany of all their officers in riot gear dealing with all these demonstrators? It’s pretty awesome.
 
-**353 · 7:48:23 PM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-11/dcfems-6001-1789177703.m4a) — [No intelligible speech.]
+**353 · 7:48:23 PM · 1 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-11/dcfems-6001-1789177703.m4a) — [static]
 
 **354 · 7:48:27 PM · 3 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-11/dcfems-6001-1789177707.m4a) — What are they rioting for in Germany right now?
 
@@ -724,7 +724,7 @@ Each numbered line contains the clip’s clock timestamp, displayed length, a li
 
 **358 · 7:49:25 PM · 4 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-11/dcfems-6001-1789177765.m4a) — Do they even give them guns in Germany, or are they just all standing around with sticks?
 
-**359 · 7:49:31 PM · 16 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-11/dcfems-6001-1789177771.m4a) — I didn't notice they were using too many guns, but they're just all these big protesters walking along for open borders, and they're throwing things at the cops, and the cops do not have any rules of engagement. They're just going to town on these people. It's crazy.
+**359 · 7:49:31 PM · 16 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-11/dcfems-6001-1789177771.m4a) — I didn't notice they were using too many guns, but they're just all these big protesters walking along for open borders, and they're throwing things at the cops, and the cops do not have any like rules of engagement. They're just going to town on these people. It's crazy.
 
 **360 · 7:49:57 PM · 6 sec** — [Audio](https://staging-afpd-tracker.ericseamonsdeveloper.workers.dev/records/openmhz/openmhz-afpd-car-to-car-2026-09-11/dcfems-6001-1789177797.m4a) — They're just like punching them in the face and dropping them to the ground and dragging them. It's pretty crazy.
 
