@@ -208,6 +208,11 @@
     status.textContent = "Loading clips…";
     const entry = days.find((entry) => entry.date === day.value);
     if (!entry) return;
+    const url = new URL(window.location.href);
+    if (url.searchParams.get("date") !== entry.date || url.searchParams.getAll("date").length !== 1) {
+      url.searchParams.set("date", entry.date);
+      window.history.replaceState(window.history.state, "", url.href);
+    }
     folder = entry.folder;
     try {
       const response = await fetch(`${base}${encodeURIComponent(folder)}/calls.json`, { signal: controller.signal });
@@ -250,15 +255,16 @@
     }
   }
 
-  function populateDays() {
+  function populateDays(selectedDate = "") {
     day.replaceChildren();
     for (const entry of days.filter((entry) => entry.date.startsWith(month.value))) {
       day.add(new Option(`${dateFormat.format(dateObject(entry.date))} — ${entry.count} clips`, entry.date));
     }
+    if (selectedDate) day.value = selectedDate;
     day.disabled = !day.options.length;
     loadDay();
   }
-  month.addEventListener("change", populateDays);
+  month.addEventListener("change", () => populateDays());
   day.addEventListener("change", loadDay);
   showCurrent?.addEventListener("click", () => {
     const clip = buttons[selected];
@@ -342,8 +348,11 @@
       for (const value of new Set(days.map((entry) => entry.date.slice(0, 7)))) {
         month.add(new Option(monthFormat.format(dateObject(`${value}-01`)), value));
       }
+      const requestedDate = new URL(window.location.href).searchParams.get("date");
+      const initialDay = days.find((entry) => entry.date === requestedDate) ?? days[0];
+      month.value = initialDay.date.slice(0, 7);
       month.disabled = false;
-      populateDays();
+      populateDays(initialDay.date);
     } catch (error) {
       month.replaceChildren(new Option("Unavailable", ""));
       day.replaceChildren(new Option("Unavailable", ""));

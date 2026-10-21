@@ -53,7 +53,7 @@ class Element {
   add(option) { this.options.push(option); if (this.options.length === 1) this.value = option.value; }
 }
 
-async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11") {
+async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11", search = "") {
   const elements = new Map(["archive", "month", "day", "audio", "play", "seek", "autoplay",
     "clips", "clips-section", "status", "current", "player-message", "elapsed", "duration"]
     .map(name => [`radio-${name}`, new Element(name === "audio" ? "audio" : "div")]));
@@ -62,7 +62,16 @@ async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11")
   const dates = [fixtureDate, "2026-09-10"];
   const fetchedAudio = [], revokedUrls = [], objectSources = new Map(), failedAudio = new Set();
   let objectNumber = 0;
-  const window = hostname ? { location: { hostname } } : undefined;
+  const window = { location: new URL(`https://${hostname ?? "localhost"}/police-radio/${search}`) };
+  const replacements = [];
+  window.history = {
+    state: { preserved: true },
+    replaceState(state, _, href) {
+      replacements.push(href);
+      window.location = new URL(href);
+      this.state = state;
+    }
+  };
   const document = {
     getElementById: id => elements.get(id),
     createDocumentFragment: () => new Element("fragment"),
@@ -74,13 +83,13 @@ async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11")
   };
   vm.runInNewContext(source, {
     document, window, Intl, Date, AbortController,
-    URL: {
-      createObjectURL(blob) {
+    URL: class extends URL {
+      static createObjectURL(blob) {
         const url = `blob:test-${++objectNumber}`;
         objectSources.set(url, blob.source);
         return url;
-      },
-      revokeObjectURL(url) { revokedUrls.push(url); }
+      }
+      static revokeObjectURL(url) { revokedUrls.push(url); }
     },
     Option: class { constructor(text, value) { this.text = text; this.value = value; } },
     fetch: async (url) => {
@@ -101,7 +110,7 @@ async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11")
   const select = i => get("clips").children[i].children[0].click();
   const active = () => players.find(player => !player.paused);
   const finish = player => { player.ended = true; player.paused = true; player.emit("ended"); };
-  return { get, select, players, active, finish, fetchedAudio, revokedUrls, failedAudio,
+  return { get, select, players, active, finish, fetchedAudio, revokedUrls, failedAudio, window, replacements,
     settle: () => new Promise(resolve => setImmediate(resolve)),
     sourceFor: player => objectSources.get(player.src) ?? player.src };
 }
@@ -316,4 +325,48 @@ test("production uses one player and falls back to the original clip URL when by
   assert.equal(f.active(), player);
   assert.match(player.src, /2026-09-11\/call-1\.m4a$/);
   assert.equal(f.get("player-message").textContent, "");
+});
+
+test("missing, invalid, and unavailable date links select and expose the latest available day", async () => {
+  for (const search of ["", "?date=nonsense", "?date=2026-02-30", "?date=2026-09-09"]) {
+    const f = await playerFixture(undefined, undefined, "2026-10-19", search);
+    assert.equal(f.get("month").value, "2026-10");
+    assert.equal(f.get("day").value, "2026-10-19");
+    assert.equal(f.window.location.search, "?date=2026-10-19");
+    assert.match(f.get("status").textContent, /October 19, 2026/);
+    assert.equal(f.replacements.length, 1);
+    assert.equal(f.window.history.state.preserved, true);
+    assert.equal(f.active(), undefined);
+  }
+});
+
+test("a shared older date selects its month and clips without rewriting a valid URL", async () => {
+  const f = await playerFixture(undefined, undefined, "2026-10-19", "?date=2026-09-10&other=keep#clips");
+  assert.equal(f.get("month").value, "2026-09");
+  assert.equal(f.get("day").value, "2026-09-10");
+  assert.match(f.get("status").textContent, /September 10, 2026/);
+  assert.equal(f.replacements.length, 0);
+  f.select(0);
+  assert.match(f.active().src, /2026-09-10\/call-0\.m4a$/);
+});
+
+test("month and day changes update the URL while retaining other parameters and the fragment", async () => {
+  const f = await playerFixture(undefined, undefined, "2026-10-19", "?other=keep#clips");
+  f.get("month").value = "2026-09";
+  f.get("month").emit("change");
+  await f.settle();
+  assert.equal(f.get("day").value, "2026-09-10");
+  assert.equal(f.window.location.searchParams.get("date"), "2026-09-10");
+  f.get("month").value = "2026-10";
+  f.get("month").emit("change");
+  await f.settle();
+  assert.equal(f.window.location.searchParams.get("date"), "2026-10-19");
+  assert.equal(f.window.location.searchParams.get("other"), "keep");
+  assert.equal(f.window.location.hash, "#clips");
+  assert.equal(f.active(), undefined);
+  const sameMonth = await playerFixture();
+  sameMonth.get("day").value = "2026-09-10";
+  sameMonth.get("day").emit("change");
+  await sameMonth.settle();
+  assert.equal(sameMonth.window.location.search, "?date=2026-09-10");
 });
