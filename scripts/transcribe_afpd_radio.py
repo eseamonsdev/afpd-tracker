@@ -166,10 +166,10 @@ def finalize(args):
     by_name = {e['filename']:e for e in entries}
     # This generator establishes a new day's initial documents. Existing days
     # are corrected in transcript.md with Git history, never overwritten by this generator.
-    outputs = [folder/'transcript.md', folder/'transcript-review-backlog.md']
+    outputs = [folder/'transcript.md']
     if any(p.exists() for p in outputs) or (folder/'transcript-drafts').exists():
         raise ValueError('Transcript documents already exist; preserve and review them separately')
-    lines = []; backlog = []; populated = 0
+    lines = []; uncertain_clips = 0; populated = 0
     for i,c in enumerate(data['calls'],1):
         name=c['original_filename']; e=by_name[name]; raw=state['clips'].get(name,{})
         if set(raw.get('passes',{})) != {'original','filtered','context'} or raw.get('sha256') != c.get('sha256'):
@@ -187,17 +187,16 @@ def finalize(args):
         clock=dt.datetime.fromtimestamp(c['epoch'],ZoneInfo('America/Denver')).strftime('%I:%M:%S %p').lstrip('0')
         line=f"**{i:03d} · {clock} · {c['displayed_seconds']} sec** — [Audio](https://afpd-accountability.com/records/openmhz/{folder.name}/{name}) — {text}"
         lines.append(line)
-        if flagged:backlog.append(line)
+        if flagged:uncertain_clips+=1
         else:c['transcript']=text;populated+=1
     title=dt.date.fromisoformat(args.date).strftime('%B %d, %Y').replace(' 0',' ')
     intro=f'# {title} — American Fork PD Car-to-Car transcript\n\nTalkgroup **6001**; **{len(lines)} clips**, in chronological archive order. All timestamps are Mountain Time (America/Denver).\n\n'
     intro+='Whisper small.en, three passes: original audio; filtered audio; original audio with up to three preceding calls within 60 seconds supplied as transcription-text context. All three outputs were reconciled using neighboring conversation. Brackets and review annotations retain uncertainty. This is automated ASR reconciliation, not direct-listening or user validation.\n\n'
     intro+='This run uses the reproducible settings standardized October 16, 2026 in scripts/radio-transcription-settings.json. The exact historical filter and context-gap settings were not recoverable; this preserves the established method with explicitly documented defaults.\n\n'
     transcript=intro+'\n\n'.join(lines)+'\n'
-    backlog_text=f'# {title} — Transcript review backlog\n\n**Pending clips: {len(backlog)}**\n\nUnresolved entries are withheld from newly populated calls.json transcript fields. Remove entries only after correction or explicit approval; use Git history to inspect superseded wording.\n\n'+'\n\n'.join(backlog)+'\n'
-    outputs[0].write_text(transcript);outputs[1].write_text(backlog_text)
+    outputs[0].write_text(transcript)
     write(folder/'calls.json',data)
-    print(json.dumps({'date':args.date,'three_pass_clips':len(lines),'player_transcripts':populated,'review_backlog':len(backlog)}))
+    print(json.dumps({'date':args.date,'three_pass_clips':len(lines),'player_transcripts':populated,'uncertain_clips':uncertain_clips}))
 
 
 if __name__ == '__main__':
