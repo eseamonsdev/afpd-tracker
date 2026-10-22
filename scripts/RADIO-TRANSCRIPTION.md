@@ -76,12 +76,11 @@ Then establish the new day's artifacts:
 python scripts/transcribe_afpd_radio.py finalize --date YYYY-MM-DD --passes WORK_DIR/YYYY-MM-DD/passes.json --reviewed REVIEWED_JSON
 ```
 
-This writes transcript.md, transcript-review-backlog.md, and eligible calls.json
-transcript fields. Radio transcripts use one continuously corrected transcript.md;
+This writes transcript.md and eligible calls.json transcript fields. Radio transcripts use one continuously corrected transcript.md;
 do not create numbered radio transcript drafts. Git history preserves revisions.
 No newly automated entry gets validated:true. Existing approved bracketed wording,
 validation flags, corrections and unrelated metadata/audio must remain untouched.
-Do not reintroduce reviewed entries into the backlog. Commit corrections so Git
+Do not create or maintain separate review-backlog files; Eric reviews transcripts separately. Commit corrections so Git
 history preserves earlier wording.
 
 ## Owner-directed transcript corrections
@@ -89,8 +88,7 @@ history preserves earlier wording.
 Use transcript.md as the single current police-radio transcript. Apply Eric's
 exact approved corrections there, match the calls.json entry by audio
 filename/epoch, update its transcript to the same wording, and set validated: true.
-This flag records Eric's verification, not automated ASR review. Remove corrected
-clips from transcript-review-backlog.md and link its source to transcript.md.
+This flag records Eric's verification, not automated ASR review.
 Preserve unrelated entries, metadata, and existing user edits. Commit changes;
 use Git history to recover originals and compare revisions instead of maintaining
 numbered radio drafts.
@@ -110,7 +108,7 @@ API tree/commit with an expected-head ref update is supported when git push is
 unavailable. Verify the final staging ref and saved files after publication.
 
 Report target date, clips processed, three-pass completion, player transcript
-count, backlog count, staging commit and failures. A queued run is not completion.
+count, staging commit and failures. A queued run is not completion.
 The daily automation stays enabled after ordinary successful runs.
 
 ## Full archive transcript review
@@ -120,7 +118,7 @@ On `excerpts` and `staging`, the owner authorized publishing all existing
 bracketed uncertainty and privacy markers. Match by original audio filename,
 never by a guessed clip number. Preserve existing text and every validation flag.
 Only `validated: true` means Verified; other available text is AI-generated and
-Unverified. This publication does not validate entries or clear the review backlog.
+Unverified. This publication does not validate entries or remove uncertainty annotations.
 Each daily calls.json uses the boolean `enableTranscription`: true for days with
 available transcripts, false for days without them. The full player shows its
 transcript button only when this field is true. Within enabled days, missing,
