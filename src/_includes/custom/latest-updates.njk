@@ -14,7 +14,7 @@
   </div>
   {% endif %}
   <ul class="latest-updates-list"{% if archiveMode %} data-updates-list{% endif %}>
-    {% for update in node.updates %}
+    {% set visibleUpdates = node.updates %}{% if node.updateLimit and not archiveMode %}{% set visibleUpdates = node.updates.slice(0, node.updateLimit) %}{% endif %}{% for update in visibleUpdates %}
       <li{% if archiveMode %} data-update-date="{{ update.publishedDate | escape }}"{% endif %}>
         <p class="latest-updates-meta">{{ (update.channel or update.publisher) | escape }}{% if update.publishedDate %} · <time datetime="{{ update.publishedDate | escape }}">{{ update.publishedDate | formatArticleDate | escape }}</time>{% endif %}</p>
         <p class="latest-updates-title">{% if update.url %}<a href="{{ update.url | escape }}" target="_blank" rel="noopener noreferrer">{{ update.label | escape }}</a>{% else %}{{ update.label | escape }}{% endif %}</p>
