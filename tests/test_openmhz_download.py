@@ -26,6 +26,41 @@ def manifest(calls=None):
 
 
 class DownloadTest(unittest.TestCase):
+    def test_law2_import_uses_its_channel_folder_and_preserves_selection(self):
+        call = sample()
+        call.update(talkgroup=5922,
+                    original_filename=call['original_filename'].replace('6001', '5922'),
+                    media_url=call['media_url'].replace('6001', '5922'),
+                    radio_ids=['14590021'])
+        data = manifest([call])
+        data['talkgroup'] = 5922
+        data['selection_summary'] = {'context_seconds': 120, 'source_day_calls': 1}
+        data['source_inventory'] = [call]
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source = root / '2026-09-30-law-2.json'
+            source.write_text(json.dumps(data))
+            downloader = Mock()
+            downloader.download.side_effect = lambda url, dest: dest.write_bytes(b'0000ftyp0000')
+            with patch.object(module, 'inspect_audio', return_value={
+                    'sha256': 'test', 'size_bytes': 12, 'audio_duration_seconds': 3}):
+                result = module.import_manifest(root, source, downloader)
+            destination = root / 'public/records/openmhz/openmhz-afpd-law-2-2026-09-30'
+            saved = json.loads((destination / 'calls.json').read_text())
+            self.assertEqual(result['downloaded'], 1)
+            self.assertEqual(saved['talkgroup'], 5922)
+            self.assertEqual(saved['calls'][0]['talkgroup_name'], 'Law 2 Northeast')
+            self.assertEqual(saved['calls'][0]['radio_ids'], ['14590021'])
+            self.assertEqual(json.loads((destination / 'source-inventory.json').read_text()), [call])
+            self.assertIn('Law 2 Northeast (5922)', (destination / 'README.txt').read_text())
+            self.assertFalse((root / 'public/records/openmhz/openmhz-afpd-car-to-car-2026-09-30').exists())
+        data['talkgroup'] = 6001
+        with self.assertRaises(ValueError):
+            module.validate_manifest(data)
+        data['talkgroup'] = 9999
+        with self.assertRaises(ValueError):
+            module.validate_manifest(data)
+
     def test_known_source_duration_discrepancy_requires_unchanged_measured_audio(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / sample()['original_filename']
