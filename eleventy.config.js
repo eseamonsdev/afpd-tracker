@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import { sortUpdates } from "./lib/sort-updates.js";
 import { profileAlternateNames } from "./lib/profile-alternate-names.js";
 import { cleanRadioExcerpts } from "./lib/clean-radio-excerpts.js";
 import { buildRadioExcerpt } from "./lib/build-radio-excerpt.js";
@@ -19,6 +20,7 @@ const currencyFormatter = new Intl.NumberFormat("en-US", {
 });
 
 export default function (eleventyConfig) {
+  eleventyConfig.addFilter("sortUpdates", sortUpdates);
   eleventyConfig.addFilter("profileAlternateNames", profileAlternateNames);
   eleventyConfig.on("eleventy.after", cleanRadioExcerpts);
   eleventyConfig.addFilter("radioExcerpt", buildRadioExcerpt);
