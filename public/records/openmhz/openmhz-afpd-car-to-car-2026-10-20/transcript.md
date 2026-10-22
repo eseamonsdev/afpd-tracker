@@ -8,21 +8,21 @@ This run uses the reproducible settings standardized October 16, 2026 in scripts
 
 **001 · 12:43:36 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792478616.m4a) — That's our chance, boys.
 
-**002 · 12:43:55 AM · 5 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792478635.m4a) — Yeah, that's an ATL that I'm going to actively look for right now.
+**002 · 12:43:55 AM · 5 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792478635.m4a) — Yeah, those are—that's an ATL that I'm going to actively look for right now.
 
-**003 · 12:44:05 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792478645.m4a) — [Proceeds authorized further? Exact wording unclear.]
+**003 · 12:44:05 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792478645.m4a) — Proceeds authorized further?
 
-**004 · 12:44:12 AM · 8 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792478652.m4a) — Okay, a white Mazda [model unclear; rendered as CZ-9] and a gray Kia Optima.
+**004 · 12:44:12 AM · 8 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792478652.m4a) — Okay, a white Mazda CZ-9 and a gray Kia Optima.
 
-**005 · 12:44:25 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792478665.m4a) — [Oh, sure / so, first?]
+**005 · 12:44:25 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792478665.m4a) — [unclear]
 
-**006 · 12:44:39 AM · 4 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792478679.m4a) — I think this authorizes [a switched attack?], don't you think?
+**006 · 12:44:39 AM · 4 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792478679.m4a) — I think this authorizes a switched attack, don't you think?
 
 **007 · 12:44:46 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792478686.m4a) — What'd you say?
 
-**008 · 12:44:50 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792478690.m4a) — Nothing. [Remainder unclear; filtered repetition excluded.]
+**008 · 12:44:50 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792478690.m4a) — Nothing. 22.
 
-**009 · 12:53:11 AM · 5 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792479191.m4a) — I'm trying to catch up to [one / him] that just passed me. [Ending unclear.]
+**009 · 12:53:11 AM · 5 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792479191.m4a) — I'm trying to catch up to one that just passed me. [unclear].
 
 **010 · 12:53:20 AM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792479200.m4a) — I'm in a Walmart parking lot right now.
 
@@ -30,49 +30,49 @@ This run uses the reproducible settings standardized October 16, 2026 in scripts
 
 **012 · 12:53:27 AM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792479207.m4a) — [Question about repeating the plate; exact wording unclear.]
 
-**013 · 12:53:31 AM · 5 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792479211.m4a) — [Nine, Fox, Charlie, Victor, zero? Plate characters need review.]
+**013 · 12:53:31 AM · 5 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792479211.m4a) — Nine, Fox, Charlie, Victor, Zero.
 
 **014 · 12:53:38 AM · 5 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792479218.m4a) — [Plate transmission unclear; begins with possible eight, Fox, Uniform.]
 
-**015 · 12:54:07 AM · 9 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792479247.m4a) — I mean, if they're somewhat kind of smart, they would have been on the freeway and [is?] just gone.
+**015 · 12:54:07 AM · 9 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792479247.m4a) — I mean, if they're somewhat kind of smart, they would have been on the freeway and is just gone.
 
-**016 · 12:54:21 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792479261.m4a) — [Sure, though?]
+**016 · 12:54:21 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792479261.m4a) — Sure, though.
 
-**017 · 1:04:58 AM · 12 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792479898.m4a) — There is a suspicious [Chevy Impala?] that pulled back into [7-Eleven?] when I drove by. [Anyone/everyone] wants to walk around.
+**017 · 1:04:58 AM · 12 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792479898.m4a) — There is a suspicious Chevy Impala that pulled back into 7-Eleven when I drove by, if anyone wants to walk around.
 
-**018 · 2:12:41 AM · 5 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792483961.m4a) — I'm going to go talk to mom and dad, see if he's a [drug user?], [remainder about pick marks on the body unclear].
+**018 · 2:12:41 AM · 5 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792483961.m4a) — I'm going to go talk to mom and dad, see if he's a drug user, he's got pick marks on his body.
 
 **019 · 2:56:12 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792486572.m4a) — Can you guys hear me?
 
 **020 · 2:56:26 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792486586.m4a) — Yeah, you good?
 
-**021 · 3:04:37 AM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792487077.m4a) — [You want to / you're gonna] shoot down North County and see the car.
+**021 · 3:04:37 AM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792487077.m4a) — You want to shoot down North County and see the car?
 
-**022 · 3:04:44 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792487084.m4a) — [Yep / yes.]
+**022 · 3:04:44 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792487084.m4a) — Yes.
 
 **023 · 3:05:55 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792487155.m4a) — They just put the [transmission cuts off].
 
-**024 · 3:07:07 AM · 5 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792487227.m4a) — [Saying / okay], if we would have gotten the address a little bit sooner, we could have [gone / gotten] staged on the freeway.
+**024 · 3:07:07 AM · 5 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792487227.m4a) — Okay, if we would have gotten the address a little bit sooner, we could have gone staged on the freeway.
 
-**025 · 3:07:14 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792487234.m4a) — I know, I think that's the same thing.
+**025 · 3:07:14 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792487234.m4a) — I know, I was thinking that same thing.
 
-**026 · 3:23:00 AM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792488180.m4a) — [She went fast / should go fast?]
+**026 · 3:23:00 AM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792488180.m4a) — [unclear], She went fast.
 
-**027 · 3:23:05 AM · 4 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792488185.m4a) — I guarantee [she's just done / she just done that?].
+**027 · 3:23:05 AM · 4 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792488185.m4a) — I guarantee she just [unclear].
 
-**028 · 5:43:52 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792496632.m4a) — [Short call sign or reply unclear; possibly 5G.]
+**028 · 5:43:52 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792496632.m4a) — [unclear; possibly 5G.]
 
-**029 · 5:44:30 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792496670.m4a) — [You too / thank you.]
+**029 · 5:44:30 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792496670.m4a) — You too.
 
-**030 · 9:55:17 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792511717.m4a) — Hey [name unclear], you on here?
+**030 · 9:55:17 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792511717.m4a) — Hey Mecham, you on here?
 
-**031 · 9:55:31 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792511731.m4a) — [Short reply unclear; bye-bye / good morning readings conflict.]
+**031 · 9:55:31 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792511731.m4a) — 10-9
 
-**032 · 9:55:36 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792511736.m4a) — [Meekam / Meekum / Mako?], are you on here?
+**032 · 9:55:36 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792511736.m4a) — Mecham, are you on here?
 
-**033 · 9:55:50 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792511750.m4a) — What are you looking for, [Renter?]
+**033 · 9:55:50 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792511750.m4a) — Who are you looking for, Renter?
 
-**034 · 9:55:56 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792511756.m4a) — [Name or short reply unclear.]
+**034 · 9:55:56 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792511756.m4a) — Mecham [unclear].
 
 **035 · 10:02:09 AM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792512129.m4a) — Okay guys, time to go.
 
@@ -84,39 +84,39 @@ This run uses the reproducible settings standardized October 16, 2026 in scripts
 
 **039 · 10:43:24 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792514604.m4a) — I brought [transmission cuts off].
 
-**040 · 10:44:39 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792514679.m4a) — Where are we going here?
+**040 · 10:44:39 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792514679.m4a) — Where are we going [unclear]?
 
 **041 · 10:44:55 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792514695.m4a) — [Good night / tonight?]
 
 **042 · 10:45:02 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792514702.m4a) — Where are we going?
 
-**043 · 11:05:58 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792515958.m4a) — [Short transmission unclear; passes conflict.]
+**043 · 11:05:58 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792515958.m4a) — [unclear]
 
 **044 · 11:06:52 AM · 4 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792516012.m4a) — After this, do you friends want to go get food?
 
 **045 · 11:16:40 AM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792516600.m4a) — Did I miss it? I thought they told me I could cancel.
 
-**046 · 11:16:53 AM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792516613.m4a) — Yeah, [you said you / he said he] could cancel it.
+**046 · 11:16:53 AM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792516613.m4a) — Yeah, he said you could cancel it.
 
-**047 · 11:22:34 AM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792516954.m4a) — [No intelligible speech; very high no-speech probability.]
+**047 · 11:22:34 AM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792516954.m4a) — [silent].
 
-**048 · 11:22:48 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792516968.m4a) — [What? Very short, low-confidence reply.]
+**048 · 11:22:48 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792516968.m4a) — What?
 
 **049 · 11:36:53 AM · 4 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792517813.m4a) — Well, my appointment never showed up, so whenever you guys are ready.
 
-**050 · 11:37:00 AM · 4 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792517820.m4a) — We are currently fighting with [two goats / two ghosts?].
+**050 · 11:37:00 AM · 4 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792517820.m4a) — We are currently fighting with two goats.
 
-**051 · 11:37:05 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792517825.m4a) — [No / and then] I just [transmission cuts off].
+**051 · 11:37:05 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792517825.m4a) — Nice.
 
 **052 · 11:37:09 AM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792517829.m4a) — I would purposely lose that battle.
 
-**053 · 11:41:47 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792518107.m4a) — [Caught her? Very short, low-confidence transmission.]
+**053 · 11:41:47 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792518107.m4a) — [unclear].
 
 **054 · 11:42:41 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792518161.m4a) — Thank you.
 
 **055 · 11:42:47 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792518167.m4a) — You're welcome.
 
-**056 · 11:45:12 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792518312.m4a) — Lunch time.
+**056 · 11:45:12 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792518312.m4a) — Lunch time?
 
 **057 · 11:45:16 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792518316.m4a) — Okay.
 
@@ -124,27 +124,27 @@ This run uses the reproducible settings standardized October 16, 2026 in scripts
 
 **059 · 11:45:26 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792518326.m4a) — I'm going to start heading over there then.
 
-**060 · 11:48:08 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792518488.m4a) — [Oh / go], [Carla?].
+**060 · 11:48:08 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792518488.m4a) — Oh, Carla.
 
 **061 · 11:48:12 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792518492.m4a) — Nose goes.
 
-**062 · 11:48:15 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792518495.m4a) — [Okay / that goes / nose goes? Context may echo the prior call.]
+**062 · 11:48:15 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792518495.m4a) — Nose goes.
 
-**063 · 11:48:18 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792518498.m4a) — [You can wait / make it white?]
+**063 · 11:48:18 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792518498.m4a) — You can wait
 
-**064 · 11:48:33 AM · 4 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792518513.m4a) — She said she wants a [detective?], so [remainder unclear].
+**064 · 11:48:33 AM · 4 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792518513.m4a) — She said she wants a detective, so none of us nose goes.
 
-**065 · 11:49:05 AM · 4 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792518545.m4a) — [Next slide?] Did you not hear a word I said?
+**065 · 11:49:05 AM · 4 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792518545.m4a) — [unclear name], Did you not hear a word I said?
 
 **066 · 11:49:10 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792518550.m4a) — I did hear it.
 
 **067 · 11:49:14 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792518554.m4a) — You're good, man.
 
-**068 · 11:49:55 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792518595.m4a) — Hey, [Heaton?].
+**068 · 11:49:55 AM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792518595.m4a) — Hey, Heaton?
 
 **069 · 11:49:59 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792518599.m4a) — Yeah, yeah.
 
-**070 · 11:50:01 AM · 5 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792518601.m4a) — The detective that that lady is looking for is going to be [name unclear; rendered as wetting].
+**070 · 11:50:01 AM · 5 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792518601.m4a) — The detective that that lady is looking for is going to be Whetton.
 
 **071 · 11:50:09 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792518609.m4a) — Thank you.
 
@@ -164,7 +164,7 @@ This run uses the reproducible settings standardized October 16, 2026 in scripts
 
 **079 · 12:17:40 PM · 4 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792520260.m4a) — I don't know if it'll be the same, but there's a potential.
 
-**080 · 12:17:48 PM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792520268.m4a) — [Oh, still checking out / oh, just go check it out.]
+**080 · 12:17:48 PM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792520268.m4a) — I'll still check it out.
 
 **081 · 12:23:11 PM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792520591.m4a) — Medical's going to be [changed?].
 
@@ -172,19 +172,19 @@ This run uses the reproducible settings standardized October 16, 2026 in scripts
 
 **083 · 2:17:27 PM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792527447.m4a) — How long does it take to impound a car?
 
-**084 · 2:17:33 PM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792527453.m4a) — [No intelligible speech; context echoes the previous call.]
+**084 · 2:17:33 PM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792527453.m4a) — [silent]
 
 **085 · 2:17:43 PM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792527463.m4a) — It's approximately that long.
 
 **086 · 2:17:47 PM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792527467.m4a) — Sorry, what were you saying?
 
-**087 · 2:17:51 PM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792527471.m4a) — [And / nothing], that was just really good timing.
+**087 · 2:17:51 PM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792527471.m4a) — Nothing, that was just really good timing.
 
 **088 · 2:18:15 PM · 5 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792527495.m4a) — Oh yeah, it was the post-impound meeting.
 
 **089 · 2:18:22 PM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792527502.m4a) — Copy.
 
-**090 · 2:18:26 PM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792527506.m4a) — [Heaton?], you want to turn your lights off?
+**090 · 2:18:26 PM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792527506.m4a) — Heaton, you want to turn your lights off?
 
 **091 · 2:18:36 PM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792527516.m4a) — [Thank you / there you go.]
 
@@ -194,7 +194,7 @@ This run uses the reproducible settings standardized October 16, 2026 in scripts
 
 **094 · 2:53:22 PM · 0 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792529602.m4a) — [No intelligible speech; near-empty clip.]
 
-**095 · 2:53:24 PM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792529604.m4a) — Hey, what's up? [It's your friend? Possible unsupported added speech.]
+**095 · 2:53:24 PM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792529604.m4a) — Hey, what [remainder unclear]?
 
 **096 · 3:12:23 PM · 12 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792530743.m4a) — Okay, copy. I was just gonna head that way because I heard you haven't cleared. I'm just finishing up here with all the kids and getting everything straightened out, but if you guys are almost done, I'll just go on my way.
 
@@ -202,9 +202,9 @@ This run uses the reproducible settings standardized October 16, 2026 in scripts
 
 **098 · 3:12:49 PM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792530769.m4a) — That'll help him understand.
 
-**099 · 5:13:43 PM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792538023.m4a) — [No intelligible speech; stock sign-off and conflicting short output excluded.]
+**099 · 5:13:43 PM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792538023.m4a) — [No speech].
 
-**100 · 5:13:45 PM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792538025.m4a) — I have a new [scanning code?] for checking in.
+**100 · 5:13:45 PM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792538025.m4a) — I have a new scanning with code 4 checking in.
 
 **101 · 5:40:16 PM · 5 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792539616.m4a) — Hey Diego, do you need one of us to take that keep-the-peace thing?
 
@@ -212,47 +212,47 @@ This run uses the reproducible settings standardized October 16, 2026 in scripts
 
 **103 · 5:40:40 PM · 7 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792539640.m4a) — I actually haven't even responded. I'm here at the fire department parking lot transferring some property over to another vehicle.
 
-**104 · 6:15:26 PM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792541726.m4a) — [No intelligible speech; very high no-speech probability.]
+**104 · 6:15:26 PM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792541726.m4a) — [silent]
 
-**105 · 6:15:30 PM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792541730.m4a) — [About / well] one or two [exact wording unclear].
+**105 · 6:15:30 PM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792541730.m4a) — You want one or two?
 
 **106 · 6:15:35 PM · 7 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792541735.m4a) — One should be fine. It's just investigating a DV, so one will work.
 
 **107 · 6:15:45 PM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792541745.m4a) — If you need another, let me know.
 
-**108 · 6:19:17 PM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792541957.m4a) — [Godfrey? Short name or reply unclear.]
+**108 · 6:19:17 PM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792541957.m4a) — Godfrey?
 
-**109 · 6:19:20 PM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792541960.m4a) — [Copy / coffee?]
+**109 · 6:19:20 PM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792541960.m4a) — Copy
 
-**110 · 6:20:43 PM · 8 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792542043.m4a) — Yeah, there was an email sent out stating that we would have problems all night until the morning [shift?].
+**110 · 6:20:43 PM · 8 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792542043.m4a) — Yeah, there was an email sent out stating that we would have problems all night until the morning shift.
 
 **111 · 6:24:35 PM · 4 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792542275.m4a) — I'm going to head over to you just in case.
 
-**112 · 6:28:50 PM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792542530.m4a) — [Opening unclear], you want me to take that harassment [for you?]
+**112 · 6:28:50 PM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792542530.m4a) — Tonga, you want me to take that harassment for—
 
 **113 · 6:28:55 PM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792542535.m4a) — Be great, thank you.
 
-**114 · 6:28:59 PM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792542539.m4a) — [If / did] you say yes, thank you, or no, [you're good?], thank you?
+**114 · 6:28:59 PM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792542539.m4a) — Did you say yes, thank you, or no, [you're good?], thank you?
 
-**115 · 7:03:03 PM · 12 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792544583.m4a) — Hey Mitch, no arrest is gonna take place. The kids are gonna go get an overnight bag, and dad wants me to stay just to keep the peace, so I think you're good to clear if you want.
+**115 · 7:03:03 PM · 12 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792544583.m4a) — Hey Mitch, no arrest is gonna take place. The kids are gonna go get an overnight bag, and dad wants me to stay just to keep the peace, so I think you're good to clear if you want. Copy.
 
 **116 · 7:09:25 PM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792544965.m4a) — You guys go for it.
 
-**117 · 7:09:39 PM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792544979.m4a) — All right, I'm going to check.
+**117 · 7:09:39 PM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792544979.m4a) — All right, I'm going to jet.
 
-**118 · 7:13:39 PM · 4 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792545219.m4a) — [Opening unclear; request about heading to a warrant.]
+**118 · 7:13:39 PM · 4 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792545219.m4a) — Hey [unclear name], will you break and about head to that warrant.
 
 **119 · 7:13:47 PM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792545227.m4a) — Sorry, head to what?
 
-**120 · 7:13:49 PM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792545229.m4a) — The warrant [1J?] is serving.
+**120 · 7:13:49 PM · 3 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792545229.m4a) — The warrant 1J is serving.
 
-**121 · 7:13:54 PM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792545234.m4a) — Yeah, [remainder differs across passes].
+**121 · 7:13:54 PM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792545234.m4a) — Yeah, yeah.
 
 **122 · 7:14:42 PM · 4 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792545282.m4a) — That warrant looks like it's for a trip down the south. Do you know that?
 
-**123 · 7:14:52 PM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792545292.m4a) — [10-9?]
+**123 · 7:14:52 PM · 2 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792545292.m4a) — 10-9.
 
-**124 · 7:14:55 PM · 6 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792545295.m4a) — [Do you think / we do think], you know, it looks like that warrant is for one of us to take their guy south.
+**124 · 7:14:55 PM · 6 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792545295.m4a) — Do you think—you know, it looks like that warrant is for one of us to take their guy south.
 
 **125 · 7:15:03 PM · 4 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-20/dcfems-6001-1792545303.m4a) — Oh, uh, why is that?
 
