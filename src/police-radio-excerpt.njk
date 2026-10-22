@@ -46,7 +46,11 @@ permalink: "{{ excerptPage.excerpt | excerptUrl }}"
           </div>
         </div>
         <p id="excerpt-player-message" role="status"></p>{% if excerpt.enableTranscription %}
-        <div id="excerpt-transcription" class="excerpt-transcription" role="region" aria-label="Current clip transcription" aria-live="polite" aria-atomic="true" hidden></div>{% endif %}
+        <div id="excerpt-transcription" class="excerpt-transcription" role="region" aria-label="Current clip transcription" aria-live="polite" aria-atomic="true" hidden>
+          <p class="radio-transcript-label"><strong>Transcript:</strong></p>
+          <p id="excerpt-transcript-text"></p>
+          <p id="excerpt-call-note" class="radio-call-note" hidden><strong>Note:</strong> <span id="excerpt-call-note-text"></span></p>
+        </div>{% endif %}
         <audio id="excerpt-audio" preload="metadata"></audio>
       </section>
       <p class="radio-source-note">Recordings sourced from <a href="https://openmhz.com/" target="_blank" rel="noopener noreferrer">OpenMHz</a> and hosted independently. This site is not affiliated with or endorsed by OpenMHz.</p>
@@ -62,7 +66,7 @@ permalink: "{{ excerptPage.excerpt | excerptUrl }}"
             <div class="radio-list-heading" aria-hidden="true"><span>Time · archive clip</span><span>Duration</span></div>
             <ol class="radio-clips">
             {% for call in range.calls %}
-              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="{{ call.source | escape }}" data-seconds="{{ call.seconds }}" data-label="{{ call.date | escape }} · {{ call.time | escape }} · Clip {{ call.number }}" {% if excerpt.enableTranscription %}data-transcript="{{ call.transcript | escape }}" {% endif %}aria-label="Play clip {{ call.number }}, {{ call.date | escape }}, {{ call.time | escape }}, {{ call.seconds }} seconds" disabled><span><time datetime="{{ call.iso | escape }}">{{ call.time | escape }}</time> <span class="excerpt-clip-number">· {{ call.number }}</span></span><span>{{ call.seconds }} sec</span></button></li>
+              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="{{ call.source | escape }}" data-seconds="{{ call.seconds }}" data-label="{{ call.date | escape }} · {{ call.time | escape }} · Clip {{ call.number }}" {% if excerpt.enableTranscription %}data-transcript="{{ call.transcript | escape }}" {% if call.note %}data-note="{{ call.note | escape }}" {% endif %}{% endif %}aria-label="Play clip {{ call.number }}, {{ call.date | escape }}, {{ call.time | escape }}, {{ call.seconds }} seconds" disabled><span><time datetime="{{ call.iso | escape }}">{{ call.time | escape }}</time> <span class="excerpt-clip-number">· {{ call.number }}</span></span><span>{{ call.seconds }} sec</span></button></li>
             {% endfor %}
             </ol>
           </div>

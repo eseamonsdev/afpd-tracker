@@ -24,6 +24,7 @@
   const current = get("current"), message = get("player-message");
   const transcriptToggle = get("transcript-toggle"), transcript = get("transcript");
   const transcriptStatus = get("transcript-status"), transcriptText = get("transcript-text");
+  const callNote = get("call-note"), callNoteText = get("call-note-text");
   const transcriptAvailability = get("transcript-availability");
   let transcriptOn = false;
   let transcriptAvailable = false;
@@ -63,6 +64,11 @@
     transcriptStatus.textContent = transcriptStatus.hidden ? ""
       : call.validated === true ? "✓ Verified" : "AI-generated · Unverified";
     transcriptStatus.setAttribute("data-verified", String(call?.validated === true));
+    if (callNote && callNoteText) {
+      const note = typeof call?.note === "string" ? call.note.trim() : "";
+      callNote.hidden = transcript.hidden || !note;
+      callNoteText.textContent = callNote.hidden ? "" : note;
+    }
     transcript.scrollTop = 0;
   }
 

@@ -7,6 +7,7 @@
   const autoplay = get("autoplay"), showCurrent = get("show-current");
   const message = get("player-message"), current = get("current");
   const transcriptionToggle = get("transcription-toggle"), transcription = get("transcription");
+  const transcriptText = get("transcript-text"), callNote = get("call-note"), callNoteText = get("call-note-text");
   let transcriptionOn = false;
   const buttons = Array.from(root.querySelectorAll("[data-excerpt-clip]"));
   // A single persistent element preserves Safari's user-granted playback permission.
@@ -14,11 +15,16 @@
   let selected = -1, auto = false, playbackRequest = 0;
   let prefetched = null, prefetchController = null, activeObjectUrl = null;
   function updateTranscription() {
-    if (!transcriptionToggle || !transcription) return;
+    if (!transcriptionToggle || !transcription || !transcriptText) return;
     transcription.hidden = !transcriptionOn;
-    transcription.textContent = !transcriptionOn ? "" : selected < 0
+    transcriptText.textContent = !transcriptionOn ? "" : selected < 0
       ? "Choose a clip to see its transcription."
       : buttons[selected].dataset.transcript?.trim() || "[No transcription for clip]";
+    if (callNote && callNoteText) {
+      const note = selected < 0 ? "" : buttons[selected].dataset.note?.trim() || "";
+      callNote.hidden = !transcriptionOn || !note;
+      callNoteText.textContent = callNote.hidden ? "" : note;
+    }
   }
   if (transcriptionToggle && transcription) {
     transcriptionToggle.disabled = false;
