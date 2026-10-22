@@ -8,7 +8,7 @@ This run uses the reproducible settings standardized October 16, 2026 in scripts
 
 **001 · 1:02:04 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-21/dcfems-6001-1792566124.m4a) — Possible 55.
 
-**002 · 1:02:47 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-21/dcfems-6001-1792566167.m4a) — YOu can go fill up anyway.
+**002 · 1:02:47 AM · 1 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-21/dcfems-6001-1792566167.m4a) — You can go fill up anyway.
 
 **003 · 1:02:50 AM · 7 sec** — [Audio](https://afpd-accountability.com/records/openmhz/openmhz-afpd-car-to-car-2026-10-21/dcfems-6001-1792566170.m4a) — Yeah, just going from, uh, 30 to 60, so it's like a court thing.
 
