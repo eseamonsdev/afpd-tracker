@@ -7,6 +7,7 @@ import { excerptUrl, validateRadioExcerptIdentities } from "./lib/radio-excerpt-
 import { customTemplatePath } from "./lib/custom-template-path.js";
 import { documentSitemapPaths } from "./lib/build-document-sitemap.js";
 import { buildRadioIndex } from "./lib/build-radio-index.js";
+import { buildRadioTranscripts } from "./lib/build-radio-transcripts.js";
 import { loadJsonFiles } from "./lib/data/load-json-files.js";
 import { buildByID } from "./lib/data/build-by-id.js";
 import { resolveRefs } from "./lib/data/resolve-refs.js";
@@ -42,7 +43,10 @@ export default function (eleventyConfig) {
       month: "long", day: "numeric", year: "numeric", timeZone: "UTC"
     }).format(new Date(`${value}T00:00:00Z`));
   });
-  eleventyConfig.on("eleventy.before", () => buildRadioIndex());
+  eleventyConfig.on("eleventy.before", () => {
+    const index = buildRadioIndex();
+    buildRadioTranscripts(index);
+  });
   eleventyConfig.addWatchTarget("./public/records/openmhz/**/calls.json");
   eleventyConfig.addFilter("readCsv", readCsv);
 
