@@ -1,4 +1,29 @@
 .radio-resources-back { display: inline-flex; align-items: center; min-height: 44px; margin-bottom: 1rem; }
+.radio-guide-nav { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; padding: .8rem 0; border-block: 1px solid var(--line); }
+.radio-guide-nav a { display: inline-flex; align-items: center; min-height: 44px; }
+.radio-resources-section h2, .radio-resources-list li { scroll-margin-top: 1.5rem; }
+.radio-call-signs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .75rem; margin: 1rem 0; }
+.radio-call-signs div { padding: .8rem; border: 1px solid var(--line); border-radius: 6px; }
+.radio-call-signs dt { font-weight: 700; color: var(--navy); font-size: 1.1rem; }
+.radio-call-signs dd { margin: .2rem 0 0; }
+.radio-guide-language { margin: 1rem 0; }
+.radio-guide-language div { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 1rem; padding: .85rem 0; border-bottom: 1px solid var(--line); }
+.radio-guide-language dt { font-weight: 700; }
+.radio-guide-language dd { margin: 0; }
+.radio-guide-language dd span { display: block; margin-top: .25rem; color: var(--muted); font-size: .9rem; }
+.radio-guide-source-links { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; font-size: .9rem; }
+.radio-guide-source-links a { display: inline-flex; align-items: center; min-height: 44px; }
+.radio-guide-table-scroll { max-width: 100%; overflow-x: auto; }
+.radio-guide-table { width: 100%; min-width: 720px; border-collapse: collapse; text-align: left; font-size: .9rem; }
+.radio-guide-table caption { text-align: left; padding: .5rem 0; color: var(--muted); }
+.radio-guide-table th, .radio-guide-table td { padding: .9rem .75rem; vertical-align: top; border-bottom: 1px solid var(--line); }
+.radio-guide-table thead { background: var(--navy); color: white; }
+.radio-guide-table th { font-weight: 600; }
+.radio-guide-table td:last-child { max-width: 300px; }
+.radio-guide-id { display: block; white-space: nowrap; margin-bottom: .6rem; }
+.radio-guide-id:last-child { margin-bottom: 0; }
+.radio-guide-id code { font-size: .95rem; }
+.radio-guide-id span { display: block; margin-top: .15rem; color: var(--muted); font-size: .8rem; }
 .radio-resources-section { margin: 2rem 0; }
 .radio-resources-section h2 { margin: 0 0 .65rem; color: var(--navy); font-size: 1.35rem; }
 .radio-resources-description { max-width: 740px; margin: 0 0 1rem; color: var(--muted); }
@@ -13,4 +38,6 @@
 .radio-resources-attribution { max-width: 740px; padding-top: 1.25rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
 @media (max-width: 640px) {
   .radio-resources-list { grid-template-columns: 1fr; }
+  .radio-call-signs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .radio-guide-language div { grid-template-columns: 1fr; gap: .25rem; }
 }

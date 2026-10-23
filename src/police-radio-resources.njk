@@ -11,30 +11,75 @@ permalink: /police-radio-resources/
   <link rel="stylesheet" href="/css/police-radio-resources.css">
 {% endblock %}
 
-{% block content %}
+{%- block content %}
   <a class="radio-resources-back" href="/police-radio/">&larr; Police Radio</a>
   <div class="page-heading">
     <h1>{{ resources.title | escape }}</h1>
     <p>{{ resources.description | escape }}</p>
   </div>
 
-  {% for section in resources.sections %}
-    <section class="radio-resources-section" aria-labelledby="{{ section.id | escape }}">
-      <h2 id="{{ section.id | escape }}">{{ section.title | escape }}</h2>
-      <p class="radio-resources-description">{{ section.description | escape }}</p>
-      <ul class="radio-resources-list">
-        {% for source in section.sources %}
-          <li>
-            <h3><a href="{{ source.url | escape }}"{% if source.download %} download{% else %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ source.title | escape }}</a></h3>
+  <nav class="radio-guide-nav" aria-label="Listening guide">
+    <a href="#agency-call-signs">Call signs</a>
+    <a href="#radio-language">Radio language</a>
+    <a href="#officer-radio-ids">Names and radio IDs</a>
+    <a href="#sources">Sources and downloads</a>
+  </nav>
+
+  <section class="radio-resources-section" aria-labelledby="agency-call-signs">
+    <h2 id="agency-call-signs">{{ resources.callSigns.title | escape }}</h2>
+    <p class="radio-resources-description">{{ resources.callSigns.description | escape }}</p>
+    <dl class="radio-call-signs">
+      {%- for entry in resources.callSigns.entries %}
+        <div><dt>{{ entry.sign | escape }}</dt><dd>{{ entry.agency | escape }}</dd></div>
+      {%- endfor %}
+    </dl>
+    <p class="radio-guide-source-links">{%- for id in resources.callSigns.sourceIds %}{%- for source in resources.sources %}{%- if source.id == id %}<a href="#source-{{ source.id | escape }}">{{ source.title | escape }}</a>{%- endif %}{%- endfor %}{%- endfor %}</p>
+  </section>
+
+  <section class="radio-resources-section" aria-labelledby="radio-language">
+    <h2 id="radio-language">{{ resources.language.title | escape }}</h2>
+    <p class="radio-resources-description">{{ resources.language.description | escape }}</p>
+    <dl class="radio-guide-language">
+      {%- for entry in resources.language.entries %}
+        <div><dt>{{ entry.term | escape }}</dt><dd>{{ entry.meaning | escape }} <span>{{ entry.example | escape }}</span></dd></div>
+      {%- endfor %}
+    </dl>
+    <p class="radio-guide-source-links">{%- for id in resources.language.sourceIds %}{%- for source in resources.sources %}{%- if source.id == id %}<a href="#source-{{ source.id | escape }}">{{ source.title | escape }}</a>{%- endif %}{%- endfor %}{%- endfor %}</p>
+  </section>
+
+  <section class="radio-resources-section" aria-labelledby="officer-radio-ids">
+    <h2 id="officer-radio-ids">{{ resources.officers.title | escape }}</h2>
+    <p class="radio-resources-description">{{ resources.officers.description | escape }}</p>
+    <p>{{ resources.idExplanation | escape }}</p>
+    <p class="radio-resources-attribution">{{ resources.attributionNote | escape }}</p>
+    <p class="radio-resource-coverage"><strong>Examples cover:</strong> {{ resources.officers.coverage | escape }}</p>
+    <div class="radio-guide-table-scroll" tabindex="0" role="region" aria-label="Officer names and associated radio IDs">
+      <table class="radio-guide-table">
+        <caption>Selected recurring associations. Counts apply separately to each radio ID.</caption>
+        <thead><tr><th scope="col">Name heard</th><th scope="col">Roster candidate</th><th scope="col">Radio ID · examples / days</th><th scope="col">Notes</th></tr></thead>
+        <tbody>{%- for officer in resources.officers.entries %}
+          <tr><th scope="row">{{ officer.heard | escape }}</th><td><a href="{{ officer.url | escape }}">{{ officer.name | escape }}</a></td><td>{%- for entry in officer.ids %}<span class="radio-guide-id"><code>{{ entry.id | escape }}</code><span>{{ entry.examples }} examples / {{ entry.days }} days</span></span>{%- endfor %}</td><td>{{ officer.note | escape }}</td></tr>
+        {%- endfor %}</tbody>
+      </table>
+    </div>
+    <p>{{ resources.officers.unresolved | escape }}</p>
+    <p class="radio-guide-source-links">{%- for id in resources.officers.sourceIds %}{%- for source in resources.sources %}{%- if source.id == id %}<a href="{{ source.url | escape }}" download>Download the full radio-ID spreadsheet</a>{%- endif %}{%- endfor %}{%- endfor %}</p>
+  </section>
+
+  <section class="radio-resources-section" aria-labelledby="sources">
+    <h2 id="sources">Sources and downloads</h2>
+    <p class="radio-resources-description">References used in the guide above. Utah County is listed first for local lookups; the statewide reference covers other agencies.</p>
+    <ul class="radio-resources-list">
+      {%- for source in resources.sources %}
+          <li id="source-{{ source.id | escape }}">
+            <h3><a href="{{ source.url | escape }}"{%- if source.download %} download{%- else %} target="_blank" rel="noopener noreferrer"{%- endif %}>{{ source.title | escape }}</a></h3>
             <p class="radio-resource-meta">{{ source.publisher | escape }} · {{ source.format | escape }}</p>
             <p>{{ source.description | escape }}</p>
-            {% if source.coverage %}<p class="radio-resource-coverage"><strong>Coverage:</strong> {{ source.coverage | escape }}</p>{% endif %}
-            {% if source.note %}<p class="radio-resource-note">{{ source.note | escape }}</p>{% endif %}
-            {% if source.download %}<a class="radio-resource-download" href="{{ source.url | escape }}" download>Download spreadsheet <span aria-hidden="true">&darr;</span></a>{% endif %}
+            {%- if source.coverage %}<p class="radio-resource-coverage"><strong>Coverage:</strong> {{ source.coverage | escape }}</p>{%- endif %}
+            {%- if source.note %}<p class="radio-resource-note">{{ source.note | escape }}</p>{%- endif %}
+            {%- if source.download %}<a class="radio-resource-download" href="{{ source.url | escape }}" download>Download spreadsheet <span aria-hidden="true">&darr;</span></a>{%- endif %}
           </li>
-        {% endfor %}
-      </ul>
-    </section>
-  {% endfor %}
-  <p class="radio-resources-attribution">{{ resources.attributionNote | escape }}</p>
-{% endblock %}
+      {%- endfor %}
+    </ul>
+  </section>
+{%- endblock %}
