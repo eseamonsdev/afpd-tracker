@@ -2,7 +2,7 @@
 
 Standardized October 16, 2026 with the owner's approval. Use staging, never main.
 The previous America/Denver calendar day is the target, even for a manual run.
-The noon transcription follows the 7 a.m. archive import.
+The 9 a.m. America/Denver transcription follows the 7 a.m. archive import.
 
 ## Method and provenance
 
@@ -78,6 +78,9 @@ python scripts/transcribe_afpd_radio.py finalize --date YYYY-MM-DD --passes WORK
 
 This writes every reconciled entry to its matching calls.json transcript field, including
 bracketed uncertainty and privacy markers, and sets enableTranscription: true.
+Every call must have nonempty text, even if the entire entry is an honest annotation
+such as [unclear], [Unintelligible transmission], [static], or [No intelligible speech].
+Do not invent spoken words for unintelligible audio or omit annotation-only entries.
 calls.json is the only authoritative police-radio transcript. Do not create
 transcript.md, numbered radio drafts, or separate review-backlog files.
 Git history preserves earlier wording. No newly automated entry gets validated:true.
