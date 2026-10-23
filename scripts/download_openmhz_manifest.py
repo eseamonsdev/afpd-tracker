@@ -34,13 +34,15 @@ def archive_readme(data):
     note = ('Selective AFPD archive: known AFPD-channel radio IDs plus calls within 120 seconds.\n'
             'Radio IDs identify radios observed on AFPD channels, not confirmed officer identities.\n'
             if data.get('selection_summary') else '')
+    rows_note = ('rows.json: source labels in chronological unique-audio order.\n'
+                 if data['talkgroup'] != 6001 else '')
     return (note + f'OpenMHz {label} ({data["talkgroup"]}), {data["date"]}, America/Denver.\n'
             f'Metadata schema: {SCHEMA_VERSION}.\n'
             f'Coverage: {data["coverage"]}; collected through {data.get("collected_through_utc") or "unknown"}.\n'
             f'{data["count"]} unique audio files; {data["source_call_count"]} source call entries.\n'
             'Source: OpenMHz (https://openmhz.com/). Original audio bytes and filenames retained.\n'
             'calls.json: chronological call metadata, original source IDs/labels, timestamps and audio checks.\n'
-            'rows.json: source labels in chronological unique-audio order.\n'
+            + rows_note +
             'validation.json: coverage and audio-validation results, plus preserved historical evidence.\n'
             'Unix timestamps determine Mountain times; original browser labels may use another timezone.\n')
 
@@ -274,7 +276,8 @@ def import_manifest(root, source, downloader):
         if 'selection_summary' in data:
             write_json(destination / 'selection-summary.json', data['selection_summary'])
         write_json(destination / 'calls.json', result)
-        write_json(destination / 'rows.json', [call.get('row', '') for call in calls])
+        if talkgroup != 6001:
+            write_json(destination / 'rows.json', [call.get('row', '') for call in calls])
         validation_path = destination / 'validation.json'
         validation = json.loads(validation_path.read_text()) if validation_path.exists() else {}
         validation.update(schema_version=SCHEMA_VERSION, date=day, timezone='America/Denver', system='dcfems',

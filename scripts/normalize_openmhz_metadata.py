@@ -71,16 +71,9 @@ def standardized_files(folder):
     validation.setdefault('minimum_pause_after_download_seconds', validation.get('download_delay_seconds'))
     validation['source_duration_discrepancies'] = [call['original_filename'] for call in calls
                                                   if not call['source_duration_matches']]
-    outputs = {'calls.json': data, 'validation.json': validation, 'rows.json': [call.get('row', '') for call in calls]}
-    outputs['README.txt'] = archive_readme(data)
-    readme_path = folder / 'README.txt'
-    if readme_path.exists() and readme_path.read_text() != outputs['README.txt'] and not (folder / 'legacy-README.txt').exists():
-        outputs['legacy-README.txt'] = readme_path.read_text()
-    original_rows_path = folder / 'rows.json'
-    if original_rows_path.exists():
-        original_rows = json.loads(original_rows_path.read_text())
-        if original_rows != outputs['rows.json'] and not (folder / 'legacy-rows.json').exists():
-            outputs['legacy-rows.json'] = original_rows
+    # Original row labels are already preserved on each call.
+    outputs = {'calls.json': data, 'validation.json': validation,
+               'README.txt': archive_readme(data)}
     return outputs
 
 

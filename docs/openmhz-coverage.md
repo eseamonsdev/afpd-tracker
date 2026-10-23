@@ -47,11 +47,16 @@ and label, actual size, SHA-256, measured audio duration, and whether the measur
 duration agrees with the source label within one second. Additional historical
 radio metadata and validation evidence remain available.
 
-`rows.json` follows the chronological unique-audio order in `calls.json`. When
-standardization changes an older source-row inventory, its original contents are
-preserved in `legacy-rows.json`. Alternate source entries for the same audio file
-remain in `duplicate_source_calls`; source-call count can exceed audio count.
-README files use the same format, with earlier notes preserved in `legacy-README.txt`.
+Car-to-Car folders keep audio, `calls.json`, `validation.json`, and `README.txt`,
+plus original source metadata and coverage evidence where available.
+Original source labels live in each call's `row`; `rows.json` is redundant and is
+no longer generated for talkgroup 6001. Alternate source entries for the same
+audio file remain in `duplicate_source_calls`; source-call count can exceed audio count.
+Completed download checkpoints, duplicate legacy rows/readmes/status files and
+transcript backlogs were removed after comparison with the retained metadata.
+Useful historical import-method notes are preserved in `validation.json` under
+`historical_import_notes`; superseded files remain recoverable in Git history.
+Normalization does not create new legacy backup files. Law 2 folders are unchanged.
 
 Historical downloaded/skipped counts and minimum download pauses are null when
 they were not recorded. Local metadata verification does not invent downloads or

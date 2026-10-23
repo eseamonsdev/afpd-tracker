@@ -32,7 +32,8 @@ Output folder:
 `public/records/openmhz/openmhz-afpd-car-to-car-YYYY-MM-DD/`
 
 Audio filenames: `dcfems-6001-<unix-seconds>.m4a`.
-Metadata: `calls.json`, `rows.json`, `validation.json`, `README.txt`.
+Car-to-Car metadata: `calls.json`, `validation.json`, `README.txt`.
+Original source labels are retained in each call's `row` field; do not generate a separate `rows.json`.
 Existing calls are preserved when extending a partial day. The workflow regenerates
 `public/records/openmhz/index.json` using `lib/build-radio-index.js`, runs the radio
 tests and site build, removes the processed source manifest, and commits to

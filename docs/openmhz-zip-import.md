@@ -13,9 +13,10 @@ ZIPs only; it does not fetch new recordings from OpenMHz. Empty runs do nothing.
 Do not upload the next batch until the previous import PR is merged, to avoid
 overlapping import PRs. Rerunning the same source commit reuses its branch/PR.
 
-ZIPs use the existing flat layout: original `dcfems-6001-EPOCH.m4a` filenames,
-`calls.json`, `rows.json`, `download-checkpoint.json`, `validation.json`,
-`README.txt`, and `STATUS.txt`. Dates use America/Denver. Unsafe paths, missing
+Car-to-Car ZIPs use a flat layout: original `dcfems-6001-EPOCH.m4a` filenames,
+`calls.json`, `validation.json`, and `README.txt`. Legacy metadata such as
+`rows.json`, `download-checkpoint.json`, and `STATUS.txt` remains optional for
+older ZIPs. Law 2 requirements are unchanged. Dates use America/Denver. Unsafe paths, missing
 audio, extra audio, invalid manifests, size/hash mismatches, and conflicting
 existing day folders stop the batch before extraction. Duplicate source calls
 sharing one filename are retained as `duplicate_source_calls` in the manifest,

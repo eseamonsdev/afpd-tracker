@@ -50,6 +50,16 @@ class ImportTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "refusing overwrite"):
             self.validate()
 
+    def test_car_to_car_zip_accepts_core_metadata_without_rows(self):
+        with zipfile.ZipFile(self.archive, "w") as z:
+            z.writestr("calls.json", json.dumps(self.data))
+            z.writestr("validation.json", "{}")
+            z.writestr("README.txt", "Archive description")
+            z.writestr(self.filename, self.audio)
+        files, count, _ = self.validate()
+        self.assertEqual(count, 1)
+        self.assertNotIn("rows.json", files)
+
     def test_paths_rejected(self):
         for name in ("../escape.m4a", "/escape.m4a", "subdir/file.m4a"):
             self.write_zip({name: self.audio})

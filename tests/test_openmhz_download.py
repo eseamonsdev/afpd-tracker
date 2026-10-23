@@ -53,6 +53,7 @@ class DownloadTest(unittest.TestCase):
             self.assertEqual(saved['calls'][0]['radio_ids'], ['14590021'])
             self.assertEqual(json.loads((destination / 'source-inventory.json').read_text()), [call])
             self.assertIn('Law 2 Northeast (5922)', (destination / 'README.txt').read_text())
+            self.assertTrue((destination / 'rows.json').exists())
             self.assertFalse((root / 'public/records/openmhz/openmhz-afpd-car-to-car-2026-09-30').exists())
         data['talkgroup'] = 6001
         with self.assertRaises(ValueError):
@@ -147,7 +148,7 @@ class DownloadTest(unittest.TestCase):
                     self.assertEqual(saved['schema_version'], 1)
                     self.assertEqual(saved['source_call_count'], 1)
                     self.assertEqual(saved['calls'][0]['timestamp_utc'], '2026-09-30T07:56:50Z')
-                    self.assertEqual(json.loads((destination / 'rows.json').read_text()), [''])
+                    self.assertFalse((destination / 'rows.json').exists())
             downloader.download.assert_not_called()
 
     def test_failed_extension_does_not_replace_metadata(self):

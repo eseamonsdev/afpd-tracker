@@ -13,7 +13,7 @@ spec.loader.exec_module(module)
 
 
 class MetadataTest(unittest.TestCase):
-    def test_normalization_uses_source_link_and_preserves_legacy_rows(self):
+    def test_normalization_preserves_source_labels_without_duplicate_files(self):
         with tempfile.TemporaryDirectory() as directory:
             folder = Path(directory)
             name = 'dcfems-6001-1790755010.m4a'
@@ -31,7 +31,10 @@ class MetadataTest(unittest.TestCase):
             self.assertEqual(files['calls.json']['calls'][0]['id'], 'original-id')
             self.assertEqual(files['calls.json']['coverage'], 'unknown')
             self.assertIsNone(files['calls.json']['collected_through_utc'])
-            self.assertEqual(files['legacy-rows.json'], ['original inventory order'])
+            self.assertEqual(files['calls.json']['calls'][0]['row'], 'original source row')
+            self.assertNotIn('rows.json', files)
+            self.assertNotIn('legacy-rows.json', files)
+            self.assertNotIn('legacy-README.txt', files)
             self.assertTrue(files['validation.json']['historic_evidence'])
             self.assertIsNone(files['validation.json']['downloaded'])
             self.assertEqual((folder / name).read_bytes(), audio)
