@@ -60,6 +60,7 @@ async function fixture(withTranscription = true) {
   if (withTranscription) {
     elements.set("transcription-toggle", new Element());
     elements.set("transcription", new Element());
+    elements.set("transcript-text", new Element());
   }
   const excerpt = buildRadioExcerpt(entity);
   const buttons = excerpt.sections.flatMap(s => s.ranges.flatMap(r => r.calls)).map(call => {
@@ -103,25 +104,28 @@ test("transcription is opt-in per excerpt and rejects invalid configuration", ()
 test("transcription follows selection and autoplay, handles missing text, and toggles off", async () => {
   const f = await fixture();
   const toggle = f.get("transcription-toggle"), panel = f.get("transcription");
+  const text = f.get("transcript-text");
   assert.equal(panel.hidden, true);
   toggle.click();
   assert.equal(toggle.getAttribute("aria-pressed"), "true");
-  assert.match(panel.textContent, /Choose a clip/);
+  assert.equal(panel.hidden, false);
+  assert.match(text.textContent, /Choose a clip/);
   f.select(0);
-  assert.equal(panel.textContent, f.buttons[0].dataset.transcript);
+  assert.equal(text.textContent, f.buttons[0].dataset.transcript);
   f.buttons[1].dataset.transcript = "  ";
   f.get("autoplay").click(); await f.settle(); f.finish();
-  assert.equal(panel.textContent, "[No transcription for clip]");
+  assert.equal(text.textContent, "[No transcription for clip]");
   f.buttons[2].dataset.transcript = '<script>alert("test")</script>';
   f.select(2);
-  assert.equal(panel.textContent, '<script>alert("test")</script>');
+  assert.equal(text.textContent, '<script>alert("test")</script>');
+  assert.equal(text.children.length, 0, "transcripts remain plain text");
   toggle.click();
   assert.equal(panel.hidden, true);
-  assert.equal(panel.textContent, "");
+  assert.equal(text.textContent, "");
   f.select(3);
   assert.equal(panel.hidden, true);
   toggle.click();
-  assert.equal(panel.textContent, f.buttons[3].dataset.transcript);
+  assert.equal(text.textContent, f.buttons[3].dataset.transcript);
 });
 
 test("excerpts without transcription controls retain normal playback", async () => {
