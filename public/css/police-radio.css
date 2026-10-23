@@ -5,10 +5,12 @@
 .radio-archive select, .radio-archive button { font: inherit; }
 .radio-archive select { width: 100%; padding: .7rem; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--ink); }
 .radio-player { position: sticky; top: 1rem; z-index: 1; padding: 1rem; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); box-shadow: 0 3px 12px #17365d0d; }
-.radio-player-heading { display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin-bottom: 1rem; }
+.radio-player-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; margin-bottom: 1rem; }
 .radio-player-heading p { margin: 0; font-weight: 600; color: var(--navy); }
 .radio-player-actions { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem; flex-shrink: 0; max-width: 100%; }
-.radio-player button { cursor: pointer; border: 1px solid var(--line); border-radius: 6px; padding: .55rem .8rem; background: var(--page); color: var(--navy); white-space: nowrap; min-height: 44px; }
+.radio-player button, #radio-transcript-download { cursor: pointer; border: 1px solid var(--line); border-radius: 6px; padding: .55rem .8rem; background: var(--page); color: var(--navy); white-space: nowrap; min-height: 44px; }
+#radio-transcript-download { display: inline-flex; align-items: center; text-decoration: none; box-sizing: border-box; }
+#radio-transcript-download[hidden] { display: none; }
 #radio-show-current { background: var(--surface); }
 .radio-player button[aria-pressed="true"] { background: var(--navy); color: white; border-color: var(--navy); }
 .radio-player button:disabled { cursor: default; opacity: .5; }

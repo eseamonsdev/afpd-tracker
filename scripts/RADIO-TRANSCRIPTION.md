@@ -86,7 +86,8 @@ transcript.md, numbered radio drafts, or separate review-backlog files.
 Git history preserves earlier wording. No newly automated entry gets validated:true.
 `make build` generates `transcript_YYYY_MM_DD.txt` beside each indexed day's
 calls.json. These text files are derived exports, never editing sources.
-They include Mountain Time, chronological clip numbers, radio IDs, and a
+They include Mountain Time, chronological clip numbers, radio IDs, verification
+(`Verified: ✓` only for validated:true; `Verified: No` otherwise), and a
 `Transcript:` label. Missing/blank/non-string text uses the player's exact
 `[no transcript available]` fallback. Rebuild after calls.json corrections;
 do not maintain the exports by hand or recreate transcript.md.

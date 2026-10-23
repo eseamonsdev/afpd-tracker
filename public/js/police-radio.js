@@ -24,6 +24,7 @@
   const current = get("current"), message = get("player-message");
   const currentRadioIds = get("current-radio-ids");
   const transcriptToggle = get("transcript-toggle"), transcript = get("transcript");
+  const transcriptDownload = get("transcript-download");
   const transcriptStatus = get("transcript-status"), transcriptText = get("transcript-text");
   const callNote = get("call-note"), callNoteText = get("call-note-text");
   const transcriptAvailability = get("transcript-availability");
@@ -171,6 +172,11 @@
 
   function resetPlayer() {
     transcriptAvailable = false;
+    if (transcriptDownload) {
+      transcriptDownload.hidden = true;
+      transcriptDownload.removeAttribute("href");
+      transcriptDownload.removeAttribute("download");
+    }
     if (transcriptAvailability) transcriptAvailability.hidden = true;
     clearPrefetchedClip();
     clearActiveObjectUrl();
@@ -290,6 +296,12 @@
         return call;
       }).sort((a, b) => a.epoch - b.epoch);
       transcriptAvailable = data.enableTranscription === true;
+      if (transcriptDownload) {
+        const filename = `transcript_${entry.date.replaceAll("-", "_")}.txt`;
+        transcriptDownload.setAttribute("href", `${base}${encodeURIComponent(folder)}/${filename}`);
+        transcriptDownload.setAttribute("download", filename);
+        transcriptDownload.hidden = false;
+      }
       if (transcriptAvailability) transcriptAvailability.hidden = transcriptAvailable;
       updateTranscript();
       const fragment = document.createDocumentFragment();

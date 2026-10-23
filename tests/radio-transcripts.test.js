@@ -9,16 +9,18 @@ test("export matches player ordering, Mountain time, IDs and transcript fallback
   const data = { date: "2026-10-21", calls: [
     { epoch: 1792566170, transcript: "  [unclear]\nSecond line.  ",
       radio_ids: ["14590107", "14590107", 0, null], srcList: [{ src: 14590020 }, { src: "bad" }] },
-    { epoch: 1792566124, transcript: "Possible 55.", radio_ids: ["14590345"] },
+    { epoch: 1792566124, transcript: "Possible 55.", validated: true, radio_ids: ["14590345"] },
     ...[undefined, "", "  \n", null, 123].map((transcript, i) => ({ epoch: 1792566200 + i, transcript }))
   ] };
   const original = JSON.stringify(data);
   const text = formatRadioTranscript(data);
   assert.ok(text.startsWith("October 21, 2026\nAmerican Fork PD Car to Car\nTimes: America/Denver\n\n"));
-  assert.ok(text.includes("1:02:04 AM — Clip 1\n────────────────────────────────────────\nRadio ID: 14590345\n\nTranscript:\nPossible 55."));
-  assert.ok(text.includes("\n\n\n1:02:50 AM — Clip 2\n────────────────────────────────────────\nRadio IDs: 14590107, 14590020\n\nTranscript:\n[unclear]\nSecond line."));
+  assert.ok(text.includes("1:02:04 AM — Clip 1\n────────────────────────────────────────\nRadio ID: 14590345\nVerified: ✓\n\nTranscript:\nPossible 55."));
+  assert.ok(text.includes("\n\n\n1:02:50 AM — Clip 2\n────────────────────────────────────────\nRadio IDs: 14590107, 14590020\nVerified: No\n\nTranscript:\n[unclear]\nSecond line."));
   assert.equal(text.split("[no transcript available]").length - 1, 5);
   assert.equal(text.split("Radio ID: [not available]").length - 1, 5);
+  assert.equal(text.split("Verified: ✓").length - 1, 1);
+  assert.equal(text.split("Verified: No").length - 1, 6);
   assert.equal(JSON.stringify(data), original);
   const player = fs.readFileSync(new URL("../public/js/police-radio.js", import.meta.url), "utf8");
   assert.ok(player.includes('text || "[no transcript available]"'));

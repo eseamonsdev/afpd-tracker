@@ -56,7 +56,7 @@ class Element {
 async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11", search = "", transcriptEnabled = true) {
   const elements = new Map(["archive", "month", "day", "audio", "play", "seek", "autoplay",
     "clips", "clips-section", "status", "current", "current-radio-ids", "player-message", "elapsed", "duration",
-    "transcript-toggle", "transcript", "transcript-status", "transcript-text", "transcript-availability"]
+    "transcript-toggle", "transcript-download", "transcript", "transcript-status", "transcript-text", "transcript-availability"]
     .map(name => [`radio-${name}`, new Element(name === "audio" ? "audio" : "div")]));
   elements.get("radio-autoplay").setAttribute("aria-pressed", "false");
   const players = [elements.get("radio-audio")];
@@ -491,4 +491,27 @@ test("radio IDs appear in clip rows and player, and disappear for missing IDs an
   await f.settle();
   assert.equal(f.get("current-radio-ids").hidden, true);
   assert.equal(f.get("current-radio-ids").textContent, "");
+});
+
+
+test("download link follows the loaded date independently of transcript display", async () => {
+  const f = await playerFixture(undefined, undefined, "2026-10-21", "", false);
+  const link = f.get("transcript-download");
+  assert.equal(link.hidden, false);
+  assert.equal(link.getAttribute("download"), "transcript_2026_10_21.txt");
+  assert.equal(link.getAttribute("href"), "/records/openmhz/2026-10-21/transcript_2026_10_21.txt");
+  assert.equal(f.get("transcript-toggle").hidden, true);
+  f.get("day").value = "2026-09-10";
+  f.get("day").emit("change");
+  assert.equal(link.hidden, true);
+  assert.equal(link.getAttribute("href"), null);
+  await f.settle();
+  assert.equal(link.hidden, false);
+  assert.equal(link.getAttribute("download"), "transcript_2026_09_10.txt");
+  assert.equal(link.getAttribute("href"), "/records/openmhz/2026-09-10/transcript_2026_09_10.txt");
+  f.get("day").value = "unavailable";
+  f.get("day").emit("change");
+  await f.settle();
+  assert.equal(link.hidden, true);
+  assert.equal(link.getAttribute("href"), null);
 });
