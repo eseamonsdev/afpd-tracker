@@ -55,7 +55,7 @@ class Element {
 
 async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11", search = "", transcriptEnabled = true) {
   const elements = new Map(["archive", "month", "day", "audio", "play", "seek", "autoplay",
-    "clips", "clips-section", "status", "current", "player-message", "elapsed", "duration",
+    "clips", "clips-section", "status", "current", "current-radio-ids", "player-message", "elapsed", "duration",
     "transcript-toggle", "transcript", "transcript-status", "transcript-text", "transcript-availability"]
     .map(name => [`radio-${name}`, new Element(name === "audio" ? "audio" : "div")]));
   elements.get("radio-autoplay").setAttribute("aria-pressed", "false");
@@ -456,4 +456,39 @@ test("month and day changes update the URL while retaining other parameters and 
   sameMonth.get("day").emit("change");
   await sameMonth.settle();
   assert.equal(sameMonth.window.location.search, "?date=2026-09-10");
+});
+
+
+test("radio IDs appear in clip rows and player, and disappear for missing IDs and day resets", async () => {
+  const calls = [
+    { epoch: 1789100000, displayed_seconds: 5, original_filename: "one.m4a", radio_ids: ["14590123"], srcList: [{ src: 14590123 }] },
+    { epoch: 1789100010, displayed_seconds: 5, original_filename: "two.m4a", srcList: [{ src: "14590123" }, { src: "14590107" }] },
+    { epoch: 1789100020, displayed_seconds: 5, original_filename: "none.m4a" },
+    { epoch: 1789100030, displayed_seconds: 5, original_filename: "invalid.m4a", radio_ids: [0, -1, "", null] }
+  ];
+  const f = await playerFixture(calls, undefined, "2026-09-11", "", false);
+  const row = i => f.get("clips").children[i].children[0];
+  assert.equal(f.get("current-radio-ids").hidden, true);
+  assert.equal(row(0).children[0].children[2].textContent, "Radio ID: 14590123");
+  assert.match(row(0).getAttribute("aria-label"), /Radio ID: 14590123/);
+  assert.equal(row(1).children[0].children[2].textContent, "Radio IDs: 14590123, 14590107");
+  for (const i of [2, 3]) {
+    assert.equal(row(i).children[0].children.length, 2, "no additional row content without a valid ID");
+    assert.doesNotMatch(row(i).getAttribute("aria-label"), /Radio ID/);
+  }
+  f.select(0);
+  assert.equal(f.get("current-radio-ids").textContent, "Radio ID: 14590123");
+  assert.equal(f.get("current-radio-ids").hidden, false);
+  assert.equal(f.get("transcript").hidden, true, "IDs do not depend on transcript visibility");
+  f.select(1);
+  assert.equal(f.get("current-radio-ids").textContent, "Radio IDs: 14590123, 14590107");
+  f.select(2);
+  assert.equal(f.get("current-radio-ids").hidden, true);
+  assert.equal(f.get("current-radio-ids").textContent, "");
+  f.select(0);
+  f.get("day").value = "2026-09-10";
+  f.get("day").emit("change");
+  await f.settle();
+  assert.equal(f.get("current-radio-ids").hidden, true);
+  assert.equal(f.get("current-radio-ids").textContent, "");
 });

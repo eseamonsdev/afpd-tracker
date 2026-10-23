@@ -22,6 +22,7 @@
   const showCurrent = get("show-current");
   const list = get("clips"), section = get("clips-section"), status = get("status");
   const current = get("current"), message = get("player-message");
+  const currentRadioIds = get("current-radio-ids");
   const transcriptToggle = get("transcript-toggle"), transcript = get("transcript");
   const transcriptStatus = get("transcript-status"), transcriptText = get("transcript-text");
   const callNote = get("call-note"), callNoteText = get("call-note-text");
@@ -45,6 +46,21 @@
   let auto = false, request = 0, playbackRequest = 0, controller;
   let lastPlayingAudio = null, keepPlaybackPlayer = false;
   let prefetchedClip = null, prefetchController = null, activeObjectUrl = null;
+
+  const radioIdText = (call) => {
+    const ids = [...new Set([
+      ...(Array.isArray(call?.radio_ids) ? call.radio_ids : []),
+      ...(Array.isArray(call?.srcList) ? call.srcList.map(source => source?.src) : [])
+    ].filter(id => typeof id === "string" || typeof id === "number")
+      .map(id => String(id).trim()).filter(id => /^[1-9]\d*$/.test(id)))];
+    return ids.length ? `Radio ID${ids.length > 1 ? "s" : ""}: ${ids.join(", ")}` : "";
+  };
+
+  function updateRadioIds(call) {
+    if (!currentRadioIds) return;
+    currentRadioIds.textContent = radioIdText(call);
+    currentRadioIds.hidden = !currentRadioIds.textContent;
+  }
 
   const clipSource = (index) => `${base}${encodeURIComponent(folder)}/${encodeURIComponent(calls[index].original_filename)}`;
 
@@ -171,6 +187,7 @@
     get("elapsed").textContent = "0:00";
     get("duration").textContent = "0:00";
     current.textContent = "Choose a clip to listen";
+    updateRadioIds();
     updateTranscript();
     message.textContent = "";
   }
@@ -221,6 +238,7 @@
     const call = calls[index];
     buttons[index].setAttribute("aria-current", "true");
     current.textContent = `${dateFormat.format(dateObject(day.value))} · ${timeFormat.format(new Date(call.epoch * 1000))} · Clip ${index + 1}`;
+    updateRadioIds(call);
     updateTranscript();
     message.textContent = "";
     seek.disabled = true;
@@ -287,9 +305,16 @@
         number.className = "radio-clip-number";
         number.textContent = ` · ${index + 1}`;
         label.append(time, number);
+        const ids = radioIdText(call);
+        if (ids) {
+          const radioIds = document.createElement("span");
+          radioIds.className = "radio-ids";
+          radioIds.textContent = ids;
+          label.append(radioIds);
+        }
         const duration = document.createElement("span");
         duration.textContent = `${call.displayed_seconds} sec`;
-        button.setAttribute("aria-label", `Play clip ${index + 1}, ${time.textContent}, ${call.displayed_seconds} seconds`);
+        button.setAttribute("aria-label", `Play clip ${index + 1}, ${time.textContent}, ${call.displayed_seconds} seconds${ids ? `, ${ids}` : ""}`);
         button.append(label, duration);
         button.addEventListener("click", () => {
           chooseClip(index);
