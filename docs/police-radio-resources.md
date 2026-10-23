@@ -1,6 +1,7 @@
 # Police Radio Resources
 
-The page is generated at `/police-radio-resources/` and linked from Police Radio.
+The page is generated at `/police-radio-resources/` and linked from Police Radio,
+the excerpts index, and each individual excerpt.
 
 Edit `data/entities/pages/police-radio-resources.json` to change the page title,
 introduction, section order, source order, or any source title, URL, description,
