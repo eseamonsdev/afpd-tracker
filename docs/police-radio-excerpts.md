@@ -92,13 +92,16 @@ HTML deletions, for the setting to take effect on the hosted site.
 Set `"enableTranscription": true` on the excerpt data entity to include a
 Transcription: Off/On button in its player controls. It defaults to off; omit the
 field or set it to false to omit the button and transcript data. Nonboolean
-values fail the build. Excerpts #1, #5, and #9 currently enable this feature.
+values fail the build. All published excerpts currently enable this feature.
 
 When switched on, the panel shows the selected clip's `transcript` from its
 daily `calls.json` and updates on manual selection and autoplay. Missing or
-blank text displays `[No transcription for clip]`. Approved bracketed annotations
-are displayed as written. Text is escaped in HTML and inserted as plain text.
-The full-day radio page, script, and styles are unaffected.
+blank text displays `[no transcript available]`. The verification label reflects
+`validated === true` in the daily manifest, and optional `note` text appears below
+the transcript. Radio IDs come from `radio_ids` and `srcList`, with duplicate or
+invalid IDs removed; clips without an ID show no ID text. Approved bracketed
+annotations are displayed as written. Text is escaped in HTML and inserted as
+plain text. The full-day radio page, script, and styles are unaffected.
 
 ## Stable URLs
 

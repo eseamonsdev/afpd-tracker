@@ -61,11 +61,19 @@ async function fixture(withTranscription = true) {
     elements.set("transcription-toggle", new Element());
     elements.set("transcription", new Element());
     elements.set("transcript-text", new Element());
+    elements.set("transcript-status", new Element());
+    elements.set("call-note", new Element());
+    elements.set("call-note-text", new Element());
+    elements.get("transcript-status").hidden = true;
+    elements.get("call-note").hidden = true;
   }
+  elements.set("current-radio-ids", new Element());
+  elements.get("current-radio-ids").hidden = true;
   const excerpt = buildRadioExcerpt(entity);
   const buttons = excerpt.sections.flatMap(s => s.ranges.flatMap(r => r.calls)).map(call => {
     const button = new Element();
-    button.dataset = { source: call.source, seconds: String(call.seconds), label: `Clip ${call.number}`, transcript: call.transcript };
+    button.dataset = { source: call.source, seconds: String(call.seconds), label: `Clip ${call.number}`,
+      transcript: call.transcript, validated: String(call.validated), note: call.note, radioIds: call.radioIds };
     return button;
   });
   const root = { querySelector: id => elements.get(id.replace("#excerpt-", "")), querySelectorAll: () => buttons };
@@ -101,6 +109,21 @@ test("transcription is opt-in per excerpt and rejects invalid configuration", ()
   assert.throws(() => buildRadioExcerpt({ ...entity, enableTranscription: "true" }), /must be a boolean/);
 });
 
+test("excerpt call metadata matches the daily archive, including missing IDs", () => {
+  const enabled = buildRadioExcerpt(entity);
+  const call = enabled.sections[0].ranges[0].calls[0];
+  assert.match(call.radioIds, /^Radio ID: [1-9]\d*$/);
+  assert.equal(call.validated, true);
+  const all = Array.from({ length: 14 }, (_, i) => {
+    const entry = JSON.parse(readFileSync(`data/entities/police-radio-excerpts/${i + 1}.json`, "utf8")).entities[0];
+    assert.equal(entry.enableTranscription, true);
+    return buildRadioExcerpt(entry).sections.flatMap(s => s.ranges.flatMap(r => r.calls));
+  }).flat();
+  assert.ok(all.some(c => !c.radioIds));
+  assert.ok(all.some(c => !c.validated));
+  assert.ok(all.every(c => c.transcript));
+});
+
 test("transcription follows selection and autoplay, handles missing text, and toggles off", async () => {
   const f = await fixture();
   const toggle = f.get("transcription-toggle"), panel = f.get("transcription");
@@ -114,7 +137,8 @@ test("transcription follows selection and autoplay, handles missing text, and to
   assert.equal(text.textContent, f.buttons[0].dataset.transcript);
   f.buttons[1].dataset.transcript = "  ";
   f.get("autoplay").click(); await f.settle(); f.finish();
-  assert.equal(text.textContent, "[No transcription for clip]");
+  assert.equal(text.textContent, "[no transcript available]");
+  assert.equal(f.get("transcript-status").hidden, true);
   f.buttons[2].dataset.transcript = '<script>alert("test")</script>';
   f.select(2);
   assert.equal(text.textContent, '<script>alert("test")</script>');
@@ -126,6 +150,33 @@ test("transcription follows selection and autoplay, handles missing text, and to
   assert.equal(panel.hidden, true);
   toggle.click();
   assert.equal(text.textContent, f.buttons[3].dataset.transcript);
+});
+
+test("selected clip shows radio IDs, verification state, and a note only when present", async () => {
+  const f = await fixture();
+  const ids = f.get("current-radio-ids"), status = f.get("transcript-status");
+  const note = f.get("call-note"), noteText = f.get("call-note-text");
+  assert.equal(ids.hidden, true);
+  f.get("transcription-toggle").click();
+  f.buttons[0].dataset.note = "Audio checked; location unclear.";
+  f.select(0);
+  assert.equal(ids.textContent, f.buttons[0].dataset.radioIds);
+  assert.equal(ids.hidden, false);
+  assert.equal(status.textContent, "✓ Verified");
+  assert.equal(status.getAttribute("data-verified"), "true");
+  assert.equal(note.hidden, false);
+  assert.equal(noteText.textContent, "Audio checked; location unclear.");
+  f.buttons[1].dataset.radioIds = "";
+  f.buttons[1].dataset.validated = "false";
+  f.select(1);
+  assert.equal(ids.hidden, true);
+  assert.equal(ids.textContent, "");
+  assert.equal(status.textContent, "AI-generated · Unverified");
+  assert.equal(status.getAttribute("data-verified"), "false");
+  assert.equal(note.hidden, true);
+  f.get("transcription-toggle").click();
+  assert.equal(status.hidden, true);
+  assert.equal(noteText.textContent, "");
 });
 
 test("excerpts without transcription controls retain normal playback", async () => {

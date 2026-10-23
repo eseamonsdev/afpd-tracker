@@ -79,15 +79,19 @@
       <h1>Reaction to someone photographing a traffic stop</h1>
       <p>A short car-to-car exchange from September 12, 2026, about someone photographing an officer during a traffic stop and how the photographs might be presented online.</p>
       <p>Audio from AFPD’s car-to-car radio talkgroup. Times shown in Mountain Time.</p>
+      <p class="radio-transcript-note">AI-generated transcripts may contain errors. Verified transcripts have been reviewed against the audio; unclear passages may remain marked.</p>
     </div>
     <div class="radio-archive" id="radio-excerpt">
       <section class="radio-player" aria-label="Audio player">
         <div class="radio-player-heading">
-          <p id="excerpt-current">Choose a clip to listen</p>
+          <div>
+            <p id="excerpt-current">Choose a clip to listen</p>
+            <p id="excerpt-current-radio-ids" class="radio-ids" hidden></p>
+          </div>
           <div class="radio-player-actions">
             <button id="excerpt-show-current" type="button" aria-controls="excerpt-clips" disabled>Show Current Clip</button>
             <button id="excerpt-autoplay" type="button" aria-pressed="false">Autoplay: Off</button>
-            <button id="excerpt-transcription-toggle" type="button" aria-pressed="false" aria-controls="excerpt-transcription" disabled>Transcription: Off</button>
+            <button id="excerpt-transcription-toggle" type="button" aria-pressed="false" aria-controls="excerpt-transcription" disabled>Transcript: Off</button>
           </div>
         </div>
         <div class="radio-playback">
@@ -99,7 +103,8 @@
           </div>
         </div>
         <p id="excerpt-player-message" role="status"></p>
-        <div id="excerpt-transcription" class="excerpt-transcription" role="region" aria-label="Current clip transcription" aria-live="polite" aria-atomic="true" hidden>
+        <div id="excerpt-transcription" class="radio-transcript" role="region" aria-label="Current clip transcript" aria-live="polite" aria-atomic="true" hidden>
+          <span id="excerpt-transcript-status" class="radio-transcript-status" hidden></span>
           <p class="radio-transcript-label"><strong>Transcript:</strong></p>
           <p id="excerpt-transcript-text"></p>
           <p id="excerpt-call-note" class="radio-call-note" hidden><strong>Note:</strong> <span id="excerpt-call-note-text"></span></p>
@@ -119,13 +124,13 @@
             <div class="radio-list-heading" aria-hidden="true"><span>Time · archive clip</span><span>Duration</span></div>
             <ol class="radio-clips">
             
-              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789269738.m4a" data-seconds="7" data-label="September 12, 2026 · 9:22:18 PM · Clip 914" data-transcript="Just had a guy taking photos of me with like a full photographer camera from his car on this traffic stop. It&#39;s kind of weird." aria-label="Play clip 914, September 12, 2026, 9:22:18 PM, 7 seconds" disabled><span><time datetime="2026-09-13T03:22:18.000Z">9:22:18 PM</time> <span class="excerpt-clip-number">· 914</span></span><span>7 sec</span></button></li>
+              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789269738.m4a" data-seconds="7" data-label="September 12, 2026 · 9:22:18 PM · Clip 914" data-radio-ids="Radio ID: 14590020" data-transcript="Just had a guy taking photos of me with like a full photographer camera from his car on this traffic stop. It&#39;s kind of weird." data-validated="true" aria-label="Play clip 914, September 12, 2026, 9:22:18 PM, 7 seconds, Radio ID: 14590020" disabled><span><time datetime="2026-09-13T03:22:18.000Z">9:22:18 PM</time> <span class="excerpt-clip-number">· 914</span><span class="radio-ids">Radio ID: 14590020</span></span><span>7 sec</span></button></li>
             
-              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789269749.m4a" data-seconds="2" data-label="September 12, 2026 · 9:22:29 PM · Clip 915" data-transcript="It&#39;s because you have a nice car." aria-label="Play clip 915, September 12, 2026, 9:22:29 PM, 2 seconds" disabled><span><time datetime="2026-09-13T03:22:29.000Z">9:22:29 PM</time> <span class="excerpt-clip-number">· 915</span></span><span>2 sec</span></button></li>
+              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789269749.m4a" data-seconds="2" data-label="September 12, 2026 · 9:22:29 PM · Clip 915" data-radio-ids="Radio ID: 14590107" data-transcript="It&#39;s because you have a nice car." data-validated="true" aria-label="Play clip 915, September 12, 2026, 9:22:29 PM, 2 seconds, Radio ID: 14590107" disabled><span><time datetime="2026-09-13T03:22:29.000Z">9:22:29 PM</time> <span class="excerpt-clip-number">· 915</span><span class="radio-ids">Radio ID: 14590107</span></span><span>2 sec</span></button></li>
             
-              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789269752.m4a" data-seconds="6" data-label="September 12, 2026 · 9:22:32 PM · Clip 916" data-transcript="I&#39;m sure he&#39;ll post it: &#39;Look at American Fork Police. They&#39;re just trying to screw people over.&#39;" aria-label="Play clip 916, September 12, 2026, 9:22:32 PM, 6 seconds" disabled><span><time datetime="2026-09-13T03:22:32.000Z">9:22:32 PM</time> <span class="excerpt-clip-number">· 916</span></span><span>6 sec</span></button></li>
+              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789269752.m4a" data-seconds="6" data-label="September 12, 2026 · 9:22:32 PM · Clip 916" data-radio-ids="Radio ID: 14590020" data-transcript="I&#39;m sure he&#39;ll post it: &#39;Look at American Fork Police. They&#39;re just trying to screw people over.&#39;" data-validated="true" aria-label="Play clip 916, September 12, 2026, 9:22:32 PM, 6 seconds, Radio ID: 14590020" disabled><span><time datetime="2026-09-13T03:22:32.000Z">9:22:32 PM</time> <span class="excerpt-clip-number">· 916</span><span class="radio-ids">Radio ID: 14590020</span></span><span>6 sec</span></button></li>
             
-              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789269763.m4a" data-seconds="1" data-label="September 12, 2026 · 9:22:43 PM · Clip 917" data-transcript="Probably." aria-label="Play clip 917, September 12, 2026, 9:22:43 PM, 1 seconds" disabled><span><time datetime="2026-09-13T03:22:43.000Z">9:22:43 PM</time> <span class="excerpt-clip-number">· 917</span></span><span>1 sec</span></button></li>
+              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-09-12/dcfems-6001-1789269763.m4a" data-seconds="1" data-label="September 12, 2026 · 9:22:43 PM · Clip 917" data-radio-ids="Radio ID: 14590107" data-transcript="Probably." data-validated="true" aria-label="Play clip 917, September 12, 2026, 9:22:43 PM, 1 seconds, Radio ID: 14590107" disabled><span><time datetime="2026-09-13T03:22:43.000Z">9:22:43 PM</time> <span class="excerpt-clip-number">· 917</span><span class="radio-ids">Radio ID: 14590107</span></span><span>1 sec</span></button></li>
             
             </ol>
           </div>

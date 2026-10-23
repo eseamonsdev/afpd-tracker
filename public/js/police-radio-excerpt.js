@@ -6,8 +6,10 @@
   const audio = get("audio"), play = get("play"), seek = get("seek");
   const autoplay = get("autoplay"), showCurrent = get("show-current");
   const message = get("player-message"), current = get("current");
+  const currentRadioIds = get("current-radio-ids");
   const transcriptionToggle = get("transcription-toggle"), transcription = get("transcription");
-  const transcriptText = get("transcript-text"), callNote = get("call-note"), callNoteText = get("call-note-text");
+  const transcriptStatus = get("transcript-status"), transcriptText = get("transcript-text");
+  const callNote = get("call-note"), callNoteText = get("call-note-text");
   let transcriptionOn = false;
   const buttons = Array.from(root.querySelectorAll("[data-excerpt-clip]"));
   // A single persistent element preserves Safari's user-granted playback permission.
@@ -17,21 +19,30 @@
   function updateTranscription() {
     if (!transcriptionToggle || !transcription || !transcriptText) return;
     transcription.hidden = !transcriptionOn;
+    const button = buttons[selected];
+    const text = button?.dataset.transcript?.trim() || "";
     transcriptText.textContent = !transcriptionOn ? "" : selected < 0
       ? "Choose a clip to see its transcription."
-      : buttons[selected].dataset.transcript?.trim() || "[No transcription for clip]";
+      : text || "[no transcript available]";
+    if (transcriptStatus) {
+      transcriptStatus.hidden = !transcriptionOn || !button || !text;
+      transcriptStatus.textContent = transcriptStatus.hidden ? ""
+        : button.dataset.validated === "true" ? "✓ Verified" : "AI-generated · Unverified";
+      transcriptStatus.setAttribute("data-verified", String(button?.dataset.validated === "true"));
+    }
     if (callNote && callNoteText) {
-      const note = selected < 0 ? "" : buttons[selected].dataset.note?.trim() || "";
+      const note = button?.dataset.note?.trim() || "";
       callNote.hidden = !transcriptionOn || !note;
       callNoteText.textContent = callNote.hidden ? "" : note;
     }
+    transcription.scrollTop = 0;
   }
   if (transcriptionToggle && transcription) {
     transcriptionToggle.disabled = false;
     transcriptionToggle.addEventListener("click", () => {
       transcriptionOn = !transcriptionOn;
       transcriptionToggle.setAttribute("aria-pressed", String(transcriptionOn));
-      transcriptionToggle.textContent = `Transcription: ${transcriptionOn ? "On" : "Off"}`;
+      transcriptionToggle.textContent = `Transcript: ${transcriptionOn ? "On" : "Off"}`;
       updateTranscription();
     });
     updateTranscription();
@@ -94,6 +105,10 @@
     selected = index; activeObjectUrl = ready;
     button.setAttribute("aria-current", "true");
     current.textContent = button.dataset.label;
+    if (currentRadioIds) {
+      currentRadioIds.textContent = button.dataset.radioIds || "";
+      currentRadioIds.hidden = !currentRadioIds.textContent;
+    }
     updateTranscription();
     message.textContent = "";
     seek.disabled = true; seek.max = 0; seek.value = 0;

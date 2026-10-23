@@ -26,15 +26,19 @@ permalink: "{{ excerptPage.excerpt | excerptUrl }}"
       <h1>{{ title | escape }}</h1>
       {% if excerpt.description %}<p>{{ excerpt.description | escape }}</p>{% endif %}
       <p>Audio from AFPD’s car-to-car radio talkgroup. Times shown in Mountain Time.</p>
+      {% if excerpt.enableTranscription %}<p class="radio-transcript-note">AI-generated transcripts may contain errors. Verified transcripts have been reviewed against the audio; unclear passages may remain marked.</p>{% endif %}
     </div>
     <div class="radio-archive" id="radio-excerpt">
       <section class="radio-player" aria-label="Audio player">
         <div class="radio-player-heading">
-          <p id="excerpt-current">Choose a clip to listen</p>
+          <div>
+            <p id="excerpt-current">Choose a clip to listen</p>
+            <p id="excerpt-current-radio-ids" class="radio-ids" hidden></p>
+          </div>
           <div class="radio-player-actions">
             <button id="excerpt-show-current" type="button" aria-controls="excerpt-clips" disabled>Show Current Clip</button>
             <button id="excerpt-autoplay" type="button" aria-pressed="false">Autoplay: Off</button>{% if excerpt.enableTranscription %}
-            <button id="excerpt-transcription-toggle" type="button" aria-pressed="false" aria-controls="excerpt-transcription" disabled>Transcription: Off</button>{% endif %}
+            <button id="excerpt-transcription-toggle" type="button" aria-pressed="false" aria-controls="excerpt-transcription" disabled>Transcript: Off</button>{% endif %}
           </div>
         </div>
         <div class="radio-playback">
@@ -46,7 +50,8 @@ permalink: "{{ excerptPage.excerpt | excerptUrl }}"
           </div>
         </div>
         <p id="excerpt-player-message" role="status"></p>{% if excerpt.enableTranscription %}
-        <div id="excerpt-transcription" class="excerpt-transcription" role="region" aria-label="Current clip transcription" aria-live="polite" aria-atomic="true" hidden>
+        <div id="excerpt-transcription" class="radio-transcript" role="region" aria-label="Current clip transcript" aria-live="polite" aria-atomic="true" hidden>
+          <span id="excerpt-transcript-status" class="radio-transcript-status" hidden></span>
           <p class="radio-transcript-label"><strong>Transcript:</strong></p>
           <p id="excerpt-transcript-text"></p>
           <p id="excerpt-call-note" class="radio-call-note" hidden><strong>Note:</strong> <span id="excerpt-call-note-text"></span></p>
@@ -66,7 +71,7 @@ permalink: "{{ excerptPage.excerpt | excerptUrl }}"
             <div class="radio-list-heading" aria-hidden="true"><span>Time · archive clip</span><span>Duration</span></div>
             <ol class="radio-clips">
             {% for call in range.calls %}
-              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="{{ call.source | escape }}" data-seconds="{{ call.seconds }}" data-label="{{ call.date | escape }} · {{ call.time | escape }} · Clip {{ call.number }}" {% if excerpt.enableTranscription %}data-transcript="{{ call.transcript | escape }}" {% if call.note %}data-note="{{ call.note | escape }}" {% endif %}{% endif %}aria-label="Play clip {{ call.number }}, {{ call.date | escape }}, {{ call.time | escape }}, {{ call.seconds }} seconds" disabled><span><time datetime="{{ call.iso | escape }}">{{ call.time | escape }}</time> <span class="excerpt-clip-number">· {{ call.number }}</span></span><span>{{ call.seconds }} sec</span></button></li>
+              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="{{ call.source | escape }}" data-seconds="{{ call.seconds }}" data-label="{{ call.date | escape }} · {{ call.time | escape }} · Clip {{ call.number }}" data-radio-ids="{{ call.radioIds | escape }}" {% if excerpt.enableTranscription %}data-transcript="{{ call.transcript | escape }}" data-validated="{{ call.validated }}" {% if call.note %}data-note="{{ call.note | escape }}" {% endif %}{% endif %}aria-label="Play clip {{ call.number }}, {{ call.date | escape }}, {{ call.time | escape }}, {{ call.seconds }} seconds{% if call.radioIds %}, {{ call.radioIds | escape }}{% endif %}" disabled><span><time datetime="{{ call.iso | escape }}">{{ call.time | escape }}</time> <span class="excerpt-clip-number">· {{ call.number }}</span>{% if call.radioIds %}<span class="radio-ids">{{ call.radioIds | escape }}</span>{% endif %}</span><span>{{ call.seconds }} sec</span></button></li>
             {% endfor %}
             </ol>
           </div>
