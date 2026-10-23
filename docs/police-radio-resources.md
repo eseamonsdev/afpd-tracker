@@ -19,6 +19,13 @@ them. Unresolved names and single-day/conflicting IDs are not promoted to the
 selected associations table. Links to officer profiles are roster candidates,
 not confirmation of the speaker in every recording.
 
+The expanded list includes surname-supported associations for Cox, Garcia,
+Gonzalez, Hawkins, Mason, McClellan, Renter, and Richardson. Each added ID has
+at least two examples across two days and no other name group in the selected
+exchanges. Do not infer a full identity from vague first names such as Jake,
+Sam, or Ron, or from an unconfirmed nickname. A lack of conflicts in the
+selected examples is not proof that an ID was never used by anyone else.
+
 The existing `afpd-radio-id-response-days.xlsx` spreadsheet is hosted in
 `public/records/openmhz/`, alongside its OpenMHz source material. It is a
 September 9–October 22, 2026 snapshot, not an automatically refreshed report.
