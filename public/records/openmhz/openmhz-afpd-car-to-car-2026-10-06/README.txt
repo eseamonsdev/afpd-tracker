@@ -1,6 +1,6 @@
 OpenMHz AFPD Car-to-Car (6001), 2026-10-06, America/Denver.
 Metadata schema: 1.
-Coverage: unknown; collected through unknown.
+Coverage: complete; collected through 2026-10-07T06:00:00Z.
 178 unique audio files; 178 source call entries.
 Source: OpenMHz (https://openmhz.com/). Original audio bytes and filenames retained.
 calls.json: chronological call metadata, original source IDs/labels, timestamps and audio checks.
