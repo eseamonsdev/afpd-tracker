@@ -22,7 +22,7 @@ come from the pinned version. Cross-platform bitwise equality is not promised.
 
 ## Execution
 
-Read repository instructions, this file and existing daily transcript headers.
+Read repository instructions, this file and existing daily calls.json metadata.
 Fetch latest staging. Ensure the target folder's calls.json and all saved audio
 are present locally; sparse checkouts must include the target audio directory.
 Never retrieve substitute audio from OpenMHz or silently change the target date.
@@ -42,9 +42,9 @@ Omit --date only when the actual execution date is the intended trigger date.
 The script resumes completed passes after verifying settings and audio hashes.
 `--clips 3,7,10` is calibration only; never use it to claim full-day completion.
 An unchanged fully completed day should be verified and skipped. If only some
-entries/documents exist, preserve them, resume missing ASR, and reconcile changes
+transcript entries exist, preserve them, resume missing ASR, and reconcile changes
 using Git history to preserve earlier wording; the initial-day finalizer deliberately refuses
-to overwrite existing documents or populated/validated call objects.
+to overwrite populated/validated call objects.
 
 ## Reconciliation is required
 
@@ -76,22 +76,21 @@ Then establish the new day's artifacts:
 python scripts/transcribe_afpd_radio.py finalize --date YYYY-MM-DD --passes WORK_DIR/YYYY-MM-DD/passes.json --reviewed REVIEWED_JSON
 ```
 
-This writes transcript.md and eligible calls.json transcript fields. Radio transcripts use one continuously corrected transcript.md;
-do not create numbered radio transcript drafts. Git history preserves revisions.
-No newly automated entry gets validated:true. Existing approved bracketed wording,
-validation flags, corrections and unrelated metadata/audio must remain untouched.
-Do not create or maintain separate review-backlog files; Eric reviews transcripts separately. Commit corrections so Git
-history preserves earlier wording.
+This writes every reconciled entry to its matching calls.json transcript field, including
+bracketed uncertainty and privacy markers, and sets enableTranscription: true.
+calls.json is the only authoritative police-radio transcript. Do not create
+transcript.md, numbered radio drafts, or separate review-backlog files.
+Git history preserves earlier wording. No newly automated entry gets validated:true.
+Existing approved wording, validation flags, corrections, and unrelated metadata/audio
+must remain untouched. Uncertain entries remain unverified.
 
 ## Owner-directed transcript corrections
 
-Use transcript.md as the single current police-radio transcript. Apply Eric's
-exact approved corrections there, match the calls.json entry by audio
-filename/epoch, update its transcript to the same wording, and set validated: true.
+Apply Eric's exact approved corrections directly to calls.json, matching the
+entry by original audio filename/epoch, and set validated: true.
 This flag records Eric's verification, not automated ASR review.
 Preserve unrelated entries, metadata, and existing user edits. Commit changes;
-use Git history to recover originals and compare revisions instead of maintaining
-numbered radio drafts.
+use Git history to recover originals and compare revisions.
 
 The Chief Paul interview is a separate workflow: preserve its original app
 transcript and separately labeled revisions. Do not consolidate those files.
@@ -100,9 +99,9 @@ transcript and separately labeled revisions. Do not consolidate those files.
 
 Fetch staging immediately before publication. Reconcile concurrent changes;
 never replace a stale calls.json over a newer copy. Verify unique filename and
-chronological coverage, all three passes, audio hashes, JSON validity, exclusion
-of unresolved wording from newly populated fields, and preservation of metadata
-and user edits. Publish only intended script/docs/transcript/calls.json changes.
+chronological coverage, all three passes, audio hashes, JSON validity, preservation
+of uncertainty annotations in unverified transcript fields, and preservation of metadata
+and user edits. Publish only intended script/docs/calls.json changes.
 Raw passes, prompts and unredacted intermediate outputs stay private. A GitHub
 API tree/commit with an expected-head ref update is supported when git push is
 unavailable. Verify the final staging ref and saved files after publication.
@@ -113,12 +112,12 @@ The daily automation stays enabled after ordinary successful runs.
 
 ## Full archive transcript review
 
-On `excerpts` and `staging`, the owner authorized publishing all existing
-`transcript.md` entries to their matching `calls.json` records, including
-bracketed uncertainty and privacy markers. Match by original audio filename,
-never by a guessed clip number. Preserve existing text and every validation flag.
-Only `validated: true` means Verified; other available text is AI-generated and
-Unverified. This publication does not validate entries or remove uncertainty annotations.
+The owner consolidated the daily police-radio transcripts into calls.json.
+Publish reconciled text directly there, including bracketed uncertainty and
+privacy markers. Match by original audio filename, never by a guessed clip number.
+Preserve existing text and every validation flag.
+Only validated: true means Verified; other available text is AI-generated and
+Unverified. Publication does not validate entries or remove uncertainty annotations.
 Each daily calls.json uses the boolean `enableTranscription`: true for days with
 available transcripts, false for days without them. The full player shows its
 transcript button only when this field is true. Within enabled days, missing,

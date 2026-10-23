@@ -1,10 +1,10 @@
 # September 12, 2026 — Transcript review backlog
 
-Source: [Current transcript](transcript.md). Entries appear in clip order and retain their audio links.
+Source: [Current transcript](calls.json). Entries appear in clip order and retain their audio links.
 
 This running backlog contains unresolved bracketed wording, unclear speech, and transmissions with no reliable words or speech recovered. Previously reviewed entries are omitted; skipped entries remain pending. Entry 003 was reviewed and retained as supplied, including its unclear opening. Entries 014, 022, 039, 056, 085, 089, and 093 were corrected or verified by Eric and are also omitted, including approved unclear/no-words annotations.
 
-When a correction is applied to transcript.md, remove that clip from this backlog. Keep skipped clips on the list. Use the current transcript wording for remaining entries. Commit corrections and use Git history to inspect earlier wording; no numbered radio drafts are needed.
+When a correction is applied to calls.json, remove that clip from this backlog. Keep skipped clips on the list. Use the current transcript wording for remaining entries. Commit corrections and use Git history to inspect earlier wording; no numbered radio drafts are needed.
 
 **Pending clips: 303**
 

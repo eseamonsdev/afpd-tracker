@@ -164,12 +164,8 @@ def finalize(args):
     if len(entries) != len(names) or {e['filename'] for e in entries} != names:
         raise ValueError('Review must cover every unique filename exactly once')
     by_name = {e['filename']:e for e in entries}
-    # This generator establishes a new day's initial documents. Existing days
-    # are corrected in transcript.md with Git history, never overwritten by this generator.
-    outputs = [folder/'transcript.md']
-    if any(p.exists() for p in outputs) or (folder/'transcript-drafts').exists():
-        raise ValueError('Transcript documents already exist; preserve and review them separately')
-    lines = []; uncertain_clips = 0; populated = 0
+    # calls.json is the authoritative transcript; preserve existing reviewed entries.
+    uncertain_clips = 0; populated = 0
     for i,c in enumerate(data['calls'],1):
         name=c['original_filename']; e=by_name[name]; raw=state['clips'].get(name,{})
         if set(raw.get('passes',{})) != {'original','filtered','context'} or raw.get('sha256') != c.get('sha256'):
@@ -184,19 +180,13 @@ def finalize(args):
         flagged=not eligible(text,e['needs_review'])
         if any(p['token_cap_reached'] for p in raw['passes'].values()) and not flagged:
             raise ValueError('Token-cap affected clip must remain flagged: '+name)
-        clock=dt.datetime.fromtimestamp(c['epoch'],ZoneInfo('America/Denver')).strftime('%I:%M:%S %p').lstrip('0')
-        line=f"**{i:03d} · {clock} · {c['displayed_seconds']} sec** — [Audio](https://afpd-accountability.com/records/openmhz/{folder.name}/{name}) — {text}"
-        lines.append(line)
-        if flagged:uncertain_clips+=1
-        else:c['transcript']=text;populated+=1
-    title=dt.date.fromisoformat(args.date).strftime('%B %d, %Y').replace(' 0',' ')
-    intro=f'# {title} — American Fork PD Car-to-Car transcript\n\nTalkgroup **6001**; **{len(lines)} clips**, in chronological archive order. All timestamps are Mountain Time (America/Denver).\n\n'
-    intro+='Whisper small.en, three passes: original audio; filtered audio; original audio with up to three preceding calls within 60 seconds supplied as transcription-text context. All three outputs were reconciled using neighboring conversation. Brackets and review annotations retain uncertainty. This is automated ASR reconciliation, not direct-listening or user validation.\n\n'
-    intro+='This run uses the reproducible settings standardized October 16, 2026 in scripts/radio-transcription-settings.json. The exact historical filter and context-gap settings were not recoverable; this preserves the established method with explicitly documented defaults.\n\n'
-    transcript=intro+'\n\n'.join(lines)+'\n'
-    outputs[0].write_text(transcript)
+        c['transcript'] = text
+        populated += 1
+        if flagged:
+            uncertain_clips += 1
+    data['enableTranscription'] = True
     write(folder/'calls.json',data)
-    print(json.dumps({'date':args.date,'three_pass_clips':len(lines),'player_transcripts':populated,'uncertain_clips':uncertain_clips}))
+    print(json.dumps({'date':args.date,'three_pass_clips':len(data['calls']),'player_transcripts':populated,'uncertain_clips':uncertain_clips}))
 
 
 if __name__ == '__main__':

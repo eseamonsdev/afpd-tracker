@@ -1,6 +1,6 @@
 # September 9, 2026 — Transcript review backlog
 
-Source: [Current transcript](transcript.md). Entries appear in clip order and retain their audio links.
+Source: [Current transcript](calls.json). Entries appear in clip order and retain their audio links.
 
 This running backlog contains unresolved bracketed wording and unclear transmissions. Clips 003, 004, 007, 009, 010, 012, 013, 015, 018, 019, 021, 023, 024, 025, 027, 035, 039, 062, 064, 117, 220, 224, 315, 343, 352, and 355 were corrected or approved by Eric and are excluded, including approved `[static]` and `[unclear acknowledgment]` entries.
 

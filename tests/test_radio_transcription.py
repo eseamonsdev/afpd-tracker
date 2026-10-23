@@ -53,12 +53,13 @@ class PublicationGuards(unittest.TestCase):
                 radio.finalize(args)
                 saved = radio.read(folder/'calls.json')
                 self.assertEqual(saved['calls'][0]['transcript'], 'On my way.')
-                self.assertNotIn('transcript', saved['calls'][1])
+                self.assertEqual(saved['calls'][1]['transcript'], '[unclear]')
+                self.assertTrue(saved['enableTranscription'])
                 for c in saved['calls']:
                     self.assertEqual(c['custom_metadata'], {'preserve': True})
                     self.assertNotIn('validated', c)
-                self.assertEqual((folder/'transcript.md').read_bytes(),
-                                 (folder/'transcript-drafts/transcript-draft-1.md').read_bytes())
+                self.assertFalse((folder/'transcript.md').exists())
+                self.assertFalse((folder/'transcript-drafts').exists())
                 before = (folder/'calls.json').read_bytes()
                 with self.assertRaises(ValueError):
                     radio.finalize(args)
