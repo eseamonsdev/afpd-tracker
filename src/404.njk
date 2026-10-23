@@ -1,0 +1,32 @@
+---
+permalink: /404.html
+sitemap: false
+eleventyExcludeFromCollections: true
+---
+{% extends "site-page-layout.njk" %}
+{% set pageTitle = "Page not found | AFPD Accountability Project" -%}
+{% set pageDescription = "This page could not be found. Explore officer profiles, police encounters, and radio recordings from the AFPD Accountability Project." -%}
+{% set canonicalUrl = "https://afpd-accountability.com/404.html" -%}
+
+{% block pageAssets %}
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="/css/not-found.css">
+{% endblock %}
+
+{% block content %}
+  <section class="not-found" aria-labelledby="not-found-title">
+    <p class="not-found-code">Error 404</p>
+    <h1 id="not-found-title">Page not found</h1>
+    <p class="not-found-description">The address may be incorrect, or this page may have moved or been removed.</p>
+    <a class="not-found-home" href="/">Return to the home page <span aria-hidden="true">&rarr;</span></a>
+
+    <nav class="not-found-explore" aria-label="Explore the project">
+      <h2>Explore the project</h2>
+      <ul>
+        <li><a href="/officers/">Officers</a><p>Browse officer profiles and related records.</p></li>
+        <li><a href="/police-encounters/">Police Encounters</a><p>Explore documented encounters and supporting material.</p></li>
+        <li><a href="/police-radio/">Police Radio</a><p>Listen to archived calls and read their transcripts.</p></li>
+      </ul>
+    </nav>
+  </section>
+{% endblock %}
