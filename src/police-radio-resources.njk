@@ -1,0 +1,40 @@
+---
+permalink: /police-radio-resources/
+---
+{% extends "site-page-layout.njk" %}
+{% set resources = entities.all["entity-page-police-radio-resources"] -%}
+{% set pageTitle = resources.title ~ " | AFPD Accountability Project" -%}
+{% set pageDescription = resources.description -%}
+{% set canonicalUrl = "https://afpd-accountability.com/police-radio-resources/" -%}
+
+{% block pageAssets %}
+  <link rel="stylesheet" href="/css/police-radio-resources.css">
+{% endblock %}
+
+{% block content %}
+  <a class="radio-resources-back" href="/police-radio/">&larr; Police Radio</a>
+  <div class="page-heading">
+    <h1>{{ resources.title | escape }}</h1>
+    <p>{{ resources.description | escape }}</p>
+  </div>
+
+  {% for section in resources.sections %}
+    <section class="radio-resources-section" aria-labelledby="{{ section.id | escape }}">
+      <h2 id="{{ section.id | escape }}">{{ section.title | escape }}</h2>
+      <p class="radio-resources-description">{{ section.description | escape }}</p>
+      <ul class="radio-resources-list">
+        {% for source in section.sources %}
+          <li>
+            <h3><a href="{{ source.url | escape }}"{% if source.download %} download{% else %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ source.title | escape }}</a></h3>
+            <p class="radio-resource-meta">{{ source.publisher | escape }} · {{ source.format | escape }}</p>
+            <p>{{ source.description | escape }}</p>
+            {% if source.coverage %}<p class="radio-resource-coverage"><strong>Coverage:</strong> {{ source.coverage | escape }}</p>{% endif %}
+            {% if source.note %}<p class="radio-resource-note">{{ source.note | escape }}</p>{% endif %}
+            {% if source.download %}<a class="radio-resource-download" href="{{ source.url | escape }}" download>Download spreadsheet <span aria-hidden="true">&darr;</span></a>{% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endfor %}
+  <p class="radio-resources-attribution">{{ resources.attributionNote | escape }}</p>
+{% endblock %}
