@@ -16,7 +16,7 @@ from urllib.parse import parse_qs, urlparse
 from zoneinfo import ZoneInfo
 
 MOUNTAIN = ZoneInfo('America/Denver')
-GAP_SECONDS = 5
+GAP_SECONDS = 2
 MAX_AUDIO_BYTES = 20 * 1024 * 1024
 MAX_CALLS = 5000
 MEDIA_HOSTS = {'media.openmhz.com', 'media2.openmhz.com'}
@@ -137,7 +137,7 @@ class NoRedirects(urllib.request.HTTPRedirectHandler):
 
 
 class Downloader:
-    """One request at a time, five seconds after completion of the last attempt."""
+    """One request at a time, two seconds after completion of the last attempt."""
     def __init__(self):
         self.finished_at = None
         self.opener = urllib.request.build_opener(NoRedirects())

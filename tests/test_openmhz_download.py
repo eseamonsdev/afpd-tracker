@@ -199,10 +199,10 @@ class DownloadTest(unittest.TestCase):
         downloader = module.Downloader()
         downloader.opener = Mock()
         downloader.opener.open.side_effect = [Response(b'0000ftyp0000'), Response(b'0000ftyp0000')]
-        with tempfile.TemporaryDirectory() as directory, patch.object(module.time, 'monotonic', side_effect=[10, 12, 20]), patch.object(module.time, 'sleep') as sleep:
+        with tempfile.TemporaryDirectory() as directory, patch.object(module.time, 'monotonic', side_effect=[10, 10.5, 20]), patch.object(module.time, 'sleep') as sleep:
             downloader.download(sample()['media_url'], Path(directory) / 'one.m4a')
             downloader.download(sample()['media_url'], Path(directory) / 'two.m4a')
-            sleep.assert_called_once_with(3)
+            sleep.assert_called_once_with(1.5)
 
     def test_html_response_is_not_saved_as_audio(self):
         class Response(io.BytesIO):

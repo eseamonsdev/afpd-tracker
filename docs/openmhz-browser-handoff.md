@@ -22,7 +22,7 @@ complete day. Collect all source rows from midnight through cutoff before sendin
 the manifest. Browser discovery completeness must be checked by the AI session;
 the downloader can validate only the supplied manifest and audio.
 
-The workflow downloads sequentially with **at least five seconds after each
+The workflow downloads sequentially with **at least two seconds after each
 download attempt finishes before starting another**. It stops on errors rather
 than repeatedly retrying a blocked server. Audio URLs are restricted to the exact
 OpenMHz media hosts and expected path. M4A signatures, ffprobe durations, and
