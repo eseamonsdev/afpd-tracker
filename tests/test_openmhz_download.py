@@ -222,6 +222,25 @@ class DownloadTest(unittest.TestCase):
                 self.assertEqual(downloader.download.call_count, 103)
             self.assertFalse(source.exists())
 
+    def test_selected_manifest_leaves_other_queued_day_untouched(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            pending = root / 'records-pending-review/openmhz-manifests'
+            pending.mkdir(parents=True)
+            source = pending / '2026-09-30.json'
+            source.write_text(json.dumps(manifest()))
+            other = pending / '2026-10-01-law-2.json'
+            other.write_text('not even parsed by this day job')
+            downloader = Mock()
+            downloader.download.side_effect = OSError('unavailable')
+            args = ['download', '--root', str(root), '--summary', str(root / 'summary.json'),
+                    '--manifest', source.name]
+            with patch('sys.argv', args), patch.object(module, 'Downloader', return_value=downloader), patch.object(module.subprocess, 'run'):
+                module.main()
+            self.assertFalse(source.exists())
+            self.assertEqual(other.read_text(), 'not even parsed by this day job')
+            downloader.download.assert_called_once()
+
     def test_all_failed_batch_is_removed_from_queue_but_kept_for_manual_retry(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -303,4 +322,3 @@ class DownloadTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-

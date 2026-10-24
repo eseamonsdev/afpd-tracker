@@ -1,0 +1,62 @@
+name: Download one Law 2 day
+
+on:
+  workflow_call:
+    inputs:
+      day:
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    concurrency:
+      group: openmhz-zip-import
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: staging
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify downloader and prepare tools
+        run: |
+          python3 -m unittest discover -s tests -p 'test_openmhz*.py'
+          if ! command -v ffprobe >/dev/null; then
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
+          npm ci
+          node --test tests/police-radio.test.js
+      - name: Prepare this day's remaining calls
+        env:
+          DAY: ${{ inputs.day }}
+        run: python3 scripts/prepare_law2_day.py --date "$DAY"
+      - name: Download this day sequentially and save every 100 calls
+        env:
+          DAY: ${{ inputs.day }}
+        run: |
+          set -euo pipefail
+          manifest="$DAY-law-2.json"
+          while test -f "records-pending-review/openmhz-manifests/$manifest"; do
+            python3 -u scripts/download_openmhz_manifest.py --manifest "$manifest" --batch-size 100 --summary "$RUNNER_TEMP/openmhz-download-summary.json"
+            cat "$RUNNER_TEMP/openmhz-download-summary.json" >> "$GITHUB_STEP_SUMMARY"
+            python3 scripts/normalize_openmhz_metadata.py --check
+            npm run build
+            bash scripts/push_openmhz_import.sh
+          done
+          echo "$DAY finished; any failed clips are recorded separately." >> "$GITHUB_STEP_SUMMARY"
+      - name: Preserve checkpoint recovery bundle on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: law2-${{ inputs.day }}-recovery-${{ github.run_id }}
+          path: ${{ runner.temp }}/openmhz-import.bundle
+          if-no-files-found: warn
+          retention-days: 7

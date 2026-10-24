@@ -345,9 +345,14 @@ def main():
     parser.add_argument('--root', type=Path, default=Path.cwd())
     parser.add_argument('--summary', type=Path, required=True)
     parser.add_argument('--batch-size', type=int, default=100)
+    parser.add_argument('--manifest', help='Process only this queued manifest filename')
     args = parser.parse_args()
     root = args.root.resolve()
     pending = sorted((root / 'records-pending-review/openmhz-manifests').glob('*.json'))
+    if args.manifest:
+        if not re.fullmatch(r'\d{4}-\d{2}-\d{2}(?:-car-to-car|-law-2)?\.json', args.manifest):
+            parser.error('--manifest must be a dated queue filename')
+        pending = [source for source in pending if source.name == args.manifest]
     for source in pending:
         validate_manifest(json.loads(source.read_text()))
     downloader = Downloader()
@@ -383,4 +388,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
