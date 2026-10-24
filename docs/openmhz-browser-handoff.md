@@ -23,8 +23,9 @@ the manifest. Browser discovery completeness must be checked by the AI session;
 the downloader can validate only the supplied manifest and audio.
 
 The workflow downloads sequentially with **at least two seconds after each
-download attempt finishes before starting another**. It stops on errors rather
-than repeatedly retrying a blocked server. Audio URLs are restricted to the exact
+download attempt finishes before starting another**. Each clip is attempted once. Download or new-audio validation failures are logged
+and skipped; the remaining clips continue. Invalid source manifests or existing-archive
+integrity failures still stop the run. Audio URLs are restricted to the exact
 OpenMHz media hosts and expected path. M4A signatures, ffprobe durations, and
 checksums are validated before publishing changes.
 
@@ -40,6 +41,15 @@ tests and site build, removes the processed source manifest, and commits to
 `staging`. It never promotes production or force-pushes. It shares a concurrency
 group with the ZIP importer to prevent simultaneous archive writes.
 
-A failure keeps the committed source manifest available for review/retry, with no
-partial download commit. A successful run means the supplied manifest was imported;
+Every 100 source calls attempted, the workflow builds and commits the validated
+audio, updated queue, and failure manifests to staging. Per-clip FETCH/OK/SKIP/FAILED
+messages are flushed to the live log. The two-second gap follows each download attempt.
+Failed clips are stored under `records-pending-review/openmhz-failures/` and are not
+retried automatically. Copy a failure manifest into the active manifest queue only
+when an independent retry is requested. Unexpected failures can lose the current
+unfinished batch; earlier pushed checkpoints remain safe. A successful run means the supplied manifest was imported;
 it does not establish that the current day has ended or contains no later calls.
+
+Code-only changes no longer start downloads. Only pushes changing active manifests
+or explicit workflow dispatch start the downloader. Parked manifests under
+`records-pending-review/openmhz-paused/` are ignored.

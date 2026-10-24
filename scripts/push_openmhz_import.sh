@@ -8,6 +8,10 @@ pending_path=records-pending-review/openmhz-manifests
 if [[ -d "$pending_path" ]] || [[ -n "$(git ls-files -- "$pending_path")" ]]; then
   git add -A -- "$pending_path"
 fi
+failure_path=records-pending-review/openmhz-failures
+if [[ -d "$failure_path" ]] || [[ -n "$(git ls-files -- "$failure_path")" ]]; then
+  git add -A -- "$failure_path"
+fi
 if git diff --cached --quiet; then
   exit 0
 fi
@@ -40,3 +44,4 @@ for attempt in 1 2 3; do
 done
 echo 'Unable to push after three attempts; downloaded audio retained in the recovery bundle.' >&2
 exit 1
+

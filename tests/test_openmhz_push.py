@@ -39,6 +39,19 @@ class PushTest(unittest.TestCase):
             git(directory, 'config', 'user.name', 'Test')
             git(directory, 'config', 'user.email', 'test@example.com')
 
+    def test_checkpoint_commits_failures_and_remaining_queue(self):
+        failures = self.worker / 'records-pending-review/openmhz-failures'
+        pending = self.worker / 'records-pending-review/openmhz-manifests'
+        failures.mkdir(parents=True)
+        pending.mkdir(parents=True)
+        (failures / 'day.json').write_text('{"count":1}')
+        (pending / 'day.json').write_text('{"count":3}')
+        (self.worker / 'public/audio.m4a').write_bytes(b'validated audio')
+        result = self.push()
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(json.loads(git(self.remote, 'show', 'staging:records-pending-review/openmhz-failures/day.json'))['count'], 1)
+        self.assertEqual(json.loads(git(self.remote, 'show', 'staging:records-pending-review/openmhz-manifests/day.json'))['count'], 3)
+
     def edit_remote(self):
         (self.editor / 'public/transcript.txt').write_text('concurrent transcript correction\n')
         git(self.editor, 'add', '.')
@@ -102,3 +115,4 @@ class PushTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+

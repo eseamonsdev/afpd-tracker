@@ -10,6 +10,8 @@ import subprocess
 import tempfile
 import time
 import urllib.request
+import urllib.error
+import http.client
 from datetime import date, datetime, time as day_time, timedelta, timezone
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
@@ -147,7 +149,7 @@ class Downloader:
             time.sleep(max(0, GAP_SECONDS - (time.monotonic() - self.finished_at)))
         try:
             req = urllib.request.Request(url, headers={'User-Agent': 'afpd-tracker-archive/1.0'})
-            with self.opener.open(req, timeout=60) as response:
+            with self.opener.open(req, timeout=20) as response:
                 content_type = response.headers.get('Content-Type', '').lower()
                 if 'text/html' in content_type or 'application/json' in content_type:
                     raise ValueError('Audio URL returned a non-audio response')
@@ -201,10 +203,15 @@ def import_manifest(root, source, downloader):
     downloaded = skipped = 0
     duplicates = list((old or {}).get('duplicate_source_calls', []))
     checked_audio = {}
-    # Keep all changes temporary until every requested recording validates.
+    failure_path = root / 'records-pending-review/openmhz-failures' / f'{day}-{channel}.json'
+    previous_failures = json.loads(failure_path.read_text()) if failure_path.exists() else None
+    outstanding = {c['id']: c for c in (previous_failures or {}).get('calls', [])}
+    failures = []
+    failed_names = {}
+    # Only validated recordings are copied into the public archive.
     with tempfile.TemporaryDirectory(prefix='openmhz-manifest-') as temp:
         temp = Path(temp)
-        for incoming in sorted(data['calls'], key=lambda call: (call['epoch'], call['id'])):
+        for position, incoming in enumerate(sorted(data['calls'], key=lambda call: (call['epoch'], call['id'])), 1):
             name = incoming['original_filename']
             if incoming['id'] in ids and ids[incoming['id']] != name:
                 raise ValueError('Source ID changed its audio filename')
@@ -219,13 +226,36 @@ def import_manifest(root, source, downloader):
                     ids[incoming['id']] = name
                 elif not any(x.get('id') == incoming['id'] for x in duplicates):
                     duplicates.append(incoming)
+                outstanding.pop(incoming['id'], None)
+                print(f'{day} [{position}/{len(data["calls"])}] SKIP {name}', flush=True)
                 continue
             audio = temp / name
-            if not audio.exists():
-                downloader.download(incoming['media_url'], audio)
-                downloaded += 1
             call = dict(incoming)
-            call.update(inspect_audio(audio, call))
+            try:
+                if name in failed_names:
+                    raise ValueError(failed_names[name])
+                is_new = not audio.exists()
+                if is_new:
+                    print(f'{day} [{position}/{len(data["calls"])}] FETCH {name}', flush=True)
+                    downloader.download(incoming['media_url'], audio)
+                call.update(inspect_audio(audio, call))
+            except (OSError, ValueError, urllib.error.URLError, http.client.HTTPException,
+                    subprocess.SubprocessError) as error:
+                if name not in checked_audio:
+                    audio.unlink(missing_ok=True)
+                reason = f'{type(error).__name__}: {error}'
+                failed_names[name] = reason
+                failed = {**incoming, 'download_error': reason}
+                outstanding[incoming['id']] = failed
+                failures.append(failed)
+                print(f'{day} [{position}/{len(data["calls"])}] FAILED {name}: {reason}', flush=True)
+                continue
+            downloaded += int(is_new)
+            outstanding.pop(incoming['id'], None)
+            call.pop('download_error', None)
+            if 'media_url_status' in call:
+                call['media_url_status'] = 'download_validated'
+            print(f'{day} [{position}/{len(data["calls"])}] OK {name}', flush=True)
             checked_audio[name] = {key: call[key] for key in ('size_bytes', 'sha256', 'audio_duration_seconds', 'source_duration_matches') if key in call}
             instant = datetime.fromtimestamp(call['epoch'], timezone.utc)
             call['timestamp_utc'] = instant.isoformat().replace('+00:00', 'Z')
@@ -236,6 +266,17 @@ def import_manifest(root, source, downloader):
             else:
                 merged[name] = call
                 ids[call['id']] = name
+        if outstanding:
+            failure_path.parent.mkdir(parents=True, exist_ok=True)
+            retry = dict(data)
+            retry.update(calls=sorted(outstanding.values(), key=lambda c: (c['epoch'], c['id'])),
+                         count=len(outstanding), coverage='unknown', collected_through_utc=None)
+            retry['retry_note'] = 'Not retried automatically. Copy this manifest into openmhz-manifests to explicitly retry these calls.'
+            write_json(failure_path, retry)
+        else:
+            failure_path.unlink(missing_ok=True)
+        if not merged:
+            return {'date': day, 'count': 0, 'downloaded': 0, 'skipped_existing': skipped, 'failed': len(failures)}
         calls = []
         for name, entry in merged.items():
             call = normalize_call_metadata(entry, day)
@@ -257,7 +298,11 @@ def import_manifest(root, source, downloader):
         old_coverage, old_cutoff = coverage_metadata(old or {}, day)
         statuses = (incoming_coverage, old_coverage)
         result['coverage'] = next(status for status in ('complete', 'partial', 'unknown') if status in statuses)
-        if result['coverage'] != old_coverage:
+        result['download_failure_count'] = len(outstanding)
+        if outstanding:
+            result['coverage'] = 'unknown'
+            result['coverage_note'] = f'{len(outstanding)} calls remain unavailable; see the separate failure manifest.'
+        elif result['coverage'] != old_coverage or (old or {}).get('download_failure_count'):
             result.pop('coverage_note', None)
         cutoffs = [value for value in (incoming_cutoff, old_cutoff) if value is not None]
         cutoff = max(cutoffs).astimezone(timezone.utc).isoformat().replace('+00:00', 'Z') if cutoffs else None
@@ -292,28 +337,50 @@ def import_manifest(root, source, downloader):
             validation.pop('coverage_note', None)
         write_json(validation_path, validation)
         (destination / 'README.txt').write_text(archive_readme(result))
-    return {'date': day, 'count': len(calls), 'downloaded': downloaded, 'skipped_existing': skipped}
+    return {'date': day, 'count': len(calls), 'downloaded': downloaded, 'skipped_existing': skipped, 'failed': len(failures)}
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, default=Path.cwd())
     parser.add_argument('--summary', type=Path, required=True)
+    parser.add_argument('--batch-size', type=int, default=100)
     args = parser.parse_args()
     root = args.root.resolve()
     pending = sorted((root / 'records-pending-review/openmhz-manifests').glob('*.json'))
     for source in pending:
         validate_manifest(json.loads(source.read_text()))
     downloader = Downloader()
-    results = [import_manifest(root, source, downloader) for source in pending]
+    if not 1 <= args.batch_size <= MAX_CALLS:
+        parser.error('--batch-size must be between 1 and 5000')
+    results = []
+    remaining_budget = args.batch_size
+    for source in pending:
+        if remaining_budget == 0:
+            break
+        full = json.loads(source.read_text())
+        ordered = sorted(full['calls'], key=lambda c: (c['epoch'], c['id']))
+        selected, remaining = ordered[:remaining_budget], ordered[remaining_budget:]
+        batch = {**full, 'calls': selected, 'count': len(selected)}
+        if remaining:
+            batch.update(coverage='unknown', collected_through_utc=None)
+        # Keep the committed source queue intact until this batch has validated.
+        with tempfile.TemporaryDirectory(prefix='openmhz-batch-') as directory:
+            batch_source = Path(directory) / source.name
+            write_json(batch_source, batch)
+            results.append(import_manifest(root, batch_source, downloader))
+        if remaining:
+            write_json(source, {**full, 'calls': remaining, 'count': len(remaining)})
+        else:
+            source.unlink()
+        remaining_budget -= len(selected)
     if results:
         subprocess.run(['node', '--input-type=module', '-e',
                         "import { buildRadioIndex } from './lib/build-radio-index.js'; buildRadioIndex();"], cwd=root, check=True)
-        for source in pending:
-            source.unlink()
     write_json(args.summary, results)
     print(json.dumps(results, indent=2))
 
 
 if __name__ == '__main__':
     main()
+

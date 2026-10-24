@@ -6,18 +6,10 @@ on:
     branches: [staging]
     paths:
       - 'records-pending-review/openmhz-manifests/*.json'
-      - 'scripts/download_openmhz_manifest.py'
-      - 'scripts/normalize_openmhz_metadata.py'
-      - 'scripts/push_openmhz_import.sh'
-      - 'tests/test_openmhz_download.py'
-      - 'tests/test_openmhz_metadata.py'
-      - 'tests/test_openmhz_push.py'
-      - '.github/workflows/download-openmhz-manifests.yml'
 
 permissions:
   contents: write
 
-# Share the archive writer lock with the existing importer.
 concurrency:
   group: openmhz-zip-import
   cancel-in-progress: false
@@ -36,34 +28,30 @@ jobs:
           node-version: '22'
       - name: Verify downloader safeguards
         run: python3 -m unittest discover -s tests -p 'test_openmhz*.py'
-      - name: Ensure audio validation tool is available
+      - name: Prepare validation and build tools
         run: |
           if ! command -v ffprobe >/dev/null; then
             sudo apt-get update
             sudo apt-get install -y ffmpeg
           fi
-      - name: Download and validate pending manifests
-        id: download
-        run: |
-          python3 scripts/download_openmhz_manifest.py --summary "$RUNNER_TEMP/openmhz-download-summary.json"
-          python3 scripts/normalize_openmhz_metadata.py --check
-          if git diff --quiet && test -z "$(git ls-files --others --exclude-standard public/records/openmhz)"; then
-            echo 'changed=false' >> "$GITHUB_OUTPUT"
-          else
-            echo 'changed=true' >> "$GITHUB_OUTPUT"
-          fi
-          cat "$RUNNER_TEMP/openmhz-download-summary.json" >> "$GITHUB_STEP_SUMMARY"
-      - name: Build and verify archive
-        if: steps.download.outputs.changed == 'true'
-        run: |
           npm ci
           node --test tests/police-radio.test.js
-          npm run build
-      - name: Commit direct downloads to staging
-        if: steps.download.outputs.changed == 'true'
-        run: bash scripts/push_openmhz_import.sh
-      - name: Preserve downloaded audio if the push fails
-        if: failure() && steps.download.outputs.changed == 'true'
+      - name: Download once per clip and checkpoint every 100 calls
+        run: |
+          set -euo pipefail
+          batch=0
+          while compgen -G 'records-pending-review/openmhz-manifests/*.json' > /dev/null; do
+            batch=$((batch + 1))
+            echo "Starting checkpoint batch $batch (up to 100 calls)"
+            python3 -u scripts/download_openmhz_manifest.py --batch-size 100 --summary "$RUNNER_TEMP/openmhz-download-summary.json"
+            cat "$RUNNER_TEMP/openmhz-download-summary.json" >> "$GITHUB_STEP_SUMMARY"
+            python3 scripts/normalize_openmhz_metadata.py --check
+            npm run build
+            bash scripts/push_openmhz_import.sh
+            echo "Checkpoint batch $batch saved to staging"
+          done
+      - name: Preserve checkpoint recovery bundle on failure
+        if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: openmhz-import-recovery-${{ github.run_id }}

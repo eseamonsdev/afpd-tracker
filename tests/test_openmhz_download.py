@@ -151,28 +151,92 @@ class DownloadTest(unittest.TestCase):
                     self.assertFalse((destination / 'rows.json').exists())
             downloader.download.assert_not_called()
 
-    def test_failed_extension_does_not_replace_metadata(self):
+    def test_failure_continues_and_retains_only_failed_calls_for_retry(self):
+        calls = [sample(1790755010 + i * 10, f'id-{i}') for i in range(3)]
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
-            destination = root / 'public/records/openmhz/openmhz-afpd-car-to-car-2026-09-30'
-            destination.mkdir(parents=True)
-            original = sample()
-            (destination / original['original_filename']).write_bytes(b'0000ftyp0000')
-            originals = {'calls.json': json.dumps(manifest()), 'rows.json': '["saved row"]',
-                         'validation.json': '{"validated":true}'}
-            for name, text in originals.items():
-                (destination / name).write_text(text)
-            new = sample(1790755131, 'new-id')
             source = root / '2026-09-30.json'
-            source.write_text(json.dumps(manifest([original, new])))
+            source.write_text(json.dumps(manifest(calls)))
+            downloader = Mock()
+            def download(url, dest):
+                if url == calls[1]['media_url']:
+                    raise OSError('connection lost')
+                dest.write_bytes(b'0000ftyp0000')
+            downloader.download.side_effect = download
+            with patch.object(module, 'inspect_audio', return_value={'sha256': 'test', 'size_bytes': 12, 'audio_duration_seconds': 3}):
+                result = module.import_manifest(root, source, downloader)
+            self.assertEqual(downloader.download.call_count, 3)
+            self.assertEqual(result['downloaded'], 2)
+            self.assertEqual(result['failed'], 1)
+            folder = root / 'public/records/openmhz/openmhz-afpd-car-to-car-2026-09-30'
+            saved = json.loads((folder / 'calls.json').read_text())
+            self.assertEqual([c['id'] for c in saved['calls']], ['id-0', 'id-2'])
+            self.assertEqual(saved['coverage'], 'unknown')
+            failure = root / 'records-pending-review/openmhz-failures/2026-09-30-car-to-car.json'
+            retry = json.loads(failure.read_text())
+            self.assertEqual([c['id'] for c in retry['calls']], ['id-1'])
+            self.assertEqual(module.validate_manifest(retry), '2026-09-30')
+            source.write_text(json.dumps(retry))
+            downloader.download.side_effect = lambda url, dest: dest.write_bytes(b'0000ftyp0000')
+            with patch.object(module, 'inspect_audio', return_value={'sha256': 'test', 'size_bytes': 12, 'audio_duration_seconds': 3}):
+                module.import_manifest(root, source, downloader)
+            self.assertFalse(failure.exists())
+            self.assertEqual(len(json.loads((folder / 'calls.json').read_text())['calls']), 3)
+
+    def test_bad_audio_is_not_published_and_same_filename_is_not_retried(self):
+        calls = [sample(), sample(call_id='same-audio'), sample(1790755131, 'later')]
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source = root / '2026-09-30.json'
+            source.write_text(json.dumps(manifest(calls)))
+            downloader = Mock()
+            downloader.download.side_effect = lambda url, dest: dest.write_bytes(b'bad audio')
+            def inspect(path, call):
+                if call['epoch'] == calls[0]['epoch']:
+                    raise ValueError('Invalid audio')
+                return {'sha256': 'test', 'size_bytes': 12, 'audio_duration_seconds': 3}
+            with patch.object(module, 'inspect_audio', side_effect=inspect):
+                result = module.import_manifest(root, source, downloader)
+            self.assertEqual(downloader.download.call_count, 2)
+            self.assertEqual(result['failed'], 2)
+            folder = root / 'public/records/openmhz/openmhz-afpd-car-to-car-2026-09-30'
+            self.assertFalse((folder / calls[0]['original_filename']).exists())
+            self.assertTrue((folder / calls[2]['original_filename']).exists())
+
+    def test_main_checkpoints_100_and_resumes_remaining_calls(self):
+        calls = [sample(1790755010 + i * 10, f'id-{i}') for i in range(103)]
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            pending = root / 'records-pending-review/openmhz-manifests'
+            pending.mkdir(parents=True)
+            source = pending / '2026-09-30.json'
+            source.write_text(json.dumps(manifest(calls)))
             downloader = Mock()
             downloader.download.side_effect = lambda url, dest: dest.write_bytes(b'0000ftyp0000')
-            with patch.object(module, 'inspect_audio', side_effect=[{'size_bytes': 12, 'sha256': 'test', 'audio_duration_seconds': 3}, ValueError('Invalid audio')]):
-                with self.assertRaises(ValueError):
-                    module.import_manifest(root, source, downloader)
-            for name, text in originals.items():
-                self.assertEqual((destination / name).read_text(), text)
-            self.assertFalse((destination / new['original_filename']).exists())
+            args = ['download', '--root', str(root), '--summary', str(root / 'summary.json')]
+            with patch('sys.argv', args), patch.object(module, 'Downloader', return_value=downloader), patch.object(module, 'inspect_audio', return_value={'sha256': 'test', 'size_bytes': 12, 'audio_duration_seconds': 3}), patch.object(module.subprocess, 'run'):
+                module.main()
+                self.assertEqual(downloader.download.call_count, 100)
+                self.assertEqual(json.loads(source.read_text())['count'], 3)
+                module.main()
+                self.assertEqual(downloader.download.call_count, 103)
+            self.assertFalse(source.exists())
+
+    def test_all_failed_batch_is_removed_from_queue_but_kept_for_manual_retry(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            pending = root / 'records-pending-review/openmhz-manifests'
+            pending.mkdir(parents=True)
+            source = pending / '2026-09-30.json'
+            source.write_text(json.dumps(manifest()))
+            downloader = Mock()
+            downloader.download.side_effect = OSError('unavailable')
+            with patch('sys.argv', ['download', '--root', str(root), '--summary', str(root / 'summary.json')]), patch.object(module, 'Downloader', return_value=downloader), patch.object(module.subprocess, 'run'):
+                module.main()
+            self.assertFalse(source.exists())
+            self.assertFalse((root / 'public/records/openmhz/openmhz-afpd-car-to-car-2026-09-30').exists())
+            self.assertTrue((root / 'records-pending-review/openmhz-failures/2026-09-30-car-to-car.json').exists())
+            downloader.download.assert_called_once()
 
     def test_manifest_uses_mountain_date_and_cutoff(self):
         self.assertEqual(module.validate_manifest(manifest()), '2026-09-30')
@@ -239,3 +303,4 @@ class DownloadTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
