@@ -31,7 +31,20 @@
       "size_bytes": 15095,
       "sha256": "e426c2637ba9c899e899d198303a600515ffedd14803eede0cc57a00fff5ca0d",
       "audio_duration_seconds": 2.176,
-      "source_duration_matches": true
+      "source_duration_matches": true,
+      "transcript": "[Unintelligible] on service."
     }
-  ]
+  ],
+  "enableTranscription": true,
+  "transcription_method": {
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "passes": [
+      "original",
+      "filtered"
+    ],
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "reconciliation": "AI comparison of both passes; uncertain words bracketed. No direct-listening or human verification."
+  }
 }

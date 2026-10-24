@@ -31,7 +31,8 @@
       "size_bytes": 18175,
       "sha256": "eb523833be77e59b5301ec67e96b573135e5e9a3239792359fd8e297915ae623",
       "audio_duration_seconds": 2.688,
-      "source_duration_matches": true
+      "source_duration_matches": true,
+      "transcript": "Frickin' don't ask."
     },
     {
       "id": "6acea1fbb4f715390cc535c4",
@@ -53,7 +54,8 @@
       "size_bytes": 18175,
       "sha256": "91e954daca154c2eed135b2ae07e1fbade2d2a610946f956f55e61ad7f0bd25d",
       "audio_duration_seconds": 2.688,
-      "source_duration_matches": true
+      "source_duration_matches": true,
+      "transcript": "Hey, [Jacqueline?], you on here?"
     },
     {
       "id": "6acea209b4f715390cc56437",
@@ -75,7 +77,20 @@
       "size_bytes": 60723,
       "sha256": "b2d2eb63439605957c506422136e5e862727d61e76a938b039436b098d478c18",
       "audio_duration_seconds": 9.728,
-      "source_duration_matches": true
+      "source_duration_matches": true,
+      "transcript": "So I just walked over right to the wall, right when you mentioned that to me, and then I just had traffic coming through. She doing okay?"
     }
-  ]
+  ],
+  "enableTranscription": true,
+  "transcription_method": {
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "passes": [
+      "original",
+      "filtered"
+    ],
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "reconciliation": "AI comparison of both passes; uncertain words bracketed. No direct-listening or human verification."
+  }
 }

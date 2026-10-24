@@ -31,7 +31,8 @@
       "size_bytes": 16643,
       "sha256": "1c9d532d4eb5abf95800fbf2976005926eb10646f4cd363eeb36cb19b3d44e8c",
       "audio_duration_seconds": 2.432,
-      "source_duration_matches": true
+      "source_duration_matches": true,
+      "transcript": "Okay, [I can head down / I'm going to head there]."
     },
     {
       "id": "6ada0f69b4f715390c6125f4",
@@ -53,7 +54,20 @@
       "size_bytes": 24375,
       "sha256": "b8c0611ba38d7dbe48219c323798ea0ed10fe164efe8f429c831c3c1e50f2986",
       "audio_duration_seconds": 3.712,
-      "source_duration_matches": true
+      "source_duration_matches": true,
+      "transcript": "[Unclear name], you said [he had possible eyes on her?] [unintelligible]."
     }
-  ]
+  ],
+  "enableTranscription": true,
+  "transcription_method": {
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "passes": [
+      "original",
+      "filtered"
+    ],
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "reconciliation": "AI comparison of both passes; uncertain words bracketed. No direct-listening or human verification."
+  }
 }

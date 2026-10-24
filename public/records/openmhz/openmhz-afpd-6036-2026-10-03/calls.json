@@ -52,7 +52,8 @@
       "size_bytes": 10455,
       "sha256": "562437837a3113fc3b346caea89ca31f9d6926fd1994e3051ac329988c358768",
       "audio_duration_seconds": 1.408,
-      "source_duration_matches": true
+      "source_duration_matches": true,
+      "transcript": "[No intelligible speech]"
     },
     {
       "id": "6ac12f104a82385db5c1b563",
@@ -95,7 +96,8 @@
       "size_bytes": 10455,
       "sha256": "15cfd68a56ad28d6be9fd772ddd0dc03b8f72fe6f6e52c3298667eb96e02bf40",
       "audio_duration_seconds": 1.408,
-      "source_duration_matches": true
+      "source_duration_matches": true,
+      "transcript": "[No intelligible speech]"
     },
     {
       "id": "6ac12f224a82385db5c2049b",
@@ -138,7 +140,8 @@
       "size_bytes": 10455,
       "sha256": "90b2e7783222d214536c096f0515cbdd0ff72713f88a44cd2ddb10850bf7c8a8",
       "audio_duration_seconds": 1.408,
-      "source_duration_matches": true
+      "source_duration_matches": true,
+      "transcript": "[No intelligible speech]"
     },
     {
       "id": "6ac12f274a82385db5c20f62",
@@ -182,7 +185,20 @@
       "size_bytes": 10455,
       "sha256": "ba14db550490569bec5c9926a8ed56337a286067ff5b3d1b04c563b3033e5acd",
       "audio_duration_seconds": 1.408,
-      "source_duration_matches": true
+      "source_duration_matches": true,
+      "transcript": "[No intelligible speech]"
     }
-  ]
+  ],
+  "enableTranscription": true,
+  "transcription_method": {
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "passes": [
+      "original",
+      "filtered"
+    ],
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "reconciliation": "AI comparison of both passes; uncertain words bracketed. No direct-listening or human verification."
+  }
 }
