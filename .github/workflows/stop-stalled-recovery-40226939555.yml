@@ -1,0 +1,16 @@
+name: Stop stalled audio recovery setup
+on:
+  push:
+    branches: [staging]
+    paths: ['.github/workflows/stop-stalled-recovery-40226939555.yml']
+permissions:
+  actions: write
+jobs:
+  stop:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Stop stalled recovery run before replacement proceeds
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST repos/eseamonsdev/afpd-tracker/actions/runs/40226939555/cancel

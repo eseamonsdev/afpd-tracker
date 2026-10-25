@@ -22,13 +22,19 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Prepare tools and verify safeguards
+      - name: Install audio validation tools
+        timeout-minutes: 4
         run: |
           if ! command -v ffprobe >/dev/null; then
-            sudo apt-get update
-            sudo apt-get install -y ffmpeg
+            sudo apt-get update -o Acquire::Retries=0 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30
+            sudo apt-get install -y ffmpeg -o Acquire::Retries=0 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30
           fi
-          npm ci
+      - name: Install site dependencies
+        timeout-minutes: 3
+        run: npm ci --no-audit --no-fund --fetch-retries=0 --fetch-timeout=30000
+      - name: Verify safeguards
+        timeout-minutes: 2
+        run: |
           python3 -m unittest discover -s tests -p 'test_openmhz*.py'
           node --test tests/police-radio.test.js
       - name: Recover browser-verified recordings sequentially
