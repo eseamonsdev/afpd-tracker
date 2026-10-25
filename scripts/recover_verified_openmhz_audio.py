@@ -22,6 +22,8 @@ with tempfile.TemporaryDirectory(prefix='verified-openmhz-recovery-') as directo
             shutil.copyfile(cache / url.rsplit('/', 1)[-1], destination)
     for failure in sorted((ROOT / 'records-pending-review/openmhz-failures').glob('*.json')):
         data = json.loads(failure.read_text())
+        if proof.get('dates') and data.get('date') not in proof['dates']:
+            continue
         validate_manifest(data)
         for call in data['calls']:
             if approved.get(call['id']) != call['media_url']:
@@ -41,7 +43,7 @@ with tempfile.TemporaryDirectory(prefix='verified-openmhz-recovery-') as directo
             if not math.isfinite(duration) or duration <= 0:
                 raise ValueError('Invalid measured duration')
             call.pop('download_error', None)
-            call.update(sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
+            call.update(audio_downloaded=True, sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
                         audio_duration_seconds=duration,
                         media_url_status='browser_identity_verified',
                         source_audio_verification={
