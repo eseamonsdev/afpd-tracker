@@ -32,6 +32,7 @@ test('archive index accepts verified R2 audio and rejects missing unverified aud
   const os = await import('node:os');
   const path = await import('node:path');
   const {buildRadioIndex} = await import('../lib/build-radio-index.js');
+  const {buildRadioExcerpt} = await import('../lib/build-radio-excerpt.js');
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'r2-index-'));
   t.after(() => fs.rmSync(dir, {recursive:true, force:true}));
   const folder = 'openmhz-afpd-car-to-car-2026-10-25';
@@ -41,7 +42,12 @@ test('archive index accepts verified R2 audio and rejects missing unverified aud
   const manifest = path.join(dir, folder, 'calls.json');
   fs.writeFileSync(manifest, JSON.stringify({date:'2026-10-25', calls:[call]}));
   assert.equal(buildRadioIndex(dir).days[0].count, 1);
+  const excerpt = {type:'police-radio-excerpt', number:1, slug:'r2-audio-test', subtitle:'R2 audio', sections:[{ranges:[{date:'2026-10-25', first:call.original_filename}]}]};
+  const built = buildRadioExcerpt(excerpt, dir);
+  assert.equal(built.total, 1);
+  assert.equal(built.sections[0].ranges[0].calls[0].source, `/records/openmhz/${folder}/${call.original_filename}`);
   call.audio_storage.verified = false;
   fs.writeFileSync(manifest, JSON.stringify({date:'2026-10-25', calls:[call]}));
   assert.throws(() => buildRadioIndex(dir), /Missing audio/);
+  assert.throws(() => buildRadioExcerpt(excerpt, dir), /missing audio/);
 });

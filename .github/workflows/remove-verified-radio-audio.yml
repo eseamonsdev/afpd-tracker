@@ -36,7 +36,7 @@ jobs:
       - name: Test storage, player and complete site build without local radio audio
         run: |
           python -m unittest discover -s tests -p 'test_openmhz*.py'
-          node --test tests/police-radio.test.js tests/radio-transcripts.test.js tests/r2-radio-audio.test.js
+          node --test tests/police-radio.test.js tests/police-radio-excerpt.test.js tests/radio-transcripts.test.js tests/r2-radio-audio.test.js
           python scripts/normalize_openmhz_metadata.py --check
           npm run build
       - name: Commit only approved deletions and radio metadata to staging
