@@ -38,6 +38,6 @@ class Law2QueueTest(unittest.TestCase):
             self.assertEqual(json.loads(queue.read_text())['count'], 1)
 
     def test_trial_refuses_dates_outside_authorized_range(self):
-        for day in ('2026-10-01', '2026-10-13'):
+        for day in ('2026-10-01', '2026-10-16'):
             with self.assertRaises(ValueError):
                 prepare(Path('/unused'), day)
