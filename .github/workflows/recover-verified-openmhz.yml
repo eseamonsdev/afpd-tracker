@@ -38,6 +38,32 @@ jobs:
           python3 scripts/normalize_openmhz_metadata.py --check
           npm run build
           bash scripts/push_openmhz_import.sh
+      - name: Audit all archived radio metadata for missing audio
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          issues = []
+          folders = 0
+          expected = 0
+          for folder in sorted(Path('public/records/openmhz').glob('openmhz-afpd-*')):
+              metadata = folder / 'calls.json'
+              if not metadata.is_file():
+                  continue
+              folders += 1
+              data = json.loads(metadata.read_text())
+              calls = data if isinstance(data, list) else data.get('calls', [])
+              for call in calls:
+                  name = call.get('original_filename') or call.get('filename')
+                  if not name:
+                      issues.append({'folder': folder.name, 'id': call.get('id'), 'issue': 'missing filename in metadata'})
+                      continue
+                  expected += 1
+                  audio = folder / name
+                  if not audio.is_file() or audio.stat().st_size < 12:
+                      issues.append({'folder': folder.name, 'id': call.get('id'), 'filename': name, 'issue': 'missing or empty audio'})
+          print(json.dumps({'audit_folders': folders, 'referenced_audio_entries': expected, 'missing_audio': issues}), flush=True)
+          PY
       - name: Preserve recovery bundle on publication failure
         if: failure()
         uses: actions/upload-artifact@v4
