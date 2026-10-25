@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""October 1 Law 2 three-pass candidate generation; publication requires AI review.
+"""Law 2 three-pass candidate generation; publication requires AI review.
 
 Original and filtered modes may run independently in parallel. Context mode
 requires both completed passes. Raw ASR never writes the authoritative calls.json.
@@ -237,12 +237,19 @@ def finalize(root, passes_path, reviewed_path):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('kind', choices=(*KINDS, 'finalize'))
+    parser.add_argument('--date', default=DAY, help='Mountain archive date (YYYY-MM-DD)')
     parser.add_argument('--root', type=Path, default=ROOT)
     parser.add_argument('--work-dir', type=Path)
     parser.add_argument('--model-dir', type=Path)
     parser.add_argument('--passes', type=Path)
     parser.add_argument('--reviewed', type=Path)
     args = parser.parse_args()
+    try:
+        if datetime.strptime(args.date, '%Y-%m-%d').date().isoformat() != args.date:
+            raise ValueError('Noncanonical date')
+    except ValueError:
+        parser.error('--date must be a valid YYYY-MM-DD date')
+    DAY = args.date
     if args.kind == 'finalize':
         if not args.passes or not args.reviewed:
             parser.error('finalize requires --passes and --reviewed')
