@@ -1,3 +1,5 @@
+import { r2RadioAudio } from "./r2-radio-audio.js";
+
 const OLD_PRODUCTION_HOST =
   "afpd-tracker.ericseamonsdeveloper.workers.dev";
 
@@ -22,6 +24,10 @@ export default {
     }
 
     const response = await env.ASSETS.fetch(request);
+    if (response.status === 404) {
+      const audio = await r2RadioAudio(request, env.RADIO_AUDIO);
+      if (audio) return audio;
+    }
 
     if (
       url.pathname.startsWith("/records/citizen-provided/daniel-sroka-meeting-transcript-drafts/") &&

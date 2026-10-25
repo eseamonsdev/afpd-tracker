@@ -6,6 +6,7 @@ import json
 import math
 from pathlib import Path
 
+from r2_audio import stored_audio, audio_checks
 from download_openmhz_manifest import (
     SCHEMA_VERSION, archive_readme, coverage_metadata, day_bounds, inspect_audio,
     normalize_call_metadata, timezone, write_json,
@@ -31,6 +32,16 @@ def standardized_files(folder):
         if name in checks:
             raise ValueError(f'Duplicate audio entry: {name}')
         audio = folder / name
+        if not audio.exists() and stored_audio(call, folder.name):
+            checked = audio_checks(call)
+            duration = checked.get('audio_duration_seconds')
+            if not isinstance(duration, (int, float)) or not math.isfinite(duration) or duration <= 0:
+                raise ValueError(f'Invalid R2 audio duration: {audio}')
+            checked['source_duration_matches'] = abs(duration - call['displayed_seconds']) <= 1
+            call.update(checked)
+            checks[name] = checked
+            calls.append(call)
+            continue
         content = audio.read_bytes()
         if len(content) < 12 or content[4:8] != b'ftyp':
             raise ValueError(f'Invalid M4A: {audio}')

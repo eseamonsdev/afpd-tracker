@@ -10,6 +10,13 @@ permissions:
 concurrency:
   group: openmhz-zip-import
   cancel-in-progress: false
+env:
+  OPENMHZ_AUDIO_STORAGE: r2
+  R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+  R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+  R2_BUCKET_NAME: ${{ vars.R2_BUCKET_NAME }}
+  R2_ENDPOINT: ${{ vars.R2_ENDPOINT }}
+
 jobs:
   recover:
     runs-on: ubuntu-latest
@@ -19,6 +26,11 @@ jobs:
         with:
           ref: staging
           fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install R2 upload client
+        run: python -m pip install 'boto3>=1.40,<2'
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -47,7 +59,9 @@ jobs:
       - name: Audit all archived radio metadata for missing audio
         run: |
           python3 - <<'PY'
-          import json
+          import json, sys
+          sys.path.insert(0, 'scripts')
+          from r2_audio import stored_audio
           from pathlib import Path
           issues = []
           folders = 0
@@ -66,7 +80,7 @@ jobs:
                       continue
                   expected += 1
                   audio = folder / name
-                  if not audio.is_file() or audio.stat().st_size < 12:
+                  if (not audio.is_file() or audio.stat().st_size < 12) and not stored_audio(call, folder.name):
                       issues.append({'folder': folder.name, 'id': call.get('id'), 'filename': name, 'issue': 'missing or empty audio'})
           print(json.dumps({'audit_folders': folders, 'referenced_audio_entries': expected, 'missing_audio': issues}), flush=True)
           PY

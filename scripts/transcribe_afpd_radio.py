@@ -78,6 +78,8 @@ def run(args):
     if importlib.metadata.version('faster-whisper') != cfg['engine_version']:
         raise ValueError('Install the pinned faster-whisper version')
     folder, data = load_archive(args.date)
+    from r2_audio import hydrate
+    hydrate(folder)
     work = pathlib.Path(args.work_dir).resolve()
     if work.is_relative_to(ROOT):
         raise ValueError('Raw checkpoint directory must be outside the repository')
@@ -153,6 +155,8 @@ def eligible(text, needs_review):
 
 def finalize(args):
     folder, data = load_archive(args.date)
+    from r2_audio import hydrate
+    hydrate(folder)
     state = read(pathlib.Path(args.passes)); reviewed = read(pathlib.Path(args.reviewed))
     cfg = read(SETTINGS)
     if state['date'] != args.date or state['settings'] != cfg:

@@ -11,6 +11,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   october_14:
+    secrets: inherit
     uses: ./.github/workflows/download-openmhz-law2-day.yml
     with:
       day: '2026-10-14'

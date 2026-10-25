@@ -16,26 +16,31 @@ concurrency:
 
 jobs:
   october_02:
+    secrets: inherit
     uses: ./.github/workflows/download-openmhz-law2-day.yml
     with:
       day: '2026-10-02'
   october_03:
     needs: october_02
+    secrets: inherit
     uses: ./.github/workflows/download-openmhz-law2-day.yml
     with:
       day: '2026-10-03'
   october_04:
     needs: october_03
+    secrets: inherit
     uses: ./.github/workflows/download-openmhz-law2-day.yml
     with:
       day: '2026-10-04'
   october_05:
     needs: october_04
+    secrets: inherit
     uses: ./.github/workflows/download-openmhz-law2-day.yml
     with:
       day: '2026-10-05'
   october_06:
     needs: october_05
+    secrets: inherit
     uses: ./.github/workflows/download-openmhz-law2-day.yml
     with:
       day: '2026-10-06'

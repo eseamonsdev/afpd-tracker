@@ -5,6 +5,7 @@ import json
 from datetime import date
 from pathlib import Path
 
+from r2_audio import stored_audio
 from download_openmhz_manifest import validate_manifest, write_json
 
 
@@ -25,7 +26,7 @@ def prepare(root, day):
     existing_path = archive / 'calls.json'
     existing = json.loads(existing_path.read_text()) if existing_path.exists() else {}
     saved = {c['original_filename'] for c in existing.get('calls', [])
-             if (archive / c['original_filename']).is_file()}
+             if (archive / c['original_filename']).is_file() or stored_audio(c, archive.name)}
     failure_path = root / 'records-pending-review/openmhz-failures' / f'{day}-law-2.json'
     failures = json.loads(failure_path.read_text()) if failure_path.exists() else {}
     failed = {c['id'] for c in failures.get('calls', [])}

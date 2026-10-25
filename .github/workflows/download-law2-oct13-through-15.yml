@@ -12,16 +12,19 @@ concurrency:
   cancel-in-progress: false
 jobs:
   october_13:
+    secrets: inherit
     uses: ./.github/workflows/download-openmhz-law2-day.yml
     with:
       day: '2026-10-13'
   october_14:
     needs: october_13
+    secrets: inherit
     uses: ./.github/workflows/download-openmhz-law2-day.yml
     with:
       day: '2026-10-14'
   october_15:
     needs: october_14
+    secrets: inherit
     uses: ./.github/workflows/download-openmhz-law2-day.yml
     with:
       day: '2026-10-15'

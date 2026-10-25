@@ -16,6 +16,7 @@ from datetime import date, datetime, time as day_time, timedelta, timezone
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 from zoneinfo import ZoneInfo
+from r2_audio import hydrate
 
 MOUNTAIN = ZoneInfo('America/Denver')
 GAP_SECONDS = 2
@@ -198,6 +199,8 @@ def import_manifest(root, source, downloader):
         raise ValueError('Existing archive folder has no manifest')
     if old and (old.get('date') != day or old.get('talkgroup') != talkgroup):
         raise ValueError('Existing archive identity does not match')
+    if old:
+        hydrate(destination)
     merged = {call['original_filename']: dict(call) for call in (old or {}).get('calls', [])}
     ids = {call['id']: name for name, call in merged.items() if call.get('id')}
     downloaded = skipped = 0

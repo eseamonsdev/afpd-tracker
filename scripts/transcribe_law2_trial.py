@@ -40,6 +40,8 @@ def load_archive(root):
         raise ValueError('Duplicate audio filename')
     if [c['epoch'] for c in calls] != sorted(c['epoch'] for c in calls):
         raise ValueError('Calls must be chronological')
+    from r2_audio import hydrate
+    hydrate(folder)
     for c in calls:
         name = c['original_filename']
         if name != f"dcfems-{TALKGROUP}-{c['epoch']}.m4a":

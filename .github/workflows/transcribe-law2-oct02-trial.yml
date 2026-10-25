@@ -14,6 +14,12 @@ concurrency:
   group: law2-transcription-trial-2026-10-02
   cancel-in-progress: false
 
+env:
+  R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+  R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+  R2_BUCKET_NAME: ${{ vars.R2_BUCKET_NAME }}
+  R2_ENDPOINT: ${{ vars.R2_ENDPOINT }}
+
 jobs:
   independent:
     name: Independent ${{ matrix.pass }} pass
@@ -41,7 +47,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y ffmpeg
-          python -m pip install -r scripts/radio-transcription-requirements.txt
+          python -m pip install -r scripts/radio-transcription-requirements.txt 'boto3>=1.40,<2'
       - name: Validate transcription guards
         run: python -m unittest discover -s tests -p 'test*radio_transcription*.py'
       - name: Transcribe every archived October 2 clip
@@ -89,7 +95,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y ffmpeg
-          python -m pip install -r scripts/radio-transcription-requirements.txt
+          python -m pip install -r scripts/radio-transcription-requirements.txt 'boto3>=1.40,<2'
       - name: Transcribe with bounded preceding-call context
         env:
           HF_HUB_DISABLE_TELEMETRY: '1'

@@ -19,6 +19,13 @@ concurrency:
   group: openmhz-zip-import
   cancel-in-progress: false
 
+env:
+  OPENMHZ_AUDIO_STORAGE: r2
+  R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+  R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+  R2_BUCKET_NAME: ${{ vars.R2_BUCKET_NAME }}
+  R2_ENDPOINT: ${{ vars.R2_ENDPOINT }}
+
 jobs:
   import:
     runs-on: ubuntu-latest
@@ -30,6 +37,11 @@ jobs:
           # this permanent workflow and is included in its first import PR.
           ref: ${{ github.ref_name == 'setup-openmhz-zip-import' && 'setup-openmhz-zip-import' || 'staging' }}
           fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install R2 upload client
+        run: python -m pip install 'boto3>=1.40,<2'
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -61,10 +73,5 @@ jobs:
       - name: Commit imported recordings and rebuilt HTML to staging
         if: steps.import.outputs.changed == 'true'
         run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -A -- public records-pending-review
-          git commit -m 'Import pending OpenMHz day ZIPs and rebuild site HTML'
-          # Do not force-push: preserve any staging updates made during the build.
-          git push origin HEAD:staging
-          echo 'Imported recordings and rebuilt HTML committed directly to staging.' >> "$GITHUB_STEP_SUMMARY"
+          bash scripts/push_openmhz_import.sh
+          echo 'Audio verified in R2; metadata and rebuilt HTML saved to staging.' >> "$GITHUB_STEP_SUMMARY"

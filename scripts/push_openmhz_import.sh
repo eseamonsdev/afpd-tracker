@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+if [[ "${OPENMHZ_AUDIO_STORAGE:-}" == 'r2' ]]; then
+  python3 scripts/r2_audio.py
+fi
+
 git config user.name 'github-actions[bot]'
 git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
 git add -A -- public
@@ -12,10 +16,14 @@ failure_path=records-pending-review/openmhz-failures
 if [[ -d "$failure_path" ]] || [[ -n "$(git ls-files -- "$failure_path")" ]]; then
   git add -A -- "$failure_path"
 fi
+# ZIP imports remove their source bundle after validation.
+if [[ -n "$(git ls-files -- 'records-pending-review/*.zip')" ]] || compgen -G 'records-pending-review/*.zip' > /dev/null; then
+  git add -A -- 'records-pending-review/*.zip'
+fi
 if git diff --cached --quiet; then
   exit 0
 fi
-git commit -m 'Import browser-collected OpenMHz audio directly and rebuild site'
+git commit -m 'Checkpoint OpenMHz metadata and verified audio storage'
 
 # Save the downloaded result before touching the branch history. A failed push
 # must not require another paced download of the entire day.
