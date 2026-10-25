@@ -1,0 +1,46 @@
+name: Law 2 sequential downloads October 7–12
+
+on:
+  push:
+    branches: [staging]
+    paths:
+      - 'records-pending-review/openmhz-queues/law2-2026-10-07-through-12.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: law2-sequential-2026-10-07-through-12
+  cancel-in-progress: false
+
+jobs:
+  october_07:
+    uses: ./.github/workflows/download-openmhz-law2-day.yml
+    with:
+      day: '2026-10-07'
+  october_08:
+    needs: october_07
+    uses: ./.github/workflows/download-openmhz-law2-day.yml
+    with:
+      day: '2026-10-08'
+  october_09:
+    needs: october_08
+    uses: ./.github/workflows/download-openmhz-law2-day.yml
+    with:
+      day: '2026-10-09'
+  october_10:
+    needs: october_09
+    uses: ./.github/workflows/download-openmhz-law2-day.yml
+    with:
+      day: '2026-10-10'
+  october_11:
+    needs: october_10
+    uses: ./.github/workflows/download-openmhz-law2-day.yml
+    with:
+      day: '2026-10-11'
+  october_12:
+    needs: october_11
+    uses: ./.github/workflows/download-openmhz-law2-day.yml
+    with:
+      day: '2026-10-12'
