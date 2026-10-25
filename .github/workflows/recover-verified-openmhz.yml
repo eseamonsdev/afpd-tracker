@@ -1,0 +1,47 @@
+name: Recover verified OpenMHz failed audio
+on:
+  push:
+    branches: [staging]
+    paths:
+      - 'records-pending-review/openmhz-queues/verified-duration-recovery.json'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: openmhz-zip-import
+  cancel-in-progress: false
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: staging
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prepare tools and verify safeguards
+        run: |
+          if ! command -v ffprobe >/dev/null; then
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
+          npm ci
+          python3 -m unittest discover -s tests -p 'test_openmhz*.py'
+          node --test tests/police-radio.test.js
+      - name: Recover browser-verified recordings sequentially
+        run: python3 -u scripts/recover_verified_openmhz_audio.py
+      - name: Validate and publish recovered audio to staging
+        run: |
+          python3 scripts/normalize_openmhz_metadata.py --check
+          npm run build
+          bash scripts/push_openmhz_import.sh
+      - name: Preserve recovery bundle on publication failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: verified-openmhz-recovery-${{ github.run_id }}
+          path: ${{ runner.temp }}/openmhz-import.bundle
+          if-no-files-found: warn
