@@ -1,0 +1,16 @@
+name: Finish Law 2 October 14 only
+on:
+  push:
+    branches: [staging]
+    paths: ['.github/workflows/finish-law2-oct14-only.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: law2-oct14-only
+  cancel-in-progress: false
+jobs:
+  october_14:
+    uses: ./.github/workflows/download-openmhz-law2-day.yml
+    with:
+      day: '2026-10-14'
