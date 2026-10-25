@@ -59,7 +59,8 @@ class PushTest(unittest.TestCase):
         git(self.editor, 'push', 'origin', 'staging')
 
     def push(self):
-        env = dict(os.environ, RUNNER_TEMP=str(self.root))
+        # These fixtures exercise Git conflict recovery without live cloud access.
+        env = dict(os.environ, RUNNER_TEMP=str(self.root), OPENMHZ_AUDIO_STORAGE='')
         return subprocess.run(['bash', str(REPO / 'scripts/push_openmhz_import.sh')],
                               cwd=self.worker, env=env, capture_output=True, text=True)
 
