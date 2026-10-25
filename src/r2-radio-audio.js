@@ -3,8 +3,13 @@ export async function r2RadioAudio(request, bucket) {
   const path = new URL(request.url).pathname;
   if (!bucket || !/^\/records\/openmhz\/openmhz-afpd-(?:car-to-car|law-2|6036)-\d{4}-\d{2}-\d{2}\/dcfems-\d+-\d+\.m4a$/.test(path)) return null;
   if (!["GET", "HEAD"].includes(request.method)) return new Response(null, {status: 405, headers: {Allow: "GET, HEAD"}});
-  const key = path.slice(1);
-  const metadata = await bucket.head(key);
+  let key = path.slice("/records/".length);
+  let metadata = await bucket.head(key);
+  // Retain compatibility with recordings uploaded before the bucket root changed.
+  if (!metadata) {
+    key = path.slice(1);
+    metadata = await bucket.head(key);
+  }
   if (!metadata) return null;
   const headers = new Headers();
   metadata.writeHttpMetadata(headers);

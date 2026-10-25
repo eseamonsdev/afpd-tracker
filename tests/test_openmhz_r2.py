@@ -58,7 +58,7 @@ class R2Test(unittest.TestCase):
         self.assertEqual(self.path.read_bytes(), b'original audio bytes')
 
     def test_conflicting_object_is_not_overwritten(self):
-        key = 'records/openmhz/' + self.folder.name + '/' + self.path.name
+        key = 'openmhz/' + self.folder.name + '/' + self.path.name
         self.client.objects[key] = b'different audio'
         with self.assertRaisesRegex(ValueError, 'checksum'):
             upload_one(self.client, 'bucket', self.path, self.call, self.folder.name)

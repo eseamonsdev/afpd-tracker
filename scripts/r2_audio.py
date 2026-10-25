@@ -13,13 +13,13 @@ def object_key(folder, filename):
         raise ValueError('Invalid radio archive folder')
     if not re.fullmatch(r'dcfems-\d+-\d+\.m4a', filename):
         raise ValueError('Invalid audio filename')
-    return f'records/openmhz/{folder}/{filename}'
+    return f'openmhz/{folder}/{filename}'
 
 
 def stored_audio(call, folder):
     storage = call.get('audio_storage', {})
     return (storage.get('provider') == 'r2' and storage.get('verified') is True
-            and storage.get('key') == object_key(folder, call['original_filename'])
+            and storage.get('key') in (object_key(folder, call['original_filename']), 'records/' + object_key(folder, call['original_filename']))
             and bool(storage.get('bucket'))
             and bool(re.fullmatch(r'[0-9a-f]{64}', call.get('sha256', '')))
             and storage.get('sha256') == call['sha256']
@@ -45,7 +45,7 @@ def client_and_bucket():
     return boto3.client('s3', endpoint_url=os.environ['R2_ENDPOINT'], region_name='auto',
                         aws_access_key_id=os.environ['R2_ACCESS_KEY_ID'],
                         aws_secret_access_key=os.environ['R2_SECRET_ACCESS_KEY'],
-                        config=Config(retries={'max_attempts': 3}, connect_timeout=15, read_timeout=60)), os.environ['R2_BUCKET_NAME']
+                        config=Config(retries={'max_attempts': 3}, connect_timeout=15, read_timeout=60, max_pool_connections=32)), os.environ['R2_BUCKET_NAME']
 
 
 def read_verified(client, bucket, key, digest, size):

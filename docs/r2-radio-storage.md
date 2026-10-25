@@ -13,6 +13,7 @@ The manifest download, day queues, retry, recovery and ZIP workflows share the
 checkpoint uploader. It uploads new recordings, reads them back and compares
 SHA-256 and byte count before committing `audio_storage` metadata. An existing
 object with different bytes aborts the checkpoint; no objects are deleted.
+Keys start at `openmhz/`, followed by the unchanged archive folder and filename.
 Original source downloads retain their two-second pacing. Git ignores new audio;
 tracked historical backups remain. Failed uploads do not publish queue changes.
 
