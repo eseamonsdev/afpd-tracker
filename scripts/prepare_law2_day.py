@@ -10,8 +10,8 @@ from download_openmhz_manifest import validate_manifest, write_json
 
 
 def prepare(root, day):
-    if not date(2026, 10, 2) <= date.fromisoformat(day) <= date(2026, 10, 15):
-        raise ValueError('This queue is limited to October 2–15, 2026')
+    if day not in ('2026-09-27', '2026-09-28') and not date(2026, 10, 2) <= date.fromisoformat(day) <= date(2026, 10, 15):
+        raise ValueError('This queue supports September 27–28 and October 2–15, 2026')
     pending = root / 'records-pending-review/openmhz-manifests' / f'{day}-law-2.json'
     if pending.exists():
         validate_manifest(json.loads(pending.read_text()))

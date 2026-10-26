@@ -1,0 +1,67 @@
+name: Preserve and download Law 2 September 27–28
+on:
+  push:
+    branches: [staging]
+    paths: ['.github/workflows/download-law2-sept27-28.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: law2-september-27-28
+  cancel-in-progress: false
+jobs:
+  metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    concurrency:
+      group: openmhz-zip-import
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: staging
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Preserve both dates before downloading audio, committing each date
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for day in 2026-09-27 2026-09-28; do
+            python -u scripts/collect_law2_metadata.py --date "$day"
+            git add "records-pending-review/openmhz-metadata/law-2/$day"
+            if ! git diff --cached --quiet; then
+              git commit -m "Preserve source Law 2 metadata for $day"
+              published=false
+              for attempt in 1 2 3; do
+                git fetch origin staging
+                git rebase origin/staging
+                if git push origin HEAD:staging; then published=true; break; fi
+              done
+              if [ "$published" != true ]; then exit 1; fi
+            fi
+          done
+      - name: Preserve metadata checkpoint even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: law2-september-27-28-metadata-${{ github.run_id }}
+          path: |
+            records-pending-review/openmhz-metadata/law-2/2026-09-27
+            records-pending-review/openmhz-metadata/law-2/2026-09-28
+          if-no-files-found: warn
+          retention-days: 30
+  september_27:
+    needs: metadata
+    secrets: inherit
+    uses: ./.github/workflows/download-openmhz-law2-day.yml
+    with:
+      day: '2026-09-27'
+  september_28:
+    needs: september_27
+    secrets: inherit
+    uses: ./.github/workflows/download-openmhz-law2-day.yml
+    with:
+      day: '2026-09-28'
