@@ -29,8 +29,9 @@ def main():
     response = client.get_object(Bucket=bucket, Key=key)
     if response['Body'].read() != body:
         raise SystemExit('R2 read-back verification failed')
+    client.delete_object(Bucket=bucket, Key=key)
     print(json.dumps({'bucket': bucket, 'list': 'passed', 'write': 'passed',
-                      'read_back': 'passed', 'probe_key': key}))
+                      'read_back': 'passed', 'probe_key': key, 'probe_removed': True}))
 
 
 if __name__ == '__main__':

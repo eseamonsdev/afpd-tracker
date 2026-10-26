@@ -1,0 +1,33 @@
+name: Remove redundant R2 test prefixes only
+on:
+  push:
+    branches: [staging]
+    paths: ['.github/workflows/cleanup-r2-test-prefixes.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: openmhz-zip-import
+  cancel-in-progress: false
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'boto3>=1.40,<2'
+      - name: Verify redundant objects, delete only test prefixes, and check archive inventory
+        env:
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ vars.R2_BUCKET_NAME }}
+          R2_ENDPOINT: ${{ vars.R2_ENDPOINT }}
+        run: python scripts/cleanup_r2_test_prefixes.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: r2-test-prefix-cleanup-${{ github.run_id }}
+          path: r2-test-cleanup-result.json
+          retention-days: 90
