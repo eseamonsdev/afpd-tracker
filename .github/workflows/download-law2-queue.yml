@@ -1,7 +1,7 @@
 name: Download queued Law 2 dates
 on:
   push:
-    branches: [staging]
+    branches: [law-2-radio]
     paths: ['records-pending-review/openmhz-queues/law2-download-queue.json']
   workflow_dispatch:
 permissions:
@@ -10,6 +10,14 @@ permissions:
 concurrency:
   group: law2-download-queue
   cancel-in-progress: false
+env:
+  OPENMHZ_TARGET_BRANCH: law-2-radio
+  OPENMHZ_AUDIO_STORAGE: r2
+  R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+  R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+  R2_BUCKET_NAME: ${{ vars.R2_BUCKET_NAME }}
+  R2_ENDPOINT: ${{ vars.R2_ENDPOINT }}
+
 jobs:
   wait:
     runs-on: ubuntu-latest
@@ -20,7 +28,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: staging
+          ref: law-2-radio
       - name: Validate queued dates
         id: queue
         run: |
@@ -64,11 +72,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: staging
+          ref: law-2-radio
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - run: python -m pip install 'boto3>=1.40,<2'
+      - name: Start public recording status heartbeat
+        run: |
+          nohup python3 -u scripts/publish_radio_status.py --watch > "$RUNNER_TEMP/radio-status.log" 2>&1 &
+          echo $! > "$RUNNER_TEMP/radio-status.pid"
       - name: Preserve each queued day's source metadata
         env:
           FIRST: ${{ needs.wait.outputs.first }}
@@ -84,13 +97,19 @@ jobs:
               git commit -m "Preserve source Law 2 metadata for $day"
               published=false
               for attempt in 1 2 3; do
-                git fetch origin staging
-                git rebase origin/staging
-                if git push origin HEAD:staging; then published=true; break; fi
+                git fetch origin law-2-radio
+                git rebase origin/law-2-radio
+                if git push origin HEAD:law-2-radio; then published=true; break; fi
               done
               if [ "$published" != true ]; then exit 1; fi
             fi
           done
+      - name: Publish final recording counts
+        if: always()
+        continue-on-error: true
+        run: |
+          if test -f "$RUNNER_TEMP/radio-status.pid"; then kill "$(cat "$RUNNER_TEMP/radio-status.pid")" 2>/dev/null || true; fi
+          python3 scripts/publish_radio_status.py --state '${{ job.status }}'
   first_date:
     needs: [wait, metadata]
     secrets: inherit

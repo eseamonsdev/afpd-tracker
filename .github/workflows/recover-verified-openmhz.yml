@@ -31,6 +31,10 @@ jobs:
           python-version: '3.11'
       - name: Install R2 upload client
         run: python -m pip install 'boto3>=1.40,<2'
+      - name: Start public recording status heartbeat
+        run: |
+          nohup python3 -u scripts/publish_radio_status.py --watch > "$RUNNER_TEMP/radio-status.log" 2>&1 &
+          echo $! > "$RUNNER_TEMP/radio-status.pid"
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -91,3 +95,9 @@ jobs:
           name: verified-openmhz-recovery-${{ github.run_id }}
           path: ${{ runner.temp }}/openmhz-import.bundle
           if-no-files-found: warn
+      - name: Publish final recording counts
+        if: always()
+        continue-on-error: true
+        run: |
+          if test -f "$RUNNER_TEMP/radio-status.pid"; then kill "$(cat "$RUNNER_TEMP/radio-status.pid")" 2>/dev/null || true; fi
+          python3 scripts/publish_radio_status.py --state '${{ job.status }}'
