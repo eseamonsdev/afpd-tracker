@@ -8,5 +8,5 @@ The recordings and each day's `calls.json` remain the underlying evidence. Findi
 
 ## Reports
 
-- [Chief Paul interview transcript review — October 26, 2026](2026-10-26-chief-paul-transcript-review.docx) — Word document covering 17 potential issues, with surrounding original and final text, source locations, and questions for Daniel Sroka. Includes the page 10 comparison block removed from the final transcript on October 26; other entries remain proposals or questions for verification.
+- [Chief Paul interview transcript review — October 26, 2026](2026-10-26-chief-paul-transcript-review.docx) — Word document covering 15 remaining review items, with surrounding original and current final text, source locations, and questions for Daniel Sroka. Item 01 reflects the page 10 cleanup. The approved Jaykob Thacker and Carlos Mootz De Arbeloa name corrections have been made in the final transcript and removed from this review; remaining entries are proposals or questions for verification.
 - [Talkgroup 6036 findings and connections to 6001 — October 24, 2026](2026-10-24-talkgroup-6036-and-6001.md)
