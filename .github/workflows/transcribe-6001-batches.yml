@@ -49,9 +49,11 @@ jobs:
           PY
       - name: Install pinned transcription engine and R2 client
         run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
           python -m pip install -r scripts/requirements-radio.txt 'boto3>=1.40,<2'
-          ffmpeg -version | head -1
-          ffprobe -version | head -1
+          command -v ffmpeg
+          command -v ffprobe
       - name: Cache model weights only
         uses: actions/cache@v4
         with:
