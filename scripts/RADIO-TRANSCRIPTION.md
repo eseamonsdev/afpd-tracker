@@ -1,5 +1,34 @@
 # Daily AFPD transcription
 
+## Resumable Actions pipeline (owner update October 26, 2026)
+
+The owner authorized `transcription-work/6001/YYYY-MM-DD/` as temporary,
+public-repository, text-only checkpoints for the actual original, filtered,
+and context-assisted outputs. This specific exception supersedes the older
+instructions below that required all raw passes to stay private. Do not add
+transcript redactions. Never commit audio, filtered WAVs, model files or secrets.
+Use `.github/workflows/transcribe-6001-batches.yml` and
+`scripts/transcribe_6001_batches.py` for R2-only processing. Repository-level
+R2 secrets/variables are injected into the Actions job. Download audio to the
+runner temporary directory only, verify source hashes, commit text every ten
+clips, and delete local audio after each saved batch and on failure. Resume
+matching checkpoints rather than restarting completed passes.
+
+The daily ChatGPT task hands off by updating
+`records-pending-review/openmhz-transcription-request.json` with the resolved
+previous Mountain date and a new request timestamp. Monitor Actions and its
+checkpoint status. Read/reconcile EVERY clip's three real outputs, confidence,
+uncertainty and relevant context. Commit reconciled transcripts to calls.json
+in batches, preserving existing text, verified flags, notes and metadata.
+No automated result becomes human-verified. This is preservation-aware batch
+publication; do not invoke the initial-day finalizer over partially populated
+calls.json. Source hashes checked by Actions must match current metadata.
+Regenerate the downloadable transcript using the repository generator.
+After the entire day is reconciled, built and verified in staging, remove only
+that day's temporary checkpoint folder. Until then retain it to resume safely.
+Never substitute blind voting or automatic raw-ASR publication for review.
+
+
 Standardized October 16, 2026 with the owner's approval. Use staging, never main.
 The previous America/Denver calendar day is the target, even for a manual run.
 The 9 a.m. America/Denver transcription follows the 7 a.m. archive import.
