@@ -16,6 +16,6 @@ jobs:
             const run_id = 40342509139;
             const {data: run} = await github.rest.actions.getWorkflowRun({...context.repo, run_id});
             if (run.status !== 'completed') {
-              await github.rest.actions.cancelWorkflowRun({...context.repo, run_id});
-              core.notice('Cancellation requested for stalled setup run ' + run_id);
+              await github.request('POST /repos/{owner}/{repo}/actions/runs/{run_id}/force-cancel', {...context.repo, run_id});
+              core.notice('Released stalled setup run ' + run_id);
             }
