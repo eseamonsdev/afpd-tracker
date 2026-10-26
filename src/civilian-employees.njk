@@ -19,6 +19,14 @@ permalink: /civilian-employees/
         <button
           class="officer-filter"
           type="button"
+          data-civilian-employee-filter="key"
+          aria-pressed="false"
+        >
+          Key Records
+        </button>
+        <button
+          class="officer-filter"
+          type="button"
           data-civilian-employee-filter="current"
           aria-pressed="false"
         >
@@ -50,7 +58,7 @@ permalink: /civilian-employees/
 
     <ul class="officer-list" aria-label="Civilian employees" aria-describedby="civilian-employee-list-description">
       {% for civilianEmployeePage in entities.byType["civilian-employee-page"] | sort(false, false, "name") %}
-        <li data-service-status="{{ civilianEmployeePage['service-status'] | escape }}">
+        <li data-service-status="{{ civilianEmployeePage['service-status'] | escape }}" data-key-records="{{ 'true' if civilianEmployeePage['key-record'] == true else 'false' }}">
           <a href="{{ civilianEmployeePage.url | escape }}">
             <span>{{ (civilianEmployeePage.directory_label or civilianEmployeePage.name) | escape }}</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
