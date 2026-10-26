@@ -6,6 +6,7 @@ const buttons = document.querySelectorAll("[data-civilian-employee-filter]");
 const civilianEmployees = document.querySelectorAll(".officer-list > li");
 
 const descriptions = {
+  key: "Selected civilian employee records that raise questions about objectivity, potential conflicts of interest, or department practices. Inclusion highlights records for review and does not establish misconduct.",
   current:
     "Current American Fork Police Department civilian employees included in this directory. Select a name to explore the available records.",
   former:
@@ -22,7 +23,9 @@ if (filters && description && buttons.length) {
     civilianEmployees.forEach((civilianEmployee) => {
       const matchesFilter =
         filter === "all" ||
-        civilianEmployee.dataset.serviceStatus === filter;
+        (filter === "key"
+          ? civilianEmployee.dataset.keyRecords === "true"
+          : civilianEmployee.dataset.serviceStatus === filter);
 
       civilianEmployee.hidden = !matchesFilter;
     });
@@ -43,6 +46,6 @@ if (filters && description && buttons.length) {
     });
   });
 
-  showFilter("current");
+  showFilter("key");
   filters.hidden = false;
 }
