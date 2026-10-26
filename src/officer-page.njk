@@ -46,10 +46,10 @@ permalink: "{{ officerPage.url }}"
           {% for section in sections %}
             <button
               class="officer-section-tab"
-              id="officer-tab-{{ loop.index }}"
+              id="officer-tab-{{ section.id | escape }}"
               type="button"
-              data-section-tab
-              aria-controls="officer-section-{{ loop.index }}"
+              data-section-tab="{{ section.id | escape }}"
+              aria-controls="officer-section-{{ section.id | escape }}"
             >
               {{ section.title | escape }}
             </button>
@@ -59,11 +59,11 @@ permalink: "{{ officerPage.url }}"
         {% for section in sections %}
           <section
             class="officer-section-panel"
-            id="officer-section-{{ loop.index }}"
-            aria-labelledby="officer-section-heading-{{ loop.index }}"
+            id="officer-section-{{ section.id | escape }}"
+            aria-labelledby="officer-section-heading-{{ section.id | escape }}"
             data-section-panel
           >
-            <h2 id="officer-section-heading-{{ loop.index }}">
+            <h2 id="officer-section-heading-{{ section.id | escape }}">
               {{ section.title | escape }}
             </h2>
 

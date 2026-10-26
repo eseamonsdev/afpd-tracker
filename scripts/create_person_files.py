@@ -285,12 +285,14 @@ def officer_page_fields(row, person):
         "url": f"/officers/{base_id}/",
         "sections": [
             {
+                "id": "overview",
                 "title": "Overview",
                 "descriptions": [
                     f"This page brings together available employment and compensation records related to {full_name}."
                 ],
             },
             {
+                "id": "employment",
                 "title": "Employment",
                 "descriptions": [employment],
                 "contents": [{"$ref": person_id, "$path": ["employment-records"], "$spread": True}],

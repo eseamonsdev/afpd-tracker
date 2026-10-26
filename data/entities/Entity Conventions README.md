@@ -155,3 +155,22 @@ discipline
 ```
 
 Only entity IDs and other indexed object IDs must be globally unique.
+
+## Profile Tabs
+
+Sections on officer, civilian employee, city official, and police encounter pages
+must have an explicit, stable kebab-case `id`, unique within that page:
+
+```json
+{
+  "id": "criminal-cases",
+  "title": "Criminal Cases",
+  "contents": []
+}
+```
+
+Link directly to a tab with `?tab=criminal-cases` appended to the profile URL.
+Selecting a tab updates the URL; browser Back and Forward restore the selection.
+A missing, unknown, or unpublished tab opens the first published tab.
+Keep the ID unchanged when renaming or reordering a tab, including unpublished
+tabs. Builds reject missing, invalid, or duplicate IDs on these four page types.

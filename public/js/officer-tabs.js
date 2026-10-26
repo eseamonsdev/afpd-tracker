@@ -14,7 +14,7 @@ document.querySelectorAll("[data-officer-sections]").forEach((container) => {
   }
 
   tabList.setAttribute("role", "tablist");
-  tabList.setAttribute("aria-label", "Officer record sections");
+  tabList.setAttribute("aria-label", "Profile record sections");
 
   tabs.forEach((tab, index) => {
     tab.setAttribute("role", "tab");
@@ -38,9 +38,25 @@ document.querySelectorAll("[data-officer-sections]").forEach((container) => {
     }
   }
 
+  function activateTabFromUrl() {
+    const requestedId = new URL(window.location.href).searchParams.get("tab");
+    const selectedIndex = tabs.findIndex((tab) => tab.dataset.sectionTab === requestedId);
+    activateTab(selectedIndex < 0 ? 0 : selectedIndex);
+  }
+
+  function selectTab(index, moveFocus = false) {
+    const url = new URL(window.location.href);
+    const id = tabs[index].dataset.sectionTab;
+    if (url.searchParams.get("tab") !== id) {
+      url.searchParams.set("tab", id);
+      window.history.pushState(null, "", url);
+    }
+    activateTab(index, moveFocus);
+  }
+
   tabs.forEach((tab, index) => {
     tab.addEventListener("click", () => {
-      activateTab(index);
+      selectTab(index);
     });
 
     tab.addEventListener("keydown", (event) => {
@@ -68,10 +84,11 @@ document.querySelectorAll("[data-officer-sections]").forEach((container) => {
       }
 
       event.preventDefault();
-      activateTab(nextIndex, true);
+      selectTab(nextIndex, true);
     });
   });
 
-  activateTab(0);
+  window.addEventListener("popstate", activateTabFromUrl);
+  activateTabFromUrl();
   tabList.hidden = false;
 });

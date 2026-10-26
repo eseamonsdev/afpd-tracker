@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import { validateProfileTabs } from "./lib/profile-tabs.js";
 import { sortUpdates } from "./lib/sort-updates.js";
 import { profileAlternateNames } from "./lib/profile-alternate-names.js";
 import { cleanRadioExcerpts } from "./lib/clean-radio-excerpts.js";
@@ -120,6 +121,7 @@ export default function (eleventyConfig) {
 
     for (const [id, entity] of Object.entries(entityByID)) {
       const resolvedEntity = resolveRefs(entity, byID);
+      validateProfileTabs(resolvedEntity);
 
       all[id] = resolvedEntity;
 
