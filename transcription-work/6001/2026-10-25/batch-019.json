@@ -1,0 +1,657 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-25",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1792955653.m4a": {
+      "index": 181,
+      "epoch": 1792955653,
+      "sha256": "dd4cc18af461311370fc1a47140e6f4b4c6d0f98caf5e918eb339cd903b9468e",
+      "passes": {
+        "original": {
+          "text": "This guy, that is the registered owner of the truck, is out of West Valley and has a history of no driver's license. When I search his name, it doesn't come off of him.",
+          "prompt": null,
+          "duration_seconds": 14.208,
+          "token_limit": 138,
+          "token_count": 43,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 14.0,
+              "text": " This guy, that is the registered owner of the truck, is out of West Valley and has a history of no driver's license. When I search his name, it doesn't come off of him.",
+              "avg_logprob": -0.23929062485694885,
+              "no_speech_prob": 0.04764251410961151,
+              "compression_ratio": 1.3228346456692914
+            }
+          ]
+        },
+        "filtered": {
+          "text": "This guy, that is the registered owner of the truck, is out of West Valley and has a history of no driver's license. When I search his name, it doesn't come off of him.",
+          "prompt": null,
+          "duration_seconds": 14.208,
+          "token_limit": 138,
+          "token_count": 43,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 14.0,
+              "text": " This guy, that is the registered owner of the truck, is out of West Valley and has a history of no driver's license. When I search his name, it doesn't come off of him.",
+              "avg_logprob": -0.2524517740715634,
+              "no_speech_prob": 0.04219118133187294,
+              "compression_ratio": 1.3228346456692914
+            }
+          ]
+        },
+        "context": {
+          "text": "This guy that is the registered owner of the truck is out of West Valley and has a history of no driver's license. When I search his name, it doesn't come off of him.",
+          "prompt": "Is that you just part of me, Mason? Go for it. Copy",
+          "duration_seconds": 14.208,
+          "token_limit": 138,
+          "token_count": 41,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 14.0,
+              "text": " This guy that is the registered owner of the truck is out of West Valley and has a history of no driver's license. When I search his name, it doesn't come off of him.",
+              "avg_logprob": -0.199315111551966,
+              "no_speech_prob": 0.04857446253299713,
+              "compression_ratio": 1.3174603174603174
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1792955672.m4a": {
+      "index": 182,
+      "epoch": 1792955672,
+      "sha256": "0aa96663579e8c46cb1c1d0c0f22ef37b12ad3f9a52abdee4af6df2808f329bd",
+      "passes": {
+        "original": {
+          "text": "Copy. Do you want to go shopping?",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy. Do you want to go shopping?",
+              "avg_logprob": -0.7056328505277634,
+              "no_speech_prob": 0.06653736531734467,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy. Do you want me to stop you? I'm sorry.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7743856855060743,
+              "no_speech_prob": 0.08383391797542572,
+              "compression_ratio": 0.9019607843137255
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Do you want me to stop you?",
+              "avg_logprob": -0.7743856855060743,
+              "no_speech_prob": 0.08383391797542572,
+              "compression_ratio": 0.9019607843137255
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " I'm sorry.",
+              "avg_logprob": -0.7743856855060743,
+              "no_speech_prob": 0.08383391797542572,
+              "compression_ratio": 0.9019607843137255
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy. Do you want to go to the truck?",
+          "prompt": "Go for it. Copy This guy, that is the registered owner of the truck, is out of West Valley and has a history of no driver's license. When I search his name, it doesn't come off of him.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy. Do you want to go to the truck?",
+              "avg_logprob": -0.5433246833937508,
+              "no_speech_prob": 0.06073495000600815,
+              "compression_ratio": 0.8809523809523809
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1792955739.m4a": {
+      "index": 183,
+      "epoch": 1792955739,
+      "sha256": "d42c2a819ad369565e24c2b4e894de5e8b9366207aadba7f675a8021ec2c4361",
+      "passes": {
+        "original": {
+          "text": "Make sure you are from the entry list.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Make sure you are from the entry list.",
+              "avg_logprob": -0.6558441271384557,
+              "no_speech_prob": 0.0607745498418808,
+              "compression_ratio": 0.8636363636363636
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I just want to know what you are from lunch with us.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I just want to know what you are from lunch with us.",
+              "avg_logprob": -0.7373168505728245,
+              "no_speech_prob": 0.0867922380566597,
+              "compression_ratio": 0.896551724137931
+            }
+          ]
+        },
+        "context": {
+          "text": "Make sure you are from the entry list.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Make sure you are from the entry list.",
+              "avg_logprob": -0.6558441271384557,
+              "no_speech_prob": 0.0607745498418808,
+              "compression_ratio": 0.8636363636363636
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1792955755.m4a": {
+      "index": 184,
+      "epoch": 1792955755,
+      "sha256": "86a0079d2485e35db3d312bc6eba19bbe4e2d50f4a1a6717bfad304dc4bd43b8",
+      "passes": {
+        "original": {
+          "text": "Sorry, I meant to text you.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Sorry, I meant to text you.",
+              "avg_logprob": -0.4808751561424949,
+              "no_speech_prob": 0.020801523700356483,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Sorry, Mr. Texty.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Sorry, Mr. Texty.",
+              "avg_logprob": -0.5918647706508636,
+              "no_speech_prob": 0.012168592773377895,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "Sorry, I meant to text you.",
+          "prompt": "Make sure you are from the entry list.",
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Sorry, I meant to text you.",
+              "avg_logprob": -0.3660378943790089,
+              "no_speech_prob": 0.03655866160988808,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1792955762.m4a": {
+      "index": 185,
+      "epoch": 1792955762,
+      "sha256": "528df23e6a359207904241b62334f760456a08352abcdf514c4ec28737cbdb1a",
+      "passes": {
+        "original": {
+          "text": "I'll just do the car on your side of the price.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'll just do the car on your side of the price.",
+              "avg_logprob": -0.5810069851577282,
+              "no_speech_prob": 0.009561523795127869,
+              "compression_ratio": 0.9038461538461539
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'll just do the car on your side of the price.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'll just do the car on your side of the price.",
+              "avg_logprob": -0.6013386882841587,
+              "no_speech_prob": 0.007161073852330446,
+              "compression_ratio": 0.9038461538461539
+            }
+          ]
+        },
+        "context": {
+          "text": "I'll just do the car on your side of the price.",
+          "prompt": "Make sure you are from the entry list. Sorry, I meant to text you.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'll just do the car on your side of the price.",
+              "avg_logprob": -0.5295240506529808,
+              "no_speech_prob": 0.0367744117975235,
+              "compression_ratio": 0.9038461538461539
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1792955766.m4a": {
+      "index": 186,
+      "epoch": 1792955766,
+      "sha256": "a7e03133f60743b86ba1b41740b336c8c60fe88aeb7825097ac22de3b821e6f4",
+      "passes": {
+        "original": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.4638742407162984,
+              "no_speech_prob": 0.010022668167948723,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5621862411499023,
+              "no_speech_prob": 0.004461977630853653,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you.",
+          "prompt": "Make sure you are from the entry list. Sorry, I meant to text you. I'll just do the car on your side of the price.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.36918704708417255,
+              "no_speech_prob": 0.015144520439207554,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1792955771.m4a": {
+      "index": 187,
+      "epoch": 1792955771,
+      "sha256": "7d19b8c7df993f862f8329aab39e3b44615e14a946ec21f3bdac8730f6424df0",
+      "passes": {
+        "original": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.6211145401000977,
+              "no_speech_prob": 0.11693955212831497,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Okay.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Okay.",
+              "avg_logprob": -0.879025936126709,
+              "no_speech_prob": 0.3473801612854004,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy.",
+          "prompt": "Sorry, I meant to text you. I'll just do the car on your side of the price. Thank you.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.5199318885803222,
+              "no_speech_prob": 0.11828968673944473,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1792955848.m4a": {
+      "index": 188,
+      "epoch": 1792955848,
+      "sha256": "04effed411b67c636a1ed7a91b364bb39b14cc55c008a2f98be0c2665067fdcf",
+      "passes": {
+        "original": {
+          "text": "One of the guys just got out of the truck.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " One of the guys just got out of the truck.",
+              "avg_logprob": -0.21850098350218364,
+              "no_speech_prob": 0.0077995131723582745,
+              "compression_ratio": 0.9545454545454546
+            }
+          ]
+        },
+        "filtered": {
+          "text": "One of the guys just got out of the truck.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " One of the guys just got out of the truck.",
+              "avg_logprob": -0.28561865644795553,
+              "no_speech_prob": 0.008077161386609077,
+              "compression_ratio": 0.9545454545454546
+            }
+          ]
+        },
+        "context": {
+          "text": "One of the guys just got out of the truck.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " One of the guys just got out of the truck.",
+              "avg_logprob": -0.21850098350218364,
+              "no_speech_prob": 0.0077995131723582745,
+              "compression_ratio": 0.9545454545454546
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1792955859.m4a": {
+      "index": 189,
+      "epoch": 1792955859,
+      "sha256": "6a6efbb6fb0b5837965f789c6d3d7549ad442121cbe6ab2b9dc6953fec882172",
+      "passes": {
+        "original": {
+          "text": "Walking back towards the grocery store at Walmart.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Walking back towards the grocery store at Walmart.",
+              "avg_logprob": -0.45601943135261536,
+              "no_speech_prob": 0.017936892807483673,
+              "compression_ratio": 0.8620689655172413
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Walking back towards the grocery store at Walmart.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Walking back towards the grocery store at Walmart.",
+              "avg_logprob": -0.5319944222768148,
+              "no_speech_prob": 0.02019289880990982,
+              "compression_ratio": 0.8620689655172413
+            }
+          ]
+        },
+        "context": {
+          "text": "Walking back towards the grocery store at Walmart.",
+          "prompt": "One of the guys just got out of the truck.",
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Walking back towards the grocery store at Walmart.",
+              "avg_logprob": -0.37242380777994794,
+              "no_speech_prob": 0.012198098003864288,
+              "compression_ratio": 0.8620689655172413
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1792955882.m4a": {
+      "index": 190,
+      "epoch": 1792955882,
+      "sha256": "c02c632d4a7d7b273b929800cd136ec845bd20f301f063d71bc14e85283d5679",
+      "passes": {
+        "original": {
+          "text": "Yeah, he just threw something.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.2800000000000002,
+              "text": " Yeah, he just threw something.",
+              "avg_logprob": -0.5483336448669434,
+              "no_speech_prob": 0.05202323943376541,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah, he just threw something.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.2800000000000002,
+              "text": " Yeah, he just threw something.",
+              "avg_logprob": -0.45620861649513245,
+              "no_speech_prob": 0.026112960651516914,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "context": {
+          "text": "Yeah, he just threw something.",
+          "prompt": "One of the guys just got out of the truck. Walking back towards the grocery store at Walmart.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.2,
+              "text": " Yeah, he just threw something.",
+              "avg_logprob": -0.353416845202446,
+              "no_speech_prob": 0.02750842273235321,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        }
+      }
+    }
+  }
+}
