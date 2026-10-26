@@ -8,5 +8,5 @@ The recordings and each day's `calls.json` remain the underlying evidence. Findi
 
 ## Reports
 
-- [Chief Paul interview transcript review — October 26, 2026](2026-10-26-chief-paul-transcript-review.docx) — Word document covering 13 remaining review items, with surrounding original and current final text, source locations, and questions for Daniel Sroka. Item 01 reflects the page 10 cleanup. Four resolved entries have been removed: Jaykob Thacker, Carlos Mootz De Arbeloa, the Risk Assessment Review annotation title, and the chief of police and designee conjunction. Remaining entries are proposals or questions for verification.
+- [Chief Paul interview transcript review — October 26, 2026](2026-10-26-chief-paul-transcript-review.docx) — Word document covering 12 remaining review items, with surrounding original and current final text, source locations, and questions for Daniel Sroka. Item 01 reflects the page 10 cleanup. Five resolved entries have been removed: Jaykob Thacker, Carlos Mootz De Arbeloa, the Risk Assessment Review annotation title, the chief of police and designee conjunction, and the missing period after explanation. Remaining entries are proposals or questions for verification.
 - [Talkgroup 6036 findings and connections to 6001 — October 24, 2026](2026-10-24-talkgroup-6036-and-6001.md)
