@@ -48,7 +48,7 @@ with tempfile.TemporaryDirectory(prefix='verified-openmhz-recovery-') as directo
                         media_url_status='browser_identity_verified',
                         source_audio_verification={
                             'method': 'OpenMHz interactive call detail; autoplay disabled',
-                            'verified_date': '2026-10-25',
+                            'verified_date': proof['verified_date'],
                             'call_link': 'https://openmhz.com/system/dcfems?filter-type=talkgroup&filter-code='
                                          + str(call['talkgroup']) + '&call-id=' + call['id']
                                          + '&time=' + str(call['epoch'] * 1000 + 1),
