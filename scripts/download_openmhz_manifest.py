@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Download browser-collected Car-to-Car and Law 2 manifests directly into the radio archive."""
 import argparse
+import os
 import hashlib
 import json
 import math
@@ -17,6 +18,23 @@ from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 from zoneinfo import ZoneInfo
 from r2_audio import hydrate
+
+
+def record_status(day, talkgroup, name, status):
+    """Private per-file progress; the public publisher uploads counts only."""
+    if not os.environ.get('RUNNER_TEMP'):
+        return
+    try:
+        path = Path(os.environ['RUNNER_TEMP']) / 'radio-download-progress.json'
+        data = json.loads(path.read_text()) if path.exists() else {}
+        key = f'{day}-{talkgroup}'
+        entry = data.setdefault(key, {'date': day, 'talkgroup': talkgroup, 'files': {}})
+        entry['files'][name] = status
+        temp = path.with_suffix('.tmp')
+        temp.write_text(json.dumps(data))
+        temp.replace(path)
+    except OSError:
+        pass
 
 MOUNTAIN = ZoneInfo('America/Denver')
 GAP_SECONDS = 2
@@ -231,6 +249,7 @@ def import_manifest(root, source, downloader):
                     duplicates.append(incoming)
                 outstanding.pop(incoming['id'], None)
                 print(f'{day} [{position}/{len(data["calls"])}] SKIP {name}', flush=True)
+                record_status(day, talkgroup, name, 'downloaded')
                 continue
             audio = temp / name
             call = dict(incoming)
@@ -252,6 +271,7 @@ def import_manifest(root, source, downloader):
                 outstanding[incoming['id']] = failed
                 failures.append(failed)
                 print(f'{day} [{position}/{len(data["calls"])}] FAILED {name}: {reason}', flush=True)
+                record_status(day, talkgroup, name, 'failed')
                 continue
             downloaded += int(is_new)
             outstanding.pop(incoming['id'], None)
@@ -259,6 +279,7 @@ def import_manifest(root, source, downloader):
             if 'media_url_status' in call:
                 call['media_url_status'] = 'download_validated'
             print(f'{day} [{position}/{len(data["calls"])}] OK {name}', flush=True)
+            record_status(day, talkgroup, name, 'downloaded')
             checked_audio[name] = {key: call[key] for key in ('size_bytes', 'sha256', 'audio_duration_seconds', 'source_duration_matches') if key in call}
             instant = datetime.fromtimestamp(call['epoch'], timezone.utc)
             call['timestamp_utc'] = instant.isoformat().replace('+00:00', 'Z')

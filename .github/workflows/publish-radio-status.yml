@@ -1,0 +1,29 @@
+name: Publish radio download counts
+on:
+  push:
+    branches: [staging, law-2-radio]
+    paths: ['scripts/publish_radio_status.py', 'public/police-radio-status.html', '.github/workflows/publish-radio-status.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: radio-status-${{ github.ref_name }}
+  cancel-in-progress: false
+env:
+  R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+  R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+  R2_BUCKET_NAME: ${{ vars.R2_BUCKET_NAME }}
+  R2_ENDPOINT: ${{ vars.R2_ENDPOINT }}
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'boto3>=1.40,<2'
+      - run: python scripts/publish_radio_status.py --branch '${{ github.ref_name }}' --state idle

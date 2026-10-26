@@ -23,6 +23,21 @@ export default {
       );
     }
 
+    const statusKeys = new Map([
+      ["/police-radio-status.html", "police-radio-status.html"],
+      ["/radio-status/staging.json", "radio-status/staging.json"],
+      ["/radio-status/law-2-radio.json", "radio-status/law-2-radio.json"]
+    ]);
+    if (statusKeys.has(url.pathname) && env.RADIO_AUDIO) {
+      if (!["GET", "HEAD"].includes(request.method)) return new Response(null, {status: 405});
+      const object = await env.RADIO_AUDIO.get(statusKeys.get(url.pathname));
+      if (!object) return new Response("Status has not been published yet", {status: 404});
+      return new Response(request.method === "HEAD" ? null : object.body, {headers: {
+        "Content-Type": url.pathname.endsWith(".json") ? "application/json; charset=utf-8" : "text/html; charset=utf-8",
+        "Cache-Control": "no-store",
+        "X-Content-Type-Options": "nosniff"
+      }});
+    }
     const response = await env.ASSETS.fetch(request);
     if (response.status === 404) {
       const audio = await r2RadioAudio(request, env.RADIO_AUDIO);

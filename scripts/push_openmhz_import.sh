@@ -5,6 +5,9 @@ if [[ "${OPENMHZ_AUDIO_STORAGE:-}" == 'r2' ]]; then
   python3 scripts/r2_audio.py
 fi
 
+target_branch="${OPENMHZ_TARGET_BRANCH:-staging}"
+case "$target_branch" in staging|law-2-radio) ;; *) echo 'Invalid radio target branch' >&2; exit 1;; esac
+
 git config user.name 'github-actions[bot]'
 git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
 git add -A -- public
@@ -30,8 +33,8 @@ git commit -m 'Checkpoint OpenMHz metadata and verified audio storage'
 git bundle create "$RUNNER_TEMP/openmhz-import.bundle" HEAD^..HEAD
 
 for attempt in 1 2 3; do
-  git fetch origin staging
-  if ! git rebase origin/staging; then
+  git fetch origin "$target_branch"
+  if ! git rebase "origin/$target_branch"; then
     conflicts=$(git diff --name-only --diff-filter=U)
     if [[ "$conflicts" == 'public/records/openmhz/index.json' ]]; then
       # This index is derived from the merged manifests and audio, so rebuild it
@@ -45,7 +48,7 @@ for attempt in 1 2 3; do
       exit 1
     fi
   fi
-  if git push origin HEAD:staging; then
+  if git push origin "HEAD:$target_branch"; then
     exit 0
   fi
   echo "Push attempt $attempt failed; fetching staging again without re-downloading audio." >&2

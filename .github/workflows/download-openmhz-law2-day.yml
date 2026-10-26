@@ -11,6 +11,7 @@ permissions:
   contents: write
 
 env:
+  OPENMHZ_TARGET_BRANCH: law-2-radio
   OPENMHZ_AUDIO_STORAGE: r2
   R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
   R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
@@ -27,24 +28,29 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: staging
+          ref: law-2-radio
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - name: Install R2 upload client
         run: python -m pip install 'boto3>=1.40,<2'
+      - name: Start public recording status heartbeat
+        run: |
+          nohup python3 -u scripts/publish_radio_status.py --watch > "$RUNNER_TEMP/radio-status.log" 2>&1 &
+          echo $! > "$RUNNER_TEMP/radio-status.pid"
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
       - name: Verify downloader and prepare tools
+        timeout-minutes: 4
         run: |
           python3 -m unittest discover -s tests -p 'test_openmhz*.py'
           if ! command -v ffprobe >/dev/null; then
-            sudo apt-get update
-            sudo apt-get install -y ffmpeg
+            sudo apt-get -o Acquire::Retries=0 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30 update
+            sudo apt-get -o Acquire::Retries=0 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30 install -y ffmpeg
           fi
-          npm ci
+          npm ci --no-audit --no-fund --fetch-retries=0 --fetch-timeout=30000
           node --test tests/police-radio.test.js
       - name: Prepare this day's remaining calls
         env:
@@ -72,3 +78,9 @@ jobs:
           path: ${{ runner.temp }}/openmhz-import.bundle
           if-no-files-found: warn
           retention-days: 7
+      - name: Publish final recording counts
+        if: always()
+        continue-on-error: true
+        run: |
+          if test -f "$RUNNER_TEMP/radio-status.pid"; then kill "$(cat "$RUNNER_TEMP/radio-status.pid")" 2>/dev/null || true; fi
+          python3 scripts/publish_radio_status.py --state '${{ job.status }}'
