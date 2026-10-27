@@ -40,11 +40,11 @@ jobs:
         with:
           node-version: '22'
       - name: Install audio validation tools
-        timeout-minutes: 4
+        timeout-minutes: 8
         run: |
           if ! command -v ffprobe >/dev/null; then
             sudo apt-get update -o Acquire::Retries=0 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30
-            sudo apt-get install -y ffmpeg -o Acquire::Retries=0 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30
+            sudo apt-get install -y --no-install-recommends ffmpeg -o Acquire::Retries=0 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30
           fi
       - name: Install site dependencies
         timeout-minutes: 3
