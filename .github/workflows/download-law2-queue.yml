@@ -34,12 +34,12 @@ jobs:
         run: |
           python3 - <<'PY'
           import json, os
-          from datetime import date, timedelta
+          from datetime import date
           from pathlib import Path
           q = json.loads(Path('records-pending-review/openmhz-queues/law2-download-queue.json').read_text())
           days = q['days']
           assert 1 <= len(days) <= 2 and all(date.fromisoformat(d).isoformat() == d for d in days)
-          assert len(days) == 1 or date.fromisoformat(days[1]) == date.fromisoformat(days[0]) + timedelta(days=1)
+          assert len(set(days)) == len(days)
           assert isinstance(q['after_run_id'], int) and q['after_run_id'] > 0
           with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
               f.write('first=' + days[0] + '\nsecond=' + (days[1] if len(days) > 1 else '') + '\npredecessor=' + str(q['after_run_id']) + '\n')
@@ -62,68 +62,14 @@ jobs:
               await new Promise(resolve => setTimeout(resolve, 30000));
             }
             throw new Error('Preceding batch still running; queue preserved for a later run');
-  metadata:
-    needs: wait
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    concurrency:
-      group: openmhz-zip-import
-      cancel-in-progress: false
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: law-2
-          fetch-depth: 0
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      - run: python -m pip install 'boto3>=1.40,<2'
-      - name: Start public recording status heartbeat
-        run: |
-          nohup python3 -u scripts/publish_radio_status.py --watch > "$RUNNER_TEMP/radio-status.log" 2>&1 &
-          echo $! > "$RUNNER_TEMP/radio-status.pid"
-      - name: Preserve each queued day's source metadata
-        env:
-          FIRST: ${{ needs.wait.outputs.first }}
-          SECOND: ${{ needs.wait.outputs.second }}
-        run: |
-          set -euo pipefail
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          for day in "$FIRST" "$SECOND"; do
-            if [ -z "$day" ]; then continue; fi
-            source="records-pending-review/openmhz-metadata/law-2/$day/calls.json"
-            if test -f "$source"; then
-              python3 -c 'import json, sys; from pathlib import Path; sys.path.insert(0, "scripts"); from download_openmhz_manifest import validate_manifest; data = json.loads(Path(sys.argv[1]).read_text()); validate_manifest(data); assert data["date"] == sys.argv[2] and data["talkgroup"] == 5922; assert data["count"] == len(data["calls"]); print("Using preserved metadata for", sys.argv[2], "-", len(data["calls"]), "calls")' "$source" "$day"
-            else
-              python -u scripts/collect_law2_metadata.py --date "$day"
-            fi
-            git add "records-pending-review/openmhz-metadata/law-2/$day"
-            if ! git diff --cached --quiet; then
-              git commit -m "Preserve source Law 2 metadata for $day"
-              published=false
-              for attempt in 1 2 3; do
-                git fetch origin law-2
-                git rebase origin/law-2
-                if git push origin HEAD:law-2; then published=true; break; fi
-              done
-              if [ "$published" != true ]; then exit 1; fi
-            fi
-          done
-      - name: Publish final recording counts
-        if: always()
-        continue-on-error: true
-        run: |
-          if test -f "$RUNNER_TEMP/radio-status.pid"; then kill "$(cat "$RUNNER_TEMP/radio-status.pid")" 2>/dev/null || true; fi
-          python3 scripts/publish_radio_status.py --state '${{ job.status }}'
   first_date:
-    needs: [wait, metadata]
+    needs: wait
     secrets: inherit
     uses: ./.github/workflows/download-openmhz-law2-day.yml
     with:
       day: ${{ needs.wait.outputs.first }}
   second_date:
-    if: ${{ needs.wait.outputs.second != '' }}
+    if: ${{ always() && needs.wait.result == 'success' && needs.wait.outputs.second != '' && (needs.first_date.result == 'success' || needs.first_date.result == 'failure') }}
     needs: [wait, first_date]
     secrets: inherit
     uses: ./.github/workflows/download-openmhz-law2-day.yml
