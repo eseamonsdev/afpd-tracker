@@ -1,55 +1,22 @@
-# Browser-to-GitHub audio handoff
+# Browser-to-R2 audio handoff
 
-The AI browser session discovers calls using the normal OpenMHz page. It commits
-one JSON source manifest to `staging` at:
+Collect source metadata using the normal OpenMHz page with autoplay disabled.
+Preserve actual call IDs, timestamps, download links and radio IDs together.
+Use Mountain date boundaries and record partial-day cutoffs honestly.
 
-`records-pending-review/openmhz-manifests/YYYY-MM-DD.json`
+Save preserved metadata under
+`records-pending-review/openmhz-metadata/CHANNEL/YYYY-MM-DD/calls.json`, where
+CHANNEL is `car-to-car`, `law-2` or `6036`. Metadata preservation alone does not
+start audio downloads.
 
-That push triggers **Download OpenMHz manifests**, separate from the existing ZIP
-importer and the headless-browser experiment. No manual action dispatch or ZIP is
-needed. There is no cron schedule in this workflow.
+To download, run **Download radio audio** with `day`, `talkgroup` and
+`target_branch`, or commit `records-pending-review/openmhz-audio-request.json`.
+Existing browser-collected active manifests still trigger the same generic
+action. They must satisfy `scripts/download_openmhz_manifest.py`; the plain
+`YYYY-MM-DD.json` filename remains supported for legacy 6001 handoffs.
 
-The manifest must contain `date`, `timezone: "America/Denver"`, `system: "dcfems"`,
-`talkgroup: 6001`, `coverage: "partial"`, a timezone-aware `collected_through_utc`,
-`count`, and `calls`. Each call contains actual `id`, integer `epoch`,
-`displayed_seconds`, `talkgroup: 6001`, `original_filename`, and `media_url`.
-Optional source row text and radio metadata may be retained if actually observed.
-See `scripts/download_openmhz_manifest.py` for exact validation requirements.
-
-For the current-day test, resolve the day in America/Denver when the AI run starts
-and use that start time as the collection cutoff. Do not call a midday archive a
-complete day. Collect all source rows from midnight through cutoff before sending
-the manifest. Browser discovery completeness must be checked by the AI session;
-the downloader can validate only the supplied manifest and audio.
-
-The workflow downloads sequentially with **at least two seconds after each
-download attempt finishes before starting another**. Each clip is attempted once. Download or new-audio validation failures are logged
-and skipped; the remaining clips continue. Invalid source manifests or existing-archive
-integrity failures still stop the run. Audio URLs are restricted to the exact
-OpenMHz media hosts and expected path. M4A signatures, ffprobe durations, and
-checksums are validated before publishing changes.
-
-Output folder:
-`public/records/openmhz/openmhz-afpd-car-to-car-YYYY-MM-DD/`
-
-Audio filenames: `dcfems-6001-<unix-seconds>.m4a`.
-Car-to-Car metadata: `calls.json`, `validation.json`, `README.txt`.
-Original source labels are retained in each call's `row` field; do not generate a separate `rows.json`.
-Existing calls are preserved when extending a partial day. The workflow regenerates
-`public/records/openmhz/index.json` using `lib/build-radio-index.js`, runs the radio
-tests and site build, removes the processed source manifest, and commits to
-`staging`. It never promotes production or force-pushes. It shares a concurrency
-group with the ZIP importer to prevent simultaneous archive writes.
-
-Every 100 source calls attempted, the workflow builds and commits the validated
-audio, updated queue, and failure manifests to staging. Per-clip FETCH/OK/SKIP/FAILED
-messages are flushed to the live log. The two-second gap follows each download attempt.
-Failed clips are stored under `records-pending-review/openmhz-failures/` and are not
-retried automatically. Copy a failure manifest into the active manifest queue only
-when an independent retry is requested. Unexpected failures can lose the current
-unfinished batch; earlier pushed checkpoints remain safe. A successful run means the supplied manifest was imported;
-it does not establish that the current day has ended or contains no later calls.
-
-Code-only changes no longer start downloads. Only pushes changing active manifests
-or explicit workflow dispatch start the downloader. Parked manifests under
-`records-pending-review/openmhz-paused/` are ignored.
+The action stores checksum-verified audio in R2 and commits metadata to the
+selected working branch. It waits two seconds after each download attempt,
+skips known failures, and checkpoints every 100 calls. No ZIP or scheduled ZIP
+poller is needed. See [Reusable radio actions](radio-workflows.md) for the
+input schema, independent multi-day requests and explicit recovery option.

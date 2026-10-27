@@ -1,0 +1,139 @@
+name: Generate radio transcription passes
+'on':
+  push:
+    branches:
+    - staging
+    - law-2
+    paths:
+    - records-pending-review/openmhz-transcription-request.json
+  workflow_dispatch:
+    inputs:
+      day:
+        description: America/Denver date (YYYY-MM-DD)
+        required: true
+        type: string
+      talkgroup:
+        description: OpenMHz talkgroup
+        required: false
+        default: '6001'
+        type: choice
+        options:
+        - '6001'
+        - '5922'
+        - '6036'
+      target_branch:
+        description: Branch for metadata and text checkpoints
+        required: false
+        default: staging
+        type: choice
+        options:
+        - staging
+        - law-2
+  workflow_call:
+    inputs:
+      day:
+        required: true
+        type: string
+      talkgroup:
+        required: false
+        default: '6001'
+        type: string
+      target_branch:
+        required: false
+        default: staging
+        type: string
+permissions:
+  contents: write
+jobs:
+  request:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.request.outputs.matrix }}
+      has_work: ${{ steps.request.outputs.has_work }}
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        ref: ${{ github.event_name == 'push' && github.ref_name || inputs.target_branch || 'staging' }}
+        fetch-depth: 0
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - name: Resolve date, talkgroup and target branch
+      run: python3 scripts/radio_workflow_request.py transcribe
+      id: request
+      env:
+        INPUT_DAY: ${{ inputs.day }}
+        INPUT_TALKGROUP: ${{ inputs.talkgroup }}
+        INPUT_BRANCH: ${{ inputs.target_branch }}
+        INPUT_MODE: ${{ inputs.mode }}
+        INPUT_PROOF: ${{ inputs.proof }}
+  transcribe:
+    needs: request
+    if: ${{ needs.request.outputs.has_work == 'true' }}
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix: ${{ fromJSON(needs.request.outputs.matrix) }}
+    name: ${{ matrix.day }} / ${{ matrix.talkgroup }} / ${{ matrix.target_branch }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    concurrency:
+      group: radio-transcription-${{ matrix.target_branch }}
+      cancel-in-progress: false
+    env:
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_BUCKET_NAME: ${{ vars.R2_BUCKET_NAME }}
+      R2_ENDPOINT: ${{ vars.R2_ENDPOINT }}
+      OPENMHZ_TARGET_BRANCH: ${{ matrix.target_branch }}
+      DAY: ${{ matrix.day }}
+      TALKGROUP: ${{ matrix.talkgroup }}
+      TARGET_BRANCH: ${{ matrix.target_branch }}
+      PYTHONUNBUFFERED: '1'
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        ref: ${{ matrix.target_branch }}
+        fetch-depth: 0
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - name: Install pinned transcription engine and R2 client
+      run: 'sudo apt-get update -qq
+
+        sudo apt-get install -y ffmpeg
+
+        python -m pip install -r scripts/requirements-radio.txt ''boto3>=1.40,<2'''
+    - name: Verify transcription identity and checkpoint safeguards
+      run: python3 -m unittest discover -s tests -p 'test_radio*.py'
+    - uses: actions/cache@v4
+      with:
+        path: ${{ runner.temp }}/radio-models
+        key: radio-whisper-${{ runner.os }}-${{ hashFiles('scripts/radio-transcription-settings.json') }}
+    - name: Generate original, filtered and context passes; commit every ten clips
+      run: 'git config user.name "github-actions[bot]"
+
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+        python3 -u scripts/transcribe_radio_batches.py --date "$DAY" --talkgroup "$TALKGROUP" --target-branch "$TARGET_BRANCH"
+        --batch-size 10 --audio-dir "$RUNNER_TEMP/radio-audio-current" --model-dir "$RUNNER_TEMP/radio-models"'
+    - name: Delete temporary audio even after failure
+      run: 'python3 - <<''PY''
+
+        import os, shutil
+
+        from pathlib import Path
+
+        shutil.rmtree(Path(os.environ[''RUNNER_TEMP'']) / ''radio-audio-current'', ignore_errors=True)
+
+        print(''Temporary audio deleted; R2 originals unchanged.'')
+
+        PY'
+      if: always()
+    - name: Report saved transcription progress
+      run: "python3 - <<'PY'\nimport json, os\nfrom pathlib import Path\np=Path('transcription-work') / os.environ['TALKGROUP']\
+        \ / os.environ['DAY'] / 'status.json'\nmessage='No checkpoint yet; inspect the failed step.'\nif p.exists():\n d=json.loads(p.read_text())\n\
+        \ message=f\"{d['date']} talkgroup {d['talkgroup']}: {d['three_pass_clips']}/{d['total_clips']} clips saved; {d['state']}.\
+        \ Reconciliation remains separate.\"\nprint(message)\nwith open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f: f.write(message+'\\\
+        n')\nPY"
+      if: always()

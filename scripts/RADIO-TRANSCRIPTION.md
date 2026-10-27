@@ -1,5 +1,8 @@
 # Daily AFPD transcription
 
+For other dates, talkgroups or working branches, use the [generic radio actions](../docs/radio-workflows.md). Their defaults are talkgroup 6001 and staging; these daily-task instructions retain that selection.
+
+
 ## Resumable Actions pipeline (owner update October 26, 2026)
 
 The owner authorized `transcription-work/6001/YYYY-MM-DD/` as temporary,
@@ -7,8 +10,8 @@ public-repository, text-only checkpoints for the actual original, filtered,
 and context-assisted outputs. This specific exception supersedes the older
 instructions below that required all raw passes to stay private. Do not add
 transcript redactions. Never commit audio, filtered WAVs, model files or secrets.
-Use `.github/workflows/transcribe-6001-batches.yml` and
-`scripts/transcribe_6001_batches.py` for R2-only processing. Repository-level
+Use `.github/workflows/radio-transcribe.yml` and
+`scripts/transcribe_radio_batches.py` for R2-only processing. Repository-level
 R2 secrets/variables are injected into the Actions job. Download audio to the
 runner temporary directory only, verify source hashes, commit text every ten
 clips, and delete local audio after each saved batch and on failure. Resume
@@ -31,7 +34,7 @@ Never substitute blind voting or automatic raw-ASR publication for review.
 
 Standardized October 16, 2026 with the owner's approval. Use staging, never main.
 The previous America/Denver calendar day is the target, even for a manual run.
-The 9 a.m. America/Denver transcription follows the 7 a.m. archive import.
+The daily ChatGPT task uses the previous Mountain day and requires its saved R2 archive. The scheduled ZIP importer has been retired; it never fetched new recordings.
 
 ## Method and provenance
 

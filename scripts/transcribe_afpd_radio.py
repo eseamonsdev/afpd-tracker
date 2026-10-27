@@ -15,6 +15,7 @@ import pathlib
 import re
 import subprocess
 from zoneinfo import ZoneInfo
+from radio_config import archive_path, valid_day, valid_talkgroup
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 SETTINGS = pathlib.Path(__file__).with_name('radio-transcription-settings.json')
@@ -39,9 +40,8 @@ def yesterday():
     return (dt.datetime.now(ZoneInfo('America/Denver')).date() - dt.timedelta(days=1)).isoformat()
 
 
-def archive(date):
-    dt.date.fromisoformat(date)
-    return ROOT / 'public/records/openmhz' / ('openmhz-afpd-car-to-car-' + date)
+def archive(date, talkgroup=6001):
+    return archive_path(ROOT, date, talkgroup)
 
 
 def context_indices(calls, index, cfg):
@@ -50,13 +50,15 @@ def context_indices(calls, index, cfg):
             if cutoff <= calls[j]['epoch'] < calls[index]['epoch']]
 
 
-def load_archive(date):
-    folder = archive(date)
+def load_archive(date, talkgroup=6001, require_complete=True):
+    talkgroup = valid_talkgroup(talkgroup)
+    valid_day(date)
+    folder = archive(date, talkgroup)
     data = read(folder/'calls.json')
     calls = data['calls']
-    if data['date'] != date or data.get('talkgroup') != 6001:
+    if data['date'] != date or data.get('talkgroup') != talkgroup:
         raise ValueError('Wrong date or talkgroup')
-    if data.get('coverage') != 'complete':
+    if require_complete and data.get('coverage') != 'complete':
         raise ValueError('Target archive is not marked complete; do not substitute another date')
     names = [c['original_filename'] for c in calls]
     if not calls or len(names) != len(set(names)):
@@ -65,7 +67,7 @@ def load_archive(date):
         raise ValueError('Archive order is not chronological')
     for c in calls:
         name = c['original_filename']
-        if name != f"dcfems-6001-{c['epoch']}.m4a":
+        if name != f"dcfems-{talkgroup}-{c['epoch']}.m4a":
             raise ValueError('Filename/epoch mismatch: ' + name)
         if dt.datetime.fromtimestamp(c['epoch'], ZoneInfo('America/Denver')).date().isoformat() != date:
             raise ValueError('Wrong Mountain date: ' + name)
