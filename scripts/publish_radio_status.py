@@ -15,7 +15,7 @@ def snapshot(root, branch, state):
         return rows.setdefault((day, group), {'date': day, 'talkgroup': group, 'saved_names': set(), 'downloaded_names': set(), 'failed_names': set(), 'total_names': set(), 'expected': 0, 'coverage': 'unknown'})
     def include(d, kind, folder=None):
         if not d.get('date') or d.get('talkgroup') not in (6001, 5922, 6036): return
-        if (d['talkgroup'] == 5922) != (branch == 'law-2-radio'): return
+        if (d['talkgroup'] == 5922) != (branch == 'law-2'): return
         r = row(d['date'], d['talkgroup'])
         for c in d.get('calls', []):
             name = c.get('original_filename')
@@ -36,12 +36,12 @@ def snapshot(root, branch, state):
         for p in (root / 'records-pending-review' / directory).glob('*.json'):
             include(json.loads(p.read_text()), kind)
     queue = root / 'records-pending-review/openmhz-queues/law2-download-queue.json'
-    if branch == 'law-2-radio' and queue.exists():
+    if branch == 'law-2' and queue.exists():
         for day in json.loads(queue.read_text()).get('days', []): row(day, 5922)
     progress = Path(os.environ.get('RUNNER_TEMP', '/tmp')) / 'radio-download-progress.json'
     if progress.exists():
         for d in json.loads(progress.read_text()).values():
-            if (d['talkgroup'] == 5922) != (branch == 'law-2-radio'): continue
+            if (d['talkgroup'] == 5922) != (branch == 'law-2'): continue
             r = row(d['date'], d['talkgroup'])
             for name, status in d['files'].items():
                 r['total_names'].add(name)
@@ -66,7 +66,7 @@ def publish(root, branch, state):
 
 if __name__ == '__main__':
     p = argparse.ArgumentParser()
-    p.add_argument('--branch', choices=['staging', 'law-2-radio'], default=os.environ.get('OPENMHZ_TARGET_BRANCH', 'staging'))
+    p.add_argument('--branch', choices=['staging', 'law-2'], default=os.environ.get('OPENMHZ_TARGET_BRANCH', 'staging'))
     p.add_argument('--state', default='running')
     p.add_argument('--watch', action='store_true')
     args = p.parse_args()
