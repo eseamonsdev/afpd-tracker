@@ -37,7 +37,16 @@ class Law2QueueTest(unittest.TestCase):
             self.assertTrue(prepare(root, '2026-10-02')['resuming'])
             self.assertEqual(json.loads(queue.read_text())['count'], 1)
 
-    def test_trial_refuses_dates_outside_authorized_range(self):
-        for day in ('2026-10-01', '2026-10-16'):
-            with self.assertRaises(ValueError):
+    def test_any_iso_day_can_use_preserved_metadata(self):
+        for day in ('2026-09-29', '2026-10-01', '2026-10-16', '2027-01-05'):
+            with self.subTest(day=day), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                source = root / 'records-pending-review/openmhz-metadata/law-2' / day / 'calls.json'
+                source.parent.mkdir(parents=True)
+                source.write_text(json.dumps({'date': day, 'talkgroup': 5922, 'count': 0, 'calls': []}))
+                self.assertEqual(prepare(root, day)['queued'], 0)
+
+    def test_invalid_and_noncanonical_dates_are_rejected(self):
+        for day in ('2026-02-30', '20261001', '../2026-10-01', '2026-1-1'):
+            with self.subTest(day=day), self.assertRaises(ValueError):
                 prepare(Path('/unused'), day)
