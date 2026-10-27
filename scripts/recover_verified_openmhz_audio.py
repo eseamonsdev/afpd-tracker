@@ -13,6 +13,7 @@ from download_openmhz_manifest import Downloader, import_manifest, validate_mani
 ROOT = Path.cwd()
 proof = json.loads((ROOT / 'records-pending-review/openmhz-queues/verified-duration-recovery.json').read_text())
 approved = {c['id']: c['media_url'] for c in proof['calls']}
+expected_hashes = {c['id']: c.get('sha256') for c in proof['calls']}
 network = Downloader()
 totals = []
 with tempfile.TemporaryDirectory(prefix='verified-openmhz-recovery-') as directory:
@@ -36,6 +37,9 @@ with tempfile.TemporaryDirectory(prefix='verified-openmhz-recovery-') as directo
                     raise ValueError('Invalid M4A')
                 subprocess.run(['ffmpeg', '-v', 'error', '-i', str(path), '-f', 'null', '-'],
                                check=True, capture_output=True, timeout=60)
+            expected_hash = expected_hashes.get(call['id'])
+            if expected_hash and hashlib.sha256(path.read_bytes()).hexdigest() != expected_hash:
+                raise ValueError('Audio differs from manually downloaded proof: ' + call['id'])
             result = subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration',
                                      '-of', 'default=noprint_wrappers=1:nokey=1', str(path)],
                                     check=True, capture_output=True, text=True, timeout=30)
