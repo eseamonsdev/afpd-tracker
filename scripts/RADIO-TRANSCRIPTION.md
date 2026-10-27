@@ -3,6 +3,10 @@
 For other dates, talkgroups or working branches, use the [generic radio actions](../docs/radio-workflows.md). Their defaults are talkgroup 6001 and staging; these daily-task instructions retain that selection.
 
 
+## Transcription references
+
+Consult [transcription helpers](../transcription-helpers/README.md) when reconciling names, places and radio terminology. The catalog supplies candidates and source references, not automatic substitutions. Keep unhinted passes and compare any targeted rerun against the audio; curated training examples are selected separately by the owner.
+
 ## Preserve original and current transcripts
 
 Every published clip keeps both versions in `calls.json`: `transcript` is the

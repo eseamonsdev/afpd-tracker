@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "description": "Recorded prompt comparisons; examples here are evaluation cases, not automatically approved training material.",
+  "cases": [
+    {
+      "date": "2026-10-12",
+      "filename": "dcfems-6001-1791788849.m4a",
+      "sha256": "3bf69648c9bd766127bfe912f07196b0de18b7d1197a37c5ec78c6a945a4265b",
+      "model": "small.en",
+      "engine": "faster-whisper 1.2.1",
+      "runtime": "ctranslate2 4.8.3; av 16.0.1; CPU int8",
+      "cases": [
+        {
+          "prompt": null,
+          "result": "Did you just go through an art die, Cole?"
+        },
+        {
+          "prompt": "Art Dye Park",
+          "result": "Did you just go through Art Dye, Cole?"
+        },
+        {
+          "prompt": "Art Dye Park, Cinemark, JCW's, VASA Fitness, Stonehenge, Maverik, Walmart, Sage Apartments, Lions Park, Lakeshore Drive.",
+          "result": "Did you just go through an Art Dye call?"
+        }
+      ],
+      "lesson": "A targeted hint fixed the name in this clip. A broader list damaged the ending. One clip is not an accuracy benchmark."
+    }
+  ]
+}
