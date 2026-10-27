@@ -3,14 +3,12 @@ on:
   push:
     branches: [staging]
     paths:
-      - '.github/workflows/transcribe-6001-batches.yml'
       - 'records-pending-review/openmhz-transcription-request.json'
   workflow_dispatch:
     inputs:
       day:
         description: America/Denver calendar date
         required: true
-        default: '2026-10-25'
 permissions:
   contents: write
 concurrency:
