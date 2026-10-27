@@ -1,16 +1,17 @@
 name: Recover verified OpenMHz failed audio
 on:
   push:
-    branches: [staging]
+    branches: [staging, law-2]
     paths:
       - 'records-pending-review/openmhz-queues/verified-duration-recovery.json'
   workflow_dispatch:
 permissions:
   contents: write
 concurrency:
-  group: openmhz-zip-import
+  group: openmhz-verified-recovery-${{ github.ref_name }}
   cancel-in-progress: false
 env:
+  OPENMHZ_TARGET_BRANCH: ${{ github.ref_name == 'law-2' && 'law-2' || 'staging' }}
   OPENMHZ_AUDIO_STORAGE: r2
   R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
   R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
@@ -24,7 +25,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: staging
+          ref: ${{ env.OPENMHZ_TARGET_BRANCH }}
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
@@ -55,7 +56,7 @@ jobs:
           node --test tests/police-radio.test.js
       - name: Recover browser-verified recordings sequentially
         run: python3 -u scripts/recover_verified_openmhz_audio.py
-      - name: Validate and publish recovered audio to staging
+      - name: Validate and publish recovered audio to the target branch
         run: |
           python3 scripts/normalize_openmhz_metadata.py --check
           npm run build
