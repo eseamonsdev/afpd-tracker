@@ -15,7 +15,6 @@ def snapshot(root, branch, state):
         return rows.setdefault((day, group), {'date': day, 'talkgroup': group, 'saved_names': set(), 'downloaded_names': set(), 'failed_names': set(), 'total_names': set(), 'expected': 0, 'coverage': 'unknown'})
     def include(d, kind, folder=None):
         if not d.get('date') or d.get('talkgroup') not in (6001, 5922, 6036): return
-        if (d['talkgroup'] == 5922) != (branch == 'law-2'): return
         r = row(d['date'], d['talkgroup'])
         for c in d.get('calls', []):
             name = c.get('original_filename')
@@ -30,18 +29,20 @@ def snapshot(root, branch, state):
         if kind == 'archive': r['coverage'] = d.get('coverage', 'unknown')
     for p in (root / 'public/records/openmhz').glob('*/calls.json'):
         include(json.loads(p.read_text()), 'archive', p.parent.name)
-    for p in (root / 'records-pending-review/openmhz-metadata/law-2').glob('*/calls.json'):
+    for p in (root / 'records-pending-review/openmhz-metadata').glob('*/*/calls.json'):
         include(json.loads(p.read_text()), 'source')
     for directory, kind in [('openmhz-manifests', 'queue'), ('openmhz-failures', 'failure')]:
         for p in (root / 'records-pending-review' / directory).glob('*.json'):
             include(json.loads(p.read_text()), kind)
-    queue = root / 'records-pending-review/openmhz-queues/law2-download-queue.json'
-    if branch == 'law-2' and queue.exists():
-        for day in json.loads(queue.read_text()).get('days', []): row(day, 5922)
+    queue = root / 'records-pending-review/openmhz-audio-request.json'
+    if queue.exists():
+        from radio_workflow_request import requests
+        for request in requests(json.loads(queue.read_text()), branch):
+            if request['target_branch'] == branch:
+                row(request['day'], request['talkgroup'])
     progress = Path(os.environ.get('RUNNER_TEMP', '/tmp')) / 'radio-download-progress.json'
     if progress.exists():
         for d in json.loads(progress.read_text()).values():
-            if (d['talkgroup'] == 5922) != (branch == 'law-2'): continue
             r = row(d['date'], d['talkgroup'])
             for name, status in d['files'].items():
                 r['total_names'].add(name)

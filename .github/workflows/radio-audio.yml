@@ -1,0 +1,159 @@
+name: Download radio audio
+'on':
+  push:
+    branches:
+    - staging
+    - law-2
+    paths:
+    - records-pending-review/openmhz-audio-request.json
+    - records-pending-review/openmhz-manifests/*.json
+  workflow_dispatch:
+    inputs:
+      day:
+        description: America/Denver date (YYYY-MM-DD)
+        required: true
+        type: string
+      talkgroup:
+        description: OpenMHz talkgroup
+        required: false
+        default: '6001'
+        type: choice
+        options:
+        - '6001'
+        - '5922'
+        - '6036'
+      target_branch:
+        description: Branch for metadata and text checkpoints
+        required: false
+        default: staging
+        type: choice
+        options:
+        - staging
+        - law-2
+      mode:
+        description: Download remaining clips, or recover explicitly verified failures
+        default: download
+        type: choice
+        options:
+        - download
+        - recover
+      proof:
+        description: 'Recovery only: browser-verified proof JSON in records-pending-review/openmhz-queues/'
+        required: false
+        type: string
+        default: ''
+  workflow_call:
+    inputs:
+      day:
+        required: true
+        type: string
+      talkgroup:
+        required: false
+        default: '6001'
+        type: string
+      target_branch:
+        required: false
+        default: staging
+        type: string
+      mode:
+        default: download
+        type: string
+      proof:
+        required: false
+        type: string
+        default: ''
+permissions:
+  contents: write
+jobs:
+  request:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.request.outputs.matrix }}
+      has_work: ${{ steps.request.outputs.has_work }}
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        ref: ${{ github.event_name == 'push' && github.ref_name || inputs.target_branch || 'staging' }}
+        fetch-depth: 0
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - name: Resolve date, talkgroup and target branch
+      run: python3 scripts/radio_workflow_request.py audio
+      id: request
+      env:
+        INPUT_DAY: ${{ inputs.day }}
+        INPUT_TALKGROUP: ${{ inputs.talkgroup }}
+        INPUT_BRANCH: ${{ inputs.target_branch }}
+        INPUT_MODE: ${{ inputs.mode }}
+        INPUT_PROOF: ${{ inputs.proof }}
+  audio:
+    needs: request
+    if: ${{ needs.request.outputs.has_work == 'true' }}
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix: ${{ fromJSON(needs.request.outputs.matrix) }}
+    name: ${{ matrix.day }} / ${{ matrix.talkgroup }} / ${{ matrix.target_branch }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    concurrency:
+      group: openmhz-zip-import
+      cancel-in-progress: false
+    env:
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_BUCKET_NAME: ${{ vars.R2_BUCKET_NAME }}
+      R2_ENDPOINT: ${{ vars.R2_ENDPOINT }}
+      OPENMHZ_TARGET_BRANCH: ${{ matrix.target_branch }}
+      DAY: ${{ matrix.day }}
+      TALKGROUP: ${{ matrix.talkgroup }}
+      TARGET_BRANCH: ${{ matrix.target_branch }}
+      PYTHONUNBUFFERED: '1'
+      OPENMHZ_AUDIO_STORAGE: r2
+      MODE: ${{ matrix.mode }}
+      PROOF: ${{ matrix.proof }}
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        ref: ${{ matrix.target_branch }}
+        fetch-depth: 0
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+    - name: Install audio validation, site and R2 tools
+      run: "set -euo pipefail\npython -m pip install 'boto3>=1.40,<2'\nif ! command -v ffprobe >/dev/null; then\n  sudo apt-get\
+        \ -o Acquire::Retries=0 -o Acquire::http::Timeout=30 update\n  sudo apt-get -o Acquire::Retries=0 -o Acquire::http::Timeout=30\
+        \ install -y ffmpeg\nfi\nnpm ci --no-audit --no-fund --fetch-retries=0 --fetch-timeout=30000"
+      timeout-minutes: 5
+    - name: Verify download safeguards
+      run: 'python3 -m unittest discover -s tests -p ''test_openmhz*.py''
+
+        python3 -m unittest discover -s tests -p ''test_radio_workflows.py''
+
+        node --test tests/police-radio.test.js tests/r2-radio-audio.test.js'
+    - name: Start public status heartbeat
+      run: 'nohup python3 -u scripts/publish_radio_status.py --watch > "$RUNNER_TEMP/radio-status.log" 2>&1 &
+
+        echo $! > "$RUNNER_TEMP/radio-status.pid"'
+    - name: Download requested audio to R2 and checkpoint every 100 calls
+      run: python3 -u scripts/run_radio_audio.py --date "$DAY" --talkgroup "$TALKGROUP" --target-branch "$TARGET_BRANCH" --mode
+        "$MODE" --proof "$PROOF"
+    - name: Preserve publication recovery bundle on failure
+      if: failure()
+      uses: actions/upload-artifact@v4
+      with:
+        name: radio-audio-${{ matrix.talkgroup }}-${{ matrix.day }}-${{ github.run_id }}
+        path: ${{ runner.temp }}/openmhz-import.bundle
+        if-no-files-found: warn
+        retention-days: 7
+    - name: Publish final recording counts
+      run: 'if test -f "$RUNNER_TEMP/radio-status.pid"; then kill "$(cat "$RUNNER_TEMP/radio-status.pid")" 2>/dev/null ||
+        true; fi
+
+        python3 scripts/publish_radio_status.py --state "${{ job.status }}"'
+      if: always()
+      continue-on-error: true

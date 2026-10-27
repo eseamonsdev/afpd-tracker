@@ -1,0 +1,87 @@
+# Reusable radio actions
+
+Use **Download radio audio** (`radio-audio.yml`) or **Generate radio transcription
+passes** (`radio-transcribe.yml`) in GitHub Actions. Both accept:
+
+| Input | Default | Meaning |
+| --- | --- | --- |
+| `day` | Required | Mountain calendar date, `YYYY-MM-DD` |
+| `talkgroup` | `6001` | `6001`, `5922` (Law 2), or `6036` |
+| `target_branch` | `staging` | `staging` or `law-2` |
+
+The branch never selects the talkgroup. For example, `day=2026-10-24`,
+`talkgroup=5922`, `target_branch=staging` downloads Law 2 onto staging. The same
+inputs work for transcription once that branch contains the verified R2 archive.
+These actions also expose the same inputs through `workflow_call`.
+
+## Start an action without workflow-dispatch access
+
+Commit `records-pending-review/openmhz-audio-request.json` for downloads, or
+`records-pending-review/openmhz-transcription-request.json` for transcription:
+
+```json
+{
+  "day": "2026-10-24",
+  "talkgroup": 5922,
+  "target_branch": "staging",
+  "requested_at": "2026-10-27T12:00:00Z"
+}
+```
+
+Use a fresh request timestamp to trigger an explicit rerun. Legacy transcription
+requests using `date` instead of `day` still work. A request may contain `days`
+or a `requests` array for up to 32 independent jobs. Only one matrix job runs at
+a time; a failed date does not cancel the other requested dates. Do not depend
+on matrix ordering; request one date at a time when strict ordering is needed.
+
+Pushing a changed active manifest under
+`records-pending-review/openmhz-manifests/` also starts the audio action, on either
+working branch. Only the changed date/talkgroup is selected; parked manifests and
+unrelated dates are not swept into the run. Code changes alone do not download
+audio or start transcription. Completed runs do not keep processing future days.
+
+## Audio behavior
+
+Preserved metadata must already exist. The action uses the target branch's
+metadata or copies only the requested metadata file from the other working
+branch, without merging branch contents. Existing queue checkpoints resume.
+The downloader skips saved audio and known failures, fetches sequentially, waits
+two seconds after every attempt, and publishes a checkpoint every 100 calls.
+Audio goes to R2; metadata and site output go to the chosen branch.
+
+Resume is normal behavior, not a separate workflow. An explicit `mode=recover`
+request can recover known failures only when `proof` names a browser-verified
+JSON file under `records-pending-review/openmhz-queues/`. Recovery selects only
+the requested date/talkgroup and proven call IDs. Normal downloads never retry
+known failures. Publication failures preserve a Git recovery bundle.
+
+Audio jobs retain the shared `openmhz-zip-import` concurrency key to avoid
+overlapping with older runs already holding that lock. The name is retained
+for lock compatibility; no ZIP importer remains installed.
+
+## Transcription behavior
+
+The action reads checksum-verified R2 objects into temporary runner storage,
+uses the pinned original, filtered and context passes, and saves text candidates
+every ten clips under `transcription-work/TALKGROUP/YYYY-MM-DD/` on the chosen
+branch. Matching saved passes resume; changed audio/settings or identities fail.
+Temporary audio is removed after each saved batch and on exit. No audio or
+models enter Git or artifacts. It processes the actual saved archive and retains
+its source-coverage status; it does not claim missing source audio was recovered.
+
+Raw passes are not final transcripts. The daily ChatGPT task still reconciles
+every clip's three outputs, preserves user corrections and uncertainty, publishes
+to `calls.json`, regenerates exports, and removes completed text checkpoints.
+The existing daily task remains talkgroup 6001 on staging; the generic actions
+are usable for every supported branch/talkgroup combination.
+
+## Utilities and removed workflows
+
+**Publish radio recording counts** accepts a target branch and includes all
+saved talkgroups on it. **Verify AFPD R2 connection** is a repeatable storage
+diagnostic; it does not choose a date or archive destination.
+
+The Law 2 day/queue workflows, 6001-only transcription workflow, separate
+verified-recovery workflow, old manifest downloader, and scheduled ZIP importer
+were replaced or removed. ZIP import is no longer part of the unattended path;
+the old local validator remains available for historical bundles.

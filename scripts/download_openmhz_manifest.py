@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Download browser-collected Car-to-Car and Law 2 manifests directly into the radio archive."""
+"""Download browser-collected radio manifests directly into the radio archive."""
 import argparse
 import os
 import hashlib
@@ -42,8 +42,7 @@ MAX_AUDIO_BYTES = 20 * 1024 * 1024
 MAX_CALLS = 5000
 MEDIA_HOSTS = {'media.openmhz.com', 'media2.openmhz.com'}
 SCHEMA_VERSION = 1
-TALKGROUPS = {6001: ('car-to-car', 'American Fork PD Car to Car'),
-              5922: ('law-2', 'Law 2 Northeast')}
+from radio_config import TALKGROUPS
 
 
 def write_json(path, data):
@@ -374,7 +373,7 @@ def main():
     root = args.root.resolve()
     pending = sorted((root / 'records-pending-review/openmhz-manifests').glob('*.json'))
     if args.manifest:
-        if not re.fullmatch(r'\d{4}-\d{2}-\d{2}(?:-car-to-car|-law-2)?\.json', args.manifest):
+        if not re.fullmatch(r'\d{4}-\d{2}-\d{2}(?:-car-to-car|-law-2|-6036)?\.json', args.manifest):
             parser.error('--manifest must be a dated queue filename')
         pending = [source for source in pending if source.name == args.manifest]
     for source in pending:
