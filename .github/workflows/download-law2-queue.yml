@@ -91,7 +91,12 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           for day in "$FIRST" "$SECOND"; do
-            python -u scripts/collect_law2_metadata.py --date "$day"
+            source="records-pending-review/openmhz-metadata/law-2/$day/calls.json"
+            if test -f "$source"; then
+              python3 -c 'import json, sys; from pathlib import Path; sys.path.insert(0, "scripts"); from download_openmhz_manifest import validate_manifest; data = json.loads(Path(sys.argv[1]).read_text()); validate_manifest(data); assert data["date"] == sys.argv[2] and data["talkgroup"] == 5922; assert data["count"] == len(data["calls"]); print("Using preserved metadata for", sys.argv[2], "-", len(data["calls"]), "calls")' "$source" "$day"
+            else
+              python -u scripts/collect_law2_metadata.py --date "$day"
+            fi
             git add "records-pending-review/openmhz-metadata/law-2/$day"
             if ! git diff --cached --quiet; then
               git commit -m "Preserve source Law 2 metadata for $day"
