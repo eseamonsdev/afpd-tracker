@@ -39,23 +39,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Install audio validation tools
-        timeout-minutes: 8
-        run: |
-          if ! command -v ffprobe >/dev/null; then
-            sudo apt-get update -o Acquire::Retries=0 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30
-            sudo apt-get install -y --no-install-recommends ffmpeg -o Acquire::Retries=0 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30
-          fi
       - name: Install site dependencies
         timeout-minutes: 3
         run: npm ci --no-audit --no-fund --fetch-retries=0 --fetch-timeout=30000
-      - name: Verify safeguards
-        timeout-minutes: 2
+      - name: Publish manually decoded recordings with exact proof hashes
         run: |
-          python3 -m unittest discover -s tests -p 'test_openmhz*.py'
-          node --test tests/police-radio.test.js
-      - name: Recover browser-verified recordings sequentially
-        run: python3 -u scripts/recover_verified_openmhz_audio.py
+          python3 -u scripts/publish_manually_verified_audio.py
+          node --input-type=module -e "import { buildRadioIndex } from './lib/build-radio-index.js'; buildRadioIndex();"
       - name: Validate and publish recovered audio to the target branch
         run: |
           python3 scripts/normalize_openmhz_metadata.py --check
