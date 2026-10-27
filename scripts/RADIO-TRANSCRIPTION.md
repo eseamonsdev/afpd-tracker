@@ -3,6 +3,27 @@
 For other dates, talkgroups or working branches, use the [generic radio actions](../docs/radio-workflows.md). Their defaults are talkgroup 6001 and staging; these daily-task instructions retain that selection.
 
 
+## Preserve original and current transcripts
+
+Every published clip keeps both versions in `calls.json`: `transcript` is the
+current wording; `transcript_original` is the immutable first published wording.
+Use `scripts/transcript_versions.py::set_transcript` when publishing new text:
+initial publication fills both fields, and subsequent corrections change only
+`transcript`. Never replace an existing `transcript_original`, including during
+retranscription. Preserve all human verification flags, notes and metadata.
+For legacy clips without an original, recover history before correcting text;
+copying an already corrected current transcript cannot recover its original.
+Only human review may set `validated: true`; that flag applies to current text.
+
+The 6001 historical backfill searches both `calls.json` and legacy
+`transcript.md` / transcript draft files, including merge results, matching the
+actual audio filename and checking available audio hashes. It chooses the first
+nonempty retained version regardless of verification flags. These are earliest
+published transcripts, not necessarily raw ASR passes. Per-clip source commits
+and paths are recorded in `findings/6001-transcript-originals-audit.json`.
+Run `python3 scripts/backfill_transcript_originals.py` to audit; add `--write`
+to fill missing originals. Existing originals and current fields are preserved.
+
 ## Resumable Actions pipeline (owner update October 26, 2026)
 
 The owner authorized `transcription-work/6001/YYYY-MM-DD/` as temporary,

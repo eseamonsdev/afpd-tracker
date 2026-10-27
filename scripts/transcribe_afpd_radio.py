@@ -16,6 +16,7 @@ import re
 import subprocess
 from zoneinfo import ZoneInfo
 from radio_config import archive_path, valid_day, valid_talkgroup
+from transcript_versions import set_transcript
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 SETTINGS = pathlib.Path(__file__).with_name('radio-transcription-settings.json')
@@ -186,7 +187,7 @@ def finalize(args):
         flagged=not eligible(text,e['needs_review'])
         if any(p['token_cap_reached'] for p in raw['passes'].values()) and not flagged:
             raise ValueError('Token-cap affected clip must remain flagged: '+name)
-        c['transcript'] = text
+        set_transcript(c, text)
         populated += 1
         if flagged:
             uncertain_clips += 1
