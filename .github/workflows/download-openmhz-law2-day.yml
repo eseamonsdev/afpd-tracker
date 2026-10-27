@@ -1,6 +1,15 @@
 name: Download one Law 2 day
 
 on:
+  push:
+    branches: [law-2]
+    paths: ['records-pending-review/openmhz-queues/law2-day-request.json']
+  workflow_dispatch:
+    inputs:
+      day:
+        description: 'Law 2 date to download (YYYY-MM-DD); preserved metadata must exist'
+        required: true
+        type: string
   workflow_call:
     inputs:
       day:
@@ -30,6 +39,30 @@ jobs:
         with:
           ref: law-2
           fetch-depth: 0
+      - name: Resolve and validate requested date
+        id: requested
+        env:
+          REQUESTED_DAY: ${{ inputs.day }}
+          RUN_EVENT: ${{ github.event_name }}
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from datetime import date
+          from pathlib import Path
+          day = os.environ.get('REQUESTED_DAY', '').strip()
+          if not day:
+              if os.environ['RUN_EVENT'] != 'push':
+                  raise ValueError('A day input is required')
+              day = json.loads(Path('records-pending-review/openmhz-queues/law2-day-request.json').read_text())['day']
+          if date.fromisoformat(day).isoformat() != day:
+              raise ValueError('Day must use YYYY-MM-DD format')
+          source = Path('records-pending-review/openmhz-metadata/law-2') / day / 'calls.json'
+          if not source.is_file():
+              raise ValueError(f'No preserved Law 2 metadata for {day}')
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              output.write('day=' + day + '\n')
+          print('Requested Law 2 audio date:', day, flush=True)
+          PY
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -54,11 +87,11 @@ jobs:
           node --test tests/police-radio.test.js
       - name: Prepare this day's remaining calls
         env:
-          DAY: ${{ inputs.day }}
+          DAY: ${{ steps.requested.outputs.day }}
         run: python3 scripts/prepare_law2_day.py --date "$DAY"
       - name: Download this day sequentially and save every 100 calls
         env:
-          DAY: ${{ inputs.day }}
+          DAY: ${{ steps.requested.outputs.day }}
         run: |
           set -euo pipefail
           manifest="$DAY-law-2.json"
@@ -74,7 +107,7 @@ jobs:
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: law2-${{ inputs.day }}-recovery-${{ github.run_id }}
+          name: law2-${{ steps.requested.outputs.day }}-recovery-${{ github.run_id }}
           path: ${{ runner.temp }}/openmhz-import.bundle
           if-no-files-found: warn
           retention-days: 7
