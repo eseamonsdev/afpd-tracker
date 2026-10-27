@@ -2,7 +2,7 @@ name: Import OpenMHz ZIPs
 
 on:
   push:
-    branches: [staging, main, setup-openmhz-zip-import]
+    branches: [staging, main]
     paths:
       - 'records-pending-review/openmhz-afpd-car-to-car-*.zip'
       - 'records-pending-review/openmhz-afpd-law-2-*.zip'
@@ -33,9 +33,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          # Always consume the latest staging uploads. The setup branch bootstraps
-          # this permanent workflow and is included in its first import PR.
-          ref: ${{ github.ref_name == 'setup-openmhz-zip-import' && 'setup-openmhz-zip-import' || 'staging' }}
+          # Always consume the latest staging uploads.
+          ref: staging
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
