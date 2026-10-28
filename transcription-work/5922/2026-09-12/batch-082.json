@@ -1,0 +1,681 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-12",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1789257957.m4a": {
+      "index": 811,
+      "epoch": 1789257957,
+      "sha256": "82feb470d04e775ead93b719f85954659acc7e6bd3da297e850c2630cd73e309",
+      "passes": {
+        "original": {
+          "text": "Okay, perfect. Ah, ah, ah, ah.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Okay, perfect.",
+              "avg_logprob": -0.7992431416231043,
+              "no_speech_prob": 0.16678768396377563,
+              "compression_ratio": 1.0
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Ah, ah, ah, ah.",
+              "avg_logprob": -0.7992431416231043,
+              "no_speech_prob": 0.16678768396377563,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It's perfect. Ah, ah.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " It's perfect.",
+              "avg_logprob": -0.8617090812096229,
+              "no_speech_prob": 0.25884249806404114,
+              "compression_ratio": 0.7241379310344828
+            },
+            {
+              "start": 1.0,
+              "end": 1.5,
+              "text": " Ah, ah.",
+              "avg_logprob": -0.8617090812096229,
+              "no_speech_prob": 0.25884249806404114,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "context": {
+          "text": "Okay, perfect.",
+          "prompt": "I'm going to be in out to the ER.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Okay, perfect.",
+              "avg_logprob": -0.8473023687090192,
+              "no_speech_prob": 0.27873656153678894,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789257959.m4a": {
+      "index": 812,
+      "epoch": 1789257959,
+      "sha256": "3f8069ce14ae17598b526588ee62fbaccb63fe26cf250e716e13c684489aee22",
+      "passes": {
+        "original": {
+          "text": "7J27, I copied you to add you to the hit and run.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2,
+              "text": " 7J27, I copied you to add you to the hit and run.",
+              "avg_logprob": -0.3851472296212849,
+              "no_speech_prob": 0.040523651987314224,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7j27 I copy gimme to add you to the hit and run",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.08,
+              "text": " 7j27 I copy gimme to add you to the hit and run",
+              "avg_logprob": -0.43997262653551605,
+              "no_speech_prob": 0.0451662503182888,
+              "compression_ratio": 0.9038461538461539
+            }
+          ]
+        },
+        "context": {
+          "text": "7J27, I copied you to add you to the hit and run.",
+          "prompt": "I'm going to be in out to the ER. Okay, perfect. Ah, ah, ah, ah.",
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2,
+              "text": " 7J27, I copied you to add you to the hit and run.",
+              "avg_logprob": -0.3629264549205178,
+              "no_speech_prob": 0.07552638649940491,
+              "compression_ratio": 1.0
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789258095.m4a": {
+      "index": 813,
+      "epoch": 1789258095,
+      "sha256": "69805f278a65ea1b6fcd8b35380d8496aaff7a6b700a1afdfe8db0d871301918",
+      "passes": {
+        "original": {
+          "text": "5J11 Central.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J11 Central.",
+              "avg_logprob": -0.5057338401675224,
+              "no_speech_prob": 0.020979302003979683,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Find J-11 Central.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Find J-11 Central.",
+              "avg_logprob": -0.6472041341993544,
+              "no_speech_prob": 0.011856934987008572,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "context": {
+          "text": "5J11 Central.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J11 Central.",
+              "avg_logprob": -0.5057338401675224,
+              "no_speech_prob": 0.020979302003979683,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789258101.m4a": {
+      "index": 814,
+      "epoch": 1789258101,
+      "sha256": "9ed37c0cb44e4f46b47123277891d3813e3afa0f38359dad2358e5618699d484",
+      "passes": {
+        "original": {
+          "text": "Oh, I was just kidding. I was just getting a device. We've just got a DV, but it's by 1021.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 30,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Oh, I was just kidding. I was just getting a device. We've just got a DV, but it's by 1021.",
+              "avg_logprob": -0.5583538355365876,
+              "no_speech_prob": 0.026755647733807564,
+              "compression_ratio": 1.123456790123457
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It's just going to vice versa. It's got a DV, but it's about 1021.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " It's just going to vice versa. It's got a DV, but it's about 1021.",
+              "avg_logprob": -0.582908441623052,
+              "no_speech_prob": 0.036441683769226074,
+              "compression_ratio": 0.9705882352941176
+            }
+          ]
+        },
+        "context": {
+          "text": "Hi, I was just kidding. I was just getting a device. We've just got a DV, but it's by 1021.",
+          "prompt": "5J11 Central.",
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 30,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.4,
+              "text": " Hi, I was just kidding. I was just getting a device. We've just got a DV, but it's by 1021.",
+              "avg_logprob": -0.5322798221342026,
+              "no_speech_prob": 0.050774961709976196,
+              "compression_ratio": 1.123456790123457
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789258109.m4a": {
+      "index": 815,
+      "epoch": 1789258109,
+      "sha256": "cacf4a664e350a5ef8ffffa79a7bea502d3cc82d03e0df47308b3e945f369288",
+      "passes": {
+        "original": {
+          "text": "Coming",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Coming",
+              "avg_logprob": -0.9122219681739807,
+              "no_speech_prob": 0.041747741401195526,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Coming",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Coming",
+              "avg_logprob": -0.8911547362804413,
+              "no_speech_prob": 0.01639447547495365,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Got me.",
+          "prompt": "5J11 Central. Oh, I was just kidding. I was just getting a device. We've just got a DV, but it's by 1021.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Got me.",
+              "avg_logprob": -0.6367594997088114,
+              "no_speech_prob": 0.026828929781913757,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789258112.m4a": {
+      "index": 816,
+      "epoch": 1789258112,
+      "sha256": "8c2638ed2199c788567e43554836ae18db3f054d5b229d3aa3907a5286b5ff78",
+      "passes": {
+        "original": {
+          "text": "Coming. 5J51 is clear.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Coming.",
+              "avg_logprob": -0.6326756660754864,
+              "no_speech_prob": 0.056063372641801834,
+              "compression_ratio": 0.7333333333333333
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " 5J51 is clear.",
+              "avg_logprob": -0.6326756660754864,
+              "no_speech_prob": 0.056063372641801834,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J51 is clear.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J51 is clear.",
+              "avg_logprob": -0.688560061984592,
+              "no_speech_prob": 0.033823031932115555,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "5J51 is clear.",
+          "prompt": "5J11 Central. Oh, I was just kidding. I was just getting a device. We've just got a DV, but it's by 1021. Coming",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.08,
+              "text": " 5J51 is clear.",
+              "avg_logprob": -0.44634972678290474,
+              "no_speech_prob": 0.011333405040204525,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789258115.m4a": {
+      "index": 817,
+      "epoch": 1789258115,
+      "sha256": "cdab462a6c5e39662cdbbbd1ff7f1d8868a6d29c3f6ff5d2d0bb69e68a7b804b",
+      "passes": {
+        "original": {
+          "text": "Thank you. Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.2925296425819397,
+              "no_speech_prob": 0.0020696090068668127,
+              "compression_ratio": 1.9545454545454546
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.2925296425819397,
+              "no_speech_prob": 0.0020696090068668127,
+              "compression_ratio": 1.9545454545454546
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.2925296425819397,
+              "no_speech_prob": 0.0020696090068668127,
+              "compression_ratio": 1.9545454545454546
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you for tuning in, Abby.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you for tuning in, Abby.",
+              "avg_logprob": -0.561148849400607,
+              "no_speech_prob": 0.003603039076551795,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you. Thank you. Thank you. Thank you.",
+          "prompt": "Oh, I was just kidding. I was just getting a device. We've just got a DV, but it's by 1021. Coming Coming. 5J51 is clear.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.28,
+              "text": " Thank you. Thank you. Thank you. Thank you.",
+              "avg_logprob": -0.5497086473873684,
+              "no_speech_prob": 0.020287247374653816,
+              "compression_ratio": 1.9545454545454546
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789258120.m4a": {
+      "index": 818,
+      "epoch": 1789258120,
+      "sha256": "716979e42993b9f90ddfb1a89e84a6617eac6ec5e7cebcca2632b207db804d78",
+      "passes": {
+        "original": {
+          "text": "5J44 units, go for it.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J44 units, go for it.",
+              "avg_logprob": -0.5148311704397202,
+              "no_speech_prob": 0.01080437283962965,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J44 units, go for it.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J44 units, go for it.",
+              "avg_logprob": -0.607542966802915,
+              "no_speech_prob": 0.012704494409263134,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "5J44 units, go for it.",
+          "prompt": "Coming Coming. 5J51 is clear. Thank you. Thank you. Thank you.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J44 units, go for it.",
+              "avg_logprob": -0.4268605237205823,
+              "no_speech_prob": 0.04513826221227646,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789258124.m4a": {
+      "index": 819,
+      "epoch": 1789258124,
+      "sha256": "0588afa007828294cbe1bdd7b329b86e4296efe69bd4abec32bc811b2fea327c",
+      "passes": {
+        "original": {
+          "text": "Before you can suspend",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Before you can suspend",
+              "avg_logprob": -0.3028623717171805,
+              "no_speech_prob": 0.02077200450003147,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "But for you to suspend",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " But for you to suspend",
+              "avg_logprob": -0.5703740045428276,
+              "no_speech_prob": 0.025047292932868004,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Before you can suspend.",
+          "prompt": "Coming. 5J51 is clear. Thank you. Thank you. Thank you. 5J44 units, go for it.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.44,
+              "text": " Before you can suspend.",
+              "avg_logprob": -0.5766370296478271,
+              "no_speech_prob": 0.07536349445581436,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789258125.m4a": {
+      "index": 820,
+      "epoch": 1789258125,
+      "sha256": "d69b083f0420fa14ce0e2784f5185da300baa87986026484422e7b23700ad73d",
+      "passes": {
+        "original": {
+          "text": "Copy suspended, 18-0-8.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.44,
+              "text": " Copy suspended, 18-0-8.",
+              "avg_logprob": -0.7099785059690475,
+              "no_speech_prob": 0.0056471312418580055,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copies suspended 18-0-8.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.44,
+              "text": " Copies suspended 18-0-8.",
+              "avg_logprob": -1.0615490575631459,
+              "no_speech_prob": 0.005488754250109196,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "context": {
+          "text": "copy suspended 18-0-8.",
+          "prompt": "Thank you. Thank you. Thank you. 5J44 units, go for it. Before you can suspend",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.44,
+              "text": " copy suspended 18-0-8.",
+              "avg_logprob": -0.6793378699909557,
+              "no_speech_prob": 0.006983777042478323,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    }
+  }
+}
