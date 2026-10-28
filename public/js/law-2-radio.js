@@ -349,6 +349,10 @@
         button.addEventListener("click", () => {
           chooseClip(index);
         });
+        row.addEventListener("click", event => {
+          if (event.target.closest("button, a, .law2-radio-association-info")) return;
+          chooseClip(index);
+        });
         row.append(button);
         if (identity) row.append(identity);
         fragment.append(row);
