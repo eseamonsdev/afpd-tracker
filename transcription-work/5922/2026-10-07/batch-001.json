@@ -1,0 +1,641 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-07",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791352880.m4a": {
+      "index": 1,
+      "epoch": 1791352880,
+      "sha256": "ceecf697f5c05b7ee54edae2cebdf9a5548d80b500634a1624d3a75ad9b26018",
+      "passes": {
+        "original": {
+          "text": "Hey, Team United, Team 1042, have a good morning.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Hey, Team United, Team 1042, have a good morning.",
+              "avg_logprob": -0.5293220071231618,
+              "no_speech_prob": 0.034894343465566635,
+              "compression_ratio": 0.9607843137254902
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18, you're 19, 10, 42, have a good morning.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 18, you're 19, 10, 42, have a good morning.",
+              "avg_logprob": -0.628370592991511,
+              "no_speech_prob": 0.027686702087521553,
+              "compression_ratio": 0.8431372549019608
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey, Team United, Team 1042, have a good morning.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Hey, Team United, Team 1042, have a good morning.",
+              "avg_logprob": -0.5293220071231618,
+              "no_speech_prob": 0.034894343465566635,
+              "compression_ratio": 0.9607843137254902
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791352883.m4a": {
+      "index": 2,
+      "epoch": 1791352883,
+      "sha256": "89f333f50c16bf31b5c2e99587baeb3b2dde3f03bb5b592cf0d1916d86485cab",
+      "passes": {
+        "original": {
+          "text": "Wait, Engine 19 copy, you two.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Wait, Engine 19 copy, you two.",
+              "avg_logprob": -0.6773211807012558,
+              "no_speech_prob": 0.0441431887447834,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Wait, engine engine copy, you two.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Wait, engine engine copy, you two.",
+              "avg_logprob": -0.6369297405083975,
+              "no_speech_prob": 0.02214510552585125,
+              "compression_ratio": 0.9714285714285714
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey, Team Engine 19, copy you two.",
+          "prompt": "Hey, Team United, Team 1042, have a good morning.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey, Team Engine 19, copy you two.",
+              "avg_logprob": -0.6221725757305439,
+              "no_speech_prob": 0.013572019524872303,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791352887.m4a": {
+      "index": 3,
+      "epoch": 1791352887,
+      "sha256": "d7e220f4ea94d3c6931cec05d27f247aeaa8f6cbd95d0551035e08ff2dc8d232",
+      "passes": {
+        "original": {
+          "text": "18.6 in the same traffic.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18.6 in the same traffic.",
+              "avg_logprob": -0.7548689300363715,
+              "no_speech_prob": 0.03529976308345795,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18.6 in the same traffic.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.92,
+              "text": " 18.6 in the same traffic.",
+              "avg_logprob": -0.6959879398345947,
+              "no_speech_prob": 0.02113695815205574,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "context": {
+          "text": "18.6 in the same traffic.",
+          "prompt": "Hey, Team United, Team 1042, have a good morning. Wait, Engine 19 copy, you two.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18.6 in the same traffic.",
+              "avg_logprob": -0.5966160514137961,
+              "no_speech_prob": 0.006530138663947582,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791352890.m4a": {
+      "index": 4,
+      "epoch": 1791352890,
+      "sha256": "9d9e4ec973bfb9a756fcf298a8afe0c21e901a3d5e7657cf04ed7e646cbe635f",
+      "passes": {
+        "original": {
+          "text": "Make it 60",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Make it 60",
+              "avg_logprob": -0.8605340123176575,
+              "no_speech_prob": 0.0309305340051651,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you, 2016.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you, 2016.",
+              "avg_logprob": -0.9077898859977722,
+              "no_speech_prob": 0.0783756747841835,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey, Team 2016.",
+          "prompt": "Hey, Team United, Team 1042, have a good morning. Wait, Engine 19 copy, you two. 18.6 in the same traffic.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.44,
+              "text": " Hey, Team 2016.",
+              "avg_logprob": -0.5974209979176521,
+              "no_speech_prob": 0.009893354959785938,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791353042.m4a": {
+      "index": 5,
+      "epoch": 1791353042,
+      "sha256": "2a28fdb697df543b0fdb39fdfe82ecd209cde1f74ad1447b3c27fcf15f013c58",
+      "passes": {
+        "original": {
+          "text": "7-0-20, happy loud noise.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7-0-20, happy loud noise.",
+              "avg_logprob": -0.7336490337665265,
+              "no_speech_prob": 0.06385451555252075,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "filtered": {
+          "text": "70 to 28, happy loud noise.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 70 to 28, happy loud noise.",
+              "avg_logprob": -0.7385809855027632,
+              "no_speech_prob": 0.08274076879024506,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        },
+        "context": {
+          "text": "7-0-20, happy loud noise.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7-0-20, happy loud noise.",
+              "avg_logprob": -0.7336490337665265,
+              "no_speech_prob": 0.06385451555252075,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791353048.m4a": {
+      "index": 6,
+      "epoch": 1791353048,
+      "sha256": "8ea569ea5a07deea38acc09e582bbf00781afd595e4aec0ca696d07b4e7093bb",
+      "passes": {
+        "original": {
+          "text": "7G28",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7G28",
+              "avg_logprob": -0.5750772356987,
+              "no_speech_prob": 0.05701394006609917,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7G28",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7G28",
+              "avg_logprob": -0.6631111105283102,
+              "no_speech_prob": 0.06863772124052048,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "7-0-20.",
+          "prompt": "7-0-20, happy loud noise.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-0-20.",
+              "avg_logprob": -0.4754435221354167,
+              "no_speech_prob": 0.032400161027908325,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791353051.m4a": {
+      "index": 7,
+      "epoch": 1791353051,
+      "sha256": "23e518ae46597b41c9a5f944a709b2a8d579767ebed1671501613ed7ba8a2a22",
+      "passes": {
+        "original": {
+          "text": "Getting a complaint, 1005 South Main construction going on, a loader being run.",
+          "prompt": null,
+          "duration_seconds": 8.064,
+          "token_limit": 89,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Getting a complaint, 1005 South Main construction going on, a loader being run.",
+              "avg_logprob": -0.4612619265913963,
+              "no_speech_prob": 0.012165885418653488,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Getting a complaint, 1005 South Main construction going on, a loader being run.",
+          "prompt": null,
+          "duration_seconds": 8.064,
+          "token_limit": 89,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " Getting a complaint, 1005 South Main construction going on, a loader being run.",
+              "avg_logprob": -0.4971306324005127,
+              "no_speech_prob": 0.010782857425510883,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "Getting a complaint, 1005 South Main, construction going on, a loader being run.",
+          "prompt": "7-0-20, happy loud noise. 7G28",
+          "duration_seconds": 8.064,
+          "token_limit": 89,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.5200000000000005,
+              "text": " Getting a complaint, 1005 South Main, construction going on, a loader being run.",
+              "avg_logprob": -0.42855609030950637,
+              "no_speech_prob": 0.0205086637288332,
+              "compression_ratio": 1.0
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791353060.m4a": {
+      "index": 8,
+      "epoch": 1791353060,
+      "sha256": "009dba681a7909a127c4d50d5567b27cea177fbdfdb7eeec8dfb427af6e9a392",
+      "passes": {
+        "original": {
+          "text": "7-3-25, I couched that out, and then I'll be in right over there.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.5,
+              "text": " 7-3-25, I couched that out, and then I'll be in right over there.",
+              "avg_logprob": -0.7724431800842285,
+              "no_speech_prob": 0.02590981312096119,
+              "compression_ratio": 0.9701492537313433
+            }
+          ]
+        },
+        "filtered": {
+          "text": "70 to 25, I copy, I copy, I copy, I copy, I copy, I copy.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 70 to 25, I copy, I copy, I copy, I copy, I copy, I copy.",
+              "avg_logprob": -0.77095064163208,
+              "no_speech_prob": 0.09691997617483139,
+              "compression_ratio": 2.111111111111111
+            }
+          ]
+        },
+        "context": {
+          "text": "7-0-25, I copy that loud noise, I'll be in right over there.",
+          "prompt": "7-0-20, happy loud noise. 7G28 Getting a complaint, 1005 South Main construction going on, a loader being run.",
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.5,
+              "text": " 7-0-25, I copy that loud noise, I'll be in right over there.",
+              "avg_logprob": -0.5343851162039716,
+              "no_speech_prob": 0.008675227873027325,
+              "compression_ratio": 0.9090909090909091
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791353065.m4a": {
+      "index": 9,
+      "epoch": 1791353065,
+      "sha256": "0516a46feee8fd009c7f5d57261e77e22711d59e398481af275421849393e05d",
+      "passes": {
+        "original": {
+          "text": "Twenty-five copy.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Twenty-five copy.",
+              "avg_logprob": -0.6041104346513748,
+              "no_speech_prob": 0.06616141647100449,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Twenty-five coffee.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Twenty-five coffee.",
+              "avg_logprob": -0.6832380071282387,
+              "no_speech_prob": 0.03981407731771469,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "25 copy.",
+          "prompt": "7G28 Getting a complaint, 1005 South Main construction going on, a loader being run. 7-3-25, I couched that out, and then I'll be in right over there.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.56,
+              "text": " 25 copy.",
+              "avg_logprob": -0.6983132163683573,
+              "no_speech_prob": 0.03136876970529556,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791353076.m4a": {
+      "index": 10,
+      "epoch": 1791353076,
+      "sha256": "f8981b99a4ca852dbf1df7285fcacdf09a1bb25f78d15c4b5edeeece10601cb0",
+      "passes": {
+        "original": {
+          "text": "Oh, you must copy a cancel ETL off your mobile.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " Oh, you must copy a cancel ETL off your mobile.",
+              "avg_logprob": -0.5425748415291309,
+              "no_speech_prob": 0.007883219048380852,
+              "compression_ratio": 0.8867924528301887
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Oh, you must copy a cancel ETL off your mobile.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " Oh, you must copy a cancel ETL off your mobile.",
+              "avg_logprob": -0.7099706120789051,
+              "no_speech_prob": 0.010968217626214027,
+              "compression_ratio": 0.8867924528301887
+            }
+          ]
+        },
+        "context": {
+          "text": "Oh, you must copy a cancel ETL off your mobile.",
+          "prompt": "Getting a complaint, 1005 South Main construction going on, a loader being run. 7-3-25, I couched that out, and then I'll be in right over there. Twenty-five copy.",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.4,
+              "text": " Oh, you must copy a cancel ETL off your mobile.",
+              "avg_logprob": -0.5708332546055317,
+              "no_speech_prob": 0.005719193257391453,
+              "compression_ratio": 0.8867924528301887
+            }
+          ]
+        }
+      }
+    }
+  }
+}
