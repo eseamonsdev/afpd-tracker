@@ -1,0 +1,689 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-04",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791097283.m4a": {
+      "index": 81,
+      "epoch": 1791097283,
+      "sha256": "7c68bac29a6c1ad585c4b488b85dbda9f90aa27633e012d89c361d522da01a49",
+      "passes": {
+        "original": {
+          "text": "I'll be in the In-N-Out parking lot on local Hotel 428 Bravo Bravo.",
+          "prompt": null,
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.12,
+              "text": " I'll be in the In-N-Out parking lot on local Hotel 428 Bravo Bravo.",
+              "avg_logprob": -0.2429013807665218,
+              "no_speech_prob": 0.023726200684905052,
+              "compression_ratio": 0.9710144927536232
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'll be in the In-N-Out parking lot on local Hotel 428 Bravo Bravo",
+          "prompt": null,
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.1000000000000005,
+              "text": " I'll be in the In-N-Out parking lot on local Hotel 428 Bravo Bravo",
+              "avg_logprob": -0.25564883436475483,
+              "no_speech_prob": 0.03015807457268238,
+              "compression_ratio": 0.9705882352941176
+            }
+          ]
+        },
+        "context": {
+          "text": "I'll be in the In-N-Out parking lot on local Hotel 428 Bravo Bravo.",
+          "prompt": "5J37 chocolate Go ahead.",
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.12,
+              "text": " I'll be in the In-N-Out parking lot on local Hotel 428 Bravo Bravo.",
+              "avg_logprob": -0.2591512311588634,
+              "no_speech_prob": 0.010594219900667667,
+              "compression_ratio": 0.9710144927536232
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791097291.m4a": {
+      "index": 82,
+      "epoch": 1791097291,
+      "sha256": "52a8ba2f0d8ba92e22237b450e1aad1d2cfbe73a047706ccd84300fe88737c73",
+      "passes": {
+        "original": {
+          "text": "Sorry, confirming which parking lot.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Sorry, confirming which parking lot.",
+              "avg_logprob": -0.6124711632728577,
+              "no_speech_prob": 0.037140704691410065,
+              "compression_ratio": 0.8780487804878049
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Sorry, confirming which parking lot.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Sorry, confirming which parking lot.",
+              "avg_logprob": -0.5845375120639801,
+              "no_speech_prob": 0.03427577763795853,
+              "compression_ratio": 0.8780487804878049
+            }
+          ]
+        },
+        "context": {
+          "text": "Sorry, I come from English parking lot.",
+          "prompt": "5J37 chocolate Go ahead. I'll be in the In-N-Out parking lot on local Hotel 428 Bravo Bravo.",
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Sorry, I come from English parking lot.",
+              "avg_logprob": -0.5739337454239527,
+              "no_speech_prob": 0.021386772394180298,
+              "compression_ratio": 0.8297872340425532
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791097294.m4a": {
+      "index": 83,
+      "epoch": 1791097294,
+      "sha256": "dbd1dadb81ccb18661680bd9378dd721c1d8ddedd564eb8436c97126e08cfee2",
+      "passes": {
+        "original": {
+          "text": "In and out.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " In and out.",
+              "avg_logprob": -0.4873541593551636,
+              "no_speech_prob": 0.04335933178663254,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "In and out.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " In and out.",
+              "avg_logprob": -0.5362135342189244,
+              "no_speech_prob": 0.047205887734889984,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "In-N-Out.",
+          "prompt": "Go ahead. I'll be in the In-N-Out parking lot on local Hotel 428 Bravo Bravo. Sorry, confirming which parking lot.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " In-N-Out.",
+              "avg_logprob": -0.3339745733473036,
+              "no_speech_prob": 0.03398904204368591,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791097296.m4a": {
+      "index": 84,
+      "epoch": 1791097296,
+      "sha256": "eccff02371d2837aaeea60c7a73ce88f31fb52bf29b274875bade16d5f422384",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6710159778594971,
+              "no_speech_prob": 0.020151160657405853,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.509211078286171,
+              "no_speech_prob": 0.018272658810019493,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "I'll be in the In-N-Out parking lot on local Hotel 428 Bravo Bravo. Sorry, confirming which parking lot. In and out.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.4113131046295166,
+              "no_speech_prob": 0.009204085916280746,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791097613.m4a": {
+      "index": 85,
+      "epoch": 1791097613,
+      "sha256": "600751d2ca9d9103b2554b0122072b9a3346b1322c0ebba3fd548680b8c585c5",
+      "passes": {
+        "original": {
+          "text": "5J37, code 4.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J37, code 4.",
+              "avg_logprob": -0.4359962403774261,
+              "no_speech_prob": 0.03212963789701462,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J37, code 4.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J37, code 4.",
+              "avg_logprob": -0.4849061071872711,
+              "no_speech_prob": 0.04103722795844078,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "5J37, code 4.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J37, code 4.",
+              "avg_logprob": -0.4359962403774261,
+              "no_speech_prob": 0.03212963789701462,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791097616.m4a": {
+      "index": 86,
+      "epoch": 1791097616,
+      "sha256": "3480efcf698a60ef84e4580fd2180fb85aa8029161ad47dab85cb4708571a77c",
+      "passes": {
+        "original": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.500077486038208,
+              "no_speech_prob": 0.033797577023506165,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.5702689034598214,
+              "no_speech_prob": 0.07479499280452728,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Code 4.",
+          "prompt": "5J37, code 4.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Code 4.",
+              "avg_logprob": -0.5579357345898946,
+              "no_speech_prob": 0.028008723631501198,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791097618.m4a": {
+      "index": 87,
+      "epoch": 1791097618,
+      "sha256": "5de0d97b6cffef90e8de562fc82b1c67e4eeaad0ad444a96cd847f29d6badc8c",
+      "passes": {
+        "original": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.5806746482849121,
+              "no_speech_prob": 0.028572091832756996,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.5162087827920914,
+              "no_speech_prob": 0.017521347850561142,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "5J37, code 4. Go for it.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.4233852863311768,
+              "no_speech_prob": 0.014647550880908966,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791097716.m4a": {
+      "index": 88,
+      "epoch": 1791097716,
+      "sha256": "f5976d59369e1c66b24fa9e3943d6085d1f30a22c87913a266ae3c4bfd6544b8",
+      "passes": {
+        "original": {
+          "text": "18J23, copy the commercial arm.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 18J23, copy the commercial arm.",
+              "avg_logprob": -0.735566054781278,
+              "no_speech_prob": 0.007766977418214083,
+              "compression_ratio": 0.8378378378378378
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18J23, complete commercial alarm.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.5200000000000005,
+              "text": " 18J23, complete commercial alarm.",
+              "avg_logprob": -0.8432529731230303,
+              "no_speech_prob": 0.007355718873441219,
+              "compression_ratio": 0.868421052631579
+            }
+          ]
+        },
+        "context": {
+          "text": "18J23, copy the commercial arm.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 18J23, copy the commercial arm.",
+              "avg_logprob": -0.735566054781278,
+              "no_speech_prob": 0.007766977418214083,
+              "compression_ratio": 0.8378378378378378
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791097721.m4a": {
+      "index": 89,
+      "epoch": 1791097721,
+      "sha256": "326c225940c53852b47a3084e91c58e80d02c2e426c3b24859f97026aa38f176",
+      "passes": {
+        "original": {
+          "text": "Copy, 9778 North Oakbrook Drive, 9778 North Oakbrook Drive. Set the young family dental through a lobby motion. Responsible is pending.",
+          "prompt": null,
+          "duration_seconds": 13.824,
+          "token_limit": 135,
+          "token_count": 37,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Copy, 9778 North Oakbrook Drive, 9778 North Oakbrook Drive.",
+              "avg_logprob": -0.37218755013064336,
+              "no_speech_prob": 0.006981889717280865,
+              "compression_ratio": 1.2857142857142858
+            },
+            {
+              "start": 7.0,
+              "end": 11.0,
+              "text": " Set the young family dental through a lobby motion.",
+              "avg_logprob": -0.37218755013064336,
+              "no_speech_prob": 0.006981889717280865,
+              "compression_ratio": 1.2857142857142858
+            },
+            {
+              "start": 11.0,
+              "end": 13.0,
+              "text": " Responsible is pending.",
+              "avg_logprob": -0.37218755013064336,
+              "no_speech_prob": 0.006981889717280865,
+              "compression_ratio": 1.2857142857142858
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy, 9778 North Oakbrook Drive, 9778 North Oakbrook Drive. Select a young family dental for a lobby motion. Responsible is pending.",
+          "prompt": null,
+          "duration_seconds": 13.824,
+          "token_limit": 135,
+          "token_count": 37,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Copy, 9778 North Oakbrook Drive, 9778 North Oakbrook Drive.",
+              "avg_logprob": -0.41163242490668045,
+              "no_speech_prob": 0.012819059193134308,
+              "compression_ratio": 1.2692307692307692
+            },
+            {
+              "start": 7.0,
+              "end": 12.0,
+              "text": " Select a young family dental for a lobby motion.",
+              "avg_logprob": -0.41163242490668045,
+              "no_speech_prob": 0.012819059193134308,
+              "compression_ratio": 1.2692307692307692
+            },
+            {
+              "start": 12.0,
+              "end": 13.0,
+              "text": " Responsible is pending.",
+              "avg_logprob": -0.41163242490668045,
+              "no_speech_prob": 0.012819059193134308,
+              "compression_ratio": 1.2692307692307692
+            }
+          ]
+        },
+        "context": {
+          "text": "copy 9778 North Oakbrook Drive, 9778 North Oakbrook Drive, set the young family dental through a lobby motion. Responsible is pending.",
+          "prompt": "18J23, copy the commercial arm.",
+          "duration_seconds": 13.824,
+          "token_limit": 135,
+          "token_count": 36,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " copy 9778 North Oakbrook Drive, 9778 North Oakbrook Drive,",
+              "avg_logprob": -0.38241715366775925,
+              "no_speech_prob": 0.008402196690440178,
+              "compression_ratio": 1.2884615384615385
+            },
+            {
+              "start": 7.0,
+              "end": 11.0,
+              "text": " set the young family dental through a lobby motion.",
+              "avg_logprob": -0.38241715366775925,
+              "no_speech_prob": 0.008402196690440178,
+              "compression_ratio": 1.2884615384615385
+            },
+            {
+              "start": 11.0,
+              "end": 13.0,
+              "text": " Responsible is pending.",
+              "avg_logprob": -0.38241715366775925,
+              "no_speech_prob": 0.008402196690440178,
+              "compression_ratio": 1.2884615384615385
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791097933.m4a": {
+      "index": 90,
+      "epoch": 1791097933,
+      "sha256": "056bcac2109ac32c05be107173b52f6bd64583ac9fc2fa6fba3b3e920e85689f",
+      "passes": {
+        "original": {
+          "text": "5J37, code 4.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J37, code 4.",
+              "avg_logprob": -0.4986626744270325,
+              "no_speech_prob": 0.05673848092556,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G37, code 4.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G37, code 4.",
+              "avg_logprob": -0.6538515865802765,
+              "no_speech_prob": 0.037081528455019,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "5J37, code 4.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J37, code 4.",
+              "avg_logprob": -0.4986626744270325,
+              "no_speech_prob": 0.05673848092556,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    }
+  }
+}

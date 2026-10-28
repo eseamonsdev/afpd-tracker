@@ -1,18 +1,46 @@
 {
   "verified_date": "2026-10-26",
   "dates": [
-    "2026-09-27",
-    "2026-09-28"
+    "2026-09-29"
   ],
-  "note": "Retry only the two failed September 27 recordings. September 28 has no failures. Both source IDs and actual download links verified together in OpenMHz with autoplay disabled.",
+  "note": "All five source IDs and their actual Download links verified in OpenMHz interactive Call Info with autoplay off. Four distinct files downloaded manually and fully decoded using ffmpeg; independent ffprobe measurements and SHA-256 hashes recorded. Two source entries at epoch 1790744669 point to the same file. Retain all source durations and IDs.",
   "calls": [
     {
-      "id": "6ab9bba5daefd1486bf45452",
-      "media_url": "https://media2.openmhz.com/media/dcfems/5922/dcfems-5922-1790557071.m4a"
+      "id": "6abbd061daefd1486b88fb77",
+      "media_url": "https://media2.openmhz.com/media/dcfems/5922/dcfems-5922-1790693464.m4a",
+      "sha256": "83d6b5b54eee3dce48364acda25fdbcfee7e81fba11c4f79dd0943a2f9c06f4c",
+      "audio_duration_seconds": 2.176,
+      "size_bytes": 15095
     },
     {
-      "id": "6ab9db1fdaefd1486b4ddc74",
-      "media_url": "https://media2.openmhz.com/media/dcfems/5922/dcfems-5922-1790565142.m4a"
+      "id": "6abc0e18daefd1486b2bd30c",
+      "media_url": "https://media2.openmhz.com/media/dcfems/5922/dcfems-5922-1790709257.m4a",
+      "sha256": "263da920daefab48eaba51871cf5d2e27b05baa64cd64474b6362e60383ada6a",
+      "audio_duration_seconds": 7.68,
+      "size_bytes": 48335
+    },
+    {
+      "id": "6abc8080daefd1486b8da1f5",
+      "media_url": "https://media2.openmhz.com/media/dcfems/5922/dcfems-5922-1790738547.m4a",
+      "sha256": "a604f9cf5d2945c4f38fe2485f5a912fe8689bce320922a0985da8cc7b71eb7c",
+      "audio_duration_seconds": 4.48,
+      "size_bytes": 29015
+    },
+    {
+      "id": "6abc9861daefd1486bc6ddb2",
+      "media_url": "https://media2.openmhz.com/media/dcfems/5922/dcfems-5922-1790744669.m4a",
+      "sha256": "68c4390d3b9d89c45dafe4b6e309b47c9ac1ea46f782d0cf3bef397df78d0ee8",
+      "audio_duration_seconds": 11.52,
+      "size_bytes": 71535
+    },
+    {
+      "id": "6abc986cdaefd1486bc6ef6c",
+      "media_url": "https://media2.openmhz.com/media/dcfems/5922/dcfems-5922-1790744669.m4a",
+      "sha256": "68c4390d3b9d89c45dafe4b6e309b47c9ac1ea46f782d0cf3bef397df78d0ee8",
+      "audio_duration_seconds": 11.52,
+      "size_bytes": 71535
     }
-  ]
+  ],
+  "retry_note": "Publish using exact hashes, sizes, and independent full-decode measurements from manually downloaded browser files. No runner audio-tool installation needed.",
+  "manual_decode_method": "ffmpeg full decode; ffprobe duration"
 }
