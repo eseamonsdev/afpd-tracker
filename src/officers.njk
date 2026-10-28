@@ -64,17 +64,16 @@ permalink: /officers/
         the available records.
       </p>
       <div class="officer-search" hidden>
-        <label for="officer-name-search">Search officers by name or observed Agency ID</label>
-        <input id="officer-name-search" type="search" placeholder="Name, alternate name, or observed Agency ID" autocomplete="off" aria-controls="officer-directory">
+        <label for="officer-name-search">Search officers by name</label>
+        <input id="officer-name-search" type="search" placeholder="Name or alternate name" autocomplete="off" aria-controls="officer-directory">
       </div>
       <p id="officer-search-status" role="status" hidden></p>
     </div>
 
     <ul id="officer-directory" class="officer-list" aria-label="Officers" aria-describedby="officer-list-description">
       {% for officerPage in entities.byType["officer-page"] | sort(false, false, "name") %}
-        {% set observedAgencyIds = officerPage.observed_agency_ids or [] %}
         <li
-          data-search-names="{{ officerPage.name | escape }} {{ (officerPage.search_names or []) | join(' ') | escape }} {% for observation in observedAgencyIds %} {{ observation.id | escape }}{% endfor %}"
+          data-search-names="{{ officerPage.name | escape }} {{ (officerPage.search_names or []) | join(' ') | escape }}"
           data-key-records="{{ 'true' if officerPage['key-record'] == true else 'false' }}"
           data-forced-resignation="{{ 'true' if officerPage['forced-resignation'] == true else 'false' }}"
           data-employment-status="{{ officerPage['employment-status'] | escape }}"
