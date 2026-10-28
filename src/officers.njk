@@ -72,6 +72,7 @@ permalink: /officers/
 
     <ul id="officer-directory" class="officer-list" aria-label="Officers" aria-describedby="officer-list-description">
       {% for officerPage in entities.byType["officer-page"] | sort(false, false, "name") %}
+        {% set agencyId = (officerPage.agency_id or "") | trim %}
         <li
           data-search-names="{{ officerPage.name | escape }} {{ (officerPage.search_names or []) | join(' ') | escape }}"
           data-key-records="{{ 'true' if officerPage['key-record'] == true else 'false' }}"
@@ -79,7 +80,7 @@ permalink: /officers/
           data-employment-status="{{ officerPage['employment-status'] | escape }}"
         >
           <a href="{{ officerPage.url | escape }}">
-            <span>{{ (officerPage.directory_label or officerPage.name) | escape }}</span>
+            <span>{{ (officerPage.directory_label or officerPage.name) | escape }}{% if agencyId %} ({{ agencyId | escape }}){% endif %}</span>
             <span class="officer-list-arrow" aria-hidden="true">→</span>
           </a>
         </li>
