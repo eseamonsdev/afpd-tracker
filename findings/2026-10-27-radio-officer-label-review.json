@@ -392,21 +392,21 @@
       "date": "2026-09-09",
       "calls": 356,
       "transcripts_screened": 356,
-      "labels": 2,
+      "labels": 3,
       "held_ids": []
     },
     {
       "date": "2026-09-10",
       "calls": 326,
       "transcripts_screened": 326,
-      "labels": 9,
+      "labels": 10,
       "held_ids": []
     },
     {
       "date": "2026-09-11",
       "calls": 559,
       "transcripts_screened": 559,
-      "labels": 15,
+      "labels": 16,
       "held_ids": []
     },
     {
@@ -569,7 +569,7 @@
       "date": "2026-10-02",
       "calls": 224,
       "transcripts_screened": 224,
-      "labels": 9,
+      "labels": 10,
       "held_ids": [
         "14590073",
         "14590102"
@@ -579,7 +579,7 @@
       "date": "2026-10-03",
       "calls": 231,
       "transcripts_screened": 231,
-      "labels": 6,
+      "labels": 7,
       "held_ids": [
         "14580151"
       ]
@@ -588,7 +588,7 @@
       "date": "2026-10-04",
       "calls": 173,
       "transcripts_screened": 173,
-      "labels": 8,
+      "labels": 9,
       "held_ids": [
         "14590073"
       ]
@@ -649,7 +649,7 @@
       "date": "2026-10-12",
       "calls": 125,
       "transcripts_screened": 125,
-      "labels": 12,
+      "labels": 13,
       "held_ids": []
     },
     {
@@ -720,7 +720,7 @@
       "date": "2026-10-21",
       "calls": 150,
       "transcripts_screened": 150,
-      "labels": 13,
+      "labels": 14,
       "held_ids": []
     },
     {
@@ -760,7 +760,9 @@
       "calls": 113,
       "transcripts_screened": 113,
       "labels": 10,
-      "held_ids": []
+      "held_ids": [
+        "14590104"
+      ]
     }
   ],
   "candidate_reviews": [
@@ -1312,6 +1314,24 @@
       "hail": "Hawkins",
       "decision": "hold",
       "reason": "Uncertain Hawkins hail receives a connected reply on the Choates ID."
+    },
+    {
+      "date": "2026-10-03",
+      "id": "14590104",
+      "q": 19,
+      "r": 20,
+      "hail": "David",
+      "decision": "not-a-contradiction",
+      "reason": "31 seconds later, the 14590104 transmission reports a separate Auto Mall jump-start incident to another officer; it does not answer the offer addressed to David. Clear Jackie/Jacqueline exchanges on this date support the association."
+    },
+    {
+      "date": "2026-10-26",
+      "id": "14590104",
+      "q": 80,
+      "r": 81,
+      "hail": "David?",
+      "decision": "hold",
+      "reason": "Uncertain hail and ambiguous That's me reply need audio review."
     }
   ],
   "held_associations": {
@@ -1597,13 +1617,84 @@
     "2026-10-21": {},
     "2026-10-22": {},
     "2026-10-23": {},
-    "2026-10-26": {}
+    "2026-10-26": {
+      "14590104": [
+        {
+          "clips": [
+            80,
+            81
+          ],
+          "reason": "Uncertain David hail precedes That's me on 14590104; earlier David replies on 14580152 suggest possible interleaving, but audio review is required before cross-date labeling."
+        }
+      ]
+    }
   },
   "label_counts": {
-    "strong": 440,
-    "confirmed": 92,
+    "strong": 446,
+    "confirmed": 94,
     "single-day": 6
   },
   "single_day_rule": "No cross-date fallback for one-day IDs. Their supported day shows Single-day association.",
-  "conflicting_id_rule": "14590100 is labeled only on owner-confirmed September 24; 14590045 is excluded because name readings are uncertain."
+  "conflicting_id_rule": "14590100 is labeled only on owner-confirmed September 24; 14590045 is excluded because name readings are uncertain.",
+  "owner_reviews": [
+    {
+      "date": "2026-10-04",
+      "id": "14590104",
+      "name": "Jaclyn G. Strong",
+      "status": "confirmed",
+      "scope": "All 13 calls with this radio ID on this date only",
+      "evidence": [
+        "E365",
+        "E234"
+      ],
+      "clips": [
+        8,
+        9
+      ],
+      "correction": {
+        "clip": 8,
+        "original": "[Tracking/dragging unclear].",
+        "transcript": "Jackie?",
+        "validated": true
+      },
+      "basis": "Owner listening review and explicit confirmation for the day. Other clips retain their existing transcript verification flags.",
+      "source_manifest": "public/records/openmhz/openmhz-afpd-car-to-car-2026-10-04/calls.json",
+      "source_blob_before": "eaa806dc42ea27181af30458113c36feabfd6134",
+      "source_blob_after": "d1edee3c37cf4c7a361a2fcd93c7cbcf5f82ce19"
+    }
+  ],
+  "jackie_review": {
+    "radio_id": "14590104",
+    "name": "Jaclyn G. Strong",
+    "calls_by_date": {
+      "2026-09-09": 3,
+      "2026-09-10": 13,
+      "2026-09-11": 5,
+      "2026-10-02": 16,
+      "2026-10-03": 24,
+      "2026-10-04": 13,
+      "2026-10-12": 1,
+      "2026-10-21": 5,
+      "2026-10-26": 7
+    },
+    "confirmed_dates": [
+      "2026-10-03",
+      "2026-10-04"
+    ],
+    "owner_audio_confirmed_dates": [
+      "2026-10-04"
+    ],
+    "strong_dates": [
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-10-02",
+      "2026-10-12",
+      "2026-10-21"
+    ],
+    "held_dates": [
+      "2026-10-26"
+    ],
+    "method": "Reviewed all 87 target-ID call contexts across nine dates against adjacent transmissions and clear name-led exchanges. September 10 and 11 Jackie hails remain bracketed, so they do not receive current-day confirmed labels. Other undated fallbacks remain restricted to screened dates."
+  }
 }
