@@ -9,6 +9,7 @@ permalink: /police-radio-resources/
 
 {% block pageAssets %}
   <link rel="stylesheet" href="/css/police-radio-resources.css">
+  <script src="/js/police-radio-resources.js" defer></script>
 {% endblock %}
 
 {%- block content %}
@@ -21,6 +22,7 @@ permalink: /police-radio-resources/
   <nav class="radio-guide-nav" aria-label="Listening guide">
     <a href="#agency-call-signs">Call signs</a>
     <a href="#radio-language">Radio language</a>
+    <a href="#radio-agency-ids">Radio IDs and 5J identifiers</a>
     <a href="#officer-radio-ids">Names and radio IDs</a>
     <a href="#sources">Sources and downloads</a>
   </nav>
@@ -45,6 +47,38 @@ permalink: /police-radio-resources/
       {%- endfor %}
     </dl>
     <p class="radio-guide-source-links">{%- for id in resources.language.sourceIds %}{%- for source in resources.sources %}{%- if source.id == id %}<a href="#source-{{ source.id | escape }}">{{ source.title | escape }}</a>{%- endif %}{%- endfor %}{%- endfor %}</p>
+  </section>
+
+  <section class="radio-resources-section" aria-labelledby="radio-agency-ids">
+    <h2 id="radio-agency-ids">{{ resources.agencyIds.title | escape }}</h2>
+    <p class="radio-resources-description">{{ resources.agencyIds.description | escape }}</p>
+    <div class="radio-id-tabs" role="tablist" aria-label="Radio ID confirmations" hidden>
+      <button id="radio-mappings-tab" type="button" role="tab" aria-selected="true" aria-controls="radio-mappings-panel">ID table</button>
+      <button id="radio-evidence-tab" type="button" role="tab" aria-selected="false" aria-controls="radio-evidence-panel" tabindex="-1">Evidence</button>
+    </div>
+    <div id="radio-mappings-panel" aria-labelledby="radio-mappings-tab">
+      <div class="radio-guide-table-scroll" tabindex="0" role="region" aria-label="Radio IDs and 5J identifiers">
+        <table class="radio-guide-table radio-id-table">
+          <caption>Radio ID to agency ID pairings; missing details are marked Not supplied</caption>
+          <thead><tr><th scope="col">Radio ID</th><th scope="col">Agency ID (5J)</th><th scope="col">Dates heard on Law 2</th></tr></thead>
+          <tbody>{%- for entry in resources.agencyIds.entries %}
+            <tr><th scope="row"><code>{{ entry.radioId | escape }}</code></th><td><code>{{ entry.agencyId | escape }}</code></td><td>{% if not entry.dates.length %}Not supplied{% endif %}{%- for date in entry.dates %}<time datetime="{{ date }}">{{ date }}</time>{% if not loop.last %}, {% endif %}{%- endfor %}</td></tr>
+          {%- endfor %}</tbody>
+        </table>
+      </div>
+    </div>
+    <div id="radio-evidence-panel" aria-labelledby="radio-evidence-tab">
+      <div class="radio-guide-table-scroll" tabindex="0" role="region" aria-label="Law 2 confirmation evidence">
+        <table class="radio-guide-table radio-id-table">
+          <caption>Evidence: owner listening confirmations, one row per date heard. Exact clip timestamps were not supplied.</caption>
+          <thead><tr><th scope="col">Radio ID</th><th scope="col">Agency ID (5J)</th><th scope="col">Date heard</th><th scope="col">Channel</th><th scope="col">Evidence</th></tr></thead>
+          <tbody>{%- for entry in resources.agencyIds.evidence %}
+            <tr><th scope="row"><code>{{ entry.radioId | escape }}</code></th><td><code>{{ entry.agencyId | escape }}</code></td><td>{% if entry.date %}<a href="{{ entry.url | escape }}">{{ entry.date | escape }}</a>{% else %}Not supplied{% endif %}</td><td>{{ entry.talkgroup | escape }}</td><td>{{ entry.basis | escape }}</td></tr>
+          {%- endfor %}</tbody>
+        </table>
+      </div>
+    </div>
+    <p class="radio-guide-source-links"><a href="/records/openmhz/afpd-radio-agency-ids.xlsx" download>Download IDs and Evidence (.xlsx)</a><a href="/records/openmhz/afpd-radio-agency-ids.csv" download>Download ID table (.csv)</a></p>
   </section>
 
   <section class="radio-resources-section" aria-labelledby="officer-radio-ids">

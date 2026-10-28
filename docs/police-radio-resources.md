@@ -32,3 +32,20 @@ September 9–October 22, 2026 snapshot, not an automatically refreshed report.
 Preserve its coverage and attribution qualifications when replacing it.
 
 Run `make build` to regenerate the page, Police Radio link, and sitemap.
+
+## IDs-only agency mapping
+
+`agencyIds` stores explicit Law 2 listening confirmations independently of the
+name associations. Each row contains a numeric radio ID, a 5J agency ID, and
+the dates heard. Its `evidence` list has one row per confirmation date. Do not
+copy names, document-derived matches, speculative transcript leads, or chat
+dates into this dataset. The initial pairings retain the owner-confirmed
+dates already recorded in the helper notes, plus 14590045 / 5J51 on October 2. The owner also confirms
+14580151 / 5J53, with its hearing date not supplied; 14590237 / 5J49 is
+confirmed for September 27. Radio 14590247 has September 27 supplied but its
+5J identifier remains marked Not supplied pending clarification.
+
+The page renders ID table and Evidence tabs. Both tables remain readable without
+JavaScript. The downloadable `afpd-radio-agency-ids.xlsx` has matching ID table
+and Evidence sheets; the CSV contains the mapping table. Keep these exports
+aligned with `agencyIds` when adding confirmations.

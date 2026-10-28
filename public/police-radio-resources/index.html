@@ -36,6 +36,7 @@
   <link rel="stylesheet" href="/css/header.css">
 
   <link rel="stylesheet" href="/css/police-radio-resources.css">
+  <script src="/js/police-radio-resources.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -78,6 +79,7 @@
   <nav class="radio-guide-nav" aria-label="Listening guide">
     <a href="#agency-call-signs">Call signs</a>
     <a href="#radio-language">Radio language</a>
+    <a href="#radio-agency-ids">Radio IDs and 5J identifiers</a>
     <a href="#officer-radio-ids">Names and radio IDs</a>
     <a href="#sources">Sources and downloads</a>
   </nav>
@@ -110,6 +112,54 @@
         <div><dt>Car-to-car</dt><dd>Officer-to-officer radio conversation. <span>The archive on this site covers AFPD’s car-to-car talkgroup, 6001.</span></dd></div>
     </dl>
     <p class="radio-guide-source-links"><a href="#source-radio-codes">Radio code meanings</a><a href="#source-radio-glossary">Common radio abbreviations</a></p>
+  </section>
+
+  <section class="radio-resources-section" aria-labelledby="radio-agency-ids">
+    <h2 id="radio-agency-ids">Radio IDs and 5J identifiers</h2>
+    <p class="radio-resources-description">IDs-only pairings confirmed by owner listening on Law 2 (5922). Evidence dates are the dates heard, not the dates the confirmations were added. Each confirmation applies to its listed date.</p>
+    <div class="radio-id-tabs" role="tablist" aria-label="Radio ID confirmations" hidden>
+      <button id="radio-mappings-tab" type="button" role="tab" aria-selected="true" aria-controls="radio-mappings-panel">ID table</button>
+      <button id="radio-evidence-tab" type="button" role="tab" aria-selected="false" aria-controls="radio-evidence-panel" tabindex="-1">Evidence</button>
+    </div>
+    <div id="radio-mappings-panel" aria-labelledby="radio-mappings-tab">
+      <div class="radio-guide-table-scroll" tabindex="0" role="region" aria-label="Radio IDs and 5J identifiers">
+        <table class="radio-guide-table radio-id-table">
+          <caption>Radio ID to agency ID pairings; missing details are marked Not supplied</caption>
+          <thead><tr><th scope="col">Radio ID</th><th scope="col">Agency ID (5J)</th><th scope="col">Dates heard on Law 2</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><code>14580151</code></th><td><code>5J53</code></td><td>Not supplied</td></tr>
+            <tr><th scope="row"><code>14580155</code></th><td><code>5J44</code></td><td><time datetime="2026-09-12">2026-09-12</time>, <time datetime="2026-09-28">2026-09-28</time>, <time datetime="2026-10-20">2026-10-20</time></td></tr>
+            <tr><th scope="row"><code>14590038</code></th><td><code>5J45</code></td><td><time datetime="2026-09-27">2026-09-27</time>, <time datetime="2026-10-01">2026-10-01</time></td></tr>
+            <tr><th scope="row"><code>14590044</code></th><td><code>5J42</code></td><td><time datetime="2026-09-13">2026-09-13</time>, <time datetime="2026-09-27">2026-09-27</time>, <time datetime="2026-10-01">2026-10-01</time>, <time datetime="2026-10-02">2026-10-02</time></td></tr>
+            <tr><th scope="row"><code>14590045</code></th><td><code>5J51</code></td><td><time datetime="2026-10-02">2026-10-02</time></td></tr>
+            <tr><th scope="row"><code>14590237</code></th><td><code>5J49</code></td><td><time datetime="2026-09-27">2026-09-27</time></td></tr>
+            <tr><th scope="row"><code>14590247</code></th><td><code>Not supplied</code></td><td><time datetime="2026-09-27">2026-09-27</time></td></tr></tbody>
+        </table>
+      </div>
+    </div>
+    <div id="radio-evidence-panel" aria-labelledby="radio-evidence-tab">
+      <div class="radio-guide-table-scroll" tabindex="0" role="region" aria-label="Law 2 confirmation evidence">
+        <table class="radio-guide-table radio-id-table">
+          <caption>Evidence: owner listening confirmations, one row per date heard. Exact clip timestamps were not supplied.</caption>
+          <thead><tr><th scope="col">Radio ID</th><th scope="col">Agency ID (5J)</th><th scope="col">Date heard</th><th scope="col">Channel</th><th scope="col">Evidence</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><code>14580151</code></th><td><code>5J53</code></td><td>Not supplied</td><td>Law 2 (5922)</td><td>Owner confirmation; date not supplied</td></tr>
+            <tr><th scope="row"><code>14580155</code></th><td><code>5J44</code></td><td><a href="/law-2-radio/?date=2026-09-12">2026-09-12</a></td><td>Law 2 (5922)</td><td>Owner listening confirmation</td></tr>
+            <tr><th scope="row"><code>14580155</code></th><td><code>5J44</code></td><td><a href="/law-2-radio/?date=2026-09-28">2026-09-28</a></td><td>Law 2 (5922)</td><td>Owner listening confirmation</td></tr>
+            <tr><th scope="row"><code>14580155</code></th><td><code>5J44</code></td><td><a href="/law-2-radio/?date=2026-10-20">2026-10-20</a></td><td>Law 2 (5922)</td><td>Owner listening confirmation</td></tr>
+            <tr><th scope="row"><code>14590038</code></th><td><code>5J45</code></td><td><a href="/law-2-radio/?date=2026-09-27">2026-09-27</a></td><td>Law 2 (5922)</td><td>Owner listening confirmation</td></tr>
+            <tr><th scope="row"><code>14590038</code></th><td><code>5J45</code></td><td><a href="/law-2-radio/?date=2026-10-01">2026-10-01</a></td><td>Law 2 (5922)</td><td>Owner listening confirmation</td></tr>
+            <tr><th scope="row"><code>14590044</code></th><td><code>5J42</code></td><td><a href="/law-2-radio/?date=2026-09-13">2026-09-13</a></td><td>Law 2 (5922)</td><td>Owner listening confirmation</td></tr>
+            <tr><th scope="row"><code>14590044</code></th><td><code>5J42</code></td><td><a href="/law-2-radio/?date=2026-09-27">2026-09-27</a></td><td>Law 2 (5922)</td><td>Owner listening confirmation</td></tr>
+            <tr><th scope="row"><code>14590044</code></th><td><code>5J42</code></td><td><a href="/law-2-radio/?date=2026-10-01">2026-10-01</a></td><td>Law 2 (5922)</td><td>Owner listening confirmation</td></tr>
+            <tr><th scope="row"><code>14590044</code></th><td><code>5J42</code></td><td><a href="/law-2-radio/?date=2026-10-02">2026-10-02</a></td><td>Law 2 (5922)</td><td>Owner listening confirmation</td></tr>
+            <tr><th scope="row"><code>14590045</code></th><td><code>5J51</code></td><td><a href="/law-2-radio/?date=2026-10-02">2026-10-02</a></td><td>Law 2 (5922)</td><td>Owner listening confirmation</td></tr>
+            <tr><th scope="row"><code>14590237</code></th><td><code>5J49</code></td><td><a href="/law-2-radio/?date=2026-09-27">2026-09-27</a></td><td>Law 2 (5922)</td><td>Owner listening confirmation</td></tr>
+            <tr><th scope="row"><code>14590247</code></th><td><code>Not supplied</code></td><td><a href="/law-2-radio/?date=2026-09-27">2026-09-27</a></td><td>Law 2 (5922)</td><td>Owner supplied date; 5J identifier not supplied</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+    <p class="radio-guide-source-links"><a href="/records/openmhz/afpd-radio-agency-ids.xlsx" download>Download IDs and Evidence (.xlsx)</a><a href="/records/openmhz/afpd-radio-agency-ids.csv" download>Download ID table (.csv)</a></p>
   </section>
 
   <section class="radio-resources-section" aria-labelledby="officer-radio-ids">
