@@ -38,7 +38,7 @@ class RequestTests(unittest.TestCase):
     def test_default_and_every_branch_talkgroup_combination(self):
         self.assertEqual(requests({'day': DAY})[0]['target_branch'], 'staging')
         self.assertEqual(requests({'date': DAY})[0]['talkgroup'], 6001)
-        for branch in ('staging', 'law-2'):
+        for branch in ('staging',):
             for group in TALKGROUPS:
                 with self.subTest(branch=branch, group=group):
                     self.assertEqual(requests({'day': DAY, 'talkgroup': str(group),
@@ -51,6 +51,7 @@ class RequestTests(unittest.TestCase):
         self.assertEqual([r['day'] for r in rows], [DAY, '2026-10-20'])
         for field, value in [('day', '20261002'), ('day', '../2026-10-02'),
                              ('talkgroup', 9999), ('target_branch', 'main'),
+                             ('target_branch', 'law-2'),
                              ('proof', '../../secret'), ('mode', 'retry-everything')]:
             with self.subTest(field=field), self.assertRaises(ValueError):
                 requests({'day': DAY, field: value})
@@ -100,12 +101,12 @@ class PreparationTests(unittest.TestCase):
                 self.assertEqual(json.loads(path.read_text())['calls'], calls[2:])
                 self.assertTrue(prepare(root, DAY, group)['resuming'])
 
-    def test_saved_metadata_can_be_copied_without_merging_the_other_branch(self):
+    def test_saved_metadata_can_be_fetched_from_staging_without_merging(self):
         data = {'date': DAY, 'talkgroup': 5922, 'count': 1, 'calls': [call(5922)]}
         commands = []
         def git(cmd, **kwargs):
             commands.append(cmd)
-            found = cmd[:3] == ['git', 'show', f'origin/law-2:{metadata_paths(DAY, 5922)[0].as_posix()}']
+            found = cmd[:3] == ['git', 'show', f'origin/staging:{metadata_paths(DAY, 5922)[0].as_posix()}']
             return SimpleNamespace(returncode=0 if found or cmd[1]=='fetch' else 1,
                                    stdout=json.dumps(data) if found else '')
         with tempfile.TemporaryDirectory() as tmp, patch('prepare_radio_day.subprocess.run', side_effect=git):
@@ -113,6 +114,7 @@ class PreparationTests(unittest.TestCase):
             self.assertEqual(prepare(root, DAY, 5922, fetch=True)['queued'], 1)
             self.assertTrue((root / metadata_paths(DAY, 5922)[0]).is_file())
         self.assertFalse(any('merge' in cmd for cmd in commands))
+        self.assertFalse(any('law-2' == part or part.startswith('origin/law-2:') for cmd in commands for part in cmd))
 
     def test_wrong_pending_talkgroup_cannot_be_resumed(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -123,13 +125,13 @@ class PreparationTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 prepare(root, DAY, 5922)
 
-    def test_status_includes_law2_on_staging_and_6001_on_law2(self):
+    def test_status_includes_all_talkgroups_on_staging(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             for group in TALKGROUPS:
                 write(archive_path(root, DAY, group) / 'calls.json',
                       {'date': DAY, 'talkgroup': group, 'calls': [call(group)]})
-            for branch in ('staging', 'law-2'):
+            for branch in ('staging',):
                 self.assertEqual({r['talkgroup'] for r in snapshot(root, branch, 'idle')['rows']}, set(TALKGROUPS))
 
 
@@ -143,7 +145,7 @@ class TranscriptionTests(unittest.TestCase):
         class Model:
             def __init__(self, *args, **kwargs): pass
             def transcribe(self, *args, **kwargs): return iter([segment]), None
-        for branch in ('staging', 'law-2'):
+        for branch in ('staging',):
             for group in TALKGROUPS:
                 with self.subTest(branch=branch, group=group), tempfile.TemporaryDirectory() as tmp:
                     parent=Path(tmp); root=parent/'repo'; root.mkdir()

@@ -3,7 +3,6 @@ name: Generate radio transcription passes
   push:
     branches:
     - staging
-    - law-2
     paths:
     - records-pending-review/openmhz-transcription-request.json
   workflow_dispatch:
@@ -28,7 +27,6 @@ name: Generate radio transcription passes
         type: choice
         options:
         - staging
-        - law-2
   workflow_call:
     inputs:
       day:

@@ -6,7 +6,7 @@ if [[ "${OPENMHZ_AUDIO_STORAGE:-}" == 'r2' ]]; then
 fi
 
 target_branch="${OPENMHZ_TARGET_BRANCH:-staging}"
-case "$target_branch" in staging|law-2) ;; *) echo 'Invalid radio target branch' >&2; exit 1;; esac
+case "$target_branch" in staging) ;; *) echo 'Invalid radio target branch' >&2; exit 1;; esac
 
 git config user.name 'github-actions[bot]'
 git config user.email '41898282+github-actions[bot]@users.noreply.github.com'

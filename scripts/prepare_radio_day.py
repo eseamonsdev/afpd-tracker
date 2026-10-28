@@ -16,7 +16,7 @@ def source_metadata(root, day, talkgroup, fetch=False):
         if (root / path).is_file():
             return json.loads((root / path).read_text())
     if fetch:
-        # Copy only this requested metadata file. Never merge branches or audio.
+        # Fetch only this requested metadata file from staging; never merge audio.
         for branch in BRANCHES:
             subprocess.run(['git', 'fetch', 'origin', branch], cwd=root, check=True)
             for path in paths:

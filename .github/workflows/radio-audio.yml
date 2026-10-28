@@ -3,7 +3,6 @@ name: Download radio audio
   push:
     branches:
     - staging
-    - law-2
     paths:
     - records-pending-review/openmhz-audio-request.json
     - records-pending-review/openmhz-manifests/*.json
@@ -29,7 +28,6 @@ name: Download radio audio
         type: choice
         options:
         - staging
-        - law-2
       mode:
         description: Download remaining clips, or recover explicitly verified failures
         default: download

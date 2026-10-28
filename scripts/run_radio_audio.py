@@ -35,7 +35,7 @@ def run(day, talkgroup, branch, mode='download', proof=''):
             with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as output:
                 output.write(Path(summary).read_text() + '\n')
         publish()
-    # Also persist metadata copied from the other working branch on a no-op run.
+    # Also persist metadata fetched from staging on a no-op run.
     if not processed:
         publish()
     print(f'{day} talkgroup {talkgroup}: finished on {branch}; known failures remain separate.', flush=True)

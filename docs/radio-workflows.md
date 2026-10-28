@@ -7,9 +7,9 @@ passes** (`radio-transcribe.yml`) in GitHub Actions. Both accept:
 | --- | --- | --- |
 | `day` | Required | Mountain calendar date, `YYYY-MM-DD` |
 | `talkgroup` | `6001` | `6001`, `5922` (Law 2), or `6036` |
-| `target_branch` | `staging` | `staging` or `law-2` |
+| `target_branch` | `staging` | `staging` only |
 
-The branch never selects the talkgroup. For example, `day=2026-10-24`,
+All radio development uses staging. The retired `law-2` branch was consolidated into staging on October 28, 2026. The talkgroup selects the channel. For example, `day=2026-10-24`,
 `talkgroup=5922`, `target_branch=staging` downloads Law 2 onto staging. The same
 inputs work for transcription once that branch contains the verified R2 archive.
 These actions also expose the same inputs through `workflow_call`.
@@ -35,16 +35,13 @@ a time; a failed date does not cancel the other requested dates. Do not depend
 on matrix ordering; request one date at a time when strict ordering is needed.
 
 Pushing a changed active manifest under
-`records-pending-review/openmhz-manifests/` also starts the audio action, on either
-working branch. Only the changed date/talkgroup is selected; parked manifests and
+`records-pending-review/openmhz-manifests/` also starts the audio action, on staging. Only the changed date/talkgroup is selected; parked manifests and
 unrelated dates are not swept into the run. Code changes alone do not download
 audio or start transcription. Completed runs do not keep processing future days.
 
 ## Audio behavior
 
-Preserved metadata must already exist. The action uses the target branch's
-metadata or copies only the requested metadata file from the other working
-branch, without merging branch contents. Existing queue checkpoints resume.
+Preserved metadata must already exist. The action uses local staging metadata or fetches only the requested metadata file from remote staging. Existing queue checkpoints resume.
 The downloader skips saved audio and known failures, fetches sequentially, waits
 two seconds after every attempt, and publishes a checkpoint every 100 calls.
 Audio goes to R2; metadata and site output go to the chosen branch.
@@ -73,7 +70,7 @@ Raw passes are not final transcripts. The daily ChatGPT task still reconciles
 every clip's three outputs, preserves user corrections and uncertainty, publishes
 to `calls.json`, regenerates exports, and removes completed text checkpoints.
 The existing daily task remains talkgroup 6001 on staging; the generic actions
-are usable for every supported branch/talkgroup combination.
+are usable for all three talkgroups on staging.
 
 ## Utilities and removed workflows
 

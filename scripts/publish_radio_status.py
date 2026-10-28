@@ -67,7 +67,7 @@ def publish(root, branch, state):
 
 if __name__ == '__main__':
     p = argparse.ArgumentParser()
-    p.add_argument('--branch', choices=['staging', 'law-2'], default=os.environ.get('OPENMHZ_TARGET_BRANCH', 'staging'))
+    p.add_argument('--branch', choices=['staging'], default=os.environ.get('OPENMHZ_TARGET_BRANCH', 'staging'))
     p.add_argument('--state', default='running')
     p.add_argument('--watch', action='store_true')
     args = p.parse_args()

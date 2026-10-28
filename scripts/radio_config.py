@@ -7,7 +7,7 @@ TALKGROUPS = {
     5922: ('law-2', 'Law 2 Northeast'),
     6036: ('6036', 'American Fork PD Car to Car Private'),
 }
-BRANCHES = ('staging', 'law-2')
+BRANCHES = ('staging',)
 
 
 def valid_day(day):
@@ -24,7 +24,7 @@ def valid_talkgroup(value):
 
 def valid_branch(branch):
     if branch not in BRANCHES:
-        raise ValueError('Target branch must be staging or law-2')
+        raise ValueError('Target branch must be staging')
     return branch
 
 
