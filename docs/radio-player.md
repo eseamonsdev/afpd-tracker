@@ -13,8 +13,13 @@ The three original script paths remain small configuration adapters.
 The old Law 2 stylesheet forwards to the shared stylesheet.
 
 The archive controller handles dated manifests, query dates and cancellation.
-Law 2 adds its explicit enabled-date and transcript rules and coverage notes;
-it never loads the car-to-car association data. The excerpt adapter retains
+It revalidates the date index and selected manifest when loading them. Both
+archives use an explicit transcript setting from the date index when present,
+falling back to the manifest for older indexes. Law 2 also requires actual
+transcript text before exposing the shared toggle and download link. An explicit
+false setting keeps its transcripts hidden even if text exists. Law 2 adds its
+enabled-date rules and coverage notes; it never loads the car-to-car association
+data. The excerpt adapter retains
 the server-selected clips, archive numbers, sections and order, and builds its
 transcript download from that selection. Both 6001 views use the same dated
 association renderer. Page content and recording data remain separate.
