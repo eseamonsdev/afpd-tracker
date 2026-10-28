@@ -48,7 +48,10 @@
   let lastPlayingAudio = null, keepPlaybackPlayer = false;
   let prefetchedClip = null, prefetchController = null, activeObjectUrl = null;
 
-  let officerDays = {};
+  let officerDays = {}, informationNumber = 0, closeInformation = null, activeInformation = null;
+  document.addEventListener?.("pointerdown", event => {
+    if (activeInformation && !activeInformation.contains(event.target)) closeInformation?.();
+  });
   const radioIds = (call) => {
     const ids = [...new Set([
       ...(Array.isArray(call?.radio_ids) ? call.radio_ids : []),
@@ -58,17 +61,88 @@
     return ids;
   };
 
-  const officerName = (id) => {
-    const name = officerDays[day.value]?.[id]?.name;
-    return typeof name === "string" ? name.trim() : "";
+  const associationLabels = {
+    confirmed: "Confirmed this day",
+    strong: "Strong association",
+    "single-day": "Single-day association"
+  };
+  const officerAssociation = (id) => {
+    const entry = officerDays[day.value]?.[id];
+    return typeof entry?.name === "string" && associationLabels[entry.status] ? entry : null;
+  };
+  const associationNote = (entry) => {
+    const date = dateFormat.format(dateObject(day.value));
+    const count = Number(entry.evidence_days) || 1;
+    const dates = Array.isArray(entry.evidence_dates) ? entry.evidence_dates.join(", ") : "";
+    const description = entry.status === "strong"
+      ? `Named exchanges associate this radio ID with ${entry.name} on ${count} dates. An association has not been confirmed for ${date}. Transcript screening found no unresolved contradiction for this ID on that date.`
+      : `Named exchanges associate this radio ID with ${entry.name} on ${date}.` +
+        (entry.status === "single-day" ? " This is the only supported date; the name is not extended to other dates." : "");
+    return `${description}${dates ? ` Evidence dates: ${dates}.` : ""} This does not independently verify the speaker in every clip.`;
   };
   const radioIdText = (call) => {
     const ids = radioIds(call);
     return ids.length ? `Radio ID${ids.length > 1 ? "s" : ""}: ${ids.map(id => {
-      const name = officerName(id);
-      return name ? `${id} · ${name}` : id;
+      const entry = officerAssociation(id);
+      return entry ? `${id} · ${entry.name} · ${associationLabels[entry.status]}` : id;
     }).join(", ")}` : "";
   };
+
+  function informationControl(entry) {
+    const wrapper = document.createElement("span");
+    wrapper.className = "radio-association-info";
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "radio-info-button";
+    button.textContent = "ⓘ";
+    button.setAttribute("aria-label", `Association information for ${entry.name}`);
+    button.setAttribute("aria-expanded", "false");
+    const popup = document.createElement("span");
+    popup.id = `radio-association-info-${++informationNumber}`;
+    popup.className = "radio-association-popup";
+    popup.setAttribute("role", "note");
+    popup.hidden = true;
+    button.setAttribute("aria-controls", popup.id);
+    button.setAttribute("aria-describedby", popup.id);
+    const note = document.createElement("span");
+    note.textContent = associationNote(entry);
+    const link = document.createElement("a");
+    link.href = "/police-radio-resources/#officer-radio-ids";
+    link.textContent = "View evidence";
+    popup.append(note, link);
+    let pinned = false, suppressFocus = false;
+    const hide = () => {
+      popup.hidden = true;
+      pinned = false;
+      button.setAttribute("aria-expanded", "false");
+    };
+    const show = () => {
+      if (closeInformation !== hide) closeInformation?.();
+      closeInformation = hide;
+      activeInformation = wrapper;
+      popup.hidden = false;
+      button.setAttribute("aria-expanded", "true");
+    };
+    wrapper.addEventListener("mouseenter", show);
+    wrapper.addEventListener("mouseleave", () => {
+      if (!pinned && !wrapper.contains(document.activeElement)) hide();
+    });
+    button.addEventListener("focus", () => { if (!suppressFocus) show(); });
+    wrapper.addEventListener("focusout", event => {
+      if (!wrapper.contains(event.relatedTarget)) hide();
+    });
+    button.addEventListener("click", () => {
+      if (pinned) hide();
+      else { show(); pinned = true; }
+    });
+    wrapper.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        hide(); suppressFocus = true; button.focus(); suppressFocus = false;
+      }
+    });
+    wrapper.append(button, popup);
+    return wrapper;
+  }
 
   function renderRadioIds(element, call) {
     element.replaceChildren();
@@ -84,12 +158,15 @@
       const number = document.createElement("strong");
       number.textContent = id;
       item.append(number);
-      const name = officerName(id);
-      if (name) {
+      const entry = officerAssociation(id);
+      if (entry) {
         const officer = document.createElement("span");
         officer.className = "radio-officer-name";
-        officer.textContent = ` · ${name}`;
-        item.append(officer);
+        officer.textContent = ` · ${entry.name}`;
+        const status = document.createElement("span");
+        status.className = "radio-association-status";
+        status.textContent = ` · ${associationLabels[entry.status]}`;
+        item.append(officer, status, informationControl(entry));
       }
       element.append(item);
       if (index < ids.length - 1) {
@@ -314,6 +391,7 @@
     const token = ++request;
     controller?.abort();
     controller = new AbortController();
+    closeInformation?.();
     resetPlayer();
     calls = []; buttons = []; list.replaceChildren();
     section.setAttribute("aria-busy", "true");
@@ -350,6 +428,7 @@
       const fragment = document.createDocumentFragment();
       buttons = calls.map((call, index) => {
         const row = document.createElement("li");
+        row.className = "radio-clip-row";
         const button = document.createElement("button");
         button.type = "button"; button.className = "radio-clip";
         const time = document.createElement("time");
@@ -361,11 +440,12 @@
         number.textContent = ` · ${index + 1}`;
         label.append(time, number);
         const ids = radioIdText(call);
+        let identity;
         if (ids) {
           const radioIds = document.createElement("span");
           radioIds.className = "radio-ids";
           renderRadioIds(radioIds, call);
-          label.append(radioIds);
+          identity = radioIds;
         }
         const duration = document.createElement("span");
         duration.textContent = `${call.displayed_seconds} sec`;
@@ -374,7 +454,9 @@
         button.addEventListener("click", () => {
           chooseClip(index);
         });
-        row.append(button); fragment.append(row);
+        row.append(button);
+        if (identity) row.append(identity);
+        fragment.append(row);
         return button;
       });
       list.append(fragment);
@@ -468,7 +550,7 @@
         fetch(`${base}index.json`),
         fetch(`${base}officer-associations.json`).then(response => response.ok ? response.json() : null).catch(() => null)
       ]);
-      if (associations?.schema_version === 1 && associations.days && typeof associations.days === "object") {
+      if (associations?.schema_version === 2 && associations.days && typeof associations.days === "object") {
         officerDays = associations.days;
       }
       if (!response.ok) throw new Error("Unable to load dates");

@@ -36,7 +36,9 @@ class Element {
     listeners.push(handler);
     this.listeners.set(name, listeners);
   }
-  emit(name) { for (const handler of this.listeners.get(name) ?? []) handler(); }
+  emit(name, event = {}) { for (const handler of this.listeners.get(name) ?? []) handler(event); }
+  contains(element) { return this === element || this.children.some(child => child.contains(element)); }
+  focus() { this.emit("focus"); }
   click() { this.emit("click"); }
   pause() { if (!this.paused) { this.paused = true; this.emit("pause"); } }
   play() {
@@ -475,9 +477,9 @@ test("radio IDs appear in clip rows and player, and disappear for missing IDs an
   const f = await playerFixture(calls, undefined, "2026-09-11", "", false);
   const row = i => f.get("clips").children[i].children[0];
   assert.equal(f.get("current-radio-ids").hidden, true);
-  assert.equal(row(0).children[0].children[2].textContent, "Radio ID: 14590123");
+  assert.equal(f.get("clips").children[0].children[1].textContent, "Radio ID: 14590123");
   assert.match(row(0).getAttribute("aria-label"), /Radio ID: 14590123/);
-  assert.equal(row(1).children[0].children[2].textContent, "Radio IDs: 14590123, 14590107");
+  assert.equal(f.get("clips").children[1].children[1].textContent, "Radio IDs: 14590123, 14590107");
   for (const i of [2, 3]) {
     assert.equal(row(i).children[0].children.length, 2, "no additional row content without a valid ID");
     assert.doesNotMatch(row(i).getAttribute("aria-label"), /Radio ID/);
@@ -505,30 +507,31 @@ test("confirmed names follow the date in rows, accessible labels and the player"
     { epoch: 1789100000, displayed_seconds: 5, original_filename: "known.m4a", radio_ids: ["14590098"] },
     { epoch: 1789100010, displayed_seconds: 5, original_filename: "mixed.m4a", radio_ids: ["14590098", "14590026"] }
   ];
-  const associations = { schema_version: 1, days: {
-    "2026-09-11": { "14590098": { name: "Greg B. Mecham" } },
-    "2026-09-10": { "14590026": { name: "Different dated association" } }
+  const associations = { schema_version: 2, days: {
+    "2026-09-11": { "14590098": { name: "Greg B. Mecham", status: "confirmed", evidence_days: 10 } },
+    "2026-09-10": { "14590026": { name: "Different dated association", status: "single-day", evidence_days: 1 } }
   } };
   const f = await playerFixture(calls, undefined, "2026-09-11", "", true, associations);
   const row = i => f.get("clips").children[i].children[0];
-  const ids = row(0).children[0].children[2];
-  assert.equal(ids.textContent, "Radio ID: 14590098 · Greg B. Mecham");
+  const ids = f.get("clips").children[0].children[1];
+  assert.equal(ids.children[1].children[1].textContent, " · Greg B. Mecham");
+  assert.equal(ids.children[1].children[2].textContent, " · Confirmed this day");
   assert.equal(ids.children[1].children[0].tag, "strong");
   assert.match(row(0).getAttribute("aria-label"), /Greg B. Mecham/);
-  assert.equal(row(1).children[0].children[2].textContent, "Radio IDs: 14590098 · Greg B. Mecham, 14590026");
+  assert.match(row(1).getAttribute("aria-label"), /14590098 · Greg B. Mecham · Confirmed this day, 14590026/);
   f.select(0);
   assert.equal(f.get("current-radio-ids").textContent, ids.textContent);
   f.get("day").value = "2026-09-10";
   f.get("day").emit("change");
   await f.settle();
   assert.equal(f.get("current-radio-ids").hidden, true);
-  assert.equal(row(0).children[0].children[2].textContent, "Radio ID: 14590098");
+  assert.equal(f.get("clips").children[0].children[1].textContent, "Radio ID: 14590098");
   f.select(1);
-  assert.equal(f.get("current-radio-ids").textContent, "Radio IDs: 14590098, 14590026 · Different dated association");
+  assert.match(f.get("current-radio-ids").textContent, /14590026 · Different dated association · Single-day association/);
 });
 
 test("missing or invalid associations leave IDs bold and playback available", async () => {
-  for (const associations of [null, { schema_version: 2, days: {} }, new Error("Unavailable")]) {
+  for (const associations of [null, { schema_version: 99, days: {} }, new Error("Unavailable")]) {
     const f = await playerFixture([
       { epoch: 1789100000, displayed_seconds: 5, original_filename: "known.m4a", radio_ids: ["14590098"] }
     ], undefined, "2026-09-11", "", true, associations);
@@ -546,17 +549,66 @@ test("curated dated labels include corrections and omit uncertain associations",
   assert.equal(days["2026-10-07"]["14590268"].name, "Samuel Canizalez");
   assert.equal(days["2026-09-24"]["14590100"].name, "Sammantha J. Halladay");
   assert.equal(days["2026-10-24"]["14590165"].name, "Ivan R. Bird");
-  assert.equal(days["2026-10-25"]["14590313"].name, "Delton L. Choates");
+  assert.equal(days["2026-10-24"]["14590313"].name, "Delton L. Choates");
+  assert.equal(days["2026-10-25"]["14590313"], undefined, "possible contradictory hail holds this date");
   assert.equal(days["2026-09-19"]["14590100"], undefined);
-  assert.equal(days["2026-10-01"]["14590247"], undefined);
+  assert.equal(days["2026-10-01"]["14590247"].status, "strong");
   for (const ids of Object.values(days)) {
     assert.equal(ids["14590045"], undefined);
     assert.equal(ids["14590221"], undefined);
     for (const [id, entry] of Object.entries(ids)) {
       assert.match(id, /^[1-9]\d*$/);
-      assert.ok(entry.name && (entry.evidence?.length || entry.clips));
+      assert.ok(entry.name && entry.status && entry.evidence_dates.length);
     }
   }
+});
+
+test("association information opens by hover, focus and tap without playing the clip", async () => {
+  const f = await playerFixture([
+    { epoch: 1789100000, displayed_seconds: 5, original_filename: "known.m4a", radio_ids: ["14590098"] }
+  ], undefined, "2026-09-11", "", true, { schema_version: 2, days: {
+    "2026-09-11": { "14590098": { name: "Greg B. Mecham", status: "strong", evidence_days: 10, evidence_dates: ["2026-09-12"] } }
+  } });
+  const identity = f.get("clips").children[0].children[1];
+  const info = identity.children[1].children[3];
+  const [button, popup] = info.children;
+  assert.equal(popup.hidden, true);
+  info.emit("mouseenter");
+  assert.equal(popup.hidden, false);
+  assert.match(popup.textContent, /on 10 dates/);
+  assert.match(popup.textContent, /not been confirmed for September 11/);
+  info.emit("mouseleave");
+  assert.equal(popup.hidden, true);
+  button.focus();
+  assert.equal(button.getAttribute("aria-expanded"), "true");
+  button.click();
+  info.emit("mouseleave");
+  assert.equal(popup.hidden, false, "tap pins the information open");
+  info.emit("keydown", { key: "Escape" });
+  assert.equal(popup.hidden, true, "Escape must not reopen on focus");
+  button.click();
+  assert.equal(popup.hidden, false);
+  button.click();
+  assert.equal(popup.hidden, true);
+  assert.equal(f.active(), undefined, "information controls do not start playback");
+});
+
+test("every 6001 day is screened and fallback names respect holds and single-day limits", () => {
+  const data = JSON.parse(readFileSync(new URL("../public/records/openmhz/officer-associations.json", import.meta.url), "utf8"));
+  const review = JSON.parse(readFileSync(new URL("../findings/2026-10-27-radio-officer-label-review.json", import.meta.url), "utf8"));
+  assert.equal(Object.keys(data.days).length, 48);
+  assert.equal(review.coverage.reduce((sum, day) => sum + day.transcripts_screened, 0), 12298);
+  for (const day of review.coverage) {
+    for (const id of day.held_ids) assert.equal(data.days[day.date][id], undefined);
+    for (const entry of Object.values(data.days[day.date])) {
+      if (entry.status === "strong") assert.ok(entry.evidence_days >= 2);
+      if (entry.status === "single-day") assert.deepEqual(entry.evidence_dates, [day.date]);
+    }
+  }
+  assert.equal(data.days["2026-09-12"]["14590020"].status, "strong");
+  assert.equal(data.days["2026-10-20"]["14590100"], undefined);
+  assert.equal(data.days["2026-10-03"]["14580151"], undefined);
+  assert.equal(data.days["2026-10-20"]["14590165"], undefined);
 });
 
 test("download link follows the loaded date independently of transcript display", async () => {
