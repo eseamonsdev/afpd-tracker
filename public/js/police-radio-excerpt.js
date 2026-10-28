@@ -5,6 +5,16 @@
   const get = name => root.querySelector(`#excerpt-${name}`);
   const audio = get("audio"), play = get("play"), seek = get("seek");
   const autoplay = get("autoplay"), showCurrent = get("show-current");
+  const controlsToggle = get("controls-toggle"), extraControls = get("extra-controls");
+  if (controlsToggle && extraControls) {
+    controlsToggle.hidden = false;
+    controlsToggle.addEventListener("click", () => {
+      const expanded = controlsToggle.getAttribute("aria-expanded") !== "true";
+      extraControls.hidden = !expanded;
+      controlsToggle.setAttribute("aria-expanded", String(expanded));
+      controlsToggle.textContent = expanded ? "Hide Controls" : "Show Controls";
+    });
+  }
   const message = get("player-message"), current = get("current");
   const currentRadioIds = get("current-radio-ids");
   const transcriptionToggle = get("transcription-toggle"), transcription = get("transcription");
@@ -12,6 +22,190 @@
   const callNote = get("call-note"), callNoteText = get("call-note-text");
   let transcriptionOn = false;
   const buttons = Array.from(root.querySelectorAll("[data-excerpt-clip]"));
+  let associationDate = "", associationsReady = false;
+  const dateFormat = new Intl.DateTimeFormat("en-US", { timeZone: "UTC", month: "long", day: "numeric", year: "numeric" });
+  const dateObject = date => new Date(`${date}T12:00:00Z`);
+  let officerDays = {}, informationNumber = 0, closeInformation = null, activeInformation = null;
+  document.addEventListener?.("pointerdown", event => {
+    if (activeInformation && !activeInformation.contains(event.target)) closeInformation?.();
+  });
+  const radioIds = (call) => {
+    const ids = [...new Set([
+      ...(Array.isArray(call?.radio_ids) ? call.radio_ids : []),
+      ...(Array.isArray(call?.srcList) ? call.srcList.map(source => source?.src) : [])
+    ].filter(id => typeof id === "string" || typeof id === "number")
+      .map(id => String(id).trim()).filter(id => /^[1-9]\d*$/.test(id)))];
+    return ids;
+  };
+
+  const associationLabels = {
+    confirmed: "Confirmed this day",
+    strong: "Strong association",
+    "single-day": "Single-day association"
+  };
+  const officerAssociation = (id) => {
+    const entry = officerDays[associationDate]?.[id];
+    return typeof entry?.name === "string" && associationLabels[entry.status] ? entry : null;
+  };
+  const associationNote = (entry) => {
+    const date = dateFormat.format(dateObject(associationDate));
+    const count = Number(entry.evidence_days) || 1;
+    const dates = Array.isArray(entry.evidence_dates) ? entry.evidence_dates.join(", ") : "";
+    const description = entry.status === "strong"
+      ? `Named exchanges associate this radio ID with ${entry.name} on ${count} dates. An association has not been confirmed for ${date}. Transcript screening found no unresolved contradiction for this ID on that date.`
+      : `Named exchanges associate this radio ID with ${entry.name} on ${date}.` +
+        (entry.status === "single-day" ? " This is the only supported date; the name is not extended to other dates." : "");
+    return `${description}${dates ? ` Evidence dates: ${dates}.` : ""} This does not independently verify the speaker in every clip.`;
+  };
+  const radioIdText = (call) => {
+    const ids = radioIds(call);
+    return ids.length ? `Radio ID${ids.length > 1 ? "s" : ""}: ${ids.map(id => {
+      const entry = officerAssociation(id);
+      return entry ? `${id} · ${entry.name} · ${associationLabels[entry.status]}` : id;
+    }).join(", ")}` : "";
+  };
+
+  function informationControl(entry, id) {
+    const wrapper = document.createElement("span");
+    wrapper.className = "radio-association-info";
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "radio-info-button";
+    button.textContent = "ⓘ";
+    button.setAttribute("aria-label", `Association information for ${entry.name}`);
+    button.setAttribute("aria-expanded", "false");
+    const popup = document.createElement("span");
+    popup.id = `radio-association-info-${++informationNumber}`;
+    popup.className = "radio-association-popup";
+    popup.setAttribute("role", "note");
+    popup.hidden = true;
+    button.setAttribute("aria-controls", popup.id);
+    button.setAttribute("aria-describedby", popup.id);
+    const note = document.createElement("span");
+    note.textContent = associationNote(entry);
+    const link = document.createElement("a");
+    link.href = `/police-radio-resources/#radio-id-${encodeURIComponent(id)}`;
+    link.textContent = "View evidence";
+    popup.append(note, link);
+    let pinned = false, suppressFocus = false;
+    const hide = () => {
+      popup.hidden = true;
+      pinned = false;
+      button.setAttribute("aria-expanded", "false");
+    };
+    const show = () => {
+      if (closeInformation !== hide) closeInformation?.();
+      closeInformation = hide;
+      activeInformation = wrapper;
+      popup.hidden = false;
+      button.setAttribute("aria-expanded", "true");
+    };
+    wrapper.addEventListener("mouseenter", show);
+    wrapper.addEventListener("mouseleave", () => {
+      if (!pinned && !wrapper.contains(document.activeElement)) hide();
+    });
+    button.addEventListener("focus", () => { if (!suppressFocus) show(); });
+    wrapper.addEventListener("focusout", event => {
+      if (!wrapper.contains(event.relatedTarget)) hide();
+    });
+    button.addEventListener("click", () => {
+      if (pinned) hide();
+      else { show(); pinned = true; }
+    });
+    wrapper.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        hide(); suppressFocus = true; button.focus(); suppressFocus = false;
+      }
+    });
+    wrapper.append(button, popup);
+    return wrapper;
+  }
+
+  function renderRadioIds(element, call) {
+    element.replaceChildren();
+    const ids = radioIds(call);
+    if (!ids.length) return;
+    const caption = document.createElement("span");
+    caption.className = "radio-id-caption";
+    caption.textContent = `Radio ID${ids.length > 1 ? "s" : ""}: `;
+    element.append(caption);
+    ids.forEach((id, index) => {
+      const item = document.createElement("span");
+      item.className = "radio-id-association";
+      const number = document.createElement("strong");
+      number.textContent = id;
+      item.append(number);
+      const entry = officerAssociation(id);
+      if (entry) {
+        const officer = document.createElement("span");
+        officer.className = "radio-officer-name";
+        officer.textContent = ` · ${entry.name}`;
+        const status = document.createElement("span");
+        status.className = "radio-association-status";
+        status.textContent = ` · ${associationLabels[entry.status]}`;
+        item.append(officer, status, informationControl(entry, id));
+      }
+      element.append(item);
+      if (index < ids.length - 1) {
+        const separator = document.createElement("span");
+        separator.textContent = ", ";
+        element.append(separator);
+      }
+    });
+  }
+
+
+  const callFor = button => ({
+    radio_ids: (button?.dataset.radioIds || "").match(/[1-9]\d*/g) || []
+  });
+  const dateFor = button => button?.dataset.source?.match(/car-to-car-(\d{4}-\d{2}-\d{2})\//)?.[1] || "";
+  function updateIdentity(button) {
+    if (!currentRadioIds) return;
+    if (associationsReady) {
+      associationDate = dateFor(button);
+      renderRadioIds(currentRadioIds, callFor(button));
+    } else currentRadioIds.textContent = button?.dataset.radioIds || "";
+    currentRadioIds.hidden = !button?.dataset.radioIds;
+  }
+  fetch("/records/openmhz/officer-associations.json")
+    .then(response => response.ok ? response.json() : null)
+    .then(data => {
+      if (data?.schema_version !== 2 || !data.days || typeof data.days !== "object") return;
+      officerDays = data.days;
+      associationsReady = true;
+      buttons.forEach(button => {
+        const identity = button.querySelector(".radio-ids");
+        if (!identity) return;
+        // Information buttons sit beside the playback button, as in the archive.
+        const row = button.closest("li");
+        row.classList.add("radio-clip-row");
+        row.append(identity);
+        associationDate = dateFor(button);
+        const call = callFor(button);
+        renderRadioIds(identity, call);
+        const label = button.getAttribute("aria-label");
+        button.setAttribute("aria-label", label.replace(/, Radio IDs?:.*$/, "") + (radioIdText(call) ? `, ${radioIdText(call)}` : ""));
+      });
+      updateIdentity(buttons[selected]);
+    }).catch(() => {});
+  const transcriptDownload = get("transcript-download");
+  let transcriptDownloadUrl = null;
+  if (transcriptDownload) {
+    transcriptDownload.hidden = false;
+    transcriptDownload.setAttribute("href", "#");
+    transcriptDownload.setAttribute("download", "transcript_" + window.location.pathname.split("/").filter(Boolean).at(-1) + ".txt");
+    transcriptDownload.addEventListener("click", () => {
+      if (transcriptDownloadUrl) URL.revokeObjectURL(transcriptDownloadUrl);
+      const text = buttons.map(button => [
+        button.dataset.label,
+        button.dataset.radioIds || "",
+        button.dataset.transcript?.trim() || "[no transcript available]",
+        button.dataset.note?.trim() ? `Note: ${button.dataset.note.trim()}` : ""
+      ].filter(Boolean).join("\n")).join("\n\n") + "\n";
+      transcriptDownloadUrl = URL.createObjectURL(new Blob([text], { type: "text/plain;charset=utf-8" }));
+      transcriptDownload.setAttribute("href", transcriptDownloadUrl);
+    });
+  }
   // A single persistent element preserves Safari's user-granted playback permission.
   audio.preload = "auto";
   let selected = -1, auto = false, playbackRequest = 0;
@@ -22,7 +216,7 @@
     const button = buttons[selected];
     const text = button?.dataset.transcript?.trim() || "";
     transcriptText.textContent = !transcriptionOn ? "" : selected < 0
-      ? "Choose a clip to see its transcription."
+      ? "Choose a clip to see its transcript."
       : text || "[no transcript available]";
     if (transcriptStatus) {
       transcriptStatus.hidden = !transcriptionOn || !button || !text;
@@ -105,10 +299,8 @@
     selected = index; activeObjectUrl = ready;
     button.setAttribute("aria-current", "true");
     current.textContent = button.dataset.label;
-    if (currentRadioIds) {
-      currentRadioIds.textContent = button.dataset.radioIds || "";
-      currentRadioIds.hidden = !currentRadioIds.textContent;
-    }
+    closeInformation?.();
+    updateIdentity(button);
     updateTranscription();
     message.textContent = "";
     seek.disabled = true; seek.max = 0; seek.value = 0;

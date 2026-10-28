@@ -38,8 +38,12 @@ permalink: "{{ excerptPage.excerpt | excerptUrl }}"
           </div>
           <div class="radio-player-actions">
             <button id="excerpt-show-current" type="button" aria-controls="excerpt-clips" disabled>Show Current Clip</button>
-            <button id="excerpt-autoplay" type="button" aria-pressed="false">Autoplay: Off</button>{% if excerpt.enableTranscription %}
-            <button id="excerpt-transcription-toggle" type="button" aria-pressed="false" aria-controls="excerpt-transcription" disabled>Transcript: Off</button>{% endif %}
+            <button id="excerpt-controls-toggle" type="button" aria-expanded="true" aria-controls="excerpt-extra-controls" hidden>Hide Controls</button>
+            <div id="excerpt-extra-controls" class="radio-extra-controls">
+              <button id="excerpt-autoplay" type="button" aria-pressed="false">Autoplay: Off</button>{% if excerpt.enableTranscription %}
+              <button id="excerpt-transcription-toggle" type="button" aria-pressed="false" aria-controls="excerpt-transcription" disabled>Transcript: Off</button>{% endif %}
+              {% if excerpt.enableTranscription %}<a id="excerpt-transcript-download" class="radio-transcript-download" download hidden>Download transcript (.txt)</a>{% endif %}
+            </div>
           </div>
         </div>
         <div class="radio-playback">
@@ -55,7 +59,10 @@ permalink: "{{ excerptPage.excerpt | excerptUrl }}"
           <span id="excerpt-transcript-status" class="radio-transcript-status" hidden></span>
           <p class="radio-transcript-label"><strong>Transcript:</strong></p>
           <p id="excerpt-transcript-text"></p>
-          <p id="excerpt-call-note" class="radio-call-note" hidden><strong>Note:</strong> <span id="excerpt-call-note-text"></span></p>
+          <details id="excerpt-call-note" class="radio-call-note" hidden>
+            <summary><span class="radio-notes-view">View Notes</span><span class="radio-notes-hide">Hide Notes</span></summary>
+            <p id="excerpt-call-note-text"></p>
+          </details>
         </div>{% endif %}
         <audio id="excerpt-audio" preload="metadata"></audio>
       </section>

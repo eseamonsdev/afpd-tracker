@@ -115,3 +115,14 @@ identity is reserved.
 Only descriptive URLs are published. Old numbered HTML pages and links are
 removed; no redirects, aliases, or compatibility routes are maintained. Hiding
 an excerpt removes its generated page and sitemap entry.
+
+## Player parity with the full archive
+
+Both players show extra controls by default. Hide Controls / Show Controls only
+hides or reveals autoplay, the transcript toggle and transcript download; it
+preserves playback and settings. Show Current Clip, the current clip label,
+play/pause, progress and any open transcript stay visible. Notes use View Notes /
+Hide Notes and start collapsed. Excerpt transcript downloads contain only the
+selected excerpt calls. Date-specific officer labels and association evidence
+use the same association data and interaction behavior as the archive. Information
+buttons sit outside playback buttons so opening evidence does not play a clip.
