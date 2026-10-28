@@ -22,8 +22,8 @@ test("export matches player ordering, Mountain time, IDs and transcript fallback
   assert.equal(text.split("Verified: ✓").length - 1, 1);
   assert.equal(text.split("Verified: No").length - 1, 6);
   assert.equal(JSON.stringify(data), original);
-  const player = fs.readFileSync(new URL("../public/js/police-radio.js", import.meta.url), "utf8");
-  assert.ok(player.includes('text || "[no transcript available]"'));
+  const player = fs.readFileSync(new URL("../public/js/radio-player-core.js", import.meta.url), "utf8");
+  assert.ok(player.includes('content || "[no transcript available]"'));
   const winter = formatRadioTranscript({ date: "2026-12-01", calls: [{ epoch: Date.parse("2026-12-01T14:31:43Z") / 1000 }] });
   assert.ok(winter.includes("7:31:43 AM — Clip 1"));
 });

@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 import test from "node:test";
 import vm from "node:vm";
 
-const source = readFileSync(new URL("../public/js/police-radio.js", import.meta.url), "utf8");
+const source = readFileSync(new URL("../public/js/radio-player-core.js", import.meta.url), "utf8") + "\n" + readFileSync(new URL("../public/js/police-radio.js", import.meta.url), "utf8");
 
 class Element {
   constructor(tag = "div") {
@@ -633,4 +633,3 @@ test("download link follows the loaded date independently of transcript display"
   assert.equal(link.hidden, true);
   assert.equal(link.getAttribute("href"), null);
 });
-

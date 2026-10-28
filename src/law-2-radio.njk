@@ -4,13 +4,15 @@ sitemap: false
 eleventyExcludeFromCollections: true
 ---
 {% extends "site-page-layout.njk" %}
+{% from "radio-player.njk" import player %}
 {% set pageTitle = "Law 2 Radio | AFPD Accountability Project" -%}
 {% set pageDescription = "Listen to archived Law 2 Northeast recordings by date." -%}
 {% set canonicalUrl = "https://afpd-accountability.com/law-2-radio/" -%}
 
 {% block pageAssets %}
   <meta name="robots" content="noindex, nofollow">
-  <link rel="stylesheet" href="/css/law-2-radio.css">
+  <link rel="stylesheet" href="/css/police-radio.css">
+  <script src="/js/radio-player-core.js" defer></script>
   <script src="/js/law-2-radio.js" defer></script>
 {% endblock %}
 
@@ -19,10 +21,10 @@ eleventyExcludeFromCollections: true
       <h1>Law 2 Radio</h1>
       <p>Recordings from Law 2 Northeast (talkgroup 5922), a dispatch channel that includes American Fork police traffic.</p>
       <p>Times shown in Mountain Time. This archive may contain only part of a day or selected calls. Numeric radio IDs identify transmitting equipment; they do not independently identify an officer.</p>
-      <p class="law2-radio-transcript-note">AI-generated transcripts may contain errors. Verified transcripts have been reviewed against the audio; unclear passages may remain marked.</p>
+      <p class="radio-transcript-note">AI-generated transcripts may contain errors. Verified transcripts have been reviewed against the audio; unclear passages may remain marked.</p>
     </div>
-    <div class="law2-radio-archive" id="law2-radio-archive">
-      <div class="law2-radio-date-selectors">
+    <div class="radio-archive" id="law2-radio-archive">
+      <div class="radio-date-selectors">
         <label for="law2-radio-month">Month
           <select id="law2-radio-month" disabled><option>Loading…</option></select>
         </label>
@@ -30,55 +32,19 @@ eleventyExcludeFromCollections: true
           <select id="law2-radio-day" disabled><option>Loading…</option></select>
         </label>
       </div>
-      <section class="law2-radio-player" aria-label="Audio player">
-        <div class="law2-radio-player-heading">
-          <div>
-            <p id="law2-radio-current">Choose a clip to listen</p>
-            <p id="law2-radio-current-radio-ids" class="law2-radio-ids" hidden></p>
-          </div>
-          <div class="law2-radio-player-actions">
-            <button id="law2-radio-show-current" type="button" aria-controls="law2-radio-clips" disabled>Show Current Clip</button>
-            <button id="law2-radio-controls-toggle" type="button" aria-expanded="true" aria-controls="law2-radio-extra-controls" hidden>Hide Controls</button>
-            <div id="law2-radio-extra-controls" class="law2-radio-extra-controls">
-              <button id="law2-radio-autoplay" type="button" aria-pressed="false">Autoplay: Off</button>
-              <button id="law2-radio-transcript-toggle" type="button" aria-pressed="false" aria-controls="law2-radio-transcript" hidden disabled>Transcript: Off</button>
-              <a id="law2-radio-transcript-download" download hidden>Download transcript (.txt)</a>
-            </div>
-          </div>
-        </div>
-        <div class="law2-radio-playback">
-          <button id="law2-radio-play" type="button" aria-label="Play selected clip" disabled>Play</button>
-          <div class="law2-radio-progress">
-            <label class="law2-radio-sr-only" for="law2-radio-seek">Position in clip</label>
-            <input id="law2-radio-seek" type="range" min="0" max="0" step="0.1" value="0" disabled>
-            <div class="law2-radio-times"><span id="law2-radio-elapsed">0:00</span><span id="law2-radio-duration">0:00</span></div>
-          </div>
-        </div>
-        <p id="law2-radio-player-message" role="status"></p>
-        <div id="law2-radio-transcript" class="law2-radio-transcript" role="region" aria-label="Current clip transcript" aria-live="polite" aria-atomic="true" hidden>
-          <span id="law2-radio-transcript-status" class="law2-radio-transcript-status" hidden></span>
-          <p class="law2-radio-transcript-label"><strong>Transcript:</strong></p>
-          <p id="law2-radio-transcript-text"></p>
-          <details id="law2-radio-call-note" class="law2-radio-call-note" hidden>
-            <summary><span class="law2-radio-notes-view">View Notes</span><span class="law2-radio-notes-hide">Hide Notes</span></summary>
-            <p id="law2-radio-call-note-text"></p>
-          </details>
-        </div>
-        <audio id="law2-radio-audio" preload="metadata"></audio>
-      </section>
-      <p class="law2-radio-source-note">
+      {{ player("law2-radio") }}
+      <p class="radio-source-note">
         Recordings sourced from <a href="https://openmhz.com/" target="_blank" rel="noopener noreferrer">OpenMHz</a>
         and hosted independently. This player covers Law 2 Northeast only.
         This site is not affiliated with or endorsed by OpenMHz.
       </p>
-      <p id="law2-radio-coverage" class="law2-radio-source-note" hidden></p>
+      <p id="law2-radio-coverage" class="radio-source-note" hidden></p>
       <p id="law2-radio-status" role="status">Loading available dates…</p>
-      <p id="law2-radio-transcript-availability" class="law2-radio-transcript-note" hidden>Transcripts are not yet available for this day.</p>
+      <p id="law2-radio-transcript-availability" class="radio-transcript-note" hidden>Transcripts are not yet available for this day.</p>
       <section aria-label="Recorded clips" aria-busy="true" id="law2-radio-clips-section">
-        <div class="law2-radio-list-heading" aria-hidden="true"><span>Time · archive clip</span><span>Duration</span></div>
-        <ol id="law2-radio-clips" class="law2-radio-clips"></ol>
+        <div class="radio-list-heading" aria-hidden="true"><span>Time · archive clip</span><span>Duration</span></div>
+        <ol id="law2-radio-clips" class="radio-clips"></ol>
       </section>
     </div>
     <noscript><p>Please enable JavaScript to select dates and play recordings.</p></noscript>
 {% endblock %}
-

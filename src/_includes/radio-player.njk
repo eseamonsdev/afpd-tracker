@@ -1,0 +1,38 @@
+{% macro player(prefix, transcripts=true, hiddenToggle=true, toggleName="transcript-toggle", transcriptName="transcript") %}
+      <section class="radio-player" aria-label="Audio player">
+        <div class="radio-player-heading">
+          <div>
+            <p id="{{ prefix }}-current">Choose a clip to listen</p>
+            <p id="{{ prefix }}-current-radio-ids" class="radio-ids" hidden></p>
+          </div>
+          <div class="radio-player-actions">
+            <button id="{{ prefix }}-show-current" class="radio-show-current" type="button" aria-controls="{{ prefix }}-clips" disabled>Show Current Clip</button>
+            <button id="{{ prefix }}-controls-toggle" class="radio-controls-toggle" type="button" aria-expanded="true" aria-controls="{{ prefix }}-extra-controls" hidden>Hide Controls</button>
+            <div id="{{ prefix }}-extra-controls" class="radio-extra-controls">
+              <button id="{{ prefix }}-autoplay" type="button" aria-pressed="false">Autoplay: Off</button>
+              {% if transcripts %}<button id="{{ prefix }}-{{ toggleName }}" type="button" aria-pressed="false" aria-controls="{{ prefix }}-{{ transcriptName }}" {% if hiddenToggle %}hidden {% endif %}disabled>Transcript: Off</button>
+              <a id="{{ prefix }}-transcript-download" class="radio-transcript-download" download hidden>Download transcript (.txt)</a>{% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="radio-playback">
+          <button id="{{ prefix }}-play" class="radio-play-button" type="button" aria-label="Play selected clip" disabled>Play</button>
+          <div class="radio-progress">
+            <label class="radio-sr-only" for="{{ prefix }}-seek">Position in clip</label>
+            <input id="{{ prefix }}-seek" class="radio-seek" type="range" min="0" max="0" step="0.1" value="0" disabled>
+            <div class="radio-times"><span id="{{ prefix }}-elapsed">0:00</span><span id="{{ prefix }}-duration">0:00</span></div>
+          </div>
+        </div>
+        <p id="{{ prefix }}-player-message" class="radio-player-message" role="status"></p>
+        {% if transcripts %}<div id="{{ prefix }}-{{ transcriptName }}" class="radio-transcript" role="region" aria-label="Current clip transcript" aria-live="polite" aria-atomic="true" hidden>
+          <span id="{{ prefix }}-transcript-status" class="radio-transcript-status" hidden></span>
+          <p class="radio-transcript-label"><strong>Transcript:</strong></p>
+          <p id="{{ prefix }}-transcript-text" class="radio-transcript-text"></p>
+          <details id="{{ prefix }}-call-note" class="radio-call-note" hidden>
+            <summary><span class="radio-notes-view">View Notes</span><span class="radio-notes-hide">Hide Notes</span></summary>
+            <p id="{{ prefix }}-call-note-text" class="radio-call-note-text"></p>
+          </details>
+        </div>
+        {% endif %}<audio id="{{ prefix }}-audio" preload="metadata"></audio>
+      </section>
+{% endmacro %}

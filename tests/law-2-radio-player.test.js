@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 import test from "node:test";
 import vm from "node:vm";
 
-const source = readFileSync(new URL("../public/js/law-2-radio.js", import.meta.url), "utf8");
+const source = readFileSync(new URL("../public/js/radio-player-core.js", import.meta.url), "utf8") + "\n" + readFileSync(new URL("../public/js/law-2-radio.js", import.meta.url), "utf8");
 
 class Element {
   constructor(tag = "div") {
@@ -170,4 +170,3 @@ test("query dates outside the enabled index cannot load an unlisted day", async 
   assert.equal(f.get("clips").children.length, 0);
   assert.equal(f.get("status").textContent, "This date is not enabled.");
 });
-

@@ -2,12 +2,14 @@
 permalink: /police-radio/
 ---
 {% extends "site-page-layout.njk" %}
+{% from "radio-player.njk" import player %}
 {% set pageTitle = "Police Radio | AFPD Accountability Project" -%}
 {% set pageDescription = "Browse recorded police radio calls by date and listen to individual clips." -%}
 {% set canonicalUrl = "https://afpd-accountability.com/police-radio/" -%}
 
 {% block pageAssets %}
   <link rel="stylesheet" href="/css/police-radio.css">
+  <script src="/js/radio-player-core.js" defer></script>
   <script src="/js/police-radio.js" defer></script>
 {% endblock %}
 
@@ -29,42 +31,7 @@ permalink: /police-radio/
           <select id="radio-day" disabled><option>Loading…</option></select>
         </label>
       </div>
-      <section class="radio-player" aria-label="Audio player">
-        <div class="radio-player-heading">
-          <div>
-            <p id="radio-current">Choose a clip to listen</p>
-            <p id="radio-current-radio-ids" class="radio-ids" hidden></p>
-          </div>
-          <div class="radio-player-actions">
-            <button id="radio-show-current" type="button" aria-controls="radio-clips" disabled>Show Current Clip</button>
-            <button id="radio-controls-toggle" type="button" aria-expanded="true" aria-controls="radio-extra-controls" hidden>Hide Controls</button>
-            <div id="radio-extra-controls" class="radio-extra-controls">
-              <button id="radio-autoplay" type="button" aria-pressed="false">Autoplay: Off</button>
-              <button id="radio-transcript-toggle" type="button" aria-pressed="false" aria-controls="radio-transcript" hidden disabled>Transcript: Off</button>
-              <a id="radio-transcript-download" download hidden>Download transcript (.txt)</a>
-            </div>
-          </div>
-        </div>
-        <div class="radio-playback">
-          <button id="radio-play" type="button" aria-label="Play selected clip" disabled>Play</button>
-          <div class="radio-progress">
-            <label class="radio-sr-only" for="radio-seek">Position in clip</label>
-            <input id="radio-seek" type="range" min="0" max="0" step="0.1" value="0" disabled>
-            <div class="radio-times"><span id="radio-elapsed">0:00</span><span id="radio-duration">0:00</span></div>
-          </div>
-        </div>
-        <p id="radio-player-message" role="status"></p>
-        <div id="radio-transcript" class="radio-transcript" role="region" aria-label="Current clip transcript" aria-live="polite" aria-atomic="true" hidden>
-          <span id="radio-transcript-status" class="radio-transcript-status" hidden></span>
-          <p class="radio-transcript-label"><strong>Transcript:</strong></p>
-          <p id="radio-transcript-text"></p>
-          <details id="radio-call-note" class="radio-call-note" hidden>
-            <summary><span class="radio-notes-view">View Notes</span><span class="radio-notes-hide">Hide Notes</span></summary>
-            <p id="radio-call-note-text"></p>
-          </details>
-        </div>
-        <audio id="radio-audio" preload="metadata"></audio>
-      </section>
+      {{ player("radio") }}
       <p class="radio-source-note">
         Recordings sourced from <a href="https://openmhz.com/" target="_blank" rel="noopener noreferrer">OpenMHz</a>
         and hosted independently. This archive covers only American Fork PD’s Car-to-Car talkgroup.
@@ -79,4 +46,3 @@ permalink: /police-radio/
     </div>
     <noscript><p>Please enable JavaScript to select dates and play recordings.</p></noscript>
 {% endblock %}
-

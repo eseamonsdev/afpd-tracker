@@ -5,7 +5,7 @@ import vm from "node:vm";
 import { buildRadioExcerpt } from "../lib/build-radio-excerpt.js";
 
 const entity = JSON.parse(readFileSync("data/entities/police-radio-excerpts/1.json", "utf8")).entities[0];
-const source = readFileSync("public/js/police-radio-excerpt.js", "utf8");
+const source = readFileSync("public/js/radio-player-core.js", "utf8") + "\n" + readFileSync("public/js/police-radio-excerpt.js", "utf8");
 class Element {
   constructor(tag = "div") {
     this.tag = tag;
@@ -25,6 +25,8 @@ class Element {
     this.loads = 0;
   }
   set src(value) { this.attrs.set("src", value); }
+  set textContent(value) { this._text = value; this.children = []; }
+  get textContent() { return this._text + this.children.map(child => child.textContent).join(""); }
   get src() { return this.getAttribute("src"); }
   setAttribute(key, value) { this.attrs.set(key, String(value)); }
   getAttribute(key) { return this.attrs.get(key) ?? null; }
@@ -80,7 +82,7 @@ async function fixture(withTranscription = true) {
   const objectSources = new Map(), failed = new Set(), revoked = [];
   let serial = 0;
   vm.runInNewContext(source, {
-    document: { getElementById: id => id === "radio-excerpt" ? root : null },
+    document: { getElementById: id => id === "radio-excerpt" ? root : null, createElement: tag => new Element(tag) },
     window: { addEventListener() {} }, AbortController,
     URL: { createObjectURL(blob) { const url = `blob:${++serial}`; objectSources.set(url, blob.source); return url; }, revokeObjectURL(url) { revoked.push(url); } },
     fetch: async url => ({ ok: !failed.has(url), blob: async () => ({ source: url }) })

@@ -1,9 +1,10 @@
 # Law 2 listening page
 
-The `/law-2-radio/` review page has independent template, script and styles:
-`src/law-2-radio.njk`, `public/js/law-2-radio.js`, and
-`public/css/law-2-radio.css`. It does not load the car-to-car player assets or
-inherit car-to-car officer-name associations.
+The `/law-2-radio/` review page retains its own page template and configuration
+adapter (`src/law-2-radio.njk` and `public/js/law-2-radio.js`). Controls,
+transcripts, row interaction, styles and playback use the shared player described
+in `docs/radio-player.md`. Law 2 does not inherit car-to-car officer-name
+associations; its identities stay numeric.
 
 ## Enable dates and transcripts
 

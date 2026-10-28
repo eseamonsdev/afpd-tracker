@@ -7,6 +7,7 @@ pagination:
 permalink: "{{ excerptPage.excerpt | excerptUrl }}"
 ---
 {% extends "site-page-layout.njk" %}
+{% from "radio-player.njk" import player %}
 {% set excerpt = excerptPage.excerpt | radioExcerpt -%}
 {% set title = excerpt.subtitle -%}
 {% set pageTitle = title ~ " | AFPD Accountability Project" -%}
@@ -15,6 +16,7 @@ permalink: "{{ excerptPage.excerpt | excerptUrl }}"
 {% block pageAssets %}
   <link rel="stylesheet" href="/css/police-radio.css">
   <link rel="stylesheet" href="/css/police-radio-excerpt.css">
+  <script src="/js/radio-player-core.js" defer></script>
   <script src="/js/police-radio-excerpt.js" defer></script>
 {% endblock %}
 {% block content %}
@@ -30,42 +32,7 @@ permalink: "{{ excerptPage.excerpt | excerptUrl }}"
       {% if excerpt.enableTranscription %}<p class="radio-transcript-note">AI-generated transcripts may contain errors. Verified transcripts have been reviewed against the audio; unclear passages may remain marked.</p>{% endif %}
     </div>
     <div class="radio-archive" id="radio-excerpt">
-      <section class="radio-player" aria-label="Audio player">
-        <div class="radio-player-heading">
-          <div>
-            <p id="excerpt-current">Choose a clip to listen</p>
-            <p id="excerpt-current-radio-ids" class="radio-ids" hidden></p>
-          </div>
-          <div class="radio-player-actions">
-            <button id="excerpt-show-current" type="button" aria-controls="excerpt-clips" disabled>Show Current Clip</button>
-            <button id="excerpt-controls-toggle" type="button" aria-expanded="true" aria-controls="excerpt-extra-controls" hidden>Hide Controls</button>
-            <div id="excerpt-extra-controls" class="radio-extra-controls">
-              <button id="excerpt-autoplay" type="button" aria-pressed="false">Autoplay: Off</button>{% if excerpt.enableTranscription %}
-              <button id="excerpt-transcription-toggle" type="button" aria-pressed="false" aria-controls="excerpt-transcription" disabled>Transcript: Off</button>{% endif %}
-              {% if excerpt.enableTranscription %}<a id="excerpt-transcript-download" class="radio-transcript-download" download hidden>Download transcript (.txt)</a>{% endif %}
-            </div>
-          </div>
-        </div>
-        <div class="radio-playback">
-          <button id="excerpt-play" type="button" aria-label="Play selected clip" disabled>Play</button>
-          <div class="radio-progress">
-            <label class="radio-sr-only" for="excerpt-seek">Position in clip</label>
-            <input id="excerpt-seek" type="range" min="0" max="0" step="0.1" value="0" disabled>
-            <div class="radio-times"><span id="excerpt-elapsed">0:00</span><span id="excerpt-duration">0:00</span></div>
-          </div>
-        </div>
-        <p id="excerpt-player-message" role="status"></p>{% if excerpt.enableTranscription %}
-        <div id="excerpt-transcription" class="radio-transcript" role="region" aria-label="Current clip transcript" aria-live="polite" aria-atomic="true" hidden>
-          <span id="excerpt-transcript-status" class="radio-transcript-status" hidden></span>
-          <p class="radio-transcript-label"><strong>Transcript:</strong></p>
-          <p id="excerpt-transcript-text"></p>
-          <details id="excerpt-call-note" class="radio-call-note" hidden>
-            <summary><span class="radio-notes-view">View Notes</span><span class="radio-notes-hide">Hide Notes</span></summary>
-            <p id="excerpt-call-note-text"></p>
-          </details>
-        </div>{% endif %}
-        <audio id="excerpt-audio" preload="metadata"></audio>
-      </section>
+      {{ player("excerpt", excerpt.enableTranscription, false, "transcription-toggle", "transcription") }}
       <p class="radio-source-note">Recordings sourced from <a href="https://openmhz.com/" target="_blank" rel="noopener noreferrer">OpenMHz</a> and hosted independently. This site is not affiliated with or endorsed by OpenMHz.</p>
       <p>{{ excerpt.total }} selected clips · approximately {{ excerpt.duration | escape }} of audio. Playback skips the time between calls.</p>
       <div id="excerpt-clips">

@@ -37,6 +37,7 @@
 
   <link rel="stylesheet" href="/css/police-radio.css">
   <link rel="stylesheet" href="/css/police-radio-excerpt.css">
+  <script src="/js/radio-player-core.js" defer></script>
   <script src="/js/police-radio-excerpt.js" defer></script>
 </head>
 <body>
@@ -83,6 +84,7 @@
       <p class="radio-transcript-note">AI-generated transcripts may contain errors. Verified transcripts have been reviewed against the audio; unclear passages may remain marked.</p>
     </div>
     <div class="radio-archive" id="radio-excerpt">
+      
       <section class="radio-player" aria-label="Audio player">
         <div class="radio-player-heading">
           <div>
@@ -90,8 +92,8 @@
             <p id="excerpt-current-radio-ids" class="radio-ids" hidden></p>
           </div>
           <div class="radio-player-actions">
-            <button id="excerpt-show-current" type="button" aria-controls="excerpt-clips" disabled>Show Current Clip</button>
-            <button id="excerpt-controls-toggle" type="button" aria-expanded="true" aria-controls="excerpt-extra-controls" hidden>Hide Controls</button>
+            <button id="excerpt-show-current" class="radio-show-current" type="button" aria-controls="excerpt-clips" disabled>Show Current Clip</button>
+            <button id="excerpt-controls-toggle" class="radio-controls-toggle" type="button" aria-expanded="true" aria-controls="excerpt-extra-controls" hidden>Hide Controls</button>
             <div id="excerpt-extra-controls" class="radio-extra-controls">
               <button id="excerpt-autoplay" type="button" aria-pressed="false">Autoplay: Off</button>
               <button id="excerpt-transcription-toggle" type="button" aria-pressed="false" aria-controls="excerpt-transcription" disabled>Transcript: Off</button>
@@ -100,25 +102,26 @@
           </div>
         </div>
         <div class="radio-playback">
-          <button id="excerpt-play" type="button" aria-label="Play selected clip" disabled>Play</button>
+          <button id="excerpt-play" class="radio-play-button" type="button" aria-label="Play selected clip" disabled>Play</button>
           <div class="radio-progress">
             <label class="radio-sr-only" for="excerpt-seek">Position in clip</label>
-            <input id="excerpt-seek" type="range" min="0" max="0" step="0.1" value="0" disabled>
+            <input id="excerpt-seek" class="radio-seek" type="range" min="0" max="0" step="0.1" value="0" disabled>
             <div class="radio-times"><span id="excerpt-elapsed">0:00</span><span id="excerpt-duration">0:00</span></div>
           </div>
         </div>
-        <p id="excerpt-player-message" role="status"></p>
+        <p id="excerpt-player-message" class="radio-player-message" role="status"></p>
         <div id="excerpt-transcription" class="radio-transcript" role="region" aria-label="Current clip transcript" aria-live="polite" aria-atomic="true" hidden>
           <span id="excerpt-transcript-status" class="radio-transcript-status" hidden></span>
           <p class="radio-transcript-label"><strong>Transcript:</strong></p>
-          <p id="excerpt-transcript-text"></p>
+          <p id="excerpt-transcript-text" class="radio-transcript-text"></p>
           <details id="excerpt-call-note" class="radio-call-note" hidden>
             <summary><span class="radio-notes-view">View Notes</span><span class="radio-notes-hide">Hide Notes</span></summary>
-            <p id="excerpt-call-note-text"></p>
+            <p id="excerpt-call-note-text" class="radio-call-note-text"></p>
           </details>
         </div>
         <audio id="excerpt-audio" preload="metadata"></audio>
       </section>
+
       <p class="radio-source-note">Recordings sourced from <a href="https://openmhz.com/" target="_blank" rel="noopener noreferrer">OpenMHz</a> and hosted independently. This site is not affiliated with or endorsed by OpenMHz.</p>
       <p>159 selected clips · approximately 8 min 4 sec of audio. Playback skips the time between calls.</p>
       <div id="excerpt-clips">

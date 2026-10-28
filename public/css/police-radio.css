@@ -8,26 +8,26 @@
 .radio-player-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; margin-bottom: 1rem; }
 .radio-player-heading p { margin: 0; font-weight: 600; color: var(--navy); }
 .radio-player-actions { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem; flex-shrink: 0; max-width: 100%; }
-.radio-player button, #radio-transcript-download { cursor: pointer; border: 1px solid var(--line); border-radius: 6px; padding: .55rem .8rem; background: var(--page); color: var(--navy); white-space: nowrap; min-height: 44px; }
-#radio-transcript-download { display: inline-flex; align-items: center; text-decoration: none; box-sizing: border-box; }
-#radio-transcript-download[hidden] { display: none; }
-#radio-show-current { background: var(--surface); }
+.radio-player button, .radio-transcript-download { cursor: pointer; border: 1px solid var(--line); border-radius: 6px; padding: .55rem .8rem; background: var(--page); color: var(--navy); white-space: nowrap; min-height: 44px; }
+.radio-transcript-download { display: inline-flex; align-items: center; text-decoration: none; box-sizing: border-box; }
+.radio-transcript-download[hidden] { display: none; }
+.radio-show-current { background: var(--surface); }
 .radio-player button[aria-pressed="true"] { background: var(--navy); color: white; border-color: var(--navy); }
 .radio-player button:disabled { cursor: default; opacity: .5; }
 .radio-playback { display: flex; align-items: center; gap: 1rem; }
-#radio-play { min-width: 78px; }
+.radio-play-button { min-width: 78px; }
 .radio-progress { flex: 1; min-width: 0; }
-#radio-seek { width: 100%; margin: 0; accent-color: var(--blue); cursor: pointer; height: 24px; }
-#radio-seek:disabled { cursor: default; }
+.radio-seek { width: 100%; margin: 0; accent-color: var(--blue); cursor: pointer; height: 24px; }
+.radio-seek:disabled { cursor: default; }
 .radio-times { display: flex; justify-content: space-between; color: var(--muted); font-size: .85rem; font-variant-numeric: tabular-nums; }
-#radio-player-message { margin: .6rem 0 0; color: var(--red); font-size: .9rem; }
-#radio-player-message:empty { display: none; }
+.radio-player-message { margin: .6rem 0 0; color: var(--red); font-size: .9rem; }
+.radio-player-message:empty { display: none; }
 .radio-transcript-note { color: var(--muted); font-size: .9rem; }
 .radio-transcript { margin-top: .85rem; padding-top: .85rem; border-top: 1px solid var(--line); max-height: 16rem; overflow-y: auto; overflow-wrap: anywhere; }
 .radio-transcript[hidden], .radio-transcript-status[hidden] { display: none; }
 .radio-transcript-status { color: var(--muted); font-size: .85rem; }
 .radio-transcript-status[data-verified="true"] { color: #256344; }
-#radio-transcript-text { margin: .4rem 0 0; line-height: 1.6; white-space: pre-wrap; }
+.radio-transcript-text { margin: .4rem 0 0; line-height: 1.6; white-space: pre-wrap; }
 .radio-transcript-label { margin: .4rem 0 0; }
 .radio-call-note { margin: .75rem 0 0; padding-top: .65rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; line-height: 1.5; white-space: pre-wrap; }
 .radio-call-note[hidden] { display: none; }
@@ -43,9 +43,9 @@
 .radio-clip[aria-current="true"] { background: #e8f0f8; color: var(--navy); box-shadow: inset 4px 0 var(--blue); font-weight: 650; }
 .radio-clip > span:last-child { color: var(--muted); font-size: .9rem; flex-shrink: 0; }
 .radio-clip > span:first-child { min-width: 0; }
-#radio-clips .radio-clip-number { color: var(--muted); font-size: .85rem; }
+.radio-clips .radio-clip-number { color: var(--muted); font-size: .85rem; }
 .radio-clip:focus-visible { outline-offset: -3px; }
-.radio-archive select:focus-visible, #radio-seek:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+.radio-archive select:focus-visible, .radio-seek:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
 .radio-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
 @media (max-width: 580px) {
   .radio-player { top: .5rem; }
@@ -81,10 +81,10 @@
 .radio-call-note { white-space: normal; }
 .radio-call-note summary { cursor: pointer; color: var(--navy); font-weight: 600; min-height: 44px; align-content: center; }
 .radio-call-note summary:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
-#radio-call-note-text { margin: .4rem 0 0; white-space: pre-wrap; }
+.radio-call-note-text { margin: .4rem 0 0; white-space: pre-wrap; }
 .radio-call-note .radio-notes-hide,
 .radio-call-note[open] .radio-notes-view { display: none; }
 .radio-call-note[open] .radio-notes-hide { display: inline; }
 
 .radio-extra-controls { display: contents; }
-.radio-extra-controls[hidden], #radio-controls-toggle[hidden] { display: none; }
+.radio-extra-controls[hidden], .radio-controls-toggle[hidden] { display: none; }
