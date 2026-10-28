@@ -20,6 +20,16 @@
   const players = nextAudio ? [audio, nextAudio] : [audio];
   const play = get("play"), seek = get("seek"), autoplay = get("autoplay");
   const showCurrent = get("show-current");
+  const controlsToggle = get("controls-toggle"), extraControls = get("extra-controls");
+  if (controlsToggle && extraControls) {
+    controlsToggle.hidden = false;
+    controlsToggle.addEventListener("click", () => {
+      const expanded = controlsToggle.getAttribute("aria-expanded") !== "true";
+      extraControls.hidden = !expanded;
+      controlsToggle.setAttribute("aria-expanded", String(expanded));
+      controlsToggle.textContent = expanded ? "Hide Controls" : "Show Controls";
+    });
+  }
   const list = get("clips"), section = get("clips-section"), status = get("status");
   const current = get("current"), message = get("player-message");
   const currentRadioIds = get("current-radio-ids");
