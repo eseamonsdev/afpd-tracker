@@ -78,6 +78,7 @@ jobs:
     concurrency:
       group: radio-transcription-${{ matrix.target_branch }}
       cancel-in-progress: false
+      queue: max
     env:
       R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
       R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
