@@ -91,6 +91,25 @@ Another example:
 
 Roles may contain more than one value when appropriate.
 
+### Officer Agency IDs
+
+Store a confirmed agency identifier as an optional `agency_id` string on the
+officer's person entity, for example `"agency_id": "5J42"`. Keep it separate
+from `name` and from radio device IDs.
+
+Reference that field on the corresponding officer-page entity:
+
+```json
+"agency_id": {
+  "$ref": "entity-person-cole-g-richardson",
+  "$path": ["agency_id"]
+}
+```
+
+The officer profile heading displays a nonblank ID in parentheses after the
+name. Omit the page reference when the person has no confirmed ID; profiles
+without an ID keep their existing headings.
+
 ## Sources vs. Entities
 
 `data/sources/` contains independently citable or retrievable materials, such as:

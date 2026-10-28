@@ -10,6 +10,7 @@ permalink: "{{ officerPage.url }}"
 {% from "document-tree.njk" import renderNodes -%}
 {% from "profile-names.njk" import renderAlternateNames -%}
 {% set alternateNames = officerPage | profileAlternateNames -%}
+{% set agencyId = (officerPage.agency_id or "") | trim -%}
 {% set siteUrl = "https://afpd-accountability.com" -%}
 {% set pageTitle = officerPage.seo_title or (officerPage.name ~ " — Officer Records | AFPD Accountability Project") -%}
 {% set defaultDescription = "Explore records related to " ~ officerPage.name ~ "’s service with the American Fork Police Department." -%}
@@ -33,7 +34,7 @@ permalink: "{{ officerPage.url }}"
 
     <div class="page-heading">
       <p class="officer-category-label">OFFICER RECORDS</p>
-      <h1>{{ (officerPage.display_name or officerPage.name) | escape }}</h1>
+      <h1>{{ (officerPage.display_name or officerPage.name) | escape }}{% if agencyId %} ({{ agencyId | escape }}){% endif %}</h1>
     </div>
 
     {% if sections | length %}
