@@ -10,7 +10,7 @@ permalink: "{{ officerPage.url }}"
 {% from "document-tree.njk" import renderNodes -%}
 {% from "profile-names.njk" import renderAlternateNames -%}
 {% set alternateNames = officerPage | profileAlternateNames -%}
-{% set agencyId = (officerPage.agency_id or "") | trim -%}
+{% set observedAgencyIds = officerPage.observed_agency_ids or [] -%}
 {% set siteUrl = "https://afpd-accountability.com" -%}
 {% set pageTitle = officerPage.seo_title or (officerPage.name ~ " — Officer Records | AFPD Accountability Project") -%}
 {% set defaultDescription = "Explore records related to " ~ officerPage.name ~ "’s service with the American Fork Police Department." -%}
@@ -34,7 +34,7 @@ permalink: "{{ officerPage.url }}"
 
     <div class="page-heading">
       <p class="officer-category-label">OFFICER RECORDS</p>
-      <h1>{{ (officerPage.display_name or officerPage.name) | escape }}{% if agencyId %} ({{ agencyId | escape }}){% endif %}</h1>
+      <h1>{{ (officerPage.display_name or officerPage.name) | escape }}</h1>
     </div>
 
     {% if sections | length %}
@@ -68,7 +68,17 @@ permalink: "{{ officerPage.url }}"
               {{ section.title | escape }}
             </h2>
 
-            {% if section.descriptions and section.descriptions | length %}
+            {% if section.id == "observed-agency-ids" %}
+              <p>Agency IDs usually stay the same, but can sometimes be reassigned. They can be a useful indicator or hint of identity, but are not absolute proof. The associations below apply to the cited records and dates.</p>
+              <div class="csv-table-scroll" tabindex="0" role="region" aria-label="Observed Agency IDs and supporting evidence">
+                <table class="csv-table">
+                  <thead><tr><th scope="col">Observed Agency ID</th><th scope="col">Date observed</th><th scope="col">Source</th><th scope="col">Supporting evidence</th></tr></thead>
+                  <tbody>{% for observation in observedAgencyIds %}
+                    <tr><th scope="row"><code>{{ observation.id | escape }}</code></th><td>{% if observation.date %}<time datetime="{{ observation.date | escape }}">{{ observation.date | escape }}</time>{% else %}Not recorded{% endif %}</td><td>{% if observation.url %}<a href="{{ observation.url | escape }}">{{ observation.source | escape }}</a>{% else %}{{ observation.source | escape }}{% endif %}</td><td>{{ observation.evidence | escape }}</td></tr>
+                  {% endfor %}</tbody>
+                </table>
+              </div>
+            {% endif %}{% if section.descriptions and section.descriptions | length %}
               <div class="officer-section-descriptions">
                 {% for description in section.descriptions %}
                   <p>{% if description.parts %}{% for part in description.parts %}{% if part.url %}<a href="{{ part.url | escape }}">{{ part.text | escape }}</a>{% else %}{{ part | escape }}{% endif %}{% endfor %}{% else %}{{ description | escape }}{% endif %}</p>
