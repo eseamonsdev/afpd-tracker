@@ -109,3 +109,15 @@ test("review page and raw Law 2 files receive noindex without changing other pag
   assert.equal(audio.headers.get("X-Robots-Tag"), "noindex, nofollow");
   assert.equal(await audio.text(), "recording");
 });
+
+test("AFPD membership is rebuilt from 6001 source IDs, excluding other talkgroups and transcript text", t => {
+  const f = fixture(t); fs.writeFileSync(f.audio, 'audio');
+  const source = path.join(f.directory, 'openmhz-afpd-car-to-car-2026-10-02');
+  fs.mkdirSync(source);
+  const write = calls => fs.writeFileSync(path.join(source, 'calls.json'), JSON.stringify({ talkgroup: 6001, calls }));
+  write([{ radio_ids: [14590027, '14590026', 0, -1, 'bad'], srcList: [{ src: 14590027 }, { src: '14590028' }], transcript: 'Radio ID 99999999' },
+    { talkgroup: 5922, radio_ids: [12345678] }]);
+  assert.deepEqual(f.build().afpdRadioIds, ['14590026', '14590027', '14590028']);
+  write([{ radio_ids: [14590029] }]);
+  assert.deepEqual(f.build().afpdRadioIds, ['14590029'], 'membership reflects current authoritative manifests');
+});

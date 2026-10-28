@@ -17,6 +17,7 @@ const durationText = seconds => { const whole = Math.floor(Number.isFinite(secon
 const isDispatchId = id => id.startsWith("904");
 
 function createIdentity(getDate) {
+  let afpdIds = new Set();
   let officerDays = {}, informationNumber = 0, closeInformation = null, activeInformation = null;
   document.addEventListener?.("pointerdown", event => {
     if (activeInformation && !activeInformation.contains(event.target)) closeInformation?.();
@@ -46,7 +47,7 @@ function createIdentity(getDate) {
     return ids.length ? `Radio ID${ids.length > 1 ? "s" : ""}: ${ids.map(id => {
       if (isDispatchId(id)) return `${id} · Dispatch`;
       const entry = officerAssociation(id);
-      return entry ? `${id} · ${entry.name} · ${associationLabels[entry.status]}` : id;
+      return entry ? `${id} · ${entry.name} · ${associationLabels[entry.status]}` : afpdIds.has(id) ? `${id} · AFPD` : id;
     }).join(", ")}` : "";
   };
 
@@ -134,10 +135,11 @@ function createIdentity(getDate) {
       number.textContent = id;
       item.append(number);
       const entry = officerAssociation(id);
-      if (isDispatchId(id)) {
+      const roleLabel = isDispatchId(id) ? "Dispatch" : !entry && afpdIds.has(id) ? "AFPD" : "";
+      if (roleLabel) {
         const role = document.createElement("span");
         role.className = "radio-role-label";
-        role.textContent = " · Dispatch";
+        role.textContent = ` · ${roleLabel}`;
         item.append(role);
       } else if (entry) {
         const officer = document.createElement("span");
@@ -165,7 +167,13 @@ function createIdentity(getDate) {
       if (data?.schema_version === 2 && data.days && typeof data.days === "object") officerDays = data.days;
     } catch { /* Numeric IDs remain available when evidence cannot load. */ }
   }
-  return { load, render: renderRadioIds, text: radioIdText, close: () => closeInformation?.() };
+  return { load, render: renderRadioIds, text: radioIdText, close: () => closeInformation?.(),
+    setAfpdRadioIds(values) {
+      afpdIds = new Set((Array.isArray(values) ? values : [])
+        .filter(id => ["string", "number"].includes(typeof id))
+        .map(id => String(id).trim()).filter(id => /^[1-9]\d*$/.test(id)));
+    }
+  };
 }
 
 function transcriptUI(get) {
@@ -575,6 +583,7 @@ function archive(config) {
       if (!response.ok) throw new Error("Unable to load dates");
       const index = await response.json();
       if (!Array.isArray(index.days)) throw new Error("Invalid index");
+      if (config.law2) identity.setAfpdRadioIds(index.afpdRadioIds);
       days = index.days.filter((entry) => (!config.law2 || (entry.enableDay === true && /^openmhz-afpd-law-2-\d{4}-\d{2}-\d{2}$/.test(entry.folder))) && /^\d{4}-\d{2}-\d{2}$/.test(entry.date) && /^[\w.-]+$/.test(entry.folder))
         .sort((a, b) => b.date.localeCompare(a.date));
       month.replaceChildren(); day.replaceChildren();

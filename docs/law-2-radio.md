@@ -58,3 +58,13 @@ There is no internal site-search crawler today. A future one should use
 `excludedFromDiscovery()` from `lib/discovery-exclusions.js` too. This setting does
 not control local `rg`, third-party crawlers, or access permissions. The page and
 files remain public to anyone with their URLs; search exclusion is not privacy.
+
+## AFPD fallback label
+
+The generated Law 2 index includes `afpdRadioIds`, derived on every build from
+positive radio IDs in saved 6001 call manifests (`radio_ids` and `srcList`).
+The shared renderer prioritizes Dispatch, then a supported dated person
+association, then AFPD for an otherwise unlabeled ID in this set. AFPD has no
+association-strength label or information icon. It indicates observation on
+6001, not an independently verified speaker identity. No role or evidence is
+copied into individual Law 2 call objects.

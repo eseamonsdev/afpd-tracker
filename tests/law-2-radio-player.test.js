@@ -58,7 +58,7 @@ class Element {
   add(option) { this.options.push(option); if (this.options.length === 1) this.value = option.value; }
 }
 
-async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11", search = "", transcriptEnabled = true, associations = null, manifestEnabled = transcriptEnabled) {
+async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11", search = "", transcriptEnabled = true, associations = null, manifestEnabled = transcriptEnabled, afpdRadioIds = []) {
   const elements = new Map(["archive", "month", "day", "audio", "play", "seek", "autoplay",
     "clips", "clips-section", "status", "current", "current-radio-ids", "player-message", "elapsed", "duration",
     "coverage", "transcript-toggle", "transcript-download", "transcript", "transcript-status", "transcript-text", "transcript-availability"]
@@ -111,7 +111,7 @@ async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11",
       }
       metadataRequests.push({ url, options });
       return { ok: true, json: async () => url.endsWith("index.json")
-        ? { days: dates.map(date => ({ date, folder: `openmhz-afpd-law-2-${date}`, enableDay: true, enableTranscription: typeof transcriptEnabled === "function" ? transcriptEnabled(date) : transcriptEnabled, count: fixtureCalls?.length ?? 4 })) }
+        ? { afpdRadioIds, days: dates.map(date => ({ date, folder: `openmhz-afpd-law-2-${date}`, enableDay: true, enableTranscription: typeof transcriptEnabled === "function" ? transcriptEnabled(date) : transcriptEnabled, count: fixtureCalls?.length ?? 4 })) }
         : { date: dates.find(date => url.includes(date)), enableTranscription: typeof manifestEnabled === "function" ? manifestEnabled(dates.find(date => url.includes(date))) : manifestEnabled, calls: fixtureCalls ?? Array.from({ length: 4 }, (_, i) => ({
           epoch: 1789100000 + i * 10, displayed_seconds: 5, original_filename: `call-${i}.m4a`
         })) } };
@@ -250,4 +250,23 @@ test("904 IDs show Dispatch without person associations in rows, labels and curr
   assert.match(f.get("clips").children[1].children[1].textContent, /9040013 · Dispatch/);
   f.get("day").value = "2026-09-10"; f.get("day").emit("change"); await f.settle();
   assert.match(f.get("clips").children[0].children[1].textContent, /9040011 · Dispatch/);
+});
+
+test("Law 2 AFPD fallback follows 6001 membership while Dispatch and dated names take priority", async () => {
+  const f = await playerFixture([
+    { epoch: 1789100000, displayed_seconds: 2, original_filename: 'one.m4a', radio_ids: [9040011, 14590026, 14590027, 14590028] }
+  ], undefined, '2026-09-11', '', false, { schema_version: 2, days: { '2026-09-11': {
+    '14590026': { name: 'Test Officer', status: 'confirmed' }
+  } } }, false, ['9040011', '14590026', '14590027', 'bad', 0]);
+  const ids = f.get('clips').children[0].children[1];
+  assert.match(ids.textContent, /9040011 · Dispatch/);
+  assert.match(ids.textContent, /14590026 · Test Officer · Confirmed this day/);
+  assert.match(ids.textContent, /14590027 · AFPD/);
+  assert.equal(ids.children[5].children.length, 2, 'AFPD has just the number and fallback label');
+  assert.equal(ids.children[7].textContent, '14590028', 'unknown IDs remain numeric');
+  assert.match(f.get('clips').children[0].children[0].getAttribute('aria-label'), /14590027 · AFPD/);
+  f.select(0); await f.settle();
+  assert.match(f.get('current-radio-ids').textContent, /14590027 · AFPD/);
+  f.get('day').value = '2026-09-10'; f.get('day').emit('change'); await f.settle();
+  assert.match(f.get('clips').children[0].children[1].textContent, /14590026 · AFPD/, 'dated person association does not extend to another day');
 });
