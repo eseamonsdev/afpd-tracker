@@ -39,7 +39,7 @@
 .law2-radio-clips li + li { border-top: 1px solid var(--line); }
 .law2-radio-clip { width: 100%; text-align: left; border: 0; padding: .85rem 1rem; background: transparent; color: var(--ink); cursor: pointer; font-variant-numeric: tabular-nums; min-height: 48px; }
 @media (hover: hover) and (pointer: fine) {
-  .law2-radio-clip:hover { background: var(--page); }
+  .law2-radio-clip-row:hover { background: var(--page); }
 }
 .law2-radio-clip[aria-current="true"] { background: #e8f0f8; color: var(--navy); box-shadow: inset 4px 0 var(--blue); font-weight: 650; }
 .law2-radio-clip > span:last-child { color: var(--muted); font-size: .9rem; flex-shrink: 0; }
@@ -61,7 +61,7 @@
 .law2-radio-officer-name { font-weight: 400; }
 .law2-radio-player-heading .law2-radio-ids[hidden] { display: none; }
 
-.law2-radio-clip-row { position: relative; border-radius: inherit; }
+.law2-radio-clip-row { position: relative; border-radius: inherit; cursor: pointer; }
 .law2-radio-clip-row .law2-radio-clip { padding-bottom: .35rem; }
 .law2-radio-clip-row > .law2-radio-ids { position: relative; display: block; margin: 0; padding: 0 1rem .65rem; color: var(--ink); font-size: .95rem; line-height: 1.5; font-weight: 400; overflow-wrap: anywhere; }
 .law2-radio-clip-row:has(.law2-radio-clip[aria-current="true"]) { background: #e8f0f8; box-shadow: inset 4px 0 var(--blue); }
