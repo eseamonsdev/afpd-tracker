@@ -24,6 +24,8 @@ class Element {
     this.loads = 0;
   }
   set src(value) { this.attrs.set("src", value); }
+  set textContent(value) { this._text = value; this.children = []; }
+  get textContent() { return this._text + this.children.map(child => child.textContent).join(""); }
   get src() { return this.getAttribute("src"); }
   setAttribute(key, value) { this.attrs.set(key, String(value)); }
   getAttribute(key) { return this.attrs.get(key) ?? null; }
@@ -49,11 +51,11 @@ class Element {
   append(...children) {
     for (const child of children) this.children.push(...(child.tag === "fragment" ? child.children : [child]));
   }
-  replaceChildren(...children) { this.children = children; this.options = []; this.value = ""; }
+  replaceChildren(...children) { this._text = ""; this.children = children; this.options = []; this.value = ""; }
   add(option) { this.options.push(option); if (this.options.length === 1) this.value = option.value; }
 }
 
-async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11", search = "", transcriptEnabled = true) {
+async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11", search = "", transcriptEnabled = true, associations = null) {
   const elements = new Map(["archive", "month", "day", "audio", "play", "seek", "autoplay",
     "clips", "clips-section", "status", "current", "current-radio-ids", "player-message", "elapsed", "duration",
     "transcript-toggle", "transcript-download", "transcript", "transcript-status", "transcript-text", "transcript-availability"]
@@ -94,6 +96,10 @@ async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11",
     },
     Option: class { constructor(text, value) { this.text = text; this.value = value; } },
     fetch: async (url) => {
+      if (url.endsWith("officer-associations.json")) {
+        if (associations instanceof Error) throw associations;
+        return { ok: true, json: async () => associations };
+      }
       if (url.endsWith(".m4a")) {
         fetchedAudio.push(url);
         if (failedAudio.has(url)) return { ok: false };
@@ -494,6 +500,65 @@ test("radio IDs appear in clip rows and player, and disappear for missing IDs an
 });
 
 
+test("confirmed names follow the date in rows, accessible labels and the player", async () => {
+  const calls = [
+    { epoch: 1789100000, displayed_seconds: 5, original_filename: "known.m4a", radio_ids: ["14590098"] },
+    { epoch: 1789100010, displayed_seconds: 5, original_filename: "mixed.m4a", radio_ids: ["14590098", "14590026"] }
+  ];
+  const associations = { schema_version: 1, days: {
+    "2026-09-11": { "14590098": { name: "Greg B. Mecham" } },
+    "2026-09-10": { "14590026": { name: "Different dated association" } }
+  } };
+  const f = await playerFixture(calls, undefined, "2026-09-11", "", true, associations);
+  const row = i => f.get("clips").children[i].children[0];
+  const ids = row(0).children[0].children[2];
+  assert.equal(ids.textContent, "Radio ID: 14590098 · Greg B. Mecham");
+  assert.equal(ids.children[1].children[0].tag, "strong");
+  assert.match(row(0).getAttribute("aria-label"), /Greg B. Mecham/);
+  assert.equal(row(1).children[0].children[2].textContent, "Radio IDs: 14590098 · Greg B. Mecham, 14590026");
+  f.select(0);
+  assert.equal(f.get("current-radio-ids").textContent, ids.textContent);
+  f.get("day").value = "2026-09-10";
+  f.get("day").emit("change");
+  await f.settle();
+  assert.equal(f.get("current-radio-ids").hidden, true);
+  assert.equal(row(0).children[0].children[2].textContent, "Radio ID: 14590098");
+  f.select(1);
+  assert.equal(f.get("current-radio-ids").textContent, "Radio IDs: 14590098, 14590026 · Different dated association");
+});
+
+test("missing or invalid associations leave IDs bold and playback available", async () => {
+  for (const associations of [null, { schema_version: 2, days: {} }, new Error("Unavailable")]) {
+    const f = await playerFixture([
+      { epoch: 1789100000, displayed_seconds: 5, original_filename: "known.m4a", radio_ids: ["14590098"] }
+    ], undefined, "2026-09-11", "", true, associations);
+    f.select(0);
+    const ids = f.get("current-radio-ids");
+    assert.equal(ids.textContent, "Radio ID: 14590098");
+    assert.equal(ids.children[1].children[0].tag, "strong");
+    assert.ok(f.active());
+  }
+});
+
+test("curated dated labels include corrections and omit uncertain associations", () => {
+  const { days } = JSON.parse(readFileSync(new URL("../public/records/openmhz/officer-associations.json", import.meta.url), "utf8"));
+  assert.equal(days["2026-09-12"]["14590105"].name, "Kelepi Makai");
+  assert.equal(days["2026-10-07"]["14590268"].name, "Samuel Canizalez");
+  assert.equal(days["2026-09-24"]["14590100"].name, "Sammantha J. Halladay");
+  assert.equal(days["2026-10-24"]["14590165"].name, "Ivan R. Bird");
+  assert.equal(days["2026-10-25"]["14590313"].name, "Delton L. Choates");
+  assert.equal(days["2026-09-19"]["14590100"], undefined);
+  assert.equal(days["2026-10-01"]["14590247"], undefined);
+  for (const ids of Object.values(days)) {
+    assert.equal(ids["14590045"], undefined);
+    assert.equal(ids["14590221"], undefined);
+    for (const [id, entry] of Object.entries(ids)) {
+      assert.match(id, /^[1-9]\d*$/);
+      assert.ok(entry.name && (entry.evidence?.length || entry.clips));
+    }
+  }
+});
+
 test("download link follows the loaded date independently of transcript display", async () => {
   const f = await playerFixture(undefined, undefined, "2026-10-21", "", false);
   const link = f.get("transcript-download");
@@ -515,3 +580,4 @@ test("download link follows the loaded date independently of transcript display"
   assert.equal(link.hidden, true);
   assert.equal(link.getAttribute("href"), null);
 });
+

@@ -48,19 +48,62 @@
   let lastPlayingAudio = null, keepPlaybackPlayer = false;
   let prefetchedClip = null, prefetchController = null, activeObjectUrl = null;
 
-  const radioIdText = (call) => {
+  let officerDays = {};
+  const radioIds = (call) => {
     const ids = [...new Set([
       ...(Array.isArray(call?.radio_ids) ? call.radio_ids : []),
       ...(Array.isArray(call?.srcList) ? call.srcList.map(source => source?.src) : [])
     ].filter(id => typeof id === "string" || typeof id === "number")
       .map(id => String(id).trim()).filter(id => /^[1-9]\d*$/.test(id)))];
-    return ids.length ? `Radio ID${ids.length > 1 ? "s" : ""}: ${ids.join(", ")}` : "";
+    return ids;
   };
+
+  const officerName = (id) => {
+    const name = officerDays[day.value]?.[id]?.name;
+    return typeof name === "string" ? name.trim() : "";
+  };
+  const radioIdText = (call) => {
+    const ids = radioIds(call);
+    return ids.length ? `Radio ID${ids.length > 1 ? "s" : ""}: ${ids.map(id => {
+      const name = officerName(id);
+      return name ? `${id} · ${name}` : id;
+    }).join(", ")}` : "";
+  };
+
+  function renderRadioIds(element, call) {
+    element.replaceChildren();
+    const ids = radioIds(call);
+    if (!ids.length) return;
+    const caption = document.createElement("span");
+    caption.className = "radio-id-caption";
+    caption.textContent = `Radio ID${ids.length > 1 ? "s" : ""}: `;
+    element.append(caption);
+    ids.forEach((id, index) => {
+      const item = document.createElement("span");
+      item.className = "radio-id-association";
+      const number = document.createElement("strong");
+      number.textContent = id;
+      item.append(number);
+      const name = officerName(id);
+      if (name) {
+        const officer = document.createElement("span");
+        officer.className = "radio-officer-name";
+        officer.textContent = ` · ${name}`;
+        item.append(officer);
+      }
+      element.append(item);
+      if (index < ids.length - 1) {
+        const separator = document.createElement("span");
+        separator.textContent = ", ";
+        element.append(separator);
+      }
+    });
+  }
 
   function updateRadioIds(call) {
     if (!currentRadioIds) return;
-    currentRadioIds.textContent = radioIdText(call);
-    currentRadioIds.hidden = !currentRadioIds.textContent;
+    renderRadioIds(currentRadioIds, call);
+    currentRadioIds.hidden = !radioIds(call).length;
   }
 
   const clipSource = (index) => `${base}${encodeURIComponent(folder)}/${encodeURIComponent(calls[index].original_filename)}`;
@@ -321,7 +364,7 @@
         if (ids) {
           const radioIds = document.createElement("span");
           radioIds.className = "radio-ids";
-          radioIds.textContent = ids;
+          renderRadioIds(radioIds, call);
           label.append(radioIds);
         }
         const duration = document.createElement("span");
@@ -421,7 +464,13 @@
 
   async function initialize() {
     try {
-      const response = await fetch(`${base}index.json`);
+      const [response, associations] = await Promise.all([
+        fetch(`${base}index.json`),
+        fetch(`${base}officer-associations.json`).then(response => response.ok ? response.json() : null).catch(() => null)
+      ]);
+      if (associations?.schema_version === 1 && associations.days && typeof associations.days === "object") {
+        officerDays = associations.days;
+      }
       if (!response.ok) throw new Error("Unable to load dates");
       const index = await response.json();
       if (!Array.isArray(index.days)) throw new Error("Invalid index");
@@ -452,3 +501,4 @@
   }
   initialize();
 })();
+
