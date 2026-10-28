@@ -1,0 +1,657 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-04",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791151019.m4a": {
+      "index": 691,
+      "epoch": 1791151019,
+      "sha256": "c72c6235e1d525618b64fee20a7928fb2a27ee33cdd896435607e6d8b0e72e50",
+      "passes": {
+        "original": {
+          "text": "7J28, I'm clear. 28.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J28, I'm clear.",
+              "avg_logprob": -0.48692708810170493,
+              "no_speech_prob": 0.054284222424030304,
+              "compression_ratio": 0.7142857142857143
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " 28.",
+              "avg_logprob": -0.48692708810170493,
+              "no_speech_prob": 0.054284222424030304,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm clear. Twenty-eight.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I'm clear.",
+              "avg_logprob": -0.6077152215517484,
+              "no_speech_prob": 0.037048473954200745,
+              "compression_ratio": 0.75
+            },
+            {
+              "start": 1.0,
+              "end": 1.1,
+              "text": " Twenty-eight.",
+              "avg_logprob": -0.6077152215517484,
+              "no_speech_prob": 0.037048473954200745,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "context": {
+          "text": "7J28, I'm clear. 28.",
+          "prompt": "Avenue Central. Good. Advising of the fires, this is the holiday oil, 579 South Pleasant Grove. In the parking lot just south of the holiday, Arby's and the White Dodge Ram, there's smoldering mulch. You put water on it. You Copy.",
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7J28, I'm clear. 28.",
+              "avg_logprob": -0.4636815327864427,
+              "no_speech_prob": 0.03407043591141701,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791151045.m4a": {
+      "index": 692,
+      "epoch": 1791151045,
+      "sha256": "8ffd553de1e007cdffec52808aba4c63c9b9759c2fb7ab055913e9b8668fe83a",
+      "passes": {
+        "original": {
+          "text": "7J, 18 Central Medical Center, with a vision.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J, 18 Central Medical Center, with a vision.",
+              "avg_logprob": -1.0577569643656413,
+              "no_speech_prob": 0.022130316123366356,
+              "compression_ratio": 0.9183673469387755
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7-J-18, control medical funding motivation.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7-J-18, control medical funding motivation.",
+              "avg_logprob": -0.9941040277481079,
+              "no_speech_prob": 0.03286735340952873,
+              "compression_ratio": 0.8431372549019608
+            }
+          ]
+        },
+        "context": {
+          "text": "7J18, Central Medical Center, San Diego Division.",
+          "prompt": "Good. Advising of the fires, this is the holiday oil, 579 South Pleasant Grove. In the parking lot just south of the holiday, Arby's and the White Dodge Ram, there's smoldering mulch. You put water on it. You Copy. 7J28, I'm clear. 28.",
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.44,
+              "text": " 7J18, Central Medical Center, San Diego Division.",
+              "avg_logprob": -0.8778005758921306,
+              "no_speech_prob": 0.14542391896247864,
+              "compression_ratio": 0.9423076923076923
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791151065.m4a": {
+      "index": 693,
+      "epoch": 1791151065,
+      "sha256": "13463f338d433369011111906b49d45ca97658198b459fd5ce096da0725baa3b",
+      "passes": {
+        "original": {
+          "text": "Copy. Are they requesting?",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy. Are they requesting?",
+              "avg_logprob": -0.681109799279107,
+              "no_speech_prob": 0.06468548625707626,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy. I think we're closing.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy. I think we're closing.",
+              "avg_logprob": -0.7040791619907726,
+              "no_speech_prob": 0.05253398045897484,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy. Are they requesting?",
+          "prompt": "7J28, I'm clear. 28. 7J, 18 Central Medical Center, with a vision.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy. Are they requesting?",
+              "avg_logprob": -0.5557917488945855,
+              "no_speech_prob": 0.05900431051850319,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791151067.m4a": {
+      "index": 694,
+      "epoch": 1791151067,
+      "sha256": "0f71a2c5b6a877da030bc048e70e1060bcc722a696cd1621f47e017a597c38f4",
+      "passes": {
+        "original": {
+          "text": "negative",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " negative",
+              "avg_logprob": -0.6994528770446777,
+              "no_speech_prob": 0.04882014915347099,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Negative.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Negative.",
+              "avg_logprob": -0.5239141464233399,
+              "no_speech_prob": 0.0450022853910923,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Negative.",
+          "prompt": "7J28, I'm clear. 28. 7J, 18 Central Medical Center, with a vision. Copy. Are they requesting?",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Negative.",
+              "avg_logprob": -0.5418567180633544,
+              "no_speech_prob": 0.018234290182590485,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791151070.m4a": {
+      "index": 695,
+      "epoch": 1791151070,
+      "sha256": "24ce2394eefc1af35f22195c34fd92f81e8f489eedf10e02c7130223d76282ba",
+      "passes": {
+        "original": {
+          "text": "Copy. I'll be around for the other fire assist.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Copy. I'll be around for the other fire assist.",
+              "avg_logprob": -0.81184028784434,
+              "no_speech_prob": 0.04485699534416199,
+              "compression_ratio": 0.9038461538461539
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'll be announcing the other fire assist.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.32,
+              "text": " I'll be announcing the other fire assist.",
+              "avg_logprob": -1.2278390030066173,
+              "no_speech_prob": 0.07655157148838043,
+              "compression_ratio": 0.8913043478260869
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy. I'll be in route to the other fire assist.",
+          "prompt": "7J, 18 Central Medical Center, with a vision. Copy. Are they requesting? negative",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.12,
+              "text": " Copy. I'll be in route to the other fire assist.",
+              "avg_logprob": -0.654698833823204,
+              "no_speech_prob": 0.028416141867637634,
+              "compression_ratio": 0.8888888888888888
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791151073.m4a": {
+      "index": 696,
+      "epoch": 1791151073,
+      "sha256": "ca3c93aa76a280a18ca9651895f7b8f91455c1fcfdee7eb35993b30f51b250a1",
+      "passes": {
+        "original": {
+          "text": "Jump rate.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Jump rate.",
+              "avg_logprob": -1.3402336835861206,
+              "no_speech_prob": 0.15742391347885132,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Jeffrey.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Jeffrey.",
+              "avg_logprob": -1.0709609031677245,
+              "no_speech_prob": 0.05414346605539322,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "Copy. Are they requesting? negative Copy. I'll be around for the other fire assist.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -1.0724832534790039,
+              "no_speech_prob": 0.07644480466842651,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791151169.m4a": {
+      "index": 697,
+      "epoch": 1791151169,
+      "sha256": "5ddf86641888cb416512173e907e7cfd98512c90d9d753e823d2df0bed705426",
+      "passes": {
+        "original": {
+          "text": "7J28",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J28",
+              "avg_logprob": -0.685391922791799,
+              "no_speech_prob": 0.09774169325828552,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J28",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J28",
+              "avg_logprob": -0.8283263941605886,
+              "no_speech_prob": 0.06882842630147934,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "7J28",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J28",
+              "avg_logprob": -0.685391922791799,
+              "no_speech_prob": 0.09774169325828552,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791151171.m4a": {
+      "index": 698,
+      "epoch": 1791151171,
+      "sha256": "398d7bd4b4a2ed88798210589052095a77a7e96b7ded7bd7a24c0e4c4b9530f8",
+      "passes": {
+        "original": {
+          "text": "Good.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Good.",
+              "avg_logprob": -0.8316856384277344,
+              "no_speech_prob": 0.07803705334663391,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bye.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye.",
+              "avg_logprob": -0.9155692100524903,
+              "no_speech_prob": 0.12620915472507477,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Good",
+          "prompt": "7J28",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Good",
+              "avg_logprob": -0.8445062935352325,
+              "no_speech_prob": 0.17521338164806366,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791151173.m4a": {
+      "index": 699,
+      "epoch": 1791151173,
+      "sha256": "fb5743bc177b0e2eabdec93ba38de3b3fc06de2e0e294b92c66e244dfe99be87",
+      "passes": {
+        "original": {
+          "text": "I'm out by the holiday on that fire. It's completely out",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.8000000000000003,
+              "text": " I'm out by the holiday on that fire. It's completely out",
+              "avg_logprob": -0.3418743470135857,
+              "no_speech_prob": 0.006868624594062567,
+              "compression_ratio": 0.9333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm out by the holiday on that fire. It's completely off",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.84,
+              "text": " I'm out by the holiday on that fire. It's completely off",
+              "avg_logprob": -0.409937578089097,
+              "no_speech_prob": 0.004611361771821976,
+              "compression_ratio": 0.9180327868852459
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm out by the holiday on that fire, it's completely out.",
+          "prompt": "7J28 Good.",
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.44,
+              "text": " I'm out by the holiday on that fire, it's completely out.",
+              "avg_logprob": -0.33926448557111955,
+              "no_speech_prob": 0.03293103724718094,
+              "compression_ratio": 0.9344262295081968
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791151178.m4a": {
+      "index": 700,
+      "epoch": 1791151178,
+      "sha256": "913289ab1fb52c976faa1950b17b4dd3a486e84432b1f02ad63cf92a85f46b7c",
+      "passes": {
+        "original": {
+          "text": "Happy?",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy?",
+              "avg_logprob": -0.7209194660186767,
+              "no_speech_prob": 0.03328431025147438,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy?",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy?",
+              "avg_logprob": -0.662476634979248,
+              "no_speech_prob": 0.02152777649462223,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy?",
+          "prompt": "7J28 Good. I'm out by the holiday on that fire. It's completely out",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy?",
+              "avg_logprob": -0.5673814296722413,
+              "no_speech_prob": 0.09611999243497849,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    }
+  }
+}
