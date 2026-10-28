@@ -1,0 +1,657 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-11",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1789161613.m4a": {
+      "index": 521,
+      "epoch": 1789161613,
+      "sha256": "ebc982e9e3c588ddcb72e01056e4b4fec75ce283a44e159d33c81e5f24379efa",
+      "passes": {
+        "original": {
+          "text": "Bye.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " Bye.",
+              "avg_logprob": -0.6101878643035888,
+              "no_speech_prob": 0.14348535239696503,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.8008395632108053,
+              "no_speech_prob": 0.09527512639760971,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you.",
+          "prompt": "5J31, copy keys. 5J31, how be it Keith?",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.8495925863583883,
+              "no_speech_prob": 0.0958552211523056,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789161615.m4a": {
+      "index": 522,
+      "epoch": 1789161615,
+      "sha256": "cba23711a82ee9bbc05f1558ca40533c4858424c5178f221a2a7b306700b1e95",
+      "passes": {
+        "original": {
+          "text": "435 south, 500 east at the desert industries. It's a white F-350, not occupied. Their park's closer to the street.",
+          "prompt": null,
+          "duration_seconds": 9.344,
+          "token_limit": 99,
+          "token_count": 35,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.44,
+              "text": " 435 south, 500 east at the desert industries.",
+              "avg_logprob": -0.45584222508801353,
+              "no_speech_prob": 0.11767328530550003,
+              "compression_ratio": 1.1176470588235294
+            },
+            {
+              "start": 4.44,
+              "end": 7.5200000000000005,
+              "text": " It's a white F-350, not occupied.",
+              "avg_logprob": -0.45584222508801353,
+              "no_speech_prob": 0.11767328530550003,
+              "compression_ratio": 1.1176470588235294
+            },
+            {
+              "start": 7.5200000000000005,
+              "end": 8.88,
+              "text": " Their park's closer to the street.",
+              "avg_logprob": -0.45584222508801353,
+              "no_speech_prob": 0.11767328530550003,
+              "compression_ratio": 1.1176470588235294
+            }
+          ]
+        },
+        "filtered": {
+          "text": "435 South 500 East at the desert industries. It's a YS-350 not occupied. Their park is closer to the street.",
+          "prompt": null,
+          "duration_seconds": 9.344,
+          "token_limit": 99,
+          "token_count": 30,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " 435 South 500 East at the desert industries. It's a YS-350 not occupied. Their park is closer to the street.",
+              "avg_logprob": -0.5556300955433999,
+              "no_speech_prob": 0.08440994471311569,
+              "compression_ratio": 1.0909090909090908
+            }
+          ]
+        },
+        "context": {
+          "text": "435 south, 500 east at the desert industries. It's a white F-350, not occupied. The park's closer to the street.",
+          "prompt": "5J31, copy keys. 5J31, how be it Keith? Bye.",
+          "duration_seconds": 9.344,
+          "token_limit": 99,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " 435 south, 500 east at the desert industries. It's a white F-350, not occupied. The park's closer to the street.",
+              "avg_logprob": -0.3879359867423773,
+              "no_speech_prob": 0.11960713565349579,
+              "compression_ratio": 1.108910891089109
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789161626.m4a": {
+      "index": 523,
+      "epoch": 1789161626,
+      "sha256": "07054f2fbf0d26d0466abd77850de0ed002fb88018b2d1cf412b4233d86bb303",
+      "passes": {
+        "original": {
+          "text": "I guess they can take that with everyone",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " I guess they can take that with everyone",
+              "avg_logprob": -0.6600231474096124,
+              "no_speech_prob": 0.02190476469695568,
+              "compression_ratio": 0.8695652173913043
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Alright, let's see if they can take that with everyone.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Alright, let's see if they can take that with everyone.",
+              "avg_logprob": -0.45509171672165394,
+              "no_speech_prob": 0.012574450112879276,
+              "compression_ratio": 0.9016393442622951
+            }
+          ]
+        },
+        "context": {
+          "text": "5J6, I can take that with everyone.",
+          "prompt": "5J31, how be it Keith? Bye. 435 south, 500 east at the desert industries. It's a white F-350, not occupied. Their park's closer to the street.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J6, I can take that with everyone.",
+              "avg_logprob": -0.38899967074394226,
+              "no_speech_prob": 0.010241575539112091,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789161629.m4a": {
+      "index": 524,
+      "epoch": 1789161629,
+      "sha256": "e6caf899db068c7d2c2b4896352442539ab97e0be3cebee372faffd61991198c",
+      "passes": {
+        "original": {
+          "text": "I copy 5J31, you copy?",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I copy 5J31, you copy?",
+              "avg_logprob": -0.5963022112846375,
+              "no_speech_prob": 0.004189716652035713,
+              "compression_ratio": 0.8461538461538461
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I copy, 5J31, you copy.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.68,
+              "text": " I copy, 5J31, you copy.",
+              "avg_logprob": -0.5666947548206036,
+              "no_speech_prob": 0.005534905008971691,
+              "compression_ratio": 0.8518518518518519
+            }
+          ]
+        },
+        "context": {
+          "text": "Hi, copy 5J31, you copy?",
+          "prompt": "Bye. 435 south, 500 east at the desert industries. It's a white F-350, not occupied. Their park's closer to the street. I guess they can take that with everyone",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.68,
+              "text": " Hi, copy 5J31, you copy?",
+              "avg_logprob": -0.5230236603663518,
+              "no_speech_prob": 0.0384037010371685,
+              "compression_ratio": 0.8571428571428571
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789161650.m4a": {
+      "index": 525,
+      "epoch": 1789161650,
+      "sha256": "db5752c28041a717cc3a163f9ddbe8736edcfda0ceb1059bf41a42efb591b5a6",
+      "passes": {
+        "original": {
+          "text": "5G24, go for a check.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G24, go for a check.",
+              "avg_logprob": -0.4745095024506251,
+              "no_speech_prob": 0.024920888245105743,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G24, go for track.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G24, go for track.",
+              "avg_logprob": -0.7268941944295709,
+              "no_speech_prob": 0.021357161924242973,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "5J24, go for a check.",
+          "prompt": "435 south, 500 east at the desert industries. It's a white F-350, not occupied. Their park's closer to the street. I guess they can take that with everyone I copy 5J31, you copy?",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J24, go for a check.",
+              "avg_logprob": -0.34701574345429737,
+              "no_speech_prob": 0.034740786999464035,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789161659.m4a": {
+      "index": 526,
+      "epoch": 1789161659,
+      "sha256": "9ae7edc2e653e817ff03bfc9cab522e2defe9fc8cec68d4c9df60910f07fd4ad",
+      "passes": {
+        "original": {
+          "text": "5J24, Code 4.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J24, Code 4.",
+              "avg_logprob": -0.5510203599929809,
+              "no_speech_prob": 0.011348096653819084,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J24, Code 4.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J24, Code 4.",
+              "avg_logprob": -0.5732255101203918,
+              "no_speech_prob": 0.0038100103847682476,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "5J24, go for it.",
+          "prompt": "I guess they can take that with everyone I copy 5J31, you copy? 5G24, go for a check.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.68,
+              "text": " 5J24, go for it.",
+              "avg_logprob": -0.27975689281116833,
+              "no_speech_prob": 0.007125089876353741,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789161672.m4a": {
+      "index": 527,
+      "epoch": 1789161672,
+      "sha256": "8372d3ebc5ba607611a540abf3fb2d976ba4268ea5ff4c74a05bfd916640b030",
+      "passes": {
+        "original": {
+          "text": "5J24 Central.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J24 Central.",
+              "avg_logprob": -0.4455038756132126,
+              "no_speech_prob": 0.026244308799505234,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J24 Central.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J24 Central.",
+              "avg_logprob": -0.36977891251444817,
+              "no_speech_prob": 0.023242995142936707,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "5J24 Central.",
+          "prompt": "I copy 5J31, you copy? 5G24, go for a check. 5J24, Code 4.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.8800000000000001,
+              "text": " 5J24 Central.",
+              "avg_logprob": -0.3663558065891266,
+              "no_speech_prob": 0.010268577374517918,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789161680.m4a": {
+      "index": 528,
+      "epoch": 1789161680,
+      "sha256": "94dccb3c883fd1e531880bd2af771dc5a7dc6959e87166ea05d5b91e3e5ee08b",
+      "passes": {
+        "original": {
+          "text": "I did try to work work",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I did try to work work",
+              "avg_logprob": -0.888219780392117,
+              "no_speech_prob": 0.028057178482413292,
+              "compression_ratio": 0.8461538461538461
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I do 24-4.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I do 24-4.",
+              "avg_logprob": -0.9807999928792318,
+              "no_speech_prob": 0.10159270465373993,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "5J24, 4.",
+          "prompt": "5G24, go for a check. 5J24, Code 4. 5J24 Central.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.12,
+              "text": " 5J24, 4.",
+              "avg_logprob": -0.4205252329508464,
+              "no_speech_prob": 0.011508754454553127,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789161682.m4a": {
+      "index": 529,
+      "epoch": 1789161682,
+      "sha256": "355ed79e337af3e5554c7b711f030b0ecb4fdfb2b7ffdd3ad00b21c8ca592212",
+      "passes": {
+        "original": {
+          "text": "Just checking code 4.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.2,
+              "text": " Just checking code 4.",
+              "avg_logprob": -0.5949122831225395,
+              "no_speech_prob": 0.00906702596694231,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Just checking code four",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Just checking code four",
+              "avg_logprob": -0.5669925212860107,
+              "no_speech_prob": 0.0073846084997057915,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "context": {
+          "text": "just checking Code 4.",
+          "prompt": "5J24, Code 4. 5J24 Central. I did try to work work",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " just checking Code 4.",
+              "avg_logprob": -0.409969799220562,
+              "no_speech_prob": 0.028077753260731697,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789161684.m4a": {
+      "index": 530,
+      "epoch": 1789161684,
+      "sha256": "c16cfec3a1ee10b0ab5f6f7c2e5cf1ca2206bdda88bb040e2fa855ba2aa5929b",
+      "passes": {
+        "original": {
+          "text": "Hup!",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Hup!",
+              "avg_logprob": -1.3185228904088337,
+              "no_speech_prob": 0.598541259765625,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bye-bye.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye-bye.",
+              "avg_logprob": -1.1294044426509313,
+              "no_speech_prob": 0.417399138212204,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Hup.",
+          "prompt": "5J24 Central. I did try to work work Just checking code 4.",
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Hup.",
+              "avg_logprob": -1.160180668036143,
+              "no_speech_prob": 0.3366799056529999,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    }
+  }
+}
