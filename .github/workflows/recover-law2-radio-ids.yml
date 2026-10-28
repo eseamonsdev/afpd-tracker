@@ -1,0 +1,40 @@
+name: Recover October 1-18 Law 2 radio IDs
+on:
+  push:
+    branches: [staging]
+    paths:
+      - .github/workflows/recover-law2-radio-ids.yml
+      - scripts/recover_law2_radio_ids.py
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: recover-law2-radio-ids-staging
+  cancel-in-progress: false
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: staging
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Configure checkpoint identity
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+      - name: Recover source radio IDs with one-second minimum intervals
+        env:
+          PYTHONUNBUFFERED: '1'
+        run: python3 scripts/recover_law2_radio_ids.py --root . --checkpoint-dir records-pending-review/openmhz-radio-id-recovery/october-1-18 --commit
+      - name: Retain recovery checkpoints even if a later step fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: law2-october-1-18-radio-id-recovery
+          path: records-pending-review/openmhz-radio-id-recovery/october-1-18
+          if-no-files-found: ignore
