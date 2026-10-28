@@ -1,0 +1,671 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-12",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1789261545.m4a": {
+      "index": 891,
+      "epoch": 1789261545,
+      "sha256": "f1c427934e29e8c2c27476d9fc2cb15bac5eae004b0b7501aef071110d978e57",
+      "passes": {
+        "original": {
+          "text": "This will be at the Macy's 135 East Main Street. They're requesting a 1021 or 1025 regarding delayed theft.",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " This will be at the Macy's 135 East Main Street.",
+              "avg_logprob": -0.2689385364452998,
+              "no_speech_prob": 0.014167143031954765,
+              "compression_ratio": 1.0808080808080809
+            },
+            {
+              "start": 3.0,
+              "end": 6.0,
+              "text": " They're requesting a 1021 or 1025 regarding delayed theft.",
+              "avg_logprob": -0.2689385364452998,
+              "no_speech_prob": 0.014167143031954765,
+              "compression_ratio": 1.0808080808080809
+            }
+          ]
+        },
+        "filtered": {
+          "text": "This will be at the Macy's 135 East Main Street. They're requesting a 1021 or 1025 regarding the late theft.",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 30,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " This will be at the Macy's 135 East Main Street.",
+              "avg_logprob": -0.30117466565101375,
+              "no_speech_prob": 0.004950174130499363,
+              "compression_ratio": 1.1134020618556701
+            },
+            {
+              "start": 3.0,
+              "end": 6.0,
+              "text": " They're requesting a 1021 or 1025 regarding the late theft.",
+              "avg_logprob": -0.30117466565101375,
+              "no_speech_prob": 0.004950174130499363,
+              "compression_ratio": 1.1134020618556701
+            }
+          ]
+        },
+        "context": {
+          "text": "this will be at the Macy's 135 East Main Street. They're requesting a 1021 or 1025 regarding delayed theft.",
+          "prompt": "5J44 Central copy test. But",
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.2,
+              "text": " this will be at the Macy's 135 East Main Street. They're requesting a 1021 or 1025 regarding",
+              "avg_logprob": -0.31656540036201475,
+              "no_speech_prob": 0.0941692665219307,
+              "compression_ratio": 1.0808080808080809
+            },
+            {
+              "start": 5.2,
+              "end": 5.96,
+              "text": " delayed theft.",
+              "avg_logprob": -0.31656540036201475,
+              "no_speech_prob": 0.0941692665219307,
+              "compression_ratio": 1.0808080808080809
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789261553.m4a": {
+      "index": 892,
+      "epoch": 1789261553,
+      "sha256": "4651cd0396bf087de35ca32c2812ad3debb9a9a146632a31a4f068184acc70e7",
+      "passes": {
+        "original": {
+          "text": "",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 0,
+          "token_cap_reached": false,
+          "segments": []
+        },
+        "filtered": {
+          "text": "But",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " But",
+              "avg_logprob": -0.7387458086013794,
+              "no_speech_prob": 0.6628796458244324,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "context": {
+          "text": "",
+          "prompt": "5J44 Central copy test. But This will be at the Macy's 135 East Main Street. They're requesting a 1021 or 1025 regarding delayed theft.",
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 0,
+          "token_cap_reached": false,
+          "segments": []
+        }
+      }
+    },
+    "dcfems-5922-1789261590.m4a": {
+      "index": 893,
+      "epoch": 1789261590,
+      "sha256": "9136d7ba40de70cffde9cda6431609765d3a40f3e18dce19f4170e836eb197b7",
+      "passes": {
+        "original": {
+          "text": "OK.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " OK.",
+              "avg_logprob": -0.9214096069335938,
+              "no_speech_prob": 0.02349218726158142,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Okay.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Okay.",
+              "avg_logprob": -0.6465898990631104,
+              "no_speech_prob": 0.03211989253759384,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "OK.",
+          "prompt": "But This will be at the Macy's 135 East Main Street. They're requesting a 1021 or 1025 regarding delayed theft.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " OK.",
+              "avg_logprob": -0.8848669052124023,
+              "no_speech_prob": 0.2885587811470032,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789261630.m4a": {
+      "index": 894,
+      "epoch": 1789261630,
+      "sha256": "6889d0ff30bdd7ddc2c24ee847cf01cdb0f5b4dc80763fa4236758b75262e312",
+      "passes": {
+        "original": {
+          "text": "1829 Central Copy, threatening suicide.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " 1829 Central Copy, threatening suicide.",
+              "avg_logprob": -0.9495955163782294,
+              "no_speech_prob": 0.041154004633426666,
+              "compression_ratio": 0.8297872340425532
+            }
+          ]
+        },
+        "filtered": {
+          "text": "H&G 9 central copy threatening surface.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " H&G 9 central copy threatening surface.",
+              "avg_logprob": -0.7908772726853689,
+              "no_speech_prob": 0.012651943601667881,
+              "compression_ratio": 0.8297872340425532
+            }
+          ]
+        },
+        "context": {
+          "text": "Each and two names central copy, threatening to say.",
+          "prompt": "OK.",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Each and two names central copy, threatening to say.",
+              "avg_logprob": -1.0423811503819056,
+              "no_speech_prob": 0.16193214058876038,
+              "compression_ratio": 0.8813559322033898
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789261634.m4a": {
+      "index": 895,
+      "epoch": 1789261634,
+      "sha256": "6d8b198c8479ca9eeec21144a0407fe4ecd07acf1c7a9c64a0485edde08db797",
+      "passes": {
+        "original": {
+          "text": "See you next time!",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " See you next time!",
+              "avg_logprob": -1.162465587258339,
+              "no_speech_prob": 0.503244936466217,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Alright.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Alright.",
+              "avg_logprob": -1.2332442283630372,
+              "no_speech_prob": 0.3968501091003418,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "OK.",
+          "prompt": "OK. 1829 Central Copy, threatening suicide.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " OK.",
+              "avg_logprob": -0.7544384956359863,
+              "no_speech_prob": 0.18190120160579681,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789261636.m4a": {
+      "index": 896,
+      "epoch": 1789261636,
+      "sha256": "c9c2dd1ce8e496d83337ead989437177e29a10b870aa2cb72ef918bca3ed2325",
+      "passes": {
+        "original": {
+          "text": "This will be at the Roxbury 5406 West Timpanogos Highway customer came in and told the RP that she was going to kill herself then left in a white The four-door passenger car ten minutes ago heading towards Lehigh",
+          "prompt": null,
+          "duration_seconds": 13.056,
+          "token_limit": 129,
+          "token_count": 51,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.540000000000001,
+              "text": " This will be at the Roxbury 5406 West Timpanogos Highway customer came in and told the RP that she was going to kill herself then left in a white",
+              "avg_logprob": -0.3525606617331505,
+              "no_speech_prob": 0.0026752452831715345,
+              "compression_ratio": 1.325
+            },
+            {
+              "start": 9.0,
+              "end": 12.44,
+              "text": " The four-door passenger car ten minutes ago heading towards Lehigh",
+              "avg_logprob": -0.3525606617331505,
+              "no_speech_prob": 0.0026752452831715345,
+              "compression_ratio": 1.325
+            }
+          ]
+        },
+        "filtered": {
+          "text": "This will be at the Roxbury 5406 West Timpanogos Highway. The customer came in and told the R.P. that she was going to kill herself, then left in a white four-door passenger car 10 minutes ago heading towards Lehigh.",
+          "prompt": null,
+          "duration_seconds": 13.056,
+          "token_limit": 129,
+          "token_count": 57,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.82,
+              "text": " This will be at the Roxbury 5406 West Timpanogos Highway.",
+              "avg_logprob": -0.37180999024160977,
+              "no_speech_prob": 0.004501888062804937,
+              "compression_ratio": 1.3170731707317074
+            },
+            {
+              "start": 4.82,
+              "end": 12.82,
+              "text": " The customer came in and told the R.P. that she was going to kill herself, then left in a white four-door passenger car 10 minutes ago heading towards Lehigh.",
+              "avg_logprob": -0.37180999024160977,
+              "no_speech_prob": 0.004501888062804937,
+              "compression_ratio": 1.3170731707317074
+            }
+          ]
+        },
+        "context": {
+          "text": "This will be at the Roxbury, 5406 West Timpanogos Highway. The customer came in and told the RP that she was going to kill herself, then left in a white four-door passenger car 10 minutes ago, heading towards Lehigh.",
+          "prompt": "OK. 1829 Central Copy, threatening suicide. See you next time!",
+          "duration_seconds": 13.056,
+          "token_limit": 129,
+          "token_count": 56,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.84,
+              "text": " This will be at the Roxbury, 5406 West Timpanogos Highway.",
+              "avg_logprob": -0.3412188396119235,
+              "no_speech_prob": 0.0037731437478214502,
+              "compression_ratio": 1.3012048192771084
+            },
+            {
+              "start": 4.84,
+              "end": 12.84,
+              "text": " The customer came in and told the RP that she was going to kill herself, then left in a white four-door passenger car 10 minutes ago, heading towards Lehigh.",
+              "avg_logprob": -0.3412188396119235,
+              "no_speech_prob": 0.0037731437478214502,
+              "compression_ratio": 1.3012048192771084
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789261650.m4a": {
+      "index": 897,
+      "epoch": 1789261650,
+      "sha256": "0a045289f123a91fbf914199f2be15eabf05d4bebcfb44d751d21340426ef61a",
+      "passes": {
+        "original": {
+          "text": "e-mail is possibly a Shelly Petty, phone number's in the notes.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " e-mail is possibly a Shelly Petty, phone number's in the notes.",
+              "avg_logprob": -0.5284093916416168,
+              "no_speech_prob": 0.012059668079018593,
+              "compression_ratio": 0.9264705882352942
+            }
+          ]
+        },
+        "filtered": {
+          "text": "females, possibly a Shelly Petty, phone number's in the notes.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " females, possibly a Shelly Petty, phone number's in the notes.",
+              "avg_logprob": -0.583498434887992,
+              "no_speech_prob": 0.006052896846085787,
+              "compression_ratio": 0.9393939393939394
+            }
+          ]
+        },
+        "context": {
+          "text": "The email is possibly a Shelly Petty, phone number's in the notes",
+          "prompt": "1829 Central Copy, threatening suicide. See you next time! This will be at the Roxbury 5406 West Timpanogos Highway customer came in and told the RP that she was going to kill herself then left in a white The four-door passenger car ten minutes ago heading towards Lehigh",
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " The email is possibly a Shelly Petty, phone number's in the notes",
+              "avg_logprob": -0.5163318879074521,
+              "no_speech_prob": 0.03219597786664963,
+              "compression_ratio": 0.9285714285714286
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789261657.m4a": {
+      "index": 898,
+      "epoch": 1789261657,
+      "sha256": "b5c0c04876d800ab64b54501f9a917aff1d223e9b77b278e4ffa8acf1f70588d",
+      "passes": {
+        "original": {
+          "text": "Copy all getting out to the location.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy all getting out to the location.",
+              "avg_logprob": -0.49768653782931244,
+              "no_speech_prob": 0.008661642670631409,
+              "compression_ratio": 0.8222222222222222
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy all units at location.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy all units at location.",
+              "avg_logprob": -0.6556209988064237,
+              "no_speech_prob": 0.016496730968356133,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy all getting out to the location.",
+          "prompt": "See you next time! This will be at the Roxbury 5406 West Timpanogos Highway customer came in and told the RP that she was going to kill herself then left in a white The four-door passenger car ten minutes ago heading towards Lehigh e-mail is possibly a Shelly Petty, phone number's in the notes.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy all getting out to the location.",
+              "avg_logprob": -0.45978535305369983,
+              "no_speech_prob": 0.005267441272735596,
+              "compression_ratio": 0.8222222222222222
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789261660.m4a": {
+      "index": 899,
+      "epoch": 1789261660,
+      "sha256": "69023d3d8fe488a74576d21ae773eeb3dc38675fe04f1c5947469c4b4405238d",
+      "passes": {
+        "original": {
+          "text": "Hi, Kathy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Hi, Kathy.",
+              "avg_logprob": -0.840287344796317,
+              "no_speech_prob": 0.011820392683148384,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hi, Kathy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Hi, Kathy.",
+              "avg_logprob": -0.5694749185017177,
+              "no_speech_prob": 0.012945719994604588,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Hi, Happy.",
+          "prompt": "This will be at the Roxbury 5406 West Timpanogos Highway customer came in and told the RP that she was going to kill herself then left in a white The four-door passenger car ten minutes ago heading towards Lehigh e-mail is possibly a Shelly Petty, phone number's in the notes. Copy all getting out to the location.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Hi, Happy.",
+              "avg_logprob": -0.6176455531801496,
+              "no_speech_prob": 0.02679726481437683,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789261664.m4a": {
+      "index": 900,
+      "epoch": 1789261664,
+      "sha256": "b127edcfbc995a8b417980815fd3f2366202743001520285c64d09defa692f58",
+      "passes": {
+        "original": {
+          "text": "We're taking you to 20 traffic.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " We're taking you to 20 traffic.",
+              "avg_logprob": -0.535512241450223,
+              "no_speech_prob": 0.023417919874191284,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We're taking you to 20 traffic.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " We're taking you to 20 traffic.",
+              "avg_logprob": -0.594363971190019,
+              "no_speech_prob": 0.04123320430517197,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "context": {
+          "text": "We're taking you to 20 traffic.",
+          "prompt": "e-mail is possibly a Shelly Petty, phone number's in the notes. Copy all getting out to the location. Hi, Kathy.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " We're taking you to 20 traffic.",
+              "avg_logprob": -0.3756810047409751,
+              "no_speech_prob": 0.04188047721982002,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        }
+      }
+    }
+  }
+}
