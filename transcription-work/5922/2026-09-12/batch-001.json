@@ -1,0 +1,681 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-12",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1789193024.m4a": {
+      "index": 1,
+      "epoch": 1789193024,
+      "sha256": "8108930107c9f54df801ee365134cc32738d670a1d775a3801bd43252c11737a",
+      "passes": {
+        "original": {
+          "text": "5G35, I copy the loud noise.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.16,
+              "text": " 5G35, I copy the loud noise.",
+              "avg_logprob": -0.533084667645968,
+              "no_speech_prob": 0.139370396733284,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G35, I copy the loud noise.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2,
+              "text": " 5G35, I copy the loud noise.",
+              "avg_logprob": -0.5373949637779822,
+              "no_speech_prob": 0.12253233790397644,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "context": {
+          "text": "5G35, I copy the loud noise.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.16,
+              "text": " 5G35, I copy the loud noise.",
+              "avg_logprob": -0.533084667645968,
+              "no_speech_prob": 0.139370396733284,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789193030.m4a": {
+      "index": 2,
+      "epoch": 1789193030,
+      "sha256": "07363a19847f34a59d05f052a5e2aa2c71928cc2079a10c37e7083eb7f286a69",
+      "passes": {
+        "original": {
+          "text": "I'm sorry, J35, copy. 800E, 620 cells, building, bravo, on the south side. There's a few people out on the patio on the first floor being loud, positively intoxicated.",
+          "prompt": null,
+          "duration_seconds": 10.624,
+          "token_limit": 109,
+          "token_count": 46,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 10.0,
+              "text": " I'm sorry, J35, copy. 800E, 620 cells, building, bravo, on the south side. There's a few people out on the patio on the first floor being loud, positively intoxicated.",
+              "avg_logprob": -0.37466609477996826,
+              "no_speech_prob": 0.012029461562633514,
+              "compression_ratio": 1.2279411764705883
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm sorry, J35, copy, 800E 620 cells building Bravo on the south side. There's a few people out on the patio on the first floor being loud, positively intoxicated.",
+          "prompt": null,
+          "duration_seconds": 10.624,
+          "token_limit": 109,
+          "token_count": 43,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.68,
+              "text": " I'm sorry, J35, copy, 800E 620 cells building Bravo on the south side.",
+              "avg_logprob": -0.39671638811176474,
+              "no_speech_prob": 0.011034172028303146,
+              "compression_ratio": 1.2164179104477613
+            },
+            {
+              "start": 5.68,
+              "end": 9.64,
+              "text": " There's a few people out on the patio on the first floor being loud, positively intoxicated.",
+              "avg_logprob": -0.39671638811176474,
+              "no_speech_prob": 0.011034172028303146,
+              "compression_ratio": 1.2164179104477613
+            }
+          ]
+        },
+        "context": {
+          "text": "5G35 copy, 800E 620 cells building Bravo on the south side, there's a few people out on the patio on the first floor being loud, positively intoxicated.",
+          "prompt": "5G35, I copy the loud noise.",
+          "duration_seconds": 10.624,
+          "token_limit": 109,
+          "token_count": 39,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.88,
+              "text": " 5G35 copy, 800E 620 cells building Bravo on the south side, there's a few people out on",
+              "avg_logprob": -0.3747871913015842,
+              "no_speech_prob": 0.0161279384046793,
+              "compression_ratio": 1.2258064516129032
+            },
+            {
+              "start": 6.88,
+              "end": 9.64,
+              "text": " the patio on the first floor being loud, positively intoxicated.",
+              "avg_logprob": -0.3747871913015842,
+              "no_speech_prob": 0.0161279384046793,
+              "compression_ratio": 1.2258064516129032
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789193500.m4a": {
+      "index": 3,
+      "epoch": 1789193500,
+      "sha256": "48c06573e5e81da9dbd7a142e055d234ed9c45997c9b843a8a449bc71c36f947",
+      "passes": {
+        "original": {
+          "text": "All units copy mobile for attempts to locate for a runaway out of 3J",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.2,
+              "text": " All units copy mobile for attempts to locate for a runaway out of 3J",
+              "avg_logprob": -0.4006715830829408,
+              "no_speech_prob": 0.03371672332286835,
+              "compression_ratio": 0.9855072463768116
+            }
+          ]
+        },
+        "filtered": {
+          "text": "All units copy mobile for attempts to locate for a runaway out of 3J.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.2,
+              "text": " All units copy mobile for attempts to locate for a runaway out of 3J.",
+              "avg_logprob": -0.37229191002092865,
+              "no_speech_prob": 0.008073161356151104,
+              "compression_ratio": 0.9857142857142858
+            }
+          ]
+        },
+        "context": {
+          "text": "All units copy mobile for attempts to locate for a runaway out of 3J",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.2,
+              "text": " All units copy mobile for attempts to locate for a runaway out of 3J",
+              "avg_logprob": -0.4006715830829408,
+              "no_speech_prob": 0.03371672332286835,
+              "compression_ratio": 0.9855072463768116
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789193519.m4a": {
+      "index": 4,
+      "epoch": 1789193519,
+      "sha256": "109df5e841859cb2a0c0f070ecb2ebd0d855cdf1aafa189722e02f0b825ef4ab",
+      "passes": {
+        "original": {
+          "text": "All units, be advised, the law is secure for emergency traffic, law 4 is secure.",
+          "prompt": null,
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.72,
+              "text": " All units, be advised, the law is secure for emergency traffic, law 4 is secure.",
+              "avg_logprob": -0.530785016038201,
+              "no_speech_prob": 0.06574966758489609,
+              "compression_ratio": 1.0666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Oh, you need to be advised, the law is secure for emergency traffic, law 4 is secure.",
+          "prompt": null,
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.8,
+              "text": " Oh, you need to be advised, the law is secure for emergency traffic, law 4 is secure.",
+              "avg_logprob": -0.5749536976218224,
+              "no_speech_prob": 0.08818891644477844,
+              "compression_ratio": 1.0897435897435896
+            }
+          ]
+        },
+        "context": {
+          "text": "All units be advised and lost for secure for emergency traffic, law 4 secure",
+          "prompt": "All units copy mobile for attempts to locate for a runaway out of 3J",
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.72,
+              "text": " All units be advised and lost for secure for emergency traffic, law 4 secure",
+              "avg_logprob": -0.5313766035768721,
+              "no_speech_prob": 0.005395006388425827,
+              "compression_ratio": 1.027027027027027
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789193542.m4a": {
+      "index": 5,
+      "epoch": 1789193542,
+      "sha256": "bae3aad874e6c93fa4b5299822f4e3f84f710075352a6e8cf1c720dd7e18ec8a",
+      "passes": {
+        "original": {
+          "text": "BLEEP BLEEP",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " BLEEP BLEEP",
+              "avg_logprob": -0.605222225189209,
+              "no_speech_prob": 0.18026943504810333,
+              "compression_ratio": 0.6875
+            }
+          ]
+        },
+        "filtered": {
+          "text": "beep beep",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " beep beep",
+              "avg_logprob": -0.454259991645813,
+              "no_speech_prob": 0.22400151193141937,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "BLEEP BLEEP",
+          "prompt": "All units copy mobile for attempts to locate for a runaway out of 3J All units, be advised, the law is secure for emergency traffic, law 4 is secure.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " BLEEP BLEEP",
+              "avg_logprob": -0.5699402491251627,
+              "no_speech_prob": 0.2689681947231293,
+              "compression_ratio": 0.6875
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789193548.m4a": {
+      "index": 6,
+      "epoch": 1789193548,
+      "sha256": "81e3dffc3a889c7aaf6c389d436b1dff7aff65afd3d1ad5732a786d48ee1580b",
+      "passes": {
+        "original": {
+          "text": "All units, Law 4 is no longer secure, resume normal traffic, resume normal traffic.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.64,
+              "text": " All units, Law 4 is no longer secure, resume normal traffic, resume normal traffic.",
+              "avg_logprob": -0.3281566642579578,
+              "no_speech_prob": 0.06846421211957932,
+              "compression_ratio": 1.2028985507246377
+            }
+          ]
+        },
+        "filtered": {
+          "text": "All units, Law 4 is no longer secure, resume normal traffic or resume normal traffic.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.72,
+              "text": " All units, Law 4 is no longer secure, resume normal traffic or resume normal traffic.",
+              "avg_logprob": -0.407919032233102,
+              "no_speech_prob": 0.027366142719984055,
+              "compression_ratio": 1.1805555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "All units, law 4 is no longer secure, resume normal traffic, resume normal traffic.",
+          "prompt": "All units copy mobile for attempts to locate for a runaway out of 3J All units, be advised, the law is secure for emergency traffic, law 4 is secure. BLEEP BLEEP",
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.64,
+              "text": " All units, law 4 is no longer secure, resume normal traffic, resume normal traffic.",
+              "avg_logprob": -0.2400409039996919,
+              "no_speech_prob": 0.00340448459610343,
+              "compression_ratio": 1.2028985507246377
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789193555.m4a": {
+      "index": 7,
+      "epoch": 1789193555,
+      "sha256": "32f626c3ab086bcbf2b6b5237688fdd8d68bfe42914c249335de885805a7ba3a",
+      "passes": {
+        "original": {
+          "text": "Say you can do night and afternoon. Say you can do night.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Say you can do night and afternoon.",
+              "avg_logprob": -0.5390616718091463,
+              "no_speech_prob": 0.17156092822551727,
+              "compression_ratio": 1.1875
+            },
+            {
+              "start": 2.0,
+              "end": 4.0,
+              "text": " Say you can do night.",
+              "avg_logprob": -0.5390616718091463,
+              "no_speech_prob": 0.17156092822551727,
+              "compression_ratio": 1.1875
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Say you can do it night and afternoon. Say you can do it night.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Say you can do it night and afternoon.",
+              "avg_logprob": -0.4795075598217192,
+              "no_speech_prob": 0.20611368119716644,
+              "compression_ratio": 1.2352941176470589
+            },
+            {
+              "start": 2.0,
+              "end": 4.0,
+              "text": " Say you can do it night.",
+              "avg_logprob": -0.4795075598217192,
+              "no_speech_prob": 0.20611368119716644,
+              "compression_ratio": 1.2352941176470589
+            }
+          ]
+        },
+        "context": {
+          "text": "Say you can do it night and afternoon. Say you can do it night.",
+          "prompt": "All units, be advised, the law is secure for emergency traffic, law 4 is secure. BLEEP BLEEP All units, Law 4 is no longer secure, resume normal traffic, resume normal traffic.",
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.5,
+              "text": " Say you can do it night and afternoon. Say you can do it night.",
+              "avg_logprob": -0.46971572700299713,
+              "no_speech_prob": 0.06584899127483368,
+              "compression_ratio": 1.2352941176470589
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789193561.m4a": {
+      "index": 8,
+      "epoch": 1789193561,
+      "sha256": "6c62977dbcc41972681fbf74ab32fb236c003365a4721b23a49c17ef2f21935c",
+      "passes": {
+        "original": {
+          "text": "5J35",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J35",
+              "avg_logprob": -0.5934385458628336,
+              "no_speech_prob": 0.06814096868038177,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J35.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J35.",
+              "avg_logprob": -0.5316256284713745,
+              "no_speech_prob": 0.07084747403860092,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "5J35",
+          "prompt": "BLEEP BLEEP All units, Law 4 is no longer secure, resume normal traffic, resume normal traffic. Say you can do night and afternoon. Say you can do night.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J35",
+              "avg_logprob": -0.5132695039113363,
+              "no_speech_prob": 0.03479291871190071,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789193563.m4a": {
+      "index": 9,
+      "epoch": 1789193563,
+      "sha256": "b5a451b5ad1e6aeca2e01944c73398f632787acf8fb066d7e4dac490a3884dfe",
+      "passes": {
+        "original": {
+          "text": "5J35 foot.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J35 foot.",
+              "avg_logprob": -0.5535849332809448,
+              "no_speech_prob": 0.1396968960762024,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J35 foot.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J35 foot.",
+              "avg_logprob": -0.6215619668364525,
+              "no_speech_prob": 0.08316304534673691,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "5J35",
+          "prompt": "All units, Law 4 is no longer secure, resume normal traffic, resume normal traffic. Say you can do night and afternoon. Say you can do night. 5J35",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.6600000000000001,
+              "text": " 5J35",
+              "avg_logprob": -0.5032054424285889,
+              "no_speech_prob": 0.10883208364248276,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789193566.m4a": {
+      "index": 10,
+      "epoch": 1789193566,
+      "sha256": "fa91ca490b99650aba3cc840e4e793b373f6393b7adce04bf28dbb34c4b22541",
+      "passes": {
+        "original": {
+          "text": "The phone number for my RP is not working. Can you see if there's another number?",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " The phone number for my RP is not working. Can you see if there's another number?",
+              "avg_logprob": -0.2914398217743093,
+              "no_speech_prob": 0.01637154258787632,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "filtered": {
+          "text": "The phone number for my RP is not working. Can you see if there's another number?",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " The phone number for my RP is not working.",
+              "avg_logprob": -0.2973564888040225,
+              "no_speech_prob": 0.010504993610084057,
+              "compression_ratio": 1.0
+            },
+            {
+              "start": 3.0,
+              "end": 5.0,
+              "text": " Can you see if there's another number?",
+              "avg_logprob": -0.2973564888040225,
+              "no_speech_prob": 0.010504993610084057,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "The phone number for my RP is not working. Can you see if there's another number?",
+          "prompt": "Say you can do night and afternoon. Say you can do night. 5J35 5J35 foot.",
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.72,
+              "text": " The phone number for my RP is not working. Can you see if there's another number?",
+              "avg_logprob": -0.22147611664100128,
+              "no_speech_prob": 0.00792350247502327,
+              "compression_ratio": 1.0
+            }
+          ]
+        }
+      }
+    }
+  }
+}
