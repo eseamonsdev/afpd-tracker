@@ -59,8 +59,8 @@ if (filters && description && buttons.length) {
     if (searchStatus) {
       searchStatus.hidden = queryWords.length === 0;
       searchStatus.textContent = visibleCount === 0
-        ? "No officers match this name in the selected category. Try All to search every officer."
-        : `${visibleCount} ${visibleCount === 1 ? "officer matches" : "officers match"} this name.`;
+        ? "No officers match this search in the selected category. Try All to search every officer."
+        : `${visibleCount} ${visibleCount === 1 ? "officer matches" : "officers match"} this search.`;
     }
   }
 
