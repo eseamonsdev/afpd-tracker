@@ -614,21 +614,28 @@ test("every 6001 day is screened and fallback names respect holds and single-day
   assert.equal(data.days["2026-10-20"]["14590165"], undefined);
 });
 
-test("download link follows the loaded date independently of transcript display", async () => {
-  const f = await playerFixture(undefined, undefined, "2026-10-21", "", false);
+test("download link follows the loaded date and hides when transcripts are disabled", async () => {
+  const f = await playerFixture(undefined, undefined, "2026-10-21", "", date => date !== "2026-09-10");
   const link = f.get("transcript-download");
   assert.equal(link.hidden, false);
   assert.equal(link.getAttribute("download"), "transcript_2026_10_21.txt");
   assert.equal(link.getAttribute("href"), "/records/openmhz/2026-10-21/transcript_2026_10_21.txt");
-  assert.equal(f.get("transcript-toggle").hidden, true);
+  assert.equal(f.get("transcript-toggle").hidden, false);
   f.get("day").value = "2026-09-10";
   f.get("day").emit("change");
   assert.equal(link.hidden, true);
   assert.equal(link.getAttribute("href"), null);
   await f.settle();
+  assert.equal(link.hidden, true);
+  assert.equal(link.getAttribute("download"), null);
+  assert.equal(link.getAttribute("href"), null);
+  assert.equal(f.get("transcript-toggle").hidden, true);
+  f.get("day").value = "2026-10-21";
+  f.get("day").emit("change");
+  await f.settle();
   assert.equal(link.hidden, false);
-  assert.equal(link.getAttribute("download"), "transcript_2026_09_10.txt");
-  assert.equal(link.getAttribute("href"), "/records/openmhz/2026-09-10/transcript_2026_09_10.txt");
+  assert.equal(link.getAttribute("download"), "transcript_2026_10_21.txt");
+  assert.equal(link.getAttribute("href"), "/records/openmhz/2026-10-21/transcript_2026_10_21.txt");
   f.get("day").value = "unavailable";
   f.get("day").emit("change");
   await f.settle();

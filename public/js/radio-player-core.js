@@ -542,7 +542,7 @@ function archive(config) {
         ? entry.enableTranscription : data.enableTranscription;
       transcriptAvailable = transcriptEnabled === true && (!config.law2 || calls.some(call => typeof call.transcript === "string" && call.transcript.trim()));
       if (config.law2 && get("coverage")) { get("coverage").textContent = entry.coverageNote || ""; get("coverage").hidden = !entry.coverageNote; }
-      if (transcriptDownload && (!config.law2 || transcriptAvailable)) {
+      if (transcriptDownload && transcriptAvailable) {
         const filename = `transcript_${entry.date.replaceAll("-", "_")}.txt`;
         transcriptDownload.setAttribute("href", `${base}${encodeURIComponent(folder)}/${filename}`);
         transcriptDownload.setAttribute("download", filename);

@@ -19,7 +19,8 @@ It revalidates the date index and selected manifest when loading them. Both
 archives use an explicit transcript setting from the date index when present,
 falling back to the manifest for older indexes. Law 2 also requires actual
 transcript text before exposing the shared toggle and download link. An explicit
-false setting keeps its transcripts hidden even if text exists. Law 2 adds its
+false setting keeps transcript controls and downloads hidden in both archives,
+even if text exists. Law 2 adds its
 enabled-date rules and coverage notes. Both talkgroups use the same dated
 radio-ID associations: names, strength labels and SVG information buttons.
 Associations have no per-player enable switch: matching date, radio ID, name
