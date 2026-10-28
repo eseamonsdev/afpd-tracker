@@ -1,0 +1,657 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-06",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791322073.m4a": {
+      "index": 1071,
+      "epoch": 1791322073,
+      "sha256": "6094fab4a6e9706afbe961b28dd9fa9d903ff66d6df2c6e34d738aeff550ec7a",
+      "passes": {
+        "original": {
+          "text": "BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.76,
+              "text": " BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP",
+              "avg_logprob": -0.4139243993494246,
+              "no_speech_prob": 0.5200071930885315,
+              "compression_ratio": 2.4375
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -1.01479942148382,
+              "no_speech_prob": 0.29187652468681335,
+              "compression_ratio": 1.0
+            },
+            {
+              "start": 1.0,
+              "end": 1.02,
+              "text": " Thank you.",
+              "avg_logprob": -1.01479942148382,
+              "no_speech_prob": 0.29187652468681335,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "I'll see you next time. Bye.",
+          "prompt": "5J32, copy medical. and",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I'll see you next time.",
+              "avg_logprob": -0.8587741085461208,
+              "no_speech_prob": 0.3069326877593994,
+              "compression_ratio": 0.7777777777777778
+            },
+            {
+              "start": 1.0,
+              "end": 1.02,
+              "text": " Bye.",
+              "avg_logprob": -0.8587741085461208,
+              "no_speech_prob": 0.3069326877593994,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791322082.m4a": {
+      "index": 1072,
+      "epoch": 1791322082,
+      "sha256": "81a1d734d8adc2a3adfb26a1945c553a1f649ab15023ff09f382088cfd93a7f2",
+      "passes": {
+        "original": {
+          "text": "copy and rough",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.88,
+              "text": " copy and rough",
+              "avg_logprob": -0.7717218498388926,
+              "no_speech_prob": 0.012741689570248127,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy and rough",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.9,
+              "text": " copy and rough",
+              "avg_logprob": -1.1313922206560771,
+              "no_speech_prob": 0.014712824486196041,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "copy and rough",
+          "prompt": "5J32, copy medical. and BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.88,
+              "text": " copy and rough",
+              "avg_logprob": -0.5641894539197286,
+              "no_speech_prob": 0.00262692803516984,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791322093.m4a": {
+      "index": 1073,
+      "epoch": 1791322093,
+      "sha256": "2f21287223e2a2f1d0a5fc9022de4c014254438616a721a14c4b9bfdf92f2e46",
+      "passes": {
+        "original": {
+          "text": "18J 22 clear.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18J 22 clear.",
+              "avg_logprob": -0.7027801871299744,
+              "no_speech_prob": 0.02809518575668335,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18J22 clear.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18J22 clear.",
+              "avg_logprob": -0.6046142429113388,
+              "no_speech_prob": 0.020394068211317062,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "18J 22 clear",
+          "prompt": "and BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP copy and rough",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.68,
+              "text": " 18J 22 clear",
+              "avg_logprob": -0.5161282845905849,
+              "no_speech_prob": 0.005732841324061155,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791322100.m4a": {
+      "index": 1074,
+      "epoch": 1791322100,
+      "sha256": "d4e3163c895528e3f1c341deadcc37a75f35e85979aade8fd4af2badb3fadb8d",
+      "passes": {
+        "original": {
+          "text": "5J49, code 4.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J49, code 4.",
+              "avg_logprob": -0.6245808005332947,
+              "no_speech_prob": 0.050628554075956345,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J49, go for it.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J49, go for it.",
+              "avg_logprob": -0.7028608430515636,
+              "no_speech_prob": 0.10095846652984619,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "5J49 cut for.",
+          "prompt": "BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP copy and rough 18J 22 clear.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.6400000000000001,
+              "text": " 5J49 cut for.",
+              "avg_logprob": -0.7558328840467665,
+              "no_speech_prob": 0.02375580184161663,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791322105.m4a": {
+      "index": 1075,
+      "epoch": 1791322105,
+      "sha256": "a88f9e6daa6302778cf1fc1083b549622ce0b1735359b40f7a54e889878356f3",
+      "passes": {
+        "original": {
+          "text": "What force has been it?",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " What force has been it?",
+              "avg_logprob": -0.822712156507704,
+              "no_speech_prob": 0.035056132823228836,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go forces Ben",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go forces Ben",
+              "avg_logprob": -0.6091067691644033,
+              "no_speech_prob": 0.03004440851509571,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "Code 4, suspect.",
+          "prompt": "copy and rough 18J 22 clear. 5J49, code 4.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.2,
+              "text": " Code 4, suspect.",
+              "avg_logprob": -0.8496981337666512,
+              "no_speech_prob": 0.05726425722241402,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791322107.m4a": {
+      "index": 1076,
+      "epoch": 1791322107,
+      "sha256": "ee5fae11f8d869aeff8514e323affaac92c1228053d3b90d299414b599c5d21a",
+      "passes": {
+        "original": {
+          "text": "Copies are st-",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.72,
+              "text": " Copies are st-",
+              "avg_logprob": -0.784648559987545,
+              "no_speech_prob": 0.04375208541750908,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copies and stuff.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copies and stuff.",
+              "avg_logprob": -0.8170312792062759,
+              "no_speech_prob": 0.10227696597576141,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "Copies is down.",
+          "prompt": "18J 22 clear. 5J49, code 4. What force has been it?",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.72,
+              "text": " Copies is down.",
+              "avg_logprob": -0.6845535412430763,
+              "no_speech_prob": 0.030687667429447174,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791322110.m4a": {
+      "index": 1077,
+      "epoch": 1791322110,
+      "sha256": "70bef9a472e7724439969ff0a074437be02a150417b8e118c5d719330454961c",
+      "passes": {
+        "original": {
+          "text": "5G6",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5G6",
+              "avg_logprob": -0.6285511453946432,
+              "no_speech_prob": 0.028409110382199287,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hi, GC.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Hi, GC.",
+              "avg_logprob": -0.9480080263955253,
+              "no_speech_prob": 0.012106834910809994,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "5J6-",
+          "prompt": "5J49, code 4. What force has been it? Copies are st-",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J6-",
+              "avg_logprob": -0.5238738911492484,
+              "no_speech_prob": 0.0028569926507771015,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791322112.m4a": {
+      "index": 1078,
+      "epoch": 1791322112,
+      "sha256": "c2ff1099fe50c1c2729b4d71b4361ab67ab499418491edd2051deefc8d0cb257",
+      "passes": {
+        "original": {
+          "text": "Six, go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Six, go ahead.",
+              "avg_logprob": -0.7750644683837891,
+              "no_speech_prob": 0.030697718262672424,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Six, guys.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Six, guys.",
+              "avg_logprob": -0.7366982357842582,
+              "no_speech_prob": 0.028764842078089714,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "6G6",
+          "prompt": "What force has been it? Copies are st- 5G6",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.76,
+              "text": " 6G6",
+              "avg_logprob": -0.19418494701385497,
+              "no_speech_prob": 0.005660081282258034,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791322115.m4a": {
+      "index": 1079,
+      "epoch": 1791322115,
+      "sha256": "e418c45ec722e6c5b6d0f8daa2eed8f2e2ed71cc60d454d951abdacf95da080d",
+      "passes": {
+        "original": {
+          "text": "That 911 cell is probably a duplicate of the medical.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " That 911 cell is probably a duplicate of the medical.",
+              "avg_logprob": -0.4552935425724302,
+              "no_speech_prob": 0.033885709941387177,
+              "compression_ratio": 0.8983050847457628
+            }
+          ]
+        },
+        "filtered": {
+          "text": "That 9-1-1 cell is probably a duplicator of the medical...",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.72,
+              "text": " That 9-1-1 cell is probably a duplicator of the medical...",
+              "avg_logprob": -0.542246329156976,
+              "no_speech_prob": 0.01938268542289734,
+              "compression_ratio": 0.8923076923076924
+            }
+          ]
+        },
+        "context": {
+          "text": "That 911 tail is probably a duplicate of the medical.",
+          "prompt": "Copies are st- 5G6 Six, go ahead.",
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " That 911 tail is probably a duplicate of the medical.",
+              "avg_logprob": -0.4083333781787327,
+              "no_speech_prob": 0.006796247325837612,
+              "compression_ratio": 0.8983050847457628
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791322119.m4a": {
+      "index": 1080,
+      "epoch": 1791322119,
+      "sha256": "39c9008595cbf4440f5951b402680002451e5f1edbe7f565e1139214f1f0ed64",
+      "passes": {
+        "original": {
+          "text": "Ah, firm, I'll do that.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Ah, firm, I'll do that.",
+              "avg_logprob": -0.6888775775829951,
+              "no_speech_prob": 0.010243319906294346,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'll do that.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I'll do that.",
+              "avg_logprob": -0.5642459541559219,
+              "no_speech_prob": 0.025365926325321198,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "Ah, firm, I'll do that.",
+          "prompt": "5G6 Six, go ahead. That 911 cell is probably a duplicate of the medical.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Ah, firm, I'll do that.",
+              "avg_logprob": -0.6097253014643987,
+              "no_speech_prob": 0.04515264928340912,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        }
+      }
+    }
+  }
+}
