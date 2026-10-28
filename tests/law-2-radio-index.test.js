@@ -23,7 +23,7 @@ function fixture(t) {
   };
   const build = () => { write(); return buildLaw2RadioIndex(directory, settingsFile); };
   const audio = path.join(directory, folder, call.original_filename);
-  const transcript = path.join(directory, folder, "transcript_2026_10_01.txt");
+  const transcript = path.join(directory, folder, "law-2-transcript-2026-10-01.txt");
   return { directory, folder, setting, call, data, audio, transcript, build };
 }
 
@@ -94,7 +94,7 @@ test("recursive PDF/CSV discovery skips excluded folders and keeps existing docu
 
 test("review page and raw Law 2 files receive noindex without changing other pages", async () => {
   const env = { ASSETS: { fetch: async () => new Response("fixture") } };
-  for (const url of ["/law-2-radio/", "/records/openmhz/law-2-index.json", "/records/openmhz/openmhz-afpd-law-2-2026-10-01/transcript_2026_10_01.txt"]) {
+  for (const url of ["/law-2-radio/", "/records/openmhz/law-2-index.json", "/records/openmhz/openmhz-afpd-law-2-2026-10-01/law-2-transcript-2026-10-01.txt"]) {
     const response = await worker.fetch(new Request(`https://example.test${url}`), env);
     assert.equal(response.headers.get("X-Robots-Tag"), "noindex, nofollow");
   }

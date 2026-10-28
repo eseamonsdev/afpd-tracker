@@ -28,7 +28,10 @@ and supported strength fields determine what appears. Unsupported dates and IDs
 remain numeric; changing talkgroup does not extend an association to new dates. The excerpt adapter retains
 the server-selected clips, archive numbers, sections and order, and builds its
 transcript download from that selection. Both 6001 views use the same dated
-association renderer. Page content and recording data remain separate.
+association renderer. Archive exports and download links use `afpd-car-to-car-transcript-YYYY-MM-DD.txt`
+for 6001 and `law-2-transcript-YYYY-MM-DD.txt` for 5922. Excerpt downloads use
+`afpd-car-to-car-transcript-<excerpt-slug>.txt`.
+Page content and recording data remain separate.
 
 Playback controls use one persistent audio element on the deployed sites. The
 existing alternate-host handoff/recovery path remains supported by the shared

@@ -543,7 +543,7 @@ function archive(config) {
       transcriptAvailable = transcriptEnabled === true && (!config.law2 || calls.some(call => typeof call.transcript === "string" && call.transcript.trim()));
       if (config.law2 && get("coverage")) { get("coverage").textContent = entry.coverageNote || ""; get("coverage").hidden = !entry.coverageNote; }
       if (transcriptDownload && transcriptAvailable) {
-        const filename = `transcript_${entry.date.replaceAll("-", "_")}.txt`;
+        const filename = `${config.law2 ? "law-2" : "afpd-car-to-car"}-transcript-${entry.date}.txt`;
         transcriptDownload.setAttribute("href", `${base}${encodeURIComponent(folder)}/${filename}`);
         transcriptDownload.setAttribute("download", filename);
         transcriptDownload.hidden = false;
@@ -658,7 +658,7 @@ function excerpt() {
   const download = get("transcript-download"); let downloadUrl;
   if (download) {
     download.hidden = false; download.setAttribute("href", "#");
-    download.setAttribute("download", "transcript_" + window.location.pathname.split("/").filter(Boolean).at(-1) + ".txt");
+    download.setAttribute("download", "afpd-car-to-car-transcript-" + window.location.pathname.split("/").filter(Boolean).at(-1) + ".txt");
     download.addEventListener("click", () => {
       if (downloadUrl) URL.revokeObjectURL(downloadUrl);
       const text = buttons.map((button, index) => [button.dataset.label, button.dataset.radioIds || "", calls[index].transcript.trim() || "[no transcript available]", calls[index].note.trim() ? `Note: ${calls[index].note.trim()}` : ""].filter(Boolean).join("\n")).join("\n\n") + "\n";

@@ -141,8 +141,8 @@ Do not invent spoken words for unintelligible audio or omit annotation-only entr
 calls.json is the only authoritative police-radio transcript. Do not create
 transcript.md, numbered radio drafts, or separate review-backlog files.
 Git history preserves earlier wording. No newly automated entry gets validated:true.
-`make build` generates `transcript_YYYY_MM_DD.txt` beside each indexed day's
-calls.json. These text files are derived exports, never editing sources.
+`make build` generates `afpd-car-to-car-transcript-YYYY-MM-DD.txt` for 6001
+and `law-2-transcript-YYYY-MM-DD.txt` for 5922 beside each indexed day's calls.json. These text files are derived exports, never editing sources.
 They include Mountain Time, chronological clip numbers, radio IDs, verification
 (`Verified: ✓` only for validated:true; `Verified: No` otherwise), and a
 `Transcript:` label. Missing/blank/non-string text uses the player's exact

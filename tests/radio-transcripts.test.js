@@ -38,11 +38,11 @@ test("build creates dated exports and regenerates corrections from calls.json", 
   const data = { date: day.date, calls: [{ epoch: 1792566124, transcript: "First version." }] };
   fs.writeFileSync(manifest, JSON.stringify(data));
   buildRadioTranscripts({ days: [day] }, directory);
-  const output = path.join(folder, "transcript_2026_10_21.txt");
+  const output = path.join(folder, "afpd-car-to-car-transcript-2026-10-21.txt");
   assert.equal(fs.readFileSync(output, "utf8"), formatRadioTranscript(data));
   data.calls[0].transcript = "Corrected wording.";
   fs.writeFileSync(manifest, JSON.stringify(data));
   buildRadioTranscripts({ days: [day] }, directory);
   assert.equal(fs.readFileSync(output, "utf8"), formatRadioTranscript(data));
-  assert.deepEqual(fs.readdirSync(folder).sort(), ["calls.json", "transcript_2026_10_21.txt"]);
+  assert.deepEqual(fs.readdirSync(folder).sort(), ["afpd-car-to-car-transcript-2026-10-21.txt", "calls.json"]);
 });

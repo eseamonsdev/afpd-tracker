@@ -618,8 +618,8 @@ test("download link follows the loaded date and hides when transcripts are disab
   const f = await playerFixture(undefined, undefined, "2026-10-21", "", date => date !== "2026-09-10");
   const link = f.get("transcript-download");
   assert.equal(link.hidden, false);
-  assert.equal(link.getAttribute("download"), "transcript_2026_10_21.txt");
-  assert.equal(link.getAttribute("href"), "/records/openmhz/2026-10-21/transcript_2026_10_21.txt");
+  assert.equal(link.getAttribute("download"), "afpd-car-to-car-transcript-2026-10-21.txt");
+  assert.equal(link.getAttribute("href"), "/records/openmhz/2026-10-21/afpd-car-to-car-transcript-2026-10-21.txt");
   assert.equal(f.get("transcript-toggle").hidden, false);
   f.get("day").value = "2026-09-10";
   f.get("day").emit("change");
@@ -634,8 +634,8 @@ test("download link follows the loaded date and hides when transcripts are disab
   f.get("day").emit("change");
   await f.settle();
   assert.equal(link.hidden, false);
-  assert.equal(link.getAttribute("download"), "transcript_2026_10_21.txt");
-  assert.equal(link.getAttribute("href"), "/records/openmhz/2026-10-21/transcript_2026_10_21.txt");
+  assert.equal(link.getAttribute("download"), "afpd-car-to-car-transcript-2026-10-21.txt");
+  assert.equal(link.getAttribute("href"), "/records/openmhz/2026-10-21/afpd-car-to-car-transcript-2026-10-21.txt");
   f.get("day").value = "unavailable";
   f.get("day").emit("change");
   await f.settle();

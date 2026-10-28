@@ -170,7 +170,8 @@ test("October 1–3 transcript controls use enabled index entries even without a
     ], undefined, date, `?date=${date}`, true, null, () => undefined);
     assert.equal(f.get("transcript-toggle").hidden, false, date);
     assert.equal(f.get("transcript-toggle").disabled, false, date);
-    assert.equal(f.get("transcript-download").getAttribute("download"), `transcript_${date.replaceAll("-", "_")}.txt`);
+    assert.equal(f.get("transcript-download").getAttribute("download"), `law-2-transcript-${date}.txt`);
+    assert.equal(f.get("transcript-download").getAttribute("href"), `/records/openmhz/openmhz-afpd-law-2-${date}/law-2-transcript-${date}.txt`);
     assert.equal(f.get("transcript-availability").hidden, true);
     f.get("transcript-toggle").click();
     f.select(0);
