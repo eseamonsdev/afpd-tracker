@@ -1,0 +1,641 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-06",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791349298.m4a": {
+      "index": 1711,
+      "epoch": 1791349298,
+      "sha256": "5db78e2392316a086718eca5e04723a397f7a777ae0addfe2b6736d97da2e9be",
+      "passes": {
+        "original": {
+          "text": "7J, turn on copy.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J, turn on copy.",
+              "avg_logprob": -0.6536412477493286,
+              "no_speech_prob": 0.04268291965126991,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7-8-10 and copy.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-8-10 and copy.",
+              "avg_logprob": -0.6476272778077559,
+              "no_speech_prob": 0.0391494520008564,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "7J, 10 to copy.",
+          "prompt": "7J27, can we have medical response for people? I can't have a medical respond for what? 7J, 10 to room.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J, 10 to copy.",
+              "avg_logprob": -0.36686182022094727,
+              "no_speech_prob": 0.0037039504386484623,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791349302.m4a": {
+      "index": 1712,
+      "epoch": 1791349302,
+      "sha256": "7e3a462b7a1b514544e8cf09d5eec41e0cc7e3b6cb9f46b1202f5868f09f9ca1",
+      "passes": {
+        "original": {
+          "text": "7J27, I don't know if you copied that. We have a 17-year-old just swallowed a handful of pills.",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 30,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.36,
+              "text": " 7J27, I don't know if you copied that. We have a 17-year-old just swallowed a handful of pills.",
+              "avg_logprob": -0.2963909026115171,
+              "no_speech_prob": 0.0257816594094038,
+              "compression_ratio": 1.0326086956521738
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7j27 I don't know if you copied that we have a 17 year old just swallowed a handful of pills",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.16,
+              "text": " 7j27 I don't know if you copied that we have a 17 year old just swallowed a handful of pills",
+              "avg_logprob": -0.27497382118151736,
+              "no_speech_prob": 0.017468834295868874,
+              "compression_ratio": 1.0823529411764705
+            }
+          ]
+        },
+        "context": {
+          "text": "7J, 27. I don't know if you copied that. We have a 17-year-old just swallowed a handful of pills.",
+          "prompt": "I can't have a medical respond for what? 7J, 10 to room. 7J, turn on copy.",
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.4,
+              "text": " 7J, 27. I don't know if you copied that. We have a 17-year-old just swallowed a handful of pills.",
+              "avg_logprob": -0.22394582070410252,
+              "no_speech_prob": 0.0004757579299621284,
+              "compression_ratio": 1.043010752688172
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791349632.m4a": {
+      "index": 1713,
+      "epoch": 1791349632,
+      "sha256": "b4e76da4999b4f0cd8f4941289612c9edba5ae5f1b0b7fcfce7e094eeb23fdd0",
+      "passes": {
+        "original": {
+          "text": "I think that's 7J28 comfort.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I think that's 7J28 comfort.",
+              "avg_logprob": -0.6700763454039892,
+              "no_speech_prob": 0.009596663527190685,
+              "compression_ratio": 0.8235294117647058
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7, 8, 28, report.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7, 8, 28, report.",
+              "avg_logprob": -0.7339745218103583,
+              "no_speech_prob": 0.02917533554136753,
+              "compression_ratio": 0.7391304347826086
+            }
+          ]
+        },
+        "context": {
+          "text": "I think that's 7J28 comfort.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I think that's 7J28 comfort.",
+              "avg_logprob": -0.6700763454039892,
+              "no_speech_prob": 0.009596663527190685,
+              "compression_ratio": 0.8235294117647058
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791349636.m4a": {
+      "index": 1714,
+      "epoch": 1791349636,
+      "sha256": "fb55bb726fa6fdeb3013ddc38358c76d01a7b920e191bbb0eba778df10aa3928",
+      "passes": {
+        "original": {
+          "text": "Cut for me.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Cut for me.",
+              "avg_logprob": -0.8533148084368024,
+              "no_speech_prob": 0.05608370900154114,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Cut for.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Cut for.",
+              "avg_logprob": -0.7642477254072825,
+              "no_speech_prob": 0.07108403742313385,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "It's comfort.",
+          "prompt": "I think that's 7J28 comfort.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " It's comfort.",
+              "avg_logprob": -0.7836708171027047,
+              "no_speech_prob": 0.06050059199333191,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791349638.m4a": {
+      "index": 1715,
+      "epoch": 1791349638,
+      "sha256": "c2577d4f7f4bc56a711697a775a9820b5bd49c5442d24e133aa571f8f84850d7",
+      "passes": {
+        "original": {
+          "text": "We're at 23 on 7.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " We're at 23 on 7.",
+              "avg_logprob": -0.5285054683685303,
+              "no_speech_prob": 0.05121017247438431,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We're at 23 and 7.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " We're at 23 and 7.",
+              "avg_logprob": -0.6475791871547699,
+              "no_speech_prob": 0.03994374722242355,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "context": {
+          "text": "We're at 23 on 7.",
+          "prompt": "I think that's 7J28 comfort. Cut for me.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " We're at 23 on 7.",
+              "avg_logprob": -0.5022542595863342,
+              "no_speech_prob": 0.023420300334692,
+              "compression_ratio": 0.68
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791349645.m4a": {
+      "index": 1716,
+      "epoch": 1791349645,
+      "sha256": "f462a25fa3e04e957b09d78224d5ef59b7b8cb5bbd51124f4ae6c74f38e05a84",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.804715347290039,
+              "no_speech_prob": 0.019198525696992874,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " Copy.",
+              "avg_logprob": -0.6054768562316895,
+              "no_speech_prob": 0.027633385732769966,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "I think that's 7J28 comfort. Cut for me. We're at 23 on 7.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5531250953674316,
+              "no_speech_prob": 0.021725503727793694,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791349969.m4a": {
+      "index": 1717,
+      "epoch": 1791349969,
+      "sha256": "bb363dcea62a1259945697959abf83f9f2b5f1aca489fb2dc1942ae5247de90f",
+      "passes": {
+        "original": {
+          "text": "7J27, go for it.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J27, go for it.",
+              "avg_logprob": -0.513069521297108,
+              "no_speech_prob": 0.09053190797567368,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J27, go for it.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J27, go for it.",
+              "avg_logprob": -0.3885046460411765,
+              "no_speech_prob": 0.053601618856191635,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "7J27, go for it.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J27, go for it.",
+              "avg_logprob": -0.513069521297108,
+              "no_speech_prob": 0.09053190797567368,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791349972.m4a": {
+      "index": 1718,
+      "epoch": 1791349972,
+      "sha256": "e0e1ca7e563ed39d89a682998f4115f4479ddbb251fd26e846ff337380446fa6",
+      "passes": {
+        "original": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.40566117422921316,
+              "no_speech_prob": 0.04414002224802971,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.45102836404527935,
+              "no_speech_prob": 0.11296984553337097,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Go for it.",
+          "prompt": "7J27, go for it.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.28107202904564993,
+              "no_speech_prob": 0.08627452701330185,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791349975.m4a": {
+      "index": 1719,
+      "epoch": 1791349975,
+      "sha256": "5852faf7f0babad1a25377217279e93866117813ccb83ec948908dc068352973",
+      "passes": {
+        "original": {
+          "text": "July 23, 12.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.12,
+              "text": " July 23, 12.",
+              "avg_logprob": -0.8203804045915604,
+              "no_speech_prob": 0.007719418033957481,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "2312.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.12,
+              "text": " 2312.",
+              "avg_logprob": -0.8201859891414642,
+              "no_speech_prob": 0.009040539152920246,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "January 23, 12th.",
+          "prompt": "7J27, go for it. Go for it.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.12,
+              "text": " January 23, 12th.",
+              "avg_logprob": -0.6837981012132432,
+              "no_speech_prob": 0.005239481572061777,
+              "compression_ratio": 0.68
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791350403.m4a": {
+      "index": 1720,
+      "epoch": 1791350403,
+      "sha256": "5007eeb7c0db13f71c2c96a4e37cbba83d16a1199ce18aad79aa896418650491",
+      "passes": {
+        "original": {
+          "text": "7G, 27, go for it.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7G, 27, go for it.",
+              "avg_logprob": -0.4246283322572708,
+              "no_speech_prob": 0.06995126605033875,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "filtered": {
+          "text": "70, 27, go for it.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 70, 27, go for it.",
+              "avg_logprob": -0.5078085986050692,
+              "no_speech_prob": 0.038048628717660904,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "context": {
+          "text": "7G, 27, go for it.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7G, 27, go for it.",
+              "avg_logprob": -0.4246283322572708,
+              "no_speech_prob": 0.06995126605033875,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        }
+      }
+    }
+  }
+}
