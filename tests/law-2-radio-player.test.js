@@ -1,3 +1,4 @@
+import { rowTemplate } from "./radio-row-fixture.js";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
@@ -78,7 +79,8 @@ async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11",
     }
   };
   const document = {
-    getElementById: id => elements.get(id),
+    getElementById: id => id === "radio-clip-row-template" ? rowTemplate(Element) : elements.get(id),
+    createElementNS: (_, tag) => new Element(tag),
     createDocumentFragment: () => new Element("fragment"),
     createElement(tag) {
       const element = new Element(tag);
@@ -199,4 +201,29 @@ test("query dates outside the enabled index cannot load an unlisted day", async 
   await f.settle();
   assert.equal(f.get("clips").children.length, 0);
   assert.equal(f.get("status").textContent, "This date is not enabled.");
+});
+
+test("Law 2 uses the same dated names, strength labels and SVG evidence controls as 6001", async () => {
+  for (const [status, label] of [['confirmed', 'Confirmed this day'], ['strong', 'Strong association'], ['single-day', 'Single-day association']]) {
+    const associations = { schema_version: 2, days: { '2026-09-12': {
+      '14590026': { name: 'Test Officer', status, evidence_days: 2, evidence_dates: ['2026-09-11', '2026-09-12'] }
+    } } };
+    const f = await playerFixture([{ epoch: 1789239600, displayed_seconds: 2, original_filename: 'one.m4a', radio_ids: [14590026] }],
+      undefined, '2026-09-12', '', false, associations);
+    const ids = f.get('clips').children[0].children[1];
+    assert.match(ids.textContent, new RegExp(`Test Officer · ${label}`));
+    const info = ids.children[1].children[3], button = info.children[0], popup = info.children[1];
+    assert.equal(button.children[0].tag, 'svg');
+    assert.equal(button.children[0].getAttribute('aria-hidden'), 'true');
+    assert.match(button.getAttribute('aria-label'), /Test Officer/);
+    assert.equal(popup.children[1].href, '/police-radio-resources/#radio-id-14590026');
+    button.click();
+    assert.equal(popup.hidden, false);
+    assert.equal(f.active(), undefined, 'information does not start audio');
+    f.select(0);
+    await f.settle();
+    assert.match(f.get('current-radio-ids').textContent, /Test Officer/);
+    f.get('day').value = '2026-09-10'; f.get('day').emit('change'); await f.settle();
+    assert.equal(f.get('clips').children[0].children[1].textContent, 'Radio ID: 14590026', 'a name does not carry into unsupported dates');
+  }
 });

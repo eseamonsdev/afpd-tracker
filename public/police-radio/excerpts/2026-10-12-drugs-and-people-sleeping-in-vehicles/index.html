@@ -85,6 +85,13 @@
     </div>
     <div class="radio-archive" id="radio-excerpt">
       
+      <template id="radio-clip-row-template"><li class="radio-clip-row">
+  <button type="button" class="radio-clip"  disabled>
+    <span><time data-radio-time></time> <span class="radio-clip-number" data-radio-number></span></span>
+    <span data-radio-duration></span>
+  </button>
+  <span class="radio-ids" hidden></span>
+</li></template>
       <section class="radio-player" aria-label="Audio player">
         <div class="radio-player-heading">
           <div>
@@ -135,30 +142,90 @@
             <div class="radio-list-heading" aria-hidden="true"><span>Time · archive clip</span><span>Duration</span></div>
             <ol class="radio-clips">
             
-              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788849.m4a" data-seconds="3" data-label="October 12, 2026 · 1:07:29 AM · Clip 7" data-radio-ids="Radio ID: 14590020" data-transcript="Did you just go through Art Dye, Cole?" data-validated="true" aria-label="Play clip 7, October 12, 2026, 1:07:29 AM, 3 seconds, Radio ID: 14590020" disabled><span><time datetime="2026-10-12T07:07:29.000Z">1:07:29 AM</time> <span class="excerpt-clip-number">· 7</span><span class="radio-ids">Radio ID: 14590020</span></span><span>3 sec</span></button></li>
-            
-              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788854.m4a" data-seconds="1" data-label="October 12, 2026 · 1:07:34 AM · Clip 8" data-radio-ids="Radio ID: 14590123" data-transcript="Yeah." data-validated="true" aria-label="Play clip 8, October 12, 2026, 1:07:34 AM, 1 seconds, Radio ID: 14590123" disabled><span><time datetime="2026-10-12T07:07:34.000Z">1:07:34 AM</time> <span class="excerpt-clip-number">· 8</span><span class="radio-ids">Radio ID: 14590123</span></span><span>1 sec</span></button></li>
-            
-              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788856.m4a" data-seconds="2" data-label="October 12, 2026 · 1:07:36 AM · Clip 9" data-radio-ids="Radio ID: 14590020" data-transcript="[Unclear acknowledgment.]" data-validated="true" aria-label="Play clip 9, October 12, 2026, 1:07:36 AM, 2 seconds, Radio ID: 14590020" disabled><span><time datetime="2026-10-12T07:07:36.000Z">1:07:36 AM</time> <span class="excerpt-clip-number">· 9</span><span class="radio-ids">Radio ID: 14590020</span></span><span>2 sec</span></button></li>
-            
-              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788861.m4a" data-seconds="1" data-label="October 12, 2026 · 1:07:41 AM · Clip 10" data-radio-ids="Radio ID: 14590123" data-transcript="What?" data-validated="true" aria-label="Play clip 10, October 12, 2026, 1:07:41 AM, 1 seconds, Radio ID: 14590123" disabled><span><time datetime="2026-10-12T07:07:41.000Z">1:07:41 AM</time> <span class="excerpt-clip-number">· 10</span><span class="radio-ids">Radio ID: 14590123</span></span><span>1 sec</span></button></li>
-            
-              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788863.m4a" data-seconds="6" data-label="October 12, 2026 · 1:07:43 AM · Clip 11" data-radio-ids="Radio ID: 14590020" data-transcript="No, I&#39;m just trying to hit up parks. I want to find someone to talk to or something." data-validated="true" aria-label="Play clip 11, October 12, 2026, 1:07:43 AM, 6 seconds, Radio ID: 14590020" disabled><span><time datetime="2026-10-12T07:07:43.000Z">1:07:43 AM</time> <span class="excerpt-clip-number">· 11</span><span class="radio-ids">Radio ID: 14590020</span></span><span>6 sec</span></button></li>
-            
-              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788871.m4a" data-seconds="5" data-label="October 12, 2026 · 1:07:51 AM · Clip 12" data-radio-ids="Radio ID: 14590123" data-transcript="Have you tried the side closest to Lehi at Walmart?" data-validated="true" aria-label="Play clip 12, October 12, 2026, 1:07:51 AM, 5 seconds, Radio ID: 14590123" disabled><span><time datetime="2026-10-12T07:07:51.000Z">1:07:51 AM</time> <span class="excerpt-clip-number">· 12</span><span class="radio-ids">Radio ID: 14590123</span></span><span>5 sec</span></button></li>
-            
-              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788876.m4a" data-seconds="1" data-label="October 12, 2026 · 1:07:56 AM · Clip 13" data-radio-ids="Radio ID: 14590123" data-transcript="[static]" data-validated="true" aria-label="Play clip 13, October 12, 2026, 1:07:56 AM, 1 seconds, Radio ID: 14590123" disabled><span><time datetime="2026-10-12T07:07:56.000Z">1:07:56 AM</time> <span class="excerpt-clip-number">· 13</span><span class="radio-ids">Radio ID: 14590123</span></span><span>1 sec</span></button></li>
-            
-              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788900.m4a" data-seconds="2" data-label="October 12, 2026 · 1:08:20 AM · Clip 14" data-radio-ids="Radio ID: 14590020" data-transcript="No, but I&#39;ll probably head that way." data-validated="true" aria-label="Play clip 14, October 12, 2026, 1:08:20 AM, 2 seconds, Radio ID: 14590020" disabled><span><time datetime="2026-10-12T07:08:20.000Z">1:08:20 AM</time> <span class="excerpt-clip-number">· 14</span><span class="radio-ids">Radio ID: 14590020</span></span><span>2 sec</span></button></li>
-            
-              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788903.m4a" data-seconds="4" data-label="October 12, 2026 · 1:08:23 AM · Clip 15" data-radio-ids="Radio ID: 14590123" data-transcript="That&#39;s my honey hole, dude. I found lots of dope over there." data-validated="true" aria-label="Play clip 15, October 12, 2026, 1:08:23 AM, 4 seconds, Radio ID: 14590123" disabled><span><time datetime="2026-10-12T07:08:23.000Z">1:08:23 AM</time> <span class="excerpt-clip-number">· 15</span><span class="radio-ids">Radio ID: 14590123</span></span><span>4 sec</span></button></li>
-            
-              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788908.m4a" data-seconds="1" data-label="October 12, 2026 · 1:08:28 AM · Clip 16" data-radio-ids="Radio ID: 14590020" data-transcript="[Unclear brief transmission.]" data-validated="true" aria-label="Play clip 16, October 12, 2026, 1:08:28 AM, 1 seconds, Radio ID: 14590020" disabled><span><time datetime="2026-10-12T07:08:28.000Z">1:08:28 AM</time> <span class="excerpt-clip-number">· 16</span><span class="radio-ids">Radio ID: 14590020</span></span><span>1 sec</span></button></li>
-            
-              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788911.m4a" data-seconds="10" data-label="October 12, 2026 · 1:08:31 AM · Clip 17" data-radio-ids="Radio ID: 14590020" data-transcript="Yeah, I&#39;ve also, the Cinemark parking lot, or at least that chunk of area right there. There&#39;s always someone sleeping there, I feel like." data-validated="true" aria-label="Play clip 17, October 12, 2026, 1:08:31 AM, 10 seconds, Radio ID: 14590020" disabled><span><time datetime="2026-10-12T07:08:31.000Z">1:08:31 AM</time> <span class="excerpt-clip-number">· 17</span><span class="radio-ids">Radio ID: 14590020</span></span><span>10 sec</span></button></li>
-            
-              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788947.m4a" data-seconds="5" data-label="October 12, 2026 · 1:09:07 AM · Clip 18" data-radio-ids="Radio ID: 14590020" data-transcript="And the Speedway, like the Great Harvest parking lot by Speedway. There&#39;s always somebody sleeping there." data-validated="true" aria-label="Play clip 18, October 12, 2026, 1:09:07 AM, 5 seconds, Radio ID: 14590020" disabled><span><time datetime="2026-10-12T07:09:07.000Z">1:09:07 AM</time> <span class="excerpt-clip-number">· 18</span><span class="radio-ids">Radio ID: 14590020</span></span><span>5 sec</span></button></li>
-            
+              <li class="radio-clip-row">
+  <button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788849.m4a" data-seconds="3" data-label="October 12, 2026 · 1:07:29 AM · Clip 7" data-radio-ids="Radio ID: 14590020" data-transcript="Did you just go through Art Dye, Cole?" data-validated="true" aria-label="Play clip 7, October 12, 2026, 1:07:29 AM, 3 seconds, Radio ID: 14590020" disabled>
+    <span><time data-radio-time datetime="2026-10-12T07:07:29.000Z">1:07:29 AM</time> <span class="radio-clip-number" data-radio-number>· 7</span></span>
+    <span data-radio-duration>3 sec</span>
+  </button>
+  <span class="radio-ids">Radio ID: 14590020</span>
+</li>
+              <li class="radio-clip-row">
+  <button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788854.m4a" data-seconds="1" data-label="October 12, 2026 · 1:07:34 AM · Clip 8" data-radio-ids="Radio ID: 14590123" data-transcript="Yeah." data-validated="true" aria-label="Play clip 8, October 12, 2026, 1:07:34 AM, 1 seconds, Radio ID: 14590123" disabled>
+    <span><time data-radio-time datetime="2026-10-12T07:07:34.000Z">1:07:34 AM</time> <span class="radio-clip-number" data-radio-number>· 8</span></span>
+    <span data-radio-duration>1 sec</span>
+  </button>
+  <span class="radio-ids">Radio ID: 14590123</span>
+</li>
+              <li class="radio-clip-row">
+  <button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788856.m4a" data-seconds="2" data-label="October 12, 2026 · 1:07:36 AM · Clip 9" data-radio-ids="Radio ID: 14590020" data-transcript="[Unclear acknowledgment.]" data-validated="true" aria-label="Play clip 9, October 12, 2026, 1:07:36 AM, 2 seconds, Radio ID: 14590020" disabled>
+    <span><time data-radio-time datetime="2026-10-12T07:07:36.000Z">1:07:36 AM</time> <span class="radio-clip-number" data-radio-number>· 9</span></span>
+    <span data-radio-duration>2 sec</span>
+  </button>
+  <span class="radio-ids">Radio ID: 14590020</span>
+</li>
+              <li class="radio-clip-row">
+  <button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788861.m4a" data-seconds="1" data-label="October 12, 2026 · 1:07:41 AM · Clip 10" data-radio-ids="Radio ID: 14590123" data-transcript="What?" data-validated="true" aria-label="Play clip 10, October 12, 2026, 1:07:41 AM, 1 seconds, Radio ID: 14590123" disabled>
+    <span><time data-radio-time datetime="2026-10-12T07:07:41.000Z">1:07:41 AM</time> <span class="radio-clip-number" data-radio-number>· 10</span></span>
+    <span data-radio-duration>1 sec</span>
+  </button>
+  <span class="radio-ids">Radio ID: 14590123</span>
+</li>
+              <li class="radio-clip-row">
+  <button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788863.m4a" data-seconds="6" data-label="October 12, 2026 · 1:07:43 AM · Clip 11" data-radio-ids="Radio ID: 14590020" data-transcript="No, I&#39;m just trying to hit up parks. I want to find someone to talk to or something." data-validated="true" aria-label="Play clip 11, October 12, 2026, 1:07:43 AM, 6 seconds, Radio ID: 14590020" disabled>
+    <span><time data-radio-time datetime="2026-10-12T07:07:43.000Z">1:07:43 AM</time> <span class="radio-clip-number" data-radio-number>· 11</span></span>
+    <span data-radio-duration>6 sec</span>
+  </button>
+  <span class="radio-ids">Radio ID: 14590020</span>
+</li>
+              <li class="radio-clip-row">
+  <button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788871.m4a" data-seconds="5" data-label="October 12, 2026 · 1:07:51 AM · Clip 12" data-radio-ids="Radio ID: 14590123" data-transcript="Have you tried the side closest to Lehi at Walmart?" data-validated="true" aria-label="Play clip 12, October 12, 2026, 1:07:51 AM, 5 seconds, Radio ID: 14590123" disabled>
+    <span><time data-radio-time datetime="2026-10-12T07:07:51.000Z">1:07:51 AM</time> <span class="radio-clip-number" data-radio-number>· 12</span></span>
+    <span data-radio-duration>5 sec</span>
+  </button>
+  <span class="radio-ids">Radio ID: 14590123</span>
+</li>
+              <li class="radio-clip-row">
+  <button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788876.m4a" data-seconds="1" data-label="October 12, 2026 · 1:07:56 AM · Clip 13" data-radio-ids="Radio ID: 14590123" data-transcript="[static]" data-validated="true" aria-label="Play clip 13, October 12, 2026, 1:07:56 AM, 1 seconds, Radio ID: 14590123" disabled>
+    <span><time data-radio-time datetime="2026-10-12T07:07:56.000Z">1:07:56 AM</time> <span class="radio-clip-number" data-radio-number>· 13</span></span>
+    <span data-radio-duration>1 sec</span>
+  </button>
+  <span class="radio-ids">Radio ID: 14590123</span>
+</li>
+              <li class="radio-clip-row">
+  <button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788900.m4a" data-seconds="2" data-label="October 12, 2026 · 1:08:20 AM · Clip 14" data-radio-ids="Radio ID: 14590020" data-transcript="No, but I&#39;ll probably head that way." data-validated="true" aria-label="Play clip 14, October 12, 2026, 1:08:20 AM, 2 seconds, Radio ID: 14590020" disabled>
+    <span><time data-radio-time datetime="2026-10-12T07:08:20.000Z">1:08:20 AM</time> <span class="radio-clip-number" data-radio-number>· 14</span></span>
+    <span data-radio-duration>2 sec</span>
+  </button>
+  <span class="radio-ids">Radio ID: 14590020</span>
+</li>
+              <li class="radio-clip-row">
+  <button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788903.m4a" data-seconds="4" data-label="October 12, 2026 · 1:08:23 AM · Clip 15" data-radio-ids="Radio ID: 14590123" data-transcript="That&#39;s my honey hole, dude. I found lots of dope over there." data-validated="true" aria-label="Play clip 15, October 12, 2026, 1:08:23 AM, 4 seconds, Radio ID: 14590123" disabled>
+    <span><time data-radio-time datetime="2026-10-12T07:08:23.000Z">1:08:23 AM</time> <span class="radio-clip-number" data-radio-number>· 15</span></span>
+    <span data-radio-duration>4 sec</span>
+  </button>
+  <span class="radio-ids">Radio ID: 14590123</span>
+</li>
+              <li class="radio-clip-row">
+  <button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788908.m4a" data-seconds="1" data-label="October 12, 2026 · 1:08:28 AM · Clip 16" data-radio-ids="Radio ID: 14590020" data-transcript="[Unclear brief transmission.]" data-validated="true" aria-label="Play clip 16, October 12, 2026, 1:08:28 AM, 1 seconds, Radio ID: 14590020" disabled>
+    <span><time data-radio-time datetime="2026-10-12T07:08:28.000Z">1:08:28 AM</time> <span class="radio-clip-number" data-radio-number>· 16</span></span>
+    <span data-radio-duration>1 sec</span>
+  </button>
+  <span class="radio-ids">Radio ID: 14590020</span>
+</li>
+              <li class="radio-clip-row">
+  <button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788911.m4a" data-seconds="10" data-label="October 12, 2026 · 1:08:31 AM · Clip 17" data-radio-ids="Radio ID: 14590020" data-transcript="Yeah, I&#39;ve also, the Cinemark parking lot, or at least that chunk of area right there. There&#39;s always someone sleeping there, I feel like." data-validated="true" aria-label="Play clip 17, October 12, 2026, 1:08:31 AM, 10 seconds, Radio ID: 14590020" disabled>
+    <span><time data-radio-time datetime="2026-10-12T07:08:31.000Z">1:08:31 AM</time> <span class="radio-clip-number" data-radio-number>· 17</span></span>
+    <span data-radio-duration>10 sec</span>
+  </button>
+  <span class="radio-ids">Radio ID: 14590020</span>
+</li>
+              <li class="radio-clip-row">
+  <button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-10-12/dcfems-6001-1791788947.m4a" data-seconds="5" data-label="October 12, 2026 · 1:09:07 AM · Clip 18" data-radio-ids="Radio ID: 14590020" data-transcript="And the Speedway, like the Great Harvest parking lot by Speedway. There&#39;s always somebody sleeping there." data-validated="true" aria-label="Play clip 18, October 12, 2026, 1:09:07 AM, 5 seconds, Radio ID: 14590020" disabled>
+    <span><time data-radio-time datetime="2026-10-12T07:09:07.000Z">1:09:07 AM</time> <span class="radio-clip-number" data-radio-number>· 18</span></span>
+    <span data-radio-duration>5 sec</span>
+  </button>
+  <span class="radio-ids">Radio ID: 14590020</span>
+</li>
             </ol>
           </div>
           

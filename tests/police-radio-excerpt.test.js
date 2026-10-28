@@ -82,7 +82,7 @@ async function fixture(withTranscription = true) {
   const objectSources = new Map(), failed = new Set(), revoked = [];
   let serial = 0;
   vm.runInNewContext(source, {
-    document: { getElementById: id => id === "radio-excerpt" ? root : null, createElement: tag => new Element(tag) },
+    document: { createElementNS: (_, tag) => new Element(tag), getElementById: id => id === "radio-excerpt" ? root : null, createElement: tag => new Element(tag) },
     window: { addEventListener() {} }, AbortController,
     URL: { createObjectURL(blob) { const url = `blob:${++serial}`; objectSources.set(url, blob.source); return url; }, revokeObjectURL(url) { revoked.push(url); } },
     fetch: async url => ({ ok: !failed.has(url), blob: async () => ({ source: url }) })

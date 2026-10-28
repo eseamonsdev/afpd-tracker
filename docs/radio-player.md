@@ -3,6 +3,8 @@
 The car-to-car archive, every excerpt, and Law 2 use:
 
 - `src/_includes/radio-player.njk` for controls, transcript status and notes.
+- `src/_includes/radio-row.njk` for every clip row: a macro for excerpts and
+  an HTML template cloned by both archive players.
 - `public/css/police-radio.css` for player and row styling.
 - `public/js/radio-player-core.js` for playback, prefetching, seeking, autoplay,
   controls/transcript toggles, row selection and association information.
@@ -18,8 +20,11 @@ archives use an explicit transcript setting from the date index when present,
 falling back to the manifest for older indexes. Law 2 also requires actual
 transcript text before exposing the shared toggle and download link. An explicit
 false setting keeps its transcripts hidden even if text exists. Law 2 adds its
-enabled-date rules and coverage notes; it never loads the car-to-car association
-data. The excerpt adapter retains
+enabled-date rules and coverage notes. Both talkgroups use the same dated
+radio-ID associations: names, strength labels and SVG information buttons.
+Associations have no per-player enable switch: matching date, radio ID, name
+and supported strength fields determine what appears. Unsupported dates and IDs
+remain numeric; changing talkgroup does not extend an association to new dates. The excerpt adapter retains
 the server-selected clips, archive numbers, sections and order, and builds its
 transcript download from that selection. Both 6001 views use the same dated
 association renderer. Page content and recording data remain separate.

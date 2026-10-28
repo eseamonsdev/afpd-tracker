@@ -1,3 +1,4 @@
+import { rowTemplate } from "./radio-row-fixture.js";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
@@ -78,7 +79,8 @@ async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11",
     }
   };
   const document = {
-    getElementById: id => elements.get(id),
+    getElementById: id => id === "radio-clip-row-template" ? rowTemplate(Element) : elements.get(id),
+    createElementNS: (_, tag) => new Element(tag),
     createDocumentFragment: () => new Element("fragment"),
     createElement(tag) {
       const element = new Element(tag);

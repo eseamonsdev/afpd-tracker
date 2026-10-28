@@ -8,6 +8,7 @@ permalink: "{{ excerptPage.excerpt | excerptUrl }}"
 ---
 {% extends "site-page-layout.njk" %}
 {% from "radio-player.njk" import player %}
+{% from "radio-row.njk" import clipRow %}
 {% set excerpt = excerptPage.excerpt | radioExcerpt -%}
 {% set title = excerpt.subtitle -%}
 {% set pageTitle = title ~ " | AFPD Accountability Project" -%}
@@ -46,8 +47,8 @@ permalink: "{{ excerptPage.excerpt | excerptUrl }}"
             <div class="radio-list-heading" aria-hidden="true"><span>Time · archive clip</span><span>Duration</span></div>
             <ol class="radio-clips">
             {% for call in range.calls %}
-              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="{{ call.source | escape }}" data-seconds="{{ call.seconds }}" data-label="{{ call.date | escape }} · {{ call.time | escape }} · Clip {{ call.number }}" data-radio-ids="{{ call.radioIds | escape }}" {% if excerpt.enableTranscription %}data-transcript="{{ call.transcript | escape }}" data-validated="{{ call.validated }}" {% if call.note %}data-note="{{ call.note | escape }}" {% endif %}{% endif %}aria-label="Play clip {{ call.number }}, {{ call.date | escape }}, {{ call.time | escape }}, {{ call.seconds }} seconds{% if call.radioIds %}, {{ call.radioIds | escape }}{% endif %}" disabled><span><time datetime="{{ call.iso | escape }}">{{ call.time | escape }}</time> <span class="excerpt-clip-number">· {{ call.number }}</span>{% if call.radioIds %}<span class="radio-ids">{{ call.radioIds | escape }}</span>{% endif %}</span><span>{{ call.seconds }} sec</span></button></li>
-            {% endfor %}
+              {{ clipRow(call, excerpt.enableTranscription) }}
+            {%- endfor %}
             </ol>
           </div>
           {% endfor %}

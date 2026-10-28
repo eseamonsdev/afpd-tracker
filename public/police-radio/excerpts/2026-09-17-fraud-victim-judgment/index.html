@@ -85,6 +85,13 @@
     </div>
     <div class="radio-archive" id="radio-excerpt">
       
+      <template id="radio-clip-row-template"><li class="radio-clip-row">
+  <button type="button" class="radio-clip"  disabled>
+    <span><time data-radio-time></time> <span class="radio-clip-number" data-radio-number></span></span>
+    <span data-radio-duration></span>
+  </button>
+  <span class="radio-ids" hidden></span>
+</li></template>
       <section class="radio-player" aria-label="Audio player">
         <div class="radio-player-heading">
           <div>
@@ -135,24 +142,69 @@
             <div class="radio-list-heading" aria-hidden="true"><span>Time · archive clip</span><span>Duration</span></div>
             <ol class="radio-clips">
             
-              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-09-17/dcfems-6001-1789674406.m4a" data-seconds="3" data-label="September 17, 2026 · 1:46:46 PM · Clip 133" data-radio-ids="Radio ID: 14590084" data-transcript="Dude, that fraud was insane." data-validated="false" aria-label="Play clip 133, September 17, 2026, 1:46:46 PM, 3 seconds, Radio ID: 14590084" disabled><span><time datetime="2026-09-17T19:46:46.000Z">1:46:46 PM</time> <span class="excerpt-clip-number">· 133</span><span class="radio-ids">Radio ID: 14590084</span></span><span>3 sec</span></button></li>
-            
-              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-09-17/dcfems-6001-1789674422.m4a" data-seconds="2" data-label="September 17, 2026 · 1:47:02 PM · Clip 134" data-radio-ids="Radio ID: 14590087" data-transcript="She lose like a million dollars?" data-validated="false" aria-label="Play clip 134, September 17, 2026, 1:47:02 PM, 2 seconds, Radio ID: 14590087" disabled><span><time datetime="2026-09-17T19:47:02.000Z">1:47:02 PM</time> <span class="excerpt-clip-number">· 134</span><span class="radio-ids">Radio ID: 14590087</span></span><span>2 sec</span></button></li>
-            
-              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-09-17/dcfems-6001-1789674425.m4a" data-seconds="4" data-label="September 17, 2026 · 1:47:05 PM · Clip 135" data-radio-ids="Radio ID: 14590084" data-transcript="She lost $11,000 in Apple gift cards." data-validated="false" aria-label="Play clip 135, September 17, 2026, 1:47:05 PM, 4 seconds, Radio ID: 14590084" disabled><span><time datetime="2026-09-17T19:47:05.000Z">1:47:05 PM</time> <span class="excerpt-clip-number">· 135</span><span class="radio-ids">Radio ID: 14590084</span></span><span>4 sec</span></button></li>
-            
-              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-09-17/dcfems-6001-1789674434.m4a" data-seconds="8" data-label="September 17, 2026 · 1:47:14 PM · Clip 136" data-radio-ids="Radio ID: 14590087" data-transcript="I don&#39;t know how you&#39;re smart enough to have $11,000 to give away and also dumb enough to do that at the same time." data-validated="false" aria-label="Play clip 136, September 17, 2026, 1:47:14 PM, 8 seconds, Radio ID: 14590087" disabled><span><time datetime="2026-09-17T19:47:14.000Z">1:47:14 PM</time> <span class="excerpt-clip-number">· 136</span><span class="radio-ids">Radio ID: 14590087</span></span><span>8 sec</span></button></li>
-            
-              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-09-17/dcfems-6001-1789674443.m4a" data-seconds="2" data-label="September 17, 2026 · 1:47:23 PM · Clip 137" data-radio-ids="Radio ID: 14590084" data-transcript="No clue." data-validated="false" aria-label="Play clip 137, September 17, 2026, 1:47:23 PM, 2 seconds, Radio ID: 14590084" disabled><span><time datetime="2026-09-17T19:47:23.000Z">1:47:23 PM</time> <span class="excerpt-clip-number">· 137</span><span class="radio-ids">Radio ID: 14590084</span></span><span>2 sec</span></button></li>
-            
-              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-09-17/dcfems-6001-1789674447.m4a" data-seconds="10" data-label="September 17, 2026 · 1:47:27 PM · Clip 138" data-radio-ids="Radio ID: 14590123" data-transcript="I once took a fraud for the mayor of Cedar Hills. Not mayor, city council, unless the mayor is a chick, and she did the same thing, $20,000." data-validated="false" aria-label="Play clip 138, September 17, 2026, 1:47:27 PM, 10 seconds, Radio ID: 14590123" disabled><span><time datetime="2026-09-17T19:47:27.000Z">1:47:27 PM</time> <span class="excerpt-clip-number">· 138</span><span class="radio-ids">Radio ID: 14590123</span></span><span>10 sec</span></button></li>
-            
-              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-09-17/dcfems-6001-1789674463.m4a" data-seconds="2" data-label="September 17, 2026 · 1:47:43 PM · Clip 139" data-radio-ids="Radio ID: 14590084" data-transcript="These people can vote?" data-validated="false" aria-label="Play clip 139, September 17, 2026, 1:47:43 PM, 2 seconds, Radio ID: 14590084" disabled><span><time datetime="2026-09-17T19:47:43.000Z">1:47:43 PM</time> <span class="excerpt-clip-number">· 139</span><span class="radio-ids">Radio ID: 14590084</span></span><span>2 sec</span></button></li>
-            
-              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-09-17/dcfems-6001-1789674466.m4a" data-seconds="3" data-label="September 17, 2026 · 1:47:46 PM · Clip 140" data-radio-ids="Radio ID: 14590084" data-transcript="These people can have children." data-validated="false" aria-label="Play clip 140, September 17, 2026, 1:47:46 PM, 3 seconds, Radio ID: 14590084" disabled><span><time datetime="2026-09-17T19:47:46.000Z">1:47:46 PM</time> <span class="excerpt-clip-number">· 140</span><span class="radio-ids">Radio ID: 14590084</span></span><span>3 sec</span></button></li>
-            
-              <li><button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-09-17/dcfems-6001-1789674498.m4a" data-seconds="3" data-label="September 17, 2026 · 1:48:18 PM · Clip 141" data-radio-ids="Radio ID: 14590084" data-transcript="Crazy, crazy." data-validated="false" aria-label="Play clip 141, September 17, 2026, 1:48:18 PM, 3 seconds, Radio ID: 14590084" disabled><span><time datetime="2026-09-17T19:48:18.000Z">1:48:18 PM</time> <span class="excerpt-clip-number">· 141</span><span class="radio-ids">Radio ID: 14590084</span></span><span>3 sec</span></button></li>
-            
+              <li class="radio-clip-row">
+  <button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-09-17/dcfems-6001-1789674406.m4a" data-seconds="3" data-label="September 17, 2026 · 1:46:46 PM · Clip 133" data-radio-ids="Radio ID: 14590084" data-transcript="Dude, that fraud was insane." data-validated="false" aria-label="Play clip 133, September 17, 2026, 1:46:46 PM, 3 seconds, Radio ID: 14590084" disabled>
+    <span><time data-radio-time datetime="2026-09-17T19:46:46.000Z">1:46:46 PM</time> <span class="radio-clip-number" data-radio-number>· 133</span></span>
+    <span data-radio-duration>3 sec</span>
+  </button>
+  <span class="radio-ids">Radio ID: 14590084</span>
+</li>
+              <li class="radio-clip-row">
+  <button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-09-17/dcfems-6001-1789674422.m4a" data-seconds="2" data-label="September 17, 2026 · 1:47:02 PM · Clip 134" data-radio-ids="Radio ID: 14590087" data-transcript="She lose like a million dollars?" data-validated="false" aria-label="Play clip 134, September 17, 2026, 1:47:02 PM, 2 seconds, Radio ID: 14590087" disabled>
+    <span><time data-radio-time datetime="2026-09-17T19:47:02.000Z">1:47:02 PM</time> <span class="radio-clip-number" data-radio-number>· 134</span></span>
+    <span data-radio-duration>2 sec</span>
+  </button>
+  <span class="radio-ids">Radio ID: 14590087</span>
+</li>
+              <li class="radio-clip-row">
+  <button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-09-17/dcfems-6001-1789674425.m4a" data-seconds="4" data-label="September 17, 2026 · 1:47:05 PM · Clip 135" data-radio-ids="Radio ID: 14590084" data-transcript="She lost $11,000 in Apple gift cards." data-validated="false" aria-label="Play clip 135, September 17, 2026, 1:47:05 PM, 4 seconds, Radio ID: 14590084" disabled>
+    <span><time data-radio-time datetime="2026-09-17T19:47:05.000Z">1:47:05 PM</time> <span class="radio-clip-number" data-radio-number>· 135</span></span>
+    <span data-radio-duration>4 sec</span>
+  </button>
+  <span class="radio-ids">Radio ID: 14590084</span>
+</li>
+              <li class="radio-clip-row">
+  <button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-09-17/dcfems-6001-1789674434.m4a" data-seconds="8" data-label="September 17, 2026 · 1:47:14 PM · Clip 136" data-radio-ids="Radio ID: 14590087" data-transcript="I don&#39;t know how you&#39;re smart enough to have $11,000 to give away and also dumb enough to do that at the same time." data-validated="false" aria-label="Play clip 136, September 17, 2026, 1:47:14 PM, 8 seconds, Radio ID: 14590087" disabled>
+    <span><time data-radio-time datetime="2026-09-17T19:47:14.000Z">1:47:14 PM</time> <span class="radio-clip-number" data-radio-number>· 136</span></span>
+    <span data-radio-duration>8 sec</span>
+  </button>
+  <span class="radio-ids">Radio ID: 14590087</span>
+</li>
+              <li class="radio-clip-row">
+  <button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-09-17/dcfems-6001-1789674443.m4a" data-seconds="2" data-label="September 17, 2026 · 1:47:23 PM · Clip 137" data-radio-ids="Radio ID: 14590084" data-transcript="No clue." data-validated="false" aria-label="Play clip 137, September 17, 2026, 1:47:23 PM, 2 seconds, Radio ID: 14590084" disabled>
+    <span><time data-radio-time datetime="2026-09-17T19:47:23.000Z">1:47:23 PM</time> <span class="radio-clip-number" data-radio-number>· 137</span></span>
+    <span data-radio-duration>2 sec</span>
+  </button>
+  <span class="radio-ids">Radio ID: 14590084</span>
+</li>
+              <li class="radio-clip-row">
+  <button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-09-17/dcfems-6001-1789674447.m4a" data-seconds="10" data-label="September 17, 2026 · 1:47:27 PM · Clip 138" data-radio-ids="Radio ID: 14590123" data-transcript="I once took a fraud for the mayor of Cedar Hills. Not mayor, city council, unless the mayor is a chick, and she did the same thing, $20,000." data-validated="false" aria-label="Play clip 138, September 17, 2026, 1:47:27 PM, 10 seconds, Radio ID: 14590123" disabled>
+    <span><time data-radio-time datetime="2026-09-17T19:47:27.000Z">1:47:27 PM</time> <span class="radio-clip-number" data-radio-number>· 138</span></span>
+    <span data-radio-duration>10 sec</span>
+  </button>
+  <span class="radio-ids">Radio ID: 14590123</span>
+</li>
+              <li class="radio-clip-row">
+  <button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-09-17/dcfems-6001-1789674463.m4a" data-seconds="2" data-label="September 17, 2026 · 1:47:43 PM · Clip 139" data-radio-ids="Radio ID: 14590084" data-transcript="These people can vote?" data-validated="false" aria-label="Play clip 139, September 17, 2026, 1:47:43 PM, 2 seconds, Radio ID: 14590084" disabled>
+    <span><time data-radio-time datetime="2026-09-17T19:47:43.000Z">1:47:43 PM</time> <span class="radio-clip-number" data-radio-number>· 139</span></span>
+    <span data-radio-duration>2 sec</span>
+  </button>
+  <span class="radio-ids">Radio ID: 14590084</span>
+</li>
+              <li class="radio-clip-row">
+  <button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-09-17/dcfems-6001-1789674466.m4a" data-seconds="3" data-label="September 17, 2026 · 1:47:46 PM · Clip 140" data-radio-ids="Radio ID: 14590084" data-transcript="These people can have children." data-validated="false" aria-label="Play clip 140, September 17, 2026, 1:47:46 PM, 3 seconds, Radio ID: 14590084" disabled>
+    <span><time data-radio-time datetime="2026-09-17T19:47:46.000Z">1:47:46 PM</time> <span class="radio-clip-number" data-radio-number>· 140</span></span>
+    <span data-radio-duration>3 sec</span>
+  </button>
+  <span class="radio-ids">Radio ID: 14590084</span>
+</li>
+              <li class="radio-clip-row">
+  <button type="button" class="radio-clip" data-excerpt-clip data-source="/records/openmhz/openmhz-afpd-car-to-car-2026-09-17/dcfems-6001-1789674498.m4a" data-seconds="3" data-label="September 17, 2026 · 1:48:18 PM · Clip 141" data-radio-ids="Radio ID: 14590084" data-transcript="Crazy, crazy." data-validated="false" aria-label="Play clip 141, September 17, 2026, 1:48:18 PM, 3 seconds, Radio ID: 14590084" disabled>
+    <span><time data-radio-time datetime="2026-09-17T19:48:18.000Z">1:48:18 PM</time> <span class="radio-clip-number" data-radio-number>· 141</span></span>
+    <span data-radio-duration>3 sec</span>
+  </button>
+  <span class="radio-ids">Radio ID: 14590084</span>
+</li>
             </ol>
           </div>
           

@@ -14,7 +14,7 @@ const durationText = seconds => { const whole = Math.floor(Number.isFinite(secon
     return ids;
   };
 
-function createIdentity(getDate, enabled) {
+function createIdentity(getDate) {
   let officerDays = {}, informationNumber = 0, closeInformation = null, activeInformation = null;
   document.addEventListener?.("pointerdown", event => {
     if (activeInformation && !activeInformation.contains(event.target)) closeInformation?.();
@@ -25,7 +25,7 @@ function createIdentity(getDate, enabled) {
     "single-day": "Single-day association"
   };
   const officerAssociation = (id) => {
-    const entry = enabled ? officerDays[getDate()]?.[id] : null;
+    const entry = officerDays[getDate()]?.[id];
     return typeof entry?.name === "string" && associationLabels[entry.status] ? entry : null;
   };
   const associationNote = (entry) => {
@@ -52,7 +52,20 @@ function createIdentity(getDate, enabled) {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "radio-info-button";
-    button.textContent = "ⓘ";
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("viewBox", "0 0 24 24");
+    svg.setAttribute("aria-hidden", "true");
+    svg.setAttribute("focusable", "false");
+    svg.setAttribute("fill", "none");
+    svg.setAttribute("stroke", "currentColor");
+    svg.setAttribute("stroke-width", "2");
+    svg.setAttribute("stroke-linecap", "round");
+    const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    circle.setAttribute("cx", "12"); circle.setAttribute("cy", "12"); circle.setAttribute("r", "9");
+    const mark = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    mark.setAttribute("d", "M12 11v6M12 7h.01");
+    svg.append(circle, mark);
+    button.append(svg);
     button.setAttribute("aria-label", `Association information for ${entry.name}`);
     button.setAttribute("aria-expanded", "false");
     const popup = document.createElement("span");
@@ -137,7 +150,6 @@ function createIdentity(getDate, enabled) {
 
 
   async function load() {
-    if (!enabled) return;
     try {
       const response = await fetch("/records/openmhz/officer-associations.json");
       const data = response.ok ? await response.json() : null;
@@ -186,18 +198,18 @@ function bindRow(row, button, choose) {
   });
 }
 function clipRow(call, index, identity, choose) {
-  const row = document.createElement("li"); row.className = "radio-clip-row";
-  const button = document.createElement("button"); button.type = "button"; button.className = "radio-clip";
-  const time = document.createElement("time");
+  const row = document.getElementById("radio-clip-row-template").content.firstElementChild.cloneNode(true);
+  const button = row.querySelector(".radio-clip");
+  const time = row.querySelector("[data-radio-time]");
   time.dateTime = new Date(call.epoch * 1000).toISOString();
   time.textContent = timeFormat.format(new Date(call.epoch * 1000));
-  const label = document.createElement("span"), number = document.createElement("span");
-  number.className = "radio-clip-number"; number.textContent = ` · ${index + 1}`; label.append(time, number);
-  const duration = document.createElement("span"); duration.textContent = `${call.displayed_seconds} sec`;
+  row.querySelector("[data-radio-number]").textContent = ` · ${index + 1}`;
+  row.querySelector("[data-radio-duration]").textContent = `${call.displayed_seconds} sec`;
   const ids = identity.text(call);
   button.setAttribute("aria-label", `Play clip ${index + 1}, ${time.textContent}, ${call.displayed_seconds} seconds${ids ? `, ${ids}` : ""}`);
-  button.append(label, duration); row.append(button);
-  if (ids) { const line = document.createElement("span"); line.className = "radio-ids"; identity.render(line, call); row.append(line); }
+  const line = row.querySelector(".radio-ids");
+  line.hidden = !ids;
+  identity.render(line, call);
   bindRow(row, button, choose);
   return { row, button };
 }
@@ -459,7 +471,7 @@ function archive(config) {
   const currentRadioIds = get("current-radio-ids"), transcriptDownload = get("transcript-download"), transcriptAvailability = get("transcript-availability");
   const base = "/records/openmhz/";
   let days = [], calls = [], buttons = [], folder = "", request = 0, controller, transcriptAvailable = false;
-  const identity = createIdentity(() => day.value, !config.law2);
+  const identity = createIdentity(() => day.value);
   const transcript = transcriptUI(get);
   function updateRadioIds(call) { if (currentRadioIds) { identity.render(currentRadioIds, call); currentRadioIds.hidden = !radioIds(call).length; } }
   const player = playbackEngine({
@@ -596,7 +608,7 @@ function excerpt() {
     get radio_ids() { return (button.dataset.radioIds || "").match(/[1-9]\d*/g) || []; }
   }));
   let associationDate = "";
-  const identity = createIdentity(() => associationDate, true), transcript = transcriptUI(get);
+  const identity = createIdentity(() => associationDate), transcript = transcriptUI(get);
   const dateFor = index => buttons[index]?.dataset.source?.match(/car-to-car-(\d{4}-\d{2}-\d{2})\//)?.[1] || "";
   const updateIdentity = index => {
     const line = get("current-radio-ids"); if (!line) return;
@@ -611,7 +623,7 @@ function excerpt() {
   buttons.forEach((button, index) => {
     const row = button.closest?.("li");
     row?.classList.add("radio-clip-row");
-    const line = button.querySelector?.(".radio-ids"); if (line && row) row.append(line);
+
     bindRow(row, button, () => player.choose(index));
   });
   identity.load().then(() => {

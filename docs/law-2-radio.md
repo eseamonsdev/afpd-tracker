@@ -3,8 +3,9 @@
 The `/law-2-radio/` review page retains its own page template and configuration
 adapter (`src/law-2-radio.njk` and `public/js/law-2-radio.js`). Controls,
 transcripts, row interaction, styles and playback use the shared player described
-in `docs/radio-player.md`. Law 2 does not inherit car-to-car officer-name
-associations; its identities stay numeric.
+in `docs/radio-player.md`. Law 2 uses the same date-specific officer-name associations as 6001 for the same
+radio IDs in the dcfems system, including strength labels and evidence popups.
+IDs without a supported association for the selected date stay numeric.
 
 ## Enable dates and transcripts
 

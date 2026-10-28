@@ -1,0 +1,13 @@
+{% macro clipRow(call=false, transcripts=false) -%}
+<li class="radio-clip-row">
+  <button type="button" class="radio-clip" {% if call %}data-excerpt-clip data-source="{{ call.source | escape }}" data-seconds="{{ call.seconds }}" data-label="{{ call.date | escape }} · {{ call.time | escape }} · Clip {{ call.number }}" data-radio-ids="{{ call.radioIds | escape }}" {% if transcripts %}data-transcript="{{ call.transcript | escape }}" data-validated="{{ call.validated }}" {% if call.note %}data-note="{{ call.note | escape }}" {% endif %}{% endif %}aria-label="Play clip {{ call.number }}, {{ call.date | escape }}, {{ call.time | escape }}, {{ call.seconds }} seconds{% if call.radioIds %}, {{ call.radioIds | escape }}{% endif %}"{% endif %} disabled>
+    <span><time data-radio-time{% if call %} datetime="{{ call.iso | escape }}"{% endif %}>{{ call.time | escape }}</time> <span class="radio-clip-number" data-radio-number>{% if call %}· {{ call.number }}{% endif %}</span></span>
+    <span data-radio-duration>{% if call %}{{ call.seconds }} sec{% endif %}</span>
+  </button>
+  <span class="radio-ids"{% if not call.radioIds %} hidden{% endif %}>{{ call.radioIds | escape }}</span>
+</li>
+{%- endmacro %}
+
+{% macro rowTemplate() -%}
+<template id="radio-clip-row-template">{{ clipRow() }}</template>
+{%- endmacro %}

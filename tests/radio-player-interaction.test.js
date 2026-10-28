@@ -54,3 +54,26 @@ test("all player pages load the same core before their adapters and render one s
     assert.match(html, /View Notes/);
   }
 });
+
+test("archive templates and excerpt rows share one escaped row macro", () => {
+  const env = new nunjucks.Environment(new nunjucks.FileSystemLoader("src/_includes"));
+  const render = call => env.renderString('{% from "radio-row.njk" import clipRow %}{{ clipRow(call, true) }}', { call });
+  const call = { source: '/recording.m4a', seconds: 4, date: '2026-09-12', time: '1:23:45 PM', number: 275,
+    iso: '2026-09-12T19:23:45Z', radioIds: '14590026', transcript: '<script>bad()</script>', note: 'A "quoted" note', validated: false };
+  const populated = render(call), empty = render(false);
+  for (const html of [populated, empty]) {
+    for (const slot of ['data-radio-time', 'data-radio-number', 'data-radio-duration']) assert.match(html, new RegExp(slot));
+    assert.equal((html.match(/class="radio-clip-row"/g) || []).length, 1);
+    assert.equal((html.match(/class="radio-ids"/g) || []).length, 1);
+    assert.ok(html.indexOf('</button>') < html.indexOf('class="radio-ids"'), 'association controls stay outside the playback button');
+  }
+  assert.match(populated, /data-excerpt-clip/);
+  assert.match(populated, /· 275/);
+  assert.match(populated, /&lt;script&gt;/);
+  assert.doesNotMatch(populated, /<script>/);
+  assert.match(populated, /&quot;quoted&quot;/);
+  assert.doesNotMatch(empty, /data-excerpt-clip/);
+  const player = env.renderString('{% from "radio-player.njk" import player %}{{ player("radio") }}');
+  assert.equal((player.match(/id="radio-clip-row-template"/g) || []).length, 1);
+  assert.match(readFileSync('src/police-radio-excerpt.njk', 'utf8'), /clipRow\(call, excerpt.enableTranscription\)/);
+});

@@ -1,4 +1,6 @@
+{% from "radio-row.njk" import rowTemplate %}
 {% macro player(prefix, transcripts=true, hiddenToggle=true, toggleName="transcript-toggle", transcriptName="transcript") %}
+      {{ rowTemplate() }}
       <section class="radio-player" aria-label="Audio player">
         <div class="radio-player-heading">
           <div>
