@@ -58,7 +58,7 @@ permalink: /police-radio-resources/
         <caption>Selected recurring associations. Counts apply separately to each radio ID.</caption>
         <thead><tr><th scope="col">Name heard</th><th scope="col">Roster candidate</th><th scope="col">Radio ID · examples / days</th><th scope="col">Notes</th></tr></thead>
         <tbody>{%- for officer in resources.officers.entries %}
-          <tr><th scope="row">{{ officer.heard | escape }}</th><td><a href="{{ officer.url | escape }}">{{ officer.name | escape }}</a></td><td>{%- for entry in officer.ids %}<span class="radio-guide-id"><code>{{ entry.id | escape }}</code><span>{{ entry.examples }} examples / {{ entry.days }} days</span></span>{%- endfor %}</td><td>{{ officer.note | escape }}</td></tr>
+          <tr><th scope="row">{{ officer.heard | escape }}</th><td><a href="{{ officer.url | escape }}">{{ officer.name | escape }}</a></td><td>{%- for entry in officer.ids %}<span id="radio-id-{{ entry.id | escape }}" class="radio-guide-id"><code>{{ entry.id | escape }}</code><span>{{ entry.examples }} examples / {{ entry.days }} days</span></span>{%- endfor %}</td><td>{{ officer.note | escape }}</td></tr>
         {%- endfor %}</tbody>
       </table>
     </div>
@@ -83,3 +83,4 @@ permalink: /police-radio-resources/
     </ul>
   </section>
 {%- endblock %}
+

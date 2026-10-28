@@ -573,6 +573,7 @@ test("association information opens by hover, focus and tap without playing the 
   const info = identity.children[1].children[3];
   const [button, popup] = info.children;
   assert.equal(popup.hidden, true);
+  assert.equal(popup.children[1].href, "/police-radio-resources/#radio-id-14590098");
   info.emit("mouseenter");
   assert.equal(popup.hidden, false);
   assert.match(popup.textContent, /on 10 dates/);

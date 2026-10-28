@@ -88,7 +88,7 @@
     }).join(", ")}` : "";
   };
 
-  function informationControl(entry) {
+  function informationControl(entry, id) {
     const wrapper = document.createElement("span");
     wrapper.className = "radio-association-info";
     const button = document.createElement("button");
@@ -107,7 +107,7 @@
     const note = document.createElement("span");
     note.textContent = associationNote(entry);
     const link = document.createElement("a");
-    link.href = "/police-radio-resources/#officer-radio-ids";
+    link.href = `/police-radio-resources/#radio-id-${encodeURIComponent(id)}`;
     link.textContent = "View evidence";
     popup.append(note, link);
     let pinned = false, suppressFocus = false;
@@ -166,7 +166,7 @@
         const status = document.createElement("span");
         status.className = "radio-association-status";
         status.textContent = ` · ${associationLabels[entry.status]}`;
-        item.append(officer, status, informationControl(entry));
+        item.append(officer, status, informationControl(entry, id));
       }
       element.append(item);
       if (index < ids.length - 1) {
