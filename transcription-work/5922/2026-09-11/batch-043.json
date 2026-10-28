@@ -1,0 +1,657 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-11",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1789154647.m4a": {
+      "index": 421,
+      "epoch": 1789154647,
+      "sha256": "0578039e80df05c65b7f17a8b21767ea1890ee10333d516af1bb0a711076ed5b",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.5121776958306631,
+              "no_speech_prob": 0.01562579534947872,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.6833949685096741,
+              "no_speech_prob": 0.01926090195775032,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Go ahead.",
+          "prompt": "Don't force us back. Copy, suspend 1323. 5J27 traffic",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.510301540295283,
+              "no_speech_prob": 0.01767323538661003,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789154649.m4a": {
+      "index": 422,
+      "epoch": 1789154649,
+      "sha256": "9ecaacf1211e5ef7df912b8ec2ad1924222cd3ba3e5a977d50d3dc795089ad09",
+      "passes": {
+        "original": {
+          "text": "4600 West and Harvey on Zulu, three three eight echo echo.",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 4600 West and Harvey on Zulu, three three eight",
+              "avg_logprob": -0.43702254444360733,
+              "no_speech_prob": 0.06299449503421783,
+              "compression_ratio": 1.0175438596491229
+            },
+            {
+              "start": 4.0,
+              "end": 8.040000000000001,
+              "text": " echo echo.",
+              "avg_logprob": -0.43702254444360733,
+              "no_speech_prob": 0.06299449503421783,
+              "compression_ratio": 1.0175438596491229
+            }
+          ]
+        },
+        "filtered": {
+          "text": "4600 West and Harvey on Zulu, 338 Echo Echo",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 4600 West and Harvey on Zulu, 338 Echo",
+              "avg_logprob": -0.49381295372458067,
+              "no_speech_prob": 0.0374671071767807,
+              "compression_ratio": 0.9148936170212766
+            },
+            {
+              "start": 4.0,
+              "end": 8.0,
+              "text": " Echo",
+              "avg_logprob": -0.49381295372458067,
+              "no_speech_prob": 0.0374671071767807,
+              "compression_ratio": 0.9148936170212766
+            }
+          ]
+        },
+        "context": {
+          "text": "4600 West and Harvey on Zulu 338 Echo. Echo.",
+          "prompt": "Copy, suspend 1323. 5J27 traffic Go ahead.",
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 4600 West and Harvey on Zulu 338 Echo. Echo.",
+              "avg_logprob": -0.48324549570679665,
+              "no_speech_prob": 0.0016699061961844563,
+              "compression_ratio": 0.9361702127659575
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789154655.m4a": {
+      "index": 423,
+      "epoch": 1789154655,
+      "sha256": "ab89d77fd1fbae98c2be321f62a199335381cf725041d086d470124910efe753",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.60433931350708,
+              "no_speech_prob": 0.015491551719605923,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.5353391021490097,
+              "no_speech_prob": 0.015533709898591042,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "5J27 traffic Go ahead. 4600 West and Harvey on Zulu, three three eight echo echo.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.3827641248703003,
+              "no_speech_prob": 0.009152678772807121,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789154975.m4a": {
+      "index": 424,
+      "epoch": 1789154975,
+      "sha256": "8c7458ecdd6c9ed301787161ba5042f8962ae01055ea711bff72be17a3dd3740",
+      "passes": {
+        "original": {
+          "text": "5J27, code for check.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J27, code for check.",
+              "avg_logprob": -0.5981821363622492,
+              "no_speech_prob": 0.012289103120565414,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5,827 post for check.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5,827 post for check.",
+              "avg_logprob": -0.9495755759152499,
+              "no_speech_prob": 0.012947920709848404,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "context": {
+          "text": "5J27, code for check.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J27, code for check.",
+              "avg_logprob": -0.5981821363622492,
+              "no_speech_prob": 0.012289103120565414,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789154978.m4a": {
+      "index": 425,
+      "epoch": 1789154978,
+      "sha256": "bf582a11538ad7c1e890df57e1264e69c9b296703fa3387900601225a389eb2a",
+      "passes": {
+        "original": {
+          "text": "Go for it",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it",
+              "avg_logprob": -0.38845228652159375,
+              "no_speech_prob": 0.025968236848711967,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it",
+              "avg_logprob": -0.40829325715700787,
+              "no_speech_prob": 0.03420105576515198,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Code for.",
+          "prompt": "5J27, code for check.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Code for.",
+              "avg_logprob": -0.3156694273153941,
+              "no_speech_prob": 0.021577607840299606,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789154980.m4a": {
+      "index": 426,
+      "epoch": 1789154980,
+      "sha256": "0f9e3edd531aaab4cc278abd1183afe479e1e1a5675c0636586b0dbe7d6a2ee6",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.5640592575073242,
+              "no_speech_prob": 0.03621527925133705,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.4930744171142578,
+              "no_speech_prob": 0.010426079854369164,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy",
+          "prompt": "5J27, code for check. Go for it",
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy",
+              "avg_logprob": -0.6857947558164597,
+              "no_speech_prob": 0.02341054566204548,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789155048.m4a": {
+      "index": 427,
+      "epoch": 1789155048,
+      "sha256": "6913b9cb86ba33647764be02cfcaf7912127d9021a79ba1c80e1a02e43b63865",
+      "passes": {
+        "original": {
+          "text": "5J27 clear.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J27 clear.",
+              "avg_logprob": -0.5680478811264038,
+              "no_speech_prob": 0.07482452690601349,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J27 clear",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J27 clear",
+              "avg_logprob": -0.5595602989196777,
+              "no_speech_prob": 0.06309444457292557,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "5J27 clear.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J27 clear.",
+              "avg_logprob": -0.5680478811264038,
+              "no_speech_prob": 0.07482452690601349,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789155051.m4a": {
+      "index": 428,
+      "epoch": 1789155051,
+      "sha256": "1836ed594d9da21d4e61115979cd00196dc1b0ee1cdf2809fc8c4af66a43562d",
+      "passes": {
+        "original": {
+          "text": "10-4.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.5706406320844378,
+              "no_speech_prob": 0.03618711978197098,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "10-4.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.5993176868983677,
+              "no_speech_prob": 0.04289137199521065,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "10-4.",
+          "prompt": "5J27 clear.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.4231065937450954,
+              "no_speech_prob": 0.05726330727338791,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789155984.m4a": {
+      "index": 429,
+      "epoch": 1789155984,
+      "sha256": "cd5b94aebf19e4d87a6c60272cb31908957daf9a4c81cab29dfb3101bd72a529",
+      "passes": {
+        "original": {
+          "text": "7J96 Central.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J96 Central.",
+              "avg_logprob": -0.9192110002040863,
+              "no_speech_prob": 0.07575751841068268,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "1796 Central.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 1796 Central.",
+              "avg_logprob": -0.5700740984507969,
+              "no_speech_prob": 0.05672255903482437,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "7J96 Central.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J96 Central.",
+              "avg_logprob": -0.9192110002040863,
+              "no_speech_prob": 0.07575751841068268,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789155989.m4a": {
+      "index": 430,
+      "epoch": 1789155989,
+      "sha256": "e1dc0b6bb11b4c24e6c59d9c7400f4d83d46624aa9be6b82a0be6b86d322666e",
+      "passes": {
+        "original": {
+          "text": "Do I?",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Do I?",
+              "avg_logprob": -0.7068680226802826,
+              "no_speech_prob": 0.05443362146615982,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.5406172076861063,
+              "no_speech_prob": 0.022332238033413887,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Do I?",
+          "prompt": "7J96 Central.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Do I?",
+              "avg_logprob": -0.7818524042765299,
+              "no_speech_prob": 0.10660112649202347,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
