@@ -496,7 +496,7 @@ function archive(config) {
     }
     folder = entry.folder;
     try {
-      const response = await fetch(`${base}${encodeURIComponent(folder)}/calls.json`, { signal: controller.signal });
+      const response = await fetch(`${base}${encodeURIComponent(folder)}/calls.json`, { signal: controller.signal, cache: "no-cache" });
       if (!response.ok) throw new Error("Unable to load clips");
       const data = await response.json();
       if (token !== request) return;
@@ -507,9 +507,11 @@ function archive(config) {
         }
         return call;
       }).sort((a, b) => a.epoch - b.epoch);
-      transcriptAvailable = config.law2
-        ? entry.enableTranscription === true && calls.some(call => typeof call.transcript === "string" && call.transcript.trim())
-        : data.enableTranscription === true;
+      // The enabled-date index owns any explicit setting; older indexes fall
+      // back to the manifest. Both archives use the same transcript controls.
+      const transcriptEnabled = typeof entry.enableTranscription === "boolean"
+        ? entry.enableTranscription : data.enableTranscription;
+      transcriptAvailable = transcriptEnabled === true && (!config.law2 || calls.some(call => typeof call.transcript === "string" && call.transcript.trim()));
       if (config.law2 && get("coverage")) { get("coverage").textContent = entry.coverageNote || ""; get("coverage").hidden = !entry.coverageNote; }
       if (transcriptDownload && (!config.law2 || transcriptAvailable)) {
         const filename = `transcript_${entry.date.replaceAll("-", "_")}.txt`;
@@ -548,7 +550,7 @@ function archive(config) {
   day.addEventListener("change", loadDay);
   async function initialize() {
     try {
-      const [response] = await Promise.all([fetch(`${base}${config.law2 ? "law-2-index.json" : "index.json"}`), identity.load()]);
+      const [response] = await Promise.all([fetch(`${base}${config.law2 ? "law-2-index.json" : "index.json"}`, { cache: "no-cache" }), identity.load()]);
       if (!response.ok) throw new Error("Unable to load dates");
       const index = await response.json();
       if (!Array.isArray(index.days)) throw new Error("Invalid index");
