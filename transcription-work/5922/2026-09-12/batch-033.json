@@ -1,0 +1,681 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-12",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1789238165.m4a": {
+      "index": 321,
+      "epoch": 1789238165,
+      "sha256": "0bcdd2f63d20748900b17c1377f98ecc8530bbbed477d2773ea825fd1c80a6b5",
+      "passes": {
+        "original": {
+          "text": "Thank you very much.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you very much.",
+              "avg_logprob": -1.0588141828775406,
+              "no_speech_prob": 0.21678602695465088,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "8 and j go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 8 and j go ahead.",
+              "avg_logprob": -1.2053355111016169,
+              "no_speech_prob": 0.15716099739074707,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "1828, go ahead.",
+          "prompt": "1828, copy accident PD.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 1828, go ahead.",
+              "avg_logprob": -0.534057511223687,
+              "no_speech_prob": 0.042180102318525314,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789238167.m4a": {
+      "index": 322,
+      "epoch": 1789238167,
+      "sha256": "c34600796e67d39512d7a396ce33217715539c3536559f18affc21bbadb91a39",
+      "passes": {
+        "original": {
+          "text": "It's going to be 6,000 West and Tippin August Highway. No injuries, not blocking, facing southbound, 6,000 West. It will be on the right-hand shoulder of the truck with the trailer versus the Honda van.",
+          "prompt": null,
+          "duration_seconds": 12.032,
+          "token_limit": 121,
+          "token_count": 59,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.54,
+              "text": " It's going to be 6,000 West and Tippin August Highway.",
+              "avg_logprob": -0.3947174141804377,
+              "no_speech_prob": 0.01840854063630104,
+              "compression_ratio": 1.3202614379084967
+            },
+            {
+              "start": 3.54,
+              "end": 7.74,
+              "text": " No injuries, not blocking, facing southbound, 6,000 West.",
+              "avg_logprob": -0.3947174141804377,
+              "no_speech_prob": 0.01840854063630104,
+              "compression_ratio": 1.3202614379084967
+            },
+            {
+              "start": 7.74,
+              "end": 9.540000000000001,
+              "text": " It will be on the right-hand shoulder of the truck",
+              "avg_logprob": -0.3947174141804377,
+              "no_speech_prob": 0.01840854063630104,
+              "compression_ratio": 1.3202614379084967
+            },
+            {
+              "start": 9.540000000000001,
+              "end": 11.58,
+              "text": " with the trailer versus the Honda van.",
+              "avg_logprob": -0.3947174141804377,
+              "no_speech_prob": 0.01840854063630104,
+              "compression_ratio": 1.3202614379084967
+            }
+          ]
+        },
+        "filtered": {
+          "text": "6,000 West and Tippin August Highway. No injuries, not blocking, facing southbound, 6,000 West. It will be on the right hand shoulder. It's a truck with a trailer versus a Honda van.",
+          "prompt": null,
+          "duration_seconds": 12.032,
+          "token_limit": 121,
+          "token_count": 51,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 6,000 West and Tippin August Highway. No injuries, not blocking, facing southbound, 6,000 West.",
+              "avg_logprob": -0.3814905262910403,
+              "no_speech_prob": 0.04803525656461716,
+              "compression_ratio": 1.2816901408450705
+            },
+            {
+              "start": 7.0,
+              "end": 12.0,
+              "text": " It will be on the right hand shoulder. It's a truck with a trailer versus a Honda van.",
+              "avg_logprob": -0.3814905262910403,
+              "no_speech_prob": 0.04803525656461716,
+              "compression_ratio": 1.2816901408450705
+            }
+          ]
+        },
+        "context": {
+          "text": "It's going to be 6000 West and Tippin August Highway. No injuries, not blocking, facing southbound 6000 West. It will be on the right hand shoulder of the truck with the trailer versus the Honda van.",
+          "prompt": "1828, copy accident PD. Thank you very much.",
+          "duration_seconds": 12.032,
+          "token_limit": 121,
+          "token_count": 49,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " It's going to be 6000 West and Tippin August Highway. No injuries, not blocking, facing southbound 6000 West.",
+              "avg_logprob": -0.3117800039052963,
+              "no_speech_prob": 0.11706672608852386,
+              "compression_ratio": 1.3178807947019868
+            },
+            {
+              "start": 7.0,
+              "end": 11.0,
+              "text": " It will be on the right hand shoulder of the truck with the trailer versus the Honda van.",
+              "avg_logprob": -0.3117800039052963,
+              "no_speech_prob": 0.11706672608852386,
+              "compression_ratio": 1.3178807947019868
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789238181.m4a": {
+      "index": 323,
+      "epoch": 1789238181,
+      "sha256": "7d0c38a49c158a00197742012b5c7e64907d39c3959ba1af0351a7233ae22a72",
+      "passes": {
+        "original": {
+          "text": "Copy. I'll be responding from North Alpine.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Copy. I'll be responding from North Alpine.",
+              "avg_logprob": -0.5243465533623328,
+              "no_speech_prob": 0.03637110814452171,
+              "compression_ratio": 0.8431372549019608
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy. I'll be responding from Nodalpine.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Copy. I'll be responding from Nodalpine.",
+              "avg_logprob": -0.5159631888071696,
+              "no_speech_prob": 0.03468665853142738,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy. I'll be responding from North Alpine.",
+          "prompt": "1828, copy accident PD. Thank you very much. It's going to be 6,000 West and Tippin August Highway. No injuries, not blocking, facing southbound, 6,000 West. It will be on the right-hand shoulder of the truck with the trailer versus the Honda van.",
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Copy. I'll be responding from North Alpine.",
+              "avg_logprob": -0.38295892568734974,
+              "no_speech_prob": 0.0475454144179821,
+              "compression_ratio": 0.8431372549019608
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789238191.m4a": {
+      "index": 324,
+      "epoch": 1789238191,
+      "sha256": "306d26e311de8931cc270651380e31b20d8310e44861ea1de8f323b9f0b83e45",
+      "passes": {
+        "original": {
+          "text": "7-j-20 on 23.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-j-20 on 23.",
+              "avg_logprob": -0.7888298684900458,
+              "no_speech_prob": 0.04795694351196289,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7-8-20 on 23.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-8-20 on 23.",
+              "avg_logprob": -0.710597038269043,
+              "no_speech_prob": 0.06664755940437317,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "7J20, I'm going to be 23.",
+          "prompt": "Thank you very much. It's going to be 6,000 West and Tippin August Highway. No injuries, not blocking, facing southbound, 6,000 West. It will be on the right-hand shoulder of the truck with the trailer versus the Honda van. Copy. I'll be responding from North Alpine.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J20, I'm going to be 23.",
+              "avg_logprob": -0.745939382484981,
+              "no_speech_prob": 0.058943312615156174,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789238199.m4a": {
+      "index": 325,
+      "epoch": 1789238199,
+      "sha256": "d925cbfadfda979b48914b53c40f44e534e8e1ee5ea87883dd0b70e97ffddb9d",
+      "passes": {
+        "original": {
+          "text": "Cubby.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Cubby.",
+              "avg_logprob": -0.8647960424423218,
+              "no_speech_prob": 0.05620370805263519,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Gaby.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Gaby.",
+              "avg_logprob": -0.8446081479390463,
+              "no_speech_prob": 0.07238954305648804,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "It's going to be 6,000 West and Tippin August Highway. No injuries, not blocking, facing southbound, 6,000 West. It will be on the right-hand shoulder of the truck with the trailer versus the Honda van. Copy. I'll be responding from North Alpine. 7-j-20 on 23.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.49335832595825196,
+              "no_speech_prob": 0.04235237464308739,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789238372.m4a": {
+      "index": 326,
+      "epoch": 1789238372,
+      "sha256": "10c162bfcfb15f990838bb7bb8917e03e795cf2cf68e8f2d59b83327f6329de6",
+      "passes": {
+        "original": {
+          "text": "Roger, ED. Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Roger, ED. Go for it.",
+              "avg_logprob": -0.8388198505748402,
+              "no_speech_prob": 0.02465265989303589,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Roger, ED. Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Roger, ED. Go for it.",
+              "avg_logprob": -0.7179994474757802,
+              "no_speech_prob": 0.011751084588468075,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "context": {
+          "text": "Roger, ED. Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Roger, ED. Go for it.",
+              "avg_logprob": -0.8388198505748402,
+              "no_speech_prob": 0.02465265989303589,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789238375.m4a": {
+      "index": 327,
+      "epoch": 1789238375,
+      "sha256": "5f7566b94a3e5d3704deb2ab3b26c49560f1f43ad29fe1b536eb60b8c624340c",
+      "passes": {
+        "original": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.6897786855697632,
+              "no_speech_prob": 0.016819123178720474,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.6079514878136771,
+              "no_speech_prob": 0.03194436430931091,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Go for it.",
+          "prompt": "Roger, ED. Go for it.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.21718495232718332,
+              "no_speech_prob": 0.02107050269842148,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789238814.m4a": {
+      "index": 328,
+      "epoch": 1789238814,
+      "sha256": "4976a49ab50fefc7638bd6673789de8d24d0fdd3c0f87208edbfe8915cca446e",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.5657183627287546,
+              "no_speech_prob": 0.010466275736689568,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go ahead",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead",
+              "avg_logprob": -0.4980377197265625,
+              "no_speech_prob": 0.015952005982398987,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.5657183627287546,
+              "no_speech_prob": 0.010466275736689568,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789238816.m4a": {
+      "index": 329,
+      "epoch": 1789238816,
+      "sha256": "b6acc00d04c35c4cebb308ad937f3c059f1f87e9d000c74e5dfb844b83ddcbd0",
+      "passes": {
+        "original": {
+          "text": "You can hold my keys and show me on our traffic top. 100 keys, 1100 south.",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " You can hold my keys and show me on our traffic top. 100 keys, 1100 south.",
+              "avg_logprob": -0.4606722593307495,
+              "no_speech_prob": 0.021675923839211464,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "filtered": {
+          "text": "You can hold my keys and show me on our traffic stop. 100 keys, 1100 south.",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " You can hold my keys and show me on our traffic stop. 100 keys, 1100 south.",
+              "avg_logprob": -0.47768812017007306,
+              "no_speech_prob": 0.021941564977169037,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "You can hold my keys and show me on our traffic top. 100 keys, 1100 south.",
+          "prompt": "Go ahead.",
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " You can hold my keys and show me on our traffic top. 100 keys, 1100 south.",
+              "avg_logprob": -0.407373384995894,
+              "no_speech_prob": 0.005551856476813555,
+              "compression_ratio": 1.0
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789238823.m4a": {
+      "index": 330,
+      "epoch": 1789238823,
+      "sha256": "067dec9b8e21df85eab196d1c2662859341ad98aa35047003af9b7d417db4d81",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.49944190979003905,
+              "no_speech_prob": 0.04716578498482704,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.49547691345214845,
+              "no_speech_prob": 0.03646723926067352,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "Go ahead. You can hold my keys and show me on our traffic top. 100 keys, 1100 south.",
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.4299562931060791,
+              "no_speech_prob": 0.030019335448741913,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
