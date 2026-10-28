@@ -1,0 +1,657 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-06",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791302009.m4a": {
+      "index": 541,
+      "epoch": 1791302009,
+      "sha256": "a6ceb1b96c57260a56452a0d10696582831a6ea976abc360d70e0240561a5e44",
+      "passes": {
+        "original": {
+          "text": "Hi, Jay. 52 Central Code 4.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Hi, Jay. 52 Central Code 4.",
+              "avg_logprob": -0.6307607193787893,
+              "no_speech_prob": 0.0292085949331522,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hi. Jay. 52 Central, Code 4.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Hi.",
+              "avg_logprob": -0.6027393341064453,
+              "no_speech_prob": 0.0356040820479393,
+              "compression_ratio": 0.7777777777777778
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Jay.",
+              "avg_logprob": -0.6027393341064453,
+              "no_speech_prob": 0.0356040820479393,
+              "compression_ratio": 0.7777777777777778
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " 52 Central, Code 4.",
+              "avg_logprob": -0.6027393341064453,
+              "no_speech_prob": 0.0356040820479393,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "context": {
+          "text": "Hi, Jay. 52 Central Code 4.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Hi, Jay. 52 Central Code 4.",
+              "avg_logprob": -0.6307607193787893,
+              "no_speech_prob": 0.0292085949331522,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791302015.m4a": {
+      "index": 542,
+      "epoch": 1791302015,
+      "sha256": "94241d78e9ac6f86626036bf13f11805bba256fa36260f3313f1a9bff058303c",
+      "passes": {
+        "original": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.726163387298584,
+              "no_speech_prob": 0.045721229165792465,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.8883946282523019,
+              "no_speech_prob": 0.03502902761101723,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Code 4.",
+          "prompt": "Hi, Jay. 52 Central Code 4.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Code 4.",
+              "avg_logprob": -0.39097482959429425,
+              "no_speech_prob": 0.03557729348540306,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791302017.m4a": {
+      "index": 543,
+      "epoch": 1791302017,
+      "sha256": "868fafe5d03a1b6244094ae481354108c898300dbd46f9bb97e9b941111bec12",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.791680097579956,
+              "no_speech_prob": 0.024913644418120384,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.7332504272460938,
+              "no_speech_prob": 0.043981365859508514,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "Hi, Jay. 52 Central Code 4. Go for it.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5369495868682861,
+              "no_speech_prob": 0.01673555001616478,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791302187.m4a": {
+      "index": 544,
+      "epoch": 1791302187,
+      "sha256": "2049cbbaf9b06afb0795d5c00dfb23d4dbbb73b74cdf9a7a87d3b43f46e5c328",
+      "passes": {
+        "original": {
+          "text": "5J25",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J25",
+              "avg_logprob": -0.5540334184964498,
+              "no_speech_prob": 0.028425175696611404,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G, 25.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G, 25.",
+              "avg_logprob": -0.8139051124453545,
+              "no_speech_prob": 0.01714005134999752,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "5J25",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J25",
+              "avg_logprob": -0.5540334184964498,
+              "no_speech_prob": 0.028425175696611404,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791302189.m4a": {
+      "index": 545,
+      "epoch": 1791302189,
+      "sha256": "a9c02d5fd1177e93562cc600d2d8d743db778e1f88a25a9ea31f64e2cfd2a095",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.84,
+              "text": " Go ahead.",
+              "avg_logprob": -0.5791371067365011,
+              "no_speech_prob": 0.014042372815310955,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go ahead",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead",
+              "avg_logprob": -0.524839448928833,
+              "no_speech_prob": 0.014328856021165848,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Go ahead",
+          "prompt": "5J25",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead",
+              "avg_logprob": -0.4889978408813477,
+              "no_speech_prob": 0.1243055984377861,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791302191.m4a": {
+      "index": 546,
+      "epoch": 1791302191,
+      "sha256": "bce87313529a963ab835ef7506c325a3b9c133b23149cac58a7b925ade93612c",
+      "passes": {
+        "original": {
+          "text": "Will you open a juvenile problem, negative checks?",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Will you open a juvenile problem, negative checks?",
+              "avg_logprob": -0.36253664126762974,
+              "no_speech_prob": 0.005353318527340889,
+              "compression_ratio": 0.8620689655172413
+            }
+          ]
+        },
+        "filtered": {
+          "text": "You open a juvenile problem, negative checks.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " You open a juvenile problem, negative checks.",
+              "avg_logprob": -0.38827922691901523,
+              "no_speech_prob": 0.006875073071569204,
+              "compression_ratio": 0.8490566037735849
+            }
+          ]
+        },
+        "context": {
+          "text": "Will you open a juvenile problem? Negative checks.",
+          "prompt": "5J25 Go ahead.",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Will you open a juvenile problem? Negative checks.",
+              "avg_logprob": -0.37790093972132754,
+              "no_speech_prob": 0.011742401868104935,
+              "compression_ratio": 0.8620689655172413
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791302195.m4a": {
+      "index": 547,
+      "epoch": 1791302195,
+      "sha256": "f0b3124705c8f45b005362935385d395db0c492f4fb47efb75d150682ce95e5b",
+      "passes": {
+        "original": {
+          "text": "Copy the location.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy the location.",
+              "avg_logprob": -0.707889369555882,
+              "no_speech_prob": 0.02271946333348751,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy location",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " copy location",
+              "avg_logprob": -0.6610115528106689,
+              "no_speech_prob": 0.023777807131409645,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy location.",
+          "prompt": "5J25 Go ahead. Will you open a juvenile problem, negative checks?",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy location.",
+              "avg_logprob": -0.6173598766326904,
+              "no_speech_prob": 0.034457169473171234,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791302198.m4a": {
+      "index": 548,
+      "epoch": 1791302198,
+      "sha256": "29fc57ea3a353fec02f857c524b680e5a3a9d172c502283194546af3beba95bd",
+      "passes": {
+        "original": {
+          "text": "Bye-bye.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.9666073322296143,
+              "no_speech_prob": 0.011915723793208599,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "So am I.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " So am I.",
+              "avg_logprob": -0.8311177662440709,
+              "no_speech_prob": 0.021048421040177345,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Feel at high.",
+          "prompt": "Go ahead. Will you open a juvenile problem, negative checks? Copy the location.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Feel at high.",
+              "avg_logprob": -0.8721575055803571,
+              "no_speech_prob": 0.014789773151278496,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791302200.m4a": {
+      "index": 549,
+      "epoch": 1791302200,
+      "sha256": "e58baa4ca72b86a64288182276c28a40489f8c32a6f0430751355bd25b4d0ef6",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.772611141204834,
+              "no_speech_prob": 0.033220067620277405,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy.",
+              "avg_logprob": -0.5586498737335205,
+              "no_speech_prob": 0.015523891896009445,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "Will you open a juvenile problem, negative checks? Copy the location. Bye-bye.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.48496642112731936,
+              "no_speech_prob": 0.016413087025284767,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791302223.m4a": {
+      "index": 550,
+      "epoch": 1791302223,
+      "sha256": "afe46609f1a549cd362ae71d52590815401a8d0deb2889b38e7e3d7ddb44328e",
+      "passes": {
+        "original": {
+          "text": "I'm sorry, J40 Central Copy Medical.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.5,
+              "text": " I'm sorry, J40 Central Copy Medical.",
+              "avg_logprob": -0.6980123519897461,
+              "no_speech_prob": 0.013737382367253304,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        },
+        "filtered": {
+          "text": "This is IJ40 Central Copy Medical.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " This is IJ40 Central Copy Medical.",
+              "avg_logprob": -0.7925017575422922,
+              "no_speech_prob": 0.01625274494290352,
+              "compression_ratio": 0.85
+            }
+          ]
+        },
+        "context": {
+          "text": "Bye-bye, J40 Central Copy Medical.",
+          "prompt": "Copy the location. Bye-bye. Copy.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.32,
+              "text": " Bye-bye, J40 Central Copy Medical.",
+              "avg_logprob": -0.44860413441291225,
+              "no_speech_prob": 0.022988129407167435,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        }
+      }
+    }
+  }
+}
