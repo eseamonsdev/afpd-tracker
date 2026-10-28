@@ -18,7 +18,7 @@ const isDispatchId = id => id.startsWith("904");
 
 function createIdentity(getDate) {
   let afpdIds = new Set(), agencyIds = {};
-  let officerDays = {}, informationNumber = 0, closeInformation = null, activeInformation = null;
+  let officerDays = {}, strongAssociations = {}, withheldDates = {}, informationNumber = 0, closeInformation = null, activeInformation = null;
   document.addEventListener?.("pointerdown", event => {
     if (activeInformation && !activeInformation.contains(event.target)) closeInformation?.();
   });
@@ -29,7 +29,11 @@ function createIdentity(getDate) {
   };
   const officerAssociation = (id) => {
     if (isDispatchId(id) || agencyIds[id]) return null;
-    const entry = officerDays[getDate()]?.[id];
+    const date = getDate();
+    const dated = officerDays[date]?.[id];
+    if (typeof dated?.name === "string" && associationLabels[dated.status]) return dated;
+    if (withheldDates[date]?.includes(id)) return null;
+    const entry = strongAssociations[id];
     return typeof entry?.name === "string" && associationLabels[entry.status] ? entry : null;
   };
   const associationNote = (entry) => {
@@ -37,7 +41,7 @@ function createIdentity(getDate) {
     const count = Number(entry.evidence_days) || 1;
     const dates = Array.isArray(entry.evidence_dates) ? entry.evidence_dates.join(", ") : "";
     const description = entry.status === "strong"
-      ? `Named exchanges associate this radio ID with ${entry.name} on ${count} dates. An association has not been confirmed for ${date}. Transcript screening found no unresolved contradiction for this ID on that date.`
+      ? `Named exchanges associate this radio ID with ${entry.name} on ${count} dates. An association has not been confirmed for ${date}. The strong association carries from evidence on other dates; it is not a confirmation of the selected date.`
       : `Named exchanges associate this radio ID with ${entry.name} on ${date}.` +
         (entry.status === "single-day" ? " This is the only supported date; the name is not extended to other dates." : "");
     return `${description}${dates ? ` Evidence dates: ${dates}.` : ""} This does not independently verify the speaker in every clip.`;
@@ -165,7 +169,23 @@ function createIdentity(getDate) {
     try {
       const response = await fetch("/records/openmhz/officer-associations.json");
       const data = response.ok ? await response.json() : null;
-      if (data?.schema_version === 2 && data.days && typeof data.days === "object") officerDays = data.days;
+      if (data?.schema_version === 2 && data.days && typeof data.days === "object") {
+        officerDays = data.days;
+        withheldDates = data.withheld_dates ?? {};
+        const candidates = new Map(), names = new Map();
+        for (const entries of Object.values(officerDays)) {
+          for (const [id, entry] of Object.entries(entries)) {
+            if (typeof entry?.name !== "string") continue;
+            if (!names.has(id)) names.set(id, new Set());
+            names.get(id).add(entry.name);
+            if (entry.status !== "strong" || Number(entry.evidence_days) < 2) continue;
+            const previous = candidates.get(id);
+            if (!previous || Number(entry.evidence_days) > Number(previous.evidence_days)) candidates.set(id, entry);
+          }
+        }
+        strongAssociations = Object.fromEntries([...candidates].filter(([id]) => names.get(id).size === 1)
+          .map(([id, entry]) => [id, { ...entry, status: "strong" }]));
+      }
     } catch { /* Numeric IDs remain available when evidence cannot load. */ }
   }
   return { load, render: renderRadioIds, text: radioIdText, close: () => closeInformation?.(),

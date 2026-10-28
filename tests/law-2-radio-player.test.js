@@ -225,7 +225,8 @@ test("Law 2 uses the same dated names, strength labels and SVG evidence controls
     await f.settle();
     assert.match(f.get('current-radio-ids').textContent, /Test Officer/);
     f.get('day').value = '2026-09-10'; f.get('day').emit('change'); await f.settle();
-    assert.equal(f.get('clips').children[0].children[1].textContent, 'Radio ID: 14590026', 'a name does not carry into unsupported dates');
+    if (status === 'strong') assert.match(f.get('clips').children[0].children[1].textContent, /Test Officer · Strong association/);
+    else assert.equal(f.get('clips').children[0].children[1].textContent, 'Radio ID: 14590026', 'dated confirmations and single-day-only names do not become strong fallbacks');
   }
 });
 
@@ -283,4 +284,27 @@ test("corrected agency ID overrides AFPD fallback in row, audio label and curren
   assert.match(row.children[0].getAttribute('aria-label'), /14580068 · 18J16/);
   f.select(0); await f.settle();
   assert.match(f.get('current-radio-ids').textContent, /14580068 · 18J16/);
+});
+
+
+test("strong names carry to Law 2-only dates, respecting withheld dates and conflicting names", async () => {
+  const associations = { schema_version: 2, withheld_dates: { '2026-09-10': ['14590026'] }, days: {
+    '2026-09-12': {
+      '14590026': { name: 'Known Officer', status: 'strong', evidence_days: 2, evidence_dates: ['2026-09-12', '2026-09-13'] },
+      '14590027': { name: 'One Day', status: 'single-day', evidence_days: 1 },
+      '14590028': { name: 'First Name', status: 'strong', evidence_days: 2 }
+    },
+    '2026-09-13': { '14590028': { name: 'Other Name', status: 'confirmed', evidence_days: 2 } }
+  } };
+  const f = await playerFixture([
+    { epoch: 1789100000, displayed_seconds: 2, original_filename: 'one.m4a', radio_ids: [14590026,14590027,14590028] }
+  ], undefined, '2026-09-11', '', false, associations);
+  const row = f.get('clips').children[0];
+  assert.match(row.children[1].textContent, /Known Officer · Strong association/);
+  assert.doesNotMatch(row.children[1].textContent, /Confirmed this day|One Day|First Name|Other Name/);
+  assert.match(row.children[0].getAttribute('aria-label'), /Known Officer · Strong association/);
+  f.select(0); await f.settle();
+  assert.match(f.get('current-radio-ids').textContent, /Known Officer · Strong association/);
+  f.get('day').value = '2026-09-10'; f.get('day').emit('change'); await f.settle();
+  assert.doesNotMatch(f.get('clips').children[0].children[1].textContent, /Known Officer/);
 });
