@@ -227,3 +227,27 @@ test("Law 2 uses the same dated names, strength labels and SVG evidence controls
     assert.equal(f.get('clips').children[0].children[1].textContent, 'Radio ID: 14590026', 'a name does not carry into unsupported dates');
   }
 });
+
+
+test("904 IDs show Dispatch without person associations in rows, labels and current clip", async () => {
+  const f = await playerFixture([
+    { epoch: 1789100000, displayed_seconds: 2, original_filename: "dispatch.m4a", radio_ids: [9040011, "9040007", 14590400] },
+    { epoch: 1789100010, displayed_seconds: 2, original_filename: "source-list.m4a", srcList: [{ src: 9040013 }] }
+  ], undefined, "2026-09-11", "", false, { schema_version: 2, days: { "2026-09-11": {
+    "9040011": { name: "Must not appear", status: "confirmed" },
+    "14590400": { name: "Field Officer", status: "confirmed" }
+  } } });
+  const row = f.get("clips").children[0], ids = row.children[1];
+  assert.match(ids.textContent, /9040011 · Dispatch/);
+  assert.match(ids.textContent, /9040007 · Dispatch/);
+  assert.match(ids.textContent, /14590400 · Field Officer · Confirmed this day/);
+  assert.equal(ids.children[1].children.length, 2, "dispatch has only its numeric ID and role label");
+  assert.equal(ids.children[3].children.length, 2);
+  assert.doesNotMatch(ids.textContent, /Must not appear/);
+  assert.match(row.children[0].getAttribute("aria-label"), /9040011 · Dispatch/);
+  f.select(0); await f.settle();
+  assert.match(f.get("current-radio-ids").textContent, /9040011 · Dispatch/);
+  assert.match(f.get("clips").children[1].children[1].textContent, /9040013 · Dispatch/);
+  f.get("day").value = "2026-09-10"; f.get("day").emit("change"); await f.settle();
+  assert.match(f.get("clips").children[0].children[1].textContent, /9040011 · Dispatch/);
+});

@@ -14,6 +14,8 @@ const durationText = seconds => { const whole = Math.floor(Number.isFinite(secon
     return ids;
   };
 
+const isDispatchId = id => id.startsWith("904");
+
 function createIdentity(getDate) {
   let officerDays = {}, informationNumber = 0, closeInformation = null, activeInformation = null;
   document.addEventListener?.("pointerdown", event => {
@@ -25,6 +27,7 @@ function createIdentity(getDate) {
     "single-day": "Single-day association"
   };
   const officerAssociation = (id) => {
+    if (isDispatchId(id)) return null;
     const entry = officerDays[getDate()]?.[id];
     return typeof entry?.name === "string" && associationLabels[entry.status] ? entry : null;
   };
@@ -41,6 +44,7 @@ function createIdentity(getDate) {
   const radioIdText = (call) => {
     const ids = radioIds(call);
     return ids.length ? `Radio ID${ids.length > 1 ? "s" : ""}: ${ids.map(id => {
+      if (isDispatchId(id)) return `${id} · Dispatch`;
       const entry = officerAssociation(id);
       return entry ? `${id} · ${entry.name} · ${associationLabels[entry.status]}` : id;
     }).join(", ")}` : "";
@@ -130,7 +134,12 @@ function createIdentity(getDate) {
       number.textContent = id;
       item.append(number);
       const entry = officerAssociation(id);
-      if (entry) {
+      if (isDispatchId(id)) {
+        const role = document.createElement("span");
+        role.className = "radio-role-label";
+        role.textContent = " · Dispatch";
+        item.append(role);
+      } else if (entry) {
         const officer = document.createElement("span");
         officer.className = "radio-officer-name";
         officer.textContent = ` · ${entry.name}`;

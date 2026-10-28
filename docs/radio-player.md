@@ -41,3 +41,9 @@ clip. Selection highlighting and hover styling cover the whole row.
 Run `node --test tests/*.test.js` and `npm run build` after shared changes.
 The three player suites load the core plus their own adapters. Shared regression
 tests cover click bubbling, information controls, asset order and template IDs.
+
+The owner-configured `904` prefix is displayed as Dispatch on every player,
+while preserving the full numeric ID. This is a role label, not a person
+association: no officer name, strength label or evidence popup is attached to
+these IDs, even if a dated person entry exists. Other IDs retain the existing
+dated association lookup.
