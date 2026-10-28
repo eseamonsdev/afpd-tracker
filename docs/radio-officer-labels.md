@@ -14,3 +14,7 @@ Names originate in the rendered resource table. Evidence dates and current-day s
 When correcting evidence, update the spreadsheet, resource table, dated labels and review report together. New dates must be screened before receiving fallback names. These labels describe radio associations; they do not independently identify the speaker in every clip. Transcript verified flags remain separate. Missing association data falls back to ID-only playback.
 
 Owner listening confirmation can also establish **Confirmed this day** for a single supported date. The October 4 Manis / 14590314 identification uses this rule; possible similar-sounding names on other dates remain unconfirmed and receive no fallback label.
+
+Owner Law 2 confirmations can create a dated entry even if the radio ID has
+no 6001 clips that day. September 27, 2026 / 14580155 / 5J44 is an explicit
+Brennan Cox confirmation under this rule; absence from 6001 is not a conflict.
