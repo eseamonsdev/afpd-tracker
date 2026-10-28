@@ -68,3 +68,10 @@ association, then AFPD for an otherwise unlabeled ID in this set. AFPD has no
 association-strength label or information icon. It indicates observation on
 6001, not an independently verified speaker identity. No role or evidence is
 copied into individual Law 2 call objects.
+
+Explicit agency corrections in `data/radio-agency-corrections.json` override
+6001 observation: 14580068 is 18J16, not AFPD (owner correction October 28,
+2026; hearing date not supplied). The index excludes it from `afpdRadioIds`
+and includes its identifier in `agencyRadioIds`. The player shows that identifier
+in clip rows, accessible labels and the current clip. Original call metadata
+and the observed-radio inventory remain intact.

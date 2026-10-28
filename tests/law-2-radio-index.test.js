@@ -118,6 +118,7 @@ test("AFPD membership is rebuilt from 6001 source IDs, excluding other talkgroup
   write([{ radio_ids: [14590027, '14590026', 0, -1, 'bad'], srcList: [{ src: 14590027 }, { src: '14590028' }], transcript: 'Radio ID 99999999' },
     { talkgroup: 5922, radio_ids: [12345678] }]);
   assert.deepEqual(f.build().afpdRadioIds, ['14590026', '14590027', '14590028']);
-  write([{ radio_ids: [14590029] }]);
-  assert.deepEqual(f.build().afpdRadioIds, ['14590029'], 'membership reflects current authoritative manifests');
+  write([{ radio_ids: [14590029, 14580068] }]);
+  assert.deepEqual(f.build().afpdRadioIds, ['14590029'], 'membership reflects current authoritative manifests and excludes corrected non-AFPD IDs');
+  assert.equal(f.build().agencyRadioIds['14580068'], '18J16');
 });
