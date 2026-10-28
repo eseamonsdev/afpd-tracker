@@ -12,3 +12,5 @@ The October 27 review covers all 48 available 6001 archive days, September 9–O
 Names originate in the rendered resource table. Evidence dates and current-day supported exchanges use the response spreadsheet and the table's documented Choates and Ivan exchanges. Uncertain Choates/14590045 is excluded. Halladay/14590100 has known Heaton associations and is shown only on owner-confirmed September 24; it has no cross-date fallback. Single-day IDs are deliberately restricted to their supported date.
 
 When correcting evidence, update the spreadsheet, resource table, dated labels and review report together. New dates must be screened before receiving fallback names. These labels describe radio associations; they do not independently identify the speaker in every clip. Transcript verified flags remain separate. Missing association data falls back to ID-only playback.
+
+Owner listening confirmation can also establish **Confirmed this day** for a single supported date. The October 4 Manis / 14590314 identification uses this rule; possible similar-sounding names on other dates remain unconfirmed and receive no fallback label.

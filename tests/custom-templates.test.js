@@ -2,10 +2,12 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import nunjucks from "nunjucks";
 import { customTemplatePath } from "../lib/custom-template-path.js";
+import { sortUpdates } from "../lib/sort-updates.js";
 
 function render(nodes) {
   const env = new nunjucks.Environment(new nunjucks.FileSystemLoader("src/_includes"));
   env.addFilter("customTemplatePath", customTemplatePath);
+  env.addFilter("sortUpdates", sortUpdates);
   env.addFilter("formatArticleDate", value => value);
   return env.renderString('{% from "document-tree.njk" import renderNodes %}{{ renderNodes(nodes) }}', { nodes });
 }

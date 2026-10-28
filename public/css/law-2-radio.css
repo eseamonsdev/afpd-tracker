@@ -1,0 +1,91 @@
+/* Independent Law 2 player styles; copied from the radio player as a starting point. */
+.law2-radio-archive { max-width: 760px; }
+.law2-radio-source-note { margin: .85rem 0; color: var(--muted); font-size: .85rem; }
+.law2-radio-date-selectors { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem; }
+.law2-radio-date-selectors label { display: grid; gap: .35rem; font-weight: 600; flex: 1; min-width: 200px; }
+.law2-radio-archive select, .law2-radio-archive button { font: inherit; }
+.law2-radio-archive select { width: 100%; padding: .7rem; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--ink); }
+.law2-radio-player { position: sticky; top: 1rem; z-index: 1; padding: 1rem; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); box-shadow: 0 3px 12px #17365d0d; }
+.law2-radio-player-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; margin-bottom: 1rem; }
+.law2-radio-player-heading p { margin: 0; font-weight: 600; color: var(--navy); }
+.law2-radio-player-actions { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem; flex-shrink: 0; max-width: 100%; }
+.law2-radio-player button, #law2-radio-transcript-download { cursor: pointer; border: 1px solid var(--line); border-radius: 6px; padding: .55rem .8rem; background: var(--page); color: var(--navy); white-space: nowrap; min-height: 44px; }
+#law2-radio-transcript-download { display: inline-flex; align-items: center; text-decoration: none; box-sizing: border-box; }
+#law2-radio-transcript-download[hidden] { display: none; }
+#law2-radio-show-current { background: var(--surface); }
+.law2-radio-player button[aria-pressed="true"] { background: var(--navy); color: white; border-color: var(--navy); }
+.law2-radio-player button:disabled { cursor: default; opacity: .5; }
+.law2-radio-playback { display: flex; align-items: center; gap: 1rem; }
+#law2-radio-play { min-width: 78px; }
+.law2-radio-progress { flex: 1; min-width: 0; }
+#law2-radio-seek { width: 100%; margin: 0; accent-color: var(--blue); cursor: pointer; height: 24px; }
+#law2-radio-seek:disabled { cursor: default; }
+.law2-radio-times { display: flex; justify-content: space-between; color: var(--muted); font-size: .85rem; font-variant-numeric: tabular-nums; }
+#law2-radio-player-message { margin: .6rem 0 0; color: var(--red); font-size: .9rem; }
+#law2-radio-player-message:empty { display: none; }
+.law2-radio-transcript-note { color: var(--muted); font-size: .9rem; }
+.law2-radio-transcript { margin-top: .85rem; padding-top: .85rem; border-top: 1px solid var(--line); max-height: 16rem; overflow-y: auto; overflow-wrap: anywhere; }
+.law2-radio-transcript[hidden], .law2-radio-transcript-status[hidden] { display: none; }
+.law2-radio-transcript-status { color: var(--muted); font-size: .85rem; }
+.law2-radio-transcript-status[data-verified="true"] { color: #256344; }
+#law2-radio-transcript-text { margin: .4rem 0 0; line-height: 1.6; white-space: pre-wrap; }
+.law2-radio-transcript-label { margin: .4rem 0 0; }
+.law2-radio-call-note { margin: .75rem 0 0; padding-top: .65rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; line-height: 1.5; white-space: pre-wrap; }
+.law2-radio-call-note[hidden] { display: none; }
+.law2-radio-list-heading, .law2-radio-clip { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.law2-radio-list-heading { padding: .6rem 1rem; color: var(--muted); font-size: .85rem; }
+.law2-radio-clips { list-style: none; margin: 0; padding: 0; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+.law2-radio-clips:empty { display: none; }
+.law2-radio-clips li + li { border-top: 1px solid var(--line); }
+.law2-radio-clip { width: 100%; text-align: left; border: 0; padding: .85rem 1rem; background: transparent; color: var(--ink); cursor: pointer; font-variant-numeric: tabular-nums; min-height: 48px; }
+@media (hover: hover) and (pointer: fine) {
+  .law2-radio-clip:hover { background: var(--page); }
+}
+.law2-radio-clip[aria-current="true"] { background: #e8f0f8; color: var(--navy); box-shadow: inset 4px 0 var(--blue); font-weight: 650; }
+.law2-radio-clip > span:last-child { color: var(--muted); font-size: .9rem; flex-shrink: 0; }
+.law2-radio-clip > span:first-child { min-width: 0; }
+#law2-radio-clips .law2-radio-clip-number { color: var(--muted); font-size: .85rem; }
+.law2-radio-clip:focus-visible { outline-offset: -3px; }
+.law2-radio-archive select:focus-visible, #law2-radio-seek:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+.law2-radio-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+@media (max-width: 580px) {
+  .law2-radio-player { top: .5rem; }
+  .law2-radio-player-heading { align-items: flex-start; flex-direction: column; }
+  .law2-radio-date-selectors label { flex-basis: 100%; min-width: 0; }
+}
+
+.law2-radio-clip .law2-radio-ids, .law2-radio-player-heading .law2-radio-ids { display: block; margin-top: .35rem; color: var(--ink); font-size: .95rem; line-height: 1.5; font-weight: 400; overflow-wrap: anywhere; }
+.law2-radio-player-heading .law2-radio-ids { font-size: 1rem; }
+.law2-radio-ids strong { font-weight: 700; font-variant-numeric: tabular-nums; }
+.law2-radio-id-caption { color: var(--muted); font-size: .85em; }
+.law2-radio-officer-name { font-weight: 400; }
+.law2-radio-player-heading .law2-radio-ids[hidden] { display: none; }
+
+.law2-radio-clip-row { position: relative; border-radius: inherit; }
+.law2-radio-clip-row .law2-radio-clip { padding-bottom: .35rem; }
+.law2-radio-clip-row > .law2-radio-ids { position: relative; display: block; margin: 0; padding: 0 1rem .65rem; color: var(--ink); font-size: .95rem; line-height: 1.5; font-weight: 400; overflow-wrap: anywhere; }
+.law2-radio-clip-row:has(.law2-radio-clip[aria-current="true"]) { background: #e8f0f8; box-shadow: inset 4px 0 var(--blue); }
+.law2-radio-clip-row .law2-radio-clip[aria-current="true"] { box-shadow: none; background: transparent; }
+.law2-radio-association-status { color: var(--muted); font-size: .8rem; font-weight: 400; }
+.law2-radio-player-heading .law2-radio-ids { position: relative; }
+.law2-radio-archive .law2-radio-info-button { display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; min-width: 32px; min-height: 32px; padding: 0; margin: -.15rem 0; border: 0; background: transparent; color: var(--blue); font-size: 1.1rem; cursor: pointer; }
+.law2-radio-info-button:focus-visible { outline: 2px solid var(--blue); outline-offset: 1px; border-radius: 4px; }
+.law2-radio-association-popup { position: absolute; z-index: 4; top: 100%; left: 0; width: min(25rem, calc(100vw - 5rem)); box-sizing: border-box; padding: .85rem 1rem; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--ink); font-size: .875rem; font-weight: 400; line-height: 1.5; box-shadow: 0 4px 16px #17365d26; }
+.law2-radio-association-popup[hidden] { display: none; }
+.law2-radio-clip-row .law2-radio-association-popup { top: calc(100% - .65rem); left: 1rem; }
+.law2-radio-association-popup a { display: block; margin-top: .5rem; }
+@media (max-width: 580px) {
+  .law2-radio-archive .law2-radio-info-button { min-width: 44px; min-height: 44px; }
+}
+
+
+.law2-radio-call-note { white-space: normal; }
+.law2-radio-call-note summary { cursor: pointer; color: var(--navy); font-weight: 600; min-height: 44px; align-content: center; }
+.law2-radio-call-note summary:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+#law2-radio-call-note-text { margin: .4rem 0 0; white-space: pre-wrap; }
+.law2-radio-call-note .law2-radio-notes-hide,
+.law2-radio-call-note[open] .law2-radio-notes-view { display: none; }
+.law2-radio-call-note[open] .law2-radio-notes-hide { display: inline; }
+
+.law2-radio-extra-controls { display: contents; }
+.law2-radio-extra-controls[hidden], #law2-radio-controls-toggle[hidden] { display: none; }

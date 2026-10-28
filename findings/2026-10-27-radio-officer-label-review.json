@@ -588,7 +588,7 @@
       "date": "2026-10-04",
       "calls": 173,
       "transcripts_screened": 173,
-      "labels": 9,
+      "labels": 10,
       "held_ids": [
         "14590073"
       ]
@@ -1631,7 +1631,7 @@
   },
   "label_counts": {
     "strong": 446,
-    "confirmed": 94,
+    "confirmed": 95,
     "single-day": 6
   },
   "single_day_rule": "No cross-date fallback for one-day IDs. Their supported day shows Single-day association.",
@@ -1661,6 +1661,42 @@
       "source_manifest": "public/records/openmhz/openmhz-afpd-car-to-car-2026-10-04/calls.json",
       "source_blob_before": "eaa806dc42ea27181af30458113c36feabfd6134",
       "source_blob_after": "d1edee3c37cf4c7a361a2fcd93c7cbcf5f82ce19"
+    },
+    {
+      "review_date": "2026-10-28",
+      "date": "2026-10-04",
+      "id": "14590314",
+      "name": "Dustin K. Manis",
+      "status": "confirmed",
+      "scope": "All 5 calls with this radio ID on October 4 only",
+      "evidence": [
+        "E366"
+      ],
+      "clips": [
+        15,
+        16,
+        17,
+        25,
+        26
+      ],
+      "corrections": [
+        {
+          "clip": 15,
+          "original": "Something about [unclear] isn't here now.",
+          "transcript": "Somerville, Manis is here now.",
+          "validated": true
+        },
+        {
+          "clip": 16,
+          "original": "[Name unclear]?",
+          "transcript": "Manis?",
+          "validated": true
+        }
+      ],
+      "basis": "Owner listening confirmation. Other-day similar-sounding names remain tentative.",
+      "source_manifest": "public/records/openmhz/openmhz-afpd-car-to-car-2026-10-04/calls.json",
+      "source_blob_before": "d1edee3c37cf4c7a361a2fcd93c7cbcf5f82ce19",
+      "source_blob_after": "24e5bdb10fcb8b01d8a7a3e11e83fe2d0e028733"
     }
   ],
   "jackie_review": {
@@ -1696,5 +1732,30 @@
       "2026-10-26"
     ],
     "method": "Reviewed all 87 target-ID call contexts across nine dates against adjacent transmissions and clear name-led exchanges. September 10 and 11 Jackie hails remain bracketed, so they do not receive current-day confirmed labels. Other undated fallbacks remain restricted to screened dates."
+  },
+  "manis_review": {
+    "id": "14590314",
+    "confirmed_dates": [
+      "2026-10-04"
+    ],
+    "tentative_examples": [
+      {
+        "date": "2026-09-11",
+        "clips": [
+          1,
+          2
+        ],
+        "name": "Name unclear, possibly Maynes"
+      },
+      {
+        "date": "2026-10-03",
+        "clips": [
+          62,
+          63
+        ],
+        "name": "Mayness / Manus?"
+      }
+    ],
+    "other_ids": "September 14 and October 3 also contain possible Manis hails answered on 14590185; October 22 contains a contextual response on 14590027, with an unresolved Neil name conflict. None is confirmed by this update."
   }
 }

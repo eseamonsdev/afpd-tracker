@@ -9,6 +9,8 @@ import { customTemplatePath } from "./lib/custom-template-path.js";
 import { documentSitemapPaths } from "./lib/build-document-sitemap.js";
 import { buildRadioIndex } from "./lib/build-radio-index.js";
 import { buildRadioTranscripts } from "./lib/build-radio-transcripts.js";
+import { buildLaw2RadioIndex } from "./lib/build-law-2-radio-index.js";
+import { excludedFromDiscovery } from "./lib/discovery-exclusions.js";
 import { loadJsonFiles } from "./lib/data/load-json-files.js";
 import { buildByID } from "./lib/data/build-by-id.js";
 import { resolveRefs } from "./lib/data/resolve-refs.js";
@@ -34,7 +36,7 @@ export default function (eleventyConfig) {
   // Include generated HTML pages; templates may opt out with sitemap: false.
   eleventyConfig.addFilter("sitemapPages", (pages) => {
     return pages
-      .filter((page) => page.url && page.outputPath?.endsWith(".html") && page.data.sitemap !== false)
+      .filter((page) => page.url && page.outputPath?.endsWith(".html") && page.data.sitemap !== false && !excludedFromDiscovery(page.url))
       .sort((a, b) => a.url.localeCompare(b.url));
   });
 
@@ -47,7 +49,10 @@ export default function (eleventyConfig) {
   eleventyConfig.on("eleventy.before", () => {
     const index = buildRadioIndex();
     buildRadioTranscripts(index);
+    buildLaw2RadioIndex();
   });
+  eleventyConfig.addWatchTarget("./data/law-2-radio-days.json");
+  eleventyConfig.addWatchTarget("./data/discovery-exclusions.json");
   eleventyConfig.addWatchTarget("./public/records/openmhz/**/calls.json");
   eleventyConfig.addFilter("readCsv", readCsv);
 
