@@ -38,7 +38,7 @@
 .radio-clips li + li { border-top: 1px solid var(--line); }
 .radio-clip { width: 100%; text-align: left; border: 0; padding: .85rem 1rem; background: transparent; color: var(--ink); cursor: pointer; font-variant-numeric: tabular-nums; min-height: 48px; }
 @media (hover: hover) and (pointer: fine) {
-  .radio-clip:hover { background: var(--page); }
+  .radio-clip-row:hover { background: var(--page); }
 }
 .radio-clip[aria-current="true"] { background: #e8f0f8; color: var(--navy); box-shadow: inset 4px 0 var(--blue); font-weight: 650; }
 .radio-clip > span:last-child { color: var(--muted); font-size: .9rem; flex-shrink: 0; }
@@ -60,7 +60,7 @@
 .radio-officer-name { font-weight: 400; }
 .radio-player-heading .radio-ids[hidden] { display: none; }
 
-.radio-clip-row { position: relative; border-radius: inherit; }
+.radio-clip-row { position: relative; border-radius: inherit; cursor: pointer; }
 .radio-clip-row .radio-clip { padding-bottom: .35rem; }
 .radio-clip-row > .radio-ids { position: relative; display: block; margin: 0; padding: 0 1rem .65rem; color: var(--ink); font-size: .95rem; line-height: 1.5; font-weight: 400; overflow-wrap: anywhere; }
 .radio-clip-row:has(.radio-clip[aria-current="true"]) { background: #e8f0f8; box-shadow: inset 4px 0 var(--blue); }
