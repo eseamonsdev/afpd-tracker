@@ -57,7 +57,7 @@ class Element {
   add(option) { this.options.push(option); if (this.options.length === 1) this.value = option.value; }
 }
 
-async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11", search = "", transcriptEnabled = true, associations = null) {
+async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11", search = "", transcriptEnabled = true, associations = null, manifestEnabled = transcriptEnabled) {
   const elements = new Map(["archive", "month", "day", "audio", "play", "seek", "autoplay",
     "clips", "clips-section", "status", "current", "current-radio-ids", "player-message", "elapsed", "duration",
     "coverage", "transcript-toggle", "transcript-download", "transcript", "transcript-status", "transcript-text", "transcript-availability"]
@@ -65,7 +65,7 @@ async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11",
   elements.get("law2-radio-autoplay").setAttribute("aria-pressed", "false");
   const players = [elements.get("law2-radio-audio")];
   const dates = [fixtureDate, "2026-09-10"];
-  const fetchedAudio = [], revokedUrls = [], objectSources = new Map(), failedAudio = new Set();
+  const fetchedAudio = [], metadataRequests = [], revokedUrls = [], objectSources = new Map(), failedAudio = new Set();
   let objectNumber = 0;
   const window = { location: new URL(`https://${hostname ?? "localhost"}/law-2-radio/${search}`) };
   const replacements = [];
@@ -97,7 +97,7 @@ async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11",
       static revokeObjectURL(url) { revokedUrls.push(url); }
     },
     Option: class { constructor(text, value) { this.text = text; this.value = value; } },
-    fetch: async (url) => {
+    fetch: async (url, options) => {
       if (url.endsWith("officer-associations.json")) {
         if (associations instanceof Error) throw associations;
         return { ok: true, json: async () => associations };
@@ -107,9 +107,10 @@ async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11",
         if (failedAudio.has(url)) return { ok: false };
         return { ok: true, blob: async () => ({ source: url }) };
       }
+      metadataRequests.push({ url, options });
       return { ok: true, json: async () => url.endsWith("index.json")
         ? { days: dates.map(date => ({ date, folder: `openmhz-afpd-law-2-${date}`, enableDay: true, enableTranscription: typeof transcriptEnabled === "function" ? transcriptEnabled(date) : transcriptEnabled, count: fixtureCalls?.length ?? 4 })) }
-        : { date: dates.find(date => url.includes(date)), enableTranscription: typeof transcriptEnabled === "function" ? transcriptEnabled(dates.find(date => url.includes(date))) : transcriptEnabled, calls: fixtureCalls ?? Array.from({ length: 4 }, (_, i) => ({
+        : { date: dates.find(date => url.includes(date)), enableTranscription: typeof manifestEnabled === "function" ? manifestEnabled(dates.find(date => url.includes(date))) : manifestEnabled, calls: fixtureCalls ?? Array.from({ length: 4 }, (_, i) => ({
           epoch: 1789100000 + i * 10, displayed_seconds: 5, original_filename: `call-${i}.m4a`
         })) } };
     }
@@ -119,7 +120,7 @@ async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11",
   const select = i => get("clips").children[i].children[0].click();
   const active = () => players.find(player => !player.paused);
   const finish = player => { player.ended = true; player.paused = true; player.emit("ended"); };
-  return { get, select, players, active, finish, fetchedAudio, revokedUrls, failedAudio, window, replacements,
+  return { get, select, players, active, finish, fetchedAudio, metadataRequests, revokedUrls, failedAudio, window, replacements,
     settle: () => new Promise(resolve => setImmediate(resolve)),
     sourceFor: player => objectSources.get(player.src) ?? player.src };
 }
@@ -158,6 +159,35 @@ test("changing to an audio-only day hides transcript controls and downloads", as
   assert.equal(f.get("transcript-toggle").hidden, true);
   f.select(0);
   assert.equal(f.get("transcript").hidden, true);
+});
+
+test("October 1–3 transcript controls use enabled index entries even without a manifest flag", async () => {
+  for (const date of ["2026-10-01", "2026-10-02", "2026-10-03"]) {
+    const f = await playerFixture([
+      { epoch: 1790834427, displayed_seconds: 2, original_filename: "one.m4a", transcript: "[unclear]", note: "Review against audio." }
+    ], undefined, date, `?date=${date}`, true, null, () => undefined);
+    assert.equal(f.get("transcript-toggle").hidden, false, date);
+    assert.equal(f.get("transcript-toggle").disabled, false, date);
+    assert.equal(f.get("transcript-download").getAttribute("download"), `transcript_${date.replaceAll("-", "_")}.txt`);
+    assert.equal(f.get("transcript-availability").hidden, true);
+    f.get("transcript-toggle").click();
+    f.select(0);
+    await f.settle();
+    assert.equal(f.get("transcript").hidden, false);
+    assert.equal(f.get("transcript-text").textContent, "[unclear]");
+    assert.equal(f.get("transcript-status").textContent, "AI-generated · Unverified");
+    assert.equal(f.metadataRequests.length, 2);
+    assert.ok(f.metadataRequests.every(request => request.options?.cache === "no-cache"));
+  }
+});
+
+test("older indexes fall back to the manifest without overriding an explicit disabled date", async () => {
+  const calls = [{ epoch: 1790834427, displayed_seconds: 2, original_filename: "one.m4a", transcript: "Go ahead." }];
+  const older = await playerFixture(calls, undefined, "2026-10-01", "", () => undefined, null, true);
+  assert.equal(older.get("transcript-toggle").disabled, false);
+  const disabled = await playerFixture(calls, undefined, "2026-10-01", "", false, null, true);
+  assert.equal(disabled.get("transcript-toggle").hidden, true);
+  assert.equal(disabled.get("transcript-download").hidden, true);
 });
 
 test("query dates outside the enabled index cannot load an unlisted day", async () => {
