@@ -1,0 +1,681 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-11",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1789141817.m4a": {
+      "index": 191,
+      "epoch": 1789141817,
+      "sha256": "56379d42235bda19669309cfca07e56d04f7318b0fd43cbd1430bf3a458b5130",
+      "passes": {
+        "original": {
+          "text": "Come and join 170. Happy events.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Come and join 170. Happy events.",
+              "avg_logprob": -0.7580562071366743,
+              "no_speech_prob": 0.087301105260849,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Come and join 170 happy events.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Come and join 170 happy events.",
+              "avg_logprob": -0.7572222054004669,
+              "no_speech_prob": 0.015343207865953445,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "context": {
+          "text": "Coming J170, copy then.",
+          "prompt": "Copy, one female detained, 0949 hours. APNJ 22 clear. Copy.",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Coming J170, copy then.",
+              "avg_logprob": -0.7997684240341186,
+              "no_speech_prob": 0.011807570233941078,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789141822.m4a": {
+      "index": 192,
+      "epoch": 1789141822,
+      "sha256": "1552f282694b4c21965393aca6ec86badcd26393e8f7b40c3dfcc788e9528c79",
+      "passes": {
+        "original": {
+          "text": "I copy. You can show me arrived. Copy.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I copy. You can show me arrived.",
+              "avg_logprob": -0.4374512191861868,
+              "no_speech_prob": 0.02378387376666069,
+              "compression_ratio": 0.8636363636363636
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " Copy.",
+              "avg_logprob": -0.4374512191861868,
+              "no_speech_prob": 0.02378387376666069,
+              "compression_ratio": 0.8636363636363636
+            }
+          ]
+        },
+        "filtered": {
+          "text": "All right, copy. You can show me arrived. Copy.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " All right, copy. You can show me arrived.",
+              "avg_logprob": -0.4796719054381053,
+              "no_speech_prob": 0.013703005388379097,
+              "compression_ratio": 0.8867924528301887
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " Copy.",
+              "avg_logprob": -0.4796719054381053,
+              "no_speech_prob": 0.013703005388379097,
+              "compression_ratio": 0.8867924528301887
+            }
+          ]
+        },
+        "context": {
+          "text": "Aye, copy. You can show me arrived. Copy.",
+          "prompt": "APNJ 22 clear. Copy. Come and join 170. Happy events.",
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Aye, copy. You can show me arrived.",
+              "avg_logprob": -0.3791399399439494,
+              "no_speech_prob": 0.0027315057814121246,
+              "compression_ratio": 0.8723404255319149
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " Copy.",
+              "avg_logprob": -0.3791399399439494,
+              "no_speech_prob": 0.0027315057814121246,
+              "compression_ratio": 0.8723404255319149
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789141836.m4a": {
+      "index": 193,
+      "epoch": 1789141836,
+      "sha256": "cbf5e2ecca863f8301f688f83f6dfb57b69f62da416a2a12afc10498bb7b5729",
+      "passes": {
+        "original": {
+          "text": "CPJ, clip 4.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " CPJ, clip 4.",
+              "avg_logprob": -0.8629079924689399,
+              "no_speech_prob": 0.014091742224991322,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "You can do it. You can do it. You can do it.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " You can do it.",
+              "avg_logprob": -0.5076449850331182,
+              "no_speech_prob": 0.008563744835555553,
+              "compression_ratio": 1.6923076923076923
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " You can do it.",
+              "avg_logprob": -0.5076449850331182,
+              "no_speech_prob": 0.008563744835555553,
+              "compression_ratio": 1.6923076923076923
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " You can do it.",
+              "avg_logprob": -0.5076449850331182,
+              "no_speech_prob": 0.008563744835555553,
+              "compression_ratio": 1.6923076923076923
+            }
+          ]
+        },
+        "context": {
+          "text": "CPJ, clip 4.",
+          "prompt": "Come and join 170. Happy events. I copy. You can show me arrived. Copy.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " CPJ, clip 4.",
+              "avg_logprob": -0.813499026828342,
+              "no_speech_prob": 0.006879754364490509,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789141839.m4a": {
+      "index": 194,
+      "epoch": 1789141839,
+      "sha256": "669b2fa21f4ad6d95baccb83393b6ba9cfc592ab86bd603f48e790911311ca19",
+      "passes": {
+        "original": {
+          "text": "Code boy, you can just spend, you've got a dead battery just trying a couple different things.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.6000000000000005,
+              "text": " Code boy, you can just spend, you've got a dead battery just trying a couple different things.",
+              "avg_logprob": -0.4969100281596184,
+              "no_speech_prob": 0.05259273946285248,
+              "compression_ratio": 1.119047619047619
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Of course, you can just spend, you've got a dead battery just trying a couple different things.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.6000000000000005,
+              "text": " Of course, you can just spend, you've got a dead battery just trying a couple different things.",
+              "avg_logprob": -0.5197856649756432,
+              "no_speech_prob": 0.03565191105008125,
+              "compression_ratio": 1.1176470588235294
+            }
+          ]
+        },
+        "context": {
+          "text": "Code boy, you can just spend, you've got a dead battery just trying a couple different things.",
+          "prompt": "Come and join 170. Happy events. I copy. You can show me arrived. Copy. CPJ, clip 4.",
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.6000000000000005,
+              "text": " Code boy, you can just spend, you've got a dead battery just trying a couple different things.",
+              "avg_logprob": -0.4515576884150505,
+              "no_speech_prob": 0.02571522630751133,
+              "compression_ratio": 1.119047619047619
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789141845.m4a": {
+      "index": 195,
+      "epoch": 1789141845,
+      "sha256": "18c8761add57f32f6f8ac08f8ffdfc97e0d04bc944e207d8e227e0d3b60bc264",
+      "passes": {
+        "original": {
+          "text": "Coffee.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Coffee.",
+              "avg_logprob": -0.8671115875244141,
+              "no_speech_prob": 0.07342369854450226,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Coffee.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Coffee.",
+              "avg_logprob": -0.6994719505310059,
+              "no_speech_prob": 0.03065209835767746,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "I copy. You can show me arrived. Copy. CPJ, clip 4. Code boy, you can just spend, you've got a dead battery just trying a couple different things.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5226977348327637,
+              "no_speech_prob": 0.07785462588071823,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789141883.m4a": {
+      "index": 196,
+      "epoch": 1789141883,
+      "sha256": "f363ced140a797becfa78de0432c8c7cf774baf7c39180a4b0887c030b59d932",
+      "passes": {
+        "original": {
+          "text": "5G for the test.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G for the test.",
+              "avg_logprob": -0.5700252321031358,
+              "no_speech_prob": 0.07395785301923752,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G for the test.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G for the test.",
+              "avg_logprob": -0.5610123210483127,
+              "no_speech_prob": 0.0589764229953289,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "5G for the test.",
+          "prompt": "CPJ, clip 4. Code boy, you can just spend, you've got a dead battery just trying a couple different things. Coffee.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G for the test.",
+              "avg_logprob": -0.5436968803405762,
+              "no_speech_prob": 0.01649523712694645,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789141887.m4a": {
+      "index": 197,
+      "epoch": 1789141887,
+      "sha256": "cd90b540de627e318a45133c9aef4bb8ee5a1df8647f001c3375438f87d995e4",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.4346020023028056,
+              "no_speech_prob": 0.04866074398159981,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " Go ahead.",
+              "avg_logprob": -0.5054956674575806,
+              "no_speech_prob": 0.041501354426145554,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Go ahead.",
+          "prompt": "Code boy, you can just spend, you've got a dead battery just trying a couple different things. Coffee. 5G for the test.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.35752594470977783,
+              "no_speech_prob": 0.041517142206430435,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789141896.m4a": {
+      "index": 198,
+      "epoch": 1789141896,
+      "sha256": "56bccd3107c1bfbe763a55b03eb6411af37220e9198622bd5ad42e0c0fca6443",
+      "passes": {
+        "original": {
+          "text": "Negative.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Negative.",
+              "avg_logprob": -0.5467562198638916,
+              "no_speech_prob": 0.04148105904459953,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Negative.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Negative.",
+              "avg_logprob": -0.5222967147827149,
+              "no_speech_prob": 0.02344588190317154,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Negative.",
+          "prompt": "Coffee. 5G for the test. Go ahead.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Negative.",
+              "avg_logprob": -0.47786827087402345,
+              "no_speech_prob": 0.00948750227689743,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789141899.m4a": {
+      "index": 199,
+      "epoch": 1789141899,
+      "sha256": "423baedb7cdcb801cec05889feb811ded1d57534a7988dfc8b6a60f3ea8e9b73",
+      "passes": {
+        "original": {
+          "text": "Copy",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy",
+              "avg_logprob": -0.781290739774704,
+              "no_speech_prob": 0.06995055824518204,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.7690860629081726,
+              "no_speech_prob": 0.05381014943122864,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "5G for the test. Go ahead. Negative.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5505729675292969,
+              "no_speech_prob": 0.02140718139708042,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789141933.m4a": {
+      "index": 200,
+      "epoch": 1789141933,
+      "sha256": "aef24d11bfb27f95666499cbb9c54ef44a3f6c12b7c4e8f45a2b27be71f01e9b",
+      "passes": {
+        "original": {
+          "text": "5k6, 9.41",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5k6, 9.41",
+              "avg_logprob": -0.9800890445709228,
+              "no_speech_prob": 0.12390388548374176,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5k6, 10.41",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.4,
+              "text": " 5k6, 10.41",
+              "avg_logprob": -0.7916589796543121,
+              "no_speech_prob": 0.07559613138437271,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "5k6, turn 41.",
+          "prompt": "Go ahead. Negative. Copy",
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5k6, turn 41.",
+              "avg_logprob": -1.01707466840744,
+              "no_speech_prob": 0.017657408490777016,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    }
+  }
+}
