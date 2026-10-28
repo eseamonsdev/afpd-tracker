@@ -50,8 +50,8 @@ permalink: /police-radio-resources/
   </section>
 
   <section class="radio-resources-section" aria-labelledby="radio-agency-ids">
-    <h2 id="radio-agency-ids">{{ resources.agencyIds.title | escape }}</h2>
-    <p class="radio-resources-description">{{ resources.agencyIds.description | escape }}</p>
+    <h2 id="radio-agency-ids">{{ radioAgencyIds.title | escape }}</h2>
+    <p class="radio-resources-description">{{ radioAgencyIds.description | escape }}</p>
     <div class="radio-id-tabs" role="tablist" aria-label="Radio ID confirmations" hidden>
       <button id="radio-mappings-tab" type="button" role="tab" aria-selected="true" aria-controls="radio-mappings-panel">ID table</button>
       <button id="radio-evidence-tab" type="button" role="tab" aria-selected="false" aria-controls="radio-evidence-panel" tabindex="-1">Evidence</button>
@@ -61,7 +61,7 @@ permalink: /police-radio-resources/
         <table class="radio-guide-table radio-id-table">
           <caption>Radio ID to agency ID pairings; missing details are marked Not supplied</caption>
           <thead><tr><th scope="col">Radio ID</th><th scope="col">Agency ID (5J)</th><th scope="col">Dates heard on Law 2</th></tr></thead>
-          <tbody>{%- for entry in resources.agencyIds.entries %}
+          <tbody>{%- for entry in radioAgencyIds.entries %}
             <tr><th scope="row"><code>{{ entry.radioId | escape }}</code></th><td><code>{{ entry.agencyId | escape }}</code></td><td>{% if not entry.dates.length %}Not supplied{% endif %}{%- for date in entry.dates %}<time datetime="{{ date }}">{{ date }}</time>{% if not loop.last %}, {% endif %}{%- endfor %}</td></tr>
           {%- endfor %}</tbody>
         </table>
@@ -72,7 +72,7 @@ permalink: /police-radio-resources/
         <table class="radio-guide-table radio-id-table">
           <caption>Evidence: owner listening confirmations, one row per date heard. Exact clip timestamps were not supplied.</caption>
           <thead><tr><th scope="col">Radio ID</th><th scope="col">Agency ID (5J)</th><th scope="col">Date heard</th><th scope="col">Channel</th><th scope="col">Evidence</th></tr></thead>
-          <tbody>{%- for entry in resources.agencyIds.evidence %}
+          <tbody>{%- for entry in radioAgencyIds.evidence %}
             <tr><th scope="row"><code>{{ entry.radioId | escape }}</code></th><td><code>{{ entry.agencyId | escape }}</code></td><td>{% if entry.date %}<a href="{{ entry.url | escape }}">{{ entry.date | escape }}</a>{% else %}Not supplied{% endif %}</td><td>{{ entry.talkgroup | escape }}</td><td>{{ entry.basis | escape }}</td></tr>
           {%- endfor %}</tbody>
         </table>

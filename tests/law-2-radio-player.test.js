@@ -58,7 +58,7 @@ class Element {
   add(option) { this.options.push(option); if (this.options.length === 1) this.value = option.value; }
 }
 
-async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11", search = "", transcriptEnabled = true, associations = null, manifestEnabled = transcriptEnabled, afpdRadioIds = [], agencyRadioIds = {}) {
+async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11", search = "", transcriptEnabled = true, associations = null, manifestEnabled = transcriptEnabled, afpdRadioIds = [], agencyRadioIds = {}, confirmations = null) {
   const elements = new Map(["archive", "month", "day", "audio", "play", "seek", "autoplay",
     "clips", "clips-section", "status", "current", "current-radio-ids", "player-message", "elapsed", "duration",
     "coverage", "transcript-toggle", "transcript-download", "transcript", "transcript-status", "transcript-text", "transcript-availability"]
@@ -100,6 +100,7 @@ async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11",
     },
     Option: class { constructor(text, value) { this.text = text; this.value = value; } },
     fetch: async (url, options) => {
+      if (url.endsWith("officer-confirmations.json")) return { ok: true, json: async () => confirmations };
       if (url.endsWith("officer-associations.json")) {
         if (associations instanceof Error) throw associations;
         return { ok: true, json: async () => associations };
@@ -307,4 +308,16 @@ test("strong names carry to Law 2-only dates, respecting withheld dates and conf
   assert.match(f.get('current-radio-ids').textContent, /Known Officer · Strong association/);
   f.get('day').value = '2026-09-10'; f.get('day').emit('change'); await f.settle();
   assert.doesNotMatch(f.get('clips').children[0].children[1].textContent, /Known Officer/);
+});
+
+
+test("September 27 owner confirmation renders Garcia as confirmed on radio 14590111", async () => {
+  const associations = JSON.parse(readFileSync(new URL('../public/records/openmhz/officer-associations.json', import.meta.url), 'utf8'));
+  const confirmations = JSON.parse(readFileSync(new URL('../public/records/openmhz/officer-confirmations.json', import.meta.url), 'utf8'));
+  const f = await playerFixture([
+    { epoch: 1790535600, displayed_seconds: 2, original_filename: 'one.m4a', radio_ids: [14590111] }
+  ], undefined, '2026-09-27', '', false, associations, false, [], {}, confirmations);
+  assert.match(f.get('clips').children[0].children[1].textContent, /14590111 · Diego O. Garcia · Confirmed this day/);
+  f.select(0); await f.settle();
+  assert.match(f.get('current-radio-ids').textContent, /Diego O. Garcia · Confirmed this day/);
 });

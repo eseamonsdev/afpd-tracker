@@ -187,6 +187,20 @@ function createIdentity(getDate) {
           .map(([id, entry]) => [id, { ...entry, status: "strong" }]));
       }
     } catch { /* Numeric IDs remain available when evidence cannot load. */ }
+    try {
+      const response = await fetch("/records/openmhz/officer-confirmations.json");
+      const data = response.ok ? await response.json() : null;
+      if (data?.schema_version === 1 && data.days && typeof data.days === "object") {
+        for (const [date, entries] of Object.entries(data.days)) {
+          if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !entries || typeof entries !== "object") continue;
+          for (const [id, entry] of Object.entries(entries)) {
+            if (!/^[1-9]\d*$/.test(id) || entry?.status !== "confirmed" || typeof entry.name !== "string" || !entry.confirmation) continue;
+            officerDays[date] ??= {};
+            officerDays[date][id] = entry;
+          }
+        }
+      }
+    } catch { /* Existing dated associations remain available. */ }
   }
   return { load, render: renderRadioIds, text: radioIdText, close: () => closeInformation?.(),
     setAfpdRadioIds(values, identifiers = {}) {
