@@ -1,0 +1,641 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-07",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791428557.m4a": {
+      "index": 1331,
+      "epoch": 1791428557,
+      "sha256": "bc51b2f04411b38a2438239ae14d3bba4d3f814f6ef9e2ad945150376a60bcbd",
+      "passes": {
+        "original": {
+          "text": "400 North 600 West. It looks to be Hotel Zulu 1-4 Juliet, so white Toyota Tacoma.",
+          "prompt": null,
+          "duration_seconds": 9.984,
+          "token_limit": 104,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 11.200000000000001,
+              "text": " 400 North 600 West. It looks to be Hotel Zulu 1-4 Juliet, so white Toyota Tacoma.",
+              "avg_logprob": -0.5329885482788086,
+              "no_speech_prob": 0.13196614384651184,
+              "compression_ratio": 0.9529411764705882
+            }
+          ]
+        },
+        "filtered": {
+          "text": "400 North, 600 West. It looks to be Hotel Zulu, 14 Juliet, so white Toyota Tacoma.",
+          "prompt": null,
+          "duration_seconds": 9.984,
+          "token_limit": 104,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 11.24,
+              "text": " 400 North, 600 West. It looks to be Hotel Zulu, 14 Juliet, so white Toyota Tacoma.",
+              "avg_logprob": -0.5235442543029785,
+              "no_speech_prob": 0.09161097556352615,
+              "compression_ratio": 0.9647058823529412
+            }
+          ]
+        },
+        "context": {
+          "text": "400 North 600 West. It looks to be Hotel Zulu 14 Juliet. It's a white Toyota Tacoma.",
+          "prompt": "50-50. 7G21 traffic Great",
+          "duration_seconds": 9.984,
+          "token_limit": 104,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 11.200000000000001,
+              "text": " 400 North 600 West. It looks to be Hotel Zulu 14 Juliet. It's a white Toyota Tacoma.",
+              "avg_logprob": -0.3662757968902588,
+              "no_speech_prob": 0.030278058722615242,
+              "compression_ratio": 0.9767441860465116
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791428569.m4a": {
+      "index": 1332,
+      "epoch": 1791428569,
+      "sha256": "07b83f481349efad47411e87bf6461197d9c8c2ee036dec66224106985ae931e",
+      "passes": {
+        "original": {
+          "text": "That'd be white treasure to come in.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " That'd be white treasure to come in.",
+              "avg_logprob": -0.6771369973818461,
+              "no_speech_prob": 0.045580118894577026,
+              "compression_ratio": 0.8571428571428571
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Grab your white treasure to come in.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Grab your white treasure to come in.",
+              "avg_logprob": -0.4995419220490889,
+              "no_speech_prob": 0.04428865388035774,
+              "compression_ratio": 0.8571428571428571
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy white Toyota Tacoma.",
+          "prompt": "7G21 traffic Great 400 North 600 West. It looks to be Hotel Zulu 1-4 Juliet, so white Toyota Tacoma.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy white Toyota Tacoma.",
+              "avg_logprob": -0.4864106550812721,
+              "no_speech_prob": 0.02305435575544834,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791428581.m4a": {
+      "index": 1333,
+      "epoch": 1791428581,
+      "sha256": "89269288da137d30923e0480c3414b7855a1f24879adc1aac693a3457115edb2",
+      "passes": {
+        "original": {
+          "text": "7J21 correction",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J21 correction",
+              "avg_logprob": -0.3750508853367397,
+              "no_speech_prob": 0.015241649001836777,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J21 correction",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J21 correction",
+              "avg_logprob": -0.2994723916053772,
+              "no_speech_prob": 0.011001321487128735,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "context": {
+          "text": "7J21 correction.",
+          "prompt": "Great 400 North 600 West. It looks to be Hotel Zulu 1-4 Juliet, so white Toyota Tacoma. That'd be white treasure to come in.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J21 correction.",
+              "avg_logprob": -0.35063641518354416,
+              "no_speech_prob": 0.01106022484600544,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791428585.m4a": {
+      "index": 1334,
+      "epoch": 1791428585,
+      "sha256": "20b2adb8f4cf37f66109ca153e868cec4930636a59f513491076e127edfa11f4",
+      "passes": {
+        "original": {
+          "text": "Okay.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Okay.",
+              "avg_logprob": -0.8821401596069336,
+              "no_speech_prob": 0.07899333536624908,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Great.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Great.",
+              "avg_logprob": -0.809450912475586,
+              "no_speech_prob": 0.059205859899520874,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Great.",
+          "prompt": "400 North 600 West. It looks to be Hotel Zulu 1-4 Juliet, so white Toyota Tacoma. That'd be white treasure to come in. 7J21 correction",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Great.",
+              "avg_logprob": -0.7936705589294434,
+              "no_speech_prob": 0.08044645935297012,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791428586.m4a": {
+      "index": 1335,
+      "epoch": 1791428586,
+      "sha256": "b15e5c6a092d1eb6bc1d43a0904e450c8cc74e10905232ecdde88906acb6e162",
+      "passes": {
+        "original": {
+          "text": "Hotel 3-1-4, Julia.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Hotel 3-1-4, Julia.",
+              "avg_logprob": -0.7278831899166107,
+              "no_speech_prob": 0.04671425744891167,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hotel 3-1 for Julian.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Hotel 3-1 for Julian.",
+              "avg_logprob": -0.6006596803665161,
+              "no_speech_prob": 0.05930457264184952,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "context": {
+          "text": "Hotel 314 Juliet.",
+          "prompt": "That'd be white treasure to come in. 7J21 correction Okay.",
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Hotel 314 Juliet.",
+              "avg_logprob": -0.8230084010532924,
+              "no_speech_prob": 0.017902659252285957,
+              "compression_ratio": 0.68
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791428637.m4a": {
+      "index": 1336,
+      "epoch": 1791428637,
+      "sha256": "cf02e528787274454004eb96476f89b233fc6d17760659dd4deee2be220e0661",
+      "passes": {
+        "original": {
+          "text": "5J46, I'll be out with 36.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J46, I'll be out with 36.",
+              "avg_logprob": -0.4531411464725222,
+              "no_speech_prob": 0.037012021988630295,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J46, I'll be out with 36.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J46, I'll be out with 36.",
+              "avg_logprob": -0.5637726954051426,
+              "no_speech_prob": 0.04055316001176834,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "context": {
+          "text": "5J46, I'll be out with 36.",
+          "prompt": "7J21 correction Okay. Hotel 3-1-4, Julia.",
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J46, I'll be out with 36.",
+              "avg_logprob": -0.43806607169764383,
+              "no_speech_prob": 0.006434164475649595,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791428666.m4a": {
+      "index": 1337,
+      "epoch": 1791428666,
+      "sha256": "d53dd966d6af08f3aa1852611f7c7dac8bc9fb87070d36bae717cca6368f9c4c",
+      "passes": {
+        "original": {
+          "text": "5J47, copy, follow-up by 21 on the test.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J47, copy, follow-up by 21 on the test.",
+              "avg_logprob": -0.5756163067287869,
+              "no_speech_prob": 0.08239558339118958,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J47, copy, follow-up by 21 on the test.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.16,
+              "text": " 5J47, copy, follow-up by 21 on the test.",
+              "avg_logprob": -0.5599910385078855,
+              "no_speech_prob": 0.0647575706243515,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        },
+        "context": {
+          "text": "5J47, copy, follow-up by 21 on the test.",
+          "prompt": "5J46, I'll be out with 36.",
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.16,
+              "text": " 5J47, copy, follow-up by 21 on the test.",
+              "avg_logprob": -0.47765063908365035,
+              "no_speech_prob": 0.03671380877494812,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791428672.m4a": {
+      "index": 1338,
+      "epoch": 1791428672,
+      "sha256": "d52c41b9d69779b2ee4da958567951d1163c5e99312e29ba8d14003501a89f3a",
+      "passes": {
+        "original": {
+          "text": "But you are not.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " But you are not.",
+              "avg_logprob": -0.539078488945961,
+              "no_speech_prob": 0.02964521385729313,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "But you are not.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " But you are not.",
+              "avg_logprob": -0.8057205229997635,
+              "no_speech_prob": 0.13238078355789185,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "But you are not.",
+          "prompt": "5J46, I'll be out with 36. 5J47, copy, follow-up by 21 on the test.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.2,
+              "text": " But you are not.",
+              "avg_logprob": -0.6951572448015213,
+              "no_speech_prob": 0.042290590703487396,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791428703.m4a": {
+      "index": 1339,
+      "epoch": 1791428703,
+      "sha256": "5933c5ad56245db381f0feb5bb8927618317fa72b0d7f9aa223b71dbe8f46827",
+      "passes": {
+        "original": {
+          "text": "5G81, can you assign me an envelope?",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5G81, can you assign me an envelope?",
+              "avg_logprob": -0.6261057300227029,
+              "no_speech_prob": 0.0487702302634716,
+              "compression_ratio": 0.8372093023255814
+            }
+          ]
+        },
+        "filtered": {
+          "text": "If I do you want can you assign me?",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.84,
+              "text": " If I do you want can you assign me?",
+              "avg_logprob": -0.6907742390265832,
+              "no_speech_prob": 0.10307145118713379,
+              "compression_ratio": 0.8974358974358975
+            }
+          ]
+        },
+        "context": {
+          "text": "5J81, can you assign me a follow-up?",
+          "prompt": "5J47, copy, follow-up by 21 on the test. But you are not.",
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5J81, can you assign me a follow-up?",
+              "avg_logprob": -0.40320200845599174,
+              "no_speech_prob": 0.01755117066204548,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791428708.m4a": {
+      "index": 1340,
+      "epoch": 1791428708,
+      "sha256": "c75f38e10e742310df0784fc24adaf94f8e626ca65052ccf6a63cfa48278aa77",
+      "passes": {
+        "original": {
+          "text": "Time for it!",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Time for it!",
+              "avg_logprob": -0.5759083884102958,
+              "no_speech_prob": 0.009150811471045017,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Time for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Time for it.",
+              "avg_logprob": -0.8644987515040806,
+              "no_speech_prob": 0.013266623951494694,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "Time for it.",
+          "prompt": "5J47, copy, follow-up by 21 on the test. But you are not. 5G81, can you assign me an envelope?",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Time for it.",
+              "avg_logprob": -0.48102148941584993,
+              "no_speech_prob": 0.016562649980187416,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    }
+  }
+}
