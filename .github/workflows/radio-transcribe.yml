@@ -109,13 +109,13 @@ jobs:
       with:
         path: ${{ runner.temp }}/radio-models
         key: radio-whisper-${{ runner.os }}-${{ hashFiles('scripts/radio-transcription-settings.json') }}
-    - name: Generate original, filtered and context passes; commit every ten clips
+    - name: Generate original, filtered and context passes; commit every 200 clips
       run: 'git config user.name "github-actions[bot]"
 
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
         python3 -u scripts/transcribe_radio_batches.py --date "$DAY" --talkgroup "$TALKGROUP" --target-branch "$TARGET_BRANCH"
-        --batch-size 10 --audio-dir "$RUNNER_TEMP/radio-audio-current" --model-dir "$RUNNER_TEMP/radio-models"'
+        --batch-size 200 --audio-dir "$RUNNER_TEMP/radio-audio-current" --model-dir "$RUNNER_TEMP/radio-models"'
     - name: Delete temporary audio even after failure
       run: 'python3 - <<''PY''
 
