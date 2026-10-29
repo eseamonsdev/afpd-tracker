@@ -1,7 +1,9 @@
 OpenMHz Law 2 Northeast (5922), 2026-10-19, America/Denver.
-1,426 source call entries; 1,425 unique audio filenames.
-Metadata only: media URLs are derived and unverified; audio has not been downloaded.
-Radio IDs and full listing metadata were imported from a user-supplied browser HAR. No transcripts are present.
-All source call IDs, epochs, and listed durations matched a fresh continuous browser listing traversal on October 28, 2026.
-The additional source entry sharing an audio filename is preserved in duplicate_source_calls.
-Browser verification does not establish complete radio reception or validate audio.
+Metadata schema: 1.
+Coverage: unknown; collected through 2026-10-20T06:00:00Z.
+1425 unique audio files; 1426 source call entries.
+Source: OpenMHz (https://openmhz.com/). Original audio bytes and filenames retained.
+calls.json: chronological call metadata, original source IDs/labels, timestamps and audio checks.
+rows.json: source labels in chronological unique-audio order.
+validation.json: coverage and audio-validation results, plus preserved historical evidence.
+Unix timestamps determine Mountain times; original browser labels may use another timezone.
