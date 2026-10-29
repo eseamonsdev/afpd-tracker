@@ -1,0 +1,264 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-08",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791463981.m4a": {
+      "index": 213,
+      "epoch": 1791463981,
+      "sha256": "ea29a4a5d0c4d636ddeead74cd635a55cc508f3d245eda0a56e366a795c2bbac",
+      "passes": {
+        "original": {
+          "text": "5G, 30 copy, medical assist.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5G, 30 copy, medical assist.",
+              "avg_logprob": -0.6081941376129786,
+              "no_speech_prob": 0.042235877364873886,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791463986.m4a": {
+      "index": 214,
+      "epoch": 1791463986,
+      "sha256": "58a2fe5728e1405ccac9c2bba100c66b04ea11898f6a9df4bb28a70d4dac879e",
+      "passes": {
+        "original": {
+          "text": "30",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 30",
+              "avg_logprob": -0.583456501364708,
+              "no_speech_prob": 0.13161221146583557,
+              "compression_ratio": 0.2
+            }
+          ]
+        },
+        "filtered": {
+          "text": "30",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 30",
+              "avg_logprob": -0.46336300671100616,
+              "no_speech_prob": 0.13364900648593903,
+              "compression_ratio": 0.2
+            }
+          ]
+        },
+        "context": {
+          "text": "30.",
+          "prompt": "5G, 30 copy, medical assist.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 30.",
+              "avg_logprob": -0.4398855686187744,
+              "no_speech_prob": 0.03593914955854416,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791463996.m4a": {
+      "index": 215,
+      "epoch": 1791463996,
+      "sha256": "092338183f10af3f38aa972685594cd59d400838bcc6ed819e379107527223c8",
+      "passes": {
+        "original": {
+          "text": "Can't be clear unless requested.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Can't be clear unless requested.",
+              "avg_logprob": -0.6465752363204956,
+              "no_speech_prob": 0.007453106809407473,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Can I be clear when it's requested?",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " Can I be clear when it's requested?",
+              "avg_logprob": -0.7256225049495697,
+              "no_speech_prob": 0.01206067856401205,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy, clear, unless requested.",
+          "prompt": "5G, 30 copy, medical assist. 30",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy, clear, unless requested.",
+              "avg_logprob": -0.5978554308414459,
+              "no_speech_prob": 0.026242151856422424,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791463999.m4a": {
+      "index": 216,
+      "epoch": 1791463999,
+      "sha256": "c41a2dceae7721f5c56f2aecb684c921f5848641ddd71b0a1f5db0d6f0bb3791",
+      "passes": {
+        "original": {
+          "text": "Bye-bye, bye-bye.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Bye-bye, bye-bye.",
+              "avg_logprob": -0.989999229257757,
+              "no_speech_prob": 0.08529434353113174,
+              "compression_ratio": 0.85
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791464005.m4a": {
+      "index": 217,
+      "epoch": 1791464005,
+      "sha256": "7836eb15069971da9336485338176be34cee689f291a2af1de640df36cf9d946",
+      "passes": {
+        "original": {
+          "text": "Roger, you're doing it for me.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Roger, you're doing it for me.",
+              "avg_logprob": -0.9594647288322449,
+              "no_speech_prob": 0.04714019596576691,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'll do it to the right part.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'll do it to the right part.",
+              "avg_logprob": -0.930797149737676,
+              "no_speech_prob": 0.04885061830282211,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        },
+        "context": {
+          "text": "Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye",
+          "prompt": "30 Can't be clear unless requested. Bye-bye, bye-bye.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 30,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.92,
+              "text": " Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye",
+              "avg_logprob": -0.1696302669663583,
+              "no_speech_prob": 0.020823011174798012,
+              "compression_ratio": 3.3
+            }
+          ]
+        }
+      }
+    }
+  }
+}
