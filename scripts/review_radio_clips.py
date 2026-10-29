@@ -88,8 +88,24 @@ def run(args):
         if convert:
             converted = Path(args.model_dir) / ('police-ct2-' + revision)
             if not (converted/'model.bin').exists():
+                # This checkpoint stores a legacy list under extra_special_tokens.
+                # Transformers 4.57 expects that key to be a named-token mapping.
+                # Preserve the same tokens/IDs using additional_special_tokens instead.
+                compatible = temporary / 'police-conversion-source'
+                compatible.mkdir()
+                for source in Path(local).iterdir():
+                    if source.name != 'tokenizer_config.json':
+                        (compatible / source.name).symlink_to(source.resolve())
+                tokenizer_config = read(Path(local) / 'tokenizer_config.json')
+                extra = tokenizer_config.get('extra_special_tokens')
+                if isinstance(extra, list):
+                    tokenizer_config.pop('extra_special_tokens')
+                    tokenizer_config['additional_special_tokens'] = list(dict.fromkeys(
+                        tokenizer_config.get('additional_special_tokens', []) + extra))
+                write(compatible / 'tokenizer_config.json', tokenizer_config)
+                result['tokenizer_compatibility'] = 'Legacy extra_special_tokens list mapped to additional_special_tokens; token vocabulary and model weights unchanged.'
                 from ctranslate2.converters import TransformersConverter
-                TransformersConverter(local, copy_files=['tokenizer.json', 'preprocessor_config.json']).convert(
+                TransformersConverter(str(compatible), copy_files=['tokenizer.json', 'preprocessor_config.json']).convert(
                     str(converted), quantization='int8', force=True)
             local = str(converted)
         model = WhisperModel(local, device='cpu', compute_type='int8', cpu_threads=4)

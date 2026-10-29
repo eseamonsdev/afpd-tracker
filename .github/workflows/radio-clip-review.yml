@@ -6,13 +6,30 @@ on:
 permissions:
   contents: write
 jobs:
+  request:
+    runs-on: ubuntu-latest
+    outputs:
+      models: ${{ steps.selection.outputs.models }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: selection
+        run: |
+          python3 - <<'PYTHON'
+          import json, os
+          r = json.load(open('records-pending-review/radio-clip-review-request.json'))
+          models = r.get('models', ['police', 'turbo', 'large-v3'])
+          assert models and len(models) == len(set(models)) and set(models) <= {'police', 'turbo', 'large-v3'}
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write('models=' + json.dumps(models) + '\n')
+          PYTHON
   compare:
+    needs: request
     runs-on: ubuntu-latest
     timeout-minutes: 90
     strategy:
       fail-fast: false
       matrix:
-        model: [police, turbo, large-v3]
+        model: ${{ fromJSON(needs.request.outputs.models) }}
     concurrency:
       group: radio-clip-review-${{ matrix.model }}
       cancel-in-progress: false
