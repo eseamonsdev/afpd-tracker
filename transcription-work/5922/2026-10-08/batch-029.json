@@ -1,0 +1,307 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-08",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791469997.m4a": {
+      "index": 281,
+      "epoch": 1791469997,
+      "sha256": "01520d40b693aa768d42f52726089d6f4353d5c1c3a03b431c14273993a652b3",
+      "passes": {
+        "original": {
+          "text": "5J171, we're code four. You can re-sign this to 31. He's aware.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5J171, we're code four. You can re-sign this to 31. He's aware.",
+              "avg_logprob": -0.41085190773010255,
+              "no_speech_prob": 0.018103085458278656,
+              "compression_ratio": 0.8873239436619719
+            }
+          ]
+        },
+        "filtered": {
+          "text": "IJ-171, work code 4. You can re-sign this to 31. He's aware.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " IJ-171, work code 4. You can re-sign this to 31. He's aware.",
+              "avg_logprob": -0.4489922046661377,
+              "no_speech_prob": 0.022372717037796974,
+              "compression_ratio": 0.8823529411764706
+            }
+          ]
+        },
+        "context": {
+          "text": "5J171, we're code four. You can re-sign this to 31. He's aware.",
+          "prompt": "5J174",
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5J171, we're code four. You can re-sign this to 31. He's aware.",
+              "avg_logprob": -0.3804091644287109,
+              "no_speech_prob": 0.045092787593603134,
+              "compression_ratio": 0.8873239436619719
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791470004.m4a": {
+      "index": 282,
+      "epoch": 1791470004,
+      "sha256": "0dd5b513de28862e6a1feea1dd283c3f3b32dded2891eab49cb265d3d61f3db6",
+      "passes": {
+        "original": {
+          "text": "Copy, 5-3-3-1, are you all right? You're still not.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Copy, 5-3-3-1, are you all right? You're still not.",
+              "avg_logprob": -0.4512014933254408,
+              "no_speech_prob": 0.010382390581071377,
+              "compression_ratio": 0.9272727272727272
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791470009.m4a": {
+      "index": 283,
+      "epoch": 1791470009,
+      "sha256": "d06f34bdc024c7a35eb202d87d3d29a5050b3b9396bbe12cdb2bab8f66609fa8",
+      "passes": {
+        "original": {
+          "text": "",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 0,
+          "token_cap_reached": false,
+          "segments": []
+        },
+        "filtered": {
+          "text": "",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 0,
+          "token_cap_reached": false,
+          "segments": []
+        },
+        "context": {
+          "text": "Copy, 5-3-1, are you all right? You're still not. Copy, 5-3-1, are you all right? You're",
+          "prompt": "5J171, we're code four. You can re-sign this to 31. He's aware. Copy, 5-3-3-1, are you all right? You're still not.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 34,
+          "token_cap_reached": true,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.76,
+              "text": " Copy, 5-3-1, are you all right? You're still not. Copy, 5-3-1, are you all right? You're",
+              "avg_logprob": -0.40236271108899796,
+              "no_speech_prob": 0.4357682764530182,
+              "compression_ratio": 1.4915254237288136
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791470383.m4a": {
+      "index": 284,
+      "epoch": 1791470383,
+      "sha256": "53029a5552e7e9bd79a6a3a37bb52b9d2d4e3fa11c9f7b189236798cb3027081",
+      "passes": {
+        "original": {
+          "text": "5G, 3E clear.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G, 3E clear.",
+              "avg_logprob": -1.1529509782791139,
+              "no_speech_prob": 0.18029947578907013,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Pause, you're getting it clear.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Pause, you're getting it clear.",
+              "avg_logprob": -0.836113045612971,
+              "no_speech_prob": 0.14309760928153992,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "context": {
+          "text": "5G, 3E clear.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G, 3E clear.",
+              "avg_logprob": -1.1529509782791139,
+              "no_speech_prob": 0.18029947578907013,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791470511.m4a": {
+      "index": 286,
+      "epoch": 1791470511,
+      "sha256": "b5619fd9150f24e6121743922c3904666cf77eeaf350bb7bae03be4cefe23044",
+      "passes": {
+        "original": {
+          "text": "5J31, are you equipped for a stolen route?",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J31, are you equipped for a stolen route?",
+              "avg_logprob": -0.3839619755744934,
+              "no_speech_prob": 0.01973355934023857,
+              "compression_ratio": 0.84
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791470517.m4a": {
+      "index": 287,
+      "epoch": 1791470517,
+      "sha256": "3bc9f14a802fdef6ad5f6a095c10282a6262ad08cf571cfcd42679ec22102174",
+      "passes": {
+        "original": {
+          "text": "Arrived, you can submit checks.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Arrived, you can submit checks.",
+              "avg_logprob": -0.682052428072149,
+              "no_speech_prob": 0.00623984495177865,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "filtered": {
+          "text": "arrived, you can suspend checks.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.88,
+              "text": " arrived, you can suspend checks.",
+              "avg_logprob": -0.7991793572902679,
+              "no_speech_prob": 0.005913961678743362,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "context": {
+          "text": "Arrive, you can suspend checks.",
+          "prompt": "5J31, are you equipped for a stolen route?",
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Arrive, you can suspend checks.",
+              "avg_logprob": -0.6385763666846536,
+              "no_speech_prob": 0.019471146166324615,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        }
+      }
+    }
+  }
+}
