@@ -60,7 +60,7 @@ for lock compatibility; no ZIP importer remains installed.
 
 The action reads checksum-verified R2 objects into temporary runner storage,
 uses the pinned original, filtered and context passes, and saves text candidates
-every ten clips under `transcription-work/TALKGROUP/YYYY-MM-DD/` on the chosen
+every 200 clips (and at the end or on interruption) under `transcription-work/TALKGROUP/YYYY-MM-DD/` on the chosen
 branch. Matching saved passes resume; changed audio/settings or identities fail.
 Temporary audio is removed after each saved batch and on exit. No audio or
 models enter Git or artifacts. It processes the actual saved archive and retains
