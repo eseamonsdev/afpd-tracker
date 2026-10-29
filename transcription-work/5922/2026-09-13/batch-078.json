@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-13",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1789355828.m4a": {
+      "index": 775,
+      "epoch": 1789355828,
+      "sha256": "7de21c9841037a169108dd6aafb445e54ba06173a2abff1375f0e0bda4b2a49d",
+      "passes": {
+        "original": {
+          "text": "Murdoch Drive, the North County Boulevard on a black Nissan Xterra no plate.",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Murdoch Drive, the North County Boulevard on a black Nissan Xterra no plate.",
+              "avg_logprob": -0.6009147435426712,
+              "no_speech_prob": 0.03931702673435211,
+              "compression_ratio": 0.9743589743589743
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789355835.m4a": {
+      "index": 776,
+      "epoch": 1789355835,
+      "sha256": "6772331bbd006c14afd873606d2d278872b72a364a7fd733ab14797329be89dc",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5315282344818115,
+              "no_speech_prob": 0.01843242347240448,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789355858.m4a": {
+      "index": 777,
+      "epoch": 1789355858,
+      "sha256": "db8e073052a1bba07838c3665257499a1a338ff6413b22463dd2588912687af0",
+      "passes": {
+        "original": {
+          "text": "5J45, Code 4.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J45, Code 4.",
+              "avg_logprob": -0.5810050964355469,
+              "no_speech_prob": 0.023929283022880554,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789355862.m4a": {
+      "index": 778,
+      "epoch": 1789355862,
+      "sha256": "371a80e4775732fac64c5ac1e6b17957077d25cd54c43da9047c3b3d74f6a193",
+      "passes": {
+        "original": {
+          "text": "Of course it's spent.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Of course it's spent.",
+              "avg_logprob": -0.8766252199808756,
+              "no_speech_prob": 0.021341189742088318,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Before I suspend.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Before I suspend.",
+              "avg_logprob": -0.698604941368103,
+              "no_speech_prob": 0.012922112829983234,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "The force is spent.",
+          "prompt": "Murdoch Drive, the North County Boulevard on a black Nissan Xterra no plate. Copy. 5J45, Code 4.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " The force is spent.",
+              "avg_logprob": -0.811648927628994,
+              "no_speech_prob": 0.050633203238248825,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789357082.m4a": {
+      "index": 780,
+      "epoch": 1789357082,
+      "sha256": "65be8b22b351c7b4e5b7e7f41b89a489cfc1eb28c8123d6269131bd0d8e3f327",
+      "passes": {
+        "original": {
+          "text": "J44, show me out with 45.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " J44, show me out with 45.",
+              "avg_logprob": -0.5096192906300226,
+              "no_speech_prob": 0.02024279162287712,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Do 44 show me out with 45.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Do 44 show me out with 45.",
+              "avg_logprob": -0.7329981435428966,
+              "no_speech_prob": 0.01540343090891838,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "context": {
+          "text": "J44, show me out with 45.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " J44, show me out with 45.",
+              "avg_logprob": -0.5096192906300226,
+              "no_speech_prob": 0.02024279162287712,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        }
+      }
+    }
+  }
+}

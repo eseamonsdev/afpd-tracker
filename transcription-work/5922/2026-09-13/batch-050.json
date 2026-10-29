@@ -1,0 +1,261 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-13",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1789333496.m4a": {
+      "index": 493,
+      "epoch": 1789333496,
+      "sha256": "2aa9023a2fdbec69522981315771d173e933ebab3ec92efb82a2b175e026aaa5",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Go ahead.",
+              "avg_logprob": -0.6052540242671967,
+              "no_speech_prob": 0.21327665448188782,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789333498.m4a": {
+      "index": 494,
+      "epoch": 1789333498,
+      "sha256": "74836815cda7fe908575401465f4dbadc792520a5a47963cee88295e1aeb9aae",
+      "passes": {
+        "original": {
+          "text": "This is the 554 North, 1570 West, 18-month-old male in a seizure. He is conscious of breathing.",
+          "prompt": null,
+          "duration_seconds": 8.064,
+          "token_limit": 89,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.48,
+              "text": " This is the 554 North, 1570 West, 18-month-old male in a seizure.",
+              "avg_logprob": -0.28595755249261856,
+              "no_speech_prob": 0.004571888595819473,
+              "compression_ratio": 1.0106382978723405
+            },
+            {
+              "start": 6.48,
+              "end": 7.5600000000000005,
+              "text": " He is conscious of breathing.",
+              "avg_logprob": -0.28595755249261856,
+              "no_speech_prob": 0.004571888595819473,
+              "compression_ratio": 1.0106382978723405
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789333507.m4a": {
+      "index": 495,
+      "epoch": 1789333507,
+      "sha256": "57ba1cd6ebb769dd05041e23bcbc1757d75bdb3323dca943d785193ea503df7f",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.8894177436828613,
+              "no_speech_prob": 0.021997105330228806,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789333511.m4a": {
+      "index": 496,
+      "epoch": 1789333511,
+      "sha256": "fcbeefe1ce3728880544770ce4e063d06974e5f7a2078a7b14ee5fb4b7cedafb",
+      "passes": {
+        "original": {
+          "text": "5G48",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G48",
+              "avg_logprob": -0.8693748712539673,
+              "no_speech_prob": 0.053216900676488876,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5,848.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.48,
+              "text": " 5,848.",
+              "avg_logprob": -1.2689511477947235,
+              "no_speech_prob": 0.019614651799201965,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "5G48.",
+          "prompt": "Go ahead. This is the 554 North, 1570 West, 18-month-old male in a seizure. He is conscious of breathing. Copy.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G48.",
+              "avg_logprob": -0.8933796542031425,
+              "no_speech_prob": 0.043047286570072174,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789333513.m4a": {
+      "index": 497,
+      "epoch": 1789333513,
+      "sha256": "21740262a9702fb307dd8f036a93e90c98aa63117c56f815643ec622e5a17687",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.5926299095153809,
+              "no_speech_prob": 0.04091855138540268,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789333516.m4a": {
+      "index": 498,
+      "epoch": 1789333516,
+      "sha256": "fba4237484106d0f431c0dc81d01dc3a63f8997e34c1d3e3b47f7bc3d6d5a11a",
+      "passes": {
+        "original": {
+          "text": "Can you assign the key to this to me, and then close it up?",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Can you assign the key to this to me, and then close it up?",
+              "avg_logprob": -0.38545238030584233,
+              "no_speech_prob": 0.025488538667559624,
+              "compression_ratio": 0.9672131147540983
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Can you decide to keep this to me and then closer up?",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Can you decide to keep this to me and then closer up?",
+              "avg_logprob": -0.49695057794451714,
+              "no_speech_prob": 0.026652993634343147,
+              "compression_ratio": 0.9298245614035088
+            }
+          ]
+        },
+        "context": {
+          "text": "Can you assign the key to this to me and then close it up?",
+          "prompt": "Copy. 5G48 Go ahead.",
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Can you assign the key to this to me and then close it up?",
+              "avg_logprob": -0.2828236652745141,
+              "no_speech_prob": 0.012216757982969284,
+              "compression_ratio": 0.9666666666666667
+            }
+          ]
+        }
+      }
+    }
+  }
+}

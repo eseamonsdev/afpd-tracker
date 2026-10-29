@@ -1,0 +1,289 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-13",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1789358490.m4a": {
+      "index": 801,
+      "epoch": 1789358490,
+      "sha256": "3cd2ed6ff3ef0bed5bf9dce02ea34d463e2f5707822e8e8daf386d9db977eb44",
+      "passes": {
+        "original": {
+          "text": "1796, show me 1042, please.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " 1796, show me 1042, please.",
+              "avg_logprob": -0.5924375240619366,
+              "no_speech_prob": 0.008952273987233639,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789358494.m4a": {
+      "index": 802,
+      "epoch": 1789358494,
+      "sha256": "95ce23549aef328a6aebf4887280aeb7fcf92be91d59b3754e57fafd1662ae00",
+      "passes": {
+        "original": {
+          "text": "Toby.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Toby.",
+              "avg_logprob": -0.7851160049438477,
+              "no_speech_prob": 0.03788123279809952,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789358539.m4a": {
+      "index": 803,
+      "epoch": 1789358539,
+      "sha256": "1fb2ad9e8ecac5254a1034f8b491522cc5d96077118582b0ea6a40ed275e9906",
+      "passes": {
+        "original": {
+          "text": "5J35, copy your trust loss.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.58,
+              "text": " 5J35, copy your trust loss.",
+              "avg_logprob": -0.8050805876652399,
+              "no_speech_prob": 0.02456420287489891,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789358547.m4a": {
+      "index": 804,
+      "epoch": 1789358547,
+      "sha256": "92499b3d148a553d07bda3359cb17a270ba2efc0a4687bc6d48c25ff563266d1",
+      "passes": {
+        "original": {
+          "text": "5G35, I copy.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G35, I copy.",
+              "avg_logprob": -0.5815521597862243,
+              "no_speech_prob": 0.03897429630160332,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J35, I copy.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J35, I copy.",
+              "avg_logprob": -0.5008233547210693,
+              "no_speech_prob": 0.02460075356066227,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "5J35, copy.",
+          "prompt": "1796, show me 1042, please. Toby. 5J35, copy your trust loss.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J35, copy.",
+              "avg_logprob": -0.2850118743048774,
+              "no_speech_prob": 0.0018282165983691812,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789359093.m4a": {
+      "index": 807,
+      "epoch": 1789359093,
+      "sha256": "28c4ecb56bb6ad41cb7bd03d24d4c4fe33bc74d9ce8ca01cbaf0718a09debc78",
+      "passes": {
+        "original": {
+          "text": "ID 35, you can suspend checks.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.36,
+              "text": " ID 35, you can suspend checks.",
+              "avg_logprob": -0.5434538559480147,
+              "no_speech_prob": 0.05308680981397629,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "filtered": {
+          "text": "ID 35, you can suspend checks.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.36,
+              "text": " ID 35, you can suspend checks.",
+              "avg_logprob": -0.5621946941722523,
+              "no_speech_prob": 0.038413986563682556,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "context": {
+          "text": "ID 35, you can suspend checks.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.36,
+              "text": " ID 35, you can suspend checks.",
+              "avg_logprob": -0.5434538559480147,
+              "no_speech_prob": 0.05308680981397629,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789360209.m4a": {
+      "index": 809,
+      "epoch": 1789360209,
+      "sha256": "b081fc520a353e2253c1517ab8115f26c83317d3013e851efa1f3f52a80e6682",
+      "passes": {
+        "original": {
+          "text": "I want to check.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I want to check.",
+              "avg_logprob": -0.7764487937092781,
+              "no_speech_prob": 0.03312354534864426,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "All right, check.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " All right, check.",
+              "avg_logprob": -0.72308100014925,
+              "no_speech_prob": 0.04267593100667,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "I want to check.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I want to check.",
+              "avg_logprob": -0.7764487937092781,
+              "no_speech_prob": 0.03312354534864426,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    }
+  }
+}

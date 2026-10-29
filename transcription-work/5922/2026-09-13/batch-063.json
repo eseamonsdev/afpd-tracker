@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-13",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1789346139.m4a": {
+      "index": 621,
+      "epoch": 1789346139,
+      "sha256": "762b2462e52a8e6296985b4f368dd1eff7e0d823d17b1c59483ce76ca12e04f5",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.6723229090372721,
+              "no_speech_prob": 0.03241093084216118,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789346142.m4a": {
+      "index": 622,
+      "epoch": 1789346142,
+      "sha256": "9c64784c1d86fbbb9072a85f729ccadb96b864f8aa3806cf2871176c51e6eaed",
+      "passes": {
+        "original": {
+          "text": "In North County and 400 North on a temp tag Papa 011694313",
+          "prompt": null,
+          "duration_seconds": 9.856,
+          "token_limit": 103,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.040000000000001,
+              "text": " In North County and 400 North on a temp tag Papa 011694313",
+              "avg_logprob": -0.47624043623606366,
+              "no_speech_prob": 0.02500532753765583,
+              "compression_ratio": 0.9508196721311475
+            }
+          ]
+        },
+        "filtered": {
+          "text": "In North County and 400 North on a temp tag Papa 0 1 1 6 9 4 3 1 3",
+          "prompt": null,
+          "duration_seconds": 9.856,
+          "token_limit": 103,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.040000000000001,
+              "text": " In North County and 400 North on a temp tag Papa 0 1 1 6 9 4 3 1 3",
+              "avg_logprob": -0.350101377653039,
+              "no_speech_prob": 0.026909351348876953,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "North County and 400 North on a temp tag Papa 011694313",
+          "prompt": "I love you. 5G 32 traffic. Go ahead.",
+          "duration_seconds": 9.856,
+          "token_limit": 103,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 11.040000000000001,
+              "text": " North County and 400 North on a temp tag Papa 011694313",
+              "avg_logprob": -0.42674782696892233,
+              "no_speech_prob": 0.021949192509055138,
+              "compression_ratio": 0.9166666666666666
+            }
+          ]
+        }
+      }
+    }
+  }
+}

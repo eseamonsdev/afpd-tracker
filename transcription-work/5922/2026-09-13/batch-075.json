@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-13",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1789354935.m4a": {
+      "index": 742,
+      "epoch": 1789354935,
+      "sha256": "ba6173a17cbb40fea45acdd03f502524845178c192ed3790d78a2246bdac6f40",
+      "passes": {
+        "original": {
+          "text": "5J51, code 4.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J51, code 4.",
+              "avg_logprob": -0.7736812591552734,
+              "no_speech_prob": 0.020295539870858192,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789354945.m4a": {
+      "index": 743,
+      "epoch": 1789354945,
+      "sha256": "b30f3444f7aa6d364e36a45e0fa3f8480f7a0d614f1ab49ea6be40701c09a5a7",
+      "passes": {
+        "original": {
+          "text": "Five, take 51.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Five, take 51.",
+              "avg_logprob": -0.9089250713586807,
+              "no_speech_prob": 0.11273108422756195,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789354948.m4a": {
+      "index": 744,
+      "epoch": 1789354948,
+      "sha256": "04354368ea22377f02610395d4f45b22056285c2be5b35449d93c6c89d35d085",
+      "passes": {
+        "original": {
+          "text": "You won't go far.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You won't go far.",
+              "avg_logprob": -0.6968293719821506,
+              "no_speech_prob": 0.10108774900436401,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We won't go for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " We won't go for it.",
+              "avg_logprob": -0.4731631278991699,
+              "no_speech_prob": 0.04105033725500107,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "We won't go far.",
+          "prompt": "5J51, code 4. Five, take 51.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " We won't go far.",
+              "avg_logprob": -0.6364242235819498,
+              "no_speech_prob": 0.023883633315563202,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    }
+  }
+}
