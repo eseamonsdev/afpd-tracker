@@ -88,6 +88,7 @@ jobs:
       DAY: ${{ matrix.day }}
       TALKGROUP: ${{ matrix.talkgroup }}
       TARGET_BRANCH: ${{ matrix.target_branch }}
+      SELECTION: ${{ matrix.selection || 'all' }}
       PYTHONUNBUFFERED: '1'
     steps:
     - uses: actions/checkout@v4
@@ -115,7 +116,7 @@ jobs:
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
         python3 -u scripts/transcribe_radio_batches.py --date "$DAY" --talkgroup "$TALKGROUP" --target-branch "$TARGET_BRANCH"
-        --batch-size 200 --audio-dir "$RUNNER_TEMP/radio-audio-current" --model-dir "$RUNNER_TEMP/radio-models"'
+        --selection "$SELECTION" --batch-size 200 --audio-dir "$RUNNER_TEMP/radio-audio-current" --model-dir "$RUNNER_TEMP/radio-models"'
     - name: Delete temporary audio even after failure
       run: 'python3 - <<''PY''
 

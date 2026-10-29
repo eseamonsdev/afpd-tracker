@@ -82,6 +82,37 @@ class RequestTests(unittest.TestCase):
         self.assertEqual(rows[0]['target_branch'], 'staging')
 
 
+class AfpdSelectionTests(unittest.TestCase):
+    def test_selection_skips_existing_and_verified_and_non_afpd_with_full_context(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write(root / 'data/radio-agency-corrections.json', {'18': {'afpd': False}})
+            write(root / 'public/records/openmhz/openmhz-afpd-car-to-car-2026-10-01/calls.json',
+                  {'talkgroup': 6001, 'calls': [{'radio_ids': ['5', '18'], 'srcList': None}]})
+            calls = [dict(call(5922, i * 10), radio_ids=[value])
+                     for i, value in enumerate(['99', '5', '18', '5', '5'])]
+            calls[3]['transcript'] = 'Existing user correction'
+            calls[4]['validated'] = True
+            data = {'talkgroup': 5922, 'calls': calls}
+            with patch.object(transcription, 'ROOT', root):
+                selected = transcription.selected_indices(data, 'afpd_missing')
+            self.assertEqual(selected, [1])
+            self.assertEqual(core.context_indices(calls, selected[0], core.read(core.SETTINGS)), [0])
+            self.assertEqual(calls[3]['transcript'], 'Existing user correction')
+            self.assertTrue(calls[4]['validated'])
+            with self.assertRaises(ValueError):
+                transcription.selected_indices({'talkgroup': 6001, 'calls': calls}, 'afpd_missing')
+
+    def test_selection_reaches_each_request_and_rejects_invalid_scope(self):
+        rows = requests({'days': [DAY, '2026-10-03'], 'talkgroup': 5922,
+                         'selection': 'afpd_missing'})
+        self.assertEqual([r['selection'] for r in rows], ['afpd_missing', 'afpd_missing'])
+        for payload in ({'day': DAY, 'selection': 'afpd_missing'},
+                        {'day': DAY, 'talkgroup': 5922, 'selection': 'unknown'}):
+            with self.assertRaises(ValueError):
+                requests(payload)
+
+
 class PreparationTests(unittest.TestCase):
     def test_all_groups_skip_saved_and_failed_and_resume_only_selected_day(self):
         for group in TALKGROUPS:

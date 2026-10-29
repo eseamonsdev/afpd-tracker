@@ -14,7 +14,7 @@ REQUEST_FILES = {'audio': 'records-pending-review/openmhz-audio-request.json',
 
 
 def requests(payload, default_branch='staging'):
-    defaults = {k: payload[k] for k in ('talkgroup', 'target_branch', 'mode', 'proof') if k in payload}
+    defaults = {k: payload[k] for k in ('talkgroup', 'target_branch', 'mode', 'proof', 'selection') if k in payload}
     rows = payload.get('requests')
     if rows is None:
         rows = [{'day': d} for d in payload['days']] if 'days' in payload else [payload]
@@ -33,6 +33,12 @@ def requests(payload, default_branch='staging'):
                        'talkgroup': valid_talkgroup(row.get('talkgroup', 6001)),
                        'target_branch': valid_branch(row.get('target_branch') or default_branch),
                        'mode': mode, 'proof': proof})
+        if 'selection' in row:
+            if row['selection'] not in ('all', 'afpd_missing'):
+                raise ValueError('Unknown transcription selection')
+            if row['selection'] == 'afpd_missing' and result[-1]['talkgroup'] != 5922:
+                raise ValueError('AFPD selection requires Law 2')
+            result[-1]['selection'] = row['selection']
     if len({(r['day'], r['talkgroup'], r['target_branch']) for r in result}) != len(result):
         raise ValueError('Duplicate radio jobs in request')
     return result

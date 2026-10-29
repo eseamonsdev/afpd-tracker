@@ -10,6 +10,7 @@ import importlib.metadata
 import json
 import math
 import os
+import re
 from pathlib import Path
 import shutil
 import subprocess
@@ -20,6 +21,32 @@ from r2_audio import client_and_bucket, read_verified, stored_audio
 from transcribe_afpd_radio import ROOT, SETTINGS, context_indices, load_archive, read, write
 
 KINDS = {'original', 'filtered', 'context'}
+
+
+def radio_ids(call):
+    values = (call.get('radio_ids') or []) + [s.get('src') for s in (call.get('srcList') or [])]
+    return {str(value) for value in values if re.fullmatch(r'[1-9]\d*', str(value))}
+
+
+def selected_indices(data, selection='all'):
+    if selection == 'all':
+        return list(range(len(data['calls'])))
+    if selection != 'afpd_missing' or data['talkgroup'] != 5922:
+        raise ValueError('AFPD missing selection is supported only for Law 2')
+    # Same association rule as the Law 2 player index; no speaker inference.
+    corrections = read(ROOT / 'data/radio-agency-corrections.json')
+    ids = set()
+    for path in (ROOT / 'public/records/openmhz').glob('openmhz-afpd-car-to-car-*/calls.json'):
+        source = read(path)
+        if source.get('talkgroup') != 6001:
+            continue
+        for call in source['calls']:
+            if call.get('talkgroup', 6001) == 6001:
+                ids.update(radio_ids(call))
+    ids = {value for value in ids if corrections.get(value, {}).get('afpd') is not False}
+    return [i for i, call in enumerate(data['calls'])
+            if radio_ids(call) & ids and call.get('validated') is not True
+            and not (isinstance(call.get('transcript'), str) and call['transcript'].strip())]
 
 
 def validate_record(call, record, index):
@@ -115,12 +142,18 @@ def run(args):
     signature = hashlib.sha256(SETTINGS.read_bytes()).hexdigest()
     directory = ROOT / 'transcription-work' / str(args.talkgroup) / args.date
     clips = restore(directory, data, signature)
+    selection = getattr(args, 'selection', 'all')
+    targets = selected_indices(data, selection)
+    print(f'SELECTION: {selection}; {len(targets)} target clips; full archive indices/context preserved.', flush=True)
+    if not targets or all(completed(clips.get(calls[i]["original_filename"], {})) for i in targets):
+        print('All selected clips already saved; no ASR required.', flush=True)
+        return
     audio = Path(args.audio_dir).resolve()
     if audio.is_relative_to(ROOT) or not audio.name.startswith(('radio-audio-', f'{args.talkgroup}-audio-')):
         raise ValueError('Use a dedicated radio-audio-* temporary directory outside the repository')
     client, bucket = client_and_bucket()
     print(f'R2 PREFLIGHT: checking saved audio for {args.date}; {len(calls)} clips.', flush=True)
-    probe = calls[0]
+    probe = calls[targets[0]]
     if not stored_audio(probe, folder.name) or probe['audio_storage']['bucket'] != bucket:
         raise ValueError('Invalid saved R2 metadata')
     read_verified(client, bucket, probe['audio_storage']['key'], probe['sha256'], probe['size_bytes'])
@@ -175,9 +208,9 @@ def run(args):
         print(f'{args.date} clip {index + 1}/{len(calls)}: {kind} COMPLETE ({time.monotonic() - started:.1f}s)', flush=True)
 
     try:
-        batches = math.ceil(len(calls) / args.batch_size)
-        for start in range(0, len(calls), args.batch_size):
-            selected = list(range(start, min(start + args.batch_size, len(calls))))
+        batches = math.ceil(len(targets) / args.batch_size)
+        for start in range(0, len(targets), args.batch_size):
+            selected = targets[start:start + args.batch_size]
             batch = start // args.batch_size + 1
             if all(completed(clips.get(calls[i]['original_filename'], {})) for i in selected):
                 print(f'Batch {batch}/{batches}: already saved; SKIP.', flush=True)
@@ -190,7 +223,7 @@ def run(args):
                 process(i, 'filtered')
             for i in selected:
                 process(i, 'context')
-            done = checkpoint(directory, data, cfg, signature, clips, 10, 'awaiting_reconciliation' if selected[-1] == len(calls) - 1 else 'running')
+            done = checkpoint(directory, data, cfg, signature, clips, 10, 'awaiting_reconciliation' if start + args.batch_size >= len(targets) else 'running')
             commit_checkpoint(directory, args.date, done, len(calls), args.talkgroup, args.target_branch)
             cleanup_audio(audio)
             print(f'Batch {batch}/{batches}: local original and filtered audio DELETED; R2 unchanged.', flush=True)
@@ -201,7 +234,7 @@ def run(args):
         raise
     finally:
         cleanup_audio(audio)
-    print(f'ALL PASSES SAVED: {len(calls)}/{len(calls)} clips. Reconciliation still required; calls.json unchanged.', flush=True)
+    print(f'ALL SELECTED PASSES SAVED: {len(targets)}/{len(targets)} selected clips; full archive {done}/{len(calls)}. Reconciliation still required; calls.json unchanged.', flush=True)
 
 
 def main():
@@ -209,6 +242,7 @@ def main():
     parser.add_argument('--date', required=True)
     parser.add_argument('--talkgroup', type=int, default=6001)
     parser.add_argument('--target-branch', default='staging')
+    parser.add_argument('--selection', choices=['all', 'afpd_missing'], default='all')
     parser.add_argument('--batch-size', type=int, default=200)
     parser.add_argument('--audio-dir', required=True)
     parser.add_argument('--model-dir', required=True)

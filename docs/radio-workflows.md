@@ -85,3 +85,14 @@ The Law 2 day/queue workflows, 6001-only transcription workflow, separate
 verified-recovery workflow, old manifest downloader, and scheduled ZIP importer
 were replaced or removed. ZIP import is no longer part of the unattended path;
 the old local validator remains available for historical bundles.
+
+### Missing AFPD-associated Law 2 calls
+
+A transcription request may specify `"selection": "afpd_missing"` with talkgroup
+5922. It selects only calls without current transcripts whose radio IDs occur
+on 6001, excluding explicit non-AFPD corrections. Existing verified entries are
+excluded. All archive indices, saved hashes, settings and checkpoints remain
+unchanged; the normal three preceding-call context rule uses the full archive,
+including original passes from other agencies when required. Matching saved
+passes are reused. Full-archive status counts still include unselected calls;
+a completed selection does not establish complete-day transcription.
