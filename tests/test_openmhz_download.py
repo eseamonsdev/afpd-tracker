@@ -29,6 +29,41 @@ def manifest(calls=None):
 
 
 class DownloadTest(unittest.TestCase):
+    def test_first_download_accepts_listing_only_or_empty_folder(self):
+        for listing in (False, True):
+            with self.subTest(listing=listing), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                folder = root / 'public/records/openmhz/openmhz-afpd-car-to-car-2026-09-30'
+                folder.mkdir(parents=True)
+                if listing:
+                    (folder / 'openmhz-listing.json').write_text('{"preserved": true}')
+                source = root / '2026-09-30.json'
+                source.write_text(json.dumps(manifest()))
+                downloader = Mock()
+                downloader.download.side_effect = lambda url, dest: dest.write_bytes(b'0000ftyp0000')
+                with patch.object(module, 'inspect_audio', return_value={
+                        'sha256': 'test', 'size_bytes': 12, 'audio_duration_seconds': 3}):
+                    result = module.import_manifest(root, source, downloader)
+                self.assertEqual(result['downloaded'], 1)
+                self.assertEqual(json.loads((folder / 'calls.json').read_text())['count'], 1)
+                if listing:
+                    self.assertEqual((folder / 'openmhz-listing.json').read_text(), '{"preserved": true}')
+
+    def test_folder_without_manifest_rejects_untracked_files(self):
+        for name in (sample()['original_filename'], 'validation.json'):
+            with self.subTest(name=name), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                folder = root / 'public/records/openmhz/openmhz-afpd-car-to-car-2026-09-30'
+                folder.mkdir(parents=True)
+                (folder / name).write_text('preserve me')
+                source = root / '2026-09-30.json'
+                source.write_text(json.dumps(manifest()))
+                downloader = Mock()
+                with self.assertRaisesRegex(ValueError, 'Existing archive folder has no manifest'):
+                    module.import_manifest(root, source, downloader)
+                downloader.download.assert_not_called()
+                self.assertEqual((folder / name).read_text(), 'preserve me')
+
     def test_metadata_inventory_survives_checkpoints_failures_and_resume(self):
         calls = [sample(1790755010 + i * 10, f'id-{i}') for i in range(3)]
         for i, call in enumerate(calls):
