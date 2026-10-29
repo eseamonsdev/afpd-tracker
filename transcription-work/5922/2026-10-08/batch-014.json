@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-08",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791457063.m4a": {
+      "index": 135,
+      "epoch": 1791457063,
+      "sha256": "e97b6b0f48c57ec8a3cb64b3e6bf1b060e3b804093cced8253ae533bb68b5e68",
+      "passes": {
+        "original": {
+          "text": "I have J47 cupular.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I have J47 cupular.",
+              "avg_logprob": -0.9119868993759155,
+              "no_speech_prob": 0.024355115368962288,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791457068.m4a": {
+      "index": 136,
+      "epoch": 1791457068,
+      "sha256": "cea066675ac7916e3cbc0fb7ae9e348ee5019a9c8ac3c5671714ac20d78d18fd",
+      "passes": {
+        "original": {
+          "text": "Good.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Good.",
+              "avg_logprob": -0.6184293270111084,
+              "no_speech_prob": 0.08038739860057831,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Good.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Good.",
+              "avg_logprob": -0.47120466232299807,
+              "no_speech_prob": 0.0756303071975708,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Good.",
+          "prompt": "I have J47 cupular.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Good.",
+              "avg_logprob": -0.47654142379760744,
+              "no_speech_prob": 0.02834278717637062,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
