@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-08",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791484738.m4a": {
+      "index": 621,
+      "epoch": 1791484738,
+      "sha256": "3a5afae7b172ff13d92fef79fc6c84f77a97445d428d044ecd8e862423883d72",
+      "passes": {
+        "original": {
+          "text": "I do 29 traffic.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " I do 29 traffic.",
+              "avg_logprob": -0.4963579475879669,
+              "no_speech_prob": 0.12345258891582489,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I do 29 traffic.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I do 29 traffic.",
+              "avg_logprob": -0.5466291978955269,
+              "no_speech_prob": 0.07899609953165054,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "I do 29 traffic.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " I do 29 traffic.",
+              "avg_logprob": -0.4963579475879669,
+              "no_speech_prob": 0.12345258891582489,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791484744.m4a": {
+      "index": 622,
+      "epoch": 1791484744,
+      "sha256": "e6eed5b8b05371cd1aa1a2d66f04cbf017bd9857cbc4fbc95796ec3f547c5a07",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.549519956111908,
+              "no_speech_prob": 0.03449537232518196,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791484746.m4a": {
+      "index": 623,
+      "epoch": 1791484746,
+      "sha256": "34968daa92f229e8f34d4a2dd6eab47fef096e25cf82b1a9618433395fb9aead",
+      "passes": {
+        "original": {
+          "text": "I'll be in 24j 1750 north 988 call 257 x-ray echo",
+          "prompt": null,
+          "duration_seconds": 8.832,
+          "token_limit": 95,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 10.4,
+              "text": " I'll be in 24j 1750 north 988 call 257 x-ray echo",
+              "avg_logprob": -0.4239262521266937,
+              "no_speech_prob": 0.08747650682926178,
+              "compression_ratio": 0.875
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'll be in 24J, 1750 North, 988, Gulf 257, X-ray, echo.",
+          "prompt": null,
+          "duration_seconds": 8.832,
+          "token_limit": 95,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.48,
+              "text": " I'll be in 24J, 1750 North, 988, Gulf 257, X-ray, echo.",
+              "avg_logprob": -0.614741903084975,
+              "no_speech_prob": 0.0835803896188736,
+              "compression_ratio": 0.873015873015873
+            }
+          ]
+        },
+        "context": {
+          "text": "I'll be in 24j 1750 north 988 call 257 x-ray echo.",
+          "prompt": "I do 29 traffic. Go ahead.",
+          "duration_seconds": 8.832,
+          "token_limit": 95,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 10.38,
+              "text": " I'll be in 24j 1750 north 988 call 257 x-ray echo.",
+              "avg_logprob": -0.45140425364176434,
+              "no_speech_prob": 0.023216554895043373,
+              "compression_ratio": 0.8771929824561403
+            }
+          ]
+        }
+      }
+    }
+  }
+}
