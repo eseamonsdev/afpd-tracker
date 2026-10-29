@@ -47,3 +47,9 @@ The page renders ID table and Evidence tabs. Both tables remain readable without
 JavaScript. The downloadable `afpd-radio-agency-ids.xlsx` has matching ID table
 and Evidence sheets; the CSV contains the mapping table. Keep these exports
 aligned with `agencyIds` when adding confirmations.
+
+The names table CSV (`afpd-radio-officer-ids.csv`) is generated from the same
+`officers.entries` data by `src/police-radio-officer-ids.njk`. Dated owner
+confirmations may be included with their date limits in the notes. Tavo / David
+O. Guerra on 14590023 is confirmed for October 27, 2026 only (clips 128–129);
+its count is one named-response exchange, not the number of clips that day.

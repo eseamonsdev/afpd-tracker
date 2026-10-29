@@ -1,0 +1,10 @@
+---
+permalink: /records/openmhz/afpd-radio-officer-ids.csv
+---
+{% set resources = entities.all["entity-page-police-radio-resources"] -%}
+"Name heard","Roster candidate","Radio ID","Examples","Days","Notes","Profile"
+{% for officer in resources.officers.entries -%}
+{% for entry in officer.ids -%}
+"{{ officer.heard | replace('"', '""') | safe }}","{{ officer.name | replace('"', '""') | safe }}","{{ entry.id }}","{{ entry.examples }}","{{ entry.days }}","{{ officer.note | replace('"', '""') | safe }}","{{ officer.url }}"
+{% endfor -%}
+{% endfor -%}
