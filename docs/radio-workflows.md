@@ -43,8 +43,11 @@ audio or start transcription. Completed runs do not keep processing future days.
 
 Preserved metadata must already exist. The action uses local staging metadata or fetches only the requested metadata file from remote staging. Existing queue checkpoints resume.
 The downloader skips saved audio and known failures, fetches sequentially, waits
-two seconds after every attempt, and publishes a checkpoint every 100 calls.
-Audio goes to R2; metadata and site output go to the chosen branch.
+750 milliseconds after every attempt, and publishes a checkpoint every 300 calls.
+Each checkpoint uploads and verifies audio in R2 and saves metadata to staging.
+The full Eleventy site build runs only with the final batch for each requested
+date/talkgroup, rather than at every checkpoint. Interrupted runs retain their
+saved progress; generated pages and indexes catch up when the resumed run finishes.
 
 Resume is normal behavior, not a separate workflow. An explicit `mode=recover`
 request can recover known failures only when `proof` names a browser-verified

@@ -35,15 +35,17 @@ def run(day, talkgroup, branch, mode='download', proof=''):
         if os.environ.get('GITHUB_STEP_SUMMARY'):
             with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as output:
                 output.write(Path(summary).read_text() + '\n')
-        publish()
+        # Save each checkpoint, but regenerate the site only on the last batch.
+        publish(build=not manifest.exists())
     # Also persist metadata fetched from staging on a no-op run.
     if not processed:
         publish()
     print(f'{day} talkgroup {talkgroup}: finished on {branch}; known failures remain separate.', flush=True)
 
 
-def publish():
-    subprocess.run(['npm', 'run', 'build'], check=True)
+def publish(build=True):
+    if build:
+        subprocess.run(['npm', 'run', 'build'], check=True)
     subprocess.run(['bash', 'scripts/push_openmhz_import.sh'], check=True)
 
 

@@ -5,7 +5,7 @@ import sys
 import tempfile
 from types import SimpleNamespace
 import unittest
-from unittest.mock import patch
+from unittest.mock import call as mock_call, patch
 
 sys.path.insert(0, str(Path(__file__).parents[1] / 'scripts'))
 from prepare_radio_day import prepare
@@ -158,7 +158,18 @@ class AudioRunnerTests(unittest.TestCase):
                      patch.dict(audio_runner.os.environ, {'RUNNER_TEMP': tmp, 'GITHUB_STEP_SUMMARY': ''}):
                     audio_runner.run(DAY, group, 'staging')
                 self.assertEqual(batches, [300, 1])
-                self.assertEqual(publish.call_count, 2)
+                self.assertEqual(publish.call_args_list,
+                                 [mock_call(build=False), mock_call(build=True)])
+
+    def test_intermediate_checkpoint_skips_build_but_still_publishes(self):
+        with patch.object(audio_runner.subprocess, 'run') as command:
+            audio_runner.publish(build=False)
+            audio_runner.publish(build=True)
+        self.assertEqual(command.call_args_list, [
+            mock_call(['bash', 'scripts/push_openmhz_import.sh'], check=True),
+            mock_call(['npm', 'run', 'build'], check=True),
+            mock_call(['bash', 'scripts/push_openmhz_import.sh'], check=True),
+        ])
 
 
 class TranscriptionTests(unittest.TestCase):
