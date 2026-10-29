@@ -104,8 +104,8 @@ def run(args):
     cfg = read(SETTINGS)
     if importlib.metadata.version('faster-whisper') != cfg['engine_version']:
         raise ValueError('Install scripts/requirements-radio.txt')
-    if args.batch_size != 10:
-        raise ValueError('Keep stable ten-clip checkpoint boundaries for safe resume')
+    if args.batch_size < 1:
+        raise ValueError('Checkpoint interval must be positive')
     valid_branch(args.target_branch)
     valid_talkgroup(args.talkgroup)
     folder, data = load_archive(args.date, args.talkgroup, require_complete=False)
@@ -190,13 +190,13 @@ def run(args):
                 process(i, 'filtered')
             for i in selected:
                 process(i, 'context')
-            done = checkpoint(directory, data, cfg, signature, clips, args.batch_size, 'awaiting_reconciliation' if selected[-1] == len(calls) - 1 else 'running')
+            done = checkpoint(directory, data, cfg, signature, clips, 10, 'awaiting_reconciliation' if selected[-1] == len(calls) - 1 else 'running')
             commit_checkpoint(directory, args.date, done, len(calls), args.talkgroup, args.target_branch)
             cleanup_audio(audio)
             print(f'Batch {batch}/{batches}: local original and filtered audio DELETED; R2 unchanged.', flush=True)
     except BaseException:
         # Preserve completed passes from the interrupted batch when possible.
-        done = checkpoint(directory, data, cfg, signature, clips, args.batch_size, 'interrupted')
+        done = checkpoint(directory, data, cfg, signature, clips, 10, 'interrupted')
         commit_checkpoint(directory, args.date, done, len(calls), args.talkgroup, args.target_branch)
         raise
     finally:
@@ -209,7 +209,7 @@ def main():
     parser.add_argument('--date', required=True)
     parser.add_argument('--talkgroup', type=int, default=6001)
     parser.add_argument('--target-branch', default='staging')
-    parser.add_argument('--batch-size', type=int, default=10)
+    parser.add_argument('--batch-size', type=int, default=200)
     parser.add_argument('--audio-dir', required=True)
     parser.add_argument('--model-dir', required=True)
     run(parser.parse_args())
