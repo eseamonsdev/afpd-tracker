@@ -1,0 +1,57 @@
+name: Compare selected radio clips across models
+on:
+  push:
+    branches: [staging]
+    paths: [records-pending-review/radio-clip-review-request.json]
+permissions:
+  contents: write
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        model: [police, turbo, large-v3]
+    concurrency:
+      group: radio-clip-review-${{ matrix.model }}
+      cancel-in-progress: false
+    env:
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_BUCKET_NAME: ${{ vars.R2_BUCKET_NAME }}
+      R2_ENDPOINT: ${{ vars.R2_ENDPOINT }}
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install transcription dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          python -m pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install -r scripts/requirements-radio.txt 'boto3>=1.40,<2' transformers==4.57.6
+      - uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/radio-review-models
+          key: radio-review-${{ runner.os }}-${{ matrix.model }}-v1
+      - name: Compare original, filtered and contextual audio
+        env:
+          REVIEW_MODEL: ${{ matrix.model }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          python scripts/review_radio_clips.py --request records-pending-review/radio-clip-review-request.json --model "$REVIEW_MODEL" --model-dir "$RUNNER_TEMP/radio-review-models" --publish
+      - name: Remove temporary audio
+        if: always()
+        run: |
+          python - <<'PY'
+          import os, pathlib, shutil
+          for path in pathlib.Path(os.environ['RUNNER_TEMP']).glob('radio-audio-review-*'):
+              if path.is_dir():
+                  shutil.rmtree(path)
+          PY
