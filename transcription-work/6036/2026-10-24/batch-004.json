@@ -1,0 +1,713 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-24",
+  "talkgroup": 6036,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6036-1792822938.m4a": {
+      "index": 31,
+      "epoch": 1792822938,
+      "sha256": "68ec9b955c9ec52e59cd6a53204af350b01ae65d759b9460bf075fc0d7965205",
+      "passes": {
+        "original": {
+          "text": "Just going over my body cam. The window was open when we cleared that room.",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Just going over my body cam. The window was open when we cleared that room.",
+              "avg_logprob": -0.37484341859817505,
+              "no_speech_prob": 0.043725889176130295,
+              "compression_ratio": 1.0135135135135136
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Just going over my body cam. The window was open when we cleared that room.",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Just going over my body cam. The window was open when we cleared that room.",
+              "avg_logprob": -0.3665385991334915,
+              "no_speech_prob": 0.06521331518888474,
+              "compression_ratio": 1.0135135135135136
+            }
+          ]
+        },
+        "context": {
+          "text": "Just going over my body cam. The window was open when we cleared that room.",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Just going over my body cam. The window was open when we cleared that room.",
+              "avg_logprob": -0.37484341859817505,
+              "no_speech_prob": 0.043725889176130295,
+              "compression_ratio": 1.0135135135135136
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6036-1792822948.m4a": {
+      "index": 32,
+      "epoch": 1792822948,
+      "sha256": "fdc58f644b5ba6483337ef1678edc504f443b75da5fd4bb2f03b58b27e4e03fb",
+      "passes": {
+        "original": {
+          "text": "I saw him back in, I looked, and there's even a child lock on it that was broken off, so it's clear he was up there.",
+          "prompt": null,
+          "duration_seconds": 6.784,
+          "token_limit": 79,
+          "token_count": 34,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " I saw him back in, I looked, and there's even a child lock on it that was broken off, so it's clear he was up there.",
+              "avg_logprob": -0.4003949233463832,
+              "no_speech_prob": 0.03752688691020012,
+              "compression_ratio": 1.2210526315789474
+            }
+          ]
+        },
+        "filtered": {
+          "text": "When I look and there's even a child like on it that was broken off still it's clear. He was up there",
+          "prompt": null,
+          "duration_seconds": 6.784,
+          "token_limit": 79,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.16,
+              "text": " When I look and there's even a child like on it that was broken off still it's clear. He was up there",
+              "avg_logprob": -0.41129949050290243,
+              "no_speech_prob": 0.12165893614292145,
+              "compression_ratio": 1.160919540229885
+            }
+          ]
+        },
+        "context": {
+          "text": "I saw him back in. I looked and there isn't even a child lock on it. That was broken off. So it's clear he was up there.",
+          "prompt": "Just going over my body cam. The window was open when we cleared that room.",
+          "duration_seconds": 6.784,
+          "token_limit": 79,
+          "token_count": 35,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " I saw him back in. I looked and there isn't even a child lock on it. That was broken off. So it's clear he was up there.",
+              "avg_logprob": -0.32629775918192333,
+              "no_speech_prob": 0.014037025161087513,
+              "compression_ratio": 1.2
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6036-1792823248.m4a": {
+      "index": 33,
+      "epoch": 1792823248,
+      "sha256": "035fa959d29105641cec1e51cf1d87b761d43a97587a901f3c4c9bd96625a348",
+      "passes": {
+        "original": {
+          "text": "Hey Cox, do you guys also want to confirm that he may not be or be at his parents address in Send a unit over there",
+          "prompt": null,
+          "duration_seconds": 10.88,
+          "token_limit": 112,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.32,
+              "text": " Hey Cox, do you guys also want to confirm that he may not be or be at his parents address in",
+              "avg_logprob": -0.19192843046039343,
+              "no_speech_prob": 0.01691945269703865,
+              "compression_ratio": 1.1855670103092784
+            },
+            {
+              "start": 8.88,
+              "end": 10.88,
+              "text": " Send a unit over there",
+              "avg_logprob": -0.19192843046039343,
+              "no_speech_prob": 0.01691945269703865,
+              "compression_ratio": 1.1855670103092784
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hey Cox, do you guys also want to confirm that he may not be or be at his parents address in Send a unit over there",
+          "prompt": null,
+          "duration_seconds": 10.88,
+          "token_limit": 112,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.34,
+              "text": " Hey Cox, do you guys also want to confirm that he may not be or be at his parents address in",
+              "avg_logprob": -0.25838846154510975,
+              "no_speech_prob": 0.002963211853057146,
+              "compression_ratio": 1.1855670103092784
+            },
+            {
+              "start": 8.88,
+              "end": 10.88,
+              "text": " Send a unit over there",
+              "avg_logprob": -0.25838846154510975,
+              "no_speech_prob": 0.002963211853057146,
+              "compression_ratio": 1.1855670103092784
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey Cox, do you guys also want to confirm that he may not be or be at his parents address in Send a unit over there",
+          "prompt": null,
+          "duration_seconds": 10.88,
+          "token_limit": 112,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.32,
+              "text": " Hey Cox, do you guys also want to confirm that he may not be or be at his parents address in",
+              "avg_logprob": -0.19192843046039343,
+              "no_speech_prob": 0.01691945269703865,
+              "compression_ratio": 1.1855670103092784
+            },
+            {
+              "start": 8.88,
+              "end": 10.88,
+              "text": " Send a unit over there",
+              "avg_logprob": -0.19192843046039343,
+              "no_speech_prob": 0.01691945269703865,
+              "compression_ratio": 1.1855670103092784
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6036-1792823259.m4a": {
+      "index": 34,
+      "epoch": 1792823259,
+      "sha256": "2e27b75e967a4be3d3ffc080c297f326180988311f4a6837f0722a3266be0482",
+      "passes": {
+        "original": {
+          "text": "We're already doing it.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " We're already doing it.",
+              "avg_logprob": -0.4001643922593858,
+              "no_speech_prob": 0.028814690187573433,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We're already doing it.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " We're already doing it.",
+              "avg_logprob": -0.531060536702474,
+              "no_speech_prob": 0.021831750869750977,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "context": {
+          "text": "We're already doing it",
+          "prompt": "Hey Cox, do you guys also want to confirm that he may not be or be at his parents address in Send a unit over there",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " We're already doing it",
+              "avg_logprob": -0.24014795199036598,
+              "no_speech_prob": 0.001042887452058494,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6036-1792823274.m4a": {
+      "index": 35,
+      "epoch": 1792823274,
+      "sha256": "4f7c0d2fc7530a3bb66bb274e1126d72835ff00145b030da1e6505dceaac746e",
+      "passes": {
+        "original": {
+          "text": "Cool.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Cool.",
+              "avg_logprob": -0.8471814155578613,
+              "no_speech_prob": 0.05894215404987335,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Cool.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Cool.",
+              "avg_logprob": -0.8150424003601074,
+              "no_speech_prob": 0.045525021851062775,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Cool.",
+          "prompt": "Hey Cox, do you guys also want to confirm that he may not be or be at his parents address in Send a unit over there We're already doing it.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Cool.",
+              "avg_logprob": -0.4230775833129883,
+              "no_speech_prob": 0.010559724643826485,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6036-1792824107.m4a": {
+      "index": 36,
+      "epoch": 1792824107,
+      "sha256": "713ab35e91e5a190af30ab570b9b13fc2d63c96624919fc90490762935e1f3f5",
+      "passes": {
+        "original": {
+          "text": "Anyone on the road in their car?",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.86,
+              "text": " Anyone on the road in their car?",
+              "avg_logprob": -0.2768823504447937,
+              "no_speech_prob": 0.025400444865226746,
+              "compression_ratio": 0.8888888888888888
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Anyone on the road in their car?",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.86,
+              "text": " Anyone on the road in their car?",
+              "avg_logprob": -0.3486428748477589,
+              "no_speech_prob": 0.034321270883083344,
+              "compression_ratio": 0.8888888888888888
+            }
+          ]
+        },
+        "context": {
+          "text": "Anyone on the road in their car?",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.86,
+              "text": " Anyone on the road in their car?",
+              "avg_logprob": -0.2768823504447937,
+              "no_speech_prob": 0.025400444865226746,
+              "compression_ratio": 0.8888888888888888
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6036-1792824111.m4a": {
+      "index": 37,
+      "epoch": 1792824111,
+      "sha256": "ecfcfbd2d116e6089b11b0dfc709c0903f6a192a7318ae1b598e17b67ef25f50",
+      "passes": {
+        "original": {
+          "text": "Good.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Good.",
+              "avg_logprob": -0.6996623992919921,
+              "no_speech_prob": 0.03885503485798836,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Good.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Good.",
+              "avg_logprob": -0.7106858253479004,
+              "no_speech_prob": 0.06176450476050377,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Good.",
+          "prompt": "Anyone on the road in their car?",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Good.",
+              "avg_logprob": -0.4533539772033691,
+              "no_speech_prob": 0.015370096080005169,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6036-1792824113.m4a": {
+      "index": 38,
+      "epoch": 1792824113,
+      "sha256": "a91ba8436a04ff1623fe78a8f80410c8ff3a7662adb6d585c7e6d9a28af88e8a",
+      "passes": {
+        "original": {
+          "text": "there's a Subaru Impreza driving east on 560 south driven by a woman but almost to convenient that they slow drove by the house she's just turned northbound on 10 hundred West",
+          "prompt": null,
+          "duration_seconds": 15.104,
+          "token_limit": 145,
+          "token_count": 43,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.24,
+              "text": " there's a Subaru Impreza driving east on 560 south driven by a woman but",
+              "avg_logprob": -0.2851965129375458,
+              "no_speech_prob": 0.02244826965034008,
+              "compression_ratio": 1.3257575757575757
+            },
+            {
+              "start": 6.24,
+              "end": 10.72,
+              "text": " almost to convenient that they slow drove by the house she's just turned",
+              "avg_logprob": -0.2851965129375458,
+              "no_speech_prob": 0.02244826965034008,
+              "compression_ratio": 1.3257575757575757
+            },
+            {
+              "start": 10.72,
+              "end": 16.16,
+              "text": " northbound on 10 hundred West",
+              "avg_logprob": -0.2851965129375458,
+              "no_speech_prob": 0.02244826965034008,
+              "compression_ratio": 1.3257575757575757
+            }
+          ]
+        },
+        "filtered": {
+          "text": "There's a Subaru Impreza driving east on 560 south, driven by a woman, but it's almost easy to mean that they slow drove by the house. She's just turned northbound on 100 west.",
+          "prompt": null,
+          "duration_seconds": 15.104,
+          "token_limit": 145,
+          "token_count": 49,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.2,
+              "text": " There's a Subaru Impreza driving east on 560 south, driven by a woman, but it's almost",
+              "avg_logprob": -0.4215500688552856,
+              "no_speech_prob": 0.018317919224500656,
+              "compression_ratio": 1.2661870503597121
+            },
+            {
+              "start": 7.2,
+              "end": 10.120000000000001,
+              "text": " easy to mean that they slow drove by the house.",
+              "avg_logprob": -0.4215500688552856,
+              "no_speech_prob": 0.018317919224500656,
+              "compression_ratio": 1.2661870503597121
+            },
+            {
+              "start": 10.120000000000001,
+              "end": 14.36,
+              "text": " She's just turned northbound on 100 west.",
+              "avg_logprob": -0.4215500688552856,
+              "no_speech_prob": 0.018317919224500656,
+              "compression_ratio": 1.2661870503597121
+            }
+          ]
+        },
+        "context": {
+          "text": "There's a Subaru Impreza driving east on 560 south. It's driven by a woman but it's almost too convenient that they slow drove by the house. She's just turned northbound on 10 hundred west.",
+          "prompt": "Anyone on the road in their car? Good.",
+          "duration_seconds": 15.104,
+          "token_limit": 145,
+          "token_count": 50,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.24,
+              "text": " There's a Subaru Impreza driving east on 560 south. It's driven by a woman but",
+              "avg_logprob": -0.24177332719167074,
+              "no_speech_prob": 0.03781585022807121,
+              "compression_ratio": 1.3309859154929577
+            },
+            {
+              "start": 6.24,
+              "end": 10.68,
+              "text": " it's almost too convenient that they slow drove by the house. She's just turned",
+              "avg_logprob": -0.24177332719167074,
+              "no_speech_prob": 0.03781585022807121,
+              "compression_ratio": 1.3309859154929577
+            },
+            {
+              "start": 10.68,
+              "end": 16.16,
+              "text": " northbound on 10 hundred west.",
+              "avg_logprob": -0.24177332719167074,
+              "no_speech_prob": 0.03781585022807121,
+              "compression_ratio": 1.3309859154929577
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6036-1792824133.m4a": {
+      "index": 39,
+      "epoch": 1792824133,
+      "sha256": "a4af2584cdcc7ae7cabc7d5064bad41abed8639e37139beb80ff234ca1864b02",
+      "passes": {
+        "original": {
+          "text": "Nor a fan on what?",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Nor a fan on what?",
+              "avg_logprob": -0.5730038219028049,
+              "no_speech_prob": 0.05737048760056496,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "filtered": {
+          "text": "You're fine on what?",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You're fine on what?",
+              "avg_logprob": -0.7398529052734375,
+              "no_speech_prob": 0.053169913589954376,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "northbound on what?",
+          "prompt": "Anyone on the road in their car? Good. there's a Subaru Impreza driving east on 560 south driven by a woman but almost to convenient that they slow drove by the house she's just turned northbound on 10 hundred West",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2800000000000002,
+              "text": " northbound on what?",
+              "avg_logprob": -0.34368936344981194,
+              "no_speech_prob": 0.011839702725410461,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6036-1792824136.m4a": {
+      "index": 40,
+      "epoch": 1792824136,
+      "sha256": "bf6e3e717ec6679d8c3e3100ed9cc61e910844f8a3d83a8bf5116ea4a9066e34",
+      "passes": {
+        "original": {
+          "text": "...on Thousand West.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " ...on Thousand West.",
+              "avg_logprob": -0.8636778742074966,
+              "no_speech_prob": 0.15183401107788086,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "On thousand left.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " On thousand left.",
+              "avg_logprob": -0.9273246697017125,
+              "no_speech_prob": 0.19458045065402985,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "on 1,000 West",
+          "prompt": "Good. there's a Subaru Impreza driving east on 560 south driven by a woman but almost to convenient that they slow drove by the house she's just turned northbound on 10 hundred West Nor a fan on what?",
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.5,
+              "text": " on 1,000 West",
+              "avg_logprob": -0.6492783576250076,
+              "no_speech_prob": 0.010435430333018303,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    }
+  }
+}
