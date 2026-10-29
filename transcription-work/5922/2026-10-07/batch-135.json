@@ -1,0 +1,689 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-07",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791428746.m4a": {
+      "index": 1341,
+      "epoch": 1791428746,
+      "sha256": "9b6b20e6875525080950dfd44f7d7df991cf8d6d34a2552c86c5949262102d5b",
+      "passes": {
+        "original": {
+          "text": "Hey, can you do 19 tonight?",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey, can you do 19 tonight?",
+              "avg_logprob": -0.7565324956720526,
+              "no_speech_prob": 0.08249544352293015,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Oh, 18-9-10-9.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Oh, 18-9-10-9.",
+              "avg_logprob": -0.8059974817129282,
+              "no_speech_prob": 0.015480007976293564,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey, can you do 19 tonight?",
+          "prompt": "5G81, can you assign me an envelope? Time for it!",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey, can you do 19 tonight?",
+              "avg_logprob": -0.8310813795436512,
+              "no_speech_prob": 0.019694684073328972,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791428748.m4a": {
+      "index": 1342,
+      "epoch": 1791428748,
+      "sha256": "a51cafbb197b8e810516c8db9bedcfeb1ae524491fdbed990076664340c5ef62",
+      "passes": {
+        "original": {
+          "text": "Hey, can you hear me?",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey, can you hear me?",
+              "avg_logprob": -0.7602845907211304,
+              "no_speech_prob": 0.0572744756937027,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you. Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.6467915698885918,
+              "no_speech_prob": 0.02996578998863697,
+              "compression_ratio": 1.4545454545454546
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.6467915698885918,
+              "no_speech_prob": 0.02996578998863697,
+              "compression_ratio": 1.4545454545454546
+            },
+            {
+              "start": 2.0,
+              "end": 2.02,
+              "text": " Thank you.",
+              "avg_logprob": -0.6467915698885918,
+              "no_speech_prob": 0.02996578998863697,
+              "compression_ratio": 1.4545454545454546
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey, can you do 19?",
+          "prompt": "5G81, can you assign me an envelope? Time for it! Hey, can you do 19 tonight?",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Hey, can you do 19?",
+              "avg_logprob": -0.3900097131729126,
+              "no_speech_prob": 0.0196542851626873,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791428809.m4a": {
+      "index": 1343,
+      "epoch": 1791428809,
+      "sha256": "08da67c9e6603c649481f779a1782dd3431febb152da3f11713000baab9c5fbe",
+      "passes": {
+        "original": {
+          "text": "project if you arrived.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " project if you arrived.",
+              "avg_logprob": -0.8178417533636093,
+              "no_speech_prob": 0.05631280317902565,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you Chris, you arrived.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you Chris, you arrived.",
+              "avg_logprob": -0.7300993859767914,
+              "no_speech_prob": 0.03310739994049072,
+              "compression_ratio": 0.8787878787878788
+            }
+          ]
+        },
+        "context": {
+          "text": "project if you arrived.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " project if you arrived.",
+              "avg_logprob": -0.8178417533636093,
+              "no_speech_prob": 0.05631280317902565,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791428812.m4a": {
+      "index": 1344,
+      "epoch": 1791428812,
+      "sha256": "89653522346c4ce875296a87bf1acc51f1a505dddafbdc8d30b91981b0483f69",
+      "passes": {
+        "original": {
+          "text": "Grabby.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Grabby.",
+              "avg_logprob": -0.9868379433949789,
+              "no_speech_prob": 0.020618397742509842,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy.",
+              "avg_logprob": -1.1675430297851563,
+              "no_speech_prob": 0.024270828813314438,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Grabby.",
+          "prompt": "project if you arrived.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Grabby.",
+              "avg_logprob": -0.856202244758606,
+              "no_speech_prob": 0.049641627818346024,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791428864.m4a": {
+      "index": 1345,
+      "epoch": 1791428864,
+      "sha256": "c640184bf87831c72cf94df3d9df1fc61fc1fb193818f64fec376d317aac0d3d",
+      "passes": {
+        "original": {
+          "text": "That's work.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " That's work.",
+              "avg_logprob": -0.8732358046940395,
+              "no_speech_prob": 0.04680580273270607,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "That's what",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " That's what",
+              "avg_logprob": -0.8856227993965149,
+              "no_speech_prob": 0.07613067328929901,
+              "compression_ratio": 0.6470588235294118
+            }
+          ]
+        },
+        "context": {
+          "text": "Pickle up.",
+          "prompt": "project if you arrived. Grabby.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Pickle up.",
+              "avg_logprob": -0.9178949424198696,
+              "no_speech_prob": 0.040962740778923035,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791428865.m4a": {
+      "index": 1346,
+      "epoch": 1791428865,
+      "sha256": "3697354a2d2a0d002001757379522e1abd0b9e86dea60e45813f9e5591b6cb24",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7501133918762207,
+              "no_speech_prob": 0.032266683876514435,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.5951311737298965,
+              "no_speech_prob": 0.02776157669723034,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Grabby.",
+          "prompt": "project if you arrived. Grabby. That's work.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Grabby.",
+              "avg_logprob": -0.33183686435222626,
+              "no_speech_prob": 0.02337447740137577,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791428890.m4a": {
+      "index": 1347,
+      "epoch": 1791428890,
+      "sha256": "705e607b3f631ec806dc626eacf62201bcd5fdf72f2e7ce323d220f0d6e283e6",
+      "passes": {
+        "original": {
+          "text": "7J21, go for it.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0200000000000005,
+              "text": " 7J21, go for it.",
+              "avg_logprob": -0.37720328027551825,
+              "no_speech_prob": 0.033631619065999985,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J21, go for it.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J21, go for it.",
+              "avg_logprob": -0.40834280577572907,
+              "no_speech_prob": 0.028342513367533684,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "7J21, go for it.",
+          "prompt": "That's work. Copy.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J21, go for it.",
+              "avg_logprob": -0.34924983978271484,
+              "no_speech_prob": 0.020514201372861862,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791428895.m4a": {
+      "index": 1348,
+      "epoch": 1791428895,
+      "sha256": "7ee9aa9ea594885d5366c5ba963951e68fe1c65d633ae3974e57db8e404c47f5",
+      "passes": {
+        "original": {
+          "text": "Go for it, Claire.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it, Claire.",
+              "avg_logprob": -0.6366546418931749,
+              "no_speech_prob": 0.008258547633886337,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.5199050903320312,
+              "no_speech_prob": 0.009632034227252007,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Go for it, Claire.",
+          "prompt": "That's work. Copy. 7J21, go for it.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.36,
+              "text": " Go for it, Claire.",
+              "avg_logprob": -0.4552900526258681,
+              "no_speech_prob": 0.004445591475814581,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791428897.m4a": {
+      "index": 1349,
+      "epoch": 1791428897,
+      "sha256": "c1a4becab03a21cacccca8cd3ea38a7b3db04834c24e61b0f1b012bf00f23f35",
+      "passes": {
+        "original": {
+          "text": "Okay.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Okay.",
+              "avg_logprob": -0.7452339649200439,
+              "no_speech_prob": 0.13052204251289368,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Okay.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Okay.",
+              "avg_logprob": -0.7313819408416748,
+              "no_speech_prob": 0.1470649093389511,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Correct.",
+          "prompt": "Copy. 7J21, go for it. Go for it, Claire.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Correct.",
+              "avg_logprob": -0.626642894744873,
+              "no_speech_prob": 0.06152813881635666,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791428903.m4a": {
+      "index": 1350,
+      "epoch": 1791428903,
+      "sha256": "6ee0402df8659535865a30aa69483be00010c3a9463f806c796921df13b9d828",
+      "passes": {
+        "original": {
+          "text": "Thank you. Eight hundred seventy. Thank you.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.7190511366900276,
+              "no_speech_prob": 0.0993218868970871,
+              "compression_ratio": 0.9777777777777777
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Eight hundred seventy.",
+              "avg_logprob": -0.7190511366900276,
+              "no_speech_prob": 0.0993218868970871,
+              "compression_ratio": 0.9777777777777777
+            },
+            {
+              "start": 2.0,
+              "end": 2.02,
+              "text": " Thank you.",
+              "avg_logprob": -0.7190511366900276,
+              "no_speech_prob": 0.0993218868970871,
+              "compression_ratio": 0.9777777777777777
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you. Eighteen to seven. Thank you.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5861641466617584,
+              "no_speech_prob": 0.13870620727539062,
+              "compression_ratio": 0.975609756097561
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Eighteen to seven.",
+              "avg_logprob": -0.5861641466617584,
+              "no_speech_prob": 0.13870620727539062,
+              "compression_ratio": 0.975609756097561
+            },
+            {
+              "start": 2.0,
+              "end": 2.02,
+              "text": " Thank you.",
+              "avg_logprob": -0.5861641466617584,
+              "no_speech_prob": 0.13870620727539062,
+              "compression_ratio": 0.975609756097561
+            }
+          ]
+        },
+        "context": {
+          "text": "827, thank you.",
+          "prompt": "7J21, go for it. Go for it, Claire. Okay.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 827, thank you.",
+              "avg_logprob": -0.7812310324774848,
+              "no_speech_prob": 0.06593716144561768,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    }
+  }
+}
