@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-08",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791493522.m4a": {
+      "index": 789,
+      "epoch": 1791493522,
+      "sha256": "12b87790a9fc4b02f9acc48b93f0234580075b927ae3a7e209d01da7d1c41350",
+      "passes": {
+        "original": {
+          "text": "5J17, you want to try it?",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J17, you want to try it?",
+              "avg_logprob": -0.5090796947479248,
+              "no_speech_prob": 0.03347625210881233,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J171 traffic",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J171 traffic",
+              "avg_logprob": -0.646917496408735,
+              "no_speech_prob": 0.02089364267885685,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "5J17, you want to try it?",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J17, you want to try it?",
+              "avg_logprob": -0.5090796947479248,
+              "no_speech_prob": 0.03347625210881233,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791493529.m4a": {
+      "index": 790,
+      "epoch": 1791493529,
+      "sha256": "9c4216bad0461a46b61e674f66cd4fcb29f7a83e6f0391b8cee5198ac0bc5315",
+      "passes": {
+        "original": {
+          "text": "I'll be 47 West and 200 South 7 Alpha Yankee Yankee for",
+          "prompt": null,
+          "duration_seconds": 8.192,
+          "token_limit": 90,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.74,
+              "text": " I'll be 47 West and 200 South 7 Alpha Yankee Yankee for",
+              "avg_logprob": -0.330286156386137,
+              "no_speech_prob": 0.035295162349939346,
+              "compression_ratio": 0.9821428571428571
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'll be 47 West and 200 South 7 Alpha Yankee Yankee for",
+          "prompt": null,
+          "duration_seconds": 8.192,
+          "token_limit": 90,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.76,
+              "text": " I'll be 47 West and 200 South 7 Alpha Yankee Yankee for",
+              "avg_logprob": -0.25971125811338425,
+              "no_speech_prob": 0.01270926184952259,
+              "compression_ratio": 0.9821428571428571
+            }
+          ]
+        },
+        "context": {
+          "text": "I'll be 47 west and 200 south, 7 alpha yankee yankee 4",
+          "prompt": "5J17, you want to try it?",
+          "duration_seconds": 8.192,
+          "token_limit": 90,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.72,
+              "text": " I'll be 47 west and 200 south, 7 alpha yankee yankee 4",
+              "avg_logprob": -0.3695132335027059,
+              "no_speech_prob": 0.006383927538990974,
+              "compression_ratio": 0.9818181818181818
+            }
+          ]
+        }
+      }
+    }
+  }
+}

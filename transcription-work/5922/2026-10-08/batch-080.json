@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-08",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791493588.m4a": {
+      "index": 792,
+      "epoch": 1791493588,
+      "sha256": "e7525d154309aa9fa2c69a41f32aeb3bcfe446731d43a0e77d8f756e2ff1931e",
+      "passes": {
+        "original": {
+          "text": "5G1, 7G1, can you confirm your location?",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.7600000000000002,
+              "text": " 5G1, 7G1, can you confirm your location?",
+              "avg_logprob": -0.420252940234016,
+              "no_speech_prob": 0.011747431010007858,
+              "compression_ratio": 0.9302325581395349
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791493604.m4a": {
+      "index": 793,
+      "epoch": 1791493604,
+      "sha256": "c661cc79e34a09871144b0fa51e3980347cc1f881aefa31850cfb92ef7eef8a8",
+      "passes": {
+        "original": {
+          "text": "5D171, can you confirm your location?",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2,
+              "text": " 5D171, can you confirm your location?",
+              "avg_logprob": -0.4642484554877648,
+              "no_speech_prob": 0.02084691822528839,
+              "compression_ratio": 0.8809523809523809
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791493608.m4a": {
+      "index": 794,
+      "epoch": 1791493608,
+      "sha256": "13e60c5492509fd6886edb8b47f9a060998e57b50dbd3ca16ed756b28d89d6aa",
+      "passes": {
+        "original": {
+          "text": "Hi, J-171. If you would just update my address to parking lot of Greenwood Elementary.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Hi, J-171. If you would just update my address to parking lot of Greenwood Elementary.",
+              "avg_logprob": -0.4443957779718482,
+              "no_speech_prob": 0.008518767543137074,
+              "compression_ratio": 1.011764705882353
+            }
+          ]
+        },
+        "filtered": {
+          "text": "If you'd just update my address to parking out of Greenwood Elementary.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.92,
+              "text": " If you'd just update my address to parking out of Greenwood Elementary.",
+              "avg_logprob": -0.37643348469453697,
+              "no_speech_prob": 0.006899199914187193,
+              "compression_ratio": 0.9726027397260274
+            }
+          ]
+        },
+        "context": {
+          "text": "5G1, 7G1, if you would just update my address to parking lot of Greenwood Elementary.",
+          "prompt": "5G1, 7G1, can you confirm your location? 5D171, can you confirm your location?",
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 5G1, 7G1, if you would just update my address to parking lot of Greenwood Elementary.",
+              "avg_logprob": -0.28795197486877444,
+              "no_speech_prob": 0.0014600747963413596,
+              "compression_ratio": 1.0119047619047619
+            }
+          ]
+        }
+      }
+    }
+  }
+}

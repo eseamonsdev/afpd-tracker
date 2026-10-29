@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-08",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791493283.m4a": {
+      "index": 775,
+      "epoch": 1791493283,
+      "sha256": "76f9812cfe5476b823b74071b52a14226ef9f8b6079988b1c5d33b6b24d1214e",
+      "passes": {
+        "original": {
+          "text": "5K171, call 4th.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5K171, call 4th.",
+              "avg_logprob": -0.8224626020951704,
+              "no_speech_prob": 0.07466400414705276,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791493286.m4a": {
+      "index": 776,
+      "epoch": 1791493286,
+      "sha256": "adaccfc5c4c47684b8c036968e3b7c7ab2b952130ee93b0c8541ee941bd55f53",
+      "passes": {
+        "original": {
+          "text": "But for you in question",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " But for you in question",
+              "avg_logprob": -0.6762319430708885,
+              "no_speech_prob": 0.0778488889336586,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "But for you",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " But for you",
+              "avg_logprob": -0.5302930871645609,
+              "no_speech_prob": 0.057916268706321716,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "Talk to you in the next video!",
+          "prompt": "5K171, call 4th.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Talk to you in the next video!",
+              "avg_logprob": -0.8685587211088701,
+              "no_speech_prob": 0.09093200415372849,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        }
+      }
+    }
+  }
+}
