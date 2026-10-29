@@ -1,0 +1,641 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-07",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791408005.m4a": {
+      "index": 681,
+      "epoch": 1791408005,
+      "sha256": "b0733adcb281fbde239350ae20f5c4cba0a2276df148ae936a71cf27b536c320",
+      "passes": {
+        "original": {
+          "text": "300 South, 500 East, Alpha 40, 3 Charlies, 0.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.36,
+              "text": " 300 South, 500 East, Alpha 40, 3 Charlies, 0.",
+              "avg_logprob": -0.5198099679417081,
+              "no_speech_prob": 0.05228825658559799,
+              "compression_ratio": 0.8823529411764706
+            }
+          ]
+        },
+        "filtered": {
+          "text": "300,000, 500,000 East. Alpha 40,000, 300,000 East, Alpha 40,000 East.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 300,000, 500,000 East. Alpha 40,000, 300,000 East, Alpha 40,000 East.",
+              "avg_logprob": -0.6277166860444205,
+              "no_speech_prob": 0.03192443028092384,
+              "compression_ratio": 1.6428571428571428
+            }
+          ]
+        },
+        "context": {
+          "text": "300 South, 500 East, Alpha 40, 3 Charlies, 0.",
+          "prompt": "APJ20 is clear. 5G, 3A traffic. 38, go ahead.",
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.36,
+              "text": " 300 South, 500 East, Alpha 40, 3 Charlies, 0.",
+              "avg_logprob": -0.5183354218800863,
+              "no_speech_prob": 0.004596588667482138,
+              "compression_ratio": 0.8823529411764706
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791408012.m4a": {
+      "index": 682,
+      "epoch": 1791408012,
+      "sha256": "551ce5b1a3ecaee625dbd074a69f9dbcb87d665a630c1d03fa1336169061b1a7",
+      "passes": {
+        "original": {
+          "text": "I copy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I copy.",
+              "avg_logprob": -0.905060867468516,
+              "no_speech_prob": 0.12007106840610504,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.9344783425331116,
+              "no_speech_prob": 0.06387709081172943,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "I copy.",
+          "prompt": "5G, 3A traffic. 38, go ahead. 300 South, 500 East, Alpha 40, 3 Charlies, 0.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.68,
+              "text": " I copy.",
+              "avg_logprob": -0.8912744124730428,
+              "no_speech_prob": 0.1459798365831375,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791408080.m4a": {
+      "index": 683,
+      "epoch": 1791408080,
+      "sha256": "d285caf686de307e6fcabd0b54c78b82994b1afbe61178ab63ad929c16c14de6",
+      "passes": {
+        "original": {
+          "text": "7J18, happy keys.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J18, happy keys.",
+              "avg_logprob": -0.5171588659286499,
+              "no_speech_prob": 0.2112838178873062,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J18, happy keys.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J18, happy keys.",
+              "avg_logprob": -0.582217025756836,
+              "no_speech_prob": 0.37975800037384033,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "7J18, happy keys.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J18, happy keys.",
+              "avg_logprob": -0.5171588659286499,
+              "no_speech_prob": 0.2112838178873062,
+              "compression_ratio": 0.68
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791408087.m4a": {
+      "index": 684,
+      "epoch": 1791408087,
+      "sha256": "8323c0900a412c20661f98401f2dfc225376841944e3ed93290fc917e97f663d",
+      "passes": {
+        "original": {
+          "text": "Coffee.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Coffee.",
+              "avg_logprob": -0.5961904525756836,
+              "no_speech_prob": 0.012289036996662617,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Coffee",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Coffee",
+              "avg_logprob": -0.33268821984529495,
+              "no_speech_prob": 0.005721043795347214,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Coffee.",
+          "prompt": "7J18, happy keys.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Coffee.",
+              "avg_logprob": -0.5334210872650147,
+              "no_speech_prob": 0.028775151818990707,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791408088.m4a": {
+      "index": 685,
+      "epoch": 1791408088,
+      "sha256": "c2a8dc628dcded250c5432610aefefcf217457b7c5989c714de6fc28b292330d",
+      "passes": {
+        "original": {
+          "text": "At the neighborhood market Walmart 1707 West State for a white Chevy Traverse in the parking lot there close to the gas station",
+          "prompt": null,
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.44,
+              "text": " At the neighborhood market Walmart 1707 West State for a white Chevy Traverse in the parking lot there close to the gas station",
+              "avg_logprob": -0.26407716636146816,
+              "no_speech_prob": 0.03968868404626846,
+              "compression_ratio": 1.1869158878504673
+            }
+          ]
+        },
+        "filtered": {
+          "text": "At the neighborhood market Walmart 1707 West State for a white Chevy Traverse in the parking lot there close to the gas station",
+          "prompt": null,
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.74,
+              "text": " At the neighborhood market Walmart 1707 West State for a white Chevy Traverse in the parking lot there close to the gas station",
+              "avg_logprob": -0.27696855259793146,
+              "no_speech_prob": 0.09167619794607162,
+              "compression_ratio": 1.1869158878504673
+            }
+          ]
+        },
+        "context": {
+          "text": "At the neighborhood market, Walmart, 1707 West State for a white Chevy Traverse in the parking lot there close to the gas station.",
+          "prompt": "7J18, happy keys. Coffee.",
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 30,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " At the neighborhood market, Walmart, 1707 West State for a white Chevy Traverse in the parking lot there close to the gas station.",
+              "avg_logprob": -0.2049580168339514,
+              "no_speech_prob": 0.18156850337982178,
+              "compression_ratio": 1.1818181818181819
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791408189.m4a": {
+      "index": 686,
+      "epoch": 1791408189,
+      "sha256": "ae6d2d15f4b32d181ad1673602088f189d2d95bf87fd424628d78c48802d4ea1",
+      "passes": {
+        "original": {
+          "text": "7J29, 1023.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " 7J29, 1023.",
+              "avg_logprob": -0.5506132006645202,
+              "no_speech_prob": 0.05575651675462723,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J29, 1023.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " 7J29, 1023.",
+              "avg_logprob": -0.6171866476535797,
+              "no_speech_prob": 0.04735979810357094,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "7J29, 1023.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " 7J29, 1023.",
+              "avg_logprob": -0.5506132006645202,
+              "no_speech_prob": 0.05575651675462723,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791408192.m4a": {
+      "index": 687,
+      "epoch": 1791408192,
+      "sha256": "5eab74b35db7283dc08deec91386ce16f90146af511e2e408e19db3eaaa2b1c0",
+      "passes": {
+        "original": {
+          "text": "I copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I copy.",
+              "avg_logprob": -0.6088843941688538,
+              "no_speech_prob": 0.018384825438261032,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I copy.",
+              "avg_logprob": -0.744925985733668,
+              "no_speech_prob": 0.02449251338839531,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "I copy.",
+          "prompt": "7J29, 1023.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I copy.",
+              "avg_logprob": -0.6019182006518046,
+              "no_speech_prob": 0.17050418257713318,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791408315.m4a": {
+      "index": 688,
+      "epoch": 1791408315,
+      "sha256": "8c40f6f8251ffb96ec5e2896d57ee51792c27ab85b0dca0cc4f03f7bd464ab0e",
+      "passes": {
+        "original": {
+          "text": "78, I'll be en route to the queset, Smith.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 78, I'll be en route to the queset, Smith.",
+              "avg_logprob": -0.4840330017937554,
+              "no_speech_prob": 0.04242157191038132,
+              "compression_ratio": 0.84
+            }
+          ]
+        },
+        "filtered": {
+          "text": "78, I'll be en route to the keys this way.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 78, I'll be en route to the keys this way.",
+              "avg_logprob": -0.527042280882597,
+              "no_speech_prob": 0.02976967766880989,
+              "compression_ratio": 0.875
+            }
+          ]
+        },
+        "context": {
+          "text": "78, I'll be en route to the queset, Smith.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 78, I'll be en route to the queset, Smith.",
+              "avg_logprob": -0.4840330017937554,
+              "no_speech_prob": 0.04242157191038132,
+              "compression_ratio": 0.84
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791408320.m4a": {
+      "index": 689,
+      "epoch": 1791408320,
+      "sha256": "c7b9f738e4a3cd2b31c8b693dbbc7cac4c0e65fb162faa5b052f9556056bda93",
+      "passes": {
+        "original": {
+          "text": "I copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I copy.",
+              "avg_logprob": -0.6648338834444681,
+              "no_speech_prob": 0.0762600377202034,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I copy.",
+              "avg_logprob": -0.675644725561142,
+              "no_speech_prob": 0.027086662128567696,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "I copy.",
+          "prompt": "78, I'll be en route to the queset, Smith.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I copy.",
+              "avg_logprob": -0.5112829804420471,
+              "no_speech_prob": 0.11063818633556366,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791408337.m4a": {
+      "index": 690,
+      "epoch": 1791408337,
+      "sha256": "db9b9b5c0ef9a8e2678365656ea8d60c97909e810c70cfe89e4c9b93693da017",
+      "passes": {
+        "original": {
+          "text": "5G, 121. You can find that. It says in the contact me.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.84,
+              "text": " 5G, 121. You can find that. It says in the contact me.",
+              "avg_logprob": -0.45286630988121035,
+              "no_speech_prob": 0.06412844359874725,
+              "compression_ratio": 0.8852459016393442
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J, 121. You can find that. It says in the contact me.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5J, 121. You can find that. It says in the contact me.",
+              "avg_logprob": -0.5441308200359345,
+              "no_speech_prob": 0.04554641619324684,
+              "compression_ratio": 0.8852459016393442
+            }
+          ]
+        },
+        "context": {
+          "text": "5G, 121. You can find that. It says in the contact me.",
+          "prompt": "78, I'll be en route to the queset, Smith. I copy.",
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5G, 121. You can find that. It says in the contact me.",
+              "avg_logprob": -0.444278821349144,
+              "no_speech_prob": 0.050169628113508224,
+              "compression_ratio": 0.8852459016393442
+            }
+          ]
+        }
+      }
+    }
+  }
+}
