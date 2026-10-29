@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-08",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791496041.m4a": {
+      "index": 871,
+      "epoch": 1791496041,
+      "sha256": "5b5e7c6cd7a0039fa8d65d5a18c5c6d03299c30a846ca6d8e9096048a1c33df5",
+      "passes": {
+        "original": {
+          "text": "Careful guys, you're training.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Careful guys, you're training.",
+              "avg_logprob": -1.0088092630559748,
+              "no_speech_prob": 0.04366103932261467,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791496100.m4a": {
+      "index": 872,
+      "epoch": 1791496100,
+      "sha256": "a75ea79a1cce66102379b467aa230ac8987dd3c650516f1a0e417f807e945d75",
+      "passes": {
+        "original": {
+          "text": "5-8, I'm rolling up on 38 ground.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.32,
+              "text": " 5-8, I'm rolling up on 38 ground.",
+              "avg_logprob": -0.532572603225708,
+              "no_speech_prob": 0.07061643153429031,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5, 8, I'm rolling up on 38 ground.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.36,
+              "text": " 5, 8, I'm rolling up on 38 ground.",
+              "avg_logprob": -0.7008509318033854,
+              "no_speech_prob": 0.06474888324737549,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "context": {
+          "text": "5-8, I'm rolling up on 38 ground.",
+          "prompt": "Careful guys, you're training.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.32,
+              "text": " 5-8, I'm rolling up on 38 ground.",
+              "avg_logprob": -0.4705687920252482,
+              "no_speech_prob": 0.005431328434497118,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        }
+      }
+    }
+  }
+}

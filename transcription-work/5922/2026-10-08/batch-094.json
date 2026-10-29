@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-08",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791497790.m4a": {
+      "index": 934,
+      "epoch": 1791497790,
+      "sha256": "989c4ad8c8096a59321fcea7e4ee02814314897cefbdfe421a67746290b4d451",
+      "passes": {
+        "original": {
+          "text": "5-2-1, 71 from Central, prepare for track.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5-2-1, 71 from Central, prepare for track.",
+              "avg_logprob": -0.7382703668930951,
+              "no_speech_prob": 0.021202504634857178,
+              "compression_ratio": 0.8571428571428571
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791497794.m4a": {
+      "index": 935,
+      "epoch": 1791497794,
+      "sha256": "92d73e87c3b3fa4b40a6619b2ec39124d487ed046f271aa9ec4aebbd3c4c8c67",
+      "passes": {
+        "original": {
+          "text": "Code Force is in.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Code Force is in.",
+              "avg_logprob": -0.6841657236218452,
+              "no_speech_prob": 0.024518100544810295,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Code Force is in.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Code Force is in.",
+              "avg_logprob": -0.6777930706739426,
+              "no_speech_prob": 0.07187014818191528,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "Code Force is in.",
+          "prompt": "5-2-1, 71 from Central, prepare for track.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.12,
+              "text": " Code Force is in.",
+              "avg_logprob": -0.6973783820867538,
+              "no_speech_prob": 0.0031001772731542587,
+              "compression_ratio": 0.68
+            }
+          ]
+        }
+      }
+    }
+  }
+}
