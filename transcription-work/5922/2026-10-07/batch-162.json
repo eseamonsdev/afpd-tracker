@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-07",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791439159.m4a": {
+      "index": 1611,
+      "epoch": 1791439159,
+      "sha256": "21e430d219648390f44bdd4a3b95c0e1cb7d12e4058bfafa438b6d67f93756f4",
+      "passes": {
+        "original": {
+          "text": "I'll be right back on",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'll be right back on",
+              "avg_logprob": -0.43942446178860134,
+              "no_speech_prob": 0.05925463140010834,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copyright by phone",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.44,
+              "text": " copyright by phone",
+              "avg_logprob": -0.5754538377126058,
+              "no_speech_prob": 0.04058021306991577,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy right by phone.",
+          "prompt": "We're pulling into the ARSA apartments on a blue Porsche No28. Copy blue portion of 20. 7J 21 copy vehicle bird by 21 off the track.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy right by phone.",
+              "avg_logprob": -0.42126112803816795,
+              "no_speech_prob": 0.013537194579839706,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791439161.m4a": {
+      "index": 1612,
+      "epoch": 1791439161,
+      "sha256": "0e2f3e4080e95f1fce65969fb979ebc9265d2a20f3820bd07c0e8ead13b1c219",
+      "passes": {
+        "original": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.7526045143604279,
+              "no_speech_prob": 0.09384665638208389,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.9040436446666718,
+              "no_speech_prob": 0.11287976056337357,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "copy.",
+          "prompt": "Copy blue portion of 20. 7J 21 copy vehicle bird by 21 off the track. I'll be right back on",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " copy.",
+              "avg_logprob": -0.645442533493042,
+              "no_speech_prob": 0.07547906041145325,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
