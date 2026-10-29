@@ -555,6 +555,10 @@ test("curated dated labels include corrections and omit uncertain associations",
   assert.equal(days["2026-10-25"]["14590313"], undefined, "possible contradictory hail holds this date");
   assert.equal(days["2026-09-19"]["14590100"], undefined);
   assert.equal(days["2026-10-01"]["14590247"].status, "strong");
+  assert.equal(days["2026-10-27"]["14590023"].name, "David O. Guerra");
+  assert.equal(days["2026-10-27"]["14590023"].status, "confirmed");
+  assert.deepEqual(days["2026-10-27"]["14590023"].confirmed_dates, ["2026-10-27"]);
+  assert.equal(days["2026-10-28"]?.["14590023"], undefined, "confirmation does not carry to other dates");
   for (const ids of Object.values(days)) {
     assert.equal(ids["14590045"], undefined);
     assert.equal(ids["14590221"], undefined);
@@ -599,7 +603,7 @@ test("association information opens by hover, focus and tap without playing the 
 test("every 6001 day is screened and fallback names respect holds and single-day limits", () => {
   const data = JSON.parse(readFileSync(new URL("../public/records/openmhz/officer-associations.json", import.meta.url), "utf8"));
   const review = JSON.parse(readFileSync(new URL("../findings/2026-10-27-radio-officer-label-review.json", import.meta.url), "utf8"));
-  assert.equal(Object.keys(data.days).length, 48);
+  assert.equal(review.coverage.length, 48, "historical screening covers 48 days; later owner confirmations may add dates");
   assert.equal(review.coverage.reduce((sum, day) => sum + day.transcripts_screened, 0), 12298);
   for (const day of review.coverage) {
     for (const id of day.held_ids) assert.equal(data.days[day.date][id], undefined);

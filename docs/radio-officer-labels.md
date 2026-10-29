@@ -25,3 +25,9 @@ there is no dated entry. `withheld_dates` preserves the review report’s held I
 and prevents the fallback on those dates. Single-day-only IDs do not acquire
 a fallback. New 5J pairings alone never create an officer-name association; the
 owner decides whether the evidence ties an officer to the radio ID.
+
+Owner confirmation on October 29, 2026 identifies Tavo as David O. Guerra and
+radio ID 14590023 as Guerra for October 27, 2026. The dated entry uses
+**Confirmed this day**, based on the clips 128–129 hail/response and explicit
+owner confirmation. It does not create a fallback on other dates or change
+transcript verification flags.
