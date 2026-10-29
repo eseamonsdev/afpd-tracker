@@ -148,6 +148,7 @@ def run(args):
     if not targets or all(completed(clips.get(calls[i]["original_filename"], {})) for i in targets):
         print('All selected clips already saved; no ASR required.', flush=True)
         return
+    batch_size = min(args.batch_size, 10) if selection == 'afpd_missing' else args.batch_size
     audio = Path(args.audio_dir).resolve()
     if audio.is_relative_to(ROOT) or not audio.name.startswith(('radio-audio-', f'{args.talkgroup}-audio-')):
         raise ValueError('Use a dedicated radio-audio-* temporary directory outside the repository')
@@ -208,10 +209,10 @@ def run(args):
         print(f'{args.date} clip {index + 1}/{len(calls)}: {kind} COMPLETE ({time.monotonic() - started:.1f}s)', flush=True)
 
     try:
-        batches = math.ceil(len(targets) / args.batch_size)
-        for start in range(0, len(targets), args.batch_size):
-            selected = targets[start:start + args.batch_size]
-            batch = start // args.batch_size + 1
+        batches = math.ceil(len(targets) / batch_size)
+        for start in range(0, len(targets), batch_size):
+            selected = targets[start:start + batch_size]
+            batch = start // batch_size + 1
             if all(completed(clips.get(calls[i]['original_filename'], {})) for i in selected):
                 print(f'Batch {batch}/{batches}: already saved; SKIP.', flush=True)
                 continue
@@ -223,7 +224,7 @@ def run(args):
                 process(i, 'filtered')
             for i in selected:
                 process(i, 'context')
-            done = checkpoint(directory, data, cfg, signature, clips, 10, 'awaiting_reconciliation' if start + args.batch_size >= len(targets) else 'running')
+            done = checkpoint(directory, data, cfg, signature, clips, 10, 'awaiting_reconciliation' if start + batch_size >= len(targets) else 'running')
             commit_checkpoint(directory, args.date, done, len(calls), args.talkgroup, args.target_branch)
             cleanup_audio(audio)
             print(f'Batch {batch}/{batches}: local original and filtered audio DELETED; R2 unchanged.', flush=True)

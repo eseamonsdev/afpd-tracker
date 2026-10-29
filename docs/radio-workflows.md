@@ -96,3 +96,7 @@ unchanged; the normal three preceding-call context rule uses the full archive,
 including original passes from other agencies when required. Matching saved
 passes are reused. Full-archive status counts still include unselected calls;
 a completed selection does not establish complete-day transcription.
+
+Targeted AFPD selections checkpoint after at most ten target clips so reconciliation
+can proceed while later batches run. Whole-archive runs retain their 200-clip
+processing interval. Checkpoint file layout remains ten archive clips per file.
