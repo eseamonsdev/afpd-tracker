@@ -214,7 +214,11 @@ def import_manifest(root, source, downloader):
     destination = root / 'public/records/openmhz' / f'openmhz-afpd-{channel}-{day}'
     old = json.loads((destination / 'calls.json').read_text()) if (destination / 'calls.json').exists() else None
     if destination.exists() and old is None:
-        raise ValueError('Existing archive folder has no manifest')
+        # Metadata collection may create the folder before the first download.
+        # Preserve its raw listing, but never adopt untracked audio or other files.
+        if any(entry.name != 'openmhz-listing.json' or not entry.is_file()
+               or entry.is_symlink() for entry in destination.iterdir()):
+            raise ValueError('Existing archive folder has no manifest')
     if old and (old.get('date') != day or old.get('talkgroup') != talkgroup):
         raise ValueError('Existing archive identity does not match')
     if old:
