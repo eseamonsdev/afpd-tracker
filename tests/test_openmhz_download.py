@@ -206,8 +206,8 @@ class DownloadTest(unittest.TestCase):
             self.assertFalse((folder / calls[0]['original_filename']).exists())
             self.assertTrue((folder / calls[2]['original_filename']).exists())
 
-    def test_main_checkpoints_100_and_resumes_remaining_calls(self):
-        calls = [sample(1790755010 + i * 10, f'id-{i}') for i in range(103)]
+    def test_main_checkpoints_300_and_resumes_remaining_calls(self):
+        calls = [sample(1790755010 + i * 10, f'id-{i}') for i in range(303)]
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             pending = root / 'records-pending-review/openmhz-manifests'
@@ -219,10 +219,10 @@ class DownloadTest(unittest.TestCase):
             args = ['download', '--root', str(root), '--summary', str(root / 'summary.json')]
             with patch('sys.argv', args), patch.object(module, 'Downloader', return_value=downloader), patch.object(module, 'inspect_audio', return_value={'sha256': 'test', 'size_bytes': 12, 'audio_duration_seconds': 3}), patch.object(module.subprocess, 'run'):
                 module.main()
-                self.assertEqual(downloader.download.call_count, 100)
+                self.assertEqual(downloader.download.call_count, 300)
                 self.assertEqual(json.loads(source.read_text())['count'], 3)
                 module.main()
-                self.assertEqual(downloader.download.call_count, 103)
+                self.assertEqual(downloader.download.call_count, 303)
             self.assertFalse(source.exists())
 
     def test_selected_manifest_leaves_other_queued_day_untouched(self):
@@ -288,7 +288,7 @@ class DownloadTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory, patch.object(module.time, 'monotonic', side_effect=[10, 10.5, 20]), patch.object(module.time, 'sleep') as sleep:
             downloader.download(sample()['media_url'], Path(directory) / 'one.m4a')
             downloader.download(sample()['media_url'], Path(directory) / 'two.m4a')
-            sleep.assert_called_once_with(1.5)
+            sleep.assert_called_once_with(0.25)
 
     def test_html_response_is_not_saved_as_audio(self):
         class Response(io.BytesIO):
@@ -301,6 +301,20 @@ class DownloadTest(unittest.TestCase):
             with self.assertRaises(ValueError):
                 downloader.download(sample()['media_url'], output)
             self.assertFalse(output.exists())
+
+    def test_failed_download_also_keeps_750_ms_pause_before_next_attempt(self):
+        class Response(io.BytesIO):
+            headers = {'Content-Type': 'audio/mp4'}
+        downloader = module.Downloader()
+        downloader.opener = Mock()
+        downloader.opener.open.side_effect = [OSError('connection lost'), Response(b'0000ftyp0000')]
+        with tempfile.TemporaryDirectory() as directory, \
+             patch.object(module.time, 'monotonic', side_effect=[10, 10.1, 20]), \
+             patch.object(module.time, 'sleep') as sleep:
+            with self.assertRaises(OSError):
+                downloader.download(sample()['media_url'], Path(directory) / 'failed.m4a')
+            downloader.download(sample()['media_url'], Path(directory) / 'next.m4a')
+            self.assertAlmostEqual(sleep.call_args.args[0], 0.65)
 
     def test_partial_day_extension_preserves_existing_calls(self):
         with tempfile.TemporaryDirectory() as directory:

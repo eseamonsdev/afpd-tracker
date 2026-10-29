@@ -37,7 +37,8 @@ def record_status(day, talkgroup, name, status):
         pass
 
 MOUNTAIN = ZoneInfo('America/Denver')
-GAP_SECONDS = 2
+GAP_SECONDS = 0.75
+DEFAULT_BATCH_SIZE = 300
 MAX_AUDIO_BYTES = 20 * 1024 * 1024
 MAX_CALLS = 5000
 MEDIA_HOSTS = {'media.openmhz.com', 'media2.openmhz.com'}
@@ -157,7 +158,7 @@ class NoRedirects(urllib.request.HTTPRedirectHandler):
 
 
 class Downloader:
-    """One request at a time, two seconds after completion of the last attempt."""
+    """One request at a time, 750 ms after completion of the last attempt."""
     def __init__(self):
         self.finished_at = None
         self.opener = urllib.request.build_opener(NoRedirects())
@@ -367,7 +368,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, default=Path.cwd())
     parser.add_argument('--summary', type=Path, required=True)
-    parser.add_argument('--batch-size', type=int, default=100)
+    parser.add_argument('--batch-size', type=int, default=DEFAULT_BATCH_SIZE)
     parser.add_argument('--manifest', help='Process only this queued manifest filename')
     args = parser.parse_args()
     root = args.root.resolve()

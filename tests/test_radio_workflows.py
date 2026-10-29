@@ -15,6 +15,7 @@ from publish_radio_status import snapshot
 import transcribe_afpd_radio as core
 import transcribe_radio_batches as transcription
 import recover_verified_openmhz_audio as recovery
+import run_radio_audio as audio_runner
 
 
 DAY = '2026-10-02'
@@ -133,6 +134,31 @@ class PreparationTests(unittest.TestCase):
                       {'date': DAY, 'talkgroup': group, 'calls': [call(group)]})
             for branch in ('staging',):
                 self.assertEqual({r['talkgroup'] for r in snapshot(root, branch, 'idle')['rows']}, set(TALKGROUPS))
+
+
+class AudioRunnerTests(unittest.TestCase):
+    def test_publishes_after_300_calls_and_final_remainder_for_every_group(self):
+        for group in TALKGROUPS:
+            with self.subTest(group=group), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                manifest = root / 'queue.json'
+                manifest.write_text('queued')
+                summary = root / 'openmhz-download-summary.json'
+                batches = []
+                def download_batch(command, **kwargs):
+                    batch_size = int(command[command.index('--batch-size') + 1])
+                    processed = min(batch_size, 301 - sum(batches))
+                    batches.append(processed)
+                    summary.write_text('[]')
+                    if sum(batches) == 301:
+                        manifest.unlink()
+                with patch.object(audio_runner, 'prepare', return_value={'manifest': str(manifest)}), \
+                     patch.object(audio_runner.subprocess, 'run', side_effect=download_batch), \
+                     patch.object(audio_runner, 'publish') as publish, \
+                     patch.dict(audio_runner.os.environ, {'RUNNER_TEMP': tmp, 'GITHUB_STEP_SUMMARY': ''}):
+                    audio_runner.run(DAY, group, 'staging')
+                self.assertEqual(batches, [300, 1])
+                self.assertEqual(publish.call_count, 2)
 
 
 class TranscriptionTests(unittest.TestCase):

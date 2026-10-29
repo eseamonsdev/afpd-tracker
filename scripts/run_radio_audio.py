@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Download one date/talkgroup to R2, with paced fetches and 100-call commits."""
+"""Download one date/talkgroup to R2, with paced fetches and 300-call commits."""
 import argparse
 import json
 import os
@@ -8,6 +8,7 @@ import subprocess
 import sys
 
 from prepare_radio_day import prepare
+from download_openmhz_manifest import DEFAULT_BATCH_SIZE
 from radio_config import valid_branch, valid_day, valid_talkgroup
 
 
@@ -30,7 +31,7 @@ def run(day, talkgroup, branch, mode='download', proof=''):
         processed = True
         summary = str(Path(os.environ['RUNNER_TEMP']) / 'openmhz-download-summary.json')
         subprocess.run([sys.executable, '-u', 'scripts/download_openmhz_manifest.py',
-                        '--manifest', manifest.name, '--batch-size', '100', '--summary', summary], check=True)
+                        '--manifest', manifest.name, '--batch-size', str(DEFAULT_BATCH_SIZE), '--summary', summary], check=True)
         if os.environ.get('GITHUB_STEP_SUMMARY'):
             with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as output:
                 output.write(Path(summary).read_text() + '\n')
