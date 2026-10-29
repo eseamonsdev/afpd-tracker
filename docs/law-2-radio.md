@@ -42,11 +42,10 @@ underlying recording files.
 
 ## Sitemap and search exclusions
 
-The page uses `sitemap: false`, `eleventyExcludeFromCollections: true`, and a
-`noindex, nofollow` meta tag. No navigation links are added. The worker also adds
-`X-Robots-Tag: noindex, nofollow` to the page and Law 2 archive responses, including
-raw audio and transcript downloads. Do not block crawling in robots.txt: search
-engines need to read the noindex directive.
+The Law 2 page is linked on the site, included in the page sitemap, and permits
+search indexing. The worker retains `X-Robots-Tag: noindex, nofollow` on raw
+Law 2 archive responses, including audio and transcript downloads. Do not block
+archive crawling in robots.txt: search engines need to read the noindex directive.
 
 `data/discovery-exclusions.json` contains URL prefixes excluded from both page and
 document sitemaps. The PDF/CSV scanner skips matching folders before recursing.

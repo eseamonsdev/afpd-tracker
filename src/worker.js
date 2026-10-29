@@ -44,10 +44,8 @@ export default {
       if (audio) response = audio;
     }
 
-    // Review page and its raw recordings/transcripts remain directly accessible,
-    // but cooperating search engines should not index them.
-    if (/^\/law-2-radio(?:\/|$)/.test(url.pathname) ||
-        url.pathname.startsWith("/records/openmhz/openmhz-afpd-law-2-") ||
+    // Raw Law 2 recordings/transcripts remain accessible without search indexing.
+    if (url.pathname.startsWith("/records/openmhz/openmhz-afpd-law-2-") ||
         url.pathname.startsWith("/records/openmhz/law-2-")) {
       response = new Response(response.body, response);
       response.headers.set("X-Robots-Tag", "noindex, nofollow");
