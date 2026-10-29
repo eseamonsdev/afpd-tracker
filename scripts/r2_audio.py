@@ -108,7 +108,7 @@ def upload_new(root, client, bucket):
     return uploaded
 
 
-def hydrate(folder, client=None, bucket=None):
+def hydrate(folder, client=None, bucket=None, *, allow_metadata_only=False):
     data = json.loads((folder / 'calls.json').read_text())
     count = 0
     for call in data['calls']:
@@ -116,6 +116,8 @@ def hydrate(folder, client=None, bucket=None):
         if path.exists():
             continue
         if not stored_audio(call, folder.name):
+            if allow_metadata_only and not call.get('sha256') and not call.get('audio_storage'):
+                continue
             raise ValueError('Missing audio without verified R2 metadata: ' + str(path))
         if client is None:
             client, bucket = client_and_bucket()
@@ -137,3 +139,4 @@ if __name__ == '__main__':
     else:
         client, bucket = client_and_bucket()
         print(json.dumps({'uploaded_and_read_back_verified': upload_new(args.root, client, bucket), 'bucket': bucket}))
+

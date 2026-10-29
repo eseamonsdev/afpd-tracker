@@ -29,6 +29,45 @@ def manifest(calls=None):
 
 
 class DownloadTest(unittest.TestCase):
+    def test_metadata_inventory_survives_checkpoints_failures_and_resume(self):
+        calls = [sample(1790755010 + i * 10, f'id-{i}') for i in range(3)]
+        for i, call in enumerate(calls):
+            call.update(radio_ids=[str(14590000 + i)], audio_downloaded=False)
+        duplicate = {**calls[2], 'id': 'duplicate-source'}
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            folder = root / 'public/records/openmhz/openmhz-afpd-car-to-car-2026-09-30'
+            folder.mkdir(parents=True)
+            old = {**manifest(calls), 'duplicate_source_calls': [duplicate]}
+            (folder / 'calls.json').write_text(json.dumps(old))
+            source = root / '2026-09-30.json'
+            downloader = Mock()
+            def download(url, dest):
+                if url == calls[1]['media_url']:
+                    raise OSError('unavailable')
+                dest.write_bytes(b'0000ftyp0000')
+            downloader.download.side_effect = download
+            checked = {'sha256': 'test', 'size_bytes': 12, 'audio_duration_seconds': 3}
+            with patch.object(module, 'inspect_audio', return_value=checked):
+                source.write_text(json.dumps(manifest(calls[:2])))
+                result = module.import_manifest(root, source, downloader)
+                self.assertEqual((result['downloaded'], result['failed']), (1, 1))
+                saved = json.loads((folder / 'calls.json').read_text())
+                self.assertEqual(saved['count'], 3)
+                self.assertEqual([c['radio_ids'] for c in saved['calls']], [c['radio_ids'] for c in calls])
+                self.assertEqual(saved['duplicate_source_calls'][0]['id'], 'duplicate-source')
+                validation = json.loads((folder / 'validation.json').read_text())
+                self.assertFalse(validation['validated'])
+                self.assertEqual(validation['audio_pending_count'], 2)
+                source.write_text(json.dumps(manifest(calls[2:])))
+                module.import_manifest(root, source, downloader)
+            saved = json.loads((folder / 'calls.json').read_text())
+            self.assertEqual(saved['count'], 3)
+            self.assertEqual([c['audio_downloaded'] for c in saved['calls']], [True, False, True])
+            self.assertTrue(saved['duplicate_source_calls'][0]['audio_downloaded'])
+            self.assertEqual(saved['download_failure_count'], 1)
+            self.assertEqual(downloader.download.call_count, 3)
+
     def test_law2_import_uses_its_channel_folder_and_preserves_selection(self):
         call = sample()
         call.update(talkgroup=5922,
@@ -339,3 +378,4 @@ class DownloadTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+

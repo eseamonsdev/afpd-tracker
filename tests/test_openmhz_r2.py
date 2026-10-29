@@ -64,6 +64,22 @@ class R2Test(unittest.TestCase):
             upload_one(self.client, 'bucket', self.path, self.call, self.folder.name)
         self.assertEqual(self.client.puts, 0)
 
+    def test_metadata_only_hydration_is_opt_in_and_keeps_saved_audio_checks(self):
+        storage = upload_one(self.client, 'bucket', self.path, self.call, self.folder.name)
+        self.call['audio_storage'] = storage
+        pending = {'original_filename': 'dcfems-6001-1792908040.m4a'}
+        metadata = self.folder / 'calls.json'
+        metadata.write_text(json.dumps({'calls': [self.call, pending]}))
+        self.path.unlink()
+        self.assertEqual(hydrate(self.folder, self.client, 'bucket', allow_metadata_only=True), 1)
+        self.assertFalse((self.folder / pending['original_filename']).exists())
+        with self.assertRaisesRegex(ValueError, 'Missing audio'):
+            hydrate(self.folder, self.client, 'bucket')
+        pending['sha256'] = '0' * 64
+        metadata.write_text(json.dumps({'calls': [self.call, pending]}))
+        with self.assertRaisesRegex(ValueError, 'Missing audio'):
+            hydrate(self.folder, self.client, 'bucket', allow_metadata_only=True)
+
     def test_failed_readback_does_not_publish_manifest(self):
         subprocess.run(['git', 'init', '-q', str(self.root)], check=True)
         (self.root / '.gitignore').write_text('*.m4a\n')
@@ -92,3 +108,4 @@ class R2Test(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+

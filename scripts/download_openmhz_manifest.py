@@ -218,7 +218,9 @@ def import_manifest(root, source, downloader):
     if old and (old.get('date') != day or old.get('talkgroup') != talkgroup):
         raise ValueError('Existing archive identity does not match')
     if old:
-        hydrate(destination)
+        # Public calls.json can contain a complete metadata inventory before
+        # audio is downloaded. Restore saved audio without requiring pending rows.
+        hydrate(destination, allow_metadata_only=True)
     merged = {call['original_filename']: dict(call) for call in (old or {}).get('calls', [])}
     ids = {call['id']: name for name, call in merged.items() if call.get('id')}
     downloaded = skipped = 0
@@ -276,6 +278,7 @@ def import_manifest(root, source, downloader):
             downloaded += int(is_new)
             outstanding.pop(incoming['id'], None)
             call.pop('download_error', None)
+            call['audio_downloaded'] = True
             if 'media_url_status' in call:
                 call['media_url_status'] = 'download_validated'
             print(f'{day} [{position}/{len(data["calls"])}] OK {name}', flush=True)
@@ -304,14 +307,21 @@ def import_manifest(root, source, downloader):
         calls = []
         for name, entry in merged.items():
             call = normalize_call_metadata(entry, day)
-            checked = checked_audio.get(name) or inspect_audio(destination / name, call)
-            checked_audio[name] = checked
-            call.update(checked)
+            checked = checked_audio.get(name)
+            if checked is None and (destination / name).exists():
+                checked = inspect_audio(destination / name, call)
+            if checked is not None:
+                checked_audio[name] = checked
+                call.update(checked)
+                call['audio_downloaded'] = True
             calls.append(call)
         calls.sort(key=lambda call: (call['epoch'], call['id']))
         duplicates = [normalize_call_metadata(call, day) for call in duplicates]
         for duplicate in duplicates:
-            duplicate.update(checked_audio[duplicate['original_filename']])
+            checked = checked_audio.get(duplicate['original_filename'])
+            if checked is not None:
+                duplicate.update(checked)
+                duplicate['audio_downloaded'] = True
         start = datetime.combine(date.fromisoformat(day), day_time.min, MOUNTAIN)
         result = dict(old or {})
         result.update(schema_version=SCHEMA_VERSION, date=day, timezone='America/Denver', system='dcfems', talkgroup=talkgroup,
@@ -351,7 +361,9 @@ def import_manifest(root, source, downloader):
         validation = json.loads(validation_path.read_text()) if validation_path.exists() else {}
         validation.update(schema_version=SCHEMA_VERSION, date=day, timezone='America/Denver', system='dcfems',
                    talkgroup=talkgroup, count=len(calls), source_call_count=result['source_call_count'], downloaded=downloaded,
-                   skipped_existing=skipped, validated=True, coverage=result['coverage'],
+                   skipped_existing=skipped, validated=len(checked_audio) == len(calls),
+                   audio_validated_count=len(checked_audio), audio_pending_count=len(calls) - len(checked_audio),
+                   coverage=result['coverage'],
                    collected_through_utc=cutoff, minimum_pause_after_download_seconds=GAP_SECONDS)
         validation['source_duration_discrepancies'] = [call['original_filename'] for call in calls
                                                       if not call.get('source_duration_matches', True)]
@@ -412,3 +424,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
