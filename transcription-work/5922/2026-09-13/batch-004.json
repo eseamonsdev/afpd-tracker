@@ -1,0 +1,665 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-13",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1789292753.m4a": {
+      "index": 31,
+      "epoch": 1789292753,
+      "sha256": "e3f5606c6ee3f9de974fc2d6bdda76f87148bbac9344828cae1bffd899886b88",
+      "passes": {
+        "original": {
+          "text": "79 North, 1020 West, you're White News in Armada and you're building Charlie. No problem.",
+          "prompt": null,
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 79 North, 1020 West, you're White News in Armada and you're building Charlie.",
+              "avg_logprob": -0.513735409293856,
+              "no_speech_prob": 0.01800784468650818,
+              "compression_ratio": 1.0
+            },
+            {
+              "start": 5.0,
+              "end": 6.0,
+              "text": " No problem.",
+              "avg_logprob": -0.513735409293856,
+              "no_speech_prob": 0.01800784468650818,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "filtered": {
+          "text": "79 North, 1020 West, for White News and Armada, and your building, Charlie. No, it's not.",
+          "prompt": null,
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 30,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 79 North, 1020 West, for White News and Armada, and your building, Charlie.",
+              "avg_logprob": -0.5979299737561133,
+              "no_speech_prob": 0.02017364092171192,
+              "compression_ratio": 0.9888888888888889
+            },
+            {
+              "start": 5.0,
+              "end": 6.0,
+              "text": " No, it's not.",
+              "avg_logprob": -0.5979299737561133,
+              "no_speech_prob": 0.02017364092171192,
+              "compression_ratio": 0.9888888888888889
+            }
+          ]
+        },
+        "context": {
+          "text": "79 north, 1020 west. You're White News in Armada and you're building Charlie. No problem.",
+          "prompt": "5J44 central copy keys. But",
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.8,
+              "text": " 79 north, 1020 west. You're White News in Armada and you're building Charlie. No problem.",
+              "avg_logprob": -0.6559954239771917,
+              "no_speech_prob": 0.05408649891614914,
+              "compression_ratio": 0.9888888888888889
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789292762.m4a": {
+      "index": 32,
+      "epoch": 1789292762,
+      "sha256": "9bc41ec21533dd966b59e2baa425106f59273d0103085bb4ff7c8fc87652a0c6",
+      "passes": {
+        "original": {
+          "text": "Bye-bye.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.84,
+              "text": " Bye-bye.",
+              "avg_logprob": -1.0145130157470703,
+              "no_speech_prob": 0.31239545345306396,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "That's all.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " That's all.",
+              "avg_logprob": -1.0964127608707972,
+              "no_speech_prob": 0.3612166941165924,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "No problem.",
+          "prompt": "5J44 central copy keys. But 79 North, 1020 West, you're White News in Armada and you're building Charlie. No problem.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " No problem.",
+              "avg_logprob": -0.8053963879744211,
+              "no_speech_prob": 0.2987608313560486,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789292771.m4a": {
+      "index": 33,
+      "epoch": 1789292771,
+      "sha256": "802405f4884975b8c0bfd148a31bd1298d21636b33614d838bea7faf30329599",
+      "passes": {
+        "original": {
+          "text": "7 to 25, you can clear it out.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7 to 25, you can clear it out.",
+              "avg_logprob": -0.32097978775317854,
+              "no_speech_prob": 0.018986357375979424,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7 to 25, you can clear it out.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7 to 25, you can clear it out.",
+              "avg_logprob": -0.32504354073451114,
+              "no_speech_prob": 0.013256294652819633,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "context": {
+          "text": "7 to 25, you can clear it out.",
+          "prompt": "But 79 North, 1020 West, you're White News in Armada and you're building Charlie. No problem. Bye-bye.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7 to 25, you can clear it out.",
+              "avg_logprob": -0.2792299802486713,
+              "no_speech_prob": 0.002697681076824665,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789292774.m4a": {
+      "index": 34,
+      "epoch": 1789292774,
+      "sha256": "ad580af88e093723cab98462bd3fefbcf56ba52b3f25210e5640c6793acfe100",
+      "passes": {
+        "original": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.6812246640523275,
+              "no_speech_prob": 0.00885715801268816,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.828636238972346,
+              "no_speech_prob": 0.0174553282558918,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Bye-bye.",
+          "prompt": "79 North, 1020 West, you're White News in Armada and you're building Charlie. No problem. Bye-bye. 7 to 25, you can clear it out.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.659839357648577,
+              "no_speech_prob": 0.020948002114892006,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789293154.m4a": {
+      "index": 35,
+      "epoch": 1789293154,
+      "sha256": "b32abf9bd5bac458f19a85e208afe00dbb050dd3b233317650334aa16bd7e4e4",
+      "passes": {
+        "original": {
+          "text": "5J35 central copy pyrocess.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.32,
+              "text": " 5J35 central copy pyrocess.",
+              "avg_logprob": -0.7233717640240988,
+              "no_speech_prob": 0.006739357952028513,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J35 central copy pyrocess.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J35 central copy pyrocess.",
+              "avg_logprob": -0.7349632382392883,
+              "no_speech_prob": 0.006909538060426712,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        },
+        "context": {
+          "text": "5J35 central copy pyrocess.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.32,
+              "text": " 5J35 central copy pyrocess.",
+              "avg_logprob": -0.7233717640240988,
+              "no_speech_prob": 0.006739357952028513,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789293157.m4a": {
+      "index": 36,
+      "epoch": 1789293157,
+      "sha256": "f15264dab9ebe9abaaf2361676eae9462aab5c35698d12200453d8160adce936",
+      "passes": {
+        "original": {
+          "text": "A copy of my advice.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " A copy of my advice.",
+              "avg_logprob": -0.8250518374972873,
+              "no_speech_prob": 0.05024317651987076,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I can't be a fan of mine",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I can't be a fan of mine",
+              "avg_logprob": -0.6872461600737139,
+              "no_speech_prob": 0.05132297798991203,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "context": {
+          "text": "I copy a fire device.",
+          "prompt": "5J35 central copy pyrocess.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I copy a fire device.",
+              "avg_logprob": -0.6008464495340983,
+              "no_speech_prob": 0.037150949239730835,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789293160.m4a": {
+      "index": 37,
+      "epoch": 1789293160,
+      "sha256": "7479b5e8868dd52f0fbe9056d3d956322543976aaa305382a04c6ab7b6cccbc0",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.8642637252807617,
+              "no_speech_prob": 0.026036448776721954,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Kathy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " Kathy.",
+              "avg_logprob": -0.7453810691833496,
+              "no_speech_prob": 0.01346067525446415,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "5J35 central copy pyrocess. A copy of my advice.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5480757713317871,
+              "no_speech_prob": 0.020550759509205818,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789293359.m4a": {
+      "index": 38,
+      "epoch": 1789293359,
+      "sha256": "637da9109b7af85e0320d169e82ad4c0f0ce826018b414afcb4e83fca6c94d08",
+      "passes": {
+        "original": {
+          "text": "Thank you 44 right",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you 44 right",
+              "avg_logprob": -0.5741622958864484,
+              "no_speech_prob": 0.004429996013641357,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you. Forty-four, right?",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.6425771585532597,
+              "no_speech_prob": 0.005149624310433865,
+              "compression_ratio": 0.7837837837837838
+            },
+            {
+              "start": 1.0,
+              "end": 1.5,
+              "text": " Forty-four, right?",
+              "avg_logprob": -0.6425771585532597,
+              "no_speech_prob": 0.005149624310433865,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you 44 right",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you 44 right",
+              "avg_logprob": -0.5741622958864484,
+              "no_speech_prob": 0.004429996013641357,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789293361.m4a": {
+      "index": 39,
+      "epoch": 1789293361,
+      "sha256": "16d68627cf2ac6eb41a79674412d404f0de7c7e1ecc372b3bcc1da6ce40f0042",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7618826866149903,
+              "no_speech_prob": 0.051030173897743225,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.8405600547790527,
+              "no_speech_prob": 0.03368394449353218,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy",
+          "prompt": "Thank you 44 right",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy",
+              "avg_logprob": -0.6168799549341202,
+              "no_speech_prob": 0.01495780237019062,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1789293580.m4a": {
+      "index": 40,
+      "epoch": 1789293580,
+      "sha256": "a80f19198a45508d06b7c5af0f55d815f7a3d602deb9b78ec1271e51a00a9b9f",
+      "passes": {
+        "original": {
+          "text": "I'm j44 clear",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm j44 clear",
+              "avg_logprob": -0.5719714313745499,
+              "no_speech_prob": 0.016747070476412773,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "RJ44 clear.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " RJ44 clear.",
+              "avg_logprob": -0.7060436521257673,
+              "no_speech_prob": 0.029557516798377037,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm j44 clear",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm j44 clear",
+              "avg_logprob": -0.5719714313745499,
+              "no_speech_prob": 0.016747070476412773,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    }
+  }
+}
