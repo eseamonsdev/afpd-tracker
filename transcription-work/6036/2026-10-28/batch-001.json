@@ -1,0 +1,673 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-28",
+  "talkgroup": 6036,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6036-1793223374.m4a": {
+      "index": 1,
+      "epoch": 1793223374,
+      "sha256": "0b3c853a8228a238f1281dc4ef4530f104363f3d1b370d1dbac57692096c4cb5",
+      "passes": {
+        "original": {
+          "text": "See you next time. Bye.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " See you next time.",
+              "avg_logprob": -0.9144557565450668,
+              "no_speech_prob": 0.5925688147544861,
+              "compression_ratio": 0.7419354838709677
+            },
+            {
+              "start": 1.0,
+              "end": 1.5,
+              "text": " Bye.",
+              "avg_logprob": -0.9144557565450668,
+              "no_speech_prob": 0.5925688147544861,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you. Bye.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.9312586784362793,
+              "no_speech_prob": 0.6432706117630005,
+              "compression_ratio": 0.6521739130434783
+            },
+            {
+              "start": 1.0,
+              "end": 1.5,
+              "text": " Bye.",
+              "avg_logprob": -0.9312586784362793,
+              "no_speech_prob": 0.6432706117630005,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "context": {
+          "text": "See you next time. Bye.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " See you next time.",
+              "avg_logprob": -0.9144557565450668,
+              "no_speech_prob": 0.5925688147544861,
+              "compression_ratio": 0.7419354838709677
+            },
+            {
+              "start": 1.0,
+              "end": 1.5,
+              "text": " Bye.",
+              "avg_logprob": -0.9144557565450668,
+              "no_speech_prob": 0.5925688147544861,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6036-1793230403.m4a": {
+      "index": 2,
+      "epoch": 1793230403,
+      "sha256": "818fd4571a470c8d43096ee650fec4902bb97b5252d5e8464a1aa89a2cceb976",
+      "passes": {
+        "original": {
+          "text": "Take a coal all the way down to Bay Street and up North County.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.8,
+              "text": " Take a coal all the way down to Bay Street and up North County.",
+              "avg_logprob": -0.8077544073263804,
+              "no_speech_prob": 0.10647539794445038,
+              "compression_ratio": 0.9130434782608695
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Take coal all the way down Bay Street and up North County.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.84,
+              "text": " Take coal all the way down Bay Street and up North County.",
+              "avg_logprob": -0.6732012145221233,
+              "no_speech_prob": 0.05853038653731346,
+              "compression_ratio": 0.90625
+            }
+          ]
+        },
+        "context": {
+          "text": "Take a coal all the way down to Bay Street and up North County.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.8,
+              "text": " Take a coal all the way down to Bay Street and up North County.",
+              "avg_logprob": -0.8077544073263804,
+              "no_speech_prob": 0.10647539794445038,
+              "compression_ratio": 0.9130434782608695
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6036-1793233035.m4a": {
+      "index": 3,
+      "epoch": 1793233035,
+      "sha256": "15006f46c3991b00b0e158495a330d0ad5e6419ab73d9cb05c2b303c6e3c2aaa",
+      "passes": {
+        "original": {
+          "text": "Thanks for watching!",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thanks for watching!",
+              "avg_logprob": -0.8706184795924595,
+              "no_speech_prob": 0.9341568350791931,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.9123319387435913,
+              "no_speech_prob": 0.8544100522994995,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Thanks for watching!",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thanks for watching!",
+              "avg_logprob": -0.8706184795924595,
+              "no_speech_prob": 0.9341568350791931,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6036-1793233036.m4a": {
+      "index": 4,
+      "epoch": 1793233036,
+      "sha256": "2a0500181df171352d0d936c58f32b296c3fc37bca5925e1162e8128aa8829e1",
+      "passes": {
+        "original": {
+          "text": "Hey, I'll...",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey, I'll...",
+              "avg_logprob": -0.6821367740631104,
+              "no_speech_prob": 0.029655233025550842,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hey, I'll",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey, I'll",
+              "avg_logprob": -0.6447403601237706,
+              "no_speech_prob": 0.025382529944181442,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey, I'll...",
+          "prompt": "Thanks for watching!",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey, I'll...",
+              "avg_logprob": -0.5497302263975143,
+              "no_speech_prob": 0.027654459699988365,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6036-1793233879.m4a": {
+      "index": 5,
+      "epoch": 1793233879,
+      "sha256": "ffce681f1319813c979e6837b36db5096ae08ad6959af3f0398a20b69b1a02c1",
+      "passes": {
+        "original": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.5813781023025513,
+              "no_speech_prob": 0.014484263025224209,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.6473528891801834,
+              "no_speech_prob": 0.0336710549890995,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.5813781023025513,
+              "no_speech_prob": 0.014484263025224209,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6036-1793243152.m4a": {
+      "index": 6,
+      "epoch": 1793243152,
+      "sha256": "73d4a4c47a88b79497c54d7850668b7d28ca885678e433874afc1d0de519de1b",
+      "passes": {
+        "original": {
+          "text": "...tongue-yun.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " ...tongue-yun.",
+              "avg_logprob": -1.164915995164351,
+              "no_speech_prob": 0.09068100899457932,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you very much.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you very much.",
+              "avg_logprob": -1.1227078139781952,
+              "no_speech_prob": 0.17310325801372528,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "...tongue-yun.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " ...tongue-yun.",
+              "avg_logprob": -1.164915995164351,
+              "no_speech_prob": 0.09068100899457932,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6036-1793243160.m4a": {
+      "index": 7,
+      "epoch": 1793243160,
+      "sha256": "c7925864cc1ad0671c950c86689a150f701e02827f915a81be621b15046c20d1",
+      "passes": {
+        "original": {
+          "text": "Negative for me. I'm going to head over.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Negative for me. I'm going to head over.",
+              "avg_logprob": -0.4386735899107797,
+              "no_speech_prob": 0.05798986554145813,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Negative for me. I'm going to head over.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Negative for me. I'm going to head over.",
+              "avg_logprob": -0.49816759143556866,
+              "no_speech_prob": 0.03836795687675476,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        },
+        "context": {
+          "text": "Negative for me. I'm gonna head over.",
+          "prompt": "...tongue-yun.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Negative for me. I'm gonna head over.",
+              "avg_logprob": -0.3059477530992948,
+              "no_speech_prob": 0.02574886754155159,
+              "compression_ratio": 0.8222222222222222
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6036-1793243256.m4a": {
+      "index": 8,
+      "epoch": 1793243256,
+      "sha256": "8365fb96b86e369648a9e3c08f7c1ce4028cde1337f7f926b52f7f9a0387f09e",
+      "passes": {
+        "original": {
+          "text": "The garage is cracked again.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " The garage is cracked again.",
+              "avg_logprob": -0.3819201522403293,
+              "no_speech_prob": 0.01108004990965128,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "filtered": {
+          "text": "The garage is cracked again.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " The garage is cracked again.",
+              "avg_logprob": -0.5272679858737521,
+              "no_speech_prob": 0.016500085592269897,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "context": {
+          "text": "The garage is cracked again.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " The garage is cracked again.",
+              "avg_logprob": -0.3819201522403293,
+              "no_speech_prob": 0.01108004990965128,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6036-1793243692.m4a": {
+      "index": 9,
+      "epoch": 1793243692,
+      "sha256": "1642988a51560cf2baaf0036629db0cf14f994179d372c95d1ba1e7c001e2f71",
+      "passes": {
+        "original": {
+          "text": "You guys need contact with Pitt.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You guys need contact with Pitt.",
+              "avg_logprob": -0.5122751533985138,
+              "no_speech_prob": 0.0315234549343586,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "filtered": {
+          "text": "If you guys need contact with Pitt",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " If you guys need contact with Pitt",
+              "avg_logprob": -0.46014186143875124,
+              "no_speech_prob": 0.032605066895484924,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "context": {
+          "text": "You guys need contact with Pitt.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You guys need contact with Pitt.",
+              "avg_logprob": -0.5122751533985138,
+              "no_speech_prob": 0.0315234549343586,
+              "compression_ratio": 0.8
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6036-1793243715.m4a": {
+      "index": 10,
+      "epoch": 1793243715,
+      "sha256": "0cbbb0c8a3ec6d6804241bb291c3e792d144822156d8a1250c10b4dc253efdbe",
+      "passes": {
+        "original": {
+          "text": "Since you're already with him, just double-check that he took a picture of the phone number Samuel was trying to contact her on, just to make sure that we have the right ones.",
+          "prompt": null,
+          "duration_seconds": 9.472,
+          "token_limit": 100,
+          "token_count": 43,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.12,
+              "text": " Since you're already with him, just double-check that he took a picture of the phone number",
+              "avg_logprob": -0.2259288335388357,
+              "no_speech_prob": 0.02165435068309307,
+              "compression_ratio": 1.3461538461538463
+            },
+            {
+              "start": 5.12,
+              "end": 9.08,
+              "text": " Samuel was trying to contact her on, just to make sure that we have the right ones.",
+              "avg_logprob": -0.2259288335388357,
+              "no_speech_prob": 0.02165435068309307,
+              "compression_ratio": 1.3461538461538463
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Okay, since you're already with him, just double check that he took a picture of the phone number Samuel was trying to contact her on, just to make sure that we have the right one.",
+          "prompt": null,
+          "duration_seconds": 9.472,
+          "token_limit": 100,
+          "token_count": 42,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " Okay, since you're already with him, just double check that he took a picture of the phone number Samuel was trying to contact her on, just to make sure that we have the right one.",
+              "avg_logprob": -0.2133011956547582,
+              "no_speech_prob": 0.01854034885764122,
+              "compression_ratio": 1.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey, since you're already with him, just double check that he took a picture of the phone number Samuel was trying to contact her on, just to make sure that we have the right one.",
+          "prompt": "You guys need contact with Pitt.",
+          "duration_seconds": 9.472,
+          "token_limit": 100,
+          "token_count": 42,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " Hey, since you're already with him, just double check that he took a picture of the phone number Samuel was trying to contact her on, just to make sure that we have the right one.",
+              "avg_logprob": -0.15550724919452225,
+              "no_speech_prob": 0.011431565508246422,
+              "compression_ratio": 1.335820895522388
+            }
+          ]
+        }
+      }
+    }
+  }
+}
