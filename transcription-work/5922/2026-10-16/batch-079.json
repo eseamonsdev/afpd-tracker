@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-16",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792195151.m4a": {
+      "index": 789,
+      "epoch": 1792195151,
+      "sha256": "a611b7cf252e5ef9bba1bdf64369de369f024aa4433a967085e9138c30edfbef",
+      "passes": {
+        "original": {
+          "text": "5J38, go for it.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J38, go for it.",
+              "avg_logprob": -0.6558590585535223,
+              "no_speech_prob": 0.07384757697582245,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792195156.m4a": {
+      "index": 790,
+      "epoch": 1792195156,
+      "sha256": "44c77cd7e02f03f3c6882c9adf81069421a02fca864d625a21fa132b3df93849",
+      "passes": {
+        "original": {
+          "text": "Thirty-eight, one-four.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thirty-eight, one-four.",
+              "avg_logprob": -0.9903602166609331,
+              "no_speech_prob": 0.04406904801726341,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thirty-eight, four-four.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thirty-eight, four-four.",
+              "avg_logprob": -0.9471246329220858,
+              "no_speech_prob": 0.0928436741232872,
+              "compression_ratio": 0.8275862068965517
+            }
+          ]
+        },
+        "context": {
+          "text": "5J38, go for it.",
+          "prompt": "5J38, go for it.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J38, go for it.",
+              "avg_logprob": -0.38447883996096527,
+              "no_speech_prob": 0.029105985537171364,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    }
+  }
+}
