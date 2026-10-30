@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-11",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791768052.m4a": {
+      "index": 1041,
+      "epoch": 1791768052,
+      "sha256": "e296fc7c05949e985a4aa88a84d64f5e39d333e1c912cea9825e2f2b4e11a84f",
+      "passes": {
+        "original": {
+          "text": "Happy as well.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy as well.",
+              "avg_logprob": -0.522870489529201,
+              "no_speech_prob": 0.02362927235662937,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791768090.m4a": {
+      "index": 1042,
+      "epoch": 1791768090,
+      "sha256": "2977e3bfdb54739f8be609fe0d5a45cc37ce18bf3937c347b634b2f4060c3440",
+      "passes": {
+        "original": {
+          "text": "5G44 clear.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G44 clear.",
+              "avg_logprob": -0.5591273456811905,
+              "no_speech_prob": 0.027169249951839447,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5,844 clear.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5,844 clear.",
+              "avg_logprob": -0.7567760679456923,
+              "no_speech_prob": 0.02897522784769535,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "5J44, clear.",
+          "prompt": "5J52, I'll be clear in 1042. Have a good night. Happy as well.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J44, clear.",
+              "avg_logprob": -0.46654346254136825,
+              "no_speech_prob": 0.0035923696123063564,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    }
+  }
+}

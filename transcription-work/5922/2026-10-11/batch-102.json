@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-11",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791766690.m4a": {
+      "index": 1015,
+      "epoch": 1791766690,
+      "sha256": "ddd8cf7fb10269bfd757be64d9fcea3da6be545aaf74aa073d3c13d4e2cbb133",
+      "passes": {
+        "original": {
+          "text": "seventy-eight seventy-eight",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " seventy-eight seventy-eight",
+              "avg_logprob": -0.9561503728230795,
+              "no_speech_prob": 0.041831206530332565,
+              "compression_ratio": 1.08
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791766692.m4a": {
+      "index": 1016,
+      "epoch": 1791766692,
+      "sha256": "87951c5386cad3bd595b30460a1793feda7245806eb43023bf6eaac3376dae57",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.5354330539703369,
+              "no_speech_prob": 0.02526159957051277,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791766726.m4a": {
+      "index": 1017,
+      "epoch": 1791766726,
+      "sha256": "55344b262a664c697131b991763945994c72705de4322461d053a00121dec9e4",
+      "passes": {
+        "original": {
+          "text": "5J51, Cook 4.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.5,
+              "text": " 5J51, Cook 4.",
+              "avg_logprob": -0.5778412699699402,
+              "no_speech_prob": 0.01825469546020031,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791766729.m4a": {
+      "index": 1018,
+      "epoch": 1791766729,
+      "sha256": "ad6725d95f0007e5eb4fc670088466c5274d898e4a164838a63ff470d12d4270",
+      "passes": {
+        "original": {
+          "text": "Go for it, just me.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it, just me.",
+              "avg_logprob": -0.7550962328910827,
+              "no_speech_prob": 0.15230469405651093,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it. Just me.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.8887371321519216,
+              "no_speech_prob": 0.06611943989992142,
+              "compression_ratio": 0.7037037037037037
+            },
+            {
+              "start": 1.0,
+              "end": 1.5,
+              "text": " Just me.",
+              "avg_logprob": -0.8887371321519216,
+              "no_speech_prob": 0.06611943989992142,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "Cook 4. This is me.",
+          "prompt": "seventy-eight seventy-eight Copy. 5J51, Cook 4.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Cook 4. This is me.",
+              "avg_logprob": -0.5830320954322815,
+              "no_speech_prob": 0.04440797492861748,
+              "compression_ratio": 0.76
+            }
+          ]
+        }
+      }
+    }
+  }
+}
