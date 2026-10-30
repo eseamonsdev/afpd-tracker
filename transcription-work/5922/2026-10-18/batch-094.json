@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-18",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792375117.m4a": {
+      "index": 935,
+      "epoch": 1792375117,
+      "sha256": "f04f18bf05d689902a7294203368fe68e80c9524c0280ce345c6619b57473b59",
+      "passes": {
+        "original": {
+          "text": "5G46, go for it.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G46, go for it.",
+              "avg_logprob": -0.5555162646553733,
+              "no_speech_prob": 0.027668051421642303,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792375120.m4a": {
+      "index": 936,
+      "epoch": 1792375120,
+      "sha256": "c268405c5d002f6f4cdf5084aa88d1a00e61280b1b8994312fe424dcbf260af2",
+      "passes": {
+        "original": {
+          "text": "For four to six",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " For four to six",
+              "avg_logprob": -0.7883121115820748,
+              "no_speech_prob": 0.2804199159145355,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "before we start.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " before we start.",
+              "avg_logprob": -1.206101315362113,
+              "no_speech_prob": 0.36119431257247925,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "5G46, go for it.",
+          "prompt": "5G46, go for it.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G46, go for it.",
+              "avg_logprob": -0.6906134432012384,
+              "no_speech_prob": 0.1787606179714203,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    }
+  }
+}
