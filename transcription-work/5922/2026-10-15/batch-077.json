@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-15",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792097148.m4a": {
+      "index": 763,
+      "epoch": 1792097148,
+      "sha256": "d43a3e3b75bc778eef0bedc7431d5495458fd956e49d47b8f85e1e50d36ed882",
+      "passes": {
+        "original": {
+          "text": "This is 7J17D, 1042.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " This is 7J17D, 1042.",
+              "avg_logprob": -0.5660577920766977,
+              "no_speech_prob": 0.06045756861567497,
+              "compression_ratio": 0.7692307692307693
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792097151.m4a": {
+      "index": 764,
+      "epoch": 1792097151,
+      "sha256": "1dc0a18879e50502bf38f8cbcb378ec24bf82f4118fbb71cfdd88cbe85222986",
+      "passes": {
+        "original": {
+          "text": "Copy 7G, 170.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy 7G, 170.",
+              "avg_logprob": -0.7088560528225369,
+              "no_speech_prob": 0.05904192849993706,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792097157.m4a": {
+      "index": 765,
+      "epoch": 1792097157,
+      "sha256": "b84f80a89f74587bd2f1c540b3fd26d8d5c5648e20cffcadbe592f66cb8eba42",
+      "passes": {
+        "original": {
+          "text": "586 cleared.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 586 cleared.",
+              "avg_logprob": -0.7062840291431972,
+              "no_speech_prob": 0.031351909041404724,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "586 cleared.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 586 cleared.",
+              "avg_logprob": -0.6780046565192086,
+              "no_speech_prob": 0.019996533170342445,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "586 cleared.",
+          "prompt": "This is 7J17D, 1042. Copy 7G, 170.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 586 cleared.",
+              "avg_logprob": -0.5208575555256435,
+              "no_speech_prob": 0.0034567946568131447,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    }
+  }
+}
