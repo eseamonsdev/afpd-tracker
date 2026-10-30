@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-19",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792444749.m4a": {
+      "index": 806,
+      "epoch": 1792444749,
+      "sha256": "bfe3b8b6e6c0181a5b3a876d8a7c1b44b72b7920c9003b7c2337bdcc77c2a28a",
+      "passes": {
+        "original": {
+          "text": "5J52, copy, follow-up by 21 on forecast.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J52, copy, follow-up by 21 on forecast.",
+              "avg_logprob": -0.5373361811918371,
+              "no_speech_prob": 0.009704219177365303,
+              "compression_ratio": 0.851063829787234
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792444753.m4a": {
+      "index": 807,
+      "epoch": 1792444753,
+      "sha256": "54b8abecbce2b7c57d3e6d2ad5e08193fa383c50ee4289cf85538163e95b0f80",
+      "passes": {
+        "original": {
+          "text": "I can't feel for ten.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I can't feel for ten.",
+              "avg_logprob": -0.7855263769626617,
+              "no_speech_prob": 0.060138095170259476,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I copy of the code.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I copy of the code.",
+              "avg_logprob": -0.7757812605963813,
+              "no_speech_prob": 0.03870399296283722,
+              "compression_ratio": 0.76
+            }
+          ]
+        },
+        "context": {
+          "text": "I copy, I'll pretend.",
+          "prompt": "5J52, copy, follow-up by 21 on forecast.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I copy, I'll pretend.",
+              "avg_logprob": -0.6998015820980072,
+              "no_speech_prob": 0.028278959915041924,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    }
+  }
+}

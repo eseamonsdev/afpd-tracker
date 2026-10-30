@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-19",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792443482.m4a": {
+      "index": 784,
+      "epoch": 1792443482,
+      "sha256": "1783ddd524dacbe282e9a2ed8c8bc7bcd02df1602eb82310a4bd4c1040614aed",
+      "passes": {
+        "original": {
+          "text": "Hey, King Bay 21 Central, copy. Case citizen contacts by phone off the test.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.58,
+              "text": " Hey, King Bay 21 Central, copy.",
+              "avg_logprob": -0.7270256695540055,
+              "no_speech_prob": 0.027562526986002922,
+              "compression_ratio": 0.9620253164556962
+            },
+            {
+              "start": 2.58,
+              "end": 4.4,
+              "text": " Case citizen contacts by phone off the test.",
+              "avg_logprob": -0.7270256695540055,
+              "no_speech_prob": 0.027562526986002922,
+              "compression_ratio": 0.9620253164556962
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792443488.m4a": {
+      "index": 785,
+      "epoch": 1792443488,
+      "sha256": "e46e76bfd99ef0f638a9c78c759551d0d0249ff0836ee402833e5ace6715b383",
+      "passes": {
+        "original": {
+          "text": "It's one of one copy.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " It's one of one copy.",
+              "avg_logprob": -0.6555702388286591,
+              "no_speech_prob": 0.08186984062194824,
+              "compression_ratio": 0.84
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792443528.m4a": {
+      "index": 786,
+      "epoch": 1792443528,
+      "sha256": "fd1973a81f9856cb44603312c1202f690cee59a3f9861ee19ae01c41174692a5",
+      "passes": {
+        "original": {
+          "text": "Right, I'm here, yeah.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Right, I'm here, yeah.",
+              "avg_logprob": -0.6027006019245494,
+              "no_speech_prob": 0.12802070379257202,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I see it from the area.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I see it from the area.",
+              "avg_logprob": -0.746654087305069,
+              "no_speech_prob": 0.09724891185760498,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "context": {
+          "text": "Right, I'm here, yeah.",
+          "prompt": "Hey, King Bay 21 Central, copy. Case citizen contacts by phone off the test. It's one of one copy.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Right, I'm here, yeah.",
+              "avg_logprob": -0.5924145741896196,
+              "no_speech_prob": 0.03687028959393501,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    }
+  }
+}
