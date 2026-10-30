@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-16",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792167537.m4a": {
+      "index": 321,
+      "epoch": 1792167537,
+      "sha256": "5dc60fbf5683bf8e7c69dc01932faaadf3cec97c95bd0ca01e027970e0114dd6",
+      "passes": {
+        "original": {
+          "text": "Page Lane and Canyon Road Tango 876 Hotel",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.48,
+              "text": " Page Lane and Canyon Road Tango 876 Hotel",
+              "avg_logprob": -0.3566199907889733,
+              "no_speech_prob": 0.026826689019799232,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Page Lane and Canyon Road Tango 876 Hotel",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.5200000000000005,
+              "text": " Page Lane and Canyon Road Tango 876 Hotel",
+              "avg_logprob": -0.364520210486192,
+              "no_speech_prob": 0.017048755660653114,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        },
+        "context": {
+          "text": "Page Lane and Canyon Road, Tango 876 Hotel",
+          "prompt": "5J31 traffic Bye.",
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.48,
+              "text": " Page Lane and Canyon Road, Tango 876 Hotel",
+              "avg_logprob": -0.28702181790556225,
+              "no_speech_prob": 0.027547238394618034,
+              "compression_ratio": 0.84
+            }
+          ]
+        }
+      }
+    }
+  }
+}
