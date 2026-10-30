@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-23",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792820500.m4a": {
+      "index": 1576,
+      "epoch": 1792820500,
+      "sha256": "a5f21da759dc4c0062093d745c5fd09e78f37c4120741d038e1eddb5d2a8db11",
+      "passes": {
+        "original": {
+          "text": "Thank you. 10-4.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.6842467139164606,
+              "no_speech_prob": 0.04682935029268265,
+              "compression_ratio": 0.6666666666666666
+            },
+            {
+              "start": 1.0,
+              "end": 1.02,
+              "text": " 10-4.",
+              "avg_logprob": -0.6842467139164606,
+              "no_speech_prob": 0.04682935029268265,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792820504.m4a": {
+      "index": 1577,
+      "epoch": 1792820504,
+      "sha256": "3528e5cadcd1d9c3cfdb9f51d4285b3a5569aca80fa2fb1333c957a7ffc55d86",
+      "passes": {
+        "original": {
+          "text": "7830 also.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.44,
+              "text": " 7830 also.",
+              "avg_logprob": -1.0333472320011683,
+              "no_speech_prob": 0.03172944113612175,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792820506.m4a": {
+      "index": 1578,
+      "epoch": 1792820506,
+      "sha256": "82d881b131fc8a1e2fc34130ea1af83ae94264fd209607910765a35467ef347a",
+      "passes": {
+        "original": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.3004993200302124,
+              "no_speech_prob": 0.024493752047419548,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792820517.m4a": {
+      "index": 1579,
+      "epoch": 1792820517,
+      "sha256": "8f7b126dc0dd011fd3dde48c6ca634f2282b8a28e4187052a97dd04cab862fa3",
+      "passes": {
+        "original": {
+          "text": "Oh",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Oh",
+              "avg_logprob": -1.020208328962326,
+              "no_speech_prob": 0.09807880222797394,
+              "compression_ratio": 0.2
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -1.0264288697923933,
+              "no_speech_prob": 0.13100625574588776,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Hopefully.",
+          "prompt": "Thank you. 10-4. 7830 also. copy",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Hopefully.",
+              "avg_logprob": -1.3175813674926757,
+              "no_speech_prob": 0.10001048445701599,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792820524.m4a": {
+      "index": 1580,
+      "epoch": 1792820524,
+      "sha256": "3eb22407c52352549ed417f7c0eb5010407899f407441fd528844000eedc4464",
+      "passes": {
+        "original": {
+          "text": "All units check mobile for ETL vehicles that fly out of EJ.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.36,
+              "text": " All units check mobile for ETL vehicles that fly out of EJ.",
+              "avg_logprob": -0.6226734320322672,
+              "no_speech_prob": 0.014937476254999638,
+              "compression_ratio": 0.8805970149253731
+            }
+          ]
+        }
+      }
+    }
+  }
+}
