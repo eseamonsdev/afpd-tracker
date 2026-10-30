@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-28",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1790642980.m4a": {
+      "index": 1008,
+      "epoch": 1790642980,
+      "sha256": "b65cc93f729e8fe522374071c1b7aef96dff0ac2a7f34802c03c3e426e12dde2",
+      "passes": {
+        "original": {
+          "text": "5J38, show me where I have to be address.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J38, show me where I have to be address.",
+              "avg_logprob": -0.8020859956741333,
+              "no_speech_prob": 0.03912040591239929,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J38 is showing right together",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5J38 is showing right together",
+              "avg_logprob": -1.111035668849945,
+              "no_speech_prob": 0.10766922682523727,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "context": {
+          "text": "5J38, show me where I have to be address.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J38, show me where I have to be address.",
+              "avg_logprob": -0.8020859956741333,
+              "no_speech_prob": 0.03912040591239929,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790643096.m4a": {
+      "index": 1010,
+      "epoch": 1790643096,
+      "sha256": "4dd5edaeda0e74d17e7f1bc8f2068da41933bc1c66e0f6caaaec6075a15c9da8",
+      "passes": {
+        "original": {
+          "text": "",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 0,
+          "token_cap_reached": false,
+          "segments": []
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -1.092367172241211,
+              "no_speech_prob": 0.42950439453125,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 0,
+          "token_cap_reached": false,
+          "segments": []
+        }
+      }
+    }
+  }
+}
