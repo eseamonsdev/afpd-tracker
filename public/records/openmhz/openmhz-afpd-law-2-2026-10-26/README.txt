@@ -1,7 +1,7 @@
 OpenMHz Law 2 Northeast (5922), 2026-10-26, America/Denver.
 Metadata schema: 1.
-Coverage: unknown; collected through unknown.
-1195 unique audio files; 1195 source call entries.
+Coverage: unknown; collected through 2026-10-27T06:00:00Z.
+1473 unique audio files; 1473 source call entries.
 Source: OpenMHz (https://openmhz.com/). Original audio bytes and filenames retained.
 calls.json: chronological call metadata, original source IDs/labels, timestamps and audio checks.
 rows.json: source labels in chronological unique-audio order.
