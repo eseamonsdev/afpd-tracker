@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-09",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791551069.m4a": {
+      "index": 291,
+      "epoch": 1791551069,
+      "sha256": "a9dc015915db8469ec2782926f8a42e130d256bc0064f9950047b265388aae43",
+      "passes": {
+        "original": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.6591138362884521,
+              "no_speech_prob": 0.011490513570606709,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791551104.m4a": {
+      "index": 292,
+      "epoch": 1791551104,
+      "sha256": "d7470e9e2fac05006c6609c818944cfa3c0d3bb8cb1c3aa7f26c232c172dc306",
+      "passes": {
+        "original": {
+          "text": "5J6, you can clear off police units.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J6, you can clear off police units.",
+              "avg_logprob": -0.6871250442096165,
+              "no_speech_prob": 0.05813441425561905,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I just think you can clear up police units.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.12,
+              "text": " I just think you can clear up police units.",
+              "avg_logprob": -0.6223695461566632,
+              "no_speech_prob": 0.037507422268390656,
+              "compression_ratio": 0.8431372549019608
+            }
+          ]
+        },
+        "context": {
+          "text": "I just think you can clear up police units.",
+          "prompt": "In 15 hours, I'll be switching the service. Happy.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " I just think you can clear up police units.",
+              "avg_logprob": -0.6319539180168738,
+              "no_speech_prob": 0.07447770982980728,
+              "compression_ratio": 0.8431372549019608
+            }
+          ]
+        }
+      }
+    }
+  }
+}
