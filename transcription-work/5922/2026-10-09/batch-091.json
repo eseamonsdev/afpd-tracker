@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-09",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791575765.m4a": {
+      "index": 908,
+      "epoch": 1791575765,
+      "sha256": "cd01de785418ce9c574f6c0969440a9a36120a5b2d787200859f15254a21d739",
+      "passes": {
+        "original": {
+          "text": "5J32, copy domestic, bye phone.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5J32, copy domestic, bye phone.",
+              "avg_logprob": -0.5487045324765719,
+              "no_speech_prob": 0.04534364491701126,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791575777.m4a": {
+      "index": 909,
+      "epoch": 1791575777,
+      "sha256": "30e449336e8e17123fe8123beb1ea1aa954e765a301b9088f9992998140fd891",
+      "passes": {
+        "original": {
+          "text": "5J32.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5J32.",
+              "avg_logprob": -0.5880765744618007,
+              "no_speech_prob": 0.07989972829818726,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791575782.m4a": {
+      "index": 910,
+      "epoch": 1791575782,
+      "sha256": "688e1edc343c931be7b9713f02cb551821e8100742cecbb0675d12f90157b6d1",
+      "passes": {
+        "original": {
+          "text": "Ready to try coffee?",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Ready to try coffee?",
+              "avg_logprob": -0.5226126164197922,
+              "no_speech_prob": 0.007074333261698484,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Ready to try coffee?",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Ready to try coffee?",
+              "avg_logprob": -0.869974747300148,
+              "no_speech_prob": 0.0026129360776394606,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "Ready to try, copy.",
+          "prompt": "5J32, copy domestic, bye phone. 5J32.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Ready to try, copy.",
+              "avg_logprob": -0.49883831871880424,
+              "no_speech_prob": 0.031177593395113945,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    }
+  }
+}
