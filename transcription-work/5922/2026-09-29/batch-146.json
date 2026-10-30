@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-29",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1790737934.m4a": {
+      "index": 1451,
+      "epoch": 1790737934,
+      "sha256": "3279ead3d488aade7e0e7c1a8796903a2f570d04cd54be5e6392b6241f7052bd",
+      "passes": {
+        "original": {
+          "text": "This is going to be about 250 South, 500 East, local Sierra, 844 Bravo Lima.",
+          "prompt": null,
+          "duration_seconds": 9.472,
+          "token_limit": 100,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " This is going to be about 250 South, 500 East, local Sierra, 844 Bravo Lima.",
+              "avg_logprob": -0.33539161733959033,
+              "no_speech_prob": 0.06758987158536911,
+              "compression_ratio": 0.9382716049382716
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It's going to be about 250 south, 500 east, local Sierra, 844 Bravo Lima.",
+          "prompt": null,
+          "duration_seconds": 9.472,
+          "token_limit": 100,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " It's going to be about 250 south, 500 east, local Sierra, 844 Bravo Lima.",
+              "avg_logprob": -0.34547641484633734,
+              "no_speech_prob": 0.036625564098358154,
+              "compression_ratio": 0.9240506329113924
+            }
+          ]
+        },
+        "context": {
+          "text": "It's going to be about 250 south, 500 east, local Sierra, 8-4, 4 Bravo Lima.",
+          "prompt": "7-0 27 you can call out follow up I'll do 53 traffic.",
+          "duration_seconds": 9.472,
+          "token_limit": 100,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " It's going to be about 250 south, 500 east, local Sierra, 8-4, 4 Bravo Lima.",
+              "avg_logprob": -0.42654316012675947,
+              "no_speech_prob": 0.017771467566490173,
+              "compression_ratio": 0.926829268292683
+            }
+          ]
+        }
+      }
+    }
+  }
+}
