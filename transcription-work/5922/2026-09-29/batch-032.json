@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-29",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1790695683.m4a": {
+      "index": 314,
+      "epoch": 1790695683,
+      "sha256": "2b9c9b5e7c4ba064096eb9a5110a1d8cead938bda23dc3e990e1d793106d8803",
+      "passes": {
+        "original": {
+          "text": "5G30, copy density.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G30, copy density.",
+              "avg_logprob": -0.432981812953949,
+              "no_speech_prob": 0.010621580295264721,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790695687.m4a": {
+      "index": 315,
+      "epoch": 1790695687,
+      "sha256": "ba28f7315ae681f166e848669409af872b9a8c77d2bb3651d9b25cbb8641aec4",
+      "passes": {
+        "original": {
+          "text": "31.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 31.",
+              "avg_logprob": -0.9065550804138184,
+              "no_speech_prob": 0.08841504156589508,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "filtered": {
+          "text": "There you go.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " There you go.",
+              "avg_logprob": -1.019051926476615,
+              "no_speech_prob": 0.08454345911741257,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "31.",
+          "prompt": "5G30, copy density.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 31.",
+              "avg_logprob": -0.7955631256103516,
+              "no_speech_prob": 0.10411645472049713,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        }
+      }
+    }
+  }
+}
