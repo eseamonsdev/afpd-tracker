@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-23",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792787919.m4a": {
+      "index": 829,
+      "epoch": 1792787919,
+      "sha256": "32cdced57305acb6669b0e9e4823e48861c5f0ad6e106ddb92d2edd07e8cca07",
+      "passes": {
+        "original": {
+          "text": "5J80, show me how to follow up at Washington Avenue.",
+          "prompt": null,
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 5J80, show me how to follow up at Washington Avenue.",
+              "avg_logprob": -0.4713145424337948,
+              "no_speech_prob": 0.04475308209657669,
+              "compression_ratio": 0.9285714285714286
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J80, show me how to follow up at Washington Avenue.",
+          "prompt": null,
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " 5J80, show me how to follow up at Washington Avenue.",
+              "avg_logprob": -0.3516546698177562,
+              "no_speech_prob": 0.0712602287530899,
+              "compression_ratio": 0.9285714285714286
+            }
+          ]
+        },
+        "context": {
+          "text": "5J80, show me how to follow up at Washington Avenue.",
+          "prompt": null,
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 5J80, show me how to follow up at Washington Avenue.",
+              "avg_logprob": -0.4713145424337948,
+              "no_speech_prob": 0.04475308209657669,
+              "compression_ratio": 0.9285714285714286
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792787928.m4a": {
+      "index": 830,
+      "epoch": 1792787928,
+      "sha256": "404879d73e33f60a69ce060f85e402418a9518779d55b783c88373b684d94002",
+      "passes": {
+        "original": {
+          "text": "Copy. Deal on checks.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy. Deal on checks.",
+              "avg_logprob": -0.5678700341118706,
+              "no_speech_prob": 0.0429808683693409,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    }
+  }
+}
