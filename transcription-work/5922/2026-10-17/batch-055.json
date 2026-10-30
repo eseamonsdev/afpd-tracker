@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-17",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792263508.m4a": {
+      "index": 541,
+      "epoch": 1792263508,
+      "sha256": "4d0a4d10c524f7f0a38d5d095dbdb4a13d680fb79ea024f071606d6b2d1c11a3",
+      "passes": {
+        "original": {
+          "text": "Oak Road West and Cedar Hills Drive on tango nine zero zero papa papa",
+          "prompt": null,
+          "duration_seconds": 6.784,
+          "token_limit": 79,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " Oak Road West and Cedar Hills Drive on tango nine zero zero papa papa",
+              "avg_logprob": -0.4225173518061638,
+              "no_speech_prob": 0.0745253786444664,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Oak Road West and Cedar Hills Drive on tango nine zero zero papa papa",
+          "prompt": null,
+          "duration_seconds": 6.784,
+          "token_limit": 79,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.040000000000001,
+              "text": " Oak Road West and Cedar Hills Drive on tango nine zero zero papa papa",
+              "avg_logprob": -0.4199971124529839,
+              "no_speech_prob": 0.05397482588887215,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "Oak Road West and Cedar Hills Drive on Tango 9-0. Zero Papa, Papa.",
+          "prompt": "5J40 traffic Bye, J-40.",
+          "duration_seconds": 6.784,
+          "token_limit": 79,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " Oak Road West and Cedar Hills Drive on Tango 9-0. Zero Papa, Papa.",
+              "avg_logprob": -0.459763839840889,
+              "no_speech_prob": 0.020278213545680046,
+              "compression_ratio": 0.9428571428571428
+            }
+          ]
+        }
+      }
+    }
+  }
+}
