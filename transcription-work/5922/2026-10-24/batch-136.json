@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-24",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792897543.m4a": {
+      "index": 1354,
+      "epoch": 1792897543,
+      "sha256": "a8c2a43b4ba44348f6733a063538ffa4026245a887848d5ed17ce2f4b0fc2792",
+      "passes": {
+        "original": {
+          "text": "5J51, checking code 4.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0200000000000005,
+              "text": " 5J51, checking code 4.",
+              "avg_logprob": -0.39042269641702826,
+              "no_speech_prob": 0.046561483293771744,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792897546.m4a": {
+      "index": 1355,
+      "epoch": 1792897546,
+      "sha256": "70b924ab34800a66a7150922f2fcb5fb9f16570d43d8d38008af35aac6503a2a",
+      "passes": {
+        "original": {
+          "text": "Call for you, please.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Call for you, please.",
+              "avg_logprob": -0.6751518249511719,
+              "no_speech_prob": 0.27035456895828247,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Call for you to clear the stops.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Call for you to clear the stops.",
+              "avg_logprob": -0.9257858449762518,
+              "no_speech_prob": 0.2737375497817993,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "context": {
+          "text": "Call 4U, cleared to stop.",
+          "prompt": "5J51, checking code 4.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Call 4U, cleared to stop.",
+              "avg_logprob": -0.7995686205950651,
+              "no_speech_prob": 0.0922410637140274,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        }
+      }
+    }
+  }
+}
