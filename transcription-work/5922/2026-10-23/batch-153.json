@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-23",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792818992.m4a": {
+      "index": 1521,
+      "epoch": 1792818992,
+      "sha256": "ce80b909986d880b17f627280360edab56863ded4349658284c80dd8e3077fcf",
+      "passes": {
+        "original": {
+          "text": "Still am I with the RP?",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Still am I with the RP?",
+              "avg_logprob": -0.5077022016048431,
+              "no_speech_prob": 0.04281037300825119,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Still am I with the RP?",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Still am I with the RP?",
+              "avg_logprob": -0.9625038385391236,
+              "no_speech_prob": 0.07121046632528305,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "context": {
+          "text": "Still am I with the RP?",
+          "prompt": "I'm getting 44. Go ahead.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Still am I with the RP?",
+              "avg_logprob": -0.3941985994577408,
+              "no_speech_prob": 0.016387484967708588,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792818997.m4a": {
+      "index": 1522,
+      "epoch": 1792818997,
+      "sha256": "1786d85a8f30f794b2a8f69c161e5a23dd2ce96f17d0fb2e82a920c9bca53e7f",
+      "passes": {
+        "original": {
+          "text": "Can you transfer them to myself?",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Can you transfer them to myself?",
+              "avg_logprob": -0.3718173623085022,
+              "no_speech_prob": 0.015056252479553223,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "filtered": {
+          "text": "You can transfer them to myself.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You can transfer them to myself.",
+              "avg_logprob": -0.5825665712356567,
+              "no_speech_prob": 0.029982343316078186,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "context": {
+          "text": "Can you transfer them to myself?",
+          "prompt": "I'm getting 44. Go ahead. Still am I with the RP?",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Can you transfer them to myself?",
+              "avg_logprob": -0.23821020126342773,
+              "no_speech_prob": 0.02037063054740429,
+              "compression_ratio": 0.8
+            }
+          ]
+        }
+      }
+    }
+  }
+}
