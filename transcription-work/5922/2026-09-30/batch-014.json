@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-30",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1790770981.m4a": {
+      "index": 131,
+      "epoch": 1790770981,
+      "sha256": "da21253611360e6cf81d959c35ea4f024c7978c5ee15a57bf6554fd4dc006cda",
+      "passes": {
+        "original": {
+          "text": "Time for Israel.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Time for Israel.",
+              "avg_logprob": -1.0995113509041923,
+              "no_speech_prob": 0.06242518872022629,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790771019.m4a": {
+      "index": 132,
+      "epoch": 1790771019,
+      "sha256": "f0abf1a480be546f3f55b3d70f2bdf2afcb887b7168f81fd91273483fdb2054d",
+      "passes": {
+        "original": {
+          "text": "5J52, the RP is passing 100 North, 100 East. They just turned their hazard lights on.",
+          "prompt": null,
+          "duration_seconds": 6.784,
+          "token_limit": 79,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " 5J52, the RP is passing 100 North, 100 East. They just turned their hazard lights on.",
+              "avg_logprob": -0.27466784477233885,
+              "no_speech_prob": 0.0498674213886261,
+              "compression_ratio": 0.9770114942528736
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790771026.m4a": {
+      "index": 133,
+      "epoch": 1790771026,
+      "sha256": "971f5c079a6bd13dc908504924f79436e76d81b65b06ec0af4ad2544d9109cfc",
+      "passes": {
+        "original": {
+          "text": "5J52, I copy. I'm behind the box truck right now.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5J52, I copy. I'm behind the box truck right now.",
+              "avg_logprob": -0.48879888183192205,
+              "no_speech_prob": 0.020756039768457413,
+              "compression_ratio": 0.8596491228070176
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hi, J-52, I copy. I'm behind the box talk right now.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.36,
+              "text": " Hi, J-52, I copy. I'm behind the box talk right now.",
+              "avg_logprob": -0.6451058387756348,
+              "no_speech_prob": 0.035689808428287506,
+              "compression_ratio": 0.8666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "5J52, I copy. I'm behind the box truck right now.",
+          "prompt": "18J23, 1042, have a good day! Time for Israel. 5J52, the RP is passing 100 North, 100 East. They just turned their hazard lights on.",
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5J52, I copy. I'm behind the box truck right now.",
+              "avg_logprob": -0.2760300259841116,
+              "no_speech_prob": 0.011846477165818214,
+              "compression_ratio": 0.8596491228070176
+            }
+          ]
+        }
+      }
+    }
+  }
+}
