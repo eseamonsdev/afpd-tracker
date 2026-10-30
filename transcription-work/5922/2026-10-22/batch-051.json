@@ -1,0 +1,339 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-22",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792698252.m4a": {
+      "index": 501,
+      "epoch": 1792698252,
+      "sha256": "8ab8c5cc1b610ee961333d627ea086fbe3e5acac8faac530787f7619615a9305",
+      "passes": {
+        "original": {
+          "text": "100 East Main Street, Local 1, X-ray 4, Zulu Fox",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 100 East Main Street, Local 1, X-ray 4, Zulu Fox",
+              "avg_logprob": -0.5281944337644076,
+              "no_speech_prob": 0.041928570717573166,
+              "compression_ratio": 0.8571428571428571
+            }
+          ]
+        },
+        "filtered": {
+          "text": "100 East Main Street, Local 1, I try 4 Zulu Fox.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.76,
+              "text": " 100 East Main Street, Local 1, I try 4 Zulu Fox.",
+              "avg_logprob": -0.5967767801549699,
+              "no_speech_prob": 0.104350745677948,
+              "compression_ratio": 0.8571428571428571
+            }
+          ]
+        },
+        "context": {
+          "text": "100 East Main Street, Local 1, actually 4, Zulu Fox.",
+          "prompt": "Oh, there's that. 5J35 traffic Go ahead.",
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 100 East Main Street, Local 1, actually 4, Zulu Fox.",
+              "avg_logprob": -0.5159854027960036,
+              "no_speech_prob": 0.017313770949840546,
+              "compression_ratio": 0.8666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792698314.m4a": {
+      "index": 502,
+      "epoch": 1792698314,
+      "sha256": "473f3e369e75fa3fda2bb5c935167119ab2f7f2006a3bf7ff77fcd6846cff13b",
+      "passes": {
+        "original": {
+          "text": "Hey, can you turn to your writing?",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey, can you turn to your writing?",
+              "avg_logprob": -0.47474826872348785,
+              "no_speech_prob": 0.019969597458839417,
+              "compression_ratio": 0.8717948717948718
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792698339.m4a": {
+      "index": 503,
+      "epoch": 1792698339,
+      "sha256": "d097a07955f4775f457b3a410c5942fa5bbb47268d14d5f05e1c27beaaa59935",
+      "passes": {
+        "original": {
+          "text": "We'll be coming to a stop at Grant Avenue and safe.",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.36,
+              "text": " We'll be coming to a stop at Grant Avenue and safe.",
+              "avg_logprob": -0.4626636765897274,
+              "no_speech_prob": 0.10598297417163849,
+              "compression_ratio": 0.864406779661017
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We'll be coming to a stop at Grant Avenue and state.",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.36,
+              "text": " We'll be coming to a stop at Grant Avenue and state.",
+              "avg_logprob": -0.5195075087249279,
+              "no_speech_prob": 0.07663923501968384,
+              "compression_ratio": 0.8813559322033898
+            }
+          ]
+        },
+        "context": {
+          "text": "We'll be coming to a stop at Grant Avenue in State.",
+          "prompt": "Hey, can you turn to your writing?",
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.32,
+              "text": " We'll be coming to a stop at Grant Avenue in State.",
+              "avg_logprob": -0.5072030425071716,
+              "no_speech_prob": 0.10076484084129333,
+              "compression_ratio": 0.864406779661017
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792698597.m4a": {
+      "index": 505,
+      "epoch": 1792698597,
+      "sha256": "8612db333515b853a17c9ddd4a20a8122622794addaeb0442f68bfebde6f3b49",
+      "passes": {
+        "original": {
+          "text": "18, J7, will you show me how to 22?",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18, J7, will you show me how to 22?",
+              "avg_logprob": -0.7633265666663647,
+              "no_speech_prob": 0.02597033418715,
+              "compression_ratio": 0.875
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792698601.m4a": {
+      "index": 506,
+      "epoch": 1792698601,
+      "sha256": "137dc185f250cc78bbbf523352f2a2642346c155ba450b02a12cba118418ad58",
+      "passes": {
+        "original": {
+          "text": "Time for.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Time for.",
+              "avg_logprob": -0.5707187453905741,
+              "no_speech_prob": 0.06499892473220825,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792698611.m4a": {
+      "index": 507,
+      "epoch": 1792698611,
+      "sha256": "d0008cfdb9294e172d963279a2d73362316b9c25c48234942651b31484acf4fa",
+      "passes": {
+        "original": {
+          "text": "5J35, put 4.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J35, put 4.",
+              "avg_logprob": -0.6729056239128113,
+              "no_speech_prob": 0.017162784934043884,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792698614.m4a": {
+      "index": 508,
+      "epoch": 1792698614,
+      "sha256": "54648b46ad1825bc75f60abba0cbe2cf629776f19bbe2545900811111bc0a738",
+      "passes": {
+        "original": {
+          "text": "I'm for",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm for",
+              "avg_logprob": -0.9929901361465454,
+              "no_speech_prob": 0.1435650885105133,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I've worked",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I've worked",
+              "avg_logprob": -0.9341762463251749,
+              "no_speech_prob": 0.1292804628610611,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "5, 4.",
+          "prompt": "18, J7, will you show me how to 22? Time for. 5J35, put 4.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.72,
+              "text": " 5, 4.",
+              "avg_logprob": -0.823388968195234,
+              "no_speech_prob": 0.042124245315790176,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792698747.m4a": {
+      "index": 510,
+      "epoch": 1792698747,
+      "sha256": "1bae549bbe874f26b3f5c0d5b04832588bbaedae2d9a5eeac4103d9c231a1d56",
+      "passes": {
+        "original": {
+          "text": "5J40 copy 9-1-1 Sal.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.6,
+              "text": " 5J40 copy 9-1-1 Sal.",
+              "avg_logprob": -0.591206682579858,
+              "no_speech_prob": 0.08414667099714279,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    }
+  }
+}
