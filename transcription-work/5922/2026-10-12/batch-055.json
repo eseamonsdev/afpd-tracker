@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-12",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791829606.m4a": {
+      "index": 541,
+      "epoch": 1791829606,
+      "sha256": "c06668e3044e16dd44ee0e331cd985bf7056b070c72cd23bd733d5789f6029f3",
+      "passes": {
+        "original": {
+          "text": "100 East 100 North 2.175 Lima November",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.16,
+              "text": " 100 East 100 North 2.175 Lima November",
+              "avg_logprob": -0.6193132152160009,
+              "no_speech_prob": 0.015174953266978264,
+              "compression_ratio": 0.8837209302325582
+            }
+          ]
+        },
+        "filtered": {
+          "text": "One hundred east, one hundred north, two with one seven five Lima November.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.2,
+              "text": " One hundred east, one hundred north, two with one seven five Lima November.",
+              "avg_logprob": -0.6626402453372353,
+              "no_speech_prob": 0.006751632317900658,
+              "compression_ratio": 1.056338028169014
+            }
+          ]
+        },
+        "context": {
+          "text": "100 East, 100 North, 2U175, Lima, November.",
+          "prompt": "5J171 traffic. Go ahead.",
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.2,
+              "text": " 100 East, 100 North, 2U175, Lima, November.",
+              "avg_logprob": -0.5980902840109432,
+              "no_speech_prob": 0.02014630101621151,
+              "compression_ratio": 0.8958333333333334
+            }
+          ]
+        }
+      }
+    }
+  }
+}
