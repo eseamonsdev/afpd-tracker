@@ -23,11 +23,14 @@ body{font:16px system-ui;max-width:1200px;margin:40px auto;padding:0 18px;color:
 <p id="updates" role="status">Loading counts…</p>
 <p id="summary"></p>
 <div class="wrap"><table><thead><tr><th>Date</th><th>Talkgroup</th><th>Status</th><th>Downloaded</th><th>Saved to R2</th><th>Failed</th><th>Total</th><th>Remaining</th></tr></thead><tbody id="rows"></tbody></table></div>
-<small>“0 calls observed” means inventory was collected and contained no calls. “Inventory pending” means no inventory is recorded. Totals describe collected records, not complete radio reception. “Complete” means all inventoried files are saved to R2. Downloaded includes validated files awaiting an R2 checkpoint; Remaining excludes separately listed failures. Main and staging reflect their respective committed archive records, even though both use the same R2 bucket. Refreshing reads the latest published snapshot; it does not start downloads.</small>
+<small>“0 calls observed” means inventory was collected and contained no calls. “Inventory pending” means no inventory is recorded. “Audio Not Available” marks earlier Law 2 dates whose missing audio is no longer retained by OpenMHz; recordings already saved to R2 remain available. Totals describe collected records, not complete radio reception. “Complete” means all inventoried files are saved to R2. Downloaded includes validated files awaiting an R2 checkpoint; Remaining excludes separately listed failures. Main and staging reflect their respective committed archive records, even though both use the same R2 bucket. Refreshing reads the latest published snapshot; it does not start downloads.</small>
 <script>
 const cache=new Map(), errors=new Map();let busy=false;
 const names={6001:'AFPD car-to-car',5922:'Law 2',6036:'6036'};
 const selected=name=>document.querySelector('input[name="'+name+'"]:checked').value;
+// Unarchived Law 2 audio before September 27 has expired from OpenMHz.
+// A saved recording remains available regardless of its source retention.
+const sourceUnavailable=r=>r.talkgroup===5922&&r.date<'2026-09-27'&&(r.total==null||r.saved<r.total);
 function rowsFor(data){
   const allDates=[...cache.values()].flatMap(d=>d.rows.map(r=>r.date)).sort();
   if(!allDates.length)return [];
@@ -53,6 +56,7 @@ function render(){
     const known=r.total!==null&&r.total!==undefined;
     let status='Inventory pending',tone='pending';
     if(known){if(r.total===0){status='0 calls observed';tone='complete';}else if(r.saved===r.total){status='Complete';tone='complete';}else if(r.failed){status='Failures to resolve';tone='failed';}else{status='Audio pending';}}
+    if(sourceUnavailable(r)){status='Audio Not Available';tone='unavailable';}
     const tr=document.createElement('tr');
     for(const [i,value] of [r.date,names[r.talkgroup],status,r.downloaded,r.saved,r.failed,r.total,r.remaining].entries()){
       const td=document.createElement('td');if(i>=3)td.className='num';
@@ -60,8 +64,8 @@ function render(){
       tr.append(td);
     }body.append(tr);
   }
-  const totals=rows.reduce((sum,r)=>{sum.saved+=r.saved;sum.total+=r.total||0;sum.failed+=r.failed;sum.pending+=r.total==null?1:0;return sum;},{saved:0,total:0,failed:0,pending:0});
-  document.getElementById('summary').textContent=totals.saved.toLocaleString()+' of '+totals.total.toLocaleString()+' inventoried files saved · '+totals.failed+' failed'+(totals.pending?' · '+totals.pending+' date/talkgroup inventories pending':'');
+  const totals=rows.reduce((sum,r)=>{sum.saved+=r.saved;sum.total+=r.total||0;sum.failed+=r.failed;sum.unavailable+=sourceUnavailable(r)?1:0;sum.pending+=r.total==null&&!sourceUnavailable(r)?1:0;return sum;},{saved:0,total:0,failed:0,pending:0,unavailable:0});
+  document.getElementById('summary').textContent=totals.saved.toLocaleString()+' of '+totals.total.toLocaleString()+' inventoried files saved · '+totals.failed+' failed'+(totals.pending?' · '+totals.pending+' date/talkgroup inventories pending':'')+(totals.unavailable?' · '+totals.unavailable+' dates with audio not available':'');
 }
 async function refresh(){
   if(busy)return;busy=true;
