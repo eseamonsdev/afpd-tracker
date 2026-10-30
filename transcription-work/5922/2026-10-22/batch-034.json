@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-22",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792688519.m4a": {
+      "index": 331,
+      "epoch": 1792688519,
+      "sha256": "ccc5f1b803df6cb4f39603dae49bbfc1e001f1a42889491bedaf867902f2a2ad",
+      "passes": {
+        "original": {
+          "text": "Code 40 clearing up you.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Code 40 clearing up you.",
+              "avg_logprob": -0.794990963406033,
+              "no_speech_prob": 0.012423796579241753,
+              "compression_ratio": 0.75
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792688528.m4a": {
+      "index": 332,
+      "epoch": 1792688528,
+      "sha256": "81a55d267956a26e419b720c4badf681a24c2bfea137fea84f99a6989295fd70",
+      "passes": {
+        "original": {
+          "text": "5-8-29-8-Resin-0, you can clear it out to me.",
+          "prompt": null,
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.6000000000000005,
+              "text": " 5-8-29-8-Resin-0, you can clear it out to me.",
+              "avg_logprob": -0.6267756894230843,
+              "no_speech_prob": 0.2611294686794281,
+              "compression_ratio": 0.8823529411764706
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5-8-29-A, resin out, you can clear it out to me.",
+          "prompt": null,
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.6000000000000005,
+              "text": " 5-8-29-A, resin out, you can clear it out to me.",
+              "avg_logprob": -0.7082964940504595,
+              "no_speech_prob": 0.16190148890018463,
+              "compression_ratio": 0.8888888888888888
+            }
+          ]
+        },
+        "context": {
+          "text": "Bye, day 29, I resin out. You can clear it out to me.",
+          "prompt": "Hi, day 29, I copy the impound. Copy. It's our G-29. Code 40 clearing up you.",
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.6000000000000005,
+              "text": " Bye, day 29, I resin out. You can clear it out to me.",
+              "avg_logprob": -0.5165056377649307,
+              "no_speech_prob": 0.0689622014760971,
+              "compression_ratio": 0.8983050847457628
+            }
+          ]
+        }
+      }
+    }
+  }
+}

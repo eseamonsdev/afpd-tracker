@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-22",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792686801.m4a": {
+      "index": 311,
+      "epoch": 1792686801,
+      "sha256": "41f317398a3b0d0703e04654fd61e2955d268e9b48c0b47cc99f2245263e7705",
+      "passes": {
+        "original": {
+          "text": "5-D-40, copy. Citizen contacts by 21 also again.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5-D-40, copy. Citizen contacts by 21 also again.",
+              "avg_logprob": -0.6170795129405128,
+              "no_speech_prob": 0.014929424971342087,
+              "compression_ratio": 0.8888888888888888
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792686807.m4a": {
+      "index": 312,
+      "epoch": 1792686807,
+      "sha256": "efde5b67e6267bab8717908de9fc3bbc5dde781afc836a6bbe5e0636590dbf05",
+      "passes": {
+        "original": {
+          "text": "Perfect.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Perfect.",
+              "avg_logprob": -0.5968635559082032,
+              "no_speech_prob": 0.14051218330860138,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Perfect.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Perfect.",
+              "avg_logprob": -0.6662953853607178,
+              "no_speech_prob": 0.2213364839553833,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Perfect.",
+          "prompt": "5-D-40, copy. Citizen contacts by 21 also again.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Perfect.",
+              "avg_logprob": -0.5793774604797364,
+              "no_speech_prob": 0.22133208811283112,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    }
+  }
+}
