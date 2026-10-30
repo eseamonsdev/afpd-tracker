@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-27",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1790565127.m4a": {
+      "index": 1113,
+      "epoch": 1790565127,
+      "sha256": "e9fa598cd0d201322afa9dee1c35ff4c41c51e2963cc2c00be8c4768cac31633",
+      "passes": {
+        "original": {
+          "text": "18J23, clear stop. And park.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 18J23, clear stop.",
+              "avg_logprob": -0.819899606704712,
+              "no_speech_prob": 0.044756047427654266,
+              "compression_ratio": 0.7777777777777778
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " And park.",
+              "avg_logprob": -0.819899606704712,
+              "no_speech_prob": 0.044756047427654266,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790565142.m4a": {
+      "index": 1114,
+      "epoch": 1790565142,
+      "sha256": "2afff95eb9ebf51cbe62d90f40bbee6789d90ddfb7165743c4e40617ef6b0564",
+      "passes": {
+        "original": {
+          "text": "Semper.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Semper.",
+              "avg_logprob": -1.1403341094652812,
+              "no_speech_prob": 0.05234465003013611,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790565167.m4a": {
+      "index": 1115,
+      "epoch": 1790565167,
+      "sha256": "f39bd2bfa61ba7e42ed4df534e0efd821172f0a8ff2af981a59da957515cfd27",
+      "passes": {
+        "original": {
+          "text": "I'll see you next time. Bye.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I'll see you next time.",
+              "avg_logprob": -0.9652435779571533,
+              "no_speech_prob": 0.11198876053094864,
+              "compression_ratio": 0.7777777777777778
+            },
+            {
+              "start": 1.0,
+              "end": 1.2,
+              "text": " Bye.",
+              "avg_logprob": -0.9652435779571533,
+              "no_speech_prob": 0.11198876053094864,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "filtered": {
+          "text": "J-51, clear.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " J-51, clear.",
+              "avg_logprob": -1.1708334816826715,
+              "no_speech_prob": 0.18815074861049652,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "J-51, clear.",
+          "prompt": "18J23, clear stop. And park. Semper.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " J-51, clear.",
+              "avg_logprob": -0.9020591311984592,
+              "no_speech_prob": 0.027469387277960777,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    }
+  }
+}
