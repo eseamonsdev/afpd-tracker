@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-10",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791668488.m4a": {
+      "index": 879,
+      "epoch": 1791668488,
+      "sha256": "4b4c1bad1a1e8b1e3655c9dcc4a143a53af4444be8504bc2fbfb419b58e8d410",
+      "passes": {
+        "original": {
+          "text": "5-8-16 Central, copy your follow-up by phone off request.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.6,
+              "text": " 5-8-16 Central, copy your follow-up by phone off request.",
+              "avg_logprob": -0.7216285347938538,
+              "no_speech_prob": 0.04955291375517845,
+              "compression_ratio": 0.8769230769230769
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791668514.m4a": {
+      "index": 880,
+      "epoch": 1791668514,
+      "sha256": "9a5f2288ce3482432083afe2ecc5edd6c334098afb3d139c70d55b24b953b579",
+      "passes": {
+        "original": {
+          "text": "Perfect.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Perfect.",
+              "avg_logprob": -1.136072540283203,
+              "no_speech_prob": 0.5392754673957825,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "For f-",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " For f-",
+              "avg_logprob": -1.238817075888316,
+              "no_speech_prob": 0.5273352861404419,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Perfect.",
+          "prompt": "5-8-16 Central, copy your follow-up by phone off request.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Perfect.",
+              "avg_logprob": -0.9680609703063965,
+              "no_speech_prob": 0.33640629053115845,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-10",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791667082.m4a": {
+      "index": 833,
+      "epoch": 1791667082,
+      "sha256": "615d742e8b04e5cd8bbc74c823cdb9cc8fe5890ad41c1a7a38c4d0babaf4d767",
+      "passes": {
+        "original": {
+          "text": "5th day 48 for 4th.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5th day 48 for 4th.",
+              "avg_logprob": -0.775889591737227,
+              "no_speech_prob": 0.17606519162654877,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791667085.m4a": {
+      "index": 834,
+      "epoch": 1791667085,
+      "sha256": "612b3cb6be413fa7b18675ae804a4154c68ae63290dc360bf100a1d78fc53f75",
+      "passes": {
+        "original": {
+          "text": "Good work.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Good work.",
+              "avg_logprob": -0.7527258495489756,
+              "no_speech_prob": 0.10037139058113098,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "good work",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.12,
+              "text": " good work",
+              "avg_logprob": -0.6796099662780761,
+              "no_speech_prob": 0.042589448392391205,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Good work.",
+          "prompt": "5th day 48 for 4th.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Good work.",
+              "avg_logprob": -0.6522957483927408,
+              "no_speech_prob": 0.10985208302736282,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    }
+  }
+}
