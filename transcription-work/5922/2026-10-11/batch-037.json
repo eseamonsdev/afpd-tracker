@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-11",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791742701.m4a": {
+      "index": 361,
+      "epoch": 1791742701,
+      "sha256": "ec6ed2a8788ad14bd81321b03d743ec5d47c3a1fe284461128875b58d358f907",
+      "passes": {
+        "original": {
+          "text": "80 south, 100 east. A local 4 picture 6 kilo x-ray.",
+          "prompt": null,
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 80 south, 100 east. A local",
+              "avg_logprob": -0.5521918887441809,
+              "no_speech_prob": 0.14289022982120514,
+              "compression_ratio": 0.864406779661017
+            },
+            {
+              "start": 4.04,
+              "end": 8.040000000000001,
+              "text": " 4 picture 6 kilo x-ray.",
+              "avg_logprob": -0.5521918887441809,
+              "no_speech_prob": 0.14289022982120514,
+              "compression_ratio": 0.864406779661017
+            }
+          ]
+        },
+        "filtered": {
+          "text": "80 south, 100 east, a local 4.5-6 kilo x-ray.",
+          "prompt": null,
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 80 south, 100 east, a local 4.5-6 kilo x-ray.",
+              "avg_logprob": -0.6546746817502108,
+              "no_speech_prob": 0.10973528772592545,
+              "compression_ratio": 0.8490566037735849
+            }
+          ]
+        },
+        "context": {
+          "text": "80 south, 100 east. Local 4, Victor 6, Kilo X-ray.",
+          "prompt": "5J48 traffic. Thank you. 48.",
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 80 south, 100 east. Local 4, Victor 6, Kilo X-ray.",
+              "avg_logprob": -0.5393341609409877,
+              "no_speech_prob": 0.15631641447544098,
+              "compression_ratio": 0.8620689655172413
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791742853.m4a": {
+      "index": 362,
+      "epoch": 1791742853,
+      "sha256": "a7490e9daac1e36f5eb02af4db5383d3a73a4b16d338e4f54c57d05116a29d3e",
+      "passes": {
+        "original": {
+          "text": "5J52, copy follow-up",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J52, copy follow-up",
+              "avg_logprob": -0.5877407572486184,
+              "no_speech_prob": 0.044416848570108414,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J52 copy follow-up",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.4,
+              "text": " 5J52 copy follow-up",
+              "avg_logprob": -0.6135010778903961,
+              "no_speech_prob": 0.02441774122416973,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "5J52, copy follow-up",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J52, copy follow-up",
+              "avg_logprob": -0.5877407572486184,
+              "no_speech_prob": 0.044416848570108414,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    }
+  }
+}
