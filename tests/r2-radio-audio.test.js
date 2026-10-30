@@ -51,3 +51,31 @@ test('archive index accepts verified R2 audio and rejects missing unverified aud
   assert.throws(() => buildRadioIndex(dir), /Missing audio/);
   assert.throws(() => buildRadioExcerpt(excerpt, dir), /missing audio/);
 });
+
+test('pending metadata does not block ready audio and remains outside the playable index', async (t) => {
+  const fs = await import('node:fs');
+  const os = await import('node:os');
+  const path = await import('node:path');
+  const {buildRadioIndex} = await import('../lib/build-radio-index.js');
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'pending-index-'));
+  t.after(() => fs.rmSync(dir, {recursive:true, force:true}));
+  const ready = 'openmhz-afpd-car-to-car-2026-10-25';
+  const pending = 'openmhz-afpd-car-to-car-2026-10-29';
+  for (const folder of [ready, pending]) fs.mkdirSync(path.join(dir, folder));
+  const saved = {original_filename:'dcfems-6001-1792908038.m4a', epoch:1792908038, displayed_seconds:3};
+  fs.writeFileSync(path.join(dir, ready, saved.original_filename), 'fixture');
+  fs.writeFileSync(path.join(dir, ready, 'calls.json'), JSON.stringify({date:'2026-10-25',calls:[saved]}));
+  const call = {original_filename:'dcfems-6001-1793274818.m4a', epoch:1793274818, displayed_seconds:7, audio_downloaded:false};
+  const manifest = path.join(dir, pending, 'calls.json');
+  const write = () => fs.writeFileSync(manifest, JSON.stringify({date:'2026-10-29',calls:[call]}));
+  write();
+  assert.deepEqual(buildRadioIndex(dir).days.map(day => day.date), ['2026-10-25']);
+  call.audio_downloaded = true; write();
+  assert.throws(() => buildRadioIndex(dir), /Missing audio/);
+  call.audio_downloaded = false; call.epoch = saved.epoch; write();
+  assert.throws(() => buildRadioIndex(dir), /outside the Mountain Time date/);
+  call.epoch = 1793274818; write();
+  fs.writeFileSync(path.join(dir, pending, call.original_filename), 'fixture');
+  assert.deepEqual(buildRadioIndex(dir).days.map(day => day.date), ['2026-10-29','2026-10-25']);
+});
+
