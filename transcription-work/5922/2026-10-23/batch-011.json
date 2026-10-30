@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-23",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792740985.m4a": {
+      "index": 108,
+      "epoch": 1792740985,
+      "sha256": "af5b7994a3a1959983664df3f760bd7f88667e693f73bf37f6ed3570168c8588",
+      "passes": {
+        "original": {
+          "text": "5, 3, 8, 5, 8, 6, 7, 8, 9, 9, 9, 9, 9,",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.3200000000000003,
+              "text": " 5, 3, 8, 5, 8, 6, 7, 8, 9, 9, 9, 9, 9,",
+              "avg_logprob": -0.6178397962025234,
+              "no_speech_prob": 0.06429934501647949,
+              "compression_ratio": 1.3571428571428572
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792740990.m4a": {
+      "index": 109,
+      "epoch": 1792740990,
+      "sha256": "7078c3b03236f71f368383c394595ffdbf6857798dcf893f5e4c0fb982f76e92",
+      "passes": {
+        "original": {
+          "text": "Forwarding route.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Forwarding route.",
+              "avg_logprob": -0.9847772802625384,
+              "no_speech_prob": 0.0456082783639431,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "filtered": {
+          "text": "for in route",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " for in route",
+              "avg_logprob": -0.9804271658261617,
+              "no_speech_prob": 0.029644891619682312,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "4, 3, 4, 5, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9",
+          "prompt": "5, 3, 8, 5, 8, 6, 7, 8, 9, 9, 9, 9, 9,",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 34,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.6600000000000001,
+              "text": " 4, 3, 4, 5, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9",
+              "avg_logprob": -0.2304013967514038,
+              "no_speech_prob": 0.03694339841604233,
+              "compression_ratio": 2.130434782608696
+            }
+          ]
+        }
+      }
+    }
+  }
+}

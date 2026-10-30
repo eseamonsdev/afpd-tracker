@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-23",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792736469.m4a": {
+      "index": 27,
+      "epoch": 1792736469,
+      "sha256": "42add9af5261a93c1da066ae7711421346ad4ad0cac71485d9e6068745960ad0",
+      "passes": {
+        "original": {
+          "text": "Hi, J46, did you want me to clear out this info?",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Hi, J46, did you want me to clear out this info?",
+              "avg_logprob": -0.3876490626070235,
+              "no_speech_prob": 0.05718189850449562,
+              "compression_ratio": 0.8571428571428571
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792736474.m4a": {
+      "index": 28,
+      "epoch": 1792736474,
+      "sha256": "07ec3708ef533bba4e9b56dafc64d5610167ec89c468e31f97553c7d0ced8ded",
+      "passes": {
+        "original": {
+          "text": "Wow, firm, thank you.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Wow, firm, thank you.",
+              "avg_logprob": -0.7352324903011322,
+              "no_speech_prob": 0.03633031249046326,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.6,
+              "text": " Thank you.",
+              "avg_logprob": -0.8383709192276001,
+              "no_speech_prob": 0.05293796584010124,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Well, from thank you.",
+          "prompt": "Hi, J46, did you want me to clear out this info?",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Well, from thank you.",
+              "avg_logprob": -0.7181259791056315,
+              "no_speech_prob": 0.05476266145706177,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    }
+  }
+}
