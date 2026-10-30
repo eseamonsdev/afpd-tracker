@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-22",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792724794.m4a": {
+      "index": 1203,
+      "epoch": 1792724794,
+      "sha256": "a06af66fa3f4bc377fc7bcb0240f08813b83979c30a68d6592fb6fd1bdb1c6ab",
+      "passes": {
+        "original": {
+          "text": "5-3-50, coffee revo.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5-3-50, coffee revo.",
+              "avg_logprob": -0.8246815021221454,
+              "no_speech_prob": 0.03431422635912895,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792724798.m4a": {
+      "index": 1204,
+      "epoch": 1792724798,
+      "sha256": "f2da3232c77e9f5711fe90b1469ec982cb6f62456e725698e4a0c0cab56c4c4d",
+      "passes": {
+        "original": {
+          "text": "5G 50 I copy, clear when ready",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.44,
+              "text": " 5G 50 I copy, clear when ready",
+              "avg_logprob": -0.7433115889628729,
+              "no_speech_prob": 0.02430982142686844,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G58 copy, clear when ready",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5G58 copy, clear when ready",
+              "avg_logprob": -0.624762773513794,
+              "no_speech_prob": 0.02927248179912567,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        },
+        "context": {
+          "text": "5-J-50, I copy. Cleveland ready.",
+          "prompt": "5-3-50, coffee revo.",
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5-J-50, I copy. Cleveland ready.",
+              "avg_logprob": -0.5477731068929036,
+              "no_speech_prob": 0.0024882613215595484,
+              "compression_ratio": 0.8
+            }
+          ]
+        }
+      }
+    }
+  }
+}
