@@ -1,0 +1,318 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-09",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791573604.m4a": {
+      "index": 824,
+      "epoch": 1791573604,
+      "sha256": "73fd32b507d5f2098fe25eaec3f0de5d484bbf7a201195c4fbd52fe772d5200e",
+      "passes": {
+        "original": {
+          "text": "1796, did you copy?",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 1796, did you copy?",
+              "avg_logprob": -0.5559754192829132,
+              "no_speech_prob": 0.061330318450927734,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791573607.m4a": {
+      "index": 825,
+      "epoch": 1791573607,
+      "sha256": "f039bbc62e56c2d067eab30e22d8a22aefe905d64afc9712cb864356d9fc2958",
+      "passes": {
+        "original": {
+          "text": "I copy. Windows open. I'm not able to make contact with anyone.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.5200000000000005,
+              "text": " I copy. Windows open. I'm not able to make contact with anyone.",
+              "avg_logprob": -0.4313457388626902,
+              "no_speech_prob": 0.018085354939103127,
+              "compression_ratio": 0.9130434782608695
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791573613.m4a": {
+      "index": 826,
+      "epoch": 1791573613,
+      "sha256": "ea034b7ecb7a78402e09ad9a7ad639955fdd3e57026fa99d97767a48fd394c21",
+      "passes": {
+        "original": {
+          "text": "10-4.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.5581565073558262,
+              "no_speech_prob": 0.13576893508434296,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791573629.m4a": {
+      "index": 827,
+      "epoch": 1791573629,
+      "sha256": "c7c4de0b8de49264d4450fb1a904696f24c4393eb66053738ac2432924471de1",
+      "passes": {
+        "original": {
+          "text": "5G6. Copy. 10-50.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5G6. Copy. 10-50.",
+              "avg_logprob": -0.5552197969876803,
+              "no_speech_prob": 0.07183118164539337,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G6, copy 1050.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.88,
+              "text": " 5G6, copy 1050.",
+              "avg_logprob": -0.7873903512954712,
+              "no_speech_prob": 0.016159098595380783,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "context": {
+          "text": "5G6, copy. 10-50.",
+          "prompt": "1796, did you copy? I copy. Windows open. I'm not able to make contact with anyone. 10-4.",
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.4,
+              "text": " 5G6, copy. 10-50.",
+              "avg_logprob": -0.4854884697840764,
+              "no_speech_prob": 0.020163966342806816,
+              "compression_ratio": 0.68
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791573633.m4a": {
+      "index": 828,
+      "epoch": 1791573633,
+      "sha256": "ecae13989dce4a1607728b25dc83a5eed6069ed69605119286da436c4f4eb145",
+      "passes": {
+        "original": {
+          "text": "Five, two, six.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Five, two, six.",
+              "avg_logprob": -0.5657219356960721,
+              "no_speech_prob": 0.045164234936237335,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791573637.m4a": {
+      "index": 829,
+      "epoch": 1791573637,
+      "sha256": "1cb32e17afd164619424852a9c65a6e68554dec2a6d60d26eb695411b25a9949",
+      "passes": {
+        "original": {
+          "text": "I'm going to be approximately 280 north west state. I got one Hyundai Honbright hybrid SUV and one Gray Versa walking the number one lane in north town west state.",
+          "prompt": null,
+          "duration_seconds": 15.232,
+          "token_limit": 146,
+          "token_count": 41,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.16,
+              "text": " I'm going to be approximately 280 north west state. I got one Hyundai Honbright",
+              "avg_logprob": -0.4311813080594653,
+              "no_speech_prob": 0.02937331050634384,
+              "compression_ratio": 1.2834645669291338
+            },
+            {
+              "start": 7.16,
+              "end": 14.16,
+              "text": " hybrid SUV and one Gray Versa walking the number one lane in north town west",
+              "avg_logprob": -0.4311813080594653,
+              "no_speech_prob": 0.02937331050634384,
+              "compression_ratio": 1.2834645669291338
+            },
+            {
+              "start": 14.16,
+              "end": 16.36,
+              "text": " state.",
+              "avg_logprob": -0.4311813080594653,
+              "no_speech_prob": 0.02937331050634384,
+              "compression_ratio": 1.2834645669291338
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm gonna be approximately 280 Northwest State. I got one Hyundai Honbride hybrid SUV and one Gray Versa walking the number one lane in Northtown West State.",
+          "prompt": null,
+          "duration_seconds": 15.232,
+          "token_limit": 146,
+          "token_count": 40,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.16,
+              "text": " I'm gonna be approximately 280 Northwest State. I got one Hyundai Honbride hybrid",
+              "avg_logprob": -0.39707207098239805,
+              "no_speech_prob": 0.02770669385790825,
+              "compression_ratio": 1.2265625
+            },
+            {
+              "start": 8.16,
+              "end": 14.18,
+              "text": " SUV and one Gray Versa walking the number one lane in Northtown West",
+              "avg_logprob": -0.39707207098239805,
+              "no_speech_prob": 0.02770669385790825,
+              "compression_ratio": 1.2265625
+            },
+            {
+              "start": 14.18,
+              "end": 16.38,
+              "text": " State.",
+              "avg_logprob": -0.39707207098239805,
+              "no_speech_prob": 0.02770669385790825,
+              "compression_ratio": 1.2265625
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm going to be approximately 280 north west state. I got one Hyundai Honbright hybrid SUV and one Gray Versa. Walking the number one lane in north town west state.",
+          "prompt": "10-4. 5G6. Copy. 10-50. Five, two, six.",
+          "duration_seconds": 15.232,
+          "token_limit": 146,
+          "token_count": 40,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.120000000000001,
+              "text": " I'm going to be approximately 280 north west state. I got one Hyundai Honbright hybrid",
+              "avg_logprob": -0.4130272748993664,
+              "no_speech_prob": 0.008246498182415962,
+              "compression_ratio": 1.2713178294573644
+            },
+            {
+              "start": 8.120000000000001,
+              "end": 16.32,
+              "text": " SUV and one Gray Versa. Walking the number one lane in north town west state.",
+              "avg_logprob": -0.4130272748993664,
+              "no_speech_prob": 0.008246498182415962,
+              "compression_ratio": 1.2713178294573644
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791573654.m4a": {
+      "index": 830,
+      "epoch": 1791573654,
+      "sha256": "a7454489467731070c3b9a176cc0bb4157f6d345cf2a21c789b16712730612f5",
+      "passes": {
+        "original": {
+          "text": "Temporic units are back to a northwest state.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Temporic units are back to a northwest state.",
+              "avg_logprob": -0.5535569361277989,
+              "no_speech_prob": 0.009002437815070152,
+              "compression_ratio": 0.8490566037735849
+            }
+          ]
+        }
+      }
+    }
+  }
+}

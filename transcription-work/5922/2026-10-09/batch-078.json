@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-09",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791571726.m4a": {
+      "index": 771,
+      "epoch": 1791571726,
+      "sha256": "34b6dac70c7404a9cf7d70414f16900a0517628227585378464a20e7973da72e",
+      "passes": {
+        "original": {
+          "text": "Thank you, 49, you go for it.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.2,
+              "text": " Thank you, 49, you go for it.",
+              "avg_logprob": -0.7662648604466364,
+              "no_speech_prob": 0.037681661546230316,
+              "compression_ratio": 0.8529411764705882
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791571731.m4a": {
+      "index": 772,
+      "epoch": 1791571731,
+      "sha256": "66aec40bff91315ea36e39bc1a00cd683756690d9c315383adcc9a00b1efefd0",
+      "passes": {
+        "original": {
+          "text": "Those four you can show me clear",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Those four you can show me clear",
+              "avg_logprob": -0.4465042233467102,
+              "no_speech_prob": 0.0031177024357020855,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it you can show me please",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it you can show me please",
+              "avg_logprob": -0.459188927303661,
+              "no_speech_prob": 0.004394740331918001,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "context": {
+          "text": "Go for it, you can show me, please.",
+          "prompt": "Thank you, 49, you go for it.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.5,
+              "text": " Go for it, you can show me, please.",
+              "avg_logprob": -0.3812853821686336,
+              "no_speech_prob": 0.012886185199022293,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        }
+      }
+    }
+  }
+}
