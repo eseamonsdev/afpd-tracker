@@ -1,0 +1,399 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-18",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792358311.m4a": {
+      "index": 541,
+      "epoch": 1792358311,
+      "sha256": "a7b3dd9ef6cae26d2425e1b304637df9c91b811daa44ebd1e5d63873e5860548",
+      "passes": {
+        "original": {
+          "text": "Time for J-40.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Time for J-40.",
+              "avg_logprob": -0.8540659480624728,
+              "no_speech_prob": 0.03659446910023689,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792358315.m4a": {
+      "index": 542,
+      "epoch": 1792358315,
+      "sha256": "285375fabc1d4e0e32618ceae0d3cfe36c4c5337007769f54a9c2fe690254a67",
+      "passes": {
+        "original": {
+          "text": "Sorry, it looks like since this is a duplex, it's unknown if the alerts are for their specific unit. Unknown unit number for them, just advising in the upstairs one.",
+          "prompt": null,
+          "duration_seconds": 8.96,
+          "token_limit": 96,
+          "token_count": 45,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.12,
+              "text": " Sorry, it looks like since this is a duplex,",
+              "avg_logprob": -0.24576288202534552,
+              "no_speech_prob": 0.0017638185527175665,
+              "compression_ratio": 1.32
+            },
+            {
+              "start": 2.12,
+              "end": 5.16,
+              "text": " it's unknown if the alerts are for their specific unit.",
+              "avg_logprob": -0.24576288202534552,
+              "no_speech_prob": 0.0017638185527175665,
+              "compression_ratio": 1.32
+            },
+            {
+              "start": 5.16,
+              "end": 6.640000000000001,
+              "text": " Unknown unit number for them, just",
+              "avg_logprob": -0.24576288202534552,
+              "no_speech_prob": 0.0017638185527175665,
+              "compression_ratio": 1.32
+            },
+            {
+              "start": 6.640000000000001,
+              "end": 8.44,
+              "text": " advising in the upstairs one.",
+              "avg_logprob": -0.24576288202534552,
+              "no_speech_prob": 0.0017638185527175665,
+              "compression_ratio": 1.32
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792358326.m4a": {
+      "index": 543,
+      "epoch": 1792358326,
+      "sha256": "6420018358b1b653ff5bbc19775b08feaa6a17e391ca38612ce110264a151850",
+      "passes": {
+        "original": {
+          "text": "Coffee's still familiar involved. It's for units.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Coffee's still familiar involved. It's for units.",
+              "avg_logprob": -0.8230593545096261,
+              "no_speech_prob": 0.02564563788473606,
+              "compression_ratio": 0.875
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy, still familiar of all the units.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Copy, still familiar of all the units.",
+              "avg_logprob": -0.7439545094966888,
+              "no_speech_prob": 0.03829867020249367,
+              "compression_ratio": 0.8636363636363636
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy, familiar of all units.",
+          "prompt": "Three Time for J-40. Sorry, it looks like since this is a duplex, it's unknown if the alerts are for their specific unit. Unknown unit number for them, just advising in the upstairs one.",
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.5,
+              "text": " Copy, familiar of all units.",
+              "avg_logprob": -0.747395932674408,
+              "no_speech_prob": 0.022807253524661064,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792358329.m4a": {
+      "index": 544,
+      "epoch": 1792358329,
+      "sha256": "a1b9b241868a7c7752a7e0d031078c1aa9935448e33466537d29a72344647d7d",
+      "passes": {
+        "original": {
+          "text": "Copy. 5J29, code 4.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.32,
+              "text": " Copy. 5J29, code 4.",
+              "avg_logprob": -0.7267803301413854,
+              "no_speech_prob": 0.03189520910382271,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792358334.m4a": {
+      "index": 545,
+      "epoch": 1792358334,
+      "sha256": "e4d3ccdab5a9b886bed854c442dc3f178ecd7e19dbafef7fdeb379a5b207d090",
+      "passes": {
+        "original": {
+          "text": "Okay.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Okay.",
+              "avg_logprob": -0.6803714752197265,
+              "no_speech_prob": 0.1435580551624298,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Okay.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Okay.",
+              "avg_logprob": -0.841424560546875,
+              "no_speech_prob": 0.20651254057884216,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Okay.",
+          "prompt": "Sorry, it looks like since this is a duplex, it's unknown if the alerts are for their specific unit. Unknown unit number for them, just advising in the upstairs one. Coffee's still familiar involved. It's for units. Copy. 5J29, code 4.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Okay.",
+              "avg_logprob": -0.5439353942871094,
+              "no_speech_prob": 0.13308069109916687,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792358400.m4a": {
+      "index": 547,
+      "epoch": 1792358400,
+      "sha256": "ba35ac896160f2a75a5d6a2524ebde668fe810d76905e5866d596bef3abe26b5",
+      "passes": {
+        "original": {
+          "text": "5G, 14 units in the area.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " 5G, 14 units in the area.",
+              "avg_logprob": -0.5366092771291733,
+              "no_speech_prob": 0.03681560978293419,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G, 14 units in the area.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5G, 14 units in the area.",
+              "avg_logprob": -0.5557393183310827,
+              "no_speech_prob": 0.03475739806890488,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "context": {
+          "text": "5G, 14 units in the area.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " 5G, 14 units in the area.",
+              "avg_logprob": -0.5366092771291733,
+              "no_speech_prob": 0.03681560978293419,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792358404.m4a": {
+      "index": 548,
+      "epoch": 1792358404,
+      "sha256": "53765084c7fbed5c3d1488ca60cdea62fd7179ebcf51491b3ae79a9b99a1cab7",
+      "passes": {
+        "original": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy.",
+              "avg_logprob": -0.5644481182098389,
+              "no_speech_prob": 0.0057471757754683495,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792358450.m4a": {
+      "index": 549,
+      "epoch": 1792358450,
+      "sha256": "f81674f4cfb21489a9eb9bb9bb70dbad16b90bc463389f6256c7ba238242e3a3",
+      "passes": {
+        "original": {
+          "text": "5G30, you're writing on the disturbance.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5G30, you're writing on the disturbance.",
+              "avg_logprob": -0.671250866992133,
+              "no_speech_prob": 0.08384692668914795,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        },
+        "filtered": {
+          "text": "budget that you're writing on the disturbance.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " budget that you're writing on the disturbance.",
+              "avg_logprob": -0.6670813312133154,
+              "no_speech_prob": 0.11436835676431656,
+              "compression_ratio": 0.8679245283018868
+            }
+          ]
+        },
+        "context": {
+          "text": "5G, 30, you're riding on the disturbance.",
+          "prompt": "5G, 14 units in the area. Happy.",
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5G, 30, you're riding on the disturbance.",
+              "avg_logprob": -0.42958662907282513,
+              "no_speech_prob": 0.10300739854574203,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        }
+      }
+    }
+  }
+}
