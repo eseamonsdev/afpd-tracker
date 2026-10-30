@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-11",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791745037.m4a": {
+      "index": 429,
+      "epoch": 1791745037,
+      "sha256": "cd34ce0e5a020060fd5d9a35f6af86d9119ecf6efae33f5205b59ec25c01160a",
+      "passes": {
+        "original": {
+          "text": "By J52, confirming still en route.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " By J52, confirming still en route.",
+              "avg_logprob": -0.6682340204715729,
+              "no_speech_prob": 0.031009824946522713,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791745042.m4a": {
+      "index": 430,
+      "epoch": 1791745042,
+      "sha256": "8c2924b71f2cac8f50177165e5856f1fd287b9e2b48e98f66911319c1ed9e8ce",
+      "passes": {
+        "original": {
+          "text": "Oh, for I'm still not.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Oh, for I'm still not.",
+              "avg_logprob": -0.724621360952204,
+              "no_speech_prob": 0.03868228569626808,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Oh, for I'm still not.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Oh, for I'm still not.",
+              "avg_logprob": -0.8520398356697776,
+              "no_speech_prob": 0.03769155964255333,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "By J52, confirming still en route.",
+          "prompt": "By J52, confirming still en route.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " By J52, confirming still en route.",
+              "avg_logprob": -0.48368391891320545,
+              "no_speech_prob": 0.02488580346107483,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        }
+      }
+    }
+  }
+}

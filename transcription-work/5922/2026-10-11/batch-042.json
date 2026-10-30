@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-11",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791744071.m4a": {
+      "index": 411,
+      "epoch": 1791744071,
+      "sha256": "ba6d0ea638eb58a3b7ff403815fa7934f930b411160dae31bb21347440010d13",
+      "passes": {
+        "original": {
+          "text": "Copy, I'll head over there.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy, I'll head over there.",
+              "avg_logprob": -0.4785152998837558,
+              "no_speech_prob": 0.02019217237830162,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791744086.m4a": {
+      "index": 412,
+      "epoch": 1791744086,
+      "sha256": "46ebe0be7f1185415e9a7e1dfca6583e1b99cd1ef3c08413554c87df71cf2f62",
+      "passes": {
+        "original": {
+          "text": "Project 52 Central, copy when inspection.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Project 52 Central, copy when inspection.",
+              "avg_logprob": -0.4670068350705234,
+              "no_speech_prob": 0.011548328213393688,
+              "compression_ratio": 0.8541666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791744091.m4a": {
+      "index": 413,
+      "epoch": 1791744091,
+      "sha256": "b284bbc748c2e2c35fcba3a29dcba977906606898fe93eebb37a211704de1d3d",
+      "passes": {
+        "original": {
+          "text": "I copy that.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I copy that.",
+              "avg_logprob": -0.718518682888576,
+              "no_speech_prob": 0.05646231025457382,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I copy, I get it.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I copy, I get it.",
+              "avg_logprob": -0.7404944479465485,
+              "no_speech_prob": 0.08042748272418976,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "I copy, I'll head.",
+          "prompt": "Just advising, we're holding a medical 255 nor 700 East. It's a first party 71-year-old female conscious and breathing with heart issues. Copy, I'll head over there. Project 52 Central, copy when inspection.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I copy, I'll head.",
+              "avg_logprob": -0.36088210344314575,
+              "no_speech_prob": 0.01411487814038992,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        }
+      }
+    }
+  }
+}

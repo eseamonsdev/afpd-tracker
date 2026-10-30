@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-11",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791746071.m4a": {
+      "index": 446,
+      "epoch": 1791746071,
+      "sha256": "c85968d6df6d15884f1d80d3ef7a64452237ee0cba6eb1432d8ad3cd5d031aaa",
+      "passes": {
+        "original": {
+          "text": "I J 48 clear",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I J 48 clear",
+              "avg_logprob": -0.6701481853212629,
+              "no_speech_prob": 0.07027241587638855,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "IJ48, clear.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " IJ48, clear.",
+              "avg_logprob": -0.8143047756618924,
+              "no_speech_prob": 0.04197831079363823,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "I J 48 clear",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I J 48 clear",
+              "avg_logprob": -0.6701481853212629,
+              "no_speech_prob": 0.07027241587638855,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791746368.m4a": {
+      "index": 448,
+      "epoch": 1791746368,
+      "sha256": "70ec721b618e1fcf45d8d1670142dba4728613ae821b96c88b5e30ee27f3cde1",
+      "passes": {
+        "original": {
+          "text": "Right.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Right.",
+              "avg_logprob": -0.49530940055847167,
+              "no_speech_prob": 0.05350198596715927,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791746370.m4a": {
+      "index": 449,
+      "epoch": 1791746370,
+      "sha256": "be53b67e5af50436a09ac753a9711819e26eac4abf09d7ee2689746bd9bd92a0",
+      "passes": {
+        "original": {
+          "text": "be located 100 east 200 north we're still rolling stand by for place",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.36,
+              "text": " be located 100 east 200 north we're still rolling stand by for place",
+              "avg_logprob": -0.4682770897360409,
+              "no_speech_prob": 0.03326006978750229,
+              "compression_ratio": 0.9855072463768116
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Be located 100 east 200 north. We're still rolling stand by for place",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.34,
+              "text": " Be located 100 east 200 north. We're still rolling stand by for place",
+              "avg_logprob": -0.4229476484987471,
+              "no_speech_prob": 0.023540029302239418,
+              "compression_ratio": 0.9452054794520548
+            }
+          ]
+        },
+        "context": {
+          "text": "Be located 100 east, 200 north. We're still rolling, stand by for place.",
+          "prompt": "Right.",
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Be located 100 east, 200 north. We're still rolling, stand by for place.",
+              "avg_logprob": -0.52179183278765,
+              "no_speech_prob": 0.04979059100151062,
+              "compression_ratio": 0.96
+            }
+          ]
+        }
+      }
+    }
+  }
+}
