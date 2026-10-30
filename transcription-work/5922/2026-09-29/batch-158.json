@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-29",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1790745063.m4a": {
+      "index": 1578,
+      "epoch": 1790745063,
+      "sha256": "5c824bc184a3ed1a66a5c118913d9abbef2797a83d15b5bffa1d6d1b6fa852cc",
+      "passes": {
+        "original": {
+          "text": "IC53 Central Copy Well Protect.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " IC53 Central Copy Well Protect.",
+              "avg_logprob": -0.7995848000049591,
+              "no_speech_prob": 0.016415197402238846,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790745067.m4a": {
+      "index": 1579,
+      "epoch": 1790745067,
+      "sha256": "ee09372909ed49f0b70f5a9bca7ccc9b4cb32546bafd89ace9b1c6df301071a2",
+      "passes": {
+        "original": {
+          "text": "Good.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Good.",
+              "avg_logprob": -0.7311449527740479,
+              "no_speech_prob": 0.046934306621551514,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.7592740654945374,
+              "no_speech_prob": 0.021811693906784058,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Good.",
+          "prompt": "IC53 Central Copy Well Protect.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Good.",
+              "avg_logprob": -0.38731229305267334,
+              "no_speech_prob": 0.039001237601041794,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790745071.m4a": {
+      "index": 1580,
+      "epoch": 1790745071,
+      "sha256": "c89978b77640a74a34be1012780b571afd1900bd45d85c4adaccd23bcecdcc0a",
+      "passes": {
+        "original": {
+          "text": "This is at the Liberty Addiction Rehab, 1088 East, 390 South. Patient left about eight minutes ago.",
+          "prompt": null,
+          "duration_seconds": 7.552,
+          "token_limit": 85,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " This is at the Liberty Addiction Rehab, 1088 East, 390 South.",
+              "avg_logprob": -0.28346806323086776,
+              "no_speech_prob": 0.010221658274531364,
+              "compression_ratio": 0.99
+            },
+            {
+              "start": 5.0,
+              "end": 7.0,
+              "text": " Patient left about eight minutes ago.",
+              "avg_logprob": -0.28346806323086776,
+              "no_speech_prob": 0.010221658274531364,
+              "compression_ratio": 0.99
+            }
+          ]
+        }
+      }
+    }
+  }
+}
