@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-15",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792089863.m4a": {
+      "index": 521,
+      "epoch": 1792089863,
+      "sha256": "e0c462263dc01d51326f4f566579ac85f5e82587903933444b145791e729de1b",
+      "passes": {
+        "original": {
+          "text": "A-Firm, I arrived.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " A-Firm, I arrived.",
+              "avg_logprob": -0.7591348344629462,
+              "no_speech_prob": 0.06631272286176682,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "filtered": {
+          "text": "A-Firm I arrive.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " A-Firm I arrive.",
+              "avg_logprob": -0.8763319194316864,
+              "no_speech_prob": 0.0363902784883976,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "8 for whom I arrive.",
+          "prompt": "Alright, copy. Hey, 10-J-20, too clear. 8, 22, 22, 23, 24, 25, 26, 27, 28, 29,",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 8 for whom I arrive.",
+              "avg_logprob": -0.5741415553622775,
+              "no_speech_prob": 0.011154873296618462,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    }
+  }
+}
