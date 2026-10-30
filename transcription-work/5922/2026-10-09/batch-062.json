@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-09",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791564186.m4a": {
+      "index": 611,
+      "epoch": 1791564186,
+      "sha256": "606214ad328be7c788c9f15e400ee6e93e57f03d46f606be64404bbe6e7637ff",
+      "passes": {
+        "original": {
+          "text": "I copy. Was that 100 yards?",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I copy. Was that 100 yards?",
+              "avg_logprob": -0.5311542749404907,
+              "no_speech_prob": 0.03793865069746971,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791564189.m4a": {
+      "index": 612,
+      "epoch": 1791564189,
+      "sha256": "e992aa8452456b88f25ef8ccb8f5eb613889556fb2ca6e6f9c24c03213df99db",
+      "passes": {
+        "original": {
+          "text": "1120 North",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.84,
+              "text": " 1120 North",
+              "avg_logprob": -0.9091976284980774,
+              "no_speech_prob": 0.2589395344257355,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "1120 North",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 1120 North",
+              "avg_logprob": -0.7562651733557383,
+              "no_speech_prob": 0.27996110916137695,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "1120 North",
+          "prompt": "Semper! 370 West 1120 North on 3 Yankee 3 Lima Romeo I copy. Was that 100 yards?",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.86,
+              "text": " 1120 North",
+              "avg_logprob": -0.4096161077419917,
+              "no_speech_prob": 0.009228027425706387,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    }
+  }
+}

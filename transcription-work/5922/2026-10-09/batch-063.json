@@ -1,0 +1,253 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-09",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791564271.m4a": {
+      "index": 621,
+      "epoch": 1791564271,
+      "sha256": "717bc491e39b023e8acfe60aba1dcfe61f3022e5a687ca06f43715e24e1cbaaa",
+      "passes": {
+        "original": {
+          "text": "Jennifer, all units, service is closed for emergency traffic on law 2.",
+          "prompt": null,
+          "duration_seconds": 8.064,
+          "token_limit": 89,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.5,
+              "text": " Jennifer, all units, service is closed for emergency traffic on law 2.",
+              "avg_logprob": -0.6071102552943759,
+              "no_speech_prob": 0.10190579295158386,
+              "compression_ratio": 0.9859154929577465
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791564285.m4a": {
+      "index": 622,
+      "epoch": 1791564285,
+      "sha256": "12035d3c4ebca14763e0668562a3a9ae6923e9a8b59e6d0614210b93d7680d89",
+      "passes": {
+        "original": {
+          "text": "18J6 for this flight out low-peak.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.52,
+              "text": " 18J6 for this flight out low-peak.",
+              "avg_logprob": -0.785505303314754,
+              "no_speech_prob": 0.005141874309629202,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791564288.m4a": {
+      "index": 623,
+      "epoch": 1791564288,
+      "sha256": "df7aca9e1523c89b2e4961d6d648881c999ef5300d61bc58a08d5b35af861297",
+      "passes": {
+        "original": {
+          "text": "I'm from Outlaw Peak.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm from Outlaw Peak.",
+              "avg_logprob": -0.7330611884593964,
+              "no_speech_prob": 0.015993185341358185,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791564293.m4a": {
+      "index": 624,
+      "epoch": 1791564293,
+      "sha256": "30386d1b3ff8346d28a7cd097ffca71081bdf96eded5cf7674bd2234b62b1289",
+      "passes": {
+        "original": {
+          "text": "5G, 32M, just down the street if they need me.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.8000000000000003,
+              "text": " 5G, 32M, just down the street if they need me.",
+              "avg_logprob": -0.3740702238347795,
+              "no_speech_prob": 0.010671229101717472,
+              "compression_ratio": 0.9019607843137255
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G32, I'm just down the street if they need me.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.8000000000000003,
+              "text": " 5G32, I'm just down the street if they need me.",
+              "avg_logprob": -0.4045800533559587,
+              "no_speech_prob": 0.021194202825427055,
+              "compression_ratio": 0.9038461538461539
+            }
+          ]
+        },
+        "context": {
+          "text": "5J32, I'm just down the street if they need me.",
+          "prompt": "Jennifer, all units, service is closed for emergency traffic on law 2. 18J6 for this flight out low-peak. I'm from Outlaw Peak.",
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.8000000000000003,
+              "text": " 5J32, I'm just down the street if they need me.",
+              "avg_logprob": -0.33924633098973167,
+              "no_speech_prob": 0.00469179218634963,
+              "compression_ratio": 0.9038461538461539
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791564296.m4a": {
+      "index": 625,
+      "epoch": 1791564296,
+      "sha256": "324214c3711d1b0277860b5f7c72cd9ad760e364acc1a92e112f3661aecffde0",
+      "passes": {
+        "original": {
+          "text": "So far, that would be great.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " So far, that would be great.",
+              "avg_logprob": -0.6598115509206598,
+              "no_speech_prob": 0.03786030784249306,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791564313.m4a": {
+      "index": 626,
+      "epoch": 1791564313,
+      "sha256": "7c101af178371c384e12818a08b76e941bcee6416cb1ac160693cc950f78b77f",
+      "passes": {
+        "original": {
+          "text": "5J32, do we have a better location to have at school?",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " 5J32, do we have a better location to have at school?",
+              "avg_logprob": -0.42935584982236225,
+              "no_speech_prob": 0.007792020682245493,
+              "compression_ratio": 0.9464285714285714
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J32, do we have a better location at the school?",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " 5J32, do we have a better location at the school?",
+              "avg_logprob": -0.39524395325604605,
+              "no_speech_prob": 0.006346331909298897,
+              "compression_ratio": 0.8596491228070176
+            }
+          ]
+        },
+        "context": {
+          "text": "5J, 32M, do we have a better location to have at school?",
+          "prompt": "I'm from Outlaw Peak. 5G, 32M, just down the street if they need me. So far, that would be great.",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " 5J, 32M, do we have a better location to have at school?",
+              "avg_logprob": -0.36679176688194276,
+              "no_speech_prob": 0.004011305049061775,
+              "compression_ratio": 0.9491525423728814
+            }
+          ]
+        }
+      }
+    }
+  }
+}
