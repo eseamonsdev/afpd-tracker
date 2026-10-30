@@ -36,6 +36,15 @@ def write(path, data):
 
 
 class RequestTests(unittest.TestCase):
+    def test_pause_parameter_defaults_overrides_and_validation(self):
+        self.assertEqual(requests({'day': DAY})[0]['pause_ms'], 1000)
+        rows = requests({'pause_ms': 500, 'requests': [{'day': DAY}, {'day': '2026-10-03', 'pause_ms': 0}]})
+        self.assertEqual([r['pause_ms'] for r in rows], [500, 0])
+        row = resolve(Path('/unused'), 'audio', {'INPUT_DAY': DAY, 'INPUT_PAUSE_MS': '750'})[0]
+        self.assertEqual(row['pause_ms'], 750)
+        for value in [-1, True, 'nan', 0.5]:
+            with self.subTest(value=value), self.assertRaises(ValueError):
+                requests({'day': DAY, 'pause_ms': value})
     def test_default_and_every_branch_talkgroup_combination(self):
         self.assertEqual(requests({'day': DAY})[0]['target_branch'], 'staging')
         self.assertEqual(requests({'date': DAY})[0]['talkgroup'], 6001)
@@ -45,7 +54,7 @@ class RequestTests(unittest.TestCase):
                     self.assertEqual(requests({'day': DAY, 'talkgroup': str(group),
                                                'target_branch': branch})[0],
                                      {'day': DAY, 'talkgroup': group, 'target_branch': branch,
-                                      'mode': 'download', 'proof': ''})
+                                      'mode': 'download', 'proof': '', 'pause_ms': 1000})
 
     def test_days_are_independent_and_bad_inputs_rejected(self):
         rows = requests({'days': [DAY, '2026-10-20'], 'talkgroup': 5922})
@@ -177,6 +186,7 @@ class AudioRunnerTests(unittest.TestCase):
                 summary = root / 'openmhz-download-summary.json'
                 batches = []
                 def download_batch(command, **kwargs):
+                    self.assertEqual(command[command.index('--pause-ms') + 1], '1000')
                     batch_size = int(command[command.index('--batch-size') + 1])
                     processed = min(batch_size, 301 - sum(batches))
                     batches.append(processed)
@@ -244,6 +254,11 @@ class TranscriptionTests(unittest.TestCase):
 
 
 class RecoveryTests(unittest.TestCase):
+    def test_recovery_receives_configured_pause(self):
+        with patch.object(recovery, 'recover') as recover, patch.object(audio_runner, 'publish'):
+            audio_runner.run(DAY, 5922, 'staging', 'recover', 'proof.json', pause_ms=500)
+        self.assertEqual(recover.call_args.kwargs['pause_ms'], 500)
+
     def test_recovery_is_scoped_and_preserves_manual_proof_hash_guard(self):
         content=b'0000ftypfixture audio'
         digest=hashlib.sha256(content).hexdigest()
@@ -259,7 +274,7 @@ class RecoveryTests(unittest.TestCase):
             write(proof,{'verified_date':DAY,'calls':[{**wanted,'sha256':digest}]})
             fetched=[]; imported=[]
             def download(url,destination): fetched.append(url); destination.write_bytes(content)
-            def import_audio(root,source,network):
+            def import_audio(root,source,network,**kwargs):
                 imported.append(json.loads(source.read_text()))
                 return {'failed':0,'downloaded':1}
             with patch.object(recovery,'Downloader',return_value=SimpleNamespace(download=download)), \

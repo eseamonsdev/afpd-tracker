@@ -96,6 +96,15 @@ def upload_new(root, client, bucket):
         calls = {c['original_filename']: c for c in data['calls']}
         for path in sorted(paths):
             call = calls[path.name]
+            # A hydrated or retained local copy is not a new upload. Trust the
+            # existing verified R2 record; explicit integrity audits are separate.
+            if stored_audio(call, folder.name):
+                if call['audio_storage']['bucket'] != bucket:
+                    raise ValueError('R2 bucket differs from archive metadata')
+                if (path.stat().st_size != call['size_bytes'] or
+                        hashlib.sha256(path.read_bytes()).hexdigest() != call['sha256']):
+                    raise ValueError('Local audio does not match validated metadata: ' + path.name)
+                continue
             call['audio_storage'] = upload_one(client, bucket, path, call, folder.name)
             uploaded += 1
         for duplicate in data.get('duplicate_source_calls', []):
@@ -139,4 +148,3 @@ if __name__ == '__main__':
     else:
         client, bucket = client_and_bucket()
         print(json.dumps({'uploaded_and_read_back_verified': upload_new(args.root, client, bucket), 'bucket': bucket}))
-

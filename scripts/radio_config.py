@@ -8,6 +8,13 @@ TALKGROUPS = {
     6036: ('6036', 'American Fork PD Car to Car Private'),
 }
 BRANCHES = ('staging',)
+DEFAULT_PAUSE_MS = 1000
+
+
+def valid_pause_ms(value):
+    if isinstance(value, bool) or not str(value).isdigit():
+        raise ValueError('pause_ms must be a nonnegative integer in milliseconds')
+    return int(value)
 
 
 def valid_day(day):

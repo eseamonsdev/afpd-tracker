@@ -43,8 +43,17 @@ audio or start transcription. Completed runs do not keep processing future days.
 
 Preserved metadata must already exist. The action uses local staging metadata or fetches only the requested metadata file from remote staging. Existing queue checkpoints resume.
 The downloader skips saved audio and known failures, fetches sequentially, waits
-750 milliseconds after every attempt, and publishes a checkpoint every 300 calls.
+**1,000 milliseconds after every attempt**, and publishes a checkpoint every 300 calls.
+Override the pause with the audio workflow's `pause_ms` input, a request JSON
+`"pause_ms": 500`, or CLI `--pause-ms 500`. The value is a nonnegative integer
+in milliseconds and applies to both normal downloads and verified recovery.
+The pause is measured after the preceding attempt finishes, including failures.
+This setting controls pacing; it is not a guarantee against source rate limits.
 Each checkpoint uploads and verifies audio in R2 and saves metadata to staging.
+Only newly downloaded audio is validated and uploaded. Existing verified R2
+recordings retain their hashes, sizes, storage proof and transcripts without
+being downloaded or re-read. Whole-archive integrity checks are separate from
+ordinary downloads and recovery; explicit `r2_audio.py --hydrate` remains available.
 The full Eleventy site build runs only with the final batch for each requested
 date/talkgroup, rather than at every checkpoint. Interrupted runs retain their
 saved progress; generated pages and indexes catch up when the resumed run finishes.

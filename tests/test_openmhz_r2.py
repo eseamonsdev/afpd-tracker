@@ -6,6 +6,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).parents[1] / 'scripts'))
 from r2_audio import upload_one, upload_new, stored_audio, hydrate
@@ -105,7 +106,21 @@ class R2Test(unittest.TestCase):
         self.assertIn('calls.json', tracked)
         self.assertNotIn('.m4a', tracked)
 
+    def test_publication_does_not_read_verified_existing_objects_again(self):
+        subprocess.run(['git', 'init', '-q', str(self.root)], check=True)
+        (self.root / '.gitignore').write_text('*.m4a\n')
+        self.call['audio_storage'] = upload_one(self.client, 'bucket', self.path, self.call, self.folder.name)
+        new_path = self.folder / 'dcfems-6001-1792908040.m4a'
+        new_path.write_bytes(b'new audio')
+        new_call = {'original_filename': new_path.name, 'size_bytes': 9,
+                    'sha256': hashlib.sha256(b'new audio').hexdigest()}
+        (self.folder / 'calls.json').write_text(json.dumps({'calls': [self.call, new_call]}))
+        with patch.object(self.client, 'get_object', wraps=self.client.get_object) as get:
+            self.assertEqual(upload_new(self.root, self.client, 'bucket'), 1)
+        self.assertTrue(get.call_args_list)
+        self.assertTrue(all(c.kwargs['Key'].endswith(new_path.name) for c in get.call_args_list))
+        self.assertEqual(self.client.puts, 2)
+
 
 if __name__ == '__main__':
     unittest.main()
-

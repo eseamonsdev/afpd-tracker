@@ -29,6 +29,65 @@ def manifest(calls=None):
 
 
 class DownloadTest(unittest.TestCase):
+    def test_new_request_preserves_verified_r2_audio_without_fetching_or_inspecting_it(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            folder = root / 'public/records/openmhz/openmhz-afpd-car-to-car-2026-09-30'
+            folder.mkdir(parents=True)
+            old = module.normalize_call_metadata(sample(), '2026-09-30')
+            old.update(sha256='a' * 64, size_bytes=12, audio_duration_seconds=3,
+                       source_duration_matches=True, audio_downloaded=True,
+                       transcript='Owner wording', transcript_original='Original wording',
+                       validated=True, note='Preserve this')
+            old['audio_storage'] = {'provider': 'r2', 'verified': True, 'bucket': 'bucket',
+                                    'key': f'openmhz/{folder.name}/{old["original_filename"]}',
+                                    'sha256': old['sha256'], 'size_bytes': 12}
+            (folder / 'calls.json').write_text(json.dumps(manifest([old])))
+            new = sample(old['epoch'] + 10, 'new-call')
+            source = root / '2026-09-30.json'
+            source.write_text(json.dumps(manifest([new])))
+            downloader = Mock()
+            downloader.download.side_effect = lambda url, path: path.write_bytes(b'0000ftyp0000')
+            checked = {'sha256': 'b' * 64, 'size_bytes': 12, 'audio_duration_seconds': 3}
+            with patch.object(module, 'inspect_audio', return_value=checked) as inspect, \
+                 patch('r2_audio.read_verified', side_effect=AssertionError('Old R2 audio must not be fetched')):
+                result = module.import_manifest(root, source, downloader, pause_ms=500)
+            downloader.download.assert_called_once_with(new['media_url'], unittest.mock.ANY)
+            self.assertEqual(inspect.call_count, 1)
+            self.assertEqual(result['downloaded'], 1)
+            saved = json.loads((folder / 'calls.json').read_text())
+            self.assertEqual(saved['calls'][0], old)
+            self.assertFalse((folder / old['original_filename']).exists())
+            validation = json.loads((folder / 'validation.json').read_text())
+            self.assertTrue(validation['validated'])
+            self.assertEqual(validation['audio_validated_count'], 2)
+            self.assertEqual(validation['minimum_pause_after_download_seconds'], 0.5)
+            # Model the intervening publication of the newly downloaded file.
+            saved['calls'][1]['audio_storage'] = {
+                'provider': 'r2', 'verified': True, 'bucket': 'bucket',
+                'key': f'openmhz/{folder.name}/{new["original_filename"]}',
+                'sha256': checked['sha256'], 'size_bytes': checked['size_bytes']}
+            (folder / 'calls.json').write_text(json.dumps(saved))
+            # Requesting an existing verified recording also skips all audio IO.
+            source.write_text(json.dumps(manifest([old])))
+            with patch.object(module, 'inspect_audio', side_effect=AssertionError('No reinspection')):
+                result = module.import_manifest(root, source, downloader)
+            self.assertEqual(result['skipped_existing'], 1)
+            self.assertEqual(downloader.download.call_count, 1)
+
+    def test_custom_millisecond_pause_is_honored(self):
+        class Response(io.BytesIO):
+            headers = {'Content-Type': 'audio/mp4'}
+        downloader = module.Downloader(pause_ms=250)
+        downloader.opener = Mock()
+        downloader.opener.open.side_effect = [Response(b'0000ftyp0000'), Response(b'0000ftyp0000')]
+        with tempfile.TemporaryDirectory() as directory, \
+             patch.object(module.time, 'monotonic', side_effect=[10, 10.1, 20]), \
+             patch.object(module.time, 'sleep') as sleep:
+            downloader.download(sample()['media_url'], Path(directory) / 'one.m4a')
+            downloader.download(sample()['media_url'], Path(directory) / 'two.m4a')
+            self.assertAlmostEqual(sleep.call_args.args[0], 0.15)
+
     def test_first_download_accepts_listing_only_or_empty_folder(self):
         for listing in (False, True):
             with self.subTest(listing=listing), tempfile.TemporaryDirectory() as directory:
@@ -378,7 +437,7 @@ class DownloadTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory, patch.object(module.time, 'monotonic', side_effect=[10, 10.25, 20]), patch.object(module.time, 'sleep') as sleep:
             downloader.download(sample()['media_url'], Path(directory) / 'one.m4a')
             downloader.download(sample()['media_url'], Path(directory) / 'two.m4a')
-            sleep.assert_called_once_with(0.25)
+            sleep.assert_called_once_with(0.75)
 
     def test_html_response_is_not_saved_as_audio(self):
         class Response(io.BytesIO):
@@ -392,7 +451,7 @@ class DownloadTest(unittest.TestCase):
                 downloader.download(sample()['media_url'], output)
             self.assertFalse(output.exists())
 
-    def test_failed_download_also_keeps_500_ms_pause_before_next_attempt(self):
+    def test_failed_download_also_keeps_default_pause_before_next_attempt(self):
         class Response(io.BytesIO):
             headers = {'Content-Type': 'audio/mp4'}
         downloader = module.Downloader()
@@ -404,7 +463,7 @@ class DownloadTest(unittest.TestCase):
             with self.assertRaises(OSError):
                 downloader.download(sample()['media_url'], Path(directory) / 'failed.m4a')
             downloader.download(sample()['media_url'], Path(directory) / 'next.m4a')
-            self.assertAlmostEqual(sleep.call_args.args[0], 0.4)
+            self.assertAlmostEqual(sleep.call_args.args[0], 0.9)
 
     def test_partial_day_extension_preserves_existing_calls(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -429,4 +488,3 @@ class DownloadTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-

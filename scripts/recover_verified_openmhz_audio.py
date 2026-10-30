@@ -10,17 +10,18 @@ from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 from download_openmhz_manifest import Downloader, import_manifest, validate_manifest, write_json
 
-from radio_config import valid_day, valid_talkgroup
+from radio_config import DEFAULT_PAUSE_MS, valid_day, valid_talkgroup, valid_pause_ms
 
 
-def recover(root, day, talkgroup, proof_path):
+def recover(root, day, talkgroup, proof_path, *, pause_ms=DEFAULT_PAUSE_MS):
+    pause_ms = valid_pause_ms(pause_ms)
     valid_day(day)
     valid_talkgroup(talkgroup)
     ROOT = root.resolve()
     proof = json.loads((ROOT / proof_path).read_text())
     approved = {c['id']: c['media_url'] for c in proof['calls']}
     expected_hashes = {c['id']: c.get('sha256') for c in proof['calls']}
-    network = Downloader()
+    network = Downloader(pause_ms=pause_ms)
     totals = []
     with tempfile.TemporaryDirectory(prefix='verified-openmhz-recovery-') as directory:
         cache = Path(directory)
@@ -71,7 +72,7 @@ def recover(root, day, talkgroup, proof_path):
                             })
             source = cache / failure.name
             write_json(source, data)
-            summary = import_manifest(ROOT, source, CachedDownloader())
+            summary = import_manifest(ROOT, source, CachedDownloader(), pause_ms=pause_ms)
             if summary['failed']:
                 raise ValueError('Recovery still has failed entries')
             totals.append(summary)
@@ -91,5 +92,6 @@ if __name__ == '__main__':
     p.add_argument('--talkgroup', type=int, default=6001)
     p.add_argument('--proof', type=Path, required=True)
     p.add_argument('--root', type=Path, default=Path.cwd())
+    p.add_argument('--pause-ms', type=valid_pause_ms, default=DEFAULT_PAUSE_MS)
     a = p.parse_args()
-    recover(a.root, a.date, a.talkgroup, a.proof)
+    recover(a.root, a.date, a.talkgroup, a.proof, pause_ms=a.pause_ms)

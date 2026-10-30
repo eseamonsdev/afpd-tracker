@@ -40,6 +40,11 @@ name: Download radio audio
         required: false
         type: string
         default: ''
+      pause_ms:
+        description: Pause after each source download attempt in milliseconds
+        required: false
+        default: 1000
+        type: number
   workflow_call:
     inputs:
       day:
@@ -60,6 +65,10 @@ name: Download radio audio
         required: false
         type: string
         default: ''
+      pause_ms:
+        required: false
+        default: 1000
+        type: number
 permissions:
   contents: write
 jobs:
@@ -85,6 +94,7 @@ jobs:
         INPUT_BRANCH: ${{ inputs.target_branch }}
         INPUT_MODE: ${{ inputs.mode }}
         INPUT_PROOF: ${{ inputs.proof }}
+        INPUT_PAUSE_MS: ${{ inputs.pause_ms }}
   audio:
     needs: request
     if: ${{ needs.request.outputs.has_work == 'true' }}
@@ -112,6 +122,7 @@ jobs:
       OPENMHZ_AUDIO_STORAGE: r2
       MODE: ${{ matrix.mode }}
       PROOF: ${{ matrix.proof }}
+      PAUSE_MS: ${{ matrix.pause_ms }}
     steps:
     - uses: actions/checkout@v4
       with:
@@ -140,7 +151,7 @@ jobs:
         echo $! > "$RUNNER_TEMP/radio-status.pid"'
     - name: Download requested audio to R2 and checkpoint every 300 calls
       run: python3 -u scripts/run_radio_audio.py --date "$DAY" --talkgroup "$TALKGROUP" --target-branch "$TARGET_BRANCH" --mode
-        "$MODE" --proof "$PROOF"
+        "$MODE" --proof "$PROOF" --pause-ms "${PAUSE_MS:-1000}"
     - name: Preserve publication recovery bundle on failure
       if: failure()
       uses: actions/upload-artifact@v4

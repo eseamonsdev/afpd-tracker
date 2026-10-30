@@ -17,7 +17,8 @@ from datetime import date, datetime, time as day_time, timedelta, timezone
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 from zoneinfo import ZoneInfo
-from r2_audio import hydrate
+from r2_audio import audio_checks, stored_audio
+from radio_config import DEFAULT_PAUSE_MS, valid_pause_ms
 
 
 def record_status(day, talkgroup, name, status):
@@ -37,7 +38,7 @@ def record_status(day, talkgroup, name, status):
         pass
 
 MOUNTAIN = ZoneInfo('America/Denver')
-GAP_SECONDS = 0.5
+GAP_SECONDS = DEFAULT_PAUSE_MS / 1000
 DEFAULT_BATCH_SIZE = 300
 MAX_AUDIO_BYTES = 20 * 1024 * 1024
 MAX_CALLS = 5000
@@ -158,14 +159,16 @@ class NoRedirects(urllib.request.HTTPRedirectHandler):
 
 
 class Downloader:
-    """One request at a time, 500 ms after completion of the last attempt."""
-    def __init__(self):
+    """One request at a time, with a configurable pause after each attempt."""
+    def __init__(self, pause_ms=DEFAULT_PAUSE_MS):
+        self.pause_ms = valid_pause_ms(pause_ms)
+        self.pause_seconds = self.pause_ms / 1000
         self.finished_at = None
         self.opener = urllib.request.build_opener(NoRedirects())
 
     def download(self, url, destination):
         if self.finished_at is not None:
-            time.sleep(max(0, GAP_SECONDS - (time.monotonic() - self.finished_at)))
+            time.sleep(max(0, self.pause_seconds - (time.monotonic() - self.finished_at)))
         try:
             req = urllib.request.Request(url, headers={'User-Agent': 'afpd-tracker-archive/1.0'})
             with self.opener.open(req, timeout=20) as response:
@@ -205,7 +208,8 @@ def inspect_audio(path, call):
             'source_duration_matches': matches}
 
 
-def import_manifest(root, source, downloader):
+def import_manifest(root, source, downloader, *, pause_ms=DEFAULT_PAUSE_MS):
+    pause_ms = valid_pause_ms(pause_ms)
     data = json.loads(source.read_text())
     day = validate_manifest(data)
     talkgroup = data['talkgroup']
@@ -222,15 +226,13 @@ def import_manifest(root, source, downloader):
             raise ValueError('Existing archive folder has no manifest')
     if old and (old.get('date') != day or old.get('talkgroup') != talkgroup):
         raise ValueError('Existing archive identity does not match')
-    if old:
-        # Public calls.json can contain a complete metadata inventory before
-        # audio is downloaded. Restore saved audio without requiring pending rows.
-        hydrate(destination, allow_metadata_only=True)
     merged = {call['original_filename']: dict(call) for call in (old or {}).get('calls', [])}
     ids = {call['id']: name for name, call in merged.items() if call.get('id')}
     downloaded = skipped = 0
     duplicates = list((old or {}).get('duplicate_source_calls', []))
-    checked_audio = {}
+    # Existing verified R2 objects retain their checks without downloading them.
+    checked_audio = {name: audio_checks(call) for name, call in merged.items()
+                     if stored_audio(call, destination.name)}
     failure_path = root / 'records-pending-review/openmhz-failures' / f'{day}-{channel}.json'
     previous_failures = json.loads(failure_path.read_text()) if failure_path.exists() else None
     outstanding = {c['id']: c for c in (previous_failures or {}).get('calls', [])}
@@ -245,12 +247,17 @@ def import_manifest(root, source, downloader):
                 raise ValueError('Source ID changed its audio filename')
             previous = merged.get(name)
             audio = destination / name
-            if previous and audio.exists():
-                checked = inspect_audio(audio, previous)
+            if previous and (stored_audio(previous, destination.name) or audio.exists()):
+                checked = (audio_checks(previous) if stored_audio(previous, destination.name)
+                           else inspect_audio(audio, previous))
                 checked_audio[name] = checked
                 skipped += 1
                 if not previous.get('id') or previous['id'] == incoming['id']:
                     merged[name] = {**previous, **incoming, **checked}
+                    for field in ('audio_storage', 'transcript', 'transcript_original',
+                                  'validated', 'note', 'needs_review'):
+                        if field in previous:
+                            merged[name][field] = previous[field]
                     ids[incoming['id']] = name
                 elif not any(x.get('id') == incoming['id'] for x in duplicates):
                     duplicates.append(incoming)
@@ -369,7 +376,7 @@ def import_manifest(root, source, downloader):
                    skipped_existing=skipped, validated=len(checked_audio) == len(calls),
                    audio_validated_count=len(checked_audio), audio_pending_count=len(calls) - len(checked_audio),
                    coverage=result['coverage'],
-                   collected_through_utc=cutoff, minimum_pause_after_download_seconds=GAP_SECONDS)
+                   collected_through_utc=cutoff, minimum_pause_after_download_seconds=pause_ms / 1000)
         validation['source_duration_discrepancies'] = [call['original_filename'] for call in calls
                                                       if not call.get('source_duration_matches', True)]
         if result.get('coverage_note'):
@@ -386,6 +393,8 @@ def main():
     parser.add_argument('--root', type=Path, default=Path.cwd())
     parser.add_argument('--summary', type=Path, required=True)
     parser.add_argument('--batch-size', type=int, default=DEFAULT_BATCH_SIZE)
+    parser.add_argument('--pause-ms', type=valid_pause_ms, default=DEFAULT_PAUSE_MS,
+                        help='Pause after each source download attempt in milliseconds (default: 1000)')
     parser.add_argument('--manifest', help='Process only this queued manifest filename')
     args = parser.parse_args()
     root = args.root.resolve()
@@ -396,7 +405,7 @@ def main():
         pending = [source for source in pending if source.name == args.manifest]
     for source in pending:
         validate_manifest(json.loads(source.read_text()))
-    downloader = Downloader()
+    downloader = Downloader(pause_ms=args.pause_ms)
     if not 1 <= args.batch_size <= MAX_CALLS:
         parser.error('--batch-size must be between 1 and 5000')
     results = []
@@ -414,7 +423,7 @@ def main():
         with tempfile.TemporaryDirectory(prefix='openmhz-batch-') as directory:
             batch_source = Path(directory) / source.name
             write_json(batch_source, batch)
-            results.append(import_manifest(root, batch_source, downloader))
+            results.append(import_manifest(root, batch_source, downloader, pause_ms=args.pause_ms))
         if remaining:
             write_json(source, {**full, 'calls': remaining, 'count': len(remaining)})
         else:
@@ -429,4 +438,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

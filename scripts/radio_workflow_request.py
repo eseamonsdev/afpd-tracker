@@ -7,14 +7,14 @@ from pathlib import Path
 import re
 import subprocess
 
-from radio_config import valid_branch, valid_day, valid_talkgroup
+from radio_config import DEFAULT_PAUSE_MS, valid_branch, valid_day, valid_talkgroup, valid_pause_ms
 
 REQUEST_FILES = {'audio': 'records-pending-review/openmhz-audio-request.json',
                  'transcribe': 'records-pending-review/openmhz-transcription-request.json'}
 
 
 def requests(payload, default_branch='staging'):
-    defaults = {k: payload[k] for k in ('talkgroup', 'target_branch', 'mode', 'proof', 'selection') if k in payload}
+    defaults = {k: payload[k] for k in ('talkgroup', 'target_branch', 'mode', 'proof', 'selection', 'pause_ms') if k in payload}
     rows = payload.get('requests')
     if rows is None:
         rows = [{'day': d} for d in payload['days']] if 'days' in payload else [payload]
@@ -32,7 +32,8 @@ def requests(payload, default_branch='staging'):
         result.append({'day': valid_day(row.get('day') or row.get('date')),
                        'talkgroup': valid_talkgroup(row.get('talkgroup', 6001)),
                        'target_branch': valid_branch(row.get('target_branch') or default_branch),
-                       'mode': mode, 'proof': proof})
+                       'mode': mode, 'proof': proof,
+                       'pause_ms': valid_pause_ms(row.get('pause_ms', DEFAULT_PAUSE_MS))})
         if 'selection' in row:
             if row['selection'] not in ('all', 'afpd_missing'):
                 raise ValueError('Unknown transcription selection')
@@ -58,7 +59,8 @@ def resolve(root, kind, env):
     if env.get('INPUT_DAY') or env.get('GITHUB_EVENT_NAME') != 'push':
         return requests({'day': env.get('INPUT_DAY'), 'talkgroup': env.get('INPUT_TALKGROUP') or 6001,
                          'target_branch': env.get('INPUT_BRANCH') or 'staging',
-                         'mode': env.get('INPUT_MODE') or 'download', 'proof': env.get('INPUT_PROOF') or ''})
+                         'mode': env.get('INPUT_MODE') or 'download', 'proof': env.get('INPUT_PROOF') or '',
+                         'pause_ms': env.get('INPUT_PAUSE_MS') or DEFAULT_PAUSE_MS})
     event = json.loads(Path(env['GITHUB_EVENT_PATH']).read_text())
     changed = changed_paths(root, event)
     request_file = REQUEST_FILES[kind]
