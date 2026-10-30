@@ -1,0 +1,657 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-29",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1793291867.m4a": {
+      "index": 41,
+      "epoch": 1793291867,
+      "sha256": "fad4ec3e0ee31d2fad8371b5a5acca601b7194c7731c942e2af58397bd25880a",
+      "passes": {
+        "original": {
+          "text": "Diego, what are we doing to get this car off the roundabout?",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Diego, what are we doing to get this car off the roundabout?",
+              "avg_logprob": -0.2756284276644389,
+              "no_speech_prob": 0.024636493995785713,
+              "compression_ratio": 0.9375
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Diego, what are we doing to get this car off the roundabout?",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.08,
+              "text": " Diego, what are we doing to get this car off the roundabout?",
+              "avg_logprob": -0.223608388668961,
+              "no_speech_prob": 0.016557082533836365,
+              "compression_ratio": 0.9375
+            }
+          ]
+        },
+        "context": {
+          "text": "Diego, what are we doing to get this car off the roundabout?",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Diego, what are we doing to get this car off the roundabout?",
+              "avg_logprob": -0.2756284276644389,
+              "no_speech_prob": 0.024636493995785713,
+              "compression_ratio": 0.9375
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793291880.m4a": {
+      "index": 42,
+      "epoch": 1793291880,
+      "sha256": "c5cfcbb8b0fce966c74aeb31e284ce59ecf1df0fe99e39dfef508c1979a462db",
+      "passes": {
+        "original": {
+          "text": "Josh, he has his own tow coming. Ricky's going to stay in case there's any trap control needed, but we're not going to do anything for this guy.",
+          "prompt": null,
+          "duration_seconds": 9.344,
+          "token_limit": 99,
+          "token_count": 37,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " Josh, he has his own tow coming. Ricky's going to stay in case there's any trap control needed, but we're not going to do anything for this guy.",
+              "avg_logprob": -0.2198269543679137,
+              "no_speech_prob": 0.07411815226078033,
+              "compression_ratio": 1.2743362831858407
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Josh, he has his own tow coming. Ricky's going to stay in case there's any trap control needed, but we're not going to do anything for this guy.",
+          "prompt": null,
+          "duration_seconds": 9.344,
+          "token_limit": 99,
+          "token_count": 37,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " Josh, he has his own tow coming. Ricky's going to stay in case there's any trap control needed, but we're not going to do anything for this guy.",
+              "avg_logprob": -0.24542959505005887,
+              "no_speech_prob": 0.048688020557165146,
+              "compression_ratio": 1.2743362831858407
+            }
+          ]
+        },
+        "context": {
+          "text": "Josh, he has his own tow coming. Ricky's gonna stay in case there's any trap control needed, but we're not gonna do anything for this guy.",
+          "prompt": "Diego, what are we doing to get this car off the roundabout?",
+          "duration_seconds": 9.344,
+          "token_limit": 99,
+          "token_count": 35,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " Josh, he has his own tow coming. Ricky's gonna stay in case there's any trap control needed, but we're not gonna do anything for this guy.",
+              "avg_logprob": -0.20631033720241654,
+              "no_speech_prob": 0.011802065186202526,
+              "compression_ratio": 1.2212389380530972
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793292035.m4a": {
+      "index": 43,
+      "epoch": 1793292035,
+      "sha256": "3f8bf7eed40c45c7f43f0a17fc9701ec1f30b714c8c5f96baefa26578f1acd73",
+      "passes": {
+        "original": {
+          "text": "Bad day for cars.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bad day for cars.",
+              "avg_logprob": -0.3592190705239773,
+              "no_speech_prob": 0.032763730734586716,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bad day for cars.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bad day for cars.",
+              "avg_logprob": -0.47103986144065857,
+              "no_speech_prob": 0.026455184444785118,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "Bad day for cars.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bad day for cars.",
+              "avg_logprob": -0.3592190705239773,
+              "no_speech_prob": 0.032763730734586716,
+              "compression_ratio": 0.68
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793292795.m4a": {
+      "index": 44,
+      "epoch": 1793292795,
+      "sha256": "a12f44b169ccc8cae0a0afdde3d6540e404ddb577674b714356562d24b350665",
+      "passes": {
+        "original": {
+          "text": "You",
+          "prompt": null,
+          "duration_seconds": 0.512,
+          "token_limit": 29,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You",
+              "avg_logprob": -0.7895121574401855,
+              "no_speech_prob": 0.830821692943573,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "filtered": {
+          "text": "You",
+          "prompt": null,
+          "duration_seconds": 0.512,
+          "token_limit": 29,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You",
+              "avg_logprob": -0.7691512405872345,
+              "no_speech_prob": 0.8637171387672424,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "context": {
+          "text": "You",
+          "prompt": null,
+          "duration_seconds": 0.512,
+          "token_limit": 29,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You",
+              "avg_logprob": -0.7895121574401855,
+              "no_speech_prob": 0.830821692943573,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793294124.m4a": {
+      "index": 45,
+      "epoch": 1793294124,
+      "sha256": "14283b890bd27c572224a0f54ec3006ebd45ea6d3015fcf722f5c375c789f86b",
+      "passes": {
+        "original": {
+          "text": "Announcement. It's lunchtime.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Announcement. It's lunchtime.",
+              "avg_logprob": -0.7811756025661122,
+              "no_speech_prob": 0.06394161283969879,
+              "compression_ratio": 0.8285714285714286
+            }
+          ]
+        },
+        "filtered": {
+          "text": "uh, announcement. Lunch time.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " uh, announcement.",
+              "avg_logprob": -0.6571446657180786,
+              "no_speech_prob": 0.03999238833785057,
+              "compression_ratio": 0.8285714285714286
+            },
+            {
+              "start": 2.0,
+              "end": 4.0,
+              "text": " Lunch time.",
+              "avg_logprob": -0.6571446657180786,
+              "no_speech_prob": 0.03999238833785057,
+              "compression_ratio": 0.8285714285714286
+            }
+          ]
+        },
+        "context": {
+          "text": "Announcement. It's lunchtime.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Announcement. It's lunchtime.",
+              "avg_logprob": -0.7811756025661122,
+              "no_speech_prob": 0.06394161283969879,
+              "compression_ratio": 0.8285714285714286
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793294133.m4a": {
+      "index": 46,
+      "epoch": 1793294133,
+      "sha256": "662f9c44219423df02284dd2dd7fc2ce481ec3e51bc8295f90ace0ec84b9667c",
+      "passes": {
+        "original": {
+          "text": "truly groundbreaking where are we eating I hear that there's gonna be a chili cook-off",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.44,
+              "text": " truly groundbreaking where are we eating I hear that there's gonna be a chili",
+              "avg_logprob": -0.26581429398578144,
+              "no_speech_prob": 0.02241484820842743,
+              "compression_ratio": 1.0617283950617284
+            },
+            {
+              "start": 4.44,
+              "end": 6.82,
+              "text": " cook-off",
+              "avg_logprob": -0.26581429398578144,
+              "no_speech_prob": 0.02241484820842743,
+              "compression_ratio": 1.0617283950617284
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Truly groundbreaking. Where are we eating? I hear that there's going to be a chili cook-off.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Truly groundbreaking. Where are we eating? I hear that there's going to be a chili cook-off.",
+              "avg_logprob": -0.36351871490478516,
+              "no_speech_prob": 0.015149672515690327,
+              "compression_ratio": 1.0574712643678161
+            }
+          ]
+        },
+        "context": {
+          "text": "Truly groundbreaking. Where are we eating? I hear that there's going to be a chili cook-off.",
+          "prompt": "Announcement. It's lunchtime.",
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Truly groundbreaking. Where are we eating? I hear that there's going to be a chili cook-off.",
+              "avg_logprob": -0.26701157569885253,
+              "no_speech_prob": 0.012592099606990814,
+              "compression_ratio": 1.0574712643678161
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793294141.m4a": {
+      "index": 47,
+      "epoch": 1793294141,
+      "sha256": "f7aeecb309aa8157b9517a9f338dd448fe021a9f2b068467ac755b245896b322",
+      "passes": {
+        "original": {
+          "text": "There will be, but I'm not going to eat chili. I might go to mobility",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.5,
+              "text": " There will be, but I'm not going to eat chili. I might go to mobility",
+              "avg_logprob": -0.38973064649672734,
+              "no_speech_prob": 0.013156376779079437,
+              "compression_ratio": 0.971830985915493
+            }
+          ]
+        },
+        "filtered": {
+          "text": "There will be, but I'm not going to eat chili. I might go to mo betas.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.54,
+              "text": " There will be, but I'm not going to eat chili. I might go to mo betas.",
+              "avg_logprob": -0.42529511203368503,
+              "no_speech_prob": 0.003894867142662406,
+              "compression_ratio": 0.9859154929577465
+            }
+          ]
+        },
+        "context": {
+          "text": "There will be but I'm not gonna eat chili. I might go to mobility",
+          "prompt": "Announcement. It's lunchtime. truly groundbreaking where are we eating I hear that there's gonna be a chili cook-off",
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.5,
+              "text": " There will be but I'm not gonna eat chili. I might go to mobility",
+              "avg_logprob": -0.35495490149447795,
+              "no_speech_prob": 0.0016655429499223828,
+              "compression_ratio": 0.9558823529411765
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793294147.m4a": {
+      "index": 48,
+      "epoch": 1793294147,
+      "sha256": "716c6e679320adc2ede7a2bed8b8e247a6f8c9364e6f47719f14b039123a0364",
+      "passes": {
+        "original": {
+          "text": "That sounds better.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " That sounds better.",
+              "avg_logprob": -0.5198734658105033,
+              "no_speech_prob": 0.016186006367206573,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "filtered": {
+          "text": "That sounds better.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.44,
+              "text": " That sounds better.",
+              "avg_logprob": -0.5166760683059692,
+              "no_speech_prob": 0.012468927539885044,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "That sounds better.",
+          "prompt": "Announcement. It's lunchtime. truly groundbreaking where are we eating I hear that there's gonna be a chili cook-off There will be, but I'm not going to eat chili. I might go to mobility",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " That sounds better.",
+              "avg_logprob": -0.564057469367981,
+              "no_speech_prob": 0.001208765315823257,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793294168.m4a": {
+      "index": 49,
+      "epoch": 1793294168,
+      "sha256": "b6666a0fb0b298412ad224505f87302f0d6983e8785bf6186879e560fb0e2b0b",
+      "passes": {
+        "original": {
+          "text": "I am also going to kick ass.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I am also going to kick ass.",
+              "avg_logprob": -0.33809558911757037,
+              "no_speech_prob": 0.01363174244761467,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm also going to kick ass.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm also going to kick ass.",
+              "avg_logprob": -0.4228276285258206,
+              "no_speech_prob": 0.007422262337058783,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm also gonna kick ass.",
+          "prompt": "truly groundbreaking where are we eating I hear that there's gonna be a chili cook-off There will be, but I'm not going to eat chili. I might go to mobility That sounds better.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm also gonna kick ass.",
+              "avg_logprob": -0.37550421953201296,
+              "no_speech_prob": 0.000700456730555743,
+              "compression_ratio": 0.75
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793294172.m4a": {
+      "index": 50,
+      "epoch": 1793294172,
+      "sha256": "3aaeffcbe905f5345d494f8197c54b11695d6906336f96063127d865fbffc6af",
+      "passes": {
+        "original": {
+          "text": "If you just ate the chili, you could accomplish both things at the same time.",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " If you just ate the chili, you could accomplish both things at the same time.",
+              "avg_logprob": -0.2524143323302269,
+              "no_speech_prob": 0.02324638143181801,
+              "compression_ratio": 1.0405405405405406
+            }
+          ]
+        },
+        "filtered": {
+          "text": "If you just ate the chili, you could accomplish both things at the same time.",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.44,
+              "text": " If you just ate the chili, you could accomplish both things at the same time.",
+              "avg_logprob": -0.24575532972812653,
+              "no_speech_prob": 0.01155297365039587,
+              "compression_ratio": 1.0405405405405406
+            }
+          ]
+        },
+        "context": {
+          "text": "If you just ate the chili, you can accomplish both things at the same time.",
+          "prompt": "There will be, but I'm not going to eat chili. I might go to mobility That sounds better. I am also going to kick ass.",
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " If you just ate the chili, you can accomplish both things at the same time.",
+              "avg_logprob": -0.23017716109752656,
+              "no_speech_prob": 0.024587782099843025,
+              "compression_ratio": 1.0273972602739727
+            }
+          ]
+        }
+      }
+    }
+  }
+}
