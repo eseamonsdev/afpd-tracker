@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-27",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1790569616.m4a": {
+      "index": 1251,
+      "epoch": 1790569616,
+      "sha256": "271e70189d5c22af1e9f34de0f206242590c75b6f4ce50d5b42bbe74620bbbfa",
+      "passes": {
+        "original": {
+          "text": "Summerfield Drive and North County Boulevard, Local 9, Delta Fox, Julia 7.",
+          "prompt": null,
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.92,
+              "text": " Summerfield Drive and North County Boulevard, Local 9, Delta Fox, Julia 7.",
+              "avg_logprob": -0.44757014364004133,
+              "no_speech_prob": 0.03730839118361473,
+              "compression_ratio": 0.9135802469135802
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790569638.m4a": {
+      "index": 1252,
+      "epoch": 1790569638,
+      "sha256": "764efcfb8a7933cc1d7c0f707ac6265d77ee0fb8a49c2e1e8074ead0ed8b850f",
+      "passes": {
+        "original": {
+          "text": "5J51 arrive",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J51 arrive",
+              "avg_logprob": -0.7683246987206596,
+              "no_speech_prob": 0.11688587814569473,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5k51 arrive",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5k51 arrive",
+              "avg_logprob": -0.734592114176069,
+              "no_speech_prob": 0.12925928831100464,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "5G, 51 arrive.",
+          "prompt": "18-0-23 traffic. Go ahead. Summerfield Drive and North County Boulevard, Local 9, Delta Fox, Julia 7.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G, 51 arrive.",
+              "avg_logprob": -0.6651042302449545,
+              "no_speech_prob": 0.0464363731443882,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    }
+  }
+}
