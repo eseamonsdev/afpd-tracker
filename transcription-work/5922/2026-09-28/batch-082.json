@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-28",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1790633667.m4a": {
+      "index": 815,
+      "epoch": 1790633667,
+      "sha256": "8aad60005cebcebe16f44b6d8b55e6ffb1a39305f561fd8ff35ed1b642250445",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.6161007781823477,
+              "no_speech_prob": 0.019950978457927704,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790633668.m4a": {
+      "index": 816,
+      "epoch": 1790633668,
+      "sha256": "889df6656814b65ff77979f10d44dc67cf9150022af7114fb3f520e09529402a",
+      "passes": {
+        "original": {
+          "text": "Looks like we've located the child approximately 50 South and North County.",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Looks like we've located the child approximately 50 South and North County.",
+              "avg_logprob": -0.2744942833395565,
+              "no_speech_prob": 0.003031930886209011,
+              "compression_ratio": 0.9375
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Looks like we've located the child approximately 50 South and North County.",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.08,
+              "text": " Looks like we've located the child approximately 50 South and North County.",
+              "avg_logprob": -0.32696160148171816,
+              "no_speech_prob": 0.002606916707009077,
+              "compression_ratio": 0.9375
+            }
+          ]
+        },
+        "context": {
+          "text": "Looks like we've located the child approximately 50 South and North County.",
+          "prompt": "Go ahead.",
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Looks like we've located the child approximately 50 South and North County.",
+              "avg_logprob": -0.2307552730335909,
+              "no_speech_prob": 0.002089201472699642,
+              "compression_ratio": 0.9375
+            }
+          ]
+        }
+      }
+    }
+  }
+}
