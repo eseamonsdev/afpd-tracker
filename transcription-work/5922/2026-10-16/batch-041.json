@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-16",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792172385.m4a": {
+      "index": 408,
+      "epoch": 1792172385,
+      "sha256": "40546cf8cff57f6ebd1e0aa8109396a6758eb55999c0903f9a14463e1f348792",
+      "passes": {
+        "original": {
+          "text": "5J31, copy accident, PD.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J31, copy accident, PD.",
+              "avg_logprob": -0.46486154198646545,
+              "no_speech_prob": 0.033649343997240067,
+              "compression_ratio": 0.75
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792172392.m4a": {
+      "index": 409,
+      "epoch": 1792172392,
+      "sha256": "3c87e24de7ec0beb04ffa7530f8730e016fd0caf89ff4a2f4a6cc9502f384395",
+      "passes": {
+        "original": {
+          "text": "Good.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Good.",
+              "avg_logprob": -0.743648624420166,
+              "no_speech_prob": 0.09406695514917374,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Good.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Good.",
+              "avg_logprob": -0.626188087463379,
+              "no_speech_prob": 0.033377062529325485,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Good.",
+          "prompt": "5J31, copy accident, PD.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Good.",
+              "avg_logprob": -0.7248810768127442,
+              "no_speech_prob": 0.06432197988033295,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792172394.m4a": {
+      "index": 410,
+      "epoch": 1792172394,
+      "sha256": "eec71b432bece199defd3d47e948435fd27007f3d4c0596d84aaa9166ec98f23",
+      "passes": {
+        "original": {
+          "text": "300 North, North County Boulevard, 300 North, North County, Arpisa Witness, advising of a white truck versus a gray passenger car.",
+          "prompt": null,
+          "duration_seconds": 9.344,
+          "token_limit": 99,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " 300 North, North County Boulevard, 300 North, North County, Arpisa Witness, advising of a white truck versus a gray passenger car.",
+              "avg_logprob": -0.4989076219499111,
+              "no_speech_prob": 0.040671057999134064,
+              "compression_ratio": 1.2621359223300972
+            }
+          ]
+        }
+      }
+    }
+  }
+}
