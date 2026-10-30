@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-29",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1790687948.m4a": {
+      "index": 196,
+      "epoch": 1790687948,
+      "sha256": "aa82849226a1e3ae64c69549325c755d1aed005103c7509984ca559fdc51f434",
+      "passes": {
+        "original": {
+          "text": "5 game 43 arrived.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5 game 43 arrived.",
+              "avg_logprob": -0.8589857816696167,
+              "no_speech_prob": 0.053531479090452194,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Five game 43 arrive.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Five game 43 arrive.",
+              "avg_logprob": -0.907641664147377,
+              "no_speech_prob": 0.05553245544433594,
+              "compression_ratio": 0.7692307692307693
+            }
+          ]
+        },
+        "context": {
+          "text": "5 game 43 arrived.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5 game 43 arrived.",
+              "avg_logprob": -0.8589857816696167,
+              "no_speech_prob": 0.053531479090452194,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790688574.m4a": {
+      "index": 200,
+      "epoch": 1790688574,
+      "sha256": "d10d49ad9ad86048d3c08a3acaa5e0c4478b73322983aa8eefab1b3fcf5e8deb",
+      "passes": {
+        "original": {
+          "text": "7 day 14, 10-11 necessarily.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0200000000000005,
+              "text": " 7 day 14, 10-11 necessarily.",
+              "avg_logprob": -0.6146106123924255,
+              "no_speech_prob": 0.024182654917240143,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        }
+      }
+    }
+  }
+}
