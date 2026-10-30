@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-18",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792354336.m4a": {
+      "index": 484,
+      "epoch": 1792354336,
+      "sha256": "210a0021ee15b64ec41a7f3b1994d07e7f548417b265fae9bdc074d21ac7aa9c",
+      "passes": {
+        "original": {
+          "text": "I'm J30, copy, follow-up, 10, 10, 1.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I'm J30, copy, follow-up, 10, 10, 1.",
+              "avg_logprob": -0.6099462240934372,
+              "no_speech_prob": 0.011160708032548428,
+              "compression_ratio": 0.9473684210526315
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792354340.m4a": {
+      "index": 485,
+      "epoch": 1792354340,
+      "sha256": "be0246dd16d45e4fcf95f29d54864728b8ff6d647314ed18a50f7b42caa80944",
+      "passes": {
+        "original": {
+          "text": "Javi",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Javi",
+              "avg_logprob": -0.883298110961914,
+              "no_speech_prob": 0.14072388410568237,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Gabby.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Gabby.",
+              "avg_logprob": -0.8783690134684244,
+              "no_speech_prob": 0.13388502597808838,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "I'm J30, copy, follow-up, 10, 10, 1.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6448622703552246,
+              "no_speech_prob": 0.029969364404678345,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
