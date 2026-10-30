@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-09",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791576936.m4a": {
+      "index": 943,
+      "epoch": 1791576936,
+      "sha256": "6ce1dd341a33db118283e6da6707fb31774bd9944af97a91ad4b3c6d11a51782",
+      "passes": {
+        "original": {
+          "text": "5J32.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J32.",
+              "avg_logprob": -0.6574017660958427,
+              "no_speech_prob": 0.03214794397354126,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791576948.m4a": {
+      "index": 944,
+      "epoch": 1791576948,
+      "sha256": "3c36dbe0543656cfb06b3b63030becfb0320bcddcf072885a510c71fee07a5ea",
+      "passes": {
+        "original": {
+          "text": "5J80 for 4th.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J80 for 4th.",
+              "avg_logprob": -0.7378207683563233,
+              "no_speech_prob": 0.02620995230972767,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791576953.m4a": {
+      "index": 945,
+      "epoch": 1791576953,
+      "sha256": "827d9cce4885e5eabe9544fdcf8de84eeebe3a229fc74217fdfc5aa05c88ab6c",
+      "passes": {
+        "original": {
+          "text": "Before.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Before.",
+              "avg_logprob": -1.038416862487793,
+              "no_speech_prob": 0.20639698207378387,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Or for.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Or for.",
+              "avg_logprob": -1.1052260796229045,
+              "no_speech_prob": 0.1099051982164383,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "4th.",
+          "prompt": "5J32. 5J80 for 4th.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 4th.",
+              "avg_logprob": -0.4610491792360942,
+              "no_speech_prob": 0.16219687461853027,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    }
+  }
+}
