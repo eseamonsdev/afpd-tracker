@@ -49,6 +49,25 @@ def selected_indices(data, selection='all'):
             and not (isinstance(call.get('transcript'), str) and call['transcript'].strip())]
 
 
+def available_targets(folder, data, targets, cfg, clips):
+    """Leave unavailable selected audio pending without stopping other clips."""
+    ready, blocked = [], []
+    for index in targets:
+        call = data['calls'][index]
+        if completed(clips.get(call['original_filename'], {})):
+            ready.append(index)
+            continue
+        required = [index] + [
+            j for j in context_indices(data['calls'], index, cfg)
+            if 'original' not in clips.get(data['calls'][j]['original_filename'], {}).get('passes', {})
+        ]
+        if all(stored_audio(data['calls'][j], folder) for j in required):
+            ready.append(index)
+        else:
+            blocked.append(index)
+    return ready, blocked
+
+
 def validate_record(call, record, index):
     if (record.get('sha256') != call['sha256'] or record.get('epoch') != call['epoch']
             or record.get('index') != index + 1):
@@ -145,8 +164,12 @@ def run(args):
     selection = getattr(args, 'selection', 'all')
     targets = selected_indices(data, selection)
     print(f'SELECTION: {selection}; {len(targets)} target clips; full archive indices/context preserved.', flush=True)
+    blocked = []
+    if selection == 'afpd_missing':
+        targets, blocked = available_targets(folder.name, data, targets, cfg, clips)
+        print(f'AUDIO SELECTION: {len(targets)} available targets; {len(blocked)} pending unavailable target/context audio.', flush=True)
     if not targets or all(completed(clips.get(calls[i]["original_filename"], {})) for i in targets):
-        print('All selected clips already saved; no ASR required.', flush=True)
+        print('All available selected clips already saved; no ASR required.', flush=True)
         return
     batch_size = min(args.batch_size, 10) if selection == 'afpd_missing' else args.batch_size
     audio = Path(args.audio_dir).resolve()
@@ -235,7 +258,7 @@ def run(args):
         raise
     finally:
         cleanup_audio(audio)
-    print(f'ALL SELECTED PASSES SAVED: {len(targets)}/{len(targets)} selected clips; full archive {done}/{len(calls)}. Reconciliation still required; calls.json unchanged.', flush=True)
+    print(f'ALL SELECTED PASSES SAVED: {len(targets)}/{len(targets)} selected clips; full archive {done}/{len(calls)}. Reconciliation still required; {len(blocked)} selected clips pending unavailable audio; calls.json unchanged.', flush=True)
 
 
 def main():
