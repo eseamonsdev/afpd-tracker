@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-15",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792102552.m4a": {
+      "index": 938,
+      "epoch": 1792102552,
+      "sha256": "075d39843ee331a6137d70af5f30dd448936857b7af30fad4b8c653b3f1f7296",
+      "passes": {
+        "original": {
+          "text": "5J32 Central, copy accident hit room.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5J32 Central, copy accident hit room.",
+              "avg_logprob": -0.5202770783351018,
+              "no_speech_prob": 0.20858986675739288,
+              "compression_ratio": 0.8409090909090909
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792102559.m4a": {
+      "index": 939,
+      "epoch": 1792102559,
+      "sha256": "2b770955bdbf93665e69b0eb737d4d2190cd9b24efbd27c7af8473b116bb9410",
+      "passes": {
+        "original": {
+          "text": "Hey",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey",
+              "avg_logprob": -0.7169619798660278,
+              "no_speech_prob": 0.6493415236473083,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hey",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey",
+              "avg_logprob": -0.7181061655282974,
+              "no_speech_prob": 0.516412615776062,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "context": {
+          "text": "Hit.",
+          "prompt": "5J32 Central, copy accident hit room.",
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Hit.",
+              "avg_logprob": -0.6962915420532226,
+              "no_speech_prob": 0.2990184724330902,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    }
+  }
+}
