@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-15",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792077301.m4a": {
+      "index": 257,
+      "epoch": 1792077301,
+      "sha256": "77a7b47cd4c6deabd430f795f613db7a663526c7364cc39722e1e6cdeb69f57a",
+      "passes": {
+        "original": {
+          "text": "At 18J20, I copy the walkout. Show me in the row.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " At 18J20, I copy the walkout. Show me in the row.",
+              "avg_logprob": -0.5630879372358322,
+              "no_speech_prob": 0.06644979119300842,
+              "compression_ratio": 0.9074074074074074
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792077304.m4a": {
+      "index": 258,
+      "epoch": 1792077304,
+      "sha256": "e76f4817fe7ab46280b60d122b319d3d77cb476bfbe2ee058f0feb77da38b346",
+      "passes": {
+        "original": {
+          "text": "10 to 4, it's going to be at 11, 318 North and Shoreline Drive.",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.44,
+              "text": " 10 to 4, it's going to be at 11, 318 North and Shoreline Drive.",
+              "avg_logprob": -0.5527374012903734,
+              "no_speech_prob": 0.03336362540721893,
+              "compression_ratio": 0.9130434782608695
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792077357.m4a": {
+      "index": 259,
+      "epoch": 1792077357,
+      "sha256": "ff59589ceb0ff831563a1138858e04b22cb39332d2c1908810aa11f453306bbf",
+      "passes": {
+        "original": {
+          "text": "Sorry, Jake, you have to arrive.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Sorry, Jake, you have to arrive.",
+              "avg_logprob": -0.9316211938858032,
+              "no_speech_prob": 0.10819398611783981,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "filtered": {
+          "text": "If I do, could the two arrive?",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " If I do, could the two arrive?",
+              "avg_logprob": -0.6427972167730331,
+              "no_speech_prob": 0.06444709002971649,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "context": {
+          "text": "I object that you arrived.",
+          "prompt": "At 18J20, I copy the walkout. Show me in the row. 10 to 4, it's going to be at 11, 318 North and Shoreline Drive.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I object that you arrived.",
+              "avg_logprob": -0.7973783281114366,
+              "no_speech_prob": 0.12884730100631714,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        }
+      }
+    }
+  }
+}
