@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-30",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1790819571.m4a": {
+      "index": 1075,
+      "epoch": 1790819571,
+      "sha256": "d5726b941720b25ce78cdddbf90b1eb2d42daf8a7988738b81f458ac1364a5e0",
+      "passes": {
+        "original": {
+          "text": "Okay, 34 and others, go for it.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.14,
+              "text": " Okay, 34 and others, go for it.",
+              "avg_logprob": -0.574127197265625,
+              "no_speech_prob": 0.006809564772993326,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790819575.m4a": {
+      "index": 1076,
+      "epoch": 1790819575,
+      "sha256": "e478decb925db4ba90d4d733b616f97e366e083a520fd3bf84076629c48eeb76",
+      "passes": {
+        "original": {
+          "text": "I don't want to do that.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I don't want to do that.",
+              "avg_logprob": -0.7674374905499545,
+              "no_speech_prob": 0.3344336450099945,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I don't want to.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I don't want to.",
+              "avg_logprob": -0.9379225836859809,
+              "no_speech_prob": 0.474515438079834,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "Go, go, go, go, go.",
+          "prompt": "Okay, 34 and others, go for it.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go, go, go, go, go.",
+              "avg_logprob": -0.6435717619382418,
+              "no_speech_prob": 0.2448599636554718,
+              "compression_ratio": 1.2666666666666666
+            }
+          ]
+        }
+      }
+    }
+  }
+}
