@@ -1,0 +1,411 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-27",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1790572462.m4a": {
+      "index": 1291,
+      "epoch": 1790572462,
+      "sha256": "5460f5453c6256825bb7f5dfb302976df68856d36754cb322e518665c4d5c740",
+      "passes": {
+        "original": {
+          "text": "500 West, 200 South, local Gulf 454 Zulu Fox",
+          "prompt": null,
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 500 West, 200 South, local Gulf 454 Zulu Fox",
+              "avg_logprob": -0.5650125816464424,
+              "no_speech_prob": 0.053095586597919464,
+              "compression_ratio": 0.88
+            }
+          ]
+        },
+        "filtered": {
+          "text": "500 West, 200 South, Local Golf 454, Zulu Fox.",
+          "prompt": null,
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.76,
+              "text": " 500 West, 200 South, Local Golf 454, Zulu Fox.",
+              "avg_logprob": -0.5308821234438155,
+              "no_speech_prob": 0.026746662333607674,
+              "compression_ratio": 0.8846153846153846
+            }
+          ]
+        },
+        "context": {
+          "text": "500 West, 200 South, local Gulf 454, Zulu Fox.",
+          "prompt": "Dapper. 5.829 traffic. Go ahead.",
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.5200000000000005,
+              "text": " 500 West, 200 South, local Gulf 454, Zulu Fox.",
+              "avg_logprob": -0.5182309415605333,
+              "no_speech_prob": 0.008544051088392735,
+              "compression_ratio": 0.8846153846153846
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790573330.m4a": {
+      "index": 1293,
+      "epoch": 1790573330,
+      "sha256": "37c31aa950a67b3dfc786104fb6df63575e6745bdd3486b5ab68fb7ce412f5ff",
+      "passes": {
+        "original": {
+          "text": "5J32 copy band at 9-1-1.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J32 copy band at 9-1-1.",
+              "avg_logprob": -0.6697639385859172,
+              "no_speech_prob": 0.03546686843037605,
+              "compression_ratio": 0.75
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790573334.m4a": {
+      "index": 1294,
+      "epoch": 1790573334,
+      "sha256": "5ad78e839a883ff453da50a114962ebcc988fc5ba1515272b5ea00b27668cf8b",
+      "passes": {
+        "original": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.9407677253087362,
+              "no_speech_prob": 0.6941694617271423,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "But",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " But",
+              "avg_logprob": -0.6833202391862869,
+              "no_speech_prob": 0.39421454071998596,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "context": {
+          "text": "Thanks for watching!",
+          "prompt": "5J32 copy band at 9-1-1.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thanks for watching!",
+              "avg_logprob": -0.93815507207598,
+              "no_speech_prob": 0.5208854079246521,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790573347.m4a": {
+      "index": 1295,
+      "epoch": 1790573347,
+      "sha256": "f3d9e879a7c1863e73c0a76f8890999f1bebd0538e10ceec51152d001c21c841",
+      "passes": {
+        "original": {
+          "text": "I've been clear.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I've been clear.",
+              "avg_logprob": -0.6839432343840599,
+              "no_speech_prob": 0.023072265088558197,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'll be in play",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'll be in play",
+              "avg_logprob": -0.3953618109226227,
+              "no_speech_prob": 0.04656798392534256,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "context": {
+          "text": "I'll be in clear.",
+          "prompt": "5J32 copy band at 9-1-1. Thank you.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I'll be in clear.",
+              "avg_logprob": -0.5662289725409614,
+              "no_speech_prob": 0.15875402092933655,
+              "compression_ratio": 0.68
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790573433.m4a": {
+      "index": 1297,
+      "epoch": 1790573433,
+      "sha256": "c6a5ffd16282b70e2aec92941620d4409355bda8ac4f15e5792076af7c61951e",
+      "passes": {
+        "original": {
+          "text": "5J 29 traffic",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J 29 traffic",
+              "avg_logprob": -0.5332368441990444,
+              "no_speech_prob": 0.15993604063987732,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J29 traffic.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2,
+              "text": " 5J29 traffic.",
+              "avg_logprob": -0.6936436295509338,
+              "no_speech_prob": 0.08941982686519623,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "5J 29 traffic",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J 29 traffic",
+              "avg_logprob": -0.5332368441990444,
+              "no_speech_prob": 0.15993604063987732,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790573437.m4a": {
+      "index": 1298,
+      "epoch": 1790573437,
+      "sha256": "95e3e97729cec2bd223170fa01ec28ac9b949ec9b60e59ba77edafb54f46915b",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.5497721334298452,
+              "no_speech_prob": 0.038328561931848526,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790573439.m4a": {
+      "index": 1299,
+      "epoch": 1790573439,
+      "sha256": "8cb9be79b2d8a2ed43d3a2e5b7cc83cbbf8dd70b39999788e57b42873d860c83",
+      "passes": {
+        "original": {
+          "text": "627, 500 East Local 8Zulu 6 Golf Hotel.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 627, 500 East Local 8Zulu 6 Golf Hotel.",
+              "avg_logprob": -0.5006107874214649,
+              "no_speech_prob": 0.011818488128483295,
+              "compression_ratio": 0.8297872340425532
+            }
+          ]
+        },
+        "filtered": {
+          "text": "627, 500 East Local 806 Golf Hotel.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 627, 500 East Local 806 Golf Hotel.",
+              "avg_logprob": -0.4548329987696239,
+              "no_speech_prob": 0.0221970584243536,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        },
+        "context": {
+          "text": "627, 500 East Local 8Zulu 6 Golf Hotel.",
+          "prompt": "5J 29 traffic Go ahead.",
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 627, 500 East Local 8Zulu 6 Golf Hotel.",
+              "avg_logprob": -0.45441501773893833,
+              "no_speech_prob": 0.013951268047094345,
+              "compression_ratio": 0.8297872340425532
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790573445.m4a": {
+      "index": 1300,
+      "epoch": 1790573445,
+      "sha256": "608f6b1f92f3eb1f4459bc8e9f26815b1726d20aeb42ae8987e6366648846d68",
+      "passes": {
+        "original": {
+          "text": "your cut off at the end. Can you turn on the plate?",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.04,
+              "text": " your cut off at the end. Can you turn on the plate?",
+              "avg_logprob": -0.43908197739545035,
+              "no_speech_prob": 0.010858957655727863,
+              "compression_ratio": 0.9107142857142857
+            }
+          ]
+        }
+      }
+    }
+  }
+}
