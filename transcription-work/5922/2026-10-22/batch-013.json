@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-22",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792676132.m4a": {
+      "index": 121,
+      "epoch": 1792676132,
+      "sha256": "292951e5eac302d476f4d89d9e7959c25ea449e082b44aa049e87996d4a2b5ad",
+      "passes": {
+        "original": {
+          "text": "5-8-29, code for some route.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.8000000000000003,
+              "text": " 5-8-29, code for some route.",
+              "avg_logprob": -0.9683861902781895,
+              "no_speech_prob": 0.034750718623399734,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792676135.m4a": {
+      "index": 122,
+      "epoch": 1792676135,
+      "sha256": "87688b0006d09fb3c01266debe542586a4adc612847caefcf3a9068ca2163f9b",
+      "passes": {
+        "original": {
+          "text": "29, go for it, I'm alright.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 29, go for it, I'm alright.",
+              "avg_logprob": -0.8586905369391808,
+              "no_speech_prob": 0.15219631791114807,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        },
+        "filtered": {
+          "text": "29th of where I'm already.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 29th of where I'm already.",
+              "avg_logprob": -0.7342111522501166,
+              "no_speech_prob": 0.18247291445732117,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "context": {
+          "text": "29, code for MRA.",
+          "prompt": "6700 West, 9600 North on to Fox, FEMA, Sierra, and I... Have you? 5-8-29, code for some route.",
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.84,
+              "text": " 29, code for MRA.",
+              "avg_logprob": -0.5365225374698639,
+              "no_speech_prob": 0.018701445311307907,
+              "compression_ratio": 0.68
+            }
+          ]
+        }
+      }
+    }
+  }
+}
