@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-10",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791671913.m4a": {
+      "index": 971,
+      "epoch": 1791671913,
+      "sha256": "1513f2aacdfd24af73a7c5d9e8b3ff64d7a1ce6b1406fc2fa55f305ddec77d6b",
+      "passes": {
+        "original": {
+          "text": "5C28, it's apartment Delta 204.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5C28, it's apartment Delta 204.",
+              "avg_logprob": -0.6384966923640325,
+              "no_speech_prob": 0.027018239721655846,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791671918.m4a": {
+      "index": 972,
+      "epoch": 1791671918,
+      "sha256": "5c15a3b069c15ed6257afdb088bfeda4ce3b44b1a3213087be709dab3c37d83f",
+      "passes": {
+        "original": {
+          "text": "I'm 28. I copy. I'm arrived.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " I'm 28. I copy. I'm arrived.",
+              "avg_logprob": -0.45244186265128,
+              "no_speech_prob": 0.013921384699642658,
+              "compression_ratio": 0.8484848484848485
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm 28, I copy, I'm arrived.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm 28, I copy, I'm arrived.",
+              "avg_logprob": -0.48660739404814585,
+              "no_speech_prob": 0.017146794125437737,
+              "compression_ratio": 0.8484848484848485
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm 28, I copy. I'm arrived.",
+          "prompt": "I'm trying to get it Copy. 5C28, it's apartment Delta 204.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm 28, I copy. I'm arrived.",
+              "avg_logprob": -0.4230769787515913,
+              "no_speech_prob": 0.007713455706834793,
+              "compression_ratio": 0.8235294117647058
+            }
+          ]
+        }
+      }
+    }
+  }
+}
