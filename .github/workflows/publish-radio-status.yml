@@ -51,5 +51,5 @@ jobs:
           STATUS_BRANCH: ${{ matrix.branch }}
         run: |
           page_args=()
-          if [ "$STATUS_BRANCH" = main ]; then page_args+=(--no-page); fi
+          if [ "$STATUS_BRANCH" = staging ]; then page_args+=(--publish-page); fi
           python3 scripts/publish_radio_status.py --root .radio-status-source --branch "$STATUS_BRANCH" --state idle "${page_args[@]}"
