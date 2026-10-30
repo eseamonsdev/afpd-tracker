@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-14",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792035179.m4a": {
+      "index": 1631,
+      "epoch": 1792035179,
+      "sha256": "93284f86c16c8024c028eabbfd680c7d7e414ed0730d19c2d3589f55936d9f4c",
+      "passes": {
+        "original": {
+          "text": "Bye bye.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Bye bye.",
+              "avg_logprob": -1.0049639145533245,
+              "no_speech_prob": 0.026537014171481133,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792035235.m4a": {
+      "index": 1632,
+      "epoch": 1792035235,
+      "sha256": "b8281fab21a1ba30e6585e80ba5467970688437f014e9f1d52f503496e4c32c6",
+      "passes": {
+        "original": {
+          "text": "This is the one's there, shall we in the house?",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.4,
+              "text": " This is the one's there, shall we in the house?",
+              "avg_logprob": -0.833978857845068,
+              "no_speech_prob": 0.11005353182554245,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Okay, it's still clear, shall we, in the house?",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.5,
+              "text": " Okay, it's still clear, shall we, in the house?",
+              "avg_logprob": -0.6667153975542854,
+              "no_speech_prob": 0.06212000921368599,
+              "compression_ratio": 0.9038461538461539
+            }
+          ]
+        },
+        "context": {
+          "text": "This is the one's there, shall we in the house?",
+          "prompt": "Bye bye.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.4,
+              "text": " This is the one's there, shall we in the house?",
+              "avg_logprob": -0.7973391003906727,
+              "no_speech_prob": 0.11438830941915512,
+              "compression_ratio": 1.0
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792035678.m4a": {
+      "index": 1637,
+      "epoch": 1792035678,
+      "sha256": "2cefd9bf4c42f953d980ea3e92931c9ddae60e6a6e303aeef5cb29396171f5f4",
+      "passes": {
+        "original": {
+          "text": "If you want a couple of minutes of it.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " If you want a couple of minutes of it.",
+              "avg_logprob": -0.8848338493934045,
+              "no_speech_prob": 0.030837679281830788,
+              "compression_ratio": 0.8837209302325582
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I need a couple of minutes up here.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I need a couple of minutes up here.",
+              "avg_logprob": -0.8859063585599264,
+              "no_speech_prob": 0.11315370351076126,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        },
+        "context": {
+          "text": "If you want a couple of minutes of it.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " If you want a couple of minutes of it.",
+              "avg_logprob": -0.8848338493934045,
+              "no_speech_prob": 0.030837679281830788,
+              "compression_ratio": 0.8837209302325582
+            }
+          ]
+        }
+      }
+    }
+  }
+}
