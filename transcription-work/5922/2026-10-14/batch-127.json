@@ -1,0 +1,264 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-14",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792026057.m4a": {
+      "index": 1265,
+      "epoch": 1792026057,
+      "sha256": "74285fb42ecc4d0dd1fed1d795a807a1e19a618e65c263c3c311607ccc8c98da",
+      "passes": {
+        "original": {
+          "text": "5G34 Harry.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5G34 Harry.",
+              "avg_logprob": -0.5144949927926064,
+              "no_speech_prob": 0.027584413066506386,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It might be a 34 area.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0200000000000005,
+              "text": " It might be a 34 area.",
+              "avg_logprob": -0.5743778944015503,
+              "no_speech_prob": 0.024722585454583168,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "5G34 Harry.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5G34 Harry.",
+              "avg_logprob": -0.5144949927926064,
+              "no_speech_prob": 0.027584413066506386,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792026062.m4a": {
+      "index": 1266,
+      "epoch": 1792026062,
+      "sha256": "39fe290b00a875a7b8f87cf6262a72b8b8e084d90654ad22ca9975571fc24126",
+      "passes": {
+        "original": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.5496745586395264,
+              "no_speech_prob": 0.010032366029918194,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792026064.m4a": {
+      "index": 1267,
+      "epoch": 1792026064,
+      "sha256": "34a079136e3132a6c30bf424e38e8173a74fad50515ec42ef2372d13eddc9c11",
+      "passes": {
+        "original": {
+          "text": "44's in traffic.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 44's in traffic.",
+              "avg_logprob": -1.0091192871332169,
+              "no_speech_prob": 0.015674391761422157,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "44 cent traffic",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.36,
+              "text": " 44 cent traffic",
+              "avg_logprob": -0.6784295042355856,
+              "no_speech_prob": 0.018742669373750687,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "context": {
+          "text": "44's in traffic.",
+          "prompt": "5G34 Harry. Happy.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.36,
+              "text": " 44's in traffic.",
+              "avg_logprob": -0.8746135383844376,
+              "no_speech_prob": 0.02655397728085518,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792026066.m4a": {
+      "index": 1268,
+      "epoch": 1792026066,
+      "sha256": "5a0e57f07d7ea107bf7b67349aaaff394cda3a2383940e0d4b806966a3c979fa",
+      "passes": {
+        "original": {
+          "text": "Coffee.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Coffee.",
+              "avg_logprob": -0.6260308265686035,
+              "no_speech_prob": 0.03387393802404404,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792026072.m4a": {
+      "index": 1269,
+      "epoch": 1792026072,
+      "sha256": "e7dbe98db46de6ae9a36af264c7663041d3fd909d1d62c92196cf3365a5ef125",
+      "passes": {
+        "original": {
+          "text": "If you want you can clear my animal bite",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.12,
+              "text": " If you want you can clear my animal bite",
+              "avg_logprob": -0.45545753836631775,
+              "no_speech_prob": 0.02391608990728855,
+              "compression_ratio": 0.9090909090909091
+            }
+          ]
+        },
+        "filtered": {
+          "text": "If if you want you can clear my animal bite",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.14,
+              "text": " If if you want you can clear my animal bite",
+              "avg_logprob": -0.4921605953803429,
+              "no_speech_prob": 0.04781240597367287,
+              "compression_ratio": 0.9148936170212766
+            }
+          ]
+        },
+        "context": {
+          "text": "51, you can clear my animal bite.",
+          "prompt": "Happy. 44's in traffic. Coffee.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.4,
+              "text": " 51, you can clear my animal bite.",
+              "avg_logprob": -0.42745637396971387,
+              "no_speech_prob": 0.013223972171545029,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        }
+      }
+    }
+  }
+}
