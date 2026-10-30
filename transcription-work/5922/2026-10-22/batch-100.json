@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-22",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792715782.m4a": {
+      "index": 991,
+      "epoch": 1792715782,
+      "sha256": "1b6b6555007ecec85022ef66cbc116e9527b14b3ae59edb3077a82e1735ab027",
+      "passes": {
+        "original": {
+          "text": "Can you resend the call to 53 and show me clear in 10-6?",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Can you resend the call to 53 and show me clear in 10-6?",
+              "avg_logprob": -0.42559837102890014,
+              "no_speech_prob": 0.00464243208989501,
+              "compression_ratio": 0.9180327868852459
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Can you re-send a call to 53 and show me clear in 10-6?",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Can you re-send a call to 53 and show me clear in 10-6?",
+              "avg_logprob": -0.45794447263081867,
+              "no_speech_prob": 0.003770275739952922,
+              "compression_ratio": 0.8870967741935484
+            }
+          ]
+        },
+        "context": {
+          "text": "Can you re-sign the call to 53 and show me clear in 10-6?",
+          "prompt": "5J35 Go ahead.",
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Can you re-sign the call to 53 and show me clear in 10-6?",
+              "avg_logprob": -0.38607884021032424,
+              "no_speech_prob": 0.004330979194492102,
+              "compression_ratio": 0.890625
+            }
+          ]
+        }
+      }
+    }
+  }
+}
