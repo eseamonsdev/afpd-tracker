@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-27",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1790555881.m4a": {
+      "index": 811,
+      "epoch": 1790555881,
+      "sha256": "e48edfac3f933e8c3faf263a034c80a42c2cfde1fd6b5d35560d17f704a87270",
+      "passes": {
+        "original": {
+          "text": "People are drinking by the pool, RPA advice, there's children in the area, it's an ongoing issue.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " People are drinking by the pool, RPA advice, there's children in the area, it's an ongoing issue.",
+              "avg_logprob": -0.38295778301027084,
+              "no_speech_prob": 0.005345750134438276,
+              "compression_ratio": 1.0898876404494382
+            }
+          ]
+        },
+        "filtered": {
+          "text": "People are drinking by the pool or if you advise their children in the area, it's an ongoing issue.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.64,
+              "text": " People are drinking by the pool or if you advise their children in the area, it's an ongoing",
+              "avg_logprob": -0.43719384846863923,
+              "no_speech_prob": 0.0028248813468962908,
+              "compression_ratio": 1.1511627906976745
+            },
+            {
+              "start": 4.64,
+              "end": 5.14,
+              "text": " issue.",
+              "avg_logprob": -0.43719384846863923,
+              "no_speech_prob": 0.0028248813468962908,
+              "compression_ratio": 1.1511627906976745
+            }
+          ]
+        },
+        "context": {
+          "text": "People are drinking by the pool, RPA advice, there's children in the area. It's an ongoing issue.",
+          "prompt": "5J32, copy intoxication. Thank you very much. 778 south, 860 east, 778 south, 860 east, there's 10 or more pupils with glass bottles of alcohol by the pool.",
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " People are drinking by the pool, RPA advice, there's children in the area. It's an ongoing issue.",
+              "avg_logprob": -0.2928444478246901,
+              "no_speech_prob": 0.012500359676778316,
+              "compression_ratio": 1.0777777777777777
+            }
+          ]
+        }
+      }
+    }
+  }
+}
