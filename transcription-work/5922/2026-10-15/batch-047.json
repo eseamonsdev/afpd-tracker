@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-15",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792088303.m4a": {
+      "index": 465,
+      "epoch": 1792088303,
+      "sha256": "6f523b4c4058caadea04a37b52d37e0a14d42b83b4611dcf094a6c9ecdef31a3",
+      "passes": {
+        "original": {
+          "text": "5J171 Central Court Court, 4.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J171 Central Court Court, 4.",
+              "avg_logprob": -0.5563389658927917,
+              "no_speech_prob": 0.05007719248533249,
+              "compression_ratio": 0.90625
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792088307.m4a": {
+      "index": 466,
+      "epoch": 1792088307,
+      "sha256": "a06ed7382f917b77c3244bcf9f71582604276f8cec1a062f0bbfb324ba348134",
+      "passes": {
+        "original": {
+          "text": "Code for a suspend.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Code for a suspend.",
+              "avg_logprob": -0.7912753075361252,
+              "no_speech_prob": 0.1208510547876358,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it, suspend.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it, suspend.",
+              "avg_logprob": -0.6495765050252279,
+              "no_speech_prob": 0.07821980118751526,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "Code 4, suspend.",
+          "prompt": "5J171 Central Court Court, 4.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Code 4, suspend.",
+              "avg_logprob": -0.587150402367115,
+              "no_speech_prob": 0.01264896709471941,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    }
+  }
+}
