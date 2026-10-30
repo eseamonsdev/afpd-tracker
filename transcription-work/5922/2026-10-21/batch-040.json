@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-21",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792607306.m4a": {
+      "index": 391,
+      "epoch": 1792607306,
+      "sha256": "a2fabe73399d542228961460549ff68516284b4096c9e608d423b2ca6fa0ffb9",
+      "passes": {
+        "original": {
+          "text": "Bye-bye.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.7739438499723162,
+              "no_speech_prob": 0.005831289105117321,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792607364.m4a": {
+      "index": 392,
+      "epoch": 1792607364,
+      "sha256": "b29a07566eb9dd618674b184f91dfc0cc4addadc09472dc18e754493bd08386a",
+      "passes": {
+        "original": {
+          "text": "5J171, you can find that Vietnamese shopping area.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.28,
+              "text": " 5J171, you can find that Vietnamese shopping area.",
+              "avg_logprob": -0.6208367506663005,
+              "no_speech_prob": 0.24317827820777893,
+              "compression_ratio": 0.8620689655172413
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5, 2, 1, 7, 1, you can find that Vietnamese shopping area.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.24,
+              "text": " 5, 2, 1, 7, 1, you can find that Vietnamese shopping area.",
+              "avg_logprob": -0.46843795549301875,
+              "no_speech_prob": 0.18350376188755035,
+              "compression_ratio": 0.9354838709677419
+            }
+          ]
+        },
+        "context": {
+          "text": "5J-171, you can find that Vietnamese shopping area.",
+          "prompt": "Bye-bye.",
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.28,
+              "text": " 5J-171, you can find that Vietnamese shopping area.",
+              "avg_logprob": -0.599592961370945,
+              "no_speech_prob": 0.02817978523671627,
+              "compression_ratio": 0.864406779661017
+            }
+          ]
+        }
+      }
+    }
+  }
+}
