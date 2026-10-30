@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-27",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1790534566.m4a": {
+      "index": 372,
+      "epoch": 1790534566,
+      "sha256": "9360692a355335c7a328f94ed40f7fde78823416094090ac311fa2f4d9e6fc37",
+      "passes": {
+        "original": {
+          "text": "I'm J48. I've arrived, buildings evacuating, no fire.",
+          "prompt": null,
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.24,
+              "text": " I'm J48. I've arrived, buildings evacuating, no fire.",
+              "avg_logprob": -0.5183284784618177,
+              "no_speech_prob": 0.054377369582653046,
+              "compression_ratio": 0.8983050847457628
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm J48. I've arrived, building, evacuating, no fire.",
+          "prompt": null,
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " I'm J48. I've arrived, building, evacuating, no fire.",
+              "avg_logprob": -0.5197572380304336,
+              "no_speech_prob": 0.020471880212426186,
+              "compression_ratio": 0.9298245614035088
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm J48. I've arrived, buildings evacuating, no fire.",
+          "prompt": null,
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.24,
+              "text": " I'm J48. I've arrived, buildings evacuating, no fire.",
+              "avg_logprob": -0.5183284784618177,
+              "no_speech_prob": 0.054377369582653046,
+              "compression_ratio": 0.8983050847457628
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790534574.m4a": {
+      "index": 373,
+      "epoch": 1790534574,
+      "sha256": "43943956ddb22bee2f6caea0b801f5e7787d8376dd590017e115618e46e1c73c",
+      "passes": {
+        "original": {
+          "text": "Tech work.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Tech work.",
+              "avg_logprob": -1.0059853394826253,
+              "no_speech_prob": 0.042918283492326736,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790534618.m4a": {
+      "index": 374,
+      "epoch": 1790534618,
+      "sha256": "a45a61dab07e49422a3609043143ce0764c40fce02d6ed5be4a5e947cb11bc27",
+      "passes": {
+        "original": {
+          "text": "I'm J48, I'll be clearing this question.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm J48, I'll be clearing this question.",
+              "avg_logprob": -0.6297498941421509,
+              "no_speech_prob": 0.028693633154034615,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        },
+        "filtered": {
+          "text": "IJ48, I'll be clear on those questions.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " IJ48, I'll be clear on those questions.",
+              "avg_logprob": -0.5612825949986776,
+              "no_speech_prob": 0.01692410185933113,
+              "compression_ratio": 0.8297872340425532
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm J48. I'll be clearing this question.",
+          "prompt": "I'm J48. I've arrived, buildings evacuating, no fire. Tech work.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm J48. I'll be clearing this question.",
+              "avg_logprob": -0.3848998030026754,
+              "no_speech_prob": 0.002203303389251232,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        }
+      }
+    }
+  }
+}
