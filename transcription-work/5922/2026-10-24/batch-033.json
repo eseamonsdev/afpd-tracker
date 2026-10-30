@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-24",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792855099.m4a": {
+      "index": 322,
+      "epoch": 1792855099,
+      "sha256": "a31e155e0f05dee7c85cc0950ca644549a0f67fbc6bb6668b5f5b85cd1f4fd39",
+      "passes": {
+        "original": {
+          "text": "Thank you, thank you so much.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you, thank you so much.",
+              "avg_logprob": -0.8166495236483488,
+              "no_speech_prob": 0.06503251194953918,
+              "compression_ratio": 0.9666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792855103.m4a": {
+      "index": 323,
+      "epoch": 1792855103,
+      "sha256": "f35ad8c89e646fd407e758390839b732f16c2f3fed2e5f00dcef301fae21c889",
+      "passes": {
+        "original": {
+          "text": "Of course it's done.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Of course it's done.",
+              "avg_logprob": -0.5687267515394423,
+              "no_speech_prob": 0.014514283277094364,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "of course it's done",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " of course it's done",
+              "avg_logprob": -0.5967969745397568,
+              "no_speech_prob": 0.02220551297068596,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "The course is done.",
+          "prompt": "Thank you, thank you so much.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " The course is done.",
+              "avg_logprob": -0.5500326678156853,
+              "no_speech_prob": 0.02170451171696186,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    }
+  }
+}

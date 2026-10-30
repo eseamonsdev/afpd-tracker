@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-24",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792856718.m4a": {
+      "index": 336,
+      "epoch": 1792856718,
+      "sha256": "6a603222d8687027b245825c2da19eba5d5a6b517a21fdb83645d866e84ab13d",
+      "passes": {
+        "original": {
+          "text": "5J52 can you copy the notes on the info and clear it",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.88,
+              "text": " 5J52 can you copy the notes on the info and clear it",
+              "avg_logprob": -0.27459582160500917,
+              "no_speech_prob": 0.019079457968473434,
+              "compression_ratio": 0.9285714285714286
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J52, can you copy the notes on the info and clear it?",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5J52, can you copy the notes on the info and clear it?",
+              "avg_logprob": -0.2887560066423918,
+              "no_speech_prob": 0.014679143205285072,
+              "compression_ratio": 0.9310344827586207
+            }
+          ]
+        },
+        "context": {
+          "text": "5J52 can you copy the notes on the info and clear it",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.88,
+              "text": " 5J52 can you copy the notes on the info and clear it",
+              "avg_logprob": -0.27459582160500917,
+              "no_speech_prob": 0.019079457968473434,
+              "compression_ratio": 0.9285714285714286
+            }
+          ]
+        }
+      }
+    }
+  }
+}

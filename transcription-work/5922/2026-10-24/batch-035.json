@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-24",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792856820.m4a": {
+      "index": 345,
+      "epoch": 1792856820,
+      "sha256": "d039fbca9d4db73e182152b97807570608953cb6183fac88538c8d920b05cea7",
+      "passes": {
+        "original": {
+          "text": "Curtis.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Curtis.",
+              "avg_logprob": -0.6923479080200196,
+              "no_speech_prob": 0.06250698119401932,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792856822.m4a": {
+      "index": 346,
+      "epoch": 1792856822,
+      "sha256": "358961ddc555fe6938872402aa2ae3e577cfd5e1a3fada214db13f5b17b02e41",
+      "passes": {
+        "original": {
+          "text": "You openness is vicious for me.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " You openness is vicious for me.",
+              "avg_logprob": -0.49232617020606995,
+              "no_speech_prob": 0.00913198385387659,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "filtered": {
+          "text": "You openness is vicious for me.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " You openness is vicious for me.",
+              "avg_logprob": -0.45842020511627196,
+              "no_speech_prob": 0.003950830083340406,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "context": {
+          "text": "You openness is vicious for me.",
+          "prompt": "Curtis.",
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " You openness is vicious for me.",
+              "avg_logprob": -0.4334931492805481,
+              "no_speech_prob": 0.002169013489037752,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792856826.m4a": {
+      "index": 347,
+      "epoch": 1792856826,
+      "sha256": "20d74a69ced0b51da7c08d2466f24b788348ad26461fa2af0df071395342d58b",
+      "passes": {
+        "original": {
+          "text": "We'll be at 200 South Center at the chapel",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.54,
+              "text": " We'll be at 200 South Center at the chapel",
+              "avg_logprob": -0.242216183589055,
+              "no_speech_prob": 0.003218644065782428,
+              "compression_ratio": 0.875
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We'll be at 200 South Center at the chapel",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.56,
+              "text": " We'll be at 200 South Center at the chapel",
+              "avg_logprob": -0.2590097555747399,
+              "no_speech_prob": 0.0010804670164361596,
+              "compression_ratio": 0.875
+            }
+          ]
+        },
+        "context": {
+          "text": "We'll be at 200 South Center at the chapel.",
+          "prompt": "Curtis. You openness is vicious for me.",
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.54,
+              "text": " We'll be at 200 South Center at the chapel.",
+              "avg_logprob": -0.27214721058096203,
+              "no_speech_prob": 0.0024927875492721796,
+              "compression_ratio": 0.8775510204081632
+            }
+          ]
+        }
+      }
+    }
+  }
+}
