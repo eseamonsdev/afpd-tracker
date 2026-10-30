@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-12",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791789448.m4a": {
+      "index": 101,
+      "epoch": 1791789448,
+      "sha256": "6a12682c4b85b5d34f4691883a045b614eb9b169620092e8a89a8d633b9ba5df",
+      "passes": {
+        "original": {
+          "text": "And then north end of the Walmart parking lot was one male",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.16,
+              "text": " And then north end of the Walmart parking lot was one male",
+              "avg_logprob": -0.3557204802831014,
+              "no_speech_prob": 0.007112407125532627,
+              "compression_ratio": 0.9354838709677419
+            }
+          ]
+        },
+        "filtered": {
+          "text": "And then north end of the Walmart parking lot was one there",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2,
+              "text": " And then north end of the Walmart parking lot was one there",
+              "avg_logprob": -0.4423352519671122,
+              "no_speech_prob": 0.006885467562824488,
+              "compression_ratio": 0.9672131147540983
+            }
+          ]
+        },
+        "context": {
+          "text": "And then north end of the Walmart parking lot, that was one male.",
+          "prompt": "I say forty-four citizen contact All right.",
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.16,
+              "text": " And then north end of the Walmart parking lot, that was one male.",
+              "avg_logprob": -0.36674286590682137,
+              "no_speech_prob": 0.002987878629937768,
+              "compression_ratio": 0.9558823529411765
+            }
+          ]
+        }
+      }
+    }
+  }
+}

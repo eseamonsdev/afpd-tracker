@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-12",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791791689.m4a": {
+      "index": 121,
+      "epoch": 1791791689,
+      "sha256": "e47c0fa7260ce18f38bed9964cac988512bf2becbd75d1afd3985244f84c8fe1",
+      "passes": {
+        "original": {
+          "text": "Come here",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Come here",
+              "avg_logprob": -0.6367428302764893,
+              "no_speech_prob": 0.02327910251915455,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791791706.m4a": {
+      "index": 122,
+      "epoch": 1791791706,
+      "sha256": "7fe6e2ed0cb29010d014fdbef086d8854a892e4173f2474ac383151fd5bb6fb2",
+      "passes": {
+        "original": {
+          "text": "5J, 51, 10, 42. Have a good morning.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.6000000000000005,
+              "text": " 5J, 51, 10, 42. Have a good morning.",
+              "avg_logprob": -0.5127584233003504,
+              "no_speech_prob": 0.018849322572350502,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J51, 1042, have a good morning.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.64,
+              "text": " 5J51, 1042, have a good morning.",
+              "avg_logprob": -0.5335367997487386,
+              "no_speech_prob": 0.02076040767133236,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "context": {
+          "text": "5-8-51-10-42 Have a good morning",
+          "prompt": "5-8-11-10-42 Come here",
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.92,
+              "text": " 5-8-51-10-42 Have a good morning",
+              "avg_logprob": -0.3282660339027643,
+              "no_speech_prob": 0.0020312825217843056,
+              "compression_ratio": 0.8
+            }
+          ]
+        }
+      }
+    }
+  }
+}
