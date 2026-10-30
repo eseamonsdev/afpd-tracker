@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-24",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792885309.m4a": {
+      "index": 979,
+      "epoch": 1792885309,
+      "sha256": "f964f2a4fb3cba56463d40b7e3ffbc321a534cbb58670fd826ae8e652245c7dc",
+      "passes": {
+        "original": {
+          "text": "Do you think my copy of the death of the cat?",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.4,
+              "text": " Do you think my copy of the death of the cat?",
+              "avg_logprob": -0.6370204210281372,
+              "no_speech_prob": 0.06880192458629608,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Do you think you want a copy of the death of the cat?",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.48,
+              "text": " Do you think you want a copy of the death of the cat?",
+              "avg_logprob": -0.6972013922298655,
+              "no_speech_prob": 0.2006109654903412,
+              "compression_ratio": 1.06
+            }
+          ]
+        },
+        "context": {
+          "text": "Do you think my copy of the death of the cat?",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.4,
+              "text": " Do you think my copy of the death of the cat?",
+              "avg_logprob": -0.6370204210281372,
+              "no_speech_prob": 0.06880192458629608,
+              "compression_ratio": 1.0
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792885332.m4a": {
+      "index": 980,
+      "epoch": 1792885332,
+      "sha256": "058425f24b19a9f2433f878874624084008ddaff79b5516ea2360d322b7da033",
+      "passes": {
+        "original": {
+          "text": "Thanks for watching!",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thanks for watching!",
+              "avg_logprob": -0.8102892637252808,
+              "no_speech_prob": 0.834749162197113,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you very much. Thank you very much.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you very much.",
+              "avg_logprob": -0.7523391942183176,
+              "no_speech_prob": 0.6921383738517761,
+              "compression_ratio": 1.59375
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thank you very much.",
+              "avg_logprob": -0.7523391942183176,
+              "no_speech_prob": 0.6921383738517761,
+              "compression_ratio": 1.59375
+            }
+          ]
+        },
+        "context": {
+          "text": "Do you think my copy of the death of the cat?",
+          "prompt": "Do you think my copy of the death of the cat?",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Do you think my copy of the death of the cat?",
+              "avg_logprob": -0.5759087642033894,
+              "no_speech_prob": 0.6788455843925476,
+              "compression_ratio": 1.0
+            }
+          ]
+        }
+      }
+    }
+  }
+}
