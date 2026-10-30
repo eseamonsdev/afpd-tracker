@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-17",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792301874.m4a": {
+      "index": 1319,
+      "epoch": 1792301874,
+      "sha256": "62b54f07368f9f1a2944d2c22a9793a08a01e38caf3f20a76ce775eb09e94c20",
+      "passes": {
+        "original": {
+          "text": "on June 46 clear and when you show me traffic",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.98,
+              "text": " on June 46 clear and when you show me traffic",
+              "avg_logprob": -0.5991108600909894,
+              "no_speech_prob": 0.012924699112772942,
+              "compression_ratio": 0.8490566037735849
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Unit 46, clear and will you show me traffic?",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.52,
+              "text": " Unit 46, clear and will you show me traffic?",
+              "avg_logprob": -0.7317130012171609,
+              "no_speech_prob": 0.02689400129020214,
+              "compression_ratio": 0.8461538461538461
+            }
+          ]
+        },
+        "context": {
+          "text": "on June 46 clear and when you show me traffic",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.98,
+              "text": " on June 46 clear and when you show me traffic",
+              "avg_logprob": -0.5991108600909894,
+              "no_speech_prob": 0.012924699112772942,
+              "compression_ratio": 0.8490566037735849
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792301878.m4a": {
+      "index": 1320,
+      "epoch": 1792301878,
+      "sha256": "b75bc12a83e077154a333d4b6e1cb9d22a4c4f950b5990b0af835f9abb8922ef",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Go ahead.",
+              "avg_logprob": -0.5217217405637106,
+              "no_speech_prob": 0.006298730615526438,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    }
+  }
+}
