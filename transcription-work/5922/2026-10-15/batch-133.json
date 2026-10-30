@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-15",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792118118.m4a": {
+      "index": 1324,
+      "epoch": 1792118118,
+      "sha256": "b81621c3ecc0a6fc97b6100108ca5e99cb8c46eb06cf42ee74d3718c90652286",
+      "passes": {
+        "original": {
+          "text": "Probably.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Probably.",
+              "avg_logprob": -0.8785433769226074,
+              "no_speech_prob": 0.042145080864429474,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792118170.m4a": {
+      "index": 1325,
+      "epoch": 1792118170,
+      "sha256": "4d8c4996d8aa87907b27fb4b3dc651f11f24c966b76a03dc78fb3dc5c8e14b65",
+      "passes": {
+        "original": {
+          "text": "5J51, Code 4.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J51, Code 4.",
+              "avg_logprob": -0.47275993824005125,
+              "no_speech_prob": 0.027281569316983223,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792118173.m4a": {
+      "index": 1326,
+      "epoch": 1792118173,
+      "sha256": "cfea0c53f0286c2a771edae1a0dd18cf8f140f85962a08b3b4d063f23e1a1be5",
+      "passes": {
+        "original": {
+          "text": "Go for strength.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.36,
+              "text": " Go for strength.",
+              "avg_logprob": -0.7136071239198957,
+              "no_speech_prob": 0.08484775573015213,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hopefully strength.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.4,
+              "text": " Hopefully strength.",
+              "avg_logprob": -0.7627428571383158,
+              "no_speech_prob": 0.0470503494143486,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "Code for strength.",
+          "prompt": "Probably. 5J51, Code 4.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.36,
+              "text": " Code for strength.",
+              "avg_logprob": -0.7216886963163104,
+              "no_speech_prob": 0.026221517473459244,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        }
+      }
+    }
+  }
+}
