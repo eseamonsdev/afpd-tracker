@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-20",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792486951.m4a": {
+      "index": 122,
+      "epoch": 1792486951,
+      "sha256": "540960e6c6672cc14d7e568fc083a0da1daf813fb5712e19aef7d757e3da6fbb",
+      "passes": {
+        "original": {
+          "text": "I'm actually at 45 Central, copy drug events.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I'm actually at 45 Central, copy drug events.",
+              "avg_logprob": -0.7072321176528931,
+              "no_speech_prob": 0.00963862519711256,
+              "compression_ratio": 0.8653846153846154
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792486956.m4a": {
+      "index": 123,
+      "epoch": 1792486956,
+      "sha256": "4d56d8d858732a780c33e2876af49a7fd32130373ad9c3f7c77e67a80ee11beb",
+      "passes": {
+        "original": {
+          "text": "But",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " But",
+              "avg_logprob": -0.2923372909426689,
+              "no_speech_prob": 0.5500314235687256,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "filtered": {
+          "text": "But",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " But",
+              "avg_logprob": -0.4447345733642578,
+              "no_speech_prob": 0.2549234628677368,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "context": {
+          "text": "But...",
+          "prompt": "I'm actually at 45 Central, copy drug events.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " But...",
+              "avg_logprob": -0.8126051902770997,
+              "no_speech_prob": 0.2852404713630676,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    }
+  }
+}
