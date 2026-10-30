@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-22",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792726854.m4a": {
+      "index": 1231,
+      "epoch": 1792726854,
+      "sha256": "be6b5414ea2c0c1bc9a5281e6f5d42d24d5e2539f4b6b83b278a205c145d64f9",
+      "passes": {
+        "original": {
+          "text": "Bye Jane, you want to ride me?",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye Jane, you want to ride me?",
+              "avg_logprob": -0.7869921574989954,
+              "no_speech_prob": 0.19022494554519653,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm fine, J.D., you want a ride?",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm fine, J.D., you want a ride?",
+              "avg_logprob": -0.7708891108632088,
+              "no_speech_prob": 0.2750892639160156,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "context": {
+          "text": "5J, do you want to ride me? I'm good.",
+          "prompt": "836 feet to 100 south, flooding near their home. It's mostly on 100 south. They're trying to put sandbags out. The water's coming up to the car doors, but it's currently not in the home. We're on pricing streets. 10-4, 7-8 Copy.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.4,
+              "text": " 5J, do you want to ride me? I'm good.",
+              "avg_logprob": -0.6441538193646599,
+              "no_speech_prob": 0.07216903567314148,
+              "compression_ratio": 0.8222222222222222
+            }
+          ]
+        }
+      }
+    }
+  }
+}
