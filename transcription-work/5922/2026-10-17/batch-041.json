@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-17",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792254078.m4a": {
+      "index": 401,
+      "epoch": 1792254078,
+      "sha256": "9fea40258184493f8fd030007e6820300f3ef5b64a1f5272b2bdad0810f5d790",
+      "passes": {
+        "original": {
+          "text": "I'll be in front of Greenwood Elementary on Bravo, Echo, Romeo, Charlie, Lima, Alpha Whiskey.",
+          "prompt": null,
+          "duration_seconds": 8.192,
+          "token_limit": 90,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.2,
+              "text": " I'll be in front of Greenwood Elementary on Bravo, Echo, Romeo, Charlie, Lima, Alpha",
+              "avg_logprob": -0.2826185492532594,
+              "no_speech_prob": 0.023872392252087593,
+              "compression_ratio": 1.021978021978022
+            },
+            {
+              "start": 7.2,
+              "end": 9.56,
+              "text": " Whiskey.",
+              "avg_logprob": -0.2826185492532594,
+              "no_speech_prob": 0.023872392252087593,
+              "compression_ratio": 1.021978021978022
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'll be in front of Greenwood Elementary on Bravo, Echo, Romeo, Charlie, Lima, Alta Whiskey.",
+          "prompt": null,
+          "duration_seconds": 8.192,
+          "token_limit": 90,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.2,
+              "text": " I'll be in front of Greenwood Elementary on Bravo, Echo, Romeo, Charlie, Lima, Alta",
+              "avg_logprob": -0.35482655722519446,
+              "no_speech_prob": 0.017068855464458466,
+              "compression_ratio": 1.0222222222222221
+            },
+            {
+              "start": 7.2,
+              "end": 9.6,
+              "text": " Whiskey.",
+              "avg_logprob": -0.35482655722519446,
+              "no_speech_prob": 0.017068855464458466,
+              "compression_ratio": 1.0222222222222221
+            }
+          ]
+        },
+        "context": {
+          "text": "I'll be in front of Greenwood Elementary on Bravo Echo Romeo Charlie Lima Alpha Whiskey.",
+          "prompt": "I'm 5J35, I'm arriving. Happy.",
+          "duration_seconds": 8.192,
+          "token_limit": 90,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.5200000000000005,
+              "text": " I'll be in front of Greenwood Elementary on Bravo Echo Romeo Charlie Lima Alpha Whiskey.",
+              "avg_logprob": -0.2934071279707409,
+              "no_speech_prob": 0.006774945184588432,
+              "compression_ratio": 0.9777777777777777
+            }
+          ]
+        }
+      }
+    }
+  }
+}
