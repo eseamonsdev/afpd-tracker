@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-24",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792867543.m4a": {
+      "index": 558,
+      "epoch": 1792867543,
+      "sha256": "7f5894c7316a17545fdf195cd3e72096029edc6c80203228ca4ea00798329131",
+      "passes": {
+        "original": {
+          "text": "5J48, copy, fix it, ticket.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J48, copy, fix it, ticket.",
+              "avg_logprob": -0.6302796261651176,
+              "no_speech_prob": 0.04076119139790535,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792867549.m4a": {
+      "index": 559,
+      "epoch": 1792867549,
+      "sha256": "2496618c03d9d141f14abeed2ddf746a6928ca1b3d8bddfc15f17c98705f69f7",
+      "passes": {
+        "original": {
+          "text": "48, I copy, I have to catch.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 48, I copy, I have to catch.",
+              "avg_logprob": -0.7653511487520658,
+              "no_speech_prob": 0.13850226998329163,
+              "compression_ratio": 0.8484848484848485
+            }
+          ]
+        },
+        "filtered": {
+          "text": "48, I copy, I have to catch.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 48, I copy, I have to catch.",
+              "avg_logprob": -0.7950663383190448,
+              "no_speech_prob": 0.1693626195192337,
+              "compression_ratio": 0.8484848484848485
+            }
+          ]
+        },
+        "context": {
+          "text": "4J48, copy, copy, catch.",
+          "prompt": "5J48, copy, fix it, ticket.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 4J48, copy, copy, catch.",
+              "avg_logprob": -0.49350934762221116,
+              "no_speech_prob": 0.0581526979804039,
+              "compression_ratio": 1.0
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792867552.m4a": {
+      "index": 560,
+      "epoch": 1792867552,
+      "sha256": "55e9ec8e9aef5995639e30c4dacbb257a559882a47d8b57aad09f106b8a305f2",
+      "passes": {
+        "original": {
+          "text": "Ten-four.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Ten-four.",
+              "avg_logprob": -0.808198366846357,
+              "no_speech_prob": 0.021084431558847427,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    }
+  }
+}

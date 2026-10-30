@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-24",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792869407.m4a": {
+      "index": 614,
+      "epoch": 1792869407,
+      "sha256": "9367111cb403a789ce127ef77fc70a619caccce88e2ec00696f4cdacd54f294f",
+      "passes": {
+        "original": {
+          "text": "5G13, copy, hit the piece.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.48,
+              "text": " 5G13, copy, hit the piece.",
+              "avg_logprob": -0.5535942407754751,
+              "no_speech_prob": 0.017107190564274788,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792869411.m4a": {
+      "index": 615,
+      "epoch": 1792869411,
+      "sha256": "387947376a6f9fac120d0ba815dcd9e71fe0d986c6dd946ecb07f73d1d1c8c30",
+      "passes": {
+        "original": {
+          "text": "Patrick Thirteen.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Patrick Thirteen.",
+              "avg_logprob": -1.1613818917955672,
+              "no_speech_prob": 0.011088736355304718,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Roger 13.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.12,
+              "text": " Roger 13.",
+              "avg_logprob": -0.8885916074117025,
+              "no_speech_prob": 0.006162680219858885,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "5G13.",
+          "prompt": "5G13, copy, hit the piece.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G13.",
+              "avg_logprob": -0.49489745071956087,
+              "no_speech_prob": 0.004346311558037996,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
