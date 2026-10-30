@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-21",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792621679.m4a": {
+      "index": 764,
+      "epoch": 1792621679,
+      "sha256": "ec75197805e2d98c8565843cbfb12ef013c1db33ce0f5528b4eae210990a2495",
+      "passes": {
+        "original": {
+          "text": "I do 29 arriving in the area.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " I do 29 arriving in the area.",
+              "avg_logprob": -0.6724068251523104,
+              "no_speech_prob": 0.1102738082408905,
+              "compression_ratio": 0.8285714285714286
+            }
+          ]
+        },
+        "filtered": {
+          "text": "By the day 29, we arrive at the ferry.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " By the day 29, we arrive at the ferry.",
+              "avg_logprob": -1.08760233436312,
+              "no_speech_prob": 0.14864103496074677,
+              "compression_ratio": 0.926829268292683
+            }
+          ]
+        },
+        "context": {
+          "text": "I do 29 arriving in the area.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " I do 29 arriving in the area.",
+              "avg_logprob": -0.6724068251523104,
+              "no_speech_prob": 0.1102738082408905,
+              "compression_ratio": 0.8285714285714286
+            }
+          ]
+        }
+      }
+    }
+  }
+}
