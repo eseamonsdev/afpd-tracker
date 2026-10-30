@@ -23,6 +23,7 @@ if(require.main===module)(async()=>{
   await fs.rm(path.join(dest,'summary.json'),{force:true});
   const cli=[path.join(__dirname,'collect-openmhz.cjs'),`--talkgroup=${tg}`,`--date=${date}`,`--output=${base}`];
   for(const k of ['buffer-ms','progress-seconds','executable-path','proxy'])if(args[k])cli.push(`--${k}=${args[k]}`);
+  if(Object.hasOwn(args,'headed'))cli.push('--headed');
   const exitCode=await new Promise((resolve,reject)=>{const child=spawn(process.execPath,cli,{stdio:'inherit'});child.on('error',reject);child.on('close',resolve)});
   let summary,calls=[];try{summary=JSON.parse(await fs.readFile(path.join(dest,'summary.json'),'utf8'));calls=JSON.parse(await fs.readFile(path.join(dest,'calls.json'),'utf8')).calls}catch(e){summary={status:'incomplete',error:e.message}}
   const complete=exitCode===0&&summary.status==='complete'&&summary.olderBoundaryReached&&summary.newerBoundaryReached;
