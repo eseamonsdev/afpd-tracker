@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-24",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792902934.m4a": {
+      "index": 1473,
+      "epoch": 1792902934,
+      "sha256": "4ddc8028bc5d8c8b379cd0cc4495cccd230133d5961b844762d8437088d1d7be",
+      "passes": {
+        "original": {
+          "text": "RPE has heard of hearings, but they're advising there's a tow truck dropping a trailer off on this property without permission.",
+          "prompt": null,
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " RPE has heard of hearings, but they're advising there's a tow truck dropping a trailer off on this property without permission.",
+              "avg_logprob": -0.26044439036270667,
+              "no_speech_prob": 0.008381165564060211,
+              "compression_ratio": 1.1981132075471699
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792902942.m4a": {
+      "index": 1474,
+      "epoch": 1792902942,
+      "sha256": "d34445f46f15d568ef37b1301a5c7ea5ddac57e79376a3130a25d3782bf2f1d9",
+      "passes": {
+        "original": {
+          "text": "220 towards 600 West.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 220 towards 600 West.",
+              "avg_logprob": -0.7323210313916206,
+              "no_speech_prob": 0.07024719566106796,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792902949.m4a": {
+      "index": 1475,
+      "epoch": 1792902949,
+      "sha256": "cd94b4f66f8a72f8c073dc05f8f1b245eddac4d28b6777bc818d68dc3cd9c163",
+      "passes": {
+        "original": {
+          "text": "Cuff.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Cuff.",
+              "avg_logprob": -1.0792183876037598,
+              "no_speech_prob": 0.15482543408870697,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792902951.m4a": {
+      "index": 1476,
+      "epoch": 1792902951,
+      "sha256": "8a1731b900026f660503d1620dcb367abe7b56f85c11fd761cf7f7085bb2222e",
+      "passes": {
+        "original": {
+          "text": "I'm J-51, I copy that welfare check, you can hold that off the cab for me.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2800000000000002,
+              "text": " I'm J-51, I copy that welfare check, you can hold that off the cab for me.",
+              "avg_logprob": -0.43613511085510254,
+              "no_speech_prob": 0.009444702416658401,
+              "compression_ratio": 0.9866666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "If you want to copy that welfare check, you can hold that off the cat for me.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2800000000000002,
+              "text": " If you want to copy that welfare check, you can hold that off the cat for me.",
+              "avg_logprob": -0.37549071420322766,
+              "no_speech_prob": 0.014230218715965748,
+              "compression_ratio": 1.0694444444444444
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm J-51. I copy that welfare check. You can hold that off the cab for me.",
+          "prompt": "RPE has heard of hearings, but they're advising there's a tow truck dropping a trailer off on this property without permission. 220 towards 600 West. Cuff.",
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " I'm J-51. I copy that welfare check. You can hold that off the cab for me.",
+              "avg_logprob": -0.3918044185638428,
+              "no_speech_prob": 0.01013665646314621,
+              "compression_ratio": 0.9866666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792902994.m4a": {
+      "index": 1479,
+      "epoch": 1792902994,
+      "sha256": "6bbda1e4385ff705d9c6fea5dff3baca0c167e9399ce8c2078c45f9a4ccc0ec3",
+      "passes": {
+        "original": {
+          "text": "Affirm we are still land lines 8-5-0 on the north end of the property.",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.4,
+              "text": " Affirm we are still land lines 8-5-0 on the north end of the property.",
+              "avg_logprob": -0.4324864175008691,
+              "no_speech_prob": 0.018246615305542946,
+              "compression_ratio": 0.9722222222222222
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792903000.m4a": {
+      "index": 1480,
+      "epoch": 1792903000,
+      "sha256": "aa13258b6206c07d7083d6a030d3fefd4cbffeed232af00b9aeb66c070cc873e",
+      "passes": {
+        "original": {
+          "text": "Chubby",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Chubby",
+              "avg_logprob": -0.47376651763916017,
+              "no_speech_prob": 0.025601375848054886,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    }
+  }
+}
