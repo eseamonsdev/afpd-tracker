@@ -139,22 +139,38 @@ class DownloadTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             module.validate_manifest(data)
 
-    def test_known_source_duration_discrepancy_requires_unchanged_measured_audio(self):
+    def test_source_duration_mismatch_uses_actual_duration_after_full_decode(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / sample()['original_filename']
-            content = b'0000ftyp0000'
-            path.write_bytes(content)
-            call = sample()
-            call['displayed_seconds'] = 9
-            probe = Mock(stdout='1.408')
-            with patch.object(module.subprocess, 'run', return_value=probe):
-                with self.assertRaises(ValueError):
-                    module.inspect_audio(path, call)
-                call.update(sha256=hashlib.sha256(content).hexdigest(), audio_duration_seconds=1.408)
-                self.assertFalse(module.inspect_audio(path, call)['source_duration_matches'])
-                call['audio_duration_seconds'] = 9
-                with self.assertRaises(ValueError):
-                    module.inspect_audio(path, call)
+            path.write_bytes(b'0000ftyp0000')
+            call = {**sample(), 'displayed_seconds': 9}
+            with patch.object(module.subprocess, 'run', side_effect=[Mock(stdout='1.408'), Mock()]) as run:
+                result = module.inspect_audio(path, call)
+            self.assertEqual(result['audio_duration_seconds'], 1.408)
+            self.assertFalse(result['source_duration_matches'])
+            self.assertEqual(call['displayed_seconds'], 9)
+            self.assertEqual(run.call_args.args[0][0], 'ffmpeg')
+            self.assertIn('-xerror', run.call_args.args[0])
+
+    def test_duration_mismatch_does_not_accept_decode_errors(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / sample()['original_filename']
+            path.write_bytes(b'0000ftyp0000')
+            failure = module.subprocess.CalledProcessError(1, 'ffmpeg')
+            with patch.object(module.subprocess, 'run', side_effect=[Mock(stdout='1.408'), failure]):
+                with self.assertRaises(module.subprocess.CalledProcessError):
+                    module.inspect_audio(path, {**sample(), 'displayed_seconds': 9})
+
+    def test_source_duration_policy_preserves_checksum_and_positive_duration_checks(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / sample()['original_filename']
+            path.write_bytes(b'0000ftyp0000')
+            with self.assertRaisesRegex(ValueError, 'checksum mismatch'):
+                module.inspect_audio(path, {**sample(), 'sha256': 'a' * 64})
+            for duration in ['0', '-1', 'nan', 'inf']:
+                with self.subTest(duration=duration), patch.object(module.subprocess, 'run', return_value=Mock(stdout=duration)):
+                    with self.assertRaises(ValueError):
+                        module.inspect_audio(path, sample())
 
     def test_complete_day_and_legacy_metadata(self):
         data = manifest()

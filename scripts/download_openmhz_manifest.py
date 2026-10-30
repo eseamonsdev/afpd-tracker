@@ -194,12 +194,13 @@ def inspect_audio(path, call):
     if not math.isfinite(duration) or duration <= 0:
         raise ValueError(f'Unexpected audio duration: {path.name}')
     matches = abs(duration - call['displayed_seconds']) <= 1
-    # A documented source-label discrepancy does not invalidate unchanged,
-    # previously measured audio. New downloads must still match their labels.
-    saved_duration = call.get('audio_duration_seconds')
-    if not matches and not (call.get('sha256') == digest and isinstance(saved_duration, (int, float))
-                            and abs(saved_duration - duration) < 0.01):
-        raise ValueError(f'Unexpected audio duration: {path.name}')
+    # The source label is metadata, not a validation limit. For a mismatch,
+    # require a complete, error-free decode of an audio stream and retain both
+    # durations. Identity, existing checksums and M4A checks still apply.
+    if not matches:
+        subprocess.run(['ffmpeg', '-v', 'error', '-xerror', '-i', str(path),
+                        '-map', '0:a:0', '-f', 'null', '-'],
+                       capture_output=True, check=True, timeout=60)
     return {'size_bytes': len(content), 'sha256': digest, 'audio_duration_seconds': duration,
             'source_duration_matches': matches}
 
