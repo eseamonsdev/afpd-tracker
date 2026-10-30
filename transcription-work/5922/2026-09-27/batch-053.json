@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-27",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1790543915.m4a": {
+      "index": 521,
+      "epoch": 1790543915,
+      "sha256": "4c10bdbe4141e5dd4c25a1db21070f9a9a46c5a5ca15ae5c1ad1814da2db7aba",
+      "passes": {
+        "original": {
+          "text": "But he thinks",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " But he thinks",
+              "avg_logprob": -1.018720765908559,
+              "no_speech_prob": 0.039050545543432236,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I do six",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.88,
+              "text": " I do six",
+              "avg_logprob": -1.0526559750239055,
+              "no_speech_prob": 0.009470001794397831,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "36.",
+          "prompt": "5J48 COPS disturbance. 48, go ahead. R.P. can hear a verbal dispute between a male and a woman. It's unknown how many occupants are in the building. R.P. is an off-duty officer from Salt Lake. Says it's escalating. Didn't hear anything about it being physical. No mention of weapons or pews just in the area visiting the sister unit at the back.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 36.",
+              "avg_logprob": -0.788006067276001,
+              "no_speech_prob": 0.10160733014345169,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        }
+      }
+    }
+  }
+}
