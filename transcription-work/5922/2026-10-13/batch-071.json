@@ -1,0 +1,344 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-13",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791924463.m4a": {
+      "index": 702,
+      "epoch": 1791924463,
+      "sha256": "42351f6c08821cb59c3fcd810ebf4702b6bc6c6bba178e6ae360c1f843cc2d96",
+      "passes": {
+        "original": {
+          "text": "I copy, break 18-15, code 4.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.48,
+              "text": " I copy, break 18-15, code 4.",
+              "avg_logprob": -0.6442538457257407,
+              "no_speech_prob": 0.017425529658794403,
+              "compression_ratio": 0.8
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791924468.m4a": {
+      "index": 703,
+      "epoch": 1791924468,
+      "sha256": "8b97a53d04108abae3de7cbaa49866e9f6b6b625c53bc606cc34b73ecd2d68c7",
+      "passes": {
+        "original": {
+          "text": "15s with a season 4.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 15s with a season 4.",
+              "avg_logprob": -1.1017797946929933,
+              "no_speech_prob": 0.047349557280540466,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791924470.m4a": {
+      "index": 704,
+      "epoch": 1791924470,
+      "sha256": "16f3ad476bc413ca7322cfbccb0075c5e0f9b3002c8a92b3be8d43e83b46eb18",
+      "passes": {
+        "original": {
+          "text": "I got it.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I got it.",
+              "avg_logprob": -0.6475101368767875,
+              "no_speech_prob": 0.01306785736232996,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791924478.m4a": {
+      "index": 705,
+      "epoch": 1791924478,
+      "sha256": "1ce397a6b707fa40f5afc3385a0d670c49605c8b7ca495e65399592ec676a9c6",
+      "passes": {
+        "original": {
+          "text": "Bye, Jeffrey.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye, Jeffrey.",
+              "avg_logprob": -1.0019920553479875,
+              "no_speech_prob": 0.06823223829269409,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you very much.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.76,
+              "text": " Thank you very much.",
+              "avg_logprob": -1.1353494375944138,
+              "no_speech_prob": 0.03380146250128746,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "Bye, Jeffrey.",
+          "prompt": "I copy, break 18-15, code 4. 15s with a season 4. I got it.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye, Jeffrey.",
+              "avg_logprob": -0.9511232716696603,
+              "no_speech_prob": 0.046890586614608765,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791924480.m4a": {
+      "index": 706,
+      "epoch": 1791924480,
+      "sha256": "47a01ff516a445849eeba7573733eec5e3d7a645f9c68eacd1e7518758b8491f",
+      "passes": {
+        "original": {
+          "text": "Done.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Done.",
+              "avg_logprob": -0.5440200805664063,
+              "no_speech_prob": 0.07898440212011337,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791924482.m4a": {
+      "index": 707,
+      "epoch": 1791924482,
+      "sha256": "746495c99062fd67c98002b41e42f16d8f72ba8f90509824da58014b8f037648",
+      "passes": {
+        "original": {
+          "text": "I'll be in route to 396 North, 480 West. Can I get one more? Go for it.",
+          "prompt": null,
+          "duration_seconds": 8.192,
+          "token_limit": 90,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " I'll be in route to 396 North, 480 West.",
+              "avg_logprob": -0.3108442364067867,
+              "no_speech_prob": 0.02920772321522236,
+              "compression_ratio": 0.922077922077922
+            },
+            {
+              "start": 5.0,
+              "end": 6.0,
+              "text": " Can I get one more?",
+              "avg_logprob": -0.3108442364067867,
+              "no_speech_prob": 0.02920772321522236,
+              "compression_ratio": 0.922077922077922
+            },
+            {
+              "start": 6.0,
+              "end": 8.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.3108442364067867,
+              "no_speech_prob": 0.02920772321522236,
+              "compression_ratio": 0.922077922077922
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791924491.m4a": {
+      "index": 708,
+      "epoch": 1791924491,
+      "sha256": "889ac62796aa609a1fe1b7dd6d99a19bc631c9050a2427162c6e8fd7c3f50b2e",
+      "passes": {
+        "original": {
+          "text": "10-4, heat it to back.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 10-4, heat it to back.",
+              "avg_logprob": -0.5969716310501099,
+              "no_speech_prob": 0.03770872578024864,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791924494.m4a": {
+      "index": 709,
+      "epoch": 1791924494,
+      "sha256": "bf01d4508f6b0fce11a7dd0a0324436cdcedced786dda9adacf91e1bd46ad086",
+      "passes": {
+        "original": {
+          "text": "35.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 35.",
+              "avg_logprob": -0.7697334289550781,
+              "no_speech_prob": 0.020947009325027466,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "filtered": {
+          "text": "35.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 35.",
+              "avg_logprob": -0.789859390258789,
+              "no_speech_prob": 0.01772114261984825,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "context": {
+          "text": "35.",
+          "prompt": "Done. I'll be in route to 396 North, 480 West. Can I get one more? Go for it. 10-4, heat it to back.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 35.",
+              "avg_logprob": -0.5263716220855713,
+              "no_speech_prob": 0.01575309969484806,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791924496.m4a": {
+      "index": 710,
+      "epoch": 1791924496,
+      "sha256": "a7d56e02f40c31c27dd20eda662e5df2c7c46d4bfaeac27ff7513d8f3eae297e",
+      "passes": {
+        "original": {
+          "text": "35 copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 35 copy.",
+              "avg_logprob": -0.5793399612108866,
+              "no_speech_prob": 0.010144566185772419,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    }
+  }
+}
