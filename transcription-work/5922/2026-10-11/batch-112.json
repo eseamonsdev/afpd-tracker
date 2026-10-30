@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-11",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791770528.m4a": {
+      "index": 1111,
+      "epoch": 1791770528,
+      "sha256": "7490dc3e9eed1be96fd526c0487c96d4f3f975dc27dd4f64af4b5b47ac0570ef",
+      "passes": {
+        "original": {
+          "text": "G44, I'll be clear at...",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.84,
+              "text": " G44, I'll be clear at...",
+              "avg_logprob": -0.7563323825597763,
+              "no_speech_prob": 0.04175766929984093,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "filtered": {
+          "text": "144, I'll be clear.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 144, I'll be clear.",
+              "avg_logprob": -0.8777155101299285,
+              "no_speech_prob": 0.05918799713253975,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "J44, I'll be clear at...",
+          "prompt": "Somerville. And then where he's going, he's possibly mentioning his train station. I think he's westbound from the back door. Copy.",
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.84,
+              "text": " J44, I'll be clear at...",
+              "avg_logprob": -0.6877069671948751,
+              "no_speech_prob": 0.030877087265253067,
+              "compression_ratio": 0.75
+            }
+          ]
+        }
+      }
+    }
+  }
+}
