@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-10",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791644686.m4a": {
+      "index": 383,
+      "epoch": 1791644686,
+      "sha256": "2b6123de5ed0d7c476dbd571d2eabb07a89f463ba4b8bc2312d038fd12e4a969",
+      "passes": {
+        "original": {
+          "text": "Hi Jay, if you could see where you can clear all units.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Hi Jay, if you could see where you can clear all units.",
+              "avg_logprob": -0.6932080212761375,
+              "no_speech_prob": 0.041399482637643814,
+              "compression_ratio": 0.9322033898305084
+            }
+          ]
+        },
+        "filtered": {
+          "text": "If you can clear all units",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " If you can clear all units",
+              "avg_logprob": -0.8294332292344835,
+              "no_speech_prob": 0.05863550677895546,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "context": {
+          "text": "Hi Jay, if you could see where you can clear all units.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Hi Jay, if you could see where you can clear all units.",
+              "avg_logprob": -0.6932080212761375,
+              "no_speech_prob": 0.041399482637643814,
+              "compression_ratio": 0.9322033898305084
+            }
+          ]
+        }
+      }
+    }
+  }
+}
