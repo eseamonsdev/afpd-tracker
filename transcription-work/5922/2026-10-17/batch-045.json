@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-17",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792256541.m4a": {
+      "index": 448,
+      "epoch": 1792256541,
+      "sha256": "871dc4248be5c4b40141442d9132182e40c1d1e742913429743681461348a550",
+      "passes": {
+        "original": {
+          "text": "5J, 24th, Central, copy, assess, I see.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J, 24th, Central, copy, assess, I see.",
+              "avg_logprob": -0.7904736664560106,
+              "no_speech_prob": 0.03378167003393173,
+              "compression_ratio": 0.8297872340425532
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792256558.m4a": {
+      "index": 449,
+      "epoch": 1792256558,
+      "sha256": "fc845fdfcebfe41c3f6703bd3f0a3b139ecf2d0bbf43cc97c363c7a9cff58465",
+      "passes": {
+        "original": {
+          "text": "5J30, re-assign this to me.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5J30, re-assign this to me.",
+              "avg_logprob": -0.6744826157887777,
+              "no_speech_prob": 0.07293619960546494,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792256565.m4a": {
+      "index": 450,
+      "epoch": 1792256565,
+      "sha256": "9e93894255ac2e96f3f82a75c49a503073d40d3b4a53451aca01c9eb4d5d40be",
+      "passes": {
+        "original": {
+          "text": "Pressing five chances.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Pressing five chances.",
+              "avg_logprob": -0.9030012041330338,
+              "no_speech_prob": 0.12860913574695587,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "correction by Jesus",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.84,
+              "text": " correction by Jesus",
+              "avg_logprob": -1.211870014667511,
+              "no_speech_prob": 0.1480540931224823,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "5J, this is me.",
+          "prompt": "5J, 24th, Central, copy, assess, I see. 5J30, re-assign this to me.",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J, this is me.",
+              "avg_logprob": -0.8424488067626953,
+              "no_speech_prob": 0.020139403641223907,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    }
+  }
+}
