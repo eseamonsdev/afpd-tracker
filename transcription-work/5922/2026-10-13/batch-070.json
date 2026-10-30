@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-13",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791924159.m4a": {
+      "index": 691,
+      "epoch": 1791924159,
+      "sha256": "6667f305da619ccfae1a4bba4cb7ef0c6c106f7cd3e48b756c6a6bc8f6d8fb0a",
+      "passes": {
+        "original": {
+          "text": "Golf was key to copy.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Golf was key to copy.",
+              "avg_logprob": -0.6773863368564181,
+              "no_speech_prob": 0.028619468212127686,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791924207.m4a": {
+      "index": 692,
+      "epoch": 1791924207,
+      "sha256": "c5d9acc0aaa816776e7cbf3f74a1c592ac2503b39155b399313d3a703451a7c9",
+      "passes": {
+        "original": {
+          "text": "5J 31 traffic",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.4,
+              "text": " 5J 31 traffic",
+              "avg_logprob": -0.6219387224742344,
+              "no_speech_prob": 0.09175532311201096,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J31 traffic",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.4,
+              "text": " 5J31 traffic",
+              "avg_logprob": -0.6248748472758702,
+              "no_speech_prob": 0.031063299626111984,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "5J31 traffic.",
+          "prompt": "Confirming four kilo bravo whiskey, too. Golf whiskey, too. Golf was key to copy.",
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.4,
+              "text": " 5J31 traffic.",
+              "avg_logprob": -0.570614643394947,
+              "no_speech_prob": 0.0029369890689849854,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    }
+  }
+}
