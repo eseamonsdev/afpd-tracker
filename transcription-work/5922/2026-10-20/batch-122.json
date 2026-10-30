@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-20",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792542979.m4a": {
+      "index": 1211,
+      "epoch": 1792542979,
+      "sha256": "897460d25aedf3400b41987e9a9ed07be9a69113c2b29e31b50dc1ede089e2e1",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6470142364501953,
+              "no_speech_prob": 0.050896238535642624,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792542983.m4a": {
+      "index": 1212,
+      "epoch": 1792542983,
+      "sha256": "d2d7ff8a3c35235a6c6041347f4b3c232ca93700ea75e0da2efc37d987b9e266",
+      "passes": {
+        "original": {
+          "text": "If I need to get a first apology, can you show me a ride on that phone?",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " If I need to get a first apology, can you show me a ride on that phone?",
+              "avg_logprob": -0.5492056228897788,
+              "no_speech_prob": 0.12599831819534302,
+              "compression_ratio": 0.9861111111111112
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Can you show me a ride in that car?",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Can you show me a ride in that car?",
+              "avg_logprob": -0.7118467734410212,
+              "no_speech_prob": 0.27457401156425476,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        },
+        "context": {
+          "text": "If I need to get a first apology, can you show me a ride on that phone?",
+          "prompt": "5J44 Code 4 Copy.",
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " If I need to get a first apology, can you show me a ride on that phone?",
+              "avg_logprob": -0.5437174981290643,
+              "no_speech_prob": 0.14188753068447113,
+              "compression_ratio": 0.9861111111111112
+            }
+          ]
+        }
+      }
+    }
+  }
+}

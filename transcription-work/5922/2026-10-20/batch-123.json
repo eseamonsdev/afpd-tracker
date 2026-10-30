@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-20",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792543604.m4a": {
+      "index": 1223,
+      "epoch": 1792543604,
+      "sha256": "1901b5d2137e7858a94f6d32c21080142afd7ae93c6826f772fe056e6eb56590",
+      "passes": {
+        "original": {
+          "text": "We'll see you next time.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " We'll see you next time.",
+              "avg_logprob": -1.1221756339073181,
+              "no_speech_prob": 0.4455934166908264,
+              "compression_ratio": 0.75
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792543605.m4a": {
+      "index": 1224,
+      "epoch": 1792543605,
+      "sha256": "d1e4ea8d8e48f194a308c5f0a5796505e84ee492116e79c17561b34e724ba00b",
+      "passes": {
+        "original": {
+          "text": "5J44, Code 4",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.14,
+              "text": " 5J44, Code 4",
+              "avg_logprob": -0.5229116545783149,
+              "no_speech_prob": 0.0777474120259285,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792543608.m4a": {
+      "index": 1225,
+      "epoch": 1792543608,
+      "sha256": "6a4cf0345c6b536a3840a965c49dbc381da4d06a612324bf83177c7771808789",
+      "passes": {
+        "original": {
+          "text": "Look for it. You can just find it.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Look for it.",
+              "avg_logprob": -0.616917101542155,
+              "no_speech_prob": 0.12914878129959106,
+              "compression_ratio": 0.85
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " You can just find it.",
+              "avg_logprob": -0.616917101542155,
+              "no_speech_prob": 0.12914878129959106,
+              "compression_ratio": 0.85
+            }
+          ]
+        },
+        "filtered": {
+          "text": "before you can suspend",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2,
+              "text": " before you can suspend",
+              "avg_logprob": -0.6984137126377651,
+              "no_speech_prob": 0.12962287664413452,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Look for it, you can just find it.",
+          "prompt": "We'll see you next time. 5J44, Code 4",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Look for it, you can just find it.",
+              "avg_logprob": -0.6626908228947566,
+              "no_speech_prob": 0.19811218976974487,
+              "compression_ratio": 0.8292682926829268
+            }
+          ]
+        }
+      }
+    }
+  }
+}
