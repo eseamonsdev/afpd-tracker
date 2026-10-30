@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-20",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792559591.m4a": {
+      "index": 1721,
+      "epoch": 1792559591,
+      "sha256": "c82babc4d829f3c0a8979248eb3824eea2fe257108e4cfbfa2ebe032bd795f34",
+      "passes": {
+        "original": {
+          "text": "We're going to be on H.E. State Street. Stand by for the plates.",
+          "prompt": null,
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " We're going to be on H.E. State Street. Stand by for the plates.",
+              "avg_logprob": -0.45083491233262146,
+              "no_speech_prob": 0.09985224157571793,
+              "compression_ratio": 0.9696969696969697
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We're going to be on H16E State Street. Stand by for the plates.",
+          "prompt": null,
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " We're going to be on H16E State Street. Stand by for the plates.",
+              "avg_logprob": -0.4529081072126116,
+              "no_speech_prob": 0.09486518055200577,
+              "compression_ratio": 0.9552238805970149
+            }
+          ]
+        },
+        "context": {
+          "text": "We're going to be on H-60E State Street. Stand by for the plates.",
+          "prompt": "What's that, 5J51? Confirmed. Go ahead with your traffic.",
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " We're going to be on H-60E State Street. Stand by for the plates.",
+              "avg_logprob": -0.45512502030892804,
+              "no_speech_prob": 0.03234704211354256,
+              "compression_ratio": 0.9558823529411765
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792559616.m4a": {
+      "index": 1722,
+      "epoch": 1792559616,
+      "sha256": "28c4fb5d63d45fdf4062fdd5a69993b4f63e14619c62222db2d4d8ee6f3116c1",
+      "passes": {
+        "original": {
+          "text": "Send certified Jason 51 to be on State Street in the maverick with a local Victor 934 uniform possible",
+          "prompt": null,
+          "duration_seconds": 13.696,
+          "token_limit": 134,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.32,
+              "text": " Send certified Jason 51 to be on State Street in the maverick with a local",
+              "avg_logprob": -0.5394215804559214,
+              "no_speech_prob": 0.09404654800891876,
+              "compression_ratio": 1.120879120879121
+            },
+            {
+              "start": 9.32,
+              "end": 15.0,
+              "text": " Victor 934 uniform possible",
+              "avg_logprob": -0.5394215804559214,
+              "no_speech_prob": 0.09404654800891876,
+              "compression_ratio": 1.120879120879121
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Center certified Jason. Uh 51 should be on State Street in the Maverick with a local Victor 934 uniform possible.",
+          "prompt": null,
+          "duration_seconds": 13.696,
+          "token_limit": 134,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 13.0,
+              "text": " Center certified Jason. Uh 51 should be on State Street in the Maverick with a local Victor 934 uniform possible.",
+              "avg_logprob": -0.7259409780855532,
+              "no_speech_prob": 0.1117515116930008,
+              "compression_ratio": 1.0865384615384615
+            }
+          ]
+        },
+        "context": {
+          "text": "Send certified Jason 51 to be on State Street in the Maverick with a local Victor 934 uniform offer.",
+          "prompt": "Confirmed. Go ahead with your traffic. We're going to be on H.E. State Street. Stand by for the plates.",
+          "duration_seconds": 13.696,
+          "token_limit": 134,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 12.68,
+              "text": " Send certified Jason 51 to be on State Street in the Maverick with a local Victor 934 uniform",
+              "avg_logprob": -0.48396501193443936,
+              "no_speech_prob": 0.05359240621328354,
+              "compression_ratio": 1.0689655172413792
+            },
+            {
+              "start": 12.68,
+              "end": 13.68,
+              "text": " offer.",
+              "avg_logprob": -0.9727458953857422,
+              "no_speech_prob": 0.21356149017810822,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    }
+  }
+}
