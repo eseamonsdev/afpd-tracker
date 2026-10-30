@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-27",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1790556515.m4a": {
+      "index": 821,
+      "epoch": 1790556515,
+      "sha256": "bdfcf7b256df975a88b6ecbfa13509ac084f097ec833ba010ae572cac87727fd",
+      "passes": {
+        "original": {
+          "text": "Hunter North and Grand Ava for Alpha Charlie 375.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.24,
+              "text": " Hunter North and Grand Ava for Alpha Charlie 375.",
+              "avg_logprob": -0.7027115268366677,
+              "no_speech_prob": 0.007414836902171373,
+              "compression_ratio": 0.9074074074074074
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hunter North and Grand Adler for Alpha Charlie 375",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.28,
+              "text": " Hunter North and Grand Adler for Alpha Charlie 375",
+              "avg_logprob": -0.6785084834465613,
+              "no_speech_prob": 0.0034132027067244053,
+              "compression_ratio": 0.9259259259259259
+            }
+          ]
+        },
+        "context": {
+          "text": "Hunter North in Grand Ave. 4A, Charlie 375.",
+          "prompt": "5J45 traffic 5J45, go ahead.",
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.6,
+              "text": " Hunter North in Grand Ave. 4A, Charlie 375.",
+              "avg_logprob": -0.8148179372151693,
+              "no_speech_prob": 0.03482072800397873,
+              "compression_ratio": 0.8431372549019608
+            }
+          ]
+        }
+      }
+    }
+  }
+}
