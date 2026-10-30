@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-23",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792794068.m4a": {
+      "index": 951,
+      "epoch": 1792794068,
+      "sha256": "c6aad45d2151d96b080638e5fee9e03a07a437c74093296ca97f4b77ed596141",
+      "passes": {
+        "original": {
+          "text": "Affirm, it's going to be a white male, approximately 40 to 50 years old, large build, black jacket, tan beanie, dark colored beard, sitting in a silver van, possibly a tan color.",
+          "prompt": null,
+          "duration_seconds": 12.032,
+          "token_limit": 121,
+          "token_count": 46,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 11.6,
+              "text": " Affirm, it's going to be a white male, approximately 40 to 50 years old, large build, black jacket, tan beanie, dark colored beard, sitting in a silver van, possibly a tan color.",
+              "avg_logprob": -0.259020448999202,
+              "no_speech_prob": 0.014280191622674465,
+              "compression_ratio": 1.2992700729927007
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792794106.m4a": {
+      "index": 952,
+      "epoch": 1792794106,
+      "sha256": "10ea050188ac1dc65293e361d4f0276bd283a58beb00f4ebf7793e06e0c22e9f",
+      "passes": {
+        "original": {
+          "text": "5J32, the mail is alone. He took a deli item and a beer.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.68,
+              "text": " 5J32, the mail is alone. He took a deli item and a beer.",
+              "avg_logprob": -0.32813370498743927,
+              "no_speech_prob": 0.017329322174191475,
+              "compression_ratio": 0.9032258064516129
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792794112.m4a": {
+      "index": 953,
+      "epoch": 1792794112,
+      "sha256": "20cdccbeae77d15913c09918dc7605d6c29b288292da906bc4443ac002c77f13",
+      "passes": {
+        "original": {
+          "text": "Copy, I'm going to be attempting contact.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy, I'm going to be attempting contact.",
+              "avg_logprob": -0.42399741136110747,
+              "no_speech_prob": 0.040862444788217545,
+              "compression_ratio": 0.8723404255319149
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm going to be attempting contact.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm going to be attempting contact.",
+              "avg_logprob": -0.5519701134074818,
+              "no_speech_prob": 0.02152976579964161,
+              "compression_ratio": 0.8536585365853658
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy, I'm going to be attempting contact.",
+          "prompt": "Let me know when we get a description. Affirm, it's going to be a white male, approximately 40 to 50 years old, large build, black jacket, tan beanie, dark colored beard, sitting in a silver van, possibly a tan color. 5J32, the mail is alone. He took a deli item and a beer.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy, I'm going to be attempting contact.",
+              "avg_logprob": -0.23977253987238958,
+              "no_speech_prob": 0.0370849147439003,
+              "compression_ratio": 0.8723404255319149
+            }
+          ]
+        }
+      }
+    }
+  }
+}
