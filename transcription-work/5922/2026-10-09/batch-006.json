@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-09",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791528012.m4a": {
+      "index": 51,
+      "epoch": 1791528012,
+      "sha256": "1e533a9698b664ee38bf5ed2cda9d8179ef2c66a4c84a6a9972ea6053f6dccb4",
+      "passes": {
+        "original": {
+          "text": "5J53 Central, copy, private impound.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J53 Central, copy, private impound.",
+              "avg_logprob": -0.6526003650256565,
+              "no_speech_prob": 0.081012062728405,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791528016.m4a": {
+      "index": 52,
+      "epoch": 1791528016,
+      "sha256": "6e0f31e0c02ddd1c720f3f4a1f04fcdb6e7d5f4018e016d3002da8f3dfbc0960",
+      "passes": {
+        "original": {
+          "text": "46, I ask you in clarinet.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.4,
+              "text": " 46, I ask you in clarinet.",
+              "avg_logprob": -0.9157639990250269,
+              "no_speech_prob": 0.034112606197595596,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "filtered": {
+          "text": "46, you can clear on any.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 46, you can clear on any.",
+              "avg_logprob": -1.0342565449801358,
+              "no_speech_prob": 0.07201449573040009,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "context": {
+          "text": "46, I copy and clear on any...",
+          "prompt": "5G, 53 Central, copy, private attempt. 5J53 Central, copy, private impound.",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.24,
+              "text": " 46, I copy and clear on any...",
+              "avg_logprob": -0.9187546968460083,
+              "no_speech_prob": 0.029964029788970947,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        }
+      }
+    }
+  }
+}
