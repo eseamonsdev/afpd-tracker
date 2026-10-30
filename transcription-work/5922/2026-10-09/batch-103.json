@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-09",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791581302.m4a": {
+      "index": 1022,
+      "epoch": 1791581302,
+      "sha256": "840ccfbba08da6ce4103718475d2c27ef1adac4b1bfe0aa6c3511cc84c2b34c1",
+      "passes": {
+        "original": {
+          "text": "5 to 8 to 6 feet, copy medical request.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5 to 8 to 6 feet, copy medical request.",
+              "avg_logprob": -0.6142444440296718,
+              "no_speech_prob": 0.09116512537002563,
+              "compression_ratio": 0.8863636363636364
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791581308.m4a": {
+      "index": 1023,
+      "epoch": 1791581308,
+      "sha256": "61796594d7b5ba675496dc3fa3272a6f7d056b150675aaff38b490eb49ff70d6",
+      "passes": {
+        "original": {
+          "text": "Go ahead",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead",
+              "avg_logprob": -0.18171477317810059,
+              "no_speech_prob": 0.03482832387089729,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go ahead",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead",
+              "avg_logprob": -0.4549432277679443,
+              "no_speech_prob": 0.02730492316186428,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Go ahead.",
+          "prompt": "5 to 8 to 6 feet, copy medical request.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.39977995057900745,
+              "no_speech_prob": 0.025293320417404175,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791581328.m4a": {
+      "index": 1024,
+      "epoch": 1791581328,
+      "sha256": "47b0db2b235b4f05837ebbca62b291235b6b920fca52a1aace3660447d4bb479",
+      "passes": {
+        "original": {
+          "text": "copy have medical advice",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.36,
+              "text": " copy have medical advice",
+              "avg_logprob": -0.8320183753967285,
+              "no_speech_prob": 0.025407124310731888,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy have medical advice",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.36,
+              "text": " copy have medical advice",
+              "avg_logprob": -0.6957838705607823,
+              "no_speech_prob": 0.008825489319860935,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy, have medical advice.",
+          "prompt": "5 to 8 to 6 feet, copy medical request. Go ahead",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy, have medical advice.",
+              "avg_logprob": -0.6457071834140353,
+              "no_speech_prob": 0.03292173147201538,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        }
+      }
+    }
+  }
+}

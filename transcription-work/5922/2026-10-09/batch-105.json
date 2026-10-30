@@ -1,0 +1,303 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-09",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791582222.m4a": {
+      "index": 1042,
+      "epoch": 1791582222,
+      "sha256": "ba4f83f51ff5b41988ccd9c7faeade23d4856eb1e387aefbc5476eafd95cc818",
+      "passes": {
+        "original": {
+          "text": "If you're unable to make contact, you can clear it out, and if they call back, just sign it to me.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " If you're unable to make contact, you can clear it out, and if they call back, just sign it to me.",
+              "avg_logprob": -0.35173532469519253,
+              "no_speech_prob": 0.024227142333984375,
+              "compression_ratio": 1.1395348837209303
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791582228.m4a": {
+      "index": 1043,
+      "epoch": 1791582228,
+      "sha256": "74afa22cfe2ef9d1f7859fd84b4915710f2742f519440ac66757628391b8ecf9",
+      "passes": {
+        "original": {
+          "text": "10-4.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.9869655541011265,
+              "no_speech_prob": 0.04963682219386101,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791582276.m4a": {
+      "index": 1044,
+      "epoch": 1791582276,
+      "sha256": "b23779e36e03b2a43d7f2025d3507ed736004002f9f0046f69742a522dc63f98",
+      "passes": {
+        "original": {
+          "text": "Have a nice day.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Have a nice day.",
+              "avg_logprob": -0.6282282471656799,
+              "no_speech_prob": 0.07574985921382904,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791582279.m4a": {
+      "index": 1045,
+      "epoch": 1791582279,
+      "sha256": "7e1f6716bd48cd6c6b4f628d3e92bd5794ccc79fa22c0ba79e2915b661dd18b9",
+      "passes": {
+        "original": {
+          "text": "200 South 200 East on a black Cherokee in Oakland.",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.92,
+              "text": " 200 South 200 East on a black Cherokee in Oakland.",
+              "avg_logprob": -0.6281416756766183,
+              "no_speech_prob": 0.023967400193214417,
+              "compression_ratio": 0.8928571428571429
+            }
+          ]
+        },
+        "filtered": {
+          "text": "200 South 200 East on a black Cherokee. No, go play",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.88,
+              "text": " 200 South 200 East on a black Cherokee. No, go play",
+              "avg_logprob": -0.5893117748200893,
+              "no_speech_prob": 0.03660622984170914,
+              "compression_ratio": 0.8947368421052632
+            }
+          ]
+        },
+        "context": {
+          "text": "200 South, 200 East, on a black Cherokee in Oakland, Oakland.",
+          "prompt": "If you're unable to make contact, you can clear it out, and if they call back, just sign it to me. 10-4. Have a nice day.",
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 200 South, 200 East, on a black Cherokee in Oakland, Oakland.",
+              "avg_logprob": -0.4651145488023758,
+              "no_speech_prob": 0.013494906015694141,
+              "compression_ratio": 1.0
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791582296.m4a": {
+      "index": 1047,
+      "epoch": 1791582296,
+      "sha256": "8843d822e363cb19d2d23187f90d3b6791c2f1aee382a2820d51dd50f693af8c",
+      "passes": {
+        "original": {
+          "text": "7J27, I'll be out with 13J on a traffic stop in the state of Maine.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J27, I'll be out with 13J on a traffic stop in the state of Maine.",
+              "avg_logprob": -0.3418506408731143,
+              "no_speech_prob": 0.007836109027266502,
+              "compression_ratio": 0.9305555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791582301.m4a": {
+      "index": 1048,
+      "epoch": 1791582301,
+      "sha256": "79d48d8490114e4859a98cdd8e7f8afce8ff10c46273f8198a42d916f76e77e0",
+      "passes": {
+        "original": {
+          "text": "Twenty-seven.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Twenty-seven.",
+              "avg_logprob": -0.7077346699578422,
+              "no_speech_prob": 0.06042744219303131,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791582316.m4a": {
+      "index": 1049,
+      "epoch": 1791582316,
+      "sha256": "3cb70ab4c8b5112aff1143cda9ceebce8244a0c4b9baf37405734172659be377",
+      "passes": {
+        "original": {
+          "text": "5-2-32, go for it.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5-2-32, go for it.",
+              "avg_logprob": -0.4682602698986347,
+              "no_speech_prob": 0.03368978202342987,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791582320.m4a": {
+      "index": 1050,
+      "epoch": 1791582320,
+      "sha256": "6506c488276a4282ad31a6917d692373ba3913dc49b9b9457a1c7933445d7fd4",
+      "passes": {
+        "original": {
+          "text": "But for suspense",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " But for suspense",
+              "avg_logprob": -0.6529362003008524,
+              "no_speech_prob": 0.05106182396411896,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "vote for suspend",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " vote for suspend",
+              "avg_logprob": -0.6665422519048055,
+              "no_speech_prob": 0.0642671287059784,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "Go for it, suspend.",
+          "prompt": "7J27, I'll be out with 13J on a traffic stop in the state of Maine. Twenty-seven. 5-2-32, go for it.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it, suspend.",
+              "avg_logprob": -0.5917723973592123,
+              "no_speech_prob": 0.07629062980413437,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    }
+  }
+}
