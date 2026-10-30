@@ -121,3 +121,28 @@
   margin-top: 0;
   margin-bottom: 1.25rem;
 }
+
+/* Reusable text disclosure, without folder styling. */
+.latest-updates-content { margin: .75rem 0; padding: 0; list-style: none; }
+.expandable-section > summary,
+.tree .expandable-section > summary {
+  display: flex; align-items: center; gap: .4rem; width: fit-content;
+  min-height: 2.75rem; padding: .25rem 0; cursor: pointer;
+  color: var(--blue); font-weight: 400; list-style: none;
+}
+.expandable-section > summary::-webkit-details-marker { display: none; }
+.expandable-section > summary::before,
+.tree .expandable-section > summary::before {
+  content: "▸"; flex: 0 0 auto; color: currentColor; font-size: .85em;
+}
+.expandable-section[open] > summary::before { transform: rotate(90deg); }
+.expandable-section > summary:hover span { text-decoration: underline; }
+.expandable-section > summary:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+.expandable-section > summary .expandable-section-expanded { display: none; }
+.expandable-section[open] > summary .expandable-section-collapsed { display: none; }
+.expandable-section[open] > summary .expandable-section-expanded { display: inline; }
+.expandable-section > .expandable-section-content,
+.tree .expandable-section > .expandable-section-content {
+  margin: .25rem 0 .75rem 1rem; padding: 0; border: 0; list-style: none;
+}
+.expandable-section-content > .tree-text-item > p { margin: .45rem 0; }

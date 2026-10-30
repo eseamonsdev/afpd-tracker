@@ -108,12 +108,21 @@
       {%- endif -%}
     {%- endmacro %}
 
+    {% macro renderExpandableSection(node) %}
+      <details class="expandable-section"{% if node.id %} id="{{ node.id | escape }}"{% endif %}{% if node.open %} open{% endif %}>
+        <summary><span class="expandable-section-collapsed">{{ node.label | escape }}</span><span class="expandable-section-expanded">{{ (node.expandedLabel or node.label) | escape }}</span></summary>
+        <ul class="expandable-section-content">{{ renderNodes(node.children) }}</ul>
+      </details>
+    {% endmacro %}
+
     {% macro renderNodes(nodes) %}
       {% for node in nodes %}
         {% if node.type == "custom" %}
           <li{% if node.anchorId %} id="{{ node.anchorId | escape }}"{% endif %}>
             {% include node.template | customTemplatePath %}
           </li>
+        {% elseif node.type == "expandable-section" %}
+          <li class="tree-expandable-item">{{ renderExpandableSection(node) }}</li>
         {% elseif node.type == "folder" %}
           <li>
             <details{% if node.anchor %} id="{{ node.anchor | escape }}"{% endif %}>
