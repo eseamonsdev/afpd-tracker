@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-19",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792459799.m4a": {
+      "index": 1146,
+      "epoch": 1792459799,
+      "sha256": "5592c9bb54e8ac972f3810a1e2ea9ea5feba8a01884399393640eac50b3685be",
+      "passes": {
+        "original": {
+          "text": "H&G 20, send report.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " H&G 20, send report.",
+              "avg_logprob": -0.7082231478257612,
+              "no_speech_prob": 0.011603160761296749,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792459802.m4a": {
+      "index": 1147,
+      "epoch": 1792459802,
+      "sha256": "c67b2c88477f4c856bd03be0abc63ae62f9e87a2a0b71dcb44421ba131de3962",
+      "passes": {
+        "original": {
+          "text": "before.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " before.",
+              "avg_logprob": -0.9932863235473632,
+              "no_speech_prob": 0.04902924969792366,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792459803.m4a": {
+      "index": 1148,
+      "epoch": 1792459803,
+      "sha256": "9b851ccb3e3100e24571820b695917cf168b1d695041572ec25475ddf6a50576",
+      "passes": {
+        "original": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy.",
+              "avg_logprob": -0.8032238960266114,
+              "no_speech_prob": 0.053463470190763474,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792459856.m4a": {
+      "index": 1149,
+      "epoch": 1792459856,
+      "sha256": "bab546b4550850272f2a278a9e58196dc2e92c9ec30cbd0f78f38e24e7366066",
+      "passes": {
+        "original": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.48794409206935335,
+              "no_speech_prob": 0.024348437786102295,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.5019052198954991,
+              "no_speech_prob": 0.02437078393995762,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Go for it.",
+          "prompt": "H&G 20, send report. before. Happy.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.42658802441188265,
+              "no_speech_prob": 0.02182859741151333,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    }
+  }
+}
