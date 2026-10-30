@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-20",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792512525.m4a": {
+      "index": 331,
+      "epoch": 1792512525,
+      "sha256": "5b638ca7780de302d7bf0566726a19830fee03caa64681aa3c2632e9e950dbe4",
+      "passes": {
+        "original": {
+          "text": "5G, 171, I can't be of medical advice.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.7600000000000002,
+              "text": " 5G, 171, I can't be of medical advice.",
+              "avg_logprob": -0.6019384413957596,
+              "no_speech_prob": 0.012941621243953705,
+              "compression_ratio": 0.8260869565217391
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J171, I can't be a medical advisor.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.7600000000000002,
+              "text": " 5J171, I can't be a medical advisor.",
+              "avg_logprob": -0.5906789064407348,
+              "no_speech_prob": 0.01621113158762455,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        },
+        "context": {
+          "text": "5J171, I can't be of medical advice.",
+          "prompt": "5J48, custody medical. to CRO5G and it took off your medical.",
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.52,
+              "text": " 5J171, I can't be of medical advice.",
+              "avg_logprob": -0.5929119348526001,
+              "no_speech_prob": 0.008207743056118488,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792513908.m4a": {
+      "index": 339,
+      "epoch": 1792513908,
+      "sha256": "081f93327b249e1eebd2dcb25f356d676b1a5778bf7165a5ae003a32d1c4c5e0",
+      "passes": {
+        "original": {
+          "text": "24, go ahead.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 24, go ahead.",
+              "avg_logprob": -0.5314807891845703,
+              "no_speech_prob": 0.04661107063293457,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792513911.m4a": {
+      "index": 340,
+      "epoch": 1792513911,
+      "sha256": "6e1ac730b9d41bf22608b15edad3a00c6b12afde79c588f47ef766aa9928f24d",
+      "passes": {
+        "original": {
+          "text": "It's going to be 550 North State Street and 13J on a Zero Echo Fox X-ray 9.",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " It's going to be 550 North State Street and 13J on a Zero Echo Fox X-ray 9.",
+              "avg_logprob": -0.44900974273681643,
+              "no_speech_prob": 0.009057030081748962,
+              "compression_ratio": 0.9259259259259259
+            }
+          ]
+        }
+      }
+    }
+  }
+}

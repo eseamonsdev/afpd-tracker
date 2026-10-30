@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-20",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792512504.m4a": {
+      "index": 329,
+      "epoch": 1792512504,
+      "sha256": "7b5013db426bc00b2bf26bdb6765501f48ba0f385232c1275a435a811d823e4e",
+      "passes": {
+        "original": {
+          "text": "5J48, custody medical.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J48, custody medical.",
+              "avg_logprob": -0.6374046027660369,
+              "no_speech_prob": 0.03137139976024628,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792512521.m4a": {
+      "index": 330,
+      "epoch": 1792512521,
+      "sha256": "63e7afa26e87f7a42c12e09dcdcc28b3b252e9509dc439cd2e5b508d02e8df7e",
+      "passes": {
+        "original": {
+          "text": "to CRO5G and it took off your medical.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " to CRO5G and it took off your medical.",
+              "avg_logprob": -0.7245595852533976,
+              "no_speech_prob": 0.011441143229603767,
+              "compression_ratio": 0.8260869565217391
+            }
+          ]
+        }
+      }
+    }
+  }
+}
