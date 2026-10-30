@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-17",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792299875.m4a": {
+      "index": 1249,
+      "epoch": 1792299875,
+      "sha256": "e93e5f70b758c3b99ea2713b64f4fad134203cf6e172d5c8f40eaab513e031db",
+      "passes": {
+        "original": {
+          "text": "5G21, copy private account.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5G21, copy private account.",
+              "avg_logprob": -0.6439915570345792,
+              "no_speech_prob": 0.06160622090101242,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792299880.m4a": {
+      "index": 1250,
+      "epoch": 1792299880,
+      "sha256": "4d3c1d385a5e2e118eecaf4156b70297d93de3ced930fd715b688d859ea76b0c",
+      "passes": {
+        "original": {
+          "text": "I copy, you can clear it when you're ready.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I copy, you can clear it when you're ready.",
+              "avg_logprob": -0.40145533879597983,
+              "no_speech_prob": 0.03543740138411522,
+              "compression_ratio": 0.8775510204081632
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I copy, you can clear it when you're ready.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I copy, you can clear it when you're ready.",
+              "avg_logprob": -0.36122302611668905,
+              "no_speech_prob": 0.020504117012023926,
+              "compression_ratio": 0.8775510204081632
+            }
+          ]
+        },
+        "context": {
+          "text": "I copy, you can clear it when you're ready.",
+          "prompt": "5G21, copy private account.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I copy, you can clear it when you're ready.",
+              "avg_logprob": -0.2930358568827311,
+              "no_speech_prob": 0.007777247112244368,
+              "compression_ratio": 0.8775510204081632
+            }
+          ]
+        }
+      }
+    }
+  }
+}
