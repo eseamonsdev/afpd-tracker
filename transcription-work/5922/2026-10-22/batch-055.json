@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-22",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792699453.m4a": {
+      "index": 549,
+      "epoch": 1792699453,
+      "sha256": "e86c23d3ecf551db5ffdca8c24eb2ebc8169cc6604a1a9d22005ff6966e15e76",
+      "passes": {
+        "original": {
+          "text": "You guys need medical.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You guys need medical.",
+              "avg_logprob": -0.3873671926558018,
+              "no_speech_prob": 0.053759269416332245,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "You guys need medical.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You guys need medical.",
+              "avg_logprob": -0.3862694539129734,
+              "no_speech_prob": 0.02223788946866989,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "You guys need medical.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You guys need medical.",
+              "avg_logprob": -0.3873671926558018,
+              "no_speech_prob": 0.053759269416332245,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792699472.m4a": {
+      "index": 550,
+      "epoch": 1792699472,
+      "sha256": "d7df59828afd9475342449de115cb77ddb837b5138ce618692f76df0bbc441d9",
+      "passes": {
+        "original": {
+          "text": "5J31, medical in 22.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.5200000000000005,
+              "text": " 5J31, medical in 22.",
+              "avg_logprob": -0.7394528930837457,
+              "no_speech_prob": 0.06866911053657532,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J31, medical in 22.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J31, medical in 22.",
+              "avg_logprob": -0.7626116275787354,
+              "no_speech_prob": 0.04758046939969063,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "5J31, medical in 22.",
+          "prompt": "You guys need medical.",
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.5200000000000005,
+              "text": " 5J31, medical in 22.",
+              "avg_logprob": -0.5763999440453269,
+              "no_speech_prob": 0.006656755227595568,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    }
+  }
+}

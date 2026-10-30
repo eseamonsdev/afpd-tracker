@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-22",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792699476.m4a": {
+      "index": 551,
+      "epoch": 1792699476,
+      "sha256": "9dc3be80e38ca3e027f45258cc79b78ac92f8c5ea6916d78b359c562a5dee121",
+      "passes": {
+        "original": {
+          "text": "Time for...",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Time for...",
+              "avg_logprob": -0.6259660422801971,
+              "no_speech_prob": 0.04277077317237854,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792699492.m4a": {
+      "index": 552,
+      "epoch": 1792699492,
+      "sha256": "293131871484e59eb4f5af32fed7b39f1129a5df93951a35655a57e7e9098942",
+      "passes": {
+        "original": {
+          "text": "I have JAD1 riding with 21 using my number.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I have JAD1 riding with 21 using my number.",
+              "avg_logprob": -0.46711238225301105,
+              "no_speech_prob": 0.04492567852139473,
+              "compression_ratio": 0.8958333333333334
+            }
+          ]
+        },
+        "filtered": {
+          "text": "All right, JAD1 writing with 21 using my number.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " All right, JAD1 writing with 21 using my number.",
+              "avg_logprob": -0.5565636791288853,
+              "no_speech_prob": 0.016989316791296005,
+              "compression_ratio": 0.9056603773584906
+            }
+          ]
+        },
+        "context": {
+          "text": "5J81, riding with 21, using my number.",
+          "prompt": "You guys need medical. 5J31, medical in 22. Time for...",
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.6000000000000005,
+              "text": " 5J81, riding with 21, using my number.",
+              "avg_logprob": -0.4811637163162231,
+              "no_speech_prob": 0.0029863116797059774,
+              "compression_ratio": 0.9047619047619048
+            }
+          ]
+        }
+      }
+    }
+  }
+}
