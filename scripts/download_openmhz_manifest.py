@@ -37,7 +37,7 @@ def record_status(day, talkgroup, name, status):
         pass
 
 MOUNTAIN = ZoneInfo('America/Denver')
-GAP_SECONDS = 0.75
+GAP_SECONDS = 0.5
 DEFAULT_BATCH_SIZE = 300
 MAX_AUDIO_BYTES = 20 * 1024 * 1024
 MAX_CALLS = 5000
@@ -158,7 +158,7 @@ class NoRedirects(urllib.request.HTTPRedirectHandler):
 
 
 class Downloader:
-    """One request at a time, 750 ms after completion of the last attempt."""
+    """One request at a time, 500 ms after completion of the last attempt."""
     def __init__(self):
         self.finished_at = None
         self.opener = urllib.request.build_opener(NoRedirects())

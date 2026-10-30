@@ -359,7 +359,7 @@ class DownloadTest(unittest.TestCase):
         downloader = module.Downloader()
         downloader.opener = Mock()
         downloader.opener.open.side_effect = [Response(b'0000ftyp0000'), Response(b'0000ftyp0000')]
-        with tempfile.TemporaryDirectory() as directory, patch.object(module.time, 'monotonic', side_effect=[10, 10.5, 20]), patch.object(module.time, 'sleep') as sleep:
+        with tempfile.TemporaryDirectory() as directory, patch.object(module.time, 'monotonic', side_effect=[10, 10.25, 20]), patch.object(module.time, 'sleep') as sleep:
             downloader.download(sample()['media_url'], Path(directory) / 'one.m4a')
             downloader.download(sample()['media_url'], Path(directory) / 'two.m4a')
             sleep.assert_called_once_with(0.25)
@@ -376,7 +376,7 @@ class DownloadTest(unittest.TestCase):
                 downloader.download(sample()['media_url'], output)
             self.assertFalse(output.exists())
 
-    def test_failed_download_also_keeps_750_ms_pause_before_next_attempt(self):
+    def test_failed_download_also_keeps_500_ms_pause_before_next_attempt(self):
         class Response(io.BytesIO):
             headers = {'Content-Type': 'audio/mp4'}
         downloader = module.Downloader()
@@ -388,7 +388,7 @@ class DownloadTest(unittest.TestCase):
             with self.assertRaises(OSError):
                 downloader.download(sample()['media_url'], Path(directory) / 'failed.m4a')
             downloader.download(sample()['media_url'], Path(directory) / 'next.m4a')
-            self.assertAlmostEqual(sleep.call_args.args[0], 0.65)
+            self.assertAlmostEqual(sleep.call_args.args[0], 0.4)
 
     def test_partial_day_extension_preserves_existing_calls(self):
         with tempfile.TemporaryDirectory() as directory:
