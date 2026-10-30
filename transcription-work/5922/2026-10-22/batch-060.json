@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-22",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792701593.m4a": {
+      "index": 597,
+      "epoch": 1792701593,
+      "sha256": "704f4e9cff265b2cda143cbfb00a0e261a32a9f8babad64db0b6e58d850a87e7",
+      "passes": {
+        "original": {
+          "text": "7J22, I'm out on the motorist assist.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.8000000000000003,
+              "text": " 7J22, I'm out on the motorist assist.",
+              "avg_logprob": -0.3875191882252693,
+              "no_speech_prob": 0.03205748274922371,
+              "compression_ratio": 0.8604651162790697
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792701597.m4a": {
+      "index": 598,
+      "epoch": 1792701597,
+      "sha256": "bdd55ea56cb56944dcb42527a79050399e63e16cbe8e082f715bad9de326326a",
+      "passes": {
+        "original": {
+          "text": "John Ford.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " John Ford.",
+              "avg_logprob": -0.800343652566274,
+              "no_speech_prob": 0.08271079510450363,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792701625.m4a": {
+      "index": 599,
+      "epoch": 1792701625,
+      "sha256": "ce27e0dbb0577785ec730ae8220153c826f22c4ead85c79420bb035e228da803",
+      "passes": {
+        "original": {
+          "text": "IJ29, I copy to medical. You can clear out to me unless requested.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " IJ29, I copy to medical.",
+              "avg_logprob": -0.5271923956663712,
+              "no_speech_prob": 0.0644524022936821,
+              "compression_ratio": 0.9428571428571428
+            },
+            {
+              "start": 4.0,
+              "end": 8.0,
+              "text": " You can clear out to me unless requested.",
+              "avg_logprob": -0.5271923956663712,
+              "no_speech_prob": 0.0644524022936821,
+              "compression_ratio": 0.9428571428571428
+            }
+          ]
+        },
+        "filtered": {
+          "text": "You can clear out to me unless requested.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.42,
+              "text": " You can clear out to me unless requested.",
+              "avg_logprob": -0.7259525706370672,
+              "no_speech_prob": 0.06508903950452805,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        },
+        "context": {
+          "text": "5J29, I copy to medical. She can clear out to me unless requested.",
+          "prompt": "7J22, I'm out on the motorist assist. John Ford.",
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 5J29, I copy to medical. She can clear out to me unless requested.",
+              "avg_logprob": -0.3755209843317668,
+              "no_speech_prob": 0.1061127632856369,
+              "compression_ratio": 0.9428571428571428
+            }
+          ]
+        }
+      }
+    }
+  }
+}

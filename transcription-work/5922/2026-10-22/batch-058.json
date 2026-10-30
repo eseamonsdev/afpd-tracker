@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-22",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792700682.m4a": {
+      "index": 572,
+      "epoch": 1792700682,
+      "sha256": "242111f69e7e31ed86e3a00733fd7cfed16ac8ff90cbcd973aa47e649cf7e319",
+      "passes": {
+        "original": {
+          "text": "Bye.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Bye.",
+              "avg_logprob": -0.7090847015380859,
+              "no_speech_prob": 0.012292874045670033,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792700685.m4a": {
+      "index": 573,
+      "epoch": 1792700685,
+      "sha256": "eefd25495b052b113cbe8243622ad8d20893c18d669a39abb21365ad3372c9ee",
+      "passes": {
+        "original": {
+          "text": "Paige Lane and Canyon Road, Fox 892 Uniform Tango",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.72,
+              "text": " Paige Lane and Canyon Road, Fox 892 Uniform Tango",
+              "avg_logprob": -0.39038679997126263,
+              "no_speech_prob": 0.020321255549788475,
+              "compression_ratio": 0.8596491228070176
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Page Lane and Canyon Road, Fox 892 Uniform Tango",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.72,
+              "text": " Page Lane and Canyon Road, Fox 892 Uniform Tango",
+              "avg_logprob": -0.4233411033948263,
+              "no_speech_prob": 0.01696770079433918,
+              "compression_ratio": 0.8571428571428571
+            }
+          ]
+        },
+        "context": {
+          "text": "Page Lane and Canyon Road, Fox 892 Uniform Tango.",
+          "prompt": "Bye.",
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.72,
+              "text": " Page Lane and Canyon Road, Fox 892 Uniform Tango.",
+              "avg_logprob": -0.3672876488417387,
+              "no_speech_prob": 0.03979799523949623,
+              "compression_ratio": 0.8596491228070176
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792701027.m4a": {
+      "index": 580,
+      "epoch": 1792701027,
+      "sha256": "5335976be6080787cf5b0e8a96606dd36463722924c66a22601faa2958805d00",
+      "passes": {
+        "original": {
+          "text": "Go ahead",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead",
+              "avg_logprob": -0.39843525886535647,
+              "no_speech_prob": 0.033832453191280365,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    }
+  }
+}
