@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-23",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792790537.m4a": {
+      "index": 866,
+      "epoch": 1792790537,
+      "sha256": "852e3ac27808db0ff320bcb3c18614fc68f2bc35c188a7fa35b908a9ab0af14c",
+      "passes": {
+        "original": {
+          "text": "5J48 Central, copy fire assist.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5J48 Central, copy fire assist.",
+              "avg_logprob": -0.4062027061978976,
+              "no_speech_prob": 0.060624442994594574,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792790543.m4a": {
+      "index": 867,
+      "epoch": 1792790543,
+      "sha256": "6ab1b16935c56828553ce4f0cf296ad1d8e7fd69c72c777b6230736c9a204a4d",
+      "passes": {
+        "original": {
+          "text": "Pretty good.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Pretty good.",
+              "avg_logprob": -0.4768022398153941,
+              "no_speech_prob": 0.09154554456472397,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Pretty good.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Pretty good.",
+              "avg_logprob": -0.5366909503936768,
+              "no_speech_prob": 0.04936046898365021,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "Pretty good.",
+          "prompt": "5J48 Central, copy fire assist.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Pretty good.",
+              "avg_logprob": -0.5487534900506338,
+              "no_speech_prob": 0.026691798120737076,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792790574.m4a": {
+      "index": 870,
+      "epoch": 1792790574,
+      "sha256": "8c218868870ee6642a35e4a5181165734f6eb0e684c8ccf016a58b14d420f9e5",
+      "passes": {
+        "original": {
+          "text": "APNJ 22 arriving.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " APNJ 22 arriving.",
+              "avg_logprob": -0.5114626354641385,
+              "no_speech_prob": 0.01886827126145363,
+              "compression_ratio": 0.68
+            }
+          ]
+        }
+      }
+    }
+  }
+}
