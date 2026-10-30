@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-10",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791613469.m4a": {
+      "index": 22,
+      "epoch": 1791613469,
+      "sha256": "6f7798a72cb020266455cc1d236b93acacd7221b020521a3c7f5d420e7e2b95c",
+      "passes": {
+        "original": {
+          "text": "I do think I'm gonna show you our next patrol at Walmart 949 grassland",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.4,
+              "text": " I do think I'm gonna show you our next patrol at Walmart 949 grassland",
+              "avg_logprob": -0.5450389623641968,
+              "no_speech_prob": 0.01929074339568615,
+              "compression_ratio": 0.958904109589041
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I do think we'll show you the next controller Walmart 949 grassland",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.44,
+              "text": " I do think we'll show you the next controller Walmart 949 grassland",
+              "avg_logprob": -0.6187622315353818,
+              "no_speech_prob": 0.01946779154241085,
+              "compression_ratio": 0.9178082191780822
+            }
+          ]
+        },
+        "context": {
+          "text": "I do think I'm gonna show you our next patrol at Walmart 949 grassland",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.4,
+              "text": " I do think I'm gonna show you our next patrol at Walmart 949 grassland",
+              "avg_logprob": -0.5450389623641968,
+              "no_speech_prob": 0.01929074339568615,
+              "compression_ratio": 0.958904109589041
+            }
+          ]
+        }
+      }
+    }
+  }
+}
