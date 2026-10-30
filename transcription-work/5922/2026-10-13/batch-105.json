@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-13",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791934387.m4a": {
+      "index": 1048,
+      "epoch": 1791934387,
+      "sha256": "7fccf490e48ec9bcedde506e43c8cfbd094d8a41f8f2888e85e99ac215c0926f",
+      "passes": {
+        "original": {
+          "text": "7-8, 10-42",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-8, 10-42",
+              "avg_logprob": -0.407517671585083,
+              "no_speech_prob": 0.08627896755933762,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791934406.m4a": {
+      "index": 1049,
+      "epoch": 1791934406,
+      "sha256": "99a53350c8cdf1dad7dde0f1bd8ab4ff56fd3d0c352280cd7af9e7a1cad103b2",
+      "passes": {
+        "original": {
+          "text": "5BA40 clear.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5BA40 clear.",
+              "avg_logprob": -0.6060666814446449,
+              "no_speech_prob": 0.022306818515062332,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G, 40 clear.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5G, 40 clear.",
+              "avg_logprob": -0.6213487519158257,
+              "no_speech_prob": 0.01732414774596691,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "5-BA-40, clear",
+          "prompt": "7-8, 10-42",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5-BA-40, clear",
+              "avg_logprob": -0.7414707183837891,
+              "no_speech_prob": 0.011683550663292408,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    }
+  }
+}
