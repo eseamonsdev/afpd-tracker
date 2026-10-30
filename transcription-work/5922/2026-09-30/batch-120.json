@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-30",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1790822584.m4a": {
+      "index": 1199,
+      "epoch": 1790822584,
+      "sha256": "33c29aa1d7044cdf7f8af21cf71e5f093e73668300d77a97d85706f4fd1a390a",
+      "passes": {
+        "original": {
+          "text": "I copy. Do you have this filling on the last hand to make sure I have it right?",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I copy. Do you have this filling on the last hand to make sure I have it right?",
+              "avg_logprob": -0.3670595366021861,
+              "no_speech_prob": 0.023932669311761856,
+              "compression_ratio": 1.0
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790822590.m4a": {
+      "index": 1200,
+      "epoch": 1790822590,
+      "sha256": "dc2a3a3fa0021e615d28c514d40bfec8c5675957c0cadea27975e564a44688ea",
+      "passes": {
+        "original": {
+          "text": "This would be Charlie Alpha, Sierra Tango, India, Lima, Lima, Oscar.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.5200000000000005,
+              "text": " This would be Charlie Alpha, Sierra Tango, India, Lima, Lima, Oscar.",
+              "avg_logprob": -0.3504803350993565,
+              "no_speech_prob": 0.006303127855062485,
+              "compression_ratio": 1.0149253731343284
+            }
+          ]
+        }
+      }
+    }
+  }
+}
