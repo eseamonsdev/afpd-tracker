@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-09",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791547200.m4a": {
+      "index": 201,
+      "epoch": 1791547200,
+      "sha256": "b3d6bcf89ff729b1b951234bc3d734050d6354271a6a8095f7cdacd832ba3dc8",
+      "passes": {
+        "original": {
+          "text": "18J6",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18J6",
+              "avg_logprob": -0.6412029763062795,
+              "no_speech_prob": 0.10618619620800018,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791547203.m4a": {
+      "index": 202,
+      "epoch": 1791547203,
+      "sha256": "3354655cd8b4d5a480feaaac0b265c77f9cea4672b01ffa102c40416d47393a4",
+      "passes": {
+        "original": {
+          "text": "temper",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " temper",
+              "avg_logprob": -0.8107365667819977,
+              "no_speech_prob": 0.02334408089518547,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791547207.m4a": {
+      "index": 203,
+      "epoch": 1791547207,
+      "sha256": "702a49cf2c16cbb7b94ff9950106d57f5c0b38c09ab6e433dcbedc2aef461181",
+      "passes": {
+        "original": {
+          "text": "5J10, off duty.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J10, off duty.",
+              "avg_logprob": -0.4977881669998169,
+              "no_speech_prob": 0.07348571717739105,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J10 off duty",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.7600000000000002,
+              "text": " 5J10 off duty",
+              "avg_logprob": -0.45331869274377823,
+              "no_speech_prob": 0.009268240071833134,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "5J10, off duty",
+          "prompt": "Sorry, are you using code number? 18J6 temper",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J10, off duty",
+              "avg_logprob": -0.43480396270751953,
+              "no_speech_prob": 0.0035618431866168976,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    }
+  }
+}
