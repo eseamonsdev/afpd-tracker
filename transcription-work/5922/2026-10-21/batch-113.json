@@ -1,0 +1,253 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-21",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792637479.m4a": {
+      "index": 1121,
+      "epoch": 1792637479,
+      "sha256": "d474bafb018af59258eb6345c9b80bab8fa39cca74f15c98981f5182171e6fa4",
+      "passes": {
+        "original": {
+          "text": "Come on.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " Come on.",
+              "avg_logprob": -0.9176111221313477,
+              "no_speech_prob": 0.040790267288684845,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792637483.m4a": {
+      "index": 1122,
+      "epoch": 1792637483,
+      "sha256": "c389d8fab2884d4e6dcc0d5bee091317c2658e19c36a38af14692cd8f271d47f",
+      "passes": {
+        "original": {
+          "text": "1100 North, 700 West, local 6 Whiskey, 2 Alpha Bravo, it's a white Honda Civic.",
+          "prompt": null,
+          "duration_seconds": 8.192,
+          "token_limit": 90,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " 1100 North, 700 West, local 6 Whiskey, 2 Alpha Bravo, it's a white Honda Civic.",
+              "avg_logprob": -0.5340266990661621,
+              "no_speech_prob": 0.06804116815328598,
+              "compression_ratio": 0.9294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792637495.m4a": {
+      "index": 1123,
+      "epoch": 1792637495,
+      "sha256": "df3758624552fa4b8e4c823e0b2e11d1e930021be6c2a8580bdaa4b0db447ad0",
+      "passes": {
+        "original": {
+          "text": "Tell me.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Tell me.",
+              "avg_logprob": -0.7465671002864838,
+              "no_speech_prob": 0.015637973323464394,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792637513.m4a": {
+      "index": 1124,
+      "epoch": 1792637513,
+      "sha256": "a4c9c8b13124c39f06e8378686627a39f10b50039f5f4ec411a475bb1a198e26",
+      "passes": {
+        "original": {
+          "text": "five J forty seven I'm in the area of the alarm you can reassign it to me",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.84,
+              "text": " five J forty seven I'm in the area of the alarm you can reassign it to me",
+              "avg_logprob": -0.30262903056361456,
+              "no_speech_prob": 0.11054611206054688,
+              "compression_ratio": 1.042857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J47 I'm in the area of the alarm you can reassign it to me.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5J47 I'm in the area of the alarm you can reassign it to me.",
+              "avg_logprob": -0.37348910759795795,
+              "no_speech_prob": 0.10934755951166153,
+              "compression_ratio": 0.967741935483871
+            }
+          ]
+        },
+        "context": {
+          "text": "5J47, I'm in the area of the alarm. You can reassign it to me.",
+          "prompt": "Come on. 1100 North, 700 West, local 6 Whiskey, 2 Alpha Bravo, it's a white Honda Civic. Tell me.",
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5J47, I'm in the area of the alarm. You can reassign it to me.",
+              "avg_logprob": -0.2112452040115992,
+              "no_speech_prob": 0.03645743802189827,
+              "compression_ratio": 0.96875
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792637518.m4a": {
+      "index": 1125,
+      "epoch": 1792637518,
+      "sha256": "2ecf2e7cc0cb8ddb350cb7d8e2f4b3d8639f28ae442cbc4d113772666f3bd4c6",
+      "passes": {
+        "original": {
+          "text": "Chubby.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Chubby.",
+              "avg_logprob": -0.789790948232015,
+              "no_speech_prob": 0.022115159779787064,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792637550.m4a": {
+      "index": 1126,
+      "epoch": 1792637550,
+      "sha256": "4de80914a9fc83302088cf98c11a1ef88c057496bc5c6d61394a753d642dffb8",
+      "passes": {
+        "original": {
+          "text": "5G15 clear.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G15 clear.",
+              "avg_logprob": -0.8017539978027344,
+              "no_speech_prob": 0.025801092386245728,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "At G15, clear.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " At G15, clear.",
+              "avg_logprob": -0.9322076373630099,
+              "no_speech_prob": 0.016529962420463562,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "Five J fifty clear.",
+          "prompt": "Tell me. five J forty seven I'm in the area of the alarm you can reassign it to me Chubby.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Five J fifty clear.",
+              "avg_logprob": -0.8032107129693031,
+              "no_speech_prob": 0.018372055143117905,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    }
+  }
+}

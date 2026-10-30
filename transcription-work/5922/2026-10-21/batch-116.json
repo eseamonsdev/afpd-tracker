@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-21",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792638081.m4a": {
+      "index": 1152,
+      "epoch": 1792638081,
+      "sha256": "b35b19e47726047fb224fe28d86fb4239ad3180a99fd1b90b512a17b824cf054",
+      "passes": {
+        "original": {
+          "text": "Friday, 53 copy, medic assist.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Friday, 53 copy, medic assist.",
+              "avg_logprob": -0.8212398940866644,
+              "no_speech_prob": 0.06287682801485062,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792638085.m4a": {
+      "index": 1153,
+      "epoch": 1792638085,
+      "sha256": "7964c89767a0940e83826d8fd492a9eb5f626e290b1ea7f25bb450f4905b912c",
+      "passes": {
+        "original": {
+          "text": "Go ahead. It's going to be at the Holiday Inn Express, room 326, female not feeling well.",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Go ahead. It's going to be at the Holiday Inn Express, room 326,",
+              "avg_logprob": -0.45741377274195355,
+              "no_speech_prob": 0.0212436281144619,
+              "compression_ratio": 1.0113636363636365
+            },
+            {
+              "start": 5.0,
+              "end": 9.0,
+              "text": " female not feeling well.",
+              "avg_logprob": -0.45741377274195355,
+              "no_speech_prob": 0.0212436281144619,
+              "compression_ratio": 1.0113636363636365
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792638096.m4a": {
+      "index": 1154,
+      "epoch": 1792638096,
+      "sha256": "4edc3b4c41d8b8150fc28fbc2f42dad39fcfa37e1b7c32ee630df5ed09a3e1a6",
+      "passes": {
+        "original": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.6766931265592575,
+              "no_speech_prob": 0.12675577402114868,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5813961982727051,
+              "no_speech_prob": 0.1372019499540329,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "Friday, 53 copy, medic assist. Go ahead. It's going to be at the Holiday Inn Express, room 326, female not feeling well.",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5918097972869873,
+              "no_speech_prob": 0.0401068739593029,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
