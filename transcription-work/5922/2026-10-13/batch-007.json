@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-13",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791873822.m4a": {
+      "index": 61,
+      "epoch": 1791873822,
+      "sha256": "e227a84564ab9d3818e1a69fec02a07a2f034430862668d23d25ae79ff2b71af",
+      "passes": {
+        "original": {
+          "text": "Twenty-six days wondering if you had any updates on that.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Twenty-six days wondering if you had any updates on that.",
+              "avg_logprob": -0.42503404431045055,
+              "no_speech_prob": 0.011414744891226292,
+              "compression_ratio": 0.9193548387096774
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791873827.m4a": {
+      "index": 62,
+      "epoch": 1791873827,
+      "sha256": "176d2e415293aad5f2a8f47ba140d77a95cad25391663578694fd0470caad167",
+      "passes": {
+        "original": {
+          "text": "Previous harassment.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Previous harassment.",
+              "avg_logprob": -0.7363921900590261,
+              "no_speech_prob": 0.02809865213930607,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791873835.m4a": {
+      "index": 63,
+      "epoch": 1791873835,
+      "sha256": "3bd185c0de7d791961efa7f42f26a7e2b5544982068c695de028443aeaad13a5",
+      "passes": {
+        "original": {
+          "text": "We released them though.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " We released them though.",
+              "avg_logprob": -0.7767293304204941,
+              "no_speech_prob": 0.10102614015340805,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We released them though.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " We released them though.",
+              "avg_logprob": -0.6225233748555183,
+              "no_speech_prob": 0.10155343264341354,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "context": {
+          "text": "We released them though.",
+          "prompt": "5J, anyone? Twenty-six days wondering if you had any updates on that. Previous harassment.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " We released them though.",
+              "avg_logprob": -0.4720861241221428,
+              "no_speech_prob": 0.024882543832063675,
+              "compression_ratio": 0.8
+            }
+          ]
+        }
+      }
+    }
+  }
+}

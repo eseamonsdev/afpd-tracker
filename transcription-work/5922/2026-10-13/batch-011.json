@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-13",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791878628.m4a": {
+      "index": 101,
+      "epoch": 1791878628,
+      "sha256": "66d8cd3d75ca22e7740f7e6c04eed29d843098459f1299858c6300a2fc1f6942",
+      "passes": {
+        "original": {
+          "text": "Doors Avenue, Frontage Road, Foxtrot 801 Zulu X-ray",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Doors Avenue, Frontage Road, Foxtrot 801 Zulu X-ray",
+              "avg_logprob": -0.4385433629155159,
+              "no_speech_prob": 0.012868206948041916,
+              "compression_ratio": 0.8947368421052632
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Doors Avenue, Frontage Road, Foxtrot 801, Zulu, X-ray.",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Doors Avenue, Frontage Road, Foxtrot 801, Zulu, X-ray.",
+              "avg_logprob": -0.5208676431490027,
+              "no_speech_prob": 0.014171316288411617,
+              "compression_ratio": 0.9
+            }
+          ]
+        },
+        "context": {
+          "text": "Doors Avenue, Frontage Road, Foxtrot 801 Zulu X-Ray.",
+          "prompt": "Find G50 traffic. Go ahead.",
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Doors Avenue, Frontage Road, Foxtrot 801 Zulu X-Ray.",
+              "avg_logprob": -0.36258833748953684,
+              "no_speech_prob": 0.00275917025282979,
+              "compression_ratio": 0.896551724137931
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791882376.m4a": {
+      "index": 103,
+      "epoch": 1791882376,
+      "sha256": "da8e733a510d892d969dff1eb6cabe0c391b5508e982d7a1c10c3db7fac0d38f",
+      "passes": {
+        "original": {
+          "text": "5J36, copy alarm.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.2800000000000002,
+              "text": " 5J36, copy alarm.",
+              "avg_logprob": -0.42807331681251526,
+              "no_speech_prob": 0.009968416765332222,
+              "compression_ratio": 0.68
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791882381.m4a": {
+      "index": 104,
+      "epoch": 1791882381,
+      "sha256": "d702e26dfe22f59598ea910d5bc6b79d8f30b63d61f58ec9a65412f8e96e20b3",
+      "passes": {
+        "original": {
+          "text": "I was...",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I was...",
+              "avg_logprob": -1.040282150109609,
+              "no_speech_prob": 0.1664007604122162,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Oh",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Oh",
+              "avg_logprob": -0.597875252366066,
+              "no_speech_prob": 0.22245226800441742,
+              "compression_ratio": 0.2
+            }
+          ]
+        },
+        "context": {
+          "text": "I was...",
+          "prompt": "5J36, copy alarm.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I was...",
+              "avg_logprob": -1.1493391791979473,
+              "no_speech_prob": 0.2729644477367401,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    }
+  }
+}
