@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-23",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792753535.m4a": {
+      "index": 221,
+      "epoch": 1792753535,
+      "sha256": "5d68b8a1bab49b2f9d11b6ea6d9a649a7d1cbbb815f78891b29703bd1a507c80",
+      "passes": {
+        "original": {
+          "text": "North County Mavericks, I stand by for twenty-eight.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " North County Mavericks, I stand by for twenty-eight.",
+              "avg_logprob": -0.7961033900578817,
+              "no_speech_prob": 0.032599471509456635,
+              "compression_ratio": 0.8813559322033898
+            }
+          ]
+        },
+        "filtered": {
+          "text": "North County Maverick. Thank you for tuning in.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " North County Maverick.",
+              "avg_logprob": -0.6817349977791309,
+              "no_speech_prob": 0.03497534990310669,
+              "compression_ratio": 0.8545454545454545
+            },
+            {
+              "start": 2.0,
+              "end": 4.0,
+              "text": " Thank you for tuning in.",
+              "avg_logprob": -0.6817349977791309,
+              "no_speech_prob": 0.03497534990310669,
+              "compression_ratio": 0.8545454545454545
+            }
+          ]
+        },
+        "context": {
+          "text": "North County Mavericks. Bye-bye for 2018.",
+          "prompt": "Find J-50 traffic. Bye-bye.",
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " North County Mavericks. Bye-bye for 2018.",
+              "avg_logprob": -0.5491675780369685,
+              "no_speech_prob": 0.004200192168354988,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792753604.m4a": {
+      "index": 222,
+      "epoch": 1792753604,
+      "sha256": "50632db73c5fe99e35a080308c29f632b3fb28e66876147def4c9c7b3a75c76b",
+      "passes": {
+        "original": {
+          "text": "5J50, copy 10 times.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J50, copy 10 times.",
+              "avg_logprob": -0.8258377421985973,
+              "no_speech_prob": 0.052460696548223495,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J50 copy 10 times.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.5200000000000005,
+              "text": " 5J50 copy 10 times.",
+              "avg_logprob": -0.7152205824851989,
+              "no_speech_prob": 0.04170863702893257,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "5J50, copy 10 times.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J50, copy 10 times.",
+              "avg_logprob": -0.8258377421985973,
+              "no_speech_prob": 0.052460696548223495,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    }
+  }
+}
