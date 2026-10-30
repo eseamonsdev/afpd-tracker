@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-19",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792430168.m4a": {
+      "index": 421,
+      "epoch": 1792430168,
+      "sha256": "d28e09049918cc7dd66de10cbdee80753d39af4d10659920dd53ad7ebd5b81d4",
+      "passes": {
+        "original": {
+          "text": "5J80, code 4 still on route.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J80, code 4 still on route.",
+              "avg_logprob": -0.6538053659292368,
+              "no_speech_prob": 0.02169841155409813,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792430172.m4a": {
+      "index": 422,
+      "epoch": 1792430172,
+      "sha256": "b0d6c1fb0969f0c93c453f267b4cd52944190d83b36f2a2fc9c2a6d4950d5b55",
+      "passes": {
+        "original": {
+          "text": "Cut for arrival.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Cut for arrival.",
+              "avg_logprob": -0.8826326302119664,
+              "no_speech_prob": 0.025562003254890442,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Just for a ride.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Just for a ride.",
+              "avg_logprob": -0.7567776367068291,
+              "no_speech_prob": 0.01542807649821043,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "Code 4 arrived.",
+          "prompt": "5J80, code 4 still on route.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Code 4 arrived.",
+              "avg_logprob": -0.4149308630398342,
+              "no_speech_prob": 0.0026863303501158953,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    }
+  }
+}

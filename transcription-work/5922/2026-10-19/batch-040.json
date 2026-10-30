@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-19",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792429124.m4a": {
+      "index": 394,
+      "epoch": 1792429124,
+      "sha256": "0d2506a98c344dc131b80b1635deeaa8cdcddd6bb859eaaf1cc999055346b90e",
+      "passes": {
+        "original": {
+          "text": "Yeah, bye.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " Yeah, bye.",
+              "avg_logprob": -0.7128917660032,
+              "no_speech_prob": 0.04929264262318611,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792429141.m4a": {
+      "index": 395,
+      "epoch": 1792429141,
+      "sha256": "c81f6073c94c5b7d1204ad7df983136cd71a61357321790bc7be7bda57d85f92",
+      "passes": {
+        "original": {
+          "text": "Never.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Never.",
+              "avg_logprob": -0.5554240226745606,
+              "no_speech_prob": 0.0738254263997078,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792429153.m4a": {
+      "index": 396,
+      "epoch": 1792429153,
+      "sha256": "c61b6b0b81c03d1ccd9135c465128797bf58fc347453a20055cafffe73915574",
+      "passes": {
+        "original": {
+          "text": "5G80, copy 1050.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G80, copy 1050.",
+              "avg_logprob": -0.5409296751022339,
+              "no_speech_prob": 0.03408784046769142,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792429158.m4a": {
+      "index": 397,
+      "epoch": 1792429158,
+      "sha256": "6ac460571af86a9939796fd0eb8661e2cbbadf06458da7e379ade9c0154ebd53",
+      "passes": {
+        "original": {
+          "text": "I can't be off the cab.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I can't be off the cab.",
+              "avg_logprob": -0.6574573841961947,
+              "no_speech_prob": 0.055068161338567734,
+              "compression_ratio": 0.7666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I can't be off the gas.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I can't be off the gas.",
+              "avg_logprob": -0.6810913302681663,
+              "no_speech_prob": 0.03311276435852051,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "context": {
+          "text": "All right, copy, off the cab.",
+          "prompt": "Yeah, bye. Never. 5G80, copy 1050.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " All right, copy, off the cab.",
+              "avg_logprob": -0.639525517821312,
+              "no_speech_prob": 0.005948319099843502,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        }
+      }
+    }
+  }
+}
