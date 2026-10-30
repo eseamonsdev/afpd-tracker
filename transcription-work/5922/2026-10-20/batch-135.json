@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-20",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792546639.m4a": {
+      "index": 1344,
+      "epoch": 1792546639,
+      "sha256": "f217ae1a1f5815c35ac71130a8604709693e39c48887d6f4bbe663e16e70d9c8",
+      "passes": {
+        "original": {
+          "text": "So J30 will you log this mortuary threat",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.32,
+              "text": " So J30 will you log this mortuary threat",
+              "avg_logprob": -0.6402967709761399,
+              "no_speech_prob": 0.019699420779943466,
+              "compression_ratio": 0.8695652173913043
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792546647.m4a": {
+      "index": 1345,
+      "epoch": 1792546647,
+      "sha256": "f5cbe8264c074a94276f1ed726c4f321eee4522dc7edc2c9748d427db99fecc2",
+      "passes": {
+        "original": {
+          "text": "Copy, 9-2-3-7.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.12,
+              "text": " Copy, 9-2-3-7.",
+              "avg_logprob": -0.4736742056333102,
+              "no_speech_prob": 0.006316938437521458,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792546674.m4a": {
+      "index": 1346,
+      "epoch": 1792546674,
+      "sha256": "3821cfc1180345937b8c7295c5a949a47f269b57808ef3c586457ee9835a4a8f",
+      "passes": {
+        "original": {
+          "text": "J44 arriving with medical.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " J44 arriving with medical.",
+              "avg_logprob": -0.5055530336168077,
+              "no_speech_prob": 0.011156249791383743,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm j44 arriving with medical",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm j44 arriving with medical",
+              "avg_logprob": -0.8331517338752746,
+              "no_speech_prob": 0.0837172120809555,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        },
+        "context": {
+          "text": "J44 arriving with medical.",
+          "prompt": "So J30 will you log this mortuary threat Copy, 9-2-3-7.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " J44 arriving with medical.",
+              "avg_logprob": -0.3471100330352783,
+              "no_speech_prob": 0.03552057221531868,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        }
+      }
+    }
+  }
+}
