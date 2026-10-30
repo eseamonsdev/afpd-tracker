@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-24",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792872460.m4a": {
+      "index": 741,
+      "epoch": 1792872460,
+      "sha256": "d388df195abad8a291ef2b26602335976cf22d3ccc8407000b9af449c2846246",
+      "passes": {
+        "original": {
+          "text": "5J13, Code 4. I complain and advise that they're going to change the time of this meeting to 1600. I'll be clear.",
+          "prompt": null,
+          "duration_seconds": 8.96,
+          "token_limit": 96,
+          "token_count": 32,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " 5J13, Code 4. I complain and advise that they're going to change the time of this meeting to 1600. I'll be clear.",
+              "avg_logprob": -0.2897799809773763,
+              "no_speech_prob": 0.03931664675474167,
+              "compression_ratio": 1.0761904761904761
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J13, Code 4, I complain and advise that they're going to change the time of this meeting to 1600. I'll be clear. Thank you.",
+          "prompt": null,
+          "duration_seconds": 8.96,
+          "token_limit": 96,
+          "token_count": 41,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.5200000000000005,
+              "text": " 5J13, Code 4, I complain and advise that they're going to change the time of this meeting to",
+              "avg_logprob": -0.34053172383989605,
+              "no_speech_prob": 0.021944211795926094,
+              "compression_ratio": 1.087719298245614
+            },
+            {
+              "start": 6.5200000000000005,
+              "end": 7.5200000000000005,
+              "text": " 1600.",
+              "avg_logprob": -0.34053172383989605,
+              "no_speech_prob": 0.021944211795926094,
+              "compression_ratio": 1.087719298245614
+            },
+            {
+              "start": 7.5200000000000005,
+              "end": 8.52,
+              "text": " I'll be clear.",
+              "avg_logprob": -0.34053172383989605,
+              "no_speech_prob": 0.021944211795926094,
+              "compression_ratio": 1.087719298245614
+            },
+            {
+              "start": 8.52,
+              "end": 8.540000000000001,
+              "text": " Thank you.",
+              "avg_logprob": -0.34053172383989605,
+              "no_speech_prob": 0.021944211795926094,
+              "compression_ratio": 1.087719298245614
+            }
+          ]
+        },
+        "context": {
+          "text": "5J13, code 4. I complain and advise that they're going to change the time of this meeting to 1600. I'll be clear.",
+          "prompt": "5J13, go for it. 5G13, central, good for",
+          "duration_seconds": 8.96,
+          "token_limit": 96,
+          "token_count": 34,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.38,
+              "text": " 5J13, code 4. I complain and advise that they're going to change the time of this meeting",
+              "avg_logprob": -0.27482114349092757,
+              "no_speech_prob": 0.009059341624379158,
+              "compression_ratio": 1.0970873786407767
+            },
+            {
+              "start": 6.38,
+              "end": 8.5,
+              "text": " to 1600. I'll be clear.",
+              "avg_logprob": -0.27482114349092757,
+              "no_speech_prob": 0.009059341624379158,
+              "compression_ratio": 1.0970873786407767
+            }
+          ]
+        }
+      }
+    }
+  }
+}
