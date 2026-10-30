@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-13",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791941889.m4a": {
+      "index": 1268,
+      "epoch": 1791941889,
+      "sha256": "ad1920c3345c6fbceda059daa7a45fc9452161d07d4bc96ca0c8584c8afed5dc",
+      "passes": {
+        "original": {
+          "text": "7G6 arrived.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7G6 arrived.",
+              "avg_logprob": -0.5243779271841049,
+              "no_speech_prob": 0.1653350293636322,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791941903.m4a": {
+      "index": 1269,
+      "epoch": 1791941903,
+      "sha256": "7ea3afb457ab8fddbb06ecaace04a44295eca3aefbfed9e773674c9bdf3dae8e",
+      "passes": {
+        "original": {
+          "text": "Sorry.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Sorry.",
+              "avg_logprob": -0.9385010719299316,
+              "no_speech_prob": 0.3870849013328552,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bye.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye.",
+              "avg_logprob": -0.7649368286132813,
+              "no_speech_prob": 0.24126450717449188,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "5G6 arrived.",
+          "prompt": "7G6 arrived.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G6 arrived.",
+              "avg_logprob": -0.970934584736824,
+              "no_speech_prob": 0.3248027563095093,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791941906.m4a": {
+      "index": 1270,
+      "epoch": 1791941906,
+      "sha256": "86e17001e44c7f30a35e79602324196aa284871461ca7a262034ab9f68a4e0b7",
+      "passes": {
+        "original": {
+          "text": "5G50 traffic. 5G50.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G50 traffic.",
+              "avg_logprob": -0.3797269995723452,
+              "no_speech_prob": 0.008396635763347149,
+              "compression_ratio": 0.76
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " 5G50.",
+              "avg_logprob": -0.3797269995723452,
+              "no_speech_prob": 0.008396635763347149,
+              "compression_ratio": 0.76
+            }
+          ]
+        }
+      }
+    }
+  }
+}
