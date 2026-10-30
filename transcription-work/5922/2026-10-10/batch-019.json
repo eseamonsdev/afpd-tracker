@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-10",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791623885.m4a": {
+      "index": 184,
+      "epoch": 1791623885,
+      "sha256": "fe9ed8af1e935fb05cabf04fd32d13b74d12f6f8acc5f28ceb8f30ef911e68d7",
+      "passes": {
+        "original": {
+          "text": "7 day 25 traffic",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7 day 25 traffic",
+              "avg_logprob": -0.5538360561643328,
+              "no_speech_prob": 0.018436962738633156,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791623888.m4a": {
+      "index": 185,
+      "epoch": 1791623888,
+      "sha256": "ed4e45ef95fa8bea716cce374d07dae1f6b49f60acf04652fe4ec3cba4a268b6",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.6406941513220469,
+              "no_speech_prob": 0.05529611185193062,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791623892.m4a": {
+      "index": 186,
+      "epoch": 1791623892,
+      "sha256": "3632a3f8020b6aa8c05cb26ae7a4a96f6fbc2122a8a5ce7cf38d28ea7cf53e4d",
+      "passes": {
+        "original": {
+          "text": "If it can work out with any points.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " If it can work out with any points.",
+              "avg_logprob": -0.766365592678388,
+              "no_speech_prob": 0.04527250677347183,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        },
+        "filtered": {
+          "text": "If you can walk over there",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " If you can walk over there",
+              "avg_logprob": -0.8185782432556152,
+              "no_speech_prob": 0.05775119364261627,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "context": {
+          "text": "If you can work out with anyone.",
+          "prompt": "7 day 25 traffic Go ahead.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " If you can work out with anyone.",
+              "avg_logprob": -0.7486455007032915,
+              "no_speech_prob": 0.038441501557826996,
+              "compression_ratio": 0.8
+            }
+          ]
+        }
+      }
+    }
+  }
+}
