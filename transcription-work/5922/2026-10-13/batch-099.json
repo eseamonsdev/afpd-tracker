@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-13",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791931927.m4a": {
+      "index": 981,
+      "epoch": 1791931927,
+      "sha256": "58f7003bcfcf45fbf7aee21aaec333d8868d137d32c12c2c5fe6c0f2fa8c2743",
+      "passes": {
+        "original": {
+          "text": "I'm 7J26, I'm by that I'm in route.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I'm 7J26, I'm by that I'm in route.",
+              "avg_logprob": -0.5547187228997549,
+              "no_speech_prob": 0.03387589007616043,
+              "compression_ratio": 0.9210526315789473
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791931939.m4a": {
+      "index": 982,
+      "epoch": 1791931939,
+      "sha256": "cdc005ee854e552c9f7251276275226f7eac494602050d811c6cd5cf2dd3f2ca",
+      "passes": {
+        "original": {
+          "text": "Sorry, J31, cut for.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Sorry, J31, cut for.",
+              "avg_logprob": -0.7433539087122137,
+              "no_speech_prob": 0.01546439528465271,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791931942.m4a": {
+      "index": 983,
+      "epoch": 1791931942,
+      "sha256": "fcf6e41b673b0fd3db60a4011e0b9b1d141d60ba0c02ecaadc293bc360bc104a",
+      "passes": {
+        "original": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.9499668053218296,
+              "no_speech_prob": 0.045022767037153244,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it.",
+              "avg_logprob": -1.026423147746495,
+              "no_speech_prob": 0.02579512447118759,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Cut for.",
+          "prompt": "I copy now. I'm 7J26, I'm by that I'm in route. Sorry, J31, cut for.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.2,
+              "text": " Cut for.",
+              "avg_logprob": -0.5786564449469248,
+              "no_speech_prob": 0.05828389152884483,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    }
+  }
+}
