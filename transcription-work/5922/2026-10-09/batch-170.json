@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-09",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791610810.m4a": {
+      "index": 1691,
+      "epoch": 1791610810,
+      "sha256": "0a3e4ef153fcdbe7a89b92b0663a2d3b4e44e75ded904eee0c51e26ab67e25ef",
+      "passes": {
+        "original": {
+          "text": "Okay",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Okay",
+              "avg_logprob": -0.6317058205604553,
+              "no_speech_prob": 0.039574120193719864,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791610812.m4a": {
+      "index": 1692,
+      "epoch": 1791610812,
+      "sha256": "1eb21a28ac1e70caabe5835db90da7574aef1887f3c41d01066042412cb95235",
+      "passes": {
+        "original": {
+          "text": "I'm on location with that accident on local four November seven uniform Bravo",
+          "prompt": null,
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.82,
+              "text": " I'm on location with that accident on local four November seven uniform Bravo",
+              "avg_logprob": -0.270051731782801,
+              "no_speech_prob": 0.005494398530572653,
+              "compression_ratio": 1.0266666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm on location with that accident on local for November 7 uniform Bravo",
+          "prompt": null,
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.82,
+              "text": " I'm on location with that accident on local for November 7 uniform Bravo",
+              "avg_logprob": -0.2568563012515797,
+              "no_speech_prob": 0.005776144098490477,
+              "compression_ratio": 1.0140845070422535
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm on location with that accident on local 4 November 7 uniform Bravo",
+          "prompt": "5J Victor 104 Okay",
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.82,
+              "text": " I'm on location with that accident on local 4 November 7 uniform Bravo",
+              "avg_logprob": -0.21067828290602741,
+              "no_speech_prob": 0.002846300369128585,
+              "compression_ratio": 1.0
+            }
+          ]
+        }
+      }
+    }
+  }
+}
