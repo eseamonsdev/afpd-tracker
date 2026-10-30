@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-23",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792785619.m4a": {
+      "index": 731,
+      "epoch": 1792785619,
+      "sha256": "c3c8ebab89c2efdc455f7b618d857ab93ff628c0028ea047109d11fb93ff9360",
+      "passes": {
+        "original": {
+          "text": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.92,
+              "text": " AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "avg_logprob": -0.5632658275690946,
+              "no_speech_prob": 0.7882568836212158,
+              "compression_ratio": 12.75
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792785621.m4a": {
+      "index": 732,
+      "epoch": 1792785621,
+      "sha256": "e03966ad07b473368deb5eadd100c3d53446b95a4b9f313f40d483d4e6a26fca",
+      "passes": {
+        "original": {
+          "text": "There is a 4-week-old and a 2-year-old in the vehicle, not mistrust.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " There is a 4-week-old and a 2-year-old in the vehicle, not mistrust.",
+              "avg_logprob": -0.2525667858123779,
+              "no_speech_prob": 0.0025100293569266796,
+              "compression_ratio": 0.9577464788732394
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792785630.m4a": {
+      "index": 733,
+      "epoch": 1792785630,
+      "sha256": "26ba81a0cf59e15c4ea489dad25ae7e9407c1eecad4dfd5360e0aa0bc4ada49a",
+      "passes": {
+        "original": {
+          "text": "I copy.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I copy.",
+              "avg_logprob": -0.5610017975171407,
+              "no_speech_prob": 0.12058215588331223,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I copy.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I copy.",
+              "avg_logprob": -0.40747476120789844,
+              "no_speech_prob": 0.029770979657769203,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "I copy.",
+          "prompt": "512 South, 1110 West for a white Audi parked in front of the home. AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA There is a 4-week-old and a 2-year-old in the vehicle, not mistrust.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I copy.",
+              "avg_logprob": -0.3769402454296748,
+              "no_speech_prob": 0.04446781054139137,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    }
+  }
+}
