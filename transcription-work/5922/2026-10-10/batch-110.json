@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-10",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791679919.m4a": {
+      "index": 1091,
+      "epoch": 1791679919,
+      "sha256": "9dd171b3f44a6e72e3f8ad73539df75d3bbbfff414881c3e4e8ecc4d6b60350b",
+      "passes": {
+        "original": {
+          "text": "18G now, you can hold that for me. Eh, copy that.",
+          "prompt": null,
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18G now, you can hold that for me.",
+              "avg_logprob": -0.5363538151695615,
+              "no_speech_prob": 0.08515359461307526,
+              "compression_ratio": 0.9074074074074074
+            },
+            {
+              "start": 6.0,
+              "end": 7.0,
+              "text": " Eh, copy that.",
+              "avg_logprob": -0.5363538151695615,
+              "no_speech_prob": 0.08515359461307526,
+              "compression_ratio": 0.9074074074074074
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791679944.m4a": {
+      "index": 1092,
+      "epoch": 1791679944,
+      "sha256": "de43c2cedc517941df3e83b7bd41ea02e88ca0c2e630dce4625606e7f0707dad",
+      "passes": {
+        "original": {
+          "text": "I do, 34 clear.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I do, 34 clear.",
+              "avg_logprob": -0.7064956029256185,
+              "no_speech_prob": 0.09254863858222961,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G34 clear.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G34 clear.",
+              "avg_logprob": -0.47095292061567307,
+              "no_speech_prob": 0.13928060233592987,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "1834, clear.",
+          "prompt": "18J21, copy welfare. 18G now, you can hold that for me. Eh, copy that.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 1834, clear.",
+              "avg_logprob": -0.5220826789736748,
+              "no_speech_prob": 0.026824625208973885,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    }
+  }
+}
