@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-11",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791703625.m4a": {
+      "index": 74,
+      "epoch": 1791703625,
+      "sha256": "aadc4c0e98272ad663ad632c3fb4d17cb702eb2bf71a9979c990bd49c2ad6f08",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.5665384232997894,
+              "no_speech_prob": 0.0801270380616188,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791703628.m4a": {
+      "index": 75,
+      "epoch": 1791703628,
+      "sha256": "a471d6a744a46c9a1a81a393558116788c36d44a3cb4e4965cffd55544d919e8",
+      "passes": {
+        "original": {
+          "text": "I'm 82 of one male and I'll be in route to one J",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.42,
+              "text": " I'm 82 of one male and I'll be in route to one J",
+              "avg_logprob": -0.28643738395637935,
+              "no_speech_prob": 0.001914067193865776,
+              "compression_ratio": 0.9056603773584906
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm 82 of one male, and I'll be in route to one J",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.44,
+              "text": " I'm 82 of one male, and I'll be in route to one J",
+              "avg_logprob": -0.34758853912353516,
+              "no_speech_prob": 0.0015304480912163854,
+              "compression_ratio": 0.9074074074074074
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm 82 of one male and I'll be in route to 1J.",
+          "prompt": "Go ahead.",
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.44,
+              "text": " I'm 82 of one male and I'll be in route to 1J.",
+              "avg_logprob": -0.32602970537386444,
+              "no_speech_prob": 0.00037124258233234286,
+              "compression_ratio": 0.8518518518518519
+            }
+          ]
+        }
+      }
+    }
+  }
+}

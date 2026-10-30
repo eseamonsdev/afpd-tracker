@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-11",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791702700.m4a": {
+      "index": 61,
+      "epoch": 1791702700,
+      "sha256": "85a4e7709c82a5e44d0103a5a958ef943e62846442f45f4e9a17d60164ebe250",
+      "passes": {
+        "original": {
+          "text": "You",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You",
+              "avg_logprob": -0.8550219833850861,
+              "no_speech_prob": 0.905873715877533,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "filtered": {
+          "text": "You",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You",
+              "avg_logprob": -0.7559807002544403,
+              "no_speech_prob": 0.899769127368927,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "context": {
+          "text": "Pause.",
+          "prompt": "Pause. Pause. Pause. Pause. Pause. Okay. 363 West, 1400 North, 363 West, 1400 North, time lapse has been about 2 hours. It's a 2014 Acura NPX, we don't have it in our toll logs. There's nothing in the state of town system.",
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.64,
+              "text": " Pause.",
+              "avg_logprob": -0.23732166290283202,
+              "no_speech_prob": 0.7431210279464722,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    }
+  }
+}
