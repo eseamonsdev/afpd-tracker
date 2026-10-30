@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-20",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792551209.m4a": {
+      "index": 1471,
+      "epoch": 1792551209,
+      "sha256": "6f1ae6d0e0754aa6b9e8b63becb2af5a18ef1b571cf7d073e0cca0be1ccbbcd3",
+      "passes": {
+        "original": {
+          "text": "500 North, North County, Anzulu 006, Alpha Bravo.",
+          "prompt": null,
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.6000000000000005,
+              "text": " 500 North, North County, Anzulu 006, Alpha Bravo.",
+              "avg_logprob": -0.5807540814081827,
+              "no_speech_prob": 0.10555215924978256,
+              "compression_ratio": 0.9607843137254902
+            }
+          ]
+        },
+        "filtered": {
+          "text": "500 North, North County, on Zulu 006, Alpha Bravo.",
+          "prompt": null,
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.64,
+              "text": " 500 North, North County, on Zulu 006, Alpha Bravo.",
+              "avg_logprob": -0.47798693511221146,
+              "no_speech_prob": 0.05766992270946503,
+              "compression_ratio": 0.9433962264150944
+            }
+          ]
+        },
+        "context": {
+          "text": "500 North North County on Zulu 006 Alpha Bravo.",
+          "prompt": "10-4. Thank you and traffic. Thank you.",
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.5600000000000005,
+              "text": " 500 North North County on Zulu 006 Alpha Bravo.",
+              "avg_logprob": -0.4688363313674927,
+              "no_speech_prob": 0.1264536827802658,
+              "compression_ratio": 0.9591836734693877
+            }
+          ]
+        }
+      }
+    }
+  }
+}
