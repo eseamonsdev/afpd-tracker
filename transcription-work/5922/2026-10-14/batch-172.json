@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-14",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792038972.m4a": {
+      "index": 1711,
+      "epoch": 1792038972,
+      "sha256": "179f6094b19aa83549eb898df200b541bd1ed8e2856afd26b709e672aebb07a7",
+      "passes": {
+        "original": {
+          "text": "of",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " of",
+              "avg_logprob": -0.7389817982912064,
+              "no_speech_prob": 0.4555046260356903,
+              "compression_ratio": 0.2
+            }
+          ]
+        },
+        "filtered": {
+          "text": "of",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " of",
+              "avg_logprob": -0.7310492992401123,
+              "no_speech_prob": 0.31536048650741577,
+              "compression_ratio": 0.2
+            }
+          ]
+        },
+        "context": {
+          "text": "Puff.",
+          "prompt": "If you want to help you, just write your advice on it.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Puff.",
+              "avg_logprob": -1.1742273966471355,
+              "no_speech_prob": 0.30823609232902527,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}

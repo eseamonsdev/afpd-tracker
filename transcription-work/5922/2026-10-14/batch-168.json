@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-14",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792037750.m4a": {
+      "index": 1673,
+      "epoch": 1792037750,
+      "sha256": "ef78bf038c1caa88fa025e3c9f427f8f9fc5e8765685a9303ad4ea556e73abb0",
+      "passes": {
+        "original": {
+          "text": "I just need to see one quick project.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I just need to see one quick project.",
+              "avg_logprob": -0.9673044582207998,
+              "no_speech_prob": 0.0603608675301075,
+              "compression_ratio": 0.8222222222222222
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792037753.m4a": {
+      "index": 1674,
+      "epoch": 1792037753,
+      "sha256": "81fe750cd176cc55a62439413095e3d198c3b1d61f787a1203e1e7b137a54f8d",
+      "passes": {
+        "original": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.5088742630822318,
+              "no_speech_prob": 0.007678647059947252,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.5455775090626308,
+              "no_speech_prob": 0.012570400722324848,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Go for it.",
+          "prompt": "I just need to see one quick project.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.38891992398670744,
+              "no_speech_prob": 0.007571280933916569,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    }
+  }
+}

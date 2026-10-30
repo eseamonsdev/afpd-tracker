@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-14",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792039616.m4a": {
+      "index": 1727,
+      "epoch": 1792039616,
+      "sha256": "02c423b8f1eb019917f8052047c6fa85830ec491b946548b91d56ecc5ba781df",
+      "passes": {
+        "original": {
+          "text": "Semper.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Semper.",
+              "avg_logprob": -0.6705768903096517,
+              "no_speech_prob": 0.06713073700666428,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792039635.m4a": {
+      "index": 1728,
+      "epoch": 1792039635,
+      "sha256": "189904b32183f4920e2aa1d003b7e1d74e4218632fe4ac8eb342189080d946c4",
+      "passes": {
+        "original": {
+          "text": "5G at 34, we got her off the ledge.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5G at 34, we got her off the ledge.",
+              "avg_logprob": -0.5727869749069214,
+              "no_speech_prob": 0.24018196761608124,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G 34, we got her off the ledge.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5G 34, we got her off the ledge.",
+              "avg_logprob": -0.5094121992588043,
+              "no_speech_prob": 0.3124750554561615,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "context": {
+          "text": "5G at 34, we got her off the ledge.",
+          "prompt": "Semper.",
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5G at 34, we got her off the ledge.",
+              "avg_logprob": -0.5471019188563029,
+              "no_speech_prob": 0.05317305773496628,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        }
+      }
+    }
+  }
+}
