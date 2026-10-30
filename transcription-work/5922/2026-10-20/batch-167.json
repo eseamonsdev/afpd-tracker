@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-20",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792556997.m4a": {
+      "index": 1661,
+      "epoch": 1792556997,
+      "sha256": "d575efcf1369843339196d28906d27f28bea468d11cd087207b15737be11ed35",
+      "passes": {
+        "original": {
+          "text": "Affirm. I'll reach out to the RP. Thank you.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.94,
+              "text": " Affirm. I'll reach out to the RP. Thank you.",
+              "avg_logprob": -0.2741837782018325,
+              "no_speech_prob": 0.03053330071270466,
+              "compression_ratio": 0.8461538461538461
+            }
+          ]
+        },
+        "filtered": {
+          "text": "from all reach out to the RP. Thank you.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.98,
+              "text": " from all reach out to the RP. Thank you.",
+              "avg_logprob": -0.47278344205447603,
+              "no_speech_prob": 0.017223600298166275,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        },
+        "context": {
+          "text": "Affirm. I'll reach out to the RP. Thank you.",
+          "prompt": "Hi, G51. 5K-51",
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.96,
+              "text": " Affirm. I'll reach out to the RP. Thank you.",
+              "avg_logprob": -0.2680342898649328,
+              "no_speech_prob": 0.07272045314311981,
+              "compression_ratio": 0.8461538461538461
+            }
+          ]
+        }
+      }
+    }
+  }
+}
