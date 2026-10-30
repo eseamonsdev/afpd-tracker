@@ -1,0 +1,382 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-09",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791556297.m4a": {
+      "index": 361,
+      "epoch": 1791556297,
+      "sha256": "382b8433a38a27510e350e07a5569a008558152683fde69b49d3a5b30e860f60",
+      "passes": {
+        "original": {
+          "text": "It's a local hotel, 544 Alpha Delta.",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " It's a local hotel, 544 Alpha Delta.",
+              "avg_logprob": -0.5662972458771297,
+              "no_speech_prob": 0.027536628767848015,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It's a local hotel by force for Alpha Delta.",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.24,
+              "text": " It's a local hotel by force for Alpha Delta.",
+              "avg_logprob": -0.6573666419301715,
+              "no_speech_prob": 0.03648068755865097,
+              "compression_ratio": 0.8979591836734694
+            }
+          ]
+        },
+        "context": {
+          "text": "It's a local hotel 544 Alpha Delta.",
+          "prompt": "Have JAD traffic? Bye-bye.",
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.2,
+              "text": " It's a local hotel 544 Alpha Delta.",
+              "avg_logprob": -0.5068183862246,
+              "no_speech_prob": 0.009021933190524578,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791556308.m4a": {
+      "index": 362,
+      "epoch": 1791556308,
+      "sha256": "61f9495af6bd98e5c3f401d9c7dbba15b2b52bdefe1cdf8184f966be3782820d",
+      "passes": {
+        "original": {
+          "text": "100 East, 1120 North. Yeah, we're in.",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 100 East, 1120 North.",
+              "avg_logprob": -0.7141273187266456,
+              "no_speech_prob": 0.09214206784963608,
+              "compression_ratio": 0.8222222222222222
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " Yeah, we're in.",
+              "avg_logprob": -0.7141273187266456,
+              "no_speech_prob": 0.09214206784963608,
+              "compression_ratio": 0.8222222222222222
+            }
+          ]
+        },
+        "filtered": {
+          "text": "100 East, 1120 North. Yeah, we're in.",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 100 East, 1120 North.",
+              "avg_logprob": -0.7344513866636488,
+              "no_speech_prob": 0.11129544675350189,
+              "compression_ratio": 0.8222222222222222
+            },
+            {
+              "start": 2.0,
+              "end": 4.0,
+              "text": " Yeah, we're in.",
+              "avg_logprob": -0.7344513866636488,
+              "no_speech_prob": 0.11129544675350189,
+              "compression_ratio": 0.8222222222222222
+            }
+          ]
+        },
+        "context": {
+          "text": "200 East, 1120 North. Yeah, we're in.",
+          "prompt": "Have JAD traffic? Bye-bye. It's a local hotel, 544 Alpha Delta.",
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 200 East, 1120 North.",
+              "avg_logprob": -0.6944169600804647,
+              "no_speech_prob": 0.02370334044098854,
+              "compression_ratio": 0.8222222222222222
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " Yeah, we're in.",
+              "avg_logprob": -0.6944169600804647,
+              "no_speech_prob": 0.02370334044098854,
+              "compression_ratio": 0.8222222222222222
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791556630.m4a": {
+      "index": 363,
+      "epoch": 1791556630,
+      "sha256": "6be900d3cd4b5ec58974ca90536f680a7e8df68d211e6c584693ecf415fcd9a0",
+      "passes": {
+        "original": {
+          "text": "For you, go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " For you, go ahead.",
+              "avg_logprob": -0.596294985877143,
+              "no_speech_prob": 0.019186872988939285,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791556633.m4a": {
+      "index": 364,
+      "epoch": 1791556633,
+      "sha256": "044f21326a75ca35247a773b32ddbb315dced0d99017b85d6d217b9544c1a2b1",
+      "passes": {
+        "original": {
+          "text": "The traffic stop at 28 on is supposed to be me. You can re-sign it to me and then I'll be Penny.",
+          "prompt": null,
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " The traffic stop at 28 on is supposed to be me. You can re-sign it to me and then I'll be Penny.",
+              "avg_logprob": -0.28953984677791594,
+              "no_speech_prob": 0.08665832877159119,
+              "compression_ratio": 1.0666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "The traffic's off. The 28 on is supposed to be me. You can re-sign it to me and then I'll be Penny.",
+          "prompt": null,
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 33,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " The traffic's off. The 28 on is supposed to be me.",
+              "avg_logprob": -0.2959505091695225,
+              "no_speech_prob": 0.03790302947163582,
+              "compression_ratio": 1.076086956521739
+            },
+            {
+              "start": 4.0,
+              "end": 8.0,
+              "text": " You can re-sign it to me and then I'll be Penny.",
+              "avg_logprob": -0.2959505091695225,
+              "no_speech_prob": 0.03790302947163582,
+              "compression_ratio": 1.076086956521739
+            }
+          ]
+        },
+        "context": {
+          "text": "The traffic stop at 28 on is supposed to be me. You can re-sign it to me and then I'll be Penny.",
+          "prompt": "For you, go ahead.",
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " The traffic stop at 28 on is supposed to be me. You can re-sign it to me and then I'll be Penny.",
+              "avg_logprob": -0.20558801343043645,
+              "no_speech_prob": 0.0024873430375009775,
+              "compression_ratio": 1.0666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791556641.m4a": {
+      "index": 365,
+      "epoch": 1791556641,
+      "sha256": "24570d66a0c224a01ef9212eb42767f90944eb83def69f7d1dada00d4dc34555",
+      "passes": {
+        "original": {
+          "text": "You don't.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " You don't.",
+              "avg_logprob": -0.7835154022489276,
+              "no_speech_prob": 0.012130705639719963,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791556646.m4a": {
+      "index": 366,
+      "epoch": 1791556646,
+      "sha256": "34fc8183e0820553d84f3e9a45d52926d74e72e74248f71925bdca2660c03c51",
+      "passes": {
+        "original": {
+          "text": "5J80 equals 4.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J80 equals 4.",
+              "avg_logprob": -0.8353003925747342,
+              "no_speech_prob": 0.011648595333099365,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791556650.m4a": {
+      "index": 367,
+      "epoch": 1791556650,
+      "sha256": "77185f54bf60a9402da973c933dcec756faf995122abbaa850d89d8cc5b3dd24",
+      "passes": {
+        "original": {
+          "text": "That's four.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " That's four.",
+              "avg_logprob": -0.6037536518914359,
+              "no_speech_prob": 0.03558560088276863,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "That's four.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " That's four.",
+              "avg_logprob": -0.5690941980906895,
+              "no_speech_prob": 0.03446625545620918,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "That's 4.",
+          "prompt": "The traffic stop at 28 on is supposed to be me. You can re-sign it to me and then I'll be Penny. You don't. 5J80 equals 4.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " That's 4.",
+              "avg_logprob": -0.3658500143459865,
+              "no_speech_prob": 0.016329441219568253,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    }
+  }
+}
