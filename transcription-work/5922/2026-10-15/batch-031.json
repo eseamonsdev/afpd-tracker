@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-15",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792080213.m4a": {
+      "index": 302,
+      "epoch": 1792080213,
+      "sha256": "b726826194e0f252d4c890f088e6f43f52c9e8a31b5ce0453e3dcf78ad2dfc3c",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " Go ahead.",
+              "avg_logprob": -0.634548415740331,
+              "no_speech_prob": 0.057453982532024384,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792080216.m4a": {
+      "index": 303,
+      "epoch": 1792080216,
+      "sha256": "af035b51c3ebf94c4ff53095412fe6ca084f9778ee59ea407e1aa37ad2904f19",
+      "passes": {
+        "original": {
+          "text": "301 south center, negative six.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 301 south center, negative six.",
+              "avg_logprob": -0.6913995623588562,
+              "no_speech_prob": 0.17445965111255646,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "filtered": {
+          "text": "301, south center, negative 6.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 301, south center, negative 6.",
+              "avg_logprob": -0.8302115310322155,
+              "no_speech_prob": 0.07764327526092529,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "context": {
+          "text": "301 south center, negative six.",
+          "prompt": "Go ahead.",
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 301 south center, negative six.",
+              "avg_logprob": -0.6174340009689331,
+              "no_speech_prob": 0.048043735325336456,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        }
+      }
+    }
+  }
+}
