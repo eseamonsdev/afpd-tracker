@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-24",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792891671.m4a": {
+      "index": 1164,
+      "epoch": 1792891671,
+      "sha256": "5e0829a124fd8c6d07945a59a0190f9addde496f8cf8e5c6609feb5b233af5fb",
+      "passes": {
+        "original": {
+          "text": "Like a 44 traffic",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Like a 44 traffic",
+              "avg_logprob": -0.44654575416019987,
+              "no_speech_prob": 0.025312770158052444,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you 44 traffic",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you 44 traffic",
+              "avg_logprob": -0.4089145404951913,
+              "no_speech_prob": 0.01971600018441677,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "Like a 44 traffic",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Like a 44 traffic",
+              "avg_logprob": -0.44654575416019987,
+              "no_speech_prob": 0.025312770158052444,
+              "compression_ratio": 0.68
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792891679.m4a": {
+      "index": 1165,
+      "epoch": 1792891679,
+      "sha256": "50163122928121dfab4a5d46a9751a62e576b2dc52078330e9d459badc7f7526",
+      "passes": {
+        "original": {
+          "text": "County Boulevard and Harvey Boulevard on Hotel 990 Alpha Zulu.",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " County Boulevard and Harvey Boulevard on Hotel 990 Alpha Zulu.",
+              "avg_logprob": -0.39451461285352707,
+              "no_speech_prob": 0.026153337210416794,
+              "compression_ratio": 1.0333333333333334
+            }
+          ]
+        },
+        "filtered": {
+          "text": "County Boulevard and Harvey Boulevard on Hotel 990 Alpha Zulu.",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.040000000000001,
+              "text": " County Boulevard and Harvey Boulevard on Hotel 990 Alpha Zulu.",
+              "avg_logprob": -0.44848233461380005,
+              "no_speech_prob": 0.04419555887579918,
+              "compression_ratio": 1.0333333333333334
+            }
+          ]
+        },
+        "context": {
+          "text": "County Boulevard and Harvey Boulevard on Hotel 990 Alpha Zulu",
+          "prompt": "Like a 44 traffic",
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " County Boulevard and Harvey Boulevard on Hotel 990 Alpha Zulu",
+              "avg_logprob": -0.37687820196151733,
+              "no_speech_prob": 0.012507285922765732,
+              "compression_ratio": 1.0338983050847457
+            }
+          ]
+        }
+      }
+    }
+  }
+}
