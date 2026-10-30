@@ -72,24 +72,26 @@ def snapshot(root, branch, state):
     return {'updated_at': datetime.now(timezone.utc).isoformat(), 'branch': branch, 'commit': commit or None, 'state': state, 'rows': sorted(result, key=lambda r: (r['date'], r['talkgroup']), reverse=True)}
 
 
-def publish(root, branch, state, publish_page=True):
+def publish(root, branch, state, publish_page=False):
     client, bucket = client_and_bucket()
     data = snapshot(root, branch, state)
     client.put_object(Bucket=bucket, Key=f'radio-status/{branch}.json', Body=(json.dumps(data)+'\n').encode(), ContentType='application/json; charset=utf-8', CacheControl='no-store')
     if publish_page:
-        client.put_object(Bucket=bucket, Key='police-radio-status.html', Body=(root/'public/police-radio-status.html').read_bytes(), ContentType='text/html; charset=utf-8', CacheControl='no-store')
+        page = (Path(__file__).resolve().parents[1] / 'public/police-radio-status.html').read_bytes()
+        for key in ('police-radio-status.html', 'radio-status/index.html'):
+            client.put_object(Bucket=bucket, Key=key, Body=page, ContentType='text/html; charset=utf-8', CacheControl='no-store')
     print('Recording status published:', branch, state, flush=True)
 
 if __name__ == '__main__':
     p = argparse.ArgumentParser()
     p.add_argument('--branch', choices=['staging', 'main'], default=os.environ.get('OPENMHZ_TARGET_BRANCH', 'staging'))
     p.add_argument('--root', type=Path, default=Path.cwd())
-    p.add_argument('--no-page', action='store_true')
+    p.add_argument('--publish-page', action='store_true')
     p.add_argument('--state', default='running')
     p.add_argument('--watch', action='store_true')
     args = p.parse_args()
     while True:
-        try: publish(args.root, args.branch, args.state, publish_page=not args.no_page)
+        try: publish(args.root, args.branch, args.state, publish_page=args.publish_page)
         except Exception as error:
             print('Status update failed:', type(error).__name__, flush=True)
             if not args.watch: raise
