@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-22",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792714156.m4a": {
+      "index": 945,
+      "epoch": 1792714156,
+      "sha256": "5d8748234b36951f70b00f78550e1d34f16270bade4a7574a925058cb062d07c",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.48699498176574707,
+              "no_speech_prob": 0.06255707144737244,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792714158.m4a": {
+      "index": 946,
+      "epoch": 1792714158,
+      "sha256": "73a1f54d7f0e524fce6462dbf9050a408192e33cc08f0b5be73ec867333e28dd",
+      "passes": {
+        "original": {
+          "text": "I'll be clear, they keep the peace when you show me right by phone on the vehicle path.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.6,
+              "text": " I'll be clear, they keep the peace when you show me right by phone on the vehicle path.",
+              "avg_logprob": -0.478487325211366,
+              "no_speech_prob": 0.006457168608903885,
+              "compression_ratio": 1.0609756097560976
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'll be clear. They keep the peace when we show them we ride by phone on the vehicle path",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.52,
+              "text": " I'll be clear. They keep the peace when we show them we ride by phone on the vehicle path",
+              "avg_logprob": -0.3541816050807635,
+              "no_speech_prob": 0.003339543007314205,
+              "compression_ratio": 1.1125
+            }
+          ]
+        },
+        "context": {
+          "text": "I'll be clear. They keep the peace when you show me right by phone on the vehicle path.",
+          "prompt": "Go ahead.",
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " I'll be clear. They keep the peace when you show me right by phone on the vehicle path.",
+              "avg_logprob": -0.44323836887876195,
+              "no_speech_prob": 0.015316308476030827,
+              "compression_ratio": 1.0875
+            }
+          ]
+        }
+      }
+    }
+  }
+}
