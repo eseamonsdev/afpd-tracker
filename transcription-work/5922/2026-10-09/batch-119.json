@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-09",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791586900.m4a": {
+      "index": 1181,
+      "epoch": 1791586900,
+      "sha256": "13085b2ce84a20dc9cb0a1a0496c2e1f1fe60a08cfb365a8af5e148f9ab18440",
+      "passes": {
+        "original": {
+          "text": "18J9, you can clear it out.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18J9, you can clear it out.",
+              "avg_logprob": -0.520645545079158,
+              "no_speech_prob": 0.07649783790111542,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791586920.m4a": {
+      "index": 1182,
+      "epoch": 1791586920,
+      "sha256": "48a64233d811cfc669bb6ecf876aa82379f0670447f8c7bfba0dba9e4729b70c",
+      "passes": {
+        "original": {
+          "text": "We'll get that copy.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " We'll get that copy.",
+              "avg_logprob": -0.7836013899909126,
+              "no_speech_prob": 0.09221310168504715,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We'll get that copy, yes.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " We'll get that copy, yes.",
+              "avg_logprob": -0.6383171406659213,
+              "no_speech_prob": 0.09248792380094528,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "context": {
+          "text": "14J9 copy. Yes.",
+          "prompt": "Sorry. You can close it out. Pemper. 18J9, you can clear it out.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 14J9 copy. Yes.",
+              "avg_logprob": -0.5412103414535523,
+              "no_speech_prob": 0.02254474349319935,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    }
+  }
+}
