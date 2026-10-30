@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-19",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792461051.m4a": {
+      "index": 1205,
+      "epoch": 1792461051,
+      "sha256": "490efbb94cad056a6232e2095a2903c2a78b38bc075bd8598a3674e9cef77a07",
+      "passes": {
+        "original": {
+          "text": "5-year-11 medical cancer.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5-year-11 medical cancer.",
+              "avg_logprob": -0.9350375695662065,
+              "no_speech_prob": 0.04550473392009735,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5 v 11 medical concurrency.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5 v 11 medical concurrency.",
+              "avg_logprob": -1.1637063145637512,
+              "no_speech_prob": 0.06425513327121735,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        },
+        "context": {
+          "text": "5-year-11 medical cancer.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5-year-11 medical cancer.",
+              "avg_logprob": -0.9350375695662065,
+              "no_speech_prob": 0.04550473392009735,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        }
+      }
+    }
+  }
+}
