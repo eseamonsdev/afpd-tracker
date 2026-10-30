@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-29",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1790714019.m4a": {
+      "index": 908,
+      "epoch": 1790714019,
+      "sha256": "262ba7b31a46e3d2215f1412c4e11d6209c2a076452a30df18dbae550cc44fd3",
+      "passes": {
+        "original": {
+          "text": "5G30, copy you're threatening suicide by 21, half the catch.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.6,
+              "text": " 5G30, copy you're threatening suicide by 21, half the catch.",
+              "avg_logprob": -0.5388358580438715,
+              "no_speech_prob": 0.07799722999334335,
+              "compression_ratio": 0.8955223880597015
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790714024.m4a": {
+      "index": 909,
+      "epoch": 1790714024,
+      "sha256": "ad7dfd7e39bfb167d11b99f9956a934e939005eb882f1ecbb0bb1e8b9b81b794",
+      "passes": {
+        "original": {
+          "text": "30 copies again.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 30 copies again.",
+              "avg_logprob": -0.8404810769217355,
+              "no_speech_prob": 0.04227810353040695,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "30 copy of the kit.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 30 copy of the kit.",
+              "avg_logprob": -0.8753271102905273,
+              "no_speech_prob": 0.07634153962135315,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "30, copy us again.",
+          "prompt": "5G30, copy you're threatening suicide by 21, half the catch.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 30, copy us again.",
+              "avg_logprob": -0.5039445029364692,
+              "no_speech_prob": 0.04199489206075668,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        }
+      }
+    }
+  }
+}
