@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-12",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791825101.m4a": {
+      "index": 479,
+      "epoch": 1791825101,
+      "sha256": "1bc4a68c2447b704cf94013444bf7494c3f4c77e3ba3d8171e1258ad058fcc28",
+      "passes": {
+        "original": {
+          "text": "5G24, copy, follow up my phone, off again.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5G24, copy, follow up my phone, off again.",
+              "avg_logprob": -0.6030111312866211,
+              "no_speech_prob": 0.015810763463377953,
+              "compression_ratio": 0.84
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791825105.m4a": {
+      "index": 480,
+      "epoch": 1791825105,
+      "sha256": "b6eb3fa8f52bba8214a951538644eea806134ce02bd1e082531299ba89afe0ad",
+      "passes": {
+        "original": {
+          "text": "I got it.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I got it.",
+              "avg_logprob": -0.6843145404543195,
+              "no_speech_prob": 0.10221605002880096,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I got it.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I got it.",
+              "avg_logprob": -0.7090166636875698,
+              "no_speech_prob": 0.10054313391447067,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "I got it.",
+          "prompt": "5G24, copy, follow up my phone, off again.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.72,
+              "text": " I got it.",
+              "avg_logprob": -0.7401069402694702,
+              "no_speech_prob": 0.054899912327528,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    }
+  }
+}
