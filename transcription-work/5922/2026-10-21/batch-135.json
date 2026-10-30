@@ -1,0 +1,364 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-21",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792643106.m4a": {
+      "index": 1341,
+      "epoch": 1792643106,
+      "sha256": "d57aee294be41c878e21a8ff927ecb6f068e155b593a8bff0bf25da9471b30dc",
+      "passes": {
+        "original": {
+          "text": "Can you show me out in front of Lone Peak High on the motor's assist?",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Can you show me out in front of Lone Peak High on the motor's assist?",
+              "avg_logprob": -0.3033097133040428,
+              "no_speech_prob": 0.014787442050874233,
+              "compression_ratio": 0.9583333333333334
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792643112.m4a": {
+      "index": 1342,
+      "epoch": 1792643112,
+      "sha256": "151db63d1d453202fb25b8992d4809c794ead07e9864ba1e0bc614a102897520",
+      "passes": {
+        "original": {
+          "text": "Sorry.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Sorry.",
+              "avg_logprob": -0.5312963008880616,
+              "no_speech_prob": 0.028539467602968216,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792643130.m4a": {
+      "index": 1343,
+      "epoch": 1792643130,
+      "sha256": "359c189a5b982f7c180ea68dea716877274d8358c0c33c08b0d4b33525012b07",
+      "passes": {
+        "original": {
+          "text": "5J53 Central Code 4.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J53 Central Code 4.",
+              "avg_logprob": -0.49476848244667054,
+              "no_speech_prob": 0.04163732752203941,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792643134.m4a": {
+      "index": 1344,
+      "epoch": 1792643134,
+      "sha256": "2604666e17e7f864b24dfc9fc2f581733a6598668a1ca8069e4146921353758c",
+      "passes": {
+        "original": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.6090378080095563,
+              "no_speech_prob": 0.04287797585129738,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.4487136942999704,
+              "no_speech_prob": 0.05401594564318657,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Code 4.",
+          "prompt": "Can you show me out in front of Lone Peak High on the motor's assist? Sorry. 5J53 Central Code 4.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Code 4.",
+              "avg_logprob": -0.29429833094278973,
+              "no_speech_prob": 0.010908993892371655,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792643137.m4a": {
+      "index": 1345,
+      "epoch": 1792643137,
+      "sha256": "6d32a18a60e59551151aa3a6198423daf4e5220c6efcdbc3ce8d8d5f00004bea",
+      "passes": {
+        "original": {
+          "text": "OK.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " OK.",
+              "avg_logprob": -0.8149615287780761,
+              "no_speech_prob": 0.11386793851852417,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792643143.m4a": {
+      "index": 1346,
+      "epoch": 1792643143,
+      "sha256": "aec146a2240a58a81fd425346ca79aa26257dbde6867e877e25d542ab39b02a6",
+      "passes": {
+        "original": {
+          "text": "5G50 Central before.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G50 Central before.",
+              "avg_logprob": -1.0526693132188585,
+              "no_speech_prob": 0.09018602967262268,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792643147.m4a": {
+      "index": 1347,
+      "epoch": 1792643147,
+      "sha256": "1d6209ac8bdc7e69a6cceb29cf53e897fe46a07303f5fbbbda05df08035ae85c",
+      "passes": {
+        "original": {
+          "text": "Coach 4",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Coach 4",
+              "avg_logprob": -0.7912809371948242,
+              "no_speech_prob": 0.03888491168618202,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.8401043925966535,
+              "no_speech_prob": 0.05045956000685692,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Go for it.",
+          "prompt": "Go for it. OK. 5G50 Central before.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.3729380454335894,
+              "no_speech_prob": 0.004440953955054283,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792643311.m4a": {
+      "index": 1349,
+      "epoch": 1792643311,
+      "sha256": "217fa9b6d035a7fd5ac9db80acdf80ad029305f61a9d160273bab04f19d5488e",
+      "passes": {
+        "original": {
+          "text": "Okay, clear.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Okay, clear.",
+              "avg_logprob": -0.8978465284620013,
+              "no_speech_prob": 0.05846825987100601,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Okay, clear.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Okay, clear.",
+              "avg_logprob": -1.001023292541504,
+              "no_speech_prob": 0.13333654403686523,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "Okay, clear.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Okay, clear.",
+              "avg_logprob": -0.8978465284620013,
+              "no_speech_prob": 0.05846825987100601,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792643318.m4a": {
+      "index": 1350,
+      "epoch": 1792643318,
+      "sha256": "0ddd8779696e2c078c855fc6e4b0e5ea1848b68127ba54d0ee42226d52b34440",
+      "passes": {
+        "original": {
+          "text": "Last unit.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Last unit.",
+              "avg_logprob": -0.5699179569880167,
+              "no_speech_prob": 0.05136553570628166,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    }
+  }
+}
