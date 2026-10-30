@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-16",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792210458.m4a": {
+      "index": 1311,
+      "epoch": 1792210458,
+      "sha256": "3cfeab06df5bef56dc66668b6148f6d812aeac27d97b7cd002eca6076c4b721e",
+      "passes": {
+        "original": {
+          "text": "I was able to find a local file for the individual, doesn't look like there's been any activity since 2018.",
+          "prompt": null,
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I was able to find a local file for the individual,",
+              "avg_logprob": -0.2706675652799935,
+              "no_speech_prob": 0.012827379629015923,
+              "compression_ratio": 1.0918367346938775
+            },
+            {
+              "start": 3.0,
+              "end": 6.0,
+              "text": " doesn't look like there's been any activity since 2018.",
+              "avg_logprob": -0.2706675652799935,
+              "no_speech_prob": 0.012827379629015923,
+              "compression_ratio": 1.0918367346938775
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792210466.m4a": {
+      "index": 1312,
+      "epoch": 1792210466,
+      "sha256": "83c99b11e281e7c256e01d71e3d87fc8c6b7da048adaff53826ff008c8450c8b",
+      "passes": {
+        "original": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.8912404378255209,
+              "no_speech_prob": 0.03512412682175636,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Coffee thank you.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.04,
+              "text": " Coffee thank you.",
+              "avg_logprob": -0.7943249600274223,
+              "no_speech_prob": 0.012389064766466618,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you.",
+          "prompt": "5J46. Thank you. I was able to find a local file for the individual, doesn't look like there's been any activity since 2018.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.4607410728931427,
+              "no_speech_prob": 0.10710199177265167,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    }
+  }
+}
