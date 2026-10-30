@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-30",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1790820525.m4a": {
+      "index": 1111,
+      "epoch": 1790820525,
+      "sha256": "1232a50244335ae7c8aa01dfd25962b899a3eadffe7bf5fe6cb63a836a9a2ea9",
+      "passes": {
+        "original": {
+          "text": "42, you can clear mine as well.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 42, you can clear mine as well.",
+              "avg_logprob": -0.39364346365133923,
+              "no_speech_prob": 0.02455689013004303,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "filtered": {
+          "text": "42, you can clear mine as well.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 42, you can clear mine as well.",
+              "avg_logprob": -0.4498868261774381,
+              "no_speech_prob": 0.09548694640398026,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "context": {
+          "text": "42 you can clear mine as well",
+          "prompt": "I do 45 you can clear my follow-up I got it",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.54,
+              "text": " 42 you can clear mine as well",
+              "avg_logprob": -0.26660226881504057,
+              "no_speech_prob": 0.00191278918646276,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        }
+      }
+    }
+  }
+}
