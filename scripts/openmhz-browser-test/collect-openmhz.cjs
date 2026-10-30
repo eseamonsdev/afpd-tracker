@@ -81,7 +81,17 @@ async function collect(date) {
     page.on('requestfailed',req=>{if(!closing&&isList(req.url()))fail(`Call-list request failed: ${req.failure()?.errorText}`)});
     phase='loading page';
     const nav=await page.goto(pageUrl,{waitUntil:'domcontentloaded',timeout:60000});
-    if(nav&&!nav.ok()){
+    if(nav&&!nav.ok()&&args.headed&&(await nav.allHeaders())['cf-mitigated']==='challenge'){
+      phase='waiting for manual browser verification';
+      log('Cloudflare verification: complete it in the visible browser. Waiting up to 5 minutes; no automatic challenge solving.');
+      try {
+        await page.locator('#calls tbody tr[data-callid]').first().waitFor({state:'visible',timeout:300000});
+        log('OpenMHz call rows loaded after manual verification');
+      }catch{
+        // Keep the original HTTP diagnostics when verification does not finish.
+      }
+    }
+    if(nav&&!nav.ok()&&!(args.headed&&await page.locator('#calls tbody tr[data-callid]').count())){
       console.error('HTTP:',nav.status(),nav.statusText());
       // Diagnostic failures must not hide the original navigation error.
       try {
