@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-10",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791697330.m4a": {
+      "index": 1502,
+      "epoch": 1791697330,
+      "sha256": "64fdbfdd477bd026d17bd73480f74a998d7b9f7763b8edf840221dcb8e34d1df",
+      "passes": {
+        "original": {
+          "text": "J51 traffic.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " J51 traffic.",
+              "avg_logprob": -0.7466257810592651,
+              "no_speech_prob": 0.08823785930871964,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm J-51 traffic.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm J-51 traffic.",
+              "avg_logprob": -0.6167434930801392,
+              "no_speech_prob": 0.03682680055499077,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "J51 traffic.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " J51 traffic.",
+              "avg_logprob": -0.7466257810592651,
+              "no_speech_prob": 0.08823785930871964,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791697333.m4a": {
+      "index": 1503,
+      "epoch": 1791697333,
+      "sha256": "9e33edf72290bed1c12d427befc5c5562521a9fe1e19395d31f8b77d38c7a819",
+      "passes": {
+        "original": {
+          "text": "Anyone?",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Anyone?",
+              "avg_logprob": -0.8925090789794922,
+              "no_speech_prob": 0.3569267690181732,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791697336.m4a": {
+      "index": 1504,
+      "epoch": 1791697336,
+      "sha256": "33345b522edadc34e999a87b463f2f4f4ff2bf342fd59ba81091edbe95547728",
+      "passes": {
+        "original": {
+          "text": "We've got a 30-cent automobile drive on a local 5-8-0-1-7-7.",
+          "prompt": null,
+          "duration_seconds": 12.416,
+          "token_limit": 124,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 12.0,
+              "text": " We've got a 30-cent automobile drive on a local 5-8-0-1-7-7.",
+              "avg_logprob": -0.550236392904211,
+              "no_speech_prob": 0.029777467250823975,
+              "compression_ratio": 0.9375
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We've got a 30-seat automatic drive for the local 5-8-0-1-7.",
+          "prompt": null,
+          "duration_seconds": 12.416,
+          "token_limit": 124,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 12.0,
+              "text": " We've got a 30-seat automatic drive for the local 5-8-0-1-7.",
+              "avg_logprob": -0.6991450309753418,
+              "no_speech_prob": 0.03839552775025368,
+              "compression_ratio": 0.9230769230769231
+            }
+          ]
+        },
+        "context": {
+          "text": "We've got a 30-cent automobile drive on a local 5-8-0-1-7-7.",
+          "prompt": "J51 traffic. Anyone?",
+          "duration_seconds": 12.416,
+          "token_limit": 124,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 11.84,
+              "text": " We've got a 30-cent automobile drive on a local 5-8-0-1-7-7.",
+              "avg_logprob": -0.561036224718447,
+              "no_speech_prob": 0.015343239530920982,
+              "compression_ratio": 0.9375
+            }
+          ]
+        }
+      }
+    }
+  }
+}
