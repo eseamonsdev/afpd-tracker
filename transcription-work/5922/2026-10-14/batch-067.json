@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-14",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792004050.m4a": {
+      "index": 662,
+      "epoch": 1792004050,
+      "sha256": "7d6dc4a70bd04497194de4fffdb7e1ab62b246b67eb8119a9ec564cd67176f5f",
+      "passes": {
+        "original": {
+          "text": "Hi, I'm Jane, 32, copy agency assist.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Hi, I'm Jane, 32, copy agency assist.",
+              "avg_logprob": -0.5019466241200765,
+              "no_speech_prob": 0.020885096862912178,
+              "compression_ratio": 0.8604651162790697
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792004055.m4a": {
+      "index": 663,
+      "epoch": 1792004055,
+      "sha256": "5d6d424ff045e896f2d061673ac38b4e936013ff2034f9c381fdd9e60bea286b",
+      "passes": {
+        "original": {
+          "text": "But",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " But",
+              "avg_logprob": -0.3753042072057724,
+              "no_speech_prob": 0.05955344811081886,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "filtered": {
+          "text": "But",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " But",
+              "avg_logprob": -0.389584019780159,
+              "no_speech_prob": 0.09007464349269867,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "context": {
+          "text": "Good.",
+          "prompt": "Hi, I'm Jane, 32, copy agency assist.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Good.",
+              "avg_logprob": -0.7679575443267822,
+              "no_speech_prob": 0.058670524507761,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
