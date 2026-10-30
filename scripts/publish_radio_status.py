@@ -44,8 +44,12 @@ def snapshot(root, branch, state):
             if request['target_branch'] == branch:
                 row(request['day'], request['talkgroup'])
     progress = Path(os.environ.get('RUNNER_TEMP', '/tmp')) / 'radio-download-progress.json'
-    if progress.exists() and branch == os.environ.get('OPENMHZ_TARGET_BRANCH', 'staging'):
+    if (progress.exists() and branch == os.environ.get('OPENMHZ_TARGET_BRANCH', 'staging')
+            and os.environ.get('DAY') and os.environ.get('TALKGROUP')):
         for d in json.loads(progress.read_text()).values():
+            if (d['date'] != os.environ['DAY']
+                    or str(d['talkgroup']) != os.environ['TALKGROUP']):
+                continue
             r = row(d['date'], d['talkgroup'])
             for name, status in d['files'].items():
                 r['total_names'].add(name)

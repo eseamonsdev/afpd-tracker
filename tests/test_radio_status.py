@@ -21,8 +21,9 @@ class StatusTests(unittest.TestCase):
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(json.dumps(data))
 
-    def rows(self, branch='staging'):
-        with patch.dict(os.environ, {'RUNNER_TEMP': str(self.root), 'OPENMHZ_TARGET_BRANCH': 'staging'}):
+    def rows(self, branch='staging', active=False):
+        with patch.dict(os.environ, {'RUNNER_TEMP': str(self.root), 'OPENMHZ_TARGET_BRANCH': 'staging',
+                                   'DAY': '2026-10-14' if active else '', 'TALKGROUP': '5922' if active else ''}):
             return {(r['date'], r['talkgroup']): r for r in snapshot(self.root, branch, 'idle')['rows']}
 
     def test_empty_collected_inventory_is_zero_not_unknown(self):
@@ -44,9 +45,18 @@ class StatusTests(unittest.TestCase):
     def test_progress_is_branch_specific_and_failed_files_are_not_downloaded(self):
         self.write('radio-download-progress.json', {'clip': {'date': '2026-10-14', 'talkgroup': 5922,
                    'files': {'a.m4a': 'failed', 'b.m4a': 'downloaded'}}})
-        row = self.rows()['2026-10-14', 5922]
+        row = self.rows(active=True)['2026-10-14', 5922]
         self.assertEqual((row['total'], row['downloaded'], row['failed'], row['remaining']), (2, 1, 1, 0))
-        self.assertEqual(self.rows('main'), {})
+        self.assertEqual(self.rows('main', active=True), {})
+        self.assertEqual(self.rows(), {})
+
+    def test_old_runner_progress_does_not_create_unrelated_failures(self):
+        self.write('radio-download-progress.json', {
+            'old': {'date': '2026-09-30', 'talkgroup': 6001, 'files': {'old.m4a': 'failed'}},
+            'current': {'date': '2026-10-14', 'talkgroup': 5922, 'files': {'current.m4a': 'downloaded'}}})
+        rows = self.rows(active=True)
+        self.assertNotIn(('2026-09-30', 6001), rows)
+        self.assertEqual(rows['2026-10-14', 5922]['downloaded'], 1)
 
     def test_saved_audio_clears_failure_and_preserves_unique_file_count(self):
         folder = 'openmhz-afpd-6036-2026-10-14'
