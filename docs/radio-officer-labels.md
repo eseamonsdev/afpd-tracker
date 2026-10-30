@@ -31,3 +31,8 @@ radio ID 14590023 as Guerra for October 27, 2026. The dated entry uses
 **Confirmed this day**, based on the clips 128–129 hail/response and explicit
 owner confirmation. It does not create a fallback on other dates or change
 transcript verification flags.
+
+Owner confirmation on October 30, 2026 identifies radio ID 14590088 as Joshua M.
+Jensen for October 29, 2026. The shared player uses **Confirmed this day** for
+that date only. Earlier radio-ID sightings do not create a cross-date fallback,
+and transcript verification flags remain separate.
