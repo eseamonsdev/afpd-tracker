@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-14",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791995863.m4a": {
+      "index": 501,
+      "epoch": 1791995863,
+      "sha256": "d5cb0971a6953fc3b1c5f9c2b006de512b5c18867e0c3a8019b3dad6f8989bc3",
+      "passes": {
+        "original": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Happy.",
+              "avg_logprob": -0.617151403427124,
+              "no_speech_prob": 0.021232610568404198,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791995867.m4a": {
+      "index": 502,
+      "epoch": 1791995867,
+      "sha256": "df7662a63c057e20a9bf133994e013efb563d20a2010120fd16f8b9872f8a88d",
+      "passes": {
+        "original": {
+          "text": "Thank you very much.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you very much.",
+              "avg_logprob": -0.9483736753463745,
+              "no_speech_prob": 0.12936072051525116,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791995870.m4a": {
+      "index": 503,
+      "epoch": 1791995870,
+      "sha256": "962df20574a6b76bbf9cd419456ee0aa6f86c611cd020ba64d551e8589c63ec2",
+      "passes": {
+        "original": {
+          "text": "It's been a long time since I met you.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " It's been a long time since I met you.",
+              "avg_logprob": -1.234942146709987,
+              "no_speech_prob": 0.09272126853466034,
+              "compression_ratio": 0.8260869565217391
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791995916.m4a": {
+      "index": 504,
+      "epoch": 1791995916,
+      "sha256": "8148ee5c60f634513a19634196114332e07f5ec4e114d60c8222d8ffa01d98f1",
+      "passes": {
+        "original": {
+          "text": "Bye Jay, be clear.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye Jay, be clear.",
+              "avg_logprob": -0.8433503574795194,
+              "no_speech_prob": 0.06619171798229218,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bye, Jay. Any clear?",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye, Jay. Any clear?",
+              "avg_logprob": -0.8549844861030579,
+              "no_speech_prob": 0.0429290272295475,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "Bye, Jay. Any clear?",
+          "prompt": "Happy. Thank you very much. It's been a long time since I met you.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye, Jay. Any clear?",
+              "avg_logprob": -0.7119692623615265,
+              "no_speech_prob": 0.017827538773417473,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791995958.m4a": {
+      "index": 508,
+      "epoch": 1791995958,
+      "sha256": "bc7ea80c44dcb1a797bc64426727d7088e8f7d7db66a3e410f4f35700f31aa43",
+      "passes": {
+        "original": {
+          "text": "Copy, just confirming 31 south, 1300 west.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.6,
+              "text": " Copy, just confirming 31 south, 1300 west.",
+              "avg_logprob": -0.5390878640688382,
+              "no_speech_prob": 0.012805096805095673,
+              "compression_ratio": 0.84
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791995962.m4a": {
+      "index": 509,
+      "epoch": 1791995962,
+      "sha256": "005bf85c152d15359006fa7a66a684664cba24b61f3586a865f33b6bd7e661d2",
+      "passes": {
+        "original": {
+          "text": "That's what we were given and we don't have a premise phone number listed.",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.72,
+              "text": " That's what we were given and we don't have a premise phone number listed.",
+              "avg_logprob": -0.3349246233701706,
+              "no_speech_prob": 0.01657566986978054,
+              "compression_ratio": 1.0136986301369864
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791995977.m4a": {
+      "index": 510,
+      "epoch": 1791995977,
+      "sha256": "3d12998a88db8cc08dd55a0c03aa9ed99c82aeb2162f409f3f1833941c5aff20",
+      "passes": {
+        "original": {
+          "text": "hubby",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " hubby",
+              "avg_logprob": -0.8621582984924316,
+              "no_speech_prob": 0.04979170113801956,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
