@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-10",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791692483.m4a": {
+      "index": 1409,
+      "epoch": 1791692483,
+      "sha256": "ea23f938ada6e4dfe869cb9d1f1e27bbb4439f06a543d584230ddba0d2151d1f",
+      "passes": {
+        "original": {
+          "text": "I just 16 traffic",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I just 16 traffic",
+              "avg_logprob": -0.9362646511622837,
+              "no_speech_prob": 0.04131220281124115,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Roger 16 traffic.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.56,
+              "text": " Roger 16 traffic.",
+              "avg_logprob": -0.8131418057850429,
+              "no_speech_prob": 0.04015423730015755,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "I just 16 traffic",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I just 16 traffic",
+              "avg_logprob": -0.9362646511622837,
+              "no_speech_prob": 0.04131220281124115,
+              "compression_ratio": 0.68
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791692487.m4a": {
+      "index": 1410,
+      "epoch": 1791692487,
+      "sha256": "d671a3a499fdef81278f128b2fa0b7b876efb27fa1733539dfee5f667b2e1def",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.595715343952179,
+              "no_speech_prob": 0.03325238451361656,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    }
+  }
+}

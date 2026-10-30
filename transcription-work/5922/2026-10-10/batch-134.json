@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-10",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791689584.m4a": {
+      "index": 1331,
+      "epoch": 1791689584,
+      "sha256": "776fda76f3440c8f2804491d4a581ed7f4722e67e6e41960642f5ab9cbe30868",
+      "passes": {
+        "original": {
+          "text": "Roger, 16 tonight.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Roger, 16 tonight.",
+              "avg_logprob": -0.708304762840271,
+              "no_speech_prob": 0.04057731851935387,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Dr. 16 tonight.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Dr. 16 tonight.",
+              "avg_logprob": -0.8017872720956802,
+              "no_speech_prob": 0.06306896358728409,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "context": {
+          "text": "Roger, 16 tonight.",
+          "prompt": "BLEEP BLEEP BLEEP Copy, 82 on mail, 21, 32 hours.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Roger, 16 tonight.",
+              "avg_logprob": -0.5868752375245094,
+              "no_speech_prob": 0.0073438044637441635,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791689636.m4a": {
+      "index": 1332,
+      "epoch": 1791689636,
+      "sha256": "3875523b6a43b37aa561c315cb77b5f66a3731fba41362209100912e53d0546c",
+      "passes": {
+        "original": {
+          "text": "5J45, come forward.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J45, come forward.",
+              "avg_logprob": -0.5870885610580444,
+              "no_speech_prob": 0.01524809654802084,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791689639.m4a": {
+      "index": 1333,
+      "epoch": 1791689639,
+      "sha256": "f93d6ff7bcff8aa1e917abc091e47a884183656b57bf91bb33b157bc0bce09a2",
+      "passes": {
+        "original": {
+          "text": "Thanks for watching!",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thanks for watching!",
+              "avg_logprob": -0.8748416560036796,
+              "no_speech_prob": 0.8250113129615784,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Don't",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Don't",
+              "avg_logprob": -0.6106553554534913,
+              "no_speech_prob": 0.7042559385299683,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "",
+          "prompt": "Roger, 16 tonight. 5J45, come forward.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 0,
+          "token_cap_reached": false,
+          "segments": []
+        }
+      }
+    },
+    "dcfems-5922-1791689646.m4a": {
+      "index": 1334,
+      "epoch": 1791689646,
+      "sha256": "63bfb5cbe098deb5654df35168ae4c24a2033fcb9305c159d72a6a9742fe54e9",
+      "passes": {
+        "original": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.7396255731582642,
+              "no_speech_prob": 0.20414236187934875,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Good for you.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Good for you.",
+              "avg_logprob": -0.8070241212844849,
+              "no_speech_prob": 0.2408408522605896,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "Go for it!",
+          "prompt": "5J45, come forward. Thanks for watching!",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it!",
+              "avg_logprob": -0.8710178988320487,
+              "no_speech_prob": 0.19755181670188904,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    }
+  }
+}
