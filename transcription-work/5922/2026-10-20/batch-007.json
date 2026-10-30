@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-20",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792479181.m4a": {
+      "index": 61,
+      "epoch": 1792479181,
+      "sha256": "32f008ff37301c122e23c2e367b5f627a4e77f7558c065a80f929ddf8d8bf117",
+      "passes": {
+        "original": {
+          "text": "Happy 5-5-5-1",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy 5-5-5-1",
+              "avg_logprob": -0.8856974406675859,
+              "no_speech_prob": 0.039091095328330994,
+              "compression_ratio": 0.7222222222222222
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792479199.m4a": {
+      "index": 62,
+      "epoch": 1792479199,
+      "sha256": "7a885bfe3668b548a5d05e8d26af731d456e13a687c1bcafd3b86a4b841d15f6",
+      "passes": {
+        "original": {
+          "text": "5J45 Central, can you copy in and out?",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.5,
+              "text": " 5J45 Central, can you copy in and out?",
+              "avg_logprob": -0.4733980735143026,
+              "no_speech_prob": 0.0034716331865638494,
+              "compression_ratio": 0.8260869565217391
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792479206.m4a": {
+      "index": 63,
+      "epoch": 1792479206,
+      "sha256": "8b5457870f76ec5243dcd2106199ada590e2125d48b2497a531060c4833f764f",
+      "passes": {
+        "original": {
+          "text": "If I have a copy you can clear when ready.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " If I have a copy you can clear when ready.",
+              "avg_logprob": -0.548665463924408,
+              "no_speech_prob": 0.008543601259589195,
+              "compression_ratio": 0.84
+            }
+          ]
+        },
+        "filtered": {
+          "text": "If I have a copy, you can clear when ready.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " If I have a copy, you can clear when ready.",
+              "avg_logprob": -0.5422189076741536,
+              "no_speech_prob": 0.023569634184241295,
+              "compression_ratio": 0.8431372549019608
+            }
+          ]
+        },
+        "context": {
+          "text": "3-5-5 copy, you can clear when ready.",
+          "prompt": "Happy 5-5-5-1 5J45 Central, can you copy in and out?",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 3-5-5 copy, you can clear when ready.",
+              "avg_logprob": -0.42092788964509964,
+              "no_speech_prob": 0.009884410537779331,
+              "compression_ratio": 0.8222222222222222
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-20",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792476951.m4a": {
+      "index": 11,
+      "epoch": 1792476951,
+      "sha256": "3ee2b5f2625a7f8e4e78566e492e51a26a7e78529acbfe0f44d06c37a78ae8a3",
+      "passes": {
+        "original": {
+          "text": "5G34, clear stop.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G34, clear stop.",
+              "avg_logprob": -0.4024500399827957,
+              "no_speech_prob": 0.17979136109352112,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G34, clear stop.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G34, clear stop.",
+              "avg_logprob": -0.6471840441226959,
+              "no_speech_prob": 0.1278580278158188,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "5G34, clear stop.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G34, clear stop.",
+              "avg_logprob": -0.4024500399827957,
+              "no_speech_prob": 0.17979136109352112,
+              "compression_ratio": 0.68
+            }
+          ]
+        }
+      }
+    }
+  }
+}
