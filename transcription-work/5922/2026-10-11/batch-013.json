@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-11",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791708537.m4a": {
+      "index": 121,
+      "epoch": 1791708537,
+      "sha256": "22821baca8fbfcb7fe0cbb83d436ae392e5a88d4888dee4930ff9934303d82da",
+      "passes": {
+        "original": {
+          "text": "You can clear it whenever you're ready.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You can clear it whenever you're ready.",
+              "avg_logprob": -0.45434651027123135,
+              "no_speech_prob": 0.01489306427538395,
+              "compression_ratio": 0.8297872340425532
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Just gonna clear it whenever you're ready.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Just gonna clear it whenever you're ready.",
+              "avg_logprob": -0.46848232050736743,
+              "no_speech_prob": 0.016793612390756607,
+              "compression_ratio": 0.84
+            }
+          ]
+        },
+        "context": {
+          "text": "You can clear it whenever you're ready.",
+          "prompt": "5J34, copy private impact.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You can clear it whenever you're ready.",
+              "avg_logprob": -0.3821919709444046,
+              "no_speech_prob": 0.0298526082187891,
+              "compression_ratio": 0.8297872340425532
+            }
+          ]
+        }
+      }
+    }
+  }
+}
