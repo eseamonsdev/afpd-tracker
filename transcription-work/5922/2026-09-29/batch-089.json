@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-29",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1790713262.m4a": {
+      "index": 885,
+      "epoch": 1790713262,
+      "sha256": "cfc5d9ea75d7ffbf46cd2871ee51fcb97afdf810728397afecca8ad877c2d945",
+      "passes": {
+        "original": {
+          "text": "7J29 to cut for.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J29 to cut for.",
+              "avg_logprob": -0.462495231628418,
+              "no_speech_prob": 0.0875290036201477,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790713281.m4a": {
+      "index": 886,
+      "epoch": 1790713281,
+      "sha256": "aace80a712b224bda0c498ea6b92122d5f3884cef3ad291198dbaa7a95468a73",
+      "passes": {
+        "original": {
+          "text": "I'm arrived. I'm going to check. Thank you. Ten-four.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I'm arrived. I'm going to check. Thank you.",
+              "avg_logprob": -0.5162705020471052,
+              "no_speech_prob": 0.028093991801142693,
+              "compression_ratio": 0.9137931034482759
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " Ten-four.",
+              "avg_logprob": -0.5162705020471052,
+              "no_speech_prob": 0.028093991801142693,
+              "compression_ratio": 0.9137931034482759
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm arrived. I'm going to check. Thank you. Ten-four.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I'm arrived. I'm going to check. Thank you.",
+              "avg_logprob": -0.6268413662910461,
+              "no_speech_prob": 0.043326228857040405,
+              "compression_ratio": 0.9137931034482759
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " Ten-four.",
+              "avg_logprob": -0.6268413662910461,
+              "no_speech_prob": 0.043326228857040405,
+              "compression_ratio": 0.9137931034482759
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm arrived. I'm going to try it. Thank you. 10-4.",
+          "prompt": "7J29 to cut for.",
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.8,
+              "text": " I'm arrived. I'm going to try it. Thank you. 10-4.",
+              "avg_logprob": -0.5522408371879941,
+              "no_speech_prob": 0.07709569483995438,
+              "compression_ratio": 0.8928571428571429
+            }
+          ]
+        }
+      }
+    }
+  }
+}
