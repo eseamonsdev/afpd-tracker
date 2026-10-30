@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-20",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792548375.m4a": {
+      "index": 1388,
+      "epoch": 1792548375,
+      "sha256": "517e7e02cd4bba1b176e6806d9e8891bdf5a71ca56d65a3479562f60f9de2238",
+      "passes": {
+        "original": {
+          "text": "5J44, copy, viruses.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J44, copy, viruses.",
+              "avg_logprob": -0.622647458856756,
+              "no_speech_prob": 0.057604458183050156,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792548382.m4a": {
+      "index": 1389,
+      "epoch": 1792548382,
+      "sha256": "a32086f152278cca6960740a98979e39a3829fd2a6e25168ed546c597cf35a79",
+      "passes": {
+        "original": {
+          "text": "Thirty-four, David.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thirty-four, David.",
+              "avg_logprob": -0.5469091203477647,
+              "no_speech_prob": 0.01906142756342888,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "filtered": {
+          "text": "34 I can take that.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 34 I can take that.",
+              "avg_logprob": -0.5923706690470377,
+              "no_speech_prob": 0.03845564275979996,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "34, take that.",
+          "prompt": "5J44, copy, viruses.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 34, take that.",
+              "avg_logprob": -0.673997089266777,
+              "no_speech_prob": 0.010475377552211285,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792548388.m4a": {
+      "index": 1390,
+      "epoch": 1792548388,
+      "sha256": "f0bd2ca8e8c933ed24f44af2378fd8fb77c725a61255794c3bf024ac5e8880a0",
+      "passes": {
+        "original": {
+          "text": "Forty-four, can I?",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Forty-four, can I?",
+              "avg_logprob": -0.6472548544406891,
+              "no_speech_prob": 0.06696013361215591,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        }
+      }
+    }
+  }
+}
