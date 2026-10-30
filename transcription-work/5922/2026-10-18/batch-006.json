@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-18",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792307456.m4a": {
+      "index": 53,
+      "epoch": 1792307456,
+      "sha256": "e06bb1e614d19d173981e33b8d14ee48224b561b55bf1ce86161255e6683c7a8",
+      "passes": {
+        "original": {
+          "text": "J53, I am unable to locate vehicle. If 18J wants to say it by the address, leave that up to their own discretion, but clear all.",
+          "prompt": null,
+          "duration_seconds": 10.752,
+          "token_limit": 111,
+          "token_count": 35,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 10.0,
+              "text": " J53, I am unable to locate vehicle. If 18J wants to say it by the address, leave that up to their own discretion, but clear all.",
+              "avg_logprob": -0.3733978337711758,
+              "no_speech_prob": 0.12170197069644928,
+              "compression_ratio": 1.1851851851851851
+            }
+          ]
+        },
+        "filtered": {
+          "text": "J53, I am unable to locate vehicle. If 18J wants to say bye to the address, we've got up to their own discretion, but we can clear all.",
+          "prompt": null,
+          "duration_seconds": 10.752,
+          "token_limit": 111,
+          "token_count": 42,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " J53, I am unable to locate vehicle.",
+              "avg_logprob": -0.4423606229382892,
+              "no_speech_prob": 0.04686127230525017,
+              "compression_ratio": 1.1842105263157894
+            },
+            {
+              "start": 4.0,
+              "end": 8.0,
+              "text": " If 18J wants to say bye to the address,",
+              "avg_logprob": -0.4423606229382892,
+              "no_speech_prob": 0.04686127230525017,
+              "compression_ratio": 1.1842105263157894
+            },
+            {
+              "start": 8.0,
+              "end": 12.0,
+              "text": " we've got up to their own discretion, but we can clear all.",
+              "avg_logprob": -0.4423606229382892,
+              "no_speech_prob": 0.04686127230525017,
+              "compression_ratio": 1.1842105263157894
+            }
+          ]
+        },
+        "context": {
+          "text": "J53, I am unable to locate vehicle. If 18J wants to say it by the address, leave that up to their own discretion, but clear all.",
+          "prompt": null,
+          "duration_seconds": 10.752,
+          "token_limit": 111,
+          "token_count": 35,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 10.0,
+              "text": " J53, I am unable to locate vehicle. If 18J wants to say it by the address, leave that up to their own discretion, but clear all.",
+              "avg_logprob": -0.3733978337711758,
+              "no_speech_prob": 0.12170197069644928,
+              "compression_ratio": 1.1851851851851851
+            }
+          ]
+        }
+      }
+    }
+  }
+}

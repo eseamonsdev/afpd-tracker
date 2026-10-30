@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-18",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792306709.m4a": {
+      "index": 42,
+      "epoch": 1792306709,
+      "sha256": "1f1e6ce52d848fc8d78b7dc0b6b84e8ec95c304cfc83d10cb15de752c4e5db43",
+      "passes": {
+        "original": {
+          "text": "5G-56.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5G-56.",
+              "avg_logprob": -0.7699219211935997,
+              "no_speech_prob": 0.08784762769937515,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792306712.m4a": {
+      "index": 43,
+      "epoch": 1792306712,
+      "sha256": "9dc4154a38537193cbc6115fe937e0849b684024c479ba20ee59f7b1d23d84b6",
+      "passes": {
+        "original": {
+          "text": "We have a canoe out that we kind of stand by near the address that comes back from the plate.",
+          "prompt": null,
+          "duration_seconds": 8.96,
+          "token_limit": 96,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " We have a canoe out that we kind of stand by near the address that comes back from the plate.",
+              "avg_logprob": -0.405663326382637,
+              "no_speech_prob": 0.08789669722318649,
+              "compression_ratio": 1.1481481481481481
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We have a kind of stand by near the address that comes back from the plate.",
+          "prompt": null,
+          "duration_seconds": 8.96,
+          "token_limit": 96,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " We have a kind of stand by near the address that comes back from the plate.",
+              "avg_logprob": -0.45597728341817856,
+              "no_speech_prob": 0.05555447190999985,
+              "compression_ratio": 1.0273972602739727
+            }
+          ]
+        },
+        "context": {
+          "text": "We have a kind of standby near the address that comes back from the plate.",
+          "prompt": "5G-56.",
+          "duration_seconds": 8.96,
+          "token_limit": 96,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " We have a kind of standby near the address that comes back from the plate.",
+              "avg_logprob": -0.49001163557956096,
+              "no_speech_prob": 0.03682680428028107,
+              "compression_ratio": 1.0136986301369864
+            }
+          ]
+        }
+      }
+    }
+  }
+}
