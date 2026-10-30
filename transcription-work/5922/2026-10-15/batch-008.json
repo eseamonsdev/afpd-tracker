@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-15",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792054373.m4a": {
+      "index": 71,
+      "epoch": 1792054373,
+      "sha256": "1297b7b7c32ed7109b241081c1d0da711afb44ea2791ad067f1e65bdbcc2a734",
+      "passes": {
+        "original": {
+          "text": "He has something in his hands, and also, while he was crouched down, was touching something in the corner by one of the terminals. Gray sweatpants, darker brown hoodie with a hood on.",
+          "prompt": null,
+          "duration_seconds": 12.928,
+          "token_limit": 128,
+          "token_count": 50,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.4,
+              "text": " He has something in his hands, and also, while he was crouched",
+              "avg_logprob": -0.21665803357666613,
+              "no_speech_prob": 0.0061302026733756065,
+              "compression_ratio": 1.4409448818897639
+            },
+            {
+              "start": 5.4,
+              "end": 7.68,
+              "text": " down, was touching something in the corner",
+              "avg_logprob": -0.21665803357666613,
+              "no_speech_prob": 0.0061302026733756065,
+              "compression_ratio": 1.4409448818897639
+            },
+            {
+              "start": 7.68,
+              "end": 10.16,
+              "text": " by one of the terminals.",
+              "avg_logprob": -0.21665803357666613,
+              "no_speech_prob": 0.0061302026733756065,
+              "compression_ratio": 1.4409448818897639
+            },
+            {
+              "start": 10.16,
+              "end": 12.52,
+              "text": " Gray sweatpants, darker brown hoodie with a hood on.",
+              "avg_logprob": -0.21665803357666613,
+              "no_speech_prob": 0.0061302026733756065,
+              "compression_ratio": 1.4409448818897639
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792054388.m4a": {
+      "index": 72,
+      "epoch": 1792054388,
+      "sha256": "d95e0a1c3f120a4900533e08a6e0c679a6a433d83b01e3a0a2c9f6ccbf0b8617",
+      "passes": {
+        "original": {
+          "text": "144, I'll be in route 11.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 144, I'll be in route 11.",
+              "avg_logprob": -0.6225385814905167,
+              "no_speech_prob": 0.008852808736264706,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Roger 44, I'll be in route loading.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Roger 44, I'll be in route loading.",
+              "avg_logprob": -0.6207740306854248,
+              "no_speech_prob": 0.03015202470123768,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        },
+        "context": {
+          "text": "144, I'll be in route 11.",
+          "prompt": "You know Copy. He has something in his hands, and also, while he was crouched down, was touching something in the corner by one of the terminals. Gray sweatpants, darker brown hoodie with a hood on.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 144, I'll be in route 11.",
+              "avg_logprob": -0.46985601882139844,
+              "no_speech_prob": 0.02595660462975502,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        }
+      }
+    }
+  }
+}
