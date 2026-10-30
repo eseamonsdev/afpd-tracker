@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-30",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1790799011.m4a": {
+      "index": 569,
+      "epoch": 1790799011,
+      "sha256": "2f7162b4ef9fb689e52d300fc24205cafa836e970c7fd6a3aae41a709ff7c963",
+      "passes": {
+        "original": {
+          "text": "Touching at 48 degrees.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Touching at 48 degrees.",
+              "avg_logprob": -0.8449382781982422,
+              "no_speech_prob": 0.16600948572158813,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "He's actually recording it quickly.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " He's actually recording it quickly.",
+              "avg_logprob": -0.5886100172996521,
+              "no_speech_prob": 0.22579187154769897,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        },
+        "context": {
+          "text": "Touching at 48 degrees.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Touching at 48 degrees.",
+              "avg_logprob": -0.8449382781982422,
+              "no_speech_prob": 0.16600948572158813,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790799022.m4a": {
+      "index": 570,
+      "epoch": 1790799022,
+      "sha256": "a6b56875c2db26f3e4d13b6ad8e2e74826ea82ac2a16548a27bca9fb25ef70ae",
+      "passes": {
+        "original": {
+          "text": "Sarah, 5-J unit with radio traffic.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.36,
+              "text": " Sarah, 5-J unit with radio traffic.",
+              "avg_logprob": -0.6224929552811843,
+              "no_speech_prob": 0.0036822035908699036,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        }
+      }
+    }
+  }
+}
