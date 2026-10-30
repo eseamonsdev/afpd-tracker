@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-14",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791990993.m4a": {
+      "index": 368,
+      "epoch": 1791990993,
+      "sha256": "523fca964b0295b4ce23036f6954dc1490191b7e04921f69316619a53ce4f353",
+      "passes": {
+        "original": {
+          "text": "Time chain 48, code 4.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Time chain 48, code 4.",
+              "avg_logprob": -0.6734260797500611,
+              "no_speech_prob": 0.019208740442991257,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791990997.m4a": {
+      "index": 369,
+      "epoch": 1791990997,
+      "sha256": "ac876644ddd25ca091e6c4c4667ccbb17bcf4c555fa07ef78d10b8d0d628d3f0",
+      "passes": {
+        "original": {
+          "text": "Good for you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Good for you.",
+              "avg_logprob": -0.9560700825282505,
+              "no_speech_prob": 0.07500745356082916,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Look for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Look for it.",
+              "avg_logprob": -0.9876587390899658,
+              "no_speech_prob": 0.06951597332954407,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "Code 4.",
+          "prompt": "Time chain 48, code 4.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Code 4.",
+              "avg_logprob": -0.3301907579104106,
+              "no_speech_prob": 0.008967840112745762,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    }
+  }
+}

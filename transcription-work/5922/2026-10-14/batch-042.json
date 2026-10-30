@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-14",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791994091.m4a": {
+      "index": 418,
+      "epoch": 1791994091,
+      "sha256": "93dc0d3149dcaea04e20c72e902574851f7f935f60f7e3ccd5b8aa27ce5c5233",
+      "passes": {
+        "original": {
+          "text": "18J7 and 22 just advising the garage is full of car oil batteries, possibly gasoline, there are no vehicles in the garage.",
+          "prompt": null,
+          "duration_seconds": 11.136,
+          "token_limit": 114,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.58,
+              "text": " 18J7 and 22 just advising the garage is full of car oil batteries, possibly gasoline, there",
+              "avg_logprob": -0.36413271352648735,
+              "no_speech_prob": 0.004801194649189711,
+              "compression_ratio": 1.1844660194174756
+            },
+            {
+              "start": 8.58,
+              "end": 10.16,
+              "text": " are no vehicles in the garage.",
+              "avg_logprob": -0.36413271352648735,
+              "no_speech_prob": 0.004801194649189711,
+              "compression_ratio": 1.1844660194174756
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791994103.m4a": {
+      "index": 419,
+      "epoch": 1791994103,
+      "sha256": "fc28ab677c0fc0fd7e00db3069d1f05e484b657ea0a9921ee6ae491fd3aadf24",
+      "passes": {
+        "original": {
+          "text": "",
+          "prompt": null,
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 0,
+          "token_cap_reached": false,
+          "segments": []
+        }
+      }
+    },
+    "dcfems-5922-1791994104.m4a": {
+      "index": 420,
+      "epoch": 1791994104,
+      "sha256": "3a0c1eca58505807688be3e39d459ee03c985bdc3d3aa3636de4a6b49f0eb091",
+      "passes": {
+        "original": {
+          "text": "I don't know if it has spread from the garage.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.16,
+              "text": " I don't know if it has spread from the garage.",
+              "avg_logprob": -0.24646466970443726,
+              "no_speech_prob": 0.004030402284115553,
+              "compression_ratio": 0.8518518518518519
+            }
+          ]
+        }
+      }
+    }
+  }
+}

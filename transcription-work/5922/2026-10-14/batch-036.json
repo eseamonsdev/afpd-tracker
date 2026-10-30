@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-14",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791990677.m4a": {
+      "index": 356,
+      "epoch": 1791990677,
+      "sha256": "33fb7b3c33adff38474af76f5691b31771b2f3e8c72209b63f97bb1f3c0aca41",
+      "passes": {
+        "original": {
+          "text": "Hi, J48, cut for you.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hi, J48, cut for you.",
+              "avg_logprob": -0.7017101993163427,
+              "no_speech_prob": 0.0028663829434663057,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791990680.m4a": {
+      "index": 357,
+      "epoch": 1791990680,
+      "sha256": "47d0683451e6a46763e59ba71b031b9a09bd07838c03daf2a88a3000b0d09c25",
+      "passes": {
+        "original": {
+          "text": "Kotor",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Kotor",
+              "avg_logprob": -0.9797682762145996,
+              "no_speech_prob": 0.11495164781808853,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Come for it.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Come for it.",
+              "avg_logprob": -0.7926578010831561,
+              "no_speech_prob": 0.05970532447099686,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "Cut for.",
+          "prompt": "Hi, J48, cut for you.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Cut for.",
+              "avg_logprob": -0.45489072799682617,
+              "no_speech_prob": 0.042185213416814804,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    }
+  }
+}
