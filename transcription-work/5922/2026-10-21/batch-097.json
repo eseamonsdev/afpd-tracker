@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-21",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792631052.m4a": {
+      "index": 965,
+      "epoch": 1792631052,
+      "sha256": "8d306a3a3d391a1698c490526099138be074f5be55187bbe367645081c5377c1",
+      "passes": {
+        "original": {
+          "text": "18 to 19 course up. 18 to 19. Now we're holding a follow-up for you.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18 to 19 course up.",
+              "avg_logprob": -0.46824623758976275,
+              "no_speech_prob": 0.03857174143195152,
+              "compression_ratio": 0.9855072463768116
+            },
+            {
+              "start": 2.0,
+              "end": 5.0,
+              "text": " 18 to 19. Now we're holding a follow-up for you.",
+              "avg_logprob": -0.46824623758976275,
+              "no_speech_prob": 0.03857174143195152,
+              "compression_ratio": 0.9855072463768116
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792631086.m4a": {
+      "index": 966,
+      "epoch": 1792631086,
+      "sha256": "758ab37c6660776cb6167503829fd508c929881f0182ceba6f619837f024595b",
+      "passes": {
+        "original": {
+          "text": "5J47 traffic. 5J47.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J47 traffic. 5J47.",
+              "avg_logprob": -0.5089687754710516,
+              "no_speech_prob": 0.03194871544837952,
+              "compression_ratio": 0.76
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792631091.m4a": {
+      "index": 967,
+      "epoch": 1792631091,
+      "sha256": "c9bcd0d611b877167b8abdb249d3406bc8a6967207d25e1a76574a9ea27c0093",
+      "passes": {
+        "original": {
+          "text": "300 East State local Victor 515 Papa Alpha",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.5600000000000005,
+              "text": " 300 East State local Victor 515 Papa Alpha",
+              "avg_logprob": -0.7361552665630976,
+              "no_speech_prob": 0.15610018372535706,
+              "compression_ratio": 0.84
+            }
+          ]
+        },
+        "filtered": {
+          "text": "300 East State Local Victor 515 Palpa Alpha",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.64,
+              "text": " 300 East State Local Victor 515 Palpa Alpha",
+              "avg_logprob": -0.6918351833636944,
+              "no_speech_prob": 0.11319393664598465,
+              "compression_ratio": 0.8431372549019608
+            }
+          ]
+        },
+        "context": {
+          "text": "300 East. Stay local. Victor, 515, Papa Alpha.",
+          "prompt": "18 to 19 course up. 18 to 19. Now we're holding a follow-up for you. 5J47 traffic. 5J47.",
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.5600000000000005,
+              "text": " 300 East. Stay local. Victor, 515, Papa Alpha.",
+              "avg_logprob": -0.6143987319048714,
+              "no_speech_prob": 0.04608676955103874,
+              "compression_ratio": 0.8518518518518519
+            }
+          ]
+        }
+      }
+    }
+  }
+}
