@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-14",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791983469.m4a": {
+      "index": 234,
+      "epoch": 1791983469,
+      "sha256": "2945aee47382a78691e18078f85cfcf6604af03c81cd92882ac681c8a7102ad9",
+      "passes": {
+        "original": {
+          "text": "",
+          "prompt": null,
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 0,
+          "token_cap_reached": false,
+          "segments": []
+        }
+      }
+    },
+    "dcfems-5922-1791983508.m4a": {
+      "index": 235,
+      "epoch": 1791983508,
+      "sha256": "6e0dcf641ef605f0417792913533f8a47410af516f6fa6ceedc8cf46530937c5",
+      "passes": {
+        "original": {
+          "text": "Find J52 and copy the welfare.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Find J52 and copy the welfare.",
+              "avg_logprob": -0.5509907007217407,
+              "no_speech_prob": 0.05174311622977257,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Find J-52 and copy the welfare.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Find J-52 and copy the welfare.",
+              "avg_logprob": -0.7275840491056442,
+              "no_speech_prob": 0.04505756497383118,
+              "compression_ratio": 0.8378378378378378
+            }
+          ]
+        },
+        "context": {
+          "text": "Find J52 and copy the welfare.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Find J52 and copy the welfare.",
+              "avg_logprob": -0.5509907007217407,
+              "no_speech_prob": 0.05174311622977257,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        }
+      }
+    }
+  }
+}
