@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-13",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791892454.m4a": {
+      "index": 195,
+      "epoch": 1791892454,
+      "sha256": "8b3150279b2642d2ec01e147d41fbd08ab9f29e32f993cacfb1048aedcfa4ee6",
+      "passes": {
+        "original": {
+          "text": "I'll be giving a courtesy shuttle to one male to 705 East State Street Maverick. Beginning is going to be 40.4.",
+          "prompt": null,
+          "duration_seconds": 10.752,
+          "token_limit": 111,
+          "token_count": 32,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " I'll be giving a courtesy shuttle to one male to 705 East State Street Maverick.",
+              "avg_logprob": -0.32499307574647845,
+              "no_speech_prob": 0.004760122857987881,
+              "compression_ratio": 1.0673076923076923
+            },
+            {
+              "start": 7.0,
+              "end": 10.0,
+              "text": " Beginning is going to be 40.4.",
+              "avg_logprob": -0.32499307574647845,
+              "no_speech_prob": 0.004760122857987881,
+              "compression_ratio": 1.0673076923076923
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791892466.m4a": {
+      "index": 196,
+      "epoch": 1791892466,
+      "sha256": "477818c063b9e29325d455ec2a1a037b2c40cd82f38a7e90e75278ae2e5a2b4c",
+      "passes": {
+        "original": {
+          "text": "Happy 40.4",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Happy 40.4",
+              "avg_logprob": -0.6020627873284476,
+              "no_speech_prob": 0.008252374827861786,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791892513.m4a": {
+      "index": 197,
+      "epoch": 1791892513,
+      "sha256": "2335d4f9882c4cafb6efda7c2b30d573326d5d1b8d903d2f926c0d018891d969",
+      "passes": {
+        "original": {
+          "text": "Chris5J, A1, and A37, off duty.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Chris5J, A1, and A37, off duty.",
+              "avg_logprob": -0.737215098212747,
+              "no_speech_prob": 0.042551275342702866,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "filtered": {
+          "text": "65J, 81, and 37, on duty.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 65J, 81, and 37, on duty.",
+              "avg_logprob": -0.701882038797651,
+              "no_speech_prob": 0.036531295627355576,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "context": {
+          "text": "5J, 81, and 37, off duty.",
+          "prompt": "I'll be giving a courtesy shuttle to one male to 705 East State Street Maverick. Beginning is going to be 40.4. Happy 40.4",
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.68,
+              "text": " 5J, 81, and 37, off duty.",
+              "avg_logprob": -0.7374975553580693,
+              "no_speech_prob": 0.023100994527339935,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791892551.m4a": {
+      "index": 199,
+      "epoch": 1791892551,
+      "sha256": "809d8d8c1165591257a97dd2b4c84f6b8cdf2d14425494af7277a57efd5c9766",
+      "passes": {
+        "original": {
+          "text": "copy 40.8",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " copy 40.8",
+              "avg_logprob": -0.5169727972575596,
+              "no_speech_prob": 0.015206504613161087,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791892595.m4a": {
+      "index": 200,
+      "epoch": 1791892595,
+      "sha256": "415ddfe2643f245fa77443370ae47f7b78c0e56e22747ac885536a030f690f0c",
+      "passes": {
+        "original": {
+          "text": "Subject 1210-42.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Subject 1210-42.",
+              "avg_logprob": -0.7473132875230577,
+              "no_speech_prob": 0.032166436314582825,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    }
+  }
+}
