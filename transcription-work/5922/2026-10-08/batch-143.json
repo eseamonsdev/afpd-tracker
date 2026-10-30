@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-08",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791519976.m4a": {
+      "index": 1422,
+      "epoch": 1791519976,
+      "sha256": "28f36e37f04543f944b2c2fcf353231a0545275fecf54e6f45d0a04c63041230",
+      "passes": {
+        "original": {
+          "text": "subject 12 correction if you do 200 south. over.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " subject 12 correction if you do 200 south.",
+              "avg_logprob": -0.718360673636198,
+              "no_speech_prob": 0.059912215918302536,
+              "compression_ratio": 0.8888888888888888
+            },
+            {
+              "start": 4.0,
+              "end": 6.0,
+              "text": " over.",
+              "avg_logprob": -0.718360673636198,
+              "no_speech_prob": 0.059912215918302536,
+              "compression_ratio": 0.8888888888888888
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791519981.m4a": {
+      "index": 1423,
+      "epoch": 1791519981,
+      "sha256": "b700a64961349eff317fc54cd92ca53481b1f609c6cc85349b39e0885df6a48d",
+      "passes": {
+        "original": {
+          "text": "Coffee.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Coffee.",
+              "avg_logprob": -0.5907379627227783,
+              "no_speech_prob": 0.028777409344911575,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791520031.m4a": {
+      "index": 1424,
+      "epoch": 1791520031,
+      "sha256": "720fca2daab629b6265385f481e24c469cd16939bd30fc4460598ff5674ebe47",
+      "passes": {
+        "original": {
+          "text": "5J41, 1042",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J41, 1042",
+              "avg_logprob": -0.4642040994432237,
+              "no_speech_prob": 0.18969646096229553,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J41, 1042.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J41, 1042.",
+              "avg_logprob": -0.5810094952583313,
+              "no_speech_prob": 0.08817102015018463,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "5 J 41 10 42.",
+          "prompt": "subject 12 correction if you do 200 south. over. Coffee.",
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.3200000000000003,
+              "text": " 5 J 41 10 42.",
+              "avg_logprob": -0.5789687857031822,
+              "no_speech_prob": 0.01702975295484066,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    }
+  }
+}
