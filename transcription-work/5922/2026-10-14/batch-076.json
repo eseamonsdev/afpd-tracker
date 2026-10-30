@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-14",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792008229.m4a": {
+      "index": 751,
+      "epoch": 1792008229,
+      "sha256": "57fa5d9860f3414c92e34d676904f2849d26c9c44a9f0ee39446f991c0e09232",
+      "passes": {
+        "original": {
+          "text": "Come up where you can suspend.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.48,
+              "text": " Come up where you can suspend.",
+              "avg_logprob": -0.564352011680603,
+              "no_speech_prob": 0.01605522818863392,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go up four, you can sustain.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.5,
+              "text": " Go up four, you can sustain.",
+              "avg_logprob": -0.8213800191879272,
+              "no_speech_prob": 0.017495572566986084,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "context": {
+          "text": "Code 4, you can suspend.",
+          "prompt": "5G13, code for check. 5-13 is up for me. Affirmative.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Code 4, you can suspend.",
+              "avg_logprob": -0.527155727148056,
+              "no_speech_prob": 0.008744847029447556,
+              "compression_ratio": 0.75
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792008632.m4a": {
+      "index": 760,
+      "epoch": 1792008632,
+      "sha256": "9569261c5403f0a6f5f79baf0c2eb21ddefdb2c82e2ae30e58ff369997902564",
+      "passes": {
+        "original": {
+          "text": "79, you can keep being clear and you can keep 7025 on the call.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.92,
+              "text": " 79, you can keep being clear and you can keep 7025 on the call.",
+              "avg_logprob": -0.35585569590330124,
+              "no_speech_prob": 0.01196193229407072,
+              "compression_ratio": 1.0862068965517242
+            }
+          ]
+        }
+      }
+    }
+  }
+}

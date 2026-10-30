@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-14",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792008216.m4a": {
+      "index": 748,
+      "epoch": 1792008216,
+      "sha256": "404e9fee86ea935963230b3be6c69ee43df325db1def47132f85f01329b520e3",
+      "passes": {
+        "original": {
+          "text": "5G13, code for check.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G13, code for check.",
+              "avg_logprob": -0.5609057708220049,
+              "no_speech_prob": 0.03985799103975296,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792008223.m4a": {
+      "index": 749,
+      "epoch": 1792008223,
+      "sha256": "4fd4af5ef0120155e6fffcd4a0dc69b903d9b94747ff1825f34729b1101d56d7",
+      "passes": {
+        "original": {
+          "text": "5-13 is up for me.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5-13 is up for me.",
+              "avg_logprob": -0.38542045788331464,
+              "no_speech_prob": 0.04766000062227249,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Five to thirteen is up for me.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.8800000000000001,
+              "text": " Five to thirteen is up for me.",
+              "avg_logprob": -0.5434693531556563,
+              "no_speech_prob": 0.04230550676584244,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "context": {
+          "text": "5G13 is up for me.",
+          "prompt": "5G13, code for check.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G13 is up for me.",
+              "avg_logprob": -0.2553182569417087,
+              "no_speech_prob": 0.040045201778411865,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792008226.m4a": {
+      "index": 750,
+      "epoch": 1792008226,
+      "sha256": "146af3d6e5d923b1ca21512268eddcdfcb07be36064675e5e97601d33a90c2c2",
+      "passes": {
+        "original": {
+          "text": "Affirmative.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Affirmative.",
+              "avg_logprob": -0.3954553178378514,
+              "no_speech_prob": 0.0381770096719265,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    }
+  }
+}
