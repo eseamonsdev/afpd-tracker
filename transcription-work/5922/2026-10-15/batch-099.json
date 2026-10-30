@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-15",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792103520.m4a": {
+      "index": 981,
+      "epoch": 1792103520,
+      "sha256": "1c24eac9f6c795d59c0ca5a6fb491fc94f1b8d360bed631d587201bb0a87bc1c",
+      "passes": {
+        "original": {
+          "text": "Correct.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Correct.",
+              "avg_logprob": -0.7479494094848633,
+              "no_speech_prob": 0.07354798167943954,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Forever.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Forever.",
+              "avg_logprob": -0.9849603652954102,
+              "no_speech_prob": 0.12579092383384705,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Correct.",
+          "prompt": "Go for it. It's fine. 10-4-4 5J32, go for it.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Correct.",
+              "avg_logprob": -0.6798329830169678,
+              "no_speech_prob": 0.009836286306381226,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792103995.m4a": {
+      "index": 990,
+      "epoch": 1792103995,
+      "sha256": "cd36e56d1fe612a1c5287739315a208563a6cac8214d19fa85a5b86aa50797ac",
+      "passes": {
+        "original": {
+          "text": "5J32 Central Health",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.04,
+              "text": " 5J32 Central Health",
+              "avg_logprob": -0.6552910953760147,
+              "no_speech_prob": 0.15897056460380554,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    }
+  }
+}
