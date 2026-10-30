@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-17",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792285778.m4a": {
+      "index": 931,
+      "epoch": 1792285778,
+      "sha256": "0adb9f815cf44dc6e140712ecff3099ca5dae354261bc4579689344879833aa9",
+      "passes": {
+        "original": {
+          "text": "RPE is requesting 25 at 279 North, North County, Villevar, 279 North, North County.",
+          "prompt": null,
+          "duration_seconds": 8.448,
+          "token_limit": 92,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.96,
+              "text": " RPE is requesting 25 at 279 North, North County,",
+              "avg_logprob": -0.7578105838210495,
+              "no_speech_prob": 0.05986678972840309,
+              "compression_ratio": 1.2769230769230768
+            },
+            {
+              "start": 4.96,
+              "end": 7.96,
+              "text": " Villevar, 279 North, North County.",
+              "avg_logprob": -0.7578105838210495,
+              "no_speech_prob": 0.05986678972840309,
+              "compression_ratio": 1.2769230769230768
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792285787.m4a": {
+      "index": 932,
+      "epoch": 1792285787,
+      "sha256": "104075c1a1358c143864acc54d5efcbac63e782862e73b730199f43029fae741",
+      "passes": {
+        "original": {
+          "text": "A guy is the item stolen from his personal storage building property, unknown time-ups.",
+          "prompt": null,
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.8,
+              "text": " A guy is the item stolen from his personal storage building property, unknown time-ups.",
+              "avg_logprob": -0.49844457989647273,
+              "no_speech_prob": 0.015635738149285316,
+              "compression_ratio": 1.0875
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792285799.m4a": {
+      "index": 933,
+      "epoch": 1792285799,
+      "sha256": "65d6283f297d16b17021401b8e309cc6fa2751aabc0a59fc3cf9de604cc61d1b",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7068819522857666,
+              "no_speech_prob": 0.028425609692931175,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.8002559661865234,
+              "no_speech_prob": 0.02165360189974308,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "5G, 50 copy for Clery. RPE is requesting 25 at 279 North, North County, Villevar, 279 North, North County. A guy is the item stolen from his personal storage building property, unknown time-ups.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.41019558906555176,
+              "no_speech_prob": 0.03809675946831703,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
