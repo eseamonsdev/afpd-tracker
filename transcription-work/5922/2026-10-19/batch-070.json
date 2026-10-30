@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-19",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792440804.m4a": {
+      "index": 697,
+      "epoch": 1792440804,
+      "sha256": "47b281a733790c316d57867b8bb79864bdff5a233888846fc13146a490b58dfd",
+      "passes": {
+        "original": {
+          "text": "I got to be.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I got to be.",
+              "avg_logprob": -0.6798952966928482,
+              "no_speech_prob": 0.13304471969604492,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792440807.m4a": {
+      "index": 698,
+      "epoch": 1792440807,
+      "sha256": "9e906cb3445c0e2f7bf19a54e357e01cf27729190767e18c29ed0a588ea583a0",
+      "passes": {
+        "original": {
+          "text": "149 South, 950 East for a white fork truck.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.3200000000000003,
+              "text": " 149 South, 950 East for a white fork truck.",
+              "avg_logprob": -0.40047189380441395,
+              "no_speech_prob": 0.004894569981843233,
+              "compression_ratio": 0.8958333333333334
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792440853.m4a": {
+      "index": 699,
+      "epoch": 1792440853,
+      "sha256": "ebadcf05b704af92988ed9967a1269d70012d268ece0ca0cd10af75c7c24690e",
+      "passes": {
+        "original": {
+          "text": "5G6, go for it.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G6, go for it.",
+              "avg_logprob": -0.5172496492212469,
+              "no_speech_prob": 0.018883317708969116,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792440857.m4a": {
+      "index": 700,
+      "epoch": 1792440857,
+      "sha256": "854799a6fdd27dd5c0965e2566dd11aedfda501922e8a0e52998c74452b7e9fc",
+      "passes": {
+        "original": {
+          "text": "But we're",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " But we're",
+              "avg_logprob": -0.8706102768580118,
+              "no_speech_prob": 0.03801938146352768,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "But we're",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " But we're",
+              "avg_logprob": -0.8525130152702332,
+              "no_speech_prob": 0.011296749114990234,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Go for it.",
+          "prompt": "I got to be. 149 South, 950 East for a white fork truck. 5G6, go for it.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.6021092789513725,
+              "no_speech_prob": 0.013248996809124947,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    }
+  }
+}
