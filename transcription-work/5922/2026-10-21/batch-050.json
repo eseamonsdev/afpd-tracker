@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-21",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792610986.m4a": {
+      "index": 496,
+      "epoch": 1792610986,
+      "sha256": "2cea86f13142cd082e9d5f02adf1c81d4baa3f740077b2cb18c7fb857d646548",
+      "passes": {
+        "original": {
+          "text": "5,829 from Central Creek Park.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5,829 from Central Creek Park.",
+              "avg_logprob": -0.8592421213785807,
+              "no_speech_prob": 0.0429651141166687,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792610990.m4a": {
+      "index": 497,
+      "epoch": 1792610990,
+      "sha256": "88eb145cea8c9cbc17e5b68120400786ef572e4c86bff9cb724c5cc4ececfa2a",
+      "passes": {
+        "original": {
+          "text": "Bye-bye.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.7514892135347638,
+              "no_speech_prob": 0.3262479603290558,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bye-bye.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.7965118544442313,
+              "no_speech_prob": 0.3861047029495239,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Go for it.",
+          "prompt": "5,829 from Central Creek Park.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.7637815475463867,
+              "no_speech_prob": 0.14373603463172913,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    }
+  }
+}

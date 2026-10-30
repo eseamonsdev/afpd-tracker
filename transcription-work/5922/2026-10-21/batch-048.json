@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-21",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792610362.m4a": {
+      "index": 479,
+      "epoch": 1792610362,
+      "sha256": "ffe9dd3c484ce5854491cb51df3f0da9d93f43f65e4f5343ce878d82e30f718d",
+      "passes": {
+        "original": {
+          "text": "5J29, can you copy traffic defense?",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5J29, can you copy traffic defense?",
+              "avg_logprob": -0.43101385006537807,
+              "no_speech_prob": 0.09314025193452835,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792610395.m4a": {
+      "index": 480,
+      "epoch": 1792610395,
+      "sha256": "30992bcffb180ace34c1645b601cb7a5d883f111166c83cb730629e5fc21cd29",
+      "passes": {
+        "original": {
+          "text": "Put it in there and go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Put it in there and go ahead.",
+              "avg_logprob": -0.6039791757410223,
+              "no_speech_prob": 0.050371430814266205,
+              "compression_ratio": 0.8285714285714286
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Put it in there and go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Put it in there and go ahead.",
+              "avg_logprob": -0.5549412965774536,
+              "no_speech_prob": 0.02725946716964245,
+              "compression_ratio": 0.8285714285714286
+            }
+          ]
+        },
+        "context": {
+          "text": "Put it in there and go ahead.",
+          "prompt": "5J29, can you copy traffic defense?",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Put it in there and go ahead.",
+              "avg_logprob": -0.5846125429326837,
+              "no_speech_prob": 0.005111756268888712,
+              "compression_ratio": 0.8285714285714286
+            }
+          ]
+        }
+      }
+    }
+  }
+}
