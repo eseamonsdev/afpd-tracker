@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-14",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792016050.m4a": {
+      "index": 1001,
+      "epoch": 1792016050,
+      "sha256": "0c0b968f1b3480d9f693cfb1c5828c86bc22b9b0fc7a8f54ec06756d588079fc",
+      "passes": {
+        "original": {
+          "text": "Tipper!",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Tipper!",
+              "avg_logprob": -1.1133570472399394,
+              "no_speech_prob": 0.026420416310429573,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792016055.m4a": {
+      "index": 1002,
+      "epoch": 1792016055,
+      "sha256": "233c97c76e155d3194299d49d5cb156363b0a3bb7b34aa0b1ec4705ae24b941b",
+      "passes": {
+        "original": {
+          "text": "By day six. Code for check.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " By day six. Code for check.",
+              "avg_logprob": -0.6930392980575562,
+              "no_speech_prob": 0.04675770550966263,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792016060.m4a": {
+      "index": 1003,
+      "epoch": 1792016060,
+      "sha256": "3392157fbaa91cb69e152e5496a7955dfb237b7d51d07ec36abba8a1eb987759",
+      "passes": {
+        "original": {
+          "text": "Code for you, Mrs. Vancic, thank you.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Code for you, Mrs. Vancic, thank you.",
+              "avg_logprob": -0.5275942012667656,
+              "no_speech_prob": 0.06208597868680954,
+              "compression_ratio": 0.8604651162790697
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Code for you, Mrs. Vanchak. Thank you.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Code for you, Mrs. Vanchak. Thank you.",
+              "avg_logprob": -0.5049161799252033,
+              "no_speech_prob": 0.027916129678487778,
+              "compression_ratio": 0.8636363636363636
+            }
+          ]
+        },
+        "context": {
+          "text": "Code for suspend. Check. Thank you.",
+          "prompt": "Code for suspend. Tipper! By day six. Code for check.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Code for suspend. Check. Thank you.",
+              "avg_logprob": -0.4757949610551198,
+              "no_speech_prob": 0.001458914251998067,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        }
+      }
+    }
+  }
+}
