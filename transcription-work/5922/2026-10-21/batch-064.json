@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-21",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792614752.m4a": {
+      "index": 635,
+      "epoch": 1792614752,
+      "sha256": "066a0e29e068b4ead529c5349f6846f1cc6aa854802aa1dce20d5353ac87db61",
+      "passes": {
+        "original": {
+          "text": "Head for it.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Head for it.",
+              "avg_logprob": -0.4466551882880075,
+              "no_speech_prob": 0.06581378728151321,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792614811.m4a": {
+      "index": 636,
+      "epoch": 1792614811,
+      "sha256": "2dc5ab59cc934b55eed92b9864e83741179416b8199f44a82291e65f9c6ca68f",
+      "passes": {
+        "original": {
+          "text": "By day 29, that follow-up you can reassign to me. I need to contact and will you come in and I'll be clear.",
+          "prompt": null,
+          "duration_seconds": 7.552,
+          "token_limit": 85,
+          "token_count": 34,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " By day 29, that follow-up you can reassign to me.",
+              "avg_logprob": -0.49530627386910575,
+              "no_speech_prob": 0.1475013643503189,
+              "compression_ratio": 1.1263157894736842
+            },
+            {
+              "start": 4.0,
+              "end": 8.0,
+              "text": " I need to contact and will you come in and I'll be clear.",
+              "avg_logprob": -0.49530627386910575,
+              "no_speech_prob": 0.1475013643503189,
+              "compression_ratio": 1.1263157894736842
+            }
+          ]
+        },
+        "filtered": {
+          "text": "By day 29, that follow-up, you can resank me. I need to contact and leave a couple of notes, and I'll be clear.",
+          "prompt": null,
+          "duration_seconds": 7.552,
+          "token_limit": 85,
+          "token_count": 34,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " By day 29, that follow-up, you can resank me. I need to contact and leave a couple of notes, and I'll be clear.",
+              "avg_logprob": -0.48911971364702495,
+              "no_speech_prob": 0.09950437396764755,
+              "compression_ratio": 1.121212121212121
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm IJ 29. That follow-up you can reassign to me. I need contact and will you come in and I'll be clear.",
+          "prompt": "Head for it.",
+          "duration_seconds": 7.552,
+          "token_limit": 85,
+          "token_count": 33,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " I'm IJ 29. That follow-up you can reassign to me. I need contact and will you come in and I'll be clear.",
+              "avg_logprob": -0.4959571449195637,
+              "no_speech_prob": 0.09549476206302643,
+              "compression_ratio": 1.1063829787234043
+            }
+          ]
+        }
+      }
+    }
+  }
+}

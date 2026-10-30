@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-21",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792615350.m4a": {
+      "index": 651,
+      "epoch": 1792615350,
+      "sha256": "a6eb6a27721d73e837bc60a57e1c50b4a4f8c89618d130b7c5502f88fcc666d6",
+      "passes": {
+        "original": {
+          "text": "Please show me out at the library on a follow-up negative shift.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " Please show me out at the library on a follow-up negative shift.",
+              "avg_logprob": -0.4341973811388016,
+              "no_speech_prob": 0.0030386776197701693,
+              "compression_ratio": 0.9411764705882353
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Please show me out at the library on a follow-up, maybe to check.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.16,
+              "text": " Please show me out at the library on a follow-up,",
+              "avg_logprob": -0.424373286691579,
+              "no_speech_prob": 0.0018329016165807843,
+              "compression_ratio": 0.9701492537313433
+            },
+            {
+              "start": 2.16,
+              "end": 3.88,
+              "text": " maybe to check.",
+              "avg_logprob": -0.424373286691579,
+              "no_speech_prob": 0.0018329016165807843,
+              "compression_ratio": 0.9701492537313433
+            }
+          ]
+        },
+        "context": {
+          "text": "Will you show me out at the library on a follow-up negative shift?",
+          "prompt": "That's right. Thanks. 521-71, go ahead.",
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Will you show me out at the library on a follow-up negative shift?",
+              "avg_logprob": -0.3541158218132822,
+              "no_speech_prob": 0.005798236932605505,
+              "compression_ratio": 0.9428571428571428
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792615423.m4a": {
+      "index": 653,
+      "epoch": 1792615423,
+      "sha256": "2104d8ffc662f98bdef40b0b52c89821f3294be8f0fe520417d0abdf28d5aca5",
+      "passes": {
+        "original": {
+          "text": "over",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " over",
+              "avg_logprob": -0.6200159937143326,
+              "no_speech_prob": 0.019193386659026146,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bye.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Bye.",
+              "avg_logprob": -0.8679323196411133,
+              "no_speech_prob": 0.02102721855044365,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "over",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " over",
+              "avg_logprob": -0.6200159937143326,
+              "no_speech_prob": 0.019193386659026146,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    }
+  }
+}
