@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-22",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792669951.m4a": {
+      "index": 71,
+      "epoch": 1792669951,
+      "sha256": "8342a2245f64cb91d1fb960eea1ab67d5fbd4011c411344c72bc4c2eefdbd55b",
+      "passes": {
+        "original": {
+          "text": "5G, 5G, sync traffic, have a good day.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5G, 5G, sync traffic, have a good day.",
+              "avg_logprob": -0.6505098342895508,
+              "no_speech_prob": 0.03450131416320801,
+              "compression_ratio": 0.8636363636363636
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5, 3, 5, 0, sync traffic, have a good day.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5, 3, 5, 0, sync traffic, have a good day.",
+              "avg_logprob": -0.6675345709449366,
+              "no_speech_prob": 0.03137814626097679,
+              "compression_ratio": 0.84
+            }
+          ]
+        },
+        "context": {
+          "text": "5G, 5G, sync traffic, have a good day.",
+          "prompt": "7G 21 film traffic Twenty-one, copy. project for some",
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 5G, 5G, sync traffic, have a good day.",
+              "avg_logprob": -0.5831048628863167,
+              "no_speech_prob": 0.01639184169471264,
+              "compression_ratio": 0.8636363636363636
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792670081.m4a": {
+      "index": 73,
+      "epoch": 1792670081,
+      "sha256": "e3efad1490eabdf421306b4f9b2b474df16dc4915c057b3464e1325701e0ce86",
+      "passes": {
+        "original": {
+          "text": "5J46, after you have been there.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J46, after you have been there.",
+              "avg_logprob": -0.7251372704139123,
+              "no_speech_prob": 0.08628714084625244,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J46, after we have a good day.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J46, after we have a good day.",
+              "avg_logprob": -0.8185350554330009,
+              "no_speech_prob": 0.05265466496348381,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "context": {
+          "text": "5J46, after you have been there.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J46, after you have been there.",
+              "avg_logprob": -0.7251372704139123,
+              "no_speech_prob": 0.08628714084625244,
+              "compression_ratio": 0.8
+            }
+          ]
+        }
+      }
+    }
+  }
+}

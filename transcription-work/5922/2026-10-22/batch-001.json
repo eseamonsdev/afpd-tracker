@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-22",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792649111.m4a": {
+      "index": 1,
+      "epoch": 1792649111,
+      "sha256": "638ffa439e99c69d7fb315c552d45f2d4fc4ee9dbf1a0bcc42ab533fbf798cc6",
+      "passes": {
+        "original": {
+          "text": "5J46 will be clear unless request is by far.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J46 will be clear unless request is by far.",
+              "avg_logprob": -0.7920946756998698,
+              "no_speech_prob": 0.0641101598739624,
+              "compression_ratio": 0.8461538461538461
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Alright, J-Force, that's how we play unless you're crossing by fire.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Alright, J-Force, that's how we play unless you're crossing by fire.",
+              "avg_logprob": -0.841464428674607,
+              "no_speech_prob": 0.026151560246944427,
+              "compression_ratio": 0.918918918918919
+            }
+          ]
+        },
+        "context": {
+          "text": "5J46 will be clear unless request is by far.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J46 will be clear unless request is by far.",
+              "avg_logprob": -0.7920946756998698,
+              "no_speech_prob": 0.0641101598739624,
+              "compression_ratio": 0.8461538461538461
+            }
+          ]
+        }
+      }
+    }
+  }
+}
