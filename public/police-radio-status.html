@@ -1,5 +1,78 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Police radio download status</title><style>body{font:17px system-ui;max-width:1100px;margin:40px auto;padding:0 18px;color:#203654;background:#f6f8fb}h1{font-size:28px}table{width:100%;border-collapse:collapse;background:white}th,td{text-align:left;padding:12px;border-bottom:1px solid #dce2eb}td:not(:first-child){font-variant-numeric:tabular-nums}#updates{white-space:pre-line;color:#52627a}.wrap{overflow:auto}.error{color:#a22828}button{padding:9px 16px}small{display:block;margin:18px 0}</style><h1>Police radio download status</h1><p>Recording counts by day. Refreshes every 30 seconds.</p><button id="refresh">Refresh now</button><p id="updates" role="status">Loading counts…</p><div class="wrap"><table><thead><tr><th>Branch</th><th>Date</th><th>Talkgroup</th><th>Downloaded</th><th>Saved to R2</th><th>Failed</th><th>Total</th><th>Remaining</th></tr></thead><tbody id="rows"></tbody></table></div><small>Downloaded includes files that passed audio validation and are awaiting the next R2 checkpoint. Saved to R2 counts checksum-verified storage. Totals describe the collected inventory; they do not guarantee complete source coverage. A stale timestamp means the workflow has stopped updating.</small><script>
-const cache=new Map();let busy=false;
-async function refresh(){if(busy)return;busy=true;const messages=[];for(const branch of ['staging','law-2']){try{const response=await fetch('/radio-status/'+branch+'.json',{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);const data=await response.json();cache.set(branch,data);}catch(error){messages.push(branch+': update unavailable; retaining last counts.');}}const body=document.getElementById('rows');body.replaceChildren();for(const data of cache.values()){const age=Date.now()-Date.parse(data.updated_at);messages.push(data.branch+': '+data.state+' · updated '+new Date(data.updated_at).toLocaleString()+(age>120000?' · STALE':''));for(const r of data.rows){const tr=document.createElement('tr');for(const value of [data.branch,r.date,({6001:'AFPD car-to-car',5922:'Law 2',6036:'6036'})[r.talkgroup],r.downloaded,r.saved,r.failed,r.total,r.remaining]){const td=document.createElement('td');td.textContent=value ?? "Inventory pending";tr.append(td);}body.append(tr);}}document.getElementById('updates').textContent=messages.join('\n');busy=false;}
-document.getElementById('refresh').onclick=refresh;refresh();setInterval(refresh,30000);
-</script></html>
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Police radio download status</title>
+<style>
+body{font:16px system-ui;max-width:1200px;margin:40px auto;padding:0 18px;color:#203654;background:#f6f8fb}h1{font-size:28px;margin-bottom:8px}p{line-height:1.5}.filters{display:flex;flex-wrap:wrap;gap:20px;margin:24px 0}fieldset{border:0;padding:0;margin:0}legend{font-weight:650;margin-bottom:8px}.options{display:flex;flex-wrap:wrap;gap:6px}.options label{position:relative;cursor:pointer}.options input{position:absolute;opacity:0;width:1px;height:1px}.options span{display:block;padding:9px 14px;border:1px solid #b7c5d8;background:white;border-radius:7px}.options input:checked+span{background:#203654;color:white;border-color:#203654}.options input:focus-visible+span{outline:3px solid #598ee3;outline-offset:3px}.wrap{overflow:auto;border:1px solid #dce2eb;border-radius:9px}table{width:100%;border-collapse:collapse;background:white}th,td{text-align:left;padding:12px;border-bottom:1px solid #e4eaf2;white-space:nowrap}th{background:#eaf0f8;font-size:14px}td.num{font-variant-numeric:tabular-nums;text-align:right}#updates,#summary,small{color:#52627a}#updates{white-space:pre-line;min-height:24px}.badge{font-size:13px;display:inline-block;padding:4px 8px;border-radius:5px;background:#edf2f8}.complete{color:#166147;background:#e8f5ee}.pending{color:#71520c;background:#fff4db}.failed{color:#a22828;background:#fff0f0}small{display:block;line-height:1.6;margin:18px 0}.empty{text-align:center;color:#52627a}#summary{font-weight:600}@media(max-width:600px){body{margin:24px auto}th,td{padding:10px}h1{font-size:24px}}
+</style>
+<h1>Police radio download status</h1>
+<p>Recording counts for every date in the archive range. Refreshes automatically every 10 seconds.</p>
+<div class="filters">
+  <fieldset><legend>Branch</legend><div class="options">
+    <label><input type="radio" name="branch" value="staging" checked><span>Staging</span></label>
+    <label><input type="radio" name="branch" value="main"><span>Main</span></label>
+  </div></fieldset>
+  <fieldset><legend>Talkgroup</legend><div class="options">
+    <label><input type="radio" name="group" value="all" checked><span>All</span></label>
+    <label><input type="radio" name="group" value="5922"><span>Law 2</span></label>
+    <label><input type="radio" name="group" value="6001"><span>AFPD car-to-car</span></label>
+    <label><input type="radio" name="group" value="6036"><span>6036</span></label>
+  </div></fieldset>
+</div>
+<p id="updates" role="status">Loading counts…</p>
+<p id="summary"></p>
+<div class="wrap"><table><thead><tr><th>Date</th><th>Talkgroup</th><th>Status</th><th>Downloaded</th><th>Saved to R2</th><th>Failed</th><th>Total</th><th>Remaining</th></tr></thead><tbody id="rows"></tbody></table></div>
+<small>“0 calls observed” means inventory was collected and contained no calls. “Inventory pending” means no inventory is recorded. Totals describe collected records, not complete radio reception. “Complete” means all inventoried files are saved to R2. Downloaded includes validated files awaiting an R2 checkpoint; Remaining excludes separately listed failures. Main and staging reflect their respective committed archive records, even though both use the same R2 bucket. Refreshing reads the latest published snapshot; it does not start downloads.</small>
+<script>
+const cache=new Map(), errors=new Map();let busy=false;
+const names={6001:'AFPD car-to-car',5922:'Law 2',6036:'6036'};
+const selected=name=>document.querySelector('input[name="'+name+'"]:checked').value;
+function rowsFor(data){
+  const allDates=[...cache.values()].flatMap(d=>d.rows.map(r=>r.date)).sort();
+  if(!allDates.length)return [];
+  const byKey=new Map(data.rows.map(r=>[r.date+':'+r.talkgroup,r]));
+  const result=[],end=allDates[allDates.length-1];
+  for(let day=new Date(allDates[0]+'T00:00:00Z');day.toISOString().slice(0,10)<=end;day.setUTCDate(day.getUTCDate()+1)){
+    const date=day.toISOString().slice(0,10);
+    for(const talkgroup of [5922,6001,6036])result.push(byKey.get(date+':'+talkgroup)||{date,talkgroup,total:null,remaining:null,downloaded:0,saved:0,failed:0});
+  }
+  return result.sort((a,b)=>b.date.localeCompare(a.date)||a.talkgroup-b.talkgroup);
+}
+function render(){
+  const branch=selected('branch'),group=selected('group'),data=cache.get(branch);
+  const body=document.getElementById('rows');body.replaceChildren();
+  document.getElementById('summary').textContent='';
+  if(!data){document.getElementById('updates').textContent=errors.get(branch)||'Loading '+branch+' counts…';return;}
+  const messages=[branch+' · snapshot '+new Date(data.updated_at).toLocaleString()+(data.commit?' · '+data.commit.slice(0,7):'')];
+  if(data.state==='running')messages.push(Date.now()-Date.parse(data.updated_at)>120000?'Running snapshot is stale; publisher may have stopped.':'Download job running.');
+  if(errors.has(branch))messages.push(errors.get(branch)+' Showing the last successful snapshot.');
+  document.getElementById('updates').textContent=messages.join('\n');
+  const rows=rowsFor(data).filter(r=>group==='all'||String(r.talkgroup)===group);
+  for(const r of rows){
+    const known=r.total!==null&&r.total!==undefined;
+    let status='Inventory pending',tone='pending';
+    if(known){if(r.total===0){status='0 calls observed';tone='complete';}else if(r.saved===r.total){status='Complete';tone='complete';}else if(r.failed){status='Failures to resolve';tone='failed';}else{status='Audio pending';}}
+    const tr=document.createElement('tr');
+    for(const [i,value] of [r.date,names[r.talkgroup],status,r.downloaded,r.saved,r.failed,r.total,r.remaining].entries()){
+      const td=document.createElement('td');if(i>=3)td.className='num';
+      if(i===2){const badge=document.createElement('span');badge.className='badge '+tone;badge.textContent=value;td.append(badge);}else td.textContent=value??'—';
+      tr.append(td);
+    }body.append(tr);
+  }
+  const totals=rows.reduce((sum,r)=>{sum.saved+=r.saved;sum.total+=r.total||0;sum.failed+=r.failed;sum.pending+=r.total==null?1:0;return sum;},{saved:0,total:0,failed:0,pending:0});
+  document.getElementById('summary').textContent=totals.saved.toLocaleString()+' of '+totals.total.toLocaleString()+' inventoried files saved · '+totals.failed+' failed'+(totals.pending?' · '+totals.pending+' date/talkgroup inventories pending':'');
+}
+async function refresh(){
+  if(busy)return;busy=true;
+  try{await Promise.all(['staging','main'].map(async branch=>{
+    try{const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),8000);let response;
+      try{response=await fetch('/radio-status/'+branch+'.json',{cache:'no-store',signal:controller.signal});if(!response.ok)throw Error('HTTP '+response.status);const data=await response.json();if(data.branch!==branch||!Array.isArray(data.rows))throw Error('Invalid snapshot');cache.set(branch,data);errors.delete(branch);}finally{clearTimeout(timer);}
+    }catch(error){errors.set(branch,branch+': update unavailable.');}
+  }));render();}finally{busy=false;}
+}
+document.querySelectorAll('input[type="radio"]').forEach(input=>input.addEventListener('change',()=>{const url=new URL(location.href);url.searchParams.set('branch',selected('branch'));url.searchParams.set('group',selected('group'));history.replaceState(null,'',url);render();}));
+const params=new URLSearchParams(location.search);for(const name of ['branch','group']){const value=params.get(name);for(const input of document.querySelectorAll('input[name="'+name+'"]'))if(input.value===value)input.checked=true;}
+refresh();setInterval(refresh,10000);
+</script>
+</html>

@@ -1,25 +1,23 @@
 name: Publish radio recording counts
-'on':
+on:
   push:
-    branches:
-    - staging
+    branches: [staging, main]
     paths:
-    - scripts/publish_radio_status.py
-    - public/police-radio-status.html
-    - .github/workflows/publish-radio-status.yml
+      - scripts/publish_radio_status.py
+      - public/police-radio-status.html
+      - .github/workflows/publish-radio-status.yml
+      - public/records/openmhz/**/calls.json
+      - records-pending-review/openmhz-metadata/**/calls.json
+      - records-pending-review/openmhz-failures/*.json
+      - records-pending-review/openmhz-audio-request.json
+  workflow_run:
+    workflows: [Download radio audio]
+    types: [completed]
   workflow_dispatch:
-    inputs:
-      target_branch:
-        description: Branch for metadata and text checkpoints
-        required: false
-        default: staging
-        type: choice
-        options:
-        - staging
 permissions:
   contents: read
 concurrency:
-  group: radio-status-${{ inputs.target_branch || github.ref_name }}
+  group: publish-radio-status
   cancel-in-progress: false
 env:
   R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
@@ -29,17 +27,29 @@ env:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
-    env:
-      OPENMHZ_TARGET_BRANCH: ${{ github.event_name == 'push' && github.ref_name || inputs.target_branch || 'staging' }}
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        branch: [staging, main]
     steps:
-    - uses: actions/checkout@v4
-      with:
-        ref: ${{ github.event_name == 'push' && github.ref_name || inputs.target_branch || 'staging' }}
-    - uses: actions/setup-python@v5
-      with:
-        python-version: '3.11'
-    - name: Install R2 client
-      run: python -m pip install 'boto3>=1.40,<2'
-    - name: Publish counts for all saved talkgroups
-      run: python3 scripts/publish_radio_status.py --state idle
+      # Use the maintained publisher while reading each branch independently.
+      - uses: actions/checkout@v4
+        with:
+          ref: staging
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ matrix.branch }}
+          path: .radio-status-source
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install R2 client
+        run: python -m pip install 'boto3>=1.40,<2'
+      - name: Publish branch inventory and recording counts
+        env:
+          STATUS_BRANCH: ${{ matrix.branch }}
+        run: |
+          page_args=()
+          if [ "$STATUS_BRANCH" = main ]; then page_args+=(--no-page); fi
+          python3 scripts/publish_radio_status.py --root .radio-status-source --branch "$STATUS_BRANCH" --state idle "${page_args[@]}"
