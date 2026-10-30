@@ -80,7 +80,25 @@ async function collect(date) {
     });
     page.on('requestfailed',req=>{if(!closing&&isList(req.url()))fail(`Call-list request failed: ${req.failure()?.errorText}`)});
     phase='loading page';
-    const nav=await page.goto(pageUrl,{waitUntil:'domcontentloaded',timeout:60000});if(nav&&!nav.ok())throw Error(`Navigation HTTP ${nav.status()}`);
+    const nav=await page.goto(pageUrl,{waitUntil:'domcontentloaded',timeout:60000});
+    if(nav&&!nav.ok()){
+      console.error('HTTP:',nav.status(),nav.statusText());
+      // Diagnostic failures must not hide the original navigation error.
+      try {
+        const headers=await nav.allHeaders();
+        console.error('Headers:',JSON.stringify(headers,null,2));
+        await fs.writeFile(path.join(out,'navigation-error-headers.json'),JSON.stringify(headers,null,2)+'\n');
+      }catch(e){console.error('Could not capture response headers:',e.message)}
+      try {
+        const body=await nav.text();
+        console.error('Body:',body.slice(0,8000));
+        await fs.writeFile(path.join(out,'navigation-error-body.txt'),body);
+      }catch(e){console.error('Could not capture response body:',e.message)}
+      try {
+        await page.screenshot({path:path.join(out,'navigation-error.png'),fullPage:true,timeout:10000});
+      }catch(e){console.error('Could not capture navigation screenshot:',e.message)}
+      throw Error(`Navigation HTTP ${nav.status()}`);
+    }
     await waitFor(()=>batches.length>0);await page.locator('#calls tbody tr[data-callid]').first().waitFor({timeout:15000});
     const autoplay=page.locator('.button-item.active').filter({hasText:'Autoplay'});if(await autoplay.count())await autoplay.click();
     for(const direction of ['older','newer']){
