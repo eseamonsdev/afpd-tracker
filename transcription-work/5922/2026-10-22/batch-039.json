@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-22",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792691848.m4a": {
+      "index": 381,
+      "epoch": 1792691848,
+      "sha256": "3d538d649179429108d742ed6a5ed91da4834e5a8c1ec6a891a4c44d56f1c4df",
+      "passes": {
+        "original": {
+          "text": "5G40",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G40",
+              "avg_logprob": -0.6209627787272135,
+              "no_speech_prob": 0.030059533193707466,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G40.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G40.",
+              "avg_logprob": -0.4307312454496111,
+              "no_speech_prob": 0.018025696277618408,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "5G40",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G40",
+              "avg_logprob": -0.6209627787272135,
+              "no_speech_prob": 0.030059533193707466,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    }
+  }
+}
