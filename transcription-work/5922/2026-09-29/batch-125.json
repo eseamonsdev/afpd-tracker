@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-29",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1790731889.m4a": {
+      "index": 1245,
+      "epoch": 1790731889,
+      "sha256": "6795495d5422588e8f46274a70e8d05f57d34bde4da7e282a3f12df413b04e3b",
+      "passes": {
+        "original": {
+          "text": "Hi, J-50, central for first.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hi, J-50, central for first.",
+              "avg_logprob": -0.7390380455897405,
+              "no_speech_prob": 0.01920672133564949,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790731896.m4a": {
+      "index": 1246,
+      "epoch": 1790731896,
+      "sha256": "dc21742a2968bef2456999035a922d13ec4c4cafc448a771a092137a53764e84",
+      "passes": {
+        "original": {
+          "text": "Hi, J-50 Central Cooper.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hi, J-50 Central Cooper.",
+              "avg_logprob": -0.8668142015283758,
+              "no_speech_prob": 0.018537910655140877,
+              "compression_ratio": 0.75
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790731899.m4a": {
+      "index": 1247,
+      "epoch": 1790731899,
+      "sha256": "7ac4951df7248fdeea7aefe27aeb3fcbf86eb6edbd7670072f21e4d19741cf7e",
+      "passes": {
+        "original": {
+          "text": "Oh, it's worse.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Oh, it's worse.",
+              "avg_logprob": -0.861004458533393,
+              "no_speech_prob": 0.13462555408477783,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "That was worse.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " That was worse.",
+              "avg_logprob": -0.7566250562667847,
+              "no_speech_prob": 0.1126631498336792,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "context": {
+          "text": "Oh, it's worse.",
+          "prompt": "Hi, J-50, central for first. Hi, J-50 Central Cooper.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Oh, it's worse.",
+              "avg_logprob": -0.8254554006788466,
+              "no_speech_prob": 0.021188564598560333,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    }
+  }
+}
