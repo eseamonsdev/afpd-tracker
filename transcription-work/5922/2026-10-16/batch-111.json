@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-16",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792206318.m4a": {
+      "index": 1108,
+      "epoch": 1792206318,
+      "sha256": "17ab11eccbcbc6ebca2445cf71010bd3e42bf169c110e13b9956e005692a90c6",
+      "passes": {
+        "original": {
+          "text": "76, I copy the abandoned cell.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 76, I copy the abandoned cell.",
+              "avg_logprob": -0.539986328645186,
+              "no_speech_prob": 0.08963383734226227,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792206322.m4a": {
+      "index": 1109,
+      "epoch": 1792206322,
+      "sha256": "0f57fb986291fb2d750754e9ce2a9202e1ccbcc8e682c7035a6ab33abfcc65b7",
+      "passes": {
+        "original": {
+          "text": "726",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 726",
+              "avg_logprob": -0.5087408542633056,
+              "no_speech_prob": 0.03009536676108837,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792206330.m4a": {
+      "index": 1110,
+      "epoch": 1792206330,
+      "sha256": "b6d6a1a710c6fee9454762462fa5abefa3d0a31e43f489900366c270138ddda1",
+      "passes": {
+        "original": {
+          "text": "5G, do you want to write?",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G, do you want to write?",
+              "avg_logprob": -0.5620761861403784,
+              "no_speech_prob": 0.033060893416404724,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G, do you want to ride?",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G, do you want to ride?",
+              "avg_logprob": -0.5675098399321238,
+              "no_speech_prob": 0.03007151558995247,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "context": {
+          "text": "5G, do you want to write?",
+          "prompt": "76, I copy the abandoned cell. 726",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G, do you want to write?",
+              "avg_logprob": -0.4755267451206843,
+              "no_speech_prob": 0.0957285687327385,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        }
+      }
+    }
+  }
+}
