@@ -23,7 +23,7 @@ body{font:16px system-ui;max-width:1200px;margin:40px auto;padding:0 18px;color:
 <p id="updates" role="status">Loading counts…</p>
 <p id="summary"></p>
 <div class="wrap"><table><thead><tr><th>Date</th><th>Talkgroup</th><th>Status</th><th>Downloaded</th><th>Saved to R2</th><th>Failed</th><th>Total</th><th>Remaining</th></tr></thead><tbody id="rows"></tbody></table></div>
-<small>“0 calls observed” means inventory was collected and contained no calls. “Inventory pending” means no inventory is recorded. “Audio Not Available” marks earlier Law 2 and 6036 dates whose missing audio is no longer retained by OpenMHz; recordings already saved to R2 remain available. Totals describe collected records, not complete radio reception. “Complete” means all inventoried files are saved to R2. Downloaded includes validated files awaiting an R2 checkpoint; Remaining excludes separately listed failures. Main and staging reflect their respective committed archive records, even though both use the same R2 bucket. Refreshing reads the latest published snapshot; it does not start downloads.</small>
+<small>“0 calls observed” means inventory was collected and contained no calls. “Inventory pending” means no inventory is recorded. “Audio Not Available” marks earlier Law 2 and 6036 dates whose missing audio is no longer retained by OpenMHz; recordings already saved to R2 remain available. Totals describe collected records, not complete radio reception. “Complete” means all inventoried files are saved to R2. Counts reflect committed branch records and update when metadata or R2 checkpoints are saved. Remaining excludes separately listed failures. Main and staging reflect their respective committed archive records, even though both use the same R2 bucket. Refreshing reads the latest published snapshot; it does not start downloads.</small>
 <script>
 const cache=new Map(), errors=new Map();let busy=false;
 const names={6001:'AFPD car-to-car',5922:'Law 2',6036:'6036'};
@@ -71,7 +71,7 @@ async function refresh(){
   if(busy)return;busy=true;
   try{await Promise.all(['staging','main'].map(async branch=>{
     try{const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),8000);let response;
-      try{response=await fetch('/radio-status/'+branch+'.json',{cache:'no-store',signal:controller.signal});if(!response.ok)throw Error('HTTP '+response.status);const data=await response.json();if(data.branch!==branch||!Array.isArray(data.rows))throw Error('Invalid snapshot');cache.set(branch,data);errors.delete(branch);}finally{clearTimeout(timer);}
+      try{response=await fetch('/radio-status/inventory-'+branch+'.json',{cache:'no-store',signal:controller.signal});if(!response.ok)throw Error('HTTP '+response.status);const data=await response.json();if(data.branch!==branch||!Array.isArray(data.rows))throw Error('Invalid snapshot');cache.set(branch,data);errors.delete(branch);}finally{clearTimeout(timer);}
     }catch(error){errors.set(branch,branch+': update unavailable.');}
   }));render();}finally{busy=false;}
 }

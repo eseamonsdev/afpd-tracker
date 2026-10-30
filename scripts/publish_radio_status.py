@@ -80,6 +80,10 @@ def publish(root, branch, state, publish_page=False):
     client, bucket = client_and_bucket()
     data = snapshot(root, branch, state)
     client.put_object(Bucket=bucket, Key=f'radio-status/{branch}.json', Body=(json.dumps(data)+'\n').encode(), ContentType='application/json; charset=utf-8', CacheControl='no-store')
+    # Dedicated inventory snapshots cannot be overwritten by a running job's
+    # older checkout. Keep legacy snapshots for existing clients.
+    snapshot_kind = 'inventory' if state == 'idle' else 'progress'
+    client.put_object(Bucket=bucket, Key=f'radio-status/{snapshot_kind}-{branch}.json', Body=(json.dumps(data)+'\n').encode(), ContentType='application/json; charset=utf-8', CacheControl='no-store')
     if publish_page:
         page = (Path(__file__).resolve().parents[1] / 'public/police-radio-status.html').read_bytes()
         for key in ('police-radio-status.html', 'radio-status/index.html'):
