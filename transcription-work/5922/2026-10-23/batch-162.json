@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-23",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792821317.m4a": {
+      "index": 1611,
+      "epoch": 1792821317,
+      "sha256": "0b88e277de871fe3b8c3b4c71db4eee1a3c586d133d9e812e1ed017756ba4d9e",
+      "passes": {
+        "original": {
+          "text": "You",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You",
+              "avg_logprob": -0.7599141597747803,
+              "no_speech_prob": 0.8991088271141052,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "filtered": {
+          "text": "You",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You",
+              "avg_logprob": -0.6360975354909897,
+              "no_speech_prob": 0.8823762536048889,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "context": {
+          "text": "You",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You",
+              "avg_logprob": -0.7599141597747803,
+              "no_speech_prob": 0.8991088271141052,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792821324.m4a": {
+      "index": 1612,
+      "epoch": 1792821324,
+      "sha256": "951ad157e1a8a71cf6c5212703415a74f2033550b2259e09b995edb14a6bc499",
+      "passes": {
+        "original": {
+          "text": "5G42, you can clear the hazard and just keep the input open.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5G42, you can clear the hazard and just keep the input open.",
+              "avg_logprob": -0.48107993602752686,
+              "no_speech_prob": 0.029019413515925407,
+              "compression_ratio": 0.9230769230769231
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5242, you can clear the hazard and just keep that open.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5242, you can clear the hazard and just keep that open.",
+              "avg_logprob": -0.5931311775656307,
+              "no_speech_prob": 0.018027372658252716,
+              "compression_ratio": 0.8870967741935484
+            }
+          ]
+        },
+        "context": {
+          "text": "5G42 you can clear the hazard and just keep the input open.",
+          "prompt": "You",
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.96,
+              "text": " 5G42 you can clear the hazard and just keep the input open.",
+              "avg_logprob": -0.5367165837022994,
+              "no_speech_prob": 0.1188637986779213,
+              "compression_ratio": 0.921875
+            }
+          ]
+        }
+      }
+    }
+  }
+}
