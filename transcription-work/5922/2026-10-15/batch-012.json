@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-15",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792057701.m4a": {
+      "index": 111,
+      "epoch": 1792057701,
+      "sha256": "8aee816531bbbb9180e61d1487030f5abcccb1ea63a092d908559e929d8d8d0e",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.6294945875803629,
+              "no_speech_prob": 0.020729249343276024,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792057703.m4a": {
+      "index": 112,
+      "epoch": 1792057703,
+      "sha256": "6b9a40a5570584d187241b82614bb6d4d95272b2e410f316f9f30c640cfcd0b2",
+      "passes": {
+        "original": {
+          "text": "In the Taco Bell parking lot with one male",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.04,
+              "text": " In the Taco Bell parking lot with one male",
+              "avg_logprob": -0.3498595481117566,
+              "no_speech_prob": 0.004639229737222195,
+              "compression_ratio": 0.84
+            }
+          ]
+        },
+        "filtered": {
+          "text": "In the Taco Bell parking lot with one male",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.08,
+              "text": " In the Taco Bell parking lot with one male",
+              "avg_logprob": -0.4107730860511462,
+              "no_speech_prob": 0.007097278255969286,
+              "compression_ratio": 0.84
+            }
+          ]
+        },
+        "context": {
+          "text": "In the Taco Bell parking lot with one male.",
+          "prompt": "RJ44 citizen contact. Go ahead.",
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.04,
+              "text": " In the Taco Bell parking lot with one male.",
+              "avg_logprob": -0.3232472034601065,
+              "no_speech_prob": 0.02192174829542637,
+              "compression_ratio": 0.8431372549019608
+            }
+          ]
+        }
+      }
+    }
+  }
+}
