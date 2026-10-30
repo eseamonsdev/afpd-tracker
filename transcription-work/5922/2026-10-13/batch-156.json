@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-13",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791957289.m4a": {
+      "index": 1551,
+      "epoch": 1791957289,
+      "sha256": "43900f76967f8d19cc76c752a3dc62e8a18cf3317de3c421ff6af2833de7cf45",
+      "passes": {
+        "original": {
+          "text": "5G46.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 5G46.",
+              "avg_logprob": -0.7720440285546439,
+              "no_speech_prob": 0.03353913500905037,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791957291.m4a": {
+      "index": 1552,
+      "epoch": 1791957291,
+      "sha256": "f15b9f6096ecd1b86b04c03575d6d280d5d371c04c0a8bd9aa281734198a7e2f",
+      "passes": {
+        "original": {
+          "text": "860 East Utah Valley Drive on a silver Audi S 4-0 plate.",
+          "prompt": null,
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.88,
+              "text": " 860 East Utah Valley Drive on a silver Audi S 4-0 plate.",
+              "avg_logprob": -0.5183204600685521,
+              "no_speech_prob": 0.05684813857078552,
+              "compression_ratio": 0.875
+            }
+          ]
+        },
+        "filtered": {
+          "text": "360 East Utah Valley Drive on a silver Audi S4 no play",
+          "prompt": null,
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.88,
+              "text": " 360 East Utah Valley Drive on a silver Audi S4 no play",
+              "avg_logprob": -0.5831411853432655,
+              "no_speech_prob": 0.06990063935518265,
+              "compression_ratio": 0.8709677419354839
+            }
+          ]
+        },
+        "context": {
+          "text": "860E Utah Valley Drive on a silver Audi S-400 plate.",
+          "prompt": "5-8-4-6 travel. 5G46.",
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.88,
+              "text": " 860E Utah Valley Drive on a silver Audi S-400 plate.",
+              "avg_logprob": -0.49999794363975525,
+              "no_speech_prob": 0.02846723608672619,
+              "compression_ratio": 0.8666666666666667
+            }
+          ]
+        }
+      }
+    }
+  }
+}
