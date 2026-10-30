@@ -1,0 +1,389 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-09",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791561558.m4a": {
+      "index": 511,
+      "epoch": 1791561558,
+      "sha256": "e500a899f89f9eddca4c16a7ab08d2654fd4280d2d333ad93d4a941882f71d7c",
+      "passes": {
+        "original": {
+          "text": "Jennifer, thanks.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Jennifer, thanks.",
+              "avg_logprob": -0.8325351987566266,
+              "no_speech_prob": 0.02862442657351494,
+              "compression_ratio": 0.68
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791561562.m4a": {
+      "index": 512,
+      "epoch": 1791561562,
+      "sha256": "5579f6d812379aed5a01ad83f991062a6bf377eddb7c4fbf96a267b5feb0f062",
+      "passes": {
+        "original": {
+          "text": "7G, 170, 10, 8.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7G, 170, 10, 8.",
+              "avg_logprob": -0.6206183433532715,
+              "no_speech_prob": 0.03696686029434204,
+              "compression_ratio": 0.75
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791561565.m4a": {
+      "index": 513,
+      "epoch": 1791561565,
+      "sha256": "9180fcd9b664d88e80335b20f44b5aa36a9e80f0c8d8cebc0c9bb35de414bb5f",
+      "passes": {
+        "original": {
+          "text": "One and seventy a copy.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " One and seventy a copy.",
+              "avg_logprob": -0.7238553365071615,
+              "no_speech_prob": 0.02369680628180504,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791561590.m4a": {
+      "index": 514,
+      "epoch": 1791561590,
+      "sha256": "5bcd676e4f538a6d15e3e334aa3108d74c2cf44864b10170dd46796d148419db",
+      "passes": {
+        "original": {
+          "text": "5J80, it's going to be a white male short hair glasses last seen wearing hoodie.",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.5200000000000005,
+              "text": " 5J80, it's going to be a white male short hair glasses last seen wearing hoodie.",
+              "avg_logprob": -0.37519655004143715,
+              "no_speech_prob": 0.004282726440578699,
+              "compression_ratio": 1.0256410256410255
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J80, it's going to be a white male short hair glasses by seam wearing hoodie.",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.5200000000000005,
+              "text": " 5J80, it's going to be a white male short hair glasses by seam wearing hoodie.",
+              "avg_logprob": -0.4099321874479453,
+              "no_speech_prob": 0.005196672864258289,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "5G, 80. It's going to be a white, male, short hair, glasses, glass seam wearing hoodie.",
+          "prompt": "Jennifer, thanks. 7G, 170, 10, 8. One and seventy a copy.",
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.44,
+              "text": " 5G, 80. It's going to be a white, male, short hair, glasses, glass seam wearing hoodie.",
+              "avg_logprob": -0.3766179495844348,
+              "no_speech_prob": 0.002132911467924714,
+              "compression_ratio": 1.0357142857142858
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791561621.m4a": {
+      "index": 515,
+      "epoch": 1791561621,
+      "sha256": "57aa6404804cf7cdc453e46b802831915f7dc5d12ced00341a0f65d4e2f78804",
+      "passes": {
+        "original": {
+          "text": "Aiden Jade",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Aiden Jade",
+              "avg_logprob": -1.1943349242210388,
+              "no_speech_prob": 0.0625402107834816,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791561623.m4a": {
+      "index": 516,
+      "epoch": 1791561623,
+      "sha256": "97552b9608e11c76915fbb39a306165dad0fd3eeeeeb7b0c5a76fe06e6ebd9be",
+      "passes": {
+        "original": {
+          "text": "APJ",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " APJ",
+              "avg_logprob": -0.8213313102722168,
+              "no_speech_prob": 0.035194676369428635,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18 days.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 18 days.",
+              "avg_logprob": -0.6253754595915476,
+              "no_speech_prob": 0.02296501211822033,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Aiden Jade",
+          "prompt": "One and seventy a copy. 5J80, it's going to be a white male short hair glasses last seen wearing hoodie. Aiden Jade",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Aiden Jade",
+              "avg_logprob": -0.32740873595078784,
+              "no_speech_prob": 0.017465293407440186,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791561625.m4a": {
+      "index": 517,
+      "epoch": 1791561625,
+      "sha256": "343385231f0f2c496b6441c3c870f10f39bd6a186c45b580bb453bab465a68c9",
+      "passes": {
+        "original": {
+          "text": "This is related to the lone peak. Can you have 20 to give me 21?",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.88,
+              "text": " This is related to the lone peak. Can you have 20 to give me 21?",
+              "avg_logprob": -0.42893301099538805,
+              "no_speech_prob": 0.010188328102231026,
+              "compression_ratio": 0.9696969696969697
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791561631.m4a": {
+      "index": 518,
+      "epoch": 1791561631,
+      "sha256": "933a1764e2b9ce8be95d3c75798e0c788ce9d53b7715fbceb6d55690508d7f8c",
+      "passes": {
+        "original": {
+          "text": "Affirm, 18J22, can you give 18J8 a 21, please?",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Affirm, 18J22, can you give 18J8 a 21, please?",
+              "avg_logprob": -0.38763931819370817,
+              "no_speech_prob": 0.005429078824818134,
+              "compression_ratio": 0.8846153846153846
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Affirm, 18J22, can you give 18J8 a 21, please?",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Affirm, 18J22, can you give 18J8 a 21, please?",
+              "avg_logprob": -0.33339392571222215,
+              "no_speech_prob": 0.007824313826858997,
+              "compression_ratio": 0.8846153846153846
+            }
+          ]
+        },
+        "context": {
+          "text": "Affirm. 18J22, can you give 18J8 a 21 please?",
+          "prompt": "Aiden Jade APJ This is related to the lone peak. Can you have 20 to give me 21?",
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Affirm. 18J22, can you give 18J8 a 21 please?",
+              "avg_logprob": -0.3754686936736107,
+              "no_speech_prob": 0.024906186386942863,
+              "compression_ratio": 0.8823529411764706
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791561637.m4a": {
+      "index": 519,
+      "epoch": 1791561637,
+      "sha256": "64b400e066920e6af19a182c2ac4297f1ccc4e184b221668e071b9929c4968e2",
+      "passes": {
+        "original": {
+          "text": "My copy, and you can also show me, right?",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " My copy, and you can also show me, right?",
+              "avg_logprob": -0.4561171929041545,
+              "no_speech_prob": 0.009964387863874435,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791561641.m4a": {
+      "index": 520,
+      "epoch": 1791561641,
+      "sha256": "04e440f46fcd8577fcbba6c7a59ecb95c83d8a78fd9500f689368ca5bb14a451",
+      "passes": {
+        "original": {
+          "text": "Happy",
+          "prompt": null,
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy",
+              "avg_logprob": -0.6312599033117294,
+              "no_speech_prob": 0.1848658323287964,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
