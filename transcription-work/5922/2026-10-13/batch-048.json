@@ -1,0 +1,314 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-13",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791913117.m4a": {
+      "index": 472,
+      "epoch": 1791913117,
+      "sha256": "1df5b0f8eb5d04fd92d9691ba5a56ca06ddfab1abf33849b5aef9dca19302e86",
+      "passes": {
+        "original": {
+          "text": "5J29 Central, copy property damage.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J29 Central, copy property damage.",
+              "avg_logprob": -0.47485579550266266,
+              "no_speech_prob": 0.023873329162597656,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791913122.m4a": {
+      "index": 473,
+      "epoch": 1791913122,
+      "sha256": "5a8eaf4e63f89c5e964b5d9d69ddfc543b65b6eae293f42e411927b794117e63",
+      "passes": {
+        "original": {
+          "text": "Bye.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.18,
+              "text": " Bye.",
+              "avg_logprob": -0.9849422454833985,
+              "no_speech_prob": 0.0643315240740776,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bye.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Bye.",
+              "avg_logprob": -0.8085912704467774,
+              "no_speech_prob": 0.049582820385694504,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Bye.",
+          "prompt": "5J29 Central, copy property damage.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Bye.",
+              "avg_logprob": -0.8845827102661132,
+              "no_speech_prob": 0.05231015384197235,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791913142.m4a": {
+      "index": 474,
+      "epoch": 1791913142,
+      "sha256": "97846266b604e1c87b1f34de2d67d5d91949ebdd0804c5c8453b83a657c11e39",
+      "passes": {
+        "original": {
+          "text": "I think",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I think",
+              "avg_logprob": -0.6515687465667724,
+              "no_speech_prob": 0.26743441820144653,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I think",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I think",
+              "avg_logprob": -0.6512877941131592,
+              "no_speech_prob": 0.20588319003582,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy.",
+          "prompt": "5J29 Central, copy property damage. Bye.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy.",
+              "avg_logprob": -0.7851897716522217,
+              "no_speech_prob": 0.109541155397892,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791913261.m4a": {
+      "index": 477,
+      "epoch": 1791913261,
+      "sha256": "29a9e4bece61e2c3ecccb9d2b069aa785defdcd51a5915d0e389c83e6a0daca1",
+      "passes": {
+        "original": {
+          "text": "Go ahead",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead",
+              "avg_logprob": -0.32851223945617675,
+              "no_speech_prob": 0.021210378035902977,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791913263.m4a": {
+      "index": 478,
+      "epoch": 1791913263,
+      "sha256": "2f2978d1189e848cbf3a9a15bc479178533014b1e9ae331ab8f5ca3c3f6f654d",
+      "passes": {
+        "original": {
+          "text": "6 feet East Alpine Drive, 6-0 East Alpine Drive, there's a car that's parked in the middle of the street, around here.",
+          "prompt": null,
+          "duration_seconds": 8.832,
+          "token_limit": 95,
+          "token_count": 32,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.5,
+              "text": " 6 feet East Alpine Drive, 6-0 East Alpine Drive, there's a car that's parked in the middle of the street, around here.",
+              "avg_logprob": -0.4020688028046579,
+              "no_speech_prob": 0.017465613782405853,
+              "compression_ratio": 1.2826086956521738
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791913274.m4a": {
+      "index": 479,
+      "epoch": 1791913274,
+      "sha256": "06c26498be40e0510ab7f59b809366337e05a5a5c5f2532726f46d651a35840a",
+      "passes": {
+        "original": {
+          "text": "Got it.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Got it.",
+              "avg_logprob": -1.1359940965970357,
+              "no_speech_prob": 0.0407264418900013,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791913294.m4a": {
+      "index": 480,
+      "epoch": 1791913294,
+      "sha256": "1e6c07c2cb068e3c5f6aafe20576322b3a89284a7a020815df2bb386f1c8ad33",
+      "passes": {
+        "original": {
+          "text": "5G40 will you hold this for 38 he's aware",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.5600000000000005,
+              "text": " 5G40 will you hold this for 38 he's aware",
+              "avg_logprob": -0.289357062180837,
+              "no_speech_prob": 0.007735741324722767,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G40, will you hold this for 38? He's aware.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.04,
+              "text": " 5G40, will you hold this for 38? He's aware.",
+              "avg_logprob": -0.3209516919321484,
+              "no_speech_prob": 0.016722319647669792,
+              "compression_ratio": 0.8461538461538461
+            }
+          ]
+        },
+        "context": {
+          "text": "5G40, will you hold this for 38? He's aware.",
+          "prompt": "Go ahead 6 feet East Alpine Drive, 6-0 East Alpine Drive, there's a car that's parked in the middle of the street, around here. Got it.",
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.5600000000000005,
+              "text": " 5G40, will you hold this for 38? He's aware.",
+              "avg_logprob": -0.26171959771050346,
+              "no_speech_prob": 0.009499133564531803,
+              "compression_ratio": 0.8461538461538461
+            }
+          ]
+        }
+      }
+    }
+  }
+}
