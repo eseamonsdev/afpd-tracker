@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-27",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1790552677.m4a": {
+      "index": 761,
+      "epoch": 1790552677,
+      "sha256": "1339724fc5668efaf43ab1d0cf0bcd487140b07b8fcda37b28fe254e22cb3135",
+      "passes": {
+        "original": {
+          "text": "Bye.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Bye.",
+              "avg_logprob": -0.4104318618774414,
+              "no_speech_prob": 0.02063591219484806,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bye.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " Bye.",
+              "avg_logprob": -0.34065463542938235,
+              "no_speech_prob": 0.017819365486502647,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Bye.",
+          "prompt": "5J45 traffic.",
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Bye.",
+              "avg_logprob": -0.28451478481292725,
+              "no_speech_prob": 0.0367400199174881,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    }
+  }
+}
