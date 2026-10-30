@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-12",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791821816.m4a": {
+      "index": 411,
+      "epoch": 1791821816,
+      "sha256": "9ba2c413e9c5cc21b06764ae6fc4a2c65ada3ff2fd17425996a2c982f8f3d8c5",
+      "passes": {
+        "original": {
+          "text": "Good.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Good.",
+              "avg_logprob": -0.5327758312225341,
+              "no_speech_prob": 0.02133697271347046,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791821817.m4a": {
+      "index": 412,
+      "epoch": 1791821817,
+      "sha256": "f46e35dbd124e3432856ca4d0bf0d56f9979b27d5eaff1f77a3a09e30a589b61",
+      "passes": {
+        "original": {
+          "text": "Can you update the address to 471 north sorry 471 east down the street",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Can you update the address to 471 north sorry 471 east down the street",
+              "avg_logprob": -0.31733878349003036,
+              "no_speech_prob": 0.006465479731559753,
+              "compression_ratio": 1.0294117647058822
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Can you update the address to 471 north sorry 471 east down the street",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Can you update the address to 471 north sorry 471 east down the street",
+              "avg_logprob": -0.3111723849647923,
+              "no_speech_prob": 0.008032191544771194,
+              "compression_ratio": 1.0294117647058822
+            }
+          ]
+        },
+        "context": {
+          "text": "Can you update the address to 471 East Elm Street?",
+          "prompt": "5J171 Good.",
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Can you update the address to 471 East Elm Street?",
+              "avg_logprob": -0.4192709724108378,
+              "no_speech_prob": 0.03026704117655754,
+              "compression_ratio": 0.8620689655172413
+            }
+          ]
+        }
+      }
+    }
+  }
+}
