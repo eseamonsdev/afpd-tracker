@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-19",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792475872.m4a": {
+      "index": 1423,
+      "epoch": 1792475872,
+      "sha256": "bb007a83ad4c6e917d236b12c3ba0825e89771f9c15ec68b504a4e1fdf8943b6",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.5660421152909597,
+              "no_speech_prob": 0.027774939313530922,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792475874.m4a": {
+      "index": 1424,
+      "epoch": 1792475874,
+      "sha256": "bafb3a21483b07ec0ecd9da18e258e820b656271aa07bd89a908298d235f7462",
+      "passes": {
+        "original": {
+          "text": "Medical will be transporting the patient. You can clear all 5J units.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.28,
+              "text": " Medical will be transporting the patient. You can clear all 5J units.",
+              "avg_logprob": -0.45884344975153607,
+              "no_speech_prob": 0.006486323196440935,
+              "compression_ratio": 0.9452054794520548
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Medical will be transporting the patients into their all 5-year units.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.28,
+              "text": " Medical will be transporting the patients into their all 5-year units.",
+              "avg_logprob": -0.6245345508351046,
+              "no_speech_prob": 0.0054095033556222916,
+              "compression_ratio": 0.9859154929577465
+            }
+          ]
+        },
+        "context": {
+          "text": "Medical will be transporting patients. You can clear all 5J units.",
+          "prompt": "Go ahead.",
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.24,
+              "text": " Medical will be transporting patients. You can clear all 5J units.",
+              "avg_logprob": -0.4079899787902832,
+              "no_speech_prob": 0.012765498831868172,
+              "compression_ratio": 0.9428571428571428
+            }
+          ]
+        }
+      }
+    }
+  }
+}

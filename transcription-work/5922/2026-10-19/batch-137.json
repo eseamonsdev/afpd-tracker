@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-19",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792469743.m4a": {
+      "index": 1362,
+      "epoch": 1792469743,
+      "sha256": "b26d88a653d04f3251178d87dd5a010f57e6e983741c5d85b0450e3d4490de71",
+      "passes": {
+        "original": {
+          "text": "57 North 900 West at the EFA select suite.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 57 North 900 West at the EFA select suite.",
+              "avg_logprob": -0.5234932942049844,
+              "no_speech_prob": 0.0719558447599411,
+              "compression_ratio": 0.84
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792469749.m4a": {
+      "index": 1363,
+      "epoch": 1792469749,
+      "sha256": "81e39d6676059eb55a7841c06737804ba6a3241afacf799c7427a551e2b1312c",
+      "passes": {
+        "original": {
+          "text": "for a higher-alarm sprinkler system switch, drop-down 22-0-9.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.2,
+              "text": " for a higher-alarm sprinkler system switch, drop-down 22-0-9.",
+              "avg_logprob": -0.6403363372968591,
+              "no_speech_prob": 0.005129125434905291,
+              "compression_ratio": 0.8970588235294118
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792469755.m4a": {
+      "index": 1364,
+      "epoch": 1792469755,
+      "sha256": "35ea4d568aa688f0a8d4556ed3b028da15c79cd3fd86877ae1574886f2c8e661",
+      "passes": {
+        "original": {
+          "text": "10-4, you get a fire arrest.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 10-4, you get a fire arrest.",
+              "avg_logprob": -0.5151604689084567,
+              "no_speech_prob": 0.057953570038080215,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "filtered": {
+          "text": "10-4, we've got a fire address.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 10-4, we've got a fire address.",
+              "avg_logprob": -0.5448938863618034,
+              "no_speech_prob": 0.06308585405349731,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "context": {
+          "text": "10-4, you get a fire arrest.",
+          "prompt": "57 North 900 West at the EFA select suite. for a higher-alarm sprinkler system switch, drop-down 22-0-9.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 10-4, you get a fire arrest.",
+              "avg_logprob": -0.46433274562542254,
+              "no_speech_prob": 0.05042831227183342,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        }
+      }
+    }
+  }
+}
