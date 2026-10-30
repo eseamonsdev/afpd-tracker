@@ -1,0 +1,508 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-08",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791510509.m4a": {
+      "index": 1211,
+      "epoch": 1791510509,
+      "sha256": "d7d3a567974cd4dcc9e5030bdf365a3e669509e033442e0b7d39d47fa41dd91d",
+      "passes": {
+        "original": {
+          "text": "I have GG in traffic.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I have GG in traffic.",
+              "avg_logprob": -0.77072630988227,
+              "no_speech_prob": 0.05627640709280968,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hi Gigi and traffic",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hi Gigi and traffic",
+              "avg_logprob": -0.8605132177472115,
+              "no_speech_prob": 0.07592111825942993,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "I have GG in traffic.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I have GG in traffic.",
+              "avg_logprob": -0.77072630988227,
+              "no_speech_prob": 0.05627640709280968,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791510512.m4a": {
+      "index": 1212,
+      "epoch": 1791510512,
+      "sha256": "071bb6fbafb906e04c567fe8152472a8ce96f3d107b8baecb89e93308b14df72",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.84,
+              "text": " Go ahead.",
+              "avg_logprob": -0.5080333848794302,
+              "no_speech_prob": 0.10619323700666428,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791510514.m4a": {
+      "index": 1213,
+      "epoch": 1791510514,
+      "sha256": "edb388a6d989a272bb83574aa00f82eef641fe9d7785b134ee8e90d3c4304a4b",
+      "passes": {
+        "original": {
+          "text": "1800 Street 4700 West",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.12,
+              "text": " 1800 Street 4700 West",
+              "avg_logprob": -0.5888355001807213,
+              "no_speech_prob": 0.03546896204352379,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "filtered": {
+          "text": "1800 Street 4700 West",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.140000000000001,
+              "text": " 1800 Street 4700 West",
+              "avg_logprob": -0.6551303043961525,
+              "no_speech_prob": 0.022972779348492622,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "context": {
+          "text": "1800 Street 4700 West.",
+          "prompt": "I have GG in traffic. Go ahead.",
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.12,
+              "text": " 1800 Street 4700 West.",
+              "avg_logprob": -0.5293651156955295,
+              "no_speech_prob": 0.010313008911907673,
+              "compression_ratio": 0.7857142857142857
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791510524.m4a": {
+      "index": 1214,
+      "epoch": 1791510524,
+      "sha256": "2b2a31e6b992d5892fa3ad73197cbece5c456a79d8e20bc24ecc7dffd44c7c66",
+      "passes": {
+        "original": {
+          "text": "Confirm the first coordinate.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Confirm the first coordinate.",
+              "avg_logprob": -0.49431371688842773,
+              "no_speech_prob": 0.08838733285665512,
+              "compression_ratio": 0.8285714285714286
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791510528.m4a": {
+      "index": 1215,
+      "epoch": 1791510528,
+      "sha256": "eae50f0780d03236b751952a09bc23b18d10a662a189b8802438815b7337319d",
+      "passes": {
+        "original": {
+          "text": "1,800 north.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 1,800 north.",
+              "avg_logprob": -0.7718201726675034,
+              "no_speech_prob": 0.04715487360954285,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "1800 North",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.6,
+              "text": " 1800 North",
+              "avg_logprob": -0.597802734375,
+              "no_speech_prob": 0.023252492770552635,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "1800 North",
+          "prompt": "Go ahead. 1800 Street 4700 West Confirm the first coordinate.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.58,
+              "text": " 1800 North",
+              "avg_logprob": -0.40091958045959475,
+              "no_speech_prob": 0.06090173497796059,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791510596.m4a": {
+      "index": 1217,
+      "epoch": 1791510596,
+      "sha256": "638baf6e682d0a35e65f9da4ecf6b400a2360b9231b5484eb29b036d32749bef",
+      "passes": {
+        "original": {
+          "text": "5G81 clear",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G81 clear",
+              "avg_logprob": -0.6072794539587838,
+              "no_speech_prob": 0.027391167357563972,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J81 cleared",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J81 cleared",
+              "avg_logprob": -0.7013904026576451,
+              "no_speech_prob": 0.0715794563293457,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "5G81 clear",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G81 clear",
+              "avg_logprob": -0.6072794539587838,
+              "no_speech_prob": 0.027391167357563972,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791510599.m4a": {
+      "index": 1218,
+      "epoch": 1791510599,
+      "sha256": "c761612577a1f83e67db0b87b2917bdec7d738f6b021d72b0a6d9025a9e7372f",
+      "passes": {
+        "original": {
+          "text": "Time for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Time for it.",
+              "avg_logprob": -0.7174900429589408,
+              "no_speech_prob": 0.0371711403131485,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Time for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Time for it.",
+              "avg_logprob": -0.7671655246189663,
+              "no_speech_prob": 0.03217621520161629,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "10-4",
+          "prompt": "5G81 clear",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-4",
+              "avg_logprob": -0.7302149136861166,
+              "no_speech_prob": 0.01306631974875927,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791510988.m4a": {
+      "index": 1219,
+      "epoch": 1791510988,
+      "sha256": "c7838995453a53281da02425583be070c3a8afa7752f927a8f9c8d3c8abc68fe",
+      "passes": {
+        "original": {
+          "text": "5J47 traffic",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J47 traffic",
+              "avg_logprob": -0.3636416622570583,
+              "no_speech_prob": 0.013225252740085125,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J47 traffic.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J47 traffic.",
+              "avg_logprob": -0.5209315866231918,
+              "no_speech_prob": 0.014340781606733799,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "5J47 traffic",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J47 traffic",
+              "avg_logprob": -0.3636416622570583,
+              "no_speech_prob": 0.013225252740085125,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791510992.m4a": {
+      "index": 1220,
+      "epoch": 1791510992,
+      "sha256": "0fb531e43625868c879f2d5388c413868070a843d6191e2e4018013ef8d9965f",
+      "passes": {
+        "original": {
+          "text": "5J47.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J47.",
+              "avg_logprob": -0.3690886412348066,
+              "no_speech_prob": 0.03493916615843773,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J47.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J47.",
+              "avg_logprob": -0.6467646871294294,
+              "no_speech_prob": 0.05187216028571129,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "5J47",
+          "prompt": "5J47 traffic",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J47",
+              "avg_logprob": -0.38849857946236926,
+              "no_speech_prob": 0.016480078920722008,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    }
+  }
+}
