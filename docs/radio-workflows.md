@@ -100,3 +100,8 @@ a completed selection does not establish complete-day transcription.
 Targeted AFPD selections checkpoint after at most ten target clips so reconciliation
 can proceed while later batches run. Whole-archive runs retain their 200-clip
 processing interval. Checkpoint file layout remains ten archive clips per file.
+
+
+## Generic browser metadata collection
+
+The [local Playwright collector](../scripts/openmhz-browser-test/README.md) accepts any Utah County `dcfems` talkgroup: `node collect-openmhz.cjs --talkgroup=6223 --date=2026-10-29`. The audit runner accepts `--talkgroups=ID,ID --dates=DAY,DAY --known-ids=PATH` and processes each day/group sequentially. It retains every source-ID entry and reports exact reference-list overlaps and completeness separately. These inspection tools do not download audio or publish archive changes.

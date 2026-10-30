@@ -1,0 +1,6 @@
+const test=require('node:test'),assert=require('node:assert/strict');
+const {midnight,nextDate,validateDate}=require('./collect-openmhz.cjs');
+const {sourceIds,compare}=require('./audit-talkgroups.cjs');
+test('Mountain midnight covers DST days correctly',()=>{assert.equal(midnight('2026-03-09')-midnight('2026-03-08'),23*3600000);assert.equal(midnight('2025-11-03')-midnight('2025-11-02'),25*3600000);assert.equal(midnight('2026-10-30'),Date.parse('2026-10-30T06:00:00Z'));assert.equal(nextDate('2026-12-31'),'2027-01-01')});
+test('calendar validation rejects normalized and malformed dates',()=>{for(const d of ['2026-02-30','bad','2026-13-01'])assert.throws(()=>validateDate(d));assert.equal(validateDate('2026-10-29'),'2026-10-29')});
+test('every source entry is compared with exact matching and placeholders excluded',()=>{const c={_id:'call',time:'2026-10-29T12:00:00Z',srcList:[{src:14570735,pos:0},{src:13230584,pos:2.16},{src:0,pos:4}],radio_ids:['13230584','-1']};assert.deepEqual(sourceIds(c),['14570735','13230584']);const r=compare([c],new Set(['13230584','0']));assert.equal(r.matching_calls,1);assert.deepEqual(r.distinct_matching_ids,['13230584']);assert.equal(compare([c],new Set(['1323058'])).matching_calls,0)});

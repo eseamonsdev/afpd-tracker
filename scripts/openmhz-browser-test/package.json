@@ -2,6 +2,12 @@
   "name": "openmhz-browser-url-test",
   "private": true,
   "type": "module",
-  "scripts": { "collect": "node collect-urls.mjs" },
-  "dependencies": { "playwright": "1.64.0" }
+  "scripts": {
+    "collect": "node collect-openmhz.cjs",
+    "audit": "node audit-talkgroups.cjs",
+    "test": "node --test collector.test.cjs"
+  },
+  "dependencies": {
+    "playwright": "1.64.0"
+  }
 }
