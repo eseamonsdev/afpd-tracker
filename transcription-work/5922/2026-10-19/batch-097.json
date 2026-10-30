@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-19",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792451022.m4a": {
+      "index": 965,
+      "epoch": 1792451022,
+      "sha256": "5f11a099dd2eeb2238eba96d8369febd06069a0f0cf6a6461f4ac78242b57363",
+      "passes": {
+        "original": {
+          "text": "IACOPY 380251703",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " IACOPY 380251703",
+              "avg_logprob": -0.6690121780742299,
+              "no_speech_prob": 0.004299776628613472,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792451077.m4a": {
+      "index": 966,
+      "epoch": 1792451077,
+      "sha256": "d812dff6f88472330010f69d24c1897c0daeafa723aca6b4e29f969af3d27684",
+      "passes": {
+        "original": {
+          "text": "5J, 121.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J, 121.",
+              "avg_logprob": -0.6806542947888374,
+              "no_speech_prob": 0.06859840452671051,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J, 171.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J, 171.",
+              "avg_logprob": -0.7711231857538223,
+              "no_speech_prob": 0.05826105549931526,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "5J-171",
+          "prompt": "IACOPY 380251703",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.8000000000000003,
+              "text": " 5J-171",
+              "avg_logprob": -0.8464849846703666,
+              "no_speech_prob": 0.03769410774111748,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792451082.m4a": {
+      "index": 967,
+      "epoch": 1792451082,
+      "sha256": "cfbe43407049465550bf5d3276bf91ca0ccb0d8e9ea8e5db3f55aec1ef973573",
+      "passes": {
+        "original": {
+          "text": "Can you update the address to 472 North, 400 West?",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.4,
+              "text": " Can you update the address to 472 North, 400 West?",
+              "avg_logprob": -0.2743413392454386,
+              "no_speech_prob": 0.0043667457066476345,
+              "compression_ratio": 0.8620689655172413
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Can you update the address to 472 North, 400 West?",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.36,
+              "text": " Can you update the address to 472 North, 400 West?",
+              "avg_logprob": -0.31704925931990147,
+              "no_speech_prob": 0.003879571333527565,
+              "compression_ratio": 0.8620689655172413
+            }
+          ]
+        },
+        "context": {
+          "text": "Can you update the address to 472 North, 400 West?",
+          "prompt": "IACOPY 380251703 5J, 121.",
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.4,
+              "text": " Can you update the address to 472 North, 400 West?",
+              "avg_logprob": -0.26720029301941395,
+              "no_speech_prob": 0.04350833594799042,
+              "compression_ratio": 0.8620689655172413
+            }
+          ]
+        }
+      }
+    }
+  }
+}

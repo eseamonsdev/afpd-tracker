@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-19",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792450557.m4a": {
+      "index": 952,
+      "epoch": 1792450557,
+      "sha256": "22854ea05cea9c755d98a828175b348b49e7dd026abecc12a7760b6c9efd293d",
+      "passes": {
+        "original": {
+          "text": "5K, 171, coffee parking problem by 21 off the cat.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.7600000000000002,
+              "text": " 5K, 171, coffee parking problem by 21 off the cat.",
+              "avg_logprob": -0.47652137980741616,
+              "no_speech_prob": 0.04459519684314728,
+              "compression_ratio": 0.8771929824561403
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792450562.m4a": {
+      "index": 953,
+      "epoch": 1792450562,
+      "sha256": "53f628b2e500453bc16f967c93691461e361679b3f35bdd9eb8001962ea4cc58",
+      "passes": {
+        "original": {
+          "text": "Hi, Jonathan, why are you happy?",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hi, Jonathan, why are you happy?",
+              "avg_logprob": -0.9197364250818888,
+              "no_speech_prob": 0.1802075356245041,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hi, Jonathan. Good to see you. Hi, Kathy.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Hi, Jonathan.",
+              "avg_logprob": -0.787466362118721,
+              "no_speech_prob": 0.1024787500500679,
+              "compression_ratio": 0.8913043478260869
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Good to see you.",
+              "avg_logprob": -0.787466362118721,
+              "no_speech_prob": 0.1024787500500679,
+              "compression_ratio": 0.8913043478260869
+            },
+            {
+              "start": 2.0,
+              "end": 2.02,
+              "text": " Hi, Kathy.",
+              "avg_logprob": -0.787466362118721,
+              "no_speech_prob": 0.1024787500500679,
+              "compression_ratio": 0.8913043478260869
+            }
+          ]
+        },
+        "context": {
+          "text": "Hi, Jonathan, why are you happy?",
+          "prompt": "5K, 171, coffee parking problem by 21 off the cat.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hi, Jonathan, why are you happy?",
+              "avg_logprob": -0.8863121519486109,
+              "no_speech_prob": 0.1566489189863205,
+              "compression_ratio": 0.8
+            }
+          ]
+        }
+      }
+    }
+  }
+}
