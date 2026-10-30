@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-30",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1790824889.m4a": {
+      "index": 1277,
+      "epoch": 1790824889,
+      "sha256": "05303326a59dacd6ae7905866491e6985f5187a90dcc553f78e248106369dd6b",
+      "passes": {
+        "original": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.5773113114493233,
+              "no_speech_prob": 0.007759435568004847,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790824893.m4a": {
+      "index": 1278,
+      "epoch": 1790824893,
+      "sha256": "011923aefc267965e15a2ea9ee5db85e2f9051e1e0084878f5151d5cea38c469",
+      "passes": {
+        "original": {
+          "text": "But we're just going you can put me back on my missing child",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " But we're just going you can put me back on my missing child",
+              "avg_logprob": -0.46835846059462605,
+              "no_speech_prob": 0.0023163941223174334,
+              "compression_ratio": 0.9230769230769231
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it, just go in and you can put the impact on my missing child.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.7600000000000002,
+              "text": " Go for it, just go in and you can put the impact on my missing child.",
+              "avg_logprob": -0.5090490976969401,
+              "no_speech_prob": 0.0008958075195550919,
+              "compression_ratio": 1.0147058823529411
+            }
+          ]
+        },
+        "context": {
+          "text": "Go for it. Just go in. You can put the back on my missing child.",
+          "prompt": "Go for it.",
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Go for it. Just go in. You can put the back on my missing child.",
+              "avg_logprob": -0.4083467097509475,
+              "no_speech_prob": 0.002737878356128931,
+              "compression_ratio": 0.9411764705882353
+            }
+          ]
+        }
+      }
+    }
+  }
+}
