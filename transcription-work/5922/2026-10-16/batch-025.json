@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-16",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792161131.m4a": {
+      "index": 241,
+      "epoch": 1792161131,
+      "sha256": "1b32168b0f3b16b2d3203ab205148cdefc369aee62e9eb84df81bc28c0d27138",
+      "passes": {
+        "original": {
+          "text": "600 West, 1120 North, Local 4, Golf 6, Lima, November.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 600 West, 1120 North, Local 4, Golf 6, Lima, November.",
+              "avg_logprob": -0.4983499825000763,
+              "no_speech_prob": 0.10740616917610168,
+              "compression_ratio": 0.9152542372881356
+            }
+          ]
+        },
+        "filtered": {
+          "text": "600 West, 1120 North, Local 4, Golf 6, Lima, November",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.24,
+              "text": " 600 West, 1120 North, Local 4, Golf 6, Lima, November",
+              "avg_logprob": -0.44364778932772186,
+              "no_speech_prob": 0.07090771198272705,
+              "compression_ratio": 0.9137931034482759
+            }
+          ]
+        },
+        "context": {
+          "text": "600 West, 1120 North, Local 4, Golf 6, Lima, November.",
+          "prompt": "5J35 traffic.",
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.2,
+              "text": " 600 West, 1120 North, Local 4, Golf 6, Lima, November.",
+              "avg_logprob": -0.48587205708026887,
+              "no_speech_prob": 0.0322120264172554,
+              "compression_ratio": 0.9152542372881356
+            }
+          ]
+        }
+      }
+    }
+  }
+}
