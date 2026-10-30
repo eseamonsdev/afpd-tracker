@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-18",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792367720.m4a": {
+      "index": 751,
+      "epoch": 1792367720,
+      "sha256": "e0275de1de0a38b751017742b9b35a7ac4aea3b167e484a29a2296765b61d4cd",
+      "passes": {
+        "original": {
+          "text": "Advising the individuals passed out with what looks like drugs on their lap. We have started medical. They'll be staging in the area.",
+          "prompt": null,
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 34,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.04,
+              "text": " Advising the individuals passed out with what looks like drugs on their lap.",
+              "avg_logprob": -0.2377887214933123,
+              "no_speech_prob": 0.0010051074204966426,
+              "compression_ratio": 1.2201834862385321
+            },
+            {
+              "start": 4.04,
+              "end": 5.04,
+              "text": " We have started medical.",
+              "avg_logprob": -0.2377887214933123,
+              "no_speech_prob": 0.0010051074204966426,
+              "compression_ratio": 1.2201834862385321
+            },
+            {
+              "start": 5.04,
+              "end": 6.16,
+              "text": " They'll be staging in the area.",
+              "avg_logprob": -0.2377887214933123,
+              "no_speech_prob": 0.0010051074204966426,
+              "compression_ratio": 1.2201834862385321
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792367728.m4a": {
+      "index": 752,
+      "epoch": 1792367728,
+      "sha256": "e46463dfdea4de9ae6b0238bbfa044a9141cc309e4e51c021add80d81d64c1ae",
+      "passes": {
+        "original": {
+          "text": "Coffee.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Coffee.",
+              "avg_logprob": -0.7914260864257813,
+              "no_speech_prob": 0.030250309035182,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Coffee.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Coffee.",
+              "avg_logprob": -0.7358553409576416,
+              "no_speech_prob": 0.02578037977218628,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Coffee.",
+          "prompt": "It's going to be at the Walmart of Grassland. individuals in a light gray or blue Volkswagen 8 Hotel 2 Alpha Fox Advising the individuals passed out with what looks like drugs on their lap. We have started medical. They'll be staging in the area.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Coffee.",
+              "avg_logprob": -0.5747362613677979,
+              "no_speech_prob": 0.04391822591423988,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    }
+  }
+}
