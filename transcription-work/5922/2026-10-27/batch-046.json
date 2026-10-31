@@ -1,0 +1,537 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-27",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793122443.m4a": {
+      "index": 451,
+      "epoch": 1793122443,
+      "sha256": "38878a3d4a85e73b8566fd40aae230563facdbee5ade1123d2d22402f96cd7ce",
+      "passes": {
+        "original": {
+          "text": "The vehicle has now left heading westbound on 1100 north. The plate is 510 Fox Romeo Charlie.",
+          "prompt": null,
+          "duration_seconds": 8.064,
+          "token_limit": 89,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " The vehicle has now left heading westbound on 1100 north. The plate is 510 Fox Romeo Charlie.",
+              "avg_logprob": -0.2659118149591529,
+              "no_speech_prob": 0.01991918496787548,
+              "compression_ratio": 1.0333333333333334
+            }
+          ]
+        },
+        "filtered": {
+          "text": "The vehicle has now left heading westbound on 1100 north. The plate is 510 Fox Romeo Charlie.",
+          "prompt": null,
+          "duration_seconds": 8.064,
+          "token_limit": 89,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.78,
+              "text": " The vehicle has now left heading westbound on 1100 north.",
+              "avg_logprob": -0.43617050170898436,
+              "no_speech_prob": 0.011704441159963608,
+              "compression_ratio": 1.0333333333333334
+            },
+            {
+              "start": 4.78,
+              "end": 7.36,
+              "text": " The plate is 510 Fox Romeo Charlie.",
+              "avg_logprob": -0.43617050170898436,
+              "no_speech_prob": 0.011704441159963608,
+              "compression_ratio": 1.0333333333333334
+            }
+          ]
+        },
+        "context": {
+          "text": "The vehicle has now left heading westbound on 1100 north. The plate is 510 Fox Romeo Charlie.",
+          "prompt": "Have a great evening. Sorry.",
+          "duration_seconds": 8.064,
+          "token_limit": 89,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " The vehicle has now left heading westbound on 1100 north. The plate is 510 Fox Romeo Charlie.",
+              "avg_logprob": -0.25842214148977527,
+              "no_speech_prob": 0.020274406298995018,
+              "compression_ratio": 1.0333333333333334
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793122455.m4a": {
+      "index": 452,
+      "epoch": 1793122455,
+      "sha256": "98efb3941542dc270d78fbbefe54b63535a0f58db7ff71260d4c1f6bac4cf7b9",
+      "passes": {
+        "original": {
+          "text": "Thanks for watching!",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thanks for watching!",
+              "avg_logprob": -1.0042837347303117,
+              "no_speech_prob": 0.404392272233963,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -1.0252901911735535,
+              "no_speech_prob": 0.3221774995326996,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Thanks for watching.",
+          "prompt": "Have a great evening. Sorry. The vehicle has now left heading westbound on 1100 north. The plate is 510 Fox Romeo Charlie.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thanks for watching.",
+              "avg_logprob": -0.8385260275432042,
+              "no_speech_prob": 0.5530046820640564,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793122467.m4a": {
+      "index": 453,
+      "epoch": 1793122467,
+      "sha256": "1cd146ab4e02f755e20d95e97e45939233760019169980c08c5cfb768af03419",
+      "passes": {
+        "original": {
+          "text": "Shabbat shalom.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Shabbat shalom.",
+              "avg_logprob": -1.0023101806640624,
+              "no_speech_prob": 0.15005306899547577,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793122469.m4a": {
+      "index": 454,
+      "epoch": 1793122469,
+      "sha256": "5a866d8c9721184ae44c619e1e892f7079ebf4fb37841f42546dde3326cba2f4",
+      "passes": {
+        "original": {
+          "text": "7322, I copy the vote for two.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7322, I copy the vote for two.",
+              "avg_logprob": -0.643168357702402,
+              "no_speech_prob": 0.03924568369984627,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793122473.m4a": {
+      "index": 455,
+      "epoch": 1793122473,
+      "sha256": "c7d4ec35014e86aa0c7e9b3cafab535b883fd5cc04d0c8592a8e21f57486a316",
+      "passes": {
+        "original": {
+          "text": "Bye-bye.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.6863561868667603,
+              "no_speech_prob": 0.15378351509571075,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bye-bye. Bye-bye.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.6669491804563082,
+              "no_speech_prob": 0.1792607605457306,
+              "compression_ratio": 0.8947368421052632
+            },
+            {
+              "start": 1.0,
+              "end": 1.5,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.6669491804563082,
+              "no_speech_prob": 0.1792607605457306,
+              "compression_ratio": 0.8947368421052632
+            }
+          ]
+        },
+        "context": {
+          "text": "Bye bye.",
+          "prompt": "Thanks for watching! Shabbat shalom. 7322, I copy the vote for two.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.3,
+              "text": " Bye bye.",
+              "avg_logprob": -0.8484919865926107,
+              "no_speech_prob": 0.26509320735931396,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793122482.m4a": {
+      "index": 456,
+      "epoch": 1793122482,
+      "sha256": "fb1953018f1a933ae1c4097dd6281314eb3294797e2b8391fe9e7dd51641c769",
+      "passes": {
+        "original": {
+          "text": "Head first.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Head first.",
+              "avg_logprob": -1.0971917708714802,
+              "no_speech_prob": 0.05126941576600075,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you. Thank you. Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.4614098299117315,
+              "no_speech_prob": 0.09298350661993027,
+              "compression_ratio": 1.9545454545454546
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.4614098299117315,
+              "no_speech_prob": 0.09298350661993027,
+              "compression_ratio": 1.9545454545454546
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.4614098299117315,
+              "no_speech_prob": 0.09298350661993027,
+              "compression_ratio": 1.9545454545454546
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.4614098299117315,
+              "no_speech_prob": 0.09298350661993027,
+              "compression_ratio": 1.9545454545454546
+            }
+          ]
+        },
+        "context": {
+          "text": "Head first.",
+          "prompt": "Shabbat shalom. 7322, I copy the vote for two. Bye-bye.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.12,
+              "text": " Head first.",
+              "avg_logprob": -1.1151259144147236,
+              "no_speech_prob": 0.060722097754478455,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793122579.m4a": {
+      "index": 457,
+      "epoch": 1793122579,
+      "sha256": "ad1b2831dd1b3665c5e41b97722121422cfa35530fbd3048a9490ca3eed90f9d",
+      "passes": {
+        "original": {
+          "text": "7J18 area.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J18 area.",
+              "avg_logprob": -0.5299365073442459,
+              "no_speech_prob": 0.04878231883049011,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793122583.m4a": {
+      "index": 458,
+      "epoch": 1793122583,
+      "sha256": "6da7e124ae35c217e656424196bc52bdfd4e97b4d40d1c781ee46085a43838de",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7364278793334961,
+              "no_speech_prob": 0.06601931899785995,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7364455223083496,
+              "no_speech_prob": 0.029489295557141304,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "7J18 area.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.8388601303100586,
+              "no_speech_prob": 0.06437496095895767,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793122778.m4a": {
+      "index": 459,
+      "epoch": 1793122778,
+      "sha256": "62b529bcb20b1caca97a0d87066d8bbadb0b907070ad29145d11c8ca293a5dab",
+      "passes": {
+        "original": {
+          "text": "That'll be all right.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " That'll be all right.",
+              "avg_logprob": -0.9185959498087565,
+              "no_speech_prob": 0.07078228145837784,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793122782.m4a": {
+      "index": 460,
+      "epoch": 1793122782,
+      "sha256": "7d8efdf232bf2dcf9e03a11537b2ddc23462d4afb475cff9dddac499acff3e31",
+      "passes": {
+        "original": {
+          "text": "Ten-four.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Ten-four.",
+              "avg_logprob": -0.8638381617409843,
+              "no_speech_prob": 0.07194310426712036,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Jennifer.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Jennifer.",
+              "avg_logprob": -0.9633244514465332,
+              "no_speech_prob": 0.049344468861818314,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you.",
+          "prompt": "That'll be all right.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.6642456352710724,
+              "no_speech_prob": 0.12106238305568695,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    }
+  }
+}
