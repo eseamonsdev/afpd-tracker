@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-28",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793235380.m4a": {
+      "index": 1441,
+      "epoch": 1793235380,
+      "sha256": "3bea2b3961cc479a1bcf8ffc4b410b7fc68d0ef6f4bd0d35312b3a8c0dbd21ce",
+      "passes": {
+        "original": {
+          "text": "I'll be back on the traffic fence at Logist 1021 with R.P.",
+          "prompt": null,
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.6000000000000005,
+              "text": " I'll be back on the traffic fence at Logist 1021 with R.P.",
+              "avg_logprob": -0.4647896687189738,
+              "no_speech_prob": 0.10499665886163712,
+              "compression_ratio": 0.8787878787878788
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793235388.m4a": {
+      "index": 1442,
+      "epoch": 1793235388,
+      "sha256": "665cee536f90526324d27677d901a1a72f6cc053baf715dbaaa6cc3e0e9f7bef",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " Copy.",
+              "avg_logprob": -0.6642727851867676,
+              "no_speech_prob": 0.01060382928699255,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793235390.m4a": {
+      "index": 1443,
+      "epoch": 1793235390,
+      "sha256": "94a4ba7723d014024fb0fe96dd81800d51eee56ad117d12e348dfd627f7f8b92",
+      "passes": {
+        "original": {
+          "text": "J-51, can you show me a ride by 21?",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " J-51, can you show me a ride by 21?",
+              "avg_logprob": -0.5551260709762573,
+              "no_speech_prob": 0.024200327694416046,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        },
+        "filtered": {
+          "text": "D-51, can you show me your RIFI-21?",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " D-51, can you show me your RIFI-21?",
+              "avg_logprob": -0.5770435101456113,
+              "no_speech_prob": 0.014951427467167377,
+              "compression_ratio": 0.875
+            }
+          ]
+        },
+        "context": {
+          "text": "J51, can you show me a ride by 21?",
+          "prompt": "Copy. I'll be back on the traffic fence at Logist 1021 with R.P. Copy.",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " J51, can you show me a ride by 21?",
+              "avg_logprob": -0.5539777994155883,
+              "no_speech_prob": 0.007595196831971407,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        }
+      }
+    }
+  }
+}
