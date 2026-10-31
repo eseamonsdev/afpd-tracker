@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-27",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793153187.m4a": {
+      "index": 1151,
+      "epoch": 1793153187,
+      "sha256": "82e829138b913687e3e2f353a25361a475036134727b4000df4a72e08e36c9ca",
+      "passes": {
+        "original": {
+          "text": "The H-J4, I copy the 10-40 field.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " The H-J4, I copy the 10-40 field.",
+              "avg_logprob": -0.5876669603235581,
+              "no_speech_prob": 0.02337826043367386,
+              "compression_ratio": 0.825
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793153190.m4a": {
+      "index": 1152,
+      "epoch": 1793153190,
+      "sha256": "477267c97596f9c2c1f6304fee049172d4b90721e213f6b12722512c65d93d01",
+      "passes": {
+        "original": {
+          "text": "Copy, 6241 West Diamond, circle.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " Copy, 6241 West Diamond, circle.",
+              "avg_logprob": -0.5815513183673223,
+              "no_speech_prob": 0.0016508077969774604,
+              "compression_ratio": 0.8
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793153219.m4a": {
+      "index": 1153,
+      "epoch": 1793153219,
+      "sha256": "c911c0099d72a8f448738de687748c84cd8ac2c584abeed12fbdbd8b12b49637",
+      "passes": {
+        "original": {
+          "text": "Coming up.",
+          "prompt": null,
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Coming up.",
+              "avg_logprob": -1.249487300713857,
+              "no_speech_prob": 0.4945489168167114,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793153238.m4a": {
+      "index": 1154,
+      "epoch": 1793153238,
+      "sha256": "9fb7b7b1354e5e366a274c5cd13a6dae765c9f73291508f62d574a1ada5ccb33",
+      "passes": {
+        "original": {
+          "text": "5J47 traffic.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J47 traffic.",
+              "avg_logprob": -0.5687147751450539,
+              "no_speech_prob": 0.10314303636550903,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5k47 traffic",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5k47 traffic",
+              "avg_logprob": -0.6830406188964844,
+              "no_speech_prob": 0.16277562081813812,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "5J47 traffic.",
+          "prompt": "The H-J4, I copy the 10-40 field. Copy, 6241 West Diamond, circle. Coming up.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J47 traffic.",
+              "avg_logprob": -0.37027236819267273,
+              "no_speech_prob": 0.023141968995332718,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    }
+  }
+}
