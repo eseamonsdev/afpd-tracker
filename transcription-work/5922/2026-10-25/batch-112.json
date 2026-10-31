@@ -1,0 +1,681 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-25",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792982037.m4a": {
+      "index": 1111,
+      "epoch": 1792982037,
+      "sha256": "9e99acb7fee35a0ab9ec307faf3998c4a290304f5bf900ba2863c90b41b286ce",
+      "passes": {
+        "original": {
+          "text": "Twenty-five, same traffic. Seventy-two, twenty-five.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Twenty-five, same traffic.",
+              "avg_logprob": -0.5632762681870234,
+              "no_speech_prob": 0.043998684734106064,
+              "compression_ratio": 1.0612244897959184
+            },
+            {
+              "start": 2.0,
+              "end": 4.0,
+              "text": " Seventy-two, twenty-five.",
+              "avg_logprob": -0.5632762681870234,
+              "no_speech_prob": 0.043998684734106064,
+              "compression_ratio": 1.0612244897959184
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Twenty-five, same traffic. Seven-two, twenty-five.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.8,
+              "text": " Twenty-five, same traffic.",
+              "avg_logprob": -0.5995272755622864,
+              "no_speech_prob": 0.08355812728404999,
+              "compression_ratio": 1.0
+            },
+            {
+              "start": 1.8,
+              "end": 3.0,
+              "text": " Seven-two, twenty-five.",
+              "avg_logprob": -0.5995272755622864,
+              "no_speech_prob": 0.08355812728404999,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "21st in traffic. 7G20, pace.",
+          "prompt": "He is awake and breathing, and it's just the RP and husband in the home. Yeah, we should. 7G23, are you all being around as well? 7G23.",
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 21st in traffic. 7G20, pace.",
+              "avg_logprob": -0.405702035341944,
+              "no_speech_prob": 0.015370811335742474,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792982041.m4a": {
+      "index": 1112,
+      "epoch": 1792982041,
+      "sha256": "1478253e3125ba52ba1506e06da5e03ccab38bca847493fdad533b7d8c79afbf",
+      "passes": {
+        "original": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.2,
+              "text": " Thank you.",
+              "avg_logprob": -0.8341086904207865,
+              "no_speech_prob": 0.27942749857902527,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thanks for watching!",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thanks for watching!",
+              "avg_logprob": -0.9277914251599994,
+              "no_speech_prob": 0.40499383211135864,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "Twenty-five.",
+          "prompt": "Yeah, we should. 7G23, are you all being around as well? 7G23. Twenty-five, same traffic. Seventy-two, twenty-five.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Twenty-five.",
+              "avg_logprob": -0.9239350727626255,
+              "no_speech_prob": 0.5286717414855957,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792982044.m4a": {
+      "index": 1113,
+      "epoch": 1792982044,
+      "sha256": "4058fc210e6619ab0dd1c543886840e77b724d4a9b5b0b98de2349b774ada692",
+      "passes": {
+        "original": {
+          "text": "We can also honor you.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " We can also honor you.",
+              "avg_logprob": -1.2193054623074002,
+              "no_speech_prob": 0.24962446093559265,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We've got one.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.28,
+              "text": " We've got one.",
+              "avg_logprob": -1.17446269094944,
+              "no_speech_prob": 0.23542076349258423,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you.",
+          "prompt": "7G23, are you all being around as well? 7G23. Twenty-five, same traffic. Seventy-two, twenty-five. Thank you.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.8589202165603638,
+              "no_speech_prob": 0.31753572821617126,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792982047.m4a": {
+      "index": 1114,
+      "epoch": 1792982047,
+      "sha256": "09ffce9a4ebea1e1f12660e78068ffae9bbde4563ba277c4ba48a8729b483e0f",
+      "passes": {
+        "original": {
+          "text": "Watching it, I can't copy.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Watching it, I can't copy.",
+              "avg_logprob": -0.5646209825168956,
+              "no_speech_prob": 0.011774136684834957,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Why should it I can't copy?",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Why should it I can't copy?",
+              "avg_logprob": -0.5652465603568337,
+              "no_speech_prob": 0.013754119165241718,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        },
+        "context": {
+          "text": "Last unit I can't copy.",
+          "prompt": "Twenty-five, same traffic. Seventy-two, twenty-five. Thank you. We can also honor you.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Last unit I can't copy.",
+              "avg_logprob": -0.5052771627902984,
+              "no_speech_prob": 0.003222959814593196,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792982050.m4a": {
+      "index": 1115,
+      "epoch": 1792982050,
+      "sha256": "2f6c6b308d18dd82517b9f2af9a4a652a1e8149f5e201a4ccb2eedc9eec866af",
+      "passes": {
+        "original": {
+          "text": "7220, how much are out to us? 7220. 7220.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7220, how much are out to us?",
+              "avg_logprob": -0.644188087919484,
+              "no_speech_prob": 0.03538668155670166,
+              "compression_ratio": 0.9534883720930233
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " 7220.",
+              "avg_logprob": -0.644188087919484,
+              "no_speech_prob": 0.03538668155670166,
+              "compression_ratio": 0.9534883720930233
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " 7220.",
+              "avg_logprob": -0.644188087919484,
+              "no_speech_prob": 0.03538668155670166,
+              "compression_ratio": 0.9534883720930233
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7020, I'll just route to it. 7020.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7020, I'll just route to it.",
+              "avg_logprob": -0.578956299357944,
+              "no_speech_prob": 0.01614135131239891,
+              "compression_ratio": 0.8292682926829268
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " 7020.",
+              "avg_logprob": -0.578956299357944,
+              "no_speech_prob": 0.01614135131239891,
+              "compression_ratio": 0.8292682926829268
+            }
+          ]
+        },
+        "context": {
+          "text": "7-20, I'll just route to this. 7-20.",
+          "prompt": "Thank you. We can also honor you. Watching it, I can't copy.",
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.2,
+              "text": " 7-20, I'll just route to this. 7-20.",
+              "avg_logprob": -0.620638993051317,
+              "no_speech_prob": 0.012004446238279343,
+              "compression_ratio": 0.8372093023255814
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792982104.m4a": {
+      "index": 1116,
+      "epoch": 1792982104,
+      "sha256": "993a0d4e5810bc6f3189169cdac3554d2885039afc6239f3c634ceac000bc007",
+      "passes": {
+        "original": {
+          "text": "70 to 23, ready.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 70 to 23, ready.",
+              "avg_logprob": -0.7570738262600369,
+              "no_speech_prob": 0.034290656447410583,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7-8-23 ready.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-8-23 ready.",
+              "avg_logprob": -0.8344176292419434,
+              "no_speech_prob": 0.010325231589376926,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "7220 if you're ready.",
+          "prompt": "We can also honor you. Watching it, I can't copy. 7220, how much are out to us? 7220. 7220.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7220 if you're ready.",
+              "avg_logprob": -0.5290858447551727,
+              "no_speech_prob": 0.006921463180333376,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792982107.m4a": {
+      "index": 1117,
+      "epoch": 1792982107,
+      "sha256": "dcd7b7ed2b73c3e67d2bb578b8a5220803e17582b0ba7c371473e78bc0532f6b",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7274527549743652,
+              "no_speech_prob": 0.04494713619351387,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6574172973632812,
+              "no_speech_prob": 0.03948744013905525,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "Watching it, I can't copy. 7220, how much are out to us? 7220. 7220. 70 to 23, ready.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " Copy.",
+              "avg_logprob": -0.5683555603027344,
+              "no_speech_prob": 0.022427326068282127,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792982111.m4a": {
+      "index": 1118,
+      "epoch": 1792982111,
+      "sha256": "c906228aa6be702bbe75f93bce7c268f3e8cd2ff927baa67c52a686d4bafd654",
+      "passes": {
+        "original": {
+          "text": "7J29",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J29",
+              "avg_logprob": -0.5389684438705444,
+              "no_speech_prob": 0.06568989902734756,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Seven to twenty-nine.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Seven to twenty-nine.",
+              "avg_logprob": -0.8343365987141927,
+              "no_speech_prob": 0.043423816561698914,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "context": {
+          "text": "70 to 29.",
+          "prompt": "70 to 23, ready. Copy.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 70 to 29.",
+              "avg_logprob": -0.5287246533802578,
+              "no_speech_prob": 0.0072002895176410675,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792982113.m4a": {
+      "index": 1119,
+      "epoch": 1792982113,
+      "sha256": "d6c33f07c71cb5c548bf8c0b8977ff40f075bd772f833be5e3acaf99420d89b4",
+      "passes": {
+        "original": {
+          "text": "7-3-20",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-3-20",
+              "avg_logprob": -0.8227484077215195,
+              "no_speech_prob": 0.13919664919376373,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7-3-20",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-3-20",
+              "avg_logprob": -0.794597364962101,
+              "no_speech_prob": 0.08896646648645401,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "7J20.",
+          "prompt": "70 to 23, ready. Copy. 7J29",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 7J20.",
+              "avg_logprob": -0.6771727119173322,
+              "no_speech_prob": 0.1080460324883461,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792982204.m4a": {
+      "index": 1120,
+      "epoch": 1792982204,
+      "sha256": "60b011cf508bcb1b95fc6dd63b12396308d7d2413be681b6157c4b0d4c13501d",
+      "passes": {
+        "original": {
+          "text": "7J25.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J25.",
+              "avg_logprob": -0.6490853343691144,
+              "no_speech_prob": 0.029455894604325294,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7-J-20 pace.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-J-20 pace.",
+              "avg_logprob": -0.8495482385158539,
+              "no_speech_prob": 0.025663558393716812,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "7J25.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J25.",
+              "avg_logprob": -0.6490853343691144,
+              "no_speech_prob": 0.029455894604325294,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
