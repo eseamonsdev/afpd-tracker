@@ -1,0 +1,697 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-19",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792451943.m4a": {
+      "index": 991,
+      "epoch": 1792451943,
+      "sha256": "06ea59faa13933eef41c957ba1d878ebeae4769ec8bc15cc532f7f3eb4c4f8b2",
+      "passes": {
+        "original": {
+          "text": "2217 North, 1420 West, 2217 North, 1420 West.",
+          "prompt": null,
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 2217 North, 1420 West, 2217 North, 1420 West.",
+              "avg_logprob": -0.3743113875389099,
+              "no_speech_prob": 0.0835007056593895,
+              "compression_ratio": 1.2857142857142858
+            }
+          ]
+        },
+        "filtered": {
+          "text": "2217 North, 1421, 2217 North, 1420 West.",
+          "prompt": null,
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.68,
+              "text": " 2217 North, 1421, 2217 North, 1420 West.",
+              "avg_logprob": -0.3952852454450395,
+              "no_speech_prob": 0.042403168976306915,
+              "compression_ratio": 1.1111111111111112
+            }
+          ]
+        },
+        "context": {
+          "text": "2217 North, 1420 West. 2217 North, 1420 West.",
+          "prompt": "copy. 7J83, happy animal complaint. Go ahead.",
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " 2217 North, 1420 West. 2217 North, 1420 West.",
+              "avg_logprob": -0.3080829319201018,
+              "no_speech_prob": 0.06964241713285446,
+              "compression_ratio": 1.3235294117647058
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792451949.m4a": {
+      "index": 992,
+      "epoch": 1792451949,
+      "sha256": "c614f5c8f7484100a8b65405603e9f368dc298a81a51188052d994685e252307",
+      "passes": {
+        "original": {
+          "text": "The neighbor leaves their four dogs in their yard all the time. The dogs bark. RP wants to be anonymous.",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.2,
+              "text": " The neighbor leaves their four dogs in their yard",
+              "avg_logprob": -0.2762678964063525,
+              "no_speech_prob": 0.01233217678964138,
+              "compression_ratio": 1.1555555555555554
+            },
+            {
+              "start": 2.2,
+              "end": 2.88,
+              "text": " all the time.",
+              "avg_logprob": -0.2762678964063525,
+              "no_speech_prob": 0.01233217678964138,
+              "compression_ratio": 1.1555555555555554
+            },
+            {
+              "start": 2.88,
+              "end": 4.0,
+              "text": " The dogs bark.",
+              "avg_logprob": -0.2762678964063525,
+              "no_speech_prob": 0.01233217678964138,
+              "compression_ratio": 1.1555555555555554
+            },
+            {
+              "start": 4.0,
+              "end": 6.32,
+              "text": " RP wants to be anonymous.",
+              "avg_logprob": -0.2762678964063525,
+              "no_speech_prob": 0.01233217678964138,
+              "compression_ratio": 1.1555555555555554
+            }
+          ]
+        },
+        "filtered": {
+          "text": "The neighbor leaves their four dogs in their yard all the time. The dogs bark. R.P. wants to be anonymous.",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 32,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.9,
+              "text": " The neighbor leaves their four dogs in their yard all the time.",
+              "avg_logprob": -0.30230481696851325,
+              "no_speech_prob": 0.005627660546451807,
+              "compression_ratio": 1.1521739130434783
+            },
+            {
+              "start": 2.9,
+              "end": 3.9,
+              "text": " The dogs bark.",
+              "avg_logprob": -0.30230481696851325,
+              "no_speech_prob": 0.005627660546451807,
+              "compression_ratio": 1.1521739130434783
+            },
+            {
+              "start": 3.9,
+              "end": 4.9,
+              "text": " R.P. wants to be anonymous.",
+              "avg_logprob": -0.30230481696851325,
+              "no_speech_prob": 0.005627660546451807,
+              "compression_ratio": 1.1521739130434783
+            }
+          ]
+        },
+        "context": {
+          "text": "The neighbor leaves their four dogs in their yard all the time. The dogs bark. RP wants to be anonymous.",
+          "prompt": "7J83, happy animal complaint. Go ahead. 2217 North, 1420 West, 2217 North, 1420 West.",
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.84,
+              "text": " The neighbor leaves their four dogs in their yard all the time.",
+              "avg_logprob": -0.2537259618441264,
+              "no_speech_prob": 0.0013218293897807598,
+              "compression_ratio": 1.1555555555555554
+            },
+            {
+              "start": 2.84,
+              "end": 3.96,
+              "text": " The dogs bark.",
+              "avg_logprob": -0.2537259618441264,
+              "no_speech_prob": 0.0013218293897807598,
+              "compression_ratio": 1.1555555555555554
+            },
+            {
+              "start": 3.96,
+              "end": 6.2,
+              "text": " RP wants to be anonymous.",
+              "avg_logprob": -0.2537259618441264,
+              "no_speech_prob": 0.0013218293897807598,
+              "compression_ratio": 1.1555555555555554
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792451956.m4a": {
+      "index": 993,
+      "epoch": 1792451956,
+      "sha256": "3955ffc860774a15dad628962f71c52861f0ef915991beb560836c7e84c9e1f4",
+      "passes": {
+        "original": {
+          "text": "So do you 30 I'll take care of that",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " So do you 30 I'll take care of that",
+              "avg_logprob": -0.4264738468023447,
+              "no_speech_prob": 0.018986448645591736,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        },
+        "filtered": {
+          "text": "So do 30 I'll take care of that",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " So do 30 I'll take care of that",
+              "avg_logprob": -0.3917419935266177,
+              "no_speech_prob": 0.02638491988182068,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "context": {
+          "text": "5830, I'll take care of that.",
+          "prompt": "Go ahead. 2217 North, 1420 West, 2217 North, 1420 West. The neighbor leaves their four dogs in their yard all the time. The dogs bark. RP wants to be anonymous.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5830, I'll take care of that.",
+              "avg_logprob": -0.45418967650486874,
+              "no_speech_prob": 0.023433344438672066,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792451958.m4a": {
+      "index": 994,
+      "epoch": 1792451958,
+      "sha256": "017e51ecb0544370f1feb4523f16bc76f38a189373cce3893a6ce0eb94c0c7ff",
+      "passes": {
+        "original": {
+          "text": "I copy. 7J83, copy.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I copy. 7J83, copy.",
+              "avg_logprob": -0.5526649703582128,
+              "no_speech_prob": 0.04159741848707199,
+              "compression_ratio": 0.8636363636363636
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I copy 7j83 copy.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.08,
+              "text": " I copy 7j83 copy.",
+              "avg_logprob": -0.5529136776924133,
+              "no_speech_prob": 0.02633977308869362,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "context": {
+          "text": "I copy 7j83 copy",
+          "prompt": "2217 North, 1420 West, 2217 North, 1420 West. The neighbor leaves their four dogs in their yard all the time. The dogs bark. RP wants to be anonymous. So do you 30 I'll take care of that",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " I copy 7j83 copy",
+              "avg_logprob": -0.4812023374769423,
+              "no_speech_prob": 0.05525233596563339,
+              "compression_ratio": 0.8
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792451961.m4a": {
+      "index": 995,
+      "epoch": 1792451961,
+      "sha256": "dbb6b360621c0127f500a364c140e3e54507fd859aaf4c6b44059ef7de7813ed",
+      "passes": {
+        "original": {
+          "text": "Bye-bye",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Bye-bye",
+              "avg_logprob": -0.8113574981689453,
+              "no_speech_prob": 0.13978442549705505,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "over",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " over",
+              "avg_logprob": -0.8651670813560486,
+              "no_speech_prob": 0.12550310790538788,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Over.",
+          "prompt": "The neighbor leaves their four dogs in their yard all the time. The dogs bark. RP wants to be anonymous. So do you 30 I'll take care of that I copy. 7J83, copy.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Over.",
+              "avg_logprob": -0.886268424987793,
+              "no_speech_prob": 0.11664547771215439,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792452037.m4a": {
+      "index": 996,
+      "epoch": 1792452037,
+      "sha256": "da84c2cb5fb8f9f83095673e50b58593734c958c3b52e989ea3212ed287c7ac2",
+      "passes": {
+        "original": {
+          "text": "7J20, 1041.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J20, 1041.",
+              "avg_logprob": -0.6498683452606201,
+              "no_speech_prob": 0.052080996334552765,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J-20, 1041.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J-20, 1041.",
+              "avg_logprob": -0.6961693546988748,
+              "no_speech_prob": 0.0500897653400898,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "7J20, 1041.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J20, 1041.",
+              "avg_logprob": -0.6498683452606201,
+              "no_speech_prob": 0.052080996334552765,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792452041.m4a": {
+      "index": 997,
+      "epoch": 1792452041,
+      "sha256": "d2feaf9a14f974b64f7da89bec7424c8e5892446fffc1ecd6a372afc8d1657d8",
+      "passes": {
+        "original": {
+          "text": "Bye-bye.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.4855071646826608,
+              "no_speech_prob": 0.009646499529480934,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bye-bye.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.8080781017030988,
+              "no_speech_prob": 0.03662051633000374,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Good-bye.",
+          "prompt": "7J20, 1041.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Good-bye.",
+              "avg_logprob": -0.8581939765385219,
+              "no_speech_prob": 0.0564880296587944,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792452352.m4a": {
+      "index": 998,
+      "epoch": 1792452352,
+      "sha256": "1f96678d7c5595d30fe420fdab3106b341769838a23f8b7cc2d4e71ccfd6cd4f",
+      "passes": {
+        "original": {
+          "text": "7-8-23 10-41",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-8-23 10-41",
+              "avg_logprob": -0.5433248389850963,
+              "no_speech_prob": 0.013583802618086338,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "70, 23, 10, 41.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 70, 23, 10, 41.",
+              "avg_logprob": -0.6857173009352251,
+              "no_speech_prob": 0.010440048761665821,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "7-8-23 10-41",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-8-23 10-41",
+              "avg_logprob": -0.5433248389850963,
+              "no_speech_prob": 0.013583802618086338,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792452354.m4a": {
+      "index": 999,
+      "epoch": 1792452354,
+      "sha256": "e728098372370717e966b1935069de35f25b44c1cf106565d47a97d91c99e706",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5278544425964355,
+              "no_speech_prob": 0.022219371050596237,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.5535244792699814,
+              "no_speech_prob": 0.011693816632032394,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy",
+          "prompt": "7-8-23 10-41",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy",
+              "avg_logprob": -0.5737750679254532,
+              "no_speech_prob": 0.13098633289337158,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792452476.m4a": {
+      "index": 1000,
+      "epoch": 1792452476,
+      "sha256": "4726b32c9531d010c8e6400146311c0dec1d56819cb10791fa7cc78ad0e7e549",
+      "passes": {
+        "original": {
+          "text": "Hey, Team J9, copy Animal Complaint.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.4,
+              "text": " Hey, Team J9, copy Animal Complaint.",
+              "avg_logprob": -0.7049151190689632,
+              "no_speech_prob": 0.011049509979784489,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18J9 copy animal complaint.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.2800000000000002,
+              "text": " 18J9 copy animal complaint.",
+              "avg_logprob": -0.727294385433197,
+              "no_speech_prob": 0.004568022210150957,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey, Team J9, copy Animal Complaint.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.4,
+              "text": " Hey, Team J9, copy Animal Complaint.",
+              "avg_logprob": -0.7049151190689632,
+              "no_speech_prob": 0.011049509979784489,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        }
+      }
+    }
+  }
+}
