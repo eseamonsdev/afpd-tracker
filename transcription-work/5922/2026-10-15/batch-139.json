@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-15",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792121535.m4a": {
+      "index": 1381,
+      "epoch": 1792121535,
+      "sha256": "85fac61892308410c6d0cfbc6d46820b89f7ea82924f500d97fc99c3eb5b70b9",
+      "passes": {
+        "original": {
+          "text": "We're going to be just west of state.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " We're going to be just west of state.",
+              "avg_logprob": -0.41064347670628476,
+              "no_speech_prob": 0.0034021532628685236,
+              "compression_ratio": 0.8604651162790697
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We're going to be just wet this day.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.84,
+              "text": " We're going to be just wet this day.",
+              "avg_logprob": -0.4197904421732976,
+              "no_speech_prob": 0.003062485484406352,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        },
+        "context": {
+          "text": "We're going to be just West of State.",
+          "prompt": "7J27, 1060. 200 South State Street on local HECO 786, Charley, X-ray. 10-4.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.84,
+              "text": " We're going to be just West of State.",
+              "avg_logprob": -0.3025883069405189,
+              "no_speech_prob": 0.022627314552664757,
+              "compression_ratio": 0.8604651162790697
+            }
+          ]
+        }
+      }
+    }
+  }
+}
