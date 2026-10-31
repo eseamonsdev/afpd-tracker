@@ -1,0 +1,689 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-30",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1793404878.m4a": {
+      "index": 71,
+      "epoch": 1793404878,
+      "sha256": "563c589de19bba131d0bb115fa1086156eefcdf660a40fb0585124dc12988187",
+      "passes": {
+        "original": {
+          "text": "I'm in the parking lot. I can go to some of the doors. I don't know if there's a specific one they want me to go to.",
+          "prompt": null,
+          "duration_seconds": 8.832,
+          "token_limit": 95,
+          "token_count": 35,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " I'm in the parking lot. I can go to some of the doors. I don't know if there's a specific one they want me to go to.",
+              "avg_logprob": -0.17033081294761765,
+              "no_speech_prob": 0.006095888093113899,
+              "compression_ratio": 1.2473118279569892
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm in the parking lot. I can go to some of the doors. I don't know if there's a specific one they want me to go to.",
+          "prompt": null,
+          "duration_seconds": 8.832,
+          "token_limit": 95,
+          "token_count": 35,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.76,
+              "text": " I'm in the parking lot. I can go to some of the doors. I don't know if there's a specific one they want me to go to.",
+              "avg_logprob": -0.16377991479304102,
+              "no_speech_prob": 0.0025713215582072735,
+              "compression_ratio": 1.2473118279569892
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm in the parking lot. I can go to some of the doors. I don't know if there's a specific one they want me to go to.",
+          "prompt": "Who you looking for? Mayness, if you can go by the gate, the RP can open the gate by her phone, if you remind us, do that for us. Well, where's the gate?",
+          "duration_seconds": 8.832,
+          "token_limit": 95,
+          "token_count": 35,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " I'm in the parking lot. I can go to some of the doors. I don't know if there's a specific one they want me to go to.",
+              "avg_logprob": -0.12906770532329878,
+              "no_speech_prob": 0.0016990825533866882,
+              "compression_ratio": 1.2473118279569892
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793404897.m4a": {
+      "index": 72,
+      "epoch": 1793404897,
+      "sha256": "877bc3413ef9db218642a9b71ec835697e091a5435505e36d5d47290493c43b8",
+      "passes": {
+        "original": {
+          "text": "Do you see like a sign for the mailing office?",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.48,
+              "text": " Do you see like a sign for the mailing office?",
+              "avg_logprob": -0.33133954235485624,
+              "no_speech_prob": 0.0025498538743704557,
+              "compression_ratio": 0.8518518518518519
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Do you see like a sign for the mailing office?",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.52,
+              "text": " Do you see like a sign for the mailing office?",
+              "avg_logprob": -0.352493479847908,
+              "no_speech_prob": 0.0032446582335978746,
+              "compression_ratio": 0.8518518518518519
+            }
+          ]
+        },
+        "context": {
+          "text": "Do you see a sign for the mailing office?",
+          "prompt": "Mayness, if you can go by the gate, the RP can open the gate by her phone, if you remind us, do that for us. Well, where's the gate? I'm in the parking lot. I can go to some of the doors. I don't know if there's a specific one they want me to go to.",
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.48,
+              "text": " Do you see a sign for the mailing office?",
+              "avg_logprob": -0.28501232770773083,
+              "no_speech_prob": 0.0006972845294512808,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793404905.m4a": {
+      "index": 73,
+      "epoch": 1793404905,
+      "sha256": "9f9bc0f05851e737f409be5c95654e3322265bc2a4630c71281d9686281055d8",
+      "passes": {
+        "original": {
+          "text": "or the what",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " or the what",
+              "avg_logprob": -0.5957114696502686,
+              "no_speech_prob": 0.0505959652364254,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "For the what?",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " For the what?",
+              "avg_logprob": -0.6666708162852696,
+              "no_speech_prob": 0.017265290021896362,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "Or the what?",
+          "prompt": "Well, where's the gate? I'm in the parking lot. I can go to some of the doors. I don't know if there's a specific one they want me to go to. Do you see like a sign for the mailing office?",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Or the what?",
+              "avg_logprob": -0.3355063370295933,
+              "no_speech_prob": 0.007935094647109509,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793404907.m4a": {
+      "index": 74,
+      "epoch": 1793404907,
+      "sha256": "3c86d35b53c6d984620a5eba6a98e4eeb3c08bdc680d7274936fe25d0ff5f6cb",
+      "passes": {
+        "original": {
+          "text": "in the mail office.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " in the mail office.",
+              "avg_logprob": -0.615492694079876,
+              "no_speech_prob": 0.013975574634969234,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "filtered": {
+          "text": "the mail office.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.6,
+              "text": " the mail office.",
+              "avg_logprob": -0.4339350291660854,
+              "no_speech_prob": 0.01587783917784691,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "the mail office",
+          "prompt": "I'm in the parking lot. I can go to some of the doors. I don't know if there's a specific one they want me to go to. Do you see like a sign for the mailing office? or the what",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.56,
+              "text": " the mail office",
+              "avg_logprob": -0.3328305234511693,
+              "no_speech_prob": 0.017742684110999107,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793404915.m4a": {
+      "index": 75,
+      "epoch": 1793404915,
+      "sha256": "e1aebbeea332df261aeda338ca649899cefca37e0d8b802f6e1c2b4c988f7023",
+      "passes": {
+        "original": {
+          "text": "no I am on the west side of the building like right in the middle there are doors that lead inside right below the sign that adds the G on it maybe I'm at the mail office I don't know",
+          "prompt": null,
+          "duration_seconds": 13.056,
+          "token_limit": 129,
+          "token_count": 48,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.2,
+              "text": " no I am on the west side of the building like right in the middle there are doors",
+              "avg_logprob": -0.16491471991247061,
+              "no_speech_prob": 0.010496831499040127,
+              "compression_ratio": 1.464
+            },
+            {
+              "start": 6.2,
+              "end": 11.32,
+              "text": " that lead inside right below the sign that adds the G on it maybe I'm at the",
+              "avg_logprob": -0.16491471991247061,
+              "no_speech_prob": 0.010496831499040127,
+              "compression_ratio": 1.464
+            },
+            {
+              "start": 11.32,
+              "end": 14.26,
+              "text": " mail office I don't know",
+              "avg_logprob": -0.16491471991247061,
+              "no_speech_prob": 0.010496831499040127,
+              "compression_ratio": 1.464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "No, I am on the west side of the building, like right in the middle. There are doors that lead inside right below the sign that adds the G on it. Maybe I'm at the mail office, I don't know.",
+          "prompt": null,
+          "duration_seconds": 13.056,
+          "token_limit": 129,
+          "token_count": 54,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.84,
+              "text": " No, I am on the west side of the building, like right in the middle.",
+              "avg_logprob": -0.23259259733286772,
+              "no_speech_prob": 0.012966426089406013,
+              "compression_ratio": 1.3795620437956204
+            },
+            {
+              "start": 5.84,
+              "end": 10.96,
+              "text": " There are doors that lead inside right below the sign that adds the G on it.",
+              "avg_logprob": -0.23259259733286772,
+              "no_speech_prob": 0.012966426089406013,
+              "compression_ratio": 1.3795620437956204
+            },
+            {
+              "start": 10.96,
+              "end": 12.36,
+              "text": " Maybe I'm at the mail office, I don't know.",
+              "avg_logprob": -0.23259259733286772,
+              "no_speech_prob": 0.012966426089406013,
+              "compression_ratio": 1.3795620437956204
+            }
+          ]
+        },
+        "context": {
+          "text": "No, I am on the west side of the building like right in the middle. There are doors that lead inside right below the sign that adds the G on it. Maybe I'm at the mail office I don't know.",
+          "prompt": "Do you see like a sign for the mailing office? or the what in the mail office.",
+          "duration_seconds": 13.056,
+          "token_limit": 129,
+          "token_count": 52,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.2,
+              "text": " No, I am on the west side of the building like right in the middle. There are doors",
+              "avg_logprob": -0.16462809409735338,
+              "no_speech_prob": 0.004197803791612387,
+              "compression_ratio": 1.375
+            },
+            {
+              "start": 6.2,
+              "end": 11.32,
+              "text": " that lead inside right below the sign that adds the G on it. Maybe I'm at the",
+              "avg_logprob": -0.16462809409735338,
+              "no_speech_prob": 0.004197803791612387,
+              "compression_ratio": 1.375
+            },
+            {
+              "start": 11.32,
+              "end": 14.280000000000001,
+              "text": " mail office I don't know.",
+              "avg_logprob": -0.16462809409735338,
+              "no_speech_prob": 0.004197803791612387,
+              "compression_ratio": 1.375
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793404937.m4a": {
+      "index": 76,
+      "epoch": 1793404937,
+      "sha256": "077ea487c9f99037acb15b17b3743192c30637b771eb7a9f4dd7d5aaf977f812",
+      "passes": {
+        "original": {
+          "text": "I see a screen right next to the door.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.52,
+              "text": " I see a screen right next to the door.",
+              "avg_logprob": -0.4080450076323289,
+              "no_speech_prob": 0.0076584224589169025,
+              "compression_ratio": 0.8260869565217391
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I see a screen right next to the door.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I see a screen right next to the door.",
+              "avg_logprob": -0.3363684599216168,
+              "no_speech_prob": 0.013725390657782555,
+              "compression_ratio": 0.8260869565217391
+            }
+          ]
+        },
+        "context": {
+          "text": "see a screen right next to the door",
+          "prompt": "or the what in the mail office. no I am on the west side of the building like right in the middle there are doors that lead inside right below the sign that adds the G on it maybe I'm at the mail office I don't know",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.5,
+              "text": " see a screen right next to the door",
+              "avg_logprob": -0.23588221181522717,
+              "no_speech_prob": 0.004058391787111759,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793404941.m4a": {
+      "index": 77,
+      "epoch": 1793404941,
+      "sha256": "07eb632e5cdbc88fd6bc6b5cf12b8d5398e48a8e14e7d8c5b09987ba23efdde8",
+      "passes": {
+        "original": {
+          "text": "Yeah.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Yeah.",
+              "avg_logprob": -0.7985912799835205,
+              "no_speech_prob": 0.09750055521726608,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Yeah.",
+              "avg_logprob": -0.6904097557067871,
+              "no_speech_prob": 0.031105808913707733,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "yeah",
+          "prompt": "in the mail office. no I am on the west side of the building like right in the middle there are doors that lead inside right below the sign that adds the G on it maybe I'm at the mail office I don't know I see a screen right next to the door.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.58,
+              "text": " yeah",
+              "avg_logprob": -0.3378663584589958,
+              "no_speech_prob": 0.03938346356153488,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793404943.m4a": {
+      "index": 78,
+      "epoch": 1793404943,
+      "sha256": "dc5d4368cc894677e71784054d30a08589ef72202c3d2ccd9be5acb23e1c3243",
+      "passes": {
+        "original": {
+          "text": "You're right next to it",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You're right next to it",
+              "avg_logprob": -0.3562423653072781,
+              "no_speech_prob": 0.015816763043403625,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "You're right next to it.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You're right next to it.",
+              "avg_logprob": -0.3271999955177307,
+              "no_speech_prob": 0.02496306225657463,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "context": {
+          "text": "You're right next to it.",
+          "prompt": "no I am on the west side of the building like right in the middle there are doors that lead inside right below the sign that adds the G on it maybe I'm at the mail office I don't know I see a screen right next to the door. Yeah.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " You're right next to it.",
+              "avg_logprob": -0.4518749177455902,
+              "no_speech_prob": 0.020659765228629112,
+              "compression_ratio": 0.75
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793404946.m4a": {
+      "index": 79,
+      "epoch": 1793404946,
+      "sha256": "3d5429d7d6cfbd97260993cf9971b96ff9aa3e07c07cca2ca51ff9ca93603bc2",
+      "passes": {
+        "original": {
+          "text": "Okay.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Okay.",
+              "avg_logprob": -0.7345728874206543,
+              "no_speech_prob": 0.05668915808200836,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Okay.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Okay.",
+              "avg_logprob": -0.695701789855957,
+              "no_speech_prob": 0.05428445339202881,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Okay.",
+          "prompt": "I see a screen right next to the door. Yeah. You're right next to it",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Okay.",
+              "avg_logprob": -0.7051255226135253,
+              "no_speech_prob": 0.09331545233726501,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793404951.m4a": {
+      "index": 80,
+      "epoch": 1793404951,
+      "sha256": "4857e44a978f84c8444b7441510bb83100e3f57fe2d1873a48cf25deda3de804",
+      "passes": {
+        "original": {
+          "text": "She unlocked it",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " She unlocked it",
+              "avg_logprob": -0.4494894544283549,
+              "no_speech_prob": 0.021072767674922943,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "She unlocked it.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " She unlocked it.",
+              "avg_logprob": -0.5903174706867763,
+              "no_speech_prob": 0.029005330055952072,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "She unlocked it.",
+          "prompt": "Yeah. You're right next to it Okay.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " She unlocked it.",
+              "avg_logprob": -0.45730156557900564,
+              "no_speech_prob": 0.0036369282752275467,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    }
+  }
+}
