@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-29",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793305615.m4a": {
+      "index": 912,
+      "epoch": 1793305615,
+      "sha256": "baaa2129accf96caf4317f404af01e8c7c45631e46a006f0d54eb60ee7df33c4",
+      "passes": {
+        "original": {
+          "text": "5J20, iterate negative checks.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J20, iterate negative checks.",
+              "avg_logprob": -0.7253698607285818,
+              "no_speech_prob": 0.04404544085264206,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J28, I have a negative check.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J28, I have a negative check.",
+              "avg_logprob": -0.6173749153430645,
+              "no_speech_prob": 0.029953546822071075,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        },
+        "context": {
+          "text": "5J20, iterate negative checks.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J20, iterate negative checks.",
+              "avg_logprob": -0.7253698607285818,
+              "no_speech_prob": 0.04404544085264206,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        }
+      }
+    }
+  }
+}

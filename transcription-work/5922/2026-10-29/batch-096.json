@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-29",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793307406.m4a": {
+      "index": 951,
+      "epoch": 1793307406,
+      "sha256": "b31e5793a0d99f6ceef7f0afd667c274a0b4fa68906c73a012726e2680a53c0a",
+      "passes": {
+        "original": {
+          "text": "Because",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Because",
+              "avg_logprob": -0.6740421205759048,
+              "no_speech_prob": 0.08664880692958832,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793307414.m4a": {
+      "index": 952,
+      "epoch": 1793307414,
+      "sha256": "33cc35496ff8d7510bfdccb97db3477a78c6257eabea852b9dbd0cf2256c7e37",
+      "passes": {
+        "original": {
+          "text": "All right, JX-52, I copied the info. You can clear one already.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " All right, JX-52, I copied the info. You can clear one already.",
+              "avg_logprob": -0.6164587058804252,
+              "no_speech_prob": 0.07216144353151321,
+              "compression_ratio": 0.8873239436619719
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'd like to see if the two are copied in so you can clear one already.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.4,
+              "text": " I'd like to see if the two are copied in so you can clear one already.",
+              "avg_logprob": -0.7366494905380976,
+              "no_speech_prob": 0.08450459688901901,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "I'd like you to exit the two-hour copy of the info, you can clear one already.",
+          "prompt": "1300 West State Street, Matt was sleeping or passed out at the wheel in a black Hyundai Elantra, Fox 444, Fox Whiskey Local. Turned westbound on a garden drive, the male driver was alone in the vehicle, seemed intoxicated or on drugs. Arby's no longer following along the sign. Because",
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2,
+              "text": " I'd like you to exit the two-hour copy of the info, you can clear one already.",
+              "avg_logprob": -0.7210659757256508,
+              "no_speech_prob": 0.08031944185495377,
+              "compression_ratio": 1.04
+            }
+          ]
+        }
+      }
+    }
+  }
+}

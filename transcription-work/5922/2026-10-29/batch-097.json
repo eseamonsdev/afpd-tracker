@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-29",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793307717.m4a": {
+      "index": 965,
+      "epoch": 1793307717,
+      "sha256": "e58455196d87a19d55dcfb06439369cf568410b6d4f6aeef32d4853c3836d1d1",
+      "passes": {
+        "original": {
+          "text": "My J49 copy medical assist.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " My J49 copy medical assist.",
+              "avg_logprob": -0.5985863864421844,
+              "no_speech_prob": 0.013331234455108643,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793307721.m4a": {
+      "index": 966,
+      "epoch": 1793307721,
+      "sha256": "191eb42d7ff09377bd241d8e5578ae4d4b53c015a9f414a9357157595ae8892e",
+      "passes": {
+        "original": {
+          "text": "Go ahead",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead",
+              "avg_logprob": -0.6668417453765869,
+              "no_speech_prob": 0.15428529679775238,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Good",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Good",
+              "avg_logprob": -0.5985547453165054,
+              "no_speech_prob": 0.14666061103343964,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Go ahead.",
+          "prompt": "My J49 copy medical assist.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.5353911717732748,
+              "no_speech_prob": 0.11820580810308456,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    }
+  }
+}

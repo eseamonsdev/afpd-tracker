@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-29",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793304090.m4a": {
+      "index": 871,
+      "epoch": 1793304090,
+      "sha256": "e08a1699e4148ad988eeee14c3bca9af439fa88bef82e907b3ef6903c86d8fc3",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7960395336151123,
+              "no_speech_prob": 0.04007677361369133,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793304148.m4a": {
+      "index": 872,
+      "epoch": 1793304148,
+      "sha256": "bf8904ad12c7ddb9814d17646a9f97ec7d50ac4c59120ca53bc33f0972c9bd7d",
+      "passes": {
+        "original": {
+          "text": "5J52, can you update the address of this follow-up to the one in the CAD notes?",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.04,
+              "text": " 5J52, can you update the address of this follow-up to the one in the CAD notes?",
+              "avg_logprob": -0.2625391387939453,
+              "no_speech_prob": 0.023389596492052078,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J52, can you update the address of this follow-up to the one in the CAD notes?",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.08,
+              "text": " 5J52, can you update the address of this follow-up to the one in the CAD notes?",
+              "avg_logprob": -0.2754339694976807,
+              "no_speech_prob": 0.024135997518897057,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "5J52, can you update the address of this follow-up to the one in the CAD notes?",
+          "prompt": "Copy.",
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 5J52, can you update the address of this follow-up to the one in the CAD notes?",
+              "avg_logprob": -0.2596471309661865,
+              "no_speech_prob": 0.025119652971625328,
+              "compression_ratio": 1.0
+            }
+          ]
+        }
+      }
+    }
+  }
+}
