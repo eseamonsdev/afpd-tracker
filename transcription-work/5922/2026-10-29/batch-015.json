@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-29",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793264351.m4a": {
+      "index": 141,
+      "epoch": 1793264351,
+      "sha256": "0b8bb8036f12f98163d48a101f77b224bce347104374f5eabaa3d998b3f0f410",
+      "passes": {
+        "original": {
+          "text": "5J45, Gulf Horse Toner.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J45, Gulf Horse Toner.",
+              "avg_logprob": -0.8114777207374573,
+              "no_speech_prob": 0.018834486603736877,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793264354.m4a": {
+      "index": 142,
+      "epoch": 1793264354,
+      "sha256": "0053b93586351e34425b352cf68185e942d96d4966b82b48f82b350910f8bd13",
+      "passes": {
+        "original": {
+          "text": "Go for arrived. You can suspend checks. Thank you.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Go for arrived. You can suspend checks. Thank you.",
+              "avg_logprob": -0.460201899210612,
+              "no_speech_prob": 0.026459574699401855,
+              "compression_ratio": 0.8620689655172413
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it. Arrived. You get just one check. Thank you.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Go for it. Arrived. You get just one check. Thank you.",
+              "avg_logprob": -0.5852573859064203,
+              "no_speech_prob": 0.013943497091531754,
+              "compression_ratio": 0.8709677419354839
+            }
+          ]
+        },
+        "context": {
+          "text": "Go for arrived. You can suspend checks. Thank you.",
+          "prompt": "5J45, Gulf Horse Toner.",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Go for arrived. You can suspend checks. Thank you.",
+              "avg_logprob": -0.41968650817871095,
+              "no_speech_prob": 0.03505578264594078,
+              "compression_ratio": 0.8620689655172413
+            }
+          ]
+        }
+      }
+    }
+  }
+}
