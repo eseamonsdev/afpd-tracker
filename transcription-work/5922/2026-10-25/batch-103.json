@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-25",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792978172.m4a": {
+      "index": 1021,
+      "epoch": 1792978172,
+      "sha256": "251832b2cc94bdef46d11eebae40a32f4c09c115a38fb8a8e1f84aaf0206d20e",
+      "passes": {
+        "original": {
+          "text": "So I made a citizen contact at eleven hundred thousand five hundred",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " So I made a citizen contact at eleven hundred thousand five hundred",
+              "avg_logprob": -0.49004915555318196,
+              "no_speech_prob": 0.04256660118699074,
+              "compression_ratio": 1.0151515151515151
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We made a citizen contact at 1,100,000 in the 500-year period.",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " We made a citizen contact at 1,100,000 in the 500-year period.",
+              "avg_logprob": -0.6739184969947452,
+              "no_speech_prob": 0.045898910611867905,
+              "compression_ratio": 0.9253731343283582
+            }
+          ]
+        },
+        "context": {
+          "text": "So I made a citizen contact at 1,100,500.",
+          "prompt": "I'll do it if you want 5J51.",
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.16,
+              "text": " So I made a citizen contact at 1,100,500.",
+              "avg_logprob": -0.6117412447929382,
+              "no_speech_prob": 0.03813863918185234,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        }
+      }
+    }
+  }
+}
