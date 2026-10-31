@@ -1,0 +1,657 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-21",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792571573.m4a": {
+      "index": 21,
+      "epoch": 1792571573,
+      "sha256": "cb3685bb89c6f8668a5bfa578b63ac3bd027ebd7c8c10072113315007763a676",
+      "passes": {
+        "original": {
+          "text": "1221 East Fort Drive, CRP's husband was released from the hospital earlier and he fell back. He's just in pain.",
+          "prompt": null,
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 1221 East Fort Drive, CRP's husband was released from the hospital earlier and he fell back. He's just in pain.",
+              "avg_logprob": -0.3602214167515437,
+              "no_speech_prob": 0.02462909184396267,
+              "compression_ratio": 1.0571428571428572
+            }
+          ]
+        },
+        "filtered": {
+          "text": "1221 East Fort Drive, the ERP husband was released from the hospital earlier and he fell back. He's just in pain.",
+          "prompt": null,
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " 1221 East Fort Drive, the ERP husband was released from the hospital earlier and he fell back.",
+              "avg_logprob": -0.48115822207182646,
+              "no_speech_prob": 0.017896290868520737,
+              "compression_ratio": 1.0761904761904761
+            },
+            {
+              "start": 6.0,
+              "end": 7.0,
+              "text": " He's just in pain.",
+              "avg_logprob": -0.48115822207182646,
+              "no_speech_prob": 0.017896290868520737,
+              "compression_ratio": 1.0761904761904761
+            }
+          ]
+        },
+        "context": {
+          "text": "1221 East Fort Drive, CRP's husband was released from the hospital earlier and he fell back. He's just in pain.",
+          "prompt": "Goodbye.",
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " 1221 East Fort Drive, CRP's husband was released from the hospital earlier and he fell back.",
+              "avg_logprob": -0.3134039705619216,
+              "no_speech_prob": 0.026844240725040436,
+              "compression_ratio": 1.0571428571428572
+            },
+            {
+              "start": 6.0,
+              "end": 7.0,
+              "text": " He's just in pain.",
+              "avg_logprob": -0.3134039705619216,
+              "no_speech_prob": 0.026844240725040436,
+              "compression_ratio": 1.0571428571428572
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792571583.m4a": {
+      "index": 22,
+      "epoch": 1792571583,
+      "sha256": "3738f062bb6dce2856055872e0f1f0fd2b760b4297089cb4f61b9ed29446d93a",
+      "passes": {
+        "original": {
+          "text": "How do we get a medical advice?",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " How do we get a medical advice?",
+              "avg_logprob": -0.5655265938151967,
+              "no_speech_prob": 0.07295545935630798,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "filtered": {
+          "text": "How are we going to run code, boys?",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " How are we going to run code, boys?",
+              "avg_logprob": -0.5745189923506516,
+              "no_speech_prob": 0.18029238283634186,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        },
+        "context": {
+          "text": "How do we get a medical advice?",
+          "prompt": "Goodbye. 1221 East Fort Drive, CRP's husband was released from the hospital earlier and he fell back. He's just in pain.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " How do we get a medical advice?",
+              "avg_logprob": -0.5780444361946799,
+              "no_speech_prob": 0.10459833592176437,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792571585.m4a": {
+      "index": 23,
+      "epoch": 1792571585,
+      "sha256": "97fe673cd31fcde66e313e03486c6310a0d1e08999a38fddf1f6623c823dcd28",
+      "passes": {
+        "original": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.8057624101638794,
+              "no_speech_prob": 0.11019733548164368,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.7726961374282837,
+              "no_speech_prob": 0.03582155331969261,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Go for it.",
+          "prompt": "Goodbye. 1221 East Fort Drive, CRP's husband was released from the hospital earlier and he fell back. He's just in pain. How do we get a medical advice?",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.7983492953436715,
+              "no_speech_prob": 0.07643260061740875,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792571775.m4a": {
+      "index": 24,
+      "epoch": 1792571775,
+      "sha256": "6fa11478eaaf0cecd1f11487cbf422f868b8dbf24396d3a528a3be9148d09de6",
+      "passes": {
+        "original": {
+          "text": "7J23, copy of medic assist.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7J23, copy of medic assist.",
+              "avg_logprob": -0.6037602970997492,
+              "no_speech_prob": 0.024830585345625877,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7-Day 23 copy of Medicisis.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7-Day 23 copy of Medicisis.",
+              "avg_logprob": -0.7364777601682223,
+              "no_speech_prob": 0.03801221027970314,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        },
+        "context": {
+          "text": "7J23, copy of medic assist.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7J23, copy of medic assist.",
+              "avg_logprob": -0.6037602970997492,
+              "no_speech_prob": 0.024830585345625877,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792571780.m4a": {
+      "index": 25,
+      "epoch": 1792571780,
+      "sha256": "caa474f4f1b378ffbf60a56d484497de1353594132358dff4f91deee8be520df",
+      "passes": {
+        "original": {
+          "text": "Good",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Good",
+              "avg_logprob": -0.5582029670476913,
+              "no_speech_prob": 0.20676015317440033,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "George",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " George",
+              "avg_logprob": -0.6063104867935181,
+              "no_speech_prob": 0.23697452247142792,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Good.",
+          "prompt": "7J23, copy of medic assist.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Good.",
+              "avg_logprob": -0.840095329284668,
+              "no_speech_prob": 0.12742774188518524,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792571781.m4a": {
+      "index": 26,
+      "epoch": 1792571781,
+      "sha256": "d4852dbf9831eaa0b7aae6d416c3444c5c75647d475ca023f6701662a80f70c3",
+      "passes": {
+        "original": {
+          "text": "1537E350 Sal for a 45-year-old male, constant breathing is 6 from a colonoscopy treatment.",
+          "prompt": null,
+          "duration_seconds": 8.832,
+          "token_limit": 95,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " 1537E350 Sal for a 45-year-old male, constant breathing is 6 from a colonoscopy treatment.",
+              "avg_logprob": -0.38812914171389173,
+              "no_speech_prob": 0.038004081696271896,
+              "compression_ratio": 1.0112359550561798
+            }
+          ]
+        },
+        "filtered": {
+          "text": "1537 E350 Sal for a 45-year-old male, constant breathing is 6 from a colonoscopy treatment.",
+          "prompt": null,
+          "duration_seconds": 8.832,
+          "token_limit": 95,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.5,
+              "text": " 1537 E350 Sal for a 45-year-old male, constant breathing is 6 from a colonoscopy treatment.",
+              "avg_logprob": -0.3611999260527747,
+              "no_speech_prob": 0.015326227061450481,
+              "compression_ratio": 1.0224719101123596
+            }
+          ]
+        },
+        "context": {
+          "text": "1537E350 salve for a 45 year old male, constant breathing is 6 from a colonoscopy treatment.",
+          "prompt": "7J23, copy of medic assist. Good",
+          "duration_seconds": 8.832,
+          "token_limit": 95,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.44,
+              "text": " 1537E350 salve for a 45 year old male, constant breathing is 6 from a colonoscopy treatment.",
+              "avg_logprob": -0.3795031684416312,
+              "no_speech_prob": 0.031533196568489075,
+              "compression_ratio": 1.0454545454545454
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792571794.m4a": {
+      "index": 27,
+      "epoch": 1792571794,
+      "sha256": "623e35df67d2c8d0af61966ea582ed61f1e914fd8a018eabc01108d1203bafb1",
+      "passes": {
+        "original": {
+          "text": "Yeah, I'm going to go first.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, I'm going to go first.",
+              "avg_logprob": -1.0676950216293335,
+              "no_speech_prob": 0.06605884432792664,
+              "compression_ratio": 0.8235294117647058
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you very much.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you very much.",
+              "avg_logprob": -1.0866243988275528,
+              "no_speech_prob": 0.06813107430934906,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you very much.",
+          "prompt": "7J23, copy of medic assist. Good 1537E350 Sal for a 45-year-old male, constant breathing is 6 from a colonoscopy treatment.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.44,
+              "text": " Thank you very much.",
+              "avg_logprob": -0.8246002420783043,
+              "no_speech_prob": 0.09765003621578217,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792571796.m4a": {
+      "index": 28,
+      "epoch": 1792571796,
+      "sha256": "487c5890bb60f610b99f479d2d55bc63bb14b9d114b05a73ea93ec914cb78ab6",
+      "passes": {
+        "original": {
+          "text": "Goodbye.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.84,
+              "text": " Goodbye.",
+              "avg_logprob": -0.7992484092712402,
+              "no_speech_prob": 0.11424662172794342,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Goodbye.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.84,
+              "text": " Goodbye.",
+              "avg_logprob": -0.6565181732177734,
+              "no_speech_prob": 0.05966386944055557,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Goodbye.",
+          "prompt": "Good 1537E350 Sal for a 45-year-old male, constant breathing is 6 from a colonoscopy treatment. Yeah, I'm going to go first.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Goodbye.",
+              "avg_logprob": -0.7889365196228028,
+              "no_speech_prob": 0.2054734081029892,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792572438.m4a": {
+      "index": 29,
+      "epoch": 1792572438,
+      "sha256": "1dba26ddd0541e617ed13baecf1956ad17739e49790df6e049e51de1fc1b936e",
+      "passes": {
+        "original": {
+          "text": "Seven day twenty, copy us.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Seven day twenty, copy us.",
+              "avg_logprob": -0.6079901576042175,
+              "no_speech_prob": 0.16528171300888062,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7-Day-20, copy it.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7-Day-20, copy it.",
+              "avg_logprob": -0.7647178322076797,
+              "no_speech_prob": 0.06706760078668594,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "context": {
+          "text": "Seven day twenty, copy us.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Seven day twenty, copy us.",
+              "avg_logprob": -0.6079901576042175,
+              "no_speech_prob": 0.16528171300888062,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792572442.m4a": {
+      "index": 30,
+      "epoch": 1792572442,
+      "sha256": "7df861269fcedcbb30f855103be7f7da70f45c1a53a2b0d690ce06608a813ed4",
+      "passes": {
+        "original": {
+          "text": "Accident Tipperum.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Accident Tipperum.",
+              "avg_logprob": -0.8888421058654785,
+              "no_speech_prob": 0.0827934592962265,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Accident tipper.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Accident tipper.",
+              "avg_logprob": -0.922088548541069,
+              "no_speech_prob": 0.055744718760252,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "Accident, different.",
+          "prompt": "Seven day twenty, copy us.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Accident, different.",
+              "avg_logprob": -0.7600049823522568,
+              "no_speech_prob": 0.025073351338505745,
+              "compression_ratio": 0.7692307692307693
+            }
+          ]
+        }
+      }
+    }
+  }
+}
