@@ -1,0 +1,681 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-30",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1790808833.m4a": {
+      "index": 821,
+      "epoch": 1790808833,
+      "sha256": "5554c198a92feebf807897e5704b401cbded5bcb7ce60345785cb1fde26efea7",
+      "passes": {
+        "original": {
+          "text": "Affirm, they have it in the CE northbound on ramp. There should be a trooper out there with it.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.5,
+              "text": " Affirm, they have it in the CE northbound on ramp.",
+              "avg_logprob": -0.3783450907674329,
+              "no_speech_prob": 0.013090227730572224,
+              "compression_ratio": 1.0795454545454546
+            },
+            {
+              "start": 2.5,
+              "end": 4.22,
+              "text": " There should be a trooper out there with it.",
+              "avg_logprob": -0.3783450907674329,
+              "no_speech_prob": 0.013090227730572224,
+              "compression_ratio": 1.0795454545454546
+            }
+          ]
+        },
+        "filtered": {
+          "text": "A-Firm, they have it in the CA northbound on-ramp. there should be a trooper out there with it.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 32,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.5,
+              "text": " A-Firm, they have it in the CA northbound on-ramp.",
+              "avg_logprob": -0.3390285996720195,
+              "no_speech_prob": 0.006455077789723873,
+              "compression_ratio": 1.0795454545454546
+            },
+            {
+              "start": 2.5,
+              "end": 4.0600000000000005,
+              "text": " there should be a trooper out there with it.",
+              "avg_logprob": -0.29523976949545055,
+              "no_speech_prob": 0.003401528811082244,
+              "compression_ratio": 0.8979591836734694
+            }
+          ]
+        },
+        "context": {
+          "text": "Affirm, they have it in the C.E. northbound on ramp. There should be a trooper out there with it.",
+          "prompt": "This is on the northbound ramp truck.",
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Affirm, they have it in the C.E. northbound on ramp. There should be a trooper out there with it.",
+              "avg_logprob": -0.32420339186986286,
+              "no_speech_prob": 0.0371238999068737,
+              "compression_ratio": 1.0898876404494382
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790808839.m4a": {
+      "index": 822,
+      "epoch": 1790808839,
+      "sha256": "09d1da85067734b44893f43b88be7dbd682c92bdda5374ff7b30035ac1f123f7",
+      "passes": {
+        "original": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5747365454832712,
+              "no_speech_prob": 0.007226115092635155,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "My God, thank you.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " My God, thank you.",
+              "avg_logprob": -0.6636834674411349,
+              "no_speech_prob": 0.007845599204301834,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you.",
+          "prompt": "This is on the northbound ramp truck. Affirm, they have it in the CE northbound on ramp. There should be a trooper out there with it.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.4000000000000001,
+              "text": " Thank you.",
+              "avg_logprob": -0.5497816205024719,
+              "no_speech_prob": 0.025186289101839066,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790809104.m4a": {
+      "index": 823,
+      "epoch": 1790809104,
+      "sha256": "dc6f487d90cc307de763924e26bce5ba04da8d6d5dee4ebe57f6654dd95ee8e9",
+      "passes": {
+        "original": {
+          "text": "M.J. 96, shall we turn 23 please?",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " M.J. 96, shall we turn 23 please?",
+              "avg_logprob": -0.6238341490427654,
+              "no_speech_prob": 0.04919813200831413,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        },
+        "filtered": {
+          "text": "OJI section, we catch 23 please.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " OJI section, we catch 23 please.",
+              "avg_logprob": -0.8249464218433087,
+              "no_speech_prob": 0.0514705628156662,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "context": {
+          "text": "M.J. 96, shall we turn 23 please?",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " M.J. 96, shall we turn 23 please?",
+              "avg_logprob": -0.6238341490427654,
+              "no_speech_prob": 0.04919813200831413,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790809108.m4a": {
+      "index": 824,
+      "epoch": 1790809108,
+      "sha256": "72a364a355cea81cd650f647ab174227256aa6f507aa99ad094949d13ce26aad",
+      "passes": {
+        "original": {
+          "text": "Take care. Take care.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Take care.",
+              "avg_logprob": -0.8280912854454734,
+              "no_speech_prob": 0.0024447431787848473,
+              "compression_ratio": 1.0
+            },
+            {
+              "start": 1.0,
+              "end": 1.02,
+              "text": " Take care.",
+              "avg_logprob": -0.8280912854454734,
+              "no_speech_prob": 0.0024447431787848473,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Take care.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Take care.",
+              "avg_logprob": -0.8759986360867819,
+              "no_speech_prob": 0.004307439085096121,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Stay coffee.",
+          "prompt": "M.J. 96, shall we turn 23 please?",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.64,
+              "text": " Stay coffee.",
+              "avg_logprob": -0.9153177340825399,
+              "no_speech_prob": 0.0012362684356048703,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790809111.m4a": {
+      "index": 825,
+      "epoch": 1790809111,
+      "sha256": "a53b1efe2cd9393de758a309154f0a3b05bc285917604bde55c1e4b3e3ecae83",
+      "passes": {
+        "original": {
+          "text": "Seven to twenty-five percent traffic.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Seven to twenty-five percent traffic.",
+              "avg_logprob": -0.8475850928913463,
+              "no_speech_prob": 0.016163857653737068,
+              "compression_ratio": 0.8604651162790697
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7 to 25% traffic.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7 to 25% traffic.",
+              "avg_logprob": -0.9057792027791342,
+              "no_speech_prob": 0.0028881016187369823,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "7 to 25th in traffic.",
+          "prompt": "M.J. 96, shall we turn 23 please? Take care. Take care.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7 to 25th in traffic.",
+              "avg_logprob": -0.8163726925849915,
+              "no_speech_prob": 0.014580311253666878,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790809113.m4a": {
+      "index": 826,
+      "epoch": 1790809113,
+      "sha256": "43aeee99288d397c4a9eca25650fc318b933a3af79883d71518851932890b002",
+      "passes": {
+        "original": {
+          "text": "Semper.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Semper.",
+              "avg_logprob": -0.7536322871843973,
+              "no_speech_prob": 0.014266799204051495,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Never.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Never.",
+              "avg_logprob": -0.9118630409240722,
+              "no_speech_prob": 0.020825879648327827,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Never.",
+          "prompt": "M.J. 96, shall we turn 23 please? Take care. Take care. Seven to twenty-five percent traffic.",
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Never.",
+              "avg_logprob": -0.8324678421020508,
+              "no_speech_prob": 0.003546541789546609,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790809219.m4a": {
+      "index": 827,
+      "epoch": 1790809219,
+      "sha256": "b731a6f5785ddcf3a61f3c1c2c751df19bf7ebe4d1bfcca768f61327046b4b62",
+      "passes": {
+        "original": {
+          "text": "7J22 traffic",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J22 traffic",
+              "avg_logprob": -0.3683393086705889,
+              "no_speech_prob": 0.018566323444247246,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J22 traffic",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J22 traffic",
+              "avg_logprob": -0.5162575415202549,
+              "no_speech_prob": 0.016926491633057594,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "7J22 traffic",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J22 traffic",
+              "avg_logprob": -0.3683393086705889,
+              "no_speech_prob": 0.018566323444247246,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790809222.m4a": {
+      "index": 828,
+      "epoch": 1790809222,
+      "sha256": "caa4479040bb8d0a68c87732d2c1463c1aa6215d967585846e519162c75704ff",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.5909151832262675,
+              "no_speech_prob": 0.031490907073020935,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.5734845002492269,
+              "no_speech_prob": 0.018544621765613556,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Go ahead",
+          "prompt": "7J22 traffic",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go ahead",
+              "avg_logprob": -0.4974835872650146,
+              "no_speech_prob": 0.035979013890028,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790809225.m4a": {
+      "index": 829,
+      "epoch": 1790809225,
+      "sha256": "443c17478f4fb43af158e0c1458c137eeb7e95c9edbcba8b7b44a3273997ef62",
+      "passes": {
+        "original": {
+          "text": "Pleasant Grove Boulevard, North County Boulevard. We'll place here at 165 Bravo Kilo.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.32,
+              "text": " Pleasant Grove Boulevard, North County Boulevard.",
+              "avg_logprob": -0.7527559270029482,
+              "no_speech_prob": 0.010290651582181454,
+              "compression_ratio": 1.0
+            },
+            {
+              "start": 2.32,
+              "end": 4.72,
+              "text": " We'll place here at 165 Bravo Kilo.",
+              "avg_logprob": -0.7527559270029482,
+              "no_speech_prob": 0.010290651582181454,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Pleasant Grove Boulevard, North County Boulevard. The place here, 165 Bravo, Cuba.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.4,
+              "text": " Pleasant Grove Boulevard, North County Boulevard.",
+              "avg_logprob": -0.7698771113699133,
+              "no_speech_prob": 0.013118662871420383,
+              "compression_ratio": 1.0
+            },
+            {
+              "start": 2.4,
+              "end": 4.8,
+              "text": " The place here, 165 Bravo, Cuba.",
+              "avg_logprob": -0.7698771113699133,
+              "no_speech_prob": 0.013118662871420383,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "Pleasant Grove Boulevard, North County Boulevard, we'll place here at 165 Bravo Kilo.",
+          "prompt": "7J22 traffic Go ahead.",
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.8,
+              "text": " Pleasant Grove Boulevard, North County Boulevard, we'll place here at 165 Bravo Kilo.",
+              "avg_logprob": -0.6415084997812907,
+              "no_speech_prob": 0.012663927860558033,
+              "compression_ratio": 1.0240963855421688
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790809231.m4a": {
+      "index": 830,
+      "epoch": 1790809231,
+      "sha256": "16c7c9723dd31f00bd354f7c8eb148133bff823247e8f07932c86af6deeea545",
+      "passes": {
+        "original": {
+          "text": "Semper.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Semper.",
+              "avg_logprob": -0.8516802390416464,
+              "no_speech_prob": 0.013993564993143082,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Semper.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Semper.",
+              "avg_logprob": -1.0378934939702351,
+              "no_speech_prob": 0.03267619013786316,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Semper.",
+          "prompt": "7J22 traffic Go ahead. Pleasant Grove Boulevard, North County Boulevard. We'll place here at 165 Bravo Kilo.",
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Semper.",
+              "avg_logprob": -0.7627877593040466,
+              "no_speech_prob": 0.006633783224970102,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    }
+  }
+}
