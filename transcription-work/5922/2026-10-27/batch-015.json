@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-27",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793106211.m4a": {
+      "index": 141,
+      "epoch": 1793106211,
+      "sha256": "f3d5da77ad92b43ef5a90b5c27ae94b1815144a25bbc0f97d962579b955ff899",
+      "passes": {
+        "original": {
+          "text": "Funny night, I ain't copied that out.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Funny night, I ain't copied that out.",
+              "avg_logprob": -0.7485089668860803,
+              "no_speech_prob": 0.10321345925331116,
+              "compression_ratio": 0.8222222222222222
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Twenty-nine, I copy that out.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Twenty-nine, I copy that out.",
+              "avg_logprob": -0.7681163996458054,
+              "no_speech_prob": 0.14577172696590424,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        },
+        "context": {
+          "text": "$20.99, copy that out.",
+          "prompt": "Thank you for joining me. Have a good one.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " $20.99, copy that out.",
+              "avg_logprob": -0.6835445662339529,
+              "no_speech_prob": 0.047794729471206665,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    }
+  }
+}
