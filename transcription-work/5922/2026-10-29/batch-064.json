@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-29",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793292993.m4a": {
+      "index": 631,
+      "epoch": 1793292993,
+      "sha256": "585f692b761a6730df1d40621d38a6ffba1a7686acdee04134ec5b74fc0964a7",
+      "passes": {
+        "original": {
+          "text": "Affirm, just right on that border.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Affirm, just right on that border.",
+              "avg_logprob": -0.44611426442861557,
+              "no_speech_prob": 0.015249980613589287,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Affirm, just right on that border.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Affirm, just right on that border.",
+              "avg_logprob": -0.4495558862884839,
+              "no_speech_prob": 0.023437056690454483,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "context": {
+          "text": "Affirm. Just right on that border.",
+          "prompt": "Try it. Would you be able to assist 13-J on a traffic stop at 1900 North State Street? Yeah, it was that in 3J.",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Affirm. Just right on that border.",
+              "avg_logprob": -0.39086781938870746,
+              "no_speech_prob": 0.013835977762937546,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        }
+      }
+    }
+  }
+}
