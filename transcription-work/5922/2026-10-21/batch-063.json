@@ -1,0 +1,681 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-21",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792614454.m4a": {
+      "index": 621,
+      "epoch": 1792614454,
+      "sha256": "5ff1238a9b3a133ff9b60204d506c7c7beebf72fcbff96db17a7451f2d03b9aa",
+      "passes": {
+        "original": {
+          "text": "10-14, I'm on call 593.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 10-14, I'm on call 593.",
+              "avg_logprob": -0.38455053312437876,
+              "no_speech_prob": 0.060140762478113174,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "10-14, I'm on call 593.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 10-14, I'm on call 593.",
+              "avg_logprob": -0.3824004339320319,
+              "no_speech_prob": 0.12466854602098465,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "context": {
+          "text": "1014, I'm on call 593.",
+          "prompt": "What did you go for? Happy. 7J29",
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 1014, I'm on call 593.",
+              "avg_logprob": -0.4730776823483981,
+              "no_speech_prob": 0.047173917293548584,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792614457.m4a": {
+      "index": 622,
+      "epoch": 1792614457,
+      "sha256": "3e86a7ec8b30e9ccc230096e313ec71d0173a11177677c004452afffc5f99199",
+      "passes": {
+        "original": {
+          "text": "That's raw. It asks.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " That's raw. It asks.",
+              "avg_logprob": -0.8256450891494751,
+              "no_speech_prob": 0.019040128216147423,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "That's all. It is. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " That's all.",
+              "avg_logprob": -0.6392947832743326,
+              "no_speech_prob": 0.056989192962646484,
+              "compression_ratio": 1.0526315789473684
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " It is.",
+              "avg_logprob": -0.6392947832743326,
+              "no_speech_prob": 0.056989192962646484,
+              "compression_ratio": 1.0526315789473684
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.6392947832743326,
+              "no_speech_prob": 0.056989192962646484,
+              "compression_ratio": 1.0526315789473684
+            }
+          ]
+        },
+        "context": {
+          "text": "That's all I've been asked.",
+          "prompt": "Happy. 7J29 10-14, I'm on call 593.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.5,
+              "text": " That's all I've been asked.",
+              "avg_logprob": -0.8523801240054044,
+              "no_speech_prob": 0.038656625896692276,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792614468.m4a": {
+      "index": 623,
+      "epoch": 1792614468,
+      "sha256": "d5c82308005f38f1a429981105d1146abfc9ccd4d97de14e442d0b8579d9eb3c",
+      "passes": {
+        "original": {
+          "text": "Seventy, one seventy, copy and welcome. Bye.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Seventy, one seventy, copy and welcome.",
+              "avg_logprob": -0.7526176677030676,
+              "no_speech_prob": 0.07899505645036697,
+              "compression_ratio": 0.9777777777777777
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Bye.",
+              "avg_logprob": -0.7526176677030676,
+              "no_speech_prob": 0.07899505645036697,
+              "compression_ratio": 0.9777777777777777
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Seventy, one seventy, copy and welcome, please.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Seventy, one seventy, copy and welcome, please.",
+              "avg_logprob": -0.8076872666676839,
+              "no_speech_prob": 0.10272739827632904,
+              "compression_ratio": 0.9791666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "7J17, copy and welcome. Bye.",
+          "prompt": "7J29 10-14, I'm on call 593. That's raw. It asks.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J17, copy and welcome. Bye.",
+              "avg_logprob": -0.6656627104832575,
+              "no_speech_prob": 0.05926069617271423,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792614483.m4a": {
+      "index": 624,
+      "epoch": 1792614483,
+      "sha256": "02ee02674565291270ba8f87e653d5e624e627f46fad4dd2f60f993137f22984",
+      "passes": {
+        "original": {
+          "text": "Thanks for watching!",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thanks for watching!",
+              "avg_logprob": -0.8207426241465977,
+              "no_speech_prob": 0.6055169105529785,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thanks for watching!",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thanks for watching!",
+              "avg_logprob": -0.9743772574833461,
+              "no_speech_prob": 0.5493157505989075,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "Bye.",
+          "prompt": "10-14, I'm on call 593. That's raw. It asks. Seventy, one seventy, copy and welcome. Bye.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye.",
+              "avg_logprob": -0.7879412651062012,
+              "no_speech_prob": 0.6804187893867493,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792614486.m4a": {
+      "index": 625,
+      "epoch": 1792614486,
+      "sha256": "34b2c4c250425fd21acc422aba54049780e122fffe096838f50801bb64ef2cff",
+      "passes": {
+        "original": {
+          "text": "Copy, en route. Ten. Or just ten parts. He looks at the RFP. He knows how to dictate.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy, en route.",
+              "avg_logprob": -0.729950350522995,
+              "no_speech_prob": 0.09340955317020416,
+              "compression_ratio": 1.0119047619047619
+            },
+            {
+              "start": 2.0,
+              "end": 6.0,
+              "text": " Ten. Or just ten parts. He looks at the RFP. He knows how to dictate.",
+              "avg_logprob": -0.729950350522995,
+              "no_speech_prob": 0.09340955317020416,
+              "compression_ratio": 1.0119047619047619
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy, you know. Ten, or just ten part two. The RFP knows how the dots are contained.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy, you know.",
+              "avg_logprob": -0.7280460553509849,
+              "no_speech_prob": 0.11012587696313858,
+              "compression_ratio": 1.037037037037037
+            },
+            {
+              "start": 2.0,
+              "end": 6.0,
+              "text": " Ten, or just ten part two. The RFP knows how the dots are contained.",
+              "avg_logprob": -0.7280460553509849,
+              "no_speech_prob": 0.11012587696313858,
+              "compression_ratio": 1.037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy, en route. Ten, purchase ten portraits. The RFP knows how to doctorate.",
+          "prompt": "That's raw. It asks. Seventy, one seventy, copy and welcome. Bye. Thanks for watching!",
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Copy, en route. Ten, purchase ten portraits. The RFP knows how to doctorate.",
+              "avg_logprob": -0.7662210619967916,
+              "no_speech_prob": 0.0355595164000988,
+              "compression_ratio": 0.987012987012987
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792614494.m4a": {
+      "index": 626,
+      "epoch": 1792614494,
+      "sha256": "b854a23b66a744cc9a9d51e0551302f074b6936436aeedc5ea9a282f64a068e4",
+      "passes": {
+        "original": {
+          "text": "10-4",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 10-4",
+              "avg_logprob": -0.7112887501716614,
+              "no_speech_prob": 0.04322131723165512,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "10-4",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-4",
+              "avg_logprob": -0.7066994408766428,
+              "no_speech_prob": 0.054679498076438904,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Ten four.",
+          "prompt": "Seventy, one seventy, copy and welcome. Bye. Thanks for watching! Copy, en route. Ten. Or just ten parts. He looks at the RFP. He knows how to dictate.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Ten four.",
+              "avg_logprob": -0.5416481693585714,
+              "no_speech_prob": 0.03549093380570412,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792614575.m4a": {
+      "index": 627,
+      "epoch": 1792614575,
+      "sha256": "d4e539420161ebb8327e800cabbfe6f38b50ae7c860d95fc0bc9f92fc669e5ed",
+      "passes": {
+        "original": {
+          "text": "Copy 171.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy 171.",
+              "avg_logprob": -0.8589723706245422,
+              "no_speech_prob": 0.037822574377059937,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy one. Seven one.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy one. Seven one.",
+              "avg_logprob": -0.7100176811218262,
+              "no_speech_prob": 0.11178361624479294,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy 171.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy 171.",
+              "avg_logprob": -0.8589723706245422,
+              "no_speech_prob": 0.037822574377059937,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792614585.m4a": {
+      "index": 628,
+      "epoch": 1792614585,
+      "sha256": "d159446bdb89d366b2f108f3cf1b5d878da877794caf786facd5e655036dc2b5",
+      "passes": {
+        "original": {
+          "text": "7J170, you're right.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J170, you're right.",
+              "avg_logprob": -0.48471721735867584,
+              "no_speech_prob": 0.058412276208400726,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J170, you're right.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.76,
+              "text": " 7J170, you're right.",
+              "avg_logprob": -0.45092271132902667,
+              "no_speech_prob": 0.02527121640741825,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "7J170, you're right.",
+          "prompt": "Copy 171.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J170, you're right.",
+              "avg_logprob": -0.3883755477991971,
+              "no_speech_prob": 0.005877377465367317,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792614589.m4a": {
+      "index": 629,
+      "epoch": 1792614589,
+      "sha256": "a0a6ed5195ad235549fe62bcc9ecc9a85762e8aeee47f843edcf0b54b088e59f",
+      "passes": {
+        "original": {
+          "text": "Jennifer.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Jennifer.",
+              "avg_logprob": -0.8723187446594238,
+              "no_speech_prob": 0.023244069889187813,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yes, sir.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Yes, sir.",
+              "avg_logprob": -0.8570066009249006,
+              "no_speech_prob": 0.05161145702004433,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "10-4.",
+          "prompt": "Copy 171. 7J170, you're right.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.7129237481525966,
+              "no_speech_prob": 0.015998177230358124,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792614732.m4a": {
+      "index": 630,
+      "epoch": 1792614732,
+      "sha256": "d3d8548ede15f5e8e51abf9dfead86700c0bad95283e560264e06a217f89b3c9",
+      "passes": {
+        "original": {
+          "text": "78 from Central.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.76,
+              "text": " 78 from Central.",
+              "avg_logprob": -0.5873500279017857,
+              "no_speech_prob": 0.015918508172035217,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Seventy from Central.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Seventy from Central.",
+              "avg_logprob": -0.7778403162956238,
+              "no_speech_prob": 0.027500519528985023,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "context": {
+          "text": "78 from Central.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.76,
+              "text": " 78 from Central.",
+              "avg_logprob": -0.5873500279017857,
+              "no_speech_prob": 0.015918508172035217,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    }
+  }
+}
