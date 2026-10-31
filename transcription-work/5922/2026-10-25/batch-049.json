@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-25",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792950523.m4a": {
+      "index": 481,
+      "epoch": 1792950523,
+      "sha256": "b951b245447324050648c2a34c5625dfe452ad8fe54079517b48d6c5c9bbe85b",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6008854866027832,
+              "no_speech_prob": 0.020180029794573784,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5558370113372803,
+              "no_speech_prob": 0.01815403252840042,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "I 5J48 Central. Are you good? 3G unit and 17-year location. Rest 4082.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.4121976375579834,
+              "no_speech_prob": 0.03663964569568634,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792950537.m4a": {
+      "index": 482,
+      "epoch": 1792950537,
+      "sha256": "bd412c3ad839c8353165c9f474da54b4bd94f9e3f3566ef54ce1403ed32a2fe5",
+      "passes": {
+        "original": {
+          "text": "Roger 49, you can show me clear and en route to 32's call.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.44,
+              "text": " Roger 49, you can show me clear and en route to 32's call.",
+              "avg_logprob": -0.573068242324026,
+              "no_speech_prob": 0.012427018024027348,
+              "compression_ratio": 0.8923076923076924
+            }
+          ]
+        },
+        "filtered": {
+          "text": "You can show me clear in en route to 32's call.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.44,
+              "text": " You can show me clear in en route to 32's call.",
+              "avg_logprob": -0.611539464443922,
+              "no_speech_prob": 0.02388155832886696,
+              "compression_ratio": 0.8703703703703703
+            }
+          ]
+        },
+        "context": {
+          "text": "5J49, you can show me clear in en route to 32's call.",
+          "prompt": "5J48 Central. Are you good? 3G unit and 17-year location. Rest 4082. Copy.",
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.44,
+              "text": " 5J49, you can show me clear in en route to 32's call.",
+              "avg_logprob": -0.2997444704174995,
+              "no_speech_prob": 0.022865766659379005,
+              "compression_ratio": 0.8833333333333333
+            }
+          ]
+        }
+      }
+    }
+  }
+}
