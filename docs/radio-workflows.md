@@ -114,3 +114,15 @@ processing interval. Checkpoint file layout remains ten archive clips per file.
 ## Generic browser metadata collection
 
 The [local Playwright collector](../scripts/openmhz-browser-test/README.md) accepts any Utah County `dcfems` talkgroup: `node collect-openmhz.cjs --talkgroup=6223 --date=2026-10-29`. The audit runner accepts `--talkgroups=ID,ID --dates=DAY,DAY --known-ids=PATH` and processes each day/group sequentially. It retains every source-ID entry and reports exact reference-list overlaps and completeness separately. These inspection tools do not download audio or publish archive changes.
+
+## Dispatch-only transcription
+
+Set `"selection": "dispatch_missing"` in a Law 2 transcription request to process
+only recordings whose source IDs include the player's owner-configured `904`
+dispatch prefix. Existing published transcripts and human-verified clips are
+excluded; saved three-pass results are skipped on resume. Preceding calls may
+receive an original-only pass when needed for the context pass, but only dispatch
+targets receive all three passes. Each date remains a separate matrix job, with
+one job running at a time under the existing staging transcription lock.
+Dispatch selection checkpoints every 100 targets, retaining the same model and
+settings as AFPD selection.

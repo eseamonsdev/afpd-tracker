@@ -92,6 +92,29 @@ class RequestTests(unittest.TestCase):
 
 
 class AfpdSelectionTests(unittest.TestCase):
+    def test_dispatch_selection_uses_source_ids_and_preserves_existing_text(self):
+        calls = [
+            {'radio_ids': ['9040001']},
+            {'srcList': [{'src': 9040016}]},
+            {'radio_ids': ['14590021', '9040007']},
+            {'radio_ids': ['9400001', '14590021'], 'transcript': ''},
+            {'radio_ids': ['9040001'], 'transcript': 'Existing correction'},
+            {'radio_ids': ['9040002'], 'validated': True},
+            {'radio_ids': ['0', '-1'], 'srcList': None},
+        ]
+        self.assertEqual(transcription.selected_indices(
+            {'talkgroup': 5922, 'calls': calls}, 'dispatch_missing'), [0, 1, 2])
+        self.assertEqual(calls[4]['transcript'], 'Existing correction')
+        with self.assertRaises(ValueError):
+            transcription.selected_indices({'talkgroup': 6001, 'calls': calls}, 'dispatch_missing')
+
+    def test_dispatch_request_propagates_selection_to_every_day(self):
+        rows = requests({'days': [DAY, '2026-10-03'], 'talkgroup': 5922,
+                         'selection': 'dispatch_missing'})
+        self.assertEqual([r['selection'] for r in rows], ['dispatch_missing'] * 2)
+        with self.assertRaises(ValueError):
+            requests({'day': DAY, 'talkgroup': 6036, 'selection': 'dispatch_missing'})
+
     def test_selection_skips_existing_and_verified_and_non_afpd_with_full_context(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

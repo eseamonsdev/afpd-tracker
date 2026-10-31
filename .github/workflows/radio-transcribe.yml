@@ -110,7 +110,7 @@ jobs:
       with:
         path: ${{ runner.temp }}/radio-models
         key: radio-whisper-${{ runner.os }}-${{ hashFiles('scripts/radio-transcription-settings.json') }}
-    - name: Generate original, filtered and context passes; commit every 200 clips
+    - name: Generate original, filtered and context passes; checkpoint selected clips
       run: 'git config user.name "github-actions[bot]"
 
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
