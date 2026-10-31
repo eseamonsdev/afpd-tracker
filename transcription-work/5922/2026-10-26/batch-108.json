@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-26",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793061515.m4a": {
+      "index": 1071,
+      "epoch": 1793061515,
+      "sha256": "a4c35626dbb25cedb81b4469b5995240f755b56e7444e0c445b96c5366434589",
+      "passes": {
+        "original": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.47785958647727966,
+              "no_speech_prob": 0.019198229536414146,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793061522.m4a": {
+      "index": 1072,
+      "epoch": 1793061522,
+      "sha256": "8f8ff05333eccfb1b0069a8fbc1aeeb97133add563beddea4c4148d412b5dfd1",
+      "passes": {
+        "original": {
+          "text": "Find J50 clear.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Find J50 clear.",
+              "avg_logprob": -0.7525400668382645,
+              "no_speech_prob": 0.10790549963712692,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G50 clear.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G50 clear.",
+              "avg_logprob": -0.7058993652462959,
+              "no_speech_prob": 0.10822813957929611,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "5J50 clear",
+          "prompt": "7J29, go ahead. Send your time in. I'm ten eight. copy",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.72,
+              "text": " 5J50 clear",
+              "avg_logprob": -0.5024823290961129,
+              "no_speech_prob": 0.026463793590664864,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    }
+  }
+}
