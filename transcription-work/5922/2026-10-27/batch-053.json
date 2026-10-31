@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-27",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793128658.m4a": {
+      "index": 521,
+      "epoch": 1793128658,
+      "sha256": "594e50a5de093a2b85673685cc1e67fb226cba64632dacbc17f4a992ca6b6cc2",
+      "passes": {
+        "original": {
+          "text": "Roger, twenty-eight central.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Roger, twenty-eight central.",
+              "avg_logprob": -0.708293616771698,
+              "no_speech_prob": 0.040755774825811386,
+              "compression_ratio": 0.8235294117647058
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793128661.m4a": {
+      "index": 522,
+      "epoch": 1793128661,
+      "sha256": "f8acc5e5aa7121bc721cb2bf27b0429dcf77c9cd89e251a152cfdbc6c9d93d11",
+      "passes": {
+        "original": {
+          "text": "Put your hand, go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Put your hand, go ahead.",
+              "avg_logprob": -0.7430699586868286,
+              "no_speech_prob": 0.10010083764791489,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Put your angle here.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Put your angle here.",
+              "avg_logprob": -0.87030378729105,
+              "no_speech_prob": 0.10765483230352402,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "Twenty-nine, go ahead.",
+          "prompt": "Roger, twenty-eight central.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Twenty-nine, go ahead.",
+              "avg_logprob": -0.5520514011383056,
+              "no_speech_prob": 0.01634693145751953,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    }
+  }
+}
