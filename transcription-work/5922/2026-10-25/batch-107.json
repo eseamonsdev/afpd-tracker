@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-25",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792980622.m4a": {
+      "index": 1061,
+      "epoch": 1792980622,
+      "sha256": "860d20a9fbead31d3dac3c097126a28822c4dfa182302b5a56f8830e3f4e7c54",
+      "passes": {
+        "original": {
+          "text": "So the Stonehenge",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " So the Stonehenge",
+              "avg_logprob": -0.49550194293260574,
+              "no_speech_prob": 0.06919196993112564,
+              "compression_ratio": 0.68
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792980626.m4a": {
+      "index": 1062,
+      "epoch": 1792980626,
+      "sha256": "6c23f41164761cd81e4c33d57026fcffb4d057773a9dc73ad7f7ca932655d90e",
+      "passes": {
+        "original": {
+          "text": "It's a short open line and shuffling before disconnect.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.68,
+              "text": " It's a short open line and shuffling before disconnect.",
+              "avg_logprob": -0.3299952864646912,
+              "no_speech_prob": 0.003466398222371936,
+              "compression_ratio": 0.9166666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792980633.m4a": {
+      "index": 1063,
+      "epoch": 1792980633,
+      "sha256": "43db0776f971c75996e16c9d0972b22a3b7570a1b17451090a4a837faa6140e5",
+      "passes": {
+        "original": {
+          "text": "I don't.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I don't.",
+              "avg_logprob": -0.8172668899808612,
+              "no_speech_prob": 0.14555831253528595,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I don't.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I don't.",
+              "avg_logprob": -1.0510944638933455,
+              "no_speech_prob": 0.18673500418663025,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "Copy. So the Stonehenge It's a short open line and shuffling before disconnect.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7859705924987793,
+              "no_speech_prob": 0.16546136140823364,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
