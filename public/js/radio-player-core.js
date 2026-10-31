@@ -25,34 +25,38 @@ function createIdentity(getDate) {
   const associationLabels = {
     confirmed: "Confirmed this day",
     strong: "Strong association",
+    possible: "Possible association",
     "single-day": "Single-day association"
   };
   const officerAssociation = (id) => {
-    if (isDispatchId(id) || agencyIds[id]) return null;
+    if (isDispatchId(id) || agencyIds[id]) return [];
     const date = getDate();
-    const dated = officerDays[date]?.[id];
-    if (typeof dated?.name === "string" && associationLabels[dated.status]) return dated;
-    if (withheldDates[date]?.includes(id)) return null;
-    const entry = strongAssociations[id];
-    return typeof entry?.name === "string" && associationLabels[entry.status] ? entry : null;
+    if (withheldDates[date]?.includes(id)) return [];
+    const asEntries = value => (Array.isArray(value) ? value : value ? [value] : [])
+      .filter(entry => typeof entry?.name === "string" && associationLabels[entry.status]);
+    const dated = asEntries(officerDays[date]?.[id]);
+    // A person's dated confirmation replaces that person's inferred label.
+    const confirmed = new Set(dated.map(entry => entry.officer_id ?? entry.name));
+    return [...dated, ...asEntries(strongAssociations[id]).filter(entry => !confirmed.has(entry.officer_id ?? entry.name))];
   };
   const associationNote = (entry) => {
     const date = dateFormat.format(dateObject(getDate()));
     const count = Number(entry.evidence_days) || 1;
     const dates = Array.isArray(entry.evidence_dates) ? entry.evidence_dates.join(", ") : "";
-    const description = entry.status === "strong"
-      ? `Named exchanges associate this radio ID with ${entry.name} on ${count} dates. An association has not been confirmed for ${date}. The strong association carries from evidence on other dates; it is not a confirmation of the selected date.`
+    const description = ["strong", "possible"].includes(entry.status)
+      ? `Named exchanges associate this radio ID with ${entry.name} on ${count} dates. An association has not been confirmed for ${date}. The ${entry.status} association carries from evidence on other dates; it is not a confirmation of the selected date.`
       : `Named exchanges associate this radio ID with ${entry.name} on ${date}.` +
         (entry.status === "single-day" ? " This is the only supported date; the name is not extended to other dates." : "");
-    return `${description}${dates ? ` Evidence dates: ${dates}.` : ""} This does not independently verify the speaker in every clip.`;
+    const evidence = Array.isArray(entry.evidence) ? entry.evidence.map(row => `${row.evidence}${row.clips?.length ? ` (talkgroup ${row.talkgroup}, clips ${row.clips.join(", ")})` : ""}`).join(" ") : "";
+    return `${description}${evidence ? ` Evidence: ${evidence}` : ""}${dates ? ` Evidence dates: ${dates}.` : ""} This does not independently verify the speaker in every clip.`;
   };
   const radioIdText = (call) => {
     const ids = radioIds(call);
     return ids.length ? `Radio ID${ids.length > 1 ? "s" : ""}: ${ids.map(id => {
       if (isDispatchId(id)) return `${id} · Dispatch`;
       if (agencyIds[id]) return `${id} · ${agencyIds[id]}`;
-      const entry = officerAssociation(id);
-      return entry ? `${id} · ${entry.name} · ${associationLabels[entry.status]}` : afpdIds.has(id) ? `${id} · AFPD` : id;
+      const entries = officerAssociation(id);
+      return entries.length ? `${id} · ${entries.map(entry => `${entry.name} · ${associationLabels[entry.status]}`).join("; ")}` : afpdIds.has(id) ? `${id} · AFPD` : id;
     }).join(", ")}` : "";
   };
 
@@ -88,7 +92,7 @@ function createIdentity(getDate) {
     const note = document.createElement("span");
     note.textContent = associationNote(entry);
     const link = document.createElement("a");
-    link.href = `/police-radio-resources/#radio-id-${encodeURIComponent(id)}`;
+    link.href = `/police-radio-resources/#radio-id-${encodeURIComponent(id)}${entry.officer_id ? `-${encodeURIComponent(entry.officer_id)}` : ""}`;
     link.textContent = "View evidence";
     popup.append(note, link);
     let pinned = false, suppressFocus = false;
@@ -139,14 +143,14 @@ function createIdentity(getDate) {
       const number = document.createElement("strong");
       number.textContent = id;
       item.append(number);
-      const entry = officerAssociation(id);
-      const roleLabel = isDispatchId(id) ? "Dispatch" : agencyIds[id] || (!entry && afpdIds.has(id) ? "AFPD" : "");
+      const entries = officerAssociation(id);
+      const roleLabel = isDispatchId(id) ? "Dispatch" : agencyIds[id] || (!entries.length && afpdIds.has(id) ? "AFPD" : "");
       if (roleLabel) {
         const role = document.createElement("span");
         role.className = "radio-role-label";
         role.textContent = ` · ${roleLabel}`;
         item.append(role);
-      } else if (entry) {
+      } else for (const entry of entries) {
         const officer = document.createElement("span");
         officer.className = "radio-officer-name";
         officer.textContent = ` · ${entry.name}`;
@@ -169,38 +173,13 @@ function createIdentity(getDate) {
     try {
       const response = await fetch("/records/openmhz/officer-associations.json");
       const data = response.ok ? await response.json() : null;
-      if (data?.schema_version === 2 && data.days && typeof data.days === "object") {
+      if ([2, 3].includes(data?.schema_version) && data.days && typeof data.days === "object") {
         officerDays = data.days;
         withheldDates = data.withheld_dates ?? {};
-        const candidates = new Map(), names = new Map();
-        for (const entries of Object.values(officerDays)) {
-          for (const [id, entry] of Object.entries(entries)) {
-            if (typeof entry?.name !== "string") continue;
-            if (!names.has(id)) names.set(id, new Set());
-            names.get(id).add(entry.name);
-            if (entry.status !== "strong" || Number(entry.evidence_days) < 2) continue;
-            const previous = candidates.get(id);
-            if (!previous || Number(entry.evidence_days) > Number(previous.evidence_days)) candidates.set(id, entry);
-          }
-        }
-        strongAssociations = Object.fromEntries([...candidates].filter(([id]) => names.get(id).size === 1)
-          .map(([id, entry]) => [id, { ...entry, status: "strong" }]));
+        // Thresholds and conflict decisions are generated once at build time.
+        strongAssociations = data.schema_version === 3 ? data.associations ?? {} : {};
       }
     } catch { /* Numeric IDs remain available when evidence cannot load. */ }
-    try {
-      const response = await fetch("/records/openmhz/officer-confirmations.json");
-      const data = response.ok ? await response.json() : null;
-      if (data?.schema_version === 1 && data.days && typeof data.days === "object") {
-        for (const [date, entries] of Object.entries(data.days)) {
-          if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !entries || typeof entries !== "object") continue;
-          for (const [id, entry] of Object.entries(entries)) {
-            if (!/^[1-9]\d*$/.test(id) || entry?.status !== "confirmed" || typeof entry.name !== "string" || !entry.confirmation) continue;
-            officerDays[date] ??= {};
-            officerDays[date][id] = entry;
-          }
-        }
-      }
-    } catch { /* Existing dated associations remain available. */ }
   }
   return { load, render: renderRadioIds, text: radioIdText, close: () => closeInformation?.(),
     setAfpdRadioIds(values, identifiers = {}) {

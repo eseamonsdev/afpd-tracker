@@ -86,18 +86,18 @@ permalink: /police-radio-resources/
     <p class="radio-resources-description">{{ resources.officers.description | escape }}</p>
     <p>{{ resources.idExplanation | escape }}</p>
     <p class="radio-resources-attribution">{{ resources.attributionNote | escape }}</p>
-    <p class="radio-resource-coverage"><strong>Examples cover:</strong> {{ resources.officers.coverage | escape }}</p>
+    {% set officerCsv = "openmhz/afpd-radio-officer-ids.csv" | readCsv -%}
     <div class="radio-guide-table-scroll" tabindex="0" role="region" aria-label="Officer names and associated radio IDs">
       <table class="radio-guide-table">
-        <caption>Selected associations, including dated owner confirmations. Counts apply separately to each radio ID.</caption>
-        <thead><tr><th scope="col">Name heard</th><th scope="col">Roster candidate</th><th scope="col">Radio ID · examples / days</th><th scope="col">Notes</th></tr></thead>
-        <tbody>{%- for officer in resources.officers.entries %}
-          <tr><th scope="row">{{ officer.heard | escape }}</th><td><a href="{{ officer.url | escape }}">{{ officer.name | escape }}</a></td><td>{%- for entry in officer.ids %}<span id="radio-id-{{ entry.id | escape }}" class="radio-guide-id"><code>{{ entry.id | escape }}</code><span>{{ entry.examples }} examples / {{ entry.days }} days</span></span>{%- endfor %}</td><td>{{ officer.note | escape }}</td></tr>
+        <caption>Confirmed days count distinct dates for each officer and radio ID. Clips are supporting evidence.</caption>
+        <thead><tr><th scope="col">Name heard</th><th scope="col">Roster candidate</th><th scope="col">Radio ID</th><th scope="col">Confirmed days</th><th scope="col">Association</th><th scope="col">Evidence dates</th><th scope="col">Evidence</th></tr></thead>
+        <tbody>{%- for row in officerCsv.rows %}
+          <tr><th scope="row">{{ row[0] | escape }}</th><td><a href="{{ row[7] | escape }}">{{ row[1] | escape }}</a></td><td><code id="radio-id-{{ row[2] | escape }}-{{ row[8] | escape }}">{{ row[2] | escape }}</code></td><td>{{ row[3] | escape }}</td><td>{{ row[4] | escape }}</td><td>{{ row[5] | escape }}</td><td>{{ row[6] | escape }}</td></tr>
         {%- endfor %}</tbody>
       </table>
     </div>
     <p>{{ resources.officers.unresolved | escape }}</p>
-    <p class="radio-guide-source-links"><a href="/records/openmhz/afpd-radio-officer-ids.csv" download>Download names and radio IDs (.csv)</a>{%- for id in resources.officers.sourceIds %}{%- for source in resources.sources %}{%- if source.id == id %}<a href="{{ source.url | escape }}" download>Download the full radio-ID spreadsheet</a>{%- endif %}{%- endfor %}{%- endfor %}</p>
+    <p class="radio-guide-source-links"><a href="/records/openmhz/afpd-radio-officer-ids.csv" download>Download names and radio IDs (.csv)</a><a href="/records/openmhz/officer-association-evidence.csv" download>Download dated evidence and clips (.csv)</a>{%- for id in resources.officers.sourceIds %}{%- for source in resources.sources %}{%- if source.id == id %}<a href="{{ source.url | escape }}" download>Download the full radio-ID spreadsheet</a>{%- endif %}{%- endfor %}{%- endfor %}</p>
   </section>
 
   <section class="radio-resources-section" aria-labelledby="sources">

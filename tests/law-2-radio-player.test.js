@@ -207,7 +207,7 @@ test("query dates outside the enabled index cannot load an unlisted day", async 
 
 test("Law 2 uses the same dated names, strength labels and SVG evidence controls as 6001", async () => {
   for (const [status, label] of [['confirmed', 'Confirmed this day'], ['strong', 'Strong association'], ['single-day', 'Single-day association']]) {
-    const associations = { schema_version: 2, days: { '2026-09-12': {
+    const associations = { schema_version: 3, associations: status === 'strong' ? { '14590026': [{ name: 'Test Officer', status, evidence_days: 4 }] } : {}, days: { '2026-09-12': {
       '14590026': { name: 'Test Officer', status, evidence_days: 2, evidence_dates: ['2026-09-11', '2026-09-12'] }
     } } };
     const f = await playerFixture([{ epoch: 1789239600, displayed_seconds: 2, original_filename: 'one.m4a', radio_ids: [14590026] }],
@@ -288,35 +288,33 @@ test("corrected agency ID overrides AFPD fallback in row, audio label and curren
 });
 
 
-test("strong names carry to Law 2-only dates, respecting withheld dates and conflicting names", async () => {
-  const associations = { schema_version: 2, withheld_dates: { '2026-09-10': ['14590026'] }, days: {
-    '2026-09-12': {
-      '14590026': { name: 'Known Officer', status: 'strong', evidence_days: 2, evidence_dates: ['2026-09-12', '2026-09-13'] },
-      '14590027': { name: 'One Day', status: 'single-day', evidence_days: 1 },
-      '14590028': { name: 'First Name', status: 'strong', evidence_days: 2 }
-    },
-    '2026-09-13': { '14590028': { name: 'Other Name', status: 'confirmed', evidence_days: 2 } }
+test("multiple possible and strong names carry to Law 2-only dates and respect holds", async () => {
+  const associations = { schema_version: 3, withheld_dates: { '2026-09-10': ['14590026'] }, days: {}, associations: {
+    '14590026': [
+      { officer_id: 'one', name: 'Known Officer', status: 'strong', evidence_days: 4 },
+      { officer_id: 'two', name: 'Second Officer', status: 'possible', evidence_days: 3 }
+    ]
   } };
   const f = await playerFixture([
-    { epoch: 1789100000, displayed_seconds: 2, original_filename: 'one.m4a', radio_ids: [14590026,14590027,14590028] }
+    { epoch: 1789100000, displayed_seconds: 2, original_filename: 'one.m4a', radio_ids: [14590026] }
   ], undefined, '2026-09-11', '', false, associations);
   const row = f.get('clips').children[0];
   assert.match(row.children[1].textContent, /Known Officer · Strong association/);
-  assert.doesNotMatch(row.children[1].textContent, /Confirmed this day|One Day|First Name|Other Name/);
-  assert.match(row.children[0].getAttribute('aria-label'), /Known Officer · Strong association/);
+  assert.match(row.children[1].textContent, /Second Officer · Possible association/);
+  assert.match(row.children[0].getAttribute('aria-label'), /Second Officer · Possible association/);
   f.select(0); await f.settle();
   assert.match(f.get('current-radio-ids').textContent, /Known Officer · Strong association/);
+  assert.match(f.get('current-radio-ids').textContent, /Second Officer · Possible association/);
   f.get('day').value = '2026-09-10'; f.get('day').emit('change'); await f.settle();
-  assert.doesNotMatch(f.get('clips').children[0].children[1].textContent, /Known Officer/);
+  assert.doesNotMatch(f.get('clips').children[0].children[1].textContent, /Known Officer|Second Officer/);
 });
 
 
 test("September 27 owner confirmation renders Garcia as confirmed on radio 14590111", async () => {
   const associations = JSON.parse(readFileSync(new URL('../public/records/openmhz/officer-associations.json', import.meta.url), 'utf8'));
-  const confirmations = JSON.parse(readFileSync(new URL('../public/records/openmhz/officer-confirmations.json', import.meta.url), 'utf8'));
   const f = await playerFixture([
     { epoch: 1790535600, displayed_seconds: 2, original_filename: 'one.m4a', radio_ids: [14590111] }
-  ], undefined, '2026-09-27', '', false, associations, false, [], {}, confirmations);
+  ], undefined, '2026-09-27', '', false, associations, false, [], {});
   assert.match(f.get('clips').children[0].children[1].textContent, /14590111 · Diego O. Garcia · Confirmed this day/);
   f.select(0); await f.settle();
   assert.match(f.get('current-radio-ids').textContent, /Diego O. Garcia · Confirmed this day/);

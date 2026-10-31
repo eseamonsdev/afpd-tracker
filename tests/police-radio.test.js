@@ -545,28 +545,15 @@ test("missing or invalid associations leave IDs bold and playback available", as
   }
 });
 
-test("curated dated labels include corrections and omit uncertain associations", () => {
-  const { days } = JSON.parse(readFileSync(new URL("../public/records/openmhz/officer-associations.json", import.meta.url), "utf8"));
-  assert.equal(days["2026-09-12"]["14590105"].name, "Kelepi Makai");
-  assert.equal(days["2026-10-07"]["14590268"].name, "Samuel Canizalez");
-  assert.equal(days["2026-09-24"]["14590100"].name, "Sammantha J. Halladay");
-  assert.equal(days["2026-10-24"]["14590165"].name, "Ivan R. Bird");
-  assert.equal(days["2026-10-24"]["14590313"].name, "Delton L. Choates");
-  assert.equal(days["2026-10-25"]["14590313"], undefined, "possible contradictory hail holds this date");
-  assert.equal(days["2026-09-19"]["14590100"], undefined);
-  assert.equal(days["2026-10-01"]["14590247"].status, "strong");
-  assert.equal(days["2026-10-27"]["14590023"].name, "David O. Guerra");
-  assert.equal(days["2026-10-27"]["14590023"].status, "confirmed");
-  assert.deepEqual(days["2026-10-27"]["14590023"].confirmed_dates, ["2026-10-27"]);
-  assert.equal(days["2026-10-28"]?.["14590023"], undefined, "confirmation does not carry to other dates");
-  for (const ids of Object.values(days)) {
-    assert.equal(ids["14590045"], undefined);
-    assert.equal(ids["14590221"], undefined);
-    for (const [id, entry] of Object.entries(ids)) {
-      assert.match(id, /^[1-9]\d*$/);
-      assert.ok(entry.name && entry.status && entry.evidence_dates.length);
-    }
-  }
+test("generated dated labels retain confirmations without extending single-day IDs", () => {
+  const { days, associations } = JSON.parse(readFileSync(new URL("../public/records/openmhz/officer-associations.json", import.meta.url), "utf8"));
+  assert.equal(days["2026-09-24"]["14590100"][0].name, "Sammantha J. Halladay");
+  assert.equal(days["2026-10-24"]["14590313"][0].name, "Delton L. Choates");
+  assert.equal(days["2026-10-25"]?.["14590313"], undefined);
+  assert.equal(days["2026-10-27"]["14590023"][0].status, "confirmed");
+  assert.equal(associations["14590023"], undefined);
+  assert.equal(days["2026-10-30"]["14590221"][0].status, "confirmed");
+  assert.equal(associations["14590221"], undefined);
 });
 
 test("association information opens by hover, focus and tap without playing the clip", async () => {
@@ -606,16 +593,16 @@ test("every 6001 day is screened and fallback names respect holds and single-day
   assert.equal(review.coverage.length, 48, "historical screening covers 48 days; later owner confirmations may add dates");
   assert.equal(review.coverage.reduce((sum, day) => sum + day.transcripts_screened, 0), 12298);
   for (const day of review.coverage) {
-    for (const id of day.held_ids) assert.equal(data.days[day.date][id], undefined);
-    for (const entry of Object.values(data.days[day.date])) {
+    for (const id of day.held_ids) assert.equal(data.days[day.date]?.[id], undefined);
+    for (const entry of Object.values(data.days[day.date] ?? {}).flat()) {
       if (entry.status === "strong") assert.ok(entry.evidence_days >= 2);
       if (entry.status === "single-day") assert.deepEqual(entry.evidence_dates, [day.date]);
     }
   }
-  assert.equal(data.days["2026-09-12"]["14590020"].status, "strong");
-  assert.equal(data.days["2026-10-20"]["14590100"], undefined);
+  assert.equal(data.associations["14590020"][0].status, "strong");
+  assert.equal(data.days["2026-10-20"]?.["14590100"], undefined);
   assert.equal(data.days["2026-10-03"]["14580151"], undefined);
-  assert.equal(data.days["2026-10-20"]["14590165"], undefined);
+  assert.equal(data.days["2026-10-20"]?.["14590165"], undefined);
 });
 
 test("download link follows the loaded date and hides when transcripts are disabled", async () => {

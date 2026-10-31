@@ -1,3 +1,4 @@
+import { buildOfficerAssociations } from "./lib/build-officer-associations.js";
 import fs from "node:fs";
 import { validateProfileTabs } from "./lib/profile-tabs.js";
 import { sortUpdates } from "./lib/sort-updates.js";
@@ -24,6 +25,9 @@ const currencyFormatter = new Intl.NumberFormat("en-US", {
 });
 
 export default function (eleventyConfig) {
+  buildOfficerAssociations();
+  eleventyConfig.addWatchTarget("./data/officer-association-evidence.json");
+  eleventyConfig.on("eleventy.before", () => buildOfficerAssociations());
   eleventyConfig.addFilter("sortUpdates", sortUpdates);
   eleventyConfig.addFilter("profileAlternateNames", profileAlternateNames);
   eleventyConfig.on("eleventy.after", cleanRadioExcerpts);
