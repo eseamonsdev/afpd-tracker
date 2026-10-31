@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-27",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793164411.m4a": {
+      "index": 1441,
+      "epoch": 1793164411,
+      "sha256": "c7b7b5c55434c2848ff5cd9ffd9136b4397581d2455153ffb5060b05c29ea4c8",
+      "passes": {
+        "original": {
+          "text": "7J6",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 7J6",
+              "avg_logprob": -0.6358830630779266,
+              "no_speech_prob": 0.0610550120472908,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793164450.m4a": {
+      "index": 1442,
+      "epoch": 1793164450,
+      "sha256": "5a8ef47be33fb81742f70c94833db0cf0fee6e3ff09a5dbe72f1b7e6b9a40c23",
+      "passes": {
+        "original": {
+          "text": "537 Medical Center 1022. We're going to go to the OB.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.4,
+              "text": " 537 Medical Center 1022. We're going to go to the OB.",
+              "avg_logprob": -0.675043175095006,
+              "no_speech_prob": 0.024162698537111282,
+              "compression_ratio": 0.9298245614035088
+            }
+          ]
+        },
+        "filtered": {
+          "text": "537 Medical Center 1022. We're going to go to the building.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 537 Medical Center 1022. We're going to go to the building.",
+              "avg_logprob": -1.0115963157854582,
+              "no_speech_prob": 0.03883742541074753,
+              "compression_ratio": 0.9516129032258065
+            }
+          ]
+        },
+        "context": {
+          "text": "5J37 Medical Center, 1022. We're going to go to the OB.",
+          "prompt": "Affirm. Copy. 2313. Thank you. 7G, 628. 7J6",
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.4,
+              "text": " 5J37 Medical Center, 1022. We're going to go to the OB.",
+              "avg_logprob": -0.5849895590827578,
+              "no_speech_prob": 0.02815568447113037,
+              "compression_ratio": 0.9322033898305084
+            }
+          ]
+        }
+      }
+    }
+  }
+}

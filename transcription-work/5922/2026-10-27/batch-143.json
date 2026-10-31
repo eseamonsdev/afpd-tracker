@@ -1,0 +1,253 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-27",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793164134.m4a": {
+      "index": 1422,
+      "epoch": 1793164134,
+      "sha256": "7ef20471f5f19a55f35faf8715b0aa6158d54d11d3aee49f65d00230132a38ad",
+      "passes": {
+        "original": {
+          "text": "350 East 200 South Tango 3 8 7 Sierra Mike",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.12,
+              "text": " 350 East 200 South Tango 3 8 7 Sierra Mike",
+              "avg_logprob": -0.5512272076947349,
+              "no_speech_prob": 0.06480032205581665,
+              "compression_ratio": 0.84
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793164141.m4a": {
+      "index": 1423,
+      "epoch": 1793164141,
+      "sha256": "bb7e585788f6ad3311217b7b305f9357c2ff3ecdef0f89519b24ae7a13f927dd",
+      "passes": {
+        "original": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Happy.",
+              "avg_logprob": -0.988615894317627,
+              "no_speech_prob": 0.011695966124534607,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793164150.m4a": {
+      "index": 1424,
+      "epoch": 1793164150,
+      "sha256": "32909d82e502d7336254c09d066b81e5d1fdd5e6765c677d43f6f868b1f79416",
+      "passes": {
+        "original": {
+          "text": "5J53, right?",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J53, right?",
+              "avg_logprob": -0.7144027286105685,
+              "no_speech_prob": 0.2935248911380768,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793164161.m4a": {
+      "index": 1425,
+      "epoch": 1793164161,
+      "sha256": "b15fa9c52a79673bafb7ed2683c8ef84df56a55f3799b25a422837b294db4d56",
+      "passes": {
+        "original": {
+          "text": "Nice J-50 traffic.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Nice J-50 traffic.",
+              "avg_logprob": -0.8750634723239474,
+              "no_speech_prob": 0.014669904485344887,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Nice J-50 traffic.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Nice J-50 traffic.",
+              "avg_logprob": -0.8776085641649034,
+              "no_speech_prob": 0.014528090134263039,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "context": {
+          "text": "5J50 traffic.",
+          "prompt": "350 East 200 South Tango 3 8 7 Sierra Mike Happy. 5J53, right?",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J50 traffic.",
+              "avg_logprob": -0.5778412148356438,
+              "no_speech_prob": 0.004156169015914202,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793164165.m4a": {
+      "index": 1426,
+      "epoch": 1793164165,
+      "sha256": "79f3ccfd3399d4f242f70b855605fe6028af0f8140c31ec741b1a1906a04af9f",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Go ahead.",
+              "avg_logprob": -0.4540593922138214,
+              "no_speech_prob": 0.014999466016888618,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793164167.m4a": {
+      "index": 1427,
+      "epoch": 1793164167,
+      "sha256": "18993545746ba1e4a3ec80cee9db9efb812d62d92e8c765f24cb18cd54062119",
+      "passes": {
+        "original": {
+          "text": "700 North, North County, x-ray 104 November Sierra.",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 700 North, North County, x-ray 104 November Sierra.",
+              "avg_logprob": -0.5102861858904362,
+              "no_speech_prob": 0.021477453410625458,
+              "compression_ratio": 0.9622641509433962
+            }
+          ]
+        },
+        "filtered": {
+          "text": "700 North, North County, x-ray 104 November Sierra.",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " 700 North, North County, x-ray 104 November Sierra.",
+              "avg_logprob": -0.549292266368866,
+              "no_speech_prob": 0.01971035823225975,
+              "compression_ratio": 0.9622641509433962
+            }
+          ]
+        },
+        "context": {
+          "text": "700 North, North County, X-ray 104, November, Sierra.",
+          "prompt": "5J53, right? Nice J-50 traffic. Go ahead.",
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " 700 North, North County, X-ray 104, November, Sierra.",
+              "avg_logprob": -0.43576382597287494,
+              "no_speech_prob": 0.027005678042769432,
+              "compression_ratio": 0.9814814814814815
+            }
+          ]
+        }
+      }
+    }
+  }
+}
