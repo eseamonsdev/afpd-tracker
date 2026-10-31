@@ -89,14 +89,20 @@ permalink: /police-radio-resources/
     {% set officerCsv = "openmhz/afpd-radio-officer-ids.csv" | readCsv -%}
     <div class="radio-guide-table-scroll" tabindex="0" role="region" aria-label="Officer names and associated radio IDs">
       <table class="radio-guide-table">
-        <caption>Confirmed days count distinct dates for each officer and radio ID. Clips are supporting evidence.</caption>
-        <thead><tr><th scope="col">Name heard</th><th scope="col">Roster candidate</th><th scope="col">Radio ID</th><th scope="col">Confirmed days</th><th scope="col">Association</th><th scope="col">Evidence dates</th><th scope="col">Evidence</th></tr></thead>
+        <caption>Evidence days count distinct dates, including unreviewed and conflicting observations. Repeated clips do not increase the day count.</caption>
+        <thead><tr><th scope="col">Full name / unresolved name</th><th scope="col">Names heard</th><th scope="col">Radio ID</th><th scope="col">Evidence days</th><th scope="col">Association</th><th scope="col">Evidence dates</th><th scope="col">Evidence</th></tr></thead>
         <tbody>{%- for row in officerCsv.rows %}
-          <tr><th scope="row">{{ row[0] | escape }}</th><td><a href="{{ row[7] | escape }}">{{ row[1] | escape }}</a></td><td><code id="radio-id-{{ row[2] | escape }}-{{ row[8] | escape }}">{{ row[2] | escape }}</code></td><td>{{ row[3] | escape }}</td><td>{{ row[4] | escape }}</td><td>{{ row[5] | escape }}</td><td>{{ row[6] | escape }}</td></tr>
+          <tr><th scope="row">{% if row[7] %}<a href="{{ row[7] | escape }}">{{ row[1] | escape }}</a>{% else %}{{ row[1] | escape }}{% endif %}</th><td>{{ row[0] | escape }}</td><td><code id="radio-id-{{ row[2] | escape }}-{{ row[8] | escape }}">{{ row[2] | escape }}</code></td><td>{{ row[3] | escape }}</td><td>{{ row[4] | escape }}</td><td>{{ row[5] | escape }}</td><td><details><summary>View dated evidence and clips</summary><div style="white-space: pre-line">{{ row[6] | escape }}</div></details></td></tr>
         {%- endfor %}</tbody>
       </table>
     </div>
     <p>{{ resources.officers.unresolved | escape }}</p>
+    {% set evidenceCsv = "openmhz/officer-association-evidence.csv" | readCsv -%}
+    <details><summary>Previously excluded observations without an assigned radio/name pairing</summary>
+      <table class="radio-guide-table"><thead><tr><th scope="col">Date</th><th scope="col">Clips</th><th scope="col">Evidence and original uncertainty</th></tr></thead><tbody>
+      {%- for row in evidenceCsv.rows %}{% if row[6] == "unassigned" %}<tr><td>{{ row[2] | escape }}</td><td>{{ row[4] | escape }}</td><td>{{ row[5] | escape }}</td></tr>{% endif %}{%- endfor %}
+      </tbody></table>
+    </details>
     <p class="radio-guide-source-links"><a href="/records/openmhz/afpd-radio-officer-ids.csv" download>Download names and radio IDs (.csv)</a><a href="/records/openmhz/officer-association-evidence.csv" download>Download dated evidence and clips (.csv)</a>{%- for id in resources.officers.sourceIds %}{%- for source in resources.sources %}{%- if source.id == id %}<a href="{{ source.url | escape }}" download>Download the full radio-ID spreadsheet</a>{%- endif %}{%- endfor %}{%- endfor %}</p>
   </section>
 

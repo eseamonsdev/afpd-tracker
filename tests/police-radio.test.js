@@ -545,15 +545,14 @@ test("missing or invalid associations leave IDs bold and playback available", as
   }
 });
 
-test("generated dated labels retain confirmations without extending single-day IDs", () => {
+test("combined dated evidence retains old uncertain rows, explicit confirmations and all candidates", () => {
   const { days, associations } = JSON.parse(readFileSync(new URL("../public/records/openmhz/officer-associations.json", import.meta.url), "utf8"));
-  assert.equal(days["2026-09-24"]["14590100"][0].name, "Sammantha J. Halladay");
-  assert.equal(days["2026-10-24"]["14590313"][0].name, "Delton L. Choates");
-  assert.equal(days["2026-10-25"]?.["14590313"], undefined);
+  assert.ok(days["2026-09-24"]["14590100"].some(e => e.name === "Sammantha J. Halladay"));
+  assert.ok(days["2026-09-17"]["14590045"].some(e => e.name === "Delton L. Choates"));
+  assert.ok(days["2026-10-25"]["14590313"].some(e => e.name === "Delton L. Choates"));
   assert.equal(days["2026-10-27"]["14590023"][0].status, "confirmed");
-  assert.equal(associations["14590023"], undefined);
   assert.equal(days["2026-10-30"]["14590221"][0].status, "confirmed");
-  assert.equal(associations["14590221"], undefined);
+  assert.ok(associations["14590221"].some(e => e.name === "Sammantha J. Halladay" && e.status === "strong"));
 });
 
 test("association information opens by hover, focus and tap without playing the clip", async () => {
@@ -587,22 +586,16 @@ test("association information opens by hover, focus and tap without playing the 
   assert.equal(f.active(), undefined, "information controls do not start playback");
 });
 
-test("every 6001 day is screened and fallback names respect holds and single-day limits", () => {
+test("historical holds stay documented while review mode includes conflicting observations", () => {
   const data = JSON.parse(readFileSync(new URL("../public/records/openmhz/officer-associations.json", import.meta.url), "utf8"));
+  const source = JSON.parse(readFileSync(new URL("../data/officer-association-evidence.json", import.meta.url), "utf8"));
   const review = JSON.parse(readFileSync(new URL("../findings/2026-10-27-radio-officer-label-review.json", import.meta.url), "utf8"));
-  assert.equal(review.coverage.length, 48, "historical screening covers 48 days; later owner confirmations may add dates");
+  assert.equal(review.coverage.length, 48);
   assert.equal(review.coverage.reduce((sum, day) => sum + day.transcripts_screened, 0), 12298);
-  for (const day of review.coverage) {
-    for (const id of day.held_ids) assert.equal(data.days[day.date]?.[id], undefined);
-    for (const entry of Object.values(data.days[day.date] ?? {}).flat()) {
-      if (entry.status === "strong") assert.ok(entry.evidence_days >= 2);
-      if (entry.status === "single-day") assert.deepEqual(entry.evidence_dates, [day.date]);
-    }
-  }
-  assert.equal(data.associations["14590020"][0].status, "strong");
-  assert.equal(data.days["2026-10-20"]?.["14590100"], undefined);
-  assert.equal(data.days["2026-10-03"]["14580151"], undefined);
-  assert.equal(data.days["2026-10-20"]?.["14590165"], undefined);
+  assert.equal(Object.values(source.withheld_dates).flat().length, 23);
+  assert.deepEqual(data.withheld_dates, {});
+  assert.ok(data.days["2026-09-13"]["14590313"].some(e => e.name === "Charles (unresolved)"));
+  assert.ok(data.days["2026-10-22"]["14590027"].some(e => e.name === "Anthony S. Neil"));
 });
 
 test("download link follows the loaded date and hides when transcripts are disabled", async () => {

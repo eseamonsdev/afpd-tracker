@@ -1,38 +1,55 @@
-# Officer association labels
+# Officer association evidence and labels
 
-Edit only `data/officer-association-evidence.json` for officer/radio evidence. `make build`, `npm run build`, and direct Eleventy builds regenerate:
+Edit `data/officer-association-evidence.json` to review or correct an association. `make build`, `npm run build`, and direct Eleventy builds regenerate:
 
 - `public/records/openmhz/officer-associations.json`: shared labels for Law 2, car-to-car, and excerpts.
-- `public/records/openmhz/afpd-radio-officer-ids.csv`: officer/radio summary, confirmed-day counts, status, dates, and evidence.
-- `public/records/openmhz/officer-association-evidence.csv`: individual dated evidence records, with clip arrays serialized as semicolon-separated numbers.
-- The Police Radio Resources table, rendered directly from the generated summary CSV.
+- `public/records/openmhz/afpd-radio-officer-ids.csv`: full names, radio IDs, distinct evidence-day counts, strengths, dates, evidence descriptions, and previously confirmed day counts.
+- `public/records/openmhz/officer-association-evidence.csv`: dated source records, clip numbers, original names heard, original assessments, alternative candidates, and review status.
+- The Police Radio Resources tables, rendered from the generated CSVs.
 
-The source contains an `officers` directory, `associations` records, and `withheld_dates`. Records use this shape:
+## Current unfiltered review
+
+Eric requested that all observations from both versions remain available without deciding which are valid. The source sets `review_mode: "include-all"`. Every `confirmed` or `supporting` record counts by distinct date. Repeated clips, repeated source records, and multiple talkgroups on the same date count as one day per officer/radio pair. `rejected` records remain documented and do not count.
+
+The source combines all 366 workbook exchanges, all 20 workbook exceptions, all 63 historical candidate reviews, all 136 records from the first migration, original table notes, old evidence-date lists, and the October 30 Halladay confirmation. It preserves duplicate observations from distinct sources, conflicts, original uncertainty, missing clip references, and historical hold decisions. Holds are review evidence in this mode and do not suppress names or dates.
+
+Full roster names are the primary labels. Original first names, surnames, nicknames and transcription uncertainty remain in `name_heard`, `evidence`, and provenance. Where a full identity is unknown, the name remains explicitly unresolved.
+
+## Record format
 
 ```json
 {
+  "record_id": "stable-source-record-id",
   "officer_id": "sammantha-j-halladay",
   "radio_id": "14590221",
   "date": "2026-10-30",
   "talkgroup": 6001,
   "clips": [],
-  "evidence": "Owner confirms Halladay using this radio ID on this date.",
-  "status": "confirmed",
-  "confirmed_by": "Eric"
+  "evidence": "Description of the exchange or other evidence.",
+  "status": "supporting",
+  "confirmed_by": null,
+  "review_status": "pending"
 }
 ```
 
-Populate `clips` with actual supporting clip numbers for that date and talkgroup. An empty array means the old evidence did not record specific clip numbers. Never infer clip numbers from radio sightings. `evidence` describes the basis for the identification. `supporting` records retain tentative observations for review without increasing confirmed-day counts. A transcript verification flag is separate from an officer identity confirmation.
+`clips` contains recorded clip numbers for that date and talkgroup. An empty array means the prior source did not record specific clip numbers. `confirmed_by` is not filled by the importer. Existing confirmations remain intact; importing a tentative observation does not create a new owner approval or alter transcript verification.
 
-Counts apply independently to each `(officer_id, radio_id)` pair:
+Multiple candidates receive separate records with the same `candidate_group_id`, date, clips and `candidate_officer_ids`. Each candidate counts dates independently. The original ambiguity remains in the evidence and the evidence CSV's “Other candidates” column. The importer does not pick a winner. Examples include Mckay A. Valadez / Philip E. Valadez, Sammantha J. Halladay / Samuel Canizalez, and Philip E. Valadez / Philip W. S. Craig.
 
-- **Confirmed this day:** a confirmed record on the selected date, even with just one confirmed date overall.
-- **Strong association:** four or more distinct confirmed dates.
-- **Possible association:** exactly three distinct confirmed dates.
-- One or two confirmed dates do not create an inferred name label on other dates.
+Observations without an established name/radio pairing are retained in `observations`, exported to the evidence CSV, and shown in the expandable observations table. They are not silently assigned an identity or radio.
 
-Multiple clips, multiple records, or multiple talkgroups on the same date count as **one day**. Multiple officers may qualify independently for one radio ID. The player displays every qualifying officer with that officer's own strength, dates, and evidence control. A dated confirmation replaces only the same officer's inferred label. It does not suppress other qualifying officers. Holds suppress all person labels for that radio/date and exclude that date from the count.
+## Generated labels
 
-The generated schema 3 lookup stores arrays per radio ID in both `days` and `associations`. The player reads these results without recalculating thresholds. The former `officer-confirmations.json` overrides and manually maintained table entries have been consolidated into the source. Historical review reports and the response workbook remain evidence provenance, not live generation inputs.
+- **Confirmed this day:** a prior confirmed identification exists for the selected date.
+- **Association this day:** imported evidence exists on that date and awaits review.
+- **Possible association:** exactly three distinct included evidence dates.
+- **Strong association:** four or more distinct included evidence dates.
+- One or two dates do not extend a name onto other dates.
 
-Migration preserved existing dated confirmations and owner-confirmed single-day identifications. It did not turn legacy fallback date lists into confirmed records. Tentative observations, missing clip references, and held dates remain explicit for further review. Names refer to radio associations; identifying the speaker in a particular recording still requires context.
+Several officers may qualify for one radio. All qualifying names are displayed independently. A dated entry replaces only the same officer's inferred label. The information control includes the date, clip numbers, original name heard and evidence. The source's `review_status` makes the unreviewed import explicit.
+
+Generated schema 3 stores arrays per radio ID in both `days` and `associations`. The player reads these results without recalculating thresholds. Without `review_mode: "include-all"`, only `confirmed` records count and `withheld_dates` again suppress labels and counts. Keep the current mode until Eric decides how his reviewed corrections should be applied.
+
+## Import provenance
+
+`python scripts/import_officer_association_evidence.py` reproduces the initial union from fixed Git snapshots. It is not a build step and must not be rerun over Eric's later corrections. The source stores each record's provenance and the original findings, resource entries and review explanations. The workbook and historical review report remain unchanged.

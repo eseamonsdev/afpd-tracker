@@ -24,6 +24,7 @@ function createIdentity(getDate) {
   });
   const associationLabels = {
     confirmed: "Confirmed this day",
+    observed: "Association this day",
     strong: "Strong association",
     possible: "Possible association",
     "single-day": "Single-day association"
@@ -47,8 +48,9 @@ function createIdentity(getDate) {
       ? `Named exchanges associate this radio ID with ${entry.name} on ${count} dates. An association has not been confirmed for ${date}. The ${entry.status} association carries from evidence on other dates; it is not a confirmation of the selected date.`
       : `Named exchanges associate this radio ID with ${entry.name} on ${date}.` +
         (entry.status === "single-day" ? " This is the only supported date; the name is not extended to other dates." : "");
-    const evidence = Array.isArray(entry.evidence) ? entry.evidence.map(row => `${row.evidence}${row.clips?.length ? ` (talkgroup ${row.talkgroup}, clips ${row.clips.join(", ")})` : ""}`).join(" ") : "";
-    return `${description}${evidence ? ` Evidence: ${evidence}` : ""}${dates ? ` Evidence dates: ${dates}.` : ""} This does not independently verify the speaker in every clip.`;
+    const evidence = Array.isArray(entry.evidence) ? entry.evidence.map(row => `${row.evidence}${row.name_heard ? ` [Name heard: ${row.name_heard}]` : ""}${row.clips?.length ? ` (talkgroup ${row.talkgroup}, clips ${row.clips.join(", ")})` : ""}`).join(" ") : "";
+    const review = entry.review_status === "pending" ? " This includes imported observations awaiting Eric’s review; original uncertainty and alternative names are retained." : "";
+    return `${description}${review}${evidence ? ` Evidence: ${evidence}` : ""}${dates ? ` Evidence dates: ${dates}.` : ""} This does not independently verify the speaker in every clip.`;
   };
   const radioIdText = (call) => {
     const ids = radioIds(call);
