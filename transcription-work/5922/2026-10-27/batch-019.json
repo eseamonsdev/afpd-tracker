@@ -1,0 +1,291 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-27",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793109787.m4a": {
+      "index": 181,
+      "epoch": 1793109787,
+      "sha256": "91677008b733ee2f10254793fc052b296182a6c56f1b3bef880640398f88c313",
+      "passes": {
+        "original": {
+          "text": "This will be near Mountain Ridge, Jr. High, 5525 West, 10,400 North.",
+          "prompt": null,
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " This will be near Mountain Ridge, Jr. High, 5525 West, 10,400 North.",
+              "avg_logprob": -0.41922419226687885,
+              "no_speech_prob": 0.10321515798568726,
+              "compression_ratio": 0.8947368421052632
+            }
+          ]
+        },
+        "filtered": {
+          "text": "This will be near Mountain Ridge Junior High, 5525 West, 10,400 North.",
+          "prompt": null,
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.12,
+              "text": " This will be near Mountain Ridge Junior High, 5525 West, 10,400 North.",
+              "avg_logprob": -0.4103332757949829,
+              "no_speech_prob": 0.17794787883758545,
+              "compression_ratio": 0.8974358974358975
+            }
+          ]
+        },
+        "context": {
+          "text": "18J21, this will be near Mountain Ridge, Jr. High, 5525 West, 10,400 North.",
+          "prompt": "18J21, go ahead.",
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 18J21, this will be near Mountain Ridge, Jr. High, 5525 West, 10,400 North.",
+              "avg_logprob": -0.2607426709598965,
+              "no_speech_prob": 0.010226631537079811,
+              "compression_ratio": 0.9146341463414634
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793109795.m4a": {
+      "index": 182,
+      "epoch": 1793109795,
+      "sha256": "c030bf0c4013f563b37bef2684e66d6ad3f35da0864968c5543a1d12ac3a4296",
+      "passes": {
+        "original": {
+          "text": "It's going to be a school bus versus a black Chevy pickup. It occurred in the turning area.",
+          "prompt": null,
+          "duration_seconds": 7.936,
+          "token_limit": 88,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.94,
+              "text": " It's going to be a school bus versus a black Chevy pickup.",
+              "avg_logprob": -0.22000865294383123,
+              "no_speech_prob": 0.0076206824742257595,
+              "compression_ratio": 1.0705882352941176
+            },
+            {
+              "start": 4.94,
+              "end": 7.0600000000000005,
+              "text": " It occurred in the turning area.",
+              "avg_logprob": -0.22000865294383123,
+              "no_speech_prob": 0.0076206824742257595,
+              "compression_ratio": 1.0705882352941176
+            }
+          ]
+        },
+        "filtered": {
+          "text": "going to be a school bus versus a black Chevy pickup. It occurred in the turning area.",
+          "prompt": null,
+          "duration_seconds": 7.936,
+          "token_limit": 88,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " going to be a school bus versus a black Chevy pickup. It occurred in the turning area.",
+              "avg_logprob": -0.2944611067121679,
+              "no_speech_prob": 0.004154565278440714,
+              "compression_ratio": 1.0617283950617284
+            }
+          ]
+        },
+        "context": {
+          "text": "It's going to be a school bus versus a black Chevy pickup. It occurred in the turning area.",
+          "prompt": "18J21, go ahead. This will be near Mountain Ridge, Jr. High, 5525 West, 10,400 North.",
+          "duration_seconds": 7.936,
+          "token_limit": 88,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.92,
+              "text": " It's going to be a school bus versus a black Chevy pickup.",
+              "avg_logprob": -0.22987081454350397,
+              "no_speech_prob": 0.010341240093111992,
+              "compression_ratio": 1.0705882352941176
+            },
+            {
+              "start": 4.92,
+              "end": 7.32,
+              "text": " It occurred in the turning area.",
+              "avg_logprob": -0.22987081454350397,
+              "no_speech_prob": 0.010341240093111992,
+              "compression_ratio": 1.0705882352941176
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793109807.m4a": {
+      "index": 183,
+      "epoch": 1793109807,
+      "sha256": "2a73dbb79da5656a4c9ac2a73e00bd7ff27836af5f504fe9b066b079b8ea8b20",
+      "passes": {
+        "original": {
+          "text": "Negative injuries.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Negative injuries.",
+              "avg_logprob": -0.6862904131412506,
+              "no_speech_prob": 0.08948103338479996,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Negative injury.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.3,
+              "text": " Negative injury.",
+              "avg_logprob": -0.5116263031959534,
+              "no_speech_prob": 0.03467712551355362,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "Negative injury.",
+          "prompt": "18J21, go ahead. This will be near Mountain Ridge, Jr. High, 5525 West, 10,400 North. It's going to be a school bus versus a black Chevy pickup. It occurred in the turning area.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Negative injury.",
+              "avg_logprob": -0.6406480073928833,
+              "no_speech_prob": 0.17549845576286316,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793109817.m4a": {
+      "index": 184,
+      "epoch": 1793109817,
+      "sha256": "fc54d6854d72352778853430697abb57a6414d36a8e165d218720da144dbaf7f",
+      "passes": {
+        "original": {
+          "text": "5-8 clear on this alarm, note to the other.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5-8 clear on this alarm, note to the other.",
+              "avg_logprob": -0.3961235750466585,
+              "no_speech_prob": 0.015640854835510254,
+              "compression_ratio": 0.8958333333333334
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G, clear on this alarm. Note to the other.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5G, clear on this alarm. Note to the other.",
+              "avg_logprob": -0.41577111929655075,
+              "no_speech_prob": 0.020179102197289467,
+              "compression_ratio": 0.8958333333333334
+            }
+          ]
+        },
+        "context": {
+          "text": "5-8, clear on this alarm. Note to the other.",
+          "prompt": "This will be near Mountain Ridge, Jr. High, 5525 West, 10,400 North. It's going to be a school bus versus a black Chevy pickup. It occurred in the turning area. Negative injuries.",
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5-8, clear on this alarm. Note to the other.",
+              "avg_logprob": -0.304956127615536,
+              "no_speech_prob": 0.004826071672141552,
+              "compression_ratio": 0.8979591836734694
+            }
+          ]
+        }
+      }
+    }
+  }
+}
