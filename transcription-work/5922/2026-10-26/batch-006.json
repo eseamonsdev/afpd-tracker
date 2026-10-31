@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-26",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793011321.m4a": {
+      "index": 51,
+      "epoch": 1793011321,
+      "sha256": "5e04c9686b24b2b202e39497100f06f174e6f99e870cddc86a2faf872760151d",
+      "passes": {
+        "original": {
+          "text": "5J44 copy impound.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J44 copy impound.",
+              "avg_logprob": -0.3681335628032684,
+              "no_speech_prob": 0.009361033327877522,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793011324.m4a": {
+      "index": 52,
+      "epoch": 1793011324,
+      "sha256": "3fa78cbd2fa1163e4c6e18e53b7c5f34abcccf4f5f9b9d44ff121c5c9c0360bf",
+      "passes": {
+        "original": {
+          "text": "Have you",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Have you",
+              "avg_logprob": -0.817463493347168,
+              "no_speech_prob": 0.04497736692428589,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy, you can clear it when ready.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy, you can clear it when ready.",
+              "avg_logprob": -0.9762590130170187,
+              "no_speech_prob": 0.0643090307712555,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy. You can clear it when ready.",
+          "prompt": "Copy. Looks like her home address is in Hyde Park. 5J44 copy impound.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy. You can clear it when ready.",
+              "avg_logprob": -0.37935786445935565,
+              "no_speech_prob": 0.015669388696551323,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        }
+      }
+    }
+  }
+}

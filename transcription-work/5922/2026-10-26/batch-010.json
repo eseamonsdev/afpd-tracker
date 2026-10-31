@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-26",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793015094.m4a": {
+      "index": 91,
+      "epoch": 1793015094,
+      "sha256": "0c243a221a6a6862211508b037e6713d8b25e361d389b9c541459268d4342f05",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6672335624694824,
+              "no_speech_prob": 0.04571407288312912,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793015129.m4a": {
+      "index": 92,
+      "epoch": 1793015129,
+      "sha256": "c94a7c6a90dc102c0ab61348a56842bb56ab16f1676270755f08c2cc93877cc0",
+      "passes": {
+        "original": {
+          "text": "AB 29, you're right, I'm back.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " AB 29, you're right, I'm back.",
+              "avg_logprob": -0.7615861935274941,
+              "no_speech_prob": 0.24636435508728027,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "filtered": {
+          "text": "AB 29, you're right, we have an accident.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " AB 29, you're right, we have an accident.",
+              "avg_logprob": -0.7671812216440836,
+              "no_speech_prob": 0.24757513403892517,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        },
+        "context": {
+          "text": "AB29, you're right man, I'm back.",
+          "prompt": "7J10, 742 Copy.",
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " AB29, you're right man, I'm back.",
+              "avg_logprob": -0.7455229600270589,
+              "no_speech_prob": 0.14792533218860626,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        }
+      }
+    }
+  }
+}
