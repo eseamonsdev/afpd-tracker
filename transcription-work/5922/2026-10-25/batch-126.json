@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-25",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792987778.m4a": {
+      "index": 1251,
+      "epoch": 1792987778,
+      "sha256": "b11835b03376b54e41186c52ee030ab4eacfeaf5b5ac3787471d4376e8d0513f",
+      "passes": {
+        "original": {
+          "text": "I have G40T tracking.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I have G40T tracking.",
+              "avg_logprob": -0.7260123431682587,
+              "no_speech_prob": 0.03050963766872883,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I have G40T treatment.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I have G40T treatment.",
+              "avg_logprob": -0.9438202142715454,
+              "no_speech_prob": 0.03433648869395256,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "I have G40T tracking.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I have G40T tracking.",
+              "avg_logprob": -0.7260123431682587,
+              "no_speech_prob": 0.03050963766872883,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792987781.m4a": {
+      "index": 1252,
+      "epoch": 1792987781,
+      "sha256": "95bac4912e1f1a77880e18a9e2a958e449bff5efa4225f4539b04584b58201fe",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.64,
+              "text": " Go ahead.",
+              "avg_logprob": -0.6052915751934052,
+              "no_speech_prob": 0.04997804015874863,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792987784.m4a": {
+      "index": 1253,
+      "epoch": 1792987784,
+      "sha256": "74d50dcab19e981e81e3b8c43105bbba501bd37ee276f77db728b5b720dfa8a1",
+      "passes": {
+        "original": {
+          "text": "300 East, in the state, local Tango 403, Vima Charlie.",
+          "prompt": null,
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.5,
+              "text": " 300 East, in the state, local Tango 403, Vima Charlie.",
+              "avg_logprob": -0.7988175781149613,
+              "no_speech_prob": 0.04315460845828056,
+              "compression_ratio": 0.8709677419354839
+            }
+          ]
+        },
+        "filtered": {
+          "text": "300 East in the state, local Tango 403, Vemma Trillie.",
+          "prompt": null,
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.5,
+              "text": " 300 East in the state, local Tango 403, Vemma Trillie.",
+              "avg_logprob": -0.9676501864478702,
+              "no_speech_prob": 0.021258192136883736,
+              "compression_ratio": 0.8709677419354839
+            }
+          ]
+        },
+        "context": {
+          "text": "300 East in the state. Local Tango 403, Vima Charlie.",
+          "prompt": "I have G40T tracking. Go ahead.",
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.5,
+              "text": " 300 East in the state. Local Tango 403, Vima Charlie.",
+              "avg_logprob": -0.780406289630466,
+              "no_speech_prob": 0.0134549206122756,
+              "compression_ratio": 0.8688524590163934
+            }
+          ]
+        }
+      }
+    }
+  }
+}
