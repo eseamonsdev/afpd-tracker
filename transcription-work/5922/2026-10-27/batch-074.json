@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-27",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793137764.m4a": {
+      "index": 732,
+      "epoch": 1793137764,
+      "sha256": "1f0be78a370ad7be4d65e3e078419a36f25575e3146a9a67c5ff6ca36e185b1d",
+      "passes": {
+        "original": {
+          "text": "5-8-29, I copy that private impoundees cleared out to me.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.72,
+              "text": " 5-8-29, I copy that private impoundees cleared out to me.",
+              "avg_logprob": -0.5395843301500592,
+              "no_speech_prob": 0.17698036134243011,
+              "compression_ratio": 0.8769230769230769
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5-8-20-9, I copy that private and county can clear it out to me.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.72,
+              "text": " 5-8-20-9, I copy that private and county can clear it out to me.",
+              "avg_logprob": -0.5141550078988075,
+              "no_speech_prob": 0.19794532656669617,
+              "compression_ratio": 0.9014084507042254
+            }
+          ]
+        },
+        "context": {
+          "text": "5-8-29, I copy that private impoundees cleared out to me.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.72,
+              "text": " 5-8-29, I copy that private impoundees cleared out to me.",
+              "avg_logprob": -0.5395843301500592,
+              "no_speech_prob": 0.17698036134243011,
+              "compression_ratio": 0.8769230769230769
+            }
+          ]
+        }
+      }
+    }
+  }
+}
