@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-27",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793163058.m4a": {
+      "index": 1384,
+      "epoch": 1793163058,
+      "sha256": "f25d262682043df02f512e8e8e69a3ee3792100aa9c667688cfe48ec0b8b955d",
+      "passes": {
+        "original": {
+          "text": "7, day 29 from Central Code 4.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.36,
+              "text": " 7, day 29 from Central Code 4.",
+              "avg_logprob": -0.6509831299384435,
+              "no_speech_prob": 0.011553357355296612,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793163061.m4a": {
+      "index": 1385,
+      "epoch": 1793163061,
+      "sha256": "4515f9df2ec6b70371f207255a1a31dc5f224505d618cf35fff3e2de0c519368",
+      "passes": {
+        "original": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.8214697326932635,
+              "no_speech_prob": 0.05465928092598915,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793163063.m4a": {
+      "index": 1386,
+      "epoch": 1793163063,
+      "sha256": "35b40d89586c3d3cc14d6ceaf531ddf4947663191c2b39001e6f60c7e41892d4",
+      "passes": {
+        "original": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.5036340951919556,
+              "no_speech_prob": 0.04417317360639572,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793163086.m4a": {
+      "index": 1387,
+      "epoch": 1793163086,
+      "sha256": "360a3e0ae2a82c471cba4622e05f5ddccf26fcfce5de3c22410c95fb6cddbb65",
+      "passes": {
+        "original": {
+          "text": "Bye, Judy, you want to rest?",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye, Judy, you want to rest?",
+              "avg_logprob": -0.7418293257554373,
+              "no_speech_prob": 0.025318799540400505,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bye, Katie. All right.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Bye, Katie.",
+              "avg_logprob": -0.7978371729453405,
+              "no_speech_prob": 0.019646793603897095,
+              "compression_ratio": 0.7333333333333333
+            },
+            {
+              "start": 1.0,
+              "end": 1.5,
+              "text": " All right.",
+              "avg_logprob": -0.7978371729453405,
+              "no_speech_prob": 0.019646793603897095,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Bye, Judy. You want to rest?",
+          "prompt": "7, day 29 from Central Code 4. Go for it. copy",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye, Judy. You want to rest?",
+              "avg_logprob": -0.7969771772623062,
+              "no_speech_prob": 0.012447316199541092,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        }
+      }
+    }
+  }
+}
