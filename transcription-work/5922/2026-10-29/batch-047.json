@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-29",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793287896.m4a": {
+      "index": 466,
+      "epoch": 1793287896,
+      "sha256": "210e1b2e61dffa2db6c52fce11d1bd50bf2e96b0d88804bd80886ffaddc631be",
+      "passes": {
+        "original": {
+          "text": "Got it",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Got it",
+              "avg_logprob": -0.7031851768493652,
+              "no_speech_prob": 0.08757974207401276,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793287956.m4a": {
+      "index": 467,
+      "epoch": 1793287956,
+      "sha256": "d1fe154ce19f3254ac36db78bc4780439ed834016b0dece3e53b34d285c53932",
+      "passes": {
+        "original": {
+          "text": "Hopefully",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hopefully",
+              "avg_logprob": -0.598346471786499,
+              "no_speech_prob": 0.03541536256670952,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it",
+              "avg_logprob": -0.8190678556760153,
+              "no_speech_prob": 0.05423569306731224,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Go for it",
+          "prompt": "Got it",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it",
+              "avg_logprob": -0.36822810769081116,
+              "no_speech_prob": 0.011650515720248222,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793288034.m4a": {
+      "index": 470,
+      "epoch": 1793288034,
+      "sha256": "d6b67b9e94587f4991897da6d5ad4bc465cca2a5645c71448b1b796c0c553072",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.45801108082135517,
+              "no_speech_prob": 0.05535266920924187,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    }
+  }
+}
