@@ -1,0 +1,222 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-26",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793049507.m4a": {
+      "index": 741,
+      "epoch": 1793049507,
+      "sha256": "b957385d68ba458a530e8e75a3c4db2b1493b259bab85d2609ccf815d3e74c3e",
+      "passes": {
+        "original": {
+          "text": "RPE asked her to move and she just keeps going further east.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " RPE asked her to move and she just keeps going further east.",
+              "avg_logprob": -0.38044438642614026,
+              "no_speech_prob": 0.06503475457429886,
+              "compression_ratio": 0.9090909090909091
+            }
+          ]
+        },
+        "filtered": {
+          "text": "RP asks her to move and she just keeps going further east.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " RP asks her to move and she just keeps going further east.",
+              "avg_logprob": -0.44137610122561455,
+              "no_speech_prob": 0.03036198951303959,
+              "compression_ratio": 0.9206349206349206
+            }
+          ]
+        },
+        "context": {
+          "text": "RPE asked her to move and she just keeps going further east.",
+          "prompt": "7J22. Go ahead. The e-mail is in the number 5 row on the e-site of this door.",
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " RPE asked her to move and she just keeps going further east.",
+              "avg_logprob": -0.4374518113977769,
+              "no_speech_prob": 0.16778090596199036,
+              "compression_ratio": 0.9090909090909091
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793049512.m4a": {
+      "index": 742,
+      "epoch": 1793049512,
+      "sha256": "05526fa7f252f391dce030756c329800ac3190da7ebe954c9ef5326743e8c327",
+      "passes": {
+        "original": {
+          "text": "It does have a bag in her cart, no weapons seen, or anything she's taking a nap right now.",
+          "prompt": null,
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " It does have a bag in her cart, no weapons seen, or anything she's taking a nap right now.",
+              "avg_logprob": -0.3634175428977379,
+              "no_speech_prob": 0.012883796356618404,
+              "compression_ratio": 1.0975609756097562
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It does have a bag in her cart, no weapons seen, or anything. She's taking a nap right now.",
+          "prompt": null,
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " It does have a bag in her cart, no weapons seen, or anything.",
+              "avg_logprob": -0.3829412378113845,
+              "no_speech_prob": 0.010862448252737522,
+              "compression_ratio": 1.0833333333333333
+            },
+            {
+              "start": 5.0,
+              "end": 6.2,
+              "text": " She's taking a nap right now.",
+              "avg_logprob": -0.3829412378113845,
+              "no_speech_prob": 0.010862448252737522,
+              "compression_ratio": 1.0833333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "It does have a bag in her cart. No weapons seen. RPE thinks she's taking a nap right now.",
+          "prompt": "Go ahead. The e-mail is in the number 5 row on the e-site of this door. RPE asked her to move and she just keeps going further east.",
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " It does have a bag in her cart. No weapons seen. RPE thinks she's taking a nap right now.",
+              "avg_logprob": -0.2591789453117936,
+              "no_speech_prob": 0.017983926460146904,
+              "compression_ratio": 1.0470588235294118
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793049521.m4a": {
+      "index": 743,
+      "epoch": 1793049521,
+      "sha256": "6b355be2bbb07f379dd142d83f854778c0b4436a7c791c04dba80026b46e2c53",
+      "passes": {
+        "original": {
+          "text": "10-4.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.8567887544631958,
+              "no_speech_prob": 0.039684075862169266,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "10-4",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-4",
+              "avg_logprob": -0.8579916755358378,
+              "no_speech_prob": 0.12745526432991028,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "10-4.",
+          "prompt": "The e-mail is in the number 5 row on the e-site of this door. RPE asked her to move and she just keeps going further east. It does have a bag in her cart, no weapons seen, or anything she's taking a nap right now.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.6982960530689785,
+              "no_speech_prob": 0.10370977222919464,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
