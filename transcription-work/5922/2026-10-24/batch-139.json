@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-24",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792899088.m4a": {
+      "index": 1381,
+      "epoch": 1792899088,
+      "sha256": "fc649f6d60bb5d02262a0d9f0b96a91a2125e27f4c50ae60af9be6f1810b5356",
+      "passes": {
+        "original": {
+          "text": "Long Beach High School, local Charlie Hotel 2, Delta Delta Yankee.",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.640000000000001,
+              "text": " Long Beach High School, local Charlie Hotel 2, Delta Delta Yankee.",
+              "avg_logprob": -0.47862546584185434,
+              "no_speech_prob": 0.026084650307893753,
+              "compression_ratio": 0.9705882352941176
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Long Beach High School local Charlie Hotel 2 Delta Delta Yankee",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.68,
+              "text": " Long Beach High School local Charlie Hotel 2 Delta Delta Yankee",
+              "avg_logprob": -0.591655603476933,
+              "no_speech_prob": 0.018362445756793022,
+              "compression_ratio": 0.9692307692307692
+            }
+          ]
+        },
+        "context": {
+          "text": "Long Beach High School, local Charlie Hotel 2, Delta Delta Yankee.",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.640000000000001,
+              "text": " Long Beach High School, local Charlie Hotel 2, Delta Delta Yankee.",
+              "avg_logprob": -0.47862546584185434,
+              "no_speech_prob": 0.026084650307893753,
+              "compression_ratio": 0.9705882352941176
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792899096.m4a": {
+      "index": 1382,
+      "epoch": 1792899096,
+      "sha256": "eebe0f1501e4c486378560bae25d8057d68ebfa75d81639bedfd146a3fbfd908",
+      "passes": {
+        "original": {
+          "text": "Copy, Lone Peacock.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy, Lone Peacock.",
+              "avg_logprob": -0.9421892166137695,
+              "no_speech_prob": 0.028099484741687775,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy, lone decoy.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy, lone decoy.",
+              "avg_logprob": -0.798747009701199,
+              "no_speech_prob": 0.021177003160119057,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy Long Beach High.",
+          "prompt": "Long Beach High School, local Charlie Hotel 2, Delta Delta Yankee.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy Long Beach High.",
+              "avg_logprob": -0.3178561255335808,
+              "no_speech_prob": 0.006500011309981346,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    }
+  }
+}
