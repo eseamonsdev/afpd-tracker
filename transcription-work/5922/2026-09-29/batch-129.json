@@ -1,0 +1,729 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-29",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1790732654.m4a": {
+      "index": 1281,
+      "epoch": 1790732654,
+      "sha256": "1cf11581a5cda53c69501dc34e434816490cafe1bf6c9a46f6c4f3d4e254ed19",
+      "passes": {
+        "original": {
+          "text": "900 West, 4230 North",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 900 West, 4230 North",
+              "avg_logprob": -0.5941135618421767,
+              "no_speech_prob": 0.034263864159584045,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "900 West, 4230 North.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.7800000000000002,
+              "text": " 900 West, 4230 North.",
+              "avg_logprob": -0.8583066165447235,
+              "no_speech_prob": 0.017145469784736633,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "context": {
+          "text": "900 west, 4230 north.",
+          "prompt": "7J28 central copy motor assist. 7J18 central copy letters with it. Go ahead.",
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 900 west, 4230 north.",
+              "avg_logprob": -0.7273820400238037,
+              "no_speech_prob": 0.005100412294268608,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790732657.m4a": {
+      "index": 1282,
+      "epoch": 1790732657,
+      "sha256": "227dcbd7393b811adecdb6c659e3c4da095b374e08565275e40872c7c882b39c",
+      "passes": {
+        "original": {
+          "text": "ERPs in a block, Toyota, Sienna, broken down in the road. ERPs waiting for a tow, but it's concerned about it being in the middle of the road. Thank you, Houser House response.",
+          "prompt": null,
+          "duration_seconds": 8.96,
+          "token_limit": 96,
+          "token_count": 53,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.4,
+              "text": " ERPs in a block, Toyota, Sienna, broken down in the road.",
+              "avg_logprob": -0.3857502061493543,
+              "no_speech_prob": 0.03694780543446541,
+              "compression_ratio": 1.31496062992126
+            },
+            {
+              "start": 4.4,
+              "end": 7.36,
+              "text": " ERPs waiting for a tow, but it's concerned about it being in the middle of the road.",
+              "avg_logprob": -0.3857502061493543,
+              "no_speech_prob": 0.03694780543446541,
+              "compression_ratio": 1.31496062992126
+            },
+            {
+              "start": 7.36,
+              "end": 8.6,
+              "text": " Thank you, Houser House response.",
+              "avg_logprob": -0.7730901141961416,
+              "no_speech_prob": 0.0070971958339214325,
+              "compression_ratio": 0.9166666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "ERPs in a block, Toyota, Sienna, broken down in the road. ERPs waiting for a tow, but it's concerned about it staying in the middle of the road. Thank you. Have a great day. Thank you. Have a great day. Thank you. Have a great day. Thank you. Have a great day.",
+          "prompt": null,
+          "duration_seconds": 8.96,
+          "token_limit": 96,
+          "token_count": 90,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.16,
+              "text": " ERPs in a block, Toyota, Sienna, broken down in the road.",
+              "avg_logprob": -0.4003418611020458,
+              "no_speech_prob": 0.01628018170595169,
+              "compression_ratio": 1.3203125
+            },
+            {
+              "start": 4.16,
+              "end": 7.36,
+              "text": " ERPs waiting for a tow, but it's concerned about it staying in the middle of the road.",
+              "avg_logprob": -0.4003418611020458,
+              "no_speech_prob": 0.01628018170595169,
+              "compression_ratio": 1.3203125
+            },
+            {
+              "start": 7.36,
+              "end": 8.36,
+              "text": " Thank you.",
+              "avg_logprob": -0.24389979790668098,
+              "no_speech_prob": 0.002224386902526021,
+              "compression_ratio": 2.875
+            },
+            {
+              "start": 8.36,
+              "end": 9.36,
+              "text": " Have a great day.",
+              "avg_logprob": -0.24389979790668098,
+              "no_speech_prob": 0.002224386902526021,
+              "compression_ratio": 2.875
+            },
+            {
+              "start": 9.36,
+              "end": 10.36,
+              "text": " Thank you.",
+              "avg_logprob": -0.24389979790668098,
+              "no_speech_prob": 0.002224386902526021,
+              "compression_ratio": 2.875
+            },
+            {
+              "start": 10.36,
+              "end": 11.36,
+              "text": " Have a great day.",
+              "avg_logprob": -0.24389979790668098,
+              "no_speech_prob": 0.002224386902526021,
+              "compression_ratio": 2.875
+            },
+            {
+              "start": 11.36,
+              "end": 12.36,
+              "text": " Thank you.",
+              "avg_logprob": -0.24389979790668098,
+              "no_speech_prob": 0.002224386902526021,
+              "compression_ratio": 2.875
+            },
+            {
+              "start": 12.36,
+              "end": 13.36,
+              "text": " Have a great day.",
+              "avg_logprob": -0.24389979790668098,
+              "no_speech_prob": 0.002224386902526021,
+              "compression_ratio": 2.875
+            },
+            {
+              "start": 13.36,
+              "end": 14.36,
+              "text": " Thank you.",
+              "avg_logprob": -0.24389979790668098,
+              "no_speech_prob": 0.002224386902526021,
+              "compression_ratio": 2.875
+            },
+            {
+              "start": 14.36,
+              "end": 15.36,
+              "text": " Have a great day.",
+              "avg_logprob": -0.24389979790668098,
+              "no_speech_prob": 0.002224386902526021,
+              "compression_ratio": 2.875
+            }
+          ]
+        },
+        "context": {
+          "text": "AirP is on a block, Toyota Sienna is broken down in the road. AirP is waiting for a tow, but is concerned about it being in the middle of the road. They do have their houses on.",
+          "prompt": "7J18 central copy letters with it. Go ahead. 900 West, 4230 North",
+          "duration_seconds": 8.96,
+          "token_limit": 96,
+          "token_count": 47,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " AirP is on a block, Toyota Sienna is broken down in the road. AirP is waiting for a tow, but is concerned about it being in the middle of the road. They do have their houses on.",
+              "avg_logprob": -0.4228791706264019,
+              "no_speech_prob": 0.14414028823375702,
+              "compression_ratio": 1.3828125
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790732668.m4a": {
+      "index": 1283,
+      "epoch": 1790732668,
+      "sha256": "a04b0210f04bd6b16a47de99c5d46fb8d380bc885ba06ea428f445733a904a28",
+      "passes": {
+        "original": {
+          "text": "I'm sorry.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I'm sorry.",
+              "avg_logprob": -1.1131668090820312,
+              "no_speech_prob": 0.04607031121850014,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm sorry.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm sorry.",
+              "avg_logprob": -0.9374382836478097,
+              "no_speech_prob": 0.07675403356552124,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm sorry.",
+          "prompt": "Go ahead. 900 West, 4230 North ERPs in a block, Toyota, Sienna, broken down in the road. ERPs waiting for a tow, but it's concerned about it being in the middle of the road. Thank you, Houser House response.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.72,
+              "text": " I'm sorry.",
+              "avg_logprob": -0.943852390561785,
+              "no_speech_prob": 0.033086054027080536,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790732697.m4a": {
+      "index": 1284,
+      "epoch": 1790732697,
+      "sha256": "23367ac1570a8a4d6baa156af1f4ebae6ad330cea7baedea32a6fd96a16529ec",
+      "passes": {
+        "original": {
+          "text": "Try it.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Try it.",
+              "avg_logprob": -0.6730696558952332,
+              "no_speech_prob": 0.11091860383749008,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Try it.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Try it.",
+              "avg_logprob": -0.7554091513156891,
+              "no_speech_prob": 0.06443330645561218,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Try it.",
+          "prompt": "900 West, 4230 North ERPs in a block, Toyota, Sienna, broken down in the road. ERPs waiting for a tow, but it's concerned about it being in the middle of the road. Thank you, Houser House response. I'm sorry.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Try it.",
+              "avg_logprob": -0.6020559867223104,
+              "no_speech_prob": 0.10243570804595947,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790732699.m4a": {
+      "index": 1285,
+      "epoch": 1790732699,
+      "sha256": "d118fd6983690322de57f3f846049c9b40abc0f76809164f2593eaba79a56f26",
+      "passes": {
+        "original": {
+          "text": "I'll be out at 631 South, 2220 West, Department 3036.",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.96,
+              "text": " I'll be out at 631 South, 2220 West, Department 3036.",
+              "avg_logprob": -0.5324269503355026,
+              "no_speech_prob": 0.03100861981511116,
+              "compression_ratio": 0.8983050847457628
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'll be out at 631 South 2220 West apartment 303",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.640000000000001,
+              "text": " I'll be out at 631 South 2220 West apartment 303",
+              "avg_logprob": -0.4615652561187744,
+              "no_speech_prob": 0.017821060493588448,
+              "compression_ratio": 0.9056603773584906
+            }
+          ]
+        },
+        "context": {
+          "text": "I'll be out at 631 South, 2220 West, Department 3036.",
+          "prompt": "ERPs in a block, Toyota, Sienna, broken down in the road. ERPs waiting for a tow, but it's concerned about it being in the middle of the road. Thank you, Houser House response. I'm sorry. Try it.",
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " I'll be out at 631 South, 2220 West, Department 3036.",
+              "avg_logprob": -0.47295265942811965,
+              "no_speech_prob": 0.006348904687911272,
+              "compression_ratio": 0.8983050847457628
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790732708.m4a": {
+      "index": 1286,
+      "epoch": 1790732708,
+      "sha256": "2c9b07b3944e00f0dbb80c8f7c54ef5b8945cd80b81dfe6b247f950bba2a990c",
+      "passes": {
+        "original": {
+          "text": "Happy?",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy?",
+              "avg_logprob": -0.6222816467285156,
+              "no_speech_prob": 0.01605183444917202,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy?",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy?",
+              "avg_logprob": -0.587288236618042,
+              "no_speech_prob": 0.005688847042620182,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy?",
+          "prompt": "I'm sorry. Try it. I'll be out at 631 South, 2220 West, Department 3036.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy?",
+              "avg_logprob": -0.6033478260040284,
+              "no_speech_prob": 0.0076948776841163635,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790732773.m4a": {
+      "index": 1287,
+      "epoch": 1790732773,
+      "sha256": "f1c1384b2c621df93346a87aa53f77789ab80d8c1f287e73435e29a982ef84d0",
+      "passes": {
+        "original": {
+          "text": "Fine, check mobile refer, cancel APL left at 3rd day.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.7,
+              "text": " Fine, check mobile refer, cancel APL left at 3rd day.",
+              "avg_logprob": -0.7163379556602902,
+              "no_speech_prob": 0.02818877063691616,
+              "compression_ratio": 0.8833333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Fine. Check mobile for cancel ATL after 3-day.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.7600000000000002,
+              "text": " Fine. Check mobile for cancel ATL after 3-day.",
+              "avg_logprob": -0.8390178680419922,
+              "no_speech_prob": 0.0032694139517843723,
+              "compression_ratio": 0.8518518518518519
+            }
+          ]
+        },
+        "context": {
+          "text": "Fine, check mobile refer, cancel APL left at 3rd day.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.7,
+              "text": " Fine, check mobile refer, cancel APL left at 3rd day.",
+              "avg_logprob": -0.7163379556602902,
+              "no_speech_prob": 0.02818877063691616,
+              "compression_ratio": 0.8833333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790732861.m4a": {
+      "index": 1288,
+      "epoch": 1790732861,
+      "sha256": "24afddbabf3f76040417a0c433eab63e0a21f724981a57d92378d8efc520b8fc",
+      "passes": {
+        "original": {
+          "text": "They can do six and I'm not locating a female or the truck. You can show me clear.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " They can do six and I'm not locating a female or the truck. You can show me clear.",
+              "avg_logprob": -0.5334150493144989,
+              "no_speech_prob": 0.11798915266990662,
+              "compression_ratio": 1.025
+            }
+          ]
+        },
+        "filtered": {
+          "text": "H-66, I'm not locating a female or the truck. Are you going to be clear?",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " H-66, I'm not locating a female or the truck. Are you going to be clear?",
+              "avg_logprob": -0.6440111870567004,
+              "no_speech_prob": 0.07236447185277939,
+              "compression_ratio": 0.9473684210526315
+            }
+          ]
+        },
+        "context": {
+          "text": "They can do six and I'm not locating a female or the truck. You can show me clear.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " They can do six and I'm not locating a female or the truck. You can show me clear.",
+              "avg_logprob": -0.5334150493144989,
+              "no_speech_prob": 0.11798915266990662,
+              "compression_ratio": 1.025
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790732865.m4a": {
+      "index": 1289,
+      "epoch": 1790732865,
+      "sha256": "40c7290167ad60537386883d0747bd6cd46d2985ead4aa8b4d7f476823cdbd3a",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.8183494567871094,
+              "no_speech_prob": 0.016734138131141663,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "traffic",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " traffic",
+              "avg_logprob": -0.8712270855903625,
+              "no_speech_prob": 0.009143483825027943,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "They can do six and I'm not locating a female or the truck. You can show me clear.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.524895715713501,
+              "no_speech_prob": 0.024427179247140884,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790732875.m4a": {
+      "index": 1290,
+      "epoch": 1790732875,
+      "sha256": "8e031843fc90d1d07cfdb12af3930cc9a11d1fefb3dbc0f50ec535c460061c62",
+      "passes": {
+        "original": {
+          "text": "So there's only so much",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " So there's only so much",
+              "avg_logprob": -0.8261516888936361,
+              "no_speech_prob": 0.054578136652708054,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "So there's only so much",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " So there's only so much",
+              "avg_logprob": -0.8026209937201606,
+              "no_speech_prob": 0.09087691456079483,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "context": {
+          "text": "So we're just going to send them out.",
+          "prompt": "They can do six and I'm not locating a female or the truck. You can show me clear. Copy.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.56,
+              "text": " So we're just going to send them out.",
+              "avg_logprob": -1.044950008392334,
+              "no_speech_prob": 0.06601022928953171,
+              "compression_ratio": 0.8222222222222222
+            }
+          ]
+        }
+      }
+    }
+  }
+}
