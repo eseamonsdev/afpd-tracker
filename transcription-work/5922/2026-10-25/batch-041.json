@@ -1,0 +1,264 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-25",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792943367.m4a": {
+      "index": 401,
+      "epoch": 1792943367,
+      "sha256": "34dedae51a1c3da06261afbc2b7a992b8a960e9c205742d95d4a653057c8c880",
+      "passes": {
+        "original": {
+          "text": "5J, 52 traffic.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5J, 52 traffic.",
+              "avg_logprob": -0.37996501392788357,
+              "no_speech_prob": 0.057829100638628006,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J52 traffic.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J52 traffic.",
+              "avg_logprob": -0.5218315050005913,
+              "no_speech_prob": 0.06532632559537888,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "5J, 52 traffic.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5J, 52 traffic.",
+              "avg_logprob": -0.37996501392788357,
+              "no_speech_prob": 0.057829100638628006,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792943372.m4a": {
+      "index": 402,
+      "epoch": 1792943372,
+      "sha256": "1f4dde43991b24df83dd66f0309637f12b84718f4521f1a02c745cf78ccdde38",
+      "passes": {
+        "original": {
+          "text": "5J52, go ahead.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J52, go ahead.",
+              "avg_logprob": -0.549149626493454,
+              "no_speech_prob": 0.02584829553961754,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792943374.m4a": {
+      "index": 403,
+      "epoch": 1792943374,
+      "sha256": "9a6bb8972d9a6159eb7ebb40583faf83efca67190d1683a808ecc787e8abe8b8",
+      "passes": {
+        "original": {
+          "text": "We located on 740 East H Street on a local tango 884 tango November",
+          "prompt": null,
+          "duration_seconds": 9.344,
+          "token_limit": 99,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 10.56,
+              "text": " We located on 740 East H Street on a local tango 884 tango November",
+              "avg_logprob": -0.34542228494371685,
+              "no_speech_prob": 0.004468746483325958,
+              "compression_ratio": 1.046875
+            }
+          ]
+        },
+        "filtered": {
+          "text": "to be located on 740 East 8th Street on a local tango 884 tango November",
+          "prompt": null,
+          "duration_seconds": 9.344,
+          "token_limit": 99,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 10.6,
+              "text": " to be located on 740 East 8th Street on a local tango 884 tango November",
+              "avg_logprob": -0.35576281081075256,
+              "no_speech_prob": 0.00560904573649168,
+              "compression_ratio": 1.0434782608695652
+            }
+          ]
+        },
+        "context": {
+          "text": "We're located on 740 East H Street on a local tango, 884 tango, November.",
+          "prompt": "5J, 52 traffic. 5J52, go ahead.",
+          "duration_seconds": 9.344,
+          "token_limit": 99,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " We're located on 740 East H Street on a local tango, 884 tango, November.",
+              "avg_logprob": -0.3652855682373047,
+              "no_speech_prob": 0.007685345131903887,
+              "compression_ratio": 1.0579710144927537
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792943767.m4a": {
+      "index": 409,
+      "epoch": 1792943767,
+      "sha256": "941824c72bac888f84206b3c8d98302a621314098be320a3613e0034b002a629",
+      "passes": {
+        "original": {
+          "text": "5G, I do change that to report 4.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G, I do change that to report 4.",
+              "avg_logprob": -0.8113400340080261,
+              "no_speech_prob": 0.06918615847826004,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792943771.m4a": {
+      "index": 410,
+      "epoch": 1792943771,
+      "sha256": "6158c3512868db91958c643fc61ab79a3f09b931a8f525c51fc3c56b732f3a6e",
+      "passes": {
+        "original": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.6338293382099697,
+              "no_speech_prob": 0.007055448833853006,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.6264965874808175,
+              "no_speech_prob": 0.0182502418756485,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Code 4.",
+          "prompt": "5G, I do change that to report 4.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Code 4.",
+              "avg_logprob": -0.5173236628373464,
+              "no_speech_prob": 0.004153400659561157,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    }
+  }
+}
