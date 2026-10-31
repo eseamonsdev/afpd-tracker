@@ -30,8 +30,10 @@ Commit `records-pending-review/openmhz-audio-request.json` for downloads, or
 
 Use a fresh request timestamp to trigger an explicit rerun. Legacy transcription
 requests using `date` instead of `day` still work. A request may contain `days`
-or a `requests` array for up to 32 independent jobs. Only one matrix job runs at
-a time; a failed date does not cancel the other requested dates. Do not depend
+or a `requests` array for up to 32 independent jobs. Transcription runs up to 15 distinct days concurrently on standard hosted
+runners; audio downloads remain sequential. The transcription lock is scoped
+to branch, talkgroup and date, preventing duplicate writers for the same day.
+A failed date does not cancel the other requested dates. Do not depend
 on matrix ordering; request one date at a time when strict ordering is needed.
 
 Pushing a changed active manifest under
@@ -126,3 +128,13 @@ targets receive all three passes. Each date remains a separate matrix job, with
 one job running at a time under the existing staging transcription lock.
 Dispatch selection checkpoints every 100 targets, retaining the same model and
 settings as AFPD selection.
+
+### Remaining calls across all radio IDs
+
+Use `"selection": "missing"` to process every unpublished, unverified call,
+regardless of radio ID. Matching completed passes are reused, partial passes
+resume, and unavailable target/context audio stays pending. Checkpoints are
+pushed every 100 newly processed targets and at the end or on interruption.
+Checkpoint files retain their ten-archive-clip layout. Different days write
+separate directories; pushes rebase and retry with jitter up to 30 times when
+other jobs advance staging. Reconciliation remains separate.

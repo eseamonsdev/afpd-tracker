@@ -4,12 +4,33 @@ from pathlib import Path
 import sys
 import tempfile
 import unittest
+from types import SimpleNamespace
+from unittest.mock import patch
+import transcribe_radio_batches as batches
 
 sys.path.insert(0, str(Path(__file__).parents[1] / 'scripts'))
 from transcribe_6001_batches import checkpoint, cleanup_audio, completed, restore
 
 
 class CheckpointTests(unittest.TestCase):
+    def test_checkpoint_retries_rejected_pushes_without_force(self):
+        commands = []
+        failures = [1, 1, 1, 1, 0]
+        def git(cmd, **kwargs):
+            commands.append(cmd)
+            result = failures.pop(0) if cmd[1] == 'push' else 1 if cmd[1] == 'diff' else 0
+            return SimpleNamespace(returncode=result)
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            directory = root / 'transcription-work/5922/2026-10-29'
+            with patch.object(batches, 'ROOT', root), \
+                 patch.object(batches.subprocess, 'run', side_effect=git), \
+                 patch.object(batches.time, 'sleep'):
+                batches.commit_checkpoint(directory, '2026-10-29', 100, 1000, 5922)
+        self.assertEqual(sum(c[1] == 'push' for c in commands), 5)
+        self.assertEqual(sum(c[1] == 'rebase' for c in commands), 5)
+        self.assertFalse(any('--force' in c for c in commands))
+
     def test_partial_resume_and_identity_guard(self):
         with tempfile.TemporaryDirectory() as tmp:
             directory = Path(tmp) / 'text'

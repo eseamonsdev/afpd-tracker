@@ -92,6 +92,16 @@ class RequestTests(unittest.TestCase):
 
 
 class AfpdSelectionTests(unittest.TestCase):
+    def test_missing_selection_covers_all_ids_and_preserves_published_calls(self):
+        calls = [{'radio_ids': ['14590001']}, {'radio_ids': ['9040001']},
+                 {'radio_ids': []}, {'transcript': '   '},
+                 {'transcript': 'Owner correction'}, {'validated': True}]
+        for group in TALKGROUPS:
+            self.assertEqual(transcription.selected_indices(
+                {'talkgroup': group, 'calls': calls}, 'missing'), [0, 1, 2, 3])
+        self.assertEqual(requests({'day': DAY, 'talkgroup': 5922,
+                                  'selection': 'missing'})[0]['selection'], 'missing')
+
     def test_dispatch_selection_uses_source_ids_and_preserves_existing_text(self):
         calls = [
             {'radio_ids': ['9040001']},

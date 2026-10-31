@@ -35,7 +35,7 @@ def requests(payload, default_branch='staging'):
                        'mode': mode, 'proof': proof,
                        'pause_ms': valid_pause_ms(row.get('pause_ms', DEFAULT_PAUSE_MS))})
         if 'selection' in row:
-            if row['selection'] not in ('all', 'afpd_missing', 'dispatch_missing'):
+            if row['selection'] not in ('all', 'afpd_missing', 'dispatch_missing', 'missing'):
                 raise ValueError('Unknown transcription selection')
             if row['selection'] == 'afpd_missing' and result[-1]['talkgroup'] != 5922:
                 raise ValueError('AFPD selection requires Law 2')

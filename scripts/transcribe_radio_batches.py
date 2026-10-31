@@ -11,6 +11,7 @@ import json
 import math
 import os
 import re
+import random
 from pathlib import Path
 import shutil
 import subprocess
@@ -31,6 +32,10 @@ def radio_ids(call):
 def selected_indices(data, selection='all'):
     if selection == 'all':
         return list(range(len(data['calls'])))
+    if selection == 'missing':
+        return [i for i, call in enumerate(data['calls'])
+                if call.get('validated') is not True
+                and not (isinstance(call.get('transcript'), str) and call['transcript'].strip())]
     if selection == 'dispatch_missing':
         if data['talkgroup'] != 5922:
             raise ValueError('Dispatch selection requires Law 2')
@@ -144,12 +149,13 @@ def commit_checkpoint(directory, day, done, total, talkgroup=6001, target_branch
     # Explicit path limits the commit to text checkpoints, even if other files are staged.
     subprocess.run(['git', 'commit', '-m', f'Checkpoint {talkgroup} {day}: {done}/{total} three-pass clips',
                     '--', relative], cwd=ROOT, check=True)
-    for attempt in range(3):
+    for attempt in range(30):
         subprocess.run(['git', 'fetch', 'origin', target_branch], cwd=ROOT, check=True)
         subprocess.run(['git', 'rebase', 'origin/' + target_branch], cwd=ROOT, check=True)
         if subprocess.run(['git', 'push', 'origin', 'HEAD:' + target_branch], cwd=ROOT).returncode == 0:
             print(f'CHECKPOINT COMMITTED: {done}/{total} clips; text only.', flush=True)
             return
+        time.sleep(random.uniform(1, 5))
     raise RuntimeError('Checkpoint push failed; previous committed batches remain safe')
 
 
@@ -173,13 +179,15 @@ def run(args):
     targets = selected_indices(data, selection)
     print(f'SELECTION: {selection}; {len(targets)} target clips; full archive indices/context preserved.', flush=True)
     blocked = []
-    if selection in ('afpd_missing', 'dispatch_missing'):
+    if selection in ('afpd_missing', 'dispatch_missing', 'missing'):
         targets, blocked = available_targets(folder.name, data, targets, cfg, clips)
         print(f'AUDIO SELECTION: {len(targets)} available targets; {len(blocked)} pending unavailable target/context audio.', flush=True)
     if not targets or all(completed(clips.get(calls[i]["original_filename"], {})) for i in targets):
         print('All available selected clips already saved; no ASR required.', flush=True)
         return
-    batch_size = (min(args.batch_size, 100) if selection == 'dispatch_missing'
+    # Count new work toward each checkpoint, excluding already saved targets.
+    targets = [i for i in targets if not completed(clips.get(calls[i]['original_filename'], {}))]
+    batch_size = (min(args.batch_size, 100) if selection in ('dispatch_missing', 'missing')
                   else min(args.batch_size, 10) if selection == 'afpd_missing'
                   else args.batch_size)
     audio = Path(args.audio_dir).resolve()
@@ -276,7 +284,7 @@ def main():
     parser.add_argument('--date', required=True)
     parser.add_argument('--talkgroup', type=int, default=6001)
     parser.add_argument('--target-branch', default='staging')
-    parser.add_argument('--selection', choices=['all', 'afpd_missing', 'dispatch_missing'], default='all')
+    parser.add_argument('--selection', choices=['all', 'afpd_missing', 'dispatch_missing', 'missing'], default='all')
     parser.add_argument('--batch-size', type=int, default=200)
     parser.add_argument('--audio-dir', required=True)
     parser.add_argument('--model-dir', required=True)

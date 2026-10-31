@@ -70,13 +70,13 @@ jobs:
     if: ${{ needs.request.outputs.has_work == 'true' }}
     strategy:
       fail-fast: false
-      max-parallel: 1
+      max-parallel: 15
       matrix: ${{ fromJSON(needs.request.outputs.matrix) }}
     name: ${{ matrix.day }} / ${{ matrix.talkgroup }} / ${{ matrix.target_branch }}
     runs-on: ubuntu-latest
     timeout-minutes: 350
     concurrency:
-      group: radio-transcription-${{ matrix.target_branch }}
+      group: radio-transcription-${{ matrix.target_branch }}-${{ matrix.talkgroup }}-${{ matrix.day }}
       cancel-in-progress: false
       queue: max
     env:
