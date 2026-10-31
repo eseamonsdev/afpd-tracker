@@ -61,7 +61,7 @@ class Element {
 async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11", search = "", transcriptEnabled = true, associations = null, manifestEnabled = transcriptEnabled, afpdRadioIds = [], agencyRadioIds = {}, confirmations = null) {
   const elements = new Map(["archive", "month", "day", "audio", "play", "seek", "autoplay",
     "clips", "clips-section", "status", "current", "current-radio-ids", "player-message", "elapsed", "duration",
-    "coverage", "transcript-toggle", "transcript-download", "transcript", "transcript-status", "transcript-text", "transcript-availability", "verification-count", "transcription-count", "review-progress"]
+    "coverage", "transcript-toggle", "transcript-download", "transcript", "transcript-status", "transcript-text", "transcript-availability", "verification-count", "transcription-count", "review-progress", "progress-date"]
     .map(name => [`law2-radio-${name}`, new Element(name === "audio" ? "audio" : "div")]));
   elements.get("law2-radio-autoplay").setAttribute("aria-pressed", "false");
   const players = [elements.get("law2-radio-audio")];
@@ -336,6 +336,7 @@ test("progress counts nonblank transcripts and explicit approvals separately acr
   const f = await playerFixture(calls);
   const transcribed = f.get("transcription-count"), verified = f.get("verification-count");
   const progress = f.get("review-progress");
+  assert.equal(f.get("progress-date").textContent, "for 09/11/2026");
   assert.equal(transcribed.textContent, "2 / 6");
   assert.equal(verified.textContent, "1 / 6");
   assert.equal(progress.hidden, false);
@@ -344,9 +345,11 @@ test("progress counts nonblank transcripts and explicit approvals separately acr
   f.get("day").value = "2026-09-10";
   f.get("day").emit("change");
   assert.equal(progress.hidden, true);
+  assert.equal(f.get("progress-date").textContent, "");
   assert.equal(transcribed.textContent, "");
   assert.equal(verified.textContent, "");
   await f.settle();
+  assert.equal(f.get("progress-date").textContent, "for 09/10/2026");
   assert.equal(transcribed.textContent, "1 / 6");
   assert.equal(verified.textContent, "0 / 6");
   assert.equal(progress.hidden, false);

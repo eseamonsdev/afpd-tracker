@@ -518,7 +518,7 @@ function playbackEngine({ get, getCalls, getButtons, clipSource, label, singlePl
 function archive(config) {
   const root = document.getElementById(config.rootId); if (!root) return;
   const get = name => document.getElementById(`${config.prefix}-${name}`);
-  const month = get("month"), day = get("day"), reviewProgress = get("review-progress"), transcriptionCount = get("transcription-count"), verificationCount = get("verification-count");
+  const month = get("month"), day = get("day"), reviewProgress = get("review-progress"), progressDate = get("progress-date"), transcriptionCount = get("transcription-count"), verificationCount = get("verification-count");
 
   const list = get("clips"), section = get("clips-section"), status = get("status");
   const currentRadioIds = get("current-radio-ids"), transcriptDownload = get("transcript-download"), transcriptAvailability = get("transcript-availability");
@@ -539,6 +539,7 @@ function archive(config) {
   function resetPlayer() {
     transcriptAvailable = false;
     if (reviewProgress) reviewProgress.hidden = true;
+    if (progressDate) progressDate.textContent = "";
     if (transcriptionCount) transcriptionCount.textContent = "";
     if (verificationCount) verificationCount.textContent = "";
     if (transcriptDownload) { transcriptDownload.hidden = true; transcriptDownload.removeAttribute("href"); transcriptDownload.removeAttribute("download"); }
@@ -600,6 +601,10 @@ function archive(config) {
         const verified = calls.filter(call => call.validated === true).length;
         transcriptionCount.textContent = `${transcribed} / ${calls.length}`;
         verificationCount.textContent = `${verified} / ${calls.length}`;
+        if (progressDate) {
+          const [year, month, day] = entry.date.split("-");
+          progressDate.textContent = `for ${month}/${day}/${year}`;
+        }
         reviewProgress.hidden = false;
       }
       status.textContent = calls.length ? `${dateFormat.format(dateObject(entry.date))} · ${calls.length} clips` : "No clips available for this day.";
