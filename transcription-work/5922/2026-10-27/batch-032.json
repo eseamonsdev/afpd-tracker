@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-27",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793116760.m4a": {
+      "index": 311,
+      "epoch": 1793116760,
+      "sha256": "204bcf7943a3d4fd9aca7edb64b5bb4e9faf79d59ce0b25320c4992caee2f686",
+      "passes": {
+        "original": {
+          "text": "500 West, 1120 North, local uniform 085 Hotel Fox.",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.62,
+              "text": " 500 West, 1120 North, local uniform 085 Hotel Fox.",
+              "avg_logprob": -0.4359632099376005,
+              "no_speech_prob": 0.04509226977825165,
+              "compression_ratio": 0.8620689655172413
+            }
+          ]
+        },
+        "filtered": {
+          "text": "500 West, 1120 North, local uniform, 085 Hotel Fox.",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 500 West, 1120 North, local uniform, 085 Hotel Fox.",
+              "avg_logprob": -0.5641171104378171,
+              "no_speech_prob": 0.09427831321954727,
+              "compression_ratio": 0.864406779661017
+            }
+          ]
+        },
+        "context": {
+          "text": "500 West, 1120 North, local uniform 085 Hotel Fox.",
+          "prompt": "Oh, J43 can hold the DV for me. 5J35 traffic. good",
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.62,
+              "text": " 500 West, 1120 North, local uniform 085 Hotel Fox.",
+              "avg_logprob": -0.444464318892535,
+              "no_speech_prob": 0.1003100723028183,
+              "compression_ratio": 0.8620689655172413
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793116766.m4a": {
+      "index": 312,
+      "epoch": 1793116766,
+      "sha256": "fcd027f0f8881fc8704bfb7293c0f9e6aca4affa0032b886799ab7dd55ac84a0",
+      "passes": {
+        "original": {
+          "text": "Copy at 9.59.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Copy at 9.59.",
+              "avg_logprob": -0.5105386310153537,
+              "no_speech_prob": 0.02432810328900814,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy, at 9.59.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy, at 9.59.",
+              "avg_logprob": -0.4449796289205551,
+              "no_speech_prob": 0.015567002817988396,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "copy at 959.",
+          "prompt": "5J35 traffic. good 500 West, 1120 North, local uniform 085 Hotel Fox.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy at 959.",
+              "avg_logprob": -0.49498624354600906,
+              "no_speech_prob": 0.007932210341095924,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    }
+  }
+}
