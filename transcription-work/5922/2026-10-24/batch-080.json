@@ -1,0 +1,649 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-24",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792875734.m4a": {
+      "index": 791,
+      "epoch": 1792875734,
+      "sha256": "af83173b24ad9c8417ad29de19a8980e241949e515996d8872c4ed072f825e5d",
+      "passes": {
+        "original": {
+          "text": "My pre-knock on her door shouldn't respond since she seems to be breathing.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " My pre-knock on her door shouldn't respond since she seems to be breathing.",
+              "avg_logprob": -0.4456339279810588,
+              "no_speech_prob": 0.0032307307701557875,
+              "compression_ratio": 1.0135135135135136
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Okay, now found her door, she didn't respond, and she seems to be breathing.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Okay, now found her door, she didn't respond, and she seems to be breathing.",
+              "avg_logprob": -0.5697203197262504,
+              "no_speech_prob": 0.003627842292189598,
+              "compression_ratio": 1.0133333333333334
+            }
+          ]
+        },
+        "context": {
+          "text": "A pre-knock on her door shouldn't respond since she seems to be breathing.",
+          "prompt": "Hang on, let me go ahead with the details. It's going to be at the Wendy's in 13J at 795 North State Street. There's a woman slumped in her car for the last hour.",
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " A pre-knock on her door shouldn't respond since she seems to be breathing.",
+              "avg_logprob": -0.3559779269354684,
+              "no_speech_prob": 0.00254551088437438,
+              "compression_ratio": 1.0277777777777777
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792875739.m4a": {
+      "index": 792,
+      "epoch": 1792875739,
+      "sha256": "e6c38eaa1699acbf1480483e6bd6f2298e9a50597ddb02e0861c4abc53d347ec",
+      "passes": {
+        "original": {
+          "text": "13 J's requesting 7 J respond will be at gray Ford local 5 Juliet 0 Whiskey November",
+          "prompt": null,
+          "duration_seconds": 7.552,
+          "token_limit": 85,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.640000000000001,
+              "text": " 13 J's requesting 7 J respond will be at gray Ford local 5 Juliet 0 Whiskey November",
+              "avg_logprob": -0.6800897175615485,
+              "no_speech_prob": 0.008640868589282036,
+              "compression_ratio": 0.9767441860465116
+            }
+          ]
+        },
+        "filtered": {
+          "text": "13 days requesting, 7 day respond will be at Gray Ford, Local 5 Juliet 0, Whiskey, November.",
+          "prompt": null,
+          "duration_seconds": 7.552,
+          "token_limit": 85,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.8,
+              "text": " 13 days requesting, 7 day respond will be at Gray Ford, Local 5 Juliet 0, Whiskey, November.",
+              "avg_logprob": -0.5509284253303821,
+              "no_speech_prob": 0.009703582152724266,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "13J is requesting. 7J respond will be at Grey Ford. Local 5, Juliet 0, Whiskey November.",
+          "prompt": "Hang on, let me go ahead with the details. It's going to be at the Wendy's in 13J at 795 North State Street. There's a woman slumped in her car for the last hour. My pre-knock on her door shouldn't respond since she seems to be breathing.",
+          "duration_seconds": 7.552,
+          "token_limit": 85,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 13J is requesting. 7J respond will be at Grey Ford. Local 5, Juliet 0, Whiskey November.",
+              "avg_logprob": -0.3751725885603163,
+              "no_speech_prob": 0.0026847815606743097,
+              "compression_ratio": 0.967032967032967
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792875771.m4a": {
+      "index": 793,
+      "epoch": 1792875771,
+      "sha256": "a47d67895946b21527f21b8c8c273bd88fb5e1eb8e4ca5bbb43d50043d4cb229",
+      "passes": {
+        "original": {
+          "text": "8 can do, 9 are covered in medical.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 8 can do, 9 are covered in medical.",
+              "avg_logprob": -0.7605589903317965,
+              "no_speech_prob": 0.013738644309341908,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18J9, I cover the medical.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18J9, I cover the medical.",
+              "avg_logprob": -0.8664577802022299,
+              "no_speech_prob": 0.010760095901787281,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "context": {
+          "text": "18J 9. I copy the medical.",
+          "prompt": "It's going to be at the Wendy's in 13J at 795 North State Street. There's a woman slumped in her car for the last hour. My pre-knock on her door shouldn't respond since she seems to be breathing. 13 J's requesting 7 J respond will be at gray Ford local 5 Juliet 0 Whiskey November",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18J 9. I copy the medical.",
+              "avg_logprob": -0.7390049447615942,
+              "no_speech_prob": 0.018795771524310112,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792875774.m4a": {
+      "index": 794,
+      "epoch": 1792875774,
+      "sha256": "e2e3b3beb8f16366d91925f5af560e54d823bd1d93c9d0d6cf7fc1bfb63cde45",
+      "passes": {
+        "original": {
+          "text": "18J9, it's going to be at 5910 West, 10100 North. ARPAE falls down 10 stairs with a water heater.",
+          "prompt": null,
+          "duration_seconds": 9.728,
+          "token_limit": 102,
+          "token_count": 34,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 18J9, it's going to be at 5910 West, 10100 North.",
+              "avg_logprob": -0.4196460655757359,
+              "no_speech_prob": 0.006925841793417931,
+              "compression_ratio": 0.9897959183673469
+            },
+            {
+              "start": 5.0,
+              "end": 9.0,
+              "text": " ARPAE falls down 10 stairs with a water heater.",
+              "avg_logprob": -0.4196460655757359,
+              "no_speech_prob": 0.006925841793417931,
+              "compression_ratio": 0.9897959183673469
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18J9, it's going to be 5910 West, 10100 North, ARPAE falls down 10 stairs with a water heater.",
+          "prompt": null,
+          "duration_seconds": 9.728,
+          "token_limit": 102,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.36,
+              "text": " 18J9, it's going to be 5910 West, 10100 North, ARPAE falls down 10 stairs with a water heater.",
+              "avg_logprob": -0.40681069158017635,
+              "no_speech_prob": 0.014827093109488487,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "18 J 9, it's going to be at 59 10 West 10 100 North. RP falls down 10 stairs with a water heater.",
+          "prompt": "My pre-knock on her door shouldn't respond since she seems to be breathing. 13 J's requesting 7 J respond will be at gray Ford local 5 Juliet 0 Whiskey November 8 can do, 9 are covered in medical.",
+          "duration_seconds": 9.728,
+          "token_limit": 102,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.44,
+              "text": " 18 J 9, it's going to be at 59 10 West 10 100 North. RP falls down 10 stairs with a water heater.",
+              "avg_logprob": -0.4281200170516968,
+              "no_speech_prob": 0.0013845915673300624,
+              "compression_ratio": 1.065934065934066
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792875785.m4a": {
+      "index": 795,
+      "epoch": 1792875785,
+      "sha256": "888889aa8761ffc4266f14b8fc6041d6da0d1dd6c50fbc115f452b315a317828",
+      "passes": {
+        "original": {
+          "text": "Their hip hurts will be a first-party 52-year-old male currently conscious of breathing.",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Their hip hurts will be a first-party 52-year-old male currently conscious of breathing.",
+              "avg_logprob": -0.401739573997,
+              "no_speech_prob": 0.02032150700688362,
+              "compression_ratio": 1.0602409638554218
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Their hip hurts will be a first-party 52-year-old male currently conscious of breathing.",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Their hip hurts will be a first-party 52-year-old male currently conscious of breathing.",
+              "avg_logprob": -0.3856457342272219,
+              "no_speech_prob": 0.023172730579972267,
+              "compression_ratio": 1.0602409638554218
+            }
+          ]
+        },
+        "context": {
+          "text": "Wives its bare hip hurts will be a first party 52 year old male currently conscious of breathing.",
+          "prompt": "13 J's requesting 7 J respond will be at gray Ford local 5 Juliet 0 Whiskey November 8 can do, 9 are covered in medical. 18J9, it's going to be at 5910 West, 10100 North. ARPAE falls down 10 stairs with a water heater.",
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Wives its bare hip hurts will be a first party 52 year old male currently conscious of breathing.",
+              "avg_logprob": -0.461817653282829,
+              "no_speech_prob": 0.062455397099256516,
+              "compression_ratio": 1.1149425287356323
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792875792.m4a": {
+      "index": 796,
+      "epoch": 1792875792,
+      "sha256": "56cf5a46c3c3a2a9a1b92cd270520a10b605e6b663a968a9c8875baf1470b212",
+      "passes": {
+        "original": {
+          "text": "So",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " So",
+              "avg_logprob": -0.6077204793691635,
+              "no_speech_prob": 0.05224616080522537,
+              "compression_ratio": 0.2
+            }
+          ]
+        },
+        "filtered": {
+          "text": "So",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " So",
+              "avg_logprob": -0.8605449199676514,
+              "no_speech_prob": 0.057025834918022156,
+              "compression_ratio": 0.2
+            }
+          ]
+        },
+        "context": {
+          "text": "Show it.",
+          "prompt": "8 can do, 9 are covered in medical. 18J9, it's going to be at 5910 West, 10100 North. ARPAE falls down 10 stairs with a water heater. Their hip hurts will be a first-party 52-year-old male currently conscious of breathing.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Show it.",
+              "avg_logprob": -0.8211113512516022,
+              "no_speech_prob": 0.2567712068557739,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792875802.m4a": {
+      "index": 797,
+      "epoch": 1792875802,
+      "sha256": "d92b7591066eb02d5f383d6109aab7653480da31cef46f7a93e2dfc441deb97a",
+      "passes": {
+        "original": {
+          "text": "70, 25 revs.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.5,
+              "text": " 70, 25 revs.",
+              "avg_logprob": -0.9573492474026151,
+              "no_speech_prob": 0.03953458368778229,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "70-25 revs.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 70-25 revs.",
+              "avg_logprob": -0.8027995427449545,
+              "no_speech_prob": 0.028576232492923737,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "70, 25 revs.",
+          "prompt": "18J9, it's going to be at 5910 West, 10100 North. ARPAE falls down 10 stairs with a water heater. Their hip hurts will be a first-party 52-year-old male currently conscious of breathing. So",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.48,
+              "text": " 70, 25 revs.",
+              "avg_logprob": -0.7852963341606988,
+              "no_speech_prob": 0.046045299619436264,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792875804.m4a": {
+      "index": 798,
+      "epoch": 1792875804,
+      "sha256": "a5d6a8f7430c1cf8a028fe63c86270a15e3cd9fa670ba6d4ff7953da3e200cfc",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.56793212890625,
+              "no_speech_prob": 0.019997267052531242,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.5682684034109116,
+              "no_speech_prob": 0.02756330743432045,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "Their hip hurts will be a first-party 52-year-old male currently conscious of breathing. So 70, 25 revs.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.4528214454650879,
+              "no_speech_prob": 0.002777921734377742,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792875859.m4a": {
+      "index": 799,
+      "epoch": 1792875859,
+      "sha256": "ad360b4b51fe1ff921c2c1f8f4908f90b7ba35b08d7daf37869442e41609e19b",
+      "passes": {
+        "original": {
+          "text": "7J25, you can show me 10H. She's got 4.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0200000000000005,
+              "text": " 7J25, you can show me 10H. She's got 4.",
+              "avg_logprob": -0.5034759295614142,
+              "no_speech_prob": 0.01365335751324892,
+              "compression_ratio": 0.8297872340425532
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J25, you can show me 10H, you can go for it.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2800000000000002,
+              "text": " 7J25, you can show me 10H, you can go for it.",
+              "avg_logprob": -0.821107491850853,
+              "no_speech_prob": 0.06615174561738968,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "70, 25. You can show me 10H. She's got 4.",
+          "prompt": "70, 25 revs. Copy.",
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 70, 25. You can show me 10H. She's got 4.",
+              "avg_logprob": -0.6195604111018934,
+              "no_speech_prob": 0.002937376033514738,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792875864.m4a": {
+      "index": 800,
+      "epoch": 1792875864,
+      "sha256": "04708b133bcbeb93d3be942965cfa647d74dd1235f35697a720fabc88971a5dc",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6255203247070312,
+              "no_speech_prob": 0.03015327639877796,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.813569164276123,
+              "no_speech_prob": 0.022760143503546715,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "Copy. 7J25, you can show me 10H. She's got 4.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5620470523834229,
+              "no_speech_prob": 0.010909058153629303,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
