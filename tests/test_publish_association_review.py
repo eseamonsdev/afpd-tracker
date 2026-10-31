@@ -4,6 +4,7 @@ import sys
 import tempfile
 import unittest
 from unittest.mock import patch
+from urllib.error import HTTPError
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from publish_association_review import publish_review, KEY
 
@@ -22,6 +23,13 @@ class PublishTests(unittest.TestCase):
             self.assertEqual(bucket.upload['ContentType'],'text/html; charset=utf-8')
             self.assertEqual(result['size_bytes'],len(bucket.upload['Body']))
             run.assert_called_once()
+    def test_public_403_keeps_verified_upload_successful_without_claiming_public_verification(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory); (root/'public').mkdir(); (root/'public'/KEY).write_text('<!doctype html><title>Review</title>')
+            with patch('publish_association_review.subprocess.run'), patch('publish_association_review.urlopen', side_effect=HTTPError('https://example.com',403,'Forbidden',{},None)):
+                result=publish_review(root,Bucket(),'afpd-public-media')
+            self.assertFalse(result['public_verified'])
+
     def test_wrong_bucket_is_rejected_before_build_or_upload(self):
         with self.assertRaises(ValueError):publish_review(Path('.'),Bucket(),'other-bucket',verify_public=False)
 
