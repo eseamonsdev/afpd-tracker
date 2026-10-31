@@ -88,6 +88,9 @@ def publish(root, branch, state, publish_page=False):
         page = (Path(__file__).resolve().parents[1] / 'public/police-radio-status.html').read_bytes()
         for key in ('police-radio-status.html', 'radio-status/index.html'):
             client.put_object(Bucket=bucket, Key=key, Body=page, ContentType='text/html; charset=utf-8', CacheControl='no-store')
+        if branch == 'staging':
+            from publish_association_review import publish_review
+            publish_review(root, client, bucket)
     print('Recording status published:', branch, state, flush=True)
 
 if __name__ == '__main__':

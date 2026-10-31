@@ -53,3 +53,11 @@ Generated schema 3 stores arrays per radio ID in both `days` and `associations`.
 ## Import provenance
 
 `python scripts/import_officer_association_evidence.py` reproduces the initial union from fixed Git snapshots. It is not a build step and must not be rerun over Eric's later corrections. The source stores each record's provenance and the original findings, resource entries and review explanations. The workbook and historical review report remain unchanged.
+
+## Listening review page
+
+`https://media.afpd-accountability.com/officer-association-review.html` is the standalone, noindex listening page stored in `afpd-public-media` under `officer-association-review.html`. `make build` regenerates its tracked HTML, and the existing recording-status publisher rebuilds and uploads it from staging whenever evidence, review source/assets, or call manifests change. Publication verifies the R2 read-back bytes and the public HTML response.
+
+The page groups full candidate names alphabetically, dates chronologically, and the selected 6001 clip numbers chronologically within each date. It includes only non-rejected association records with actual 6001 clip references. Dates with no clip numbers and Law 2 records are omitted. A repeated clip appears once within a person's date, while shared evidence appears under every relevant candidate. Missing manifest references or unavailable audio fail the build instead of silently omitting evidence.
+
+Each date has native seeking/volume controls, previous/next, playback speed, optional autoplay within that date, transcripts, original evidence notes and direct recording/archive links. Only one date plays at a time. Audio is not preloaded, and the self-contained page does not fetch association data, stylesheets or scripts from another host. Referenced recordings use their verified R2 object keys, with the existing archive URL as a fallback for local historical audio.

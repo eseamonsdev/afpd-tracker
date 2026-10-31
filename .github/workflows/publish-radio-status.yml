@@ -4,6 +4,13 @@ on:
     branches: [staging, main]
     paths:
       - scripts/publish_radio_status.py
+      - scripts/publish_association_review.py
+      - scripts/build_association_review.mjs
+      - lib/build-association-review.js
+      - data/officer-association-evidence.json
+      - public/officer-association-review.html
+      - public/js/officer-association-review.js
+      - public/css/officer-association-review.css
       - public/police-radio-status.html
       - .github/workflows/publish-radio-status.yml
       - public/records/openmhz/**/calls.json
@@ -41,6 +48,9 @@ jobs:
         with:
           ref: ${{ matrix.branch }}
           path: .radio-status-source
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
