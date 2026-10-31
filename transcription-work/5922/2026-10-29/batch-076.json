@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-29",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793298858.m4a": {
+      "index": 757,
+      "epoch": 1793298858,
+      "sha256": "df09e8539ee05272cb4f13a55ecc2eee8fe0994e0a1042d0677fd0865130e264",
+      "passes": {
+        "original": {
+          "text": "Have a great week. Bye. Bye.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Have a great week.",
+              "avg_logprob": -0.6883271681635004,
+              "no_speech_prob": 0.016223782673478127,
+              "compression_ratio": 1.064516129032258
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Bye.",
+              "avg_logprob": -0.6883271681635004,
+              "no_speech_prob": 0.016223782673478127,
+              "compression_ratio": 1.064516129032258
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Bye.",
+              "avg_logprob": -0.6883271681635004,
+              "no_speech_prob": 0.016223782673478127,
+              "compression_ratio": 1.064516129032258
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah, right?",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, right?",
+              "avg_logprob": -0.9040343080248151,
+              "no_speech_prob": 0.03207036852836609,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "Have a great week. Bye. Bye.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Have a great week.",
+              "avg_logprob": -0.6883271681635004,
+              "no_speech_prob": 0.016223782673478127,
+              "compression_ratio": 1.064516129032258
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Bye.",
+              "avg_logprob": -0.6883271681635004,
+              "no_speech_prob": 0.016223782673478127,
+              "compression_ratio": 1.064516129032258
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Bye.",
+              "avg_logprob": -0.6883271681635004,
+              "no_speech_prob": 0.016223782673478127,
+              "compression_ratio": 1.064516129032258
+            }
+          ]
+        }
+      }
+    }
+  }
+}

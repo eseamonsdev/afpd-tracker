@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-29",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793300451.m4a": {
+      "index": 769,
+      "epoch": 1793300451,
+      "sha256": "a41e7b93aac936460c23298da40a9e67709c51b9e5b3eb416f81c5895fcd2c07",
+      "passes": {
+        "original": {
+          "text": "I just did. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I just did.",
+              "avg_logprob": -0.8919003754854202,
+              "no_speech_prob": 0.26147347688674927,
+              "compression_ratio": 0.7333333333333333
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.8919003754854202,
+              "no_speech_prob": 0.26147347688674927,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "All right, you're safe.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " All right, you're safe.",
+              "avg_logprob": -0.8890117406845093,
+              "no_speech_prob": 0.16175153851509094,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "context": {
+          "text": "I just did. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I just did.",
+              "avg_logprob": -0.8919003754854202,
+              "no_speech_prob": 0.26147347688674927,
+              "compression_ratio": 0.7333333333333333
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.8919003754854202,
+              "no_speech_prob": 0.26147347688674927,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793300457.m4a": {
+      "index": 770,
+      "epoch": 1793300457,
+      "sha256": "5931c23bc807329e3342f190e2e7bf116689cc0dbd950205bf9cf234ecb8ebf4",
+      "passes": {
+        "original": {
+          "text": "I'll be on a follow-up by phone. You can use the base of the address, and you can use the checks.",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " I'll be on a follow-up by phone. You can use the base of the address, and you can use the checks.",
+              "avg_logprob": -0.46646969119707743,
+              "no_speech_prob": 0.02200862020254135,
+              "compression_ratio": 1.1686746987951808
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'll be on a follow-up by phone. You can use the address. I'll use the check.",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " I'll be on a follow-up by phone. You can use the address. I'll use the check.",
+              "avg_logprob": -0.47364833836372083,
+              "no_speech_prob": 0.012415867298841476,
+              "compression_ratio": 1.013157894736842
+            }
+          ]
+        },
+        "context": {
+          "text": "I'll be on a follow-up by phone. You can use the base of the address and use the checks.",
+          "prompt": "I just did. Thank you.",
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " I'll be on a follow-up by phone. You can use the base of the address and use the checks.",
+              "avg_logprob": -0.4344234930144416,
+              "no_speech_prob": 0.03459532931447029,
+              "compression_ratio": 1.1
+            }
+          ]
+        }
+      }
+    }
+  }
+}
