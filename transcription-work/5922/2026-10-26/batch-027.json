@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-26",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793028340.m4a": {
+      "index": 261,
+      "epoch": 1793028340,
+      "sha256": "4b0a85d29e85b04e35125ea1b5f527cdacf85e94a10a261baeb0499747fb60e5",
+      "passes": {
+        "original": {
+          "text": "Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.8518084612759677,
+              "no_speech_prob": 0.01490445900708437,
+              "compression_ratio": 1.0
+            },
+            {
+              "start": 1.0,
+              "end": 1.02,
+              "text": " Thank you.",
+              "avg_logprob": -0.8518084612759677,
+              "no_speech_prob": 0.01490445900708437,
+              "compression_ratio": 1.0
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793028363.m4a": {
+      "index": 262,
+      "epoch": 1793028363,
+      "sha256": "9e15dcf622e2d5ed6618ea3f750cb32a2ff9dd984af17b2148c7c3e3f55b8d85",
+      "passes": {
+        "original": {
+          "text": "557 south 400 east negative checks",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.84,
+              "text": " 557 south 400 east negative checks",
+              "avg_logprob": -0.4103348761796951,
+              "no_speech_prob": 0.026647895574569702,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "filtered": {
+          "text": "557 south 400 east negative checks",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.88,
+              "text": " 557 south 400 east negative checks",
+              "avg_logprob": -0.44425763189792633,
+              "no_speech_prob": 0.022080695256590843,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "context": {
+          "text": "557 South 400 East negative checks",
+          "prompt": "5G29. Cavemen Boulevard and East Main Street negative checks Thank you. Thank you.",
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.84,
+              "text": " 557 South 400 East negative checks",
+              "avg_logprob": -0.2986114025115967,
+              "no_speech_prob": 0.006423112936317921,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        }
+      }
+    }
+  }
+}
