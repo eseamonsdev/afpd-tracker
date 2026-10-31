@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-28",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793229972.m4a": {
+      "index": 1231,
+      "epoch": 1793229972,
+      "sha256": "eacb48e92373f7b508ebf3eb0d02faccb414377c57725e7b67f1cfa4de59e6f6",
+      "passes": {
+        "original": {
+          "text": "18J181042, have a good night.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.32,
+              "text": " 18J181042, have a good night.",
+              "avg_logprob": -0.45108073736940113,
+              "no_speech_prob": 0.016502825543284416,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793229976.m4a": {
+      "index": 1232,
+      "epoch": 1793229976,
+      "sha256": "8e5774c67dcad2312ee5feb08de644ca45c49fca00c1ef1a91b6dc53efa0140d",
+      "passes": {
+        "original": {
+          "text": "See you, too.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " See you, too.",
+              "avg_logprob": -0.5024281591176987,
+              "no_speech_prob": 0.027157139033079147,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793229986.m4a": {
+      "index": 1233,
+      "epoch": 1793229986,
+      "sha256": "6abd0d75056e8a79130fe51d209c0f1a2e57c4366d0ba7dcaa81abe42acc5fcc",
+      "passes": {
+        "original": {
+          "text": "584, if I'm on the CAD, you can take me off.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0200000000000005,
+              "text": " 584, if I'm on the CAD, you can take me off.",
+              "avg_logprob": -0.400631424627806,
+              "no_speech_prob": 0.012772100046277046,
+              "compression_ratio": 0.8627450980392157
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Five-year-four. If I'm in the cab, you can take me off.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.24,
+              "text": " Five-year-four. If I'm in the cab, you can take me off.",
+              "avg_logprob": -0.6062118546529249,
+              "no_speech_prob": 0.013764115050435066,
+              "compression_ratio": 0.9166666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "5G4, if I'm on the CAD, you can take me off.",
+          "prompt": "Kathy. 18J181042, have a good night. See you, too.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0200000000000005,
+              "text": " 5G4, if I'm on the CAD, you can take me off.",
+              "avg_logprob": -0.31952436864376066,
+              "no_speech_prob": 0.012262855656445026,
+              "compression_ratio": 0.8627450980392157
+            }
+          ]
+        }
+      }
+    }
+  }
+}
