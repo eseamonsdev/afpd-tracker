@@ -1,0 +1,239 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-25",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792969778.m4a": {
+      "index": 882,
+      "epoch": 1792969778,
+      "sha256": "0a38690fb76610a03efec23f7bfd2a9d4f6df5183eb44291d080183c805e9ae9",
+      "passes": {
+        "original": {
+          "text": "5J52 Central.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.8,
+              "text": " 5J52 Central.",
+              "avg_logprob": -0.5669405981898308,
+              "no_speech_prob": 0.004208260681480169,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792969782.m4a": {
+      "index": 883,
+      "epoch": 1792969782,
+      "sha256": "de8353fe40980d6bb333dfb19922dbf91f0c315f79118334913de452907897a6",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.6663361688454946,
+              "no_speech_prob": 0.06532641500234604,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Good.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Good.",
+              "avg_logprob": -0.9014839172363281,
+              "no_speech_prob": 0.1422983556985855,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Go ahead.",
+          "prompt": "5J52 Central.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.5653432508309683,
+              "no_speech_prob": 0.06986838579177856,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792969789.m4a": {
+      "index": 884,
+      "epoch": 1792969789,
+      "sha256": "b9e0a5d4ac1350aad5739e4d04aed0b7200547db6843566b3bd2db11444f493d",
+      "passes": {
+        "original": {
+          "text": "Negative.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Negative.",
+              "avg_logprob": -0.8182149887084961,
+              "no_speech_prob": 0.2554943263530731,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Right, it was okay.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Right, it was okay.",
+              "avg_logprob": -0.9156030019124349,
+              "no_speech_prob": 0.27564364671707153,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "Negative.",
+          "prompt": "5J52 Central. Go ahead.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Negative.",
+              "avg_logprob": -0.5501009941101074,
+              "no_speech_prob": 0.09548166394233704,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792970194.m4a": {
+      "index": 889,
+      "epoch": 1792970194,
+      "sha256": "78aa4a4e9d998a8110f87bfbc17c6db9811935c6754ea376f9f57b954ae57b1a",
+      "passes": {
+        "original": {
+          "text": "5J52 clear.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J52 clear.",
+              "avg_logprob": -0.4766588881611824,
+              "no_speech_prob": 0.011385479010641575,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J52 clear.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J52 clear.",
+              "avg_logprob": -0.4947255775332451,
+              "no_speech_prob": 0.02068042755126953,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "5J52 clear.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J52 clear.",
+              "avg_logprob": -0.4766588881611824,
+              "no_speech_prob": 0.011385479010641575,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    }
+  }
+}
