@@ -1,0 +1,386 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-25",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792979305.m4a": {
+      "index": 1031,
+      "epoch": 1792979305,
+      "sha256": "bd5a43ad4b2c4d55e9de9d4570cebbbecbf1fb6049186122f235fac56020c3c7",
+      "passes": {
+        "original": {
+          "text": "We're going to be on 100 East and Front Road. Standby for fleets.",
+          "prompt": null,
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.64,
+              "text": " We're going to be on 100 East and Front Road. Standby for fleets.",
+              "avg_logprob": -0.4827515989542007,
+              "no_speech_prob": 0.023140577599406242,
+              "compression_ratio": 0.9027777777777778
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We're going to be on 100 East and Front Road. Standby for cleats.",
+          "prompt": null,
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " We're going to be on 100 East and Front Road. Standby for cleats.",
+              "avg_logprob": -0.48689751397995723,
+              "no_speech_prob": 0.006467549130320549,
+              "compression_ratio": 0.9027777777777778
+            }
+          ]
+        },
+        "context": {
+          "text": "We're going to be on 100 East and Front Road. Standby for fleets.",
+          "prompt": "5G51 traffic. Five day fifty-one and...",
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.64,
+              "text": " We're going to be on 100 East and Front Road. Standby for fleets.",
+              "avg_logprob": -0.4894781827926636,
+              "no_speech_prob": 0.00717208394780755,
+              "compression_ratio": 0.9027777777777778
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792979322.m4a": {
+      "index": 1032,
+      "epoch": 1792979322,
+      "sha256": "d576df75eb0bfcb709f7200c7ca5725a6dec150e566886d96309d8f453b4dd6e",
+      "passes": {
+        "original": {
+          "text": "It'll be a local project. It's going to be a local Delta 937 Charlie echo",
+          "prompt": null,
+          "duration_seconds": 9.728,
+          "token_limit": 102,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.120000000000001,
+              "text": " It'll be a local project. It's going to be a local Delta 937 Charlie echo",
+              "avg_logprob": -0.40563631328669464,
+              "no_speech_prob": 0.03255811706185341,
+              "compression_ratio": 1.028169014084507
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It'll be a local project. It's going to be a local Delta 937 Charlie echo",
+          "prompt": null,
+          "duration_seconds": 9.728,
+          "token_limit": 102,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.14,
+              "text": " It'll be a local project. It's going to be a local Delta 937 Charlie echo",
+              "avg_logprob": -0.3855653716759248,
+              "no_speech_prob": 0.021990183740854263,
+              "compression_ratio": 1.028169014084507
+            }
+          ]
+        },
+        "context": {
+          "text": "It'll be a local project. It's going to be a local Delta 937, Charlie Echo.",
+          "prompt": "5G51 traffic. Five day fifty-one and... We're going to be on 100 East and Front Road. Standby for fleets.",
+          "duration_seconds": 9.728,
+          "token_limit": 102,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.120000000000001,
+              "text": " It'll be a local project. It's going to be a local Delta 937, Charlie Echo.",
+              "avg_logprob": -0.4786606306831042,
+              "no_speech_prob": 0.007093013729900122,
+              "compression_ratio": 1.0273972602739727
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792979640.m4a": {
+      "index": 1035,
+      "epoch": 1792979640,
+      "sha256": "e5cc6ab7f181896aece4eb2331003d971deaa661fdb7201822be21bbcb1cd660",
+      "passes": {
+        "original": {
+          "text": "J51, clear stop.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " J51, clear stop.",
+              "avg_logprob": -0.7871389389038086,
+              "no_speech_prob": 0.03236796706914902,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Okay, 51 clear stop.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.28,
+              "text": " Okay, 51 clear stop.",
+              "avg_logprob": -0.955826653374566,
+              "no_speech_prob": 0.03896321356296539,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "J51, clear stop.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " J51, clear stop.",
+              "avg_logprob": -0.7871389389038086,
+              "no_speech_prob": 0.03236796706914902,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792979799.m4a": {
+      "index": 1037,
+      "epoch": 1792979799,
+      "sha256": "5b9c6c992cd0cf89ced4c0671d2c5256106a8b772f5e46a70af92b98d25352d5",
+      "passes": {
+        "original": {
+          "text": "I'll be 1017 to 98 south, Roosevelt Ave, if you'll start me one more.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.6000000000000005,
+              "text": " I'll be 1017 to 98 south, Roosevelt Ave, if you'll start me one more.",
+              "avg_logprob": -0.3489619130673616,
+              "no_speech_prob": 0.013440887443721294,
+              "compression_ratio": 0.92
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'll be 1017 to 98 south, Roosevelt Ave, if you'll start me one more.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.6000000000000005,
+              "text": " I'll be 1017 to 98 south, Roosevelt Ave, if you'll start me one more.",
+              "avg_logprob": -0.41185071157372516,
+              "no_speech_prob": 0.023142648860812187,
+              "compression_ratio": 0.92
+            }
+          ]
+        },
+        "context": {
+          "text": "I'll be 1017 to 98 south, Roosevelt Ave, if you'll start me one more.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.6000000000000005,
+              "text": " I'll be 1017 to 98 south, Roosevelt Ave, if you'll start me one more.",
+              "avg_logprob": -0.3489619130673616,
+              "no_speech_prob": 0.013440887443721294,
+              "compression_ratio": 0.92
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792979808.m4a": {
+      "index": 1038,
+      "epoch": 1792979808,
+      "sha256": "74777384b8421169cabe0e1d79dfba7fc591251aad1686a294ae3a5038f4173b",
+      "passes": {
+        "original": {
+          "text": "Bye Jean",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye Jean",
+              "avg_logprob": -0.5324357032775879,
+              "no_speech_prob": 0.019579872488975525,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bye, Jeannie.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye, Jeannie.",
+              "avg_logprob": -0.7273498103022575,
+              "no_speech_prob": 0.01554781198501587,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "Bye, Jeannie.",
+          "prompt": "I'll be 1017 to 98 south, Roosevelt Ave, if you'll start me one more.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye, Jeannie.",
+              "avg_logprob": -0.6804224699735641,
+              "no_speech_prob": 0.003352859988808632,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792979810.m4a": {
+      "index": 1039,
+      "epoch": 1792979810,
+      "sha256": "464ac3a4f5626e0f37de7954db253f2eaab6ccd1a12c58f9837d816d9baad9e0",
+      "passes": {
+        "original": {
+          "text": "Thank you, Amy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you, Amy.",
+              "avg_logprob": -0.5996497496962547,
+              "no_speech_prob": 0.007041585631668568,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792979817.m4a": {
+      "index": 1040,
+      "epoch": 1792979817,
+      "sha256": "ae9fdc5556a3f7208f748cf6d867694d016f8f72888c264cb95d52992a3b4b84",
+      "passes": {
+        "original": {
+          "text": "You",
+          "prompt": null,
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You",
+              "avg_logprob": -0.7624268531799316,
+              "no_speech_prob": 0.8177342414855957,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        }
+      }
+    }
+  }
+}
