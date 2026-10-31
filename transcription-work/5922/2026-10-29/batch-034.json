@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-29",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793279011.m4a": {
+      "index": 334,
+      "epoch": 1793279011,
+      "sha256": "b0b424dcf70fb25af5628ea7498f8c2fa31d8b563476c3d8b9d727e67d82382e",
+      "passes": {
+        "original": {
+          "text": "If you have anything, fair enough.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " If you have anything, fair enough.",
+              "avg_logprob": -0.607659329067577,
+              "no_speech_prob": 0.05616062507033348,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793279013.m4a": {
+      "index": 335,
+      "epoch": 1793279013,
+      "sha256": "05bccc537b4cac38fe79cc877661035f15abf19632d7dae11c7f5a1a2c40e332",
+      "passes": {
+        "original": {
+          "text": "Time for...",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Time for...",
+              "avg_logprob": -0.6491337716579437,
+              "no_speech_prob": 0.004637307021766901,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793279058.m4a": {
+      "index": 336,
+      "epoch": 1793279058,
+      "sha256": "5eb935ede3bd33ebc3d468ee85dd7042ff25958208914184a719bf2d8dc57aa6",
+      "passes": {
+        "original": {
+          "text": "5J52 clear.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5J52 clear.",
+              "avg_logprob": -0.5870500057935715,
+              "no_speech_prob": 0.05525312200188637,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J52 clear.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J52 clear.",
+              "avg_logprob": -0.5664335042238235,
+              "no_speech_prob": 0.033607978373765945,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "5J52 clear.",
+          "prompt": "If you have anything, fair enough. Time for...",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J52 clear.",
+              "avg_logprob": -0.478719025850296,
+              "no_speech_prob": 0.008948937058448792,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    }
+  }
+}
