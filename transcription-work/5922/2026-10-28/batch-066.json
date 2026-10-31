@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-28",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793210086.m4a": {
+      "index": 655,
+      "epoch": 1793210086,
+      "sha256": "da34b01a181ad562d630c89a505836ac701c7f415643e3901204d6f686974151",
+      "passes": {
+        "original": {
+          "text": "Can you do some traffic?",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Can you do some traffic?",
+              "avg_logprob": -0.7523856692843967,
+              "no_speech_prob": 0.06551672518253326,
+              "compression_ratio": 0.75
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793210090.m4a": {
+      "index": 656,
+      "epoch": 1793210090,
+      "sha256": "d6ce4c29995b6a282a8f98392185a43fcd41cc5f68eeae7193d2c966d5ec9cc3",
+      "passes": {
+        "original": {
+          "text": "400 breaths to 200 north on 9 alpha, Romeo 272.",
+          "prompt": null,
+          "duration_seconds": 7.552,
+          "token_limit": 85,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 400 breaths to 200 north on 9 alpha, Romeo 272.",
+              "avg_logprob": -0.7629383007685343,
+              "no_speech_prob": 0.08653216809034348,
+              "compression_ratio": 0.9038461538461539
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793210099.m4a": {
+      "index": 657,
+      "epoch": 1793210099,
+      "sha256": "cf9b540ca70b1a73eb1d12b0c4e71ae15f72b65498ee76fb1b54b9935bf8bb3d",
+      "passes": {
+        "original": {
+          "text": "I copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I copy.",
+              "avg_logprob": -0.5571479598681132,
+              "no_speech_prob": 0.008811687119305134,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793210124.m4a": {
+      "index": 658,
+      "epoch": 1793210124,
+      "sha256": "db0eadf7b8e911d94fb95aa68b826de50454e859af70861455c21c896267d9a2",
+      "passes": {
+        "original": {
+          "text": "5G, 174.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G, 174.",
+              "avg_logprob": -0.7852890118956566,
+              "no_speech_prob": 0.05679991841316223,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J174",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5J174",
+              "avg_logprob": -0.6638915340105692,
+              "no_speech_prob": 0.013943037018179893,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "5G, 174.",
+          "prompt": "Can you do some traffic? 400 breaths to 200 north on 9 alpha, Romeo 272. I copy.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5G, 174.",
+              "avg_logprob": -0.7007561400532722,
+              "no_speech_prob": 0.010834351181983948,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    }
+  }
+}
