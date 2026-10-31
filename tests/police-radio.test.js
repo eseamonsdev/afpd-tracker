@@ -61,7 +61,7 @@ class Element {
 async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11", search = "", transcriptEnabled = true, associations = null) {
   const elements = new Map(["archive", "month", "day", "audio", "play", "seek", "autoplay",
     "clips", "clips-section", "status", "current", "current-radio-ids", "player-message", "elapsed", "duration",
-    "transcript-toggle", "transcript-download", "transcript", "transcript-status", "transcript-text", "transcript-availability", "verification-count"]
+    "transcript-toggle", "transcript-download", "transcript", "transcript-status", "transcript-text", "transcript-availability", "verification-count", "transcription-count", "review-progress"]
     .map(name => [`radio-${name}`, new Element(name === "audio" ? "audio" : "div")]));
   elements.get("radio-autoplay").setAttribute("aria-pressed", "false");
   const players = [elements.get("radio-audio")];
@@ -672,26 +672,37 @@ test("904 IDs show Dispatch without person associations in rows, labels and curr
 });
 
 
-test("verification count uses explicit approvals, includes all clips, and clears on day changes", async () => {
-  const calls = [true, false, undefined, "true"].map((validated, i) => ({
-    epoch: 1789100000 + i * 10, displayed_seconds: 5,
-    original_filename: `count-${i}.m4a`, validated
-  }));
+test("progress counts nonblank transcripts and explicit approvals separately across days", async () => {
+  const calls = [
+    { transcript: "Approved", validated: true },
+    { transcript: "AI draft", validated: false },
+    { transcript: "  ", validated: "true" },
+    { transcript: null },
+    { transcript: 42 },
+    {}
+  ].map((call, i) => ({ ...call, epoch: 1789100000 + i * 10,
+    displayed_seconds: 5, original_filename: `count-${i}.m4a` }));
   const f = await playerFixture(calls);
-  const count = f.get("verification-count");
-  assert.equal(count.textContent, "1 / 4 clips verified");
-  assert.equal(count.hidden, false);
+  const transcribed = f.get("transcription-count"), verified = f.get("verification-count");
+  const progress = f.get("review-progress");
+  assert.equal(transcribed.textContent, "2 / 6");
+  assert.equal(verified.textContent, "1 / 6");
+  assert.equal(progress.hidden, false);
   calls[0].validated = false;
+  calls[1].transcript = "";
   f.get("day").value = "2026-09-10";
   f.get("day").emit("change");
-  assert.equal(count.hidden, true);
-  assert.equal(count.textContent, "");
+  assert.equal(progress.hidden, true);
+  assert.equal(transcribed.textContent, "");
+  assert.equal(verified.textContent, "");
   await f.settle();
-  assert.equal(count.textContent, "0 / 4 clips verified");
-  assert.equal(count.hidden, false);
+  assert.equal(transcribed.textContent, "1 / 6");
+  assert.equal(verified.textContent, "0 / 6");
+  assert.equal(progress.hidden, false);
 });
 
-test("an empty day displays zero verified out of zero clips", async () => {
+test("an empty day displays zero out of zero for both progress counts", async () => {
   const f = await playerFixture([]);
-  assert.equal(f.get("verification-count").textContent, "0 / 0 clips verified");
+  assert.equal(f.get("transcription-count").textContent, "0 / 0");
+  assert.equal(f.get("verification-count").textContent, "0 / 0");
 });

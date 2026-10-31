@@ -77,7 +77,10 @@
       <p>Times shown in Mountain Time. This archive may contain only part of a day or selected calls. Numeric radio IDs identify transmitting equipment; they do not independently identify an officer.</p>
       <p class="radio-source-note">AFPD marks radio IDs also observed on AFPD’s 6001 talkgroup; it does not independently identify the speaker.</p>
       <p class="radio-transcript-note">AI-generated transcripts may contain errors. Verified transcripts have been reviewed against the audio; unclear passages may remain marked.</p>
-      <p id="law2-radio-verification-count" class="radio-transcript-note" role="status" hidden></p>
+      <div id="law2-radio-review-progress" class="radio-review-progress" role="status" aria-label="Transcription and verification progress for the selected day" hidden>
+        <span class="radio-progress-stat"><strong id="law2-radio-transcription-count"></strong> <span>clips transcribed</span></span>
+        <span class="radio-progress-stat"><strong id="law2-radio-verification-count"></strong> <span>clips verified</span></span>
+      </div>
     </div>
     <div class="radio-archive" id="law2-radio-archive">
       <div class="radio-date-selectors">
@@ -150,3 +153,4 @@
   </main>
 </body>
 </html>
+

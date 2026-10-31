@@ -79,7 +79,10 @@
       <p><a href="/police-radio-resources/">Police Radio Resources</a> explains agency call signs and provides radio-ID references.</p>
       <p>Times shown in Mountain Time. Officer names show confirmed associations for the selected date or strong associations across other dates. Single-day associations stay on their supported date. Select ⓘ for the evidence and limits; names do not independently verify the speaker in every clip.</p>
       <p class="radio-transcript-note">AI-generated transcripts may contain errors. Verified transcripts have been reviewed against the audio; unclear passages may remain marked.</p>
-      <p id="radio-verification-count" class="radio-transcript-note" role="status" hidden></p>
+      <div id="radio-review-progress" class="radio-review-progress" role="status" aria-label="Transcription and verification progress for the selected day" hidden>
+        <span class="radio-progress-stat"><strong id="radio-transcription-count"></strong> <span>clips transcribed</span></span>
+        <span class="radio-progress-stat"><strong id="radio-verification-count"></strong> <span>clips verified</span></span>
+      </div>
     </div>
     <div class="radio-archive" id="radio-archive">
       <div class="radio-date-selectors">
@@ -151,3 +154,4 @@
   </main>
 </body>
 </html>
+
