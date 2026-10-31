@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-25",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792963040.m4a": {
+      "index": 792,
+      "epoch": 1792963040,
+      "sha256": "a1c339eafc613f5089d365247e277883d2caf51a20e3980766406582224f7e03",
+      "passes": {
+        "original": {
+          "text": "5J49, code 4.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J49, code 4.",
+              "avg_logprob": -0.5383808255195618,
+              "no_speech_prob": 0.013930149376392365,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792963045.m4a": {
+      "index": 793,
+      "epoch": 1792963045,
+      "sha256": "a230c2f1e0ac947eb71a8c7a0856e19cfe86c56897cf7e14193eebfc9c1ece15",
+      "passes": {
+        "original": {
+          "text": "Of course, it's been",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Of course, it's been",
+              "avg_logprob": -0.7699742847018771,
+              "no_speech_prob": 0.10578012466430664,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it. It's just them.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.8324215497289386,
+              "no_speech_prob": 0.08747829496860504,
+              "compression_ratio": 0.7647058823529411
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " It's just them.",
+              "avg_logprob": -0.8324215497289386,
+              "no_speech_prob": 0.08747829496860504,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "context": {
+          "text": "Code 4, it's just been...",
+          "prompt": "5J49, code 4.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Code 4, it's just been...",
+              "avg_logprob": -0.6258919022300027,
+              "no_speech_prob": 0.051712196320295334,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        }
+      }
+    }
+  }
+}

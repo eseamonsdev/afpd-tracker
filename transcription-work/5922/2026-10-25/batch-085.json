@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-25",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792967291.m4a": {
+      "index": 842,
+      "epoch": 1792967291,
+      "sha256": "afca5a89a376edc65c28711dc9ba4cec18950a6c702af9be7ac733816d419e18",
+      "passes": {
+        "original": {
+          "text": "5J52, Code 4 still en route.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J52, Code 4 still en route.",
+              "avg_logprob": -0.45711056085733265,
+              "no_speech_prob": 0.015387441031634808,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792967298.m4a": {
+      "index": 843,
+      "epoch": 1792967298,
+      "sha256": "b7eece69aaa577b2a4651dc24ff12267ac0afb7eb071a6b0852f5a7b3399cb37",
+      "passes": {
+        "original": {
+          "text": "5J52, CO4, you can show me in the area.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.1,
+              "text": " 5J52, CO4, you can show me in the area.",
+              "avg_logprob": -0.49152203400929767,
+              "no_speech_prob": 0.024973129853606224,
+              "compression_ratio": 0.8297872340425532
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J52, Code 4, you can show me in the area.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J52, Code 4, you can show me in the area.",
+              "avg_logprob": -0.47194511857297683,
+              "no_speech_prob": 0.043109651654958725,
+              "compression_ratio": 0.84
+            }
+          ]
+        },
+        "context": {
+          "text": "5J52, Code 4, you can show me in the area.",
+          "prompt": "5J52, Code 4 still en route.",
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.08,
+              "text": " 5J52, Code 4, you can show me in the area.",
+              "avg_logprob": -0.23766610026359558,
+              "no_speech_prob": 0.0745864287018776,
+              "compression_ratio": 0.84
+            }
+          ]
+        }
+      }
+    }
+  }
+}
