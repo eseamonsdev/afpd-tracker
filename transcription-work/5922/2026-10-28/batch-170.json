@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-28",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793247430.m4a": {
+      "index": 1695,
+      "epoch": 1793247430,
+      "sha256": "c1d8b1e1d186e3a13557c6e8a6e7bbd6aba6cb2910dcfe97fa30da2f494785cd",
+      "passes": {
+        "original": {
+          "text": "7j23 tonight",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7j23 tonight",
+              "avg_logprob": -0.5321839877537319,
+              "no_speech_prob": 0.009196075610816479,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793247432.m4a": {
+      "index": 1696,
+      "epoch": 1793247432,
+      "sha256": "45ba3230916d5b3e106d3d82b68a95fc234518000ad6ff369f7dc106534b3fd0",
+      "passes": {
+        "original": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.6100393384695053,
+              "no_speech_prob": 0.034624818712472916,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793247439.m4a": {
+      "index": 1697,
+      "epoch": 1793247439,
+      "sha256": "41a5c40ca62d1cb6dc6d4c0babe1ced3c9464be518d866bde1a0489cfe3f4117",
+      "passes": {
+        "original": {
+          "text": "I have J44 clear all.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0200000000000005,
+              "text": " I have J44 clear all.",
+              "avg_logprob": -0.6331076502799988,
+              "no_speech_prob": 0.00639563100412488,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Fj44 clear all",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Fj44 clear all",
+              "avg_logprob": -0.3922891542315483,
+              "no_speech_prob": 0.005690599326044321,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "of j44 clear all",
+          "prompt": "7j23 tonight copy",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " of j44 clear all",
+              "avg_logprob": -0.4504196047782898,
+              "no_speech_prob": 0.018355701118707657,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    }
+  }
+}
