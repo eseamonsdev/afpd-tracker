@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-26",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793053344.m4a": {
+      "index": 901,
+      "epoch": 1793053344,
+      "sha256": "d421d8cfc5d9ad9a4de6adb05f1ed199fbff1954981d419aa992efa8f6367278",
+      "passes": {
+        "original": {
+          "text": "can you show me on a follow-up at 435 North Center negative shift",
+          "prompt": null,
+          "duration_seconds": 6.784,
+          "token_limit": 79,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.28,
+              "text": " can you show me on a follow-up at 435 North Center negative shift",
+              "avg_logprob": -0.36335983706845176,
+              "no_speech_prob": 0.037272993475198746,
+              "compression_ratio": 0.9027777777777778
+            }
+          ]
+        },
+        "filtered": {
+          "text": "can you show me on a follow-up at 435 North Center negative shift",
+          "prompt": null,
+          "duration_seconds": 6.784,
+          "token_limit": 79,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.28,
+              "text": " can you show me on a follow-up at 435 North Center negative shift",
+              "avg_logprob": -0.4238414168357849,
+              "no_speech_prob": 0.014567138627171516,
+              "compression_ratio": 0.9027777777777778
+            }
+          ]
+        },
+        "context": {
+          "text": "can you show me on a follow-up at 435 North Center negative shift",
+          "prompt": "5G-171 5-J-1-7-1",
+          "duration_seconds": 6.784,
+          "token_limit": 79,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.24,
+              "text": " can you show me on a follow-up at 435 North Center negative shift",
+              "avg_logprob": -0.37562507225407493,
+              "no_speech_prob": 0.06770383566617966,
+              "compression_ratio": 0.9027777777777778
+            }
+          ]
+        }
+      }
+    }
+  }
+}
