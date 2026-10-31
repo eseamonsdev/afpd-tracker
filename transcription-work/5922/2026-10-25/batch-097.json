@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-25",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792973190.m4a": {
+      "index": 964,
+      "epoch": 1792973190,
+      "sha256": "6340120d777d195cf1eeb93529439e4ed2fe1aef8e65f18db9d7640f0d35acf0",
+      "passes": {
+        "original": {
+          "text": "Bye, J52, I'll be 1042. Have a good night.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.6,
+              "text": " Bye, J52, I'll be 1042. Have a good night.",
+              "avg_logprob": -0.6212559060046547,
+              "no_speech_prob": 0.020744886249303818,
+              "compression_ratio": 0.84
+            }
+          ]
+        },
+        "filtered": {
+          "text": "IJ 52 I'll be 1042 have a good night",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.56,
+              "text": " IJ 52 I'll be 1042 have a good night",
+              "avg_logprob": -0.5524061679840088,
+              "no_speech_prob": 0.03275037184357643,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        },
+        "context": {
+          "text": "Bye, J52, I'll be 1042. Have a good night.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.6,
+              "text": " Bye, J52, I'll be 1042. Have a good night.",
+              "avg_logprob": -0.6212559060046547,
+              "no_speech_prob": 0.020744886249303818,
+              "compression_ratio": 0.84
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792973197.m4a": {
+      "index": 965,
+      "epoch": 1792973197,
+      "sha256": "e4c862593fc326658b0fd57b3408fa2734839935877a677bcfa88a58f0d869f7",
+      "passes": {
+        "original": {
+          "text": "I need a 49-cent traffic.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I need a 49-cent traffic.",
+              "avg_logprob": -0.8479986407540061,
+              "no_speech_prob": 0.024946479126811028,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'd be a 49-cent traffic.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'd be a 49-cent traffic.",
+              "avg_logprob": -0.8954331874847412,
+              "no_speech_prob": 0.032603587955236435,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "context": {
+          "text": "I'll be 49, same traffic.",
+          "prompt": "Bye, J52, I'll be 1042. Have a good night.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'll be 49, same traffic.",
+              "avg_logprob": -0.7867898724295876,
+              "no_speech_prob": 0.010833033360540867,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        }
+      }
+    }
+  }
+}
