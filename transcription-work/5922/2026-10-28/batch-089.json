@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-28",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793219444.m4a": {
+      "index": 883,
+      "epoch": 1793219444,
+      "sha256": "dcd2b7a3c6c392fc140649f3049da6de659c94b07763fd7edf6bd3732e5b77b2",
+      "passes": {
+        "original": {
+          "text": "Sorry, Pete.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Sorry, Pete.",
+              "avg_logprob": -0.8765966892242432,
+              "no_speech_prob": 0.10694580525159836,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793219447.m4a": {
+      "index": 884,
+      "epoch": 1793219447,
+      "sha256": "72706524f84773cbce256dcfaff3462f17adbc4e68af5cb4e6c2e7b3a0fc7409",
+      "passes": {
+        "original": {
+          "text": "Macy's curfew store no checks",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Macy's curfew store no checks",
+              "avg_logprob": -0.3914665910932753,
+              "no_speech_prob": 0.01154004130512476,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793219458.m4a": {
+      "index": 885,
+      "epoch": 1793219458,
+      "sha256": "32dc56795dac0550c9c56bb0b42f8703a73240f8491616050b2e8b3006c954be",
+      "passes": {
+        "original": {
+          "text": "Bye.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye.",
+              "avg_logprob": -0.6519303321838379,
+              "no_speech_prob": 0.10089292377233505,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793219461.m4a": {
+      "index": 886,
+      "epoch": 1793219461,
+      "sha256": "fb65dd12d2b4e53f9323c6f2572d02c13646e9fb17a4fd8aa4f31a618866c4ac",
+      "passes": {
+        "original": {
+          "text": "We have 100 East Automotive Drive on an Arizona plate, Golf 1, Alpha 1, Papa Kilo.",
+          "prompt": null,
+          "duration_seconds": 8.448,
+          "token_limit": 92,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " We have 100 East Automotive Drive on an Arizona plate, Golf 1, Alpha 1, Papa Kilo.",
+              "avg_logprob": -0.5474863243103028,
+              "no_speech_prob": 0.13447758555412292,
+              "compression_ratio": 0.9761904761904762
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We have 100 East Automotive Drive on a Arizona plate, Golf 1, Alpha 1, Papa Kilo.",
+          "prompt": null,
+          "duration_seconds": 8.448,
+          "token_limit": 92,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " We have 100 East Automotive Drive on a Arizona plate, Golf 1, Alpha 1, Papa Kilo.",
+              "avg_logprob": -0.5655255317687988,
+              "no_speech_prob": 0.17565837502479553,
+              "compression_ratio": 0.9759036144578314
+            }
+          ]
+        },
+        "context": {
+          "text": "We have 100 East, automobile drive on an Arizona plate. Golf, one Alpha, one Papa Kilo.",
+          "prompt": "Sorry, Pete. Macy's curfew store no checks Bye.",
+          "duration_seconds": 8.448,
+          "token_limit": 92,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " We have 100 East, automobile drive on an Arizona plate. Golf, one Alpha, one Papa Kilo.",
+              "avg_logprob": -0.6316881752014161,
+              "no_speech_prob": 0.030632561072707176,
+              "compression_ratio": 1.0
+            }
+          ]
+        }
+      }
+    }
+  }
+}
