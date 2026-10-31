@@ -17,6 +17,8 @@ MODELS = {
     'police': ('sepiaapps/whisper-small.en-police-radio', True),
     'turbo': ('mobiuslabsgmbh/faster-whisper-large-v3-turbo', False),
     'large-v3': ('Systran/faster-whisper-large-v3', False),
+    'small.en': ('Systran/faster-whisper-small.en', False),
+    'parakeet': ('nvidia/parakeet-tdt-0.6b-v2', False),
 }
 
 
@@ -52,7 +54,8 @@ def publish(path):
 
 def run(args):
     from faster_whisper import WhisperModel
-    from huggingface_hub import HfApi, snapshot_download
+    from huggingface_hub import HfApi, snapshot_download, hf_hub_download
+    from radio_review_engines import ParakeetAdapter, adjacent_audio, target_text
     req = read(Path(args.request))
     experiment = req['experiment']
     if not re.fullmatch(r'[a-z0-9-]{1,90}', experiment):
@@ -83,8 +86,11 @@ def run(args):
             audio[i] = path
             result['clips'][str(i)] = {'index': i, 'filename': c['original_filename'], 'sha256': c['sha256'],
                 'timestamp_mountain': c['timestamp_mountain'], 'target': i in targets, 'passes': []}
-        local = snapshot_download(repo_id, revision=revision, allow_patterns=['*.json', '*.txt', '*.bin', '*.safetensors'],
-                                  cache_dir=args.model_dir)
+        if args.model == 'parakeet':
+            local = hf_hub_download(repo_id, 'parakeet-tdt-0.6b-v2.nemo', revision=revision, cache_dir=args.model_dir)
+        else:
+            local = snapshot_download(repo_id, revision=revision, allow_patterns=['*.json', '*.txt', '*.bin', '*.safetensors'],
+                                      cache_dir=args.model_dir)
         if convert:
             converted = Path(args.model_dir) / ('police-ct2-' + revision)
             if not (converted/'model.bin').exists():
@@ -108,14 +114,18 @@ def run(args):
                 TransformersConverter(str(compatible), copy_files=['tokenizer.json', 'preprocessor_config.json']).convert(
                     str(converted), quantization='int8', force=True)
             local = str(converted)
-        model = WhisperModel(local, device='cpu', compute_type='int8', cpu_threads=4)
+        model = (ParakeetAdapter(local) if args.model == 'parakeet'
+                 else WhisperModel(local, device='cpu', compute_type='int8', cpu_threads=4))
+        if args.model == 'parakeet':
+            result['settings'].update(engine='nemo', compute_type='float32', decoding='greedy_batch')
+            result['notes'] += ' Parakeet uses no text prompts; beam size/temperature apply only to Whisper.'
 
-        def transcribe(i, kind, source, prompt=None):
+        def transcribe(i, kind, source, prompt=None, target_window=None):
             segments, _ = model.transcribe(str(source), language='en', beam_size=5, temperature=0,
-                condition_on_previous_text=False, vad_filter=False, initial_prompt=prompt, max_new_tokens=160)
+                condition_on_previous_text=False, vad_filter=False, initial_prompt=prompt, max_new_tokens=160, word_timestamps=target_window is not None)
             segments = list(segments)
-            text = ' '.join(s.text.strip() for s in segments).strip()
-            result['clips'][str(i)]['passes'].append({'kind': kind, 'prompt': prompt, 'text': text,
+            text = target_text(segments, target_window)
+            result['clips'][str(i)]['passes'].append({'kind': kind, 'prompt': prompt, 'text': text, 'target_window': target_window,
                 'segments': [{'start': s.start, 'end': s.end, 'text': s.text, 'avg_logprob': s.avg_logprob,
                               'no_speech_prob': s.no_speech_prob, 'compression_ratio': s.compression_ratio} for s in segments]})
             write(output, result)
@@ -130,9 +140,12 @@ def run(args):
                     'highpass=f=200,lowpass=f=3400,afftdn=nf=-25','-ar','16000','-ac','1',str(filtered)], check=True)
                 transcribe(i, 'filtered', filtered)
                 neighbors = [baseline[j] for j in neighbor_indices if j != i and abs(data['calls'][j-1]['epoch']-data['calls'][i-1]['epoch']) <= 120]
-                if neighbors:
+                if neighbors and args.model != 'parakeet':
                     transcribe(i, 'surrounding-context', audio[i], ' '.join(neighbors)[-600:])
-                for hint in req.get('hints', {}).get(str(i), []):
+                combined, window = adjacent_audio(audio, data, i, temporary)
+                if combined:
+                    transcribe(i, 'adjacent-audio', combined, target_window=window)
+                for hint in ([] if args.model == 'parakeet' else req.get('hints', {}).get(str(i), [])):
                     if not isinstance(hint, str) or len(hint) > 600:
                         raise ValueError('Hint must be text up to 600 characters')
                     transcribe(i, 'candidate-hint', audio[i], hint)
