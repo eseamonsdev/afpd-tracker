@@ -518,7 +518,7 @@ function playbackEngine({ get, getCalls, getButtons, clipSource, label, singlePl
 function archive(config) {
   const root = document.getElementById(config.rootId); if (!root) return;
   const get = name => document.getElementById(`${config.prefix}-${name}`);
-  const month = get("month"), day = get("day");
+  const month = get("month"), day = get("day"), verificationCount = get("verification-count");
 
   const list = get("clips"), section = get("clips-section"), status = get("status");
   const currentRadioIds = get("current-radio-ids"), transcriptDownload = get("transcript-download"), transcriptAvailability = get("transcript-availability");
@@ -538,6 +538,7 @@ function archive(config) {
   function updateTranscript() { transcript.update(calls[player.selected], transcriptAvailable); }
   function resetPlayer() {
     transcriptAvailable = false;
+    if (verificationCount) { verificationCount.hidden = true; verificationCount.textContent = ""; }
     if (transcriptDownload) { transcriptDownload.hidden = true; transcriptDownload.removeAttribute("href"); transcriptDownload.removeAttribute("download"); }
     if (transcriptAvailability) transcriptAvailability.hidden = true;
     player.reset();
@@ -592,6 +593,11 @@ function archive(config) {
         fragment.append(row); return button;
       });
       list.append(fragment);
+      if (verificationCount) {
+        const verified = calls.filter(call => call.validated === true).length;
+        verificationCount.textContent = `${verified} / ${calls.length} clips verified`;
+        verificationCount.hidden = false;
+      }
       status.textContent = calls.length ? `${dateFormat.format(dateObject(entry.date))} · ${calls.length} clips` : "No clips available for this day.";
     } catch (error) {
       if (token !== request || error.name === "AbortError") return;

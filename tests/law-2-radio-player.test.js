@@ -61,7 +61,7 @@ class Element {
 async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11", search = "", transcriptEnabled = true, associations = null, manifestEnabled = transcriptEnabled, afpdRadioIds = [], agencyRadioIds = {}, confirmations = null) {
   const elements = new Map(["archive", "month", "day", "audio", "play", "seek", "autoplay",
     "clips", "clips-section", "status", "current", "current-radio-ids", "player-message", "elapsed", "duration",
-    "coverage", "transcript-toggle", "transcript-download", "transcript", "transcript-status", "transcript-text", "transcript-availability"]
+    "coverage", "transcript-toggle", "transcript-download", "transcript", "transcript-status", "transcript-text", "transcript-availability", "verification-count"]
     .map(name => [`law2-radio-${name}`, new Element(name === "audio" ? "audio" : "div")]));
   elements.get("law2-radio-autoplay").setAttribute("aria-pressed", "false");
   const players = [elements.get("law2-radio-audio")];
@@ -320,4 +320,29 @@ test("September 27 owner confirmation renders Garcia as confirmed on radio 14590
   assert.match(f.get('clips').children[0].children[1].textContent, /14590111 · Diego O. Garcia · Confirmed this day/);
   f.select(0); await f.settle();
   assert.match(f.get('current-radio-ids').textContent, /Diego O. Garcia · Confirmed this day/);
+});
+
+
+test("verification count uses explicit approvals, includes all clips, and clears on day changes", async () => {
+  const calls = [true, false, undefined, "true"].map((validated, i) => ({
+    epoch: 1789100000 + i * 10, displayed_seconds: 5,
+    original_filename: `count-${i}.m4a`, validated
+  }));
+  const f = await playerFixture(calls);
+  const count = f.get("verification-count");
+  assert.equal(count.textContent, "1 / 4 clips verified");
+  assert.equal(count.hidden, false);
+  calls[0].validated = false;
+  f.get("day").value = "2026-09-10";
+  f.get("day").emit("change");
+  assert.equal(count.hidden, true);
+  assert.equal(count.textContent, "");
+  await f.settle();
+  assert.equal(count.textContent, "0 / 4 clips verified");
+  assert.equal(count.hidden, false);
+});
+
+test("an empty day displays zero verified out of zero clips", async () => {
+  const f = await playerFixture([]);
+  assert.equal(f.get("verification-count").textContent, "0 / 0 clips verified");
 });
