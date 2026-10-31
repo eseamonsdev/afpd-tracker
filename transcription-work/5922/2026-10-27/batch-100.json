@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-27",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793147952.m4a": {
+      "index": 991,
+      "epoch": 1793147952,
+      "sha256": "32ec179cfd0e4fdffaeb4a922dc098ff2efa541b291585566b3af4b5ce921328",
+      "passes": {
+        "original": {
+          "text": "I'd say I'd try not to be able to do something.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I'd say I'd try not to be able to do something.",
+              "avg_logprob": -0.9684497608857996,
+              "no_speech_prob": 0.07838496565818787,
+              "compression_ratio": 0.9215686274509803
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793147956.m4a": {
+      "index": 992,
+      "epoch": 1793147956,
+      "sha256": "0eb1df9617028d5a267996a0ab58a55fef55fdda537fbacdcd3e287d2135cb81",
+      "passes": {
+        "original": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.5132674723863602,
+              "no_speech_prob": 0.011792013421654701,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793147981.m4a": {
+      "index": 993,
+      "epoch": 1793147981,
+      "sha256": "c6fb9ae719c884bc05a4a2084925557a606800b38485926314d5521087602f79",
+      "passes": {
+        "original": {
+          "text": "5J29, 1042, have a good night.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J29, 1042, have a good night.",
+              "avg_logprob": -0.4671044826507568,
+              "no_speech_prob": 0.1051536276936531,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J29, 1042, have a good night.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J29, 1042, have a good night.",
+              "avg_logprob": -0.3719438989957174,
+              "no_speech_prob": 0.07719315588474274,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "context": {
+          "text": "5J29, 1042, have a good night.",
+          "prompt": "19-18 Central Copy, Heath. I'd say I'd try not to be able to do something. copy",
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J29, 1042, have a good night.",
+              "avg_logprob": -0.41490833361943563,
+              "no_speech_prob": 0.07146282494068146,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        }
+      }
+    }
+  }
+}
