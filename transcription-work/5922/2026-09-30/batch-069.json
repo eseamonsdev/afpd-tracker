@@ -1,0 +1,632 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-30",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1790802525.m4a": {
+      "index": 681,
+      "epoch": 1790802525,
+      "sha256": "358088cda7114db45ff5dd095d541eddaeebd409543e592c9bb0b74d3221d9d7",
+      "passes": {
+        "original": {
+          "text": "BEEP BEEP BEEP",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.44,
+              "text": " BEEP BEEP BEEP",
+              "avg_logprob": -1.010048336452908,
+              "no_speech_prob": 0.48184242844581604,
+              "compression_ratio": 0.9333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "BEEP BEEP BEEP BEEP BEEP BEEP",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.44,
+              "text": " BEEP BEEP BEEP BEEP BEEP BEEP",
+              "avg_logprob": -0.6564099391301473,
+              "no_speech_prob": 0.5493261218070984,
+              "compression_ratio": 1.8125
+            }
+          ]
+        },
+        "context": {
+          "text": "Beep-beep-beep-beep-beep-beep",
+          "prompt": "7J, 25. Go ahead Bye-bye.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.44,
+              "text": " Beep-beep-beep-beep-beep-beep",
+              "avg_logprob": -0.5412150591611862,
+              "no_speech_prob": 0.26854994893074036,
+              "compression_ratio": 1.8125
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790802547.m4a": {
+      "index": 682,
+      "epoch": 1790802547,
+      "sha256": "1576b6e56f323754dff1d2609ab0cd2c7475e3d384e287ba31e4de1b77742d90",
+      "passes": {
+        "original": {
+          "text": "7J23, you put that 7J address in the box.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J23, you put that 7J address in the box.",
+              "avg_logprob": -0.6790378794950598,
+              "no_speech_prob": 0.019246211275458336,
+              "compression_ratio": 0.8541666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J23, put that P, that's 7J, I just don't know.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.6,
+              "text": " 7J23, put that P, that's 7J, I just don't know.",
+              "avg_logprob": -0.813545823097229,
+              "no_speech_prob": 0.01954561285674572,
+              "compression_ratio": 0.9215686274509803
+            }
+          ]
+        },
+        "context": {
+          "text": "7J23, you put that P, that 7J address in the box.",
+          "prompt": "Go ahead Bye-bye. BEEP BEEP BEEP",
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J23, you put that P, that 7J address in the box.",
+              "avg_logprob": -0.6591139376163483,
+              "no_speech_prob": 0.017468079924583435,
+              "compression_ratio": 0.9607843137254902
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790802554.m4a": {
+      "index": 683,
+      "epoch": 1790802554,
+      "sha256": "264a734583f8cce2b2ff59dabbf827e5fd6f4db71cf4531e53b0cab167cf6eba",
+      "passes": {
+        "original": {
+          "text": "Bye-bye.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.6442455564226423,
+              "no_speech_prob": 0.0077369012869894505,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bye-bye.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.6436903647014073,
+              "no_speech_prob": 0.00426489720121026,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Bye-bye.",
+          "prompt": "Bye-bye. BEEP BEEP BEEP 7J23, you put that 7J address in the box.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.43364856924329487,
+              "no_speech_prob": 0.05323541536927223,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790802567.m4a": {
+      "index": 684,
+      "epoch": 1790802567,
+      "sha256": "32eb335866cd66e52f6bd92ebbbfd054ab1c119750bf5408ea8d50fb60fdbaa1",
+      "passes": {
+        "original": {
+          "text": "Thanks for watching!",
+          "prompt": null,
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thanks for watching!",
+              "avg_logprob": -0.9459211145128522,
+              "no_speech_prob": 0.847221851348877,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "",
+          "prompt": null,
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 0,
+          "token_cap_reached": false,
+          "segments": []
+        },
+        "context": {
+          "text": "BEEP BEEP BEEP",
+          "prompt": "BEEP BEEP BEEP 7J23, you put that 7J address in the box. Bye-bye.",
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.38,
+              "text": " BEEP BEEP BEEP",
+              "avg_logprob": -0.658700093626976,
+              "no_speech_prob": 0.8435598611831665,
+              "compression_ratio": 0.9333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790802608.m4a": {
+      "index": 685,
+      "epoch": 1790802608,
+      "sha256": "58a83cf95859da0be407bc2168efd5e603ca0a470d7eceeb8f04325c3fa95687",
+      "passes": {
+        "original": {
+          "text": "7J23, right",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J23, right",
+              "avg_logprob": -0.6950149163603783,
+              "no_speech_prob": 0.023413604125380516,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J23, right",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J23, right",
+              "avg_logprob": -0.562870442867279,
+              "no_speech_prob": 0.01705138385295868,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "7J23 Rock",
+          "prompt": "Bye-bye. Thanks for watching!",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J23 Rock",
+              "avg_logprob": -0.6917626517159599,
+              "no_speech_prob": 0.020110366865992546,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790802611.m4a": {
+      "index": 686,
+      "epoch": 1790802611,
+      "sha256": "a25e97ebb14d35884abfc5cd68310180b280b88f1732d96d2e4d6b157f863c8b",
+      "passes": {
+        "original": {
+          "text": "7J23",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 7J23",
+              "avg_logprob": -0.5922522147496542,
+              "no_speech_prob": 0.005382458213716745,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7-day 23.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 7-day 23.",
+              "avg_logprob": -0.7033956572413445,
+              "no_speech_prob": 0.005201693624258041,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "7J23",
+          "prompt": "Bye-bye. Thanks for watching! 7J23, right",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.72,
+              "text": " 7J23",
+              "avg_logprob": -0.4834441343943278,
+              "no_speech_prob": 0.010641167871654034,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790802663.m4a": {
+      "index": 687,
+      "epoch": 1790802663,
+      "sha256": "86e2866839f738daf5f20af5fa35eeb9f3f24c1b620be1c9c2bd06d69fbee811",
+      "passes": {
+        "original": {
+          "text": "Thanks for watching!",
+          "prompt": null,
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thanks for watching!",
+              "avg_logprob": -0.7367994444710868,
+              "no_speech_prob": 0.8515345454216003,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thanks for watching!",
+          "prompt": null,
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thanks for watching!",
+              "avg_logprob": -0.9131147861480713,
+              "no_speech_prob": 0.8577622175216675,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "7J23, right 7J23, right 7J23",
+          "prompt": "7J23, right 7J23",
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J23, right 7J23, right 7J23",
+              "avg_logprob": -0.624814722687006,
+              "no_speech_prob": 0.6417902708053589,
+              "compression_ratio": 1.2173913043478262
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790802746.m4a": {
+      "index": 688,
+      "epoch": 1790802746,
+      "sha256": "360b306e6500929a120ec236d822375b45d348127e7ba5150b8a01c5ea1a36b7",
+      "passes": {
+        "original": {
+          "text": "7J10, you can clear this out.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7J10, you can clear this out.",
+              "avg_logprob": -0.5755019187927246,
+              "no_speech_prob": 0.0631919801235199,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7 to 18, you can close this out.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7 to 18, you can close this out.",
+              "avg_logprob": -0.6260100328005277,
+              "no_speech_prob": 0.05216887965798378,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "context": {
+          "text": "7J10, you can clear this out.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7J10, you can clear this out.",
+              "avg_logprob": -0.5755019187927246,
+              "no_speech_prob": 0.0631919801235199,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790802750.m4a": {
+      "index": 689,
+      "epoch": 1790802750,
+      "sha256": "1df53884aa479c7974e41f02d94a5b6a427e208ada8eed7586ae0d96839fcb05",
+      "passes": {
+        "original": {
+          "text": "Make happy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Make happy.",
+              "avg_logprob": -0.7589221994082133,
+              "no_speech_prob": 0.0023569585755467415,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Make happy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Make happy.",
+              "avg_logprob": -0.6531279782454172,
+              "no_speech_prob": 0.0026458946522325277,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "Make happy.",
+          "prompt": "7J10, you can clear this out.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Make happy.",
+              "avg_logprob": -0.666076640288035,
+              "no_speech_prob": 0.001916678505949676,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1790802756.m4a": {
+      "index": 690,
+      "epoch": 1790802756,
+      "sha256": "5a06d9c6060cec4179fb6f6d9f5398eea8a98c9c57bfd3a7679a066996864715",
+      "passes": {
+        "original": {
+          "text": "7, 8, 10",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 7, 8, 10",
+              "avg_logprob": -0.7369528859853745,
+              "no_speech_prob": 0.039623115211725235,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7j10",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 7j10",
+              "avg_logprob": -0.7554226120313009,
+              "no_speech_prob": 0.015108559280633926,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "7J10.",
+          "prompt": "7J10, you can clear this out. Make happy.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 7J10.",
+              "avg_logprob": -0.38272678000586374,
+              "no_speech_prob": 0.007669104263186455,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
