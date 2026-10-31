@@ -1,0 +1,665 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-09",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791525772.m4a": {
+      "index": 1,
+      "epoch": 1791525772,
+      "sha256": "e146724eb14811d875d28fc993b4de853dd7d00bb7f3c7ffffc4fe5d30d0f8c4",
+      "passes": {
+        "original": {
+          "text": "7G, 21 traffic. Go ahead.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7G, 21 traffic.",
+              "avg_logprob": -0.715268748147147,
+              "no_speech_prob": 0.02756001427769661,
+              "compression_ratio": 0.7575757575757576
+            },
+            {
+              "start": 2.0,
+              "end": 4.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.715268748147147,
+              "no_speech_prob": 0.02756001427769661,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "filtered": {
+          "text": "So, do you want to traffic? Go ahead.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " So, do you want to traffic?",
+              "avg_logprob": -0.8058497495949268,
+              "no_speech_prob": 0.006723346654325724,
+              "compression_ratio": 0.8222222222222222
+            },
+            {
+              "start": 3.0,
+              "end": 3.5,
+              "text": " Go ahead.",
+              "avg_logprob": -0.8058497495949268,
+              "no_speech_prob": 0.006723346654325724,
+              "compression_ratio": 0.8222222222222222
+            }
+          ]
+        },
+        "context": {
+          "text": "7G, 21 traffic. Go ahead.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7G, 21 traffic.",
+              "avg_logprob": -0.715268748147147,
+              "no_speech_prob": 0.02756001427769661,
+              "compression_ratio": 0.7575757575757576
+            },
+            {
+              "start": 2.0,
+              "end": 4.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.715268748147147,
+              "no_speech_prob": 0.02756001427769661,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791525777.m4a": {
+      "index": 2,
+      "epoch": 1791525777,
+      "sha256": "338bd9f595eeec1401511415eb1b63ce1dd059e2e10fc7f6062be002b6228424",
+      "passes": {
+        "original": {
+          "text": "Grove Parkway, North County, Alpha 944 Fox-Rulu.",
+          "prompt": null,
+          "duration_seconds": 8.96,
+          "token_limit": 96,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " Grove Parkway, North County, Alpha 944 Fox-Rulu.",
+              "avg_logprob": -0.5267799040850472,
+              "no_speech_prob": 0.02904808335006237,
+              "compression_ratio": 0.8888888888888888
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Grove Parkway, North County, Alpha 944 Fox-Zulu.",
+          "prompt": null,
+          "duration_seconds": 8.96,
+          "token_limit": 96,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.24,
+              "text": " Grove Parkway, North County, Alpha 944 Fox-Zulu.",
+              "avg_logprob": -0.5858815137077781,
+              "no_speech_prob": 0.03857572376728058,
+              "compression_ratio": 0.8888888888888888
+            }
+          ]
+        },
+        "context": {
+          "text": "Grove Parkway, North County, Alpha 944 Fox-Rulu.",
+          "prompt": "7G, 21 traffic. Go ahead.",
+          "duration_seconds": 8.96,
+          "token_limit": 96,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " Grove Parkway, North County, Alpha 944 Fox-Rulu.",
+              "avg_logprob": -0.48227298960966225,
+              "no_speech_prob": 0.0044571165926754475,
+              "compression_ratio": 0.8888888888888888
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791525786.m4a": {
+      "index": 3,
+      "epoch": 1791525786,
+      "sha256": "c26c5811c274032736840f3fb0a339f46efff59dac0368361c87c301f2635f41",
+      "passes": {
+        "original": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.6067233234643936,
+              "no_speech_prob": 0.12333753705024719,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7145031452178955,
+              "no_speech_prob": 0.021834854036569595,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "7G, 21 traffic. Go ahead. Grove Parkway, North County, Alpha 944 Fox-Rulu.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.4676413059234619,
+              "no_speech_prob": 0.021947404369711876,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791525791.m4a": {
+      "index": 4,
+      "epoch": 1791525791,
+      "sha256": "8682a27078af88663ac6011a2e867bd8473b63af073fc4ce3bd68cfe87553b30",
+      "passes": {
+        "original": {
+          "text": "7 day 21, it's going to be Sam White and Grove Parkway.",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.12,
+              "text": " 7 day 21, it's going to be Sam White and Grove Parkway.",
+              "avg_logprob": -0.4687318139606052,
+              "no_speech_prob": 0.058786652982234955,
+              "compression_ratio": 0.873015873015873
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7 day 21, it's going to be Sam White in Grove Parkway.",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.16,
+              "text": " 7 day 21, it's going to be Sam White in Grove Parkway.",
+              "avg_logprob": -0.44932619896199966,
+              "no_speech_prob": 0.019532129168510437,
+              "compression_ratio": 0.8709677419354839
+            }
+          ]
+        },
+        "context": {
+          "text": "7G, 21. It's going to be Sam White and Grove Parkway.",
+          "prompt": "7G, 21 traffic. Go ahead. Grove Parkway, North County, Alpha 944 Fox-Rulu. copy",
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.04,
+              "text": " 7G, 21. It's going to be Sam White and Grove Parkway.",
+              "avg_logprob": -0.38287243403886495,
+              "no_speech_prob": 0.11209453642368317,
+              "compression_ratio": 0.8688524590163934
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791525797.m4a": {
+      "index": 5,
+      "epoch": 1791525797,
+      "sha256": "17bca77a9d2d90ae72ab1e8fadfcae97e4825ade7ce08a1a40785ac854445a60",
+      "passes": {
+        "original": {
+          "text": "Copied.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copied.",
+              "avg_logprob": -0.6742150584856669,
+              "no_speech_prob": 0.05673201009631157,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7104866981506348,
+              "no_speech_prob": 0.03090304136276245,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "copy",
+          "prompt": "Grove Parkway, North County, Alpha 944 Fox-Rulu. copy 7 day 21, it's going to be Sam White and Grove Parkway.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " copy",
+              "avg_logprob": -0.5992163568735123,
+              "no_speech_prob": 0.03296975418925285,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791525804.m4a": {
+      "index": 6,
+      "epoch": 1791525804,
+      "sha256": "9966bfa1eec6a4142e84a9dd9ab948c5e4ea79494cca1edea057d2e2f8688609",
+      "passes": {
+        "original": {
+          "text": "18.9, 10.42, good morning.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 18.9, 10.42, good morning.",
+              "avg_logprob": -0.9384578721863883,
+              "no_speech_prob": 0.02531806379556656,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18.9, 10.42, the warning.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 18.9, 10.42, the warning.",
+              "avg_logprob": -1.0112333127430506,
+              "no_speech_prob": 0.02299962006509304,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "context": {
+          "text": "18 January, 10 times 42, good morning.",
+          "prompt": "copy 7 day 21, it's going to be Sam White and Grove Parkway. Copied.",
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 18 January, 10 times 42, good morning.",
+              "avg_logprob": -0.9789124268751878,
+              "no_speech_prob": 0.0210551917552948,
+              "compression_ratio": 0.8260869565217391
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791525808.m4a": {
+      "index": 7,
+      "epoch": 1791525808,
+      "sha256": "7bfaf635e0d15d6db03c2ae5131d2a605b4cc0c3a80eba16f35b4462369ca5aa",
+      "passes": {
+        "original": {
+          "text": "Copy. Thank you, too.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy. Thank you, too.",
+              "avg_logprob": -0.5851710498332977,
+              "no_speech_prob": 0.038053158670663834,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy. Thank you, too.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy. Thank you, too.",
+              "avg_logprob": -0.47155246138572693,
+              "no_speech_prob": 0.01777333952486515,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "context": {
+          "text": "Copied. 18.42, good morning.",
+          "prompt": "7 day 21, it's going to be Sam White and Grove Parkway. Copied. 18.9, 10.42, good morning.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copied. 18.42, good morning.",
+              "avg_logprob": -0.655071918780987,
+              "no_speech_prob": 0.029770908877253532,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791526092.m4a": {
+      "index": 8,
+      "epoch": 1791526092,
+      "sha256": "d89632c8bdc4f4a559bf8fdb2b110f1218885b9feb60fe31d54ea86e18406b7f",
+      "passes": {
+        "original": {
+          "text": "7-J-21 Central Court Court.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7-J-21 Central Court Court.",
+              "avg_logprob": -0.8519447793563207,
+              "no_speech_prob": 0.05378047749400139,
+              "compression_ratio": 0.9
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7-J-21 Central Report.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.2800000000000002,
+              "text": " 7-J-21 Central Report.",
+              "avg_logprob": -0.6978458166122437,
+              "no_speech_prob": 0.027101896703243256,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "7-J-21 Central Court Court.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7-J-21 Central Court Court.",
+              "avg_logprob": -0.8519447793563207,
+              "no_speech_prob": 0.05378047749400139,
+              "compression_ratio": 0.9
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791526096.m4a": {
+      "index": 9,
+      "epoch": 1791526096,
+      "sha256": "6d320194abd2fa395c2c77b2d2f627ae80c28b92437372bbd68df6fa1ecc0717",
+      "passes": {
+        "original": {
+          "text": "I don't go for it.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I don't go for it.",
+              "avg_logprob": -0.5866253972053528,
+              "no_speech_prob": 0.07691389322280884,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm going for it",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm going for it",
+              "avg_logprob": -0.4087376594543457,
+              "no_speech_prob": 0.01643368788063526,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "What I'm going for.",
+          "prompt": "7-J-21 Central Court Court.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " What I'm going for.",
+              "avg_logprob": -0.5892881817287869,
+              "no_speech_prob": 0.09073171764612198,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791526098.m4a": {
+      "index": 10,
+      "epoch": 1791526098,
+      "sha256": "b53fc3de0fc707389248f2381f9be807e08625671ec7eecfd6b863fbcec6e906",
+      "passes": {
+        "original": {
+          "text": "Coffee.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Coffee.",
+              "avg_logprob": -0.683678674697876,
+              "no_speech_prob": 0.018506871536374092,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.7569090127944946,
+              "no_speech_prob": 0.06602729856967926,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Coffee.",
+          "prompt": "7-J-21 Central Court Court. I don't go for it.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Coffee.",
+              "avg_logprob": -0.5946931362152099,
+              "no_speech_prob": 0.03649885952472687,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    }
+  }
+}

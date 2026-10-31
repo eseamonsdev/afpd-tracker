@@ -1,0 +1,665 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-09",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791528358.m4a": {
+      "index": 61,
+      "epoch": 1791528358,
+      "sha256": "ce69ff43bb51ff7be300b74b834e4433893d3ea40d02950fa2d558fb9ed2f890",
+      "passes": {
+        "original": {
+          "text": "I'll send you H-1-1, H-1-2-3",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I'll send you H-1-1, H-1-2-3",
+              "avg_logprob": -0.9098233938217163,
+              "no_speech_prob": 0.0869046226143837,
+              "compression_ratio": 0.875
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Turn the H1 on. Hold for 3.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Turn the H1 on.",
+              "avg_logprob": -1.1250274181365967,
+              "no_speech_prob": 0.1333092600107193,
+              "compression_ratio": 0.7714285714285715
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Hold for 3.",
+              "avg_logprob": -1.1250274181365967,
+              "no_speech_prob": 0.1333092600107193,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        },
+        "context": {
+          "text": "I'll send you H-1-1, H-1-2-3",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I'll send you H-1-1, H-1-2-3",
+              "avg_logprob": -0.9098233938217163,
+              "no_speech_prob": 0.0869046226143837,
+              "compression_ratio": 0.875
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791528410.m4a": {
+      "index": 62,
+      "epoch": 1791528410,
+      "sha256": "840de43e1df8d2d9b4e638801bc32255a4661be8697b737ed5f2ae9f56705dc7",
+      "passes": {
+        "original": {
+          "text": "7J12, I'll be out with three Tango-3 Delta uniforms.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.16,
+              "text": " 7J12, I'll be out with three Tango-3 Delta uniforms.",
+              "avg_logprob": -0.4326630592346191,
+              "no_speech_prob": 0.07824477553367615,
+              "compression_ratio": 0.8666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J12, I'll be out with three Tango 3 Delta uniforms.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.16,
+              "text": " 7J12, I'll be out with three Tango 3 Delta uniforms.",
+              "avg_logprob": -0.4888105141489129,
+              "no_speech_prob": 0.14387966692447662,
+              "compression_ratio": 0.8666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "7J-12, I'll be out with three Tango-3 Delta uniforms",
+          "prompt": "I'll send you H-1-1, H-1-2-3",
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.24,
+              "text": " 7J-12, I'll be out with three Tango-3 Delta uniforms",
+              "avg_logprob": -0.38397625684738157,
+              "no_speech_prob": 0.02228829264640808,
+              "compression_ratio": 0.8666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791528415.m4a": {
+      "index": 63,
+      "epoch": 1791528415,
+      "sha256": "e51fa5f69939ccec8fd9f689caef014e715540db7dcbfd06a1321723b563757d",
+      "passes": {
+        "original": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.7681412696838379,
+              "no_speech_prob": 0.09680553525686264,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7740496158599853,
+              "no_speech_prob": 0.07316041737794876,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy.",
+          "prompt": "I'll send you H-1-1, H-1-2-3 7J12, I'll be out with three Tango-3 Delta uniforms.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.6862341403961182,
+              "no_speech_prob": 0.022615574300289154,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791528687.m4a": {
+      "index": 64,
+      "epoch": 1791528687,
+      "sha256": "ba06f77d4381f38d1365493f4366d12c193787eca79cd4c312eca4d705b23728",
+      "passes": {
+        "original": {
+          "text": "7-8-12, I'll be clear from that vehicle. Back look to the other mount.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.32,
+              "text": " 7-8-12, I'll be clear from that vehicle. Back look to the other mount.",
+              "avg_logprob": -0.5252163981397947,
+              "no_speech_prob": 0.03595099598169327,
+              "compression_ratio": 0.9459459459459459
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7-8-12, I'll be clear from that vehicle. Back, look for the other man.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.16,
+              "text": " 7-8-12, I'll be clear from that vehicle.",
+              "avg_logprob": -0.5240074263678657,
+              "no_speech_prob": 0.04772425815463066,
+              "compression_ratio": 0.9459459459459459
+            },
+            {
+              "start": 3.16,
+              "end": 4.24,
+              "text": " Back, look for the other man.",
+              "avg_logprob": -0.5240074263678657,
+              "no_speech_prob": 0.04772425815463066,
+              "compression_ratio": 0.9459459459459459
+            }
+          ]
+        },
+        "context": {
+          "text": "7-8-12, I'll be clear from that vehicle. Back look to the other mount.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.32,
+              "text": " 7-8-12, I'll be clear from that vehicle. Back look to the other mount.",
+              "avg_logprob": -0.5252163981397947,
+              "no_speech_prob": 0.03595099598169327,
+              "compression_ratio": 0.9459459459459459
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791528692.m4a": {
+      "index": 65,
+      "epoch": 1791528692,
+      "sha256": "d5ffe01fceb8ff55fe5971ef53bcf37dd59272c2a0acbeee3a2f16080850ada7",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.664604663848877,
+              "no_speech_prob": 0.06025457754731178,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7610559463500977,
+              "no_speech_prob": 0.03769293799996376,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "7-8-12, I'll be clear from that vehicle. Back look to the other mount.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5811695575714111,
+              "no_speech_prob": 0.04258923977613449,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791528857.m4a": {
+      "index": 66,
+      "epoch": 1791528857,
+      "sha256": "3f23213c871abc9a0391d620c3c04400963163ed65a0afcf31b17c0d09323f7e",
+      "passes": {
+        "original": {
+          "text": "7J21 units, close 4.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J21 units, close 4.",
+              "avg_logprob": -0.542731989513744,
+              "no_speech_prob": 0.07164674997329712,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J21 units, go for it.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7J21 units, go for it.",
+              "avg_logprob": -0.6764051814874014,
+              "no_speech_prob": 0.06435494124889374,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "7J21 units, close 4.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J21 units, close 4.",
+              "avg_logprob": -0.542731989513744,
+              "no_speech_prob": 0.07164674997329712,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791528863.m4a": {
+      "index": 67,
+      "epoch": 1791528863,
+      "sha256": "c0248c4d2fad1fe6d24cb77026cf5c8cbe5e5d3eeaa9eb3fcc8b1794ece0bd8d",
+      "passes": {
+        "original": {
+          "text": "Hopefully, you can suspend her help.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.2,
+              "text": " Hopefully, you can suspend her help.",
+              "avg_logprob": -0.8876448327844794,
+              "no_speech_prob": 0.02149541862308979,
+              "compression_ratio": 0.8571428571428571
+            }
+          ]
+        },
+        "filtered": {
+          "text": "You can suspend her now. OK.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You can suspend her now.",
+              "avg_logprob": -0.8983108630547156,
+              "no_speech_prob": 0.04338624328374863,
+              "compression_ratio": 0.7777777777777778
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " OK.",
+              "avg_logprob": -0.8983108630547156,
+              "no_speech_prob": 0.04338624328374863,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "context": {
+          "text": "Hopefully, you can suspend her now.",
+          "prompt": "7J21 units, close 4.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hopefully, you can suspend her now.",
+              "avg_logprob": -0.8563310449773615,
+              "no_speech_prob": 0.036790065467357635,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791528866.m4a": {
+      "index": 68,
+      "epoch": 1791528866,
+      "sha256": "1143437bc25a4ca5e5deafdcbdec5b220b18460c93df19559c72a8c376f16d45",
+      "passes": {
+        "original": {
+          "text": "Coffee?",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Coffee?",
+              "avg_logprob": -0.5876554489135742,
+              "no_speech_prob": 0.041433874517679214,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Coffee?",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Coffee?",
+              "avg_logprob": -0.7610480308532714,
+              "no_speech_prob": 0.02769559435546398,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Coffee?",
+          "prompt": "7J21 units, close 4. Hopefully, you can suspend her help.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Coffee?",
+              "avg_logprob": -0.7538868427276612,
+              "no_speech_prob": 0.007520715240389109,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791529325.m4a": {
+      "index": 69,
+      "epoch": 1791529325,
+      "sha256": "e066d44c4b704da781d4498fbb591ea5bdf774b7e4942a4014042a1fe6a864c2",
+      "passes": {
+        "original": {
+          "text": "7J21, clear off.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J21, clear off.",
+              "avg_logprob": -0.43364624977111815,
+              "no_speech_prob": 0.027274221181869507,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J21 clear off",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J21 clear off",
+              "avg_logprob": -0.3209832049906254,
+              "no_speech_prob": 0.0299890898168087,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "7J21, clear off.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J21, clear off.",
+              "avg_logprob": -0.43364624977111815,
+              "no_speech_prob": 0.027274221181869507,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791529328.m4a": {
+      "index": 70,
+      "epoch": 1791529328,
+      "sha256": "04c6ea3a25638f2caf4e56bbd6d02959572bfa4e43dad3c1109ed5dc12b1dd12",
+      "passes": {
+        "original": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " copy",
+              "avg_logprob": -0.660289004445076,
+              "no_speech_prob": 0.08822271227836609,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Coffee?",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Coffee?",
+              "avg_logprob": -0.8902298927307128,
+              "no_speech_prob": 0.07456588745117188,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Coffee?",
+          "prompt": "7J21, clear off.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Coffee?",
+              "avg_logprob": -1.0911041259765626,
+              "no_speech_prob": 0.11864900588989258,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    }
+  }
+}
