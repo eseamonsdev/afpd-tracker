@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-25",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792911787.m4a": {
+      "index": 104,
+      "epoch": 1792911787,
+      "sha256": "35d39a7e2b705821a8cad0c8d0287891df86f3c118f1dabbc09efd7c7e934cce",
+      "passes": {
+        "original": {
+          "text": "",
+          "prompt": null,
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 0,
+          "token_cap_reached": false,
+          "segments": []
+        }
+      }
+    },
+    "dcfems-5922-1792911802.m4a": {
+      "index": 105,
+      "epoch": 1792911802,
+      "sha256": "09e4af985e3329224a12fe21ab5bbfd80533bf9c403e49faaaa91d6c8b81b244",
+      "passes": {
+        "original": {
+          "text": "Thank you for watching.",
+          "prompt": null,
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you for watching.",
+              "avg_logprob": -0.9875853955745697,
+              "no_speech_prob": 0.77690589427948,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792911817.m4a": {
+      "index": 106,
+      "epoch": 1792911817,
+      "sha256": "cb9b9710e30ea552f8fa74d6dbb5c3df8a60c2c67f3e41aa3886af230599510b",
+      "passes": {
+        "original": {
+          "text": "Thank you for watching.",
+          "prompt": null,
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you for watching.",
+              "avg_logprob": -0.9379940778017044,
+              "no_speech_prob": 0.7396712303161621,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792911827.m4a": {
+      "index": 107,
+      "epoch": 1792911827,
+      "sha256": "d44abe296fb9d62754693cd12dd732720ba09cc23777463661bd9612bd7bed51",
+      "passes": {
+        "original": {
+          "text": "Okay",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Okay",
+              "avg_logprob": -0.7136520892381668,
+              "no_speech_prob": 0.5592942237854004,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Okay.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Okay.",
+              "avg_logprob": -0.7468713283538818,
+              "no_speech_prob": 0.4891468286514282,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Okay.",
+          "prompt": "Thank you for watching. Thank you for watching.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Okay.",
+              "avg_logprob": -0.5859220504760743,
+              "no_speech_prob": 0.4301118552684784,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}

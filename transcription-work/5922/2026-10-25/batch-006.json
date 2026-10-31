@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-25",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792911187.m4a": {
+      "index": 51,
+      "epoch": 1792911187,
+      "sha256": "4a75bf8c8afeaa72e4d3fbafb3cf5c804febfad417e81fe1f4104fa8df69defd",
+      "passes": {
+        "original": {
+          "text": "and then use this",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " and then use this",
+              "avg_logprob": -0.8856958661760602,
+              "no_speech_prob": 0.06529092788696289,
+              "compression_ratio": 0.7391304347826086
+            }
+          ]
+        },
+        "filtered": {
+          "text": "and then use this.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " and then use this.",
+              "avg_logprob": -0.8439829871058464,
+              "no_speech_prob": 0.1663360446691513,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "context": {
+          "text": "Lots of new systems.",
+          "prompt": "multiple ready. BEEP",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Lots of new systems.",
+              "avg_logprob": -0.9182656556367874,
+              "no_speech_prob": 0.03745804354548454,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    }
+  }
+}
