@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-28",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793218408.m4a": {
+      "index": 851,
+      "epoch": 1793218408,
+      "sha256": "ee5dce0829bfc543ce25ac931af6c46d3d5ee38ed4c808c985d5abd98d826f42",
+      "passes": {
+        "original": {
+          "text": "21 north, 1020 west at heart.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 21 north, 1020 west at heart.",
+              "avg_logprob": -0.508026659488678,
+              "no_speech_prob": 0.07491263002157211,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        },
+        "filtered": {
+          "text": "21 North, 1020 West, at heart.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 21 North, 1020 West, at heart.",
+              "avg_logprob": -0.5824768176445594,
+              "no_speech_prob": 0.03174823522567749,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "context": {
+          "text": "21 North, 1020 West, at heart.",
+          "prompt": "5J41, tobacco problem. Bye.",
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 21 North, 1020 West, at heart.",
+              "avg_logprob": -0.45299288859734166,
+              "no_speech_prob": 0.06642439216375351,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        }
+      }
+    }
+  }
+}
