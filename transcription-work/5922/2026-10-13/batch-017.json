@@ -1,0 +1,665 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-13",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791889466.m4a": {
+      "index": 161,
+      "epoch": 1791889466,
+      "sha256": "73664bee38f722551c9768d811244dccfd93b1ad32cf4a0ee53f2377f3a75904",
+      "passes": {
+        "original": {
+          "text": "At Starbucks, 1926 West Pleasant Grove Boulevard, there's a mill standing in the drive-through pounding on the window with a hook pulled over its face.",
+          "prompt": null,
+          "duration_seconds": 12.928,
+          "token_limit": 128,
+          "token_count": 35,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.2,
+              "text": " At Starbucks, 1926 West Pleasant Grove Boulevard, there's a mill standing in the drive-through",
+              "avg_logprob": -0.2941567450761795,
+              "no_speech_prob": 0.009905876591801643,
+              "compression_ratio": 1.1705426356589148
+            },
+            {
+              "start": 7.2,
+              "end": 11.040000000000001,
+              "text": " pounding on the window with a hook pulled over its face.",
+              "avg_logprob": -0.2941567450761795,
+              "no_speech_prob": 0.009905876591801643,
+              "compression_ratio": 1.1705426356589148
+            }
+          ]
+        },
+        "filtered": {
+          "text": "At Starbucks, 1926 West Pleasant Grove Boulevard, there's a mill standing in the drive-through, pounding on the window with a hood pulled over its face.",
+          "prompt": null,
+          "duration_seconds": 12.928,
+          "token_limit": 128,
+          "token_count": 36,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.2,
+              "text": " At Starbucks, 1926 West Pleasant Grove Boulevard, there's a mill standing in the drive-through,",
+              "avg_logprob": -0.3271025225922868,
+              "no_speech_prob": 0.01804503984749317,
+              "compression_ratio": 1.178294573643411
+            },
+            {
+              "start": 7.2,
+              "end": 11.08,
+              "text": " pounding on the window with a hood pulled over its face.",
+              "avg_logprob": -0.3271025225922868,
+              "no_speech_prob": 0.01804503984749317,
+              "compression_ratio": 1.178294573643411
+            }
+          ]
+        },
+        "context": {
+          "text": "Starbucks 1926 West Pleasant Grove Boulevard. There's a mill standing in the drive-through pounding on the window with a hook pulled over his face.",
+          "prompt": "7J12, copy suspicious. Good.",
+          "duration_seconds": 12.928,
+          "token_limit": 128,
+          "token_count": 33,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.24,
+              "text": " Starbucks 1926 West Pleasant Grove Boulevard. There's a mill standing in the",
+              "avg_logprob": -0.28084766338853273,
+              "no_speech_prob": 0.0199503805488348,
+              "compression_ratio": 1.176
+            },
+            {
+              "start": 6.24,
+              "end": 12.88,
+              "text": " drive-through pounding on the window with a hook pulled over his face.",
+              "avg_logprob": -0.28084766338853273,
+              "no_speech_prob": 0.0199503805488348,
+              "compression_ratio": 1.176
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791889485.m4a": {
+      "index": 162,
+      "epoch": 1791889485,
+      "sha256": "c92e5415259cf83698fd74faf76ab6db8360cc9fe2f5c52eab322d7d285f1c77",
+      "passes": {
+        "original": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.7105941077073415,
+              "no_speech_prob": 0.1311771124601364,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you, everybody.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you, everybody.",
+              "avg_logprob": -0.7154436111450195,
+              "no_speech_prob": 0.05813271924853325,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you.",
+          "prompt": "7J12, copy suspicious. Good. At Starbucks, 1926 West Pleasant Grove Boulevard, there's a mill standing in the drive-through pounding on the window with a hook pulled over its face.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5516397953033447,
+              "no_speech_prob": 0.3207513988018036,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791889713.m4a": {
+      "index": 163,
+      "epoch": 1791889713,
+      "sha256": "a852232ea729f7c315e5124ec785301b2a7627ac42502043dfafc48fa31f4302",
+      "passes": {
+        "original": {
+          "text": "7G12, right?",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7G12, right?",
+              "avg_logprob": -0.8214064174228244,
+              "no_speech_prob": 0.2227853238582611,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "1712 right",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 1712 right",
+              "avg_logprob": -0.8912280201911926,
+              "no_speech_prob": 0.26386964321136475,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "7G12, right?",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7G12, right?",
+              "avg_logprob": -0.8214064174228244,
+              "no_speech_prob": 0.2227853238582611,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791889716.m4a": {
+      "index": 164,
+      "epoch": 1791889716,
+      "sha256": "ca53a7a84a5362e061041152787b7a42c2e9dc8ae17da82e34a2d24cb4a55549",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5726510047912597,
+              "no_speech_prob": 0.018746815621852875,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.602250337600708,
+              "no_speech_prob": 0.013890610076487064,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "7G12, right?",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.4941708564758301,
+              "no_speech_prob": 0.004656580742448568,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791889962.m4a": {
+      "index": 165,
+      "epoch": 1791889962,
+      "sha256": "0001f01f5daa27425ec80caf624953a08d7e072f3853bb5a80e5117a8b6e5762",
+      "passes": {
+        "original": {
+          "text": "7-2-12, you clear now.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-2-12, you clear now.",
+              "avg_logprob": -0.6767578125,
+              "no_speech_prob": 0.09049641340970993,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J12 is cleared out.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J12 is cleared out.",
+              "avg_logprob": -0.6655181765556335,
+              "no_speech_prob": 0.10079817473888397,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "7-2-12, you clear now.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-2-12, you clear now.",
+              "avg_logprob": -0.6767578125,
+              "no_speech_prob": 0.09049641340970993,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791889966.m4a": {
+      "index": 166,
+      "epoch": 1791889966,
+      "sha256": "dd37289fc5abb9d58899f2c6c23f81cb283a59ab87d7d5c4a9dad6b6bbdc575c",
+      "passes": {
+        "original": {
+          "text": "Happy?",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy?",
+              "avg_logprob": -0.5676740646362305,
+              "no_speech_prob": 0.032721977680921555,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy?",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy?",
+              "avg_logprob": -0.5469055652618409,
+              "no_speech_prob": 0.015170804224908352,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy?",
+          "prompt": "7-2-12, you clear now.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy?",
+              "avg_logprob": -0.4812727451324463,
+              "no_speech_prob": 0.008014635182917118,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791890062.m4a": {
+      "index": 167,
+      "epoch": 1791890062,
+      "sha256": "8f9a6144c3e59be9e54d56ef3e5623f189c48d753fe571e431ceced5bd288261",
+      "passes": {
+        "original": {
+          "text": "5J47, cost of medical.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J47, cost of medical.",
+              "avg_logprob": -0.6460403312336315,
+              "no_speech_prob": 0.048813339322805405,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "at J47 Coffee Medical.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " at J47 Coffee Medical.",
+              "avg_logprob": -0.7812151379055448,
+              "no_speech_prob": 0.03129146993160248,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "5J47, cost of medical.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J47, cost of medical.",
+              "avg_logprob": -0.6460403312336315,
+              "no_speech_prob": 0.048813339322805405,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791890309.m4a": {
+      "index": 168,
+      "epoch": 1791890309,
+      "sha256": "6db6d24d289a0cb94d9c719879094f2da3e0ae85b8dac88592dc155fc72fc623",
+      "passes": {
+        "original": {
+          "text": "7J21.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J21.",
+              "avg_logprob": -0.4597425290516445,
+              "no_speech_prob": 0.08425730466842651,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7G21.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7G21.",
+              "avg_logprob": -0.6273123877389091,
+              "no_speech_prob": 0.07049556821584702,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "7J21.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J21.",
+              "avg_logprob": -0.4597425290516445,
+              "no_speech_prob": 0.08425730466842651,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791890313.m4a": {
+      "index": 169,
+      "epoch": 1791890313,
+      "sha256": "1b645f10fd9033457fa2d18466d3e0d389844fecee93125d1461d568f95bb3f8",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.3925486405690511,
+              "no_speech_prob": 0.2157794088125229,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.5055526892344157,
+              "no_speech_prob": 0.13384909927845,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Go ahead, go ahead.",
+          "prompt": "7J21.",
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Go ahead, go ahead.",
+              "avg_logprob": -0.5271322462293837,
+              "no_speech_prob": 0.18971432745456696,
+              "compression_ratio": 0.9047619047619048
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791890329.m4a": {
+      "index": 170,
+      "epoch": 1791890329,
+      "sha256": "93946cae32b4132a10174483f04e1f4b55430aca75767aaf9b2fdb4fda9aee84",
+      "passes": {
+        "original": {
+          "text": "That's where they've been saving for the last few days.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2800000000000002,
+              "text": " That's where they've been saving for the last few days.",
+              "avg_logprob": -0.2587675116956234,
+              "no_speech_prob": 0.014089451171457767,
+              "compression_ratio": 0.9016393442622951
+            }
+          ]
+        },
+        "filtered": {
+          "text": "That's where they've been saving for the last few days.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.3200000000000003,
+              "text": " That's where they've been saving for the last few days.",
+              "avg_logprob": -0.25507123209536076,
+              "no_speech_prob": 0.013617753982543945,
+              "compression_ratio": 0.9016393442622951
+            }
+          ]
+        },
+        "context": {
+          "text": "That's where they've been saving for the last few days.",
+          "prompt": "7J21. Go ahead.",
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " That's where they've been saving for the last few days.",
+              "avg_logprob": -0.22873297333717346,
+              "no_speech_prob": 0.020184671506285667,
+              "compression_ratio": 0.9016393442622951
+            }
+          ]
+        }
+      }
+    }
+  }
+}
