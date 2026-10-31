@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-27",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793129302.m4a": {
+      "index": 537,
+      "epoch": 1793129302,
+      "sha256": "c24458100b889ccaf33084f3378d3d5cdc7421b8c6b10c2333fe3e10f883ce67",
+      "passes": {
+        "original": {
+          "text": "18J7 Central, go for it.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 18J7 Central, go for it.",
+              "avg_logprob": -0.43949008484681445,
+              "no_speech_prob": 0.05508101359009743,
+              "compression_ratio": 0.75
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793129305.m4a": {
+      "index": 538,
+      "epoch": 1793129305,
+      "sha256": "d52d119d226d5c9dc9af7c943ab8548ac2c18de4781cce45a53addbbd507166f",
+      "passes": {
+        "original": {
+          "text": "That's what",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " That's what",
+              "avg_logprob": -0.7164886097113291,
+              "no_speech_prob": 0.3359461724758148,
+              "compression_ratio": 0.6470588235294118
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793129308.m4a": {
+      "index": 539,
+      "epoch": 1793129308,
+      "sha256": "84745c7e85e1394350451b1b8d3360e5d5249e8faca641f7e376df5a90f73434",
+      "passes": {
+        "original": {
+          "text": "Copy. Break 5J29 Central, Cookport.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Copy. Break 5J29 Central, Cookport.",
+              "avg_logprob": -0.6214022168091365,
+              "no_speech_prob": 0.009328581392765045,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793129311.m4a": {
+      "index": 540,
+      "epoch": 1793129311,
+      "sha256": "59811c101b6ed42073788ee0243c0c80fa15748ea89303aba89afb17006f615c",
+      "passes": {
+        "original": {
+          "text": "Go for you, Mr. Spence.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for you, Mr. Spence.",
+              "avg_logprob": -0.801249290506045,
+              "no_speech_prob": 0.06669580191373825,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for your consent.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for your consent.",
+              "avg_logprob": -0.7822125479578972,
+              "no_speech_prob": 0.08900201320648193,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "Cookport, you can spin.",
+          "prompt": "18J7 Central, go for it. That's what Copy. Break 5J29 Central, Cookport.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Cookport, you can spin.",
+              "avg_logprob": -0.6306642651557922,
+              "no_speech_prob": 0.022464903071522713,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        }
+      }
+    }
+  }
+}
