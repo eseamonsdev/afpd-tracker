@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-25",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792912067.m4a": {
+      "index": 111,
+      "epoch": 1792912067,
+      "sha256": "2e9e8c82bf948d020ab67b59e4079c91ec487e7a5d5339bbf043337cb063f97f",
+      "passes": {
+        "original": {
+          "text": "13-14, got two detained. I'm going to be switching to Metro service.",
+          "prompt": null,
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 13-14, got two detained. I'm going to be switching to Metro service.",
+              "avg_logprob": -0.4195685613723028,
+              "no_speech_prob": 0.045725200325250626,
+              "compression_ratio": 0.9855072463768116
+            }
+          ]
+        },
+        "filtered": {
+          "text": "13 to 14. I've got two detained. I'm going to be switching to Metro Service.",
+          "prompt": null,
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 13 to 14. I've got two detained. I'm going to be switching to Metro Service.",
+              "avg_logprob": -0.42207165645516437,
+              "no_speech_prob": 0.026802802458405495,
+              "compression_ratio": 1.0410958904109588
+            }
+          ]
+        },
+        "context": {
+          "text": "13-14, got two detained. I'm going to be switching to Metro service.",
+          "prompt": null,
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 13-14, got two detained. I'm going to be switching to Metro service.",
+              "avg_logprob": -0.4195685613723028,
+              "no_speech_prob": 0.045725200325250626,
+              "compression_ratio": 0.9855072463768116
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792912076.m4a": {
+      "index": 112,
+      "epoch": 1792912076,
+      "sha256": "6e210ac0c464b42287dd3dc806fe78e3f7085161548350c9472673937eef2109",
+      "passes": {
+        "original": {
+          "text": "Copy due to change.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy due to change.",
+              "avg_logprob": -0.7129307761788368,
+              "no_speech_prob": 0.06491100788116455,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy due to date.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy due to date.",
+              "avg_logprob": -0.7403355985879898,
+              "no_speech_prob": 0.03684292361140251,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy due to change.",
+          "prompt": "13-14, got two detained. I'm going to be switching to Metro service.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy due to change.",
+              "avg_logprob": -0.8557713702321053,
+              "no_speech_prob": 0.06709011644124985,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    }
+  }
+}
