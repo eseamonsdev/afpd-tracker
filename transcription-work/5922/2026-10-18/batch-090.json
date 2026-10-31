@@ -1,0 +1,761 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-18",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1792371671.m4a": {
+      "index": 891,
+      "epoch": 1792371671,
+      "sha256": "d980c331b3ee840e22397beb5b0ec81a020eba64abb6b0746d866e799c2c5c79",
+      "passes": {
+        "original": {
+          "text": "Zachary Charles Land, Year 4, 13 of 2004.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.4,
+              "text": " Zachary Charles Land, Year 4, 13 of 2004.",
+              "avg_logprob": -0.51440958182017,
+              "no_speech_prob": 0.0026747384108603,
+              "compression_ratio": 0.8723404255319149
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Zachary Charles Land, Year 4, 13 of 2004.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.44,
+              "text": " Zachary Charles Land, Year 4, 13 of 2004.",
+              "avg_logprob": -0.44797757069269817,
+              "no_speech_prob": 0.0023947616573423147,
+              "compression_ratio": 0.8723404255319149
+            }
+          ]
+        },
+        "context": {
+          "text": "Zachary Charles Land, year 4, 13 of 2004.",
+          "prompt": "beep beep beep All units, record a copy at 10-0, exhale. Continuing 10-0 retail out of 7J, attempt to locate an assault suspect.",
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.44,
+              "text": " Zachary Charles Land, year 4, 13 of 2004.",
+              "avg_logprob": -0.60514235496521,
+              "no_speech_prob": 0.004043223336338997,
+              "compression_ratio": 0.8723404255319149
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792371675.m4a": {
+      "index": 892,
+      "epoch": 1792371675,
+      "sha256": "6ffd99da0ce470620aae79fb48eab1162cb20cb6653a067f7187a32a9f05e001",
+      "passes": {
+        "original": {
+          "text": "Subject will have a Wyoming DL lasting driving a black Audi A4 with local plate 8 Fox Bravo Kilo 0. Subject is wanted for assault, possibly abduction.",
+          "prompt": null,
+          "duration_seconds": 10.24,
+          "token_limit": 106,
+          "token_count": 38,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.84,
+              "text": " Subject will have a Wyoming DL lasting driving a black Audi A4 with local plate 8 Fox Bravo",
+              "avg_logprob": -0.3541490542582976,
+              "no_speech_prob": 0.003495612880215049,
+              "compression_ratio": 1.171875
+            },
+            {
+              "start": 5.84,
+              "end": 7.48,
+              "text": " Kilo 0.",
+              "avg_logprob": -0.3541490542582976,
+              "no_speech_prob": 0.003495612880215049,
+              "compression_ratio": 1.171875
+            },
+            {
+              "start": 7.48,
+              "end": 9.82,
+              "text": " Subject is wanted for assault, possibly abduction.",
+              "avg_logprob": -0.3541490542582976,
+              "no_speech_prob": 0.003495612880215049,
+              "compression_ratio": 1.171875
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Subject will have a Wyoming DL lasting driving a Black Audi A4 with local place 8 FOX Bravo Kilo 0. Subject is wanted for assault, possibly abduction.",
+          "prompt": null,
+          "duration_seconds": 10.24,
+          "token_limit": 106,
+          "token_count": 38,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.84,
+              "text": " Subject will have a Wyoming DL lasting driving a Black Audi A4 with local place 8 FOX Bravo",
+              "avg_logprob": -0.37684426399377674,
+              "no_speech_prob": 0.0028173027094453573,
+              "compression_ratio": 1.1450381679389312
+            },
+            {
+              "start": 5.84,
+              "end": 6.84,
+              "text": " Kilo 0.",
+              "avg_logprob": -0.37684426399377674,
+              "no_speech_prob": 0.0028173027094453573,
+              "compression_ratio": 1.1450381679389312
+            },
+            {
+              "start": 6.84,
+              "end": 9.84,
+              "text": " Subject is wanted for assault, possibly abduction.",
+              "avg_logprob": -0.37684426399377674,
+              "no_speech_prob": 0.0028173027094453573,
+              "compression_ratio": 1.1450381679389312
+            }
+          ]
+        },
+        "context": {
+          "text": "Subject will have a Wyoming DL lasting driving a Black Audi A4 with local plate 8 Fox Bravo Kilo 0. Subject is wanted for assault, possibly abduction.",
+          "prompt": "All units, record a copy at 10-0, exhale. Continuing 10-0 retail out of 7J, attempt to locate an assault suspect. Zachary Charles Land, Year 4, 13 of 2004.",
+          "duration_seconds": 10.24,
+          "token_limit": 106,
+          "token_count": 36,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0200000000000005,
+              "text": " Subject will have a Wyoming DL lasting driving a Black Audi A4 with local plate 8 Fox Bravo Kilo 0.",
+              "avg_logprob": -0.27823716885334737,
+              "no_speech_prob": 0.0015790568431839347,
+              "compression_ratio": 1.171875
+            },
+            {
+              "start": 7.0200000000000005,
+              "end": 10.02,
+              "text": " Subject is wanted for assault, possibly abduction.",
+              "avg_logprob": -0.27823716885334737,
+              "no_speech_prob": 0.0015790568431839347,
+              "compression_ratio": 1.171875
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792371691.m4a": {
+      "index": 893,
+      "epoch": 1792371691,
+      "sha256": "c6ed33f69fd01bf4b54ada74f727bba6738534175f93ece74775ca3e8e1eb295",
+      "passes": {
+        "original": {
+          "text": "Suspect has threatened to shoot LEO. It's located. Use caution and contact 7J and to broadcast at 19.01 hours.",
+          "prompt": null,
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 34,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.84,
+              "text": " Suspect has threatened to shoot LEO.",
+              "avg_logprob": -0.42350289481026787,
+              "no_speech_prob": 0.06623309850692749,
+              "compression_ratio": 1.0784313725490196
+            },
+            {
+              "start": 2.84,
+              "end": 3.48,
+              "text": " It's located.",
+              "avg_logprob": -0.42350289481026787,
+              "no_speech_prob": 0.06623309850692749,
+              "compression_ratio": 1.0784313725490196
+            },
+            {
+              "start": 3.48,
+              "end": 6.88,
+              "text": " Use caution and contact 7J and to broadcast at 19.01 hours.",
+              "avg_logprob": -0.42350289481026787,
+              "no_speech_prob": 0.06623309850692749,
+              "compression_ratio": 1.0784313725490196
+            }
+          ]
+        },
+        "filtered": {
+          "text": "The suspect has threatened to shoot LEO. It's located. Use caution and contact 7-J and to broadcast at 19-01 hours.",
+          "prompt": null,
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 35,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.8000000000000003,
+              "text": " The suspect has threatened to shoot LEO.",
+              "avg_logprob": -0.40049737526310814,
+              "no_speech_prob": 0.017724210396409035,
+              "compression_ratio": 1.0952380952380953
+            },
+            {
+              "start": 2.8000000000000003,
+              "end": 3.48,
+              "text": " It's located.",
+              "avg_logprob": -0.40049737526310814,
+              "no_speech_prob": 0.017724210396409035,
+              "compression_ratio": 1.0952380952380953
+            },
+            {
+              "start": 3.48,
+              "end": 6.88,
+              "text": " Use caution and contact 7-J and to broadcast at 19-01 hours.",
+              "avg_logprob": -0.40049737526310814,
+              "no_speech_prob": 0.017724210396409035,
+              "compression_ratio": 1.0952380952380953
+            }
+          ]
+        },
+        "context": {
+          "text": "Subject has threatened to shoot LEO. It's located. Use caution and contact 7J in the broadcast at 19-01 hours.",
+          "prompt": "Continuing 10-0 retail out of 7J, attempt to locate an assault suspect. Zachary Charles Land, Year 4, 13 of 2004. Subject will have a Wyoming DL lasting driving a black Audi A4 with local plate 8 Fox Bravo Kilo 0. Subject is wanted for assault, possibly abduction.",
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Subject has threatened to shoot LEO. It's located. Use caution and contact 7J in the broadcast at 19-01 hours.",
+              "avg_logprob": -0.2810444444417953,
+              "no_speech_prob": 0.0010289162164554,
+              "compression_ratio": 1.0679611650485437
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792371944.m4a": {
+      "index": 894,
+      "epoch": 1792371944,
+      "sha256": "508a6c7381d6a7991a99f3d8618562808863592117fe98313b6b5f63a1ab00cf",
+      "passes": {
+        "original": {
+          "text": "7-8-8.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 7-8-8.",
+              "avg_logprob": -0.9915918774074979,
+              "no_speech_prob": 0.05843919888138771,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "So, J18.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " So, J18.",
+              "avg_logprob": -0.8123004883527756,
+              "no_speech_prob": 0.03853710740804672,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "7-8-8.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 7-8-8.",
+              "avg_logprob": -0.9915918774074979,
+              "no_speech_prob": 0.05843919888138771,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792372046.m4a": {
+      "index": 895,
+      "epoch": 1792372046,
+      "sha256": "d5f013c6e4d6d6d73175f59e5e3d78931350ad1edc7b789005b1ad5590230c73",
+      "passes": {
+        "original": {
+          "text": "7-3-2",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-3-2",
+              "avg_logprob": -1.0225658565759659,
+              "no_speech_prob": 0.09890460222959518,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7-3-28. 7-3-28.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 7-3-28.",
+              "avg_logprob": -0.6764683442957261,
+              "no_speech_prob": 0.05110333487391472,
+              "compression_ratio": 0.8333333333333334
+            },
+            {
+              "start": 1.0,
+              "end": 1.5,
+              "text": " 7-3-28.",
+              "avg_logprob": -0.6764683442957261,
+              "no_speech_prob": 0.05110333487391472,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        },
+        "context": {
+          "text": "7-3-2",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-3-2",
+              "avg_logprob": -1.0225658565759659,
+              "no_speech_prob": 0.09890460222959518,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792372049.m4a": {
+      "index": 896,
+      "epoch": 1792372049,
+      "sha256": "0daa834a288910ae18cb2214cd06cb3c05024b034796594436ee4dcdf8463670",
+      "passes": {
+        "original": {
+          "text": "728",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 728",
+              "avg_logprob": -0.6378347396850585,
+              "no_speech_prob": 0.13638779520988464,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "filtered": {
+          "text": "728",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 728",
+              "avg_logprob": -0.9540716171264648,
+              "no_speech_prob": 0.15928970277309418,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "context": {
+          "text": "7-2-28",
+          "prompt": "7-3-2",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 7-2-28",
+              "avg_logprob": -0.4813215658068657,
+              "no_speech_prob": 0.07022291421890259,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792372052.m4a": {
+      "index": 897,
+      "epoch": 1792372052,
+      "sha256": "7da36f11c514944f3e138e333d254401def1057347b5fa5e5912f2b179c87d00",
+      "passes": {
+        "original": {
+          "text": "On this assault, the abduction case, I'm out at Bernie's tire. I think I got the victim's wallet and glasses.",
+          "prompt": null,
+          "duration_seconds": 8.832,
+          "token_limit": 95,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.4,
+              "text": " On this assault, the abduction case, I'm out at Bernie's tire.",
+              "avg_logprob": -0.2918208729137074,
+              "no_speech_prob": 0.006546468939632177,
+              "compression_ratio": 1.1354166666666667
+            },
+            {
+              "start": 4.4,
+              "end": 7.92,
+              "text": " I think I got the victim's wallet and glasses.",
+              "avg_logprob": -0.2918208729137074,
+              "no_speech_prob": 0.006546468939632177,
+              "compression_ratio": 1.1354166666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "On this assault, the abduction case, I'm out at Bernie's tire. I think I got the victim's wallet and glasses.",
+          "prompt": null,
+          "duration_seconds": 8.832,
+          "token_limit": 95,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.44,
+              "text": " On this assault, the abduction case, I'm out at Bernie's tire.",
+              "avg_logprob": -0.3009402535178445,
+              "no_speech_prob": 0.0052417851984500885,
+              "compression_ratio": 1.1354166666666667
+            },
+            {
+              "start": 4.44,
+              "end": 7.92,
+              "text": " I think I got the victim's wallet and glasses.",
+              "avg_logprob": -0.3009402535178445,
+              "no_speech_prob": 0.0052417851984500885,
+              "compression_ratio": 1.1354166666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "On this assault abduction case, I'm out at Bernie's tire. I think I got the victim's wallet and glasses",
+          "prompt": "7-3-2 728",
+          "duration_seconds": 8.832,
+          "token_limit": 95,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.76,
+              "text": " On this assault abduction case, I'm out at Bernie's tire. I think I got the victim's wallet and glasses",
+              "avg_logprob": -0.24729184088883577,
+              "no_speech_prob": 0.09393861144781113,
+              "compression_ratio": 1.10752688172043
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792372062.m4a": {
+      "index": 898,
+      "epoch": 1792372062,
+      "sha256": "bb143ae4b49dca8a5a1f23624e3fdf5e828a152fe9fb3d049a27c1436921f321",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.9963356018066406,
+              "no_speech_prob": 0.06209513172507286,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.6966899782419205,
+              "no_speech_prob": 0.04167747497558594,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "7-3-2 728 On this assault, the abduction case, I'm out at Bernie's tire. I think I got the victim's wallet and glasses.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.5711935043334961,
+              "no_speech_prob": 0.09236577153205872,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792372085.m4a": {
+      "index": 899,
+      "epoch": 1792372085,
+      "sha256": "43616aa68c1f7c37e60186a52f871b034dd1597e42ea2412c3c73c545e01ec44",
+      "passes": {
+        "original": {
+          "text": "Sunday 20th, we just had a note that there are cameras here that should have captured this incident where I'm found in the property. Thanks for watching!",
+          "prompt": null,
+          "duration_seconds": 8.064,
+          "token_limit": 89,
+          "token_count": 38,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.44,
+              "text": " Sunday 20th, we just had a note that there are cameras here that",
+              "avg_logprob": -0.4321954618482029,
+              "no_speech_prob": 0.011885395273566246,
+              "compression_ratio": 1.2110091743119267
+            },
+            {
+              "start": 4.44,
+              "end": 7.74,
+              "text": " should have captured this incident where I'm found in the property.",
+              "avg_logprob": -0.4321954618482029,
+              "no_speech_prob": 0.011885395273566246,
+              "compression_ratio": 1.2110091743119267
+            },
+            {
+              "start": 7.74,
+              "end": 9.74,
+              "text": " Thanks for watching!",
+              "avg_logprob": -0.938427175794329,
+              "no_speech_prob": 0.9187207818031311,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Sunday 20, we just had a note that there are cameras here that should have captured this incident where I'm found in the property.",
+          "prompt": null,
+          "duration_seconds": 8.064,
+          "token_limit": 89,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.6000000000000005,
+              "text": " Sunday 20, we just had a note that there are cameras here that should have captured this incident where I'm found in the property.",
+              "avg_logprob": -0.4036960810422897,
+              "no_speech_prob": 0.011194780468940735,
+              "compression_ratio": 1.2037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "728, we just had a note that there are cameras here that should have captured this incident where I'm found in the property.",
+          "prompt": "728 On this assault, the abduction case, I'm out at Bernie's tire. I think I got the victim's wallet and glasses. Copy.",
+          "duration_seconds": 8.064,
+          "token_limit": 89,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.32,
+              "text": " 728, we just had a note that there are cameras here that should have captured this incident",
+              "avg_logprob": -0.3268269933760166,
+              "no_speech_prob": 0.0020009188447147608,
+              "compression_ratio": 1.1923076923076923
+            },
+            {
+              "start": 6.32,
+              "end": 7.44,
+              "text": " where I'm found in the property.",
+              "avg_logprob": -0.3268269933760166,
+              "no_speech_prob": 0.0020009188447147608,
+              "compression_ratio": 1.1923076923076923
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1792372290.m4a": {
+      "index": 900,
+      "epoch": 1792372290,
+      "sha256": "2576dc1829f67530f2e6f5b39653e15e0ab526061cb032981b0e895e022ca4a6",
+      "passes": {
+        "original": {
+          "text": "beep beep beep",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.48,
+              "text": " beep beep beep",
+              "avg_logprob": -0.5907884173923068,
+              "no_speech_prob": 0.15161864459514618,
+              "compression_ratio": 0.9333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "beep beep beep",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.48,
+              "text": " beep beep beep",
+              "avg_logprob": -0.4673272238837348,
+              "no_speech_prob": 0.17739051580429077,
+              "compression_ratio": 0.9333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "beep beep beep",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.48,
+              "text": " beep beep beep",
+              "avg_logprob": -0.5907884173923068,
+              "no_speech_prob": 0.15161864459514618,
+              "compression_ratio": 0.9333333333333333
+            }
+          ]
+        }
+      }
+    }
+  }
+}
