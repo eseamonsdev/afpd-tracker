@@ -100,7 +100,17 @@ test("starter selects the intended calls and retains original archive numbering"
   const numbers = excerpt.sections.flatMap(s => s.ranges.flatMap(r => r.calls.map(c => c.number)));
   assert.equal(excerpt.total, 159);
   assert.equal(excerpt.duration, "8 min 4 sec");
+  assert.deepEqual(excerpt.progress, [{ date: "09/12/2026", total: 159, transcribed: 159, verified: 159 }]);
   assert.deepEqual(numbers, [...Array.from({length:66},(_,i)=>i+58), ...Array.from({length:34},(_,i)=>i+130), ...Array.from({length:59},(_,i)=>i+172)]);
+});
+
+test("coverage counts only the selected excerpt clips and keeps verification separate", () => {
+  const unverified = JSON.parse(readFileSync("data/entities/police-radio-excerpts/2.json", "utf8")).entities[0];
+  assert.deepEqual(buildRadioExcerpt(unverified).progress, [{ date: "09/12/2026", total: 182, transcribed: 182, verified: 0 }]);
+  const single = structuredClone(entity);
+  single.sections = [{ ranges: [{ ...entity.sections[0].ranges[0] }] }];
+  delete single.sections[0].ranges[0].last;
+  assert.deepEqual(buildRadioExcerpt(single).progress, [{ date: "09/12/2026", total: 1, transcribed: 1, verified: 1 }]);
 });
 
 test("transcription is opt-in per excerpt and rejects invalid configuration", () => {
@@ -108,6 +118,8 @@ test("transcription is opt-in per excerpt and rejects invalid configuration", ()
   assert.ok(enabled.sections[0].ranges[0].calls[0].transcript.length);
   const disabled = buildRadioExcerpt({ ...entity, enableTranscription: false });
   assert.equal(disabled.sections[0].ranges[0].calls[0].transcript, "");
+  assert.equal(disabled.progress[0].transcribed, 0);
+  assert.equal(disabled.progress[0].verified, 159);
   assert.throws(() => buildRadioExcerpt({ ...entity, enableTranscription: "true" }), /must be a boolean/);
 });
 

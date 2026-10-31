@@ -31,11 +31,21 @@ permalink: "{{ excerptPage.excerpt | excerptUrl }}"
       {% if excerpt.description %}<p>{{ excerpt.description | escape }}</p>{% endif %}
       <p>Audio from AFPD’s car-to-car radio talkgroup. Times shown in Mountain Time.</p>
       {% if excerpt.enableTranscription %}<p class="radio-transcript-note">AI-generated transcripts may contain errors. Verified transcripts have been reviewed against the audio; unclear passages may remain marked.</p>{% endif %}
+      <div class="radio-review-progress excerpt-summary" aria-label="Selected audio and transcript coverage">
+        <p class="excerpt-summary-detail">{{ excerpt.total }} selected clips · approximately {{ excerpt.duration | escape }} of audio.</p>
+        {% for progress in excerpt.progress %}
+        <div class="excerpt-progress-row">
+          <span class="radio-progress-stat"><strong>{{ progress.transcribed }} / {{ progress.total }}</strong> <span>clips transcribed</span></span>
+          <span class="radio-progress-stat"><strong>{{ progress.verified }} / {{ progress.total }}</strong> <span>clips verified</span></span>
+          <span class="radio-progress-stat">for {{ progress.date }}</span>
+        </div>
+        {% endfor %}
+        <p class="excerpt-summary-playback">Playback skips the gaps between calls.</p>
+      </div>
     </div>
     <div class="radio-archive" id="radio-excerpt">
       {{ player("excerpt", excerpt.enableTranscription, false, "transcription-toggle", "transcription") }}
       <p class="radio-source-note">Recordings sourced from <a href="https://openmhz.com/" target="_blank" rel="noopener noreferrer">OpenMHz</a> and hosted independently. This site is not affiliated with or endorsed by OpenMHz.</p>
-      <p>{{ excerpt.total }} selected clips · approximately {{ excerpt.duration | escape }} of audio. Playback skips the time between calls.</p>
       <div id="excerpt-clips">
       {% for section in excerpt.sections %}
         <section class="excerpt-section" aria-label="{{ section.title or ('Section ' ~ loop.index) | escape }}">
