@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-28",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793214933.m4a": {
+      "index": 741,
+      "epoch": 1793214933,
+      "sha256": "f1b593de2a9aad51c79ee2e6044bc374206450d047f09b504cca3405d6a5f7d0",
+      "passes": {
+        "original": {
+          "text": "I got me. Yep, thanks.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I got me.",
+              "avg_logprob": -0.5407436811006986,
+              "no_speech_prob": 0.05810198560357094,
+              "compression_ratio": 0.7333333333333333
+            },
+            {
+              "start": 2.0,
+              "end": 4.0,
+              "text": " Yep, thanks.",
+              "avg_logprob": -0.5407436811006986,
+              "no_speech_prob": 0.05810198560357094,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I go. Yep. Right. Thanks.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I go.",
+              "avg_logprob": -0.4734052254094018,
+              "no_speech_prob": 0.06253688037395477,
+              "compression_ratio": 0.7575757575757576
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Yep.",
+              "avg_logprob": -0.4734052254094018,
+              "no_speech_prob": 0.06253688037395477,
+              "compression_ratio": 0.7575757575757576
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Right.",
+              "avg_logprob": -0.4734052254094018,
+              "no_speech_prob": 0.06253688037395477,
+              "compression_ratio": 0.7575757575757576
+            },
+            {
+              "start": 3.0,
+              "end": 3.02,
+              "text": " Thanks.",
+              "avg_logprob": -0.4734052254094018,
+              "no_speech_prob": 0.06253688037395477,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "context": {
+          "text": "I got me. Yep, thanks.",
+          "prompt": "Seven days, thirty, and twenty-four en route on the traffic event. The female is driving erratically before pulling into the pediatric office. They're parked in front of the resident in front of the entrance. No one's gotten out of the vehicle yet. RP is going to be waiting in a white Honda minivan until an officer arrives. They'll call back if she ends up leaving. Code for temporary.",
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I got me. Yep, thanks.",
+              "avg_logprob": -0.5404789339412343,
+              "no_speech_prob": 0.06524404138326645,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    }
+  }
+}
