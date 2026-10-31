@@ -1,0 +1,721 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-08",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791449447.m4a": {
+      "index": 91,
+      "epoch": 1791449447,
+      "sha256": "01ad0ca649361653eea17ffb181211f00e4ba4a3292c53d514b0cc8f1a38e4b9",
+      "passes": {
+        "original": {
+          "text": "I tend to locate Ryan Mark Newby, 22 of 1991, 35-year-old white male, 5'11\", 125, left his Bluffdale house on foot, possibly wearing a leather jacket with a hiking backpack, holding two swords. If located, check welfare contacts Bluffdale P, dispatch clear 251.",
+          "prompt": null,
+          "duration_seconds": 20.352,
+          "token_limit": 187,
+          "token_count": 69,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 15.0,
+              "text": " I tend to locate Ryan Mark Newby, 22 of 1991, 35-year-old white male, 5'11\", 125, left his Bluffdale house on foot, possibly wearing a leather jacket with a hiking backpack, holding two swords.",
+              "avg_logprob": -0.348471012711525,
+              "no_speech_prob": 0.005780995357781649,
+              "compression_ratio": 1.3316326530612246
+            },
+            {
+              "start": 15.0,
+              "end": 20.0,
+              "text": " If located, check welfare contacts Bluffdale P, dispatch clear 251.",
+              "avg_logprob": -0.348471012711525,
+              "no_speech_prob": 0.005780995357781649,
+              "compression_ratio": 1.3316326530612246
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I tend to locate Ryan Mark Newby, 22 of 1991, 35-year-old white male, 5'11\", 125, left his Bluffdale house on foot, possibly wearing a leather jacket with a hiking backpack, holding two swords. is located. Check over. Contact Fluff LPD. Dispatch clear 251.",
+          "prompt": null,
+          "duration_seconds": 20.352,
+          "token_limit": 187,
+          "token_count": 74,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.44,
+              "text": " I tend to locate Ryan Mark Newby, 22 of 1991, 35-year-old white male, 5'11\", 125, left",
+              "avg_logprob": -0.34612556675384787,
+              "no_speech_prob": 0.011256266385316849,
+              "compression_ratio": 1.2371794871794872
+            },
+            {
+              "start": 8.44,
+              "end": 14.6,
+              "text": " his Bluffdale house on foot, possibly wearing a leather jacket with a hiking backpack, holding",
+              "avg_logprob": -0.34612556675384787,
+              "no_speech_prob": 0.011256266385316849,
+              "compression_ratio": 1.2371794871794872
+            },
+            {
+              "start": 14.6,
+              "end": 15.6,
+              "text": " two swords.",
+              "avg_logprob": -0.34612556675384787,
+              "no_speech_prob": 0.011256266385316849,
+              "compression_ratio": 1.2371794871794872
+            },
+            {
+              "start": 15.6,
+              "end": 19.6,
+              "text": " is located. Check over. Contact Fluff LPD. Dispatch clear 251.",
+              "avg_logprob": -0.7143229120656064,
+              "no_speech_prob": 0.007168868090957403,
+              "compression_ratio": 0.9117647058823529
+            }
+          ]
+        },
+        "context": {
+          "text": "Attempt to locate Ryan Mark Newby, 22 of 1991, 35-year-old white male, 5'11\", 125, left his Bluffdale house on foot, possibly wearing a leather jacket with a hiking backpack holding two swords. If located, check welfare contacts Bluffdale PD, dispatch clear 251.",
+          "prompt": "beep beep beep All units, prepare to copy the attempt to locate suicidal mail, 10-0 out of Westdale.",
+          "duration_seconds": 20.352,
+          "token_limit": 187,
+          "token_count": 71,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.76,
+              "text": " Attempt to locate Ryan Mark Newby, 22 of 1991, 35-year-old white male, 5'11\", 125, left his",
+              "avg_logprob": -0.32564141270187164,
+              "no_speech_prob": 0.0018386635929346085,
+              "compression_ratio": 1.3232323232323233
+            },
+            {
+              "start": 8.76,
+              "end": 14.6,
+              "text": " Bluffdale house on foot, possibly wearing a leather jacket with a hiking backpack holding",
+              "avg_logprob": -0.32564141270187164,
+              "no_speech_prob": 0.0018386635929346085,
+              "compression_ratio": 1.3232323232323233
+            },
+            {
+              "start": 14.6,
+              "end": 15.6,
+              "text": " two swords.",
+              "avg_logprob": -0.32564141270187164,
+              "no_speech_prob": 0.0018386635929346085,
+              "compression_ratio": 1.3232323232323233
+            },
+            {
+              "start": 15.6,
+              "end": 19.52,
+              "text": " If located, check welfare contacts Bluffdale PD, dispatch clear 251.",
+              "avg_logprob": -0.32564141270187164,
+              "no_speech_prob": 0.0018386635929346085,
+              "compression_ratio": 1.3232323232323233
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791449474.m4a": {
+      "index": 92,
+      "epoch": 1791449474,
+      "sha256": "27a5e42ff076ea1a1efdd57893558646873bf6d1ecdb6c1d3f3e2c230acb0670",
+      "passes": {
+        "original": {
+          "text": "7J12 clear all",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J12 clear all",
+              "avg_logprob": -0.518459640443325,
+              "no_speech_prob": 0.08764968067407608,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7G12 clear all",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7G12 clear all",
+              "avg_logprob": -0.6164930090308189,
+              "no_speech_prob": 0.027699414640665054,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "7J12 clear all.",
+          "prompt": "beep beep beep All units, prepare to copy the attempt to locate suicidal mail, 10-0 out of Westdale. I tend to locate Ryan Mark Newby, 22 of 1991, 35-year-old white male, 5'11\", 125, left his Bluffdale house on foot, possibly wearing a leather jacket with a hiking backpack, holding two swords. If located, check welfare contacts Bluffdale P, dispatch clear 251.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.4000000000000001,
+              "text": " 7J12 clear all.",
+              "avg_logprob": -0.532742076449924,
+              "no_speech_prob": 0.08994698524475098,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791449476.m4a": {
+      "index": 93,
+      "epoch": 1791449476,
+      "sha256": "c829a3be80eb53cd15dcd6c571ab6979f5c2e20f3346422fc13a146ce57f67ba",
+      "passes": {
+        "original": {
+          "text": "10-4",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-4",
+              "avg_logprob": -0.5745318035284678,
+              "no_speech_prob": 0.07252377271652222,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "10-4.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " 10-4.",
+              "avg_logprob": -0.47667845657893587,
+              "no_speech_prob": 0.07218120247125626,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "10-4",
+          "prompt": "All units, prepare to copy the attempt to locate suicidal mail, 10-0 out of Westdale. I tend to locate Ryan Mark Newby, 22 of 1991, 35-year-old white male, 5'11\", 125, left his Bluffdale house on foot, possibly wearing a leather jacket with a hiking backpack, holding two swords. If located, check welfare contacts Bluffdale P, dispatch clear 251. 7J12 clear all",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.1500000000000001,
+              "text": " 10-4",
+              "avg_logprob": -0.33942127227783203,
+              "no_speech_prob": 0.06468193978071213,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791450250.m4a": {
+      "index": 94,
+      "epoch": 1791450250,
+      "sha256": "3b3221e64ed24a151e4adffd28f27f5f928ed9f73f3fa410a433744be31eba2c",
+      "passes": {
+        "original": {
+          "text": "Clear when you're ready.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Clear when you're ready.",
+              "avg_logprob": -0.6132270495096842,
+              "no_speech_prob": 0.07792966812849045,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Clear when you're ready.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Clear when you're ready.",
+              "avg_logprob": -0.48984697129991317,
+              "no_speech_prob": 0.04004906490445137,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "context": {
+          "text": "Clear when you're ready.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Clear when you're ready.",
+              "avg_logprob": -0.6132270495096842,
+              "no_speech_prob": 0.07792966812849045,
+              "compression_ratio": 0.75
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791450259.m4a": {
+      "index": 95,
+      "epoch": 1791450259,
+      "sha256": "4d7cc2f16d2a3abe20ef97a0681215f8bf8ce2f64c1e39c40ef71f70cec0b356",
+      "passes": {
+        "original": {
+          "text": "I'll be in route as well.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.36,
+              "text": " I'll be in route as well.",
+              "avg_logprob": -0.5859583616256714,
+              "no_speech_prob": 0.13558551669120789,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "filtered": {
+          "text": "76, I'll be on route as well.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.36,
+              "text": " 76, I'll be on route as well.",
+              "avg_logprob": -0.6117111902970535,
+              "no_speech_prob": 0.12540876865386963,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        },
+        "context": {
+          "text": "76, I'll be in route as well.",
+          "prompt": "Clear when you're ready.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.36,
+              "text": " 76, I'll be in route as well.",
+              "avg_logprob": -0.5108593610616831,
+              "no_speech_prob": 0.029906975105404854,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791450262.m4a": {
+      "index": 96,
+      "epoch": 1791450262,
+      "sha256": "f3f775618a0215d560f0fa88d4d4322b561dba6666c0c98e3249da78956f0386",
+      "passes": {
+        "original": {
+          "text": "We're lasting at Maverick. It was a great Chevy pickup truck. Local 8 Juliet Victor Sierra 2.",
+          "prompt": null,
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " We're lasting at Maverick. It was a great Chevy pickup truck.",
+              "avg_logprob": -0.4962394723185786,
+              "no_speech_prob": 0.04760441929101944,
+              "compression_ratio": 1.0333333333333334
+            },
+            {
+              "start": 4.0,
+              "end": 8.0,
+              "text": " Local 8 Juliet Victor Sierra 2.",
+              "avg_logprob": -0.4962394723185786,
+              "no_speech_prob": 0.04760441929101944,
+              "compression_ratio": 1.0333333333333334
+            }
+          ]
+        },
+        "filtered": {
+          "text": "And we're lasting at Maverick, it was a great Chevy pickup truck, local 8 Juliet Victor Sierra 2.",
+          "prompt": null,
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " And we're lasting at Maverick, it was a great Chevy pickup truck, local 8 Juliet Victor Sierra 2.",
+              "avg_logprob": -0.636660995391699,
+              "no_speech_prob": 0.02950969897210598,
+              "compression_ratio": 1.043010752688172
+            }
+          ]
+        },
+        "context": {
+          "text": "We're lasting at Maverick. It was a great Chevy pickup truck, Local 8, Juliet Victor Sierra 2.",
+          "prompt": "Clear when you're ready. I'll be in route as well.",
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " We're lasting at Maverick. It was a great Chevy pickup truck, Local 8, Juliet Victor Sierra 2.",
+              "avg_logprob": -0.4997831697647388,
+              "no_speech_prob": 0.0203623715788126,
+              "compression_ratio": 1.0217391304347827
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791450269.m4a": {
+      "index": 97,
+      "epoch": 1791450269,
+      "sha256": "cae015a1ad997eb2bdf65e6dfa46983fb1f68d44d4f28104637d09088c0135d2",
+      "passes": {
+        "original": {
+          "text": "The driver seemed intoxicated, the last scene heading towards the back of the maverick.",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.2800000000000002,
+              "text": " The driver seemed intoxicated, the last scene",
+              "avg_logprob": -0.4146395092425139,
+              "no_speech_prob": 0.006179756484925747,
+              "compression_ratio": 1.0875
+            },
+            {
+              "start": 2.2800000000000002,
+              "end": 4.0,
+              "text": " heading towards the back of the maverick.",
+              "avg_logprob": -0.4146395092425139,
+              "no_speech_prob": 0.006179756484925747,
+              "compression_ratio": 1.0875
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Trevor seemed intoxicated. Last scene is heading towards the back of the Mavericks.",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.68,
+              "text": " Trevor seemed intoxicated.",
+              "avg_logprob": -0.4748812586069107,
+              "no_speech_prob": 0.008252810686826706,
+              "compression_ratio": 1.064102564102564
+            },
+            {
+              "start": 1.68,
+              "end": 4.2,
+              "text": " Last scene is heading towards the back of the Mavericks.",
+              "avg_logprob": -0.4748812586069107,
+              "no_speech_prob": 0.008252810686826706,
+              "compression_ratio": 1.064102564102564
+            }
+          ]
+        },
+        "context": {
+          "text": "Driver seemed intoxicated. Last scene heading towards the back of the Maverick.",
+          "prompt": "Clear when you're ready. I'll be in route as well. We're lasting at Maverick. It was a great Chevy pickup truck. Local 8 Juliet Victor Sierra 2.",
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Driver seemed intoxicated. Last scene heading towards the back of the Maverick.",
+              "avg_logprob": -0.367570827404658,
+              "no_speech_prob": 0.0011518793180584908,
+              "compression_ratio": 1.025974025974026
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791450280.m4a": {
+      "index": 98,
+      "epoch": 1791450280,
+      "sha256": "2469d81080251bca972c484bbc8c165b34e2c957da43668acf8e2fc1c264cae8",
+      "passes": {
+        "original": {
+          "text": "I'm on Sunday 12 here.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm on Sunday 12 here.",
+              "avg_logprob": -0.8345259904861451,
+              "no_speech_prob": 0.0568946972489357,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It's 7 day 12 over here.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " It's 7 day 12 over here.",
+              "avg_logprob": -0.7574036446484652,
+              "no_speech_prob": 0.08110704272985458,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "context": {
+          "text": "It's 7 day 12 here.",
+          "prompt": "I'll be in route as well. We're lasting at Maverick. It was a great Chevy pickup truck. Local 8 Juliet Victor Sierra 2. The driver seemed intoxicated, the last scene heading towards the back of the maverick.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " It's 7 day 12 here.",
+              "avg_logprob": -0.7385863780975341,
+              "no_speech_prob": 0.07072210311889648,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791450283.m4a": {
+      "index": 99,
+      "epoch": 1791450283,
+      "sha256": "029aa713ca15473e4448dde6abcfe29da5f382b25c5e52ecc09f909055a4f266",
+      "passes": {
+        "original": {
+          "text": "And we're",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " And we're",
+              "avg_logprob": -0.9242671728134155,
+              "no_speech_prob": 0.07191664725542068,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "and we're",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " and we're",
+              "avg_logprob": -0.9415608644485474,
+              "no_speech_prob": 0.0715070515871048,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "And we're...",
+          "prompt": "We're lasting at Maverick. It was a great Chevy pickup truck. Local 8 Juliet Victor Sierra 2. The driver seemed intoxicated, the last scene heading towards the back of the maverick. I'm on Sunday 12 here.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " And we're...",
+              "avg_logprob": -0.8590078353881836,
+              "no_speech_prob": 0.0549318753182888,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791450363.m4a": {
+      "index": 100,
+      "epoch": 1791450363,
+      "sha256": "0da4f45d4c6d17b0b9ba3bd0aaffc1a33a6ce3e4f8ac3562689e5a0ceb230c2a",
+      "passes": {
+        "original": {
+          "text": "7221 area.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7221 area.",
+              "avg_logprob": -0.4791990177971976,
+              "no_speech_prob": 0.03245559707283974,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J21 area.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J21 area.",
+              "avg_logprob": -0.5908588171005249,
+              "no_speech_prob": 0.015763578936457634,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "7221 area.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7221 area.",
+              "avg_logprob": -0.4791990177971976,
+              "no_speech_prob": 0.03245559707283974,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    }
+  }
+}

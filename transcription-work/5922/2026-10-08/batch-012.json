@@ -1,0 +1,713 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-08",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1791451591.m4a": {
+      "index": 111,
+      "epoch": 1791451591,
+      "sha256": "5c569ffe6dcdb5d3fdac849cca2d649127b142903c53bb4a59fc8f32af9c8aa3",
+      "passes": {
+        "original": {
+          "text": "in the area of Cook Family Park on 500 West, near 500 North, from Pissah, a silver passenger car parked on the side of the road. Occupied by one male, it looked like he was asleep looked over at the car.",
+          "prompt": null,
+          "duration_seconds": 13.952,
+          "token_limit": 136,
+          "token_count": 60,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.36,
+              "text": " in the area of Cook Family Park on 500 West,",
+              "avg_logprob": -0.37399078001741504,
+              "no_speech_prob": 0.031037339940667152,
+              "compression_ratio": 1.3624161073825503
+            },
+            {
+              "start": 4.36,
+              "end": 8.0,
+              "text": " near 500 North, from Pissah, a silver passenger car",
+              "avg_logprob": -0.37399078001741504,
+              "no_speech_prob": 0.031037339940667152,
+              "compression_ratio": 1.3624161073825503
+            },
+            {
+              "start": 8.0,
+              "end": 9.6,
+              "text": " parked on the side of the road.",
+              "avg_logprob": -0.37399078001741504,
+              "no_speech_prob": 0.031037339940667152,
+              "compression_ratio": 1.3624161073825503
+            },
+            {
+              "start": 9.6,
+              "end": 12.040000000000001,
+              "text": " Occupied by one male, it looked like he was asleep",
+              "avg_logprob": -0.37399078001741504,
+              "no_speech_prob": 0.031037339940667152,
+              "compression_ratio": 1.3624161073825503
+            },
+            {
+              "start": 12.040000000000001,
+              "end": 13.120000000000001,
+              "text": " looked over at the car.",
+              "avg_logprob": -0.37399078001741504,
+              "no_speech_prob": 0.031037339940667152,
+              "compression_ratio": 1.3624161073825503
+            }
+          ]
+        },
+        "filtered": {
+          "text": "in the area of Cook Family Park on 600 West, near 500 North, from Pissah, a silver passenger car parked on the side of the road, occupied by one male, looked like he was asleep, looked over at the car.",
+          "prompt": null,
+          "duration_seconds": 13.952,
+          "token_limit": 136,
+          "token_count": 55,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.38,
+              "text": " in the area of Cook Family Park on 600 West, near 500 North,",
+              "avg_logprob": -0.4231614007481507,
+              "no_speech_prob": 0.028815388679504395,
+              "compression_ratio": 1.3581081081081081
+            },
+            {
+              "start": 6.38,
+              "end": 10.66,
+              "text": " from Pissah, a silver passenger car parked on the side of the road, occupied by one male,",
+              "avg_logprob": -0.4231614007481507,
+              "no_speech_prob": 0.028815388679504395,
+              "compression_ratio": 1.3581081081081081
+            },
+            {
+              "start": 10.66,
+              "end": 13.120000000000001,
+              "text": " looked like he was asleep, looked over at the car.",
+              "avg_logprob": -0.4231614007481507,
+              "no_speech_prob": 0.028815388679504395,
+              "compression_ratio": 1.3581081081081081
+            }
+          ]
+        },
+        "context": {
+          "text": "In the area of Cook Family Park on 500 West, near 500 North, her piece saw a silver passenger car parked on the side of the road, occupied by one male, looked like he was asleep, looked over at the car.",
+          "prompt": "7J-12 copy welfare check. Good.",
+          "duration_seconds": 13.952,
+          "token_limit": 136,
+          "token_count": 53,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " In the area of Cook Family Park on 500 West, near 500 North,",
+              "avg_logprob": -0.35813819810196207,
+              "no_speech_prob": 0.19910188019275665,
+              "compression_ratio": 1.364864864864865
+            },
+            {
+              "start": 5.0,
+              "end": 9.0,
+              "text": " her piece saw a silver passenger car parked on the side of the road,",
+              "avg_logprob": -0.35813819810196207,
+              "no_speech_prob": 0.19910188019275665,
+              "compression_ratio": 1.364864864864865
+            },
+            {
+              "start": 9.0,
+              "end": 13.0,
+              "text": " occupied by one male, looked like he was asleep, looked over at the car.",
+              "avg_logprob": -0.35813819810196207,
+              "no_speech_prob": 0.19910188019275665,
+              "compression_ratio": 1.364864864864865
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791451608.m4a": {
+      "index": 112,
+      "epoch": 1791451608,
+      "sha256": "b16c9c48e22136d0944a5d5a753fb9a46fe8bc12559ca202e9031e9835bdae5e",
+      "passes": {
+        "original": {
+          "text": "I guess",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I guess",
+              "avg_logprob": -0.485009765625,
+              "no_speech_prob": 0.2784918248653412,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I guess.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I guess.",
+              "avg_logprob": -0.678710142771403,
+              "no_speech_prob": 0.20907770097255707,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "I guess.",
+          "prompt": "7J-12 copy welfare check. Good. in the area of Cook Family Park on 500 West, near 500 North, from Pissah, a silver passenger car parked on the side of the road. Occupied by one male, it looked like he was asleep looked over at the car.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I guess.",
+              "avg_logprob": -0.5240265528361002,
+              "no_speech_prob": 0.4486275315284729,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791451614.m4a": {
+      "index": 113,
+      "epoch": 1791451614,
+      "sha256": "2dd2832d148cd7094f1f4e5b3279c90a5b8ad56cb32ea1dad6d4d21ca1694608",
+      "passes": {
+        "original": {
+          "text": "7J21 en route",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J21 en route",
+              "avg_logprob": -0.4319279119372368,
+              "no_speech_prob": 0.08043187111616135,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J21 en route",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J21 en route",
+              "avg_logprob": -0.47564219683408737,
+              "no_speech_prob": 0.04661494866013527,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "7J21 en route.",
+          "prompt": "Good. in the area of Cook Family Park on 500 West, near 500 North, from Pissah, a silver passenger car parked on the side of the road. Occupied by one male, it looked like he was asleep looked over at the car. I guess",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J21 en route.",
+              "avg_logprob": -0.49445825152926975,
+              "no_speech_prob": 0.0480690523982048,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791451616.m4a": {
+      "index": 114,
+      "epoch": 1791451616,
+      "sha256": "af9abd5c7ae6b0849dc59472aa37c827325cc632a6995637ef512c5896191074",
+      "passes": {
+        "original": {
+          "text": "Bye-bye.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.7385886566979545,
+              "no_speech_prob": 0.016548004001379013,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bye-bye.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.7031182050704956,
+              "no_speech_prob": 0.034125350415706635,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Downward.",
+          "prompt": "in the area of Cook Family Park on 500 West, near 500 North, from Pissah, a silver passenger car parked on the side of the road. Occupied by one male, it looked like he was asleep looked over at the car. I guess 7J21 en route",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Downward.",
+              "avg_logprob": -0.9429538249969482,
+              "no_speech_prob": 0.04528213292360306,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791451644.m4a": {
+      "index": 115,
+      "epoch": 1791451644,
+      "sha256": "9e777493f798b5e61fd572d7865aa18a1d0588a1a0eb69fafdebdc301301d313",
+      "passes": {
+        "original": {
+          "text": "76, I'll be out on that vehicle. 9 Alpha, 16, 13 local.",
+          "prompt": null,
+          "duration_seconds": 9.088,
+          "token_limit": 97,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 76, I'll be out on that vehicle.",
+              "avg_logprob": -0.4743809829587522,
+              "no_speech_prob": 0.10113225132226944,
+              "compression_ratio": 0.8870967741935484
+            },
+            {
+              "start": 4.0,
+              "end": 9.0,
+              "text": " 9 Alpha, 16, 13 local.",
+              "avg_logprob": -0.4743809829587522,
+              "no_speech_prob": 0.10113225132226944,
+              "compression_ratio": 0.8870967741935484
+            }
+          ]
+        },
+        "filtered": {
+          "text": "76, I'll be out on that vehicle, 9, Alpha, 16, 13, local.",
+          "prompt": null,
+          "duration_seconds": 9.088,
+          "token_limit": 97,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.8,
+              "text": " 76, I'll be out on that vehicle, 9, Alpha, 16, 13, local.",
+              "avg_logprob": -0.5416100491648135,
+              "no_speech_prob": 0.10069729387760162,
+              "compression_ratio": 0.890625
+            }
+          ]
+        },
+        "context": {
+          "text": "76, I'll be out on that vehicle. Nine Alpha, one six, one three local.",
+          "prompt": "I guess 7J21 en route Bye-bye.",
+          "duration_seconds": 9.088,
+          "token_limit": 97,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.8,
+              "text": " 76, I'll be out on that vehicle. Nine Alpha, one six, one three local.",
+              "avg_logprob": -0.46237050968667737,
+              "no_speech_prob": 0.009302438236773014,
+              "compression_ratio": 0.9722222222222222
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791451654.m4a": {
+      "index": 116,
+      "epoch": 1791451654,
+      "sha256": "618bfdc6a88a58736250eaedfed3d66d90c18b8b6c8ae0f32fe3f0ed416e4b04",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6002377986907959,
+              "no_speech_prob": 0.06535506248474121,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.603348970413208,
+              "no_speech_prob": 0.042613010853528976,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "7J21 en route Bye-bye. 76, I'll be out on that vehicle. 9 Alpha, 16, 13 local.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.4690755844116211,
+              "no_speech_prob": 0.055837664753198624,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791451824.m4a": {
+      "index": 117,
+      "epoch": 1791451824,
+      "sha256": "2b590798a5505eb226952be7251e223184cacee252902c9695aeae879e847066",
+      "passes": {
+        "original": {
+          "text": "That'd be a clover, I-",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " That'd be a clover, I-",
+              "avg_logprob": -0.9957354565461477,
+              "no_speech_prob": 0.4391503632068634,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It's going to be a clover.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " It's going to be a clover.",
+              "avg_logprob": -0.9070146083831787,
+              "no_speech_prob": 0.2521706819534302,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "context": {
+          "text": "That'd be a clover, I-",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " That'd be a clover, I-",
+              "avg_logprob": -0.9957354565461477,
+              "no_speech_prob": 0.4391503632068634,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791451837.m4a": {
+      "index": 118,
+      "epoch": 1791451837,
+      "sha256": "de911e2ce97d556df9f7793108c4912690e57c88c4a02cbe8386c0f426d70113",
+      "passes": {
+        "original": {
+          "text": "Twenty-one time.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Twenty-one time.",
+              "avg_logprob": -0.9071560055017471,
+              "no_speech_prob": 0.04917028173804283,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "21, same.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 21, same.",
+              "avg_logprob": -0.8725391456059047,
+              "no_speech_prob": 0.008263424038887024,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Twenty-one time.",
+          "prompt": "That'd be a clover, I-",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.36,
+              "text": " Twenty-one time.",
+              "avg_logprob": -0.8216530159115791,
+              "no_speech_prob": 0.0013297402765601873,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791451839.m4a": {
+      "index": 119,
+      "epoch": 1791451839,
+      "sha256": "e573494277013c7e88b31eb71aee7d0e29c4bcf7063bf406ac107ad2f3cc5d28",
+      "passes": {
+        "original": {
+          "text": "number",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " number",
+              "avg_logprob": -0.9727386832237244,
+              "no_speech_prob": 0.09906808286905289,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bye-bye.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.8314318146024432,
+              "no_speech_prob": 0.024194864556193352,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Time for-",
+          "prompt": "That'd be a clover, I- Twenty-one time.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.1500000000000001,
+              "text": " Time for-",
+              "avg_logprob": -0.9815119743347168,
+              "no_speech_prob": 0.04270739108324051,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1791452454.m4a": {
+      "index": 120,
+      "epoch": 1791452454,
+      "sha256": "47a066b3ade424c4ecfe8b8f7ce5435fe5f4209c28d1aad67012349a17307f57",
+      "passes": {
+        "original": {
+          "text": "7-J-12, good for track.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-J-12, good for track.",
+              "avg_logprob": -0.8602710870596079,
+              "no_speech_prob": 0.03791050612926483,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7G12, go for track.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7G12, go for track.",
+              "avg_logprob": -0.8754720471122048,
+              "no_speech_prob": 0.011529242619872093,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "7-J-12, good for track.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-J-12, good for track.",
+              "avg_logprob": -0.8602710870596079,
+              "no_speech_prob": 0.03791050612926483,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        }
+      }
+    }
+  }
+}
