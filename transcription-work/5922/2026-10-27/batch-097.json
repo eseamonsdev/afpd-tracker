@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-27",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793146576.m4a": {
+      "index": 969,
+      "epoch": 1793146576,
+      "sha256": "b7e20c067be5cab5961584cfbf1cfbb4bd3db42d484ed458a374038863b4ed3c",
+      "passes": {
+        "original": {
+          "text": "Buh-bye!",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.72,
+              "text": " Buh-bye!",
+              "avg_logprob": -1.256318911910057,
+              "no_speech_prob": 0.49470874667167664,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793146627.m4a": {
+      "index": 970,
+      "epoch": 1793146627,
+      "sha256": "b96f1353f0422fc57781575ddc3e9559878d6a1ee916a3afec000ee264350e88",
+      "passes": {
+        "original": {
+          "text": "YJ37 Central, copy accident PD.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " YJ37 Central, copy accident PD.",
+              "avg_logprob": -0.48772360384464264,
+              "no_speech_prob": 0.10123968869447708,
+              "compression_ratio": 0.8157894736842105
+            }
+          ]
+        }
+      }
+    }
+  }
+}
