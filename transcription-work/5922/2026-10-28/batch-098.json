@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-28",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793220926.m4a": {
+      "index": 971,
+      "epoch": 1793220926,
+      "sha256": "8bb05936e1a76836b474e533223a3d80982fa4d5c5b529efbd89d32d1df22c1f",
+      "passes": {
+        "original": {
+          "text": "They were you can show me already",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " They were you can show me already",
+              "avg_logprob": -0.6144738614559173,
+              "no_speech_prob": 0.05321834608912468,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Remember, you can show me your writing.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Remember, you can show me your writing.",
+              "avg_logprob": -0.6309700906276703,
+              "no_speech_prob": 0.03888753056526184,
+              "compression_ratio": 0.8863636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "Never mind, you can show me your writing.",
+          "prompt": "You 5J-170 Central The chief handled the alarm. I think I'll just respond back to the base to speak with our panel body.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Never mind, you can show me your writing.",
+              "avg_logprob": -0.537714958190918,
+              "no_speech_prob": 0.09156294912099838,
+              "compression_ratio": 0.8913043478260869
+            }
+          ]
+        }
+      }
+    }
+  }
+}
