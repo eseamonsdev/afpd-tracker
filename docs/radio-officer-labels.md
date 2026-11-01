@@ -61,3 +61,20 @@ Generated schema 3 stores arrays per radio ID in both `days` and `associations`.
 The page groups full candidate names alphabetically, dates chronologically, and the selected 6001 clip numbers chronologically within each date. It includes only non-rejected association records with actual 6001 clip references. Dates with no clip numbers and Law 2 records are omitted. A repeated clip appears once within a person's date, while shared evidence appears under every relevant candidate. Missing manifest references or unavailable audio fail the build instead of silently omitting evidence.
 
 Each date has native seeking/volume controls, previous/next, playback speed, optional autoplay within that date, transcripts, original evidence notes and direct recording/archive links. Only one date plays at a time. Audio is not preloaded, and the self-contained page does not fetch association data, stylesheets or scripts from another host. Referenced recordings use their verified R2 object keys, with the existing archive URL as a fallback for local historical audio.
+
+## Sam identity corrections (November 1, 2026)
+
+The pre-October-31 CSV records Eric’s listening identifications of Halladay on
+14590067 (October 7–8) and 14590100 (September 24), and Canizalez on 14590090
+and 14590066 (September 28) and 14590268 (October 7). The missing confirmer
+attributions on Halladay’s October 7–8 records are restored from those notes.
+The October 30 Halladay confirmation on 14590221 also remains intact.
+
+For this pair, shared first-name candidates are unassigned observations, not
+independent evidence dates for both officers. The shared filter applies this
+rule to the listening page, CSVs and labels, including later imports. A named
+owner confirmation overrides competing candidates only for overlapping clips
+on the same date, talkgroup and (for association records) radio. It never
+assigns every recording from a radio to one person. September 20, October 13
+and October 17 on 14590221 remain unassigned pending listening identification.
+Original imported records remain in the source for provenance.

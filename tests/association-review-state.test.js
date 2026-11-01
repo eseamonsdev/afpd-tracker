@@ -31,6 +31,8 @@ test('cleanup preserves prior sources and workbook exchanges and keeps retained 
  const current=JSON.parse(fs.readFileSync('data/officer-association-evidence.json'));
  const original=JSON.parse(execFileSync('git',['show','fe0fc30658200b09ebfbf3853642f1201eb6b0da:data/officer-association-evidence.json'],{maxBuffer:10e6}));
  const protectedRows = rows => rows.filter(r=>r.record_id.startsWith('prior-source-') || r.record_id.startsWith('workbook-'));
+ // The old CSV explicitly attributes these two Halladay listening identifications to Eric.
+ for(const row of original.associations) if(['prior-source-080','prior-source-083'].includes(row.record_id))row.confirmed_by='Eric';
  assert.deepEqual(protectedRows(current.associations),protectedRows(original.associations));assert.deepEqual(current.observations,original.observations);
  assert.equal(current.associations.filter(r=>r.record_id.startsWith('prior-source-')).length,136);
  assert.equal(current.associations.filter(r=>r.source==='owner_listening_review').length,21);
