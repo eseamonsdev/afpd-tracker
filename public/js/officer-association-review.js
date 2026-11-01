@@ -90,22 +90,32 @@
     toggle.addEventListener("click", () => { transcript.hidden=!transcript.hidden; toggle.textContent=transcript.hidden ? "Transcript: Off" : "Transcript: On"; toggle.setAttribute("aria-pressed", String(!transcript.hidden)); });
   }
   persist();
-  const search=document.getElementById("person-search"), sections=[...document.querySelectorAll(".person")];
-  const navigation=[...document.querySelectorAll("#people a")];
-  function filter() {
-    const value=search.value.trim().toLowerCase();
-    sections.forEach(section => { section.hidden=!section.dataset.search.includes(value); });
-    navigation.forEach((link,i) => { link.hidden=sections[i].hidden; });
-    document.getElementById("search-status").textContent=`${sections.filter(s=>!s.hidden).length} ${sections.filter(s=>!s.hidden).length === 1 ? "person" : "people"} shown`;
+  const selector=document.getElementById("person-select"), sections=[...document.querySelectorAll(".person")];
+  function showPerson(id) {
+    if (!sections.some(section=>section.id===id)) return;
+    selector.value=id;
+    sections.forEach(section=>{
+      section.hidden=section.id!==id;
+      if(section.hidden) section.querySelectorAll("audio").forEach(audio=>audio.pause());
+    });
+    const selected=sections.find(section=>section.id===id);
+    document.getElementById("selection-status").textContent=selected.querySelector("h2").textContent + " · " + selected.querySelector(".person-meta").textContent.split(" · Back to people")[0];
   }
-  search.addEventListener("input",filter);
+  selector.addEventListener("change",()=>{
+    showPerson(selector.value);
+    history.replaceState(null,"","#"+selector.value);
+  });
   function revealHash() {
-    const target=document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    let id;
+    try { id=decodeURIComponent(location.hash.slice(1)); } catch { return; }
+    const target=document.getElementById(id);
     if (!target) return;
     const person=target.closest(".person");
-    if (person?.hidden) { search.value="";filter(); }
+    if(person) showPerson(person.id);
     const day=target.closest("[data-day]");if(day) day.open=true;
     target.scrollIntoView({block:"start"});
   }
-  addEventListener("hashchange",revealHash); filter(); if(location.hash) revealHash();
+  addEventListener("hashchange",revealHash);
+  if(selector.value) showPerson(selector.value);
+  if(location.hash) revealHash();
 })();
