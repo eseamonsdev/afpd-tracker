@@ -106,3 +106,15 @@ test("all workbook rows, old table pairs, conflicts, and same-clip alternatives 
   }
   assert.ok(alternatives >= 4);
 });
+
+test('completed owner evidence review counts selected Mason radio/date groups and retains excluded source rows as history',()=>{
+ const result=buildOfficerAssociations();
+ const mason=Object.entries(result.labels.associations).flatMap(([radio,rows])=>rows.filter(r=>r.officer_id==='brandon-k-mason').map(r=>[radio,r.evidence_days]));
+ assert.deepEqual(mason,[['14590237',8],['14590315',15]]);
+ assert.ok(!Object.values(result.labels.days['2026-10-23']??{}).flat().some(r=>r.officer_id==='brandon-k-mason'));
+ assert.match(result.evidenceCsv,/historical context; not counted/);
+ const source=JSON.parse(fs.readFileSync('data/officer-association-evidence.json'));
+ assert.ok(source.associations.some(r=>r.record_id==='legacy-review-006'));
+ assert.equal(source.associations.filter(r=>r.source==='owner_evidence_selection').length,23);
+ assert.ok(source.associations.filter(r=>r.source==='owner_evidence_selection').every(r=>r.status==='supporting' && r.confirmed_by===null));
+});

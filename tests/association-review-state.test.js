@@ -134,13 +134,15 @@ test('radio evidence uses the supported target rather than the transmitting call
  assert.equal(Object.keys(review.export().clips).length,2);
 });
 
-test('unanswered context clears stale checked choices once and records the old decision in export',()=>{
+test('context defaults remain unchecked without overriding explicit user selections, and old cleared choices recover',()=>{
  const input=structuredClone(payload);input.clip_selections=[{officer_id:'one',clip_id:'shared',evidence:false,attribution_basis:'transcript_dialogue',context_reason:'No answer',evidence_radio_ids:[]}];
- const saved={reviewer:'Eric',evidence_reviews:{'["one","shared"]':{officer_id:'one',clip_id:'shared',included:true,reviewed_by:'Eric',reviewed_at:'earlier'}}};
- const review=new Review(input,saved);assert.equal(review.evidenceSelected('one','shared'),false);
- assert.equal(review.export().evidence_changes[0].previous_choice.included,true);assert.equal(review.export().radio_evidence.length,0);
- // A later deliberate reviewer choice remains possible, with no inferred radio attribution.
- review.setEvidence('one','shared',true);
- assert.equal(new Review(input,review.state).evidenceSelected('one','shared'),true);
+ assert.equal(new Review(input).evidenceSelected('one','shared'),false);
+ const choice={officer_id:'one',clip_id:'shared',included:true,reviewed_by:'Eric',reviewed_at:'earlier'};
+ const saved={reviewer:'Eric',evidence_reviews:{'["one","shared"]':choice}};
+ assert.equal(new Review(input,saved).evidenceSelected('one','shared'),true);
+ const cleared={reviewer:'Eric',evidence_reviews:{'["one","shared"]':{...choice,included:false,policy_migration:'Old context cleanup',previous_choice:choice}}};
+ const review=new Review(input,cleared);assert.equal(review.evidenceSelected('one','shared'),true);
  assert.equal(review.export().radio_evidence.length,0);
+ review.setEvidence('one','shared',false);
+ assert.equal(new Review(input,review.state).evidenceSelected('one','shared'),false);
 });

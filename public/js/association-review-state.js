@@ -2,7 +2,7 @@
 globalThis.AFPDReviewState = class AFPDReviewState {
   constructor(payload, saved = {}) {
     this.payload = payload;
-    this.state = {schema_version:2,reviewer:typeof saved.reviewer==="string" ? saved.reviewer : "",transcripts:{},confirmations:{},clip_reviews:{},evidence_reviews:{},dialogue_policy_revision:1};
+    this.state = {schema_version:2,reviewer:typeof saved.reviewer==="string" ? saved.reviewer : "",transcripts:{},confirmations:{},clip_reviews:{},evidence_reviews:{},dialogue_policy_revision:2};
     this.selections=new Set((payload.clip_selections ?? []).map(c=>JSON.stringify([c.officer_id,c.clip_id])));
     for(const [key,change] of Object.entries(saved.clip_reviews ?? {})) {
       if(change && key===JSON.stringify([change.officer_id,change.clip_id]) && this.selections.has(key) && ["removed","confirmed"].includes(change.status)) this.state.clip_reviews[key]=change;
@@ -23,13 +23,10 @@ globalThis.AFPDReviewState = class AFPDReviewState {
         if(this.selections.has(key) && !this.state.evidence_reviews[key]) this.state.evidence_reviews[key]={officer_id:confirmation.officer_id,clip_id:id,included:true,reviewed_at:confirmation.confirmed_at,reviewed_by:confirmation.confirmed_by,migrated_from:"association_confirmation"};
       }
     }
-    // A one-time policy migration clears stale checked context without deleting review history.
-    if(saved.dialogue_policy_revision!==1) for(const selection of payload.clip_selections ?? []) {
-      if(selection.evidence===false && ["transcript_dialogue","unassigned_context"].includes(selection.attribution_basis)) {
-        const key=JSON.stringify([selection.officer_id,selection.clip_id]);
-        const previous=this.state.evidence_reviews[key];
-        if(previous?.included) this.state.evidence_reviews[key]={officer_id:selection.officer_id,clip_id:selection.clip_id,included:false,reviewed_by:null,reviewed_at:null,reason:selection.context_reason,policy_migration:"Unanswered or unresolved context is unchecked",previous_choice:previous};
-      }
+    // Recover explicit reviewer choices that an earlier context-policy migration cleared.
+    // Defaults may change; a user's own checks and unchecks always take priority.
+    for(const [key,change] of Object.entries(this.state.evidence_reviews)) {
+      if(change.policy_migration && change.previous_choice?.included===true) this.state.evidence_reviews[key]={...change.previous_choice,recovered_policy_migration:change.policy_migration};
     }
     for(const [id,change] of Object.entries(saved.transcripts ?? {})) {
       if(payload.clips[id] && typeof change?.text === "string" && typeof change.original_transcript === "string") this.state.transcripts[id]=change;

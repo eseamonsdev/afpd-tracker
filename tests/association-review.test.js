@@ -37,7 +37,7 @@ test("real review includes both talkgroups, AI context and the full export paylo
  assert.ok(html.includes("dcfems-5922-"));assert.ok(html.includes("Anthony S. Neil"));
  assert.match(html,/id="export-review"/);assert.match(html,/data-clip-evidence/);assert.match(html,/data-action="edit-transcript"/);assert.match(html,/Personal verification/);
  const payload=JSON.parse(html.match(/<script type="application\/json" id="review-data">([\s\S]*?)<\/script>/)[1]);
- assert.equal(payload.source.associations.length,552);assert.equal(payload.source.review_leads.length,662);assert.equal(Object.keys(payload.clips).length,result.uniqueClips);
+ assert.equal(payload.source.associations.length,input.associations.length);assert.equal(payload.source.review_leads.length,662);assert.equal(Object.keys(payload.clips).length,result.uniqueClips);
  assert.match(html,/https:\/\/media\.afpd-accountability\.com\/openmhz\//);
  const ids=[...html.matchAll(/\sid="([^"]+)"/g)].map(m=>m[1]);assert.equal(ids.length,new Set(ids).size);
 });
