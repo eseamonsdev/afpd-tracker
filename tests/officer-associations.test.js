@@ -2,40 +2,39 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import { compileOfficerAssociations, buildOfficerAssociations } from "../lib/build-officer-associations.js";
-import { filterAssociationContext } from "../lib/association-context-review.js";
+import { withProductionAssociationBaseline } from "../lib/production-association-baseline.js";
+import { filterAssociationContext, loadAssociationEvidence } from "../lib/association-context-review.js";
 import { readCsv } from "../lib/data/read-csv.js";
 const record = (date, extra = {}) => ({ officer_id: "one", radio_id: "123", date, talkgroup: 6001, clips: [1,2], evidence: 'Addressed by name, then replies. "Copy."', status: "confirmed", confirmed_by: "Eric", ...extra });
 const source = associations => ({ schema_version: 1, officers: { one: { name: "One", heard: "One", url: "/officers/one/" }, two: { name: "Two", heard: "Two", url: "/officers/two/" } }, associations });
 
 test("thresholds count distinct confirmed dates, never clips, records or talkgroups", () => {
   const rows = [record("2026-10-01"), record("2026-10-01", { talkgroup: 5922, clips: [3,4,5] })];
-  let result = compileOfficerAssociations(source(rows));
+  let result = compileOfficerAssociations({...source(rows), association_confirmations:{"one/123":{confirmed:false}}});
   assert.equal(result.labels.days["2026-10-01"]["123"][0].status, "confirmed");
   assert.equal(result.labels.days["2026-10-01"]["123"][0].evidence_days, 1);
   assert.equal(result.labels.associations["123"], undefined);
   rows.push(record("2026-10-02"), record("2026-10-03", { status: "supporting" }));
-  assert.equal(compileOfficerAssociations(source(rows)).labels.associations["123"][0].status, "possible");
-  assert.equal(compileOfficerAssociations(source(rows)).labels.associations["123"][0].evidence_days, 2);
+  assert.equal(compileOfficerAssociations({...source(rows), association_confirmations:{"one/123":{confirmed:false}}}).labels.associations["123"][0].status, "possible");
+  assert.equal(compileOfficerAssociations({...source(rows), association_confirmations:{"one/123":{confirmed:false}}}).labels.associations["123"][0].evidence_days, 2);
   rows.push(record("2026-10-03"));
-  assert.equal(compileOfficerAssociations(source(rows)).labels.associations["123"][0].status, "possible");
+  assert.equal(compileOfficerAssociations({...source(rows), association_confirmations:{"one/123":{confirmed:false}}}).labels.associations["123"][0].status, "possible");
   rows.push(record("2026-10-04"));
-  result = compileOfficerAssociations(source(rows));
+  result = compileOfficerAssociations({...source(rows), association_confirmations:{"one/123":{confirmed:false}}});
   assert.equal(result.labels.associations["123"][0].status, "strong");
   assert.equal(result.labels.associations["123"][0].evidence_days, 4);
   assert.equal(result.labels.days["2026-10-01"]["123"][0].evidence[0].evidence, rows[0].evidence);
   assert.deepEqual(result.labels.days["2026-10-01"]["123"][0].evidence[0].clips, [1,2]);
 });
 
-test("holds suppress a date; each officer independently qualifies for the same radio", () => {
+test("explicit dated confirmations survive historical holds and general strength never mixes possible with strong", () => {
   const rows = [1,2,3,4,5].map(n => record(`2026-10-0${n}`));
   rows.push(...[1,2,3].map(n => record(`2026-10-0${n}`, { officer_id: "two" })));
   const input = source(rows); input.withheld_dates = { "2026-10-05": ["123"] };
   const result = compileOfficerAssociations(input);
-  assert.deepEqual(result.labels.associations["123"].map(e => [e.name,e.status,e.evidence_days]), [["One","strong",4],["Two","possible",3]]);
-  assert.equal(result.labels.days["2026-10-05"], undefined);
-  assert.equal(result.labels.days["2026-10-01"]["123"].length, 2);
-  rows.push(record("2026-10-04", {officer_id: "two"}));
-  assert.ok(compileOfficerAssociations(input).labels.associations["123"].every(e => e.status === "strong"));
+  assert.deepEqual(result.labels.associations["123"].map(e => [e.name,e.status,e.evidence_days]), [["One","strong",5]]);
+  assert.equal(result.labels.days["2026-10-05"]["123"][0].status,"confirmed");
+  assert.equal(result.labels.days["2026-10-01"]["123"].length,2);
 });
 
 test("build exports CSV and labels from the same records with repeatable output", () => {
@@ -44,15 +43,15 @@ test("build exports CSV and labels from the same records with repeatable output"
   assert.deepEqual(result, again);
   const table = readCsv("openmhz/afpd-radio-officer-ids.csv");
   for (const row of table.rows) {
-    const input = filterAssociationContext(JSON.parse(fs.readFileSync("data/officer-association-evidence.json")));
-    const entry = input.associations.filter(e => e.radio_id === row[2] && input.officers[e.officer_id].name === row[1] && (!input.owner_evidence_reviews?.[e.officer_id] || input.owner_evidence_reviews[e.officer_id].active_record_ids.includes(e.record_id)));
-    const dates = new Set(entry.filter(e => e.status !== "rejected").map(e => e.date));
+    const input = filterAssociationContext(withProductionAssociationBaseline(loadAssociationEvidence(process.cwd())));
+    const entry = input.associations.filter(e => e.radio_id === row[2] && input.officers[e.officer_id].name === row[1] && (e.production_baseline || e.status === "confirmed" && e.confirmed_by === "Eric" || !input.owner_evidence_reviews?.[e.officer_id] || input.owner_evidence_reviews[e.officer_id].active_record_ids.includes(e.record_id)));
+    const dates = new Set(entry.filter(e => e.status !== "rejected" && (e.association_reviewed === true || e.status === "confirmed" && e.confirmed_by === "Eric")).map(e => e.date));
     assert.equal(Number(row[3]), dates.size);
   }
   const halladay = result.labels.days["2026-10-30"]["14590221"][0];
   assert.equal(halladay.status, "confirmed");
-  assert.equal(halladay.evidence_days, 1);
-  assert.equal(result.labels.associations["14590221"], undefined);
+  assert.equal(halladay.evidence_days, 4);
+  assert.equal(result.labels.associations["14590221"][0].status, "strong");
   const template = fs.readFileSync("src/police-radio-resources.njk", "utf8");
   assert.match(template, /officerCsv.rows/);
   assert.match(template, /afpd-radio-officer-ids.csv.*readCsv/);
@@ -65,21 +64,15 @@ test("invalid source fails the build instead of silently dropping evidence", () 
 });
 
 
-test("review mode counts uncertain and conflicting dates without inventing owner confirmations", () => {
-  const input = source([1,2,3].map(n => record(`2026-10-0${n}`, {status: "supporting",confirmed_by: null})));
-  input.review_mode = "include-all"; input.withheld_dates = {"2026-10-01": ["123"]};
-  input.associations.push(record("2026-10-01", {status: "supporting",officer_id: "two",confirmed_by: null}));
-  input.associations.push(record("2026-10-02", {status: "supporting",officer_id: "two",confirmed_by: null}));
-  input.associations.push(record("2026-10-03", {status: "supporting",officer_id: "two",confirmed_by: null}));
+test("conflicting unconfirmed candidates remain in CSV without becoming display labels", () => {
+  const input = source([1,2,3].flatMap(n => ["one","two"].map(officer_id => record(`2026-10-0${n}`, {officer_id,status:"supporting",confirmed_by:null}))));
   const result = compileOfficerAssociations(input);
-  assert.equal(result.labels.associations["123"].length, 2);
-  assert.ok(result.labels.associations["123"].every(e => e.status === "possible" && e.evidence_days === 3));
-  assert.equal(result.labels.days["2026-10-01"]["123"][0].status, "observed");
-  assert.equal(result.labels.days["2026-10-01"]["123"][0].evidence[0].confirmed_by, null);
-  assert.deepEqual(result.labels.withheld_dates, {});
-  input.associations[0].status = "rejected";
-  assert.equal(compileOfficerAssociations(input).labels.associations["123"].find(e => e.officer_id === "one").evidence_days, 2);
-  assert.equal(compileOfficerAssociations(input).labels.associations["123"].find(e => e.officer_id === "one").status, "possible");
+  assert.equal(result.labels.associations["123"],undefined);
+  assert.deepEqual(result.labels.days,{});
+  assert.deepEqual(result.labels.profiles,{});
+  assert.match(result.evidenceCsv,/Unreviewed or insufficient evidence; CSV only/);
+  assert.match(result.summaryCsv,/One/);
+  assert.match(result.summaryCsv,/Two/);
 });
 
 test("all workbook rows, old table pairs, conflicts, and same-clip alternatives survive the union", () => {
@@ -125,7 +118,7 @@ test('completed owner evidence review counts selected Mason radio/date groups an
 test('Sam first-name alternatives do not count as two identities and owner confirmations override only matching exchanges', async () => {
  const {resolveSamIdentities}=await import('../lib/association-context-review.js');
  const halladay='sammantha-j-halladay', canizalez='samuel-canizalez';
- const input={...source([]),review_mode:'include-all',officers:{[halladay]:{name:'Halladay'},[canizalez]:{name:'Canizalez'}}};
+ const input={...source([]),officers:{[halladay]:{name:'Halladay'},[canizalez]:{name:'Canizalez'}}};
  const alternative=(officer_id,date,clips=[1,2])=>record(date,{officer_id,clips,record_id:`${date}-${officer_id}`,candidate_group_id:date,candidate_officer_ids:[halladay,canizalez],status:'supporting',confirmed_by:null});
  input.associations=[alternative(halladay,'2026-10-01'),alternative(canizalez,'2026-10-01'),
   record('2026-10-01',{officer_id:halladay,record_id:'owner',confirmed_by:'Eric'}),
@@ -155,7 +148,7 @@ test('historical Sam voice identifications survive while 14590221 shared-name da
   assert.ok(own.evidence.some(r=>r.confirmed_by==='Eric'));
   assert.ok(!entries.some(r=>r.officer_id===(id===h?s:h)));
  }
- assert.equal(result.labels.profiles[h].find(r=>r.radio_id==='14590221').evidence_days,1);
+ assert.equal(result.labels.profiles[h].find(r=>r.radio_id==='14590221').evidence_days,4);
  assert.ok(!result.labels.profiles[s].some(r=>r.radio_id==='14590221'));
  for(const date of ['2026-09-20','2026-10-13','2026-10-17'])assert.ok(!result.labels.days[date]?.['14590221']?.some(r=>[h,s].includes(r.officer_id)));
 });

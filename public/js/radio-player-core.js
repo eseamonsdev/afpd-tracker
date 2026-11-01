@@ -24,6 +24,7 @@ function createIdentity(getDate) {
   });
   const associationLabels = {
     confirmed: "Confirmed this day",
+    "confirmed-association": "Personally confirmed association",
     observed: "Association this day",
     strong: "Strong association",
     possible: "Possible association",
@@ -32,19 +33,28 @@ function createIdentity(getDate) {
   const officerAssociation = (id) => {
     if (isDispatchId(id) || agencyIds[id]) return [];
     const date = getDate();
-    if (withheldDates[date]?.includes(id)) return [];
     const asEntries = value => (Array.isArray(value) ? value : value ? [value] : [])
-      .filter(entry => typeof entry?.name === "string" && associationLabels[entry.status]);
+      .filter(entry => entry?.display_eligible !== false && typeof entry?.name === "string" && associationLabels[entry.status]);
     const dated = asEntries(officerDays[date]?.[id]);
-    // A person's dated confirmation replaces that person's inferred label.
-    const confirmed = new Set(dated.map(entry => entry.officer_id ?? entry.name));
-    return [...dated, ...asEntries(strongAssociations[id]).filter(entry => !confirmed.has(entry.officer_id ?? entry.name))];
+    // A dated owner identification replaces every usual identity for this ID,
+    // including another person's strong association. It applies only this day.
+    const confirmed = dated.filter(entry => ["confirmed", "single-day"].includes(entry.status));
+    if (confirmed.length) return confirmed;
+    if (withheldDates[date]?.includes(id)) return [];
+    const general = asEntries(strongAssociations[id]);
+    // Support older, reviewed dated strength entries without displaying raw
+    // observed/transcript candidates as a competing identity.
+    if (!general.length) general.push(...dated.filter(entry => ["strong", "possible"].includes(entry.status)));
+    const tier = ["confirmed-association", "strong", "possible"].find(status => general.some(entry => entry.status === status));
+    return general.filter(entry => entry.status === tier);
   };
   const associationNote = (entry) => {
     const date = dateFormat.format(dateObject(getDate()));
     const count = Number(entry.evidence_days) || 1;
     const dates = Array.isArray(entry.evidence_dates) ? entry.evidence_dates.join(", ") : "";
-    const description = ["strong", "possible"].includes(entry.status)
+    const description = entry.status === "confirmed-association"
+      ? `Eric has personally confirmed the association between this radio ID and ${entry.name}. This confirms the association, not the speaker in every recording or on ${date}.`
+      : ["strong", "possible"].includes(entry.status)
       ? `Named exchanges associate this radio ID with ${entry.name} on ${count} dates. An association has not been confirmed for ${date}. The ${entry.status} association carries from evidence on other dates; it is not a confirmation of the selected date.`
       : `Named exchanges associate this radio ID with ${entry.name} on ${date}.` +
         (entry.status === "single-day" ? " This is the only supported date; the name is not extended to other dates." : "");

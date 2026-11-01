@@ -84,19 +84,19 @@ permalink: /police-radio-resources/
   <section class="radio-resources-section" aria-labelledby="officer-radio-ids">
     <h2 id="officer-radio-ids">{{ resources.officers.title | escape }}</h2>
     <p class="radio-resources-description">{{ resources.officers.description | escape }}</p>
-    <p>This table contains officer–radio associations compiled and reviewed with AI assistance. Personal verification by the site's author is pending. Unless explicitly marked personally verified, associations remain provisional and may include errors, conflicting evidence, or alternative identities.</p>
-    <p>Default association labels count distinct evidence dates: one date is a dated association, two or three dates are a possible association, and four or more dates are a strong association. These labels do not independently confirm every speaker using a radio.</p>
+    <p>Production’s strong associations and dated confirmations are retained across all days, with their original verification attribution. A confirmed date takes priority over the usual radio association on that date. New AI and transcript candidates remain in the downloadable CSVs until reviewed and cannot displace these retained entries.</p>
+    <p>Two or three accepted evidence dates support a possible association; four or more support a strong association. Strong and possible names are not mixed for the same radio. Two accepted possible associations may coexist. A confirmation for one day does not establish a permanent association or verify every transcript.</p>
     <p><a href="https://media.afpd-accountability.com/officer-association-review.html">Listen, edit transcripts, confirm associations, and export your review</a>. New AI search leads are available there for verification and do not count toward association thresholds.</p>
     <p>{{ resources.idExplanation | escape }}</p>
     <p class="radio-resources-attribution">{{ resources.attributionNote | escape }}</p>
     {% set officerCsv = "openmhz/afpd-radio-officer-ids.csv" | readCsv -%}
     <div class="radio-guide-table-scroll" tabindex="0" role="region" aria-label="Officer names and associated radio IDs">
       <table class="radio-guide-table">
-        <caption>Evidence days count distinct dates, including unreviewed and conflicting observations. Repeated clips do not increase the day count.</caption>
+        <caption>Evidence days count distinct dates with accepted evidence. The CSV also retains unreviewed candidates. Repeated clips do not increase the day count.</caption>
         <thead><tr><th scope="col">Full name / unresolved name</th><th scope="col">Names heard</th><th scope="col">Radio ID</th><th scope="col">Evidence days</th><th scope="col">Association</th><th scope="col">Evidence dates</th><th scope="col">Evidence</th></tr></thead>
-        <tbody>{%- for row in officerCsv.rows %}
+        <tbody>{%- for row in officerCsv.rows %}{%- if row[11] == "true" %}
           <tr><th scope="row">{% if row[7] %}<a href="{{ row[7] | escape }}">{{ row[1] | escape }}</a>{% else %}{{ row[1] | escape }}{% endif %}</th><td>{{ row[0] | escape }}</td><td><code id="radio-id-{{ row[2] | escape }}-{{ row[8] | escape }}">{{ row[2] | escape }}</code></td><td>{{ row[3] | escape }}</td><td>{{ row[4] | escape }}</td><td>{{ row[5] | escape }}</td><td><details><summary>View dated evidence and clips</summary><div style="white-space: pre-line">{{ row[6] | escape }}</div></details></td></tr>
-        {%- endfor %}</tbody>
+        {%- endif %}{%- endfor %}</tbody>
       </table>
     </div>
     <p>{{ resources.officers.unresolved | escape }}</p>

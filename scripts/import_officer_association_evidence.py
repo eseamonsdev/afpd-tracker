@@ -41,8 +41,8 @@ def slug(name):
     return re.sub(r'[^a-z0-9]+', '-', name.lower()).strip('-')
 
 source = read(AFTER, 'data/officer-association-evidence.json')
-source['review_mode'] = 'include-all'
-source['migration_note'] = 'Unfiltered union of both versions, workbook exchanges and exceptions, historical evidence dates, and review findings. All non-rejected observations count by distinct date during Eric\'s review. Original uncertainty, conflicts, duplicate source observations, and previous confirmations are retained. No new validity decisions or owner confirmations were made.'
+source.pop('review_mode', None)
+source['migration_note'] = 'Historical union of workbook exchanges, exceptions, original table entries, and review findings. Retained candidates are archival evidence, not display approvals. Only individually accepted evidence contributes to general strength; owner-confirmed dates remain authoritative. The unfiltered review mode has been removed.'
 source['import_sources'] = [{'ref': BEFORE, 'purpose': 'Pre-migration evidence and table'}, {'ref': AFTER, 'purpose': 'Migrated evidence including October 30 Halladay identification'}]
 source['observations'] = []
 source['legacy_resource_entries'] = []

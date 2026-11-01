@@ -121,6 +121,7 @@ def import_review(export_file, root, officer_id):
     for (date, tg, radio), group in sorted(grouped.items()):
         record = {'record_id': f'{prefix}{date}-{tg}-{radio}', 'officer_id': officer_id, 'radio_id': radio, 'date': date, 'talkgroup': tg,
                   'clips': sorted(set(group['clips'])), 'status': 'supporting', 'confirmed_by': None, 'source': 'owner_evidence_selection',
+                  'association_reviewed': True, 'association_review_basis': 'owner evidence selection',
                   'review_status': 'owner_reviewed_evidence', 'reviewed_by': reviewer, 'reviewed_at': data['exported_at'], 'name_heard': 'Mason',
                   'evidence': f'{reviewer} selected these calls as evidence for {source["officers"][officer_id]["name"]} and radio {radio}. ' + ' '.join(e['reason'] for e in group['exchanges'].values()),
                   'dialogue_exchange_ids': list(group['exchanges']), 'evidence_clip_ids': group['clip_ids'], 'provenance': provenance,

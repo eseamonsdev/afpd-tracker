@@ -17,7 +17,7 @@ globalThis.AFPDReviewState = class AFPDReviewState {
       if(!this.state.evidence_reviews[key]) this.state.evidence_reviews[key]={officer_id:item.officer_id,clip_id:item.clip_id,included:item.status==="confirmed",reviewed_at:item.reviewed_at,reviewed_by:item.reviewed_by,migrated_from:item.status};
     }
     for(const confirmation of Object.values(saved.confirmations ?? {})) {
-      if(confirmation?.confirmed!==true || !Array.isArray(confirmation.clip_ids) || !this.eligibleRecord(confirmation)) continue;
+      if(confirmation?.confirmed!==true || !Array.isArray(confirmation.clip_ids)) continue;
       for(const id of confirmation.clip_ids) {
         const key=JSON.stringify([confirmation.officer_id,id]);
         if(this.selections.has(key) && !this.state.evidence_reviews[key]) this.state.evidence_reviews[key]={officer_id:confirmation.officer_id,clip_id:id,included:true,reviewed_at:confirmation.confirmed_at,reviewed_by:confirmation.confirmed_by,migrated_from:"association_confirmation"};
@@ -32,7 +32,7 @@ globalThis.AFPDReviewState = class AFPDReviewState {
       if(payload.clips[id] && typeof change?.text === "string" && typeof change.original_transcript === "string") this.state.transcripts[id]=change;
     }
     for(const [key,confirmation] of Object.entries(saved.confirmations ?? {})) {
-      if(confirmation?.confirmed===true && Array.isArray(confirmation.clip_ids) && confirmation.clip_ids.every(id=>payload.clips[id] && (!this.selections.has(JSON.stringify([confirmation.officer_id,id])) || this.evidenceSelected(confirmation.officer_id,id))) && payload.source.officers[confirmation.officer_id] && !payload.source.excluded_candidates?.[confirmation.officer_id] && this.eligibleRecord(confirmation)) this.state.confirmations[key]=confirmation;
+      if(confirmation?.confirmed===true && Array.isArray(confirmation.clip_ids) && confirmation.clip_ids.every(id=>(!this.selections.has(JSON.stringify([confirmation.officer_id,id])) || this.evidenceSelected(confirmation.officer_id,id))) && payload.source.officers[confirmation.officer_id] && !payload.source.excluded_candidates?.[confirmation.officer_id]) this.state.confirmations[key]=confirmation;
     }
   }
   evidenceSelected(officerId,clipId) {

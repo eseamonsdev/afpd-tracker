@@ -60,7 +60,7 @@ test("employment exclusions remove identities from headings, choices and labels 
 });
 
 test("rejected civilian matches never enter the player, clip catalog or CSV-derived day counts", async()=>{
- const input={...source,schema_version:1,review_mode:"include-all",associations:[record("one","2026-10-01",[1],{record_id:"wrong"}),record("one","2026-10-02",[2],{record_id:"valid"})],review_leads:[{record_id:"mixed",date:"2026-10-03",talkgroup:6001,clips:[1],candidate_officer_ids:["one","two"],evidence:"Ron is addressed; Joshua Draper is a civilian"}],context_review_exclusions:{records:{wrong:{reason:"Civilian namesake"},mixed:{officer_ids:["one"],reason:"Wrong full-name candidate"}}}};
+ const input={...source,schema_version:1,associations:[record("one","2026-10-01",[1],{record_id:"wrong"}),record("one","2026-10-02",[2],{record_id:"valid"})],review_leads:[{record_id:"mixed",date:"2026-10-03",talkgroup:6001,clips:[1],candidate_officer_ids:["one","two"],evidence:"Ron is addressed; Joshua Draper is a civilian"}],context_review_exclusions:{records:{wrong:{reason:"Civilian namesake"},mixed:{officer_ids:["one"],reason:"Wrong full-name candidate"}}}};
  const result=selectAssociationReview(input,manifest);
  assert.deepEqual(result.people[0].days.map(d=>d.date),["2026-10-02"]);
  assert.deepEqual(result.people[1].days[0].evidence[0].candidate_officer_ids,["two"]);
@@ -68,7 +68,8 @@ test("rejected civilian matches never enter the player, clip catalog or CSV-deri
  const {compileOfficerAssociations}=await import('../lib/build-officer-associations.js');
  const output=compileOfficerAssociations(input);
  assert.equal(output.labels.days["2026-10-01"],undefined);
- assert.equal(output.labels.days["2026-10-02"]["123"][0].evidence_days,1);
+ assert.equal(output.labels.days["2026-10-02"],undefined);
+ assert.match(output.evidenceCsv,/valid/);
  assert.ok(!output.evidenceCsv.includes('"wrong"'));
  assert.ok(!output.summaryCsv.includes("2026-10-01"));
  assert.equal(input.associations.length,2);

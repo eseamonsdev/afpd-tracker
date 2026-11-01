@@ -29,6 +29,7 @@ const currencyFormatter = new Intl.NumberFormat("en-US", {
 export default function (eleventyConfig) {
   buildOfficerAssociations();
   eleventyConfig.addWatchTarget("./data/officer-association-evidence.json");
+  eleventyConfig.addWatchTarget("./data/production-officer-association-baseline.json");
   eleventyConfig.on("eleventy.before", () => { buildOfficerAssociations(); buildAssociationReview(); });
   eleventyConfig.addFilter("sortUpdates", sortUpdates);
   eleventyConfig.addFilter("profileAlternateNames", profileAlternateNames);

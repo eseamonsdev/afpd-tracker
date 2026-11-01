@@ -30,12 +30,12 @@ test('restored edits report source changes rather than silently losing the origi
 test('cleanup preserves prior sources and workbook exchanges and keeps retained leads unassigned',()=>{
  const current=JSON.parse(fs.readFileSync('data/officer-association-evidence.json'));
  const original=JSON.parse(execFileSync('git',['show','fe0fc30658200b09ebfbf3853642f1201eb6b0da:data/officer-association-evidence.json'],{maxBuffer:10e6}));
- const protectedRows = rows => rows.filter(r=>r.record_id.startsWith('prior-source-') || r.record_id.startsWith('workbook-'));
+ const protectedRows = rows => rows.filter(r=>r.record_id.startsWith('prior-source-') || r.record_id.startsWith('workbook-')).map(({association_reviewed,association_review_basis,...original})=>original);
  // The old CSV explicitly attributes these two Halladay listening identifications to Eric.
  for(const row of original.associations) if(['prior-source-080','prior-source-083'].includes(row.record_id))row.confirmed_by='Eric';
  assert.deepEqual(protectedRows(current.associations),protectedRows(original.associations));assert.deepEqual(current.observations,original.observations);
  assert.equal(current.associations.filter(r=>r.record_id.startsWith('prior-source-')).length,136);
- assert.equal(current.associations.filter(r=>r.source==='owner_listening_review').length,21);
+ assert.equal(current.associations.filter(r=>r.source==='owner_listening_review').length,23);
  for(const [id,officer] of Object.entries(original.officers)) assert.deepEqual(current.officers[id],officer);
  assert.equal(current.review_leads.length,662);
  assert.ok(!current.review_leads.some(r=>r.report_id==='N234'));
@@ -53,12 +53,12 @@ test('excluded former employees cannot be restored or newly confirmed; transcrip
  assert.throws(()=>state.confirm('new',{officer_id:'former',radio_id:'123',date:'2026-10-01',talkgroup:6001,clip_ids:['c']}),/eligible/);
 });
 
-test('context-rejected matches cannot return through saved confirmations; their recordings remain editable and exportable',()=>{
+test('saved personal confirmations survive later AI context exclusions while new excluded matches stay blocked',()=>{
  const updated=structuredClone(payload);
  updated.source.context_review_exclusions={records:{original:{reason:'Civilian namesake'}}};
  const saved={reviewer:'Eric',transcripts:{shared:{text:'Edited',original_transcript:'Original'}},confirmations:{old:{...record,confirmed:true}}};
  const review=new Review(updated,saved);
- assert.equal(Object.keys(review.state.confirmations).length,0);
+ assert.equal(Object.keys(review.state.confirmations).length,1);
  assert.equal(review.transcript('shared'),'Edited');
  assert.throws(()=>review.confirm('new',record),/context review/);
  assert.equal(review.export().clips.shared.transcript,'Edited');
@@ -147,4 +147,10 @@ test('context defaults remain unchecked without overriding explicit user selecti
  assert.equal(review.export().radio_evidence.length,0);
  review.setEvidence('one','shared',false);
  assert.equal(new Review(input,review.state).evidenceSelected('one','shared'),false);
+});
+
+test('saved personal confirmations remain in exports when their clip is absent from a later review payload',()=>{
+ const confirmation={confirmed:true,officer_id:'one',radio_id:'123',date:'2026-10-01',talkgroup:6001,clip_ids:['missing'],confirmed_by:'Eric'};
+ const review=new Review({source:{officers:{one:{name:'One'}},associations:[]},clips:{}},{reviewer:'Eric',confirmations:{saved:confirmation}});
+ assert.equal(JSON.stringify(review.export().confirmed_associations),JSON.stringify([confirmation]));
 });

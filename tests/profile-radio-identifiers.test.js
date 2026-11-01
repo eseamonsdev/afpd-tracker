@@ -19,8 +19,8 @@ test('profiles receive a stable ID tab and shared radio view without changing ma
 });
 
 test('compiler profiles apply the same excluded evidence, dates and source notes as radio labels and CSVs',()=>{
- const row=(id,date,extra={})=>({record_id:id,date,officer_id:'one',radio_id:'123',talkgroup:6001,clips:[1,2],evidence:'Cue and reply',status:'supporting',...extra});
- const source={schema_version:1,review_mode:'include-all',officers:{one:{name:'One'}},associations:[row('a','2026-10-01'),row('b','2026-10-01',{clips:[2,3],talkgroup:5922}),row('excluded','2026-10-02'),row('old','2026-10-03')],context_review_exclusions:{records:{excluded:{reason:'Wrong person'}}},owner_evidence_reviews:{one:{active_record_ids:['a','b','excluded']}}};
+ const row=(id,date,extra={})=>({record_id:id,date,officer_id:'one',radio_id:'123',talkgroup:6001,clips:[1,2],evidence:'Cue and reply',status:'confirmed',confirmed_by:'Eric',...extra});
+ const source={schema_version:1,officers:{one:{name:'One'}},associations:[row('a','2026-10-01'),row('b','2026-10-01',{clips:[2,3],talkgroup:5922}),row('excluded','2026-10-02',{confirmed_by:null}),row('old','2026-10-03',{confirmed_by:null})],context_review_exclusions:{records:{excluded:{reason:'Wrong person'}}},owner_evidence_reviews:{one:{active_record_ids:['a','b','excluded']}}};
  const result=compileOfficerAssociations(source),profile=result.labels.profiles.one[0];
  assert.equal(profile.evidence_days,1);assert.deepEqual(profile.evidence_dates,['2026-10-01']);
  assert.equal(profile.evidence.length,2);assert.equal(profile.evidence.find(d=>d.talkgroup===5922).url,'/law-2-radio/?date=2026-10-01');

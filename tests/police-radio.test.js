@@ -548,13 +548,15 @@ test("missing or invalid associations leave IDs bold and playback available", as
 test("combined dated evidence retains old uncertain rows, explicit confirmations and all candidates", () => {
   const { days, associations } = JSON.parse(readFileSync(new URL("../public/records/openmhz/officer-associations.json", import.meta.url), "utf8"));
   assert.ok(days["2026-09-24"]["14590100"].some(e => e.name === "Sammantha J. Halladay"));
-  assert.ok(days["2026-09-17"]["14590045"].some(e => e.name === "Delton L. Choates"));
-  assert.ok(days["2026-10-25"]["14590313"].some(e => e.name === "Delton L. Choates"));
+  assert.equal(days["2026-09-17"]?.["14590045"],undefined);
+  assert.ok(associations["14590045"].some(e=>e.name === "Delton L. Choates"));
+  assert.equal(days["2026-10-25"]?.["14590313"],undefined);
+  assert.ok(associations["14590313"].some(e=>e.name === "Delton L. Choates"));
   assert.equal(days["2026-10-27"]["14590023"][0].status, "confirmed");
   assert.equal(days["2026-10-30"]["14590221"][0].status, "confirmed");
   assert.equal(days["2026-10-30"]["14590221"][0].name, "Sammantha J. Halladay");
-  assert.equal(days["2026-10-30"]["14590221"][0].evidence_days, 1);
-  assert.equal(associations["14590221"], undefined, "a single confirmed date is not a general strong association");
+  assert.equal(days["2026-10-30"]["14590221"][0].evidence_days, 4);
+  assert.equal(associations["14590221"][0].status,"strong","the existing production strong association is preserved independently of dated confirmation");
 });
 
 test("association information opens by hover, focus and tap without playing the clip", async () => {
@@ -588,16 +590,17 @@ test("association information opens by hover, focus and tap without playing the 
   assert.equal(f.active(), undefined, "information controls do not start playback");
 });
 
-test("historical holds stay documented while review mode includes conflicting observations", () => {
+test("historical holds stay documented while conflicting candidates are excluded from display", () => {
   const data = JSON.parse(readFileSync(new URL("../public/records/openmhz/officer-associations.json", import.meta.url), "utf8"));
   const source = JSON.parse(readFileSync(new URL("../data/officer-association-evidence.json", import.meta.url), "utf8"));
   const review = JSON.parse(readFileSync(new URL("../findings/2026-10-27-radio-officer-label-review.json", import.meta.url), "utf8"));
   assert.equal(review.coverage.length, 48);
   assert.equal(review.coverage.reduce((sum, day) => sum + day.transcripts_screened, 0), 12298);
   assert.equal(Object.values(source.withheld_dates).flat().length, 23);
-  assert.deepEqual(data.withheld_dates, {});
-  assert.ok(data.days["2026-09-13"]["14590313"].some(e => e.name === "Charles (unresolved)"));
-  assert.ok(data.days["2026-10-22"]["14590027"].some(e => e.name === "Anthony S. Neil"));
+  assert.deepEqual(data.withheld_dates,JSON.parse(readFileSync(new URL("../data/production-officer-association-baseline.json",import.meta.url),"utf8")).withheld_dates);
+  assert.ok(!data.days["2026-09-13"]?.["14590313"]?.some(e => e.name === "Charles (unresolved)"));
+  assert.ok(!data.days["2026-10-22"]?.["14590027"]?.some(e => e.name === "Anthony S. Neil"));
+  assert.ok(source.associations.some(e => e.officer_id === "anthony-s-neil" && e.radio_id === "14590027"));
 });
 
 test("download link follows the loaded date and hides when transcripts are disabled", async () => {
@@ -697,4 +700,33 @@ test('current shared schema carries a two-date possible association on 6001',asy
  const f=await playerFixture([{epoch:1789100000,displayed_seconds:2,original_filename:'one.m4a',radio_ids:[14590026]}],undefined,'2026-09-11','',false,associations);
  assert.match(f.get('clips').children[0].children[1].textContent,/Two Date Officer · Possible association/);
  f.select(0);await f.settle();assert.match(f.get('current-radio-ids').textContent,/Two Date Officer · Possible association/);
+});
+
+test("pair confirmation carries to an unreviewed date without labeling its clips confirmed", async () => {
+  const f = await playerFixture([
+    { epoch: 1789100000, displayed_seconds: 5, original_filename: "known.m4a", radio_ids: ["14590104"] }
+  ], undefined, "2026-09-11", "", true, { schema_version: 4, days: {}, associations: {
+    "14590104": [{officer_id:"jaclyn-g-strong", name:"Jaclyn G. Strong", status:"confirmed-association", confirmed:true, display_eligible:true, evidence_days:1, evidence_dates:["2026-10-04"]},
+      {name:"CSV-only candidate",status:"possible",display_eligible:false}]
+  } });
+  const text=f.get("clips").children[0].textContent;
+  assert.match(text,/Jaclyn G\. Strong · Personally confirmed association/);
+  assert.doesNotMatch(text,/Confirmed this day|CSV-only candidate/);
+});
+
+test("a confirmed day overrides another officer's strong association and a historical hold, then returns to the usual identity", async () => {
+  const associations={schema_version:4,withheld_dates:{'2026-09-11':['14590104']},days:{'2026-09-11':{'14590104':[{officer_id:'two',name:'Confirmed Officer',status:'confirmed'}]}},associations:{'14590104':[{officer_id:'one',name:'Usual Officer',status:'strong',evidence_days:8},{officer_id:'three',name:'Possible Officer',status:'possible',evidence_days:2}]}};
+  const f=await playerFixture([{epoch:1789100000,displayed_seconds:5,original_filename:'known.m4a',radio_ids:['14590104']}],undefined,'2026-09-11','',true,associations);
+  assert.match(f.get('clips').children[0].textContent,/Confirmed Officer · Confirmed this day/);
+  assert.doesNotMatch(f.get('clips').children[0].textContent,/Usual Officer|Possible Officer/);
+  f.get('day').value='2026-09-10';f.get('day').emit('change');await f.settle();
+  assert.match(f.get('clips').children[0].textContent,/Usual Officer · Strong association/);
+  assert.doesNotMatch(f.get('clips').children[0].textContent,/Confirmed Officer|Possible Officer/);
+});
+
+test("two accepted possible identities can render together without a strong identity", async () => {
+  const associations={schema_version:4,days:{},associations:{'14590104':[{officer_id:'one',name:'First Officer',status:'possible',evidence_days:2},{officer_id:'two',name:'Second Officer',status:'possible',evidence_days:3}]}};
+  const f=await playerFixture([{epoch:1789100000,displayed_seconds:5,original_filename:'known.m4a',radio_ids:['14590104']}],undefined,'2026-09-11','',true,associations);
+  assert.match(f.get('clips').children[0].textContent,/First Officer · Possible association/);
+  assert.match(f.get('clips').children[0].textContent,/Second Officer · Possible association/);
 });

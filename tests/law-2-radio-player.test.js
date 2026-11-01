@@ -288,7 +288,7 @@ test("corrected agency ID overrides AFPD fallback in row, audio label and curren
 });
 
 
-test("multiple possible and strong names carry to Law 2-only dates and respect holds", async () => {
+test("strong names suppress possible alternatives on Law 2-only dates and respect holds", async () => {
   const associations = { schema_version: 3, withheld_dates: { '2026-09-10': ['14590026'] }, days: {}, associations: {
     '14590026': [
       { officer_id: 'one', name: 'Known Officer', status: 'strong', evidence_days: 4 },
@@ -300,11 +300,11 @@ test("multiple possible and strong names carry to Law 2-only dates and respect h
   ], undefined, '2026-09-11', '', false, associations);
   const row = f.get('clips').children[0];
   assert.match(row.children[1].textContent, /Known Officer · Strong association/);
-  assert.match(row.children[1].textContent, /Second Officer · Possible association/);
-  assert.match(row.children[0].getAttribute('aria-label'), /Second Officer · Possible association/);
+  assert.doesNotMatch(row.children[1].textContent, /Second Officer/);
+  assert.doesNotMatch(row.children[0].getAttribute('aria-label'), /Second Officer/);
   f.select(0); await f.settle();
   assert.match(f.get('current-radio-ids').textContent, /Known Officer · Strong association/);
-  assert.match(f.get('current-radio-ids').textContent, /Second Officer · Possible association/);
+  assert.doesNotMatch(f.get('current-radio-ids').textContent, /Second Officer/);
   f.get('day').value = '2026-09-10'; f.get('day').emit('change'); await f.settle();
   assert.doesNotMatch(f.get('clips').children[0].children[1].textContent, /Known Officer|Second Officer/);
 });

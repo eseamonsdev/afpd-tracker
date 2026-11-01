@@ -7,13 +7,23 @@ Edit `data/officer-association-evidence.json` to review or correct an associatio
 - `public/records/openmhz/officer-association-evidence.csv`: dated source records, clip numbers, original names heard, original assessments, alternative candidates, and review status.
 - The Police Radio Resources tables, rendered from the generated CSVs.
 
-## Current unfiltered review
+## Protected production baseline
 
-Eric requested that all observations from both versions remain available without deciding which are valid. The source sets `review_mode: "include-all"`. Every `confirmed` or `supporting` record counts by distinct date. Repeated clips, repeated source records, and multiple talkgroups on the same date count as one day per officer/radio pair. `rejected` records remain documented and do not count.
+Eric explicitly requires every strong association and every dated entry marked confirmed in production to remain across all days. `data/production-officer-association-baseline.json` freezes the production response, retaining only those protected entries, its URL, capture time, and original response SHA-256. The captured baseline contains 29 strong pairs and 113 dated confirmed entries. Builds never refresh this snapshot from the network.
 
-The source combines all 366 workbook exchanges, all 20 workbook exceptions, all 63 historical candidate reviews, all 136 records from the first migration, original table notes, old evidence-date lists, and the October 30 Halladay confirmation. It preserves duplicate observations from distinct sources, conflicts, original uncertainty, missing clip references, and historical hold decisions. Holds are review evidence in this mode and do not suppress names or dates.
+`lib/production-association-baseline.js` supplies protected evidence before compilation. Existing strong labels, evidence dates, and confirmed dates cannot be removed or demoted by later candidate imports, evidence filtering, or historical holds that production did not apply. Evidence dates may gain explicitly accepted additions. A new candidate cannot join a protected confirmed radio/date with a conflicting identity. The original verifier attribution is preserved: retaining production's confirmed label does not newly assert Eric personally verified it.
 
-Full roster names are the primary labels. Original first names, surnames, nicknames and transcription uncertainty remain in `name_heard`, `evidence`, and provenance. Where a full identity is unknown, the name remains explicitly unresolved.
+The production baseline includes its legacy unresolved strong label; the general exclusion of newly inferred unresolved identities does not delete that existing label. Pending production possibilities and observed-only dates are not automatically imported.
+
+## Reviewed evidence only
+
+The unfiltered review mode has been removed. The compiler rejects the retired `review_mode` setting instead of interpreting it. Transcription, AI suggestions, repeated hails, and repeated dates cannot approve an identity.
+
+`association_reviewed: true` accepts a specific evidence record for association counting. Existing individually accepted pre-union records, selected evidence behind the accepted production baseline, and Eric's evidence selections were retained with `association_review_basis`. This metadata does not claim Eric personally confirmed every identity. Other source rows stay unreviewed and do not contribute to strength, even if an older AI import called their status confirmed.
+
+Every original source row, uncertainty, candidate, and provenance remains available in canonical evidence. The CSVs retain pending and rejected candidates, while player and profile labels use accepted evidence. Repeated records, clips, and talkgroups count once per date for an officer/radio pair.
+
+Profile-header names, including middle initials, are used for labels. Full middle names remain in profile details and original evidence wording.
 
 ## Record format
 
@@ -38,17 +48,28 @@ Multiple candidates receive separate records with the same `candidate_group_id`,
 
 Observations without an established name/radio pairing are retained in `observations`, exported to the evidence CSV, and shown in the expandable observations table. They are not silently assigned an identity or radio.
 
-## Generated labels
+## Dated confirmation and general strength
 
-- **Confirmed this day:** a prior confirmed identification exists for the selected date.
-- **Association this day:** imported evidence exists on that date and awaits review.
-- **Possible association:** exactly three distinct included evidence dates.
-- **Strong association:** four or more distinct included evidence dates.
-- One or two dates do not extend a name onto other dates.
+A source record with `status: "confirmed"` and `confirmed_by: "Eric"` is an owner-confirmed instance on its recorded date. It remains eligible even if an older AI context exclusion, historical hold, or evidence selection filter disagrees. In the player, a confirmed date replaces all general identities for that radio on that date, including another officer's strong association. The usual general identity returns on other dates. One confirmed date is not automatically converted into a permanent pair confirmation.
 
-Several officers may qualify for one radio. All qualifying names are displayed independently. A dated entry replaces only the same officer's inferred label. The information control includes the date, clip numbers, original name heard and evidence. The source's `review_status` makes the unreviewed import explicit.
+General strength counts distinct dates with explicitly accepted evidence:
 
-Generated schema 3 stores arrays per radio ID in both `days` and `associations`. The player reads these results without recalculating thresholds. Without `review_mode: "include-all"`, only `confirmed` records count and `withheld_dates` again suppress labels and counts. Keep the current mode until Eric decides how his reviewed corrections should be applied.
+- **Possible association:** two or three accepted dates.
+- **Strong association:** four or more accepted dates.
+- **Confirmed this day:** owner confirmation for the selected date.
+- A single accepted date does not extend a name across dates.
+
+Strong and possible identities are never mixed for one radio. When accepted strong associations exist, possible alternatives remain CSV-only unless they have a date-specific owner confirmation. Otherwise two accepted possible associations can coexist. Unreviewed additions cannot change an established strength, introduce another name, or replace a confirmed instance. `display_policy.accepted_general_pairs` retains the accepted general mappings: even newly accepted evidence for a competing general pair cannot replace those mappings until that pair is explicitly accepted too. Non-conflicting new pairs remain eligible after individual evidence review. Dated owner confirmations are independent of this general-pair guard.
+
+`association_confirmations["officer-id/radio-id"].confirmed` is reserved for a separately explicit general pair approval. Existing day confirmations are not used to seed that general approval. A general approval, if explicitly supplied, still yields to the selected date's confirmed identity.
+
+Generated schema 4 stores owner-confirmed date entries in `days`, selected general strengths in `associations`, and eligible mappings in `profiles`. The player applies the same date-first, strong-before-possible precedence. Production’s `withheld_dates` is retained. Older holds that production did not apply cannot hide the protected labels; dated confirmations still take priority over general associations.
+
+The evidence CSV includes Evidence accepted and Acceptance basis, separately from personal confirmation and display eligibility. The importer for personal evidence selections marks only the selected records accepted; AI report imports do not.
+
+Saved personal confirmations on the public-media review page survive subsequent AI context exclusions and missing clips in a later payload. Explicit user unchecks/removals still revoke their associated saved confirmation. User-requested former-employee exclusions remain enforced. Transcript corrections remain separate from identity confirmation.
+
+See `findings/2026-11-01-officer-association-display-audit.md` for the duplicate inventory and source tracing.
 
 ## Import provenance
 
