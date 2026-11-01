@@ -83,3 +83,18 @@ test("real cleanup removes Brandon West while preserving actual officer mentions
  assert.ok(!payload.source.associations.some(r=>r.record_id==="legacy-review-023"));
  assert.match(visible,/id="person-select"/);assert.match(visible,/id="export-review"/);
 });
+
+
+test("person controls remain inert until selected, while all evidence stays in the export payload",()=>{
+ const input={...source,associations:[record("one","2026-10-01",[1]),record("two","2026-10-02",[2])]};
+ const html=renderAssociationReview(selectAssociationReview(input,manifest),input,"","");
+ const templates=[...html.matchAll(/<template data-person="([^"]+)">([\s\S]*?)<\/template>/g)];
+ assert.deepEqual(templates.map(t=>t[1]),["person-one","person-two"]);
+ for(const template of templates) assert.match(template[2],/<audio controls preload="none"/);
+ const shell=html.replace(/<template[\s\S]*?<\/template>/g,"").split('<script type="application/json"')[0];
+ assert.ok(!shell.includes("<audio"));
+ assert.ok(!shell.includes('class="person"'));
+ const payload=JSON.parse(html.match(/<script type="application\/json" id="review-data">([\s\S]*?)<\/script>/)[1]);
+ assert.equal(payload.source.associations.length,2);
+ assert.equal(Object.keys(payload.clips).length,2);
+});
