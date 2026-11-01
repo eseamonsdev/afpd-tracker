@@ -28,14 +28,14 @@ test("HTML safely renders uncertainty, gives each day controls, and preloads no 
 test("real review includes both talkgroups, AI context and the full export payload",()=>{
  const input=JSON.parse(fs.readFileSync("data/officer-association-evidence.json","utf8"));
  const result=buildAssociationReview();
- assert.ok(result.days>700);assert.ok(result.uniqueClips>4000);
+ assert.ok(result.days>500);assert.ok(result.uniqueClips>4000);
  const html=fs.readFileSync(result.output,"utf8");
  assert.equal((html.match(/data-day>/g)||[]).length,result.days);
  assert.equal((html.match(/class="clip"/g)||[]).length,result.clips);
  assert.ok(html.includes("dcfems-5922-"));assert.ok(html.includes("Anthony S. Neil"));
  assert.match(html,/id="export-review"/);assert.match(html,/data-confirm/);assert.match(html,/data-action="edit-transcript"/);assert.match(html,/Personal verification/);
  const payload=JSON.parse(html.match(/<script type="application\/json" id="review-data">([\s\S]*?)<\/script>/)[1]);
- assert.equal(payload.source.associations.length,580);assert.equal(payload.source.review_leads.length,733);assert.equal(Object.keys(payload.clips).length,result.uniqueClips);
+ assert.equal(payload.source.associations.length,552);assert.equal(payload.source.review_leads.length,662);assert.equal(Object.keys(payload.clips).length,result.uniqueClips);
  assert.match(html,/https:\/\/media\.afpd-accountability\.com\/openmhz\//);
  const ids=[...html.matchAll(/\sid="([^"]+)"/g)].map(m=>m[1]);assert.equal(ids.length,new Set(ids).size);
 });
@@ -53,4 +53,33 @@ test("employment exclusions remove identities from headings, choices and labels 
  const labels=compileOfficerAssociations({...input,schema_version:1});
  assert.deepEqual(labels.labels.days,{});
  assert.ok(!labels.summaryCsv.includes("First Officer"));
+});
+
+test("rejected civilian matches never enter the player, clip catalog or CSV-derived day counts", async()=>{
+ const input={...source,schema_version:1,review_mode:"include-all",associations:[record("one","2026-10-01",[1],{record_id:"wrong"}),record("one","2026-10-02",[2],{record_id:"valid"})],review_leads:[{record_id:"mixed",date:"2026-10-03",talkgroup:6001,clips:[1],candidate_officer_ids:["one","two"],evidence:"Ron is addressed; Joshua Draper is a civilian"}],context_review_exclusions:{records:{wrong:{reason:"Civilian namesake"},mixed:{officer_ids:["one"],reason:"Wrong full-name candidate"}}}};
+ const result=selectAssociationReview(input,manifest);
+ assert.deepEqual(result.people[0].days.map(d=>d.date),["2026-10-02"]);
+ assert.deepEqual(result.people[1].days[0].evidence[0].candidate_officer_ids,["two"]);
+ assert.ok(!Object.values(result.clipCatalog).some(c=>c.date==="2026-10-01"));
+ const {compileOfficerAssociations}=await import('../lib/build-officer-associations.js');
+ const output=compileOfficerAssociations(input);
+ assert.equal(output.labels.days["2026-10-01"],undefined);
+ assert.equal(output.labels.days["2026-10-02"]["123"][0].evidence_days,1);
+ assert.ok(!output.evidenceCsv.includes('"wrong"'));
+ assert.ok(!output.summaryCsv.includes("2026-10-01"));
+ assert.equal(input.associations.length,2);
+});
+
+test("real cleanup removes Brandon West while preserving actual officer mentions as unassigned leads",()=>{
+ const html=fs.readFileSync(buildAssociationReview().output,"utf8");
+ const payload=JSON.parse(html.match(/<script type="application\/json" id="review-data">([\s\S]*?)<\/script>/)[1]);
+ const visible=html.split('<script type="application/json"')[0];
+ for(const id of ["N234","N005","V001","V020","N163"]) {
+  assert.ok(!payload.source.review_leads.some(r=>r.record_id===`ai-report-${id}`));
+  assert.ok(!visible.includes(`data-record-id="ai-report-${id}"`));
+ }
+ assert.ok(visible.includes('data-record-id="ai-report-N115"'));
+ assert.ok(payload.source.review_leads.some(r=>r.original_record_id==="legacy-review-023" && !r.radio_id));
+ assert.ok(!payload.source.associations.some(r=>r.record_id==="legacy-review-023"));
+ assert.match(visible,/id="person-select"/);assert.match(visible,/id="export-review"/);
 });

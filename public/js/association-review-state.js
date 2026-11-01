@@ -7,8 +7,12 @@ globalThis.AFPDReviewState = class AFPDReviewState {
       if(payload.clips[id] && typeof change?.text === "string" && typeof change.original_transcript === "string") this.state.transcripts[id]=change;
     }
     for(const [key,confirmation] of Object.entries(saved.confirmations ?? {})) {
-      if(confirmation?.confirmed===true && Array.isArray(confirmation.clip_ids) && confirmation.clip_ids.every(id=>payload.clips[id]) && payload.source.officers[confirmation.officer_id] && !payload.source.excluded_candidates?.[confirmation.officer_id]) this.state.confirmations[key]=confirmation;
+      if(confirmation?.confirmed===true && Array.isArray(confirmation.clip_ids) && confirmation.clip_ids.every(id=>payload.clips[id]) && payload.source.officers[confirmation.officer_id] && !payload.source.excluded_candidates?.[confirmation.officer_id] && this.eligibleRecord(confirmation)) this.state.confirmations[key]=confirmation;
     }
+  }
+  eligibleRecord(record) {
+    const exclusion=this.payload.source.context_review_exclusions?.records?.[record.record_id];
+    return !exclusion || !!(exclusion.officer_ids && !exclusion.officer_ids.includes(record.officer_id));
   }
   transcript(id) { return this.state.transcripts[id]?.text ?? this.payload.clips[id].transcript; }
   saveTranscript(id,text,at=new Date().toISOString()) {
@@ -20,6 +24,7 @@ globalThis.AFPDReviewState = class AFPDReviewState {
     const {source,clips}=this.payload;
     if(!this.state.reviewer.trim()) throw new Error("Enter your reviewer name at the top before confirming.");
     if(!source.officers[record.officer_id] || source.excluded_candidates?.[record.officer_id]) throw new Error("Choose an eligible person.");
+    if(!this.eligibleRecord(record)) throw new Error("This match was removed after transcript context review.");
     if(!/^[1-9]\d*$/.test(record.radio_id)) throw new Error("Enter the radio ID you have verified.");
     if(!record.clip_ids.length || record.clip_ids.some(id=>!clips[id] || clips[id].date!==record.date || clips[id].talkgroup!==record.talkgroup)) throw new Error("Select at least one evidence clip from this date and talkgroup.");
     this.state.confirmations[key]={...record,confirmed:true,confirmed_by:this.state.reviewer.trim(),confirmed_at:at};

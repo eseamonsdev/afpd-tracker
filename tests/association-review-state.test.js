@@ -27,12 +27,16 @@ test('restored edits report source changes rather than silently losing the origi
  const review=new Review(payload);review.saveTranscript('shared','Mine');const changed=structuredClone(payload);changed.clips.shared.transcript='New source';
  const out=new Review(changed,review.state).export();assert.equal(out.transcript_changes[0].original_transcript,'Original');assert.equal(out.transcript_changes[0].source_changed_since_edit,true);assert.equal(out.clips.shared.transcript,'Mine');
 });
-test('merge retains every original record and treats all 733 new report hits as unassigned leads',()=>{
+test('cleanup preserves prior sources and workbook exchanges and keeps retained leads unassigned',()=>{
  const current=JSON.parse(fs.readFileSync('data/officer-association-evidence.json'));
  const original=JSON.parse(execFileSync('git',['show','fe0fc30658200b09ebfbf3853642f1201eb6b0da:data/officer-association-evidence.json'],{maxBuffer:10e6}));
- assert.deepEqual(current.associations,original.associations);assert.deepEqual(current.observations,original.observations);
+ const protectedRows = rows => rows.filter(r=>r.record_id.startsWith('prior-source-') || r.record_id.startsWith('workbook-'));
+ assert.deepEqual(protectedRows(current.associations),protectedRows(original.associations));assert.deepEqual(current.observations,original.observations);
+ assert.equal(current.associations.filter(r=>r.record_id.startsWith('prior-source-')).length,136);
+ assert.equal(current.associations.filter(r=>r.source==='owner_listening_review').length,21);
  for(const [id,officer] of Object.entries(original.officers)) assert.deepEqual(current.officers[id],officer);
- assert.equal(current.review_leads.length,733);assert.equal(current.ai_reviews.length,363);
+ assert.equal(current.review_leads.length,662);
+ assert.ok(!current.review_leads.some(r=>r.report_id==='N234'));
  assert.ok(current.review_leads.every(r=>r.status==='unassigned'&&!r.radio_id&&r.review_status==='pending'));
  assert.ok(current.review_leads.every(r=>!r.candidate_officer_ids.includes('philip-w-s-craig')));
  const richardson=current.review_leads.find(r=>r.report_id==='N012');assert.equal(richardson.talkgroup,5922);assert.ok(richardson.candidate_officer_ids.includes('cole-g-richardson'));
@@ -45,4 +49,16 @@ test('excluded former employees cannot be restored or newly confirmed; transcrip
  assert.equal(Object.keys(state.state.confirmations).length,0);
  assert.equal(state.transcript('c'),'Edited');
  assert.throws(()=>state.confirm('new',{officer_id:'former',radio_id:'123',date:'2026-10-01',talkgroup:6001,clip_ids:['c']}),/eligible/);
+});
+
+test('context-rejected matches cannot return through saved confirmations; their recordings remain editable and exportable',()=>{
+ const updated=structuredClone(payload);
+ updated.source.context_review_exclusions={records:{original:{reason:'Civilian namesake'}}};
+ const saved={reviewer:'Eric',transcripts:{shared:{text:'Edited',original_transcript:'Original'}},confirmations:{old:{...record,confirmed:true}}};
+ const review=new Review(updated,saved);
+ assert.equal(Object.keys(review.state.confirmations).length,0);
+ assert.equal(review.transcript('shared'),'Edited');
+ assert.throws(()=>review.confirm('new',record),/context review/);
+ assert.equal(review.export().clips.shared.transcript,'Edited');
+ assert.equal(review.export().source.associations.length,1);
 });
