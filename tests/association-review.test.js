@@ -17,11 +17,13 @@ test("review groups every candidate separately, orders dates and clips, deduplic
  assert.throws(()=>selectAssociationReview({...source,associations:[record("one","2026-10-01",[1])]},manifest,()=>false),/Audio unavailable/);
 });
 
-test("HTML safely renders uncertainty, gives each day controls, and preloads no audio",()=>{
+test("HTML preserves source uncertainty, uses one compact player per person, and preloads no audio",()=>{
  const input={...source,associations:[record("one","2026-10-01",[1],{evidence:'<script>unsafe</script>',name_heard:'"First?"',candidate_officer_ids:["one","two"]})]};
  const html=renderAssociationReview(selectAssociationReview(input,manifest),input,"body{}","test()");
- assert.match(html,/&lt;script&gt;unsafe&lt;\/script&gt;/);assert.match(html,/First Officer \/ Second Officer/);
- assert.match(html,/<audio controls preload="none"/);assert.match(html,/data-action="previous"/);assert.match(html,/data-autoplay/);
+ const payload=JSON.parse(html.match(/<script type="application\/json" id="review-data">([\s\S]*?)<\/script>/)[1]);
+ assert.equal(payload.source.associations[0].evidence,"<script>unsafe</script>");assert.ok(!html.includes("<script>unsafe</script>"));
+ assert.match(html,/<audio preload="none"/);assert.match(html,/data-action="show-current"/);assert.match(html,/data-seek/);assert.match(html,/data-speed/);
+ assert.ok(!html.includes('data-action="previous"'));assert.ok(!html.includes("data-autoplay"));
  assert.match(html,/noindex, nofollow/);assert.match(html,/data-transcript="First"/);
 });
 
@@ -30,10 +32,10 @@ test("real review includes both talkgroups, AI context and the full export paylo
  const result=buildAssociationReview();
  assert.ok(result.days>500);assert.ok(result.uniqueClips>4000);
  const html=fs.readFileSync(result.output,"utf8");
- assert.equal((html.match(/data-day>/g)||[]).length,result.days);
+ assert.equal((html.match(/data-day /g)||[]).length,result.days);
  assert.equal((html.match(/class="clip"/g)||[]).length,result.clips);
  assert.ok(html.includes("dcfems-5922-"));assert.ok(html.includes("Anthony S. Neil"));
- assert.match(html,/id="export-review"/);assert.match(html,/data-confirm/);assert.match(html,/data-action="edit-transcript"/);assert.match(html,/Personal verification/);
+ assert.match(html,/id="export-review"/);assert.match(html,/data-clip-evidence/);assert.match(html,/data-action="edit-transcript"/);assert.match(html,/Personal verification/);
  const payload=JSON.parse(html.match(/<script type="application\/json" id="review-data">([\s\S]*?)<\/script>/)[1]);
  assert.equal(payload.source.associations.length,552);assert.equal(payload.source.review_leads.length,662);assert.equal(Object.keys(payload.clips).length,result.uniqueClips);
  assert.match(html,/https:\/\/media\.afpd-accountability\.com\/openmhz\//);
@@ -78,7 +80,7 @@ test("real cleanup removes Brandon West while preserving actual officer mentions
   assert.ok(!payload.source.review_leads.some(r=>r.record_id===`ai-report-${id}`));
   assert.ok(!visible.includes(`data-record-id="ai-report-${id}"`));
  }
- assert.ok(visible.includes('data-record-id="ai-report-N115"'));
+ assert.ok(payload.source.review_leads.some(r=>r.record_id==="ai-report-N115"));
  assert.ok(payload.source.review_leads.some(r=>r.original_record_id==="legacy-review-023" && !r.radio_id));
  assert.ok(!payload.source.associations.some(r=>r.record_id==="legacy-review-023"));
  assert.match(visible,/id="person-select"/);assert.match(visible,/id="export-review"/);
@@ -90,7 +92,7 @@ test("person controls remain inert until selected, while all evidence stays in t
  const html=renderAssociationReview(selectAssociationReview(input,manifest),input,"","");
  const templates=[...html.matchAll(/<template data-person="([^"]+)">([\s\S]*?)<\/template>/g)];
  assert.deepEqual(templates.map(t=>t[1]),["person-one","person-two"]);
- for(const template of templates) assert.match(template[2],/<audio controls preload="none"/);
+ for(const template of templates) assert.match(template[2],/<audio preload="none"/);
  const shell=html.replace(/<template[\s\S]*?<\/template>/g,"").split('<script type="application/json"')[0];
  assert.ok(!shell.includes("<audio"));
  assert.ok(!shell.includes('class="person"'));
@@ -99,11 +101,23 @@ test("person controls remain inert until selected, while all evidence stays in t
  assert.equal(Object.keys(payload.clips).length,2);
 });
 
- test("each displayed clip has removal and confirmation controls and a per-person export selection",()=>{
+ test("each clip has one evidence checkbox, context stays playable, and redundant controls are absent",()=>{
  const input={...source,associations:[record("one","2026-10-01",[1])]};
  const html=renderAssociationReview(selectAssociationReview(input,manifest),input,"","");
- assert.match(html,/data-clip-remove/);assert.match(html,/data-clip-confirm/);assert.match(html,/data-show-removed/);
+ assert.match(html,/data-clip-evidence/);
+ for(const old of ["data-clip-remove","data-clip-confirm","data-show-removed",'class="evidence"',"data-confirm-person"])assert.ok(!html.includes(old));
  const data=JSON.parse(html.match(/<script type="application\/json" id="review-data">([\s\S]*?)<\/script>/)[1]);
  assert.ok(data.clip_selections.length>0);
  assert.ok(data.clip_selections.every(c=>c.officer_id && data.clips[c.clip_id]));
+ });
+
+ test("evidence defaults use cues while context and extra AI references remain in the list",()=>{
+ const input={...source,associations:[record("one","2026-10-01",[1,2],{record_id:"cue",cue_clips:[2]})],ai_reviews:[{source_record_ids:["cue"],clip_references:[{date:"2026-10-01",talkgroup:6001,number:3}]}]};
+ const manifests=(date,tg)=>({...manifest(date,tg),calls:[...manifest(date,tg).calls,{epoch:300,original_filename:`dcfems-${tg}-300.m4a`,transcript:"Context"}]});
+ const html=renderAssociationReview(selectAssociationReview(input,manifests),input,"","");
+ const payload=JSON.parse(html.match(/<script type="application\/json" id="review-data">([\s\S]*?)<\/script>/)[1]);
+ assert.deepEqual(payload.clip_selections.map(c=>[c.number,c.evidence]),[[1,false],[2,true],[3,false]]);
+ assert.equal((html.match(/data-clip-evidence/g)||[]).length,3);
+ assert.equal((html.match(/<audio /g)||[]).length,1);
+ assert.equal((html.match(/data-clip-evidence[^>]* checked/g)||[]).length,1);
  });

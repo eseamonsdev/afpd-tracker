@@ -77,9 +77,48 @@ test('per-person clip decisions survive reload and export without removing share
  assert.equal(out.removed_clips[0].officer_id,'one');assert.equal(out.removed_clips[0].reviewed_at,'remove-time');
  assert.equal(out.confirmed_clips[0].officer_id,'two');assert.equal(out.confirmed_clips[0].reviewed_by,'Eric');
  assert.equal(out.clips.shared.personal_clip_reviews.length,2);assert.equal(out.clips.shared.transcript,'Original');
- assert.equal(out.clip_reviews.find(c=>c.clip_id==='other').status,'pending');
+ assert.equal(out.clip_reviews.find(c=>c.clip_id==='other').status,'context');
  reload.markClip('one','shared','pending');reload.markClip('two','shared','pending');
  assert.equal(reload.export().removed_clips.length,0);assert.equal(reload.export().confirmed_clips.length,0);
  assert.throws(()=>reload.markClip('unknown','shared','removed'),/Unknown/);
  assert.throws(()=>reload.markClip('one','other','bad'),/Invalid/);
+});
+
+test('evidence checkbox overrides defaults per person, survives reload and retains every context clip',()=>{
+ const input=structuredClone(payload);
+ input.clip_selections=[{officer_id:'one',clip_id:'shared',evidence:true},{officer_id:'two',clip_id:'shared',evidence:true},{officer_id:'one',clip_id:'other',evidence:false}];
+ const review=new Review(input);review.state.reviewer='Eric';
+ assert.equal(review.evidenceSelected('one','shared'),true);assert.equal(review.evidenceSelected('one','other'),false);
+ review.setEvidence('one','shared',false,'unchecked-time');review.setEvidence('one','other',true,'checked-time');
+ const reload=new Review(input,JSON.parse(JSON.stringify(review.state))),out=reload.export();
+ assert.equal(reload.evidenceSelected('one','shared'),false);assert.equal(reload.evidenceSelected('two','shared'),true);
+ assert.equal(out.evidence_clips.length,2);assert.equal(out.context_clips.length,1);assert.equal(Object.keys(out.clips).length,2);
+ assert.equal(out.removed_from_evidence_clips[0].clip_id,'shared');assert.equal(out.evidence_changes.length,2);
+ assert.equal(out.evidence_changes[0].reviewed_at,'unchecked-time');assert.equal(out.evidence_changes[0].reviewed_by,'Eric');
+ reload.setEvidence('one','shared',true);assert.equal(reload.export().context_clips.length,0);
+ assert.throws(()=>reload.setEvidence('one','unknown',false),/Unknown/);
+ assert.throws(()=>reload.setEvidence('one','shared','false'),/checked or unchecked/);
+});
+
+test('prior removals and confirmations migrate into checkbox choices and preserve history',()=>{
+ const input=structuredClone(payload);
+ input.clip_selections=[{officer_id:'one',clip_id:'shared',evidence:true},{officer_id:'two',clip_id:'shared',evidence:false}];
+ const saved={reviewer:'Eric',clip_reviews:{'["one","shared"]':{officer_id:'one',clip_id:'shared',status:'removed',reviewed_at:'old-removal'},'["two","shared"]':{officer_id:'two',clip_id:'shared',status:'confirmed',reviewed_at:'old-confirmation'}}};
+ const review=new Review(input,saved);
+ assert.equal(review.evidenceSelected('one','shared'),false);assert.equal(review.evidenceSelected('two','shared'),true);
+ review.setEvidence('one','shared',true);
+ const reload=new Review(input,review.state);
+ assert.equal(reload.evidenceSelected('one','shared'),true);
+ assert.equal(reload.export().legacy_clip_reviews.find(c=>c.status==='removed').reviewed_at,'old-removal');
+ assert.equal(reload.export().removed_clips.length,0);
+});
+
+test('unchecking evidence invalidates a dependent personal association without changing its original source',()=>{
+ const input=structuredClone(payload);input.clip_selections=[{officer_id:'one',clip_id:'shared',evidence:true}];
+ const saved={reviewer:'Eric',confirmations:{'original/one':{...record,confirmed:true,confirmed_by:'Eric',confirmed_at:'old-confirmation'}}};
+ const review=new Review(input,saved);assert.equal(review.evidenceSelected('one','shared'),true);
+ assert.equal(review.export().confirmed_associations.length,1);
+ review.setEvidence('one','shared',false);
+ const reload=new Review(input,review.state);assert.equal(reload.export().confirmed_associations.length,0);
+ assert.equal(reload.export().source.associations[0].evidence,'Uncertain original');
 });
