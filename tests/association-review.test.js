@@ -98,3 +98,12 @@ test("person controls remain inert until selected, while all evidence stays in t
  assert.equal(payload.source.associations.length,2);
  assert.equal(Object.keys(payload.clips).length,2);
 });
+
+ test("each displayed clip has removal and confirmation controls and a per-person export selection",()=>{
+ const input={...source,associations:[record("one","2026-10-01",[1])]};
+ const html=renderAssociationReview(selectAssociationReview(input,manifest),input,"","");
+ assert.match(html,/data-clip-remove/);assert.match(html,/data-clip-confirm/);assert.match(html,/data-show-removed/);
+ const data=JSON.parse(html.match(/<script type="application\/json" id="review-data">([\s\S]*?)<\/script>/)[1]);
+ assert.ok(data.clip_selections.length>0);
+ assert.ok(data.clip_selections.every(c=>c.officer_id && data.clips[c.clip_id]));
+ });

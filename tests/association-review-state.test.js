@@ -62,3 +62,24 @@ test('context-rejected matches cannot return through saved confirmations; their 
  assert.equal(review.export().clips.shared.transcript,'Edited');
  assert.equal(review.export().source.associations.length,1);
 });
+
+test('per-person clip decisions survive reload and export without removing shared evidence',()=>{
+ const input=structuredClone(payload);
+ input.clip_selections=[{officer_id:'one',clip_id:'shared'},{officer_id:'two',clip_id:'shared'},{officer_id:'one',clip_id:'other'}];
+ const review=new Review(input);review.state.reviewer='Eric';
+ review.confirm('original/one',record);
+ review.markClip('one','shared','removed','remove-time');
+ review.markClip('two','shared','confirmed','confirm-time');
+ assert.equal(Object.keys(review.state.confirmations).length,0);
+ assert.throws(()=>review.confirm('original/one',record),/Restore removed/);
+ const reload=new Review(input,JSON.parse(JSON.stringify(review.state))),out=reload.export();
+ assert.equal(out.removed_clips.length,1);assert.equal(out.confirmed_clips.length,1);
+ assert.equal(out.removed_clips[0].officer_id,'one');assert.equal(out.removed_clips[0].reviewed_at,'remove-time');
+ assert.equal(out.confirmed_clips[0].officer_id,'two');assert.equal(out.confirmed_clips[0].reviewed_by,'Eric');
+ assert.equal(out.clips.shared.personal_clip_reviews.length,2);assert.equal(out.clips.shared.transcript,'Original');
+ assert.equal(out.clip_reviews.find(c=>c.clip_id==='other').status,'pending');
+ reload.markClip('one','shared','pending');reload.markClip('two','shared','pending');
+ assert.equal(reload.export().removed_clips.length,0);assert.equal(reload.export().confirmed_clips.length,0);
+ assert.throws(()=>reload.markClip('unknown','shared','removed'),/Unknown/);
+ assert.throws(()=>reload.markClip('one','other','bad'),/Invalid/);
+});

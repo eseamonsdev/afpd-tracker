@@ -10,7 +10,7 @@
   function persist() {
     if(!storageError) try { localStorage.setItem(storageKey,JSON.stringify(review.state)); }
     catch { storageError="Browser storage is unavailable or full. Changes are held in memory; export before leaving."; }
-    saveStatus.textContent=storageError || `${Object.keys(review.state.transcripts).length} transcript changes · ${Object.keys(review.state.confirmations).length} personally confirmed associations · Saved in this browser`;
+    saveStatus.textContent=storageError || `${Object.keys(review.state.transcripts).length} transcript changes · ${Object.keys(review.state.confirmations).length} personally confirmed associations · ${Object.values(review.state.clip_reviews).filter(r=>r.status==="removed").length} removed clips · ${Object.values(review.state.clip_reviews).filter(r=>r.status==="confirmed").length} confirmed clips · Saved in this browser`;
   }
   reviewer.addEventListener("input",()=>{review.state.reviewer=reviewer.value;persist();});
   document.getElementById("export-review").addEventListener("click",()=>{
@@ -43,6 +43,7 @@
         persist();
       });
     }
+    const officerId=section.dataset.personId;
     const transcriptRenderers=[];
     const players = [...section.querySelectorAll("[data-day]")];
     for (const day of players) {
@@ -54,6 +55,52 @@
       const editor=day.querySelector(".transcript-editor"), area=editor.querySelector("textarea"), text=day.querySelector(".transcript-text");
       const edit=day.querySelector('[data-action="edit-transcript"]');
       let index = -1, generation = 0, editingId=null;
+      const removed=number=>review.clipReview(officerId,clips[number]?.dataset.clipId)?.status==="removed";
+      const available=(start,step)=>{for(let n=start;n>=0&&n<clips.length;n+=step) if(!removed(n)) return n;return -1;};
+      function navigation() {
+        previous.disabled=available(index-1,-1)<0;next.disabled=available(index+1,1)<0;
+        day.querySelector('[data-action="play-day"]').disabled=available(0,1)<0;
+      }
+      function refreshReviews() {
+        let count=0;
+        clips.forEach((clip,n)=>{
+          const row=clip.closest("li"),status=review.clipReview(officerId,clip.dataset.clipId)?.status;
+          const isRemoved=status==="removed";if(isRemoved) count++;
+          row.hidden=isRemoved&&!day.querySelector("[data-show-removed]").checked;
+          row.classList.toggle("is-removed",isRemoved);
+          clip.disabled=isRemoved;
+          row.querySelector("[data-clip-confirm]").checked=status==="confirmed";
+          row.querySelector("[data-clip-confirm]").disabled=isRemoved;
+          row.querySelector("[data-clip-remove]").textContent=isRemoved?"Restore clip":"Remove clip";
+          row.querySelector("[data-clip-status]").textContent=isRemoved?"Removed from this person's list":status==="confirmed"?"Confirmed":"";
+        });
+        day.querySelector("[data-removed-count]").textContent=`(${count})`;
+        for(const row of section.querySelectorAll("[data-evidence-key]")) {
+          if(!review.state.confirmations[row.dataset.evidenceKey] && row.querySelector("[data-confirm]").checked) {
+            row.querySelector("[data-confirm]").checked=false;
+            row.querySelector(".confirmation-status").textContent="Supporting clip removed. Review and confirm again.";
+          }
+        }
+        navigation();
+      }
+      clips.forEach((clip,n)=>{
+        const row=clip.closest("li");
+        row.querySelector("[data-clip-confirm]").addEventListener("change",event=>{review.markClip(officerId,clip.dataset.clipId,event.target.checked?"confirmed":"pending");persist();refreshReviews();});
+        row.querySelector("[data-clip-remove]").addEventListener("click",()=>{
+          if(editingId && area.value!==review.transcript(editingId)) {message.textContent="Save or cancel your transcript edit before removing clips.";return;}
+          const status=removed(n)?"pending":"removed";
+          review.markClip(officerId,clip.dataset.clipId,status);
+          if(status==="removed" && index===n) {
+            ++generation;audio.pause();audio.removeAttribute("src");audio.load();index=-1;closeEditor();
+            current.textContent="Choose a clip";recording.hidden=true;text.textContent="";edit.disabled=true;
+            day.querySelector(".transcript-status").textContent="";day.querySelector(".call-note").textContent="";
+            clips.forEach(c=>{c.classList.remove("is-current");c.removeAttribute("aria-current");});
+          }
+          persist();refreshReviews();
+        });
+      });
+      day.querySelector("[data-show-removed]").addEventListener("change",refreshReviews);
+      refreshReviews();
       function renderTranscript() {
         if(index<0) return;
         const clip=clips[index],id=clip.dataset.clipId;
@@ -67,7 +114,7 @@
       day.querySelector('[data-action="save-transcript"]').addEventListener("click",()=>{if(!editingId)return;review.saveTranscript(editingId,area.value);persist();closeEditor();transcriptRenderers.forEach(render=>render());});
       day.querySelector('[data-action="cancel-transcript"]').addEventListener("click",closeEditor);
       function select(number, play = true) {
-        if (!Number.isInteger(number) || number < 0 || number >= clips.length) return;
+        if (!Number.isInteger(number) || number < 0 || number >= clips.length || removed(number)) return;
         if(editingId && area.value!==review.transcript(editingId)) {message.textContent="Save or cancel your transcript edit before switching clips.";return;}
         closeEditor();
         const clip = clips[number], selected = ++generation;
@@ -76,21 +123,21 @@
         }
         audio.playbackRate = Number(speed.value);
         clips.forEach((button, n) => { button.classList.toggle("is-current",n===index); if (n===index) button.setAttribute("aria-current","true"); else button.removeAttribute("aria-current"); });
-        current.textContent = `${clip.children[0].textContent.trim()} · Radio ${clip.children[1].textContent.trim()}`; previous.disabled = index===0; next.disabled = index===clips.length-1;
+        current.textContent = `${clip.children[0].textContent.trim()} · Radio ${clip.children[1].textContent.trim()}`; navigation();
         renderTranscript();
         day.querySelector(".call-note").textContent = clip.dataset.note;
         recording.href = clip.dataset.source; recording.hidden = false; message.textContent = "";
         if (play) audio.play().catch(() => { if (selected !== generation) return; message.textContent = "Playback did not start. Use the audio Play control or open the selected recording."; });
       }
       clips.forEach((clip, n) => clip.addEventListener("click", () => select(n)));
-      day.querySelector('[data-action="play-day"]').addEventListener("click", () => select(0));
-      previous.addEventListener("click", () => select(index-1)); next.addEventListener("click", () => select(index+1));
+      day.querySelector('[data-action="play-day"]').addEventListener("click", () => select(available(0,1)));
+      previous.addEventListener("click", () => select(available(index-1,-1))); next.addEventListener("click", () => select(available(index+1,1)));
       speed.addEventListener("change", () => { audio.playbackRate = Number(speed.value); });
       audio.addEventListener("play", () => {
         if(activeAudio && activeAudio!==audio) activeAudio.pause();
         activeAudio=audio;
       });
-      audio.addEventListener("ended", () => { if(day.querySelector("[data-autoplay]").checked && index+1<clips.length) select(index+1); });
+      audio.addEventListener("ended", () => { if(day.querySelector("[data-autoplay]").checked && index+1<clips.length) select(available(index+1,1)); });
       audio.addEventListener("error", () => { message.textContent = "This recording could not be loaded. Try the selected recording link or the full archive day."; });
       toggle.addEventListener("click", () => { transcript.hidden=!transcript.hidden; toggle.textContent=transcript.hidden ? "Transcript: Off" : "Transcript: On"; toggle.setAttribute("aria-pressed", String(!transcript.hidden)); });
     }
