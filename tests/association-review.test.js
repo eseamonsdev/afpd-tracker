@@ -121,3 +121,22 @@ test("person controls remain inert until selected, while all evidence stays in t
  assert.equal((html.match(/<audio /g)||[]).length,1);
  assert.equal((html.match(/data-clip-evidence[^>]* checked/g)||[]).length,1);
  });
+
+test("Mason dialogue review separates supported radios, backward acknowledgements and unanswered context",()=>{
+ const html=fs.readFileSync(buildAssociationReview().output,"utf8");
+ const payload=JSON.parse(html.match(/<script type="application\/json" id="review-data">([\s\S]*?)<\/script>/)[1]);
+ const find=(date,number)=>payload.clip_selections.find(c=>c.officer_id==="brandon-k-mason"&&c.date===date&&c.number===number);
+ for(const number of [219,220])assert.deepEqual(find("2026-10-10",number).evidence_radio_ids,["14590237"]);
+ for(const number of [236,237,244,245])assert.deepEqual(find("2026-10-10",number).evidence_radio_ids,["14590315"]);
+ const hail=find("2026-10-10",236);
+ assert.deepEqual(hail.transmitter_radio_ids,["14590088"]);assert.equal(hail.dialogue_exchanges[0].role,"name_cue");
+ assert.equal(find("2026-10-28",154).dialogue_exchanges[0].role,"preceding_speaker");
+ for(const [date,number] of [["2026-09-12",634],["2026-09-12",635],["2026-09-17",432],["2026-10-23",23],["2026-10-29",122]]) {
+  const clip=find(date,number);assert.equal(clip.evidence,false);assert.deepEqual(clip.evidence_radio_ids,[]);assert.ok(clip.context_reason);
+ }
+ for(const exchange of payload.source.dialogue_reviews.people["brandon-k-mason"].exchanges) {
+  const rows=exchange.evidence_clips.map(n=>find(exchange.date,n));
+  assert.ok(rows.every(Boolean),exchange.exchange_id);
+  assert.ok(rows.some(c=>c.transmitter_radio_ids.includes(exchange.target_radio_id)),exchange.exchange_id);
+ }
+});

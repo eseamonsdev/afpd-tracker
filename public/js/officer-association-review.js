@@ -71,6 +71,13 @@
       }
       const day=clip.closest("[data-day]");
       current.textContent=`${day.dataset.date} · ${day.dataset.talkgroup} · ${clip.children[0].textContent.trim()} · ${clip.children[1].textContent.trim()}`;
+      const selection=review.selectionDetails.get(JSON.stringify([officerId,clip.dataset.clipId]));
+      const attribution=root.querySelector(".attribution");
+      attribution.hidden=false;
+      attribution.textContent=selection.dialogue_exchanges?.length
+        ? selection.dialogue_exchanges.map(e=>`Supports radio ${e.target_radio_id} · ${e.confidence} · ${e.role.replaceAll("_"," ")}. ${e.reason}`).join(" ")
+        : selection.evidence_radio_ids?.length ? `Existing source evidence for radio ${selection.evidence_radio_ids.join(" / ")}; dialogue review pending.`
+        : selection.context_reason || "Context only; no radio ID assigned.";
       play.disabled=false;show.disabled=false;message.textContent="";renderTranscript();startPlayback();
     }
     for(const clip of clips) {

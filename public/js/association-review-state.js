@@ -2,7 +2,7 @@
 globalThis.AFPDReviewState = class AFPDReviewState {
   constructor(payload, saved = {}) {
     this.payload = payload;
-    this.state = {schema_version:2,reviewer:typeof saved.reviewer==="string" ? saved.reviewer : "",transcripts:{},confirmations:{},clip_reviews:{},evidence_reviews:{}};
+    this.state = {schema_version:2,reviewer:typeof saved.reviewer==="string" ? saved.reviewer : "",transcripts:{},confirmations:{},clip_reviews:{},evidence_reviews:{},dialogue_policy_revision:1};
     this.selections=new Set((payload.clip_selections ?? []).map(c=>JSON.stringify([c.officer_id,c.clip_id])));
     for(const [key,change] of Object.entries(saved.clip_reviews ?? {})) {
       if(change && key===JSON.stringify([change.officer_id,change.clip_id]) && this.selections.has(key) && ["removed","confirmed"].includes(change.status)) this.state.clip_reviews[key]=change;
@@ -21,6 +21,14 @@ globalThis.AFPDReviewState = class AFPDReviewState {
       for(const id of confirmation.clip_ids) {
         const key=JSON.stringify([confirmation.officer_id,id]);
         if(this.selections.has(key) && !this.state.evidence_reviews[key]) this.state.evidence_reviews[key]={officer_id:confirmation.officer_id,clip_id:id,included:true,reviewed_at:confirmation.confirmed_at,reviewed_by:confirmation.confirmed_by,migrated_from:"association_confirmation"};
+      }
+    }
+    // A one-time policy migration clears stale checked context without deleting review history.
+    if(saved.dialogue_policy_revision!==1) for(const selection of payload.clip_selections ?? []) {
+      if(selection.evidence===false && ["transcript_dialogue","unassigned_context"].includes(selection.attribution_basis)) {
+        const key=JSON.stringify([selection.officer_id,selection.clip_id]);
+        const previous=this.state.evidence_reviews[key];
+        if(previous?.included) this.state.evidence_reviews[key]={officer_id:selection.officer_id,clip_id:selection.clip_id,included:false,reviewed_by:null,reviewed_at:null,reason:selection.context_reason,policy_migration:"Unanswered or unresolved context is unchecked",previous_choice:previous};
       }
     }
     for(const [id,change] of Object.entries(saved.transcripts ?? {})) {
@@ -82,6 +90,14 @@ globalThis.AFPDReviewState = class AFPDReviewState {
     const confirmed=Object.values(this.state.confirmations);
     const changes=Object.entries(this.state.transcripts).map(([id,c])=>({clip_id:id,...c,current_source_transcript:this.payload.clips[id].transcript,source_changed_since_edit:c.original_transcript!==this.payload.clips[id].transcript}));
     const clipReviews=(this.payload.clip_selections ?? []).map(c=>({...c,status:this.evidenceSelected(c.officer_id,c.clip_id)?"evidence":"context",previous_clip_review:this.clipReview(c.officer_id,c.clip_id),reviewed_by:this.state.evidence_reviews[JSON.stringify([c.officer_id,c.clip_id])]?.reviewed_by ?? null,reviewed_at:this.state.evidence_reviews[JSON.stringify([c.officer_id,c.clip_id])]?.reviewed_at ?? null,evidence_selected:this.evidenceSelected(c.officer_id,c.clip_id),originally_evidence:c.evidence===true,evidence_review:this.state.evidence_reviews[JSON.stringify([c.officer_id,c.clip_id])] ?? null}));
+    const radioGroups=new Map();
+    for(const row of clipReviews.filter(r=>r.evidence_selected)) for(const radioId of row.evidence_radio_ids ?? []) {
+      const key=JSON.stringify([row.officer_id,radioId,row.date,row.talkgroup]);
+      if(!radioGroups.has(key))radioGroups.set(key,{officer_id:row.officer_id,radio_id:radioId,date:row.date,talkgroup:row.talkgroup,clip_ids:[],exchange_ids:[],assessment:"Provisional evidence; personal verification is separate."});
+      const group=radioGroups.get(key);group.clip_ids.push(row.clip_id);
+      group.exchange_ids=[...new Set([...group.exchange_ids,...(row.dialogue_exchanges??[]).filter(e=>e.target_radio_id===radioId).map(e=>e.exchange_id)])];
+    }
+    const radioEvidence=[...radioGroups.values()];
     const reviewsByClip=new Map();
     for(const item of clipReviews) {if(!reviewsByClip.has(item.clip_id)) reviewsByClip.set(item.clip_id,[]);reviewsByClip.get(item.clip_id).push(item);}
     const clips=Object.fromEntries(Object.entries(this.payload.clips).map(([id,c])=>[id,{...c,original_transcript:c.transcript,transcript:this.transcript(id),transcript_changed:!!this.state.transcripts[id],transcript_change:this.state.transcripts[id] ?? null,personal_clip_reviews:reviewsByClip.get(id) ?? [],confirmed_in_evidence:confirmed.filter(r=>r.clip_ids.includes(id)).map(r=>({record_id:r.record_id,officer_id:r.officer_id,radio_id:r.radio_id,confirmed_by:r.confirmed_by,confirmed_at:r.confirmed_at}))}]));
@@ -89,6 +105,6 @@ globalThis.AFPDReviewState = class AFPDReviewState {
       record.personal_reviews=confirmed.filter(c=>c.record_id===record.record_id);
       record.evidence_transcript_changes=changes.filter(c=>{const clip=clips[c.clip_id];return clip.date===record.date && clip.talkgroup===record.talkgroup && record.clips.includes(clip.number);});
     }
-    return {export_schema_version:3,evidence_clips:clipReviews.filter(r=>r.evidence_selected),context_clips:clipReviews.filter(r=>!r.evidence_selected),evidence_changes:Object.values(this.state.evidence_reviews),removed_from_evidence_clips:clipReviews.filter(r=>r.originally_evidence && !r.evidence_selected),clip_reviews:clipReviews,legacy_clip_reviews:Object.values(this.state.clip_reviews),removed_clips:clipReviews.filter(r=>!r.evidence_selected && (r.originally_evidence || r.previous_clip_review?.status==="removed")),confirmed_clips:clipReviews.filter(r=>r.evidence_selected && r.previous_clip_review?.status==="confirmed"),exported_at:at,reviewer:this.state.reviewer,notice:"AI assessments and prior source confirmations are preserved separately. Personal confirmations are locally recorded reviewer assertions, not authenticated server updates.",source,clips,transcript_changes:changes,confirmed_associations:confirmed};
+    return {export_schema_version:4,radio_evidence:radioEvidence,evidence_clips:clipReviews.filter(r=>r.evidence_selected),context_clips:clipReviews.filter(r=>!r.evidence_selected),evidence_changes:Object.values(this.state.evidence_reviews),removed_from_evidence_clips:clipReviews.filter(r=>r.originally_evidence && !r.evidence_selected),clip_reviews:clipReviews,legacy_clip_reviews:Object.values(this.state.clip_reviews),removed_clips:clipReviews.filter(r=>!r.evidence_selected && (r.originally_evidence || r.previous_clip_review?.status==="removed")),confirmed_clips:clipReviews.filter(r=>r.evidence_selected && r.previous_clip_review?.status==="confirmed"),exported_at:at,reviewer:this.state.reviewer,notice:"AI assessments and prior source confirmations are preserved separately. Personal confirmations are locally recorded reviewer assertions, not authenticated server updates.",source,clips,transcript_changes:changes,confirmed_associations:confirmed};
   }
 };

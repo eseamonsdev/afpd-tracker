@@ -122,3 +122,25 @@ test('unchecking evidence invalidates a dependent personal association without c
  const reload=new Review(input,review.state);assert.equal(reload.export().confirmed_associations.length,0);
  assert.equal(reload.export().source.associations[0].evidence,'Uncertain original');
 });
+
+test('radio evidence uses the supported target rather than the transmitting caller and excludes unanswered clips',()=>{
+ const input=structuredClone(payload);input.clip_selections=[
+ {officer_id:'one',clip_id:'shared',date:'2026-10-01',talkgroup:6001,evidence:true,transmitter_radio_ids:['caller'],evidence_radio_ids:['123'],dialogue_exchanges:[{target_radio_id:'123',exchange_id:'pair'}]},
+ {officer_id:'one',clip_id:'other',date:'2026-10-02',talkgroup:6001,evidence:false,transmitter_radio_ids:['other-caller'],evidence_radio_ids:[]}];
+ const review=new Review(input);let out=review.export();
+ assert.equal(out.radio_evidence.length,1);assert.equal(out.radio_evidence[0].radio_id,'123');assert.equal(out.radio_evidence[0].clip_ids[0],'shared');
+ review.setEvidence('one','other',true);assert.equal(review.export().radio_evidence.length,1);
+ review.setEvidence('one','shared',false);assert.equal(review.export().radio_evidence.length,0);
+ assert.equal(Object.keys(review.export().clips).length,2);
+});
+
+test('unanswered context clears stale checked choices once and records the old decision in export',()=>{
+ const input=structuredClone(payload);input.clip_selections=[{officer_id:'one',clip_id:'shared',evidence:false,attribution_basis:'transcript_dialogue',context_reason:'No answer',evidence_radio_ids:[]}];
+ const saved={reviewer:'Eric',evidence_reviews:{'["one","shared"]':{officer_id:'one',clip_id:'shared',included:true,reviewed_by:'Eric',reviewed_at:'earlier'}}};
+ const review=new Review(input,saved);assert.equal(review.evidenceSelected('one','shared'),false);
+ assert.equal(review.export().evidence_changes[0].previous_choice.included,true);assert.equal(review.export().radio_evidence.length,0);
+ // A later deliberate reviewer choice remains possible, with no inferred radio attribution.
+ review.setEvidence('one','shared',true);
+ assert.equal(new Review(input,review.state).evidenceSelected('one','shared'),true);
+ assert.equal(review.export().radio_evidence.length,0);
+});
