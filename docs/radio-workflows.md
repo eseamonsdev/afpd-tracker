@@ -43,6 +43,11 @@ audio or start transcription. Completed runs do not keep processing future days.
 
 ## Audio behavior
 
+Downloads do not run a test suite or require officer associations, transcripts,
+or player checks. Preserved source metadata sufficient for the downloader is
+the input requirement. Verified audio checkpoints are saved before site rendering,
+so an unrelated page-build error cannot prevent saved download progress.
+
 Preserved metadata must already exist. The action uses local staging metadata or fetches only the requested metadata file from remote staging. Existing queue checkpoints resume.
 The downloader skips saved audio and known failures, fetches sequentially, waits
 **1,000 milliseconds after every attempt**, and publishes a checkpoint every 300 calls.

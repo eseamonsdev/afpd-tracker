@@ -46,9 +46,12 @@ def run(day, talkgroup, branch, mode='download', proof='', pause_ms=DEFAULT_PAUS
 
 
 def publish(build=True):
+    # Persist verified downloads before rendering pages, which also builds
+    # unrelated officer associations. A rendering error must not lose progress.
+    subprocess.run(['bash', 'scripts/push_openmhz_import.sh'], check=True)
     if build:
         subprocess.run(['npm', 'run', 'build'], check=True)
-    subprocess.run(['bash', 'scripts/push_openmhz_import.sh'], check=True)
+        subprocess.run(['bash', 'scripts/push_openmhz_import.sh'], check=True)
 
 
 if __name__ == '__main__':

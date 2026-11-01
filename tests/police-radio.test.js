@@ -552,7 +552,9 @@ test("combined dated evidence retains old uncertain rows, explicit confirmations
   assert.ok(days["2026-10-25"]["14590313"].some(e => e.name === "Delton L. Choates"));
   assert.equal(days["2026-10-27"]["14590023"][0].status, "confirmed");
   assert.equal(days["2026-10-30"]["14590221"][0].status, "confirmed");
-  assert.ok(associations["14590221"].some(e => e.name === "Sammantha J. Halladay" && e.status === "strong"));
+  assert.equal(days["2026-10-30"]["14590221"][0].name, "Sammantha J. Halladay");
+  assert.equal(days["2026-10-30"]["14590221"][0].evidence_days, 1);
+  assert.equal(associations["14590221"], undefined, "a single confirmed date is not a general strong association");
 });
 
 test("association information opens by hover, focus and tap without playing the clip", async () => {

@@ -1,5 +1,6 @@
 import hashlib
 import json
+import subprocess
 from pathlib import Path
 import sys
 import tempfile
@@ -241,8 +242,21 @@ class AudioRunnerTests(unittest.TestCase):
             audio_runner.publish(build=True)
         self.assertEqual(command.call_args_list, [
             mock_call(['bash', 'scripts/push_openmhz_import.sh'], check=True),
+            mock_call(['bash', 'scripts/push_openmhz_import.sh'], check=True),
             mock_call(['npm', 'run', 'build'], check=True),
             mock_call(['bash', 'scripts/push_openmhz_import.sh'], check=True),
+        ])
+
+    def test_download_checkpoint_is_saved_before_a_site_build_failure(self):
+        def execute(command, **kwargs):
+            if command == ['npm', 'run', 'build']:
+                raise subprocess.CalledProcessError(1, command)
+        with patch.object(audio_runner.subprocess, 'run', side_effect=execute) as command:
+            with self.assertRaises(subprocess.CalledProcessError):
+                audio_runner.publish(build=True)
+        self.assertEqual(command.call_args_list, [
+            mock_call(['bash', 'scripts/push_openmhz_import.sh'], check=True),
+            mock_call(['npm', 'run', 'build'], check=True),
         ])
 
 
