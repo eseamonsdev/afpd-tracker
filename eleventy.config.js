@@ -1,4 +1,5 @@
 import { buildAssociationReview } from "./lib/build-association-review.js";
+import { withProfileRadioIdentifiers } from "./lib/profile-radio-identifiers.js";
 import { buildOfficerAssociations } from "./lib/build-officer-associations.js";
 import fs from "node:fs";
 import { validateProfileTabs } from "./lib/profile-tabs.js";
@@ -125,12 +126,13 @@ export default function (eleventyConfig) {
     // Only entities are exposed in these groups.
     const entityByID = buildByID(loadedEntityFiles);
 
+    const radioProfiles=JSON.parse(fs.readFileSync("public/records/openmhz/officer-associations.json","utf8")).profiles;
     const all = Object.create(null);
     const byType = Object.create(null);
     byType["police-radio-excerpt-page"] = [];
 
     for (const [id, entity] of Object.entries(entityByID)) {
-      const resolvedEntity = resolveRefs(entity, byID);
+      const resolvedEntity = withProfileRadioIdentifiers(resolveRefs(entity, byID),radioProfiles);
       validateProfileTabs(resolvedEntity);
 
       all[id] = resolvedEntity;

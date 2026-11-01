@@ -88,6 +88,23 @@ permalink: "{{ officerPage.url }}"
                   <h3>Radio ID</h3>
                   <p>A radio ID is the numeric identifier transmitted by a radio device and shown in recording metadata. An officer may use more than one radio, and a device may be shared or reassigned. A radio ID is distinct from the officer’s spoken call sign.</p>
                 {%- endif -%}
+                {%- if identifierType == "radio-id" -%}
+                  {%- if officerPage.radio_identifiers | length -%}
+                  <p>Radio associations use the same dated evidence and exclusions as the <a href="/police-radio-resources/#radio-mappings-panel">radio resources table</a>. Evidence counts describe associations, not proof of identity or transcript verification.</p>
+                  <div class="csv-table-scroll" tabindex="0" role="region" aria-label="Radio ID observations and supporting evidence">
+                    <table class="csv-table"><thead><tr><th scope="col">Radio ID</th><th scope="col">Evidence days</th><th scope="col">Evidence dates</th><th scope="col">Association</th><th scope="col">Supporting evidence</th></tr></thead><tbody>
+                    {%- for radio in officerPage.radio_identifiers -%}
+                      <tr><th scope="row"><code>{{ radio.radio_id | escape }}</code></th><td>{{ radio.evidence_days }}</td><td>{% for date in radio.evidence_dates %}<time datetime="{{ date | escape }}">{{ date | escape }}</time>{% if not loop.last %}; {% endif %}{% else %}No counted evidence dates{% endfor %}</td><td>{{ radio.status_label | escape }}</td><td><details><summary>View dated evidence and supporting clips</summary>
+                        {%- for day in radio.evidence -%}
+                          <p><strong>{{ day.date | escape }} · {{ day.talkgroup }}</strong>{% if day.url %} · <a href="{{ day.url | escape }}">Listen in day archive</a>{% endif %}{% if day.clips | length %}{% if day.review_url %} · <a href="{{ day.review_url | escape }}">Review clips {{ day.clips | join(", ") | escape }}</a>{% else %} · Clips {{ day.clips | join(", ") | escape }}{% endif %}{% endif %}</p>
+                          <ul>{%- for record in day.records -%}<li>{{ record.evidence | escape }}{% if record.source_url %} <a href="{{ record.source_url | escape }}">{{ record.source_label | default("Source", true) | escape }}</a>{% endif %}</li>{%- endfor -%}</ul>
+                        {%- endfor -%}
+                      </details></td></tr>
+                    {%- endfor -%}
+                    </tbody></table>
+                  </div>
+                  {%- else -%}<p>No Radio ID documented in the cited records for this officer.</p>{%- endif -%}
+                {%- else -%}
                 {%- set observationsByType = observedOfficerIds | groupby("type") -%}
                 {%- set observations = observationsByType[identifierType] or [] -%}
                 {%- if observations | length -%}
@@ -101,6 +118,7 @@ permalink: "{{ officerPage.url }}"
                   </div>
                 {%- else -%}
                   <p>No {{ identifierTitle | escape }} documented in the cited records for this officer.</p>
+                {%- endif -%}
                 {%- endif -%}
               {%- endfor -%}
             {% endif %}{% if section.descriptions and section.descriptions | length %}

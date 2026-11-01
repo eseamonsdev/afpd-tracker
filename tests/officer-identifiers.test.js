@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import test from "node:test";
 
+const sharedProfiles=JSON.parse(fs.readFileSync("public/records/openmhz/officer-associations.json","utf8")).profiles;
 const labels = { "call-sign": "Call Sign", "ucjis-user-id": "UCJIS User ID", "radio-id": "Radio ID" };
 
 test("built officer profiles keep each identifier in its own evidence table", () => {
@@ -16,7 +17,7 @@ test("built officer profiles keep each identifier in its own evidence table", ()
     assert.doesNotMatch(html, /Observed Agency IDs/);
     assert.match(html, /Officer Name: \[UCJIS ID\] - \[Full Name\]/);
     for (const [type, label] of Object.entries(labels)) {
-      const observations = officer.observed_officer_ids.filter(row => row.type === type);
+      const observations = type === "radio-id" ? (sharedProfiles[slug]??[]).map(row=>({id:row.radio_id})) : officer.observed_officer_ids.filter(row => row.type === type);
       const table = html.match(new RegExp(`aria-label="${label} observations and supporting evidence"[\\s\\S]*?<tbody>([\\s\\S]*?)</tbody>`));
       if (!observations.length) {
         assert.equal(table, null, `${slug}: no invented ${label} table`);
