@@ -689,3 +689,10 @@ test("an empty day displays zero out of zero for both progress counts", async ()
   assert.equal(f.get("transcription-count").textContent, "0 / 0");
   assert.equal(f.get("verification-count").textContent, "0 / 0");
 });
+
+test('current shared schema carries a two-date possible association on 6001',async()=>{
+ const associations={schema_version:4,profiles:{},days:{},associations:{'14590026':[{officer_id:'one',name:'Two Date Officer',status:'possible',evidence_days:2,evidence_dates:['2026-09-09','2026-09-10']}]}};
+ const f=await playerFixture([{epoch:1789100000,displayed_seconds:2,original_filename:'one.m4a',radio_ids:[14590026]}],undefined,'2026-09-11','',false,associations);
+ assert.match(f.get('clips').children[0].children[1].textContent,/Two Date Officer · Possible association/);
+ f.select(0);await f.settle();assert.match(f.get('current-radio-ids').textContent,/Two Date Officer · Possible association/);
+});

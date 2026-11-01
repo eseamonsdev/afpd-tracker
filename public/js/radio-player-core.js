@@ -175,11 +175,11 @@ function createIdentity(getDate) {
     try {
       const response = await fetch("/records/openmhz/officer-associations.json");
       const data = response.ok ? await response.json() : null;
-      if ([2, 3].includes(data?.schema_version) && data.days && typeof data.days === "object") {
+      if ([2, 3, 4].includes(data?.schema_version) && data.days && typeof data.days === "object") {
         officerDays = data.days;
         withheldDates = data.withheld_dates ?? {};
         // Thresholds and conflict decisions are generated once at build time.
-        strongAssociations = data.schema_version === 3 ? data.associations ?? {} : {};
+        strongAssociations = [3, 4].includes(data.schema_version) ? data.associations ?? {} : {};
       }
     } catch { /* Numeric IDs remain available when evidence cannot load. */ }
   }

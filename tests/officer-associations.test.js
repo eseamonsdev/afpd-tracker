@@ -13,7 +13,8 @@ test("thresholds count distinct confirmed dates, never clips, records or talkgro
   assert.equal(result.labels.days["2026-10-01"]["123"][0].evidence_days, 1);
   assert.equal(result.labels.associations["123"], undefined);
   rows.push(record("2026-10-02"), record("2026-10-03", { status: "supporting" }));
-  assert.equal(compileOfficerAssociations(source(rows)).labels.associations["123"], undefined);
+  assert.equal(compileOfficerAssociations(source(rows)).labels.associations["123"][0].status, "possible");
+  assert.equal(compileOfficerAssociations(source(rows)).labels.associations["123"][0].evidence_days, 2);
   rows.push(record("2026-10-03"));
   assert.equal(compileOfficerAssociations(source(rows)).labels.associations["123"][0].status, "possible");
   rows.push(record("2026-10-04"));
@@ -76,7 +77,8 @@ test("review mode counts uncertain and conflicting dates without inventing owner
   assert.equal(result.labels.days["2026-10-01"]["123"][0].evidence[0].confirmed_by, null);
   assert.deepEqual(result.labels.withheld_dates, {});
   input.associations[0].status = "rejected";
-  assert.equal(compileOfficerAssociations(input).labels.associations["123"].filter(e => e.officer_id === "one").length, 0);
+  assert.equal(compileOfficerAssociations(input).labels.associations["123"].find(e => e.officer_id === "one").evidence_days, 2);
+  assert.equal(compileOfficerAssociations(input).labels.associations["123"].find(e => e.officer_id === "one").status, "possible");
 });
 
 test("all workbook rows, old table pairs, conflicts, and same-clip alternatives survive the union", () => {
