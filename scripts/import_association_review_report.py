@@ -59,7 +59,7 @@ def merge(report_path, root):
   badge=next(summary.find(lambda n:'badge' in n.attrs.get('class','').split()),None)
   refs=clips_for(e)
   item={'report_id':id,'summary':summary.text(),'ai_assessment':badge.text() if badge else '',
-        'evidence':paras[0] if paras else '', 'report_notes':paras[1:], 'clip_references':refs,'review_status':'pending'}
+        'evidence':paras[0] if paras else '', 'report_notes':[p for p in paras[1:] if not p.startswith('Search-matched full-name candidates: ')], 'original_report_notes':paras[1:], 'clip_references':refs,'review_status':'pending'}
   if id.startswith(('A','O')):
    item['source_record_ids']=[n.text() for n in e.find(lambda n:n.tag=='strong') if any(r.get('record_id')==n.text() for r in source['associations']+source.get('observations',[]))]
    if id.startswith('O'):
@@ -79,12 +79,12 @@ def merge(report_path, root):
    if not slug:
     slug=re.sub('[^a-z0-9]+','-',name.lower()).strip('-')
     source['officers'].setdefault(slug,{'name':name,'heard':cue[4],'url':'','candidate_source':'AI report search match; roster identity unverified'})
-   if slug!='philip-w-s-craig':candidate_ids.append(slug)
+   if slug!='philip-w-s-craig' and slug not in source.get('excluded_candidates',{}):candidate_ids.append(slug)
   if not candidate_ids:
    family=cue[4].removeprefix('search family ').strip()
    # Search families remain hypotheses, including similarly spelled roster names.
    terms=[t.lower() for t in re.split(r'[/ ]',family) if len(t)>2]
-   candidate_ids=[k for k,v in source['officers'].items() if k!='philip-w-s-craig' and any(t in v['name'].lower() for t in terms)]
+   candidate_ids=[k for k,v in source['officers'].items() if k!='philip-w-s-craig' and k not in source.get('excluded_candidates',{}) and any(t in v['name'].lower() for t in terms)]
   if not candidate_ids:
    slug='unresolved-cue-'+re.sub('[^a-z0-9]+','-',cue[4].lower()).strip('-')
    source['officers'].setdefault(slug,{'name':cue[4]+' (unresolved search cue)','heard':cue[4],'url':''})
@@ -98,7 +98,7 @@ def merge(report_path, root):
   leads.append(item)
  source['ai_reviews']=reviews
  source['review_leads']=leads
- source['excluded_candidates']={'philip-w-s-craig':'Excluded by author: left the department years before these recordings. Original records preserved for provenance only.'}
+ source.setdefault('excluded_candidates',{}).setdefault('philip-w-s-craig','Excluded by author: left the department years before these recordings. Original records preserved for provenance only.')
  source['review_notice']='This table contains officer–radio associations compiled and reviewed with AI assistance. Personal verification by the site’s author is pending. Unless explicitly marked personally verified, associations remain provisional and may include errors, conflicting evidence, or alternative identities.'
  source['ai_report_import']={'filename':report_path.name,'sha256':hashlib.sha256(raw).hexdigest(),'original_associations':len(source['associations']),'existing_claim_reviews':sum(r['report_id'].startswith('A') for r in reviews),'exception_reviews':sum(r['report_id'].startswith('O') for r in reviews),'new_search_hits':sum(r['report_id'].startswith('N') for r in leads),'variant_hits':sum(r['report_id'].startswith('V') for r in leads),'note':'AI search leads do not count toward association thresholds. Context uses adjacent current-manifest recordings, matched by stable filename, not the next transmitter as an identity.'}
  file.write_text(json.dumps(source,indent=2,ensure_ascii=False)+'\n')

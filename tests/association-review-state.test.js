@@ -37,3 +37,12 @@ test('merge retains every original record and treats all 733 new report hits as 
  assert.ok(current.review_leads.every(r=>!r.candidate_officer_ids.includes('philip-w-s-craig')));
  const richardson=current.review_leads.find(r=>r.report_id==='N012');assert.equal(richardson.talkgroup,5922);assert.ok(richardson.candidate_officer_ids.includes('cole-g-richardson'));
 });
+
+test('excluded former employees cannot be restored or newly confirmed; transcript edits survive',()=>{
+ const payload={source:{officers:{former:{name:'Former Officer'}},excluded_candidates:{former:'Left before recordings'},associations:[]},clips:{c:{date:'2026-10-01',talkgroup:6001,transcript:'Original'}}};
+ const saved={reviewer:'Eric',transcripts:{c:{text:'Edited',original_transcript:'Original'}},confirmations:{old:{confirmed:true,officer_id:'former',clip_ids:['c']}}};
+ const state=new Review(payload,saved);
+ assert.equal(Object.keys(state.state.confirmations).length,0);
+ assert.equal(state.transcript('c'),'Edited');
+ assert.throws(()=>state.confirm('new',{officer_id:'former',radio_id:'123',date:'2026-10-01',talkgroup:6001,clip_ids:['c']}),/eligible/);
+});

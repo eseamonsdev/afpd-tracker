@@ -39,3 +39,18 @@ test("real review includes both talkgroups, AI context and the full export paylo
  assert.match(html,/https:\/\/media\.afpd-accountability\.com\/openmhz\//);
  const ids=[...html.matchAll(/\sid="([^"]+)"/g)].map(m=>m[1]);assert.equal(ids.length,new Set(ids).size);
 });
+
+test("employment exclusions remove identities from headings, choices and labels while retaining original evidence and audio for export", async()=>{
+ const input={...source,excluded_candidates:{one:"Left before recordings"},associations:[record("one","2026-10-01",[1])],review_leads:[{record_id:"lead",date:"2026-10-02",talkgroup:6001,clips:[2],candidate_officer_ids:["one","two"],evidence:"Unresolved cue"}]};
+ const review=selectAssociationReview(input,manifest);
+ assert.deepEqual(review.people.map(p=>p.id),["two"]);
+ assert.equal(Object.keys(review.clipCatalog).length,2);
+ const html=renderAssociationReview(review,input,"","");
+ const visible=html.split('<script type="application/json"')[0];
+ assert.ok(!visible.includes("First Officer"));
+ assert.ok(!visible.includes('value="one"'));
+ const {compileOfficerAssociations}=await import('../lib/build-officer-associations.js');
+ const labels=compileOfficerAssociations({...input,schema_version:1});
+ assert.deepEqual(labels.labels.days,{});
+ assert.ok(!labels.summaryCsv.includes("First Officer"));
+});
