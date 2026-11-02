@@ -1,0 +1,649 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-31",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1793481157.m4a": {
+      "index": 81,
+      "epoch": 1793481157,
+      "sha256": "fe3c2d7ba9e189743bdf0e3a0a7d2c8e862ef08883b283dbb8bb2b5b8a8cfd6a",
+      "passes": {
+        "original": {
+          "text": "I went northbound from 17, North County, and I haven't seen anything.",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " I went northbound from 17, North County, and I haven't seen anything.",
+              "avg_logprob": -0.3553359121084213,
+              "no_speech_prob": 0.07306905090808868,
+              "compression_ratio": 0.971830985915493
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I went northbound from 7th to 8th, North County, and I haven't seen anything.",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " I went northbound from 7th to 8th, North County, and I haven't seen anything.",
+              "avg_logprob": -0.5005572686592737,
+              "no_speech_prob": 0.10438097268342972,
+              "compression_ratio": 0.9871794871794872
+            }
+          ]
+        },
+        "context": {
+          "text": "I went northbound from 17, North County, and I haven't seen anything.",
+          "prompt": "I know who it is. I have a working relationship with him, so let's see what happens. Are they at the house? I'm at the house, but he's not here",
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " I went northbound from 17, North County, and I haven't seen anything.",
+              "avg_logprob": -0.38758886605501175,
+              "no_speech_prob": 0.059927232563495636,
+              "compression_ratio": 0.971830985915493
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793481164.m4a": {
+      "index": 82,
+      "epoch": 1793481164,
+      "sha256": "1305fa9bb19b4d65be5dce13422b95d2817cda865cc994e3884d7a84ce2fe33f",
+      "passes": {
+        "original": {
+          "text": "I've been sitting by Liberty Edition Center. I haven't seen anything.",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.48,
+              "text": " I've been sitting by Liberty Edition Center. I haven't seen anything.",
+              "avg_logprob": -0.3855724318159951,
+              "no_speech_prob": 0.014143673703074455,
+              "compression_ratio": 0.9583333333333334
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I've been sitting by Liberty Edition Center, I haven't seen anything.",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.6000000000000005,
+              "text": " I've been sitting by Liberty Edition Center, I haven't seen anything.",
+              "avg_logprob": -0.3492071446445253,
+              "no_speech_prob": 0.006988855544477701,
+              "compression_ratio": 0.9452054794520548
+            }
+          ]
+        },
+        "context": {
+          "text": "I've been sitting by Liberty Addition Center, I haven't seen anything.",
+          "prompt": "Are they at the house? I'm at the house, but he's not here I went northbound from 17, North County, and I haven't seen anything.",
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.48,
+              "text": " I've been sitting by Liberty Addition Center, I haven't seen anything.",
+              "avg_logprob": -0.3467437279851813,
+              "no_speech_prob": 0.05414269119501114,
+              "compression_ratio": 0.958904109589041
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793481208.m4a": {
+      "index": 83,
+      "epoch": 1793481208,
+      "sha256": "2a4271473a61b0dfb4f24475853c03dc6141669a87848e3a95e9a5dc995b7b44",
+      "passes": {
+        "original": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.811018298069636,
+              "no_speech_prob": 0.7392964959144592,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.8803915977478027,
+              "no_speech_prob": 0.6510351896286011,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm at the house, but I haven't seen anything.",
+          "prompt": "I'm at the house, but he's not here I went northbound from 17, North County, and I haven't seen anything. I've been sitting by Liberty Edition Center. I haven't seen anything.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm at the house, but I haven't seen anything.",
+              "avg_logprob": -0.6152260489761829,
+              "no_speech_prob": 0.6700601577758789,
+              "compression_ratio": 0.8518518518518519
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793481498.m4a": {
+      "index": 84,
+      "epoch": 1793481498,
+      "sha256": "58328f091ddfe09f42ac797664b50352e685dced9550717854bfeff7efd6e9b2",
+      "passes": {
+        "original": {
+          "text": "I'm checking nearby near roads from parking lots. No contact.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.32,
+              "text": " I'm checking nearby near roads from parking lots. No contact.",
+              "avg_logprob": -0.6335010007023811,
+              "no_speech_prob": 0.0689205601811409,
+              "compression_ratio": 0.9838709677419355
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm checking nearby neighborhoods and parking lots. No contact.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " I'm checking nearby neighborhoods and parking lots. No contact.",
+              "avg_logprob": -0.5815821250279745,
+              "no_speech_prob": 0.0851312205195427,
+              "compression_ratio": 0.9545454545454546
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm checking nearby near roads from parking lots. No contact.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.32,
+              "text": " I'm checking nearby near roads from parking lots. No contact.",
+              "avg_logprob": -0.6335010007023811,
+              "no_speech_prob": 0.0689205601811409,
+              "compression_ratio": 0.9838709677419355
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793481547.m4a": {
+      "index": 85,
+      "epoch": 1793481547,
+      "sha256": "a6aa5ad0394aadccef09fc189888cce2f03a905bbe834834cbc16bd9e904925f",
+      "passes": {
+        "original": {
+          "text": "Still nothing on South North County.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Still nothing on South North County.",
+              "avg_logprob": -0.4297193080186844,
+              "no_speech_prob": 0.053186703473329544,
+              "compression_ratio": 0.8571428571428571
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Still nothing on South North Carolina.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.1,
+              "text": " Still nothing on South North Carolina.",
+              "avg_logprob": -0.6117989480495453,
+              "no_speech_prob": 0.030181219801306725,
+              "compression_ratio": 0.8636363636363636
+            }
+          ]
+        },
+        "context": {
+          "text": "Still nothing on South North County.",
+          "prompt": "I'm checking nearby near roads from parking lots. No contact.",
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Still nothing on South North County.",
+              "avg_logprob": -0.31394811272621154,
+              "no_speech_prob": 0.008027654141187668,
+              "compression_ratio": 0.8571428571428571
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793483549.m4a": {
+      "index": 86,
+      "epoch": 1793483549,
+      "sha256": "66297aa26016335141a4fdb748f8550aadadb122d8e596559d258faab2e7898c",
+      "passes": {
+        "original": {
+          "text": "That was good.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " That was good.",
+              "avg_logprob": -0.7037069627216884,
+              "no_speech_prob": 0.13528169691562653,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "filtered": {
+          "text": "That was good.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " That was good.",
+              "avg_logprob": -0.5845422915049961,
+              "no_speech_prob": 0.117674320936203,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "That was good.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " That was good.",
+              "avg_logprob": -0.7037069627216884,
+              "no_speech_prob": 0.13528169691562653,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793484170.m4a": {
+      "index": 87,
+      "epoch": 1793484170,
+      "sha256": "02bb899fdc41d8a00258e89b38d71d7bd59bd52eb1077d001b52e1004a5158a0",
+      "passes": {
+        "original": {
+          "text": "But",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " But",
+              "avg_logprob": -0.5148542672395706,
+              "no_speech_prob": 0.606784462928772,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "filtered": {
+          "text": "But",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " But",
+              "avg_logprob": -0.5262230783700943,
+              "no_speech_prob": 0.44887444376945496,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "context": {
+          "text": "But",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " But",
+              "avg_logprob": -0.5148542672395706,
+              "no_speech_prob": 0.606784462928772,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793484183.m4a": {
+      "index": 88,
+      "epoch": 1793484183,
+      "sha256": "314b573a669bb3927de44f2f25c1bc9905d3bd6b3de6861c20f9a636194d702c",
+      "passes": {
+        "original": {
+          "text": "Yeah, I got you",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, I got you",
+              "avg_logprob": -0.7045280784368515,
+              "no_speech_prob": 0.26081612706184387,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah, I got you.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, I got you.",
+              "avg_logprob": -0.6237598525153266,
+              "no_speech_prob": 0.2734656035900116,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "You got you",
+          "prompt": "But",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You got you",
+              "avg_logprob": -0.7317593197027842,
+              "no_speech_prob": 0.177882120013237,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793484185.m4a": {
+      "index": 89,
+      "epoch": 1793484185,
+      "sha256": "81d7807d967e7ce8f8c9e2072484ef43d9d24ef113fc7e0e6a4ae6853ca3f26d",
+      "passes": {
+        "original": {
+          "text": "Sounds good. I don't know if people have already searched different places yet, so maybe just confirm that we don't double-take it or whatever.",
+          "prompt": null,
+          "duration_seconds": 8.96,
+          "token_limit": 96,
+          "token_count": 33,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " Sounds good. I don't know if people have already searched different places yet, so maybe just confirm that we don't double-take it or whatever.",
+              "avg_logprob": -0.2685733542722814,
+              "no_speech_prob": 0.00666196970269084,
+              "compression_ratio": 1.2327586206896552
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Sounds good. I don't know if people have already searched different places yet. So, maybe just confirm that we don't double-take it or whatever.",
+          "prompt": null,
+          "duration_seconds": 8.96,
+          "token_limit": 96,
+          "token_count": 36,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Sounds good. I don't know if people have already searched different places yet.",
+              "avg_logprob": -0.29641848641472895,
+              "no_speech_prob": 0.006743449717760086,
+              "compression_ratio": 1.2307692307692308
+            },
+            {
+              "start": 6.0,
+              "end": 9.0,
+              "text": " So, maybe just confirm that we don't double-take it or whatever.",
+              "avg_logprob": -0.29641848641472895,
+              "no_speech_prob": 0.006743449717760086,
+              "compression_ratio": 1.2307692307692308
+            }
+          ]
+        },
+        "context": {
+          "text": "Sounds good. I don't know if people have already searched different places yet, so maybe just confirm that we don't double ticket or whatever",
+          "prompt": "But Yeah, I got you",
+          "duration_seconds": 8.96,
+          "token_limit": 96,
+          "token_count": 30,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.24,
+              "text": " Sounds good. I don't know if people have already searched different places yet, so maybe just confirm that we don't double ticket or whatever",
+              "avg_logprob": -0.23195227307658042,
+              "no_speech_prob": 0.0023160548880696297,
+              "compression_ratio": 1.2260869565217392
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793484197.m4a": {
+      "index": 90,
+      "epoch": 1793484197,
+      "sha256": "f843ddb872dc232bb02bf0802a22ac827496ed2f21f187addbbbf818f33f64cd",
+      "passes": {
+        "original": {
+          "text": "Yes, I searched common areas and the surrounding neighborhoods, at least twice.",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Yes, I searched common areas and the surrounding neighborhoods, at least twice.",
+              "avg_logprob": -0.3440004951424069,
+              "no_speech_prob": 0.008404687978327274,
+              "compression_ratio": 1.0394736842105263
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yes, I search common areas and surrounding neighborhoods, at least once.",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Yes, I search common areas and surrounding neighborhoods, at least once.",
+              "avg_logprob": -0.37524184058694277,
+              "no_speech_prob": 0.014127158559858799,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "Yes, I searched common areas and the surrounding neighborhoods, at least twice.",
+          "prompt": "But Yeah, I got you Sounds good. I don't know if people have already searched different places yet, so maybe just confirm that we don't double-take it or whatever.",
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.36,
+              "text": " Yes, I searched common areas and the surrounding neighborhoods, at least twice.",
+              "avg_logprob": -0.3513701574669944,
+              "no_speech_prob": 0.006312735378742218,
+              "compression_ratio": 1.0394736842105263
+            }
+          ]
+        }
+      }
+    }
+  }
+}
