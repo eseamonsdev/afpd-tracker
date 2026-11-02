@@ -141,7 +141,7 @@ test('Sam first-name alternatives do not count as two identities and owner confi
 test('historical Sam voice identifications survive while 14590221 shared-name dates remain unassigned',()=>{
  const result=buildOfficerAssociations();
  const h='sammantha-j-halladay',s='samuel-canizalez';
- for(const [date,radio,id] of [['2026-09-24','14590100',h],['2026-10-07','14590067',h],['2026-10-08','14590067',h],['2026-09-28','14590090',s],['2026-09-28','14590066',s],['2026-10-07','14590268',s],['2026-10-30','14590221',h]]) {
+ for(const [date,radio,id] of [['2026-09-24','14590100',h],['2026-10-07','14590067',h],['2026-10-08','14590067',h],['2026-09-28','14590090',s],['2026-09-28','14590066',s],['2026-10-07','14590268',s],['2026-10-30','14590221',h],['2026-10-17','14590221',h]]) {
   const entries=result.labels.days[date][radio];
   const own=entries.find(r=>r.officer_id===id);
   assert.equal(own.status,'confirmed');
@@ -150,7 +150,7 @@ test('historical Sam voice identifications survive while 14590221 shared-name da
  }
  assert.equal(result.labels.profiles[h].find(r=>r.radio_id==='14590221').evidence_days,4);
  assert.ok(!result.labels.profiles[s].some(r=>r.radio_id==='14590221'));
- for(const date of ['2026-09-20','2026-10-13','2026-10-17'])assert.ok(!result.labels.days[date]?.['14590221']?.some(r=>[h,s].includes(r.officer_id)));
+ for(const date of ['2026-09-20','2026-10-13'])assert.ok(!result.labels.days[date]?.['14590221']?.some(r=>[h,s].includes(r.officer_id)));
 });
 
 
@@ -162,7 +162,8 @@ test("owner-accepted Neil evidence leaves unassigned leads and generates the cor
  const neil=result.labels.profiles["anthony-s-neil"];
  assert.equal(neil.length,1);
  assert.equal(neil[0].radio_id,"14590027");
- assert.equal(neil[0].evidence_days,4);
+ assert.equal(neil[0].evidence_days,5);
+ assert.ok(result.labels.days["2026-10-03"]["14590027"].some(r=>r.officer_id==="anthony-s-neil" && r.evidence.some(e=>e.clips.includes(91) && e.clips.includes(92))));
  assert.equal(neil[0].confirmed,false);
  assert.equal(result.labels.associations["14590268"]?.some(r=>r.officer_id==="anthony-s-neil")??false,false);
  const mention=source.observations.find(r=>r.report_id==="N605");
