@@ -7,6 +7,7 @@ pagination:
 permalink: "{{ excerptPage.excerpt | excerptUrl }}"
 ---
 {% extends "site-page-layout.njk" %}
+{% from "radio-navigation.njk" import radioNavigation %}
 {% from "radio-player.njk" import player %}
 {% from "radio-row.njk" import clipRow %}
 {% set excerpt = excerptPage.excerpt | radioExcerpt -%}
@@ -21,11 +22,7 @@ permalink: "{{ excerptPage.excerpt | excerptUrl }}"
   <script src="/js/police-radio-excerpt.js" defer></script>
 {% endblock %}
 {% block content %}
-    <nav class="excerpt-back-links" aria-label="Radio navigation">
-      <a href="/police-radio-excerpts/">← All radio excerpts</a>
-      <a href="/police-radio/">Full police radio archive</a>
-      <a href="/police-radio-resources/">Police Radio Resources</a>
-    </nav>
+    {{ radioNavigation(page.url, true) }}
     <div class="page-heading excerpt-heading">
       <h1>{{ title | escape }}</h1>
       {% if excerpt.description %}<p>{{ excerpt.description | escape }}</p>{% endif %}

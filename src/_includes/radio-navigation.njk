@@ -1,0 +1,11 @@
+{% macro radioLinks(currentUrl, excerptSection=false) -%}
+  <a href="/police-radio-excerpts/"{% if currentUrl == "/police-radio-excerpts/" %} aria-current="page"{% elif excerptSection %} aria-current="location"{% endif %}>Radio Excerpts</a>
+  <a href="/police-radio/"{% if currentUrl == "/police-radio/" %} aria-current="page"{% endif %}>AFPD Car-to-Car</a>
+  <a href="/police-radio-resources/"{% if currentUrl == "/police-radio-resources/" %} aria-current="page"{% endif %}>Radio Resources</a>
+  <a href="/law-2-radio/"{% if currentUrl == "/law-2-radio/" %} aria-current="page"{% endif %}>Law 2 Dispatch</a>
+{%- endmacro %}
+{% macro radioNavigation(currentUrl, excerptSection=false) -%}
+<nav class="radio-section-nav" aria-label="Police radio navigation">
+  {{ radioLinks(currentUrl, excerptSection) }}
+</nav>
+{%- endmacro %}

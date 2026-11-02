@@ -2,6 +2,7 @@
 permalink: /police-radio-resources/
 ---
 {% extends "site-page-layout.njk" %}
+{% from "radio-navigation.njk" import radioNavigation %}
 {% set resources = entities.all["entity-page-police-radio-resources"] -%}
 {% set pageTitle = resources.title ~ " | AFPD Accountability Project" -%}
 {% set pageDescription = resources.description -%}
@@ -13,7 +14,7 @@ permalink: /police-radio-resources/
 {% endblock %}
 
 {%- block content %}
-  <a class="radio-resources-back" href="/police-radio/">&larr; Police Radio</a>
+    {{ radioNavigation(page.url) }}
   <div class="page-heading">
     <h1>{{ resources.title | escape }}</h1>
     <p>{{ resources.description | escape }}</p>

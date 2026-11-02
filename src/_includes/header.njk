@@ -1,3 +1,4 @@
+{%- from "radio-navigation.njk" import radioLinks -%}
 {% macro navLink(url, label) -%}
 <a href="{{ url }}"{% if page.url == url %} aria-current="page"{% elif url != "/" and page.url and page.url.indexOf(url) == 0 %} aria-current="location"{% endif %}>{{ label }}</a>
 {%- endmacro -%}
@@ -22,7 +23,12 @@
           {{ navLink("/city-officials/", "City Officials") }}
         </div>
       </details>
-      {{ navLink("/police-radio/", "Police Radio") }}
+      <details class="personnel-nav radio-nav">
+        <summary{% if page.url and (page.url.indexOf("/police-radio") == 0 or page.url == "/law-2-radio/") %} class="is-current-section"{% endif %}>Police Radio <span class="nav-chevron" aria-hidden="true"></span></summary>
+        <div class="personnel-links">
+          {{ radioLinks(page.url, page.url and page.url.indexOf("/police-radio/excerpts/") == 0) }}
+        </div>
+      </details>
       {{ navLink("/afpd-resources/", "AFPD Resources") }}
       {{ navLink("/city-oversight/", "City Oversight") }}
     </nav>

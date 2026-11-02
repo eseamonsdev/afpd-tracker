@@ -2,8 +2,9 @@
 permalink: /law-2-radio/
 ---
 {% extends "site-page-layout.njk" %}
+{% from "radio-navigation.njk" import radioNavigation %}
 {% from "radio-player.njk" import player %}
-{% set pageTitle = "Law 2 Radio | AFPD Accountability Project" -%}
+{% set pageTitle = "Law 2 Dispatch | AFPD Accountability Project" -%}
 {% set pageDescription = "Listen to archived Law 2 Northeast recordings by date." -%}
 {% set canonicalUrl = "https://afpd-accountability.com/law-2-radio/" -%}
 
@@ -14,8 +15,9 @@ permalink: /law-2-radio/
 {% endblock %}
 
 {% block content %}
+    {{ radioNavigation(page.url) }}
     <div class="page-heading">
-      <h1>Law 2 Radio</h1>
+      <h1>Law 2 Dispatch</h1>
       <p>Recordings from Law 2 Northeast (talkgroup 5922), a dispatch channel that includes American Fork police traffic.</p>
       <p>Times shown in Mountain Time. This archive may contain only part of a day or selected calls. Numeric radio IDs identify transmitting equipment; they do not independently identify an officer.</p>
       <p class="radio-source-note">AFPD marks radio IDs also observed on AFPD’s 6001 talkgroup; it does not independently identify the speaker.</p>

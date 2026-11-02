@@ -2,6 +2,7 @@
 permalink: /police-radio-excerpts/
 ---
 {% extends "site-page-layout.njk" %}
+{% from "radio-navigation.njk" import radioNavigation %}
 {% set pageTitle = "Police Radio Excerpts | AFPD Accountability Project" -%}
 {% set pageDescription = "Browse selected AFPD car-to-car radio discussions with descriptive titles and original timestamps." -%}
 {% set canonicalUrl = "https://afpd-accountability.com/police-radio-excerpts/" -%}
@@ -9,7 +10,7 @@ permalink: /police-radio-excerpts/
   <link rel="stylesheet" href="/css/police-radio-excerpt.css">
 {% endblock %}
 {% block content %}
-    <a class="excerpt-back-link" href="/police-radio/">← Full police radio archive</a>
+    {{ radioNavigation(page.url) }}
     <div class="page-heading excerpt-heading">
       <h1>Police Radio Excerpts</h1>
       <p>Selected discussions from AFPD’s car-to-car radio talkgroup. Choose an excerpt to listen with original Mountain Time timestamps.</p>
