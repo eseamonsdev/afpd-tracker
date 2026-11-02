@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
-import {filterAssociationContext,loadAssociationEvidence} from "../lib/association-context-review.js";
+import {clipDialogueEvidence,filterAssociationContext,loadAssociationEvidence} from "../lib/association-context-review.js";
 import {selectAssociationReview, renderAssociationReview, buildAssociationReview} from "../lib/build-association-review.js";
 const source = {officers:{one:{name:"First Officer"},two:{name:"Second Officer"}}, associations:[]};
 const record = (officer_id,date,clips,extra={})=>({officer_id,date,clips,talkgroup:6001,status:"supporting",radio_id:"123",evidence:"Original uncertainty",...extra});
@@ -142,4 +142,17 @@ test("Mason dialogue review separates supported radios, backward acknowledgement
   assert.ok(rows.every(Boolean),exchange.exchange_id);
   assert.ok(rows.some(c=>c.transmitter_radio_ids.includes(exchange.target_radio_id)),exchange.exchange_id);
  }
+});
+
+
+test("owner-selected context persists by stable clip ID without asserting transmitter identity",()=>{
+ const choice={officer_id:"one",clip_id:"6001:2026-10-01:dcfems-6001-100.m4a",number:1,included:true,reviewer:"Eric",reviewed_at:"2026-11-01"};
+ const day={date:"2026-10-01",talkgroup:6001,evidence:[{clips:[1,2],owner_clip_selections:[choice]}]};
+ const selected=clipDialogueEvidence(source,"one",day,{id:choice.clip_id,number:1});
+ assert.equal(selected.evidence,true);
+ assert.equal(selected.owner_evidence_review.reviewer,"Eric");
+ assert.deepEqual(selected.evidence_radio_ids,[]);
+ assert.equal(clipDialogueEvidence(source,"two",day,{id:choice.clip_id,number:1}).evidence,false);
+ assert.equal(clipDialogueEvidence(source,"one",day,{id:"6001:2026-10-01:dcfems-6001-200.m4a",number:1}).evidence,false);
+ assert.equal(clipDialogueEvidence(source,"one",day,{id:choice.clip_id,number:9}).evidence,true);
 });
