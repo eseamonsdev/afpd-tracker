@@ -133,7 +133,7 @@ def backfill(root, ref='origin/staging', write=False):
                 continue
             stats['transcripts'] += 1
             if c.get('validated') is True: stats['verified'] += 1
-            if 'transcript_original' in c:
+            if isinstance(c.get('original_transcript'), str) and c['original_transcript'].strip():
                 stats['already_preserved'] += 1
                 continue
             name = c['original_filename']
@@ -152,7 +152,7 @@ def backfill(root, ref='origin/staging', write=False):
             if candidate['reviewed']:
                 report['warnings'].append({'date': data['date'], 'filename': name,
                     'issue': 'Earliest retained version already marked reviewed; initial AI wording is unproven'})
-            c['transcript_original'] = candidate['text']
+            c['original_transcript'] = candidate['text']
             changed = True; stats['originals_added'] += 1
             stats['different_from_current'] += candidate['text'] != text
             stats[candidate['kind']] += 1

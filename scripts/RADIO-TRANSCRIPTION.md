@@ -10,14 +10,23 @@ Consult [transcription helpers](../transcription-helpers/README.md) when reconci
 ## Preserve original and current transcripts
 
 Every published clip keeps both versions in `calls.json`: `transcript` is the
-current wording; `transcript_original` is the immutable first published wording.
+current wording; `original_transcript` is the immutable first published wording.
 Use `scripts/transcript_versions.py::set_transcript` when publishing new text:
 initial publication fills both fields, and subsequent corrections change only
-`transcript`. Never replace an existing `transcript_original`, including during
+`transcript`. Never replace an existing `original_transcript`, including during
 retranscription. Preserve all human verification flags, notes and metadata.
 For legacy clips without an original, recover history before correcting text;
 copying an already corrected current transcript cannot recover its original.
 Only human review may set `validated: true`; that flag applies to current text.
+Every archived call in every talkgroup has `original_transcript`; it is `null`
+until wording is first published. First publication fills the null value, and
+later corrections preserve it. Metadata and download writers initialize this
+field too. The site build rejects missing or incorrectly typed originals.
+
+The schema migration preserved existing saved originals exactly. Where none
+had been saved, it retained the current wording as the first saved baseline;
+that does not establish the earliest historical wording. Per-file counts are
+recorded in `findings/original-transcript-schema-migration.json`.
 
 The 6001 historical backfill searches both `calls.json` and legacy
 `transcript.md` / transcript draft files, including merge results, matching the

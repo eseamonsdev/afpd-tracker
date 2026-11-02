@@ -43,7 +43,7 @@ Radio-ID associations are supporting evidence and do not establish the speaker
 in every clip. McKay and Makai remain separate candidates. A proposed nickname
 or phonetic error is not an automatic substitution rule.
 
-Preserve `transcript_original` permanently. Keep accepted current transcripts,
+Preserve `original_transcript` permanently. Keep accepted current transcripts,
 notes and verification flags unless a specific correction is authorized. New
 machine outputs never become human-verified automatically. Retain uncertainty
 where the available evidence does not resolve it.

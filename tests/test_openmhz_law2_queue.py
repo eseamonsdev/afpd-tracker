@@ -33,7 +33,8 @@ class Law2QueueTest(unittest.TestCase):
             result = prepare(root, '2026-10-02')
             self.assertEqual(result['queued'], 1)
             queue = root / 'records-pending-review/openmhz-manifests/2026-10-02-law-2.json'
-            self.assertEqual(json.loads(queue.read_text())['calls'], calls[2:])
+            self.assertEqual(json.loads(queue.read_text())['calls'],
+                             [{**call, 'original_transcript': None} for call in calls[2:]])
             self.assertTrue(prepare(root, '2026-10-02')['resuming'])
             self.assertEqual(json.loads(queue.read_text())['count'], 1)
 

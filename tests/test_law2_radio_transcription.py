@@ -97,7 +97,9 @@ class Law2TranscriptionGuards(unittest.TestCase):
         self.assertEqual(saved['coverage'], 'unknown')
         self.assertEqual(saved['coverage_note'], self.data['coverage_note'])
         for before, after in zip(self.calls, saved['calls']):
-            self.assertEqual({k: v for k, v in after.items() if k != 'transcript'}, before)
+            self.assertEqual({k: v for k, v in after.items() if k not in ('transcript', 'original_transcript')},
+                             {k: v for k, v in before.items() if k != 'original_transcript'})
+            self.assertEqual(after['original_transcript'], after['transcript'])
             self.assertNotIn('validated', after)
         self.assertEqual(saved['calls'][1]['transcript'], '[unintelligible]')
         self.assertTrue(saved['enableTranscription'])

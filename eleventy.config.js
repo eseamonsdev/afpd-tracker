@@ -1,4 +1,5 @@
 import { buildAssociationReview } from "./lib/build-association-review.js";
+import { validateOriginalTranscripts } from "./lib/radio-transcript-schema.js";
 import { withProfileRadioIdentifiers } from "./lib/profile-radio-identifiers.js";
 import { buildOfficerAssociations } from "./lib/build-officer-associations.js";
 import fs from "node:fs";
@@ -27,6 +28,7 @@ const currencyFormatter = new Intl.NumberFormat("en-US", {
 });
 
 export default function (eleventyConfig) {
+  validateOriginalTranscripts();
   buildOfficerAssociations();
   eleventyConfig.addWatchTarget("./data/officer-association-evidence.json");
   eleventyConfig.addWatchTarget("./data/production-officer-association-baseline.json");

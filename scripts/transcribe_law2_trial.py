@@ -19,6 +19,7 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 
 from transcribe_afpd_radio import context_indices, read, sha, write
+from transcript_versions import set_transcript
 
 ROOT = Path(__file__).resolve().parents[1]
 SETTINGS = Path(__file__).with_name('radio-transcription-settings.json')
@@ -231,7 +232,7 @@ def finalize(root, passes_path, reviewed_path):
             raise ValueError('Uncertainty must remain visible in the transcript text')
         if any(p['token_cap_reached'] for p in item['passes'].values()) and not entry['needs_review']:
             raise ValueError('Token-capped clip must retain uncertainty')
-        c['transcript'] = text
+        set_transcript(c, text)
     updated['enableTranscription'] = True
     write(folder / 'calls.json', updated)
 

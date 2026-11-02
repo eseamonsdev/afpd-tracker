@@ -3,6 +3,9 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 
 spec = importlib.util.spec_from_file_location('personal_import', Path(__file__).resolve().parents[1] / 'scripts/import_personal_association_review.py')
 module = importlib.util.module_from_spec(spec)
@@ -14,7 +17,7 @@ class PersonalReviewImportTests(unittest.TestCase):
         (root/'data').mkdir()
         folder = root/'public/records/openmhz/openmhz-afpd-car-to-car-2026-10-28'
         folder.mkdir(parents=True)
-        calls = [{'epoch': 100+i, 'original_filename': f'dcfems-6001-{100+i}.m4a', 'transcript': t, 'transcript_original': 'earliest'} for i,t in enumerate(['Old cue','Where at?'])]
+        calls = [{'epoch': 100+i, 'original_filename': f'dcfems-6001-{100+i}.m4a', 'transcript': t, 'original_transcript': 'earliest'} for i,t in enumerate(['Old cue','Where at?'])]
         manifest = folder/'calls.json'
         manifest.write_text(json.dumps({'date':'2026-10-28','talkgroup':6001,'calls':calls}))
         (root/'data/officer-association-evidence.json').write_text(json.dumps({'schema_version':1,'officers':{officer:{'name':'Brandon K. Mason'}},'associations':[]}))
@@ -38,7 +41,7 @@ class PersonalReviewImportTests(unittest.TestCase):
             result=module.import_review(path,root,officer)
             calls=json.loads(manifest.read_text())['calls']
             self.assertEqual(calls[0]['transcript'],'Mason, set up a landing zone.')
-            self.assertTrue(calls[0]['validated']);self.assertEqual(calls[0]['transcript_original'],'earliest')
+            self.assertTrue(calls[0]['validated']);self.assertEqual(calls[0]['original_transcript'],'earliest')
             self.assertEqual(calls[0]['original_transcript'],'earliest');self.assertNotIn('validated',calls[1])
             self.assertEqual(result['counts']['selected_evidence_clips'],2)
             source=json.loads((root/'data/officer-association-evidence.json').read_text())

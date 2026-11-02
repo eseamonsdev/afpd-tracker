@@ -16,7 +16,7 @@ import re
 import subprocess
 from zoneinfo import ZoneInfo
 from radio_config import archive_path, valid_day, valid_talkgroup
-from transcript_versions import set_transcript
+from transcript_versions import ensure_original_transcript, set_transcript
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 SETTINGS = pathlib.Path(__file__).with_name('radio-transcription-settings.json')
@@ -27,6 +27,9 @@ def read(path):
 
 
 def write(path, data):
+    if isinstance(data, dict):
+        for call in data.get('calls', []):
+            ensure_original_transcript(call)
     path.parent.mkdir(parents=True, exist_ok=True)
     temp = path.with_suffix(path.suffix + '.tmp')
     temp.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')

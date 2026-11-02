@@ -8,7 +8,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).parents[1] / 'scripts'))
 import backfill_transcript_originals as history
-from transcript_versions import set_transcript
+from transcript_versions import ensure_original_transcript, set_transcript
 
 
 NAME='dcfems-6001-1792908038.m4a'
@@ -69,7 +69,7 @@ class HistoryTests(unittest.TestCase):
                  patch.object(history,'git',return_value=b'head\n'):
                 result=history.backfill(root,write=True)
                 saved=json.loads(target.read_text())
-                self.assertEqual(saved['calls'][0].pop('transcript_original'),'Original AI text.')
+                self.assertEqual(saved['calls'][0].pop('original_transcript'),'Original AI text.')
                 self.assertEqual(saved,data)
                 self.assertEqual(result['totals']['originals_added'],1)
                 target.write_text(json.dumps(data))
@@ -82,17 +82,26 @@ class HistoryTests(unittest.TestCase):
 
 
 class VersionTests(unittest.TestCase):
+    def test_untranscribed_call_uses_null_until_first_publication(self):
+        call = {'id': 'metadata-only'}
+        ensure_original_transcript(call)
+        self.assertIsNone(call['original_transcript'])
+        set_transcript(call, 'First publication.')
+        set_transcript(call, 'Later correction.', validated=True)
+        self.assertEqual(call['original_transcript'], 'First publication.')
+        self.assertEqual(call['transcript'], 'Later correction.')
+
     def test_original_is_written_once_and_user_corrections_remain_current(self):
         call={'transcript':'Original [unclear].','note':'Keep','validated':False}
         set_transcript(call,'First correction.',validated=True)
         set_transcript(call,'Latest correction.',validated=True)
-        self.assertEqual(call,{'transcript':'Latest correction.','transcript_original':'Original [unclear].',
+        self.assertEqual(call,{'transcript':'Latest correction.','original_transcript':'Original [unclear].',
                                'validated':True,'note':'Keep'})
 
     def test_new_automated_publication_keeps_both_texts_without_marking_verified(self):
         call={}
         set_transcript(call,'[No intelligible speech]')
-        self.assertEqual(call['transcript'],call['transcript_original'])
+        self.assertEqual(call['transcript'],call['original_transcript'])
         self.assertNotIn('validated',call)
 
 

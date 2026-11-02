@@ -12,6 +12,7 @@ import zipfile
 from datetime import date, datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
+from transcript_versions import ensure_original_transcript
 
 ZIP_NAME = re.compile(r"openmhz-afpd-(car-to-car|law-2)-(\d{4}-\d{2}-\d{2})\.zip")
 TALKGROUPS = {"car-to-car": 6001, "law-2": 5922}
@@ -89,7 +90,9 @@ def validate_zip(archive, destination):
         data["duplicate_source_calls"] = duplicates
         data["calls"] = list(unique.values())
         data["count"] = len(unique)
-        files["calls.json"] = (json.dumps(data, indent=2) + "\n").encode()
+    for call in [*data['calls'], *data.get('duplicate_source_calls', [])]:
+        ensure_original_transcript(call)
+    files["calls.json"] = (json.dumps(data, indent=2) + "\n").encode()
     # A repeat upload is harmless; differing content must be reviewed manually.
     if destination.exists():
         existing = {p.name for p in destination.iterdir() if p.is_file()}

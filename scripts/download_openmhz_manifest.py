@@ -19,6 +19,7 @@ from urllib.parse import parse_qs, urlparse
 from zoneinfo import ZoneInfo
 from r2_audio import audio_checks, stored_audio
 from radio_config import DEFAULT_PAUSE_MS, valid_pause_ms
+from transcript_versions import ensure_original_transcript
 
 
 def record_status(day, talkgroup, name, status):
@@ -48,6 +49,10 @@ from radio_config import TALKGROUPS
 
 
 def write_json(path, data):
+    if isinstance(data, dict):
+        for key in ('calls', 'duplicate_source_calls'):
+            for call in data.get(key, []):
+                ensure_original_transcript(call)
     path.write_text(json.dumps(data, indent=2) + '\n')
 
 
@@ -76,6 +81,7 @@ def day_bounds(day):
 
 def normalize_call_metadata(call, day):
     result = dict(call)
+    ensure_original_transcript(result)
     if not result.get('id'):
         result['id'] = parse_qs(urlparse(result.get('call_link', '')).query).get('call-id', [None])[0]
     validate_call(result, day)
@@ -254,7 +260,7 @@ def import_manifest(root, source, downloader, *, pause_ms=DEFAULT_PAUSE_MS):
                 skipped += 1
                 if not previous.get('id') or previous['id'] == incoming['id']:
                     merged[name] = {**previous, **incoming, **checked}
-                    for field in ('audio_storage', 'transcript', 'transcript_original',
+                    for field in ('audio_storage', 'transcript', 'original_transcript',
                                   'validated', 'note', 'needs_review'):
                         if field in previous:
                             merged[name][field] = previous[field]

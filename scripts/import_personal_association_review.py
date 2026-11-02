@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+from transcript_versions import set_transcript
 
 
 def import_review(export_file, root, officer_id):
@@ -58,10 +59,7 @@ def import_review(export_file, root, officer_id):
             raise ValueError(f'Transcript changed since export: {change["clip_id"]}')
         if change['text'] == baseline:
             continue
-        call.setdefault('transcript_original', current)
-        call.setdefault('original_transcript', call['transcript_original'])
-        call['transcript'] = change['text']
-        call['validated'] = True
+        set_transcript(call, change['text'], validated=True)
         call['validated_by'] = change.get('edited_by') or reviewer
         call['validated_at'] = change['edited_at']
         call['transcript_review'] = {**provenance, 'edited_at': change['edited_at'], 'previous_transcript': baseline, 'method': 'owner_corrected_review_export'}

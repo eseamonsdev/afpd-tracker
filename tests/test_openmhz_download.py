@@ -37,7 +37,7 @@ class DownloadTest(unittest.TestCase):
             old = module.normalize_call_metadata(sample(), '2026-09-30')
             old.update(sha256='a' * 64, size_bytes=12, audio_duration_seconds=3,
                        source_duration_matches=True, audio_downloaded=True,
-                       transcript='Owner wording', transcript_original='Original wording',
+                       transcript='Owner wording', original_transcript='Original wording',
                        validated=True, note='Preserve this')
             old['audio_storage'] = {'provider': 'r2', 'verified': True, 'bucket': 'bucket',
                                     'key': f'openmhz/{folder.name}/{old["original_filename"]}',
