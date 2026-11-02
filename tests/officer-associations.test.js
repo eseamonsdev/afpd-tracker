@@ -79,7 +79,7 @@ test("all workbook rows, old table pairs, conflicts, and same-clip alternatives 
   const input = JSON.parse(fs.readFileSync("data/officer-association-evidence.json"));
   assert.equal(input.import_counts.workbook_exchange_ids, 366);
   assert.equal(new Set(input.associations.flatMap(r => r.provenance?.sheet === "Exchanges" ? r.evidence_ids : [])).size, 366);
-  assert.equal(input.observations.length, 20);
+  assert.equal(input.observations.filter(r => !r.officer_id).length, 20);
   assert.equal(input.legacy_review_reports[0].candidate_reviews.length, 63);
   for (const officer of input.legacy_resource_entries) {
     const id = officer.url.split("/").filter(Boolean).at(-1);
@@ -151,4 +151,22 @@ test('historical Sam voice identifications survive while 14590221 shared-name da
  assert.equal(result.labels.profiles[h].find(r=>r.radio_id==='14590221').evidence_days,4);
  assert.ok(!result.labels.profiles[s].some(r=>r.radio_id==='14590221'));
  for(const date of ['2026-09-20','2026-10-13','2026-10-17'])assert.ok(!result.labels.days[date]?.['14590221']?.some(r=>[h,s].includes(r.officer_id)));
+});
+
+
+test("owner-accepted Neil evidence leaves unassigned leads and generates the correct radio rows",()=>{
+ const source=loadAssociationEvidence(process.cwd());
+ const ids=["N252","N319","N362","N504","N592","N605"];
+ assert.ok(!source.review_leads.some(r=>ids.includes(r.report_id)));
+ const result=compileOfficerAssociations(source);
+ const neil=result.labels.profiles["anthony-s-neil"];
+ assert.equal(neil.length,1);
+ assert.equal(neil[0].radio_id,"14590027");
+ assert.equal(neil[0].evidence_days,4);
+ assert.equal(neil[0].confirmed,false);
+ assert.equal(result.labels.associations["14590268"]?.some(r=>r.officer_id==="anthony-s-neil")??false,false);
+ const mention=source.observations.find(r=>r.report_id==="N605");
+ assert.equal(mention.officer_id,"anthony-s-neil");
+ assert.equal(mention.radio_id,undefined);
+ assert.match(result.evidenceCsv,/"anthony-s-neil","","2026-10-03"/);
 });
