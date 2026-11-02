@@ -106,7 +106,7 @@ permalink: /police-radio-resources/
       {%- for row in evidenceCsv.rows %}{% if row[6] == "unassigned" %}<tr><td>{{ row[2] | escape }}</td><td>{{ row[4] | escape }}</td><td>{{ row[5] | escape }}</td></tr>{% endif %}{%- endfor %}
       </tbody></table>
     </details>
-    <p class="radio-guide-source-links"><a href="/records/openmhz/afpd-radio-officer-ids.csv" download>Download names and radio IDs (.csv)</a><a href="/records/openmhz/officer-association-evidence.csv" download>Download dated evidence and clips (.csv)</a>{%- for id in resources.officers.sourceIds %}{%- for source in resources.sources %}{%- if source.id == id %}<a href="{{ source.url | escape }}" download>Download the full radio-ID spreadsheet</a>{%- endif %}{%- endfor %}{%- endfor %}</p>
+    <p class="radio-guide-source-links"><a href="/records/openmhz/afpd-radio-officer-ids.csv" download>Download names and radio IDs (.csv)</a><a href="/records/openmhz/officer-association-evidence.csv" download>Download dated evidence and clips (.csv)</a></p>
   </section>
 
   <section class="radio-resources-section" aria-labelledby="sources">
