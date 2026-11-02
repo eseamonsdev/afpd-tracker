@@ -1,0 +1,657 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-01",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1793584119.m4a": {
+      "index": 101,
+      "epoch": 1793584119,
+      "sha256": "a29abf93f95dc0dca998be39cb1a64954f148568593289875ee0ebe6f845ca40",
+      "passes": {
+        "original": {
+          "text": "I think it's the one to the left, it's going to be over by me.",
+          "prompt": null,
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " I think it's the one to the left, it's going to be over by me.",
+              "avg_logprob": -0.34621177342804993,
+              "no_speech_prob": 0.11422794312238693,
+              "compression_ratio": 1.0689655172413792
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I think it's the one to the left. It's going to be over by me.",
+          "prompt": null,
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " I think it's the one to the left.",
+              "avg_logprob": -0.23667017060021558,
+              "no_speech_prob": 0.06071699410676956,
+              "compression_ratio": 1.0333333333333334
+            },
+            {
+              "start": 4.0200000000000005,
+              "end": 8.02,
+              "text": " It's going to be over by me.",
+              "avg_logprob": -0.23667017060021558,
+              "no_speech_prob": 0.06071699410676956,
+              "compression_ratio": 1.0333333333333334
+            }
+          ]
+        },
+        "context": {
+          "text": "I think it's the one to the left, it's going to be over by me.",
+          "prompt": null,
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " I think it's the one to the left, it's going to be over by me.",
+              "avg_logprob": -0.34621177342804993,
+              "no_speech_prob": 0.11422794312238693,
+              "compression_ratio": 1.0689655172413792
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793584146.m4a": {
+      "index": 102,
+      "epoch": 1793584146,
+      "sha256": "416dfcb10b9e1a34bf236548df19ba86bcecd7040d1116991f3134af34ada7f5",
+      "passes": {
+        "original": {
+          "text": "Five, two, ten.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Five, two, ten.",
+              "avg_logprob": -0.9728967878553603,
+              "no_speech_prob": 0.1621915102005005,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Part 2, sir.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Part 2, sir.",
+              "avg_logprob": -1.2218815833330154,
+              "no_speech_prob": 0.05926990509033203,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "Five, two, one.",
+          "prompt": "I think it's the one to the left, it's going to be over by me.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Five, two, one.",
+              "avg_logprob": -1.006043963962131,
+              "no_speech_prob": 0.12723824381828308,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793584154.m4a": {
+      "index": 103,
+      "epoch": 1793584154,
+      "sha256": "7327a3cc20ee806692f2e6ba2ede3684e6886373aa15c6671435273981dc294a",
+      "passes": {
+        "original": {
+          "text": "Sorry, sorry, sorry.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Sorry, sorry, sorry.",
+              "avg_logprob": -0.8038883209228516,
+              "no_speech_prob": 0.234285369515419,
+              "compression_ratio": 1.1111111111111112
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Sorry, sorry, sorry.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Sorry, sorry, sorry.",
+              "avg_logprob": -0.6101468404134115,
+              "no_speech_prob": 0.29070985317230225,
+              "compression_ratio": 1.1111111111111112
+            }
+          ]
+        },
+        "context": {
+          "text": "Sorry, sorry, sorry, sorry.",
+          "prompt": "I think it's the one to the left, it's going to be over by me. Five, two, ten.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Sorry, sorry, sorry, sorry.",
+              "avg_logprob": -0.6752304597334429,
+              "no_speech_prob": 0.33170589804649353,
+              "compression_ratio": 1.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793584158.m4a": {
+      "index": 104,
+      "epoch": 1793584158,
+      "sha256": "13764a56ba9a0fb06801ae250e2edac4ae70a38739c361724ec6ee636bdb6749",
+      "passes": {
+        "original": {
+          "text": "I can see the RP from the window she's calling us up.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0200000000000005,
+              "text": " I can see the RP from the window she's calling us up.",
+              "avg_logprob": -0.2034452943240895,
+              "no_speech_prob": 0.03354755416512489,
+              "compression_ratio": 0.9464285714285714
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I can see the RP from the window she's calling us up.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " I can see the RP from the window she's calling us up.",
+              "avg_logprob": -0.27096375297097597,
+              "no_speech_prob": 0.027646252885460854,
+              "compression_ratio": 0.9464285714285714
+            }
+          ]
+        },
+        "context": {
+          "text": "I can see the RP from the window she's calling us up.",
+          "prompt": "I think it's the one to the left, it's going to be over by me. Five, two, ten. Sorry, sorry, sorry.",
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " I can see the RP from the window she's calling us up.",
+              "avg_logprob": -0.1466679292566636,
+              "no_speech_prob": 0.025649266317486763,
+              "compression_ratio": 0.9464285714285714
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793584171.m4a": {
+      "index": 105,
+      "epoch": 1793584171,
+      "sha256": "8138444feb0f604b6c7b32f600261587413777c045f697ec82003015a6d9d9d9",
+      "passes": {
+        "original": {
+          "text": "David, are you on your way to this?",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " David, are you on your way to this?",
+              "avg_logprob": -0.2882950764435988,
+              "no_speech_prob": 0.06078145653009415,
+              "compression_ratio": 0.875
+            }
+          ]
+        },
+        "filtered": {
+          "text": "David are you on your way to this?",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.86,
+              "text": " David are you on your way to this?",
+              "avg_logprob": -0.31734805057446164,
+              "no_speech_prob": 0.01900373212993145,
+              "compression_ratio": 0.8717948717948718
+            }
+          ]
+        },
+        "context": {
+          "text": "David, are you on your way to this?",
+          "prompt": "Five, two, ten. Sorry, sorry, sorry. I can see the RP from the window she's calling us up.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " David, are you on your way to this?",
+              "avg_logprob": -0.24349107192112848,
+              "no_speech_prob": 0.010213080793619156,
+              "compression_ratio": 0.875
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793584178.m4a": {
+      "index": 106,
+      "epoch": 1793584178,
+      "sha256": "10c2f7119b77ec8dbfa3f9b44501de3da4112b0745411f6bf14c339995fa87a6",
+      "passes": {
+        "original": {
+          "text": "Mother Lockout",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Mother Lockout",
+              "avg_logprob": -0.9458837906519572,
+              "no_speech_prob": 0.006953919772058725,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Not the lockout.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Not the lockout.",
+              "avg_logprob": -0.993833235331944,
+              "no_speech_prob": 0.006944681517779827,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "Not a lot go.",
+          "prompt": "Sorry, sorry, sorry. I can see the RP from the window she's calling us up. David, are you on your way to this?",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Not a lot go.",
+              "avg_logprob": -0.8193617314100266,
+              "no_speech_prob": 0.0029394447337836027,
+              "compression_ratio": 0.6842105263157895
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793584181.m4a": {
+      "index": 107,
+      "epoch": 1793584181,
+      "sha256": "91537d29a79dc13b5cd96fa0397d73a679d42b583fb6ddc6b36188aa833391ac",
+      "passes": {
+        "original": {
+          "text": "Can you come this way just as quick as you can for translation? The suspect doesn't speak English.",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Can you come this way just as quick as you can for translation?",
+              "avg_logprob": -0.2872150391340256,
+              "no_speech_prob": 0.07234564423561096,
+              "compression_ratio": 1.065217391304348
+            },
+            {
+              "start": 4.0,
+              "end": 6.0,
+              "text": " The suspect doesn't speak English.",
+              "avg_logprob": -0.2872150391340256,
+              "no_speech_prob": 0.07234564423561096,
+              "compression_ratio": 1.065217391304348
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Can you come this way just as quick as you can for translation, the suspect doesn't speak English.",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Can you come this way just as quick as you can for translation, the suspect doesn't speak English.",
+              "avg_logprob": -0.3236609349648158,
+              "no_speech_prob": 0.08505510538816452,
+              "compression_ratio": 1.1136363636363635
+            }
+          ]
+        },
+        "context": {
+          "text": "Can you come this way just as quick as you can for translation? The suspect doesn't speak English.",
+          "prompt": "I can see the RP from the window she's calling us up. David, are you on your way to this? Mother Lockout",
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Can you come this way just as quick as you can for translation? The suspect doesn't speak English.",
+              "avg_logprob": -0.2504477413992087,
+              "no_speech_prob": 0.013893675990402699,
+              "compression_ratio": 1.065217391304348
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793584190.m4a": {
+      "index": 108,
+      "epoch": 1793584190,
+      "sha256": "06366768024630208b5e7e4f2bf33bd7ad84c9fe6c63437784a27427a54e5b34",
+      "passes": {
+        "original": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.7737276256084442,
+              "no_speech_prob": 0.03547756001353264,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bye-bye.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.7252811704363141,
+              "no_speech_prob": 0.018565939739346504,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Bye-bye.",
+          "prompt": "David, are you on your way to this? Mother Lockout Can you come this way just as quick as you can for translation? The suspect doesn't speak English.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.7713540111269269,
+              "no_speech_prob": 0.02334044687449932,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793584591.m4a": {
+      "index": 109,
+      "epoch": 1793584591,
+      "sha256": "0ac73b2066cd5df68cfaff331c25f53a28a09df55d2c28f72176f9923dcdfc16",
+      "passes": {
+        "original": {
+          "text": "Hey David, what would be your ETA down here?",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Hey David, what would be your ETA down here?",
+              "avg_logprob": -0.21700829068819683,
+              "no_speech_prob": 0.06774560362100601,
+              "compression_ratio": 0.8461538461538461
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hey David, what would be your ETA down here?",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Hey David, what would be your ETA down here?",
+              "avg_logprob": -0.24254079262415568,
+              "no_speech_prob": 0.05446832254528999,
+              "compression_ratio": 0.8461538461538461
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey David, what would be your ETA down here?",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Hey David, what would be your ETA down here?",
+              "avg_logprob": -0.21700829068819683,
+              "no_speech_prob": 0.06774560362100601,
+              "compression_ratio": 0.8461538461538461
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793584613.m4a": {
+      "index": 110,
+      "epoch": 1793584613,
+      "sha256": "68fa054a7191283ca6ca4a3351af19a7589386d3103ea9cae15a2f9beb6e233d",
+      "passes": {
+        "original": {
+          "text": "one hour",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " one hour",
+              "avg_logprob": -0.5395912647247314,
+              "no_speech_prob": 0.02184637077152729,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "one hour",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " one hour",
+              "avg_logprob": -0.7176095485687256,
+              "no_speech_prob": 0.025112155824899673,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "One hour.",
+          "prompt": "Hey David, what would be your ETA down here?",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " One hour.",
+              "avg_logprob": -0.6030559539794922,
+              "no_speech_prob": 0.00753947114571929,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    }
+  }
+}

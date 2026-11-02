@@ -1,0 +1,721 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-01",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1793555818.m4a": {
+      "index": 31,
+      "epoch": 1793555818,
+      "sha256": "ff8fc748c96443da6f518a66bb17bb2c51bf9609c84a41b3460342e064ccbe75",
+      "passes": {
+        "original": {
+          "text": "Welcome. Thank you. Bye-bye.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Welcome.",
+              "avg_logprob": -0.4955980891273135,
+              "no_speech_prob": 0.05177844688296318,
+              "compression_ratio": 1.0277777777777777
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.4955980891273135,
+              "no_speech_prob": 0.05177844688296318,
+              "compression_ratio": 1.0277777777777777
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.4955980891273135,
+              "no_speech_prob": 0.05177844688296318,
+              "compression_ratio": 1.0277777777777777
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Welcome.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Welcome.",
+              "avg_logprob": -0.5589603900909423,
+              "no_speech_prob": 0.11418239027261734,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Welcome. I'm three.",
+          "prompt": "Neil, sorry, doing two things at once. I'm almost wrapped up here. Do you need me to head over that way? And we have suspicion at least to detain him.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Welcome.",
+              "avg_logprob": -0.6216068159450184,
+              "no_speech_prob": 0.04808533936738968,
+              "compression_ratio": 0.7037037037037037
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " I'm three.",
+              "avg_logprob": -0.6216068159450184,
+              "no_speech_prob": 0.04808533936738968,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793555820.m4a": {
+      "index": 32,
+      "epoch": 1793555820,
+      "sha256": "6a27b7f86b4862f4a6908782f7c1b5d16cc90e7ba5a638b0566730aab2882593",
+      "passes": {
+        "original": {
+          "text": "Yeah, okay Who's with you",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, okay",
+              "avg_logprob": -0.49243593215942383,
+              "no_speech_prob": 0.08216164261102676,
+              "compression_ratio": 0.7575757575757576
+            },
+            {
+              "start": 2.48,
+              "end": 4.48,
+              "text": " Who's with you",
+              "avg_logprob": -0.49243593215942383,
+              "no_speech_prob": 0.08216164261102676,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah, okay Who's with you?",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, okay",
+              "avg_logprob": -0.45049895690037656,
+              "no_speech_prob": 0.11325879395008087,
+              "compression_ratio": 0.7647058823529411
+            },
+            {
+              "start": 2.48,
+              "end": 4.48,
+              "text": " Who's with you?",
+              "avg_logprob": -0.45049895690037656,
+              "no_speech_prob": 0.11325879395008087,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "context": {
+          "text": "I'll be back with that. Okay. Who's with you?",
+          "prompt": "Neil, sorry, doing two things at once. I'm almost wrapped up here. Do you need me to head over that way? And we have suspicion at least to detain him. Welcome. Thank you. Bye-bye.",
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " I'll be back with that. Okay. Who's with you?",
+              "avg_logprob": -0.5777075150433708,
+              "no_speech_prob": 0.005675087682902813,
+              "compression_ratio": 0.9183673469387755
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793555826.m4a": {
+      "index": 33,
+      "epoch": 1793555826,
+      "sha256": "d3ac533e9d7a4ba40161f14c9962710efe171d356e399f611dde1288ee11bc8f",
+      "passes": {
+        "original": {
+          "text": "Hands with him downstairs right now and I just want another unit down there with her.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Hands with him downstairs right now and I just want another unit down there with her.",
+              "avg_logprob": -0.38723844587802886,
+              "no_speech_prob": 0.20684480667114258,
+              "compression_ratio": 1.1486486486486487
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Sounds like I'm downstairs right now and I just want another unit down there with her.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Sounds like I'm downstairs right now and I just want another unit down there with her.",
+              "avg_logprob": -0.38218566349574495,
+              "no_speech_prob": 0.15338093042373657,
+              "compression_ratio": 1.075
+            }
+          ]
+        },
+        "context": {
+          "text": "Hands with him downstairs right now and I just want another unit down there with her.",
+          "prompt": "And we have suspicion at least to detain him. Welcome. Thank you. Bye-bye. Yeah, okay Who's with you",
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.6000000000000005,
+              "text": " Hands with him downstairs right now and I just want another unit down there with her.",
+              "avg_logprob": -0.33228091448545455,
+              "no_speech_prob": 0.03899005427956581,
+              "compression_ratio": 1.1486486486486487
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793555831.m4a": {
+      "index": 34,
+      "epoch": 1793555831,
+      "sha256": "896dc726d9b4790b0d6063ad6f5f72c09b8f870aa6814eaacaa54de25bfcbbc4",
+      "passes": {
+        "original": {
+          "text": "Yeah, all right, give me just a few minutes and I'll roll over",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2,
+              "text": " Yeah, all right, give me just a few minutes and I'll roll over",
+              "avg_logprob": -0.35747939661929484,
+              "no_speech_prob": 0.00797200296074152,
+              "compression_ratio": 0.9393939393939394
+            }
+          ]
+        },
+        "filtered": {
+          "text": "All right, give me just a few minutes and I'll roll over.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.44,
+              "text": " All right, give me just a few minutes and I'll roll over.",
+              "avg_logprob": -0.4067208303345574,
+              "no_speech_prob": 0.01023518480360508,
+              "compression_ratio": 0.9344262295081968
+            }
+          ]
+        },
+        "context": {
+          "text": "Yeah, alright. Give me just a few minutes and I'll roll over.",
+          "prompt": "Welcome. Thank you. Bye-bye. Yeah, okay Who's with you Hands with him downstairs right now and I just want another unit down there with her.",
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.36,
+              "text": " Yeah, alright. Give me just a few minutes and I'll roll over.",
+              "avg_logprob": -0.30772351591210617,
+              "no_speech_prob": 0.00383409159258008,
+              "compression_ratio": 0.9104477611940298
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793555845.m4a": {
+      "index": 35,
+      "epoch": 1793555845,
+      "sha256": "811cb8fc822e04b10e9c42c02ee781b0a0f305f01d92faf64b4fe5db337ea0f4",
+      "passes": {
+        "original": {
+          "text": "Okay. Okay. Okay. Okay. Okay.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Okay.",
+              "avg_logprob": -0.3174380089925683,
+              "no_speech_prob": 0.11670815199613571,
+              "compression_ratio": 2.0
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Okay.",
+              "avg_logprob": -0.3174380089925683,
+              "no_speech_prob": 0.11670815199613571,
+              "compression_ratio": 2.0
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Okay.",
+              "avg_logprob": -0.3174380089925683,
+              "no_speech_prob": 0.11670815199613571,
+              "compression_ratio": 2.0
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " Okay.",
+              "avg_logprob": -0.3174380089925683,
+              "no_speech_prob": 0.11670815199613571,
+              "compression_ratio": 2.0
+            },
+            {
+              "start": 4.0,
+              "end": 5.0,
+              "text": " Okay.",
+              "avg_logprob": -0.3174380089925683,
+              "no_speech_prob": 0.11670815199613571,
+              "compression_ratio": 2.0
+            }
+          ]
+        },
+        "filtered": {
+          "text": "OK. Bye-bye.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " OK.",
+              "avg_logprob": -0.49390326846729626,
+              "no_speech_prob": 0.07615198940038681,
+              "compression_ratio": 0.6
+            },
+            {
+              "start": 1.0,
+              "end": 2.54,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.49390326846729626,
+              "no_speech_prob": 0.07615198940038681,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "Okay, I heard",
+          "prompt": "Yeah, okay Who's with you Hands with him downstairs right now and I just want another unit down there with her. Yeah, all right, give me just a few minutes and I'll roll over",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Okay, I heard",
+              "avg_logprob": -0.49731450421469553,
+              "no_speech_prob": 0.06380903720855713,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793556271.m4a": {
+      "index": 36,
+      "epoch": 1793556271,
+      "sha256": "cdd68ffdac53925e45cbfcbb14e875bb5332aac13dae448ca715cd9e9f132778",
+      "passes": {
+        "original": {
+          "text": "I'm not getting a take off look",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm not getting a take off look",
+              "avg_logprob": -0.5078213865106757,
+              "no_speech_prob": 0.048268187791109085,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm not getting a take off look.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.12,
+              "text": " I'm not getting a take off look.",
+              "avg_logprob": -0.5329972406228384,
+              "no_speech_prob": 0.055143922567367554,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm not getting a take off look",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm not getting a take off look",
+              "avg_logprob": -0.5078213865106757,
+              "no_speech_prob": 0.048268187791109085,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793556277.m4a": {
+      "index": 37,
+      "epoch": 1793556277,
+      "sha256": "94c8e4b2167cac29e82c88dcdb69209889a7c95b8fa45fbeecf70d492b86ad94",
+      "passes": {
+        "original": {
+          "text": "Yeah, you're good too.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, you're good too.",
+              "avg_logprob": -0.4546289026737213,
+              "no_speech_prob": 0.07374195009469986,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah, you're good to go.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, you're good to go.",
+              "avg_logprob": -0.3803891214457425,
+              "no_speech_prob": 0.039568834006786346,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "context": {
+          "text": "Yeah, you're good too",
+          "prompt": "I'm not getting a take off look",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, you're good too",
+              "avg_logprob": -0.4401913483937581,
+              "no_speech_prob": 0.007033095695078373,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793556461.m4a": {
+      "index": 38,
+      "epoch": 1793556461,
+      "sha256": "500989f587927f74b04b273d7454d8d396fad574a6ec110209feb8edf4fca2d4",
+      "passes": {
+        "original": {
+          "text": "Is that a regional code for it?",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Is that a regional code for it?",
+              "avg_logprob": -0.9160680120641534,
+              "no_speech_prob": 0.029883211478590965,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "filtered": {
+          "text": "That's an unreasonable code for it.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.52,
+              "text": " That's an unreasonable code for it.",
+              "avg_logprob": -0.7530332153493707,
+              "no_speech_prob": 0.01049221120774746,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        },
+        "context": {
+          "text": "Is that a regional code for it?",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Is that a regional code for it?",
+              "avg_logprob": -0.9160680120641534,
+              "no_speech_prob": 0.029883211478590965,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793556479.m4a": {
+      "index": 39,
+      "epoch": 1793556479,
+      "sha256": "027a2ae417565f1aa9b6e9c3dda825ed984e18f844783b414b787901a6ab50eb",
+      "passes": {
+        "original": {
+          "text": "All the way down stairs",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.44,
+              "text": " All the way down stairs",
+              "avg_logprob": -0.609740361571312,
+              "no_speech_prob": 0.011612809263169765,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "All the way down stairs.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " All the way down stairs.",
+              "avg_logprob": -0.6055028703477647,
+              "no_speech_prob": 0.014520359225571156,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "context": {
+          "text": "All the way down stairs.",
+          "prompt": "Is that a regional code for it?",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " All the way down stairs.",
+              "avg_logprob": -0.5417660077412924,
+              "no_speech_prob": 0.008901368826627731,
+              "compression_ratio": 0.75
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793557055.m4a": {
+      "index": 40,
+      "epoch": 1793557055,
+      "sha256": "ec0508ada85bb3df5930b0b03b0a9b939c139d6c4333cc4f6fc20c40206ecae2",
+      "passes": {
+        "original": {
+          "text": "Where do you guys need help?",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Where do you guys need help?",
+              "avg_logprob": -0.38841015100479126,
+              "no_speech_prob": 0.11947615444660187,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Where do you guys need help?",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Where do you guys need help?",
+              "avg_logprob": -0.36030695736408236,
+              "no_speech_prob": 0.06867626309394836,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "context": {
+          "text": "Where do you guys need help?",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Where do you guys need help?",
+              "avg_logprob": -0.38841015100479126,
+              "no_speech_prob": 0.11947615444660187,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        }
+      }
+    }
+  }
+}
