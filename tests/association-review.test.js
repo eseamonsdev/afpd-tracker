@@ -156,3 +156,16 @@ test("owner-selected context persists by stable clip ID without asserting transm
  assert.equal(clipDialogueEvidence(source,"one",day,{id:"6001:2026-10-01:dcfems-6001-200.m4a",number:1}).evidence,false);
  assert.equal(clipDialogueEvidence(source,"one",day,{id:choice.clip_id,number:9}).evidence,true);
 });
+
+test("owner-retained tentative dialogue keeps its target and qualification",()=>{
+ const choice={officer_id:"one",clip_id:"6001:2026-10-01:dcfems-6001-100.m4a",included:true,
+   evidence_radio_ids:["123"],dialogue_exchanges:[{confidence:"tentative",role:"possible_reply"}],
+   context_reason:"Possible reply; another participant could interject."};
+ const day={date:"2026-10-01",talkgroup:6001,evidence:[{clips:[1],owner_clip_selections:[choice]}]};
+ const result=clipDialogueEvidence(source,"one",day,{id:choice.clip_id,number:1});
+ assert.equal(result.evidence,true);
+ assert.deepEqual(result.evidence_radio_ids,["123"]);
+ assert.equal(result.dialogue_exchanges[0].confidence,"tentative");
+ assert.equal(result.context_reason,choice.context_reason);
+ assert.equal(result.personal_identity_confirmation,undefined);
+});
