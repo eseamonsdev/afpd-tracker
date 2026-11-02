@@ -36,7 +36,7 @@ permalink: /police-radio-resources/
         <div><dt>{{ entry.sign | escape }}</dt><dd>{{ entry.agency | escape }}</dd></div>
       {%- endfor %}
     </dl>
-    <p class="radio-guide-source-links">{%- for id in resources.callSigns.sourceIds %}{%- for source in resources.sources %}{%- if source.id == id %}<a href="#source-{{ source.id | escape }}">{{ source.title | escape }}</a>{%- endif %}{%- endfor %}{%- endfor %}</p>
+    <p class="radio-guide-source-links">{%- for id in resources.callSigns.sourceIds %}{%- for source in resources.sources %}{%- if source.id == id %}<a href="{{ source.url | escape }}" target="_blank" rel="noopener noreferrer">{{ source.title | escape }}</a>{%- endif %}{%- endfor %}{%- endfor %}</p>
   </section>
 
   <section class="radio-resources-section" aria-labelledby="radio-language">
@@ -47,7 +47,7 @@ permalink: /police-radio-resources/
         <div><dt>{{ entry.term | escape }}</dt><dd>{{ entry.meaning | escape }} <span>{{ entry.example | escape }}</span></dd></div>
       {%- endfor %}
     </dl>
-    <p class="radio-guide-source-links">{%- for id in resources.language.sourceIds %}{%- for source in resources.sources %}{%- if source.id == id %}<a href="#source-{{ source.id | escape }}">{{ source.title | escape }}</a>{%- endif %}{%- endfor %}{%- endfor %}</p>
+    <p class="radio-guide-source-links">{%- for id in resources.language.sourceIds %}{%- for source in resources.sources %}{%- if source.id == id %}<a href="{{ source.url | escape }}" target="_blank" rel="noopener noreferrer">{{ source.title | escape }}</a>{%- endif %}{%- endfor %}{%- endfor %}</p>
   </section>
 
   <section class="radio-resources-section" aria-labelledby="radio-agency-ids">
