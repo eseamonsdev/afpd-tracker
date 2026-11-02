@@ -39,6 +39,17 @@ globalThis.AFPDReviewState = class AFPDReviewState {
     const key=JSON.stringify([officerId,clipId]);
     return this.state.evidence_reviews[key]?.included ?? this.selectionDetails.get(key)?.evidence ?? false;
   }
+  evidenceStatus(officerId,clipId) {
+    const key=JSON.stringify([officerId,clipId]);
+    const baseline=this.selectionDetails.get(key)?.evidence===true;
+    return {baseline,locallyReviewed:!!this.state.evidence_reviews[key],pending:this.evidenceSelected(officerId,clipId)!==baseline};
+  }
+  transcriptPending(id) { return this.transcript(id)!==this.payload.clips[id].transcript; }
+  pendingChanges() {
+    const evidence=(this.payload.clip_selections ?? []).filter(c=>this.evidenceStatus(c.officer_id,c.clip_id).pending).length;
+    const transcripts=Object.keys(this.state.transcripts).filter(id=>this.transcriptPending(id)).length;
+    return {evidence,transcripts,total:evidence+transcripts};
+  }
   setEvidence(officerId,clipId,included,at=new Date().toISOString()) {
     const key=JSON.stringify([officerId,clipId]);
     if(!this.selections.has(key)) throw new Error("Unknown officer clip selection.");
@@ -102,6 +113,6 @@ globalThis.AFPDReviewState = class AFPDReviewState {
       record.personal_reviews=confirmed.filter(c=>c.record_id===record.record_id);
       record.evidence_transcript_changes=changes.filter(c=>{const clip=clips[c.clip_id];return clip.date===record.date && clip.talkgroup===record.talkgroup && record.clips.includes(clip.number);});
     }
-    return {export_schema_version:4,radio_evidence:radioEvidence,evidence_clips:clipReviews.filter(r=>r.evidence_selected),context_clips:clipReviews.filter(r=>!r.evidence_selected),evidence_changes:Object.values(this.state.evidence_reviews),removed_from_evidence_clips:clipReviews.filter(r=>r.originally_evidence && !r.evidence_selected),clip_reviews:clipReviews,legacy_clip_reviews:Object.values(this.state.clip_reviews),removed_clips:clipReviews.filter(r=>!r.evidence_selected && (r.originally_evidence || r.previous_clip_review?.status==="removed")),confirmed_clips:clipReviews.filter(r=>r.evidence_selected && r.previous_clip_review?.status==="confirmed"),exported_at:at,reviewer:this.state.reviewer,notice:"AI assessments and prior source confirmations are preserved separately. Personal confirmations are locally recorded reviewer assertions, not authenticated server updates.",source,clips,transcript_changes:changes,confirmed_associations:confirmed};
+    return {export_schema_version:4,pending_changes:this.pendingChanges(),radio_evidence:radioEvidence,evidence_clips:clipReviews.filter(r=>r.evidence_selected),context_clips:clipReviews.filter(r=>!r.evidence_selected),evidence_changes:Object.values(this.state.evidence_reviews),removed_from_evidence_clips:clipReviews.filter(r=>r.originally_evidence && !r.evidence_selected),clip_reviews:clipReviews,legacy_clip_reviews:Object.values(this.state.clip_reviews),removed_clips:clipReviews.filter(r=>!r.evidence_selected && (r.originally_evidence || r.previous_clip_review?.status==="removed")),confirmed_clips:clipReviews.filter(r=>r.evidence_selected && r.previous_clip_review?.status==="confirmed"),exported_at:at,reviewer:this.state.reviewer,notice:"AI assessments and prior source confirmations are preserved separately. Personal confirmations are locally recorded reviewer assertions, not authenticated server updates.",source,clips,transcript_changes:changes,confirmed_associations:confirmed};
   }
 };

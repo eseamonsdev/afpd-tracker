@@ -11,7 +11,9 @@
     if(!storageError) try {localStorage.setItem(storageKey,JSON.stringify(review.state));}
     catch {storageError="Browser storage is unavailable or full. Export before leaving.";}
     const count=(payload.clip_selections??[]).filter(c=>review.evidenceSelected(c.officer_id,c.clip_id)).length;
-    saveStatus.textContent=storageError||`${count} evidence clips · ${Object.keys(review.state.transcripts).length} transcript changes · Saved in this browser`;
+    saveStatus.textContent=storageError||`${count} evidence clips · Saved in this browser`;
+    const pending=review.pendingChanges();
+    document.getElementById("review-pending-status").textContent=`${pending.total} pending changes compared with the published repo version: ${pending.evidence} evidence selections · ${pending.transcripts} transcripts`;
   }
   reviewer.addEventListener("input",()=>{review.state.reviewer=reviewer.value;persist();});
   document.getElementById("export-review").addEventListener("click",()=>{
@@ -44,7 +46,7 @@
       if(!selected)return;
       const id=selected.dataset.clipId;
       transcript.hidden=false;text.textContent=review.transcript(id)||"No transcript available.";
-      root.querySelector(".transcript-status").textContent=review.state.transcripts[id]?"Personally edited transcript":selected.dataset.verified==="true"?"Previously verified transcript":"AI transcript · unverified";
+      root.querySelector(".transcript-status").textContent=review.transcriptPending(id)?"Your transcript edit · pending repo update":review.state.transcripts[id]?"Your saved transcript matches repo":selected.dataset.verified==="true"?"Repo transcript · previously verified":"Repo transcript · AI · unverified";
     }
     function updateProgress() {
       const valid=Number.isFinite(audio.duration)&&audio.duration>0;
@@ -82,9 +84,14 @@
     }
     for(const clip of clips) {
       const row=clip.closest("li"),check=row.querySelector("[data-clip-evidence]");
+      const status=document.createElement("small");status.className="evidence-origin";
+      check.closest("label").append(status);
       function refreshEvidence() {
         check.checked=review.evidenceSelected(officerId,clip.dataset.clipId);
         row.classList.toggle("is-evidence",check.checked);
+        const info=review.evidenceStatus(officerId,clip.dataset.clipId);
+        row.classList.toggle("is-pending",info.pending);
+        status.textContent=info.pending?`Your change · pending (repo: ${info.baseline?"checked":"unchecked"})`:info.locallyReviewed?"Your saved choice matches repo":`Repo: ${info.baseline?"checked":"unchecked"}`;
       }
       refreshEvidence();
       check.addEventListener("change",()=>{review.setEvidence(officerId,clip.dataset.clipId,check.checked);refreshEvidence();persist();});

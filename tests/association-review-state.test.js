@@ -154,3 +154,42 @@ test('saved personal confirmations remain in exports when their clip is absent f
  const review=new Review({source:{officers:{one:{name:'One'}},associations:[]},clips:{}},{reviewer:'Eric',confirmations:{saved:confirmation}});
  assert.equal(JSON.stringify(review.export().confirmed_associations),JSON.stringify([confirmation]));
 });
+
+test('pending counts compare values with repo, preserve local provenance, and clear on reverting',()=>{
+ const input=structuredClone(payload);
+ input.clip_selections=[{officer_id:'one',clip_id:'shared',evidence:true},{officer_id:'two',clip_id:'shared',evidence:false}];
+ const review=new Review(input);
+ assert.equal(review.pendingChanges().total,0);
+ assert.equal(review.evidenceStatus('one','shared').locallyReviewed,false);
+ review.setEvidence('one','shared',false);
+ review.setEvidence('two','shared',true);
+ review.saveTranscript('shared','Edited');
+ assert.equal(review.pendingChanges().evidence,2);
+ assert.equal(review.pendingChanges().transcripts,1);
+ assert.equal(review.export().pending_changes.total,3);
+ const reload=new Review(input,JSON.parse(JSON.stringify(review.state)));
+ assert.equal(reload.pendingChanges().total,3);
+ reload.setEvidence('one','shared',true);
+ reload.setEvidence('two','shared',false);
+ reload.saveTranscript('shared','Original');
+ assert.equal(reload.pendingChanges().total,0);
+ assert.equal(reload.evidenceStatus('one','shared').locallyReviewed,true);
+ assert.equal(reload.evidenceStatus('one','shared').pending,false);
+});
+
+test('new repo defaults acknowledge incorporated edits without losing explicit browser choices',()=>{
+ const input=structuredClone(payload);
+ input.clip_selections=[{officer_id:'one',clip_id:'shared',evidence:false}];
+ const review=new Review(input);review.setEvidence('one','shared',true);review.saveTranscript('shared','Edited');
+ const updated=structuredClone(input);updated.clip_selections[0].evidence=true;updated.clips.shared.transcript='Edited';
+ const reload=new Review(updated,review.state);
+ assert.equal(reload.pendingChanges().total,0);
+ assert.equal(reload.evidenceStatus('one','shared').locallyReviewed,true);
+ assert.equal(reload.transcriptPending('shared'),false);
+ assert.equal(reload.state.transcripts.shared.original_transcript,'Original');
+ updated.clip_selections[0].evidence=false;updated.clips.shared.transcript='Different repo edit';
+ const conflict=new Review(updated,review.state);
+ assert.equal(conflict.pendingChanges().total,2);
+ assert.equal(conflict.evidenceSelected('one','shared'),true);
+ assert.equal(conflict.transcript('shared'),'Edited');
+});
