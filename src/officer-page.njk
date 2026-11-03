@@ -75,18 +75,17 @@ permalink: "{{ officerPage.url }}"
               {%- set observationsByType = observedOfficerIds | groupby("type") -%}
               <div data-identifier-sections>
                 <div class="officer-section-tabs identifier-tabs" data-identifier-tabs hidden>
-                  {%- for identifierType in ["call-sign", "radio-id", "ucjis-user-id"] -%}
+                  {%- for identifierType in ["call-sign", "radio-id"] -%}
                     {%- set observations = observationsByType[identifierType] or [] -%}
-                    {%- if identifierType == "ucjis-user-id" or (identifierType == "radio-id" and (officerPage.radio_identifiers | length) > 0) or (identifierType != "radio-id" and (observations | length) > 0) -%}
-                      <button class="officer-section-tab" id="identifier-tab-{{ identifierType }}" type="button" data-identifier-tab="{{ identifierType }}" aria-controls="identifier-panel-{{ identifierType }}">{% if identifierType == "call-sign" %}Call Signs{% elif identifierType == "radio-id" %}Radio IDs{% else %}UCJIS User IDs{% endif %}</button>
+                    {%- if (identifierType == "radio-id" and (officerPage.radio_identifiers | length) > 0) or (identifierType != "radio-id" and (observations | length) > 0) -%}
+                      <button class="officer-section-tab" id="identifier-tab-{{ identifierType }}" type="button" data-identifier-tab="{{ identifierType }}" aria-controls="identifier-panel-{{ identifierType }}">{% if identifierType == "call-sign" %}Call Signs{% else %}Radio IDs{% endif %}</button>
                     {%- endif -%}
                   {%- endfor -%}
                 </div>
-              {%- for identifierType in ["call-sign", "radio-id", "ucjis-user-id"] -%}
+              {%- for identifierType in ["call-sign", "radio-id"] -%}
                 {%- set observations = observationsByType[identifierType] or [] -%}
-                {%- if identifierType == "ucjis-user-id" or (identifierType == "radio-id" and (officerPage.radio_identifiers | length) > 0) or (identifierType != "radio-id" and (observations | length) > 0) -%}
+                {%- if (identifierType == "radio-id" and (officerPage.radio_identifiers | length) > 0) or (identifierType != "radio-id" and (observations | length) > 0) -%}
                   {%- if identifierType == "call-sign" -%}{%- set identifierTitle = "Call Sign" -%}
-                  {%- elif identifierType == "ucjis-user-id" -%}{%- set identifierTitle = "UCJIS User ID" -%}
                   {%- else -%}{%- set identifierTitle = "Radio ID" -%}{%- endif -%}
                   <section class="identifier-panel" id="identifier-panel-{{ identifierType }}" data-identifier-panel aria-labelledby="identifier-heading-{{ identifierType }}">
                   <h3 id="identifier-heading-{{ identifierType }}">{{ identifierTitle | escape }}</h3>
@@ -120,11 +119,6 @@ permalink: "{{ officerPage.url }}"
                   <details class="identifier-explanation"><summary>About {{ identifierTitle | escape }}s</summary>
                     {%- if identifierType == "call-sign" -%}
                     <p>A call sign, such as <code>5J45</code>, identifies an officer or unit in radio communications and may also appear in police and court records. Call signs can change or be reassigned.</p>
-                    {%- elif identifierType == "ucjis-user-id" -%}
-                    <p>UCJIS (Utah Criminal Justice Information System) is Utah’s secure criminal justice information system, managed by the Utah Bureau of Criminal Identification (BCI). It provides authorized access to state and federal databases, including the FBI’s National Crime Information Center (NCIC). An agency’s Terminal Agency Coordinator (TAC) assigns each user an individual account and User ID. See <a href="https://ucjis-tac.utah.gov/manuals/">BCI’s manuals page</a> for UCJIS Basics and TAC Responsibilities.</p>
-                    <p>An identifier such as <code>AFSPENCERT</code> in the affidavit’s officer-name field is a UCJIS User ID, not a Spillman ID.</p>
-                    <h4>Where You See It</h4><p>UCJIS User IDs appear in affidavits of probable cause in this format:</p>
-                    <p><code>Officer Name: [UCJIS ID] - [Full Name]</code></p>
                     {%- else -%}
                     <p>A radio ID is the numeric identifier transmitted by a radio device and shown in recording metadata. An officer may use more than one radio, and a device may be shared or reassigned. A radio ID is distinct from the officer’s spoken call sign.</p>
                     <p>Radio associations use the same dated evidence and exclusions as the <a href="/police-radio-resources/#radio-mappings-panel">radio resources table</a>. Evidence counts describe associations, not proof of identity or transcript verification.</p>

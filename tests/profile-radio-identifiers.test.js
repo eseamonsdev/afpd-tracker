@@ -18,6 +18,14 @@ test('profiles receive a stable ID tab and shared radio view without changing ma
  assert.equal(withProfileRadioIdentifiers({...page,type:'civilian-employee-page'},{one:radio}).radio_identifiers,undefined);
 });
 
+test('profiles with only unclassified affidavit identifiers do not keep an empty IDs tab',()=>{
+ const page={type:'officer-page',url:'/officers/one/',sections:[{id:'overview'},{id:'observed-agency-ids'}],observed_officer_ids:[{type:'ucjis-user-id',id:'UNCLASSIFIED'}]};
+ assert.deepEqual(withProfileRadioIdentifiers(page,{}).sections.map(s=>s.id),['overview']);
+ assert.deepEqual(withProfileRadioIdentifiers({...page,observed_officer_ids:[{type:'call-sign',id:'5J42'}]},{}).sections.map(s=>s.id),['overview','observed-agency-ids']);
+ assert.deepEqual(withProfileRadioIdentifiers(page,{one:[{radio_id:'123'}]}).sections.map(s=>s.id),['overview','observed-agency-ids']);
+ assert.equal(page.sections.length,2);
+});
+
 test('compiler profiles apply the same excluded evidence, dates and source notes as radio labels and CSVs',()=>{
  const row=(id,date,extra={})=>({record_id:id,date,officer_id:'one',radio_id:'123',talkgroup:6001,clips:[1,2],evidence:'Cue and reply',status:'confirmed',confirmed_by:'Eric',...extra});
  const source={schema_version:1,officers:{one:{name:'One'}},associations:[row('a','2026-10-01'),row('b','2026-10-01',{clips:[2,3],talkgroup:5922}),row('excluded','2026-10-02',{confirmed_by:null}),row('old','2026-10-03',{confirmed_by:null})],context_review_exclusions:{records:{excluded:{reason:'Wrong person'}}},owner_evidence_reviews:{one:{active_record_ids:['a','b','excluded']}}};

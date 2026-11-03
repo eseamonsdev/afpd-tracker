@@ -3,7 +3,7 @@ import fs from "node:fs";
 import test from "node:test";
 import vm from "node:vm";
 
-function identifierTabs(query = "?tab=observed-agency-ids", ids = ["call-sign", "radio-id", "ucjis-user-id"]) {
+function identifierTabs(query = "?tab=observed-agency-ids", ids = ["call-sign", "radio-id"]) {
   const element = id => ({
     id, dataset: { identifierTab: id }, attrs: {}, listeners: {},
     setAttribute(key, value) { this.attrs[key] = value; },
@@ -54,13 +54,13 @@ test("identifier tabs default to the first available type and preserve the paren
   assert.equal(ui.selected(), "call-sign");
   assert.equal(identifierTabs("?identifier=unknown").selected(), "call-sign");
   assert.equal(identifierTabs("?identifier=radio-id").selected(), "radio-id");
-  assert.equal(identifierTabs("", ["radio-id", "ucjis-user-id"]).selected(), "radio-id");
+  assert.equal(identifierTabs("", ["radio-id"]).selected(), "radio-id");
 });
 
 test("identifier keyboard navigation wraps, moves focus, and exposes accessible panels", () => {
   const ui = identifierTabs();
   assert.equal(ui.list.attrs.role, "tablist");
-  for (const [index, key, expected] of [[0, "End", 2], [2, "ArrowRight", 0], [0, "ArrowLeft", 2], [2, "Home", 0]]) {
+  for (const [index, key, expected] of [[0, "End", 1], [1, "ArrowRight", 0], [0, "ArrowLeft", 1], [1, "Home", 0]]) {
     let prevented = false;
     ui.tabs[index].listeners.keydown({ key, preventDefault() { prevented = true; } });
     assert.ok(prevented);
@@ -85,7 +85,7 @@ test("every existing observed IDs panel renders only its existing identifier sec
     const expected = [];
     if (html.includes('aria-label="Call Sign observations')) expected.push("call-sign");
     if (html.includes('aria-label="Radio ID observations')) expected.push("radio-id");
-    expected.push("ucjis-user-id");
+    assert.doesNotMatch(html, /UCJIS User ID|identifier-(?:tab|panel)-ucjis-user-id/);
     const tabs = [...html.matchAll(/data-identifier-tab="([^"]+)"/g)].map(match => match[1]);
     const panels = [...html.matchAll(/id="identifier-panel-([^"]+)"/g)].map(match => match[1]);
     assert.deepEqual(tabs, expected, slug);

@@ -3,7 +3,7 @@ import fs from "node:fs";
 import test from "node:test";
 
 const sharedProfiles=JSON.parse(fs.readFileSync("public/records/openmhz/officer-associations.json","utf8")).profiles;
-const labels = { "call-sign": "Call Sign", "ucjis-user-id": "UCJIS User ID", "radio-id": "Radio ID" };
+const labels = { "call-sign": "Call Sign", "radio-id": "Radio ID" };
 
 test("built officer profiles keep each identifier in its own evidence table", () => {
   let profiles = 0;
@@ -13,17 +13,10 @@ test("built officer profiles keep each identifier in its own evidence table", ()
     profiles++;
     const slug = file.replace(/\.json$/, "");
     const html = fs.readFileSync(`public/officers/${slug}/index.html`, "utf8");
-    assert.match(html, /Observed Officer IDs/);
+    const hasVisibleIdentifiers = officer.observed_officer_ids.some(row=>row.type==="call-sign") || (sharedProfiles[slug]??[]).length > 0;
+    assert.equal(html.includes('data-section-tab="observed-agency-ids"'), hasVisibleIdentifiers, slug);
+    assert.doesNotMatch(html, /UCJIS User ID|identifier-(?:tab|panel)-ucjis-user-id/);
     assert.doesNotMatch(html, /Observed Agency IDs/);
-    const hasUcjis = officer.observed_officer_ids.some(row=>row.type==="ucjis-user-id");
-    if(hasUcjis) {
-      assert.match(html, /Officer Name: \[UCJIS ID\] - \[Full Name\]/);
-      assert.match(html, /<details class="identifier-explanation"><summary>About UCJIS User IDs<\/summary>/);
-      assert.ok(html.indexOf('aria-label="UCJIS User ID observations') < html.indexOf('About UCJIS User IDs'));
-    } else {
-      assert.ok(html.includes('No UCJIS User ID documented in the cited records for this officer.'));
-      assert.ok(html.indexOf('No UCJIS User ID documented') < html.indexOf('About UCJIS User IDs'));
-    }
     for (const [type, label] of Object.entries(labels)) {
       const observations = type === "radio-id" ? (sharedProfiles[slug]??[]).map(row=>({id:row.radio_id})) : officer.observed_officer_ids.filter(row => row.type === type);
       const table = html.match(new RegExp(`aria-label="${label} observations and supporting evidence"[\\s\\S]*?<tbody>([\\s\\S]*?)</tbody>`));
