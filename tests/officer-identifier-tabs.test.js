@@ -83,7 +83,7 @@ test("every existing observed IDs panel renders only its existing identifier sec
     }
     count++;
     const expected = [];
-    if (html.includes('aria-label="Call Sign observations')) expected.push("call-sign");
+    if (html.includes('aria-label="Call sign assignments')) expected.push("call-sign");
     if (html.includes('aria-label="Radio ID observations')) expected.push("radio-id");
     assert.doesNotMatch(html, /UCJIS User ID|identifier-(?:tab|panel)-ucjis-user-id/);
     const tabs = [...html.matchAll(/data-identifier-tab="([^"]+)"/g)].map(match => match[1]);

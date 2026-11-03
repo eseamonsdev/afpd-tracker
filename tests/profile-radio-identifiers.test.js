@@ -15,13 +15,17 @@ test('profiles receive a stable ID tab and shared radio view without changing ma
  assert.equal(page.sections.length,2);
  assert.equal(withProfileRadioIdentifiers(result,{one:radio}).sections.length,3);
  assert.equal(withProfileRadioIdentifiers(page,{}).sections.length,2);
+ const directory={one:[{call_sign:'5J42',assignment:'Officer One',sources:[]}]};
+ const directoryOnly=withProfileRadioIdentifiers(page,{},directory);
+ assert.equal(directoryOnly.call_sign_assignments,directory.one);
+ assert.deepEqual(directoryOnly.sections.map(s=>s.id),['overview','observed-agency-ids','employment']);
  assert.equal(withProfileRadioIdentifiers({...page,type:'civilian-employee-page'},{one:radio}).radio_identifiers,undefined);
 });
 
 test('profiles with only unclassified affidavit identifiers do not keep an empty IDs tab',()=>{
  const page={type:'officer-page',url:'/officers/one/',sections:[{id:'overview'},{id:'observed-agency-ids'}],observed_officer_ids:[{type:'ucjis-user-id',id:'UNCLASSIFIED'}]};
  assert.deepEqual(withProfileRadioIdentifiers(page,{}).sections.map(s=>s.id),['overview']);
- assert.deepEqual(withProfileRadioIdentifiers({...page,observed_officer_ids:[{type:'call-sign',id:'5J42'}]},{}).sections.map(s=>s.id),['overview','observed-agency-ids']);
+ assert.deepEqual(withProfileRadioIdentifiers(page,{},{one:[{call_sign:'5J42'}]}).sections.map(s=>s.id),['overview','observed-agency-ids']);
  assert.deepEqual(withProfileRadioIdentifiers(page,{one:[{radio_id:'123'}]}).sections.map(s=>s.id),['overview','observed-agency-ids']);
  assert.equal(page.sections.length,2);
 });

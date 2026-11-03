@@ -2,37 +2,47 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import test from "node:test";
 
-const sharedProfiles=JSON.parse(fs.readFileSync("public/records/openmhz/officer-associations.json","utf8")).profiles;
-const labels = { "call-sign": "Call Sign", "radio-id": "Radio ID" };
+const directoryProfiles = JSON.parse(fs.readFileSync("data/officer-call-sign-assignments.json", "utf8")).profiles;
 
-test("built officer profiles keep each identifier in its own evidence table", () => {
-  let profiles = 0;
-  for (const file of fs.readdirSync("data/entities/people/officers")) {
-    const officer = JSON.parse(fs.readFileSync(`data/entities/people/officers/${file}`, "utf8")).entities[0];
-    if (!officer.observed_officer_ids?.length) continue;
-    profiles++;
-    const slug = file.replace(/\.json$/, "");
+test("every directory officer has a simple dated call-sign assignment table with working sources", () => {
+  assert.equal(Object.keys(directoryProfiles).length, 58);
+  for (const [slug, assignments] of Object.entries(directoryProfiles)) {
     const html = fs.readFileSync(`public/officers/${slug}/index.html`, "utf8");
-    const hasVisibleIdentifiers = officer.observed_officer_ids.some(row=>row.type==="call-sign") || (sharedProfiles[slug]??[]).length > 0;
-    assert.equal(html.includes('data-section-tab="observed-agency-ids"'), hasVisibleIdentifiers, slug);
-    assert.doesNotMatch(html, /UCJIS User ID|identifier-(?:tab|panel)-ucjis-user-id/);
-    assert.doesNotMatch(html, /Observed Agency IDs/);
-    for (const [type, label] of Object.entries(labels)) {
-      const observations = type === "radio-id" ? (sharedProfiles[slug]??[]).map(row=>({id:row.radio_id})) : officer.observed_officer_ids.filter(row => row.type === type);
-      const table = html.match(new RegExp(`aria-label="${label} observations and supporting evidence"[\\s\\S]*?<tbody>([\\s\\S]*?)</tbody>`));
-      if (!observations.length) {
-        assert.equal(table, null, `${slug}: no invented ${label} table`);
-        if(type!=="ucjis-user-id")assert.ok(!html.includes(`<h3>${label}</h3>`));
-        continue;
-      }
-      assert.ok(table, `${slug}: ${label} evidence table`);
-      const ids = [...table[1].matchAll(/<th scope="row"><code>([^<]+)<\/code>/g)].map(match => match[1]);
-      assert.deepEqual(ids, observations.map(row => row.id), `${slug}: ${label} contains only its own IDs`);
-      for (const observation of observations) {
-        if (!observation.url?.startsWith("/records/")) continue;
-        assert.ok(fs.existsSync(`public${observation.url.split("#")[0]}`), `${slug}: source exists`);
+    assert.match(html, /data-section-tab="observed-agency-ids"/);
+    assert.doesNotMatch(html, /UCJIS User ID|About Call Signs/);
+    const panel = html.match(/id="identifier-panel-call-sign"[\s\S]*?<\/section>/)?.[0];
+    assert.ok(panel, slug);
+    assert.match(panel, /<th scope="col">Call sign<\/th><th scope="col">Assignment<\/th><th scope="col">Source<\/th>/);
+    assert.doesNotMatch(panel, /Date observed|Supporting evidence|<details/);
+    assert.ok(panel.indexOf("Call signs can change or be reassigned.") < panel.indexOf("<table"));
+    const ids = [...panel.matchAll(/<th scope="row"><code>([^<]+)<\/code>/g)].map(match => match[1]);
+    assert.deepEqual(ids, assignments.map(row => row.call_sign), slug);
+    for (const assignment of assignments) {
+      assert.ok(panel.includes(assignment.assignment), slug);
+      for (const source of assignment.sources) {
+        assert.match(source.date, /^2026-(08-17|09-28)$/);
+        assert.ok(panel.includes(`href="${source.url}"`), slug);
+        assert.ok(source.label.includes(source.date.endsWith("09-28") ? "September 28, 2026" : "August 17, 2026"));
+        assert.ok(fs.existsSync(`public${source.url.split("#")[0]}`));
       }
     }
   }
-  assert.equal(profiles, 9);
+});
+
+test("directory snapshots preserve reassigned call signs and do not invent unnamed assignments", () => {
+  const dated = (slug, date) => directoryProfiles[slug].filter(row => row.sources.some(source => source.date === date)).map(row => row.call_sign);
+  assert.deepEqual(dated("tanner-m-ballamis", "2026-08-17"), ["5J83"]);
+  assert.deepEqual(dated("tanner-m-ballamis", "2026-09-28"), ["5J53"]);
+  assert.deepEqual(dated("joshua-m-jensen", "2026-08-17"), ["5J27"]);
+  assert.deepEqual(dated("joshua-m-jensen", "2026-09-28"), ["5J28"]);
+  assert.deepEqual(dated("greg-b-mecham", "2026-08-17"), ["5J35"]);
+  assert.deepEqual(dated("greg-b-mecham", "2026-09-28"), ["5J171"]);
+  assert.deepEqual(dated("s-scott-daughrity", "2026-08-17"), ["5J170"]);
+  assert.deepEqual(dated("s-scott-daughrity", "2026-09-28"), ["5J27"]);
+  for (const date of ["2026-08-17", "2026-09-28"]) {
+    const calls = Object.keys(directoryProfiles).flatMap(slug => dated(slug, date));
+    assert.equal(calls.length, 58);
+    assert.equal(new Set(calls).size, calls.length);
+    assert.ok(!calls.includes("5J33"));
+  }
 });

@@ -40,6 +40,7 @@
 
   
     <script src="/js/officer-tabs.js" defer></script>
+    <script src="/js/officer-identifier-tabs.js" defer></script>
   
 </head>
 <body>
@@ -111,6 +112,16 @@
           
             <button
               class="officer-section-tab"
+              id="officer-tab-observed-agency-ids"
+              type="button"
+              data-section-tab="observed-agency-ids"
+              aria-controls="officer-section-observed-agency-ids"
+            >
+              Observed Officer IDs
+            </button>
+          
+            <button
+              class="officer-section-tab"
               id="officer-tab-employment"
               type="button"
               data-section-tab="employment"
@@ -142,6 +153,31 @@
 
             
               <p class="profile-alternate-names"><strong>Other names used:</strong> Ivan Bird.</p>
+          </section>
+        
+          <section
+            class="officer-section-panel"
+            id="officer-section-observed-agency-ids"
+            aria-labelledby="officer-section-heading-observed-agency-ids"
+            data-section-panel
+          >
+            <h2 id="officer-section-heading-observed-agency-ids">
+              Observed Officer IDs
+            </h2>
+
+            
+              <p>The identifiers below are recorded for this officer. Each association applies to the cited records and dates.</p><div data-identifier-sections>
+                <div class="officer-section-tabs identifier-tabs" data-identifier-tabs hidden><button class="officer-section-tab" id="identifier-tab-call-sign" type="button" data-identifier-tab="call-sign" aria-controls="identifier-panel-call-sign">Call Signs</button></div><section class="identifier-panel" id="identifier-panel-call-sign" data-identifier-panel aria-labelledby="identifier-heading-call-sign">
+                  <h3 id="identifier-heading-call-sign">Call Sign</h3><p>A call sign identifies an officer or unit in radio communications. The assignments below are listed in the dated AFPD directories. Call signs can change or be reassigned.</p>
+                  <div class="csv-table-scroll" tabindex="0" role="region" aria-label="Call sign assignments from AFPD directories">
+                    <table class="csv-table">
+                      <thead><tr><th scope="col">Call sign</th><th scope="col">Assignment</th><th scope="col">Source</th></tr></thead>
+                      <tbody><tr><th scope="row"><code>5J13</code></th><td>Officer Ivan Bird</td><td><a href="/records/afpd-directories/afpd-directory-2026-09-28.pdf#page=1">AFPD Directory — September 28, 2026, page 1</a></td></tr><tr><th scope="row"><code>5J13</code></th><td>Officer Ivan Bird - Administrative Officer</td><td><a href="/records/afpd-directories/afpd-directory-2026-08-17.pdf#page=1">AFPD Directory — August 17, 2026, page 1</a></td></tr></tbody>
+                    </table>
+                  </div>
+                  </section></div>
+
+            
           </section>
         
           <section

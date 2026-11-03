@@ -31,6 +31,7 @@ export default function (eleventyConfig) {
   validateOriginalTranscripts();
   buildOfficerAssociations();
   eleventyConfig.addWatchTarget("./data/officer-association-evidence.json");
+  eleventyConfig.addWatchTarget("./data/officer-call-sign-assignments.json");
   eleventyConfig.addWatchTarget("./data/production-officer-association-baseline.json");
   eleventyConfig.on("eleventy.before", () => { buildOfficerAssociations(); buildAssociationReview(); });
   eleventyConfig.addFilter("sortUpdates", sortUpdates);
@@ -130,12 +131,13 @@ export default function (eleventyConfig) {
     const entityByID = buildByID(loadedEntityFiles);
 
     const radioProfiles=JSON.parse(fs.readFileSync("public/records/openmhz/officer-associations.json","utf8")).profiles;
+    const callSignProfiles=JSON.parse(fs.readFileSync("data/officer-call-sign-assignments.json","utf8")).profiles;
     const all = Object.create(null);
     const byType = Object.create(null);
     byType["police-radio-excerpt-page"] = [];
 
     for (const [id, entity] of Object.entries(entityByID)) {
-      const resolvedEntity = withProfileRadioIdentifiers(resolveRefs(entity, byID),radioProfiles);
+      const resolvedEntity = withProfileRadioIdentifiers(resolveRefs(entity, byID),radioProfiles,callSignProfiles);
       validateProfileTabs(resolvedEntity);
 
       all[id] = resolvedEntity;
