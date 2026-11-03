@@ -124,3 +124,16 @@ test("AFPD membership is rebuilt from 6001 source IDs, excluding other talkgroup
   assert.deepEqual(f.build().afpdRadioIds, ['14590029'], 'membership reflects current authoritative manifests and excludes corrected non-AFPD IDs');
   assert.equal(f.build().agencyRadioIds['14580068'], '18J16');
 });
+
+test("known unavailable recordings use only the shared placeholder and retain their source URL", t => {
+  const f = fixture(t);
+  f.call.audio_status = "unavailable";
+  f.call.playback_url = "/records/openmhz/place-holder-audio.m4a";
+  f.call.media_url = "https://media2.openmhz.com/original.m4a";
+  assert.equal(f.build().days.length, 0, "placeholder asset must exist");
+  fs.writeFileSync(path.join(f.directory, "place-holder-audio.m4a"), "placeholder");
+  assert.equal(f.build().days.length, 1);
+  assert.match(fs.readFileSync(f.transcript, "utf8"), /Original audio unavailable/);
+  f.call.playback_url = "https://example.test/untrusted.m4a";
+  assert.equal(f.build().days.length, 0);
+});

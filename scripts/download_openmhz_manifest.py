@@ -258,6 +258,9 @@ def import_manifest(root, source, downloader, *, pause_ms=DEFAULT_PAUSE_MS):
         temp = Path(temp)
         for position, incoming in enumerate(sorted(data['calls'], key=lambda call: (call['epoch'], call['id'])), 1):
             name = incoming['original_filename']
+            if incoming.get('audio_status') == 'unavailable':
+                skipped += 1
+                continue
             if incoming['id'] in ids and ids[incoming['id']] != name:
                 raise ValueError('Source ID changed its audio filename')
             previous = merged.get(name)
@@ -313,6 +316,8 @@ def import_manifest(root, source, downloader, *, pause_ms=DEFAULT_PAUSE_MS):
             outstanding.pop(incoming['id'], None)
             call.pop('download_error', None)
             call['audio_downloaded'] = True
+            for field in ('audio_status', 'playback_url', 'audio_unavailable_reason'):
+                call.pop(field, None)
             if 'media_url_status' in call:
                 call['media_url_status'] = 'download_validated'
             print(f'{day} [{position}/{len(data["calls"])}] OK {name}', flush=True)

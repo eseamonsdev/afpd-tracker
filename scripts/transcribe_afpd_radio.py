@@ -51,7 +51,8 @@ def archive(date, talkgroup=6001):
 def context_indices(calls, index, cfg):
     cutoff = calls[index]['epoch'] - cfg['context_seconds']
     return [j for j in range(max(0, index-cfg['context_calls']), index)
-            if cutoff <= calls[j]['epoch'] < calls[index]['epoch']]
+            if cutoff <= calls[j]['epoch'] < calls[index]['epoch']
+            and calls[j].get('audio_status') != 'unavailable']
 
 
 def load_archive(date, talkgroup=6001, require_complete=True):
@@ -100,6 +101,7 @@ def run(args):
     selected = [int(x)-1 for x in args.clips.split(',')] if args.clips else list(range(len(calls)))
     if any(i < 0 or i >= len(calls) for i in selected):
         raise ValueError('Invalid sample index')
+    selected = [i for i in selected if calls[i].get('audio_status') != 'unavailable']
     required = sorted(set(selected) | {j for i in selected for j in context_indices(calls, i, cfg)})
     for i in required:
         c = calls[i]; source = folder/c['original_filename']
@@ -170,13 +172,15 @@ def finalize(args):
     if reviewed.get('date') != args.date or reviewed.get('settings_sha256') != state['settings_sha256']:
         raise ValueError('Review date/settings mismatch')
     entries = reviewed['entries']
-    names = {c['original_filename'] for c in data['calls']}
+    names = {c['original_filename'] for c in data['calls'] if c.get('audio_status') != 'unavailable'}
     if len(entries) != len(names) or {e['filename'] for e in entries} != names:
         raise ValueError('Review must cover every unique filename exactly once')
     by_name = {e['filename']:e for e in entries}
     # calls.json is the authoritative transcript; preserve existing reviewed entries.
     uncertain_clips = 0; populated = 0
     for i,c in enumerate(data['calls'],1):
+        if c.get('audio_status') == 'unavailable':
+            continue
         name=c['original_filename']; e=by_name[name]; raw=state['clips'].get(name,{})
         if set(raw.get('passes',{})) != {'original','filtered','context'} or raw.get('sha256') != c.get('sha256'):
             raise ValueError('Missing passes/checksum mismatch: '+name)
@@ -196,7 +200,7 @@ def finalize(args):
             uncertain_clips += 1
     data['enableTranscription'] = True
     write(folder/'calls.json',data)
-    print(json.dumps({'date':args.date,'three_pass_clips':len(data['calls']),'player_transcripts':populated,'uncertain_clips':uncertain_clips}))
+    print(json.dumps({'date':args.date,'three_pass_clips':len(names),'player_transcripts':populated,'uncertain_clips':uncertain_clips}))
 
 
 if __name__ == '__main__':

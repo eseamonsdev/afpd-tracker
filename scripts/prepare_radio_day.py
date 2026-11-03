@@ -70,7 +70,12 @@ def prepare(root, day, talkgroup=6001, fetch=False):
         else:
             failures_path.unlink(missing_ok=True)
     failed = {c['id'] for c in retained}
-    calls = [c for c in data['calls'] if c['original_filename'] not in saved and c['id'] not in failed]
+    # Source URLs remain evidence, not an instruction to keep retrying a known gap.
+    unavailable = {c['id'] for c in existing.get('calls', [])
+                   if c.get('audio_status') == 'unavailable'}
+    calls = [c for c in data['calls'] if c['original_filename'] not in saved
+             and c['id'] not in failed and c['id'] not in unavailable
+             and c.get('audio_status') != 'unavailable']
     if calls:
         coverage = data.get('coverage', 'unknown')
         if coverage not in ('complete', 'partial', 'unknown'):

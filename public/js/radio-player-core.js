@@ -15,6 +15,9 @@ const durationText = seconds => { const whole = Math.floor(Number.isFinite(secon
   };
 
 const isDispatchId = id => id.startsWith("904");
+const unavailableAudio = call => call?.audio_status === "unavailable";
+const placeholderAudio = "/records/openmhz/place-holder-audio.m4a";
+const playbackSource = (call, fallback) => unavailableAudio(call) ? placeholderAudio : fallback;
 
 function createIdentity(getDate) {
   let afpdIds = new Set(), agencyIds = {};
@@ -231,7 +234,7 @@ function transcriptUI(get) {
     toggle.textContent = `Transcript: ${on ? "On" : "Off"}`;
     render();
   });
-  return { update(next, enabled) { call = next; available = enabled; render(); } };
+  return { update(next, enabled) { call = next; available = enabled && !unavailableAudio(call); render(); } };
 }
 function bindRow(row, button, choose) {
   button.disabled = false;
@@ -254,6 +257,13 @@ function clipRow(call, index, identity, choose) {
   const line = row.querySelector(".radio-ids");
   line.hidden = !ids;
   identity.render(line, call);
+  if (unavailableAudio(call)) {
+    const notice = document.createElement("span");
+    notice.className = "radio-audio-unavailable";
+    notice.textContent = "Original audio unavailable";
+    row.append(notice);
+    button.setAttribute("aria-label", button.getAttribute("aria-label") + ", Original audio unavailable, one-second silent placeholder");
+  }
   bindRow(row, button, choose);
   return { row, button };
 }
@@ -414,7 +424,7 @@ function playbackEngine({ get, getCalls, getButtons, clipSource, label, singlePl
     selected = index;
     const call = getCalls()[index];
     getButtons()[index].setAttribute("aria-current", "true");
-    current.textContent = label(index);
+    current.textContent = label(index) + (unavailableAudio(call) ? " · Original audio unavailable" : "");
     onSelect(call, index);
     message.textContent = "";
     seek.disabled = true;
@@ -521,7 +531,7 @@ function archive(config) {
   const player = playbackEngine({
     get, getCalls: () => calls, getButtons: () => buttons,
     singlePlayer: config.law2 || /(^|-)afpd-tracker\.ericseamonsdeveloper\.workers\.dev$/.test(window.location.hostname) || /(^|\.)afpd-accountability\.com$/.test(window.location.hostname),
-    clipSource: index => `${base}${encodeURIComponent(folder)}/${encodeURIComponent(calls[index].original_filename)}`,
+    clipSource: index => playbackSource(calls[index], `${base}${encodeURIComponent(folder)}/${encodeURIComponent(calls[index].original_filename)}`),
     label: index => `${dateFormat.format(dateObject(day.value))} · ${timeFormat.format(new Date(calls[index].epoch * 1000))} · Clip ${index + 1}`,
     onSelect(call) { identity.close(); updateRadioIds(call); updateTranscript(); },
     onReset() { updateRadioIds(); updateTranscript(); }
@@ -588,10 +598,11 @@ function archive(config) {
       });
       list.append(fragment);
       if (reviewProgress && transcriptionCount && verificationCount) {
-        const transcribed = calls.filter(call => typeof call.transcript === "string" && call.transcript.trim()).length;
-        const verified = calls.filter(call => call.validated === true).length;
-        transcriptionCount.textContent = `${transcribed} / ${calls.length}`;
-        verificationCount.textContent = `${verified} / ${calls.length}`;
+        const eligible = calls.filter(call => !unavailableAudio(call));
+        const transcribed = eligible.filter(call => typeof call.transcript === "string" && call.transcript.trim()).length;
+        const verified = eligible.filter(call => call.validated === true).length;
+        transcriptionCount.textContent = `${transcribed} / ${eligible.length}`;
+        verificationCount.textContent = `${verified} / ${eligible.length}`;
         if (progressDate) {
           const [year, month, day] = entry.date.split("-");
           progressDate.textContent = `for ${month}/${day}/${year}`;
@@ -661,6 +672,7 @@ function excerpt() {
   const buttons = Array.from(root.querySelectorAll("[data-excerpt-clip]"));
   const calls = buttons.map(button => ({
     get source() { return button.dataset.source; },
+    get audio_status() { return button.dataset.audioStatus; },
     get displayed_seconds() { return Number(button.dataset.seconds); },
     get transcript() { return button.dataset.transcript || ""; },
     get note() { return button.dataset.note || ""; },
@@ -669,13 +681,13 @@ function excerpt() {
   }));
   let associationDate = "";
   const identity = createIdentity(() => associationDate), transcript = transcriptUI(get);
-  const dateFor = index => buttons[index]?.dataset.source?.match(/car-to-car-(\d{4}-\d{2}-\d{2})\//)?.[1] || "";
+  const dateFor = index => buttons[index]?.dataset.archiveDate || buttons[index]?.dataset.source?.match(/car-to-car-(\d{4}-\d{2}-\d{2})\//)?.[1] || "";
   const updateIdentity = index => {
     const line = get("current-radio-ids"); if (!line) return;
     associationDate = dateFor(index); identity.render(line, calls[index]); line.hidden = !radioIds(calls[index]).length;
   };
   const player = playbackEngine({ get, getCalls: () => calls, getButtons: () => buttons,
-    clipSource: index => calls[index].source, label: index => buttons[index].dataset.label,
+    clipSource: index => playbackSource(calls[index], calls[index].source), label: index => buttons[index].dataset.label,
     endMessage: "End of excerpt.",
     onSelect(call, index) { identity.close(); updateIdentity(index); transcript.update(call, Boolean(get("transcript-toggle"))); }
   });
@@ -708,6 +720,6 @@ function excerpt() {
     });
   }
 }
-globalThis.RadioPlayer = { archive, excerpt, bindRow };
+globalThis.RadioPlayer = { archive, excerpt, bindRow, playbackSource };
 })();
 

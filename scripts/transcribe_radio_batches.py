@@ -31,17 +31,19 @@ def radio_ids(call):
 
 def selected_indices(data, selection='all'):
     if selection == 'all':
-        return list(range(len(data['calls'])))
+        return [i for i, call in enumerate(data['calls']) if call.get('audio_status') != 'unavailable']
     if selection == 'missing':
         return [i for i, call in enumerate(data['calls'])
-                if call.get('validated') is not True
+                if call.get('audio_status') != 'unavailable'
+                and call.get('validated') is not True
                 and not (isinstance(call.get('transcript'), str) and call['transcript'].strip())]
     if selection == 'dispatch_missing':
         if data['talkgroup'] != 5922:
             raise ValueError('Dispatch selection requires Law 2')
         # Same owner-configured 904 prefix used by the radio player.
         return [i for i, call in enumerate(data['calls'])
-                if any(value.startswith('904') for value in radio_ids(call))
+                if call.get('audio_status') != 'unavailable'
+                and any(value.startswith('904') for value in radio_ids(call))
                 and call.get('validated') is not True
                 and not (isinstance(call.get('transcript'), str) and call['transcript'].strip())]
     if selection != 'afpd_missing' or data['talkgroup'] != 5922:
@@ -58,7 +60,8 @@ def selected_indices(data, selection='all'):
                 ids.update(radio_ids(call))
     ids = {value for value in ids if corrections.get(value, {}).get('afpd') is not False}
     return [i for i, call in enumerate(data['calls'])
-            if radio_ids(call) & ids and call.get('validated') is not True
+            if call.get('audio_status') != 'unavailable'
+            and radio_ids(call) & ids and call.get('validated') is not True
             and not (isinstance(call.get('transcript'), str) and call['transcript'].strip())]
 
 
@@ -67,6 +70,8 @@ def available_targets(folder, data, targets, cfg, clips):
     ready, blocked = [], []
     for index in targets:
         call = data['calls'][index]
+        if call.get('audio_status') == 'unavailable':
+            continue
         if completed(clips.get(call['original_filename'], {})):
             ready.append(index)
             continue
@@ -127,10 +132,12 @@ def checkpoint(directory, data, cfg, signature, clips, batch_size, status):
             'schema_version': 1, 'date': data['date'], 'talkgroup': data.get('talkgroup', 6001),
             'settings_sha256': signature, 'settings': cfg,
             'clips': selected})
-    done = sum(completed(clips.get(c['original_filename'], {})) for c in calls)
+    eligible = [c for c in calls if c.get('audio_status') != 'unavailable']
+    done = sum(completed(clips.get(c['original_filename'], {})) for c in eligible)
     write(directory / 'status.json', {
         'date': data['date'], 'talkgroup': data.get('talkgroup', 6001), 'total_clips': len(calls),
-        'three_pass_clips': done, 'remaining_clips': len(calls) - done,
+        'three_pass_clips': done, 'remaining_clips': len(eligible) - done,
+        'unavailable_clips': len(calls) - len(eligible),
         'state': status, 'updated_at': dt.datetime.now(dt.timezone.utc).isoformat(),
         'reconciled': False, 'audio_saved_in_repository': False})
     return done

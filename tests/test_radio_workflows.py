@@ -157,6 +157,18 @@ class AfpdSelectionTests(unittest.TestCase):
 
 
 class PreparationTests(unittest.TestCase):
+    def test_known_unavailable_source_is_not_automatically_queued(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            source = call(5922)
+            write(root / metadata_paths(DAY, 5922)[0],
+                  {'date': DAY, 'talkgroup': 5922, 'count': 1, 'calls': [source]})
+            missing = dict(source, audio_status='unavailable',
+                           playback_url='/records/openmhz/place-holder-audio.m4a')
+            write(archive_path(root, DAY, 5922) / 'calls.json', {'calls': [missing]})
+            self.assertEqual(prepare(root, DAY, 5922)['queued'], 0)
+            self.assertEqual(missing['media_url'], source['media_url'])
+
     def test_all_groups_skip_saved_and_failed_and_resume_only_selected_day(self):
         for group in TALKGROUPS:
             with self.subTest(group=group), tempfile.TemporaryDirectory() as tmp:

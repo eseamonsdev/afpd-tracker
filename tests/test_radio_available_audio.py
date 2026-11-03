@@ -3,7 +3,8 @@ from pathlib import Path
 import unittest
 
 sys.path.insert(0, str(Path(__file__).parents[1] / 'scripts'))
-from transcribe_radio_batches import available_targets
+from transcribe_radio_batches import available_targets, selected_indices
+from transcribe_afpd_radio import context_indices
 
 
 class AvailableAudioTests(unittest.TestCase):
@@ -35,6 +36,20 @@ class AvailableAudioTests(unittest.TestCase):
         data = {'calls': [self.call(100, False)]}
         saved = {data['calls'][0]['original_filename']: {'passes': {k: {} for k in ['original', 'filtered', 'context']}}}
         self.assertEqual(available_targets(self.folder, data, [0], self.cfg, saved), ([0], []))
+
+    def test_known_unavailable_audio_is_skipped_for_selection_and_context(self):
+        missing = dict(self.call(100, False), audio_status='unavailable',
+                       media_url='https://media2.openmhz.com/original.m4a',
+                       playback_url='/records/openmhz/place-holder-audio.m4a',
+                       radio_ids=['9040006'])
+        normal = dict(self.call(120), radio_ids=['9040006'])
+        data = {'talkgroup': 5922, 'calls': [missing, normal]}
+        for selection in ('all', 'missing', 'dispatch_missing'):
+            with self.subTest(selection=selection):
+                self.assertEqual(selected_indices(data, selection), [1])
+        self.assertEqual(context_indices(data['calls'], 1, self.cfg), [])
+        self.assertEqual(available_targets(self.folder, data, [0, 1], self.cfg, {}), ([1], []))
+        self.assertIn('media_url', missing)
 
 
 if __name__ == '__main__':

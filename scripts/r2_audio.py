@@ -17,6 +17,8 @@ def object_key(folder, filename):
 
 
 def stored_audio(call, folder):
+    if call.get('audio_status') == 'unavailable':
+        return False
     storage = call.get('audio_storage', {})
     return (storage.get('provider') == 'r2' and storage.get('verified') is True
             and storage.get('key') in (object_key(folder, call['original_filename']), 'records/' + object_key(folder, call['original_filename']))
@@ -121,6 +123,8 @@ def hydrate(folder, client=None, bucket=None, *, allow_metadata_only=False):
     data = json.loads((folder / 'calls.json').read_text())
     count = 0
     for call in data['calls']:
+        if call.get('audio_status') == 'unavailable':
+            continue
         path = folder / call['original_filename']
         if path.exists():
             continue

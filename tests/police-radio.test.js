@@ -730,3 +730,29 @@ test("two accepted possible identities can render together without a strong iden
   assert.match(f.get('clips').children[0].textContent,/First Officer · Possible association/);
   assert.match(f.get('clips').children[0].textContent,/Second Officer · Possible association/);
 });
+
+test("known unavailable audio uses placeholder, labels persist and autoplay returns to normal transcription", async () => {
+  const calls = [
+    { epoch: 1789100000, displayed_seconds: 8, original_filename: "missing.m4a",
+      media_url: "https://media2.openmhz.com/original.m4a", audio_status: "unavailable",
+      playback_url: "/records/openmhz/place-holder-audio.m4a", transcript: "Must not display" },
+    { epoch: 1789100010, displayed_seconds: 5, original_filename: "normal.m4a", transcript: "Normal transcript." }
+  ];
+  const f = await playerFixture(calls, "afpd-accountability.com");
+  const row = f.get("clips").children[0];
+  assert.equal(row.children.at(-1).textContent, "Original audio unavailable");
+  f.select(0);
+  assert.equal(f.sourceFor(f.active()), calls[0].playback_url);
+  assert.match(f.get("current").textContent, /Original audio unavailable/);
+  assert.equal(f.get("transcript-toggle").hidden, true);
+  assert.equal(f.get("transcript").hidden, true);
+  assert.equal(f.get("transcription-count").textContent, "1 / 1");
+  f.get("autoplay").click();
+  await f.settle();
+  f.finish(f.active());
+  assert.match(f.sourceFor(f.active()), /normal.m4a$/);
+  assert.equal(f.get("transcript-toggle").hidden, false);
+  f.get("transcript-toggle").click();
+  assert.equal(f.get("transcript-text").textContent, "Normal transcript.");
+  assert.equal(row.children.at(-1).textContent, "Original audio unavailable");
+});
