@@ -1,4 +1,4 @@
-.PHONY: promote-staging build
+.PHONY: promote-staging build manual-deploy
 
 promote-staging:
 	@test "$$(git branch --show-current)" = "staging" || \
@@ -14,3 +14,10 @@ promote-staging:
 
 build:
 	npm run build
+
+manual-deploy:
+	git switch staging
+	git pull --ff-only
+	git status --short
+	npm run build
+	npx wrangler versions upload --preview-alias staging --message "staging $$(git rev-parse --short HEAD)"
