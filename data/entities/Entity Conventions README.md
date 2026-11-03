@@ -193,3 +193,26 @@ Selecting a tab updates the URL; browser Back and Forward restore the selection.
 A missing, unknown, or unpublished tab opens the first published tab.
 Keep the ID unchanged when renaming or reordering a tab, including unpublished
 tabs. Builds reject missing, invalid, or duplicate IDs on these four page types.
+
+## Profile Photos
+
+City official page entities can supply an optional `photo` object:
+
+```json
+"photo": {
+  "src": "/records/american-fork-city/city-official-photos/brad-frost-photo.jpg",
+  "width": 400,
+  "height": 600,
+  "position": "center top"
+}
+```
+
+`width` and `height` are the original image dimensions. The reusable
+`profile-photo.njk` macro displays a responsive 4:5 portrait without stretching
+the image. Cropping defaults to `center top` to keep faces visible; optional
+`position` overrides CSS `object-position` for a particular photo. Clicking the
+photo opens the original image. Optional `alt` overrides the default portrait
+description. Omit `photo` for officials without one; no empty frame is rendered.
+
+Other profile templates can import `renderProfilePhoto(photo, name)` and load
+`/css/profile-photo.css` to reuse the same component.
