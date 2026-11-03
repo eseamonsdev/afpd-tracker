@@ -236,6 +236,23 @@ class AudioRunnerTests(unittest.TestCase):
                 self.assertEqual(publish.call_args_list,
                                  [mock_call(build=False), mock_call(build=True)])
 
+    def test_rate_limit_publishes_checkpoint_then_fails_without_another_batch(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest = root / 'queue.json'
+            manifest.write_text('pending')
+            (root / 'openmhz-download-summary.json').write_text('[{"rate_limited": true}]')
+            error = audio_runner.subprocess.CalledProcessError(audio_runner.RATE_LIMIT_EXIT_CODE, 'download')
+            with patch.object(audio_runner, 'prepare', return_value={'manifest': str(manifest)}), \
+                 patch.object(audio_runner.subprocess, 'run', side_effect=error) as download, \
+                 patch.object(audio_runner, 'publish') as publish, \
+                 patch.dict(audio_runner.os.environ, {'RUNNER_TEMP': tmp, 'GITHUB_STEP_SUMMARY': ''}):
+                with self.assertRaises(audio_runner.subprocess.CalledProcessError):
+                    audio_runner.run(DAY, 5922, 'staging')
+            download.assert_called_once()
+            publish.assert_called_once_with(build=False)
+            self.assertTrue(manifest.exists())
+
     def test_intermediate_checkpoint_skips_build_but_still_publishes(self):
         with patch.object(audio_runner.subprocess, 'run') as command:
             audio_runner.publish(build=False)

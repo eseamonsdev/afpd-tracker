@@ -2,6 +2,7 @@
 """Download browser-collected radio manifests directly into the radio archive."""
 import argparse
 import os
+import sys
 import hashlib
 import json
 import math
@@ -40,6 +41,7 @@ def record_status(day, talkgroup, name, status):
 
 MOUNTAIN = ZoneInfo('America/Denver')
 GAP_SECONDS = DEFAULT_PAUSE_MS / 1000
+RATE_LIMIT_EXIT_CODE = 75
 DEFAULT_BATCH_SIZE = 300
 MAX_AUDIO_BYTES = 20 * 1024 * 1024
 MAX_CALLS = 5000
@@ -244,6 +246,7 @@ def import_manifest(root, source, downloader, *, pause_ms=DEFAULT_PAUSE_MS):
     outstanding = {c['id']: c for c in (previous_failures or {}).get('calls', [])}
     failures = []
     failed_names = {}
+    rate_limit = {}
     # Only validated recordings are copied into the public archive.
     with tempfile.TemporaryDirectory(prefix='openmhz-manifest-') as temp:
         temp = Path(temp)
@@ -285,6 +288,13 @@ def import_manifest(root, source, downloader, *, pause_ms=DEFAULT_PAUSE_MS):
                     subprocess.SubprocessError) as error:
                 if name not in checked_audio:
                     audio.unlink(missing_ok=True)
+                if isinstance(error, urllib.error.HTTPError) and error.code == 429:
+                    rate_limit = {'rate_limited': True, 'processed': position - 1,
+                                  'retry_after': error.headers.get('Retry-After') if error.headers else None}
+                    print(f'{day} HTTP 429: stopping immediately; blocked and unattempted calls remain pending. '
+                          f'Retry-After: {rate_limit["retry_after"] or "not provided"}', flush=True)
+                    record_status(day, talkgroup, name, 'pending')
+                    break
                 reason = f'{type(error).__name__}: {error}'
                 failed_names[name] = reason
                 failed = {**incoming, 'download_error': reason}
@@ -321,7 +331,7 @@ def import_manifest(root, source, downloader, *, pause_ms=DEFAULT_PAUSE_MS):
         else:
             failure_path.unlink(missing_ok=True)
         if not merged:
-            return {'date': day, 'count': 0, 'downloaded': 0, 'skipped_existing': skipped, 'failed': len(failures)}
+            return {'date': day, 'count': 0, 'downloaded': 0, 'skipped_existing': skipped, 'failed': len(failures), **rate_limit}
         calls = []
         for name, entry in merged.items():
             call = normalize_call_metadata(entry, day)
@@ -351,6 +361,8 @@ def import_manifest(root, source, downloader, *, pause_ms=DEFAULT_PAUSE_MS):
         statuses = (incoming_coverage, old_coverage)
         result['coverage'] = next(status for status in ('complete', 'partial', 'unknown') if status in statuses)
         result['download_failure_count'] = len(outstanding)
+        if rate_limit:
+            result['coverage'] = 'unknown'
         if outstanding:
             result['coverage'] = 'unknown'
             result['coverage_note'] = f'{len(outstanding)} calls remain unavailable; see the separate failure manifest.'
@@ -391,7 +403,7 @@ def import_manifest(root, source, downloader, *, pause_ms=DEFAULT_PAUSE_MS):
             validation.pop('coverage_note', None)
         write_json(validation_path, validation)
         (destination / 'README.txt').write_text(archive_readme(result))
-    return {'date': day, 'count': len(calls), 'downloaded': downloaded, 'skipped_existing': skipped, 'failed': len(failures)}
+    return {'date': day, 'count': len(calls), 'downloaded': downloaded, 'skipped_existing': skipped, 'failed': len(failures), **rate_limit}
 
 
 def main():
@@ -430,16 +442,22 @@ def main():
             batch_source = Path(directory) / source.name
             write_json(batch_source, batch)
             results.append(import_manifest(root, batch_source, downloader, pause_ms=args.pause_ms))
+        if results[-1].get('rate_limited'):
+            remaining = selected[results[-1]['processed']:] + remaining
         if remaining:
             write_json(source, {**full, 'calls': remaining, 'count': len(remaining)})
         else:
             source.unlink()
         remaining_budget -= len(selected)
+        if results[-1].get('rate_limited'):
+            break
     if results:
         subprocess.run(['node', '--input-type=module', '-e',
                         "import { buildRadioIndex } from './lib/build-radio-index.js'; buildRadioIndex();"], cwd=root, check=True)
     write_json(args.summary, results)
     print(json.dumps(results, indent=2))
+    if any(result.get('rate_limited') for result in results):
+        sys.exit(RATE_LIMIT_EXIT_CODE)
 
 
 if __name__ == '__main__':

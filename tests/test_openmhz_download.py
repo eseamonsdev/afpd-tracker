@@ -29,6 +29,48 @@ def manifest(calls=None):
 
 
 class DownloadTest(unittest.TestCase):
+    def test_429_stops_immediately_and_keeps_blocked_and_unattempted_calls_pending(self):
+        for stop_at in (0, 1):
+            with self.subTest(stop_at=stop_at), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                queue = root / 'records-pending-review/openmhz-manifests/2026-09-30.json'
+                queue.parent.mkdir(parents=True)
+                calls = [sample(1790755010 + i, f'id-{i}') for i in range(4)]
+                queue.write_text(json.dumps(manifest(calls)))
+                downloader = Mock()
+                attempts = []
+                def download(url, path):
+                    attempts.append(url)
+                    if len(attempts) == stop_at + 1:
+                        raise module.urllib.error.HTTPError(url, 429, 'Too Many Requests',
+                                                           {'Retry-After': '120'}, None)
+                    path.write_bytes(b'0000ftyp0000')
+                downloader.download.side_effect = download
+                checked = {'sha256': 'a' * 64, 'size_bytes': 12, 'audio_duration_seconds': 3}
+                summary = root / 'summary.json'
+                args = ['download', '--root', str(root), '--summary', str(summary), '--batch-size', '3']
+                with patch('sys.argv', args), patch.object(module, 'Downloader', return_value=downloader), \
+                     patch.object(module, 'inspect_audio', return_value=checked), \
+                     patch.object(module.subprocess, 'run'):
+                    with self.assertRaises(SystemExit) as stopped:
+                        module.main()
+                self.assertEqual(stopped.exception.code, module.RATE_LIMIT_EXIT_CODE)
+                self.assertEqual(len(attempts), stop_at + 1)
+                pending = json.loads(queue.read_text())
+                self.assertEqual([c['id'] for c in pending['calls']], [c['id'] for c in calls[stop_at:]])
+                self.assertFalse((root / 'records-pending-review/openmhz-failures/2026-09-30-car-to-car.json').exists())
+                result = json.loads(summary.read_text())[0]
+                self.assertTrue(result['rate_limited'])
+                self.assertEqual(result['retry_after'], '120')
+                self.assertEqual(result['downloaded'], stop_at)
+                self.assertEqual(result['failed'], 0)
+                if stop_at:
+                    folder = root / 'public/records/openmhz/openmhz-afpd-car-to-car-2026-09-30'
+                    saved = json.loads((folder / 'calls.json').read_text())
+                    self.assertEqual(saved['count'], stop_at)
+                    self.assertEqual(saved['coverage'], 'unknown')
+                    self.assertTrue((folder / calls[0]['original_filename']).exists())
+
     def test_new_request_preserves_verified_r2_audio_without_fetching_or_inspecting_it(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

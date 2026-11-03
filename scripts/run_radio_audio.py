@@ -8,7 +8,7 @@ import subprocess
 import sys
 
 from prepare_radio_day import prepare
-from download_openmhz_manifest import DEFAULT_BATCH_SIZE
+from download_openmhz_manifest import DEFAULT_BATCH_SIZE, RATE_LIMIT_EXIT_CODE
 from radio_config import DEFAULT_PAUSE_MS, valid_branch, valid_day, valid_talkgroup, valid_pause_ms
 
 
@@ -31,9 +31,20 @@ def run(day, talkgroup, branch, mode='download', proof='', pause_ms=DEFAULT_PAUS
     while manifest.exists():
         processed = True
         summary = str(Path(os.environ['RUNNER_TEMP']) / 'openmhz-download-summary.json')
-        subprocess.run([sys.executable, '-u', 'scripts/download_openmhz_manifest.py',
-                        '--manifest', manifest.name, '--batch-size', str(DEFAULT_BATCH_SIZE),
-                        '--pause-ms', str(pause_ms), '--summary', summary], check=True)
+        try:
+            subprocess.run([sys.executable, '-u', 'scripts/download_openmhz_manifest.py',
+                            '--manifest', manifest.name, '--batch-size', str(DEFAULT_BATCH_SIZE),
+                            '--pause-ms', str(pause_ms), '--summary', summary], check=True)
+        except subprocess.CalledProcessError as error:
+            if error.returncode != RATE_LIMIT_EXIT_CODE:
+                raise
+            # Upload verified audio and persist the remaining queue before failing.
+            publish(build=False)
+            if os.environ.get('GITHUB_STEP_SUMMARY'):
+                with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as output:
+                    output.write('Stopped on HTTP 429. Progress saved; remaining clips are pending.\n')
+                    output.write(Path(summary).read_text() + '\n')
+            raise
         if os.environ.get('GITHUB_STEP_SUMMARY'):
             with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as output:
                 output.write(Path(summary).read_text() + '\n')

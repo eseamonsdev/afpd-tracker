@@ -143,7 +143,7 @@ jobs:
       run: 'nohup python3 -u scripts/publish_radio_status.py --watch > "$RUNNER_TEMP/radio-status.log" 2>&1 &
 
         echo $! > "$RUNNER_TEMP/radio-status.pid"'
-    - name: Download requested audio to R2 and checkpoint every 300 calls
+    - name: Download audio, checkpoint every 300 calls, and stop on HTTP 429
       run: python3 -u scripts/run_radio_audio.py --date "$DAY" --talkgroup "$TALKGROUP" --target-branch "$TARGET_BRANCH" --mode
         "$MODE" --proof "$PROOF" --pause-ms "${PAUSE_MS:-1000}"
     - name: Preserve publication recovery bundle on failure
