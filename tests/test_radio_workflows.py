@@ -173,7 +173,8 @@ class PreparationTests(unittest.TestCase):
                 result = prepare(root, DAY, group)
                 self.assertEqual(result['queued'], 1)
                 path = root / 'records-pending-review/openmhz-manifests' / result['manifest']
-                self.assertEqual(json.loads(path.read_text())['calls'], calls[2:])
+                expected_calls = [{**c, 'original_transcript': None} for c in calls[2:]]
+                self.assertEqual(json.loads(path.read_text())['calls'], expected_calls)
                 self.assertTrue(prepare(root, DAY, group)['resuming'])
 
     def test_saved_metadata_can_be_fetched_from_staging_without_merging(self):
