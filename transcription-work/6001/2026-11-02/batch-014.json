@@ -1,0 +1,689 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-02",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1793688019.m4a": {
+      "index": 131,
+      "epoch": 1793688019,
+      "sha256": "e1d021c4be17a1664abaf99dc279f79a6de3e9bb2ca23cb0f2334eca7b0fdd17",
+      "passes": {
+        "original": {
+          "text": "I checked the extended stay in the parking lot across the street, I didn't see anything.",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " I checked the extended stay in the parking lot across the street, I didn't see anything.",
+              "avg_logprob": -0.24335113845088266,
+              "no_speech_prob": 0.008231905288994312,
+              "compression_ratio": 1.1
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I checked the extended stay in the parking lot across the street. I didn't see anything.",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.04,
+              "text": " I checked the extended stay in the parking lot across the street.",
+              "avg_logprob": -0.2971309460699558,
+              "no_speech_prob": 0.0030302591621875763,
+              "compression_ratio": 1.1139240506329113
+            },
+            {
+              "start": 4.04,
+              "end": 5.04,
+              "text": " I didn't see anything.",
+              "avg_logprob": -0.2971309460699558,
+              "no_speech_prob": 0.0030302591621875763,
+              "compression_ratio": 1.1139240506329113
+            }
+          ]
+        },
+        "context": {
+          "text": "I checked the extended stay in the parking lot across the street, I didn't see anything.",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " I checked the extended stay in the parking lot across the street, I didn't see anything.",
+              "avg_logprob": -0.24335113845088266,
+              "no_speech_prob": 0.008231905288994312,
+              "compression_ratio": 1.1
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793688035.m4a": {
+      "index": 132,
+      "epoch": 1793688035,
+      "sha256": "a9eadbff2efce6cec839d28e9449c19730a493b4e73ad7839850a8ce24ad9dff",
+      "passes": {
+        "original": {
+          "text": "so long ago the suspect vehicle was a hatchback right",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.48,
+              "text": " so long ago the suspect vehicle was a hatchback right",
+              "avg_logprob": -0.37439640292099546,
+              "no_speech_prob": 0.009146044962108135,
+              "compression_ratio": 0.9636363636363636
+            }
+          ]
+        },
+        "filtered": {
+          "text": "longer the suspect vehicle was a hatchback right",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.5200000000000005,
+              "text": " longer the suspect vehicle was a hatchback right",
+              "avg_logprob": -0.3702120780944824,
+              "no_speech_prob": 0.005299058277159929,
+              "compression_ratio": 0.9056603773584906
+            }
+          ]
+        },
+        "context": {
+          "text": "So long ago the suspect vehicle was a hatchback, right?",
+          "prompt": "I checked the extended stay in the parking lot across the street, I didn't see anything.",
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.48,
+              "text": " So long ago the suspect vehicle was a hatchback, right?",
+              "avg_logprob": -0.308450348675251,
+              "no_speech_prob": 0.002325063105672598,
+              "compression_ratio": 0.9016393442622951
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793688044.m4a": {
+      "index": 133,
+      "epoch": 1793688044,
+      "sha256": "041db9842461baaf59a5a9790b5dff9b21dc5c04eb6625fcfcde7f34f5592ec7",
+      "passes": {
+        "original": {
+          "text": "Right there, next.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Right there, next.",
+              "avg_logprob": -0.7184125855565071,
+              "no_speech_prob": 0.01798514649271965,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Okay, next. Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Okay, next.",
+              "avg_logprob": -0.6413542568683624,
+              "no_speech_prob": 0.0067751603201031685,
+              "compression_ratio": 1.3870967741935485
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.6413542568683624,
+              "no_speech_prob": 0.0067751603201031685,
+              "compression_ratio": 1.3870967741935485
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.6413542568683624,
+              "no_speech_prob": 0.0067751603201031685,
+              "compression_ratio": 1.3870967741935485
+            }
+          ]
+        },
+        "context": {
+          "text": "right there next",
+          "prompt": "I checked the extended stay in the parking lot across the street, I didn't see anything. so long ago the suspect vehicle was a hatchback right",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.84,
+              "text": " right there next",
+              "avg_logprob": -0.5827376246452332,
+              "no_speech_prob": 0.04103493317961693,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793688047.m4a": {
+      "index": 134,
+      "epoch": 1793688047,
+      "sha256": "d5052b4c5b8106322cacef75d7691e111ab925fff0a99b8f5c5a9bf289df6b47",
+      "passes": {
+        "original": {
+          "text": "the silver car we're looking for was a hatchback correct",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.5600000000000005,
+              "text": " the silver car we're looking for was a hatchback correct",
+              "avg_logprob": -0.3078343152999878,
+              "no_speech_prob": 0.02698303945362568,
+              "compression_ratio": 0.9333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "the silver car we're looking for was a hatchback correct",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.6000000000000005,
+              "text": " the silver car we're looking for was a hatchback correct",
+              "avg_logprob": -0.3159524361292521,
+              "no_speech_prob": 0.02506413124501705,
+              "compression_ratio": 0.9333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "the silver car we're looking for was a hatchback correct",
+          "prompt": "I checked the extended stay in the parking lot across the street, I didn't see anything. so long ago the suspect vehicle was a hatchback right Right there, next.",
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.5600000000000005,
+              "text": " the silver car we're looking for was a hatchback correct",
+              "avg_logprob": -0.2638149778048197,
+              "no_speech_prob": 0.004346933215856552,
+              "compression_ratio": 0.9333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793688053.m4a": {
+      "index": 135,
+      "epoch": 1793688053,
+      "sha256": "98abcfd5c71aed7b02ae858a8a3f1748d156f4e47c6bef1cbed40a443b9976ce",
+      "passes": {
+        "original": {
+          "text": "Correct, it's going to be lighter in color possibly silver or beige and he described it as a possible Toyota Yaris.",
+          "prompt": null,
+          "duration_seconds": 9.088,
+          "token_limit": 97,
+          "token_count": 30,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.8,
+              "text": " Correct, it's going to be lighter in color possibly silver or beige and he",
+              "avg_logprob": -0.19822265832654892,
+              "no_speech_prob": 0.006072897929698229,
+              "compression_ratio": 1.1734693877551021
+            },
+            {
+              "start": 5.8,
+              "end": 10.4,
+              "text": " described it as a possible Toyota Yaris.",
+              "avg_logprob": -0.19822265832654892,
+              "no_speech_prob": 0.006072897929698229,
+              "compression_ratio": 1.1734693877551021
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It's going to be lighter in color, possibly silver or beige, and he described it as a possible Toyota Yaris.",
+          "prompt": null,
+          "duration_seconds": 9.088,
+          "token_limit": 97,
+          "token_count": 30,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.04,
+              "text": " It's going to be lighter in color, possibly silver or beige, and he described it as a",
+              "avg_logprob": -0.23321318530267285,
+              "no_speech_prob": 0.005243236664682627,
+              "compression_ratio": 1.1612903225806452
+            },
+            {
+              "start": 7.04,
+              "end": 8.6,
+              "text": " possible Toyota Yaris.",
+              "avg_logprob": -0.23321318530267285,
+              "no_speech_prob": 0.005243236664682627,
+              "compression_ratio": 1.1612903225806452
+            }
+          ]
+        },
+        "context": {
+          "text": "correct it's going to be lighter in color possibly silver or beige and he described it as a possible Toyota Yaris",
+          "prompt": "so long ago the suspect vehicle was a hatchback right Right there, next. the silver car we're looking for was a hatchback correct",
+          "duration_seconds": 9.088,
+          "token_limit": 97,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.3,
+              "text": " correct it's going to be lighter in color possibly silver or beige and he described",
+              "avg_logprob": -0.17500507009440455,
+              "no_speech_prob": 0.0006100949249230325,
+              "compression_ratio": 1.2282608695652173
+            },
+            {
+              "start": 6.3,
+              "end": 10.4,
+              "text": " it as a possible Toyota Yaris",
+              "avg_logprob": -0.17500507009440455,
+              "no_speech_prob": 0.0006100949249230325,
+              "compression_ratio": 1.2282608695652173
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793688063.m4a": {
+      "index": 136,
+      "epoch": 1793688063,
+      "sha256": "27c5e32ab5acacb222614f22f614f0b6bf5cf46701afc0321cf3a9b52a1f6bea",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.8275506973266602,
+              "no_speech_prob": 0.07283614575862885,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Coffee.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Coffee.",
+              "avg_logprob": -0.9310149192810059,
+              "no_speech_prob": 0.02432701177895069,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "Right there, next. the silver car we're looking for was a hatchback correct Correct, it's going to be lighter in color possibly silver or beige and he described it as a possible Toyota Yaris.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.708365535736084,
+              "no_speech_prob": 0.028053466230630875,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793688090.m4a": {
+      "index": 137,
+      "epoch": 1793688090,
+      "sha256": "2bd31dee48614cebe101a7f8fb28791bdeb3fe130e95a82a128eeb8cf4dca2bd",
+      "passes": {
+        "original": {
+          "text": "Hey, just 1014, this is not the car or driver.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Hey, just 1014, this is not the car or driver.",
+              "avg_logprob": -0.4423702464384191,
+              "no_speech_prob": 0.004460845608264208,
+              "compression_ratio": 0.9019607843137255
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hey just 1014 this is not the car or driver",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.76,
+              "text": " Hey just 1014 this is not the car or driver",
+              "avg_logprob": -0.4190625101327896,
+              "no_speech_prob": 0.002712949411943555,
+              "compression_ratio": 0.8958333333333334
+            }
+          ]
+        },
+        "context": {
+          "text": "Okay just 10-14 this is not the car or driver",
+          "prompt": "the silver car we're looking for was a hatchback correct Correct, it's going to be lighter in color possibly silver or beige and he described it as a possible Toyota Yaris. Copy.",
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.72,
+              "text": " Okay just 10-14 this is not the car or driver",
+              "avg_logprob": -0.3447314659754435,
+              "no_speech_prob": 0.002252301201224327,
+              "compression_ratio": 0.9
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793688105.m4a": {
+      "index": 138,
+      "epoch": 1793688105,
+      "sha256": "190b994a6bb5b90502b8b04e8ecf085c0e587d3721e9ef20068f4abaaf8cecb1",
+      "passes": {
+        "original": {
+          "text": "May I message you out of traffic for me?",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " May I message you out of traffic for me?",
+              "avg_logprob": -0.47148805398207444,
+              "no_speech_prob": 0.0059116920456290245,
+              "compression_ratio": 0.851063829787234
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Man, it's a geographic for me.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Man, it's a geographic for me.",
+              "avg_logprob": -0.41247209658225376,
+              "no_speech_prob": 0.009852270595729351,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "context": {
+          "text": "May I just send you a graphic for me?",
+          "prompt": "Correct, it's going to be lighter in color possibly silver or beige and he described it as a possible Toyota Yaris. Copy. Hey, just 1014, this is not the car or driver.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " May I just send you a graphic for me?",
+              "avg_logprob": -0.4925642747145433,
+              "no_speech_prob": 0.014387187547981739,
+              "compression_ratio": 0.8222222222222222
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793688108.m4a": {
+      "index": 139,
+      "epoch": 1793688108,
+      "sha256": "b093697665af7fea56a7aaca4bdbd2852b43c819849c550fe0fa41a308147499",
+      "passes": {
+        "original": {
+          "text": "I'm just saying this is not the car that Jotaz stopped. It's not the one we're looking for.",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.5,
+              "text": " I'm just saying this is not the car that Jotaz stopped. It's not the one we're looking for.",
+              "avg_logprob": -0.3287487125822476,
+              "no_speech_prob": 0.0052789910696446896,
+              "compression_ratio": 1.0963855421686748
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm just saying this is not the car that Choate has stopped. It's not the one we're looking for",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.5200000000000005,
+              "text": " I'm just saying this is not the car that Choate has stopped. It's not the one we're looking for",
+              "avg_logprob": -0.36680260411015264,
+              "no_speech_prob": 0.004118910524994135,
+              "compression_ratio": 1.1176470588235294
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm just saying this is not the car that Jotaz stopped. It's not the one we're looking for.",
+          "prompt": "Copy. Hey, just 1014, this is not the car or driver. May I message you out of traffic for me?",
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.5,
+              "text": " I'm just saying this is not the car that Jotaz stopped. It's not the one we're looking for.",
+              "avg_logprob": -0.2708043764744486,
+              "no_speech_prob": 0.0025290914345532656,
+              "compression_ratio": 1.0963855421686748
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793688115.m4a": {
+      "index": 140,
+      "epoch": 1793688115,
+      "sha256": "7c77c2bc1647c45045df27fe33aee5b866328952bdffe4f3685aa0aba54ef736",
+      "passes": {
+        "original": {
+          "text": "Okay, I'll be right here.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Okay, I'll be right here.",
+              "avg_logprob": -0.7112390344793146,
+              "no_speech_prob": 0.012550896033644676,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "filtered": {
+          "text": "God bless you.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " God bless you.",
+              "avg_logprob": -0.7836734737668719,
+              "no_speech_prob": 0.05099950730800629,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "Okay, I'll be right here.",
+          "prompt": "Hey, just 1014, this is not the car or driver. May I message you out of traffic for me? I'm just saying this is not the car that Jotaz stopped. It's not the one we're looking for.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Okay, I'll be right here.",
+              "avg_logprob": -0.5854134126143022,
+              "no_speech_prob": 0.04998568072915077,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        }
+      }
+    }
+  }
+}
