@@ -4,6 +4,7 @@ import fs from "node:fs";
 import { compileOfficerAssociations, buildOfficerAssociations } from "../lib/build-officer-associations.js";
 import { withProductionAssociationBaseline } from "../lib/production-association-baseline.js";
 import { filterAssociationContext, loadAssociationEvidence } from "../lib/association-context-review.js";
+import { isDatedConfirmation } from "../lib/association-display-policy.js";
 import { readCsv } from "../lib/data/read-csv.js";
 const record = (date, extra = {}) => ({ officer_id: "one", radio_id: "123", date, talkgroup: 6001, clips: [1,2], evidence: 'Addressed by name, then replies. "Copy."', status: "confirmed", confirmed_by: "Eric", ...extra });
 const source = associations => ({ schema_version: 1, officers: { one: { name: "One", heard: "One", url: "/officers/one/" }, two: { name: "Two", heard: "Two", url: "/officers/two/" } }, associations });
@@ -44,7 +45,7 @@ test("build exports CSV and labels from the same records with repeatable output"
   const table = readCsv("openmhz/afpd-radio-officer-ids.csv");
   for (const row of table.rows) {
     const input = filterAssociationContext(withProductionAssociationBaseline(loadAssociationEvidence(process.cwd())));
-    const entry = input.associations.filter(e => e.radio_id === row[2] && input.officers[e.officer_id].name === row[1] && (e.production_baseline || e.status === "confirmed" && e.confirmed_by === "Eric" || !input.owner_evidence_reviews?.[e.officer_id] || input.owner_evidence_reviews[e.officer_id].active_record_ids.includes(e.record_id)));
+    const entry = input.associations.filter(e => e.radio_id === row[2] && input.officers[e.officer_id].name === row[1] && (e.production_baseline || isDatedConfirmation(e) || !input.owner_evidence_reviews?.[e.officer_id] || input.owner_evidence_reviews[e.officer_id].active_record_ids.includes(e.record_id)));
     const dates = new Set(entry.filter(e => e.status !== "rejected" && (e.association_reviewed === true || e.status === "confirmed" && e.confirmed_by === "Eric")).map(e => e.date));
     assert.equal(Number(row[3]), dates.size);
   }
@@ -106,7 +107,7 @@ test("all workbook rows, old table pairs, conflicts, and same-clip alternatives 
 test('completed owner evidence review counts selected Mason radio/date groups and retains excluded source rows as history',()=>{
  const result=buildOfficerAssociations();
  const mason=Object.entries(result.labels.associations).flatMap(([radio,rows])=>rows.filter(r=>r.officer_id==='brandon-k-mason').map(r=>[radio,r.evidence_days]));
- assert.deepEqual(mason,[['14590237',8],['14590315',15]]);
+ assert.deepEqual(mason,[['14590237',9],['14590315',15]]);
  assert.ok(!Object.values(result.labels.days['2026-10-23']??{}).flat().some(r=>r.officer_id==='brandon-k-mason'));
  assert.match(result.evidenceCsv,/historical context; not counted/);
  const source=JSON.parse(fs.readFileSync('data/officer-association-evidence.json'));
