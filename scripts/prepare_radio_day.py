@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Prepare a date/talkgroup from preserved metadata; never retry known failures."""
+"""Prepare preserved metadata, leaving rate-limited calls eligible for retry."""
 import argparse
 import json
 from pathlib import Path
 import subprocess
 
-from download_openmhz_manifest import validate_manifest, write_json
+from download_openmhz_manifest import is_rate_limit_failure, validate_manifest, write_json
 from radio_config import BRANCHES, TALKGROUPS, archive_path, metadata_paths, valid_day, valid_talkgroup
 from r2_audio import stored_audio
 
@@ -61,7 +61,15 @@ def prepare(root, day, talkgroup=6001, fetch=False):
              if (folder / c['original_filename']).is_file() or stored_audio(c, folder.name)}
     failures_path = root / 'records-pending-review/openmhz-failures' / f'{day}-{channel}.json'
     failures = json.loads(failures_path.read_text()) if failures_path.exists() else {}
-    failed = {c['id'] for c in failures.get('calls', [])}
+    # Older downloaders incorrectly classified HTTP 429 as unavailable audio.
+    # Keep genuine failures separate, but automatically retry rate-limited calls.
+    retained = [c for c in failures.get('calls', []) if not is_rate_limit_failure(c)]
+    if len(retained) != len(failures.get('calls', [])):
+        if retained:
+            write_json(failures_path, {**failures, 'calls': retained, 'count': len(retained)})
+        else:
+            failures_path.unlink(missing_ok=True)
+    failed = {c['id'] for c in retained}
     calls = [c for c in data['calls'] if c['original_filename'] not in saved and c['id'] not in failed]
     if calls:
         coverage = data.get('coverage', 'unknown')

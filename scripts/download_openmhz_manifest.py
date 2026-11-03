@@ -50,6 +50,11 @@ SCHEMA_VERSION = 1
 from radio_config import TALKGROUPS
 
 
+def is_rate_limit_failure(call):
+    """Legacy HTTP 429 entries are pending downloads, not unavailable audio."""
+    return bool(re.search(r'\bHTTP(?: Error)?\s+429\b', call.get('download_error', ''), re.I))
+
+
 def write_json(path, data):
     if isinstance(data, dict):
         for key in ('calls', 'duplicate_source_calls'):
@@ -243,7 +248,8 @@ def import_manifest(root, source, downloader, *, pause_ms=DEFAULT_PAUSE_MS):
                      if stored_audio(call, destination.name)}
     failure_path = root / 'records-pending-review/openmhz-failures' / f'{day}-{channel}.json'
     previous_failures = json.loads(failure_path.read_text()) if failure_path.exists() else None
-    outstanding = {c['id']: c for c in (previous_failures or {}).get('calls', [])}
+    outstanding = {c['id']: c for c in (previous_failures or {}).get('calls', [])
+                   if not is_rate_limit_failure(c)}
     failures = []
     failed_names = {}
     rate_limit = {}
