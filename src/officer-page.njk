@@ -17,13 +17,15 @@ permalink: "{{ officerPage.url }}"
 {% set pageDescription = officerPage.seo_description or defaultDescription -%}
 {% set canonicalUrl = siteUrl ~ officerPage.url -%}
 {% set sections = officerPage.sections | publishedSections -%}
+{% set sectionsById = sections | groupby("id") -%}
 
 {% block pageAssets %}  <link rel="stylesheet" href="/css/document-tree.css">
   <link rel="stylesheet" href="/css/officer-page.css">
   <link rel="stylesheet" href="/css/csv-table.css">
 
   {% if sections | length %}
-    <script src="/js/officer-tabs.js" defer></script>
+    <script src="/js/officer-tabs.js" defer></script>{% if sectionsById["observed-agency-ids"] %}
+    <script src="/js/officer-identifier-tabs.js" defer></script>{% endif %}
   {% endif %}
 {% endblock %}
 
@@ -71,13 +73,23 @@ permalink: "{{ officerPage.url }}"
             {% if section.id == "observed-agency-ids" %}
               <p>The identifiers below are recorded for this officer. Each association applies to the cited records and dates.</p>
               {%- set observationsByType = observedOfficerIds | groupby("type") -%}
-              {%- for identifierType in ["call-sign", "ucjis-user-id", "radio-id"] -%}
+              <div data-identifier-sections>
+                <div class="officer-section-tabs identifier-tabs" data-identifier-tabs hidden>
+                  {%- for identifierType in ["call-sign", "radio-id", "ucjis-user-id"] -%}
+                    {%- set observations = observationsByType[identifierType] or [] -%}
+                    {%- if identifierType == "ucjis-user-id" or (identifierType == "radio-id" and (officerPage.radio_identifiers | length) > 0) or (identifierType != "radio-id" and (observations | length) > 0) -%}
+                      <button class="officer-section-tab" id="identifier-tab-{{ identifierType }}" type="button" data-identifier-tab="{{ identifierType }}" aria-controls="identifier-panel-{{ identifierType }}">{% if identifierType == "call-sign" %}Call Signs{% elif identifierType == "radio-id" %}Radio IDs{% else %}UCJIS User IDs{% endif %}</button>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </div>
+              {%- for identifierType in ["call-sign", "radio-id", "ucjis-user-id"] -%}
                 {%- set observations = observationsByType[identifierType] or [] -%}
                 {%- if identifierType == "ucjis-user-id" or (identifierType == "radio-id" and (officerPage.radio_identifiers | length) > 0) or (identifierType != "radio-id" and (observations | length) > 0) -%}
                   {%- if identifierType == "call-sign" -%}{%- set identifierTitle = "Call Sign" -%}
                   {%- elif identifierType == "ucjis-user-id" -%}{%- set identifierTitle = "UCJIS User ID" -%}
                   {%- else -%}{%- set identifierTitle = "Radio ID" -%}{%- endif -%}
-                  <h3>{{ identifierTitle | escape }}</h3>
+                  <section class="identifier-panel" id="identifier-panel-{{ identifierType }}" data-identifier-panel aria-labelledby="identifier-heading-{{ identifierType }}">
+                  <h3 id="identifier-heading-{{ identifierType }}">{{ identifierTitle | escape }}</h3>
                   {%- if identifierType == "radio-id" -%}
                   <div class="csv-table-scroll" tabindex="0" role="region" aria-label="Radio ID observations and supporting evidence">
                     <table class="csv-table"><thead><tr><th scope="col">Radio ID</th><th scope="col">Evidence days</th><th scope="col">Evidence dates</th><th scope="col">Association</th><th scope="col">Supporting evidence</th></tr></thead><tbody>
@@ -118,9 +130,10 @@ permalink: "{{ officerPage.url }}"
                     <p>Radio associations use the same dated evidence and exclusions as the <a href="/police-radio-resources/#radio-mappings-panel">radio resources table</a>. Evidence counts describe associations, not proof of identity or transcript verification.</p>
                     {%- endif -%}
                   </details>
+                  </section>
                 {%- endif -%}
               {%- endfor -%}
-            {% endif %}{% if section.descriptions and section.descriptions | length %}
+              </div>{% endif %}{% if section.descriptions and section.descriptions | length %}
               <div class="officer-section-descriptions">
                 {% for description in section.descriptions %}
                   <p>{% if description.parts %}{% for part in description.parts %}{% if part.url %}<a href="{{ part.url | escape }}">{{ part.text | escape }}</a>{% else %}{{ part | escape }}{% endif %}{% endfor %}{% else %}{{ description | escape }}{% endif %}</p>
