@@ -203,6 +203,9 @@ City official page entities can supply an optional `photo` object:
   "src": "/records/american-fork-city/city-official-photos/brad-frost-photo.jpg",
   "width": 400,
   "height": 600,
+  "download_date": "2026-11-02",
+  "source_url": "https://www.americanfork.gov/ImageRepository/Document?documentID=5660",
+  "source_page_url": "https://www.americanfork.gov/678/Mayor-City-Council",
   "position": "center top"
 }
 ```
@@ -213,6 +216,11 @@ the image. Cropping defaults to `center top` to keep faces visible; optional
 `position` overrides CSS `object-position` for a particular photo. Clicking the
 photo opens the original image. Optional `alt` overrides the default portrait
 description. Omit `photo` for officials without one; no empty frame is rendered.
+
+`download_date` records the date the saved image was originally downloaded, in
+`YYYY-MM-DD` format. `source_url` is the direct original image download URL;
+`source_page_url` is the page that publishes and identifies the image. These
+fields document provenance and do not indicate a reuse license.
 
 Other profile templates can import `renderProfilePhoto(photo, name)` and load
 `/css/profile-photo.css` to reuse the same component.
