@@ -226,7 +226,7 @@ def main():
     run = sub.add_parser('run')
     run.add_argument('--day', required=True, type=valid_day)
     run.add_argument('--min-speech', type=positive, default=3.0)
-    run.add_argument('--threshold', type=similarity_threshold, default=0.75,
+    run.add_argument('--threshold', type=similarity_threshold, default=0.70,
                      help='Uncalibrated cosine cutoff; adjust after listening')
     run.add_argument('--model-dir', default='.cache/radio-speakers')
     run.add_argument('--output', default='voice-recognition/6001')
