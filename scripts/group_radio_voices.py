@@ -104,22 +104,21 @@ def write_reports(output, result, vectors):
 
 
 def publish_result(path):
-    """Upload only the approved per-day voice JSON prefix and verify readback."""
-    from r2_audio import client_and_bucket, read_verified
+    """Publish model/revision-scoped embeddings and separate comparison results."""
+    from r2_audio import client_and_bucket
+    from reorganize_voice_storage import split_result, write_layout
     relative = path.resolve().relative_to(ROOT).as_posix()
     match = re.fullmatch(r'voice-recognition/6001/(\d{4}-\d{2}-\d{2})/voices.json', relative)
     if not match:
         raise ValueError('Unexpected voice output path')
-    content = path.read_bytes()
-    data = json.loads(content)
+    data = json.loads(path.read_bytes())
     if data.get('date') != valid_day(match[1]) or data.get('talkgroup') != 6001:
         raise ValueError('Voice result identity mismatch')
-    digest = hashlib.sha256(content).hexdigest()
     client, bucket = client_and_bucket()
-    client.put_object(Bucket=bucket, Key=relative, Body=content,
-                      ContentType='application/json', Metadata={'sha256': digest})
-    read_verified(client, bucket, relative, digest, len(content))
-    print(f'Saved and readback-verified R2 JSON: {relative}', flush=True)
+    objects = split_result(data)
+    write_layout(client, bucket, objects, replace=True)
+    for key in objects:
+        print(f'Saved and readback-verified R2 JSON: {key}', flush=True)
 
 
 def run_day(args):

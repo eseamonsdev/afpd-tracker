@@ -11,29 +11,28 @@ from group_radio_voices import cluster_vectors, positive, select_days, similarit
 
 class SpeakerGroupingTests(unittest.TestCase):
     def test_r2_output_is_scoped_and_readback_verified(self):
-        import hashlib
         from unittest.mock import Mock, patch
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             path = root / 'voice-recognition/6001/2026-11-02/voices.json'
             path.parent.mkdir(parents=True)
-            path.write_text(json.dumps({'date': '2026-11-02', 'talkgroup': 6001}))
+            data = {'date': '2026-11-02', 'talkgroup': 6001}
+            path.write_text(json.dumps(data))
             client = Mock()
+            objects = {'voice-recognition/6001/new-layout.json': b'{}'}
             with patch('group_radio_voices.ROOT', root), \
                  patch('r2_audio.client_and_bucket', return_value=(client, 'afpd-public-media')), \
-                 patch('r2_audio.read_verified') as verify:
+                 patch('reorganize_voice_storage.split_result', return_value=objects) as split, \
+                 patch('reorganize_voice_storage.write_layout') as write:
                 publish_result(path)
-                upload = client.put_object.call_args.kwargs
-                self.assertEqual(upload['Key'], 'voice-recognition/6001/2026-11-02/voices.json')
-                self.assertEqual(upload['ContentType'], 'application/json')
-                verify.assert_called_once_with(client, 'afpd-public-media', upload['Key'],
-                    hashlib.sha256(path.read_bytes()).hexdigest(), len(path.read_bytes()))
+                split.assert_called_once_with(data)
+                write.assert_called_once_with(client, 'afpd-public-media', objects, replace=True)
                 with self.assertRaises(ValueError):
                     publish_result(root / 'openmhz/voices.json')
                 path.write_text(json.dumps({'date': '2026-11-01', 'talkgroup': 6001}))
                 with self.assertRaises(ValueError):
                     publish_result(path)
-                self.assertEqual(client.put_object.call_count, 1)
+                self.assertEqual(write.call_count, 1)
 
     def test_dates_are_selected_exactly_and_only_from_6001(self):
         with tempfile.TemporaryDirectory() as tmp:

@@ -1,0 +1,53 @@
+name: Reorganize voice storage by model and revision
+'on':
+  push:
+    branches: [staging]
+    paths:
+      - records-pending-review/voice-storage-migration-request.json
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: radio-speaker-processing-staging
+  cancel-in-progress: false
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_BUCKET_NAME: ${{ vars.R2_BUCKET_NAME }}
+      R2_ENDPOINT: ${{ vars.R2_ENDPOINT }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install storage and test dependencies
+        run: python -m pip install 'boto3>=1.40,<2' numpy==2.2.6 scipy==1.15.3
+      - name: Test storage separation and migration safety
+        run: |
+          python -m unittest discover -s tests -p test_voice_storage.py
+          python -m unittest discover -s tests -p test_radio_speakers.py
+      - name: Preview migration and reject conflicts
+        run: python scripts/reorganize_voice_storage.py --report voice-storage-plan.json
+      - name: Copy and readback-verify new layout
+        run: python scripts/reorganize_voice_storage.py --apply --report voice-storage-migration.json
+      - name: Upload migration reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: voice-storage-migration
+          path: voice-storage-*.json
+          retention-days: 90
+      - name: Show result
+        run: |
+          python - <<'PY'
+          import json, os
+          d = json.load(open('voice-storage-migration.json'))
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as f:
+              f.write(f"# Voice storage migration\n\nDays copied and verified: {len(d['days'])}. Errors: {len(d['errors'])}.\n\nLegacy objects preserved. Embeddings and comparisons stored separately by model and exact revision.\n")
+          PY

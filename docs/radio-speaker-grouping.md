@@ -5,10 +5,23 @@ Workflow: **Group 6001 clips by suggested voice** (`radio-speakers.yml`).
 Run against staging archives. Select one date, comma-separated dates, or `all` for
 all available 6001 daily archives. Up to 15 daily jobs run concurrently in each run, subject to GitHub runner availability.
 Each date is processed independently. Labels do not identify people or match across days.
-Results accumulate in the configured R2 bucket at `voice-recognition/6001/YYYY-MM-DD/voices.json`.
-Each JSON includes normalized embeddings for later reuse, so the data does not
-depend on retaining the downloadable artifact. Rerunning a day updates that day's
-JSON at the same R2 key.
+Results accumulate separately by day, model, and exact model revision:
+
+- `voice-recognition/6001/YYYY-MM-DD/embeddings/MODEL--REVISION/embeddings.json`
+- `voice-recognition/6001/YYYY-MM-DD/comparisons/MODEL--REVISION/complete-linkage-cosine/threshold-0.70/groups.json`
+
+The model folder includes the provider, model name, and full revision, for example
+`speechbrain--spkrec-ecapa-voxceleb--0f99f2d0ebe89ac095bcc5903c4dd8f72b367286`.
+Embeddings contain clip metadata, detected speech duration, extraction settings,
+and normalized vectors, without grouping settings. Comparison files contain groups
+and per-clip scores without duplicating vectors. They record the embeddings key
+and SHA-256; readers must verify that checksum before combining the files.
+A new threshold creates a separate comparison, reusing identical embeddings.
+A rerun with changed extraction settings updates that model/revision's current
+embeddings; older comparisons with a different embeddings checksum are stale.
+Daily Actions artifacts retain the original combined voices.json for convenience.
+Legacy R2 voices.json files are preserved as migration backups and are no longer
+updated by the daily publisher.
 
 Defaults: ECAPA-TDNN, 2 seconds of Silero-detected speech, 0.70 cosine similarity
 cutoff. The cutoff is an experimental starting value, not calibrated radio accuracy
@@ -76,3 +89,21 @@ Add `--publish` to save and readback-verify the daily JSON in R2.
 The workflow has read-only GitHub contents permission and never commits embeddings to Git.
 Planning needs no audio/model dependencies; running processes one day. Keep
 clips below the minimum in the source archive so they can be revisited later.
+
+## Reorganize existing R2 results
+
+Run `python scripts/reorganize_voice_storage.py` for a read-only dry run.
+Add `--apply` to copy the legacy daily JSON into the new layout and verify all
+destination sizes and SHA-256 hashes by reading them back. The migration never
+deletes or overwrites legacy objects. Identical destinations are verified and
+skipped; different existing destinations stop that day with an error.
+
+Workflow: **Reorganize voice storage by model and revision**. It runs tests,
+previews all destinations, then applies the migration. Start it through Actions
+after it reaches the default branch, or update
+`records-pending-review/voice-storage-migration-request.json` on staging.
+The workflow shares the daily extraction concurrency group so these operations
+cannot run simultaneously. Reports are uploaded as Actions artifacts for 90 days.
+Migration reorganizes existing results only; it does not process audio or recover
+previously overwritten runs. Historical 3-second extractions remain marked as
+3-second extractions even though the current default is 2 seconds.
