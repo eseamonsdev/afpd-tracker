@@ -94,8 +94,6 @@ jobs:
               f.write(f'has_work=true\nmin_speech={minimum}\nthreshold={threshold}\nsource_sha={sha}\n')
           PY
   group:
-    permissions:
-      contents: write
     needs: plan
     if: needs.plan.outputs.has_work == 'true'
     strategy:
@@ -138,20 +136,18 @@ jobs:
           key: radio-speakers-${{ runner.os }}-${{ hashFiles('scripts/requirements-radio-speakers.txt') }}
       - name: Group voices and save original clip numbers
         run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          python -u scripts/group_radio_voices.py run --day "$DAY" --min-speech "$MIN_SPEECH" --threshold "$THRESHOLD" --model-dir "$RUNNER_TEMP/radio-speaker-models" --output speaker-work/6001 --publish
+          python -u scripts/group_radio_voices.py run --day "$DAY" --min-speech "$MIN_SPEECH" --threshold "$THRESHOLD" --model-dir "$RUNNER_TEMP/radio-speaker-models" --output voice-recognition/6001 --publish
       - name: Upload reports and embeddings (including partial results)
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: radio-voices-6001-${{ matrix.day }}
-          path: speaker-work/6001/${{ matrix.day }}/
+          path: voice-recognition/6001/${{ matrix.day }}/
           if-no-files-found: warn
           retention-days: 90
       - name: Show daily voice groups
         if: always()
         run: |
-          if [ -f "speaker-work/6001/$DAY/report.md" ]; then
-            cat "speaker-work/6001/$DAY/report.md" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f "voice-recognition/6001/$DAY/report.md" ]; then
+            cat "voice-recognition/6001/$DAY/report.md" >> "$GITHUB_STEP_SUMMARY"
           fi

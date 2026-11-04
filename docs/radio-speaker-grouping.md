@@ -5,10 +5,10 @@ Workflow: **Group 6001 clips by suggested voice** (`radio-speakers.yml`).
 Run against staging archives. Select one date, comma-separated dates, or `all` for
 all available 6001 daily archives. Only one daily job runs at a time in each run.
 Each date is processed independently. Labels do not identify people or match across days.
-Results accumulate on staging in `speaker-work/6001/YYYY-MM-DD/voices.json`.
+Results accumulate in the configured R2 bucket at `voice-recognition/6001/YYYY-MM-DD/voices.json`.
 Each JSON includes normalized embeddings for later reuse, so the data does not
 depend on retaining the downloadable artifact. Rerunning a day updates that day's
-JSON, with the previous version retained in Git history.
+JSON at the same R2 key.
 
 Defaults: ECAPA-TDNN, 3 seconds of Silero-detected speech, 0.75 cosine similarity
 cutoff. The cutoff is an experimental starting value, not calibrated radio accuracy
@@ -52,7 +52,7 @@ Each daily Actions artifact (`radio-voices-6001-YYYY-MM-DD`) includes:
 - `embeddings.npz`: normalized embeddings with original clip numbers.
 - `progress.json`: extraction progress, useful if a job fails or times out.
 
-Download artifacts within 90 days. Daily voices.json files remain in the repository.
+Download artifacts within 90 days. Daily voices.json files remain in R2.
 Reports are separate from the website and authoritative transcripts; no person
 identifications or changes to source clip metadata are published.
 Audio is read from R2 using existing secrets and verified against size and SHA-256.
@@ -72,6 +72,7 @@ python scripts/group_radio_voices.py plan --days all
 python scripts/group_radio_voices.py run --day 2026-11-02 --min-speech 3 --threshold 0.75
 ```
 
-Add `--publish` to save the daily JSON on staging (requires Git push access).
+Add `--publish` to save and readback-verify the daily JSON in R2.
+The workflow has read-only GitHub contents permission and never commits embeddings to Git.
 Planning needs no audio/model dependencies; running processes one day. Keep
 clips below the minimum in the source archive so they can be revisited later.

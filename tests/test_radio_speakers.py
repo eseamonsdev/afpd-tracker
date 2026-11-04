@@ -6,10 +6,35 @@ import tempfile
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from group_radio_voices import cluster_vectors, positive, select_days, similarity_threshold, write_reports
+from group_radio_voices import cluster_vectors, positive, select_days, similarity_threshold, write_reports, publish_result
 
 
 class SpeakerGroupingTests(unittest.TestCase):
+    def test_r2_output_is_scoped_and_readback_verified(self):
+        import hashlib
+        from unittest.mock import Mock, patch
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            path = root / 'voice-recognition/6001/2026-11-02/voices.json'
+            path.parent.mkdir(parents=True)
+            path.write_text(json.dumps({'date': '2026-11-02', 'talkgroup': 6001}))
+            client = Mock()
+            with patch('group_radio_voices.ROOT', root), \
+                 patch('r2_audio.client_and_bucket', return_value=(client, 'afpd-public-media')), \
+                 patch('r2_audio.read_verified') as verify:
+                publish_result(path)
+                upload = client.put_object.call_args.kwargs
+                self.assertEqual(upload['Key'], 'voice-recognition/6001/2026-11-02/voices.json')
+                self.assertEqual(upload['ContentType'], 'application/json')
+                verify.assert_called_once_with(client, 'afpd-public-media', upload['Key'],
+                    hashlib.sha256(path.read_bytes()).hexdigest(), len(path.read_bytes()))
+                with self.assertRaises(ValueError):
+                    publish_result(root / 'openmhz/voices.json')
+                path.write_text(json.dumps({'date': '2026-11-01', 'talkgroup': 6001}))
+                with self.assertRaises(ValueError):
+                    publish_result(path)
+                self.assertEqual(client.put_object.call_count, 1)
+
     def test_dates_are_selected_exactly_and_only_from_6001(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

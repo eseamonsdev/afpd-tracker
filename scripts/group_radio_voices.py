@@ -104,21 +104,22 @@ def write_reports(output, result, vectors):
 
 
 def publish_result(path):
-    """Accumulate one JSON per day on staging without staging unrelated files."""
+    """Upload only the approved per-day voice JSON prefix and verify readback."""
+    from r2_audio import client_and_bucket, read_verified
     relative = path.resolve().relative_to(ROOT).as_posix()
-    if not re.fullmatch(r'speaker-work/6001/\d{4}-\d{2}-\d{2}/voices.json', relative):
+    match = re.fullmatch(r'voice-recognition/6001/(\d{4}-\d{2}-\d{2})/voices.json', relative)
+    if not match:
         raise ValueError('Unexpected voice output path')
-    subprocess.run(['git', 'add', '--', relative], cwd=ROOT, check=True)
-    if subprocess.run(['git', 'diff', '--cached', '--quiet', '--', relative], cwd=ROOT).returncode == 0:
-        return
-    subprocess.run(['git', 'commit', '-m', f'Save suggested 6001 voices for {path.parent.name}',
-                    '--', relative], cwd=ROOT, check=True)
-    for _ in range(5):
-        subprocess.run(['git', 'fetch', 'origin', 'staging'], cwd=ROOT, check=True)
-        subprocess.run(['git', 'rebase', 'origin/staging'], cwd=ROOT, check=True)
-        if subprocess.run(['git', 'push', 'origin', 'HEAD:staging'], cwd=ROOT).returncode == 0:
-            return
-    raise RuntimeError('Unable to save daily voices JSON to staging; download the artifact')
+    content = path.read_bytes()
+    data = json.loads(content)
+    if data.get('date') != valid_day(match[1]) or data.get('talkgroup') != 6001:
+        raise ValueError('Voice result identity mismatch')
+    digest = hashlib.sha256(content).hexdigest()
+    client, bucket = client_and_bucket()
+    client.put_object(Bucket=bucket, Key=relative, Body=content,
+                      ContentType='application/json', Metadata={'sha256': digest})
+    read_verified(client, bucket, relative, digest, len(content))
+    print(f'Saved and readback-verified R2 JSON: {relative}', flush=True)
 
 
 def run_day(args):
@@ -228,8 +229,8 @@ def main():
     run.add_argument('--threshold', type=similarity_threshold, default=0.75,
                      help='Uncalibrated cosine cutoff; adjust after listening')
     run.add_argument('--model-dir', default='.cache/radio-speakers')
-    run.add_argument('--output', default='speaker-work/6001')
-    run.add_argument('--publish', action='store_true', help='Save daily voices.json to staging')
+    run.add_argument('--output', default='voice-recognition/6001')
+    run.add_argument('--publish', action='store_true', help='Save daily voices.json to the configured R2 bucket')
     args = parser.parse_args()
     if args.command == 'plan':
         days = select_days(args.root, args.days)
