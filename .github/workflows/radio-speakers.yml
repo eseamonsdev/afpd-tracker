@@ -8,7 +8,7 @@ name: Group 6001 clips by suggested voice
         type: string
       min_speech:
         description: Minimum detected speech in seconds
-        default: '3'
+        default: '2'
         type: string
       threshold:
         description: 'Cosine similarity cutoff (experimental; not a probability)'
@@ -79,7 +79,7 @@ jobs:
               request = json.loads(Path(request_path).read_text())
           else:
               request = {'days': os.environ['INPUT_DAYS'],
-                         'min_speech': os.environ['INPUT_MIN_SPEECH'] or '3',
+                         'min_speech': os.environ['INPUT_MIN_SPEECH'] or '2',
                          'threshold': os.environ['INPUT_THRESHOLD'] or '0.70'}
           selection = request['days']
           if isinstance(selection, list):
@@ -87,7 +87,7 @@ jobs:
           days = select_days(root, selection)
           if len(days) > 256:
               raise ValueError('At most 256 dates per run; split the selection')
-          minimum = positive(request.get('min_speech', 3))
+          minimum = positive(request.get('min_speech', 2))
           threshold = similarity_threshold(request.get('threshold', 0.70))
           with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
               f.write('matrix=' + json.dumps({'day': days}) + '\n')

@@ -236,7 +236,7 @@ def main():
     plan.add_argument('--root', type=Path, default=ROOT)
     run = sub.add_parser('run')
     run.add_argument('--day', required=True, type=valid_day)
-    run.add_argument('--min-speech', type=positive, default=3.0)
+    run.add_argument('--min-speech', type=positive, default=2.0)
     run.add_argument('--threshold', type=similarity_threshold, default=0.70,
                      help='Uncalibrated cosine cutoff; adjust after listening')
     run.add_argument('--clip-numbers', help='Comma-separated original clip numbers for an artifact-only experiment')

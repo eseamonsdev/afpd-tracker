@@ -10,7 +10,7 @@ Each JSON includes normalized embeddings for later reuse, so the data does not
 depend on retaining the downloadable artifact. Rerunning a day updates that day's
 JSON at the same R2 key.
 
-Defaults: ECAPA-TDNN, 3 seconds of Silero-detected speech, 0.70 cosine similarity
+Defaults: ECAPA-TDNN, 2 seconds of Silero-detected speech, 0.70 cosine similarity
 cutoff. The cutoff is an experimental starting value, not calibrated radio accuracy
 or a probability. Complete-linkage clustering requires every pair within a group
 to meet the cutoff, avoiding chains of weak matches. Singletons are unassigned.
@@ -30,7 +30,7 @@ While the workflow is only on staging, create or update
 ```json
 {
   "days": ["2026-11-02"],
-  "min_speech": 3,
+  "min_speech": 2,
   "threshold": 0.70,
   "request_id": "first-6001-test"
 }
@@ -69,7 +69,7 @@ environment settings as the existing radio workflows.
 ```bash
 python scripts/group_radio_voices.py plan --days 2026-11-01,2026-11-02
 python scripts/group_radio_voices.py plan --days all
-python scripts/group_radio_voices.py run --day 2026-11-02 --min-speech 3 --threshold 0.70
+python scripts/group_radio_voices.py run --day 2026-11-02 --min-speech 2 --threshold 0.70
 ```
 
 Add `--publish` to save and readback-verify the daily JSON in R2.
