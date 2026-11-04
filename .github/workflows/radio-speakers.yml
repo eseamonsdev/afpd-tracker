@@ -1,0 +1,157 @@
+name: Group 6001 clips by suggested voice
+'on':
+  workflow_dispatch:
+    inputs:
+      days:
+        description: 'Dates separated by commas (YYYY-MM-DD), or all'
+        required: true
+        type: string
+      min_speech:
+        description: Minimum detected speech in seconds
+        default: '3'
+        type: string
+      threshold:
+        description: 'Cosine similarity cutoff (experimental; not a probability)'
+        default: '0.75'
+        type: string
+  push:
+    branches: [staging]
+    paths:
+      - records-pending-review/radio-speaker-request.json
+      - .github/workflows/radio-speakers.yml
+      - scripts/group_radio_voices.py
+      - scripts/requirements-radio-speakers.txt
+      - tests/test_radio_speakers.py
+permissions:
+  contents: read
+concurrency:
+  group: radio-speaker-processing-staging
+  cancel-in-progress: false
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+      has_work: ${{ steps.plan.outputs.has_work }}
+      min_speech: ${{ steps.plan.outputs.min_speech }}
+      threshold: ${{ steps.plan.outputs.threshold }}
+      source_sha: ${{ steps.plan.outputs.source_sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: staging
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install test dependencies
+        run: python -m pip install numpy==2.2.6 scipy==1.15.3
+      - name: Test selection and voice grouping
+        run: python -m unittest discover -s tests -p test_radio_speakers.py
+      - name: Resolve selected 6001 dates
+        id: plan
+        env:
+          INPUT_DAYS: ${{ inputs.days }}
+          INPUT_MIN_SPEECH: ${{ inputs.min_speech }}
+          INPUT_THRESHOLD: ${{ inputs.threshold }}
+        run: |
+          python - <<'PY'
+          import json, os, subprocess, sys
+          from pathlib import Path
+          sys.path.insert(0, 'scripts')
+          from group_radio_voices import select_days, positive, similarity_threshold
+          root = Path.cwd()
+          sha = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
+          request_path = 'records-pending-review/radio-speaker-request.json'
+          if os.environ['GITHUB_EVENT_NAME'] == 'push':
+              event = json.loads(Path(os.environ['GITHUB_EVENT_PATH']).read_text())
+              # Checkout the event SHA to avoid reading a later request from staging.
+              subprocess.run(['git', 'checkout', '--detach', event['after']], check=True)
+              sha = event['after']
+              before = event.get('before', '')
+              command = (['git', 'diff', '--name-only', before, sha] if before and set(before) != {'0'}
+                         else ['git', 'show', '--pretty=format:', '--name-only', sha])
+              changed = subprocess.check_output(command, text=True).splitlines()
+              if request_path not in changed or not Path(request_path).is_file():
+                  with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+                      f.write('has_work=false\n')
+                  sys.exit(0)
+              request = json.loads(Path(request_path).read_text())
+          else:
+              request = {'days': os.environ['INPUT_DAYS'],
+                         'min_speech': os.environ['INPUT_MIN_SPEECH'] or '3',
+                         'threshold': os.environ['INPUT_THRESHOLD'] or '0.75'}
+          selection = request['days']
+          if isinstance(selection, list):
+              selection = ','.join(selection)
+          days = select_days(root, selection)
+          if len(days) > 256:
+              raise ValueError('At most 256 dates per run; split the selection')
+          minimum = positive(request.get('min_speech', 3))
+          threshold = similarity_threshold(request.get('threshold', 0.75))
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write('matrix=' + json.dumps({'day': days}) + '\n')
+              f.write(f'has_work=true\nmin_speech={minimum}\nthreshold={threshold}\nsource_sha={sha}\n')
+          PY
+  group:
+    permissions:
+      contents: write
+    needs: plan
+    if: needs.plan.outputs.has_work == 'true'
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    name: 6001 / ${{ matrix.day }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    concurrency:
+      group: radio-speakers-6001-${{ matrix.day }}
+      cancel-in-progress: false
+    env:
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_BUCKET_NAME: ${{ vars.R2_BUCKET_NAME }}
+      R2_ENDPOINT: ${{ vars.R2_ENDPOINT }}
+      DAY: ${{ matrix.day }}
+      MIN_SPEECH: ${{ needs.plan.outputs.min_speech }}
+      THRESHOLD: ${{ needs.plan.outputs.threshold }}
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.plan.outputs.source_sha }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install CPU speaker model dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          python -m pip install torch==2.5.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install -r scripts/requirements-radio-speakers.txt
+          python -m pip check
+      - uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/radio-speaker-models
+          key: radio-speakers-${{ runner.os }}-${{ hashFiles('scripts/requirements-radio-speakers.txt') }}
+      - name: Group voices and save original clip numbers
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          python -u scripts/group_radio_voices.py run --day "$DAY" --min-speech "$MIN_SPEECH" --threshold "$THRESHOLD" --model-dir "$RUNNER_TEMP/radio-speaker-models" --output speaker-work/6001 --publish
+      - name: Upload reports and embeddings (including partial results)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: radio-voices-6001-${{ matrix.day }}
+          path: speaker-work/6001/${{ matrix.day }}/
+          if-no-files-found: warn
+          retention-days: 90
+      - name: Show daily voice groups
+        if: always()
+        run: |
+          if [ -f "speaker-work/6001/$DAY/report.md" ]; then
+            cat "speaker-work/6001/$DAY/report.md" >> "$GITHUB_STEP_SUMMARY"
+          fi
