@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Experimental, per-day 6001 speaker groups. Never changes source metadata."""
+"""Extract reusable 6001 voice embeddings; compare only on explicit request."""
 import argparse
 import csv
 import hashlib
@@ -107,19 +107,19 @@ def write_reports(output, result, vectors):
     (output / 'report.md').write_text('\n'.join(lines) + '\n')
 
 
-def publish_result(path):
+def publish_result(path, *, embeddings_only=False):
     """Publish model/revision-scoped embeddings and separate comparison results."""
     from r2_audio import client_and_bucket
-    from reorganize_voice_storage import split_result, write_layout
+    from reorganize_voice_storage import embedding_result, split_result, write_layout
     relative = path.resolve().relative_to(ROOT).as_posix()
-    match = re.fullmatch(r'voice-recognition/6001/(\d{4}-\d{2}-\d{2})/voices.json', relative)
+    match = re.fullmatch(r'voice-recognition/6001/(\d{4}-\d{2}-\d{2})/(?:voices|embeddings)\.json', relative)
     if not match:
         raise ValueError('Unexpected voice output path')
     data = json.loads(path.read_bytes())
     if data.get('date') != valid_day(match[1]) or data.get('talkgroup') != 6001:
         raise ValueError('Voice result identity mismatch')
     client, bucket = client_and_bucket()
-    objects = split_result(data)
+    objects = embedding_result(data) if embeddings_only else split_result(data)
     write_layout(client, bucket, objects, replace=True)
     for key in objects:
         print(f'Saved and readback-verified R2 JSON: {key}', flush=True)
@@ -195,7 +195,6 @@ def run_day(args):
     from transcribe_afpd_radio import load_archive
 
     minimum = positive(args.min_speech)
-    threshold = similarity_threshold(args.threshold)
     folder, data = load_archive(args.day, 6001, require_complete=False)
     selected = getattr(args, 'clip_numbers', None)
     if selected:
@@ -216,8 +215,7 @@ def run_day(args):
               'archive_coverage': data.get('coverage'),
               'source_metadata_sha256': hashlib.sha256((folder / 'calls.json').read_bytes()).hexdigest(),
               'model': MODEL, 'model_revision': revision, 'min_speech_seconds': minimum,
-              'similarity_threshold': threshold, 'clustering': 'complete-linkage-cosine',
-              'human_verified': False, 'status': 'running', 'clips': [], 'groups': [],
+              'human_verified': False, 'status': 'running', 'clips': [],
               'preprocessing': PREPROCESSING}
     if selected:
         result['selected_clip_numbers'] = sorted(selected)
@@ -229,7 +227,7 @@ def run_day(args):
             continue
         clip = {'clip_number': index, 'filename': call['original_filename'], 'call_id': call.get('id'),
                 'sha256': call.get('sha256'), 'timestamp_mountain': call.get('timestamp_mountain'),
-                'radio_ids': call.get('radio_ids', []), 'voice': None, 'status': 'pending'}
+                'radio_ids': call.get('radio_ids', []), 'status': 'pending'}
         result['clips'].append(clip)
         try:
             if reuse_cached_clip(clip, cached.get(index), minimum):
@@ -288,7 +286,49 @@ def run_day(args):
             # Lightweight checkpoint survives a later clip failure or job timeout.
             output.mkdir(parents=True, exist_ok=True)
             (output / 'progress.json').write_text(json.dumps(result, indent=2) + '\n')
+    errors = sum(c['status'] == 'error' for c in result['clips'])
+    result['status'] = 'partial_error' if errors else 'complete'
+    result['run_counts'] = {'reused_embeddings': reused, 'new_embeddings': created,
+                            'reused_short_speech_skips': skipped_cached, 'errors': errors}
+    print('Incremental extraction: ' + json.dumps(result['run_counts']), flush=True)
+    write_embedding_reports(output, result, vectors)
+    if args.publish:
+        publish_result(output / 'embeddings.json', embeddings_only=True)
+    if errors:
+        raise RuntimeError(f'{errors} clips failed; partial reports saved in {output}')
+
+
+def write_embedding_reports(output, result, vectors):
+    from reorganize_voice_storage import embedding_result
+    import numpy as np
+    output.mkdir(parents=True, exist_ok=True)
+    content = next(iter(embedding_result(result, allow_subset=True).values()))
+    (output / 'embeddings.json').write_bytes(content)
     accepted = [c for c in result['clips'] if c['status'] == 'embedded']
+    np.savez_compressed(output / 'embeddings.npz',
+                        clip_numbers=np.asarray([c['clip_number'] for c in accepted]),
+                        embeddings=np.asarray(vectors, dtype=np.float32))
+    counts = result['run_counts']
+    (output / 'report.md').write_text(
+        f"# Voice embeddings — {result['date']} / 6001\n\n"
+        f"Minimum detected speech: {result['min_speech_seconds']} seconds.\n\n"
+        f"Reused: {counts['reused_embeddings']}. New: {counts['new_embeddings']}. "
+        f"Errors: {counts['errors']}.\n\nNo voice comparisons or groups were generated.\n")
+
+
+def compare_embeddings(args):
+    import copy
+    import numpy as np
+    from reorganize_voice_storage import embedding_result, split_result, write_layout
+    result = json.loads(args.embeddings.read_bytes())
+    if result.get('kind') != 'speaker_embeddings' or result.get('schema_version') != 2:
+        raise ValueError('Expected reusable schema-2 speaker embeddings')
+    embedding_result(result)  # Validate identity and vectors before creating comparisons.
+    result = copy.deepcopy(result)
+    threshold = similarity_threshold(args.threshold)
+    result.update(similarity_threshold=threshold, clustering='complete-linkage-cosine', groups=[])
+    accepted = [c for c in result['clips'] if c['status'] == 'embedded']
+    vectors = [np.asarray(c['embedding'], dtype=np.float64) for c in accepted]
     labels = cluster_vectors(vectors, threshold)
     for label in sorted(set(labels)):
         members = [i for i, value in enumerate(labels) if value == label]
@@ -298,16 +338,16 @@ def run_day(args):
             accepted[i]['min_group_similarity'] = (round(min(float(np.dot(vectors[i], vectors[j]))
                 for j in members if j != i), 5) if len(members) > 1 else None)
         result['groups'].append({'voice': voice, 'clip_numbers': [accepted[i]['clip_number'] for i in members]})
-    errors = sum(c['status'] == 'error' for c in result['clips'])
-    result['status'] = 'partial_error' if errors else 'complete'
-    result['run_counts'] = {'reused_embeddings': reused, 'new_embeddings': created,
-                            'reused_short_speech_skips': skipped_cached, 'errors': errors}
-    print('Incremental extraction: ' + json.dumps(result['run_counts']), flush=True)
+    output = Path(args.output)
     write_reports(output, result, vectors)
+    objects = {k: v for k, v in split_result(result).items() if '/comparisons/' in k}
+    (output / 'groups.json').write_bytes(next(iter(objects.values())))
     if args.publish:
-        publish_result(output / 'voices.json')
-    if errors:
-        raise RuntimeError(f'{errors} clips failed; partial reports saved in {output}')
+        from r2_audio import client_and_bucket
+        client, bucket = client_and_bucket()
+        write_layout(client, bucket, objects, replace=True)
+        for key in objects:
+            print(f'Saved and readback-verified R2 comparison: {key}', flush=True)
 
 
 def main():
@@ -319,12 +359,15 @@ def main():
     run = sub.add_parser('run')
     run.add_argument('--day', required=True, type=valid_day)
     run.add_argument('--min-speech', type=positive, default=2.0)
-    run.add_argument('--threshold', type=similarity_threshold, default=0.70,
-                     help='Uncalibrated cosine cutoff; adjust after listening')
     run.add_argument('--clip-numbers', help='Comma-separated original clip numbers for an artifact-only experiment')
     run.add_argument('--model-dir', default='.cache/radio-speakers')
     run.add_argument('--output', default='voice-recognition/6001')
-    run.add_argument('--publish', action='store_true', help='Save daily voices.json to the configured R2 bucket')
+    run.add_argument('--publish', action='store_true', help='Save reusable embeddings only to the configured R2 bucket')
+    compare = sub.add_parser('compare', help='Compare an existing embeddings JSON without processing audio')
+    compare.add_argument('--embeddings', type=Path, required=True)
+    compare.add_argument('--threshold', type=similarity_threshold, default=0.70)
+    compare.add_argument('--output', type=Path, required=True)
+    compare.add_argument('--publish', action='store_true')
     args = parser.parse_args()
     if args.command == 'plan':
         days = select_days(args.root, args.days)
@@ -335,6 +378,8 @@ def main():
         if os.environ.get('GITHUB_OUTPUT'):
             with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
                 output.write('matrix=' + matrix + '\n')
+    elif args.command == 'compare':
+        compare_embeddings(args)
     else:
         run_day(args)
 

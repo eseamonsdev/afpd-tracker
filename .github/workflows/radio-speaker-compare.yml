@@ -1,0 +1,72 @@
+name: Compare saved 6001 voice embeddings
+'on':
+  workflow_dispatch:
+    inputs:
+      day:
+        description: 'Date (YYYY-MM-DD)'
+        required: true
+        type: string
+      model_revision:
+        description: 'Exact model revision from the embeddings folder'
+        required: true
+        type: string
+      threshold:
+        description: 'Cosine similarity cutoff (experimental; not a probability)'
+        default: '0.70'
+        type: string
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_BUCKET_NAME: ${{ vars.R2_BUCKET_NAME }}
+      R2_ENDPOINT: ${{ vars.R2_ENDPOINT }}
+      DAY: ${{ inputs.day }}
+      MODEL_REVISION: ${{ inputs.model_revision }}
+      THRESHOLD: ${{ inputs.threshold }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install comparison dependencies
+        run: python -m pip install numpy==2.2.6 scipy==1.15.3 'boto3>=1.40,<2'
+      - name: Read saved embeddings
+        run: |
+          python - <<'PY'
+          import json, os, re, sys
+          from pathlib import Path
+          sys.path.insert(0, 'scripts')
+          from radio_config import valid_day
+          from group_radio_voices import MODEL
+          from r2_audio import client_and_bucket
+          from reorganize_voice_storage import read_optional
+          day = valid_day(os.environ['DAY'])
+          revision = os.environ['MODEL_REVISION']
+          if not re.fullmatch(r'[0-9a-f]{40,64}', revision):
+              raise ValueError('Exact model revision is required')
+          key = f"voice-recognition/6001/{day}/embeddings/{MODEL.replace('/', '--')}--{revision}/embeddings.json"
+          client, bucket = client_and_bucket()
+          content = read_optional(client, bucket, key)
+          if content is None:
+              raise ValueError('No saved embeddings at ' + key)
+          data = json.loads(content)
+          if (data.get('date'), data.get('talkgroup'), data.get('model'), data.get('model_revision')) != (day, 6001, MODEL, revision):
+              raise ValueError('Saved embeddings identity mismatch')
+          Path('saved-embeddings.json').write_bytes(content)
+          PY
+      - name: Compare without processing audio or changing embeddings
+        run: |
+          python scripts/group_radio_voices.py compare --embeddings saved-embeddings.json --threshold "$THRESHOLD" --output comparison --publish
+          cat comparison/report.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: voice-comparison-${{ inputs.day }}
+          path: |
+            comparison/groups.json
+            comparison/clips.csv
+            comparison/report.md

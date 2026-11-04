@@ -1,10 +1,6 @@
 name: Test short cross-radio evidence clips
 'on':
-  push:
-    branches: [staging]
-    paths:
-      - .github/workflows/radio-short-evidence-test.yml
-      - scripts/summarize_short_voice_test.py
+  workflow_dispatch:
 permissions:
   contents: read
 concurrency:
@@ -44,7 +40,8 @@ jobs:
           key: radio-speakers-${{ runner.os }}-${{ hashFiles('scripts/requirements-radio-speakers.txt') }}
       - name: Group voices and save original clip numbers
         run: |
-          python -u scripts/group_radio_voices.py run --day "$DAY" --min-speech "$MIN_SPEECH" --threshold "$THRESHOLD" --clip-numbers 120,192 --model-dir "$RUNNER_TEMP/radio-speaker-models" --output voice-experiments/short-evidence
+          python -u scripts/group_radio_voices.py run --day "$DAY" --min-speech "$MIN_SPEECH" --clip-numbers 120,192 --model-dir "$RUNNER_TEMP/radio-speaker-models" --output voice-experiments/short-evidence
+          python scripts/group_radio_voices.py compare --embeddings "voice-experiments/short-evidence/$DAY/embeddings.json" --threshold "$THRESHOLD" --output "voice-experiments/short-evidence/$DAY"
           python scripts/summarize_short_voice_test.py
       - name: Upload reports and embeddings (including partial results)
         if: always()

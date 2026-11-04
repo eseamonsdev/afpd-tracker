@@ -18,7 +18,7 @@ def encode(data):
     return (json.dumps(data, indent=2, sort_keys=True, allow_nan=False) + '\n').encode()
 
 
-def split_result(data):
+def embedding_result(data, *, allow_subset=False):
     from radio_config import valid_day
     day = valid_day(data['date'])
     if data.get('talkgroup') != 6001 or data.get('status') not in ('complete', 'partial_error'):
@@ -29,6 +29,32 @@ def split_result(data):
         raise ValueError('Invalid model identifier')
     if not re.fullmatch(r'[0-9a-f]{40,64}', revision):
         raise ValueError('Exact model revision is required')
+    model_folder = model.replace('/', '--') + '--' + revision
+    root = f'{PREFIX}/{day}'
+    embedding_key = f'{root}/embeddings/{model_folder}/embeddings.json'
+    embeddings = {k: copy.deepcopy(v) for k, v in data.items()
+                  if k not in ('clips', 'groups', 'similarity_threshold', 'clustering', 'selected_clip_numbers', 'run_counts')}
+    embeddings['schema_version'] = 2
+    embeddings['kind'] = 'speaker_embeddings'
+    embeddings['clips'] = [{k: copy.deepcopy(v) for k, v in c.items()
+                            if k not in ('voice', 'min_group_similarity')} for c in data['clips']]
+    numbers = [c['clip_number'] for c in embeddings['clips']]
+    if len(set(numbers)) != len(numbers):
+        raise ValueError('Duplicate original clip numbers')
+    if data.get('selected_clip_numbers') and not allow_subset:
+        raise ValueError('Subset experiments cannot be stored as daily embeddings')
+    embedded = [c for c in embeddings['clips'] if c['status'] == 'embedded']
+    if any(not c.get('embedding') for c in embedded):
+        raise ValueError('Missing accepted embedding')
+    embedding_bytes = encode(embeddings)
+    return {embedding_key: embedding_bytes}
+
+
+def split_result(data):
+    objects = embedding_result(data)
+    embedding_key, embedding_bytes = next(iter(objects.items()))
+    day = data['date']
+    model, revision = data['model'], data['model_revision']
     model_folder = model.replace('/', '--') + '--' + revision
     method = data['clustering']
     if method != 'complete-linkage-cosine':
@@ -41,21 +67,6 @@ def split_result(data):
     root = f'{PREFIX}/{day}'
     embedding_key = f'{root}/embeddings/{model_folder}/embeddings.json'
     comparison_key = f'{root}/comparisons/{model_folder}/{method}/threshold-{label}/groups.json'
-    embeddings = {k: copy.deepcopy(v) for k, v in data.items()
-                  if k not in ('clips', 'groups', 'similarity_threshold', 'clustering', 'selected_clip_numbers', 'run_counts')}
-    embeddings['schema_version'] = 2
-    embeddings['kind'] = 'speaker_embeddings'
-    embeddings['clips'] = [{k: copy.deepcopy(v) for k, v in c.items()
-                            if k not in ('voice', 'min_group_similarity')} for c in data['clips']]
-    numbers = [c['clip_number'] for c in embeddings['clips']]
-    if len(set(numbers)) != len(numbers):
-        raise ValueError('Duplicate original clip numbers')
-    if data.get('selected_clip_numbers'):
-        raise ValueError('Subset experiments cannot be stored as daily embeddings')
-    embedded = [c for c in embeddings['clips'] if c['status'] == 'embedded']
-    if any(not c.get('embedding') for c in embedded):
-        raise ValueError('Missing accepted embedding')
-    embedding_bytes = encode(embeddings)
     comparison = {
         'schema_version': 2, 'kind': 'speaker_comparison', 'date': day,
         'talkgroup': 6001, 'model': model, 'model_revision': revision,

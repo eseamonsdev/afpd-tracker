@@ -1,4 +1,4 @@
-name: Group 6001 clips by suggested voice
+name: Embed 6001 voice clips
 'on':
   workflow_dispatch:
     inputs:
@@ -10,16 +10,13 @@ name: Group 6001 clips by suggested voice
         description: Minimum detected speech in seconds
         default: '2'
         type: string
-      threshold:
-        description: 'Cosine similarity cutoff (experimental; not a probability)'
-        default: '0.70'
-        type: string
   push:
     branches: [staging]
     paths:
       - records-pending-review/radio-speaker-request.json
       - .github/workflows/radio-speakers.yml
       - scripts/reorganize_voice_storage.py
+      - tests/test_embedding_only.py
       - tests/test_incremental_radio_speakers.py
       - tests/test_voice_storage.py
       - scripts/group_radio_voices.py
@@ -37,7 +34,6 @@ jobs:
       matrix: ${{ steps.plan.outputs.matrix }}
       has_work: ${{ steps.plan.outputs.has_work }}
       min_speech: ${{ steps.plan.outputs.min_speech }}
-      threshold: ${{ steps.plan.outputs.threshold }}
       source_sha: ${{ steps.plan.outputs.source_sha }}
     steps:
       - uses: actions/checkout@v4
@@ -49,23 +45,23 @@ jobs:
           python-version: '3.11'
       - name: Install test dependencies
         run: python -m pip install numpy==2.2.6 scipy==1.15.3
-      - name: Test selection and voice grouping
+      - name: Test embedding extraction and separate comparison
         run: |
           python -m unittest discover -s tests -p test_radio_speakers.py
           python -m unittest discover -s tests -p test_voice_storage.py
           python -m unittest discover -s tests -p test_incremental_radio_speakers.py
+          python -m unittest discover -s tests -p test_embedding_only.py
       - name: Resolve selected 6001 dates
         id: plan
         env:
           INPUT_DAYS: ${{ inputs.days }}
           INPUT_MIN_SPEECH: ${{ inputs.min_speech }}
-          INPUT_THRESHOLD: ${{ inputs.threshold }}
         run: |
           python - <<'PY'
           import json, os, subprocess, sys
           from pathlib import Path
           sys.path.insert(0, 'scripts')
-          from group_radio_voices import select_days, positive, similarity_threshold
+          from group_radio_voices import select_days, positive
           root = Path.cwd()
           sha = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
           request_path = 'records-pending-review/radio-speaker-request.json'
@@ -85,8 +81,7 @@ jobs:
               request = json.loads(Path(request_path).read_text())
           else:
               request = {'days': os.environ['INPUT_DAYS'],
-                         'min_speech': os.environ['INPUT_MIN_SPEECH'] or '2',
-                         'threshold': os.environ['INPUT_THRESHOLD'] or '0.70'}
+                         'min_speech': os.environ['INPUT_MIN_SPEECH'] or '2'}
           selection = request['days']
           if isinstance(selection, list):
               selection = ','.join(selection)
@@ -94,12 +89,11 @@ jobs:
           if len(days) > 256:
               raise ValueError('At most 256 dates per run; split the selection')
           minimum = positive(request.get('min_speech', 2))
-          threshold = similarity_threshold(request.get('threshold', 0.70))
           with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
               f.write('matrix=' + json.dumps({'day': days}) + '\n')
-              f.write(f'has_work=true\nmin_speech={minimum}\nthreshold={threshold}\nsource_sha={sha}\n')
+              f.write(f'has_work=true\nmin_speech={minimum}\nsource_sha={sha}\n')
           PY
-  group:
+  embed:
     needs: plan
     if: needs.plan.outputs.has_work == 'true'
     strategy:
@@ -119,7 +113,6 @@ jobs:
       R2_ENDPOINT: ${{ vars.R2_ENDPOINT }}
       DAY: ${{ matrix.day }}
       MIN_SPEECH: ${{ needs.plan.outputs.min_speech }}
-      THRESHOLD: ${{ needs.plan.outputs.threshold }}
       PYTHONUNBUFFERED: '1'
     steps:
       - uses: actions/checkout@v4
@@ -140,18 +133,18 @@ jobs:
         with:
           path: ${{ runner.temp }}/radio-speaker-models
           key: radio-speakers-${{ runner.os }}-${{ hashFiles('scripts/requirements-radio-speakers.txt') }}
-      - name: Group voices and save original clip numbers
+      - name: Embed voices and save original clip numbers
         run: |
-          python -u scripts/group_radio_voices.py run --day "$DAY" --min-speech "$MIN_SPEECH" --threshold "$THRESHOLD" --model-dir "$RUNNER_TEMP/radio-speaker-models" --output voice-recognition/6001 --publish
+          python -u scripts/group_radio_voices.py run --day "$DAY" --min-speech "$MIN_SPEECH" --model-dir "$RUNNER_TEMP/radio-speaker-models" --output voice-recognition/6001 --publish
       - name: Upload reports and embeddings (including partial results)
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: radio-voices-6001-${{ matrix.day }}
+          name: radio-embeddings-6001-${{ matrix.day }}
           path: voice-recognition/6001/${{ matrix.day }}/
           if-no-files-found: warn
           retention-days: 90
-      - name: Show daily voice groups
+      - name: Show daily embedding summary
         if: always()
         run: |
           if [ -f "voice-recognition/6001/$DAY/report.md" ]; then
