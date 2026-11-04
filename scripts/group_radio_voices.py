@@ -134,6 +134,13 @@ def run_day(args):
     minimum = positive(args.min_speech)
     threshold = similarity_threshold(args.threshold)
     folder, data = load_archive(args.day, 6001, require_complete=False)
+    selected = getattr(args, 'clip_numbers', None)
+    if selected:
+        selected = {int(n) for n in selected.split(',')}
+        if not selected or min(selected) < 1 or max(selected) > len(data['calls']):
+            raise ValueError('Selected clip numbers are outside the archive')
+        if args.publish:
+            raise ValueError('Subset experiments cannot overwrite daily R2 results')
     torch.set_num_threads(2)
     torch.manual_seed(0)
     revision = HfApi().model_info(MODEL).sha
@@ -146,10 +153,14 @@ def run_day(args):
               'model': MODEL, 'model_revision': revision, 'min_speech_seconds': minimum,
               'similarity_threshold': threshold, 'clustering': 'complete-linkage-cosine',
               'human_verified': False, 'status': 'running', 'clips': [], 'groups': []}
+    if selected:
+        result['selected_clip_numbers'] = sorted(selected)
     output = Path(args.output) / args.day
     vectors = []
     client = bucket = None
     for index, call in enumerate(data['calls'], 1):
+        if selected and index not in selected:
+            continue
         clip = {'clip_number': index, 'filename': call['original_filename'], 'call_id': call.get('id'),
                 'sha256': call.get('sha256'), 'timestamp_mountain': call.get('timestamp_mountain'),
                 'radio_ids': call.get('radio_ids', []), 'voice': None, 'status': 'pending'}
@@ -228,6 +239,7 @@ def main():
     run.add_argument('--min-speech', type=positive, default=3.0)
     run.add_argument('--threshold', type=similarity_threshold, default=0.70,
                      help='Uncalibrated cosine cutoff; adjust after listening')
+    run.add_argument('--clip-numbers', help='Comma-separated original clip numbers for an artifact-only experiment')
     run.add_argument('--model-dir', default='.cache/radio-speakers')
     run.add_argument('--output', default='voice-recognition/6001')
     run.add_argument('--publish', action='store_true', help='Save daily voices.json to the configured R2 bucket')

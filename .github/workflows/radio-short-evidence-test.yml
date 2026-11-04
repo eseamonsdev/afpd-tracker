@@ -1,0 +1,62 @@
+name: Test short cross-radio evidence clips
+'on':
+  push:
+    branches: [staging]
+    paths:
+      - .github/workflows/radio-short-evidence-test.yml
+      - scripts/summarize_short_voice_test.py
+permissions:
+  contents: read
+concurrency:
+  group: radio-short-evidence-test
+  cancel-in-progress: false
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_BUCKET_NAME: ${{ vars.R2_BUCKET_NAME }}
+      R2_ENDPOINT: ${{ vars.R2_ENDPOINT }}
+      DAY: '2026-09-28'
+      MIN_SPEECH: '1.0'
+      THRESHOLD: '0.70'
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install CPU speaker model dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          python -m pip install torch==2.5.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install -r scripts/requirements-radio-speakers.txt
+          python -m pip check
+      - uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/radio-speaker-models
+          key: radio-speakers-${{ runner.os }}-${{ hashFiles('scripts/requirements-radio-speakers.txt') }}
+      - name: Group voices and save original clip numbers
+        run: |
+          python -u scripts/group_radio_voices.py run --day "$DAY" --min-speech "$MIN_SPEECH" --threshold "$THRESHOLD" --clip-numbers 120,192 --model-dir "$RUNNER_TEMP/radio-speaker-models" --output voice-experiments/short-evidence
+          python scripts/summarize_short_voice_test.py
+      - name: Upload reports and embeddings (including partial results)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: radio-short-evidence-2026-09-28
+          path: voice-experiments/short-evidence/2026-09-28/
+          if-no-files-found: warn
+          retention-days: 90
+      - name: Show daily voice groups
+        if: always()
+        run: |
+          if [ -f "voice-experiments/short-evidence/$DAY/report.md" ]; then
+            cat "voice-experiments/short-evidence/$DAY/report.md" >> "$GITHUB_STEP_SUMMARY"
+          fi
