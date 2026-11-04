@@ -98,12 +98,10 @@ destination sizes and SHA-256 hashes by reading them back. The migration never
 deletes or overwrites legacy objects. Identical destinations are verified and
 skipped; different existing destinations stop that day with an error.
 
-Workflow: **Reorganize voice storage by model and revision**. It runs tests,
-previews all destinations, then applies the migration. Start it through Actions
-after it reaches the default branch, or update
-`records-pending-review/voice-storage-migration-request.json` on staging.
-The workflow shares the daily extraction concurrency group so these operations
-cannot run simultaneously. Reports are uploaded as Actions artifacts for 90 days.
+The one-time migration workflow and its request file were removed after the
+55-day migration completed. The script remains available for manual maintenance
+and supplies the storage helpers used by future daily voice runs.
+
 Migration reorganizes existing results only; it does not process audio or recover
 previously overwritten runs. Historical 3-second extractions remain marked as
 3-second extractions even though the current default is 2 seconds.
