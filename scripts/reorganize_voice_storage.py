@@ -42,7 +42,7 @@ def split_result(data):
     embedding_key = f'{root}/embeddings/{model_folder}/embeddings.json'
     comparison_key = f'{root}/comparisons/{model_folder}/{method}/threshold-{label}/groups.json'
     embeddings = {k: copy.deepcopy(v) for k, v in data.items()
-                  if k not in ('clips', 'groups', 'similarity_threshold', 'clustering', 'selected_clip_numbers')}
+                  if k not in ('clips', 'groups', 'similarity_threshold', 'clustering', 'selected_clip_numbers', 'run_counts')}
     embeddings['schema_version'] = 2
     embeddings['kind'] = 'speaker_embeddings'
     embeddings['clips'] = [{k: copy.deepcopy(v) for k, v in c.items()
@@ -91,6 +91,25 @@ def read_optional(client, bucket, key):
     return content
 
 
+def assert_existing_vectors_preserved(old_bytes, new_bytes):
+    old, new = json.loads(old_bytes), json.loads(new_bytes)
+    for field in ('date', 'talkgroup', 'model', 'model_revision'):
+        if old.get(field) != new.get(field):
+            raise ValueError('Cannot replace embeddings from a different extraction identity')
+    if old.get('preprocessing', new.get('preprocessing')) != new.get('preprocessing'):
+        raise ValueError('Cannot replace embeddings with different preprocessing')
+    current = {c['clip_number']: c for c in new['clips']}
+    for clip in old['clips']:
+        if clip['status'] != 'embedded':
+            continue
+        candidate = current.get(clip['clip_number'], {})
+        for field in ('embedding', 'filename', 'call_id', 'sha256', 'speech_seconds'):
+            if candidate.get(field) != clip.get(field):
+                raise ValueError(f"Refusing to overwrite existing vector for clip {clip['clip_number']}")
+        if candidate.get('status') != 'embedded':
+            raise ValueError('Refusing to remove an existing embedding')
+
+
 def write_layout(client, bucket, objects, *, replace=False):
     from r2_audio import read_verified
     # Check every destination before creating any object for this day.
@@ -99,6 +118,10 @@ def write_layout(client, bucket, objects, *, replace=False):
         for key, content in objects.items():
             if existing[key] is not None and existing[key] != content:
                 raise ValueError('Conflicting destination; preserved without overwrite: ' + key)
+    if replace:
+        for key, content in objects.items():
+            if '/embeddings/' in key and existing[key] is not None:
+                assert_existing_vectors_preserved(existing[key], content)
     for key, content in objects.items():
         digest = hashlib.sha256(content).hexdigest()
         if existing[key] != content:

@@ -100,6 +100,10 @@ def write_reports(output, result, vectors):
                   f"Accepted: {len(accepted)}. Skipped: {sum(c['status'].startswith('skipped') for c in result['clips'])}. "
                   f"Errors: {sum(c['status'] == 'error' for c in result['clips'])}.", '',
                   'See clips.csv for radio IDs, skipped clips, errors and timestamps. Scores are not identity probabilities.'])
+    if 'run_counts' in result:
+        counts = result['run_counts']
+        lines.extend(['', f"Incremental extraction: {counts['reused_embeddings']} embeddings reused; "
+                      f"{counts['new_embeddings']} new embeddings created."])
     (output / 'report.md').write_text('\n'.join(lines) + '\n')
 
 
@@ -119,6 +123,66 @@ def publish_result(path):
     write_layout(client, bucket, objects, replace=True)
     for key in objects:
         print(f'Saved and readback-verified R2 JSON: {key}', flush=True)
+
+
+
+# Settings that affect the vector itself, rather than clip eligibility or clustering.
+PREPROCESSING = {'decoder': 'ffmpeg-mono-f32le', 'sample_rate': 16000,
+                 'vad': 'silero-vad-6.2.0', 'speech_pad_ms': 0,
+                 'speech_input': 'concatenated-detected-regions', 'normalization': 'l2'}
+
+
+def load_existing_embeddings(client, bucket, day, revision, calls):
+    from reorganize_voice_storage import read_optional
+    key = (f'voice-recognition/6001/{day}/embeddings/'
+           f"{MODEL.replace('/', '--')}--{revision}/embeddings.json")
+    content = read_optional(client, bucket, key)
+    if content is None:
+        return {}, None
+    previous = json.loads(content)
+    if (previous.get('date') != day or previous.get('talkgroup') != 6001
+            or previous.get('model') != MODEL or previous.get('model_revision') != revision):
+        raise ValueError('Existing embeddings identity mismatch')
+    if previous.get('preprocessing', PREPROCESSING) != PREPROCESSING:
+        raise ValueError('Preprocessing differs; use a separate model/settings namespace')
+    if previous.get('schema_version') != 2:
+        raise ValueError('Unsupported embeddings schema')
+    cached = {}
+    for clip in previous['clips']:
+        number = clip['clip_number']
+        if number in cached:
+            raise ValueError('Duplicate cached clip number')
+        if not 1 <= number <= len(calls):
+            raise ValueError('Archive clip numbers changed; existing embeddings preserved')
+        call = calls[number - 1]
+        identity = (call.get('id'), call['original_filename'], call.get('sha256'))
+        old_identity = (clip.get('call_id'), clip['filename'], clip.get('sha256'))
+        if identity != old_identity:
+            if clip['status'] == 'embedded':
+                raise ValueError(f'Audio identity changed for embedded clip {number}; preserved without overwrite')
+            continue
+        cached[number] = clip
+    return cached, previous
+
+
+def reuse_cached_clip(clip, cached, minimum):
+    import copy
+    import numpy as np
+    if cached is None:
+        return False
+    if cached['status'] == 'embedded':
+        vector = np.asarray(cached.get('embedding', []), dtype=np.float64)
+        if (vector.ndim != 1 or vector.size == 0 or not np.isfinite(vector).all()
+                or not np.isclose(np.linalg.norm(vector), 1, atol=1e-4)):
+            raise ValueError('Invalid cached embedding; refusing to replace it')
+        clip.update(embedding=copy.deepcopy(cached['embedding']), status='embedded',
+                    speech_seconds=cached['speech_seconds'])
+        return True
+    if (cached['status'] == 'skipped_short_speech'
+            and cached.get('speech_seconds', float('inf')) < minimum):
+        clip.update(status='skipped_short_speech', speech_seconds=cached['speech_seconds'])
+        return True
+    return False
 
 
 def run_day(args):
@@ -143,20 +207,23 @@ def run_day(args):
     torch.set_num_threads(2)
     torch.manual_seed(0)
     revision = HfApi().model_info(MODEL).sha
-    encoder = EncoderClassifier.from_hparams(source=MODEL, revision=revision,
-        savedir=str(Path(args.model_dir) / revision), run_opts={'device': 'cpu'})
-    vad = load_silero_vad()
+    encoder = vad = None
+    client, bucket = client_and_bucket()
+    cached, previous = load_existing_embeddings(client, bucket, args.day, revision, data['calls'])
+    if previous is not None:
+        minimum = min(minimum, positive(previous['min_speech_seconds']))
     result = {'schema_version': 1, 'date': args.day, 'talkgroup': 6001,
               'archive_coverage': data.get('coverage'),
               'source_metadata_sha256': hashlib.sha256((folder / 'calls.json').read_bytes()).hexdigest(),
               'model': MODEL, 'model_revision': revision, 'min_speech_seconds': minimum,
               'similarity_threshold': threshold, 'clustering': 'complete-linkage-cosine',
-              'human_verified': False, 'status': 'running', 'clips': [], 'groups': []}
+              'human_verified': False, 'status': 'running', 'clips': [], 'groups': [],
+              'preprocessing': PREPROCESSING}
     if selected:
         result['selected_clip_numbers'] = sorted(selected)
     output = Path(args.output) / args.day
     vectors = []
-    client = bucket = None
+    reused = created = skipped_cached = 0
     for index, call in enumerate(data['calls'], 1):
         if selected and index not in selected:
             continue
@@ -165,6 +232,13 @@ def run_day(args):
                 'radio_ids': call.get('radio_ids', []), 'voice': None, 'status': 'pending'}
         result['clips'].append(clip)
         try:
+            if reuse_cached_clip(clip, cached.get(index), minimum):
+                if clip['status'] == 'embedded':
+                    vectors.append(np.asarray(clip['embedding'], dtype=np.float64))
+                    reused += 1
+                else:
+                    skipped_cached += 1
+                continue
             if call.get('audio_status') == 'unavailable':
                 clip['status'] = 'skipped_unavailable'
                 continue
@@ -184,6 +258,8 @@ def run_day(args):
                 wav = torch.from_numpy(np.frombuffer(decoded, dtype='<f4').copy())
             if not wav.numel() or not torch.isfinite(wav).all():
                 raise ValueError('Empty or invalid decoded audio')
+            if vad is None:
+                vad = load_silero_vad()
             # Measure detected speech without extra boundary padding.
             timestamps = get_speech_timestamps(wav, vad, sampling_rate=16000, speech_pad_ms=0)
             samples = sum(t['end'] - t['start'] for t in timestamps)
@@ -192,6 +268,9 @@ def run_day(args):
                 clip['status'] = 'skipped_short_speech'
                 continue
             cleaned = torch.cat([wav[t['start']:t['end']] for t in timestamps])
+            if encoder is None:
+                encoder = EncoderClassifier.from_hparams(source=MODEL, revision=revision,
+                    savedir=str(Path(args.model_dir) / revision), run_opts={'device': 'cpu'})
             with torch.inference_mode():
                 vector = encoder.encode_batch(cleaned.unsqueeze(0)).squeeze().cpu().numpy()
             norm = float(np.linalg.norm(vector))
@@ -201,6 +280,7 @@ def run_day(args):
             # Keep vectors with clip identity so accumulated JSON can be reused.
             clip['embedding'] = (vector / norm).tolist()
             clip['status'] = 'embedded'
+            created += 1
         except Exception as exc:
             clip.update(status='error', error=f'{type(exc).__name__}: {exc}')
         finally:
@@ -220,6 +300,9 @@ def run_day(args):
         result['groups'].append({'voice': voice, 'clip_numbers': [accepted[i]['clip_number'] for i in members]})
     errors = sum(c['status'] == 'error' for c in result['clips'])
     result['status'] = 'partial_error' if errors else 'complete'
+    result['run_counts'] = {'reused_embeddings': reused, 'new_embeddings': created,
+                            'reused_short_speech_skips': skipped_cached, 'errors': errors}
+    print('Incremental extraction: ' + json.dumps(result['run_counts']), flush=True)
     write_reports(output, result, vectors)
     if args.publish:
         publish_result(output / 'voices.json')

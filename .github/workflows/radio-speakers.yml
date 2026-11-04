@@ -20,6 +20,7 @@ name: Group 6001 clips by suggested voice
       - records-pending-review/radio-speaker-request.json
       - .github/workflows/radio-speakers.yml
       - scripts/reorganize_voice_storage.py
+      - tests/test_incremental_radio_speakers.py
       - tests/test_voice_storage.py
       - scripts/group_radio_voices.py
       - scripts/requirements-radio-speakers.txt
@@ -52,6 +53,7 @@ jobs:
         run: |
           python -m unittest discover -s tests -p test_radio_speakers.py
           python -m unittest discover -s tests -p test_voice_storage.py
+          python -m unittest discover -s tests -p test_incremental_radio_speakers.py
       - name: Resolve selected 6001 dates
         id: plan
         env:

@@ -17,8 +17,16 @@ and normalized vectors, without grouping settings. Comparison files contain grou
 and per-clip scores without duplicating vectors. They record the embeddings key
 and SHA-256; readers must verify that checksum before combining the files.
 A new threshold creates a separate comparison, reusing identical embeddings.
-A rerun with changed extraction settings updates that model/revision's current
-embeddings; older comparisons with a different embeddings checksum are stale.
+Daily extraction is incremental: existing vectors are reused without recalculating
+or changing their values. Lowering the minimum admits previously skipped clips;
+known clips still below the minimum are skipped without downloading their audio.
+The daily embeddings manifest is updated to add new vectors. Publication rejects
+removing or modifying any existing vector or changing its audio identity.
+The exact model revision and preprocessing must match; changed preprocessing
+requires a separate namespace. The stored minimum only decreases as coverage
+expands. Each run reports reused and newly created embedding counts.
+Group comparisons are recomputed from the accumulated vectors; comparisons with
+a different embeddings checksum are stale.
 Daily Actions artifacts retain the original combined voices.json for convenience.
 Legacy R2 voices.json files are preserved as migration backups and are no longer
 updated by the daily publisher.
