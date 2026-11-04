@@ -7,12 +7,41 @@ permalink: /lawsuits/
 {% set pageDescription = "Browse lawsuits involving American Fork policing, with case statuses, settlement information, and links to available court records." -%}
 {% set canonicalUrl = siteUrl ~ "/lawsuits/" -%}
 
+{% macro profileLinks(text, index=0) -%}
+  {%- set names = [
+    ["Aaron Booker", "entity-police-encounter-page-aaron-booker"],
+    ["Bronson Kitchen", "entity-officer-page-bronson-t-kitchen"],
+    ["Ben Schneider", "entity-police-encounter-page-benjamin-paul-schneider"],
+    ["Janene Thorpe", "entity-police-encounter-page-janene-thorpe"],
+    ["Cody Wayne Greenland", "entity-police-encounter-page-cody-wayne-greenland"],
+    ["Joseph Ferreri", "entity-police-encounter-page-joseph-ferreri"],
+    ["Shawn Lott", "entity-officer-page-shawn-e-lott"],
+    ["Michael Anthony Roy", "entity-police-encounter-page-michael-anthony-roy"],
+    ["Nancy Boldt", "entity-police-encounter-page-nancy-boldt"],
+    ["Jay M. Christensen", "entity-officer-page-jay-m-christensen"]
+  ] -%}
+  {%- if index < names.length -%}
+    {%- set name = names[index][0] -%}
+    {%- set profile = entities.all[names[index][1]] -%}
+    {%- if profile and profile.url and profile.type in ["police-encounter-page", "civilian-employee-page", "officer-page"] -%}
+      {%- for part in text.split(name) -%}
+        {{- profileLinks(part, index + 1) -}}
+        {%- if not loop.last -%}<a href="{{ profile.url | escape }}">{{ name | escape }}</a>{%- endif -%}
+      {%- endfor -%}
+    {%- else -%}
+      {{- profileLinks(text, index + 1) -}}
+    {%- endif -%}
+  {%- else -%}
+    {{- text | escape -}}
+  {%- endif -%}
+{%- endmacro %}
+
 {% macro lawsuit(name, url, status, description, note) %}
   <li class="lawsuit-entry">
     <h3>{% if url %}<a href="{{ url | escape }}">{{ name | escape }}</a>{% else %}{{ name | escape }}{% endif %}</h3>
     <p><strong>Case Status:</strong> {{ status | escape }}</p>
-    <p>{{ description | escape }}</p>
-    {% if note %}<p>{{ note | escape }}</p>{% endif %}
+    <p>{{ profileLinks(description) }}</p>
+    {% if note %}<p>{{ profileLinks(note) }}</p>{% endif %}
   </li>
 {% endmacro %}
 
