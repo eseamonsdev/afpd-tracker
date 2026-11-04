@@ -98,7 +98,7 @@ jobs:
     if: needs.plan.outputs.has_work == 'true'
     strategy:
       fail-fast: false
-      max-parallel: 1
+      max-parallel: 15
       matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
     name: 6001 / ${{ matrix.day }}
     runs-on: ubuntu-latest

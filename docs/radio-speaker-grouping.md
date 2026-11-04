@@ -3,7 +3,7 @@
 Workflow: **Group 6001 clips by suggested voice** (`radio-speakers.yml`).
 
 Run against staging archives. Select one date, comma-separated dates, or `all` for
-all available 6001 daily archives. Only one daily job runs at a time in each run.
+all available 6001 daily archives. Up to 15 daily jobs run concurrently in each run, subject to GitHub runner availability.
 Each date is processed independently. Labels do not identify people or match across days.
 Results accumulate in the configured R2 bucket at `voice-recognition/6001/YYYY-MM-DD/voices.json`.
 Each JSON includes normalized embeddings for later reuse, so the data does not
