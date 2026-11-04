@@ -52,6 +52,14 @@ class MemoryR2:
 
 
 class VoiceStorageTests(unittest.TestCase):
+    def test_model_first_paths_keep_embeddings_and_daily_comparisons_separate(self):
+        data = sample()
+        folder = data['model'].replace('/', '--') + '--' + data['model_revision']
+        root = f'voice-recognition/{folder}/6001'
+        objects = split_result(data)
+        self.assertIn(f"{root}/embeddings/{data['date']}/embeddings.json", objects)
+        self.assertIn(f"{root}/comparisons/complete-linkage-cosine/threshold-0.70/{data['date']}/groups.json", objects)
+
     def test_threshold_changes_only_comparison_and_never_duplicates_embeddings(self):
         a = sample()
         b = copy.deepcopy(a)

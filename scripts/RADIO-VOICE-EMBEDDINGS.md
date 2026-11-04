@@ -47,17 +47,12 @@ are experimental and local to that date; they do not confirm a person's identity
 The dedicated short-evidence experiment still explicitly runs extraction followed
 by comparison, and never publishes subset embeddings over daily archives.
 
-## Migration
+## Completed migration
 
-`migrate_voice_model_layout.py` defaults to a dry run. It inventories the entire
-old `voice-recognition/6001/` prefix, validates identities and destinations, and
-copies all recognized objects. Embeddings and historical bundles remain byte
-identical; comparison JSON changes only its embedding path. Snapshot hashes
-must still match. Conflicts or unknown objects stop the migration.
+All 55 days were moved into the model-first layout on November 4, 2026.
+The 165 original objects were copied and verified before their old paths were
+removed. Embedding bytes were preserved, and comparison references were updated.
+The temporary migration script, workflow, request, and migration-only tests have
+been removed. Shared storage helpers remain in `reorganize_voice_storage.py`.
 
-The migration workflow runs with the same concurrency group as extraction and
-comparison. `--apply --remove-old` removes old objects only after every
-replacement has been read back and verified and sources are rechecked. Its
-artifact contains per-object source/destination hashes and completion status.
-No radio audio is moved, regenerated, or deleted. A completed migration is
-safe to rerun; existing model-first objects are preserved.
+[Completed migration and audit](https://github.com/eseamonsdev/afpd-tracker/actions/runs/41873405847)
