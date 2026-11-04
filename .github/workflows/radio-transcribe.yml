@@ -105,7 +105,11 @@ jobs:
 
         python -m pip install -r scripts/requirements-radio.txt ''boto3>=1.40,<2'''
     - name: Verify transcription identity and checkpoint safeguards
-      run: python3 -m unittest discover -s tests -p 'test_radio*.py'
+      run: >-
+        PYTHONPATH=scripts:tests python3 -m unittest
+        test_radio_transcription test_radio_batch_checkpoints
+        test_radio_available_audio test_radio_workflows
+        test_law2_radio_transcription
     - uses: actions/cache@v4
       with:
         path: ${{ runner.temp }}/radio-models
