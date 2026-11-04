@@ -1,5 +1,14 @@
-<ul class="media-coverage-list" aria-label="{{ section.title | escape }}">
-  {% for article in section.contents %}
+{% macro renderMediaCoverage(articles, label) %}
+<ul class="media-coverage-list" aria-label="{{ label | escape }}">
+  {% for article in articles %}
+    {% if article.type == "folder" %}
+    <li class="media-coverage-group">
+      <details>
+        <summary><svg class="icon folder-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2.75 6.5h7l2 2h9.5v11.75H2.75z"/><path d="M2.75 6.5V4.75h7l2 2h9.5V8.5"/></svg>{{ article.label | escape }}</summary>
+        {{ renderMediaCoverage(article.contents, article.label) }}
+      </details>
+    </li>
+    {% else %}
     <li class="media-coverage-item">
       <h3>
         <a href="{{ article.url | escape }}" target="_blank" rel="noopener noreferrer">{{ article.label | escape }}</a>
@@ -13,5 +22,8 @@
         <p class="media-coverage-description">{{ article.description | escape }}</p>
       {% endif %}
     </li>
+    {% endif %}
   {% endfor %}
 </ul>
+{% endmacro %}
+{{ renderMediaCoverage(section.contents, section.title) }}
