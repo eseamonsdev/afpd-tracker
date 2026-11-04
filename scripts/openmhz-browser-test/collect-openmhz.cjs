@@ -2,6 +2,7 @@
 /* Metadata-only collector: ordinary OpenMHz page pagination, no synthetic API calls. */
 const { chromium } = require('playwright');
 const { openSession } = require('./browser-session.cjs');
+const { clearDiagnostics, requestFailure, failedResponse } = require('./run-diagnostics.cjs');
 const fs = require('node:fs/promises');
 const path = require('node:path');
 const sleep = ms => new Promise(r => setTimeout(r, ms));
@@ -23,8 +24,9 @@ async function collect(date) {
   const system=String(args.system||'dcfems'),tg=Number(args.talkgroup||6001),gap=Number(args['buffer-ms']||500);
   if(!Number.isFinite(start)||(!Number.isInteger(tg)||tg<1||tg>65535)||!Number.isFinite(gap)||gap<0)throw Error('Invalid arguments');
   const out=path.resolve(String(args.output||'openmhz-results'),date);await fs.mkdir(out,{recursive:true});
+  await clearDiagnostics(out);
   const pageUrl=`https://openmhz.com/system/${encodeURIComponent(system)}?filter-type=talkgroup&filter-code=${tg}&time=${Math.floor((start+end)/2)}`;
-  const calls=new Map(),batches=[],pending=new Set();let failure=null,session,page,requests=0,queue=Promise.resolve(),closing=false;
+  const calls=new Map(),batches=[],networkDiagnostics=[],pending=new Set();let failure=null,session,page,requests=0,queue=Promise.resolve(),closing=false;
   const begun=new Date().toISOString();
   const progressMs=Number(args['progress-seconds']||10)*1000;
   if(!Number.isFinite(progressMs)||progressMs<1000)throw Error('--progress-seconds must be at least 1');
@@ -70,10 +72,12 @@ async function collect(date) {
         await sleep(gap);
       });queue=task.catch(e=>fail(e.message));await queue;
     });
+    page.on('console',message=>{if(['error','warning'].includes(message.type())&&networkDiagnostics.length<100)networkDiagnostics.push({kind:'console',at:new Date().toISOString(),type:message.type(),text:message.text()})});
+    page.on('pageerror',error=>{if(networkDiagnostics.length<100)networkDiagnostics.push({kind:'pageerror',at:new Date().toISOString(),error:error.message})});
     page.on('response',response=>{
       if(!isList(response.url())||closing)return;
       const task=(async()=>{
-        if(!response.ok())throw Error(`HTTP ${response.status()} on call list; stopped. Retry-After: ${response.headers()['retry-after']||'none'}`);
+        if(!response.ok()){networkDiagnostics.push(failedResponse(response));throw Error(`HTTP ${response.status()} on call list ${response.url()}; stopped. Retry-After: ${response.headers()['retry-after']||'none'}`);}
         const data=await response.json();if(!Array.isArray(data.calls))throw Error('Unexpected call-list response');
         const beforeCount=calls.size;
         for(const c of data.calls){if(Number(c.talkgroupNum)!==tg||!c._id||!Number.isFinite(Date.parse(c.time)))throw Error('Unexpected call metadata');calls.set(c._id,c)}
@@ -81,7 +85,7 @@ async function collect(date) {
         lastDataAt=Date.now();if(calls.size>beforeCount)lastGrowthAt=lastDataAt;
       })().catch(e=>fail(e.message));pending.add(task);task.finally(()=>pending.delete(task));
     });
-    page.on('requestfailed',req=>{if(!closing&&isList(req.url()))fail(`Call-list request failed: ${req.failure()?.errorText}`)});
+    page.on('requestfailed',req=>{if(!closing&&isList(req.url())){const detail=requestFailure(req);networkDiagnostics.push(detail);fail(`Call-list request failed: ${detail.error} (${detail.method} ${detail.url})`)}});
     phase='loading page';
     const nav=await page.goto(pageUrl,{waitUntil:'domcontentloaded',timeout:60000});
     if(nav&&!nav.ok()&&session.visible&&(await nav.allHeaders())['cf-mitigated']==='challenge'){
@@ -129,7 +133,8 @@ async function collect(date) {
     }
     await Promise.all([...pending]);check();
   }catch(e){fail(e.message)}finally{
-    closing=true;clearInterval(progressTimer);if(progressTask)await progressTask;phase='saving results';if(session){try{await session.close()}catch(e){fail(`Browser cleanup failed: ${e.message}`)}}await Promise.allSettled([...pending]);await checkpoint();
+    closing=true;clearInterval(progressTimer);if(progressTask)await progressTask;phase='saving results';if(session){if(failure&&session.attached&&page&&!page.isClosed())log('Leaving the collection tab open for manual inspection and disconnecting Playwright.');try{await session.close({keepPage:!!failure})}catch(e){fail(`Browser cleanup failed: ${e.message}`)}}await Promise.allSettled([...pending]);await checkpoint();
+    await fs.writeFile(path.join(out,'network-diagnostics.json'),JSON.stringify({date,talkgroup:tg,startedAt:begun,events:networkDiagnostics},null,2)+'\n');
     await fs.writeFile(path.join(out,'browser-batches.json'),JSON.stringify(batches,null,2)+'\n');
     const b=bounds();const summary={date,timezone:zone,system,talkgroup:tg,pageUrl,startedAt:begun,finishedAt:new Date().toISOString(),status:failure?'incomplete':'complete',error:failure,count:selected().length,listRequests:requests,bufferAfterResponseMs:gap,olderBoundaryReached:b.oldest<start,newerBoundaryReached:b.newest>=end,audioDownloaded:false};
     await fs.writeFile(path.join(out,'summary.json'),JSON.stringify(summary,null,2)+'\n');log(`${failure?'INCOMPLETE':'COMPLETE'} | ${summary.count} unique calls | ${requests} requests | both midnight boundaries ${summary.olderBoundaryReached&&summary.newerBoundaryReached?'reached':'not reached'} | results: ${out}`);

@@ -20,7 +20,7 @@ In a second terminal, run the collector:
 node collect-openmhz.cjs --date=2026-11-03 --talkgroup=6001
 ```
 
-By default it connects to `http://127.0.0.1:9222`, reuses the existing browser profile and cookies, and opens its own collection tab. It closes that tab and disconnects when finished, leaving Chromium and your other tabs open. Routing and audio blocking apply only to the collection tab. The browser retains its existing timezone and settings; date boundaries and progress labels still use `--timezone` (America/Denver by default). Complete any browser verification manually when prompted; attached mode does not require `--headed`.
+By default it connects to `http://127.0.0.1:9222`, reuses the existing browser profile and cookies, and opens its own collection tab. On success it closes that tab and disconnects, leaving Chromium and your other tabs open. On failure it disconnects and leaves the collection tab open for manual inspection. Routing and audio blocking apply only to the collection tab. The browser retains its existing timezone and settings; date boundaries and progress labels still use `--timezone` (America/Denver by default). Complete any browser verification manually when prompted; attached mode does not require `--headed`.
 
 Use `--cdp-url=http://127.0.0.1:OTHER_PORT` to change the connection. A failed connection stops with instructions; it never silently launches a fresh browser.
 
@@ -76,3 +76,9 @@ An environment/access failure stops the remaining jobs. The audit runner accepts
 
 Run `npm test` for browser attachment/cleanup, date/DST, invalid-calendar and multi-source exact-match tests.
 The collector and audit runner do not modify site archives or trigger audio jobs.
+
+## Diagnosing a failed run
+
+Each run writes `network-diagnostics.json` with failed call-list request URLs, methods, browser errors, HTTP error status and selected response headers, plus browser console errors and warnings. A generic `net::ERR_FAILED` alone does not identify the cause; inspect these events and the tab left open after failure.
+
+Old `navigation-error-*` files and `network-diagnostics.json` are cleared at startup so a previous challenge page cannot be mistaken for evidence from the new run. Navigation diagnostics are created only if navigation itself fails. Timestamps in all diagnostics identify the attempt they belong to.

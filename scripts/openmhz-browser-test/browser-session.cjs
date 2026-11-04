@@ -19,9 +19,9 @@ async function openSession(chromium, args, zone) {
     if (!context) throw Error('Attached Chromium has no existing browser context');
     page = await context.newPage();
     return {page, attached, visible:attached || !!args.headed,
-      async close() {
+      async close({keepPage=false}={}) {
         // Never close the shared context. CDP browser.close() disconnects the client.
-        try { if (!page.isClosed()) await page.close(); }
+        try { if (!(attached && keepPage) && !page.isClosed()) await page.close(); }
         finally { await browser.close(); }
       },
     };

@@ -39,3 +39,26 @@ test('setup failure and tab-close failure still disconnect the client',async()=>
  const n=browserMock();const s=await openSession(n.chromium,{},'UTC');n.page.close=async()=>{throw Error('already disconnected')};
  await assert.rejects(s.close(),/already disconnected/);assert.equal(n.calls.at(-1),'disconnect');
 });
+
+test('failed attached run can keep its tab open while disconnecting',async()=>{
+ const m=browserMock();const s=await openSession(m.chromium,{},'UTC');
+ await s.close({keepPage:true});assert.deepEqual(m.calls,[['connect','http://127.0.0.1:9222'],'newPage','disconnect']);
+ const n=browserMock();const launched=await openSession(n.chromium,{'launch-browser':true},'UTC');
+ await launched.close({keepPage:true});assert.deepEqual(n.calls.slice(-2),['page.close','disconnect']);
+});
+const {clearDiagnostics,requestFailure,failedResponse}=require('./run-diagnostics.cjs');
+test('new run clears stale diagnostics while preserving checkpoints',async()=>{
+ const fs=require('node:fs/promises'),os=require('node:os'),path=require('node:path');
+ const dir=await fs.mkdtemp(path.join(os.tmpdir(),'openmhz-diagnostics-'));
+ try{
+  for(const name of ['navigation-error-body.txt','navigation-error-headers.json','navigation-error.png','network-diagnostics.json','calls.json'])await fs.writeFile(path.join(dir,name),'prior run');
+  await clearDiagnostics(dir);assert.deepEqual(await fs.readdir(dir),['calls.json']);await clearDiagnostics(dir);
+ }finally{await fs.rm(dir,{recursive:true,force:true})}
+});
+test('network failures preserve exact URL and challenge response evidence',()=>{
+ const url='https://api.openmhz.com/dcfems/calls?filter-code=6001';
+ const detail=requestFailure({url:()=>url,method:()=>'GET',resourceType:()=>'fetch',failure:()=>({errorText:'net::ERR_FAILED'})});
+ assert.equal(detail.url,url);assert.equal(detail.error,'net::ERR_FAILED');assert.equal(detail.method,'GET');
+ const response=failedResponse({url:()=>url,status:()=>403,headers:()=>({'cf-mitigated':'challenge','content-type':'text/html','set-cookie':'private'})});
+ assert.equal(response.status,403);assert.equal(response.headers['cf-mitigated'],'challenge');assert.equal(response.headers['set-cookie'],undefined);
+});
