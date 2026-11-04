@@ -16,6 +16,9 @@ name: Compare saved 6001 voice embeddings
         type: string
 permissions:
   contents: read
+concurrency:
+  group: radio-speaker-processing-staging
+  cancel-in-progress: false
 jobs:
   compare:
     runs-on: ubuntu-latest
@@ -49,7 +52,7 @@ jobs:
           revision = os.environ['MODEL_REVISION']
           if not re.fullmatch(r'[0-9a-f]{40,64}', revision):
               raise ValueError('Exact model revision is required')
-          key = f"voice-recognition/6001/{day}/embeddings/{MODEL.replace('/', '--')}--{revision}/embeddings.json"
+          key = f"voice-recognition/{MODEL.replace('/', '--')}--{revision}/6001/embeddings/{day}/embeddings.json"
           client, bucket = client_and_bucket()
           content = read_optional(client, bucket, key)
           if content is None:

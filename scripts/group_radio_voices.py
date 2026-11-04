@@ -134,8 +134,8 @@ PREPROCESSING = {'decoder': 'ffmpeg-mono-f32le', 'sample_rate': 16000,
 
 def load_existing_embeddings(client, bucket, day, revision, calls):
     from reorganize_voice_storage import read_optional
-    key = (f'voice-recognition/6001/{day}/embeddings/'
-           f"{MODEL.replace('/', '--')}--{revision}/embeddings.json")
+    key = (f"voice-recognition/{MODEL.replace('/', '--')}--{revision}/6001/"
+           f'embeddings/{day}/embeddings.json')
     content = read_optional(client, bucket, key)
     if content is None:
         return {}, None

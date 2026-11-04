@@ -30,8 +30,8 @@ def embedding_result(data, *, allow_subset=False):
     if not re.fullmatch(r'[0-9a-f]{40,64}', revision):
         raise ValueError('Exact model revision is required')
     model_folder = model.replace('/', '--') + '--' + revision
-    root = f'{PREFIX}/{day}'
-    embedding_key = f'{root}/embeddings/{model_folder}/embeddings.json'
+    root = f'voice-recognition/{model_folder}/6001'
+    embedding_key = f'{root}/embeddings/{day}/embeddings.json'
     embeddings = {k: copy.deepcopy(v) for k, v in data.items()
                   if k not in ('clips', 'groups', 'similarity_threshold', 'clustering', 'selected_clip_numbers', 'run_counts')}
     embeddings['schema_version'] = 2
@@ -64,9 +64,9 @@ def split_result(data):
         raise ValueError('Invalid similarity threshold')
     label = format(threshold.normalize(), 'f')
     label += '0' * max(0, 2 - len(label.split('.')[1]))
-    root = f'{PREFIX}/{day}'
-    embedding_key = f'{root}/embeddings/{model_folder}/embeddings.json'
-    comparison_key = f'{root}/comparisons/{model_folder}/{method}/threshold-{label}/groups.json'
+    root = f'voice-recognition/{model_folder}/6001'
+    embedding_key = f'{root}/embeddings/{day}/embeddings.json'
+    comparison_key = f'{root}/comparisons/{method}/threshold-{label}/{day}/groups.json'
     comparison = {
         'schema_version': 2, 'kind': 'speaker_comparison', 'date': day,
         'talkgroup': 6001, 'model': model, 'model_revision': revision,
