@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /* Metadata-only collector: ordinary OpenMHz page pagination, no synthetic API calls. */
 const { chromium } = require('playwright');
+const { openSession } = require('./browser-session.cjs');
 const fs = require('node:fs/promises');
 const path = require('node:path');
 const sleep = ms => new Promise(r => setTimeout(r, ms));
@@ -23,7 +24,7 @@ async function collect(date) {
   if(!Number.isFinite(start)||(!Number.isInteger(tg)||tg<1||tg>65535)||!Number.isFinite(gap)||gap<0)throw Error('Invalid arguments');
   const out=path.resolve(String(args.output||'openmhz-results'),date);await fs.mkdir(out,{recursive:true});
   const pageUrl=`https://openmhz.com/system/${encodeURIComponent(system)}?filter-type=talkgroup&filter-code=${tg}&time=${Math.floor((start+end)/2)}`;
-  const calls=new Map(),batches=[],pending=new Set();let failure=null,browser,page,requests=0,queue=Promise.resolve(),closing=false;
+  const calls=new Map(),batches=[],pending=new Set();let failure=null,session,page,requests=0,queue=Promise.resolve(),closing=false;
   const begun=new Date().toISOString();
   const progressMs=Number(args['progress-seconds']||10)*1000;
   if(!Number.isFinite(progressMs)||progressMs<1000)throw Error('--progress-seconds must be at least 1');
@@ -53,9 +54,11 @@ async function collect(date) {
   async function checkpoint(){const dest=path.join(out,'calls.json');await fs.writeFile(dest,JSON.stringify({date,timezone:zone,system,talkgroup:tg,calls:selected()},null,2)+'\n')}
   async function waitFor(pred){const deadline=Date.now()+45000;while(!pred()){check();if(Date.now()>deadline)throw Error('Pagination stalled; completeness has NOT been established');await sleep(100)}check()}
   try {
-    browser=await chromium.launch({headless:!args.headed,...(args.proxy?{proxy:{server:String(args.proxy)}}:{}),...(args['executable-path']?{executablePath:String(args['executable-path'])}:{})});
-    const context=await browser.newContext({ignoreHTTPSErrors:!!args['ignore-https-errors'],timezoneId:zone,viewport:{width:1280,height:800}});page=await context.newPage();
-    await context.route('**/*',async route=>{
+    phase=args['launch-browser']?'launching browser':'attaching to Chromium';
+    session=await openSession(chromium,args,zone);page=session.page;
+    log(session.attached?'Attached to existing Chromium; collecting in a new tab':'Launched collector browser');
+    // Scope interception to our tab, leaving the user's other tabs untouched.
+    await page.route('**/*',async route=>{
       const req=route.request();if(req.resourceType()==='media'||/\.(m4a|mp3|wav|aac|ogg)(?:[?#]|$)/i.test(req.url()))return route.abort();
       if(!isList(req.url()))return route.continue();
       const task=queue.then(async()=>{
@@ -81,7 +84,7 @@ async function collect(date) {
     page.on('requestfailed',req=>{if(!closing&&isList(req.url()))fail(`Call-list request failed: ${req.failure()?.errorText}`)});
     phase='loading page';
     const nav=await page.goto(pageUrl,{waitUntil:'domcontentloaded',timeout:60000});
-    if(nav&&!nav.ok()&&args.headed&&(await nav.allHeaders())['cf-mitigated']==='challenge'){
+    if(nav&&!nav.ok()&&session.visible&&(await nav.allHeaders())['cf-mitigated']==='challenge'){
       phase='waiting for manual browser verification';
       log('Cloudflare verification: complete it in the visible browser. Waiting up to 5 minutes; no automatic challenge solving.');
       try {
@@ -91,7 +94,7 @@ async function collect(date) {
         // Keep the original HTTP diagnostics when verification does not finish.
       }
     }
-    if(nav&&!nav.ok()&&!(args.headed&&await page.locator('#calls tbody tr[data-callid]').count())){
+    if(nav&&!nav.ok()&&!(session.visible&&await page.locator('#calls tbody tr[data-callid]').count())){
       console.error('HTTP:',nav.status(),nav.statusText());
       // Diagnostic failures must not hide the original navigation error.
       try {
@@ -126,7 +129,7 @@ async function collect(date) {
     }
     await Promise.all([...pending]);check();
   }catch(e){fail(e.message)}finally{
-    closing=true;clearInterval(progressTimer);if(progressTask)await progressTask;phase='saving results';if(browser)await browser.close();await Promise.allSettled([...pending]);await checkpoint();
+    closing=true;clearInterval(progressTimer);if(progressTask)await progressTask;phase='saving results';if(session){try{await session.close()}catch(e){fail(`Browser cleanup failed: ${e.message}`)}}await Promise.allSettled([...pending]);await checkpoint();
     await fs.writeFile(path.join(out,'browser-batches.json'),JSON.stringify(batches,null,2)+'\n');
     const b=bounds();const summary={date,timezone:zone,system,talkgroup:tg,pageUrl,startedAt:begun,finishedAt:new Date().toISOString(),status:failure?'incomplete':'complete',error:failure,count:selected().length,listRequests:requests,bufferAfterResponseMs:gap,olderBoundaryReached:b.oldest<start,newerBoundaryReached:b.newest>=end,audioDownloaded:false};
     await fs.writeFile(path.join(out,'summary.json'),JSON.stringify(summary,null,2)+'\n');log(`${failure?'INCOMPLETE':'COMPLETE'} | ${summary.count} unique calls | ${requests} requests | both midnight boundaries ${summary.olderBoundaryReached&&summary.newerBoundaryReached?'reached':'not reached'} | results: ${out}`);

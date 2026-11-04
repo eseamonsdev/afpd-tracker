@@ -22,15 +22,16 @@ if(require.main===module)(async()=>{
   // Do not re-use an old summary as evidence if this attempt exits before writing one.
   await fs.rm(path.join(dest,'summary.json'),{force:true});
   const cli=[path.join(__dirname,'collect-openmhz.cjs'),`--talkgroup=${tg}`,`--date=${date}`,`--output=${base}`];
-  for(const k of ['buffer-ms','progress-seconds','executable-path','proxy'])if(args[k])cli.push(`--${k}=${args[k]}`);
+  for(const k of ['buffer-ms','progress-seconds','executable-path','proxy','cdp-url'])if(args[k])cli.push(`--${k}=${args[k]}`);
   if(Object.hasOwn(args,'headed'))cli.push('--headed');
+  if(Object.hasOwn(args,'launch-browser'))cli.push('--launch-browser');
   const exitCode=await new Promise((resolve,reject)=>{const child=spawn(process.execPath,cli,{stdio:'inherit'});child.on('error',reject);child.on('close',resolve)});
   let summary,calls=[];try{summary=JSON.parse(await fs.readFile(path.join(dest,'summary.json'),'utf8'));calls=JSON.parse(await fs.readFile(path.join(dest,'calls.json'),'utf8')).calls}catch(e){summary={status:'incomplete',error:e.message}}
   const complete=exitCode===0&&summary.status==='complete'&&summary.olderBoundaryReached&&summary.newerBoundaryReached;
   const row={talkgroup:+tg,date,complete,exitCode,summary,...compare(calls,known)};results.push(row);
   await fs.writeFile(path.join(out,'audit.json'),JSON.stringify({reference:args['known-ids'],reference_id_count:known.size,note:'Exact source-ID overlap does not establish AFPD ownership. Counts from incomplete jobs are partial, not full-day negatives.',results},null,2)+'\n');
   console.log(`AUDIT TG ${tg} ${date}: ${complete?'COMPLETE':'INCOMPLETE'}; ${calls.length} collected calls; ${row.matching_calls} matching calls; ${row.distinct_matching_ids.length} distinct matching IDs`);
-  if(/navigation HTTP|HTTP (403|429)|verify|access.denied|browserType.launch/i.test(summary.error||''))throw Error('Environment/access failure; remaining jobs stopped. Partial results saved.');
+  if(/navigation HTTP|HTTP (403|429)|verify|access.denied|browserType.launch|Cannot attach to Chromium/i.test(summary.error||''))throw Error('Environment/access failure; remaining jobs stopped. Partial results saved.');
  }
  if(results.some(x=>!x.complete))process.exitCode=1;
 })().catch(e=>{console.error('AUDIT ERROR: '+e.message);process.exitCode=1});

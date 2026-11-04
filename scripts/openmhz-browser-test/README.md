@@ -1,14 +1,30 @@
 # OpenMHz scrolling metadata collector
 
-Requires Node.js 20+ and Playwright. On a Raspberry Pi, use a supported 64-bit OS. Install Playwright and its Chromium browser:
+Requires Node.js 20+ and Playwright. On a Raspberry Pi, use a supported 64-bit OS. From this directory, install the script dependencies:
 
 ```sh
-npm install playwright
-npx playwright install --with-deps chromium
-node collect-openmhz.cjs --date=2026-10-29 --talkgroup=6001
+npm ci
 ```
 
-If using an already installed compatible Chromium, add `--executable-path=/usr/bin/chromium`.
+Start Chromium from a terminal on the Pi's desktop and keep it running:
+
+```sh
+chromium --remote-debugging-port=9222 --remote-debugging-address=127.0.0.1 \
+  --user-data-dir="$HOME/.config/chromium-openmhz" \
+  "https://openmhz.com/system/dcfems?filter-type=talkgroup&filter-code=6001"
+```
+
+In a second terminal, run the collector:
+
+```sh
+node collect-openmhz.cjs --date=2026-11-03 --talkgroup=6001
+```
+
+By default it connects to `http://127.0.0.1:9222`, reuses the existing browser profile and cookies, and opens its own collection tab. It closes that tab and disconnects when finished, leaving Chromium and your other tabs open. Routing and audio blocking apply only to the collection tab. The browser retains its existing timezone and settings; date boundaries and progress labels still use `--timezone` (America/Denver by default). Complete any browser verification manually when prompted; attached mode does not require `--headed`.
+
+Use `--cdp-url=http://127.0.0.1:OTHER_PORT` to change the connection. A failed connection stops with instructions; it never silently launches a fresh browser.
+
+To explicitly use the previous separate-browser behavior, add `--launch-browser`. Only that mode needs Playwright's downloaded Chromium (`npx playwright install --with-deps chromium`), or `--executable-path=/usr/bin/chromium` for a compatible installed browser. `--proxy` and `--ignore-https-errors` also require `--launch-browser`; attached mode uses the browser's existing settings. Do not combine `--launch-browser` with `--cdp-url`.
 
 Collect multiple days sequentially:
 
@@ -56,7 +72,7 @@ source entry is compared, including secondary sources; zero/negative placeholder
 are excluded. IDs observed on AFPD channels do not prove AFPD ownership.
 Incomplete jobs are explicitly marked and cannot establish a full-day negative.
 An environment/access failure stops the remaining jobs. The audit runner accepts
-`--buffer-ms`, `--progress-seconds`, `--executable-path` and `--proxy` too.
+`--buffer-ms`, `--progress-seconds`, `--executable-path`, `--proxy`, `--cdp-url` and `--launch-browser` too.
 
-Run `npm test` for date/DST, invalid-calendar and multi-source exact-match tests.
+Run `npm test` for browser attachment/cleanup, date/DST, invalid-calendar and multi-source exact-match tests.
 The collector and audit runner do not modify site archives or trigger audio jobs.
