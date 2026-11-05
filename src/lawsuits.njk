@@ -51,7 +51,7 @@ permalink: /lawsuits/
 {% macro lawsuit(name, url, status, description, note) %}
   <li class="lawsuit-entry">
     <h3>{% if url %}<a href="{{ url | escape }}">{{ name | escape }}</a>{% else %}{{ name | escape }}{% endif %}</h3>
-    <p><strong>Case Status:</strong> {{ lawsuitText(status, url) }}</p>
+    <p><strong>Case Status:</strong> {{ status | escape }}</p>
     <p>{{ lawsuitText(description, url) }}</p>
     {% if note %}<p>{{ lawsuitText(note, url) }}</p>{% endif %}
   </li>
