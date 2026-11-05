@@ -1,0 +1,657 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-03",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793715021.m4a": {
+      "index": 181,
+      "epoch": 1793715021,
+      "sha256": "80b619bf4d6e5ad661d101454811e8ad8228a6c36c57f6395931dc5c491afa70",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.8610372742017111,
+              "no_speech_prob": 0.09257928282022476,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yes.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Yes.",
+              "avg_logprob": -0.7393245697021484,
+              "no_speech_prob": 0.08028911054134369,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Go ahead",
+          "prompt": "7G24",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go ahead",
+              "avg_logprob": -1.1519624710083007,
+              "no_speech_prob": 0.1705150306224823,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793715023.m4a": {
+      "index": 182,
+      "epoch": 1793715023,
+      "sha256": "43975f07cf7bc5fa68adee6fc6f481c1b1090b587f5b03d9e41a68c46b4257bb",
+      "passes": {
+        "original": {
+          "text": "Can you create a parking problem for me at 550 South? Let's grab a boulevard and make a check.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.8000000000000003,
+              "text": " Can you create a parking problem for me at 550 South?",
+              "avg_logprob": -0.5913723707199097,
+              "no_speech_prob": 0.008913966827094555,
+              "compression_ratio": 1.0217391304347827
+            },
+            {
+              "start": 2.8000000000000003,
+              "end": 4.6000000000000005,
+              "text": " Let's grab a boulevard and make a check.",
+              "avg_logprob": -0.5913723707199097,
+              "no_speech_prob": 0.008913966827094555,
+              "compression_ratio": 1.0217391304347827
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Can you create a parking problem for me at 550 South? Let me grab a boulevard and make a check.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.8000000000000003,
+              "text": " Can you create a parking problem for me at 550 South?",
+              "avg_logprob": -0.5947058009249824,
+              "no_speech_prob": 0.014636391773819923,
+              "compression_ratio": 1.043956043956044
+            },
+            {
+              "start": 2.8000000000000003,
+              "end": 4.64,
+              "text": " Let me grab a boulevard and make a check.",
+              "avg_logprob": -0.5947058009249824,
+              "no_speech_prob": 0.014636391773819923,
+              "compression_ratio": 1.043956043956044
+            }
+          ]
+        },
+        "context": {
+          "text": "Can you create a parking problem for me at 550 South? Let's grab a boulevard and make a check.",
+          "prompt": "7G24 Go ahead.",
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.5,
+              "text": " Can you create a parking problem for me at 550 South? Let's grab a boulevard and make a check.",
+              "avg_logprob": -0.5482045503763052,
+              "no_speech_prob": 0.0040419381111860275,
+              "compression_ratio": 1.0217391304347827
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793715031.m4a": {
+      "index": 183,
+      "epoch": 1793715031,
+      "sha256": "d78378bfa4d59b5a9127c7f2dd8dd7e7c768341e8e85f22ddeb71d41ee27092c",
+      "passes": {
+        "original": {
+          "text": "Semper.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Semper.",
+              "avg_logprob": -1.002211372057597,
+              "no_speech_prob": 0.07661771774291992,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Never.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Never.",
+              "avg_logprob": -1.0427976608276368,
+              "no_speech_prob": 0.07144603133201599,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Never.",
+          "prompt": "7G24 Go ahead. Can you create a parking problem for me at 550 South? Let's grab a boulevard and make a check.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Never.",
+              "avg_logprob": -1.012943935394287,
+              "no_speech_prob": 0.07111267745494843,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793715189.m4a": {
+      "index": 184,
+      "epoch": 1793715189,
+      "sha256": "31a2523d04170b2431bb00aec0795dd2a2e24d999e4f2621893344f1ff558d0d",
+      "passes": {
+        "original": {
+          "text": "18J21, Code 4.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18J21, Code 4.",
+              "avg_logprob": -0.7272552251815796,
+              "no_speech_prob": 0.07817414402961731,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18J21, Code 4.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18J21, Code 4.",
+              "avg_logprob": -0.6225154995918274,
+              "no_speech_prob": 0.026023121550679207,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "18J21, Code 4.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18J21, Code 4.",
+              "avg_logprob": -0.7272552251815796,
+              "no_speech_prob": 0.07817414402961731,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793715193.m4a": {
+      "index": 185,
+      "epoch": 1793715193,
+      "sha256": "f24ea043e67df6d924e011da9bccc90d38a09c23e197df6f25bad56a9d70a0fb",
+      "passes": {
+        "original": {
+          "text": "That's work.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " That's work.",
+              "avg_logprob": -1.0252037388937814,
+              "no_speech_prob": 0.10861600190401077,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Come forth.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Come forth.",
+              "avg_logprob": -1.2020399173100789,
+              "no_speech_prob": 0.10433918982744217,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "Code 4.",
+          "prompt": "18J21, Code 4.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.64,
+              "text": " Code 4.",
+              "avg_logprob": -0.4947008192539215,
+              "no_speech_prob": 0.10192268341779709,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793715194.m4a": {
+      "index": 186,
+      "epoch": 1793715194,
+      "sha256": "d57648a8e5ec7642352f5145c0fa2640465a98062fdcadacf612a56d7ae7d7c3",
+      "passes": {
+        "original": {
+          "text": "Probably.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Probably.",
+              "avg_logprob": -0.9616529464721679,
+              "no_speech_prob": 0.1519894301891327,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Probably.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Probably.",
+              "avg_logprob": -0.7156390190124512,
+              "no_speech_prob": 0.0672340914607048,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Okay.",
+          "prompt": "18J21, Code 4. That's work.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Okay.",
+              "avg_logprob": -0.8421699523925781,
+              "no_speech_prob": 0.06950366497039795,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793715236.m4a": {
+      "index": 187,
+      "epoch": 1793715236,
+      "sha256": "68a308fc92471d34feb77c449006fd14c256ddcadcdeb1ae27da54363c313628",
+      "passes": {
+        "original": {
+          "text": "And you can J-21 clear stop.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " And you can J-21 clear stop.",
+              "avg_logprob": -0.610755110780398,
+              "no_speech_prob": 0.014541334472596645,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah, you can J21 clear yourself.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, you can J21 clear yourself.",
+              "avg_logprob": -0.4847880353530248,
+              "no_speech_prob": 0.016696706414222717,
+              "compression_ratio": 0.8461538461538461
+            }
+          ]
+        },
+        "context": {
+          "text": "18J21, clear stop.",
+          "prompt": "18J21, Code 4. That's work. Probably.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18J21, clear stop.",
+              "avg_logprob": -0.46096315383911135,
+              "no_speech_prob": 0.03514651954174042,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793715240.m4a": {
+      "index": 188,
+      "epoch": 1793715240,
+      "sha256": "2d78761c3976585bbd4e365cfecf41e22a96dcd1044865525022f9844d5ef2b4",
+      "passes": {
+        "original": {
+          "text": "Jennifer.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Jennifer.",
+              "avg_logprob": -1.1540489196777344,
+              "no_speech_prob": 0.06993364542722702,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Check for it.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Check for it.",
+              "avg_logprob": -1.1090422357831682,
+              "no_speech_prob": 0.03560362011194229,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "10-4.",
+          "prompt": "That's work. Probably. And you can J-21 clear stop.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.7930928809302193,
+              "no_speech_prob": 0.03059488534927368,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793715286.m4a": {
+      "index": 189,
+      "epoch": 1793715286,
+      "sha256": "9ac0f7c3fb226b196a347ad3ae74486591b5d83843968af9b8e24868fe623b2b",
+      "passes": {
+        "original": {
+          "text": "18, just 21, 20, 10, 50.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18, just 21, 20, 10, 50.",
+              "avg_logprob": -0.6878231380667005,
+              "no_speech_prob": 0.017745831981301308,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "filtered": {
+          "text": "81, just 21, copy, 10, 50.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 81, just 21, copy, 10, 50.",
+              "avg_logprob": -0.8410983809403011,
+              "no_speech_prob": 0.019386259838938713,
+              "compression_ratio": 0.8125
+            }
+          ]
+        },
+        "context": {
+          "text": "J-21, copy, 10-50.",
+          "prompt": "And you can J-21 clear stop. Jennifer.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " J-21, copy, 10-50.",
+              "avg_logprob": -0.6152067551246057,
+              "no_speech_prob": 0.0021937701385468245,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793715298.m4a": {
+      "index": 190,
+      "epoch": 1793715298,
+      "sha256": "fb88fd31a557a1ab048332eae259b4b29a37fa3f18771bbf0367fe6bd53f0a9c",
+      "passes": {
+        "original": {
+          "text": "I'm sorry.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I'm sorry.",
+              "avg_logprob": -0.8828737735748291,
+              "no_speech_prob": 0.204148530960083,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm sorry.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I'm sorry.",
+              "avg_logprob": -0.737742713519505,
+              "no_speech_prob": 0.2591632902622223,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "All right.",
+          "prompt": "Jennifer. 18, just 21, 20, 10, 50.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " All right.",
+              "avg_logprob": -0.8830468853314718,
+              "no_speech_prob": 0.22879302501678467,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    }
+  }
+}
