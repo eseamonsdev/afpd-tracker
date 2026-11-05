@@ -1,0 +1,689 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-03",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793731764.m4a": {
+      "index": 671,
+      "epoch": 1793731764,
+      "sha256": "fdc83000d9d4afa568576961da08f59633b3b6b87fe8c1de6909c28fb9976452",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.685099462668101,
+              "no_speech_prob": 0.033778272569179535,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.6706446905930837,
+              "no_speech_prob": 0.019276605919003487,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Go ahead",
+          "prompt": "7J24",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go ahead",
+              "avg_logprob": -0.676274585723877,
+              "no_speech_prob": 0.13028892874717712,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793731766.m4a": {
+      "index": 672,
+      "epoch": 1793731766,
+      "sha256": "47c986f68f7ad87cc5cc1ea4ad39553b75c53de037c4223e6aefb90d5f7e430c",
+      "passes": {
+        "original": {
+          "text": "Just 10-14, it looks like they're doing maintenance on the alarm. Everything's going for you, clear it out. Thank you.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 35,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.1,
+              "text": " Just 10-14, it looks like they're doing maintenance on the alarm.",
+              "avg_logprob": -0.4202512679621577,
+              "no_speech_prob": 0.01673588715493679,
+              "compression_ratio": 1.0918367346938775
+            },
+            {
+              "start": 3.1,
+              "end": 4.64,
+              "text": " Everything's going for you, clear it out.",
+              "avg_logprob": -0.4202512679621577,
+              "no_speech_prob": 0.01673588715493679,
+              "compression_ratio": 1.0918367346938775
+            },
+            {
+              "start": 4.64,
+              "end": 5.64,
+              "text": " Thank you.",
+              "avg_logprob": -0.9349130590756735,
+              "no_speech_prob": 0.6665500402450562,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Just 10-14, it looks like they're doing maintenance on the alarm. Everything's going to go forward and clear it out.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.12,
+              "text": " Just 10-14, it looks like they're doing maintenance on the alarm.",
+              "avg_logprob": -0.48849858716130257,
+              "no_speech_prob": 0.012412519194185734,
+              "compression_ratio": 1.1372549019607843
+            },
+            {
+              "start": 3.12,
+              "end": 4.82,
+              "text": " Everything's going to go forward and clear it out.",
+              "avg_logprob": -0.48849858716130257,
+              "no_speech_prob": 0.012412519194185734,
+              "compression_ratio": 1.1372549019607843
+            }
+          ]
+        },
+        "context": {
+          "text": "Just 10-14, it looks like they're doing maintenance on the alarm. Everything's going for you, clear it out.",
+          "prompt": "7J24 Go ahead.",
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 30,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.36,
+              "text": " Just 10-14, it looks like they're doing maintenance on the alarm.",
+              "avg_logprob": -0.4338903100259842,
+              "no_speech_prob": 0.012833272106945515,
+              "compression_ratio": 1.0918367346938775
+            },
+            {
+              "start": 3.36,
+              "end": 4.64,
+              "text": " Everything's going for you, clear it out.",
+              "avg_logprob": -0.4338903100259842,
+              "no_speech_prob": 0.012833272106945515,
+              "compression_ratio": 1.0918367346938775
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793731774.m4a": {
+      "index": 673,
+      "epoch": 1793731774,
+      "sha256": "41ef2e28255d62e04bca4887bf353adbc630d2fb1d5164d183a4c333a7a06ba7",
+      "passes": {
+        "original": {
+          "text": "Thank you. Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.4447200670838356,
+              "no_speech_prob": 0.07430285960435867,
+              "compression_ratio": 1.9545454545454546
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.4447200670838356,
+              "no_speech_prob": 0.07430285960435867,
+              "compression_ratio": 1.9545454545454546
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.4447200670838356,
+              "no_speech_prob": 0.07430285960435867,
+              "compression_ratio": 1.9545454545454546
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.896883507569631,
+              "no_speech_prob": 0.42888838052749634,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "10-4.",
+          "prompt": "7J24 Go ahead. Just 10-14, it looks like they're doing maintenance on the alarm. Everything's going for you, clear it out. Thank you.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.38519972562789917,
+              "no_speech_prob": 0.11945056915283203,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793731778.m4a": {
+      "index": 674,
+      "epoch": 1793731778,
+      "sha256": "53021bb27d1425d1b710287d3281dcbfa0c9d301f1176760fc553aef731dcda8",
+      "passes": {
+        "original": {
+          "text": "29 copy.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.42,
+              "text": " 29 copy.",
+              "avg_logprob": -0.7527349889278412,
+              "no_speech_prob": 0.03241884708404541,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "29 copy.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.48,
+              "text": " 29 copy.",
+              "avg_logprob": -0.9439104795455933,
+              "no_speech_prob": 0.010404589585959911,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "29 copy.",
+          "prompt": "Go ahead. Just 10-14, it looks like they're doing maintenance on the alarm. Everything's going for you, clear it out. Thank you. Thank you. Thank you. Thank you.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.44,
+              "text": " 29 copy.",
+              "avg_logprob": -0.44846440354983014,
+              "no_speech_prob": 0.03757350891828537,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793731781.m4a": {
+      "index": 675,
+      "epoch": 1793731781,
+      "sha256": "25afee4e656d011203cfd36df3fd36daef18f7940010c93534525a2ace9ce3b0",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -1.22904691696167,
+              "no_speech_prob": 0.1265302300453186,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.830630111694336,
+              "no_speech_prob": 0.07443370670080185,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "Just 10-14, it looks like they're doing maintenance on the alarm. Everything's going for you, clear it out. Thank you. Thank you. Thank you. Thank you. 29 copy.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.72,
+              "text": " Copy.",
+              "avg_logprob": -0.6524999618530274,
+              "no_speech_prob": 0.10166309028863907,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793731792.m4a": {
+      "index": 676,
+      "epoch": 1793731792,
+      "sha256": "6bd8ae5a8ece702eb3e17ce87147e2a4e3bee1aa281874fdc52409625319d29a",
+      "passes": {
+        "original": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.8416946729024252,
+              "no_speech_prob": 0.8440963625907898,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thanks for watching!",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thanks for watching!",
+              "avg_logprob": -0.9398134435926165,
+              "no_speech_prob": 0.7865739464759827,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you.",
+          "prompt": "Thank you. Thank you. Thank you. 29 copy. Copy.",
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.663904050985972,
+              "no_speech_prob": 0.6201063990592957,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793731796.m4a": {
+      "index": 677,
+      "epoch": 1793731796,
+      "sha256": "c09d2f20c8a579b12db684888ed1355ca6fe6bb34a8a96b7916f6dbfbe787323",
+      "passes": {
+        "original": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.7959726452827454,
+              "no_speech_prob": 0.5726297497749329,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.7852688431739807,
+              "no_speech_prob": 0.4846930503845215,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you.",
+          "prompt": "29 copy. Copy. Thank you.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.50520787636439,
+              "no_speech_prob": 0.4855796694755554,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793731800.m4a": {
+      "index": 678,
+      "epoch": 1793731800,
+      "sha256": "30229b6ede159e7613923162816640fea859782f334ae9bf4fe2a9c881de6eed",
+      "passes": {
+        "original": {
+          "text": "5J13, you can assign the VIN to me.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.44,
+              "text": " 5J13, you can assign the VIN to me.",
+              "avg_logprob": -0.41224549524486065,
+              "no_speech_prob": 0.040069907903671265,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J13, you can assign the VIN to me.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.48,
+              "text": " 5J13, you can assign the VIN to me.",
+              "avg_logprob": -0.622190348803997,
+              "no_speech_prob": 0.019823458045721054,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        },
+        "context": {
+          "text": "5J13, you can assign the VIN to me.",
+          "prompt": "Copy. Thank you. Thank you.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J13, you can assign the VIN to me.",
+              "avg_logprob": -0.3485969267785549,
+              "no_speech_prob": 0.04577833041548729,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793731804.m4a": {
+      "index": 679,
+      "epoch": 1793731804,
+      "sha256": "8c5df859230f62613ed1b0b0b91d69e21ab0af5b167f40e8b92ec035d68e8cf4",
+      "passes": {
+        "original": {
+          "text": "copy one ninety six thousand one hundred one",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " copy one ninety six thousand one hundred one",
+              "avg_logprob": -0.4482334310358221,
+              "no_speech_prob": 0.06631825119256973,
+              "compression_ratio": 0.9777777777777777
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy, 196,101.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.7600000000000002,
+              "text": " Copy, 196,101.",
+              "avg_logprob": -0.5711246066623263,
+              "no_speech_prob": 0.04200226813554764,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy, 196,101.",
+          "prompt": "Thank you. Thank you. 5J13, you can assign the VIN to me.",
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Copy, 196,101.",
+              "avg_logprob": -0.6332337591383193,
+              "no_speech_prob": 0.11400163173675537,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793731811.m4a": {
+      "index": 680,
+      "epoch": 1793731811,
+      "sha256": "14bfae8afc283fa672c19ed4e564c7c1b65c059ea8cd391aeb202af7bc29fdc0",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7005470275878907,
+              "no_speech_prob": 0.0158760454505682,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7352984428405762,
+              "no_speech_prob": 0.013752354308962822,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "copy",
+          "prompt": "Thank you. 5J13, you can assign the VIN to me. copy one ninety six thousand one hundred one",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.96,
+              "text": " copy",
+              "avg_logprob": -0.4404700845479965,
+              "no_speech_prob": 0.04484071582555771,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    }
+  }
+}
