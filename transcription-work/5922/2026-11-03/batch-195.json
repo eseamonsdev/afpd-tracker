@@ -1,0 +1,657 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-03",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793770102.m4a": {
+      "index": 1941,
+      "epoch": 1793770102,
+      "sha256": "203c393516e052b46f355dad93cfd93db52927f9237d46aa04d3e8abb07f223c",
+      "passes": {
+        "original": {
+          "text": "Bye!",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Bye!",
+              "avg_logprob": -0.8149264335632325,
+              "no_speech_prob": 0.04242623597383499,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bye!",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye!",
+              "avg_logprob": -0.8061117172241211,
+              "no_speech_prob": 0.04665291681885719,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Good",
+          "prompt": "5J52 traffic",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Good",
+              "avg_logprob": -0.9139215052127838,
+              "no_speech_prob": 0.05465901643037796,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793770104.m4a": {
+      "index": 1942,
+      "epoch": 1793770104,
+      "sha256": "017ec71d9ef0d64c13908f2be09bf43d0afb3a9d8d5d18f8296f0420f3dbe497",
+      "passes": {
+        "original": {
+          "text": "He's located on Main Street, sorry, we're still rolling, can you show me in the parking lot of 7-Eleven off of Main Street on a local Alpha 885 Juliet Golf?",
+          "prompt": null,
+          "duration_seconds": 16.512,
+          "token_limit": 157,
+          "token_count": 42,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 16.0,
+              "text": " He's located on Main Street, sorry, we're still rolling, can you show me in the parking lot of 7-Eleven off of Main Street on a local Alpha 885 Juliet Golf?",
+              "avg_logprob": -0.35074495021686997,
+              "no_speech_prob": 0.05046160891652107,
+              "compression_ratio": 1.2093023255813953
+            }
+          ]
+        },
+        "filtered": {
+          "text": "be located on Main Street sorry we're strolling can you show me on the in the parking lot of 7-eleven off of Main Street on a local Alpha 885 Juliet Golf",
+          "prompt": null,
+          "duration_seconds": 16.512,
+          "token_limit": 157,
+          "token_count": 43,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0600000000000005,
+              "text": " be located on Main Street sorry we're strolling can you show me on the in the",
+              "avg_logprob": -0.3797446990554983,
+              "no_speech_prob": 0.04063260927796364,
+              "compression_ratio": 1.275
+            },
+            {
+              "start": 7.0600000000000005,
+              "end": 14.9,
+              "text": " parking lot of 7-eleven off of Main Street on a local Alpha 885 Juliet",
+              "avg_logprob": -0.3797446990554983,
+              "no_speech_prob": 0.04063260927796364,
+              "compression_ratio": 1.275
+            },
+            {
+              "start": 14.9,
+              "end": 17.72,
+              "text": " Golf",
+              "avg_logprob": -0.3797446990554983,
+              "no_speech_prob": 0.04063260927796364,
+              "compression_ratio": 1.275
+            }
+          ]
+        },
+        "context": {
+          "text": "We're located on Main Street. Sorry, we're still rolling. Can you show me in the parking lot of 7-Eleven off of Main Street on a local Alpha 885 Juliet Golf?",
+          "prompt": "5J52 traffic Bye!",
+          "duration_seconds": 16.512,
+          "token_limit": 157,
+          "token_count": 42,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 16.0,
+              "text": " We're located on Main Street. Sorry, we're still rolling. Can you show me in the parking lot of 7-Eleven off of Main Street on a local Alpha 885 Juliet Golf?",
+              "avg_logprob": -0.2720373647157536,
+              "no_speech_prob": 0.11036494374275208,
+              "compression_ratio": 1.2076923076923076
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793770122.m4a": {
+      "index": 1943,
+      "epoch": 1793770122,
+      "sha256": "32cb927c821744582511e83ec17c93aba78bb1d1305268f7bf93d6f04dbf24ec",
+      "passes": {
+        "original": {
+          "text": "I copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I copy.",
+              "avg_logprob": -0.6218142807483673,
+              "no_speech_prob": 0.026202190667390823,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I copy.",
+              "avg_logprob": -0.5045250058174133,
+              "no_speech_prob": 0.012855388224124908,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Can I copy?",
+          "prompt": "5J52 traffic Bye! He's located on Main Street, sorry, we're still rolling, can you show me in the parking lot of 7-Eleven off of Main Street on a local Alpha 885 Juliet Golf?",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Can I copy?",
+              "avg_logprob": -0.6255062648228237,
+              "no_speech_prob": 0.026460498571395874,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793770127.m4a": {
+      "index": 1944,
+      "epoch": 1793770127,
+      "sha256": "4d44dbc43ab3943b0183c8413520427bcaa05a2a807a5254e705115631524592",
+      "passes": {
+        "original": {
+          "text": "5G6, there are two 711s on Main Street. Can you clarify which one is that?",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5G6, there are two 711s on Main Street. Can you clarify which one is that?",
+              "avg_logprob": -0.34255311012268064,
+              "no_speech_prob": 0.010430723428726196,
+              "compression_ratio": 0.9487179487179487
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G6, there are two 711s on Man Street. Can you clarify which one he's at?",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5G6, there are two 711s on Man Street. Can you clarify which one he's at?",
+              "avg_logprob": -0.48255834441918594,
+              "no_speech_prob": 0.014038094319403172,
+              "compression_ratio": 0.948051948051948
+            }
+          ]
+        },
+        "context": {
+          "text": "5G6, there are two 7-Elevens on Main Street, can you clarify which one he's at?",
+          "prompt": "Bye! He's located on Main Street, sorry, we're still rolling, can you show me in the parking lot of 7-Eleven off of Main Street on a local Alpha 885 Juliet Golf? I copy.",
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5G6, there are two 7-Elevens on Main Street, can you clarify which one he's at?",
+              "avg_logprob": -0.2018438774560179,
+              "no_speech_prob": 0.0052955662831664085,
+              "compression_ratio": 0.9518072289156626
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793770134.m4a": {
+      "index": 1945,
+      "epoch": 1793770134,
+      "sha256": "d8e2b1f62673ed791994ff0656a1bc867ea6ed5ba3eef7615f261eeb84555d14",
+      "passes": {
+        "original": {
+          "text": "Hi Jay 52, I'll help you off with a one-on-one hundred piece.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Hi Jay 52, I'll help you off with a one-on-one hundred piece.",
+              "avg_logprob": -0.5499700118194927,
+              "no_speech_prob": 0.020679978653788567,
+              "compression_ratio": 0.9104477611940298
+            }
+          ]
+        },
+        "filtered": {
+          "text": "All right, J-52, I'll be off to the one-on-one hundred views.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " All right, J-52, I'll be off to the one-on-one hundred views.",
+              "avg_logprob": -0.5894862239559492,
+              "no_speech_prob": 0.03332090750336647,
+              "compression_ratio": 0.9384615384615385
+            }
+          ]
+        },
+        "context": {
+          "text": "Hi Jay 52, I'll help you off of the 1-on-100s.",
+          "prompt": "He's located on Main Street, sorry, we're still rolling, can you show me in the parking lot of 7-Eleven off of Main Street on a local Alpha 885 Juliet Golf? I copy. 5G6, there are two 711s on Main Street. Can you clarify which one is that?",
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Hi Jay 52, I'll help you off of the 1-on-100s.",
+              "avg_logprob": -0.5947222028459821,
+              "no_speech_prob": 0.004880777094513178,
+              "compression_ratio": 0.8846153846153846
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793770140.m4a": {
+      "index": 1946,
+      "epoch": 1793770140,
+      "sha256": "163d565adca5f1c2c8ca8acbefa3641b565c3a77d15b5a8b42f6bf2eacfdac25",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5395131587982178,
+              "no_speech_prob": 0.02363092638552189,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy.",
+              "avg_logprob": -0.6077249050140381,
+              "no_speech_prob": 0.022374434396624565,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "I copy. 5G6, there are two 711s on Main Street. Can you clarify which one is that? Hi Jay 52, I'll help you off with a one-on-one hundred piece.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.542629623413086,
+              "no_speech_prob": 0.03524411469697952,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793770159.m4a": {
+      "index": 1947,
+      "epoch": 1793770159,
+      "sha256": "c56e370b6feb2c4011d89a86f58e104e24c69595fb1176c8963e58e1f1360370",
+      "passes": {
+        "original": {
+          "text": "I, J38 Central, go to work.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I, J38 Central, go to work.",
+              "avg_logprob": -0.7195557997776911,
+              "no_speech_prob": 0.012976855039596558,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hi, J. 38 Central, go to work.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hi, J. 38 Central, go to work.",
+              "avg_logprob": -0.8225817084312439,
+              "no_speech_prob": 0.007639732677489519,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "context": {
+          "text": "Hi Jay 38 Central goes for it.",
+          "prompt": "5G6, there are two 711s on Main Street. Can you clarify which one is that? Hi Jay 52, I'll help you off with a one-on-one hundred piece. Copy.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.6600000000000001,
+              "text": " Hi Jay 38 Central goes for it.",
+              "avg_logprob": -0.6117648428136652,
+              "no_speech_prob": 0.007860959507524967,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793770163.m4a": {
+      "index": 1948,
+      "epoch": 1793770163,
+      "sha256": "5125651dc15ba8d8e400f7ecb981f44366df7c12275acf39b51da861396d828f",
+      "passes": {
+        "original": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.5653105463300433,
+              "no_speech_prob": 0.18334095180034637,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.5515273639133998,
+              "no_speech_prob": 0.1190050020813942,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Go for it.",
+          "prompt": "Hi Jay 52, I'll help you off with a one-on-one hundred piece. Copy. I, J38 Central, go to work.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.39936173813683645,
+              "no_speech_prob": 0.2194150984287262,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793770165.m4a": {
+      "index": 1949,
+      "epoch": 1793770165,
+      "sha256": "f62fcbf4776eb27e0c32d81f6abd4b352cbe848a0e3233ba9e0ce31b281a6e63",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -1.1544952392578125,
+              "no_speech_prob": 0.06968977302312851,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "heavy",
+          "prompt": null,
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " heavy",
+              "avg_logprob": -1.0315313637256622,
+              "no_speech_prob": 0.06258294731378555,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "Copy. I, J38 Central, go to work. Go for it.",
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.33566484451293943,
+              "no_speech_prob": 0.02024996466934681,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793770233.m4a": {
+      "index": 1950,
+      "epoch": 1793770233,
+      "sha256": "ecfb6041408516f58d13bf6296e5d59a21145a9a5ed74c78d6ee04d3cb82946c",
+      "passes": {
+        "original": {
+          "text": "7G25, I copy the 9-1-1.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7G25, I copy the 9-1-1.",
+              "avg_logprob": -0.6500161439180374,
+              "no_speech_prob": 0.050735458731651306,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7G25 is happy to know you've been one.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7G25 is happy to know you've been one.",
+              "avg_logprob": -0.8358708222707113,
+              "no_speech_prob": 0.029058853164315224,
+              "compression_ratio": 0.8260869565217391
+            }
+          ]
+        },
+        "context": {
+          "text": "7G25, I copy the 9-1-1.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7G25, I copy the 9-1-1.",
+              "avg_logprob": -0.6500161439180374,
+              "no_speech_prob": 0.050735458731651306,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        }
+      }
+    }
+  }
+}
