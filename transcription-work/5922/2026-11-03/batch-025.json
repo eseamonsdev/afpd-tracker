@@ -1,0 +1,681 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-03",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793716962.m4a": {
+      "index": 241,
+      "epoch": 1793716962,
+      "sha256": "71f5ac0a2b8850ef813cc95214fba863cfdfe6849f3beb633a5a3cf28d9435ae",
+      "passes": {
+        "original": {
+          "text": "18J20, show me clear.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.5,
+              "text": " 18J20, show me clear.",
+              "avg_logprob": -0.6322844461961226,
+              "no_speech_prob": 0.16797354817390442,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18 G20, some equipment.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.58,
+              "text": " 18 G20, some equipment.",
+              "avg_logprob": -0.9096598148345947,
+              "no_speech_prob": 0.09239570796489716,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "context": {
+          "text": "18 j 20, show me clear.",
+          "prompt": "5 j 4 6 square ohm Howdy.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.56,
+              "text": " 18 j 20, show me clear.",
+              "avg_logprob": -0.6022349270907316,
+              "no_speech_prob": 0.06544531881809235,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793716966.m4a": {
+      "index": 242,
+      "epoch": 1793716966,
+      "sha256": "03d430461723b7c7c5987915488ff4b3b44bbed76d86c79efdb06f04debb68c6",
+      "passes": {
+        "original": {
+          "text": "Thanks for having me. Thanks for having me.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thanks for having me.",
+              "avg_logprob": -0.5403935521841049,
+              "no_speech_prob": 0.19863580167293549,
+              "compression_ratio": 1.9393939393939394
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thanks for having me.",
+              "avg_logprob": -0.5403935521841049,
+              "no_speech_prob": 0.19863580167293549,
+              "compression_ratio": 1.9393939393939394
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.8509242534637451,
+              "no_speech_prob": 0.4691459834575653,
+              "compression_ratio": 1.0
+            },
+            {
+              "start": 1.0,
+              "end": 1.5,
+              "text": " Thank you.",
+              "avg_logprob": -0.8509242534637451,
+              "no_speech_prob": 0.4691459834575653,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "Thanks.",
+          "prompt": "5 j 4 6 square ohm Howdy. 18J20, show me clear.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thanks.",
+              "avg_logprob": -0.7824877738952637,
+              "no_speech_prob": 0.19406838715076447,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793717074.m4a": {
+      "index": 243,
+      "epoch": 1793717074,
+      "sha256": "ff5a49ef1d1b57e42a61764637d8862228d6d9eaab22ea02f6a645ce741a8aeb",
+      "passes": {
+        "original": {
+          "text": "8, can you do 21 clear?",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 8, can you do 21 clear?",
+              "avg_logprob": -0.5783751877871427,
+              "no_speech_prob": 0.017566420137882233,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hey, you can do 21 for you.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey, you can do 21 for you.",
+              "avg_logprob": -0.5866075903177261,
+              "no_speech_prob": 0.019883403554558754,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        },
+        "context": {
+          "text": "8, can you do 21 clear?",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 8, can you do 21 clear?",
+              "avg_logprob": -0.5783751877871427,
+              "no_speech_prob": 0.017566420137882233,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793717079.m4a": {
+      "index": 244,
+      "epoch": 1793717079,
+      "sha256": "ce13dd19406b8b7b9d1c1a204db13148f5817f392871485effdbb84b6a268c1b",
+      "passes": {
+        "original": {
+          "text": "Help me.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Help me.",
+              "avg_logprob": -0.9772292772928873,
+              "no_speech_prob": 0.1438002586364746,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.8902290734377775,
+              "no_speech_prob": 0.12659503519535065,
+              "compression_ratio": 1.0
+            },
+            {
+              "start": 1.0,
+              "end": 1.5,
+              "text": " Thank you.",
+              "avg_logprob": -0.8902290734377775,
+              "no_speech_prob": 0.12659503519535065,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "Yeah. Copy.",
+          "prompt": "8, can you do 21 clear?",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Yeah.",
+              "avg_logprob": -0.9608482784695096,
+              "no_speech_prob": 0.08148892968893051,
+              "compression_ratio": 0.5789473684210527
+            },
+            {
+              "start": 1.0,
+              "end": 1.5,
+              "text": " Copy.",
+              "avg_logprob": -0.9608482784695096,
+              "no_speech_prob": 0.08148892968893051,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793717104.m4a": {
+      "index": 245,
+      "epoch": 1793717104,
+      "sha256": "60b09f58d36c8763dfbcf6d3ed6a61f85aa6857a4bbbce3ab6f2b1aa86649795",
+      "passes": {
+        "original": {
+          "text": "7J24R.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J24R.",
+              "avg_logprob": -0.7168666869401932,
+              "no_speech_prob": 0.04912605509161949,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J24, right?",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J24, right?",
+              "avg_logprob": -0.5201160642835829,
+              "no_speech_prob": 0.037160199135541916,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "7J24R.",
+          "prompt": "8, can you do 21 clear? Help me.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J24R.",
+              "avg_logprob": -0.6549018695950508,
+              "no_speech_prob": 0.0019372690003365278,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793717109.m4a": {
+      "index": 246,
+      "epoch": 1793717109,
+      "sha256": "0bea3f9284f1fcb8d89b5400f41e8b142061b931469b4d041b80ded15f87422b",
+      "passes": {
+        "original": {
+          "text": "Sorry, Kirby.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Sorry, Kirby.",
+              "avg_logprob": -0.8354911974498204,
+              "no_speech_prob": 0.03917380049824715,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.7020383576552073,
+              "no_speech_prob": 0.014196565374732018,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Sorry, Kirby.",
+          "prompt": "8, can you do 21 clear? Help me. 7J24R.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.2,
+              "text": " Sorry, Kirby.",
+              "avg_logprob": -0.7903333221163068,
+              "no_speech_prob": 0.007474439684301615,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793717469.m4a": {
+      "index": 247,
+      "epoch": 1793717469,
+      "sha256": "df6c77c098e3a4d0b889cf71547786eab6781dd908c7142c7259c455f8478b11",
+      "passes": {
+        "original": {
+          "text": "beep beep beep",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.48,
+              "text": " beep beep beep",
+              "avg_logprob": -0.6334725485907661,
+              "no_speech_prob": 0.1196286529302597,
+              "compression_ratio": 0.9333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "beep beep beep",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.48,
+              "text": " beep beep beep",
+              "avg_logprob": -0.4887009726630317,
+              "no_speech_prob": 0.19726888835430145,
+              "compression_ratio": 0.9333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "beep beep beep",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.48,
+              "text": " beep beep beep",
+              "avg_logprob": -0.6334725485907661,
+              "no_speech_prob": 0.1196286529302597,
+              "compression_ratio": 0.9333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793717471.m4a": {
+      "index": 248,
+      "epoch": 1793717471,
+      "sha256": "72fd049236cb724e2036c83dfe994b8f38045cdbe3accfaa5525607ad574e87e",
+      "passes": {
+        "original": {
+          "text": "Internet Plus 3 is no longer secure. Service is open.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0200000000000005,
+              "text": " Internet Plus 3 is no longer secure. Service is open.",
+              "avg_logprob": -0.5714295228322347,
+              "no_speech_prob": 0.04280306398868561,
+              "compression_ratio": 0.8983050847457628
+            }
+          ]
+        },
+        "filtered": {
+          "text": "And plus three is no longer secure. Service is open.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.58,
+              "text": " And plus three is no longer secure.",
+              "avg_logprob": -0.7305708492503447,
+              "no_speech_prob": 0.013242807239294052,
+              "compression_ratio": 0.9122807017543859
+            },
+            {
+              "start": 2.58,
+              "end": 3.42,
+              "text": " Service is open.",
+              "avg_logprob": -0.7305708492503447,
+              "no_speech_prob": 0.013242807239294052,
+              "compression_ratio": 0.9122807017543859
+            }
+          ]
+        },
+        "context": {
+          "text": "Internet Plus 3 is no longer secure, service is open",
+          "prompt": "beep beep beep",
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.44,
+              "text": " Internet Plus 3 is no longer secure, service is open",
+              "avg_logprob": -0.7163854879992348,
+              "no_speech_prob": 0.008014831691980362,
+              "compression_ratio": 0.9285714285714286
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793717788.m4a": {
+      "index": 249,
+      "epoch": 1793717788,
+      "sha256": "0c2c0fb0a89c02f1cbf99e5ff379a66c26d482a05d74ac256b5cd5dcfb2d8a7b",
+      "passes": {
+        "original": {
+          "text": "7J, 24.4.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J, 24.4.",
+              "avg_logprob": -0.6356281220912934,
+              "no_speech_prob": 0.04062056168913841,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J, 24.4.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J, 24.4.",
+              "avg_logprob": -0.5782049238681793,
+              "no_speech_prob": 0.032891277223825455,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "7J, 24.4.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J, 24.4.",
+              "avg_logprob": -0.6356281220912934,
+              "no_speech_prob": 0.04062056168913841,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793717792.m4a": {
+      "index": 250,
+      "epoch": 1793717792,
+      "sha256": "e3edbc1bc9b8a926e98d4a046bbd66bd3ffe36f48366c57f14e1b9fb84282dfb",
+      "passes": {
+        "original": {
+          "text": "Go for it, system.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it, system.",
+              "avg_logprob": -0.6907210879855685,
+              "no_speech_prob": 0.0399455763399601,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it, system.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it, system.",
+              "avg_logprob": -0.7584514617919922,
+              "no_speech_prob": 0.06015278026461601,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "context": {
+          "text": "Code for a system.",
+          "prompt": "7J, 24.4.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Code for a system.",
+              "avg_logprob": -0.6998477205634117,
+              "no_speech_prob": 0.024817196652293205,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        }
+      }
+    }
+  }
+}
