@@ -1,0 +1,721 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-31",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793499692.m4a": {
+      "index": 1101,
+      "epoch": 1793499692,
+      "sha256": "5066ba3db51424d965034950589720b7288382151794d92dd54d4bcf106f3efe",
+      "passes": {
+        "original": {
+          "text": "It's going to be teenagers that were speeding through the cul-de-sac, and now there's individuals hiding. They believe there's at least three involved at this time. I have a unit back.",
+          "prompt": null,
+          "duration_seconds": 8.064,
+          "token_limit": 89,
+          "token_count": 50,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " It's going to be teenagers that were speeding",
+              "avg_logprob": -0.14687858198000037,
+              "no_speech_prob": 0.0034527264069765806,
+              "compression_ratio": 1.310077519379845
+            },
+            {
+              "start": 2.0,
+              "end": 4.28,
+              "text": " through the cul-de-sac, and now there's individuals hiding.",
+              "avg_logprob": -0.14687858198000037,
+              "no_speech_prob": 0.0034527264069765806,
+              "compression_ratio": 1.310077519379845
+            },
+            {
+              "start": 4.28,
+              "end": 6.8,
+              "text": " They believe there's at least three involved at this time.",
+              "avg_logprob": -0.14687858198000037,
+              "no_speech_prob": 0.0034527264069765806,
+              "compression_ratio": 1.310077519379845
+            },
+            {
+              "start": 6.8,
+              "end": 8.8,
+              "text": " I have a unit back.",
+              "avg_logprob": -0.6697246763441298,
+              "no_speech_prob": 0.019389694556593895,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It's going to be teenagers that were speeding through the cul-de-sac, and now there's individuals hiding. There's at least three involved at this time, so I have units back.",
+          "prompt": null,
+          "duration_seconds": 8.064,
+          "token_limit": 89,
+          "token_count": 46,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.72,
+              "text": " It's going to be teenagers that were speeding through the cul-de-sac, and now there's individuals",
+              "avg_logprob": -0.19112997242937918,
+              "no_speech_prob": 0.004063904285430908,
+              "compression_ratio": 1.3435114503816794
+            },
+            {
+              "start": 3.72,
+              "end": 4.72,
+              "text": " hiding.",
+              "avg_logprob": -0.19112997242937918,
+              "no_speech_prob": 0.004063904285430908,
+              "compression_ratio": 1.3435114503816794
+            },
+            {
+              "start": 4.72,
+              "end": 7.72,
+              "text": " There's at least three involved at this time, so I have units back.",
+              "avg_logprob": -0.338600682584863,
+              "no_speech_prob": 0.0026774394791573286,
+              "compression_ratio": 0.9571428571428572
+            }
+          ]
+        },
+        "context": {
+          "text": "It's going to be teenagers that were speeding through the cul-de-sac, and now there's individuals hiding. They believe there's at least three involved at this time. So I have a units back.",
+          "prompt": "7J21, copy and assault in progress. Go ahead. 13, 57 West, N3150 North, 13, 57 West, 3150 North.",
+          "duration_seconds": 8.064,
+          "token_limit": 89,
+          "token_count": 51,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " It's going to be teenagers that were speeding",
+              "avg_logprob": -0.23092614859342575,
+              "no_speech_prob": 0.009113306179642677,
+              "compression_ratio": 1.3525179856115108
+            },
+            {
+              "start": 2.0,
+              "end": 4.28,
+              "text": " through the cul-de-sac, and now there's individuals hiding.",
+              "avg_logprob": -0.23092614859342575,
+              "no_speech_prob": 0.009113306179642677,
+              "compression_ratio": 1.3525179856115108
+            },
+            {
+              "start": 4.28,
+              "end": 6.8,
+              "text": " They believe there's at least three involved at this time.",
+              "avg_logprob": -0.23092614859342575,
+              "no_speech_prob": 0.009113306179642677,
+              "compression_ratio": 1.3525179856115108
+            },
+            {
+              "start": 6.8,
+              "end": 8.88,
+              "text": " So I have a units back.",
+              "avg_logprob": -0.23092614859342575,
+              "no_speech_prob": 0.009113306179642677,
+              "compression_ratio": 1.3525179856115108
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793499701.m4a": {
+      "index": 1102,
+      "epoch": 1793499701,
+      "sha256": "67faa5b946e05826956c31989874ef900defe26ca24825c37fd6dc0b59c2a297",
+      "passes": {
+        "original": {
+          "text": "Yeah, I'm going to be coaching.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, I'm going to be coaching.",
+              "avg_logprob": -0.803856760263443,
+              "no_speech_prob": 0.13114558160305023,
+              "compression_ratio": 0.8378378378378378
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah, I'm going to be careful.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, I'm going to be careful.",
+              "avg_logprob": -0.8483139475186666,
+              "no_speech_prob": 0.20011964440345764,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm going to be coach.",
+          "prompt": "Go ahead. 13, 57 West, N3150 North, 13, 57 West, 3150 North. It's going to be teenagers that were speeding through the cul-de-sac, and now there's individuals hiding. They believe there's at least three involved at this time. I have a unit back.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.2800000000000002,
+              "text": " I'm going to be coach.",
+              "avg_logprob": -0.6246878743171692,
+              "no_speech_prob": 0.14169712364673615,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793499704.m4a": {
+      "index": 1103,
+      "epoch": 1793499704,
+      "sha256": "6fc6192566c902c96065b7d7437c8741d6cb85601cb038791c518742e928d8d0",
+      "passes": {
+        "original": {
+          "text": "Have a good one.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Have a good one.",
+              "avg_logprob": -0.7433918789029121,
+              "no_speech_prob": 0.01162769366055727,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Have a good one.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Have a good one.",
+              "avg_logprob": -0.6057526096701622,
+              "no_speech_prob": 0.012806346639990807,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "Have a good one.",
+          "prompt": "13, 57 West, N3150 North, 13, 57 West, 3150 North. It's going to be teenagers that were speeding through the cul-de-sac, and now there's individuals hiding. They believe there's at least three involved at this time. I have a unit back. Yeah, I'm going to be coaching.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Have a good one.",
+              "avg_logprob": -0.6605436354875565,
+              "no_speech_prob": 0.05497484654188156,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793499707.m4a": {
+      "index": 1104,
+      "epoch": 1793499707,
+      "sha256": "4bc68724f400e346c79ee131845b44f2cd41f586b4a7e5e1b8863148047fa6f0",
+      "passes": {
+        "original": {
+          "text": "Pre-pre-",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.72,
+              "text": " Pre-pre-",
+              "avg_logprob": -1.0599137714930944,
+              "no_speech_prob": 0.42752543091773987,
+              "compression_ratio": 0.5714285714285714
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.8367175857226054,
+              "no_speech_prob": 0.48310425877571106,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you.",
+          "prompt": "It's going to be teenagers that were speeding through the cul-de-sac, and now there's individuals hiding. They believe there's at least three involved at this time. I have a unit back. Yeah, I'm going to be coaching. Have a good one.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.9032265345255533,
+              "no_speech_prob": 0.47490382194519043,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793499708.m4a": {
+      "index": 1105,
+      "epoch": 1793499708,
+      "sha256": "25e422cb87512375416b3b6038f7875a040cc3ec739910509c98aaa7975bfac9",
+      "passes": {
+        "original": {
+          "text": "Aye. Subject called fact.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Aye.",
+              "avg_logprob": -1.0082601408163707,
+              "no_speech_prob": 0.09452734887599945,
+              "compression_ratio": 0.7575757575757576
+            },
+            {
+              "start": 2.0,
+              "end": 4.0,
+              "text": " Subject called fact.",
+              "avg_logprob": -1.0082601408163707,
+              "no_speech_prob": 0.09452734887599945,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you. Subject called fact.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.9826197028160095,
+              "no_speech_prob": 0.017532197758555412,
+              "compression_ratio": 0.7948717948717948
+            },
+            {
+              "start": 2.0,
+              "end": 4.0,
+              "text": " Subject called fact.",
+              "avg_logprob": -0.9826197028160095,
+              "no_speech_prob": 0.017532197758555412,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "context": {
+          "text": "Aye. Subject called five.",
+          "prompt": "Yeah, I'm going to be coaching. Have a good one. Pre-pre-",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.8000000000000003,
+              "text": " Aye. Subject called five.",
+              "avg_logprob": -0.9704379200935364,
+              "no_speech_prob": 0.05089423432946205,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793499712.m4a": {
+      "index": 1106,
+      "epoch": 1793499712,
+      "sha256": "ec0d57d6115b96a6193fdedf6262c05f90300f31690a1170d88baa7165ee9e5f",
+      "passes": {
+        "original": {
+          "text": "Seventy six o'clock",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Seventy six o'clock",
+              "avg_logprob": -0.895964092678494,
+              "no_speech_prob": 0.1009390726685524,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7G, 6G.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7G, 6G.",
+              "avg_logprob": -0.7799128426445855,
+              "no_speech_prob": 0.14845333993434906,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Seventy six o'clock.",
+          "prompt": "Have a good one. Pre-pre- Aye. Subject called fact.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Seventy six o'clock.",
+              "avg_logprob": -0.6893706858158112,
+              "no_speech_prob": 0.029983162879943848,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793499715.m4a": {
+      "index": 1107,
+      "epoch": 1793499715,
+      "sha256": "41c442dae2f0755ddfa1554f6a51fd51ec52eccda05d0b08d6a4028c2ed70203",
+      "passes": {
+        "original": {
+          "text": "I copy 21, 12, and 6 responding.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.32,
+              "text": " I copy 21, 12, and 6 responding.",
+              "avg_logprob": -0.4039552303460928,
+              "no_speech_prob": 0.0022906663361936808,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I copy 21, 12, and 6 responding.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.2800000000000002,
+              "text": " I copy 21, 12, and 6 responding.",
+              "avg_logprob": -0.3859340319266686,
+              "no_speech_prob": 0.0021446160972118378,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "context": {
+          "text": "I copy 21 12 and 6 responding.",
+          "prompt": "Pre-pre- Aye. Subject called fact. Seventy six o'clock",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.32,
+              "text": " I copy 21 12 and 6 responding.",
+              "avg_logprob": -0.46639518304304645,
+              "no_speech_prob": 0.0046948762610554695,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793499735.m4a": {
+      "index": 1108,
+      "epoch": 1793499735,
+      "sha256": "17341da14a6cae7f6ae6807f350bc58640cb0c20daa73c8a19d65e3eb8423676",
+      "passes": {
+        "original": {
+          "text": "7J21 and units responding. It's now verbal only. They have stopped physically fighting.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.36,
+              "text": " 7J21 and units responding. It's now verbal only. They have stopped physically fighting.",
+              "avg_logprob": -0.3426496129144322,
+              "no_speech_prob": 0.013957425020635128,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J21 in units responding, it's now verbal only they have stopped physically fighting.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.36,
+              "text": " 7J21 in units responding, it's now verbal only they have stopped physically fighting.",
+              "avg_logprob": -0.39240524882362005,
+              "no_speech_prob": 0.00990358181297779,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "Seven J 21 and units responding. It's now verbal only. They have stopped physically fighting.",
+          "prompt": "Aye. Subject called fact. Seventy six o'clock I copy 21, 12, and 6 responding.",
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.36,
+              "text": " Seven J 21 and units responding. It's now verbal only. They have stopped physically fighting.",
+              "avg_logprob": -0.3291542651978406,
+              "no_speech_prob": 0.0017397621413692832,
+              "compression_ratio": 1.0449438202247192
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793499742.m4a": {
+      "index": 1109,
+      "epoch": 1793499742,
+      "sha256": "9654ea14be6c39834efd6a3787b4e95eed50ae9ba55aea8ff1ff7d5a021ada9b",
+      "passes": {
+        "original": {
+          "text": "They arrived in a gray, silver Kia Forte.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.32,
+              "text": " They arrived in a gray, silver Kia Forte.",
+              "avg_logprob": -0.3953542311986287,
+              "no_speech_prob": 0.002549960743635893,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        },
+        "filtered": {
+          "text": "They arrived in a gray-silver Kia Forte.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.32,
+              "text": " They arrived in a gray-silver Kia Forte.",
+              "avg_logprob": -0.4209181229273478,
+              "no_speech_prob": 0.0016489489935338497,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        },
+        "context": {
+          "text": "They arrived in a gray silver Kia Forte.",
+          "prompt": "Seventy six o'clock I copy 21, 12, and 6 responding. 7J21 and units responding. It's now verbal only. They have stopped physically fighting.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.32,
+              "text": " They arrived in a gray silver Kia Forte.",
+              "avg_logprob": -0.3251056798866817,
+              "no_speech_prob": 0.00451648561283946,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793499748.m4a": {
+      "index": 1110,
+      "epoch": 1793499748,
+      "sha256": "dc43a9123c1d7e4fc05ba0080d2f14f35ee6d1501ce2beb045e217a0d79e2522",
+      "passes": {
+        "original": {
+          "text": "7J21, do we have a plate?",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J21, do we have a plate?",
+              "avg_logprob": -0.30556223025688756,
+              "no_speech_prob": 0.015468542464077473,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J21, do we have a plate?",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J21, do we have a plate?",
+              "avg_logprob": -0.34538761469034046,
+              "no_speech_prob": 0.021628526970744133,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "context": {
+          "text": "7J21, do we have a plate?",
+          "prompt": "I copy 21, 12, and 6 responding. 7J21 and units responding. It's now verbal only. They have stopped physically fighting. They arrived in a gray, silver Kia Forte.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J21, do we have a plate?",
+              "avg_logprob": -0.2857526173958412,
+              "no_speech_prob": 0.0012369583128020167,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        }
+      }
+    }
+  }
+}
