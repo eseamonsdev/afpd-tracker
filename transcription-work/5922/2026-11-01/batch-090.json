@@ -1,0 +1,657 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-01",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793587832.m4a": {
+      "index": 891,
+      "epoch": 1793587832,
+      "sha256": "4974c29bed94850229c8481ead0669300a83f49402babd8bd7c2f772401735fa",
+      "passes": {
+        "original": {
+          "text": "Please show me 1017 to address 9803 North 4680 West Seater Hills 10 minute checks on arrival.",
+          "prompt": null,
+          "duration_seconds": 11.52,
+          "token_limit": 117,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.96,
+              "text": " Please show me 1017 to address 9803 North 4680 West Seater Hills 10 minute",
+              "avg_logprob": -0.4812755121125115,
+              "no_speech_prob": 0.019418399780988693,
+              "compression_ratio": 0.9893617021276596
+            },
+            {
+              "start": 9.96,
+              "end": 12.6,
+              "text": " checks on arrival.",
+              "avg_logprob": -0.4812755121125115,
+              "no_speech_prob": 0.019418399780988693,
+              "compression_ratio": 0.9893617021276596
+            }
+          ]
+        },
+        "filtered": {
+          "text": "you show me 1017 to address nine eight zero three north four six eight zero west seared hills ten minute checks on arrival",
+          "prompt": null,
+          "duration_seconds": 11.52,
+          "token_limit": 117,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.84,
+              "text": " you show me 1017 to address nine eight zero three north four six eight zero",
+              "avg_logprob": -0.43033438523610434,
+              "no_speech_prob": 0.013339725323021412,
+              "compression_ratio": 1.2842105263157895
+            },
+            {
+              "start": 7.84,
+              "end": 12.68,
+              "text": " west seared hills ten minute checks on arrival",
+              "avg_logprob": -0.43033438523610434,
+              "no_speech_prob": 0.013339725323021412,
+              "compression_ratio": 1.2842105263157895
+            }
+          ]
+        },
+        "context": {
+          "text": "You show me 1017 to address 9803 North 4680 West, Cedar Hills. 10-minute check on arrival.",
+          "prompt": "5G53 553. 5J53, go ahead.",
+          "duration_seconds": 11.52,
+          "token_limit": 117,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 11.0,
+              "text": " You show me 1017 to address 9803 North 4680 West, Cedar Hills. 10-minute check on arrival.",
+              "avg_logprob": -0.5261915568952207,
+              "no_speech_prob": 0.0017063104314729571,
+              "compression_ratio": 0.9782608695652174
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793587844.m4a": {
+      "index": 892,
+      "epoch": 1793587844,
+      "sha256": "75786393207e833096f514404cd19c235cbbdaaf9c5e195ea077ab3bfd90cc59",
+      "passes": {
+        "original": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.6715011119842529,
+              "no_speech_prob": 0.011685087345540524,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6941052913665772,
+              "no_speech_prob": 0.016249557957053185,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "553. 5J53, go ahead. Please show me 1017 to address 9803 North 4680 West Seater Hills 10 minute checks on arrival.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6296647071838379,
+              "no_speech_prob": 0.01893775351345539,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793587847.m4a": {
+      "index": 893,
+      "epoch": 1793587847,
+      "sha256": "b49683b15600bd0782bc4e90d33139470ece851927ad7e9fc00077e63d6e016c",
+      "passes": {
+        "original": {
+          "text": "5G-50 same traffic",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G-50 same traffic",
+              "avg_logprob": -0.6788526640997993,
+              "no_speech_prob": 0.046830691397190094,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G at 50, same traffic.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G at 50, same traffic.",
+              "avg_logprob": -0.6076638265089556,
+              "no_speech_prob": 0.05774398520588875,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "context": {
+          "text": "5J50, same traffic.",
+          "prompt": "5J53, go ahead. Please show me 1017 to address 9803 North 4680 West Seater Hills 10 minute checks on arrival. Happy.",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J50, same traffic.",
+              "avg_logprob": -0.5039918482303619,
+              "no_speech_prob": 0.007527218200266361,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793587851.m4a": {
+      "index": 894,
+      "epoch": 1793587851,
+      "sha256": "1701079fb81f43d9d6acbac5292354fce3830d5add81208a2da928c421c28b2e",
+      "passes": {
+        "original": {
+          "text": "Copy, 5,250.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy, 5,250.",
+              "avg_logprob": -0.6599920590718588,
+              "no_speech_prob": 0.00869419053196907,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy, 50-50.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy, 50-50.",
+              "avg_logprob": -0.7932093938191732,
+              "no_speech_prob": 0.005173941142857075,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "copy 5G-50",
+          "prompt": "Please show me 1017 to address 9803 North 4680 West Seater Hills 10 minute checks on arrival. Happy. 5G-50 same traffic",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy 5G-50",
+              "avg_logprob": -0.38797298818826675,
+              "no_speech_prob": 0.0033343364484608173,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793587892.m4a": {
+      "index": 895,
+      "epoch": 1793587892,
+      "sha256": "07fce062254c23cd481b39e82c0569cc69e50ff3b2cbf74eb259311d2fa24c26",
+      "passes": {
+        "original": {
+          "text": "7G6, show me out 29.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " 7G6, show me out 29.",
+              "avg_logprob": -0.6023536523183187,
+              "no_speech_prob": 0.11253787577152252,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7G6, show me out, right now.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " 7G6, show me out, right now.",
+              "avg_logprob": -0.8670478463172913,
+              "no_speech_prob": 0.04193907603621483,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "context": {
+          "text": "7G-6, show me out, 29.",
+          "prompt": "Happy. 5G-50 same traffic Copy, 5,250.",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " 7G-6, show me out, 29.",
+              "avg_logprob": -0.5098259747028351,
+              "no_speech_prob": 0.012745016254484653,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793587896.m4a": {
+      "index": 896,
+      "epoch": 1793587896,
+      "sha256": "c05d1808aafad9c34b8f7546ae01a937788b52a3a367dd097a3998a605807575",
+      "passes": {
+        "original": {
+          "text": "copy 7j6",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy 7j6",
+              "avg_logprob": -0.6062011037554059,
+              "no_speech_prob": 0.019087357446551323,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy 7j6",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy 7j6",
+              "avg_logprob": -0.4847970690046038,
+              "no_speech_prob": 0.014472703449428082,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy, 7G6.",
+          "prompt": "5G-50 same traffic Copy, 5,250. 7G6, show me out 29.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy, 7G6.",
+              "avg_logprob": -0.35235434108310276,
+              "no_speech_prob": 0.004253782797604799,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793588124.m4a": {
+      "index": 897,
+      "epoch": 1793588124,
+      "sha256": "d554e45f5338ff8db6c59cb658f1453140475ada14128e80153ffee170f077ef",
+      "passes": {
+        "original": {
+          "text": "18J231041",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.4,
+              "text": " 18J231041",
+              "avg_logprob": -0.6011658161878586,
+              "no_speech_prob": 0.0332038477063179,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18J23, 1041.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.7600000000000002,
+              "text": " 18J23, 1041.",
+              "avg_logprob": -0.5872758328914642,
+              "no_speech_prob": 0.017946947365999222,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "18J231041",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.4,
+              "text": " 18J231041",
+              "avg_logprob": -0.6011658161878586,
+              "no_speech_prob": 0.0332038477063179,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793588128.m4a": {
+      "index": 898,
+      "epoch": 1793588128,
+      "sha256": "b58a842d35fd3347d5bf120e07b35d5d43035dc41c35ef427aecb90cd08471de",
+      "passes": {
+        "original": {
+          "text": "18-day 23.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18-day 23.",
+              "avg_logprob": -0.8960682600736618,
+              "no_speech_prob": 0.006911067292094231,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18-day 23.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 18-day 23.",
+              "avg_logprob": -0.8782825767993927,
+              "no_speech_prob": 0.01070095133036375,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "18J23",
+          "prompt": "18J231041",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 18J23",
+              "avg_logprob": -0.4820902645587921,
+              "no_speech_prob": 0.012190327048301697,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793588300.m4a": {
+      "index": 899,
+      "epoch": 1793588300,
+      "sha256": "059f0445861451601682316652a354396579b1820e89545f5b9e4d35f74d14ff",
+      "passes": {
+        "original": {
+          "text": "7J29 code 4.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J29 code 4.",
+              "avg_logprob": -0.5540794796413846,
+              "no_speech_prob": 0.020137963816523552,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7j29 for four",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7j29 for four",
+              "avg_logprob": -0.7049452587962151,
+              "no_speech_prob": 0.018129324540495872,
+              "compression_ratio": 0.6842105263157895
+            }
+          ]
+        },
+        "context": {
+          "text": "7J29 code 4.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J29 code 4.",
+              "avg_logprob": -0.5540794796413846,
+              "no_speech_prob": 0.020137963816523552,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793588306.m4a": {
+      "index": 900,
+      "epoch": 1793588306,
+      "sha256": "52cc422106b284b0c82b730abda0a0c1755d5d772d22b94f9b52f3052a83bca2",
+      "passes": {
+        "original": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.32674283534288406,
+              "no_speech_prob": 0.025814447551965714,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.31772225350141525,
+              "no_speech_prob": 0.015163376927375793,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "7J29 code 4.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7340864658355712,
+              "no_speech_prob": 0.02867579646408558,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
