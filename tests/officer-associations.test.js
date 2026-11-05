@@ -107,7 +107,11 @@ test("all workbook rows, old table pairs, conflicts, and same-clip alternatives 
 test('completed owner evidence review counts selected Mason radio/date groups and retains excluded source rows as history',()=>{
  const result=buildOfficerAssociations();
  const mason=Object.entries(result.labels.associations).flatMap(([radio,rows])=>rows.filter(r=>r.officer_id==='brandon-k-mason').map(r=>[radio,r.evidence_days]));
- assert.deepEqual(mason,[['14590237',9],['14590315',15]]);
+ // Includes the later Law 2 and November 2 dated confirmations.
+ assert.deepEqual(mason,[['14590237',11],['14590315',16]]);
+ for (const radio of ['14590237','14590315']) {
+  assert.equal(result.labels.days['2026-11-02'][radio].find(r=>r.officer_id==='brandon-k-mason').status,'confirmed');
+ }
  assert.ok(!Object.values(result.labels.days['2026-10-23']??{}).flat().some(r=>r.officer_id==='brandon-k-mason'));
  assert.match(result.evidenceCsv,/historical context; not counted/);
  const source=JSON.parse(fs.readFileSync('data/officer-association-evidence.json'));
@@ -163,7 +167,9 @@ test("owner-accepted Neil evidence leaves unassigned leads and generates the cor
  const neil=result.labels.profiles["anthony-s-neil"];
  assert.equal(neil.length,1);
  assert.equal(neil[0].radio_id,"14590027");
- assert.equal(neil[0].evidence_days,5);
+ assert.equal(neil[0].evidence_days,6);
+ assert.deepEqual(neil[0].evidence_dates,['2026-09-14','2026-09-15','2026-09-20','2026-09-23','2026-10-03','2026-10-30']);
+ assert.ok(result.labels.days['2026-10-30']['14590027'].some(r=>r.officer_id==='anthony-s-neil' && r.evidence.some(e=>e.confirmed_by==='Eric' && e.clips.includes(304))));
  assert.ok(result.labels.days["2026-10-03"]["14590027"].some(r=>r.officer_id==="anthony-s-neil" && r.evidence.some(e=>e.clips.includes(91) && e.clips.includes(92))));
  assert.equal(neil[0].confirmed,false);
  assert.equal(result.labels.associations["14590268"]?.some(r=>r.officer_id==="anthony-s-neil")??false,false);

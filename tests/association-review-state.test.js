@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
+import {isDeepStrictEqual} from 'node:util';
 import {execFileSync} from 'node:child_process';
 const context=vm.createContext({});vm.runInContext(fs.readFileSync('public/js/association-review-state.js','utf8'),context);
 const Review=context.AFPDReviewState;
@@ -30,14 +31,35 @@ test('restored edits report source changes rather than silently losing the origi
 test('cleanup preserves prior sources and workbook exchanges and keeps retained leads unassigned',()=>{
  const current=JSON.parse(fs.readFileSync('data/officer-association-evidence.json'));
  const original=JSON.parse(execFileSync('git',['show','fe0fc30658200b09ebfbf3853642f1201eb6b0da:data/officer-association-evidence.json'],{maxBuffer:10e6}));
+ // Preserve the imported exchanges, allowing only the subsequent explicit reviews.
+ const ronIds = new Set(['E095','E128','E131','E132','E137','E167','E193','E207','E231','E232','E233','E265','E312'].map(id=>`workbook-${id}-1`));
+ const neilIds = new Set(['E344','E345','E346','E347'].map(id=>`workbook-${id}-1--anthony-s-neil`));
+ for(const row of original.associations) {
+  // The old CSV attributes these two Halladay listening identifications to Eric.
+  if(['prior-source-080','prior-source-083'].includes(row.record_id))row.confirmed_by='Eric';
+  if(ronIds.has(row.record_id)) Object.assign(row, {
+   officer_id:'ronald-j-bibeau',original_candidate:'Ronald J. Bibeau',
+   evidence:row.evidence.split(' Original notes:')[0]+' Eric confirms this Ron exchange as Ronald J. Bibeau.',
+   status:'confirmed',confirmed_by:'Eric',review_status:'owner_confirmed',
+   reviewed_at:'2026-11-02T17:37:50.701177+00:00'
+  });
+  if(neilIds.has(row.record_id)) Object.assign(row,{name_heard:'Neil',original_unresolved_identity:{...original.officers['unresolved-neil'],heard:'Neil',heard_variants:['Neil']}});
+ }
  const protectedRows = rows => rows.filter(r=>r.record_id.startsWith('prior-source-') || r.record_id.startsWith('workbook-')).map(({association_reviewed,association_review_basis,...original})=>original);
- // The old CSV explicitly attributes these two Halladay listening identifications to Eric.
- for(const row of original.associations) if(['prior-source-080','prior-source-083'].includes(row.record_id))row.confirmed_by='Eric';
- assert.deepEqual(protectedRows(current.associations),protectedRows(original.associations));assert.deepEqual(current.observations,original.observations);
+ assert.deepEqual(protectedRows(current.associations),protectedRows(original.associations));
+ // New observations may be added, but none of the original observations may disappear.
+ for(const observation of original.observations) assert.ok(current.observations.some(row=>isDeepStrictEqual(row,observation)),observation.record_id);
  assert.equal(current.associations.filter(r=>r.record_id.startsWith('prior-source-')).length,136);
- assert.equal(current.associations.filter(r=>r.source==='owner_listening_review').length,23);
+ const originalListeningIds=new Set(original.associations.filter(r=>r.source==='owner_listening_review').map(r=>r.record_id));
+ assert.equal(current.associations.filter(r=>originalListeningIds.has(r.record_id) && r.source==='owner_listening_review').length,originalListeningIds.size);
+ // Reviewed aliases and the resolved Ron placeholder are deliberate later changes.
+ delete original.officers['unresolved-ron'];
+ Object.assign(original.officers['diego-o-garcia'],{heard:'Diego / Garcia / Tavo',heard_variants:['Diego / Garcia','Tavo']});
+ Object.assign(original.officers['unresolved-neil'],{heard:'Neil',heard_variants:['Neil']});
+ original.officers['anthony-s-neil'].heard='Neil';
  for(const [id,officer] of Object.entries(original.officers)) assert.deepEqual(current.officers[id],officer);
- assert.equal(current.review_leads.length,662);
+ assert.equal(current.officers['unresolved-ron'],undefined);
+ assert.equal(current.review_leads.length,656);
  assert.ok(!current.review_leads.some(r=>r.report_id==='N234'));
  assert.ok(current.review_leads.every(r=>r.status==='unassigned'&&!r.radio_id&&r.review_status==='pending'));
  assert.ok(current.review_leads.every(r=>!r.candidate_officer_ids.includes('philip-w-s-craig')));
