@@ -48,12 +48,12 @@ permalink: /lawsuits/
   {%- endif -%}
 {%- endmacro %}
 
-{% macro lawsuit(name, url, status, description, note) %}
+{% macro lawsuit(name, url, status, description, note, docketNexusUrl="") %}
   <li class="lawsuit-entry">
     <h3>{% if url %}<a href="{{ url | escape }}">{{ name | escape }}</a>{% else %}{{ name | escape }}{% endif %}</h3>
     <p><strong>Case Status:</strong> {{ status | escape }}</p>
-    <p>{{ lawsuitText(description, url) }}</p>
-    {% if note %}<p>{{ lawsuitText(note, url) }}</p>{% endif %}
+    <p>{{ lawsuitText(description, docketNexusUrl or url) }}</p>
+    {% if note %}<p>{{ lawsuitText(note, docketNexusUrl or url) }}</p>{% endif %}
   </li>
 {% endmacro %}
 
@@ -120,10 +120,11 @@ permalink: /lawsuits/
       ) }}
       {{ lawsuit(
         "Mosby v. American Fork City et al.",
-        "https://docketnexus.com/case/mosby-v-american-fork-city-14894913/",
+        "/civilian-employees/christine-m-mosby/?tab=lawsuits",
         "Dismissed by stipulation (agreement of the parties); settlement reported by Docket Nexus",
         "Christine Mosby’s case is listed as settled by Docket Nexus, and a stipulated motion for dismissal has been identified. Case No. 2:18-cv-00940.",
-        "The reported settlement has not been independently confirmed in an explicit court record or settlement agreement. A profile tab containing this case’s records is not yet available."
+        "The reported settlement has not been independently confirmed in an explicit court record or settlement agreement. The complaint, civil cover sheet, and PACER docket are available on her profile.",
+        "https://docketnexus.com/case/mosby-v-american-fork-city-14894913/"
       ) }}
       {{ lawsuit(
         "Boldt et al. v. American Fork City et al.",
