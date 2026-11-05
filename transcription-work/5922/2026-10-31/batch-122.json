@@ -1,0 +1,689 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-31",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793503096.m4a": {
+      "index": 1211,
+      "epoch": 1793503096,
+      "sha256": "7c6c40ced67582df036dd23dc72f8d6a6e22bf8d34d4286ada9536ac0be3adcc",
+      "passes": {
+        "original": {
+          "text": "Bye.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Bye.",
+              "avg_logprob": -0.7002305030822754,
+              "no_speech_prob": 0.06352981925010681,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "But",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " But",
+              "avg_logprob": -0.9184649884700775,
+              "no_speech_prob": 0.1415995955467224,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "context": {
+          "text": "Bye.",
+          "prompt": "5J54, copy as suspicious.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Bye.",
+              "avg_logprob": -0.6302132129669189,
+              "no_speech_prob": 0.09814035892486572,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793503109.m4a": {
+      "index": 1212,
+      "epoch": 1793503109,
+      "sha256": "3177798493b62d6d25872237798c89f6f8aa0e39926526077151e2b91f2aabd7",
+      "passes": {
+        "original": {
+          "text": "such as a black man, 25 to 30 years old with black dreadlocks, 5'5\", 1 to 2 pounds, last wearing gray sweatshirt, dark green pants.",
+          "prompt": null,
+          "duration_seconds": 8.064,
+          "token_limit": 89,
+          "token_count": 39,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " such as a black man, 25 to 30 years old with black dreadlocks, 5'5\", 1 to 2 pounds,",
+              "avg_logprob": -0.4766116037964821,
+              "no_speech_prob": 0.05764708295464516,
+              "compression_ratio": 1.190909090909091
+            },
+            {
+              "start": 5.0,
+              "end": 8.0,
+              "text": " last wearing gray sweatshirt, dark green pants.",
+              "avg_logprob": -0.4766116037964821,
+              "no_speech_prob": 0.05764708295464516,
+              "compression_ratio": 1.190909090909091
+            }
+          ]
+        },
+        "filtered": {
+          "text": "such as a black man, 25 to 30 years old, with black dreadlocks, 5'5\", 1-10 pounds, that's wearing gray sweatshirts, dark green pants.",
+          "prompt": null,
+          "duration_seconds": 8.064,
+          "token_limit": 89,
+          "token_count": 42,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " such as a black man, 25 to 30 years old, with black dreadlocks, 5'5\", 1-10 pounds,",
+              "avg_logprob": -0.45812793665154034,
+              "no_speech_prob": 0.07258473336696625,
+              "compression_ratio": 1.1875
+            },
+            {
+              "start": 5.0,
+              "end": 8.0,
+              "text": " that's wearing gray sweatshirts, dark green pants.",
+              "avg_logprob": -0.45812793665154034,
+              "no_speech_prob": 0.07258473336696625,
+              "compression_ratio": 1.1875
+            }
+          ]
+        },
+        "context": {
+          "text": "Such as a black man, 25 to 30 years old with black dreadlocks, 5'5\", 1 to 2 pounds, ass-wearing gray sweatshirt, dark green pants.",
+          "prompt": "5J54, copy as suspicious. Bye.",
+          "duration_seconds": 8.064,
+          "token_limit": 89,
+          "token_count": 41,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Such as a black man, 25 to 30 years old with black dreadlocks, 5'5\", 1 to 2 pounds,",
+              "avg_logprob": -0.46458402488912853,
+              "no_speech_prob": 0.2710392475128174,
+              "compression_ratio": 1.1607142857142858
+            },
+            {
+              "start": 5.0,
+              "end": 8.0,
+              "text": " ass-wearing gray sweatshirt, dark green pants.",
+              "avg_logprob": -0.46458402488912853,
+              "no_speech_prob": 0.2710392475128174,
+              "compression_ratio": 1.1607142857142858
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793503118.m4a": {
+      "index": 1213,
+      "epoch": 1793503118,
+      "sha256": "c17d8c18e40f43f1b6088c13bdd2683f705a7d2a7ae0d020d6c4b2231d5456ec",
+      "passes": {
+        "original": {
+          "text": "It doesn't have anything worth it, and it's unknown to your vehicle.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " It doesn't have anything worth it, and it's unknown to your vehicle.",
+              "avg_logprob": -0.5150417277687475,
+              "no_speech_prob": 0.0066313715651631355,
+              "compression_ratio": 0.9577464788732394
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It doesn't have anything with it, and it's unknown to you right in the vehicle.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.08,
+              "text": " It doesn't have anything with it, and it's unknown to you right in the vehicle.",
+              "avg_logprob": -0.4977036172693426,
+              "no_speech_prob": 0.008677604608237743,
+              "compression_ratio": 1.025974025974026
+            }
+          ]
+        },
+        "context": {
+          "text": "It doesn't have anything worth it and it's unknown to your driving vehicle.",
+          "prompt": "5J54, copy as suspicious. Bye. such as a black man, 25 to 30 years old with black dreadlocks, 5'5\", 1 to 2 pounds, last wearing gray sweatshirt, dark green pants.",
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " It doesn't have anything worth it and it's unknown to your driving vehicle.",
+              "avg_logprob": -0.5251748875567788,
+              "no_speech_prob": 0.021792007610201836,
+              "compression_ratio": 1.0
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793503123.m4a": {
+      "index": 1214,
+      "epoch": 1793503123,
+      "sha256": "ab78cb54e4e16b2d3aa1a1c28876302f2f056594083fa7fc6c1026571ca6832d",
+      "passes": {
+        "original": {
+          "text": "Coffee.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Coffee.",
+              "avg_logprob": -0.7070215225219727,
+              "no_speech_prob": 0.09249705821275711,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Coffee.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Coffee.",
+              "avg_logprob": -0.840495491027832,
+              "no_speech_prob": 0.23192720115184784,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Coffee.",
+          "prompt": "Bye. such as a black man, 25 to 30 years old with black dreadlocks, 5'5\", 1 to 2 pounds, last wearing gray sweatshirt, dark green pants. It doesn't have anything worth it, and it's unknown to your vehicle.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Coffee.",
+              "avg_logprob": -0.511471176147461,
+              "no_speech_prob": 0.04567212983965874,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793503132.m4a": {
+      "index": 1215,
+      "epoch": 1793503132,
+      "sha256": "cb9fb6111d18748225704f7c3dd7b4a76304dd5b89e3d44a4d78606222be6a8e",
+      "passes": {
+        "original": {
+          "text": "18J10, copy a disturbance.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18J10, copy a disturbance.",
+              "avg_logprob": -0.47137677669525146,
+              "no_speech_prob": 0.008369089104235172,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18J10, copy a disturbance.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18J10, copy a disturbance.",
+              "avg_logprob": -0.49441592259840533,
+              "no_speech_prob": 0.002792816376313567,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "context": {
+          "text": "18J10, copy a disturbance.",
+          "prompt": "such as a black man, 25 to 30 years old with black dreadlocks, 5'5\", 1 to 2 pounds, last wearing gray sweatshirt, dark green pants. It doesn't have anything worth it, and it's unknown to your vehicle. Coffee.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.84,
+              "text": " 18J10, copy a disturbance.",
+              "avg_logprob": -0.4107566313310103,
+              "no_speech_prob": 0.01609964855015278,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793503136.m4a": {
+      "index": 1216,
+      "epoch": 1793503136,
+      "sha256": "81d87eaf01a15e6793c96201b1b533bae9e2f9ed44a3b04340d4140b4884aec5",
+      "passes": {
+        "original": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.8822600046793619,
+              "no_speech_prob": 0.2226758748292923,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5685379604498545,
+              "no_speech_prob": 0.26250171661376953,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "It's fine.",
+          "prompt": "It doesn't have anything worth it, and it's unknown to your vehicle. Coffee. 18J10, copy a disturbance.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " It's fine.",
+              "avg_logprob": -1.0297762666429793,
+              "no_speech_prob": 0.10376469045877457,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793503139.m4a": {
+      "index": 1217,
+      "epoch": 1793503139,
+      "sha256": "621caccc5a97bb8f0d38c83024cb8a75de6255a3a3b5cb7e6552d125704f9f02",
+      "passes": {
+        "original": {
+          "text": "One ten fifty-five percent of Scamble Oak one five five noise Scamble Circle.",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.4,
+              "text": " One ten fifty-five percent of Scamble Oak one five five noise Scamble Circle.",
+              "avg_logprob": -0.6860446256140004,
+              "no_speech_prob": 0.04826335981488228,
+              "compression_ratio": 1.1
+            }
+          ]
+        },
+        "filtered": {
+          "text": "One ten fifty-five thousand, Gamble Oak, one five five noise, Gamble Circle.",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.44,
+              "text": " One ten fifty-five thousand, Gamble Oak, one five five noise, Gamble Circle.",
+              "avg_logprob": -0.8578017779758998,
+              "no_speech_prob": 0.15199704468250275,
+              "compression_ratio": 1.1176470588235294
+            }
+          ]
+        },
+        "context": {
+          "text": "18J10, gamble oak 155 noise, gamble circle.",
+          "prompt": "Coffee. 18J10, copy a disturbance. Thank you.",
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.44,
+              "text": " 18J10, gamble oak 155 noise, gamble circle.",
+              "avg_logprob": -0.7890968322753906,
+              "no_speech_prob": 0.10072481632232666,
+              "compression_ratio": 0.9772727272727273
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793503146.m4a": {
+      "index": 1218,
+      "epoch": 1793503146,
+      "sha256": "62c47978d438201e175fc0db0b8d34840049913957f343e713282434d0713761",
+      "passes": {
+        "original": {
+          "text": "The only information we have right now is someone on the line saying, come in the door and I'll kill you.",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.98,
+              "text": " The only information we have right now is someone on the line saying,",
+              "avg_logprob": -0.20781834988758482,
+              "no_speech_prob": 0.0401780940592289,
+              "compression_ratio": 1.1290322580645162
+            },
+            {
+              "start": 2.98,
+              "end": 4.5200000000000005,
+              "text": " come in the door and I'll kill you.",
+              "avg_logprob": -0.20781834988758482,
+              "no_speech_prob": 0.0401780940592289,
+              "compression_ratio": 1.1290322580645162
+            }
+          ]
+        },
+        "filtered": {
+          "text": "The only situation we have right now is someone on the line saying, come in the door and I'll kill you.",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " The only situation we have right now is someone on the line saying,",
+              "avg_logprob": -0.27626791904712544,
+              "no_speech_prob": 0.07502923905849457,
+              "compression_ratio": 1.1318681318681318
+            },
+            {
+              "start": 3.0,
+              "end": 4.5200000000000005,
+              "text": " come in the door and I'll kill you.",
+              "avg_logprob": -0.27626791904712544,
+              "no_speech_prob": 0.07502923905849457,
+              "compression_ratio": 1.1318681318681318
+            }
+          ]
+        },
+        "context": {
+          "text": "The only information we have right now is someone on the line saying come in the door and I'll kill you.",
+          "prompt": "18J10, copy a disturbance. Thank you. One ten fifty-five percent of Scamble Oak one five five noise Scamble Circle.",
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.5,
+              "text": " The only information we have right now is someone on the line saying come in the door and I'll kill you.",
+              "avg_logprob": -0.211811767747769,
+              "no_speech_prob": 0.07191524654626846,
+              "compression_ratio": 1.1428571428571428
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793503152.m4a": {
+      "index": 1219,
+      "epoch": 1793503152,
+      "sha256": "98caa69e4a88a27f19cc02ee9fa829273acd324216de43e0aab3cc0dbd9c6e44",
+      "passes": {
+        "original": {
+          "text": "I was having a Halloween party with over a hundred kids at the house, and there's a lot less driving at the response.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 30,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.6,
+              "text": " I was having a Halloween party with over a hundred kids at the house, and there's a lot",
+              "avg_logprob": -0.6343308379573207,
+              "no_speech_prob": 0.025283455848693848,
+              "compression_ratio": 1.21875
+            },
+            {
+              "start": 3.6,
+              "end": 5.28,
+              "text": " less driving at the response.",
+              "avg_logprob": -0.6343308379573207,
+              "no_speech_prob": 0.025283455848693848,
+              "compression_ratio": 1.21875
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I was having a Halloween party with over a hundred kids at the house, and there's a lot of weeks to have a unit to respond with.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 32,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " I was having a Halloween party with over a hundred kids at the house, and there's a lot of weeks to have a unit to respond with.",
+              "avg_logprob": -0.548353252988873,
+              "no_speech_prob": 0.027650626376271248,
+              "compression_ratio": 1.2427184466019416
+            }
+          ]
+        },
+        "context": {
+          "text": "Someone was having a Halloween party with over a hundred kids at the house and there's multiple",
+          "prompt": "Thank you. One ten fifty-five percent of Scamble Oak one five five noise Scamble Circle. The only information we have right now is someone on the line saying, come in the door and I'll kill you.",
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.5,
+              "text": " Someone was having a Halloween party with over a hundred kids at the house and there's multiple",
+              "avg_logprob": -0.2884877070784569,
+              "no_speech_prob": 0.0662345364689827,
+              "compression_ratio": 1.1176470588235294
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793503159.m4a": {
+      "index": 1220,
+      "epoch": 1793503159,
+      "sha256": "e7483439b4c1f48b6d17bc74fef7bddf638714e338dad719807f24c3a4ebb601",
+      "passes": {
+        "original": {
+          "text": "Thank you, John.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you, John.",
+              "avg_logprob": -0.8411828875541687,
+              "no_speech_prob": 0.1398288607597351,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you, John.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you, John.",
+              "avg_logprob": -0.981578916311264,
+              "no_speech_prob": 0.13116683065891266,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you John.",
+          "prompt": "One ten fifty-five percent of Scamble Oak one five five noise Scamble Circle. The only information we have right now is someone on the line saying, come in the door and I'll kill you. I was having a Halloween party with over a hundred kids at the house, and there's a lot less driving at the response.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you John.",
+              "avg_logprob": -0.758734907422747,
+              "no_speech_prob": 0.2839204668998718,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    }
+  }
+}
