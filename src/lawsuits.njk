@@ -37,12 +37,23 @@ permalink: /lawsuits/
   {%- endif -%}
 {%- endmacro %}
 
+{% macro lawsuitText(text, url) -%}
+  {%- if url and url.startsWith("https://docketnexus.com/") -%}
+    {%- for part in text.split("Docket Nexus") -%}
+      {{- profileLinks(part) -}}
+      {%- if not loop.last -%}<a href="{{ url | escape }}">Docket Nexus</a>{%- endif -%}
+    {%- endfor -%}
+  {%- else -%}
+    {{- profileLinks(text) -}}
+  {%- endif -%}
+{%- endmacro %}
+
 {% macro lawsuit(name, url, status, description, note) %}
   <li class="lawsuit-entry">
     <h3>{% if url %}<a href="{{ url | escape }}">{{ name | escape }}</a>{% else %}{{ name | escape }}{% endif %}</h3>
-    <p><strong>Case Status:</strong> {{ status | escape }}</p>
-    <p>{{ profileLinks(description) }}</p>
-    {% if note %}<p>{{ profileLinks(note) }}</p>{% endif %}
+    <p><strong>Case Status:</strong> {{ lawsuitText(status, url) }}</p>
+    <p>{{ lawsuitText(description, url) }}</p>
+    {% if note %}<p>{{ lawsuitText(note, url) }}</p>{% endif %}
   </li>
 {% endmacro %}
 
