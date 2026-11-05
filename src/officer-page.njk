@@ -12,7 +12,7 @@ permalink: "{{ officerPage.url }}"
 {% set alternateNames = officerPage | profileAlternateNames -%}
 {% set observedOfficerIds = officerPage.observed_officer_ids or [] -%}
 {% set siteUrl = "https://afpd-accountability.com" -%}
-{% set pageTitle = officerPage.seo_title or (officerPage.name ~ " — Officer Records | AFPD Accountability Project") -%}
+{% set pageTitle = officerPage.name ~ " — Officer Records | AFPD Accountability Project" -%}
 {% set defaultDescription = "Explore records related to " ~ officerPage.name ~ "’s service with the American Fork Police Department." -%}
 {% set pageDescription = officerPage.seo_description or defaultDescription -%}
 {% set canonicalUrl = siteUrl ~ officerPage.url -%}
@@ -36,7 +36,7 @@ permalink: "{{ officerPage.url }}"
 
     <div class="page-heading">
       <p class="officer-category-label">OFFICER RECORDS</p>
-      <h1>{{ (officerPage.display_name or officerPage.name) | escape }}</h1>
+      <h1>{{ officerPage.name | escape }}</h1>
     </div>
 
     {% if sections | length %}
