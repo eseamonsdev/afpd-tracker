@@ -1,0 +1,665 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-31",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793508174.m4a": {
+      "index": 1471,
+      "epoch": 1793508174,
+      "sha256": "dcfd159461b544ae2d8095469dbfce2cd575de1304e5d4ab4861e17aaa13d93c",
+      "passes": {
+        "original": {
+          "text": "716,000, 1,500 East, 716,000 East, South 1500 East, large party with about 50 people, unknown drugs or alcohol. Do I have you in the back?",
+          "prompt": null,
+          "duration_seconds": 9.472,
+          "token_limit": 100,
+          "token_count": 42,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " 716,000, 1,500 East, 716,000 East, South 1500 East, large party with about 50 people, unknown drugs or alcohol. Do I have you in the back?",
+              "avg_logprob": -0.33530956922575483,
+              "no_speech_prob": 0.005838370881974697,
+              "compression_ratio": 1.2
+            }
+          ]
+        },
+        "filtered": {
+          "text": "716 South and 1500 East, 716 South 1500 East. Large party is about 50 people. Unknown drugs are alcohol. Do I have you in the back?",
+          "prompt": null,
+          "duration_seconds": 9.472,
+          "token_limit": 100,
+          "token_count": 35,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " 716 South and 1500 East, 716 South 1500 East. Large party is about 50 people. Unknown drugs are alcohol. Do I have you in the back?",
+              "avg_logprob": -0.32780153469906914,
+              "no_speech_prob": 0.007307884283363819,
+              "compression_ratio": 1.1592920353982301
+            }
+          ]
+        },
+        "context": {
+          "text": "716,000, 1500 East, 716 South 1500 East, large party with about 50 people, unknown drugs or alcohol. Do I have you in the back?",
+          "prompt": "7J21, copy a log party. Go ahead",
+          "duration_seconds": 9.472,
+          "token_limit": 100,
+          "token_count": 36,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " 716,000, 1500 East, 716 South 1500 East, large party with about 50 people, unknown drugs or alcohol. Do I have you in the back?",
+              "avg_logprob": -0.30731069075094686,
+              "no_speech_prob": 0.0169225987046957,
+              "compression_ratio": 1.1441441441441442
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793508185.m4a": {
+      "index": 1472,
+      "epoch": 1793508185,
+      "sha256": "c6206990580bac42a3ee8975f9b2c61973093ec1c1254deb3996e3ad2dd667a6",
+      "passes": {
+        "original": {
+          "text": "7j12",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7j12",
+              "avg_logprob": -0.740897556145986,
+              "no_speech_prob": 0.13883845508098602,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Sunday 12",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Sunday 12",
+              "avg_logprob": -0.5878312110900878,
+              "no_speech_prob": 0.09287261217832565,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "7J12.",
+          "prompt": "7J21, copy a log party. Go ahead 716,000, 1,500 East, 716,000 East, South 1500 East, large party with about 50 people, unknown drugs or alcohol. Do I have you in the back?",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 7J12.",
+              "avg_logprob": -0.4926621743610927,
+              "no_speech_prob": 0.016120996326208115,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793508187.m4a": {
+      "index": 1473,
+      "epoch": 1793508187,
+      "sha256": "d4b8437166ace447ba997bef0cb4d947d888f9595c1302697a9ac2766ce21c07",
+      "passes": {
+        "original": {
+          "text": "Have a great talk.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Have a great talk.",
+              "avg_logprob": -0.7414580583572388,
+              "no_speech_prob": 0.07880625873804092,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Have a great time.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Have a great time.",
+              "avg_logprob": -0.6969423741102219,
+              "no_speech_prob": 0.07912040501832962,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "context": {
+          "text": "7j12",
+          "prompt": "Go ahead 716,000, 1,500 East, 716,000 East, South 1500 East, large party with about 50 people, unknown drugs or alcohol. Do I have you in the back? 7j12",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 7j12",
+              "avg_logprob": -0.2746320267518361,
+              "no_speech_prob": 0.06184850633144379,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793508190.m4a": {
+      "index": 1474,
+      "epoch": 1793508190,
+      "sha256": "8aee31ed49cff588c5685535914ad4ef9fbde61388bad9a32fb7f70035837e62",
+      "passes": {
+        "original": {
+          "text": "Tryin'",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Tryin'",
+              "avg_logprob": -1.0465024908383687,
+              "no_speech_prob": 0.06849395483732224,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Join in.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Join in.",
+              "avg_logprob": -0.9672468900680542,
+              "no_speech_prob": 0.14058101177215576,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm trying.",
+          "prompt": "716,000, 1,500 East, 716,000 East, South 1500 East, large party with about 50 people, unknown drugs or alcohol. Do I have you in the back? 7j12 Have a great talk.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I'm trying.",
+              "avg_logprob": -0.7492524555751255,
+              "no_speech_prob": 0.06335709244012833,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793508192.m4a": {
+      "index": 1475,
+      "epoch": 1793508192,
+      "sha256": "81ae4a9b3739e06231d990d50da6c37e3223ead45e848abda3ca92e9456fd64d",
+      "passes": {
+        "original": {
+          "text": "Have a honey night.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Have a honey night.",
+              "avg_logprob": -0.9159857928752899,
+              "no_speech_prob": 0.01772305928170681,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Have a nice day.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Have a nice day.",
+              "avg_logprob": -0.9462853223085403,
+              "no_speech_prob": 0.032568227499723434,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "Honey, nice.",
+          "prompt": "7j12 Have a great talk. Tryin'",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Honey, nice.",
+              "avg_logprob": -1.07429153578622,
+              "no_speech_prob": 0.024631453678011894,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793508195.m4a": {
+      "index": 1476,
+      "epoch": 1793508195,
+      "sha256": "23b36c4fd442f0f013fd0a8cc69015d38ac885b91ad7527b8ec148b6fadf8c55",
+      "passes": {
+        "original": {
+          "text": "7G6, I'll be clear and I'll be en route on the left part.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7G6, I'll be clear and I'll be en route on the left part.",
+              "avg_logprob": -0.3777743794701316,
+              "no_speech_prob": 0.13282135128974915,
+              "compression_ratio": 0.9827586206896551
+            }
+          ]
+        },
+        "filtered": {
+          "text": "76, I'll be clear, and I'll be en route on the left part.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 76, I'll be clear, and I'll be en route on the left part.",
+              "avg_logprob": -0.3649884746188209,
+              "no_speech_prob": 0.17481401562690735,
+              "compression_ratio": 0.9827586206896551
+            }
+          ]
+        },
+        "context": {
+          "text": "7G6, I'll be clear. And I'll be in round on the left part.",
+          "prompt": "Have a great talk. Tryin' Have a honey night.",
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7G6, I'll be clear. And I'll be in round on the left part.",
+              "avg_logprob": -0.3706085759660472,
+              "no_speech_prob": 0.12427432090044022,
+              "compression_ratio": 1.0175438596491229
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793508228.m4a": {
+      "index": 1477,
+      "epoch": 1793508228,
+      "sha256": "8320cd38bbc9efcd815b2e652342f1cd4eac20815334b8302ef0b6b71555c4e3",
+      "passes": {
+        "original": {
+          "text": "7J28, copy and assist for fire.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J28, copy and assist for fire.",
+              "avg_logprob": -0.40966836305765003,
+              "no_speech_prob": 0.008532531559467316,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J28, copy and assist for fire.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J28, copy and assist for fire.",
+              "avg_logprob": -0.4794563330136813,
+              "no_speech_prob": 0.007929805666208267,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "context": {
+          "text": "7J28, copy and assist for fire.",
+          "prompt": "Tryin' Have a honey night. 7G6, I'll be clear and I'll be en route on the left part.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J28, copy and assist for fire.",
+              "avg_logprob": -0.3018372333966769,
+              "no_speech_prob": 0.01898987963795662,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793508232.m4a": {
+      "index": 1478,
+      "epoch": 1793508232,
+      "sha256": "d8f7ee4ec93495c0be6a8471b46b663c9892a5c601bb83597aeb4f01defebfce",
+      "passes": {
+        "original": {
+          "text": "Good.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Good.",
+              "avg_logprob": -0.9767864227294922,
+              "no_speech_prob": 0.09229425340890884,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Good.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Good.",
+              "avg_logprob": -0.8718669891357422,
+              "no_speech_prob": 0.20868094265460968,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Good.",
+          "prompt": "Have a honey night. 7G6, I'll be clear and I'll be en route on the left part. 7J28, copy and assist for fire.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Good.",
+              "avg_logprob": -0.8845142364501953,
+              "no_speech_prob": 0.24445532262325287,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793508234.m4a": {
+      "index": 1479,
+      "epoch": 1793508234,
+      "sha256": "5bb807c77a3cac2cdc816e87d8abdc9693e19eef702fed4bfefe9309394f81c2",
+      "passes": {
+        "original": {
+          "text": "At the Murphy USA at 1679 Weston State Street, therapy's not there but advising that it's been flooding inside the business.",
+          "prompt": null,
+          "duration_seconds": 7.936,
+          "token_limit": 88,
+          "token_count": 30,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.08,
+              "text": " At the Murphy USA at 1679 Weston State Street, therapy's not there but advising that it's",
+              "avg_logprob": -0.34384013183655276,
+              "no_speech_prob": 0.009394616819918156,
+              "compression_ratio": 1.117117117117117
+            },
+            {
+              "start": 6.08,
+              "end": 7.6000000000000005,
+              "text": " been flooding inside the business.",
+              "avg_logprob": -0.34384013183655276,
+              "no_speech_prob": 0.009394616819918156,
+              "compression_ratio": 1.117117117117117
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy Murphy, USA, at 1679 Weston State Street. therapy's not there, but advising that it's been flooding inside the business.",
+          "prompt": null,
+          "duration_seconds": 7.936,
+          "token_limit": 88,
+          "token_count": 32,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.16,
+              "text": " Happy Murphy, USA, at 1679 Weston State Street.",
+              "avg_logprob": -0.32992068204012787,
+              "no_speech_prob": 0.00462631369009614,
+              "compression_ratio": 1.1150442477876106
+            },
+            {
+              "start": 4.16,
+              "end": 7.6000000000000005,
+              "text": " therapy's not there, but advising that it's been flooding inside the business.",
+              "avg_logprob": -0.32992068204012787,
+              "no_speech_prob": 0.00462631369009614,
+              "compression_ratio": 1.1150442477876106
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy Murphy, USA at 1679 Weston State Street. There are pews not there but advising that it's been flooding inside the business.",
+          "prompt": "7G6, I'll be clear and I'll be en route on the left part. 7J28, copy and assist for fire. Good.",
+          "duration_seconds": 7.936,
+          "token_limit": 88,
+          "token_count": 32,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.12,
+              "text": " Happy Murphy, USA at 1679 Weston State Street. There are pews not there but advising that it's",
+              "avg_logprob": -0.34819912187980884,
+              "no_speech_prob": 0.10898332297801971,
+              "compression_ratio": 1.1217391304347826
+            },
+            {
+              "start": 6.12,
+              "end": 7.6000000000000005,
+              "text": " been flooding inside the business.",
+              "avg_logprob": -0.34819912187980884,
+              "no_speech_prob": 0.10898332297801971,
+              "compression_ratio": 1.1217391304347826
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793508242.m4a": {
+      "index": 1480,
+      "epoch": 1793508242,
+      "sha256": "1076dddeeae4f3943553320ed8d25f14d3043a783f6da667fadb3b339a415e09",
+      "passes": {
+        "original": {
+          "text": "saying that it's about five minutes away, we'll try to come back to let responders in.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.44,
+              "text": " saying that it's about five minutes away, we'll try to come back to let responders in.",
+              "avg_logprob": -0.39077241265255475,
+              "no_speech_prob": 0.006627321243286133,
+              "compression_ratio": 1.0886075949367089
+            }
+          ]
+        },
+        "filtered": {
+          "text": "saying that about five minutes away we'll try to come back to let responders in.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.44,
+              "text": " saying that about five minutes away we'll try to come back to let responders in.",
+              "avg_logprob": -0.38123337030410764,
+              "no_speech_prob": 0.006670595612376928,
+              "compression_ratio": 1.0666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Saying that it's about five minutes away, we'll try to come back to let responders in.",
+          "prompt": "7J28, copy and assist for fire. Good. At the Murphy USA at 1679 Weston State Street, therapy's not there but advising that it's been flooding inside the business.",
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.4,
+              "text": " Saying that it's about five minutes away, we'll try to come back to let responders in.",
+              "avg_logprob": -0.30103464489397797,
+              "no_speech_prob": 0.0761336013674736,
+              "compression_ratio": 1.0617283950617284
+            }
+          ]
+        }
+      }
+    }
+  }
+}
