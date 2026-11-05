@@ -1,0 +1,665 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-03",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793745611.m4a": {
+      "index": 1091,
+      "epoch": 1793745611,
+      "sha256": "89bb2f1afbb48fe255fe42d3b49b5dee295e35adbb1446f87b3a2a7e52b6559a",
+      "passes": {
+        "original": {
+          "text": "I do. Will you show me 10-6, please?",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I do.",
+              "avg_logprob": -0.47572028636932373,
+              "no_speech_prob": 0.08960982412099838,
+              "compression_ratio": 0.8181818181818182
+            },
+            {
+              "start": 1.0,
+              "end": 2.5,
+              "text": " Will you show me 10-6, please?",
+              "avg_logprob": -0.47572028636932373,
+              "no_speech_prob": 0.08960982412099838,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I do. Will you show me 10-6, please? All right.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I do.",
+              "avg_logprob": -0.5447735580114218,
+              "no_speech_prob": 0.24122612178325653,
+              "compression_ratio": 0.9193548387096774
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Will you show me 10-6, please?",
+              "avg_logprob": -0.5447735580114218,
+              "no_speech_prob": 0.24122612178325653,
+              "compression_ratio": 0.9193548387096774
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " All right.",
+              "avg_logprob": -0.5447735580114218,
+              "no_speech_prob": 0.24122612178325653,
+              "compression_ratio": 0.9193548387096774
+            }
+          ]
+        },
+        "context": {
+          "text": "I do. Will you show me 10-6, please?",
+          "prompt": "46 for Can you call in for a hit?",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I do. Will you show me 10-6, please?",
+              "avg_logprob": -0.47138068825006485,
+              "no_speech_prob": 0.05064292624592781,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793745616.m4a": {
+      "index": 1092,
+      "epoch": 1793745616,
+      "sha256": "52fc0ec25ed1390968d18d6a05257b2312f2fe541bb776af28434cf30bb5408a",
+      "passes": {
+        "original": {
+          "text": "10-4.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " 10-4.",
+              "avg_logprob": -0.7543020078114101,
+              "no_speech_prob": 0.041121382266283035,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "10-4.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " 10-4.",
+              "avg_logprob": -0.8527587992804391,
+              "no_speech_prob": 0.03347364068031311,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "10-4.",
+          "prompt": "Can you call in for a hit? I do. Will you show me 10-6, please?",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.4216424141611372,
+              "no_speech_prob": 0.013612126000225544,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793745618.m4a": {
+      "index": 1093,
+      "epoch": 1793745618,
+      "sha256": "82c6f523a7915b56a45cb681d8af6f5c49e542be70f28c7bb0958944f45a8c3c",
+      "passes": {
+        "original": {
+          "text": "18, J-20, Code 4.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18, J-20, Code 4.",
+              "avg_logprob": -0.7072425832351049,
+              "no_speech_prob": 0.012550869025290012,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18, J-20, Code 4.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18, J-20, Code 4.",
+              "avg_logprob": -0.7210757831732432,
+              "no_speech_prob": 0.00809402484446764,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "18-8, 20, code 4.",
+          "prompt": "I do. Will you show me 10-6, please? 10-4.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.56,
+              "text": " 18-8, 20, code 4.",
+              "avg_logprob": -0.6650232970714569,
+              "no_speech_prob": 0.0068992809392511845,
+              "compression_ratio": 0.68
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793745624.m4a": {
+      "index": 1094,
+      "epoch": 1793745624,
+      "sha256": "3e8769cd10890d2c12b35c054a8df4e0ffe6389ecc8e7020fae34b9d57efbc16",
+      "passes": {
+        "original": {
+          "text": "And we're.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.84,
+              "text": " And we're.",
+              "avg_logprob": -1.0622830050332206,
+              "no_speech_prob": 0.09229572862386703,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Stand for.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Stand for.",
+              "avg_logprob": -0.9137919545173645,
+              "no_speech_prob": 0.10385128855705261,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "10-4.",
+          "prompt": "I do. Will you show me 10-6, please? 10-4. 18, J-20, Code 4.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.3973380242075239,
+              "no_speech_prob": 0.022364897653460503,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793745628.m4a": {
+      "index": 1095,
+      "epoch": 1793745628,
+      "sha256": "e564fbf6348900cffc149c8b16b00bd04c493dba8f45564c5b53de3359a3020b",
+      "passes": {
+        "original": {
+          "text": "7-14, 10-42.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-14, 10-42.",
+              "avg_logprob": -0.7307103005322543,
+              "no_speech_prob": 0.01886766590178013,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7-14, 10-42.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7-14, 10-42.",
+              "avg_logprob": -0.723500360142101,
+              "no_speech_prob": 0.02203090488910675,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "7, J-14, 10-42.",
+          "prompt": "10-4. 18, J-20, Code 4. And we're.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7, J-14, 10-42.",
+              "avg_logprob": -0.4559866740153386,
+              "no_speech_prob": 0.026802506297826767,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793745631.m4a": {
+      "index": 1096,
+      "epoch": 1793745631,
+      "sha256": "308f248c00983ff29b606c18037671c3f105ecba6f285d7a61efb72c6bab4699",
+      "passes": {
+        "original": {
+          "text": "OK.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " OK.",
+              "avg_logprob": -0.780895185470581,
+              "no_speech_prob": 0.05051763728260994,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "filtered": {
+          "text": "OK.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " OK.",
+              "avg_logprob": -0.46438984870910643,
+              "no_speech_prob": 0.0422525480389595,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "context": {
+          "text": "OK.",
+          "prompt": "18, J-20, Code 4. And we're. 7-14, 10-42.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " OK.",
+              "avg_logprob": -0.7491250991821289,
+              "no_speech_prob": 0.07202566415071487,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793745710.m4a": {
+      "index": 1097,
+      "epoch": 1793745710,
+      "sha256": "c0fabd93178775f35e626ff6b135f47fc1040b4b32663515c57c58734f111e4b",
+      "passes": {
+        "original": {
+          "text": "5 to 13.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.24,
+              "text": " 5 to 13.",
+              "avg_logprob": -0.9190262726375035,
+              "no_speech_prob": 0.02425125055015087,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5 to 13.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.36,
+              "text": " 5 to 13.",
+              "avg_logprob": -0.7572799239839826,
+              "no_speech_prob": 0.012819865718483925,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "5 to 13.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.24,
+              "text": " 5 to 13.",
+              "avg_logprob": -0.9190262726375035,
+              "no_speech_prob": 0.02425125055015087,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793745713.m4a": {
+      "index": 1098,
+      "epoch": 1793745713,
+      "sha256": "bb36cbf1181d28c8e89cc28aa7d03a662592404c0b63eef6a9f231999b9e53e9",
+      "passes": {
+        "original": {
+          "text": "5-8-13, God.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5-8-13, God.",
+              "avg_logprob": -0.8836432478644631,
+              "no_speech_prob": 0.029531950131058693,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Dr. 13, go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Dr. 13, go ahead.",
+              "avg_logprob": -0.8673421740531921,
+              "no_speech_prob": 0.01317448727786541,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "5 to 13, God.",
+          "prompt": "5 to 13.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5 to 13, God.",
+              "avg_logprob": -0.6320917341444228,
+              "no_speech_prob": 0.09112606942653656,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793745716.m4a": {
+      "index": 1099,
+      "epoch": 1793745716,
+      "sha256": "dd8c72209b09bcda335860431d65f3bb10bbff9cb02bd0b72b79e93f4fe46dfb",
+      "passes": {
+        "original": {
+          "text": "Will you re-open my accident detail, please?",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Will you re-open my accident detail, please?",
+              "avg_logprob": -0.4658365419932774,
+              "no_speech_prob": 0.005653719417750835,
+              "compression_ratio": 0.8461538461538461
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Will you re-open my accident detail, please?",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.7600000000000002,
+              "text": " Will you re-open my accident detail, please?",
+              "avg_logprob": -0.5010233393737248,
+              "no_speech_prob": 0.002657674951478839,
+              "compression_ratio": 0.8461538461538461
+            }
+          ]
+        },
+        "context": {
+          "text": "Will you re-open my accident detail, please?",
+          "prompt": "5 to 13. 5-8-13, God.",
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Will you re-open my accident detail, please?",
+              "avg_logprob": -0.41241816537720816,
+              "no_speech_prob": 0.02472047507762909,
+              "compression_ratio": 0.8461538461538461
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793745766.m4a": {
+      "index": 1100,
+      "epoch": 1793745766,
+      "sha256": "caa039d629a1fb439b8c5e4f14dd43d2e91c43d77a78cd56617490b238261d42",
+      "passes": {
+        "original": {
+          "text": "7831, Code Force on out.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7831, Code Force on out.",
+              "avg_logprob": -0.7350289821624756,
+              "no_speech_prob": 0.07780725508928299,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J31, Code Force, 9-0.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J31, Code Force, 9-0.",
+              "avg_logprob": -1.0134548374584742,
+              "no_speech_prob": 0.03204387053847313,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "7-8-31, Code Force on out.",
+          "prompt": "5 to 13. 5-8-13, God. Will you re-open my accident detail, please?",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.36,
+              "text": " 7-8-31, Code Force on out.",
+              "avg_logprob": -0.58096701332501,
+              "no_speech_prob": 0.01649727299809456,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        }
+      }
+    }
+  }
+}
