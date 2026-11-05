@@ -1,0 +1,697 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-30",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793394038.m4a": {
+      "index": 721,
+      "epoch": 1793394038,
+      "sha256": "de01f6e0b885ec5ae84073d486f706284cbc5f68de029e8826794fc8a05772bb",
+      "passes": {
+        "original": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.8846003532409668,
+              "no_speech_prob": 0.11661772429943085,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.64,
+              "text": " Thank you.",
+              "avg_logprob": -0.8791623512903849,
+              "no_speech_prob": 0.04781292751431465,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Kelsey.",
+          "prompt": "Project 3, we shall be wrapping up on the next one. Kelsey. 5J21 arrived.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.72,
+              "text": " Kelsey.",
+              "avg_logprob": -0.6748989224433899,
+              "no_speech_prob": 0.0602639876306057,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793394066.m4a": {
+      "index": 722,
+      "epoch": 1793394066,
+      "sha256": "22eb8fd8ceb68c658d4cfe23e9ef9b8379b05ead076d826f760659e9636acdfd",
+      "passes": {
+        "original": {
+          "text": "5, 8, 30.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5, 8, 30.",
+              "avg_logprob": -0.6411320898267958,
+              "no_speech_prob": 0.06055030971765518,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bye. Bye. Bye. Bye. Bye.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Bye.",
+              "avg_logprob": -0.35511737778073266,
+              "no_speech_prob": 0.041404735296964645,
+              "compression_ratio": 1.6
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Bye.",
+              "avg_logprob": -0.35511737778073266,
+              "no_speech_prob": 0.041404735296964645,
+              "compression_ratio": 1.6
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Bye.",
+              "avg_logprob": -0.35511737778073266,
+              "no_speech_prob": 0.041404735296964645,
+              "compression_ratio": 1.6
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " Bye.",
+              "avg_logprob": -0.35511737778073266,
+              "no_speech_prob": 0.041404735296964645,
+              "compression_ratio": 1.6
+            },
+            {
+              "start": 4.0,
+              "end": 5.0,
+              "text": " Bye.",
+              "avg_logprob": -0.35511737778073266,
+              "no_speech_prob": 0.041404735296964645,
+              "compression_ratio": 1.6
+            }
+          ]
+        },
+        "context": {
+          "text": "5J30.",
+          "prompt": "Kelsey. 5J21 arrived. Happy.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J30.",
+              "avg_logprob": -0.5822822877338955,
+              "no_speech_prob": 0.026704054325819016,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793394069.m4a": {
+      "index": 723,
+      "epoch": 1793394069,
+      "sha256": "af0139c56ee3ade7b70ec0397e79d21ae950217d0d19ae5c9d049129fa8eee41",
+      "passes": {
+        "original": {
+          "text": "Alright.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.72,
+              "text": " Alright.",
+              "avg_logprob": -0.8075762748718261,
+              "no_speech_prob": 0.0977620780467987,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "All right.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " All right.",
+              "avg_logprob": -0.6836337844530741,
+              "no_speech_prob": 0.017162878066301346,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Alright.",
+          "prompt": "5J21 arrived. Happy. 5, 8, 30.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.72,
+              "text": " Alright.",
+              "avg_logprob": -0.6693928718566895,
+              "no_speech_prob": 0.034421373158693314,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793394073.m4a": {
+      "index": 724,
+      "epoch": 1793394073,
+      "sha256": "26e1f8a7535e4f70fcd0f155de511c0157229563b8df49b72f0972852f71d9d5",
+      "passes": {
+        "original": {
+          "text": "I just tried to stop a Suran black helmet going northbound on the canal trail into 18J. I'm not pursuing.",
+          "prompt": null,
+          "duration_seconds": 11.648,
+          "token_limit": 118,
+          "token_count": 30,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.48,
+              "text": " I just tried to stop a Suran black helmet going northbound on the canal trail into 18J.",
+              "avg_logprob": -0.4766815516256517,
+              "no_speech_prob": 0.040089432150125504,
+              "compression_ratio": 1.105263157894737
+            },
+            {
+              "start": 9.48,
+              "end": 11.24,
+              "text": " I'm not pursuing.",
+              "avg_logprob": -0.4766815516256517,
+              "no_speech_prob": 0.040089432150125504,
+              "compression_ratio": 1.105263157894737
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I just tried to stop the Saron Black Helmet going northbound on the Canal Trail into 18-J. I'm not pursuing.",
+          "prompt": null,
+          "duration_seconds": 11.648,
+          "token_limit": 118,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.52,
+              "text": " I just tried to stop the Saron Black Helmet going northbound on the Canal Trail into 18-J.",
+              "avg_logprob": -0.4744894541800022,
+              "no_speech_prob": 0.030566874891519547,
+              "compression_ratio": 1.1020408163265305
+            },
+            {
+              "start": 9.52,
+              "end": 10.36,
+              "text": " I'm not pursuing.",
+              "avg_logprob": -0.4744894541800022,
+              "no_speech_prob": 0.030566874891519547,
+              "compression_ratio": 1.1020408163265305
+            }
+          ]
+        },
+        "context": {
+          "text": "Just tried to stop a Suran black helmet going north down on the canal trail into 18J. I'm not pursuing.",
+          "prompt": "Happy. 5, 8, 30. Alright.",
+          "duration_seconds": 11.648,
+          "token_limit": 118,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.6,
+              "text": " Just tried to stop a Suran black helmet going north down on the canal trail into 18J. I'm",
+              "avg_logprob": -0.45834776759147644,
+              "no_speech_prob": 0.005976412445306778,
+              "compression_ratio": 1.0957446808510638
+            },
+            {
+              "start": 9.6,
+              "end": 11.24,
+              "text": " not pursuing.",
+              "avg_logprob": -0.45834776759147644,
+              "no_speech_prob": 0.005976412445306778,
+              "compression_ratio": 1.0957446808510638
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793394086.m4a": {
+      "index": 725,
+      "epoch": 1793394086,
+      "sha256": "f39a200a488f41ae5cd04a215b733e2eeaeb65935555bab99a14b10f2b5e0b4b",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -1.1372074127197265,
+              "no_speech_prob": 0.21220771968364716,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Coffee.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Coffee.",
+              "avg_logprob": -1.0025564193725587,
+              "no_speech_prob": 0.11113479733467102,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "5, 8, 30. Alright. I just tried to stop a Suran black helmet going northbound on the canal trail into 18J. I'm not pursuing.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7257302284240723,
+              "no_speech_prob": 0.1282309591770172,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793394099.m4a": {
+      "index": 726,
+      "epoch": 1793394099,
+      "sha256": "31b70e1aa3f818bbf46d27a1357418996cf4ee4b5e17d5c6f7790c1599787b0b",
+      "passes": {
+        "original": {
+          "text": "If I do 30, will you start a case on that?",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.1,
+              "text": " If I do 30, will you start a case on that?",
+              "avg_logprob": -0.5857414752244949,
+              "no_speech_prob": 0.0839603841304779,
+              "compression_ratio": 0.84
+            }
+          ]
+        },
+        "filtered": {
+          "text": "If I do 30, will you start a case on that?",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " If I do 30, will you start a case on that?",
+              "avg_logprob": -0.6934944167733192,
+              "no_speech_prob": 0.03209242597222328,
+              "compression_ratio": 0.84
+            }
+          ]
+        },
+        "context": {
+          "text": "5J30, will you start a case on that?",
+          "prompt": "Alright. I just tried to stop a Suran black helmet going northbound on the canal trail into 18J. I'm not pursuing. Copy.",
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J30, will you start a case on that?",
+              "avg_logprob": -0.43787770668665565,
+              "no_speech_prob": 0.0474090576171875,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793394103.m4a": {
+      "index": 727,
+      "epoch": 1793394103,
+      "sha256": "8cb85808dca3b0cd679488e47f6dee06773158a9aad46068696c7914940de26b",
+      "passes": {
+        "original": {
+          "text": "Bye-bye.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.7577466283525739,
+              "no_speech_prob": 0.14946211874485016,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.773096630970637,
+              "no_speech_prob": 0.16213080286979675,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "I just tried to stop a Suran black helmet going northbound on the canal trail into 18J. I'm not pursuing. Copy. If I do 30, will you start a case on that?",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.42490406036376954,
+              "no_speech_prob": 0.07532240450382233,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793394169.m4a": {
+      "index": 728,
+      "epoch": 1793394169,
+      "sha256": "17924c0d5fbad37c842a90b69b7286285ed2b109d1c78fc10c9067ee5758c5ce",
+      "passes": {
+        "original": {
+          "text": "Bye, G30.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Bye, G30.",
+              "avg_logprob": -0.8464205637574196,
+              "no_speech_prob": 0.09689873456954956,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5,230.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5,230.",
+              "avg_logprob": -0.7591203280857631,
+              "no_speech_prob": 0.06091151759028435,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Bye, G30.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Bye, G30.",
+              "avg_logprob": -0.8464205637574196,
+              "no_speech_prob": 0.09689873456954956,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793394171.m4a": {
+      "index": 729,
+      "epoch": 1793394171,
+      "sha256": "dbc385b02592a4555e031d43b4fcc0429aaa5f7e3345cded91ef03e5ed2767a1",
+      "passes": {
+        "original": {
+          "text": "five",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " five",
+              "avg_logprob": -0.5460333824157715,
+              "no_speech_prob": 0.09508808702230453,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "five",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " five",
+              "avg_logprob": -0.7366480976343155,
+              "no_speech_prob": 0.03873933479189873,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Bye.",
+          "prompt": "Bye, G30.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Bye.",
+              "avg_logprob": -0.5216514587402343,
+              "no_speech_prob": 0.01685606874525547,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793394197.m4a": {
+      "index": 730,
+      "epoch": 1793394197,
+      "sha256": "37833f8d45a0fcfe17bf989126558fd6518b47e0f28702f84a80e51757913596",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -1.0528274536132813,
+              "no_speech_prob": 0.11677892506122589,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.8603818893432618,
+              "no_speech_prob": 0.055625516921281815,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "copies",
+          "prompt": "Bye, G30. five",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copies",
+              "avg_logprob": -1.0367425382137299,
+              "no_speech_prob": 0.06254955381155014,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    }
+  }
+}
