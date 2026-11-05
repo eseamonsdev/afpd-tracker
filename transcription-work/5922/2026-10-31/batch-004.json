@@ -1,0 +1,649 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-31",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793426858.m4a": {
+      "index": 31,
+      "epoch": 1793426858,
+      "sha256": "182ec51b29f367fc7869e8e1acd1c579c614759fdc7f454c1e6519732c248438",
+      "passes": {
+        "original": {
+          "text": "70, 21, go ahead.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 70, 21, go ahead.",
+              "avg_logprob": -0.679812204837799,
+              "no_speech_prob": 0.020196693018078804,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "filtered": {
+          "text": "70, 21, go ahead",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 70, 21, go ahead",
+              "avg_logprob": -0.569305419921875,
+              "no_speech_prob": 0.006992206908762455,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "7G, 21, go ahead.",
+          "prompt": "7G, 21. They're advising it's the side door on the right side of the house, the front door doesn't work.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7G, 21, go ahead.",
+              "avg_logprob": -0.3751744736324657,
+              "no_speech_prob": 0.007595689967274666,
+              "compression_ratio": 0.68
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793426863.m4a": {
+      "index": 32,
+      "epoch": 1793426863,
+      "sha256": "30c89e07e83eb18b4e675c630729f7c66ccb851a42ef4e58342040e4536ed584",
+      "passes": {
+        "original": {
+          "text": "RPs advising the front door does not work. It's the side door on the right side.",
+          "prompt": null,
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " RPs advising the front door does not work.",
+              "avg_logprob": -0.3182966136932373,
+              "no_speech_prob": 0.002887282520532608,
+              "compression_ratio": 1.095890410958904
+            },
+            {
+              "start": 3.0,
+              "end": 5.0,
+              "text": " It's the side door on the right side.",
+              "avg_logprob": -0.3182966136932373,
+              "no_speech_prob": 0.002887282520532608,
+              "compression_ratio": 1.095890410958904
+            }
+          ]
+        },
+        "filtered": {
+          "text": "RPs advising the front door does not work. It's the side door on the right side.",
+          "prompt": null,
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " RPs advising the front door does not work. It's the side door on the right side.",
+              "avg_logprob": -0.3190143937649934,
+              "no_speech_prob": 0.0013148757861927152,
+              "compression_ratio": 1.095890410958904
+            }
+          ]
+        },
+        "context": {
+          "text": "They're advising the front door does not work, it's the side door on the right side.",
+          "prompt": "7G, 21. They're advising it's the side door on the right side of the house, the front door doesn't work. 70, 21, go ahead.",
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " They're advising the front door does not work, it's the side door on the right side.",
+              "avg_logprob": -0.2704307333282802,
+              "no_speech_prob": 0.0003618727205321193,
+              "compression_ratio": 1.12
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793426887.m4a": {
+      "index": 33,
+      "epoch": 1793426887,
+      "sha256": "1bb581e6ea437331ca510cdcc21de34d32442db909ad4eaf9c90c392aa1ebd63",
+      "passes": {
+        "original": {
+          "text": "5J81, Code 4, still on route.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J81, Code 4, still on route.",
+              "avg_logprob": -0.618264696427754,
+              "no_speech_prob": 0.06673521548509598,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J81, Code 4, still in route.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J81, Code 4, still in route.",
+              "avg_logprob": -0.6184371028627668,
+              "no_speech_prob": 0.04291994497179985,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        },
+        "context": {
+          "text": "5J81, Code 4, still on route.",
+          "prompt": "They're advising it's the side door on the right side of the house, the front door doesn't work. 70, 21, go ahead. RPs advising the front door does not work. It's the side door on the right side.",
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J81, Code 4, still on route.",
+              "avg_logprob": -0.5778976806572506,
+              "no_speech_prob": 0.10188978165388107,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793426892.m4a": {
+      "index": 34,
+      "epoch": 1793426892,
+      "sha256": "1b36b147546d8cca76f8966d0c52aa5537680531ece67b61ec1badf1f3ccabfd",
+      "passes": {
+        "original": {
+          "text": "Oh, of course not.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Oh, of course not.",
+              "avg_logprob": -0.6713385052151151,
+              "no_speech_prob": 0.015477564185857773,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah, of course I know.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, of course I know.",
+              "avg_logprob": -0.5871815800666809,
+              "no_speech_prob": 0.04048113897442818,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "context": {
+          "text": "Code 4 is on route.",
+          "prompt": "70, 21, go ahead. RPs advising the front door does not work. It's the side door on the right side. 5J81, Code 4, still on route.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Code 4 is on route.",
+              "avg_logprob": -0.5409944852193197,
+              "no_speech_prob": 0.015974434092640877,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793426894.m4a": {
+      "index": 35,
+      "epoch": 1793426894,
+      "sha256": "fdae5a87f0a7c0d647181a53139855c5aaf951eaa409943f4323d1cfccc6b3eb",
+      "passes": {
+        "original": {
+          "text": "Can't work.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Can't work.",
+              "avg_logprob": -0.8314373322895595,
+              "no_speech_prob": 0.07116792351007462,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Can't work.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " Can't work.",
+              "avg_logprob": -0.7434166329247611,
+              "no_speech_prob": 0.04564061760902405,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "Can't work.",
+          "prompt": "RPs advising the front door does not work. It's the side door on the right side. 5J81, Code 4, still on route. Oh, of course not.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Can't work.",
+              "avg_logprob": -0.6783352068492344,
+              "no_speech_prob": 0.03524399548768997,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793426909.m4a": {
+      "index": 36,
+      "epoch": 1793426909,
+      "sha256": "9c809676bce913ddc54497f34ae8d881eed6cc1d7b881b74cc1e60dfb140cef6",
+      "passes": {
+        "original": {
+          "text": "You can do it now and after.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You can do it now and after.",
+              "avg_logprob": -0.8461782065304843,
+              "no_speech_prob": 0.03579682484269142,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "filtered": {
+          "text": "So you can do it now and after that.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " So you can do it now and after that.",
+              "avg_logprob": -0.772292815721952,
+              "no_speech_prob": 0.030085911974310875,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        },
+        "context": {
+          "text": "18J9, off today.",
+          "prompt": "5J81, Code 4, still on route. Oh, of course not. Can't work.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18J9, off today.",
+              "avg_logprob": -0.7368883788585663,
+              "no_speech_prob": 0.008348149247467518,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793426912.m4a": {
+      "index": 37,
+      "epoch": 1793426912,
+      "sha256": "eb35be0f796cb7ff966cc85e7142565aa1866d5a60aa16081a3ef41c7c3425d5",
+      "passes": {
+        "original": {
+          "text": "Hey, P&J and I.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey, P&J and I.",
+              "avg_logprob": -0.9003890644420277,
+              "no_speech_prob": 0.022671623155474663,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hey, Tingjie, nice.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey, Tingjie, nice.",
+              "avg_logprob": -0.9474935233592987,
+              "no_speech_prob": 0.01580389030277729,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey, Pindjina.",
+          "prompt": "Oh, of course not. Can't work. You can do it now and after.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Hey, Pindjina.",
+              "avg_logprob": -0.946473240852356,
+              "no_speech_prob": 0.004253813065588474,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793426973.m4a": {
+      "index": 38,
+      "epoch": 1793426973,
+      "sha256": "4887ecb3537a10e1986f97671352504293631dcb40de29dea392eee0b37ed29f",
+      "passes": {
+        "original": {
+          "text": "7J21, 7J12",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J21, 7J12",
+              "avg_logprob": -0.29692515134811404,
+              "no_speech_prob": 0.06968815624713898,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J21, 7J12",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J21, 7J12",
+              "avg_logprob": -0.3287213176488876,
+              "no_speech_prob": 0.04643331840634346,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "7J21, 7J12",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J21, 7J12",
+              "avg_logprob": -0.29692515134811404,
+              "no_speech_prob": 0.06968815624713898,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793426977.m4a": {
+      "index": 39,
+      "epoch": 1793426977,
+      "sha256": "123dbf3b6b65e2a6d74a85f571b68da897f68ec0937e82a30656bbf0a76e1bfb",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go ahead.",
+              "avg_logprob": -1.0579665501912434,
+              "no_speech_prob": 0.12391733378171921,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bye.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Bye.",
+              "avg_logprob": -0.9786396026611328,
+              "no_speech_prob": 0.1341058909893036,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "5J21, 7J12",
+          "prompt": "7J21, 7J12",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 5J21, 7J12",
+              "avg_logprob": -0.7931533455848694,
+              "no_speech_prob": 0.1532762497663498,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793426979.m4a": {
+      "index": 40,
+      "epoch": 1793426979,
+      "sha256": "5e66f1034a14f9ba30faf97f0697e1054d5daaf9fd2a1a613740d598d0e6a5b0",
+      "passes": {
+        "original": {
+          "text": "Are you in contact?",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Are you in contact?",
+              "avg_logprob": -0.35029999539256096,
+              "no_speech_prob": 0.03730872645974159,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Are you in contact?",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Are you in contact?",
+              "avg_logprob": -0.38423706218600273,
+              "no_speech_prob": 0.03913266956806183,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "Are you in contact?",
+          "prompt": "7J21, 7J12 Go ahead.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.36,
+              "text": " Are you in contact?",
+              "avg_logprob": -0.3419441059231758,
+              "no_speech_prob": 0.008418451063334942,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    }
+  }
+}

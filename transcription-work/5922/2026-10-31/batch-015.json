@@ -1,0 +1,713 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-31",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793432609.m4a": {
+      "index": 141,
+      "epoch": 1793432609,
+      "sha256": "bbd512fe5fae8b5762f14a79fed7d0f0fd1bd646d09ff14ded4222bc92ae0d4b",
+      "passes": {
+        "original": {
+          "text": "5J47, can you copy the info JRA off the cap?",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5J47, can you copy the info JRA off the cap?",
+              "avg_logprob": -0.45810454421573216,
+              "no_speech_prob": 0.07694369554519653,
+              "compression_ratio": 0.8979591836734694
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J47, can you copy the info J.R.A. off the cap?",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5J47, can you copy the info J.R.A. off the cap?",
+              "avg_logprob": -0.6882990327748385,
+              "no_speech_prob": 0.027490902692079544,
+              "compression_ratio": 0.9038461538461539
+            }
+          ]
+        },
+        "context": {
+          "text": "5J47, can you copy the info JRA off the cap?",
+          "prompt": "5G50 clear. Happy.",
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5J47, can you copy the info JRA off the cap?",
+              "avg_logprob": -0.39822834233442944,
+              "no_speech_prob": 0.05464200675487518,
+              "compression_ratio": 0.8979591836734694
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793432614.m4a": {
+      "index": 142,
+      "epoch": 1793432614,
+      "sha256": "f753931ded8c89710557822a61548ddb6c5218ca005f279388f3217e5a2aaf4c",
+      "passes": {
+        "original": {
+          "text": "Okay. Thank you. Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Okay.",
+              "avg_logprob": -0.6051114618778228,
+              "no_speech_prob": 0.08197218924760818,
+              "compression_ratio": 1.52
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.6051114618778228,
+              "no_speech_prob": 0.08197218924760818,
+              "compression_ratio": 1.52
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.6051114618778228,
+              "no_speech_prob": 0.08197218924760818,
+              "compression_ratio": 1.52
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.6051114618778228,
+              "no_speech_prob": 0.08197218924760818,
+              "compression_ratio": 1.52
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I don't know.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I don't know.",
+              "avg_logprob": -0.8701310008764267,
+              "no_speech_prob": 0.09917235374450684,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "Okay.",
+          "prompt": "5G50 clear. Happy. 5J47, can you copy the info JRA off the cap?",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Okay.",
+              "avg_logprob": -0.7295779705047607,
+              "no_speech_prob": 0.11520956456661224,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793432739.m4a": {
+      "index": 143,
+      "epoch": 1793432739,
+      "sha256": "e482c258d71ce00ed8db11ce5a0598b6be6d064c28dfce01bda98d95b831f27f",
+      "passes": {
+        "original": {
+          "text": "5J50 traffic. 5J50.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J50 traffic.",
+              "avg_logprob": -0.4482055625745228,
+              "no_speech_prob": 0.01965964585542679,
+              "compression_ratio": 0.76
+            },
+            {
+              "start": 2.0,
+              "end": 4.0,
+              "text": " 5J50.",
+              "avg_logprob": -0.4482055625745228,
+              "no_speech_prob": 0.01965964585542679,
+              "compression_ratio": 0.76
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J50 traffic. 5J50.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J50 traffic.",
+              "avg_logprob": -0.45309717314583914,
+              "no_speech_prob": 0.03139068931341171,
+              "compression_ratio": 0.76
+            },
+            {
+              "start": 2.0,
+              "end": 4.0,
+              "text": " 5J50.",
+              "avg_logprob": -0.45309717314583914,
+              "no_speech_prob": 0.03139068931341171,
+              "compression_ratio": 0.76
+            }
+          ]
+        },
+        "context": {
+          "text": "5J50 traffic. 5J50.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J50 traffic.",
+              "avg_logprob": -0.4482055625745228,
+              "no_speech_prob": 0.01965964585542679,
+              "compression_ratio": 0.76
+            },
+            {
+              "start": 2.0,
+              "end": 4.0,
+              "text": " 5J50.",
+              "avg_logprob": -0.4482055625745228,
+              "no_speech_prob": 0.01965964585542679,
+              "compression_ratio": 0.76
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793432744.m4a": {
+      "index": 144,
+      "epoch": 1793432744,
+      "sha256": "ede5a717e4342a66c013e6fb65b87510273f0b9d9d204492ec9c1fae364ca391",
+      "passes": {
+        "original": {
+          "text": "200 North, North County, the 20 will be 037, Romeo 30.",
+          "prompt": null,
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 200 North, North County, the 20 will be 037, Romeo 30.",
+              "avg_logprob": -0.4635703344094126,
+              "no_speech_prob": 0.012431974522769451,
+              "compression_ratio": 0.9473684210526315
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Standard North, North County, the 20-0B 037, Romeo-Chardonnay.",
+          "prompt": null,
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Standard North, North County, the 20-0B 037, Romeo-Chardonnay.",
+              "avg_logprob": -0.7515685384472212,
+              "no_speech_prob": 0.010788898915052414,
+              "compression_ratio": 0.96875
+            }
+          ]
+        },
+        "context": {
+          "text": "200 North, North County. The 20 will be 037, Romeo 30.",
+          "prompt": "5J50 traffic. 5J50.",
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 200 North, North County. The 20 will be 037, Romeo 30.",
+              "avg_logprob": -0.5152963399887085,
+              "no_speech_prob": 0.014804570004343987,
+              "compression_ratio": 0.9473684210526315
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793432752.m4a": {
+      "index": 145,
+      "epoch": 1793432752,
+      "sha256": "b96fbcf9aad28023174714702d99218fe531e52850e373096880db301802b8ae",
+      "passes": {
+        "original": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.8155907392501831,
+              "no_speech_prob": 0.054018110036849976,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.5824880450963974,
+              "no_speech_prob": 0.016778860241174698,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "5J50 traffic. 5J50. 200 North, North County, the 20 will be 037, Romeo 30.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.5731012344360351,
+              "no_speech_prob": 0.036184437572956085,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793433072.m4a": {
+      "index": 146,
+      "epoch": 1793433072,
+      "sha256": "01988d90ff7ff54a3d7db5d421d7e66a9e98c2d8a9b2460a70b4f8228b381223",
+      "passes": {
+        "original": {
+          "text": "5G50 cleared",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G50 cleared",
+              "avg_logprob": -0.4704072986330305,
+              "no_speech_prob": 0.045869506895542145,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G50 clear",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G50 clear",
+              "avg_logprob": -0.5522371530532837,
+              "no_speech_prob": 0.03627537190914154,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "5G50 cleared",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G50 cleared",
+              "avg_logprob": -0.4704072986330305,
+              "no_speech_prob": 0.045869506895542145,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793433079.m4a": {
+      "index": 147,
+      "epoch": 1793433079,
+      "sha256": "04177468645d0716891048ed59d1fda8566a0a698e80d2bf3582c6d9689c301d",
+      "passes": {
+        "original": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.7247474670410157,
+              "no_speech_prob": 0.008119859732687473,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.6655455589294433,
+              "no_speech_prob": 0.011622395366430283,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy",
+          "prompt": "5G50 cleared",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy",
+              "avg_logprob": -0.47816236317157745,
+              "no_speech_prob": 0.004977117758244276,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793433168.m4a": {
+      "index": 148,
+      "epoch": 1793433168,
+      "sha256": "24cf5718747c8167e9be1468aa0be8e989cab77ed72d606bd96fee3746478351",
+      "passes": {
+        "original": {
+          "text": "Hi, J.D., one copy ever in progress.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.36,
+              "text": " Hi, J.D., one copy ever in progress.",
+              "avg_logprob": -0.7762180884679158,
+              "no_speech_prob": 0.010522479191422462,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hi, J.D. one copy ever in progress.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hi, J.D. one copy ever in progress.",
+              "avg_logprob": -0.781580917040507,
+              "no_speech_prob": 0.009363288059830666,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        },
+        "context": {
+          "text": "Hi, J.D., one copy ever in progress.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.36,
+              "text": " Hi, J.D., one copy ever in progress.",
+              "avg_logprob": -0.7762180884679158,
+              "no_speech_prob": 0.010522479191422462,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793433171.m4a": {
+      "index": 149,
+      "epoch": 1793433171,
+      "sha256": "f0e39fef1ba937597b6d28b8e8014202af6cefcea6eb06fa19860ed0c3ceb573",
+      "passes": {
+        "original": {
+          "text": "Good",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Good",
+              "avg_logprob": -1.0072748959064484,
+              "no_speech_prob": 0.18402099609375,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Good",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Good",
+              "avg_logprob": -0.9697913825511932,
+              "no_speech_prob": 0.16415269672870636,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Good luck.",
+          "prompt": "Hi, J.D., one copy ever in progress.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Good luck.",
+              "avg_logprob": -1.0094990332921345,
+              "no_speech_prob": 0.07632362097501755,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793433174.m4a": {
+      "index": 150,
+      "epoch": 1793433174,
+      "sha256": "baa55c5834989d9a40f011b70150329ade9186444999ee10134fd4af5606aefe",
+      "passes": {
+        "original": {
+          "text": "45 style 500 East, 45 style 500 East, RP style somebody outside, possibly trying to break into another home.",
+          "prompt": null,
+          "duration_seconds": 8.96,
+          "token_limit": 96,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.140000000000001,
+              "text": " 45 style 500 East, 45 style 500 East, RP style somebody outside, possibly trying to break",
+              "avg_logprob": -0.35231880630765644,
+              "no_speech_prob": 0.010694552212953568,
+              "compression_ratio": 1.1868131868131868
+            },
+            {
+              "start": 7.140000000000001,
+              "end": 8.24,
+              "text": " into another home.",
+              "avg_logprob": -0.35231880630765644,
+              "no_speech_prob": 0.010694552212953568,
+              "compression_ratio": 1.1868131868131868
+            }
+          ]
+        },
+        "filtered": {
+          "text": "45 style 500 East, 45 style 500 East, RP South on the outside, possibly trying to break into another home.",
+          "prompt": null,
+          "duration_seconds": 8.96,
+          "token_limit": 96,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.4,
+              "text": " 45 style 500 East, 45 style 500 East, RP South on the outside, possibly trying to break into",
+              "avg_logprob": -0.4181923784058669,
+              "no_speech_prob": 0.018242642283439636,
+              "compression_ratio": 1.1777777777777778
+            },
+            {
+              "start": 7.4,
+              "end": 8.24,
+              "text": " another home.",
+              "avg_logprob": -0.4181923784058669,
+              "no_speech_prob": 0.018242642283439636,
+              "compression_ratio": 1.1777777777777778
+            }
+          ]
+        },
+        "context": {
+          "text": "45 style 500 East, 45 style 500 East, RP style somebody outside, possibly trying to break into another home.",
+          "prompt": "Hi, J.D., one copy ever in progress. Good",
+          "duration_seconds": 8.96,
+          "token_limit": 96,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.140000000000001,
+              "text": " 45 style 500 East, 45 style 500 East, RP style somebody outside, possibly trying to break",
+              "avg_logprob": -0.44364422985485624,
+              "no_speech_prob": 0.06605410575866699,
+              "compression_ratio": 1.1868131868131868
+            },
+            {
+              "start": 7.140000000000001,
+              "end": 8.24,
+              "text": " into another home.",
+              "avg_logprob": -0.44364422985485624,
+              "no_speech_prob": 0.06605410575866699,
+              "compression_ratio": 1.1868131868131868
+            }
+          ]
+        }
+      }
+    }
+  }
+}

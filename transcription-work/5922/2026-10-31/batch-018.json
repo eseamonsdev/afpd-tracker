@@ -1,0 +1,657 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-31",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793433999.m4a": {
+      "index": 171,
+      "epoch": 1793433999,
+      "sha256": "39d514ca9a0dc2aacbcf5ae195b2fe2797db79be72995d97b17aebe3bdd4c1d4",
+      "passes": {
+        "original": {
+          "text": "Their troopers are tied up, just asking if you can handle. They're about 10 feet off the road.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.04,
+              "text": " Their troopers are tied up, just asking if you can handle.",
+              "avg_logprob": -0.31030914077052363,
+              "no_speech_prob": 0.008398719131946564,
+              "compression_ratio": 1.0804597701149425
+            },
+            {
+              "start": 3.04,
+              "end": 4.4,
+              "text": " They're about 10 feet off the road.",
+              "avg_logprob": -0.31030914077052363,
+              "no_speech_prob": 0.008398719131946564,
+              "compression_ratio": 1.0804597701149425
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Their troopers are tied up. Just ask them if you can handle. They're about 10 feet off the road.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.92,
+              "text": " Their troopers are tied up. Just ask them if you can handle. They're about 10 feet off",
+              "avg_logprob": -0.3089590391942433,
+              "no_speech_prob": 0.006556123495101929,
+              "compression_ratio": 1.0909090909090908
+            },
+            {
+              "start": 3.92,
+              "end": 4.44,
+              "text": " the road.",
+              "avg_logprob": -0.3089590391942433,
+              "no_speech_prob": 0.006556123495101929,
+              "compression_ratio": 1.0909090909090908
+            }
+          ]
+        },
+        "context": {
+          "text": "Their troopers are tied up, just asking if you can handle. They're about 10 feet off the road.",
+          "prompt": "and So, it's for highway. They're asking if you can take a 1050 at the 278 southbound off-room. The red infinity sedan went off the road, airbags deployed.",
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.44,
+              "text": " Their troopers are tied up, just asking if you can handle. They're about 10 feet off the road.",
+              "avg_logprob": -0.2182130241394043,
+              "no_speech_prob": 0.012056151404976845,
+              "compression_ratio": 1.0804597701149425
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793434008.m4a": {
+      "index": 172,
+      "epoch": 1793434008,
+      "sha256": "440c025ec5de664f5ab120d9fc710bf251e371aeb3a35bd6cd37bbfebbcba30e",
+      "passes": {
+        "original": {
+          "text": "Drop it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Drop it.",
+              "avg_logprob": -1.008897026379903,
+              "no_speech_prob": 0.04444245994091034,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "So",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " So",
+              "avg_logprob": -0.7184816747903824,
+              "no_speech_prob": 0.08640362322330475,
+              "compression_ratio": 0.2
+            }
+          ]
+        },
+        "context": {
+          "text": "Dropping.",
+          "prompt": "So, it's for highway. They're asking if you can take a 1050 at the 278 southbound off-room. The red infinity sedan went off the road, airbags deployed. Their troopers are tied up, just asking if you can handle. They're about 10 feet off the road.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Dropping.",
+              "avg_logprob": -0.8584336439768473,
+              "no_speech_prob": 0.08073560893535614,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793434011.m4a": {
+      "index": 173,
+      "epoch": 1793434011,
+      "sha256": "f1d6b8f20d9e81e723d3545444f72502f55a05f29c09b982fe6fb0bfe534d33c",
+      "passes": {
+        "original": {
+          "text": "5J81 in cars code 4.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J81 in cars code 4.",
+              "avg_logprob": -0.63380474394018,
+              "no_speech_prob": 0.010670504532754421,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5k 81 in purse code 4",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5k 81 in purse code 4",
+              "avg_logprob": -0.7932766735553741,
+              "no_speech_prob": 0.011210412718355656,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "context": {
+          "text": "5J81 in cars code 4.",
+          "prompt": "The red infinity sedan went off the road, airbags deployed. Their troopers are tied up, just asking if you can handle. They're about 10 feet off the road. Drop it.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J81 in cars code 4.",
+              "avg_logprob": -0.5982788584449075,
+              "no_speech_prob": 0.014727371744811535,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793434026.m4a": {
+      "index": 174,
+      "epoch": 1793434026,
+      "sha256": "a74816d2b66474dbddc782ed495f39853b52b342363ef8b2282ed42d910c5243",
+      "passes": {
+        "original": {
+          "text": "5J81 in cars. Code 4.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0200000000000005,
+              "text": " 5J81 in cars. Code 4.",
+              "avg_logprob": -0.38032661626736325,
+              "no_speech_prob": 0.027488725259900093,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "581 in cars, code 4.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.2800000000000002,
+              "text": " 581 in cars, code 4.",
+              "avg_logprob": -0.7196636633439497,
+              "no_speech_prob": 0.04978276044130325,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "5J81 in cars code 4.",
+          "prompt": "Their troopers are tied up, just asking if you can handle. They're about 10 feet off the road. Drop it. 5J81 in cars code 4.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.2800000000000002,
+              "text": " 5J81 in cars code 4.",
+              "avg_logprob": -0.31081131913445215,
+              "no_speech_prob": 0.04142134264111519,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793434047.m4a": {
+      "index": 175,
+      "epoch": 1793434047,
+      "sha256": "8f050c83b2ad25a09fd00aa1604a8229452a889ce2126f9b148ef4b913075f0e",
+      "passes": {
+        "original": {
+          "text": "5J81 Central.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J81 Central.",
+              "avg_logprob": -0.5862549170851707,
+              "no_speech_prob": 0.014928809367120266,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bye, J.D. 1 Central.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye, J.D. 1 Central.",
+              "avg_logprob": -0.8173318107922872,
+              "no_speech_prob": 0.008463883772492409,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "5J81 Central.",
+          "prompt": "Drop it. 5J81 in cars code 4. 5J81 in cars. Code 4.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.76,
+              "text": " 5J81 Central.",
+              "avg_logprob": -0.41299963742494583,
+              "no_speech_prob": 0.00939496885985136,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793434061.m4a": {
+      "index": 176,
+      "epoch": 1793434061,
+      "sha256": "c50240869c68382e5458dcf1d12d21a21f10476895433a9b4b70af5c97c842a6",
+      "passes": {
+        "original": {
+          "text": "5G81, Code 4.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G81, Code 4.",
+              "avg_logprob": -0.6444422364234924,
+              "no_speech_prob": 0.06422863900661469,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G, do you want to go for it?",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G, do you want to go for it?",
+              "avg_logprob": -0.567012220621109,
+              "no_speech_prob": 0.11635123193264008,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        },
+        "context": {
+          "text": "5J81 code 4.",
+          "prompt": "5J81 in cars code 4. 5J81 in cars. Code 4. 5J81 Central.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.52,
+              "text": " 5J81 code 4.",
+              "avg_logprob": -0.41745132870144314,
+              "no_speech_prob": 0.016291724517941475,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793434064.m4a": {
+      "index": 177,
+      "epoch": 1793434064,
+      "sha256": "784a60dd1afd11a5d0831c0c595c1450a036941f9680892c50a6ecfa20a413ca",
+      "passes": {
+        "original": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.6571420192718506,
+              "no_speech_prob": 0.06758271157741547,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.6599594593048096,
+              "no_speech_prob": 0.10639814287424088,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm happy.",
+          "prompt": "5J81 in cars. Code 4. 5J81 Central. 5G81, Code 4.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I'm happy.",
+              "avg_logprob": -0.7221599987574986,
+              "no_speech_prob": 0.06252472847700119,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793434206.m4a": {
+      "index": 178,
+      "epoch": 1793434206,
+      "sha256": "2cf5f9bd63d3629b6fa44abb329dbc0789ddbc541fb715d42942eef8ff1b3645",
+      "passes": {
+        "original": {
+          "text": "So I'm going to check your mobile for an email.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " So I'm going to check your mobile for an email.",
+              "avg_logprob": -0.5440008242925009,
+              "no_speech_prob": 0.005273394286632538,
+              "compression_ratio": 0.8545454545454545
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'll unit check for mobile for an e-tail.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'll unit check for mobile for an e-tail.",
+              "avg_logprob": -0.6680656909942627,
+              "no_speech_prob": 0.008080115541815758,
+              "compression_ratio": 0.9111111111111111
+            }
+          ]
+        },
+        "context": {
+          "text": "So I'm going to check your mobile for an email.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " So I'm going to check your mobile for an email.",
+              "avg_logprob": -0.5440008242925009,
+              "no_speech_prob": 0.005273394286632538,
+              "compression_ratio": 0.8545454545454545
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793434243.m4a": {
+      "index": 179,
+      "epoch": 1793434243,
+      "sha256": "f2242e0c02a6cbd4965741265fb55619df64f4596abe7fc720ee8fa422e4c083",
+      "passes": {
+        "original": {
+          "text": "18J5 1042",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.24,
+              "text": " 18J5 1042",
+              "avg_logprob": -0.6378991231322289,
+              "no_speech_prob": 0.04502255842089653,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18J5 1042.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.2,
+              "text": " 18J5 1042.",
+              "avg_logprob": -0.9068460464477539,
+              "no_speech_prob": 0.027131814509630203,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "18J5 1042",
+          "prompt": "So I'm going to check your mobile for an email.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.24,
+              "text": " 18J5 1042",
+              "avg_logprob": -0.6333161368966103,
+              "no_speech_prob": 0.038257624953985214,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793434591.m4a": {
+      "index": 180,
+      "epoch": 1793434591,
+      "sha256": "7b46915e1676ee156e250dcb86a568f45fe56870a327cba1991325994ecf8b1b",
+      "passes": {
+        "original": {
+          "text": "5J47 out with 46. We're both arrived.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 5J47 out with 46. We're both arrived.",
+              "avg_logprob": -0.48965484301249185,
+              "no_speech_prob": 0.078976109623909,
+              "compression_ratio": 0.8604651162790697
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J47 out with 46. We're both arrived.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.08,
+              "text": " 5J47 out with 46. We're both arrived.",
+              "avg_logprob": -0.5244630495707194,
+              "no_speech_prob": 0.039263755083084106,
+              "compression_ratio": 0.8604651162790697
+            }
+          ]
+        },
+        "context": {
+          "text": "5J47 out with 46. We're both arrived.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 5J47 out with 46. We're both arrived.",
+              "avg_logprob": -0.48965484301249185,
+              "no_speech_prob": 0.078976109623909,
+              "compression_ratio": 0.8604651162790697
+            }
+          ]
+        }
+      }
+    }
+  }
+}
