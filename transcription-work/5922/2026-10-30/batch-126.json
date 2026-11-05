@@ -1,0 +1,641 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-30",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793413678.m4a": {
+      "index": 1251,
+      "epoch": 1793413678,
+      "sha256": "6130277120a94e96a87158ce723586f494f3374374bf0b7d767372a06bfaf2b5",
+      "passes": {
+        "original": {
+          "text": "When we call back they kept saying it was an accident, but keep hanging up on us.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " When we call back they kept saying it was an accident, but keep hanging up on us.",
+              "avg_logprob": -0.2892458520152352,
+              "no_speech_prob": 0.0017247304785996675,
+              "compression_ratio": 1.0657894736842106
+            }
+          ]
+        },
+        "filtered": {
+          "text": "When we call back, they kept saying it was an accident, but keep hanging up on us.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " When we call back, they kept saying it was an accident, but keep hanging up on us.",
+              "avg_logprob": -0.23036624685577725,
+              "no_speech_prob": 0.0018000632990151644,
+              "compression_ratio": 1.0789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "When we call back, they kept saying it was an accident, but keep hanging up on us.",
+          "prompt": "The suspect male got into a white Jeep plate given it was 0 Bravo Gileat Hotel 4. 18J17, copy. 911 cell. 6174 West Tennant's Harvard Drive. We had a phase two open line. Couldn't tell exactly what was being said, but we could hear a young child say something about 911 and SOS in an ambulance.",
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " When we call back, they kept saying it was an accident, but keep hanging up on us.",
+              "avg_logprob": -0.22453805026800736,
+              "no_speech_prob": 0.000147280385135673,
+              "compression_ratio": 1.0789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793413687.m4a": {
+      "index": 1252,
+      "epoch": 1793413687,
+      "sha256": "d1622bf5fac502c31d3d051aaa9fe994646350ad22f655e5e4f7dd936600a37d",
+      "passes": {
+        "original": {
+          "text": "17 o'clock.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 17 o'clock.",
+              "avg_logprob": -0.8195171505212784,
+              "no_speech_prob": 0.08660179376602173,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "17 o'clock.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 17 o'clock.",
+              "avg_logprob": -0.6437122672796249,
+              "no_speech_prob": 0.036418136209249496,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "17J17, copy.",
+          "prompt": "18J17, copy. 911 cell. 6174 West Tennant's Harvard Drive. We had a phase two open line. Couldn't tell exactly what was being said, but we could hear a young child say something about 911 and SOS in an ambulance. When we call back they kept saying it was an accident, but keep hanging up on us.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 17J17, copy.",
+              "avg_logprob": -0.35427946514553493,
+              "no_speech_prob": 0.03842367231845856,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793413707.m4a": {
+      "index": 1253,
+      "epoch": 1793413707,
+      "sha256": "d2d2024d204cb7663708418a6abd66060cca0c0af4966e06e0dcd51eae076327",
+      "passes": {
+        "original": {
+          "text": "Copy. 5J53. Go for it.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Copy. 5J53. Go for it.",
+              "avg_logprob": -0.39245408314924973,
+              "no_speech_prob": 0.008186392486095428,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy. 5J53. Go for it.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Copy. 5J53. Go for it.",
+              "avg_logprob": -0.414011340874892,
+              "no_speech_prob": 0.00939696840941906,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy. 5J53. Go for it.",
+          "prompt": "6174 West Tennant's Harvard Drive. We had a phase two open line. Couldn't tell exactly what was being said, but we could hear a young child say something about 911 and SOS in an ambulance. When we call back they kept saying it was an accident, but keep hanging up on us. 17 o'clock.",
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Copy. 5J53. Go for it.",
+              "avg_logprob": -0.39274065311138445,
+              "no_speech_prob": 0.004734941758215427,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793413711.m4a": {
+      "index": 1254,
+      "epoch": 1793413711,
+      "sha256": "ac592fad0ff858cac0bf6d73de1fdab91f37423ccaaf43de394cf783dc2b3fee",
+      "passes": {
+        "original": {
+          "text": "Go for it and clear.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it and clear.",
+              "avg_logprob": -0.807490242852105,
+              "no_speech_prob": 0.053531914949417114,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Good for you, Clay.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Good for you, Clay.",
+              "avg_logprob": -0.9659354951646593,
+              "no_speech_prob": 0.07099667191505432,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "Go for it and clear.",
+          "prompt": "When we call back they kept saying it was an accident, but keep hanging up on us. 17 o'clock. Copy. 5J53. Go for it.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it and clear.",
+              "avg_logprob": -0.4954142040676541,
+              "no_speech_prob": 0.004607346374541521,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793413759.m4a": {
+      "index": 1255,
+      "epoch": 1793413759,
+      "sha256": "c26bf85c7d5c3fd6928c85e94bb798c947854e18550e2e7b39a0db70b5d43620",
+      "passes": {
+        "original": {
+          "text": "7G21, I'm going to drive up on the trail.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7G21, I'm going to drive up on the trail.",
+              "avg_logprob": -0.358857182895436,
+              "no_speech_prob": 0.0058207157999277115,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7G21, I'm going to drive up on the trail.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7G21, I'm going to drive up on the trail.",
+              "avg_logprob": -0.32976868573357077,
+              "no_speech_prob": 0.0050838110037148,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        },
+        "context": {
+          "text": "7J21. I'm going to drive up on the trail.",
+          "prompt": "Copy. 5J53. Go for it. Go for it and clear.",
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.8000000000000003,
+              "text": " 7J21. I'm going to drive up on the trail.",
+              "avg_logprob": -0.2935624403112075,
+              "no_speech_prob": 0.005010037217289209,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793413763.m4a": {
+      "index": 1256,
+      "epoch": 1793413763,
+      "sha256": "61a4344316994e6534c4ef7109d7439c680f4ce28af86e4b8d866ff0dfb92eb2",
+      "passes": {
+        "original": {
+          "text": "10-4.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.9148833070482526,
+              "no_speech_prob": 0.03101813979446888,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "10-4.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.9978619643620082,
+              "no_speech_prob": 0.0365423783659935,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "10-4.",
+          "prompt": "Copy. 5J53. Go for it. Go for it and clear. 7G21, I'm going to drive up on the trail.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.48727915968213764,
+              "no_speech_prob": 0.030250174924731255,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793413770.m4a": {
+      "index": 1257,
+      "epoch": 1793413770,
+      "sha256": "d9a00bf5455113515d021d2a9be123cccb9327e7e2945f6f311c78a1e756b269",
+      "passes": {
+        "original": {
+          "text": "Semper.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2,
+              "text": " Semper.",
+              "avg_logprob": -1.0323518514633179,
+              "no_speech_prob": 0.05735259875655174,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Semper.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Semper.",
+              "avg_logprob": -0.540754497051239,
+              "no_speech_prob": 0.07568979263305664,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "10-4.",
+          "prompt": "Go for it and clear. 7G21, I'm going to drive up on the trail. 10-4.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.24,
+              "text": " 10-4.",
+              "avg_logprob": -0.3767567958150591,
+              "no_speech_prob": 0.08787119388580322,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793413782.m4a": {
+      "index": 1258,
+      "epoch": 1793413782,
+      "sha256": "89c57b2b8752486cd2f546c13b23f08dddc249896e51e9dff7604d2e794ec202",
+      "passes": {
+        "original": {
+          "text": "5J47, Code 4.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J47, Code 4.",
+              "avg_logprob": -0.44672089219093325,
+              "no_speech_prob": 0.05673327296972275,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J47, go for it.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J47, go for it.",
+              "avg_logprob": -0.4937057603489269,
+              "no_speech_prob": 0.023420225828886032,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "5J47, go for it.",
+          "prompt": "7G21, I'm going to drive up on the trail. 10-4. Semper.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J47, go for it.",
+              "avg_logprob": -0.44861251657659357,
+              "no_speech_prob": 0.05956964194774628,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793413786.m4a": {
+      "index": 1259,
+      "epoch": 1793413786,
+      "sha256": "516bdebde8f9bed530fb897f2fec6463245b370517eddb70322f0467e9cd1abb",
+      "passes": {
+        "original": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.6503211430140904,
+              "no_speech_prob": 0.14116008579730988,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.6194408961704799,
+              "no_speech_prob": 0.16289958357810974,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Code 4.",
+          "prompt": "10-4. Semper. 5J47, Code 4.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Code 4.",
+              "avg_logprob": -0.3985149413347244,
+              "no_speech_prob": 0.03258269280195236,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793413788.m4a": {
+      "index": 1260,
+      "epoch": 1793413788,
+      "sha256": "4d790fa5b1d539ef6198c54d61e2b97de2016bf6b93e389475fa766bff4e7bab",
+      "passes": {
+        "original": {
+          "text": "Timber.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Timber.",
+              "avg_logprob": -0.876646614074707,
+              "no_speech_prob": 0.027578122913837433,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Timber.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Timber.",
+              "avg_logprob": -1.0122949600219726,
+              "no_speech_prob": 0.02537652850151062,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Semper.",
+          "prompt": "Semper. 5J47, Code 4. Go for it.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Semper.",
+              "avg_logprob": -0.5481118957201639,
+              "no_speech_prob": 0.004307630471885204,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    }
+  }
+}
