@@ -1,0 +1,657 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-04",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1793775781.m4a": {
+      "index": 1,
+      "epoch": 1793775781,
+      "sha256": "cc93b61110163ff94a7c1202207ea98cd972b987bb83a4d79b8e9822e53de280",
+      "passes": {
+        "original": {
+          "text": "Hey guys, I'm out. I appreciate you guys letting me hang out tonight. It was awesome.",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Hey guys, I'm out. I appreciate you guys letting me hang out tonight. It was awesome.",
+              "avg_logprob": -0.2062868339320024,
+              "no_speech_prob": 0.13312530517578125,
+              "compression_ratio": 1.0625
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hey guys, I'm out. I appreciate you guys letting me hang out tonight. It was awesome.",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Hey guys, I'm out. I appreciate you guys letting me hang out tonight. It was awesome.",
+              "avg_logprob": -0.22003303095698357,
+              "no_speech_prob": 0.041305623948574066,
+              "compression_ratio": 1.0625
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey guys, I'm out. I appreciate you guys letting me hang out tonight. It was awesome.",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Hey guys, I'm out. I appreciate you guys letting me hang out tonight. It was awesome.",
+              "avg_logprob": -0.2062868339320024,
+              "no_speech_prob": 0.13312530517578125,
+              "compression_ratio": 1.0625
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793775792.m4a": {
+      "index": 2,
+      "epoch": 1793775792,
+      "sha256": "82537e44619172d70cc94fb09a34d9451173f62ef943d27c98fcea8be1f43b23",
+      "passes": {
+        "original": {
+          "text": "Copy, thank you.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.48,
+              "text": " Copy, thank you.",
+              "avg_logprob": -0.7918985486030579,
+              "no_speech_prob": 0.019372399896383286,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.56,
+              "text": " Thank you.",
+              "avg_logprob": -0.8519453803698221,
+              "no_speech_prob": 0.01903274655342102,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy, thank you.",
+          "prompt": "Hey guys, I'm out. I appreciate you guys letting me hang out tonight. It was awesome.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.48,
+              "text": " Copy, thank you.",
+              "avg_logprob": -0.6190056353807449,
+              "no_speech_prob": 0.017400506883859634,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793775797.m4a": {
+      "index": 3,
+      "epoch": 1793775797,
+      "sha256": "f65b12b4cd5cf1103083eb7dcd42e55b5e24a12d97328d43bf6e9d5a6801da21",
+      "passes": {
+        "original": {
+          "text": "We'll see you next week, right?",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " We'll see you next week, right?",
+              "avg_logprob": -0.3870939463376999,
+              "no_speech_prob": 0.006248813588172197,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We'll see you next week, right?",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " We'll see you next week, right?",
+              "avg_logprob": -0.31236977378527325,
+              "no_speech_prob": 0.0018120345193892717,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "context": {
+          "text": "We'll see you next week, right?",
+          "prompt": "Hey guys, I'm out. I appreciate you guys letting me hang out tonight. It was awesome. Copy, thank you.",
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " We'll see you next week, right?",
+              "avg_logprob": -0.3352813646197319,
+              "no_speech_prob": 0.0009292667382396758,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793775802.m4a": {
+      "index": 4,
+      "epoch": 1793775802,
+      "sha256": "faee58ee9513ba536da851141ceb3e424643acbcb0d756cad0f2954e14da1d1d",
+      "passes": {
+        "original": {
+          "text": "We'll see what we can do.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " We'll see what we can do.",
+              "avg_logprob": -0.39622835137627344,
+              "no_speech_prob": 0.06711755692958832,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We'll see what we can do.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.24,
+              "text": " We'll see what we can do.",
+              "avg_logprob": -0.4086854241111062,
+              "no_speech_prob": 0.03309066593647003,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "context": {
+          "text": "We'll see what we can do.",
+          "prompt": "Hey guys, I'm out. I appreciate you guys letting me hang out tonight. It was awesome. Copy, thank you. We'll see you next week, right?",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.2,
+              "text": " We'll see what we can do.",
+              "avg_logprob": -0.33246089111674915,
+              "no_speech_prob": 0.017204584553837776,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793775807.m4a": {
+      "index": 5,
+      "epoch": 1793775807,
+      "sha256": "9334e89449a3fa89c934b0d4650bb3e58a62bbf50bb914aa0944175ac354bffa",
+      "passes": {
+        "original": {
+          "text": "All right, that was good. Have a good one.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " All right, that was good. Have a good one.",
+              "avg_logprob": -0.466372545560201,
+              "no_speech_prob": 0.012351037934422493,
+              "compression_ratio": 0.9130434782608695
+            }
+          ]
+        },
+        "filtered": {
+          "text": "All right, sounds good. Have a go.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " All right, sounds good. Have a go.",
+              "avg_logprob": -0.4553125179730929,
+              "no_speech_prob": 0.0044640894047915936,
+              "compression_ratio": 0.85
+            }
+          ]
+        },
+        "context": {
+          "text": "All right. Sounds good. Have a good one.",
+          "prompt": "Copy, thank you. We'll see you next week, right? We'll see what we can do.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " All right. Sounds good. Have a good one.",
+              "avg_logprob": -0.442467389362199,
+              "no_speech_prob": 0.005890499334782362,
+              "compression_ratio": 0.9090909090909091
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793775812.m4a": {
+      "index": 6,
+      "epoch": 1793775812,
+      "sha256": "589d4a2bdbb0aa840680cea41f90eb53ab1cbc3d6bbd2833d945e828ef16ab4e",
+      "passes": {
+        "original": {
+          "text": "Have a good night, Chief. Thanks for coming out.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Have a good night, Chief. Thanks for coming out.",
+              "avg_logprob": -0.2666195313135783,
+              "no_speech_prob": 0.005387304816395044,
+              "compression_ratio": 0.8571428571428571
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Have a good night, Keith. Thanks for coming out. Thank you.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Have a good night, Keith.",
+              "avg_logprob": -0.47269617969339545,
+              "no_speech_prob": 0.0019414169946685433,
+              "compression_ratio": 0.9516129032258065
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thanks for coming out.",
+              "avg_logprob": -0.47269617969339545,
+              "no_speech_prob": 0.0019414169946685433,
+              "compression_ratio": 0.9516129032258065
+            },
+            {
+              "start": 2.0,
+              "end": 2.02,
+              "text": " Thank you.",
+              "avg_logprob": -0.47269617969339545,
+              "no_speech_prob": 0.0019414169946685433,
+              "compression_ratio": 0.9516129032258065
+            }
+          ]
+        },
+        "context": {
+          "text": "Have a good night, Chief. Thanks for coming out.",
+          "prompt": "We'll see you next week, right? We'll see what we can do. All right, that was good. Have a good one.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Have a good night, Chief. Thanks for coming out.",
+              "avg_logprob": -0.21932188669840494,
+              "no_speech_prob": 0.0012545345816761255,
+              "compression_ratio": 0.8571428571428571
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793778370.m4a": {
+      "index": 7,
+      "epoch": 1793778370,
+      "sha256": "cffe9a56dba4ea18f0a27a24b27cac73d98ccd8ac5dca37539d2ffa2d4e1a5f6",
+      "passes": {
+        "original": {
+          "text": "Yup.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yup.",
+              "avg_logprob": -0.8258868753910065,
+              "no_speech_prob": 0.1434486210346222,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yep.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yep.",
+              "avg_logprob": -0.7380908012390137,
+              "no_speech_prob": 0.12179213762283325,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Yup.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yup.",
+              "avg_logprob": -0.8258868753910065,
+              "no_speech_prob": 0.1434486210346222,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793778373.m4a": {
+      "index": 8,
+      "epoch": 1793778373,
+      "sha256": "3ae2dae0634eb7fba1ccb74eb3aa6c07f186fca66b65998f578f812d36c1e078",
+      "passes": {
+        "original": {
+          "text": "that guy that we had an encounter with at 7-Eleven is here at Walmart",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.96,
+              "text": " that guy that we had an encounter with at 7-Eleven is here at Walmart",
+              "avg_logprob": -0.2814376562833786,
+              "no_speech_prob": 0.006970720365643501,
+              "compression_ratio": 0.971830985915493
+            }
+          ]
+        },
+        "filtered": {
+          "text": "That guy that we had an encounter with at 7-11 is here at Walmart.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.2,
+              "text": " That guy that we had an encounter with at 7-11 is here at Walmart.",
+              "avg_logprob": -0.28977871537208555,
+              "no_speech_prob": 0.0033495407551527023,
+              "compression_ratio": 0.9705882352941176
+            }
+          ]
+        },
+        "context": {
+          "text": "That guy that we had an encounter with at 7-11 is here at Walmart.",
+          "prompt": "Yup.",
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " That guy that we had an encounter with at 7-11 is here at Walmart.",
+              "avg_logprob": -0.2621423214673996,
+              "no_speech_prob": 0.05757157504558563,
+              "compression_ratio": 0.9705882352941176
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793778381.m4a": {
+      "index": 9,
+      "epoch": 1793778381,
+      "sha256": "24f8217b1b32836f446880139bd70f01f393059e66a068fd71c11b8187a4fc31",
+      "passes": {
+        "original": {
+          "text": "Did he come on his bike?",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.56,
+              "text": " Did he come on his bike?",
+              "avg_logprob": -0.49961936473846436,
+              "no_speech_prob": 0.054346293210983276,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Did he come on his bike?",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.6,
+              "text": " Did he come on his bike?",
+              "avg_logprob": -0.40148248672485354,
+              "no_speech_prob": 0.011910400353372097,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "context": {
+          "text": "did he come on his bike?",
+          "prompt": "Yup. that guy that we had an encounter with at 7-Eleven is here at Walmart",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.54,
+              "text": " did he come on his bike?",
+              "avg_logprob": -0.4376674175262451,
+              "no_speech_prob": 0.00943314004689455,
+              "compression_ratio": 0.75
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793778385.m4a": {
+      "index": 10,
+      "epoch": 1793778385,
+      "sha256": "eb233b4f44156b17c3eee9deefbb15d08fc7cac490fac6325f8422768686d39e",
+      "passes": {
+        "original": {
+          "text": "negative he actually drove that whole vehicle over here on a flat",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.44,
+              "text": " negative he actually drove that whole vehicle over here on a flat",
+              "avg_logprob": -0.213796865940094,
+              "no_speech_prob": 0.014372594654560089,
+              "compression_ratio": 1.0483870967741935
+            }
+          ]
+        },
+        "filtered": {
+          "text": "negative he actually drove that whole vehicle over here on a flat",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.44,
+              "text": " negative he actually drove that whole vehicle over here on a flat",
+              "avg_logprob": -0.2353848099708557,
+              "no_speech_prob": 0.005665589589625597,
+              "compression_ratio": 1.0483870967741935
+            }
+          ]
+        },
+        "context": {
+          "text": "negative he actually drove that whole vehicle over here on a flat",
+          "prompt": "Yup. that guy that we had an encounter with at 7-Eleven is here at Walmart Did he come on his bike?",
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.44,
+              "text": " negative he actually drove that whole vehicle over here on a flat",
+              "avg_logprob": -0.2494043231010437,
+              "no_speech_prob": 0.005195661913603544,
+              "compression_ratio": 1.0483870967741935
+            }
+          ]
+        }
+      }
+    }
+  }
+}
