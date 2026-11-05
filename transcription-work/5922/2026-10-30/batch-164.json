@@ -1,0 +1,649 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-30",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793425017.m4a": {
+      "index": 1631,
+      "epoch": 1793425017,
+      "sha256": "5470d32782a21a68a79e54937047be62e7d70e2b798adee5e46428308547d7e6",
+      "passes": {
+        "original": {
+          "text": "751 West, 200 South, either at or near the pool. There's a lot of party.",
+          "prompt": null,
+          "duration_seconds": 7.936,
+          "token_limit": 88,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " 751 West, 200 South, either at or near the pool.",
+              "avg_logprob": -0.30744517078766453,
+              "no_speech_prob": 0.026467356830835342,
+              "compression_ratio": 0.96
+            },
+            {
+              "start": 6.0,
+              "end": 7.76,
+              "text": " There's a lot of party.",
+              "avg_logprob": -0.30744517078766453,
+              "no_speech_prob": 0.026467356830835342,
+              "compression_ratio": 0.96
+            }
+          ]
+        },
+        "filtered": {
+          "text": "751 West, 200 South. Either at or near the pool. There's a lot of party.",
+          "prompt": null,
+          "duration_seconds": 7.936,
+          "token_limit": 88,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 751 West, 200 South. Either at or near the pool. There's a lot of party.",
+              "avg_logprob": -0.29286476969718933,
+              "no_speech_prob": 0.016781199723482132,
+              "compression_ratio": 0.9473684210526315
+            }
+          ]
+        },
+        "context": {
+          "text": "751 West. 200 South. Either at or near the pool. There's a loud party.",
+          "prompt": "5J47 clear. 10-4. 5J21. Copy. Loud Friday. Go ahead.",
+          "duration_seconds": 7.936,
+          "token_limit": 88,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 751 West. 200 South. Either at or near the pool. There's a loud party.",
+              "avg_logprob": -0.17873788527820422,
+              "no_speech_prob": 0.0023558102548122406,
+              "compression_ratio": 0.9333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793425026.m4a": {
+      "index": 1632,
+      "epoch": 1793425026,
+      "sha256": "7a68b01c4b7c2dcb4dda424b8579a043dbffe8b2ec868784f47214f787e41ca4",
+      "passes": {
+        "original": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.6376572847366333,
+              "no_speech_prob": 0.06693600118160248,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'll be back.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.12,
+              "text": " I'll be back.",
+              "avg_logprob": -0.7786276340484619,
+              "no_speech_prob": 0.09614959359169006,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "10-4. 5J21. Copy. Loud Friday. Go ahead. 751 West, 200 South, either at or near the pool. There's a lot of party.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.3210825681686401,
+              "no_speech_prob": 0.03365989401936531,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793425034.m4a": {
+      "index": 1633,
+      "epoch": 1793425034,
+      "sha256": "ffed906dc0dc8a98fcefdb18a223698c9240372823797d18b3d6b0db938496c6",
+      "passes": {
+        "original": {
+          "text": "In fact, I have to explain",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " In fact, I have to explain",
+              "avg_logprob": -1.0730908870697022,
+              "no_speech_prob": 0.026137210428714752,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Get it back back to you, Thomas.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Get it back back to you, Thomas.",
+              "avg_logprob": -0.6606983492771784,
+              "no_speech_prob": 0.023591693490743637,
+              "compression_ratio": 0.9142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "It's VAC 5J-20.",
+          "prompt": "Go ahead. 751 West, 200 South, either at or near the pool. There's a lot of party. copy",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " It's VAC 5J-20.",
+              "avg_logprob": -1.0369099080562592,
+              "no_speech_prob": 0.10746105015277863,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793425038.m4a": {
+      "index": 1634,
+      "epoch": 1793425038,
+      "sha256": "a3c7724cd2cc3f450b31d80fb32d04c4a9ff744f99bb25169a2106d3270f0820",
+      "passes": {
+        "original": {
+          "text": "I do 50",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I do 50",
+              "avg_logprob": -0.6921873986721039,
+              "no_speech_prob": 0.017574159428477287,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I do 50",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I do 50",
+              "avg_logprob": -0.7001186410586039,
+              "no_speech_prob": 0.017016688361763954,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "5050",
+          "prompt": "751 West, 200 South, either at or near the pool. There's a lot of party. copy In fact, I have to explain",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5050",
+              "avg_logprob": -0.7032657623291015,
+              "no_speech_prob": 0.037336431443691254,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793425039.m4a": {
+      "index": 1635,
+      "epoch": 1793425039,
+      "sha256": "b5e4db35932aa295b053cb90c90cbb8d22e8e8442ef932423c2db281554c3650",
+      "passes": {
+        "original": {
+          "text": "50.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 50.",
+              "avg_logprob": -0.676163911819458,
+              "no_speech_prob": 0.07562711834907532,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "filtered": {
+          "text": "50.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 50.",
+              "avg_logprob": -0.6695136547088623,
+              "no_speech_prob": 0.04779651015996933,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "context": {
+          "text": "50",
+          "prompt": "copy In fact, I have to explain I do 50",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 50",
+              "avg_logprob": -0.2828143760561943,
+              "no_speech_prob": 0.014133553020656109,
+              "compression_ratio": 0.2
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793425210.m4a": {
+      "index": 1636,
+      "epoch": 1793425210,
+      "sha256": "a64979f04f9e3d837da22216bd2e3b01885fa947ae5b59516eb1f5831f7082fb",
+      "passes": {
+        "original": {
+          "text": "5G, you want to copy that impound, you can clear it when ready.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.12,
+              "text": " 5G, you want to copy that impound, you can clear it when ready.",
+              "avg_logprob": -0.4530369100116548,
+              "no_speech_prob": 0.051955848932266235,
+              "compression_ratio": 0.9402985074626866
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J81, I copy that impound, you can clear it when ready.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.12,
+              "text": " 5J81, I copy that impound, you can clear it when ready.",
+              "avg_logprob": -0.42089251428842545,
+              "no_speech_prob": 0.051329899579286575,
+              "compression_ratio": 0.873015873015873
+            }
+          ]
+        },
+        "context": {
+          "text": "5G, you want to copy that impound, you can clear it when ready.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.12,
+              "text": " 5G, you want to copy that impound, you can clear it when ready.",
+              "avg_logprob": -0.4530369100116548,
+              "no_speech_prob": 0.051955848932266235,
+              "compression_ratio": 0.9402985074626866
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793425214.m4a": {
+      "index": 1637,
+      "epoch": 1793425214,
+      "sha256": "7d77a248d30b6de34e85899e59450ef50e951fba0f8fda98036ed3ad1ecefd53",
+      "passes": {
+        "original": {
+          "text": "81.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 81.",
+              "avg_logprob": -0.7159427165985107,
+              "no_speech_prob": 0.10583969950675964,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "filtered": {
+          "text": "81",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 81",
+              "avg_logprob": -0.6965469270944595,
+              "no_speech_prob": 0.054584186524152756,
+              "compression_ratio": 0.2
+            }
+          ]
+        },
+        "context": {
+          "text": "81.",
+          "prompt": "5G, you want to copy that impound, you can clear it when ready.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 81.",
+              "avg_logprob": -0.6865760326385498,
+              "no_speech_prob": 0.02609739638864994,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793425336.m4a": {
+      "index": 1638,
+      "epoch": 1793425336,
+      "sha256": "57eff1fa352101178e8174d1decaa86a2058af196f9264db9ff580cb3ed9bf68",
+      "passes": {
+        "original": {
+          "text": "5J21, both units arriving.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J21, both units arriving.",
+              "avg_logprob": -0.4833007942546498,
+              "no_speech_prob": 0.01118437759578228,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J21, both units arriving.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " 5J21, both units arriving.",
+              "avg_logprob": -0.5317067016254772,
+              "no_speech_prob": 0.025675585493445396,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "context": {
+          "text": "5J21, both units arriving.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J21, both units arriving.",
+              "avg_logprob": -0.4833007942546498,
+              "no_speech_prob": 0.01118437759578228,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793425340.m4a": {
+      "index": 1639,
+      "epoch": 1793425340,
+      "sha256": "21e9d77c5e78dff53fa864313884ab1ea559f40fd32c803ecfc8c3a6add286de",
+      "passes": {
+        "original": {
+          "text": "Stand for.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Stand for.",
+              "avg_logprob": -0.7104072471459707,
+              "no_speech_prob": 0.04134693741798401,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Stand for.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Stand for.",
+              "avg_logprob": -0.7921021183331808,
+              "no_speech_prob": 0.039400603622198105,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Time for it.",
+          "prompt": "5J21, both units arriving.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Time for it.",
+              "avg_logprob": -0.624564528465271,
+              "no_speech_prob": 0.03146210312843323,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793425369.m4a": {
+      "index": 1640,
+      "epoch": 1793425369,
+      "sha256": "44f29b7a52ee8772598a90f92c181ec0b8f0aaf0bce3e60bc551f2faf954b2a8",
+      "passes": {
+        "original": {
+          "text": "5J46 traffic",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J46 traffic",
+              "avg_logprob": -0.6258015632629395,
+              "no_speech_prob": 0.0636497288942337,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J46 traffic.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J46 traffic.",
+              "avg_logprob": -0.7019810825586319,
+              "no_speech_prob": 0.052093829959630966,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "5J46 traffic.",
+          "prompt": "5J21, both units arriving. Stand for.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J46 traffic.",
+              "avg_logprob": -0.3278704360127449,
+              "no_speech_prob": 0.009834358468651772,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    }
+  }
+}
