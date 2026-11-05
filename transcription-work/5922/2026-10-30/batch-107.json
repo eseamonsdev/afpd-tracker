@@ -1,0 +1,649 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-30",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793405076.m4a": {
+      "index": 1061,
+      "epoch": 1793405076,
+      "sha256": "fe4fc8981941b8f6ec0a4e299e9ad842e4ad490dbddcdcdee2d505354e2aa234",
+      "passes": {
+        "original": {
+          "text": "748 West 450 North 748 West 450 North",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 748 West 450 North 748 West 450 North",
+              "avg_logprob": -0.35199143336369443,
+              "no_speech_prob": 0.049797289073467255,
+              "compression_ratio": 1.2333333333333334
+            }
+          ]
+        },
+        "filtered": {
+          "text": "748 West, 450 North, 748 West, 450 North.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.8,
+              "text": " 748 West, 450 North, 748 West, 450 North.",
+              "avg_logprob": -0.3753766733057359,
+              "no_speech_prob": 0.04884917661547661,
+              "compression_ratio": 1.2424242424242424
+            }
+          ]
+        },
+        "context": {
+          "text": "Seven-forty-eight west. Four-fifty north. Seven-four-eight west. Four-five-zero north.",
+          "prompt": "Hi, Jake. Anyone call me medical assistant? Forty-six, Bill.",
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 30,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Seven-forty-eight west. Four-fifty north. Seven-four-eight west. Four-five-zero north.",
+              "avg_logprob": -0.19872205392006906,
+              "no_speech_prob": 0.007146590389311314,
+              "compression_ratio": 1.323076923076923
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793405081.m4a": {
+      "index": 1062,
+      "epoch": 1793405081,
+      "sha256": "2b4ddd9e45027c08eae8a905c79a4d475a4c3685353e5555e8d3ee669d1a6417",
+      "passes": {
+        "original": {
+          "text": "Husband, 69-year-old male hasn't eaten a lot, worked out with feeling lightheaded.",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Husband, 69-year-old male hasn't eaten a lot, worked out with feeling lightheaded.",
+              "avg_logprob": -0.33425591468811033,
+              "no_speech_prob": 0.004305560607463121,
+              "compression_ratio": 1.0123456790123457
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Husband, 69-year-old male, hasn't eaten a lot, worked out with feeling lightheaded.",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.16,
+              "text": " Husband, 69-year-old male, hasn't eaten a lot, worked out with feeling lightheaded.",
+              "avg_logprob": -0.32745267336185163,
+              "no_speech_prob": 0.0032954702619463205,
+              "compression_ratio": 1.0121951219512195
+            }
+          ]
+        },
+        "context": {
+          "text": "Husband, 69-year-old male. Hasn't eaten a lot. Worked out with feeling white-headed.",
+          "prompt": "Hi, Jake. Anyone call me medical assistant? Forty-six, Bill. 748 West 450 North 748 West 450 North",
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Husband, 69-year-old male. Hasn't eaten a lot. Worked out with feeling white-headed.",
+              "avg_logprob": -0.2780604650234354,
+              "no_speech_prob": 0.005866436753422022,
+              "compression_ratio": 1.0120481927710843
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793405087.m4a": {
+      "index": 1063,
+      "epoch": 1793405087,
+      "sha256": "45d9893bdd32b7b096ea9a3461297fb426c9d5b492869368d9cb745ccc6a4ff1",
+      "passes": {
+        "original": {
+          "text": "Our P-advisor requesting to cancel going POV to Mountain Point Hospital.",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Our P-advisor requesting to cancel going POV to Mountain Point Hospital.",
+              "avg_logprob": -0.570230053530799,
+              "no_speech_prob": 0.01017698086798191,
+              "compression_ratio": 0.972972972972973
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Our PFIs are requesting to cancel going POV to Mountain Point Hospital.",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Our PFIs are requesting to cancel going POV to Mountain Point Hospital.",
+              "avg_logprob": -0.48491836996639476,
+              "no_speech_prob": 0.00712629547342658,
+              "compression_ratio": 0.9726027397260274
+            }
+          ]
+        },
+        "context": {
+          "text": "Our P-advisor requesting to cancel going POV to Mountain Point Hospital.",
+          "prompt": "Forty-six, Bill. 748 West 450 North 748 West 450 North Husband, 69-year-old male hasn't eaten a lot, worked out with feeling lightheaded.",
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Our P-advisor requesting to cancel going POV to Mountain Point Hospital.",
+              "avg_logprob": -0.4443756275706821,
+              "no_speech_prob": 0.0076793283224105835,
+              "compression_ratio": 0.972972972972973
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793405097.m4a": {
+      "index": 1064,
+      "epoch": 1793405097,
+      "sha256": "1bebafc329523e27b9777b8a1bc3febf1a5c5eed44a257349edb4a1c163dbe2c",
+      "passes": {
+        "original": {
+          "text": "copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy.",
+              "avg_logprob": -0.6746730327606201,
+              "no_speech_prob": 0.04551593214273453,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "All right. Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " All right.",
+              "avg_logprob": -0.7576388597488404,
+              "no_speech_prob": 0.03603687882423401,
+              "compression_ratio": 0.6666666666666666
+            },
+            {
+              "start": 0.5,
+              "end": 2.04,
+              "text": " Copy.",
+              "avg_logprob": -0.7576388597488404,
+              "no_speech_prob": 0.03603687882423401,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "748 West 450 North 748 West 450 North Husband, 69-year-old male hasn't eaten a lot, worked out with feeling lightheaded. Our P-advisor requesting to cancel going POV to Mountain Point Hospital.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7023536682128906,
+              "no_speech_prob": 0.2717389464378357,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793405158.m4a": {
+      "index": 1065,
+      "epoch": 1793405158,
+      "sha256": "55588ee9c8bfc160d182801af32b55735c05277af5f81fa32f79e168666792a8",
+      "passes": {
+        "original": {
+          "text": "5k43 off duty.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5k43 off duty.",
+              "avg_logprob": -0.611961841583252,
+              "no_speech_prob": 0.011634333990514278,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5k 43 off duty",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5k 43 off duty",
+              "avg_logprob": -0.6595265790820122,
+              "no_speech_prob": 0.006725122686475515,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "5k43 off duty.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5k43 off duty.",
+              "avg_logprob": -0.611961841583252,
+              "no_speech_prob": 0.011634333990514278,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793405161.m4a": {
+      "index": 1066,
+      "epoch": 1793405161,
+      "sha256": "08a5c6411e4c1a8e80fb983ca233c3703e80c9e54832ea28d462b045a4cd2008",
+      "passes": {
+        "original": {
+          "text": "copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " copy.",
+              "avg_logprob": -0.7477240085601806,
+              "no_speech_prob": 0.04300412908196449,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.8227206230163574,
+              "no_speech_prob": 0.06396428495645523,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "5k43 off duty.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6119179725646973,
+              "no_speech_prob": 0.11808664351701736,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793405221.m4a": {
+      "index": 1067,
+      "epoch": 1793405221,
+      "sha256": "fe06a7b09435e12c003f6575d7ee2c4c9ad112fec56094245f3de12676a866df",
+      "passes": {
+        "original": {
+          "text": "5G, 3A, 5G",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G, 3A, 5G",
+              "avg_logprob": -0.7927943359721791,
+              "no_speech_prob": 0.1578383445739746,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G38, after you.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G38, after you.",
+              "avg_logprob": -0.7917531788349151,
+              "no_speech_prob": 0.05791493132710457,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "5G, 3850.",
+          "prompt": "copy.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G, 3850.",
+              "avg_logprob": -0.6630217234293619,
+              "no_speech_prob": 0.0758705884218216,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793405223.m4a": {
+      "index": 1068,
+      "epoch": 1793405223,
+      "sha256": "6f8e2b098ed9db72ff6c2630327fe61268603d96cbdaef66ad049d8bfb5f3c01",
+      "passes": {
+        "original": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.5842401027679444,
+              "no_speech_prob": 0.04477035254240036,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.5645046710968018,
+              "no_speech_prob": 0.04371487349271774,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy",
+          "prompt": "5G, 3A, 5G",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy",
+              "avg_logprob": -0.5745982378721237,
+              "no_speech_prob": 0.036141347140073776,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793405334.m4a": {
+      "index": 1069,
+      "epoch": 1793405334,
+      "sha256": "88e31f221ca60af218c208ff0b922c0709b1a88ba4c53cb5e94154ddce0acdc1",
+      "passes": {
+        "original": {
+          "text": "5J, you want clear?",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J, you want clear?",
+              "avg_logprob": -0.6892727851867676,
+              "no_speech_prob": 0.1431272178888321,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J, do you want clear?",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J, do you want clear?",
+              "avg_logprob": -0.7921566746451638,
+              "no_speech_prob": 0.08872053027153015,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "5J, you want clear?",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J, you want clear?",
+              "avg_logprob": -0.6892727851867676,
+              "no_speech_prob": 0.1431272178888321,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793405336.m4a": {
+      "index": 1070,
+      "epoch": 1793405336,
+      "sha256": "a0d54ab49add941c7504a2b7cd2b28bcc1bb7b6cda50b0c9afd68d61af97a256",
+      "passes": {
+        "original": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.6677058935165405,
+              "no_speech_prob": 0.03382202237844467,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.39225058257579803,
+              "no_speech_prob": 0.018964901566505432,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "5J, you want clear?",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.83211669921875,
+              "no_speech_prob": 0.005068517290055752,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
