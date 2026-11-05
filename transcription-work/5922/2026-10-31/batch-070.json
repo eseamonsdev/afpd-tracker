@@ -1,0 +1,665 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-31",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793482295.m4a": {
+      "index": 691,
+      "epoch": 1793482295,
+      "sha256": "cb0294cd2e1da4143aad65d80a976e393300da4066d11a333af44360a84c76d4",
+      "passes": {
+        "original": {
+          "text": "544 South Pleasant Grove Boulevard.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 544 South Pleasant Grove Boulevard.",
+              "avg_logprob": -0.6013232052326203,
+              "no_speech_prob": 0.10052785277366638,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        },
+        "filtered": {
+          "text": "544 South, Pleasant Grove Boulevard.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0200000000000005,
+              "text": " 544 South, Pleasant Grove Boulevard.",
+              "avg_logprob": -0.698502551425587,
+              "no_speech_prob": 0.13957424461841583,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        },
+        "context": {
+          "text": "544 south, Pleasant Grove Boulevard.",
+          "prompt": "7J29, copy, trespass in progress. Bye.",
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 544 south, Pleasant Grove Boulevard.",
+              "avg_logprob": -0.6135922128503973,
+              "no_speech_prob": 0.05427756905555725,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793482298.m4a": {
+      "index": 692,
+      "epoch": 1793482298,
+      "sha256": "bd5881bc90a1390edcdb7dbecc84c02a0c054f296133675ca8f1d79c9b6b7961",
+      "passes": {
+        "original": {
+          "text": "RPs requesting a drunk employee be removed from the premises. It's going to be a 30- to 40-year-old male named Adam.",
+          "prompt": null,
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 34,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " RPs requesting a drunk employee be removed from the premises.",
+              "avg_logprob": -0.2713153430393764,
+              "no_speech_prob": 0.02687641978263855,
+              "compression_ratio": 1.0841121495327102
+            },
+            {
+              "start": 4.0,
+              "end": 7.0,
+              "text": " It's going to be a 30- to 40-year-old male named Adam.",
+              "avg_logprob": -0.2713153430393764,
+              "no_speech_prob": 0.02687641978263855,
+              "compression_ratio": 1.0841121495327102
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Her piece requesting a drunk employee be removed from the premises. It's going to be a 30 to 40 year old male named Adam.",
+          "prompt": null,
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Her piece requesting a drunk employee be removed from the premises.",
+              "avg_logprob": -0.3518404522910714,
+              "no_speech_prob": 0.044972408562898636,
+              "compression_ratio": 1.1523809523809523
+            },
+            {
+              "start": 4.0,
+              "end": 8.0,
+              "text": " It's going to be a 30 to 40 year old male named Adam.",
+              "avg_logprob": -0.3518404522910714,
+              "no_speech_prob": 0.044972408562898636,
+              "compression_ratio": 1.1523809523809523
+            }
+          ]
+        },
+        "context": {
+          "text": "RPs requesting a drunk employee be removed from the premises. It's going to be a 30 to 40-year-old male named Adam.",
+          "prompt": "7J29, copy, trespass in progress. Bye. 544 South Pleasant Grove Boulevard.",
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 33,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " RPs requesting a drunk employee be removed from the premises.",
+              "avg_logprob": -0.2409601505188381,
+              "no_speech_prob": 0.08487877994775772,
+              "compression_ratio": 1.0849056603773586
+            },
+            {
+              "start": 4.0,
+              "end": 7.0,
+              "text": " It's going to be a 30 to 40-year-old male named Adam.",
+              "avg_logprob": -0.2409601505188381,
+              "no_speech_prob": 0.08487877994775772,
+              "compression_ratio": 1.0849056603773586
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793482306.m4a": {
+      "index": 693,
+      "epoch": 1793482306,
+      "sha256": "52f7ea538c24dd25018a3fa20cd9a5cb72ad0cbf6b5571d4c7d63d2ea36d65ec",
+      "passes": {
+        "original": {
+          "text": "Torn in green hoodie and white shoes carrying bags from holiday unknown weapons",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.2,
+              "text": " Torn in green hoodie and white shoes carrying bags from holiday unknown weapons",
+              "avg_logprob": -0.3332255587858312,
+              "no_speech_prob": 0.034024305641651154,
+              "compression_ratio": 1.082191780821918
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It's worn in green hoodie and white shoes carrying bags from holiday unknown weapons",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.2,
+              "text": " It's worn in green hoodie and white shoes carrying bags from holiday unknown weapons",
+              "avg_logprob": -0.274330945391404,
+              "no_speech_prob": 0.025121157988905907,
+              "compression_ratio": 1.0909090909090908
+            }
+          ]
+        },
+        "context": {
+          "text": "Torn in green hoodie and white shoes carrying bags from holiday unknown weapons.",
+          "prompt": "Bye. 544 South Pleasant Grove Boulevard. RPs requesting a drunk employee be removed from the premises. It's going to be a 30- to 40-year-old male named Adam.",
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.32,
+              "text": " Torn in green hoodie and white shoes carrying bags from holiday unknown weapons.",
+              "avg_logprob": -0.3582708123657439,
+              "no_speech_prob": 0.033159419894218445,
+              "compression_ratio": 1.0526315789473684
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793482311.m4a": {
+      "index": 694,
+      "epoch": 1793482311,
+      "sha256": "473de62456bc4a55a1b09780780c99067ebdf7a5a4c4e2f48500618037198207",
+      "passes": {
+        "original": {
+          "text": "He's been asked to leave multiple times.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.56,
+              "text": " He's been asked to leave multiple times.",
+              "avg_logprob": -0.41489847004413605,
+              "no_speech_prob": 0.04017696902155876,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        },
+        "filtered": {
+          "text": "He's been asked to leave multiple times.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.56,
+              "text": " He's been asked to leave multiple times.",
+              "avg_logprob": -0.36327408750851947,
+              "no_speech_prob": 0.02088889293372631,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        },
+        "context": {
+          "text": "He's been asked to leave multiple times.",
+          "prompt": "544 South Pleasant Grove Boulevard. RPs requesting a drunk employee be removed from the premises. It's going to be a 30- to 40-year-old male named Adam. Torn in green hoodie and white shoes carrying bags from holiday unknown weapons",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.5,
+              "text": " He's been asked to leave multiple times.",
+              "avg_logprob": -0.38036538163820904,
+              "no_speech_prob": 0.07676524668931961,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793482315.m4a": {
+      "index": 695,
+      "epoch": 1793482315,
+      "sha256": "45739914db83a55709798fdcf8c14ec675f8e8f88b58e76b1e372a312eb67838",
+      "passes": {
+        "original": {
+          "text": "Templar. What's the business?",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Templar. What's the business?",
+              "avg_logprob": -0.7153775990009308,
+              "no_speech_prob": 0.06693187355995178,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        },
+        "filtered": {
+          "text": "What's the business?",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.1,
+              "text": " What's the business?",
+              "avg_logprob": -0.673350378870964,
+              "no_speech_prob": 0.04772992804646492,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "Templar. What's the business?",
+          "prompt": "RPs requesting a drunk employee be removed from the premises. It's going to be a 30- to 40-year-old male named Adam. Torn in green hoodie and white shoes carrying bags from holiday unknown weapons He's been asked to leave multiple times.",
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Templar. What's the business?",
+              "avg_logprob": -0.5810724198818207,
+              "no_speech_prob": 0.03254083916544914,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793482320.m4a": {
+      "index": 696,
+      "epoch": 1793482320,
+      "sha256": "568b5b7cdd21672b57f79c8a8ffdf9f2f198f7a9dfe77399e80a68ae6f2aad91",
+      "passes": {
+        "original": {
+          "text": "I'm sure I'll have the call taker advice.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " I'm sure I'll have the call taker advice.",
+              "avg_logprob": -0.37145737806955975,
+              "no_speech_prob": 0.022552592679858208,
+              "compression_ratio": 0.8723404255319149
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm sure I'll have the call take her by",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm sure I'll have the call take her by",
+              "avg_logprob": -0.2998743440423693,
+              "no_speech_prob": 0.014011872000992298,
+              "compression_ratio": 0.8666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm sure I'll have the call take her advice.",
+          "prompt": "Torn in green hoodie and white shoes carrying bags from holiday unknown weapons He's been asked to leave multiple times. Templar. What's the business?",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm sure I'll have the call take her advice.",
+              "avg_logprob": -0.3225921074549357,
+              "no_speech_prob": 0.0212431401014328,
+              "compression_ratio": 0.88
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793482324.m4a": {
+      "index": 697,
+      "epoch": 1793482324,
+      "sha256": "901f895188f91a0a5ae908615b7d5fb7e60ed1ac99a8b2b3f33b11cb0fdfc433",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.825322437286377,
+              "no_speech_prob": 0.07719365507364273,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6998660087585449,
+              "no_speech_prob": 0.045714449137449265,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "He's been asked to leave multiple times. Templar. What's the business? I'm sure I'll have the call taker advice.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.4999864101409912,
+              "no_speech_prob": 0.046359360218048096,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793482355.m4a": {
+      "index": 698,
+      "epoch": 1793482355,
+      "sha256": "1977494aa2737a18bd2492a092c34184f104b1e00878606d89af3d2456059134",
+      "passes": {
+        "original": {
+          "text": "7 to 29 is going to be at the highest.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7 to 29 is going to be at the highest.",
+              "avg_logprob": -0.545623528105872,
+              "no_speech_prob": 0.0770423486828804,
+              "compression_ratio": 0.8837209302325582
+            }
+          ]
+        },
+        "filtered": {
+          "text": "70-29 is going to be at the highest.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 70-29 is going to be at the highest.",
+              "avg_logprob": -0.5814344755240849,
+              "no_speech_prob": 0.16461260616779327,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        },
+        "context": {
+          "text": "700-29, it's going to be at the highest.",
+          "prompt": "Templar. What's the business? I'm sure I'll have the call taker advice. Copy.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.36,
+              "text": " 700-29, it's going to be at the highest.",
+              "avg_logprob": -0.6000730767846107,
+              "no_speech_prob": 0.044926099479198456,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793482360.m4a": {
+      "index": 699,
+      "epoch": 1793482360,
+      "sha256": "0d3063c0ab1cfef8d3643ad54111f740ba01bb6d8930f7d3d813fc82c37eaf16",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.739927101135254,
+              "no_speech_prob": 0.024774888530373573,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Crapi.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Crapi.",
+              "avg_logprob": -0.8458888701030186,
+              "no_speech_prob": 0.09212981164455414,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "I'm sure I'll have the call taker advice. Copy. 7 to 29 is going to be at the highest.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.4146618366241455,
+              "no_speech_prob": 0.06762908399105072,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793482385.m4a": {
+      "index": 700,
+      "epoch": 1793482385,
+      "sha256": "76a0c1bd195978189b9c620b0702352aeb30a399b94a950d95e2da0256d0c66f",
+      "passes": {
+        "original": {
+          "text": "seven to eight I'll be in round as well on that trespass",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.92,
+              "text": " seven to eight I'll be in round as well on that trespass",
+              "avg_logprob": -0.3526721242815256,
+              "no_speech_prob": 0.03315398097038269,
+              "compression_ratio": 0.9180327868852459
+            }
+          ]
+        },
+        "filtered": {
+          "text": "seven to eight I'll be in round as well on that trespass",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.96,
+              "text": " seven to eight I'll be in round as well on that trespass",
+              "avg_logprob": -0.35591254010796547,
+              "no_speech_prob": 0.04751211404800415,
+              "compression_ratio": 0.9180327868852459
+            }
+          ]
+        },
+        "context": {
+          "text": "7 to 8, I'll be in round as well on that trespass.",
+          "prompt": "7 to 29 is going to be at the highest. Copy.",
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.32,
+              "text": " 7 to 8, I'll be in round as well on that trespass.",
+              "avg_logprob": -0.33702316880226135,
+              "no_speech_prob": 0.012231572531163692,
+              "compression_ratio": 0.8771929824561403
+            }
+          ]
+        }
+      }
+    }
+  }
+}
