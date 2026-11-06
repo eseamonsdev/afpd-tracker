@@ -5,7 +5,7 @@ permalink: /city-oversight/
 {% from "document-tree.njk" import renderNodes -%}
 {% set siteUrl = "https://afpd-accountability.com" -%}
 {% set pageTitle = "City Oversight | AFPD Accountability Project" -%}
-{% set pageDescription = "Explore city council records related to oversight of the American Fork Police Department." -%}
+{% set pageDescription = "Explore public records appeals and city council records related to oversight of the American Fork Police Department." -%}
 {% set canonicalUrl = siteUrl ~ "/city-oversight/" -%}
 
 {% block pageAssets %}  <link rel="stylesheet" href="/css/document-tree.css">
@@ -22,9 +22,17 @@ permalink: /city-oversight/
       </p>
     </div>
 
+    <nav aria-label="City Oversight sections">
+      <ul>
+        {% for section in entities.all["entity-page-city-oversight"].sections %}
+          <li><a href="#{{ section.id | escape }}">{{ section.title | escape }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+
     {% for section in entities.all["entity-page-city-oversight"].sections %}
-      <section aria-labelledby="oversight-heading-{{ loop.index }}">
-        <h2 id="oversight-heading-{{ loop.index }}">{{ section.title | escape }}</h2>
+      <section id="{{ section.id | escape }}" aria-labelledby="{{ section.headingId | escape }}">
+        <h2 id="{{ section.headingId | escape }}">{{ section.title | escape }}</h2>
         {% for description in section.descriptions %}
           <p>{{ description | escape }}</p>
         {% endfor %}
