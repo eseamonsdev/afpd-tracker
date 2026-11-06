@@ -15,7 +15,7 @@ in a particular section, such as City Oversight's City Council Meetings.
   "$override": {
     "originalSource": {
       "url": "https://www.americanfork.gov/AgendaCenter/ViewFile/Minutes/_09222026-2294",
-      "label": "View original on American Fork City’s website"
+      "label": "View on city website"
     }
   }
 }
