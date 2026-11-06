@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-05",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1793942849.m4a": {
+      "index": 301,
+      "epoch": 1793942849,
+      "sha256": "306209606aec8fe4bb39628a3d150edca00c7caa9b69d46246a61a1e59dac170",
+      "passes": {
+        "original": {
+          "text": "Or heading back to the PD with you",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Or heading back to the PD with you",
+              "avg_logprob": -0.318281271240928,
+              "no_speech_prob": 0.09172230958938599,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We're heading back to the PD with you.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " We're heading back to the PD with you.",
+              "avg_logprob": -0.42189010289999157,
+              "no_speech_prob": 0.08557572215795517,
+              "compression_ratio": 0.8260869565217391
+            }
+          ]
+        },
+        "context": {
+          "text": "Or heading back to the PD with you",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Or heading back to the PD with you",
+              "avg_logprob": -0.318281271240928,
+              "no_speech_prob": 0.09172230958938599,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793942873.m4a": {
+      "index": 302,
+      "epoch": 1793942873,
+      "sha256": "460a7d387d2d618d4d4de72bf094b7bbcea2024b057d2fb491918abc6d756929",
+      "passes": {
+        "original": {
+          "text": "Did you see them? They're locking the doors.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Did you see them?",
+              "avg_logprob": -0.4094208497554064,
+              "no_speech_prob": 0.03690250590443611,
+              "compression_ratio": 0.88
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " They're locking the doors.",
+              "avg_logprob": -0.4094208497554064,
+              "no_speech_prob": 0.03690250590443611,
+              "compression_ratio": 0.88
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Did you see them? They're locking the doors.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Did you see them?",
+              "avg_logprob": -0.48768874257802963,
+              "no_speech_prob": 0.03754590079188347,
+              "compression_ratio": 0.88
+            },
+            {
+              "start": 1.0,
+              "end": 2.4,
+              "text": " They're locking the doors.",
+              "avg_logprob": -0.48768874257802963,
+              "no_speech_prob": 0.03754590079188347,
+              "compression_ratio": 0.88
+            }
+          ]
+        },
+        "context": {
+          "text": "Did you see them? They're locked in the doors.",
+          "prompt": "Or heading back to the PD with you",
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.4,
+              "text": " Did you see them? They're locked in the doors.",
+              "avg_logprob": -0.4897736708323161,
+              "no_speech_prob": 0.013821098953485489,
+              "compression_ratio": 0.8846153846153846
+            }
+          ]
+        }
+      }
+    }
+  }
+}
