@@ -1,0 +1,665 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-05",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1793919570.m4a": {
+      "index": 161,
+      "epoch": 1793919570,
+      "sha256": "a88db38dcfe2fa611d5aad00064d1ce69f9caabafc729e5ddef119256b1adec0",
+      "passes": {
+        "original": {
+          "text": "Come by, do you want me to stay here or move?",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Come by, do you want me to stay here or move?",
+              "avg_logprob": -0.466277115046978,
+              "no_speech_prob": 0.08283212035894394,
+              "compression_ratio": 0.8653846153846154
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Come by, do you want me to stay here or move? Or...",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Come by, do you want me to stay here or move?",
+              "avg_logprob": -0.5008387386798858,
+              "no_speech_prob": 0.06404375284910202,
+              "compression_ratio": 0.8793103448275862
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " Or...",
+              "avg_logprob": -0.5008387386798858,
+              "no_speech_prob": 0.06404375284910202,
+              "compression_ratio": 0.8793103448275862
+            }
+          ]
+        },
+        "context": {
+          "text": "Come by. Do you want me to stay here or move?",
+          "prompt": "Yeah, we're going to need them to point it out and come to a complete stop because it's rolling again. I'm going to park up in frontage and start walking down the track. Yeah, safely, just somewhere where you can communicate with the conductor when you see him.",
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Come by. Do you want me to stay here or move?",
+              "avg_logprob": -0.3661359194666147,
+              "no_speech_prob": 0.06398472189903259,
+              "compression_ratio": 0.8653846153846154
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793919575.m4a": {
+      "index": 162,
+      "epoch": 1793919575,
+      "sha256": "a352d70438e89683cc8bdcb89bd9e1b75f39796960b8e2b162fb33163d534f23",
+      "passes": {
+        "original": {
+          "text": "Uh, flip around and start heading towards Lehigh, I guess, or the track station.",
+          "prompt": null,
+          "duration_seconds": 8.96,
+          "token_limit": 96,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.5,
+              "text": " Uh, flip around and start heading towards Lehigh, I guess, or the track station.",
+              "avg_logprob": -0.2991060424934734,
+              "no_speech_prob": 0.031084205955266953,
+              "compression_ratio": 1.0126582278481013
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Uh, flip around and start heading towards Lehigh, I guess, or the track station.",
+          "prompt": null,
+          "duration_seconds": 8.96,
+          "token_limit": 96,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.6,
+              "text": " Uh, flip around and start heading towards Lehigh, I guess, or the track station.",
+              "avg_logprob": -0.33412364667112177,
+              "no_speech_prob": 0.054837971925735474,
+              "compression_ratio": 1.0126582278481013
+            }
+          ]
+        },
+        "context": {
+          "text": "Uh, flip around and start heading towards Lehigh, I guess, or the track station.",
+          "prompt": "I'm going to park up in frontage and start walking down the track. Yeah, safely, just somewhere where you can communicate with the conductor when you see him. Come by, do you want me to stay here or move?",
+          "duration_seconds": 8.96,
+          "token_limit": 96,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.5,
+              "text": " Uh, flip around and start heading towards Lehigh, I guess, or the track station.",
+              "avg_logprob": -0.2725141265175559,
+              "no_speech_prob": 0.013505551964044571,
+              "compression_ratio": 1.0126582278481013
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793919659.m4a": {
+      "index": 163,
+      "epoch": 1793919659,
+      "sha256": "d5ee2fc9bfd2452fb83a19d38a5b009becff3bda4a08b72a1c8f9c0abfaaedb6",
+      "passes": {
+        "original": {
+          "text": "Are either of you near the front of the train?",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Are either of you near the front of the train?",
+              "avg_logprob": -0.26355124158518656,
+              "no_speech_prob": 0.026255331933498383,
+              "compression_ratio": 0.9583333333333334
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Are either of you near the front of the train?",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Are either of you near the front of the train?",
+              "avg_logprob": -0.3024097425597055,
+              "no_speech_prob": 0.03036421723663807,
+              "compression_ratio": 0.9583333333333334
+            }
+          ]
+        },
+        "context": {
+          "text": "Are either of you near the front of the train?",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Are either of you near the front of the train?",
+              "avg_logprob": -0.26355124158518656,
+              "no_speech_prob": 0.026255331933498383,
+              "compression_ratio": 0.9583333333333334
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793919664.m4a": {
+      "index": 164,
+      "epoch": 1793919664,
+      "sha256": "3b850ad491e036614c21d118aa5888bf9d2fc66ee7c6091041b838e9cdf34640",
+      "passes": {
+        "original": {
+          "text": "Yeah, I'm right at the front",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, I'm right at the front",
+              "avg_logprob": -0.17823807217858054,
+              "no_speech_prob": 0.02174055203795433,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah, I'm right at the front",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, I'm right at the front",
+              "avg_logprob": -0.22039134394038806,
+              "no_speech_prob": 0.013274694792926311,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "context": {
+          "text": "Yep, I'm right at the front.",
+          "prompt": "Are either of you near the front of the train?",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yep, I'm right at the front.",
+              "avg_logprob": -0.23830589652061462,
+              "no_speech_prob": 0.006950064562261105,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793919667.m4a": {
+      "index": 165,
+      "epoch": 1793919667,
+      "sha256": "2555f08a68fe83faf452b4a35659b22812797702a8c05554f9d2f6cc609c950a",
+      "passes": {
+        "original": {
+          "text": "Okay, let's communicate with the conductor, figure out exactly where this guy is at.",
+          "prompt": null,
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Okay, let's communicate with the conductor, figure out exactly where this guy is at.",
+              "avg_logprob": -0.3162491037732079,
+              "no_speech_prob": 0.01041367743164301,
+              "compression_ratio": 1.05
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Okay, let's communicate with the conductor, figure out exactly where this guy is at.",
+          "prompt": null,
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Okay, let's communicate with the conductor, figure out exactly where this guy is at.",
+              "avg_logprob": -0.35164793332417804,
+              "no_speech_prob": 0.00816945731639862,
+              "compression_ratio": 1.05
+            }
+          ]
+        },
+        "context": {
+          "text": "Okay, let's communicate with the conductor to figure out exactly where this guy's at",
+          "prompt": "Are either of you near the front of the train? Yeah, I'm right at the front",
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Okay, let's communicate with the conductor to figure out exactly where this guy's at",
+              "avg_logprob": -0.3225347489118576,
+              "no_speech_prob": 0.022105854004621506,
+              "compression_ratio": 1.05
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793919964.m4a": {
+      "index": 166,
+      "epoch": 1793919964,
+      "sha256": "aa5e48a1e098f0c20dfb68d6096a72b1d47f26e8c58693cd5250c59b7ccb1aa0",
+      "passes": {
+        "original": {
+          "text": "It looked really good, it's been synchronous.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " It looked really good, it's been synchronous.",
+              "avg_logprob": -0.8779390624591282,
+              "no_speech_prob": 0.023223454132676125,
+              "compression_ratio": 0.8490566037735849
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It looked really good.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " It looked really good.",
+              "avg_logprob": -0.7518147081136703,
+              "no_speech_prob": 0.044767916202545166,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "It looked really good, it's been synchronous.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " It looked really good, it's been synchronous.",
+              "avg_logprob": -0.8779390624591282,
+              "no_speech_prob": 0.023223454132676125,
+              "compression_ratio": 0.8490566037735849
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793919973.m4a": {
+      "index": 167,
+      "epoch": 1793919973,
+      "sha256": "0e4be9364a6da8a21c189f47c53598882d0716204ffcb2bc82e2273ce1c81686",
+      "passes": {
+        "original": {
+          "text": "We are Warren Kumbot.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " We are Warren Kumbot.",
+              "avg_logprob": -0.419627845287323,
+              "no_speech_prob": 0.15021288394927979,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We are Warren Kumbot.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " We are Warren Kumbot.",
+              "avg_logprob": -0.4855660915374756,
+              "no_speech_prob": 0.07757651060819626,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "context": {
+          "text": "We are Warren Kumbot.",
+          "prompt": "It looked really good, it's been synchronous.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " We are Warren Kumbot.",
+              "avg_logprob": -0.3036895215511322,
+              "no_speech_prob": 0.02880679816007614,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793919981.m4a": {
+      "index": 168,
+      "epoch": 1793919981,
+      "sha256": "a4f6e075cdc55236e0a0dd61eda718403c2fa0108e8a88e7959530a1d1bf7f5b",
+      "passes": {
+        "original": {
+          "text": "nice",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " nice",
+              "avg_logprob": -0.6895679980516434,
+              "no_speech_prob": 0.10009326785802841,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Nice.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Nice.",
+              "avg_logprob": -0.607485294342041,
+              "no_speech_prob": 0.08312449604272842,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Nice.",
+          "prompt": "It looked really good, it's been synchronous. We are Warren Kumbot.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Nice.",
+              "avg_logprob": -0.5271038055419922,
+              "no_speech_prob": 0.05140383541584015,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793921651.m4a": {
+      "index": 169,
+      "epoch": 1793921651,
+      "sha256": "955010c2cd717f23b591c93af6ad99a8def71c5ff4234f3ebd089d11aab45cde",
+      "passes": {
+        "original": {
+          "text": "Hey patrol, this is heads up. We're going to be training as a slot team at the field just south of 1120 north, like 8th west. We'll be out there for about an hour and a half. I let this patch know and then we have some training barricades that we're going to put up as well, but not everybody that lives in the area is going to know that we're out there. So if you didn't call, that's probably us.",
+          "prompt": null,
+          "duration_seconds": 25.728,
+          "token_limit": 220,
+          "token_count": 101,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 25.0,
+              "text": " Hey patrol, this is heads up. We're going to be training as a slot team at the field just south of 1120 north, like 8th west. We'll be out there for about an hour and a half. I let this patch know and then we have some training barricades that we're going to put up as well, but not everybody that lives in the area is going to know that we're out there. So if you didn't call, that's probably us.",
+              "avg_logprob": -0.23305878700578914,
+              "no_speech_prob": 0.089771568775177,
+              "compression_ratio": 1.6337448559670782
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hey patrol, this is heads up. Just a, we're going to be training as a slot team at the field, just south of 1120 North, like 8th West. We'll be out there for about an hour and a half. I let dispatch know, and then we have some training barricades that we're going to put up as well. But not everybody that lives in the area is going to know that we're out there. So if you didn't call, that's probably us.",
+          "prompt": null,
+          "duration_seconds": 25.728,
+          "token_limit": 220,
+          "token_count": 109,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 13.0,
+              "text": " Hey patrol, this is heads up. Just a, we're going to be training as a slot team at the field, just south of 1120 North, like 8th West.",
+              "avg_logprob": -0.28245480196042494,
+              "no_speech_prob": 0.1055033802986145,
+              "compression_ratio": 1.6007905138339922
+            },
+            {
+              "start": 13.0,
+              "end": 20.0,
+              "text": " We'll be out there for about an hour and a half. I let dispatch know, and then we have some training barricades that we're going to put up as well.",
+              "avg_logprob": -0.28245480196042494,
+              "no_speech_prob": 0.1055033802986145,
+              "compression_ratio": 1.6007905138339922
+            },
+            {
+              "start": 20.0,
+              "end": 25.0,
+              "text": " But not everybody that lives in the area is going to know that we're out there. So if you didn't call, that's probably us.",
+              "avg_logprob": -0.28245480196042494,
+              "no_speech_prob": 0.1055033802986145,
+              "compression_ratio": 1.6007905138339922
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey patrol, this is heads up. We're going to be training as a slot team at the field just south of 1120 north, like 8th west. We'll be out there for about an hour and a half. I let this patch know and then we have some training barricades that we're going to put up as well, but not everybody that lives in the area is going to know that we're out there. So if you didn't call, that's probably us.",
+          "prompt": null,
+          "duration_seconds": 25.728,
+          "token_limit": 220,
+          "token_count": 101,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 25.0,
+              "text": " Hey patrol, this is heads up. We're going to be training as a slot team at the field just south of 1120 north, like 8th west. We'll be out there for about an hour and a half. I let this patch know and then we have some training barricades that we're going to put up as well, but not everybody that lives in the area is going to know that we're out there. So if you didn't call, that's probably us.",
+              "avg_logprob": -0.23305878700578914,
+              "no_speech_prob": 0.089771568775177,
+              "compression_ratio": 1.6337448559670782
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793921712.m4a": {
+      "index": 170,
+      "epoch": 1793921712,
+      "sha256": "69aa499925d466347f963bb1dc6a4c834d438458ab6877079d639be3285758d6",
+      "passes": {
+        "original": {
+          "text": "He didn't worry at all.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " He didn't worry at all.",
+              "avg_logprob": -0.739451014995575,
+              "no_speech_prob": 0.21750597655773163,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "He's gonna worry out.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " He's gonna worry out.",
+              "avg_logprob": -0.9386680391099718,
+              "no_speech_prob": 0.1636045128107071,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "context": {
+          "text": "He didn't worry at all.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " He didn't worry at all.",
+              "avg_logprob": -0.739451014995575,
+              "no_speech_prob": 0.21750597655773163,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        }
+      }
+    }
+  }
+}
