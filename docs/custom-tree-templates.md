@@ -1,5 +1,28 @@
 # Custom document-tree templates
 
+## Original document sources
+
+Ordinary document nodes can optionally set `originalSource` with `url` and
+`label` fields. The shared renderer displays this link on a separate, smaller
+line beneath the document title. An optional `note` appears below that link.
+Text and attributes are escaped; raw HTML and inline CSS are not needed.
+Use a reference's `$override.originalSource` for a link that should appear only
+in a particular section, such as City Oversight's City Council Meetings.
+
+```json
+{
+  "$ref": "existing-document-id",
+  "$override": {
+    "originalSource": {
+      "url": "https://www.americanfork.gov/AgendaCenter/ViewFile/Minutes/_09222026-2294",
+      "label": "View original on American Fork City’s website"
+    }
+  }
+}
+```
+
+## Custom nodes
+
 Add a `custom` node anywhere the document tree accepts nodes, including a profile
 section’s `contents` or the homepage’s `root.tree`:
 

@@ -172,13 +172,17 @@
           <li class="tree-row">
             {{ renderIcon(node.type) }}
 
-            <a
+            {% if node.originalSource %}<span class="tree-document-links">{% endif %}<a
               target="{% if node.type == "profile" or node["same-tab"] == true %}_self{% else %}_blank{% endif %}"
               rel="noopener noreferrer"
               href="{% if node.type == 'file' %}/records/{{ node.path | escape }}{% else %}{{ node.url | escape }}{% endif %}{{ (node.urlSuffix or '') | escape }}"
             >
               {{ node.label | escape }}
-            </a>
+            </a>{% if node.originalSource %}
+              <small class="tree-original-source">
+                <a href="{{ node.originalSource.url | escape }}" target="_blank" rel="noopener noreferrer">{{ node.originalSource.label | escape }}</a>
+              </small>{% if node.originalSource.note %}<small class="tree-source-note">{{ node.originalSource.note | escape }}</small>{% endif %}
+            </span>{% endif %}
           </li>
         {% endif %}
       {% endfor %}
