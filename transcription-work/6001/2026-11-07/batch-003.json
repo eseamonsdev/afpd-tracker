@@ -1,0 +1,632 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-07",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1794071176.m4a": {
+      "index": 21,
+      "epoch": 1794071176,
+      "sha256": "9e75bb3bc4b4b9b036f7ffdae6f80669a8a450587b5c624a1c83bcf87f7bd552",
+      "passes": {
+        "original": {
+          "text": "Hey, Gonzo, there's one of those raccoons' buddies right there on the night of her worst.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Hey, Gonzo, there's one of those raccoons' buddies right there on the night of her worst.",
+              "avg_logprob": -0.5357999978242097,
+              "no_speech_prob": 0.0687454342842102,
+              "compression_ratio": 1.1125
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hey Gonzo, there's one of those raccoons' bodies right there on, like, her worst.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.64,
+              "text": " Hey Gonzo, there's one of those raccoons' bodies right there on, like, her worst.",
+              "avg_logprob": -0.647450525027055,
+              "no_speech_prob": 0.06462104618549347,
+              "compression_ratio": 1.051948051948052
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey, Gonzo, there's one of those raccoons' buddies right there on the night of her worst.",
+          "prompt": "If anybody wants to go up to the range, I'm just going to show Donald the difference between a contact shot and just a regular shot.",
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Hey, Gonzo, there's one of those raccoons' buddies right there on the night of her worst.",
+              "avg_logprob": -0.4727563813880638,
+              "no_speech_prob": 0.02319127880036831,
+              "compression_ratio": 1.1125
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794071182.m4a": {
+      "index": 22,
+      "epoch": 1794071182,
+      "sha256": "005d4ba97fb6f01df6edbdabff3f80d1412838985e6579713385451a57ffa029",
+      "passes": {
+        "original": {
+          "text": "Yeah, I was about to say, we'll run it over.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.5,
+              "text": " Yeah, I was about to say, we'll run it over.",
+              "avg_logprob": -0.5662343081306008,
+              "no_speech_prob": 0.0060758525505661964,
+              "compression_ratio": 0.8461538461538461
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah, I was about to say, you know, we'll run it over.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.5,
+              "text": " Yeah, I was about to say, you know, we'll run it over.",
+              "avg_logprob": -0.5607756227254868,
+              "no_speech_prob": 0.018511034548282623,
+              "compression_ratio": 0.8709677419354839
+            }
+          ]
+        },
+        "context": {
+          "text": "Yeah, that's what I was saying. You know, we'll run it over.",
+          "prompt": "If anybody wants to go up to the range, I'm just going to show Donald the difference between a contact shot and just a regular shot. Hey, Gonzo, there's one of those raccoons' buddies right there on the night of her worst.",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.5,
+              "text": " Yeah, that's what I was saying. You know, we'll run it over.",
+              "avg_logprob": -0.4253233614422026,
+              "no_speech_prob": 0.006540484726428986,
+              "compression_ratio": 0.9090909090909091
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794071191.m4a": {
+      "index": 23,
+      "epoch": 1794071191,
+      "sha256": "d0fdd163d21a09de9831a70319d3eadc65ed65c7df2ccf6400663a300fe774e3",
+      "passes": {
+        "original": {
+          "text": "I thought we were talking about those things being smart.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I thought we were talking about those things being smart.",
+              "avg_logprob": -0.3425007973398481,
+              "no_speech_prob": 0.008431649766862392,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I thought we were talking about those things being smart.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I thought we were talking about those things being smart.",
+              "avg_logprob": -0.3673446476459503,
+              "no_speech_prob": 0.020525826141238213,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "I thought we were talking about those things being smart.",
+          "prompt": "If anybody wants to go up to the range, I'm just going to show Donald the difference between a contact shot and just a regular shot. Hey, Gonzo, there's one of those raccoons' buddies right there on the night of her worst. Yeah, I was about to say, we'll run it over.",
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.8000000000000003,
+              "text": " I thought we were talking about those things being smart.",
+              "avg_logprob": -0.2558348774909973,
+              "no_speech_prob": 0.022032225504517555,
+              "compression_ratio": 1.0
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794071488.m4a": {
+      "index": 24,
+      "epoch": 1794071488,
+      "sha256": "29ffb6099a924b47ac2dafb50d649e320238e568871c2f1bc9f9507a4056e04b",
+      "passes": {
+        "original": {
+          "text": "Bye-bye.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.7425975118364606,
+              "no_speech_prob": 0.2676766812801361,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "But",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " But",
+              "avg_logprob": -0.834673136472702,
+              "no_speech_prob": 0.4577629566192627,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "context": {
+          "text": "Bye-bye.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.7425975118364606,
+              "no_speech_prob": 0.2676766812801361,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794071490.m4a": {
+      "index": 25,
+      "epoch": 1794071490,
+      "sha256": "cad1df30c514cf39914e4ec042d5e84298a1007310fca2193244d69508286a6f",
+      "passes": {
+        "original": {
+          "text": "",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 0,
+          "token_cap_reached": false,
+          "segments": []
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.9626748164494833,
+              "no_speech_prob": 0.5845510363578796,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Bye-bye.",
+          "prompt": "Bye-bye.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.5829112018857684,
+              "no_speech_prob": 0.5156620740890503,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794071493.m4a": {
+      "index": 26,
+      "epoch": 1794071493,
+      "sha256": "80224a316d291a5b770019428fc3d110b24059fc798e2bd738925736a181dde6",
+      "passes": {
+        "original": {
+          "text": "Do you hear anything?",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Do you hear anything?",
+              "avg_logprob": -0.38193294778466225,
+              "no_speech_prob": 0.10684017837047577,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Do you hear anything?",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Do you hear anything?",
+              "avg_logprob": -0.4510471224784851,
+              "no_speech_prob": 0.10338103026151657,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "context": {
+          "text": "Do you hear anything?",
+          "prompt": "Bye-bye.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Do you hear anything?",
+              "avg_logprob": -0.3307733051478863,
+              "no_speech_prob": 0.01696859672665596,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794071497.m4a": {
+      "index": 27,
+      "epoch": 1794071497,
+      "sha256": "b24ec900cdc53c41887f0d72ec25938345dc7c94121c355157a3c104d0701324",
+      "passes": {
+        "original": {
+          "text": "See you around.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " See you around.",
+              "avg_logprob": -0.7773276737758091,
+              "no_speech_prob": 0.22272899746894836,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "You're welcome.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You're welcome.",
+              "avg_logprob": -0.9473137174333844,
+              "no_speech_prob": 0.3076293468475342,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "context": {
+          "text": "See you around.",
+          "prompt": "Bye-bye. Do you hear anything?",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " See you around.",
+              "avg_logprob": -0.6248805182320731,
+              "no_speech_prob": 0.07662307471036911,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794071509.m4a": {
+      "index": 28,
+      "epoch": 1794071509,
+      "sha256": "c20fdebcd9c9d5f1fc72ac9f784e251a9faf1bc6cfc9cd7b81d0d7d3f79afeb3",
+      "passes": {
+        "original": {
+          "text": "We will check.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " We will check.",
+              "avg_logprob": -0.8109624215534755,
+              "no_speech_prob": 0.18387484550476074,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We'll check.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " We'll check.",
+              "avg_logprob": -0.9362203053065709,
+              "no_speech_prob": 0.2751014232635498,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "We'll check.",
+          "prompt": "Do you hear anything? See you around.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " We'll check.",
+              "avg_logprob": -0.6586568866457257,
+              "no_speech_prob": 0.11007213592529297,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794071520.m4a": {
+      "index": 29,
+      "epoch": 1794071520,
+      "sha256": "90f3810e904ad3f12be839d6aef475861fa2f4a2eb9febfcb5d9cb4c88ce2d29",
+      "passes": {
+        "original": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5858233571052551,
+              "no_speech_prob": 0.018354332074522972,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.3,
+              "text": " Thank you.",
+              "avg_logprob": -0.5461184680461884,
+              "no_speech_prob": 0.006471013650298119,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you.",
+          "prompt": "Do you hear anything? See you around. We will check.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.2,
+              "text": " Thank you.",
+              "avg_logprob": -0.5085488160451254,
+              "no_speech_prob": 0.029463868588209152,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794072317.m4a": {
+      "index": 30,
+      "epoch": 1794072317,
+      "sha256": "28891b28242aca194d720ebffa0d61ed51becc1076d43e18b87a1c3f8f7ceb8d",
+      "passes": {
+        "original": {
+          "text": "Have you guys been on 2100 North recently?",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Have you guys been on 2100 North recently?",
+              "avg_logprob": -0.3457382619380951,
+              "no_speech_prob": 0.008105915039777756,
+              "compression_ratio": 0.84
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Have you guys been on 2100 North recently?",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.72,
+              "text": " Have you guys been on 2100 North recently?",
+              "avg_logprob": -0.40047720571358997,
+              "no_speech_prob": 0.003960081841796637,
+              "compression_ratio": 0.84
+            }
+          ]
+        },
+        "context": {
+          "text": "Have you guys been on 2100 North recently?",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Have you guys been on 2100 North recently?",
+              "avg_logprob": -0.3457382619380951,
+              "no_speech_prob": 0.008105915039777756,
+              "compression_ratio": 0.84
+            }
+          ]
+        }
+      }
+    }
+  }
+}
