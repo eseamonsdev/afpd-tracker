@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-06",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1794034263.m4a": {
+      "index": 341,
+      "epoch": 1794034263,
+      "sha256": "1f0004eafbfa61466debe5b9571b5f8226cc951efbbd061dd76b5d5cffe8e404",
+      "passes": {
+        "original": {
+          "text": "Alright, I understand we're going to run through the same neighborhoods you've already done.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Alright, I understand we're going to run through the same neighborhoods you've already done.",
+              "avg_logprob": -0.2850115866888137,
+              "no_speech_prob": 0.013052541762590408,
+              "compression_ratio": 1.069767441860465
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Alright, I understand. We're going to run through the same neighborhoods you've already done.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Alright, I understand. We're going to run through the same neighborhoods you've already done.",
+              "avg_logprob": -0.3414146995002573,
+              "no_speech_prob": 0.007866640575230122,
+              "compression_ratio": 1.0689655172413792
+            }
+          ]
+        },
+        "context": {
+          "text": "Alright, I understand we're going to run through the same neighborhoods you've already done.",
+          "prompt": "I did, but I'm not there anymore. I'm on 11th and 20 right now.",
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Alright, I understand we're going to run through the same neighborhoods you've already done.",
+              "avg_logprob": -0.24352138950711205,
+              "no_speech_prob": 0.008090992458164692,
+              "compression_ratio": 1.069767441860465
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794034271.m4a": {
+      "index": 342,
+      "epoch": 1794034271,
+      "sha256": "bbb14016dcb4aaa1501dc7c52d2e7f1520a18bcb937ed4bf2504bb0f84456303",
+      "passes": {
+        "original": {
+          "text": "Yeah, I've cut through a handful on the west side and now I'm up by Hunter Park",
+          "prompt": null,
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.5600000000000005,
+              "text": " Yeah, I've cut through a handful on the west side and now I'm up by Hunter Park",
+              "avg_logprob": -0.1605917435625325,
+              "no_speech_prob": 0.010385249741375446,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah, I've cut through a handful on the west side and now I'm up by Hunter Park",
+          "prompt": null,
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.6000000000000005,
+              "text": " Yeah, I've cut through a handful on the west side and now I'm up by Hunter Park",
+              "avg_logprob": -0.13092333207959714,
+              "no_speech_prob": 0.005641977768391371,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "Yeah, I've cut through a handful on the west side, and now I'm up by Hunter Park.",
+          "prompt": "I did, but I'm not there anymore. I'm on 11th and 20 right now. Alright, I understand we're going to run through the same neighborhoods you've already done.",
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Yeah, I've cut through a handful on the west side, and now I'm up by Hunter Park.",
+              "avg_logprob": -0.19692111968994142,
+              "no_speech_prob": 0.009849430061876774,
+              "compression_ratio": 0.9878048780487805
+            }
+          ]
+        }
+      }
+    }
+  }
+}
