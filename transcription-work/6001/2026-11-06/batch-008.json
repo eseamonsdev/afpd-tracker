@@ -1,0 +1,641 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-06",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1793991309.m4a": {
+      "index": 71,
+      "epoch": 1793991309,
+      "sha256": "1b596342e6f051250c9799709fab52ed1ebe89dd2ba9d284aa4a11efc39cc122",
+      "passes": {
+        "original": {
+          "text": "I think it's going to be this one right here.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I think it's going to be this one right here.",
+              "avg_logprob": -0.45813047885894775,
+              "no_speech_prob": 0.10109139233827591,
+              "compression_ratio": 0.8823529411764706
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I think it's going to be this one right here.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I think it's going to be this one right here.",
+              "avg_logprob": -0.5111886024475097,
+              "no_speech_prob": 0.187174454331398,
+              "compression_ratio": 0.8823529411764706
+            }
+          ]
+        },
+        "context": {
+          "text": "I think it's going to be this one right here.",
+          "prompt": "Hey Mitch, so we're at 500 now. You and I will monitor the parking lot. Jackie and Pitt will go in. And if you guys can't find out what car as soon as possible so that way we can make sure no one else is part of it. It's going to be a 2018 Range Rover Gray I believe Got me. I believe I see it.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I think it's going to be this one right here.",
+              "avg_logprob": -0.4077127695083618,
+              "no_speech_prob": 0.05884912237524986,
+              "compression_ratio": 0.8823529411764706
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793991328.m4a": {
+      "index": 72,
+      "epoch": 1793991328,
+      "sha256": "9fb5f368356e808bb57660c26908e69ca60e08e83e778327dd3be640f671dd39",
+      "passes": {
+        "original": {
+          "text": "What do you guys get in, will you confirm that this is his car, and I'll run it real quick.",
+          "prompt": null,
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " What do you guys get in, will you confirm that this is his car, and I'll run it real quick.",
+              "avg_logprob": -0.38388534828468607,
+              "no_speech_prob": 0.037796467542648315,
+              "compression_ratio": 1.0833333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "When you guys get in, we confirm that this is his car and I'll run it real quick.",
+          "prompt": null,
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.5600000000000005,
+              "text": " When you guys get in, we confirm that this is his car and I'll run it real quick.",
+              "avg_logprob": -0.2874851313730081,
+              "no_speech_prob": 0.06613820046186447,
+              "compression_ratio": 1.0253164556962024
+            }
+          ]
+        },
+        "context": {
+          "text": "What do you guys get in? Will you confirm that this is his car? And I'll run it real quick.",
+          "prompt": "It's going to be a 2018 Range Rover Gray I believe Got me. I believe I see it. I think it's going to be this one right here.",
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " What do you guys get in? Will you confirm that this is his car? And I'll run it real quick.",
+              "avg_logprob": -0.2643191968953168,
+              "no_speech_prob": 0.023946335539221764,
+              "compression_ratio": 1.058139534883721
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793991432.m4a": {
+      "index": 73,
+      "epoch": 1793991432,
+      "sha256": "7aae265bc6361a6034f8a698189ca3e60e3e0c983ff23993b0b27daac19be3e2",
+      "passes": {
+        "original": {
+          "text": "And for sure, in here, we're in contact with them.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " And for sure, in here, we're in contact with them.",
+              "avg_logprob": -0.4943179523243624,
+              "no_speech_prob": 0.06521226465702057,
+              "compression_ratio": 0.9433962264150944
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We're sure in here we're in contact with them.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " We're sure in here we're in contact with them.",
+              "avg_logprob": -0.4353996793429057,
+              "no_speech_prob": 0.057329609990119934,
+              "compression_ratio": 0.9787234042553191
+            }
+          ]
+        },
+        "context": {
+          "text": "And for sure, in here, we're in contact with them.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " And for sure, in here, we're in contact with them.",
+              "avg_logprob": -0.4943179523243624,
+              "no_speech_prob": 0.06521226465702057,
+              "compression_ratio": 0.9433962264150944
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793991446.m4a": {
+      "index": 74,
+      "epoch": 1793991446,
+      "sha256": "333886019e923288ff6c8951690d3ea6062bf66da4934af1402b26352e393b33",
+      "passes": {
+        "original": {
+          "text": "copy when you can let me know what card is it's the one I'm in front of",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.68,
+              "text": " copy when you can let me know what card is it's the one I'm in front of",
+              "avg_logprob": -0.40515651486136695,
+              "no_speech_prob": 0.09763126075267792,
+              "compression_ratio": 1.0289855072463767
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy. When you can. Let me know what card it is. It's the one I'm in front of.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Copy. When you can. Let me know what card it is. It's the one I'm in front of.",
+              "avg_logprob": -0.4748917244098805,
+              "no_speech_prob": 0.03359270095825195,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy. When you can. Let me know what card is. It's the one I'm in front of.",
+          "prompt": "And for sure, in here, we're in contact with them.",
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Copy. When you can. Let me know what card is. It's the one I'm in front of.",
+              "avg_logprob": -0.31005525245116305,
+              "no_speech_prob": 0.038960810750722885,
+              "compression_ratio": 0.9868421052631579
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793991455.m4a": {
+      "index": 75,
+      "epoch": 1793991455,
+      "sha256": "f06ffb6d33e5b4a8cd6d4cd44174af8fbaf24a4f86be816cb8e3a74f1e83f5c1",
+      "passes": {
+        "original": {
+          "text": "Yeah, we're going to ask.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, we're going to ask.",
+              "avg_logprob": -0.38883396170356055,
+              "no_speech_prob": 0.043768759816884995,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah, we're going to ask.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, we're going to ask.",
+              "avg_logprob": -0.4024549505927346,
+              "no_speech_prob": 0.06236762925982475,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "context": {
+          "text": "yeah we're gonna ask",
+          "prompt": "And for sure, in here, we're in contact with them. copy when you can let me know what card is it's the one I'm in front of",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.3200000000000003,
+              "text": " yeah we're gonna ask",
+              "avg_logprob": -0.39163368195295334,
+              "no_speech_prob": 0.024233980104327202,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793991458.m4a": {
+      "index": 76,
+      "epoch": 1793991458,
+      "sha256": "b2a1c40878c927c85104b00b779fe93d310342fada8e66ee4339db012ccda64d",
+      "passes": {
+        "original": {
+          "text": "Okay.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Okay.",
+              "avg_logprob": -0.8804231643676758,
+              "no_speech_prob": 0.20002076029777527,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Okay.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Okay.",
+              "avg_logprob": -0.5521368026733399,
+              "no_speech_prob": 0.14385221898555756,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Okay.",
+          "prompt": "And for sure, in here, we're in contact with them. copy when you can let me know what card is it's the one I'm in front of Yeah, we're going to ask.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Okay.",
+              "avg_logprob": -0.6219854354858398,
+              "no_speech_prob": 0.17683690786361694,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793991510.m4a": {
+      "index": 77,
+      "epoch": 1793991510,
+      "sha256": "7007d3a02f80164d17b184b514a90ad848057eb46d5778a5d992df0e83863b73",
+      "passes": {
+        "original": {
+          "text": "2015 Subaru Outback",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 2015 Subaru Outback",
+              "avg_logprob": -0.35074723618371145,
+              "no_speech_prob": 0.017443254590034485,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "filtered": {
+          "text": "2015 Subaru Outback",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 2015 Subaru Outback",
+              "avg_logprob": -0.4059023175920759,
+              "no_speech_prob": 0.02174350805580616,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "2015 Subaru Outback.",
+          "prompt": "Yeah, we're going to ask. Okay.",
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 2015 Subaru Outback.",
+              "avg_logprob": -0.3487934470176697,
+              "no_speech_prob": 0.011914195492863655,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793991514.m4a": {
+      "index": 78,
+      "epoch": 1793991514,
+      "sha256": "40263d47095c41a94f9b69edd8a3e15b248ba97bcbfbd80b729d1f9244faf7f3",
+      "passes": {
+        "original": {
+          "text": "Glue and color.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Glue and color.",
+              "avg_logprob": -0.6504514068365097,
+              "no_speech_prob": 0.02738468535244465,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Blue in color.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.5,
+              "text": " Blue in color.",
+              "avg_logprob": -0.7046004704066685,
+              "no_speech_prob": 0.044837068766355515,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "Glue and color.",
+          "prompt": "Yeah, we're going to ask. Okay. 2015 Subaru Outback",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Glue and color.",
+              "avg_logprob": -0.6655391603708267,
+              "no_speech_prob": 0.034382618963718414,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793991517.m4a": {
+      "index": 79,
+      "epoch": 1793991517,
+      "sha256": "793216ef944f301603f4276162672d0a928265cc13b8cbd35ebee5a7ed9c62d8",
+      "passes": {
+        "original": {
+          "text": "Happy. We're at the party mark.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Happy. We're at the party mark.",
+              "avg_logprob": -0.542894184589386,
+              "no_speech_prob": 0.12310288846492767,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy. We're at the party one.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Happy. We're at the party one.",
+              "avg_logprob": -0.5164414495229721,
+              "no_speech_prob": 0.08606316149234772,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy. We're at the party one.",
+          "prompt": "Okay. 2015 Subaru Outback Glue and color.",
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Happy. We're at the party one.",
+              "avg_logprob": -0.5907751818497976,
+              "no_speech_prob": 0.03529423847794533,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793991529.m4a": {
+      "index": 80,
+      "epoch": 1793991529,
+      "sha256": "4b9861b72d06621b40de465908101a91fdcc1724d50bb75da1f35af33abb9730",
+      "passes": {
+        "original": {
+          "text": "I believe I see it directly, Sal.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " I believe I see it directly, Sal.",
+              "avg_logprob": -0.6098261078198751,
+              "no_speech_prob": 0.027110779657959938,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I believe I see it directly so.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.72,
+              "text": " I believe I see it directly so.",
+              "avg_logprob": -0.6102767857638273,
+              "no_speech_prob": 0.027073798701167107,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "context": {
+          "text": "I believe I see it. You can direct me south.",
+          "prompt": "2015 Subaru Outback Glue and color. Happy. We're at the party mark.",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " I believe I see it. You can direct me south.",
+              "avg_logprob": -0.5126037995020548,
+              "no_speech_prob": 0.08655693382024765,
+              "compression_ratio": 0.8461538461538461
+            }
+          ]
+        }
+      }
+    }
+  }
+}

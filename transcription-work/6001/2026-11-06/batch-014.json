@@ -1,0 +1,641 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-06",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1793998539.m4a": {
+      "index": 131,
+      "epoch": 1793998539,
+      "sha256": "ad88a59370e3a99f5922c5e62de09b15a19dc4c5873b8c569dacfe95cc00b486",
+      "passes": {
+        "original": {
+          "text": "Hey, will someone run a 28 for me?",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Hey, will someone run a 28 for me?",
+              "avg_logprob": -0.34027166549976057,
+              "no_speech_prob": 0.0071336678229272366,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hey, will someone run a 28 for me?",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Hey, will someone run a 28 for me?",
+              "avg_logprob": -0.34678885569939244,
+              "no_speech_prob": 0.0034418690484017134,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey, will someone run a 28 for me?",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Hey, will someone run a 28 for me?",
+              "avg_logprob": -0.34027166549976057,
+              "no_speech_prob": 0.0071336678229272366,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793998546.m4a": {
+      "index": 132,
+      "epoch": 1793998546,
+      "sha256": "549625f45043f6d59874cb7a1060c4d3f843ac7c8f24478d2db0916b533957ef",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.6713174283504486,
+              "no_speech_prob": 0.11438389867544174,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.7529339691003164,
+              "no_speech_prob": 0.06596491485834122,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Go ahead.",
+          "prompt": "Hey, will someone run a 28 for me?",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.49855465690294903,
+              "no_speech_prob": 0.015857402235269547,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793998548.m4a": {
+      "index": 133,
+      "epoch": 1793998548,
+      "sha256": "9f784ff92458d9b549563376e9a789ff6171efd19163165f82762937af349373",
+      "passes": {
+        "original": {
+          "text": "Three, Echo, Papa, Charlie, seven.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.2,
+              "text": " Three, Echo, Papa, Charlie, seven.",
+              "avg_logprob": -0.535778705890362,
+              "no_speech_prob": 0.051518384367227554,
+              "compression_ratio": 0.8292682926829268
+            }
+          ]
+        },
+        "filtered": {
+          "text": "3, Echo, Papa, Charlie, 7",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 3, Echo, Papa, Charlie, 7",
+              "avg_logprob": -0.524306039015452,
+              "no_speech_prob": 0.043485213071107864,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "context": {
+          "text": "Three, Echo, Papa, Charlie, seven.",
+          "prompt": "Hey, will someone run a 28 for me? Go ahead.",
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.2,
+              "text": " Three, Echo, Papa, Charlie, seven.",
+              "avg_logprob": -0.4555580157500047,
+              "no_speech_prob": 0.04339679703116417,
+              "compression_ratio": 0.8292682926829268
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793998567.m4a": {
+      "index": 134,
+      "epoch": 1793998567,
+      "sha256": "238b4fa01f2a36b8e4c3cd18d8b9bcb8532758d46f964aef07a069d81fa0eead",
+      "passes": {
+        "original": {
+          "text": "registered and insured. What's your question about it?",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " registered and insured. What's your question about it?",
+              "avg_logprob": -0.35213458112307955,
+              "no_speech_prob": 0.03626390919089317,
+              "compression_ratio": 0.9
+            }
+          ]
+        },
+        "filtered": {
+          "text": "registered and insured. What's your question about it?",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " registered and insured. What's your question about it?",
+              "avg_logprob": -0.39723801399980274,
+              "no_speech_prob": 0.019330086186528206,
+              "compression_ratio": 0.9
+            }
+          ]
+        },
+        "context": {
+          "text": "Registered and insured. What's your question about it?",
+          "prompt": "Hey, will someone run a 28 for me? Go ahead. Three, Echo, Papa, Charlie, seven.",
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Registered and insured. What's your question about it?",
+              "avg_logprob": -0.2556350188595908,
+              "no_speech_prob": 0.00232336507178843,
+              "compression_ratio": 0.9
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793998574.m4a": {
+      "index": 135,
+      "epoch": 1793998574,
+      "sha256": "4132dcce221b8fa2b0a58cbeb331ff28398ac815a4da1d2661e372ddf1c5f658",
+      "passes": {
+        "original": {
+          "text": "It has a sticker of 10 of 25.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " It has a sticker of 10 of 25.",
+              "avg_logprob": -0.5018340895573298,
+              "no_speech_prob": 0.023938655853271484,
+              "compression_ratio": 0.8529411764705882
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It has a sticker of 10 of 25.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " It has a sticker of 10 of 25.",
+              "avg_logprob": -0.3809833601117134,
+              "no_speech_prob": 0.011224664747714996,
+              "compression_ratio": 0.8529411764705882
+            }
+          ]
+        },
+        "context": {
+          "text": "It has a sticker of 10 of 25.",
+          "prompt": "Go ahead. Three, Echo, Papa, Charlie, seven. registered and insured. What's your question about it?",
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " It has a sticker of 10 of 25.",
+              "avg_logprob": -0.4770706941684087,
+              "no_speech_prob": 0.018934907391667366,
+              "compression_ratio": 0.8529411764705882
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793998579.m4a": {
+      "index": 136,
+      "epoch": 1793998579,
+      "sha256": "2af6d6277b144fcec97f6fb1fb996d55ad76a7c2598b9c816ddeb6012e949064",
+      "passes": {
+        "original": {
+          "text": "Registration expires October of next year.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Registration expires October of next year.",
+              "avg_logprob": -0.48630831241607664,
+              "no_speech_prob": 0.026850922033190727,
+              "compression_ratio": 0.84
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Registration expires October next year.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Registration expires October next year.",
+              "avg_logprob": -0.48840898937649196,
+              "no_speech_prob": 0.006061777472496033,
+              "compression_ratio": 0.8297872340425532
+            }
+          ]
+        },
+        "context": {
+          "text": "Registration expires October next year.",
+          "prompt": "Three, Echo, Papa, Charlie, seven. registered and insured. What's your question about it? It has a sticker of 10 of 25.",
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.24,
+              "text": " Registration expires October next year.",
+              "avg_logprob": -0.3211028046078152,
+              "no_speech_prob": 0.0015844033332541585,
+              "compression_ratio": 0.8297872340425532
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1793998585.m4a": {
+      "index": 137,
+      "epoch": 1793998585,
+      "sha256": "d28d09241e234f680f3859acb3b8e104e88f4e3bfff55d250e33e16d3bbe6843",
+      "passes": {
+        "original": {
+          "text": "I got me.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I got me.",
+              "avg_logprob": -0.6215751682009015,
+              "no_speech_prob": 0.10405965894460678,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I got me.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I got me.",
+              "avg_logprob": -0.8034704753330776,
+              "no_speech_prob": 0.10172368586063385,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "I got me.",
+          "prompt": "registered and insured. What's your question about it? It has a sticker of 10 of 25. Registration expires October of next year.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I got me.",
+              "avg_logprob": -0.6602278436933245,
+              "no_speech_prob": 0.10521739721298218,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794000999.m4a": {
+      "index": 138,
+      "epoch": 1794000999,
+      "sha256": "3e0fc1786d50dc86d91defb5f9831a699546c402a394e7425d15453c22987fb8",
+      "passes": {
+        "original": {
+          "text": "Hey, I'm pretty close. I'll head that way",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey, I'm pretty close. I'll head that way",
+              "avg_logprob": -0.1904296338558197,
+              "no_speech_prob": 0.017868561670184135,
+              "compression_ratio": 0.8541666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hey, I'm pretty close I'll head that way",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey, I'm pretty close I'll head that way",
+              "avg_logprob": -0.248505528484072,
+              "no_speech_prob": 0.010037547908723354,
+              "compression_ratio": 0.851063829787234
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey, I'm pretty close. I'll head that way",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey, I'm pretty close. I'll head that way",
+              "avg_logprob": -0.1904296338558197,
+              "no_speech_prob": 0.017868561670184135,
+              "compression_ratio": 0.8541666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794001013.m4a": {
+      "index": 139,
+      "epoch": 1794001013,
+      "sha256": "e9f2b722350ba55719dadb847737def469a99e521cf9a0abd3f4f5a38cd08837",
+      "passes": {
+        "original": {
+          "text": "This is the Black Fire Diner couple.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " This is the Black Fire Diner couple.",
+              "avg_logprob": -0.6063725749651591,
+              "no_speech_prob": 0.01103936042636633,
+              "compression_ratio": 0.8571428571428571
+            }
+          ]
+        },
+        "filtered": {
+          "text": "This is the Black Bear Diner couple.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.4,
+              "text": " This is the Black Bear Diner couple.",
+              "avg_logprob": -0.5737995555003484,
+              "no_speech_prob": 0.01010365504771471,
+              "compression_ratio": 0.8571428571428571
+            }
+          ]
+        },
+        "context": {
+          "text": "This is the Black Fire Diner couple",
+          "prompt": "Hey, I'm pretty close. I'll head that way",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " This is the Black Fire Diner couple",
+              "avg_logprob": -0.630476095459678,
+              "no_speech_prob": 0.005463369656354189,
+              "compression_ratio": 0.8536585365853658
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794001018.m4a": {
+      "index": 140,
+      "epoch": 1794001018,
+      "sha256": "9d12297cfe0f3c47533977ea3947a8cb5cc5f5fb78bae545e6846802e490f825",
+      "passes": {
+        "original": {
+          "text": "paper.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " paper.",
+              "avg_logprob": -0.48160505294799805,
+              "no_speech_prob": 0.026973944157361984,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "paper",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " paper",
+              "avg_logprob": -0.3705291822552681,
+              "no_speech_prob": 0.0474984347820282,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "paper",
+          "prompt": "Hey, I'm pretty close. I'll head that way This is the Black Fire Diner couple.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " paper",
+              "avg_logprob": -0.3697958216071129,
+              "no_speech_prob": 0.028007173910737038,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
