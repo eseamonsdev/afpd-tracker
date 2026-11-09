@@ -1,4 +1,4 @@
-.PHONY: promote-staging build manual-deploy
+.PHONY: promote-staging build manual-deploy prod-manual-deploy
 
 promote-staging:
 	@test "$$(git branch --show-current)" = "staging" || \
@@ -21,3 +21,13 @@ manual-deploy:
 	git status --short
 	npm run build
 	npx wrangler versions upload --preview-alias staging --message "staging $$(git rev-parse --short HEAD)"
+
+# Build main locally and deploy it to the live production Worker.
+prod-manual-deploy:
+	@test -z "$$(git status --porcelain)" || \
+		{ echo "Error: You have uncommitted or untracked changes."; exit 1; }
+	git switch main
+	git pull --ff-only
+	git status --short
+	npm run build
+	npx wrangler deploy --message "production $$(git rev-parse --short HEAD)"
