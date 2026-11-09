@@ -22,12 +22,12 @@ manual-deploy:
 	npm run build
 	npx wrangler versions upload --preview-alias staging --message "staging $$(git rev-parse --short HEAD)"
 
-# Build main locally and deploy it to the live production Worker.
+# Promote staging to main, then deploy the same commit to the live Worker.
 prod-manual-deploy:
 	@test -z "$$(git status --porcelain)" || \
 		{ echo "Error: You have uncommitted or untracked changes."; exit 1; }
-	git switch main
-	git pull --ff-only
-	git status --short
+	git switch staging
+	git pull --ff-only origin staging
+	$(MAKE) promote-staging
 	npm run build
 	npx wrangler deploy --message "production $$(git rev-parse --short HEAD)"
