@@ -1,55 +1,47 @@
 # Police Radio Resources
 
-The page is generated at `/police-radio-resources/` and linked from Police Radio,
-the excerpts index, and each individual excerpt.
+The page at `/police-radio-resources/` provides agency call signs, radio
+language, and one consolidated officer/radio-ID table. Edit the guide text
+and reference links in `data/entities/pages/police-radio-resources.json`.
+The template is `src/police-radio-resources.njk`.
 
-Edit `data/entities/pages/police-radio-resources.json` to update the practical
-guide and its sources. `callSigns`, `language`, and `officers` contain the quick
-lookups. `sources` is the single list of reference titles, URLs, descriptions,
-publishers, formats, coverage, and notes. Each guide's `sourceIds` points to the
-references it uses. Remove unused references instead of keeping a general
-reading list. The Utah County source comes before the statewide source, placing
-it on the left on wider screens and first on mobile. Use `download: true` for
-downloadable files. The template escapes displayed text.
+## Consolidated officer evidence
 
-Officer entries are a selected snapshot of recurring associations in the
-spreadsheet, with example counts and distinct response-day counts per ID. Keep
-those values and the coverage date aligned with the workbook when updating
-them. Unresolved names and single-day/conflicting IDs are not promoted to the
-selected associations table. Links to officer profiles are roster candidates,
-not confirmation of the speaker in every recording.
+`data/officer-association-evidence.json` is the source of officer associations,
+including accepted named exchanges and dated Law 2 radio/call-sign pairings.
+Directory-derived officer matches retain their call sign, confirmation date,
+source attribution and date limits. Confirmation does not verify every transcript
+or establish a permanent radio assignment.
 
-The expanded list includes surname-supported associations for Cox, Garcia,
-Gonzalez, Hawkins, Mason, McClellan, Renter, and Richardson. Each added ID has
-at least two examples across two days and no other name group in the selected
-exchanges. Do not infer a full identity from vague first names such as Jake,
-Sam, or Ron, or from an unconfirmed nickname. A lack of conflicts in the
-selected examples is not proof that an ID was never used by anyone else.
+`lib/build-officer-associations.js` generates the officer summary CSV, dated
+evidence CSV and player labels. Two or three accepted evidence dates support
+a possible association; four or more support a strong association. Dated
+confirmations remain independently visible. Unreviewed candidates cannot
+displace retained associations or increase their strength.
 
-The existing `afpd-radio-id-response-days.xlsx` spreadsheet is hosted in
-`public/records/openmhz/`, alongside its OpenMHz source material. It is a
-September 9–October 22, 2026 snapshot, not an automatically refreshed report.
-Preserve its coverage and attribution qualifications when replacing it.
+The resources page reads these CSVs and displays eligible officer associations
+with expandable dated evidence. Visitors can follow the official directory link
+without joining a separate radio/call-sign table to the officer table.
 
-Run `make build` to regenerate the page, Police Radio link, and sitemap.
+## Unresolved identities
 
-## IDs-only agency mapping
+Observations with review status `owner-requested-identity-review` appear in
+the visible “Radio identities awaiting review” table. They remain unassigned,
+do not confirm an officer, and do not count toward association strength.
 
-`agencyIds` stores explicit Law 2 listening confirmations independently of the
-name associations. Each row contains a numeric radio ID, a 5J agency ID, and
-the dates heard. Its `evidence` list has one row per confirmation date. Do not
-copy names, document-derived matches, speculative transcript leads, or chat
-dates into this dataset. The `agencyIds` dataset records the authoritative
-confirmation dates. A confirmation on one date does not fill another date
-without explicit owner confirmation.
+The September 27 5J29/McOmie/Halladay case and the September 15/29
+Garcia/Guerra radio history require owner review. Preserve existing dated
+confirmations while recording the uncertainty. Resolve an observation only
+after the owner decides the identity or corrects the underlying evidence.
 
-The page renders ID table and Evidence tabs. Both tables remain readable without
-JavaScript. The downloadable `afpd-radio-agency-ids.xlsx` has matching ID table
-and Evidence sheets; the CSV contains the mapping table. Keep these exports
-aligned with `agencyIds` when adding confirmations.
+## Historical sources and builds
 
-The names table CSV (`afpd-radio-officer-ids.csv`) is generated from the same
-`officers.entries` data by `src/police-radio-officer-ids.njk`. Dated owner
-confirmations may be included with their date limits in the notes. Tavo / David
-O. Guerra on 14590023 is confirmed for October 27, 2026 only (clips 128–129);
-its count is one named-response exchange, not the number of clips that day.
+The original `radio-agency-identifiers.json`, IDs-only CSV and workbook remain
+available as historical source records. They are no longer rendered as a
+separate section. The legacy `#radio-agency-ids` anchor leads to the consolidated
+section.
+
+The response-days workbook is a September 9–October 22, 2026 snapshot,
+not an automatically refreshed report. Preserve its coverage and attribution.
+
+Run `make build` to regenerate the page and other site outputs.
