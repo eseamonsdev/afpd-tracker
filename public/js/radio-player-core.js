@@ -715,7 +715,18 @@ function excerpt() {
     download.setAttribute("download", "afpd-car-to-car-transcript-" + window.location.pathname.split("/").filter(Boolean).at(-1) + ".txt");
     download.addEventListener("click", () => {
       if (downloadUrl) URL.revokeObjectURL(downloadUrl);
-      const text = buttons.map((button, index) => [button.dataset.label, button.dataset.radioIds || "", calls[index].transcript.trim() || "[no transcript available]", calls[index].note.trim() ? `Note: ${calls[index].note.trim()}` : ""].filter(Boolean).join("\n")).join("\n\n") + "\n";
+      const text = buttons.map((button, index) => {
+        const call = calls[index];
+        const ids = radioIds(call);
+        const heading = [
+          button.dataset.label,
+          ids.length ? `Radio IDs: ${ids.join(", ")}` : "",
+          `Verified: ${call.validated === true ? "Yes" : "No"}`
+        ].filter(Boolean).join("\n");
+        const content = call.transcript.trim() || "[no transcript available]";
+        const note = call.note.trim();
+        return heading + "\n\n" + content + (note ? `\n\nNote: ${note}` : "");
+      }).join("\n\n\n") + "\n";
       downloadUrl = URL.createObjectURL(new Blob([text], { type: "text/plain;charset=utf-8" })); download.setAttribute("href", downloadUrl);
     });
   }
