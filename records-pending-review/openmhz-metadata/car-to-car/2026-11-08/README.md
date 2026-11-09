@@ -1,7 +1,9 @@
 # Car-to-car metadata: November 8, 2026
 
-OpenMHz system dcfems, talkgroup 6001. 221 unique calls, 26 radio IDs, no calls missing radio IDs. Collected by clicking browser rows with autoplay disabled.
+OpenMHz system dcfems, talkgroup 6001. 300 unique calls; 26 radio IDs; no calls missing radio IDs.
 
-Coverage: November 8, 2026 from midnight through 6:50:54 PM America/Denver. First call 00:21:45 MST; last available call 18:39:39 MST. UTC timestamps may show November 9 for evening Mountain Time calls. Every included local_time is November 8.
+Partial-day coverage from midnight through 2026-11-08T21:49:05.862-07:00 (America/Denver). Last available call: 2026-11-08T21:48:49-07:00. Coverage is complete_through_cutoff, not full-day complete.
 
-calls.json preserves displayed metadata, radio IDs and positions, durations, frequencies, audio URLs and call links. import-validation.json records checks. Raw browser observations are not included in this upload.
+Browser rows were opened with autoplay disabled. 79 new calls added to the previously collected 221; overlap with the previous collection checked. UTC dates may show November 9 for November 8 Mountain evening calls. Every included local_time is November 8.
+
+calls.json preserves displayed radio IDs and positions, duration, frequency, audio URL and call links. import-validation.json records checks. Raw observations outside the included Mountain day are excluded.
