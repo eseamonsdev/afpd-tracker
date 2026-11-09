@@ -23,16 +23,12 @@ The resources page reads these CSVs and displays eligible officer associations
 with expandable dated evidence. Visitors can follow the official directory link
 without joining a separate radio/call-sign table to the officer table.
 
-## Unresolved identities
+## Identity review observations
 
-Observations with review status `owner-requested-identity-review` appear in
-the visible “Radio identities awaiting review” table. They remain unassigned,
-do not confirm an officer, and do not count toward association strength.
-
-The September 27 5J29/McOmie/Halladay case and the September 15/29
-Garcia/Guerra radio history require owner review. Preserve existing dated
-confirmations while recording the uncertainty. Resolve an observation only
-after the owner decides the identity or corrects the underlying evidence.
+The separate identity-review table was removed at the owner's request after
+review of the McOmie/Halladay identification and correction of the September 15
+Garcia/Guerra attribution. Underlying observations and dated evidence remain
+available in the evidence data and downloads.
 
 ## Historical sources and builds
 

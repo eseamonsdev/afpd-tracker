@@ -71,16 +71,6 @@ permalink: /police-radio-resources/
     </div>
     <p>{{ resources.officers.unresolved | escape }}</p>
     {% set evidenceCsv = "openmhz/officer-association-evidence.csv" | readCsv -%}
-    <h3 id="radio-identity-review">Radio identities awaiting review</h3>
-    <p>These observations are unresolved and do not add an officer association or increase its strength.</p>
-    <div class="radio-guide-table-scroll" tabindex="0" role="region" aria-label="Radio identities awaiting review">
-      <table class="radio-guide-table">
-        <thead><tr><th scope="col">Date</th><th scope="col">Channel and clips</th><th scope="col">Review note</th></tr></thead>
-        <tbody>{%- for row in evidenceCsv.rows %}{% if row[11] == "owner-requested-identity-review" %}
-          <tr><th scope="row"><a href="/law-2-radio/?date={{ row[2] | escape }}">{{ row[2] | escape }}</a></th><td>Law 2: {{ row[4] | escape }}</td><td>{{ row[5] | escape }}</td></tr>
-        {% endif %}{%- endfor %}</tbody>
-      </table>
-    </div>
     <details><summary>Previously excluded observations without an assigned radio/name pairing</summary>
       <table class="radio-guide-table"><thead><tr><th scope="col">Date</th><th scope="col">Clips</th><th scope="col">Evidence and original uncertainty</th></tr></thead><tbody>
       {%- for row in evidenceCsv.rows %}{% if row[6] == "unassigned" and row[11] != "owner-requested-identity-review" %}<tr><td>{{ row[2] | escape }}</td><td>{{ row[4] | escape }}</td><td>{{ row[5] | escape }}</td></tr>{% endif %}{%- endfor %}
