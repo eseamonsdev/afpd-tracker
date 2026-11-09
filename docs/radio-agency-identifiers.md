@@ -1,13 +1,12 @@
-# IDs-only radio agency table
+# Historical radio/call-sign evidence
 
-`public/records/openmhz/radio-agency-identifiers.json` is the dedicated source
-for radio IDs, 5J identifiers and dated Law 2 evidence. It contains no names.
-`src/_data/radioAgencyIds.js` loads it for the rendered helper page. The page
-also refreshes the two table bodies from this file in the browser, keeping
-previously generated pages aligned with the latest table data.
+The former IDs-only table has been consolidated into the officer association
+table on `/police-radio-resources/`. Its dated confirmations are retained in
+`data/officer-association-evidence.json`, including the two unresolved identity
+observations. The redundant IDs-only CSV has been removed.
 
-Update this source, the CSV and the workbook together. The historical mixed
-resource entity still supplies the rest of the helper page; its old agencyIds
-section is superseded by this dedicated file. A pairing does not assign a
-person to a radio. Dated person confirmations are separate player metadata in
-`officer-confirmations.json`.
+`public/records/openmhz/radio-agency-identifiers.json` and the original workbook
+remain historical snapshots. New officer evidence belongs in the consolidated
+evidence source; do not regenerate the retired export or maintain a parallel
+live association table. A dated radio/call-sign pairing does not establish a
+permanent radio owner.

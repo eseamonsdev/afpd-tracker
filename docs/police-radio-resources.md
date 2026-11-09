@@ -36,7 +36,7 @@ after the owner decides the identity or corrects the underlying evidence.
 
 ## Historical sources and builds
 
-The original `radio-agency-identifiers.json`, IDs-only CSV and workbook remain
+The original `radio-agency-identifiers.json` and workbook remain
 available as historical source records. They are no longer rendered as a
 separate section. The legacy `#radio-agency-ids` anchor leads to the consolidated
 section.
