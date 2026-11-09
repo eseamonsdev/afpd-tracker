@@ -1,0 +1,665 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-08",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1794198877.m4a": {
+      "index": 271,
+      "epoch": 1794198877,
+      "sha256": "1d75b5115f17a15f72b824d7c045c243551224182a45814c797b8e1831e84458",
+      "passes": {
+        "original": {
+          "text": "R.P. confirmed that the truck on the southwest side of the property is 50 vehicle-y jags, not sure about the truck.",
+          "prompt": null,
+          "duration_seconds": 9.856,
+          "token_limit": 103,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " R.P. confirmed that the truck on the southwest side of the property is 50 vehicle-y jags, not sure about the truck.",
+              "avg_logprob": -0.46263943891972303,
+              "no_speech_prob": 0.07469833642244339,
+              "compression_ratio": 1.1386138613861385
+            }
+          ]
+        },
+        "filtered": {
+          "text": "R.P. confirmed that the truck on the southwest side of the property is illegally jagged. Not sure about the truck.",
+          "prompt": null,
+          "duration_seconds": 9.856,
+          "token_limit": 103,
+          "token_count": 30,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " R.P. confirmed that the truck on the southwest side of the property is illegally jagged.",
+              "avg_logprob": -0.42969943054260745,
+              "no_speech_prob": 0.07763874530792236,
+              "compression_ratio": 1.1875
+            },
+            {
+              "start": 8.0,
+              "end": 10.0,
+              "text": " Not sure about the truck.",
+              "avg_logprob": -0.42969943054260745,
+              "no_speech_prob": 0.07763874530792236,
+              "compression_ratio": 1.1875
+            }
+          ]
+        },
+        "context": {
+          "text": "R.P. confirmed that the truck on the southwest side of the property is 50 vehicle ejags, not sure about the truck.",
+          "prompt": "Got me.",
+          "duration_seconds": 9.856,
+          "token_limit": 103,
+          "token_count": 30,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " R.P. confirmed that the truck on the southwest side of the property is 50 vehicle ejags, not sure about the truck.",
+              "avg_logprob": -0.40421902172027097,
+              "no_speech_prob": 0.04126940295100212,
+              "compression_ratio": 1.14
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794198891.m4a": {
+      "index": 272,
+      "epoch": 1794198891,
+      "sha256": "32fba5dc863900db8356b568eefb3b3ca6ac584d823bf8fd4bef5ffac36c24a1",
+      "passes": {
+        "original": {
+          "text": "I just have a running black truck, that actually might be white. I'm not sure what color it is, it's just black down and running currently.",
+          "prompt": null,
+          "duration_seconds": 9.088,
+          "token_limit": 97,
+          "token_count": 36,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.24,
+              "text": " I just have a running black truck, that actually might be white.",
+              "avg_logprob": -0.2879098234949885,
+              "no_speech_prob": 0.09192212671041489,
+              "compression_ratio": 1.275229357798165
+            },
+            {
+              "start": 5.24,
+              "end": 8.44,
+              "text": " I'm not sure what color it is, it's just black down and running currently.",
+              "avg_logprob": -0.2879098234949885,
+              "no_speech_prob": 0.09192212671041489,
+              "compression_ratio": 1.275229357798165
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I just have a running black truck, that actually might be white. I'm not sure what color it is, it's just blacked out and running currently.",
+          "prompt": null,
+          "duration_seconds": 9.088,
+          "token_limit": 97,
+          "token_count": 37,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.28,
+              "text": " I just have a running black truck, that actually might be white.",
+              "avg_logprob": -0.29122048537982137,
+              "no_speech_prob": 0.05078945681452751,
+              "compression_ratio": 1.2612612612612613
+            },
+            {
+              "start": 5.28,
+              "end": 8.48,
+              "text": " I'm not sure what color it is, it's just blacked out and running currently.",
+              "avg_logprob": -0.29122048537982137,
+              "no_speech_prob": 0.05078945681452751,
+              "compression_ratio": 1.2612612612612613
+            }
+          ]
+        },
+        "context": {
+          "text": "I just have a running black truck. Actually, it might be white. I'm not sure what color it is. It's just black down and running currently.",
+          "prompt": "Got me. R.P. confirmed that the truck on the southwest side of the property is 50 vehicle-y jags, not sure about the truck.",
+          "duration_seconds": 9.088,
+          "token_limit": 97,
+          "token_count": 35,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " I just have a running black truck. Actually, it might be white. I'm not sure what color it is. It's just black down and running currently.",
+              "avg_logprob": -0.2529161795973778,
+              "no_speech_prob": 0.0314161442220211,
+              "compression_ratio": 1.2545454545454546
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794198924.m4a": {
+      "index": 273,
+      "epoch": 1794198924,
+      "sha256": "b9369aed5c13aef710aa6008ae2fd68b412d6a90d989f8ea3a96d0cfd242c417",
+      "passes": {
+        "original": {
+          "text": "He sure loves his camera",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " He sure loves his camera",
+              "avg_logprob": -0.4156065843999386,
+              "no_speech_prob": 0.005968570243567228,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "filtered": {
+          "text": "He sure loves his camera.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " He sure loves his camera.",
+              "avg_logprob": -0.4461032549540202,
+              "no_speech_prob": 0.008895487524569035,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "context": {
+          "text": "He sure loves his camera.",
+          "prompt": "R.P. confirmed that the truck on the southwest side of the property is 50 vehicle-y jags, not sure about the truck. I just have a running black truck, that actually might be white. I'm not sure what color it is, it's just black down and running currently.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " He sure loves his camera.",
+              "avg_logprob": -0.45727109909057617,
+              "no_speech_prob": 0.004311694763600826,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794198991.m4a": {
+      "index": 274,
+      "epoch": 1794198991,
+      "sha256": "f6f2b285733ea0aa29dd52b444d19c3b359451aedcc3184f10c84e93fa1c5517",
+      "passes": {
+        "original": {
+          "text": "We realized one of the lights on the outside of the office turned off.",
+          "prompt": null,
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " We realized one of the lights on the outside of the office turned off.",
+              "avg_logprob": -0.5037901964452531,
+              "no_speech_prob": 0.02370554395020008,
+              "compression_ratio": 1.09375
+            }
+          ]
+        },
+        "filtered": {
+          "text": "A few rows won the life of the outside of the office turned off.",
+          "prompt": null,
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " A few rows won the life of the outside of the office turned off.",
+              "avg_logprob": -0.6722087562084198,
+              "no_speech_prob": 0.029317399486899376,
+              "compression_ratio": 1.103448275862069
+            }
+          ]
+        },
+        "context": {
+          "text": "We realized one of the lights on the outside of the office turned off.",
+          "prompt": null,
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " We realized one of the lights on the outside of the office turned off.",
+              "avg_logprob": -0.5037901964452531,
+              "no_speech_prob": 0.02370554395020008,
+              "compression_ratio": 1.09375
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794199083.m4a": {
+      "index": 275,
+      "epoch": 1794199083,
+      "sha256": "fe6d44085b90d5d1df2542ee5ca370885d2dd75dc7d01dfea269a9046fc54346",
+      "passes": {
+        "original": {
+          "text": "Heard somebody get out of the truck, I don't see where they're at though.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Heard somebody get out of the truck, I don't see where they're at though.",
+              "avg_logprob": -0.28652665160951163,
+              "no_speech_prob": 0.02218274213373661,
+              "compression_ratio": 0.9864864864864865
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Heard somebody get out of the truck, I don't see where they're at though.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Heard somebody get out of the truck, I don't see where they're at though.",
+              "avg_logprob": -0.3022324187414987,
+              "no_speech_prob": 0.0079671461135149,
+              "compression_ratio": 0.9864864864864865
+            }
+          ]
+        },
+        "context": {
+          "text": "Heard somebody get out of the truck, I don't see where they're at though.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Heard somebody get out of the truck, I don't see where they're at though.",
+              "avg_logprob": -0.28652665160951163,
+              "no_speech_prob": 0.02218274213373661,
+              "compression_ratio": 0.9864864864864865
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794199114.m4a": {
+      "index": 276,
+      "epoch": 1794199114,
+      "sha256": "4401fc64e71e7920a8b3880d766ce1aa8dd4bf619ea7a811802b6fde3ad11233",
+      "passes": {
+        "original": {
+          "text": "In the Contempo, the northwest side of Contempo tile, just off of 500 years.",
+          "prompt": null,
+          "duration_seconds": 7.552,
+          "token_limit": 85,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.64,
+              "text": " In the Contempo, the northwest side of Contempo tile, just off of 500 years.",
+              "avg_logprob": -0.5591273208459219,
+              "no_speech_prob": 0.037436917424201965,
+              "compression_ratio": 1.0857142857142856
+            }
+          ]
+        },
+        "filtered": {
+          "text": "In the North West side of Contempo tile, just off of 500EZ.",
+          "prompt": null,
+          "duration_seconds": 7.552,
+          "token_limit": 85,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " In the North West side of Contempo tile, just off of 500EZ.",
+              "avg_logprob": -0.6517654941195533,
+              "no_speech_prob": 0.01658596098423004,
+              "compression_ratio": 0.9365079365079365
+            }
+          ]
+        },
+        "context": {
+          "text": "In the Contempo, the northwest side of Contempo tile, just off of 500 feet.",
+          "prompt": "Heard somebody get out of the truck, I don't see where they're at though.",
+          "duration_seconds": 7.552,
+          "token_limit": 85,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.64,
+              "text": " In the Contempo, the northwest side of Contempo tile, just off of 500 feet.",
+              "avg_logprob": -0.49603401869535446,
+              "no_speech_prob": 0.06470982730388641,
+              "compression_ratio": 1.0869565217391304
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794199122.m4a": {
+      "index": 277,
+      "epoch": 1794199122,
+      "sha256": "45c2153d50bc7a65dac2e39962c339bf942011179b6ec684b08e9f950c069331",
+      "passes": {
+        "original": {
+          "text": "His son just pulled up. He's at the front gate right now",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " His son just pulled up. He's at the front gate right now",
+              "avg_logprob": -0.29601209303911996,
+              "no_speech_prob": 0.008088878355920315,
+              "compression_ratio": 0.9032258064516129
+            }
+          ]
+        },
+        "filtered": {
+          "text": "His son just called out. He's at the front gate right now",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " His son just called out. He's at the front gate right now",
+              "avg_logprob": -0.3241883165696088,
+              "no_speech_prob": 0.005229779053479433,
+              "compression_ratio": 0.9193548387096774
+            }
+          ]
+        },
+        "context": {
+          "text": "His son just pulled up, he's at the front gate right now.",
+          "prompt": "Heard somebody get out of the truck, I don't see where they're at though. In the Contempo, the northwest side of Contempo tile, just off of 500 years.",
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " His son just pulled up, he's at the front gate right now.",
+              "avg_logprob": -0.281801689002249,
+              "no_speech_prob": 0.00236355303786695,
+              "compression_ratio": 0.9047619047619048
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794199135.m4a": {
+      "index": 278,
+      "epoch": 1794199135,
+      "sha256": "5ec3576586d9e19bab547566b59d7a9d3c695f26f8d02f5066c55902430c9e53",
+      "passes": {
+        "original": {
+          "text": "Sun just went inside.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Sun just went inside.",
+              "avg_logprob": -0.5136302784085274,
+              "no_speech_prob": 0.04151441901922226,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Sun just went inside.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Sun just went inside.",
+              "avg_logprob": -0.49581585824489594,
+              "no_speech_prob": 0.06866315007209778,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "context": {
+          "text": "Son just went inside.",
+          "prompt": "Heard somebody get out of the truck, I don't see where they're at though. In the Contempo, the northwest side of Contempo tile, just off of 500 years. His son just pulled up. He's at the front gate right now",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Son just went inside.",
+              "avg_logprob": -0.3831598721444607,
+              "no_speech_prob": 0.006394733674824238,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794199154.m4a": {
+      "index": 279,
+      "epoch": 1794199154,
+      "sha256": "9f3030a50d58b87be0faa514e8fb9426686f65899def4b1c066d52939a7796d1",
+      "passes": {
+        "original": {
+          "text": "Copy. I'm at the front here right now.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Copy. I'm at the front here right now.",
+              "avg_logprob": -0.4576236307621002,
+              "no_speech_prob": 0.0844375491142273,
+              "compression_ratio": 0.8260869565217391
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy. I'm at the front here right now.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Copy. I'm at the front here right now.",
+              "avg_logprob": -0.4750245043209621,
+              "no_speech_prob": 0.08938023447990417,
+              "compression_ratio": 0.8260869565217391
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy. I'm at the front gate right now.",
+          "prompt": "In the Contempo, the northwest side of Contempo tile, just off of 500 years. His son just pulled up. He's at the front gate right now Sun just went inside.",
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Copy. I'm at the front gate right now.",
+              "avg_logprob": -0.24697991141251155,
+              "no_speech_prob": 0.012938433326780796,
+              "compression_ratio": 0.8260869565217391
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794199159.m4a": {
+      "index": 280,
+      "epoch": 1794199159,
+      "sha256": "7dc02de5567fde1ffe75081a432c821adea80af5e588eb6b7a875e5eefdda5d8",
+      "passes": {
+        "original": {
+          "text": "Yeah, it's heading towards another vehicle that's backing up.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Yeah, it's heading towards another vehicle that's backing up.",
+              "avg_logprob": -0.41830617003142834,
+              "no_speech_prob": 0.027506032958626747,
+              "compression_ratio": 0.9384615384615385
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah, it's heading towards another vehicle that's backing up.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.36,
+              "text": " Yeah, it's heading towards another vehicle that's backing up.",
+              "avg_logprob": -0.45944214798510075,
+              "no_speech_prob": 0.013546859845519066,
+              "compression_ratio": 0.9384615384615385
+            }
+          ]
+        },
+        "context": {
+          "text": "Yeah, it's heading towards another vehicle that's backing up.",
+          "prompt": "His son just pulled up. He's at the front gate right now Sun just went inside. Copy. I'm at the front here right now.",
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.16,
+              "text": " Yeah, it's heading towards another vehicle that's backing up.",
+              "avg_logprob": -0.34399816766381264,
+              "no_speech_prob": 0.010542057454586029,
+              "compression_ratio": 0.9384615384615385
+            }
+          ]
+        }
+      }
+    }
+  }
+}
