@@ -1,0 +1,657 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-08",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1794165330.m4a": {
+      "index": 111,
+      "epoch": 1794165330,
+      "sha256": "bc0d4e698b279a0bedfb15d9887fe544ebf340fe6e1b2945b3a0b34456e2d7c7",
+      "passes": {
+        "original": {
+          "text": "Give me one moment and I can.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Give me one moment and I can.",
+              "avg_logprob": -0.3514992648904974,
+              "no_speech_prob": 0.014940774999558926,
+              "compression_ratio": 0.8285714285714286
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Give me one moment and I can.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Give me one moment and I can.",
+              "avg_logprob": -0.3394278883934021,
+              "no_speech_prob": 0.011530451476573944,
+              "compression_ratio": 0.8285714285714286
+            }
+          ]
+        },
+        "context": {
+          "text": "Give me one moment and I can.",
+          "prompt": "Someone in a spot to run a 28 for me.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Give me one moment and I can.",
+              "avg_logprob": -0.21658680655739523,
+              "no_speech_prob": 0.0021014008671045303,
+              "compression_ratio": 0.8285714285714286
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794165368.m4a": {
+      "index": 112,
+      "epoch": 1794165368,
+      "sha256": "92f4ce6d9320e42484080eaef2e4ebd2ff24a11da2f90db231beffb5bad2a49d",
+      "passes": {
+        "original": {
+          "text": "Oh, you're good. Don't worry about it. It went the other way. I don't want to go after it.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Oh, you're good. Don't worry about it. It went the other way. I don't want to go after it.",
+              "avg_logprob": -0.2526295522848765,
+              "no_speech_prob": 0.04815454035997391,
+              "compression_ratio": 1.0843373493975903
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Oh, you're good. Don't worry about it. It went the other way. I didn't want to go after it.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Oh, you're good. Don't worry about it. It went the other way.",
+              "avg_logprob": -0.2270956179127097,
+              "no_speech_prob": 0.019628223031759262,
+              "compression_ratio": 1.0833333333333333
+            },
+            {
+              "start": 4.0200000000000005,
+              "end": 8.02,
+              "text": " I didn't want to go after it.",
+              "avg_logprob": -0.2270956179127097,
+              "no_speech_prob": 0.019628223031759262,
+              "compression_ratio": 1.0833333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Oh, you're good. Don't worry about it. It went the other way and I don't want to go after it.",
+          "prompt": "Someone in a spot to run a 28 for me. Give me one moment and I can.",
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Oh, you're good. Don't worry about it. It went the other way and I don't want to go after it.",
+              "avg_logprob": -0.2436514566342036,
+              "no_speech_prob": 0.010847642086446285,
+              "compression_ratio": 1.0941176470588236
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794165379.m4a": {
+      "index": 113,
+      "epoch": 1794165379,
+      "sha256": "b8d092dda1c724e58073ed2eb0df6bc0aba9832b9a0ecf186e7f4cfb8fbb348d",
+      "passes": {
+        "original": {
+          "text": "Well, I got it here. Assurance firm registration is good. Come back to 2016. Black Silverado.",
+          "prompt": null,
+          "duration_seconds": 9.088,
+          "token_limit": 97,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " Well, I got it here. Assurance firm registration is good. Come back to 2016. Black Silverado.",
+              "avg_logprob": -0.40058731459654295,
+              "no_speech_prob": 0.02255956642329693,
+              "compression_ratio": 1.0333333333333334
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Well, I got it here. Assurance firm registration is good. Come back to 2016. Black Silverado.",
+          "prompt": null,
+          "duration_seconds": 9.088,
+          "token_limit": 97,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " Well, I got it here. Assurance firm registration is good. Come back to 2016. Black Silverado.",
+              "avg_logprob": -0.4007655554092847,
+              "no_speech_prob": 0.034395426511764526,
+              "compression_ratio": 1.0333333333333334
+            }
+          ]
+        },
+        "context": {
+          "text": "Well, I got it here. Assurance firm. Registration is good. Come back to 2016. Black Silverado.",
+          "prompt": "Someone in a spot to run a 28 for me. Give me one moment and I can. Oh, you're good. Don't worry about it. It went the other way. I don't want to go after it.",
+          "duration_seconds": 9.088,
+          "token_limit": 97,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " Well, I got it here. Assurance firm. Registration is good. Come back to 2016. Black Silverado.",
+              "avg_logprob": -0.31604950737070153,
+              "no_speech_prob": 0.005329908803105354,
+              "compression_ratio": 1.032967032967033
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794165390.m4a": {
+      "index": 114,
+      "epoch": 1794165390,
+      "sha256": "78c9a372a9f23631e67ad35123082f69acd47a8179682f67e4aec8fb8413ad9d",
+      "passes": {
+        "original": {
+          "text": "Copy that, a sticker on the plate of 24 or so.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Copy that, a sticker on the plate of 24 or so.",
+              "avg_logprob": -0.32938046380877495,
+              "no_speech_prob": 0.012319293804466724,
+              "compression_ratio": 0.8679245283018868
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy that, a sticker on the plate of 24 or so.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Copy that, a sticker on the plate of 24 or so.",
+              "avg_logprob": -0.5282466486096382,
+              "no_speech_prob": 0.005630104802548885,
+              "compression_ratio": 0.8679245283018868
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy that. A sticker on the plate of 24 or so.",
+          "prompt": "Give me one moment and I can. Oh, you're good. Don't worry about it. It went the other way. I don't want to go after it. Well, I got it here. Assurance firm registration is good. Come back to 2016. Black Silverado.",
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Copy that. A sticker on the plate of 24 or so.",
+              "avg_logprob": -0.2607063017785549,
+              "no_speech_prob": 0.0023334771394729614,
+              "compression_ratio": 0.8679245283018868
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794165567.m4a": {
+      "index": 115,
+      "epoch": 1794165567,
+      "sha256": "8706eef087e9cdf460bd3b30926da05441c6ac20d3dbcc9ffd202c20efb6c3df",
+      "passes": {
+        "original": {
+          "text": "Anybody close to 7-11 on 300W?",
+          "prompt": null,
+          "duration_seconds": 7.936,
+          "token_limit": 88,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Anybody close to 7-11 on 300W?",
+              "avg_logprob": -0.822350800037384,
+              "no_speech_prob": 0.11943408846855164,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hey, uh, Belayman Circons Hall is for Jackie. Is anybody close to 7-Eleven on 300 West?",
+          "prompt": null,
+          "duration_seconds": 7.936,
+          "token_limit": 88,
+          "token_count": 30,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Hey, uh, Belayman Circons Hall is for Jackie.",
+              "avg_logprob": -0.6747217908982308,
+              "no_speech_prob": 0.029239196330308914,
+              "compression_ratio": 0.9886363636363636
+            },
+            {
+              "start": 5.0,
+              "end": 8.0,
+              "text": " Is anybody close to 7-Eleven on 300 West?",
+              "avg_logprob": -0.6747217908982308,
+              "no_speech_prob": 0.029239196330308914,
+              "compression_ratio": 0.9886363636363636
+            }
+          ]
+        },
+        "context": {
+          "text": "Anybody close to 7-11 on 300W?",
+          "prompt": null,
+          "duration_seconds": 7.936,
+          "token_limit": 88,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Anybody close to 7-11 on 300W?",
+              "avg_logprob": -0.822350800037384,
+              "no_speech_prob": 0.11943408846855164,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794165578.m4a": {
+      "index": 116,
+      "epoch": 1794165578,
+      "sha256": "5f72d766f287d4276f808b24d0224660da0c5064e66880c2dc76f38809584bb8",
+      "passes": {
+        "original": {
+          "text": "And roll that way",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " And roll that way",
+              "avg_logprob": -0.42579861198152813,
+              "no_speech_prob": 0.024347953498363495,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "filtered": {
+          "text": "And roll that way",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " And roll that way",
+              "avg_logprob": -0.4238937326839992,
+              "no_speech_prob": 0.026506274938583374,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "And roll that way.",
+          "prompt": "Anybody close to 7-11 on 300W?",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " And roll that way.",
+              "avg_logprob": -0.4754524603486061,
+              "no_speech_prob": 0.008792583830654621,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794165580.m4a": {
+      "index": 117,
+      "epoch": 1794165580,
+      "sha256": "f77ba5832f6b40ed158b8fd7ac4980a2992ea6a801316f0dc9880403a3f08eb2",
+      "passes": {
+        "original": {
+          "text": "yeah there's two really good cars here with a large number of people",
+          "prompt": null,
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.24,
+              "text": " yeah there's two really good cars here with a large number of people",
+              "avg_logprob": -0.24702145071590648,
+              "no_speech_prob": 0.0098138228058815,
+              "compression_ratio": 1.0303030303030303
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah, there's two really good cars here with a large number of people.",
+          "prompt": null,
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.28,
+              "text": " Yeah, there's two really good cars here with a large number of people.",
+              "avg_logprob": -0.26116550596136795,
+              "no_speech_prob": 0.005588975269347429,
+              "compression_ratio": 0.9859154929577465
+            }
+          ]
+        },
+        "context": {
+          "text": "Yeah, there's two really good cars here with a large number of people",
+          "prompt": "Anybody close to 7-11 on 300W? And roll that way",
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.5,
+              "text": " Yeah, there's two really good cars here with a large number of people",
+              "avg_logprob": -0.3001317083835602,
+              "no_speech_prob": 0.007758878171443939,
+              "compression_ratio": 0.9857142857142858
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794165594.m4a": {
+      "index": 118,
+      "epoch": 1794165594,
+      "sha256": "181ba6003c095d697f64788b5904726123a4c0dd9c96f3cad676aec6e846ecc3",
+      "passes": {
+        "original": {
+          "text": "Why do you hide them at lunchtime?",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Why do you hide them at lunchtime?",
+              "avg_logprob": -0.5925671855608622,
+              "no_speech_prob": 0.055359482765197754,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Why do you hide them at lunchtime?",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Why do you hide them at lunchtime?",
+              "avg_logprob": -0.5429700762033463,
+              "no_speech_prob": 0.04837396368384361,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "context": {
+          "text": "Why do you mind I'm at lunchtime?",
+          "prompt": "Anybody close to 7-11 on 300W? And roll that way yeah there's two really good cars here with a large number of people",
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Why do you mind I'm at lunchtime?",
+              "avg_logprob": -0.6431478353647085,
+              "no_speech_prob": 0.019498011097311974,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794165600.m4a": {
+      "index": 119,
+      "epoch": 1794165600,
+      "sha256": "0a63295e050188d5779c0d1dcc7c7eadb7ffce823db68d42ed709a57f6ce7971",
+      "passes": {
+        "original": {
+          "text": "That couldn't resist.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " That couldn't resist.",
+              "avg_logprob": -0.46286893635988235,
+              "no_speech_prob": 0.013275076635181904,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "That could resist.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " That could resist.",
+              "avg_logprob": -0.5512139286313739,
+              "no_speech_prob": 0.05151718482375145,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "context": {
+          "text": "That couldn't resist.",
+          "prompt": "And roll that way yeah there's two really good cars here with a large number of people Why do you hide them at lunchtime?",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " That couldn't resist.",
+              "avg_logprob": -0.493630550801754,
+              "no_speech_prob": 0.0054460023529827595,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794165984.m4a": {
+      "index": 120,
+      "epoch": 1794165984,
+      "sha256": "e081e6d212fb4e82a3a7b259c0e18c9d88e7defe59ea143d1ca2aa384ea493fb",
+      "passes": {
+        "original": {
+          "text": "Ever.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Ever.",
+              "avg_logprob": -0.7135757446289063,
+              "no_speech_prob": 0.01419537328183651,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Ever.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Ever.",
+              "avg_logprob": -0.9031982421875,
+              "no_speech_prob": 0.022106051445007324,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Ever.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Ever.",
+              "avg_logprob": -0.7135757446289063,
+              "no_speech_prob": 0.01419537328183651,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
