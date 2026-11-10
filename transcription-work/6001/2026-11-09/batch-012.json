@@ -1,0 +1,673 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-09",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1794266589.m4a": {
+      "index": 111,
+      "epoch": 1794266589,
+      "sha256": "a1ac487bef932ba3558fdb33cd4bf13c60babaf1af02a8fc0bd1fd617d2d7080",
+      "passes": {
+        "original": {
+          "text": "Hey Neil, I can head your way, I'm just finishing up some stuff at the office.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.84,
+              "text": " Hey Neil, I can head your way, I'm just finishing up some stuff at the office.",
+              "avg_logprob": -0.28849828243255615,
+              "no_speech_prob": 0.011880186386406422,
+              "compression_ratio": 0.9873417721518988
+            }
+          ]
+        },
+        "filtered": {
+          "text": "And you know I can head your way. I'm just finishing up some stuff at the office",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.7800000000000002,
+              "text": " And you know I can head your way. I'm just finishing up some stuff at the office",
+              "avg_logprob": -0.3622178841720928,
+              "no_speech_prob": 0.0063867755234241486,
+              "compression_ratio": 1.0256410256410255
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey Neil I can head your way. I'm just finishing up some stuff at the office",
+          "prompt": "It's not a hundred percent positive, but it looks pretty dang close. So I just sent all the pictures in our crew chat",
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.7600000000000002,
+              "text": " Hey Neil I can head your way. I'm just finishing up some stuff at the office",
+              "avg_logprob": -0.2963990256899879,
+              "no_speech_prob": 0.007292896509170532,
+              "compression_ratio": 1.0133333333333334
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794266597.m4a": {
+      "index": 112,
+      "epoch": 1794266597,
+      "sha256": "82615e51aba8cbeb3611b0445f3667b8646d6c501201fffc4bfc77d8f305d82a",
+      "passes": {
+        "original": {
+          "text": "Three takes.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Three takes.",
+              "avg_logprob": -0.9674597779909769,
+              "no_speech_prob": 0.09306995570659637,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "See you next time.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " See you next time.",
+              "avg_logprob": -0.8274478539824486,
+              "no_speech_prob": 0.06892801821231842,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "context": {
+          "text": "Free text.",
+          "prompt": "It's not a hundred percent positive, but it looks pretty dang close. So I just sent all the pictures in our crew chat Hey Neil, I can head your way, I'm just finishing up some stuff at the office.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Free text.",
+              "avg_logprob": -0.8276826639970144,
+              "no_speech_prob": 0.07176093012094498,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794266638.m4a": {
+      "index": 113,
+      "epoch": 1794266638,
+      "sha256": "8652b80dfa20ac8ca40bffea9508fdd2337ee19a8e39b25a83ee6fb7b00394d8",
+      "passes": {
+        "original": {
+          "text": "Brendan, I'm going to break and go choose the steps in 24-J.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Brendan, I'm going to break and go choose the steps in 24-J.",
+              "avg_logprob": -0.5470536023378372,
+              "no_speech_prob": 0.015615386888384819,
+              "compression_ratio": 0.8955223880597015
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Brendan, I'm going to break and go choose the steps in 24 days.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Brendan, I'm going to break and go choose the steps in 24 days.",
+              "avg_logprob": -0.5353003112893355,
+              "no_speech_prob": 0.04416850581765175,
+              "compression_ratio": 0.9
+            }
+          ]
+        },
+        "context": {
+          "text": "Right in, I'm going to break and go choose the steps in 24-J.",
+          "prompt": "Hey Neil, I can head your way, I'm just finishing up some stuff at the office. Three takes.",
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Right in, I'm going to break and go choose the steps in 24-J.",
+              "avg_logprob": -0.5048146701994396,
+              "no_speech_prob": 0.026592349633574486,
+              "compression_ratio": 0.9104477611940298
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794266644.m4a": {
+      "index": 114,
+      "epoch": 1794266644,
+      "sha256": "61641001261bc94a64ad44fa494e40086430c5894e2495bdc37bf42e1273ac12",
+      "passes": {
+        "original": {
+          "text": "Yeah, no problem",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, no problem",
+              "avg_logprob": -0.24705150297709874,
+              "no_speech_prob": 0.02155858464539051,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah, no problem",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, no problem",
+              "avg_logprob": -0.0869079977273941,
+              "no_speech_prob": 0.05296260118484497,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "Yeah, no problem.",
+          "prompt": "Hey Neil, I can head your way, I'm just finishing up some stuff at the office. Three takes. Brendan, I'm going to break and go choose the steps in 24-J.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Yeah, no problem.",
+              "avg_logprob": -0.31740527972579,
+              "no_speech_prob": 0.04044835641980171,
+              "compression_ratio": 0.68
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794266646.m4a": {
+      "index": 115,
+      "epoch": 1794266646,
+      "sha256": "c14fbc575da5462ffbb866114d503984f410e0fe163714d2a670cbad2abef935",
+      "passes": {
+        "original": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.6838452816009521,
+              "no_speech_prob": 0.10642005503177643,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.6326038638750712,
+              "no_speech_prob": 0.1189548447728157,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you.",
+          "prompt": "Three takes. Brendan, I'm going to break and go choose the steps in 24-J. Yeah, no problem",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.546832432349523,
+              "no_speech_prob": 0.11773949861526489,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794266716.m4a": {
+      "index": 116,
+      "epoch": 1794266716,
+      "sha256": "38cdb0f76e0c42af9ff48cd7595db62abbf4bf0ea640c18192347df436cefd10",
+      "passes": {
+        "original": {
+          "text": "Hey Greg, I will hold short until you get here.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Hey Greg, I will hold short until you get here.",
+              "avg_logprob": -0.33222386439641316,
+              "no_speech_prob": 0.052937496453523636,
+              "compression_ratio": 0.8545454545454545
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hey Greg, I will hold short until you get here.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Hey Greg, I will hold short until you get here.",
+              "avg_logprob": -0.3781173825263977,
+              "no_speech_prob": 0.04072273522615433,
+              "compression_ratio": 0.8545454545454545
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey Greg, I will hold short until you get here.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Hey Greg, I will hold short until you get here.",
+              "avg_logprob": -0.33222386439641316,
+              "no_speech_prob": 0.052937496453523636,
+              "compression_ratio": 0.8545454545454545
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794266726.m4a": {
+      "index": 117,
+      "epoch": 1794266726,
+      "sha256": "888bc8b85323cb87f53b720b9c74600550f7268287c6112bc217a9887d7ede6c",
+      "passes": {
+        "original": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " copy",
+              "avg_logprob": -0.7858472764492035,
+              "no_speech_prob": 0.04895903915166855,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " copy",
+              "avg_logprob": -0.8186553418636322,
+              "no_speech_prob": 0.014977570623159409,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "Hey Greg, I will hold short until you get here.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6855367660522461,
+              "no_speech_prob": 0.015983371064066887,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794268766.m4a": {
+      "index": 118,
+      "epoch": 1794268766,
+      "sha256": "f9df196b6c45adbb771a28e1e3f4fddf1bd0d491bebacdfd1f068af3b0b5ae61",
+      "passes": {
+        "original": {
+          "text": "If anybody is going to be able to come swap me out, that would be awesome. I'm going to be on 1040 tissue pretty quick.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 34,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.84,
+              "text": " If anybody is going to be able to come swap me out, that would be awesome.",
+              "avg_logprob": -0.3725800105503627,
+              "no_speech_prob": 0.03729655221104622,
+              "compression_ratio": 1.19
+            },
+            {
+              "start": 2.84,
+              "end": 4.64,
+              "text": " I'm going to be on 1040 tissue pretty quick.",
+              "avg_logprob": -0.3725800105503627,
+              "no_speech_prob": 0.03729655221104622,
+              "compression_ratio": 1.19
+            }
+          ]
+        },
+        "filtered": {
+          "text": "If anybody is able to come swap me out, that would be awesome. I'm going to be on 1042. pretty quick.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 33,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.84,
+              "text": " If anybody is able to come swap me out, that would be awesome.",
+              "avg_logprob": -0.35010814666748047,
+              "no_speech_prob": 0.017508793622255325,
+              "compression_ratio": 1.0792079207920793
+            },
+            {
+              "start": 2.84,
+              "end": 4.04,
+              "text": " I'm going to be on 1042.",
+              "avg_logprob": -0.35010814666748047,
+              "no_speech_prob": 0.017508793622255325,
+              "compression_ratio": 1.0792079207920793
+            },
+            {
+              "start": 4.04,
+              "end": 5.04,
+              "text": " pretty quick.",
+              "avg_logprob": -0.7504760225613912,
+              "no_speech_prob": 0.08247332274913788,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "If anybody is going to be able to come swap me out, that would be awesome. I'm going to be on 1040 tissue pretty quick.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 34,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.84,
+              "text": " If anybody is going to be able to come swap me out, that would be awesome.",
+              "avg_logprob": -0.3725800105503627,
+              "no_speech_prob": 0.03729655221104622,
+              "compression_ratio": 1.19
+            },
+            {
+              "start": 2.84,
+              "end": 4.64,
+              "text": " I'm going to be on 1040 tissue pretty quick.",
+              "avg_logprob": -0.3725800105503627,
+              "no_speech_prob": 0.03729655221104622,
+              "compression_ratio": 1.19
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794268777.m4a": {
+      "index": 119,
+      "epoch": 1794268777,
+      "sha256": "f36881908516fdcb17f35562db5173c2856d37045f85fece432d81cc366a9b2a",
+      "passes": {
+        "original": {
+          "text": "L2-20, I can be in route.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " L2-20, I can be in route.",
+              "avg_logprob": -0.7256513237953186,
+              "no_speech_prob": 0.030016159638762474,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We'll do 20. I can be in route.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " We'll do 20. I can be in route.",
+              "avg_logprob": -0.6328413145882743,
+              "no_speech_prob": 0.015693949535489082,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "context": {
+          "text": "120, I can be en route.",
+          "prompt": "If anybody is going to be able to come swap me out, that would be awesome. I'm going to be on 1040 tissue pretty quick.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 120, I can be en route.",
+              "avg_logprob": -0.644551461393183,
+              "no_speech_prob": 0.03237808868288994,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794268782.m4a": {
+      "index": 120,
+      "epoch": 1794268782,
+      "sha256": "01fac630b044f47869df46c5789eb50b3dfa6ae813a8bd11eb0874c7162f940c",
+      "passes": {
+        "original": {
+          "text": "I'm not sure the address just look on the CAD like 737E 450 North or something like that.",
+          "prompt": null,
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.8,
+              "text": " I'm not sure the address just look on the CAD like 737E 450 North or something like that.",
+              "avg_logprob": -0.5031134605407714,
+              "no_speech_prob": 0.006279101595282555,
+              "compression_ratio": 1.0348837209302326
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm not sure the address just look on the CAD like 737E4.50 more or something like that.",
+          "prompt": null,
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.68,
+              "text": " I'm not sure the address just look on the CAD like 737E4.50 more or something like that.",
+              "avg_logprob": -0.5679190512056704,
+              "no_speech_prob": 0.011464035138487816,
+              "compression_ratio": 1.035294117647059
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm not sure the address just becomes a cat, like 1137E, 450 North, or something like that.",
+          "prompt": "If anybody is going to be able to come swap me out, that would be awesome. I'm going to be on 1040 tissue pretty quick. L2-20, I can be in route.",
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " I'm not sure the address just becomes a cat, like 1137E, 450 North, or something like that.",
+              "avg_logprob": -0.505123045709398,
+              "no_speech_prob": 0.00826665386557579,
+              "compression_ratio": 1.0224719101123596
+            }
+          ]
+        }
+      }
+    }
+  }
+}
