@@ -1,0 +1,665 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-06",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793952372.m4a": {
+      "index": 11,
+      "epoch": 1793952372,
+      "sha256": "dfdefe9f2b6e64bb2ab5b1d61e39b2d543c42acfdbc27069edfa3e0df2dc1c57",
+      "passes": {
+        "original": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.6416484713554382,
+              "no_speech_prob": 0.20143911242485046,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.843169093132019,
+              "no_speech_prob": 0.21994076669216156,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.6416484713554382,
+              "no_speech_prob": 0.20143911242485046,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793952374.m4a": {
+      "index": 12,
+      "epoch": 1793952374,
+      "sha256": "40d0c3115cc0cd7dcaacabe49d0658ccb575e2d6f5e6660b89c92606ca668c37",
+      "passes": {
+        "original": {
+          "text": "1103 East, 400 North. Female fell out of bed, hit her head, cracked her neck, unknown if it's broken.",
+          "prompt": null,
+          "duration_seconds": 8.448,
+          "token_limit": 92,
+          "token_count": 33,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.36,
+              "text": " 1103 East, 400 North.",
+              "avg_logprob": -0.3181784696438733,
+              "no_speech_prob": 0.05658012256026268,
+              "compression_ratio": 1.063157894736842
+            },
+            {
+              "start": 3.36,
+              "end": 6.8,
+              "text": " Female fell out of bed, hit her head, cracked her neck,",
+              "avg_logprob": -0.3181784696438733,
+              "no_speech_prob": 0.05658012256026268,
+              "compression_ratio": 1.063157894736842
+            },
+            {
+              "start": 6.8,
+              "end": 7.92,
+              "text": " unknown if it's broken.",
+              "avg_logprob": -0.3181784696438733,
+              "no_speech_prob": 0.05658012256026268,
+              "compression_ratio": 1.063157894736842
+            }
+          ]
+        },
+        "filtered": {
+          "text": "1103 East, 400 North, female fell out of bed, hit her head, cracked her neck, unknown if it's broken.",
+          "prompt": null,
+          "duration_seconds": 8.448,
+          "token_limit": 92,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " 1103 East, 400 North, female fell out of bed, hit her head, cracked her neck, unknown if it's broken.",
+              "avg_logprob": -0.26435953279336294,
+              "no_speech_prob": 0.04785090684890747,
+              "compression_ratio": 1.086021505376344
+            }
+          ]
+        },
+        "context": {
+          "text": "1103 East, 400 North. Female fell out of bed, hit her head, cracked her neck, unknown if it's broken.",
+          "prompt": "Thank you.",
+          "duration_seconds": 8.448,
+          "token_limit": 92,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.3200000000000003,
+              "text": " 1103 East, 400 North.",
+              "avg_logprob": -0.32596600241959095,
+              "no_speech_prob": 0.20808109641075134,
+              "compression_ratio": 1.063157894736842
+            },
+            {
+              "start": 3.3200000000000003,
+              "end": 7.96,
+              "text": " Female fell out of bed, hit her head, cracked her neck, unknown if it's broken.",
+              "avg_logprob": -0.32596600241959095,
+              "no_speech_prob": 0.20808109641075134,
+              "compression_ratio": 1.063157894736842
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793952385.m4a": {
+      "index": 13,
+      "epoch": 1793952385,
+      "sha256": "9d8efc14cba9d3ac07d0b2f4b693c51383885a0aee6e82c0d0f8bbbca7f7fee7",
+      "passes": {
+        "original": {
+          "text": "All right, guys.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " All right, guys.",
+              "avg_logprob": -0.796075776219368,
+              "no_speech_prob": 0.10179544985294342,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "All right, Jesse.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " All right, Jesse.",
+              "avg_logprob": -0.8151075765490532,
+              "no_speech_prob": 0.11843287944793701,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "All right, guys.",
+          "prompt": "Thank you. 1103 East, 400 North. Female fell out of bed, hit her head, cracked her neck, unknown if it's broken.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " All right, guys.",
+              "avg_logprob": -0.6395437493920326,
+              "no_speech_prob": 0.1309095323085785,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793952402.m4a": {
+      "index": 14,
+      "epoch": 1793952402,
+      "sha256": "4bc898b26c95ce0b4a2fc1a89a7caaba4b0d17c0bf6b5d0f1c5c4c5b76806258",
+      "passes": {
+        "original": {
+          "text": "You",
+          "prompt": null,
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You",
+              "avg_logprob": -0.826587438583374,
+              "no_speech_prob": 0.8266055583953857,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "filtered": {
+          "text": "You",
+          "prompt": null,
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You",
+              "avg_logprob": -0.785450667142868,
+              "no_speech_prob": 0.8728943467140198,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "context": {
+          "text": "All right, guys. 1103 East, 400 North.",
+          "prompt": "Thank you. 1103 East, 400 North. Female fell out of bed, hit her head, cracked her neck, unknown if it's broken. All right, guys.",
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.38,
+              "text": " All right, guys. 1103 East, 400 North.",
+              "avg_logprob": -0.8522165758269173,
+              "no_speech_prob": 0.7364513278007507,
+              "compression_ratio": 0.8444444444444444
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793952409.m4a": {
+      "index": 15,
+      "epoch": 1793952409,
+      "sha256": "b192d8288398dccbc4618b02f94f8351916681b01cccc4942738bcc3967ba28c",
+      "passes": {
+        "original": {
+          "text": "5G34. Give me a line for the medical order.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5G34. Give me a line for the medical order.",
+              "avg_logprob": -0.597710944712162,
+              "no_speech_prob": 0.07354440540075302,
+              "compression_ratio": 0.8775510204081632
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G34, give me a line for the medical order.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5G34, give me a line for the medical order.",
+              "avg_logprob": -0.6526857800781727,
+              "no_speech_prob": 0.061358969658613205,
+              "compression_ratio": 0.8775510204081632
+            }
+          ]
+        },
+        "context": {
+          "text": "want to do 34? Give me a line for the medical order.",
+          "prompt": "1103 East, 400 North. Female fell out of bed, hit her head, cracked her neck, unknown if it's broken. All right, guys. You",
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.4,
+              "text": " want to do 34? Give me a line for the medical order.",
+              "avg_logprob": -0.8077719632317039,
+              "no_speech_prob": 0.05536322295665741,
+              "compression_ratio": 0.896551724137931
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793952417.m4a": {
+      "index": 16,
+      "epoch": 1793952417,
+      "sha256": "1d8cb8692d26f2bfc298c5b43b01e72af10faf8d3ec0e2b2dbb51114ccb201c4",
+      "passes": {
+        "original": {
+          "text": "5J34.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J34.",
+              "avg_logprob": -0.4995168788092477,
+              "no_speech_prob": 0.06868229061365128,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5, 2, 3, 4...",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5, 2, 3, 4...",
+              "avg_logprob": -0.448042479428378,
+              "no_speech_prob": 0.08227094262838364,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "5G34.",
+          "prompt": "All right, guys. You 5G34. Give me a line for the medical order.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 5G34.",
+              "avg_logprob": -0.3569221411432539,
+              "no_speech_prob": 0.16404913365840912,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793952584.m4a": {
+      "index": 17,
+      "epoch": 1793952584,
+      "sha256": "74d50e8e19192581027f90135d433163a069876fc05fe70acbca55c71d80471f",
+      "passes": {
+        "original": {
+          "text": "7j29 1042 have a good night",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.16,
+              "text": " 7j29 1042 have a good night",
+              "avg_logprob": -0.5980793535709381,
+              "no_speech_prob": 0.07082336395978928,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7j 29 10 42 have a good night",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.2,
+              "text": " 7j 29 10 42 have a good night",
+              "avg_logprob": -0.5383297055959702,
+              "no_speech_prob": 0.04663928970694542,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        },
+        "context": {
+          "text": "7j29 1042 have a good night",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.16,
+              "text": " 7j29 1042 have a good night",
+              "avg_logprob": -0.5980793535709381,
+              "no_speech_prob": 0.07082336395978928,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793952589.m4a": {
+      "index": 18,
+      "epoch": 1793952589,
+      "sha256": "82f12ebd51605273ca3e4293ba6d3205dbad031f72ca4bb0e49495fce3548aa3",
+      "passes": {
+        "original": {
+          "text": "Hi, Kathy. Thanks. You too.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hi, Kathy. Thanks. You too.",
+              "avg_logprob": -0.5155816723903021,
+              "no_speech_prob": 0.007038036361336708,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I copy. Thanks. You too.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I copy. Thanks. You too.",
+              "avg_logprob": -0.5132132226770575,
+              "no_speech_prob": 0.008452143520116806,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "context": {
+          "text": "Hi copy. Thanks. You too",
+          "prompt": "7j29 1042 have a good night",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hi copy. Thanks. You too",
+              "avg_logprob": -0.5569770634174347,
+              "no_speech_prob": 0.01587064377963543,
+              "compression_ratio": 0.75
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793952672.m4a": {
+      "index": 19,
+      "epoch": 1793952672,
+      "sha256": "993890f988f2829fab3cc442370d8bd892e44dc666e0477f3feed3ce3a2b274d",
+      "passes": {
+        "original": {
+          "text": "5G34 and 55R.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5G34 and 55R.",
+              "avg_logprob": -0.4214414209127426,
+              "no_speech_prob": 0.03648656979203224,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G34 and 55R",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5G34 and 55R",
+              "avg_logprob": -0.5547381507025825,
+              "no_speech_prob": 0.046270500868558884,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "5G34 and 55R.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5G34 and 55R.",
+              "avg_logprob": -0.4214414209127426,
+              "no_speech_prob": 0.03648656979203224,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793952955.m4a": {
+      "index": 20,
+      "epoch": 1793952955,
+      "sha256": "de1714cc29da2a2c6937a08e103a37eb2db4a7e783414ca6b93bd585b49acaaf",
+      "passes": {
+        "original": {
+          "text": "5J48, copy, ready to go.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J48, copy, ready to go.",
+              "avg_logprob": -0.7080095914693979,
+              "no_speech_prob": 0.03236902877688408,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5-28, copy, ready to go.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5-28, copy, ready to go.",
+              "avg_logprob": -0.9592718344468337,
+              "no_speech_prob": 0.03749578818678856,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "context": {
+          "text": "5J48, copy, ready to go.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J48, copy, ready to go.",
+              "avg_logprob": -0.7080095914693979,
+              "no_speech_prob": 0.03236902877688408,
+              "compression_ratio": 0.75
+            }
+          ]
+        }
+      }
+    }
+  }
+}
