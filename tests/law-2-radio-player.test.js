@@ -58,7 +58,7 @@ class Element {
   add(option) { this.options.push(option); if (this.options.length === 1) this.value = option.value; }
 }
 
-async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11", search = "", transcriptEnabled = true, associations = null, manifestEnabled = transcriptEnabled, afpdRadioIds = [], agencyRadioIds = {}, confirmations = null) {
+async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11", search = "", transcriptEnabled = true, associations = null, manifestEnabled = transcriptEnabled, afpdRadioIds = [], agencyRadioIds = {}, confirmations = null, datedAgencyIds = {}) {
   const elements = new Map(["archive", "month", "day", "audio", "play", "seek", "autoplay",
     "clips", "clips-section", "status", "current", "current-radio-ids", "player-message", "elapsed", "duration",
     "coverage", "transcript-toggle", "transcript-download", "transcript", "transcript-status", "transcript-text", "transcript-availability", "verification-count", "transcription-count", "review-progress", "progress-date"]
@@ -112,7 +112,7 @@ async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11",
       }
       metadataRequests.push({ url, options });
       return { ok: true, json: async () => url.endsWith("index.json")
-        ? { afpdRadioIds, agencyRadioIds, days: dates.map(date => ({ date, folder: `openmhz-afpd-law-2-${date}`, enableDay: true, enableTranscription: typeof transcriptEnabled === "function" ? transcriptEnabled(date) : transcriptEnabled, count: fixtureCalls?.length ?? 4 })) }
+        ? { afpdRadioIds, agencyRadioIds, days: dates.map(date => ({ date, agencyRadioIds: datedAgencyIds[date], folder: `openmhz-afpd-law-2-${date}`, enableDay: true, enableTranscription: typeof transcriptEnabled === "function" ? transcriptEnabled(date) : transcriptEnabled, count: fixtureCalls?.length ?? 4 })) }
         : { date: dates.find(date => url.includes(date)), enableTranscription: typeof manifestEnabled === "function" ? manifestEnabled(dates.find(date => url.includes(date))) : manifestEnabled, calls: fixtureCalls ?? Array.from({ length: 4 }, (_, i) => ({
           epoch: 1789100000 + i * 10, displayed_seconds: 5, original_filename: `call-${i}.m4a`
         })) } };
@@ -364,4 +364,19 @@ test('current shared schema carries two-date possible associations into Law 2',a
  const f=await playerFixture([{epoch:1789100000,displayed_seconds:2,original_filename:'one.m4a',radio_ids:[14590026]}],undefined,'2026-09-11','',false,associations);
  assert.match(f.get('clips').children[0].children[1].textContent,/Two Date Officer · Possible association/);
  f.select(0);await f.settle();assert.match(f.get('current-radio-ids').textContent,/Two Date Officer · Possible association/);
+});
+
+test("dated callsign overrides AFPD only on the selected date and does not leak when switching days", async () => {
+  const f = await playerFixture([
+    { epoch: 1789100000, displayed_seconds: 2, original_filename: "one.m4a", radio_ids: ["14750172"] }
+  ], undefined, "2026-09-11", "", false, null, false, ["14750172"], {}, null, {
+    "2026-09-11": { "14750172": "7J20" }
+  });
+  assert.match(f.get("clips").children[0].children[1].textContent, /14750172 · 7J20/);
+  assert.match(f.get("clips").children[0].children[0].getAttribute("aria-label"), /14750172 · 7J20/);
+  f.select(0);
+  assert.match(f.get("current-radio-ids").textContent, /14750172 · 7J20/);
+  f.get("day").value = "2026-09-10"; f.get("day").emit("change"); await f.settle();
+  assert.match(f.get("clips").children[0].children[1].textContent, /14750172 · AFPD/);
+  assert.doesNotMatch(f.get("clips").children[0].children[1].textContent, /7J20/);
 });
