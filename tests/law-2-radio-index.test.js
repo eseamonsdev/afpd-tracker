@@ -122,7 +122,7 @@ test("AFPD membership is rebuilt from 6001 source IDs, excluding other talkgroup
   assert.deepEqual(f.build().afpdRadioIds, ['14590026', '14590027', '14590028']);
   write([{ radio_ids: [14590029, 14580068] }]);
   assert.deepEqual(f.build().afpdRadioIds, ['14590029'], 'membership reflects current authoritative manifests and excludes corrected non-AFPD IDs');
-  assert.equal(f.build().agencyRadioIds['14580068'], '18J16');
+  assert.equal(f.build().agencyRadioIds['14580068'], undefined, 'undated non-5J evidence must not publish a global callsign');
 });
 
 test("known unavailable recordings use only the shared placeholder and retain their source URL", t => {

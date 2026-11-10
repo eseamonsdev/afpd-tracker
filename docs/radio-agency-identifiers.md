@@ -33,5 +33,12 @@ For a callsign known only on one date, add `agencyRadioIds` to that date in
 ```
 
 Rebuilding carries these dated labels into the Law 2 index. They override officer
-and AFPD fallback labels for that date only; global agency corrections apply on
-other dates. Callsign labels use the numeric agency/unit format, such as 7J20.
+and AFPD fallback labels for that date only. Non-5J callsigns are displayed only
+on explicitly confirmed dates. A non-5J assignment excludes that radio from the
+AFPD fallback on every date, even if it appears on 6001 while assisting. Undated
+agency corrections retain their evidence but do not publish an undated non-5J
+callsign. On other dates, the numeric radio ID remains without the AFPD fallback.
+Callsign labels use the numeric agency/unit format, such as 7J20.
+
+The raw 6001/6036 radio inventory preserves observed transmissions; appearing
+in that inventory is not an AFPD agency association.
