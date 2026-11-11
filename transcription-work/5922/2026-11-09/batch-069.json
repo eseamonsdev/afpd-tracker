@@ -1,0 +1,649 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-09",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794262025.m4a": {
+      "index": 681,
+      "epoch": 1794262025,
+      "sha256": "7b4b4f9a954096d6c942ede833966e284a792eaea5f2b7a0695ac71cfb96a2ba",
+      "passes": {
+        "original": {
+          "text": "89 South Lincoln Avenue, 89 South Lincoln. It's a black dog's gram.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.4,
+              "text": " 89 South Lincoln Avenue, 89 South Lincoln.",
+              "avg_logprob": -0.6034437255425886,
+              "no_speech_prob": 0.006876181811094284,
+              "compression_ratio": 1.1166666666666667
+            },
+            {
+              "start": 3.4,
+              "end": 4.72,
+              "text": " It's a black dog's gram.",
+              "avg_logprob": -0.6034437255425886,
+              "no_speech_prob": 0.006876181811094284,
+              "compression_ratio": 1.1166666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "89 South Lincoln Avenue, 89 South Lincoln. It's a black dot square.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 89 South Lincoln Avenue, 89 South Lincoln. It's a black dot square.",
+              "avg_logprob": -0.49894694905532033,
+              "no_speech_prob": 0.006941569969058037,
+              "compression_ratio": 1.0806451612903225
+            }
+          ]
+        },
+        "context": {
+          "text": "89 South Lincoln Avenue, 89 South Lincoln. It's a black-dot-gram.",
+          "prompt": "5J40, copy keys. Good",
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 89 South Lincoln Avenue, 89 South Lincoln. It's a black-dot-gram.",
+              "avg_logprob": -0.6037881260826474,
+              "no_speech_prob": 0.03544112667441368,
+              "compression_ratio": 1.0833333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794262043.m4a": {
+      "index": 682,
+      "epoch": 1794262043,
+      "sha256": "6499d3e2e15dc0236bd8d71111438875c1d7215d10d657e1face3a692cf9bac3",
+      "passes": {
+        "original": {
+          "text": "5J42, copy. Keep the beast.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.48,
+              "text": " 5J42, copy. Keep the beast.",
+              "avg_logprob": -0.49834546676048863,
+              "no_speech_prob": 0.019526677206158638,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        },
+        "filtered": {
+          "text": "at J42. Copy. Keep the peace.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " at J42. Copy. Keep the peace.",
+              "avg_logprob": -0.6001685032477746,
+              "no_speech_prob": 0.0055558872409164906,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        },
+        "context": {
+          "text": "5J42, copy keys. Peace.",
+          "prompt": "5J40, copy keys. Good 89 South Lincoln Avenue, 89 South Lincoln. It's a black dog's gram.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.48,
+              "text": " 5J42, copy keys. Peace.",
+              "avg_logprob": -0.4617021232843399,
+              "no_speech_prob": 0.00539677869528532,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794262049.m4a": {
+      "index": 683,
+      "epoch": 1794262049,
+      "sha256": "e6de9b03b21c3aeefb097ce0de8cf1768f560045d51301dbccd7f459a64a4284",
+      "passes": {
+        "original": {
+          "text": "Now we've again",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Now we've again",
+              "avg_logprob": -1.1418029921395438,
+              "no_speech_prob": 0.25028514862060547,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Now we've got",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Now we've got",
+              "avg_logprob": -0.8285672153745379,
+              "no_speech_prob": 0.17792360484600067,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy again.",
+          "prompt": "Good 89 South Lincoln Avenue, 89 South Lincoln. It's a black dog's gram. 5J42, copy. Keep the beast.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy again.",
+              "avg_logprob": -0.8248936136563619,
+              "no_speech_prob": 0.07531668990850449,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794262052.m4a": {
+      "index": 684,
+      "epoch": 1794262052,
+      "sha256": "2d15213a5c54b347cad4e15f29c0e527eca1976212ba8a042a572e3bec8c6d63",
+      "passes": {
+        "original": {
+          "text": "Stand for.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Stand for.",
+              "avg_logprob": -0.7466743886470795,
+              "no_speech_prob": 0.01491761114448309,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Stand for.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " Stand for.",
+              "avg_logprob": -0.5994613965352377,
+              "no_speech_prob": 0.01494007557630539,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Time for...",
+          "prompt": "89 South Lincoln Avenue, 89 South Lincoln. It's a black dog's gram. 5J42, copy. Keep the beast. Now we've again",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.1500000000000001,
+              "text": " Time for...",
+              "avg_logprob": -0.7976696968078614,
+              "no_speech_prob": 0.021988950669765472,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794262056.m4a": {
+      "index": 685,
+      "epoch": 1794262056,
+      "sha256": "a86935c6d28b150b7d3d5e299607acd3ffb1879aa2f517a8f076d7580bf1d534",
+      "passes": {
+        "original": {
+          "text": "7J29 in units, code 4.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J29 in units, code 4.",
+              "avg_logprob": -0.5413429141044617,
+              "no_speech_prob": 0.00819921400398016,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J29 in units, clear for us.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J29 in units, clear for us.",
+              "avg_logprob": -0.7197105701153095,
+              "no_speech_prob": 0.010279904119670391,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "context": {
+          "text": "7J29 in units, code 4.",
+          "prompt": "5J42, copy. Keep the beast. Now we've again Stand for.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J29 in units, code 4.",
+              "avg_logprob": -0.4009835595885913,
+              "no_speech_prob": 0.010256868787109852,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794262060.m4a": {
+      "index": 686,
+      "epoch": 1794262060,
+      "sha256": "1cdf1c4e65dd29783ec8dfab270afc220277082cf9c7d457304a399b4576c187",
+      "passes": {
+        "original": {
+          "text": "Go for it",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it",
+              "avg_logprob": -0.5053520699342092,
+              "no_speech_prob": 0.030036376789212227,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.356150073664529,
+              "no_speech_prob": 0.07206584513187408,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Go for it.",
+          "prompt": "Now we've again Stand for. 7J29 in units, code 4.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.47359258787972586,
+              "no_speech_prob": 0.017775118350982666,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794262064.m4a": {
+      "index": 687,
+      "epoch": 1794262064,
+      "sha256": "d3e2fb0b6439f41734f1ee96bce5180796dc87452b2849159421f7696d3e9c79",
+      "passes": {
+        "original": {
+          "text": "Send your time.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Send your time.",
+              "avg_logprob": -0.6185741594859532,
+              "no_speech_prob": 0.1390894204378128,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Send your time.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Send your time.",
+              "avg_logprob": -0.48588287830352783,
+              "no_speech_prob": 0.08601949363946915,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "context": {
+          "text": "Stand your time.",
+          "prompt": "Stand for. 7J29 in units, code 4. Go for it",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Stand your time.",
+              "avg_logprob": -0.5644899947302682,
+              "no_speech_prob": 0.009718247689306736,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794262067.m4a": {
+      "index": 688,
+      "epoch": 1794262067,
+      "sha256": "bde3e83b598aa83e4e8ddca4cfc49f1c451e15b113bb3c914663c639b7421a99",
+      "passes": {
+        "original": {
+          "text": "Bye.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Bye.",
+              "avg_logprob": -0.5698960304260254,
+              "no_speech_prob": 0.031125778332352638,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bye.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " Bye.",
+              "avg_logprob": -0.3911106586456299,
+              "no_speech_prob": 0.015963438898324966,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Bye.",
+          "prompt": "7J29 in units, code 4. Go for it Send your time.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Bye.",
+              "avg_logprob": -0.5597569942474365,
+              "no_speech_prob": 0.0333685427904129,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794262072.m4a": {
+      "index": 689,
+      "epoch": 1794262072,
+      "sha256": "ac8bb2c610f4c0e6e842c60dc1ed9778e9b0b31fe16462395cb25397bfb1e877",
+      "passes": {
+        "original": {
+          "text": "Bye-bye.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.8379005874906268,
+              "no_speech_prob": 0.11894220858812332,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bye, Tim.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.36,
+              "text": " Bye, Tim.",
+              "avg_logprob": -0.9022106102534703,
+              "no_speech_prob": 0.03483467921614647,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Bye, too.",
+          "prompt": "Go for it Send your time. Bye.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye, too.",
+              "avg_logprob": -0.6408720016479492,
+              "no_speech_prob": 0.042109765112400055,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794262118.m4a": {
+      "index": 690,
+      "epoch": 1794262118,
+      "sha256": "61f275c3b00a3fa9f9e837b25c903f184b0e3419de6841953518bd78c236ed3a",
+      "passes": {
+        "original": {
+          "text": "So Jay Sinclair",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " So Jay Sinclair",
+              "avg_logprob": -0.8703130483627319,
+              "no_speech_prob": 0.1255161464214325,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Some days in class",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Some days in class",
+              "avg_logprob": -1.0638841560908727,
+              "no_speech_prob": 0.18074193596839905,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "context": {
+          "text": "7J, Sinclair.",
+          "prompt": "Send your time. Bye. Bye-bye.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J, Sinclair.",
+              "avg_logprob": -0.7891580611467361,
+              "no_speech_prob": 0.04151368513703346,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    }
+  }
+}
