@@ -1,0 +1,641 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-09",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794266575.m4a": {
+      "index": 851,
+      "epoch": 1794266575,
+      "sha256": "d7a290df728208498279e63308e4c22e965d1a2af388d8a08764950ff753ec65",
+      "passes": {
+        "original": {
+          "text": "10-4, just confirming is at 415 North.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 10-4, just confirming is at 415 North.",
+              "avg_logprob": -0.61960055572646,
+              "no_speech_prob": 0.017201900482177734,
+              "compression_ratio": 0.8260869565217391
+            }
+          ]
+        },
+        "filtered": {
+          "text": "And we're just confirming is at 415 north.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " And we're just confirming is at 415 north.",
+              "avg_logprob": -0.4837023661686824,
+              "no_speech_prob": 0.011426014825701714,
+              "compression_ratio": 0.84
+            }
+          ]
+        },
+        "context": {
+          "text": "Thanks for just confirming, is it 415 North?",
+          "prompt": "5J35, go ahead. Can you hold the theft? Show me on a follow-up at 1137 East 415 North and take us on the date when one's going to be available.",
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Thanks for just confirming, is it 415 North?",
+              "avg_logprob": -0.36960246012761044,
+              "no_speech_prob": 0.0189168993383646,
+              "compression_ratio": 0.8461538461538461
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794266579.m4a": {
+      "index": 852,
+      "epoch": 1794266579,
+      "sha256": "b4167e6908c53cc6c7e7dae1e13d463351e832ab6bf6415020e5b7792fecddfa",
+      "passes": {
+        "original": {
+          "text": "It's going to be 1 1 3 7 East 4 5 0 and North",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.72,
+              "text": " It's going to be 1 1 3 7 East 4 5 0 and North",
+              "avg_logprob": -0.4150773419274224,
+              "no_speech_prob": 0.014626139774918556,
+              "compression_ratio": 0.8823529411764706
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It's going to be 1-1-3-7 East 4-5-0 North.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.76,
+              "text": " It's going to be 1-1-3-7 East 4-5-0 North.",
+              "avg_logprob": -0.3528899187627046,
+              "no_speech_prob": 0.01301654428243637,
+              "compression_ratio": 0.84
+            }
+          ]
+        },
+        "context": {
+          "text": "It's going to be 1137 East 450 North.",
+          "prompt": "5J35, go ahead. Can you hold the theft? Show me on a follow-up at 1137 East 415 North and take us on the date when one's going to be available. 10-4, just confirming is at 415 North.",
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.72,
+              "text": " It's going to be 1137 East 450 North.",
+              "avg_logprob": -0.2756709158420563,
+              "no_speech_prob": 0.012185556814074516,
+              "compression_ratio": 0.8222222222222222
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794266585.m4a": {
+      "index": 853,
+      "epoch": 1794266585,
+      "sha256": "93a1a3e7db9c7a41278a3e0ed313341ecaabf2bfb30cc26cec26417edc479a22",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.6533738136291504,
+              "no_speech_prob": 0.013455943204462528,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.7083504676818848,
+              "no_speech_prob": 0.012626679614186287,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "copy.",
+          "prompt": "Can you hold the theft? Show me on a follow-up at 1137 East 415 North and take us on the date when one's going to be available. 10-4, just confirming is at 415 North. It's going to be 1 1 3 7 East 4 5 0 and North",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 10.0,
+              "text": " copy.",
+              "avg_logprob": -0.9847222328186035,
+              "no_speech_prob": 0.016795514151453972,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794266614.m4a": {
+      "index": 854,
+      "epoch": 1794266614,
+      "sha256": "5403fd59d203ce39a1ed1f3f2341de43fe23e21c51e1891212d97ca07b79cdd7",
+      "passes": {
+        "original": {
+          "text": "Happy 1623.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy 1623.",
+              "avg_logprob": -0.48589028630937847,
+              "no_speech_prob": 0.005982081405818462,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy, 1623.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy, 1623.",
+              "avg_logprob": -0.5825242847204208,
+              "no_speech_prob": 0.007492637261748314,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy 16-23.",
+          "prompt": "10-4, just confirming is at 415 North. It's going to be 1 1 3 7 East 4 5 0 and North Copy.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy 16-23.",
+              "avg_logprob": -0.6494617834687233,
+              "no_speech_prob": 0.0014985583256930113,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794266626.m4a": {
+      "index": 855,
+      "epoch": 1794266626,
+      "sha256": "ffd575fa2245bc8882f9106244f8676da3e9bbaa15f4d71e3ceaefbbc0092001",
+      "passes": {
+        "original": {
+          "text": "5G171, you can show me en route to 35 location.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.28,
+              "text": " 5G171, you can show me en route to 35 location.",
+              "avg_logprob": -0.4193086624145508,
+              "no_speech_prob": 0.01551869511604309,
+              "compression_ratio": 0.8545454545454545
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G171, you can show me en route to 35 location.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.3,
+              "text": " 5G171, you can show me en route to 35 location.",
+              "avg_logprob": -0.4390379400814281,
+              "no_speech_prob": 0.025162944570183754,
+              "compression_ratio": 0.8545454545454545
+            }
+          ]
+        },
+        "context": {
+          "text": "5G171, you can show me en route to 35 location.",
+          "prompt": "It's going to be 1 1 3 7 East 4 5 0 and North Copy. Happy 1623.",
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.28,
+              "text": " 5G171, you can show me en route to 35 location.",
+              "avg_logprob": -0.39206656287698183,
+              "no_speech_prob": 0.011537475511431694,
+              "compression_ratio": 0.8545454545454545
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794266631.m4a": {
+      "index": 856,
+      "epoch": 1794266631,
+      "sha256": "e66d7e9c76abb9c870dd85b87eeb1d5d3e9496cf0482a3553b06b57bd50d8e09",
+      "passes": {
+        "original": {
+          "text": "Time for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Time for it.",
+              "avg_logprob": -0.8890124048505511,
+              "no_speech_prob": 0.05666530504822731,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It's going to work.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " It's going to work.",
+              "avg_logprob": -0.9346279568142362,
+              "no_speech_prob": 0.013326795771718025,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "Time for it.",
+          "prompt": "Copy. Happy 1623. 5G171, you can show me en route to 35 location.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Time for it.",
+              "avg_logprob": -0.6906535455158779,
+              "no_speech_prob": 0.05122753232717514,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794266682.m4a": {
+      "index": 857,
+      "epoch": 1794266682,
+      "sha256": "cc9569a5a9e07e67ac7d42a09448d8929d00c8dd23b016e8576725b723f071b3",
+      "passes": {
+        "original": {
+          "text": "5G40, you can assign your call 9-1-2.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5G40, you can assign your call 9-1-2.",
+              "avg_logprob": -0.3519747191005283,
+              "no_speech_prob": 0.04115184769034386,
+              "compression_ratio": 0.9024390243902439
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G40, you can assign your call 9-1-2.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5G40, you can assign your call 9-1-2.",
+              "avg_logprob": -0.43780744075775146,
+              "no_speech_prob": 0.033639565110206604,
+              "compression_ratio": 0.9024390243902439
+            }
+          ]
+        },
+        "context": {
+          "text": "5G40, you can assign me a call, 912.",
+          "prompt": "5G171, you can show me en route to 35 location. Time for it.",
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5G40, you can assign me a call, 912.",
+              "avg_logprob": -0.3608855920679429,
+              "no_speech_prob": 0.018365005031228065,
+              "compression_ratio": 0.8571428571428571
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794266687.m4a": {
+      "index": 858,
+      "epoch": 1794266687,
+      "sha256": "0d273193991f20cf744b2bebee0aba33c53cdbdb553d883207e638e3b1ffc0c6",
+      "passes": {
+        "original": {
+          "text": "Stand for.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Stand for.",
+              "avg_logprob": -0.6040683885415395,
+              "no_speech_prob": 0.05111223831772804,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Therefore.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " Therefore.",
+              "avg_logprob": -0.8122942924499512,
+              "no_speech_prob": 0.012872297316789627,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Time for it.",
+          "prompt": "Time for it. 5G40, you can assign your call 9-1-2.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Time for it.",
+              "avg_logprob": -0.31803429978234427,
+              "no_speech_prob": 0.013260815292596817,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794266805.m4a": {
+      "index": 859,
+      "epoch": 1794266805,
+      "sha256": "3c535068959286e64878467cf81f3e4c3fd75f8e83974ae26a2089ebe6e86e61",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Go ahead.",
+              "avg_logprob": -0.574037233988444,
+              "no_speech_prob": 0.03688715398311615,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Go ahead.",
+              "avg_logprob": -0.542755126953125,
+              "no_speech_prob": 0.026558557525277138,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Go ahead.",
+              "avg_logprob": -0.574037233988444,
+              "no_speech_prob": 0.03688715398311615,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794266807.m4a": {
+      "index": 860,
+      "epoch": 1794266807,
+      "sha256": "184ee198bb9b66bf0a3693d707577e40b8fcd8764aa5604cf95149a1c8669c19",
+      "passes": {
+        "original": {
+          "text": "We arrived at 597 with Sycamore Lane in Alpine negative check",
+          "prompt": null,
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.24,
+              "text": " We arrived at 597 with Sycamore Lane in Alpine negative check",
+              "avg_logprob": -0.45870259228874655,
+              "no_speech_prob": 0.023913556709885597,
+              "compression_ratio": 0.9242424242424242
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We should have arrived at 597 with Sycamore Lane and Alpine, negative check.",
+          "prompt": null,
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.28,
+              "text": " We should have arrived at 597 with Sycamore Lane and Alpine, negative check.",
+              "avg_logprob": -0.4712928192956107,
+              "no_speech_prob": 0.0056128730066120625,
+              "compression_ratio": 0.9382716049382716
+            }
+          ]
+        },
+        "context": {
+          "text": "I assume you arrived at 597 with Sycamore Lane in Alpine. Negative check.",
+          "prompt": "Go ahead.",
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.24,
+              "text": " I assume you arrived at 597 with Sycamore Lane in Alpine. Negative check.",
+              "avg_logprob": -0.4682343914395287,
+              "no_speech_prob": 0.005726878996938467,
+              "compression_ratio": 0.9125
+            }
+          ]
+        }
+      }
+    }
+  }
+}
