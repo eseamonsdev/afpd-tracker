@@ -1,0 +1,713 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-07",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794070481.m4a": {
+      "index": 231,
+      "epoch": 1794070481,
+      "sha256": "dc19a2b43c2fe1f9acda46dbe5be7af0ff8c905a620526603fd3e59244eb88d5",
+      "passes": {
+        "original": {
+          "text": "Paige Medics, 425 South North County Boulevard, this is going to be for an elderly female 59 year old. Her dog pulled her and she fell, hit her head. She was bleeding from the forehead. Medics are in her.",
+          "prompt": null,
+          "duration_seconds": 14.72,
+          "token_limit": 142,
+          "token_count": 54,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Paige Medics, 425 South North County Boulevard, this is going to be for an elderly female 59 year old.",
+              "avg_logprob": -0.30003072023391725,
+              "no_speech_prob": 0.04841182008385658,
+              "compression_ratio": 1.3161290322580645
+            },
+            {
+              "start": 7.0,
+              "end": 12.0,
+              "text": " Her dog pulled her and she fell, hit her head. She was bleeding from the forehead.",
+              "avg_logprob": -0.30003072023391725,
+              "no_speech_prob": 0.04841182008385658,
+              "compression_ratio": 1.3161290322580645
+            },
+            {
+              "start": 12.0,
+              "end": 14.0,
+              "text": " Medics are in her.",
+              "avg_logprob": -0.30003072023391725,
+              "no_speech_prob": 0.04841182008385658,
+              "compression_ratio": 1.3161290322580645
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Paige Medics, 425 South North County Boulevard. This is going to be for an elderly female, 59-year-old. Her dog pulled her and she fell, hit her head. She was bleeding from the forehead. Medics are in her.",
+          "prompt": null,
+          "duration_seconds": 14.72,
+          "token_limit": 142,
+          "token_count": 61,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Paige Medics, 425 South North County Boulevard.",
+              "avg_logprob": -0.25088832359160146,
+              "no_speech_prob": 0.044261619448661804,
+              "compression_ratio": 1.305732484076433
+            },
+            {
+              "start": 4.0,
+              "end": 7.0,
+              "text": " This is going to be for an elderly female, 59-year-old.",
+              "avg_logprob": -0.25088832359160146,
+              "no_speech_prob": 0.044261619448661804,
+              "compression_ratio": 1.305732484076433
+            },
+            {
+              "start": 7.0,
+              "end": 10.0,
+              "text": " Her dog pulled her and she fell, hit her head.",
+              "avg_logprob": -0.25088832359160146,
+              "no_speech_prob": 0.044261619448661804,
+              "compression_ratio": 1.305732484076433
+            },
+            {
+              "start": 10.0,
+              "end": 12.0,
+              "text": " She was bleeding from the forehead.",
+              "avg_logprob": -0.25088832359160146,
+              "no_speech_prob": 0.044261619448661804,
+              "compression_ratio": 1.305732484076433
+            },
+            {
+              "start": 12.0,
+              "end": 14.0,
+              "text": " Medics are in her.",
+              "avg_logprob": -0.25088832359160146,
+              "no_speech_prob": 0.044261619448661804,
+              "compression_ratio": 1.305732484076433
+            }
+          ]
+        },
+        "context": {
+          "text": "Page Medics 425 South North County Boulevard. This is going to be for an elderly female 59 year old. Her dog pulled her and she fell, hit her head. She was bleeding from the forehead. Medics are in her.",
+          "prompt": "7J24 copy, medical assist. Go ahead.",
+          "duration_seconds": 14.72,
+          "token_limit": 142,
+          "token_count": 49,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 14.0,
+              "text": " Page Medics 425 South North County Boulevard. This is going to be for an elderly female 59 year old. Her dog pulled her and she fell, hit her head. She was bleeding from the forehead. Medics are in her.",
+              "avg_logprob": -0.25456163823604583,
+              "no_speech_prob": 0.01637130044400692,
+              "compression_ratio": 1.3116883116883118
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794070499.m4a": {
+      "index": 232,
+      "epoch": 1794070499,
+      "sha256": "9c3698d7129d36b92c5f38f58f7d667cee601d6d22bdc437b44fdd75668273c8",
+      "passes": {
+        "original": {
+          "text": "Tommy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Tommy",
+              "avg_logprob": -0.5854605585336685,
+              "no_speech_prob": 0.03299689292907715,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Tommy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Tommy",
+              "avg_logprob": -0.680567130446434,
+              "no_speech_prob": 0.014060059562325478,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "7J24 copy, medical assist. Go ahead. Paige Medics, 425 South North County Boulevard, this is going to be for an elderly female 59 year old. Her dog pulled her and she fell, hit her head. She was bleeding from the forehead. Medics are in her.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.7533819675445557,
+              "no_speech_prob": 0.026704352349042892,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794070516.m4a": {
+      "index": 233,
+      "epoch": 1794070516,
+      "sha256": "00be7db6da1b8a58e43a989b05cdf258a96b6141eef44fb63b79b36138efb3f6",
+      "passes": {
+        "original": {
+          "text": "Unfortunately...",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Unfortunately...",
+              "avg_logprob": -0.7646095752716064,
+              "no_speech_prob": 0.011874363757669926,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "of course",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " of course",
+              "avg_logprob": -0.6497739791870117,
+              "no_speech_prob": 0.012734672985970974,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Unfortunately.",
+          "prompt": "Go ahead. Paige Medics, 425 South North County Boulevard, this is going to be for an elderly female 59 year old. Her dog pulled her and she fell, hit her head. She was bleeding from the forehead. Medics are in her. Tommy",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Unfortunately.",
+              "avg_logprob": -0.7619230270385742,
+              "no_speech_prob": 0.01123555563390255,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794070518.m4a": {
+      "index": 234,
+      "epoch": 1794070518,
+      "sha256": "907b31967da2a636c70a26b3465e23a9d29f1c8648f2ae244ebbc056a4b3b8b6",
+      "passes": {
+        "original": {
+          "text": "Coming",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Coming",
+              "avg_logprob": -0.4444844126701355,
+              "no_speech_prob": 0.02193676307797432,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Probably",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Probably",
+              "avg_logprob": -0.7357224225997925,
+              "no_speech_prob": 0.029341870918869972,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Tommy.",
+          "prompt": "Paige Medics, 425 South North County Boulevard, this is going to be for an elderly female 59 year old. Her dog pulled her and she fell, hit her head. She was bleeding from the forehead. Medics are in her. Tommy Unfortunately...",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Tommy.",
+              "avg_logprob": -0.44229974746704104,
+              "no_speech_prob": 0.0068402462638914585,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794070730.m4a": {
+      "index": 235,
+      "epoch": 1794070730,
+      "sha256": "323a4b8efe9122c09445f46e5bfff63fb5f4011a89168390777e454307fe9433",
+      "passes": {
+        "original": {
+          "text": "7J23",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J23",
+              "avg_logprob": -0.3836800654729207,
+              "no_speech_prob": 0.06587480753660202,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J24",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J24",
+              "avg_logprob": -0.5600385367870331,
+              "no_speech_prob": 0.09719599783420563,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "7J23",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J23",
+              "avg_logprob": -0.3836800654729207,
+              "no_speech_prob": 0.06587480753660202,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794070733.m4a": {
+      "index": 236,
+      "epoch": 1794070733,
+      "sha256": "765245b5a4c95795403ce299a28fb533d2962509e7d7a522dba7fb15f2870376",
+      "passes": {
+        "original": {
+          "text": "7824.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.16,
+              "text": " 7824.",
+              "avg_logprob": -0.8285651107629141,
+              "no_speech_prob": 0.07635851949453354,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7824.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.2,
+              "text": " 7824.",
+              "avg_logprob": -0.8782209952672323,
+              "no_speech_prob": 0.06731030344963074,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "7J24",
+          "prompt": "7J23",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 7J24",
+              "avg_logprob": -0.4279717803001404,
+              "no_speech_prob": 0.06374549865722656,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794070735.m4a": {
+      "index": 237,
+      "epoch": 1794070735,
+      "sha256": "124a26fbd7708517a86b10e899dce300ccc855b6b9109b50159dc23fdeb2f7a9",
+      "passes": {
+        "original": {
+          "text": "You can have medical advice and show me clear, right? Copy that, excellent.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " You can have medical advice and show me clear, right? Copy that, excellent.",
+              "avg_logprob": -0.45185613036155703,
+              "no_speech_prob": 0.016900474205613136,
+              "compression_ratio": 0.974025974025974
+            }
+          ]
+        },
+        "filtered": {
+          "text": "You can have medical advice and show me clear, right? Copy that, actually.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " You can have medical advice and show me clear, right? Copy that, actually.",
+              "avg_logprob": -0.477105975151062,
+              "no_speech_prob": 0.011601339094340801,
+              "compression_ratio": 0.9736842105263158
+            }
+          ]
+        },
+        "context": {
+          "text": "You can have medical advice and show me clear, right? Copy that, excellent.",
+          "prompt": "7J23 7824.",
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " You can have medical advice and show me clear, right? Copy that, excellent.",
+              "avg_logprob": -0.4611817464232445,
+              "no_speech_prob": 0.04657333716750145,
+              "compression_ratio": 0.974025974025974
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794070740.m4a": {
+      "index": 238,
+      "epoch": 1794070740,
+      "sha256": "6a3803dc475574cddf3f9f54a857357212fb4449754e018956c6635c6d57771f",
+      "passes": {
+        "original": {
+          "text": "Copies will be at exit 275, northbound at the intersection at the, looks like this will be top of the off-ramp, so that's possibly how it controls.",
+          "prompt": null,
+          "duration_seconds": 15.616,
+          "token_limit": 149,
+          "token_count": 41,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 10.96,
+              "text": " Copies will be at exit 275, northbound at the intersection at the, looks like this will",
+              "avg_logprob": -0.3877677491733006,
+              "no_speech_prob": 0.025924723595380783,
+              "compression_ratio": 1.2672413793103448
+            },
+            {
+              "start": 10.96,
+              "end": 14.48,
+              "text": " be top of the off-ramp, so that's possibly how it controls.",
+              "avg_logprob": -0.3877677491733006,
+              "no_speech_prob": 0.025924723595380783,
+              "compression_ratio": 1.2672413793103448
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copies will be at exit 275, northbound at the intersection at the—looks like this will be top of the off-ramp, so that's possibly how it controls.",
+          "prompt": null,
+          "duration_seconds": 15.616,
+          "token_limit": 149,
+          "token_count": 42,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 10.92,
+              "text": " Copies will be at exit 275, northbound at the intersection at the—looks like this",
+              "avg_logprob": -0.41695829463559525,
+              "no_speech_prob": 0.04181836545467377,
+              "compression_ratio": 1.2131147540983607
+            },
+            {
+              "start": 10.92,
+              "end": 14.56,
+              "text": " will be top of the off-ramp, so that's possibly how it controls.",
+              "avg_logprob": -0.41695829463559525,
+              "no_speech_prob": 0.04181836545467377,
+              "compression_ratio": 1.2131147540983607
+            }
+          ]
+        },
+        "context": {
+          "text": "Copies will be at exit 275, northbound at the intersection at the, looks like this will be top of the off-ramp, so that's possibly how it controls.",
+          "prompt": "7J23 7824. You can have medical advice and show me clear, right? Copy that, excellent.",
+          "duration_seconds": 15.616,
+          "token_limit": 149,
+          "token_count": 41,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 11.44,
+              "text": " Copies will be at exit 275, northbound at the intersection at the, looks like this will be",
+              "avg_logprob": -0.3530168164344061,
+              "no_speech_prob": 0.01193348877131939,
+              "compression_ratio": 1.2672413793103448
+            },
+            {
+              "start": 11.44,
+              "end": 14.48,
+              "text": " top of the off-ramp, so that's possibly how it controls.",
+              "avg_logprob": -0.3530168164344061,
+              "no_speech_prob": 0.01193348877131939,
+              "compression_ratio": 1.2672413793103448
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794070763.m4a": {
+      "index": 239,
+      "epoch": 1794070763,
+      "sha256": "47b566aa00f204a2c2b53946a6561648df7d09a4a58a2cf34087c99be06362d8",
+      "passes": {
+        "original": {
+          "text": "Thank you very much.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.2,
+              "text": " Thank you very much.",
+              "avg_logprob": -0.9108659327030182,
+              "no_speech_prob": 0.029318267479538918,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you, Tommy.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you, Tommy.",
+              "avg_logprob": -0.9541143774986267,
+              "no_speech_prob": 0.02758273109793663,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "7824. You can have medical advice and show me clear, right? Copy that, excellent. Copies will be at exit 275, northbound at the intersection at the, looks like this will be top of the off-ramp, so that's possibly how it controls.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.8296493530273438,
+              "no_speech_prob": 0.05382178723812103,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794070778.m4a": {
+      "index": 240,
+      "epoch": 1794070778,
+      "sha256": "6951fa2e84e4c7f26e6e7c401edbf7c643b67bdbb7171c577f824df279c44c01",
+      "passes": {
+        "original": {
+          "text": "7-j24 is our favorite part of any injuries.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7-j24 is our favorite part of any injuries.",
+              "avg_logprob": -0.5108612140019735,
+              "no_speech_prob": 0.013284819200634956,
+              "compression_ratio": 0.8431372549019608
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7-j24 is the RP report of any injuries.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7-j24 is the RP report of any injuries.",
+              "avg_logprob": -0.6681230465571085,
+              "no_speech_prob": 0.016855021938681602,
+              "compression_ratio": 0.8297872340425532
+            }
+          ]
+        },
+        "context": {
+          "text": "Seven J-24 is our favorite part of any injuries.",
+          "prompt": "You can have medical advice and show me clear, right? Copy that, excellent. Copies will be at exit 275, northbound at the intersection at the, looks like this will be top of the off-ramp, so that's possibly how it controls. Thank you very much.",
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Seven J-24 is our favorite part of any injuries.",
+              "avg_logprob": -0.5262692213058472,
+              "no_speech_prob": 0.04081382974982262,
+              "compression_ratio": 0.8571428571428571
+            }
+          ]
+        }
+      }
+    }
+  }
+}
