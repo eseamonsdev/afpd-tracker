@@ -1,0 +1,641 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-06",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794004407.m4a": {
+      "index": 801,
+      "epoch": 1794004407,
+      "sha256": "c36efbbfb5f2c6ee19bab1d4113c9781afe27068c863bf3fbe91746cb599f800",
+      "passes": {
+        "original": {
+          "text": "You showed me that accident at 300 East State, two vehicles not blocking.",
+          "prompt": null,
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " You showed me that accident at 300 East State, two vehicles not blocking.",
+              "avg_logprob": -0.534184005525377,
+              "no_speech_prob": 0.043673139065504074,
+              "compression_ratio": 0.9605263157894737
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Please show me my accidents while at 300 East State, two vehicles not blocking.",
+          "prompt": null,
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Please show me my accidents while at 300 East State, two vehicles not blocking.",
+              "avg_logprob": -0.6386051115236784,
+              "no_speech_prob": 0.025735434144735336,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "You showed me an accident at 300 East State. Two vehicles not blocking.",
+          "prompt": "Time for... 5J170 Go ahead.",
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " You showed me an accident at 300 East State. Two vehicles not blocking.",
+              "avg_logprob": -0.4944120744864146,
+              "no_speech_prob": 0.0012147693196311593,
+              "compression_ratio": 0.9594594594594594
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794004414.m4a": {
+      "index": 802,
+      "epoch": 1794004414,
+      "sha256": "317bcf2caa3310e49bdce3c3bd68fd368d436aa601982d7935f5be47911e2763",
+      "passes": {
+        "original": {
+          "text": "Coffee, are there any injuries?",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Coffee, are there any injuries?",
+              "avg_logprob": -0.5286306738853455,
+              "no_speech_prob": 0.05262131243944168,
+              "compression_ratio": 0.8378378378378378
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy other injuries.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy other injuries.",
+              "avg_logprob": -0.6416928597858974,
+              "no_speech_prob": 0.06929837912321091,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "Coffee, are there any injuries?",
+          "prompt": "5J170 Go ahead. You showed me that accident at 300 East State, two vehicles not blocking.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Coffee, are there any injuries?",
+              "avg_logprob": -0.323512065410614,
+              "no_speech_prob": 0.02014264278113842,
+              "compression_ratio": 0.8378378378378378
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794004418.m4a": {
+      "index": 803,
+      "epoch": 1794004418,
+      "sha256": "a177fa5b2d1a15e5af3078bc9caeeebdc97f68470a7dfa68bbb5ca07120a0f34",
+      "passes": {
+        "original": {
+          "text": "He doesn't appear to be any injuries.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " He doesn't appear to be any injuries.",
+              "avg_logprob": -0.48091783622900647,
+              "no_speech_prob": 0.02117758058011532,
+              "compression_ratio": 0.8222222222222222
+            }
+          ]
+        },
+        "filtered": {
+          "text": "He doesn't appear to be an injury.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " He doesn't appear to be an injury.",
+              "avg_logprob": -0.4168088460961978,
+              "no_speech_prob": 0.020549263805150986,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "context": {
+          "text": "It doesn't appear to be any injuries.",
+          "prompt": "Go ahead. You showed me that accident at 300 East State, two vehicles not blocking. Coffee, are there any injuries?",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.4,
+              "text": " It doesn't appear to be any injuries.",
+              "avg_logprob": -0.41275886197884876,
+              "no_speech_prob": 0.002862102584913373,
+              "compression_ratio": 0.8222222222222222
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794004422.m4a": {
+      "index": 804,
+      "epoch": 1794004422,
+      "sha256": "6a915c8c40e68b6b0804709e1d2d1b796f5fc300a63efd5c2ef2dcf948e409f4",
+      "passes": {
+        "original": {
+          "text": "Done for.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Done for.",
+              "avg_logprob": -0.6582063436508179,
+              "no_speech_prob": 0.03788483515381813,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Done for.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Done for.",
+              "avg_logprob": -0.7936712106068929,
+              "no_speech_prob": 0.048093248158693314,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Done for.",
+          "prompt": "You showed me that accident at 300 East State, two vehicles not blocking. Coffee, are there any injuries? He doesn't appear to be any injuries.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Done for.",
+              "avg_logprob": -0.606519083182017,
+              "no_speech_prob": 0.011897629126906395,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794004436.m4a": {
+      "index": 805,
+      "epoch": 1794004436,
+      "sha256": "4052d8fe0b8ef2a12f4460200449cd6c383b55a8910a55c1d5f766aeeea4d269",
+      "passes": {
+        "original": {
+          "text": "5G28 clear.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G28 clear.",
+              "avg_logprob": -0.5967810153961182,
+              "no_speech_prob": 0.013768474571406841,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G28 clear.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G28 clear.",
+              "avg_logprob": -0.6022318452596664,
+              "no_speech_prob": 0.007054126355797052,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "5G28 clear.",
+          "prompt": "Coffee, are there any injuries? He doesn't appear to be any injuries. Done for.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G28 clear.",
+              "avg_logprob": -0.4447382017970085,
+              "no_speech_prob": 0.0023523897398263216,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794004439.m4a": {
+      "index": 806,
+      "epoch": 1794004439,
+      "sha256": "c057a7850dfb5da8ad9d92b9a014ed9d4a41179b2180eac529d36ea95dc2c54d",
+      "passes": {
+        "original": {
+          "text": "10-4.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.737113186291286,
+              "no_speech_prob": 0.018922897055745125,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "So.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " So.",
+              "avg_logprob": -1.0581506729125976,
+              "no_speech_prob": 0.0467979721724987,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "context": {
+          "text": "Time for.",
+          "prompt": "He doesn't appear to be any injuries. Done for. 5G28 clear.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Time for.",
+              "avg_logprob": -0.5330424507459005,
+              "no_speech_prob": 0.00541485333815217,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794004492.m4a": {
+      "index": 807,
+      "epoch": 1794004492,
+      "sha256": "8f79b29608ce8e803bcc4e924e4ce8e0cef4b43b90ea64976cd44c2592af6f2a",
+      "passes": {
+        "original": {
+          "text": "5J28, it can be en route on that PD with 5J170.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5J28, it can be en route on that PD with 5J170.",
+              "avg_logprob": -0.2591706156730652,
+              "no_speech_prob": 0.051931217312812805,
+              "compression_ratio": 0.8545454545454545
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J28, it can be en route on that PD with 5J170.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.4,
+              "text": " 5J28, it can be en route on that PD with 5J170.",
+              "avg_logprob": -0.3361495226621628,
+              "no_speech_prob": 0.026475243270397186,
+              "compression_ratio": 0.8545454545454545
+            }
+          ]
+        },
+        "context": {
+          "text": "5G28, it can be en route on that PD with 5G170.",
+          "prompt": "5G28 clear. 10-4.",
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 5G28, it can be en route on that PD with 5G170.",
+              "avg_logprob": -0.277331055700779,
+              "no_speech_prob": 0.011751181446015835,
+              "compression_ratio": 0.8545454545454545
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794004497.m4a": {
+      "index": 808,
+      "epoch": 1794004497,
+      "sha256": "24edc5d2ab37acd11929497f28e5e28e65d381b7aa0cb1dee84905c3a376f17b",
+      "passes": {
+        "original": {
+          "text": "Time for...",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Time for...",
+              "avg_logprob": -0.8926318089167277,
+              "no_speech_prob": 0.01943925768136978,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "That was",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " That was",
+              "avg_logprob": -0.6602944374084473,
+              "no_speech_prob": 0.039675306528806686,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "10-4.",
+          "prompt": "10-4. 5J28, it can be en route on that PD with 5J170.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.36679195506232126,
+              "no_speech_prob": 0.027022089809179306,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794004627.m4a": {
+      "index": 809,
+      "epoch": 1794004627,
+      "sha256": "e195f9fa19ee9e8eefabb1ec9af230345c5d76e2e50611e24da4122197da2a97",
+      "passes": {
+        "original": {
+          "text": "5J37 follow up.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0200000000000005,
+              "text": " 5J37 follow up.",
+              "avg_logprob": -0.3885089026557075,
+              "no_speech_prob": 0.03965485468506813,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J37 follow-up.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J37 follow-up.",
+              "avg_logprob": -0.406777435541153,
+              "no_speech_prob": 0.057117849588394165,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "context": {
+          "text": "5J37 follow up.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0200000000000005,
+              "text": " 5J37 follow up.",
+              "avg_logprob": -0.3885089026557075,
+              "no_speech_prob": 0.03965485468506813,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794004633.m4a": {
+      "index": 810,
+      "epoch": 1794004633,
+      "sha256": "ba9c96a30e34acbce4ffa4c28fdb1c9a0453833054fcea54f497a0438d37e8a7",
+      "passes": {
+        "original": {
+          "text": "372 south, 460 east, five minute check.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 372 south, 460 east, five minute check.",
+              "avg_logprob": -0.4989751669076773,
+              "no_speech_prob": 0.07710662484169006,
+              "compression_ratio": 0.8297872340425532
+            }
+          ]
+        },
+        "filtered": {
+          "text": "372 south, 460 east. Five minute checks.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 372 south, 460 east. Five minute checks.",
+              "avg_logprob": -0.5227887263664832,
+              "no_speech_prob": 0.09937948733568192,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        },
+        "context": {
+          "text": "372 south, 460 east, 5 minute check.",
+          "prompt": "5J37 follow up.",
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 372 south, 460 east, 5 minute check.",
+              "avg_logprob": -0.5551021099090576,
+              "no_speech_prob": 0.011839635670185089,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        }
+      }
+    }
+  }
+}
