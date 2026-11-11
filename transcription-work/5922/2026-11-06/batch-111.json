@@ -1,0 +1,649 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-06",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794015960.m4a": {
+      "index": 1101,
+      "epoch": 1794015960,
+      "sha256": "bdd821a7abe92f74d64c12b666999055dac5d8f8a85eb6e6575f757b8bcf4a0a",
+      "passes": {
+        "original": {
+          "text": "And I'm a plate",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " And I'm a plate",
+              "avg_logprob": -0.648171178996563,
+              "no_speech_prob": 0.07024266570806503,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "And I'm afraid",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " And I'm afraid",
+              "avg_logprob": -0.7890813180378505,
+              "no_speech_prob": 0.0849456787109375,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "Send on the plate.",
+          "prompt": "Thank you for your traffic. Last minute. 5G38, I'll be traffic 200 North Pacific Drive, Tango 450 Hotel and Fox.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.12,
+              "text": " Send on the plate.",
+              "avg_logprob": -0.8383909240365028,
+              "no_speech_prob": 0.03742899373173714,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794015962.m4a": {
+      "index": 1102,
+      "epoch": 1794015962,
+      "sha256": "9b5ce61ec6d9335ee4b48ae0b342e8abb9e09a0ed51a20c7e0820525df71bbf4",
+      "passes": {
+        "original": {
+          "text": "Tango 450 Hotel Fox.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Tango 450 Hotel Fox.",
+              "avg_logprob": -0.6190288861592611,
+              "no_speech_prob": 0.033946163952350616,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Tango 450 Hotel Fox. Time for thank you.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Tango 450 Hotel Fox.",
+              "avg_logprob": -0.6187918223440647,
+              "no_speech_prob": 0.03743583709001541,
+              "compression_ratio": 0.8333333333333334
+            },
+            {
+              "start": 4.0,
+              "end": 5.0,
+              "text": " Time for thank you.",
+              "avg_logprob": -0.6187918223440647,
+              "no_speech_prob": 0.03743583709001541,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        },
+        "context": {
+          "text": "Tango 450 Hotel Fox. Thank you.",
+          "prompt": "Last minute. 5G38, I'll be traffic 200 North Pacific Drive, Tango 450 Hotel and Fox. And I'm a plate",
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.96,
+              "text": " Tango 450 Hotel Fox. Thank you.",
+              "avg_logprob": -0.37335800131162006,
+              "no_speech_prob": 0.02525598742067814,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794015984.m4a": {
+      "index": 1103,
+      "epoch": 1794015984,
+      "sha256": "2f31b3348ec874c2db30a3a772f99a984f30aeca79ec6463b69f2c6b2eb48a4f",
+      "passes": {
+        "original": {
+          "text": "5J38, are you 1084?",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J38, are you 1084?",
+              "avg_logprob": -0.43136774251858395,
+              "no_speech_prob": 0.02480200305581093,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5238, are you 1084?",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5238, are you 1084?",
+              "avg_logprob": -0.4626766659996726,
+              "no_speech_prob": 0.033072058111429214,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "5G38, are you 1084?",
+          "prompt": "5G38, I'll be traffic 200 North Pacific Drive, Tango 450 Hotel and Fox. And I'm a plate Tango 450 Hotel Fox.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.2,
+              "text": " 5G38, are you 1084?",
+              "avg_logprob": -0.3443220555782318,
+              "no_speech_prob": 0.008789358660578728,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794015988.m4a": {
+      "index": 1104,
+      "epoch": 1794015988,
+      "sha256": "0e960997083d7786f4d5a8b8fb3d72dd251e808f7e2d07e0ccc6f7154bf3d2a6",
+      "passes": {
+        "original": {
+          "text": "I've heard my words when I...",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I've heard my words when I...",
+              "avg_logprob": -0.6972990252754905,
+              "no_speech_prob": 0.07122797518968582,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I found my word too nice.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I found my word too nice.",
+              "avg_logprob": -0.8585554182529449,
+              "no_speech_prob": 0.09054167568683624,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "context": {
+          "text": "I found my way to 29th.",
+          "prompt": "And I'm a plate Tango 450 Hotel Fox. 5J38, are you 1084?",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I found my way to 29th.",
+              "avg_logprob": -0.6115590984171088,
+              "no_speech_prob": 0.006376389414072037,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794015992.m4a": {
+      "index": 1105,
+      "epoch": 1794015992,
+      "sha256": "a93d7001a1639b2f48e9e0e3d81b37d68fdd272bcdd2c4f8521e9536a8b64e09",
+      "passes": {
+        "original": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy.",
+              "avg_logprob": -0.6963557720184326,
+              "no_speech_prob": 0.04023214057087898,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "OK.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " OK.",
+              "avg_logprob": -0.5100576400756835,
+              "no_speech_prob": 0.06215417757630348,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy.",
+          "prompt": "Tango 450 Hotel Fox. 5J38, are you 1084? I've heard my words when I...",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy.",
+              "avg_logprob": -0.6284004211425781,
+              "no_speech_prob": 0.035398222506046295,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794016032.m4a": {
+      "index": 1106,
+      "epoch": 1794016032,
+      "sha256": "dd5c7c56d9a36716ccf2fef9b85be4e243183ec80710b914772573d044bf501f",
+      "passes": {
+        "original": {
+          "text": "All units, check mobile for any tail.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " All units, check mobile for any tail.",
+              "avg_logprob": -0.4980764438708623,
+              "no_speech_prob": 0.015042092651128769,
+              "compression_ratio": 0.8222222222222222
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Audience, check mobile for any teal.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Audience, check mobile for any teal.",
+              "avg_logprob": -0.49109139809241664,
+              "no_speech_prob": 0.01365464087575674,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        },
+        "context": {
+          "text": "All units, check mobile for any tail.",
+          "prompt": "5J38, are you 1084? I've heard my words when I... Happy.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " All units, check mobile for any tail.",
+              "avg_logprob": -0.49331455926100415,
+              "no_speech_prob": 0.007506228052079678,
+              "compression_ratio": 0.8222222222222222
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794016092.m4a": {
+      "index": 1107,
+      "epoch": 1794016092,
+      "sha256": "5e85234aaef56d56b7bda77d9fafd2a9894a677ce864f9de39b67927ef78d0c1",
+      "passes": {
+        "original": {
+          "text": "5J52, Corporal.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J52, Corporal.",
+              "avg_logprob": -0.6871396780014039,
+              "no_speech_prob": 0.01962447725236416,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J5244.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.68,
+              "text": " 5J5244.",
+              "avg_logprob": -0.8118154034018517,
+              "no_speech_prob": 0.014111388474702835,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "5J52, call 4.",
+          "prompt": "All units, check mobile for any tail.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J52, call 4.",
+              "avg_logprob": -0.6976036727428436,
+              "no_speech_prob": 0.006638235878199339,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794016095.m4a": {
+      "index": 1108,
+      "epoch": 1794016095,
+      "sha256": "a7b4bef57d435f892b25f5c773c8f1c94bb5901479e1ccc8e12c6f6d7319d17e",
+      "passes": {
+        "original": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.6880054644175938,
+              "no_speech_prob": 0.07364226877689362,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "good",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " good",
+              "avg_logprob": -0.5245926976203918,
+              "no_speech_prob": 0.06294846534729004,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Go for it.",
+          "prompt": "5J52, Corporal.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.5913652692522321,
+              "no_speech_prob": 0.05700606480240822,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794016099.m4a": {
+      "index": 1109,
+      "epoch": 1794016099,
+      "sha256": "870023493dc7677ccd4cf2c0f0352b4be0b811e5ee2b5aab44482d3083557266",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.6717560291290283,
+              "no_speech_prob": 0.0343041755259037,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copies.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copies.",
+              "avg_logprob": -0.7599254449208578,
+              "no_speech_prob": 0.017874157056212425,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "5J52, Corporal. Go for it.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5654110908508301,
+              "no_speech_prob": 0.012758085504174232,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794016155.m4a": {
+      "index": 1110,
+      "epoch": 1794016155,
+      "sha256": "74e76185623a39563f58c26aab436981c949d3db2936a485620e392d876ed0ce",
+      "passes": {
+        "original": {
+          "text": "7J30, copy 9-1-1-7",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J30, copy 9-1-1-7",
+              "avg_logprob": -0.44911394516626996,
+              "no_speech_prob": 0.13378310203552246,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7, day 30, copy 9-1-1-7.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.84,
+              "text": " 7, day 30, copy 9-1-1-7.",
+              "avg_logprob": -0.5315171971040613,
+              "no_speech_prob": 0.09626807272434235,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "context": {
+          "text": "7, J30. Copy. 9-1-1-7.",
+          "prompt": "Go for it. Copy.",
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7, J30. Copy. 9-1-1-7.",
+              "avg_logprob": -0.596307012769911,
+              "no_speech_prob": 0.04931265115737915,
+              "compression_ratio": 0.7857142857142857
+            }
+          ]
+        }
+      }
+    }
+  }
+}
