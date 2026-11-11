@@ -88,9 +88,19 @@ def publish(root, branch, state, publish_page=False):
         page = (Path(__file__).resolve().parents[1] / 'public/police-radio-status.html').read_bytes()
         for key in ('police-radio-status.html', 'radio-status/index.html'):
             client.put_object(Bucket=bucket, Key=key, Body=page, ContentType='text/html; charset=utf-8', CacheControl='no-store')
-        if branch == 'staging':
-            from publish_association_review import publish_review
-            publish_review(root, client, bucket)
+        if branch == 'staging' and bucket == 'afpd-public-media':
+            from botocore.exceptions import ClientError
+
+            key = 'officer-association-review.html'
+            client.delete_object(Bucket=bucket, Key=key)
+            try:
+                client.head_object(Bucket=bucket, Key=key)
+            except ClientError as error:
+                if error.response['ResponseMetadata']['HTTPStatusCode'] != 404:
+                    raise
+            else:
+                raise RuntimeError(f'R2 object still exists: {key}')
+            print(f'Verified R2 removal: {bucket}/{key}', flush=True)
     print('Recording status published:', branch, state, flush=True)
 
 if __name__ == '__main__':
