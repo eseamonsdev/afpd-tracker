@@ -77,7 +77,7 @@ See `findings/2026-11-01-officer-association-display-audit.md` for the duplicate
 
 ## Listening review page
 
-`https://media.afpd-accountability.com/officer-association-review.html` is the standalone, noindex listening page stored in `afpd-public-media` under `officer-association-review.html`. `make build` regenerates its tracked HTML, and the existing recording-status publisher rebuilds and uploads it from staging whenever evidence, review source/assets, or call manifests change. Publication verifies the R2 read-back bytes and checks the public HTML response when accessible. A runner-specific public HTTP 403 is reported separately without failing a successful R2 upload or claiming public verification; use a browser to verify that case.
+`make build` generates `public/officer-association-review.html` for local listening review. The recording-status publisher no longer uploads this page to R2.
 
 The page groups full candidate names alphabetically, dates chronologically, and the selected 6001 clip numbers chronologically within each date. It includes only non-rejected association records with actual 6001 clip references. Dates with no clip numbers and Law 2 records are omitted. A repeated clip appears once within a person's date, while shared evidence appears under every relevant candidate. Missing manifest references or unavailable audio fail the build instead of silently omitting evidence.
 
