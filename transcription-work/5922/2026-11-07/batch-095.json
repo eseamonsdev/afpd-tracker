@@ -1,0 +1,769 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-07",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794109095.m4a": {
+      "index": 941,
+      "epoch": 1794109095,
+      "sha256": "ca167e5ab419a9974d8456424962f746e38cb3aac9595e5ce59b156d330400bb",
+      "passes": {
+        "original": {
+          "text": "I'll be.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'll be.",
+              "avg_logprob": -0.41976640054157804,
+              "no_speech_prob": 0.011064471676945686,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'll be.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'll be.",
+              "avg_logprob": -0.5493039403642926,
+              "no_speech_prob": 0.022664345800876617,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "70-25, clear stop.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5051096916198731,
+              "no_speech_prob": 0.0036263270303606987,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794109429.m4a": {
+      "index": 942,
+      "epoch": 1794109429,
+      "sha256": "e07065480947549e7459da034b130ca7211c80a60006ff1a0a14e337447fbcd7",
+      "passes": {
+        "original": {
+          "text": "235 South Twin River Loop, 235 South Twin River Loop, RPs Anonymous, requesting a welfare check on a Paul Altridge of this address.",
+          "prompt": null,
+          "duration_seconds": 12.16,
+          "token_limit": 122,
+          "token_count": 33,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.5200000000000005,
+              "text": " 235 South Twin River Loop, 235 South Twin River Loop, RPs Anonymous,",
+              "avg_logprob": -0.4219388707595713,
+              "no_speech_prob": 0.01793992705643177,
+              "compression_ratio": 1.2358490566037736
+            },
+            {
+              "start": 7.5200000000000005,
+              "end": 10.92,
+              "text": " requesting a welfare check on a Paul Altridge of this address.",
+              "avg_logprob": -0.4219388707595713,
+              "no_speech_prob": 0.01793992705643177,
+              "compression_ratio": 1.2358490566037736
+            }
+          ]
+        },
+        "filtered": {
+          "text": "235 South Twin River Loop, 235 South Twin River Loop, R.P. is anonymous, requesting a welfare check on a Paul Altridge of this address.",
+          "prompt": null,
+          "duration_seconds": 12.16,
+          "token_limit": 122,
+          "token_count": 36,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.040000000000001,
+              "text": " 235 South Twin River Loop, 235 South Twin River Loop, R.P. is anonymous, requesting",
+              "avg_logprob": -0.44019239979821284,
+              "no_speech_prob": 0.009533639065921307,
+              "compression_ratio": 1.2272727272727273
+            },
+            {
+              "start": 8.040000000000001,
+              "end": 11.040000000000001,
+              "text": " a welfare check on a Paul Altridge of this address.",
+              "avg_logprob": -0.44019239979821284,
+              "no_speech_prob": 0.009533639065921307,
+              "compression_ratio": 1.2272727272727273
+            }
+          ]
+        },
+        "context": {
+          "text": "235 South Twin River Loop, 235 South Twin River Loop, RPs Anonymous, requesting a welfare check on a Paul Altridge of this address.",
+          "prompt": null,
+          "duration_seconds": 12.16,
+          "token_limit": 122,
+          "token_count": 33,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.5200000000000005,
+              "text": " 235 South Twin River Loop, 235 South Twin River Loop, RPs Anonymous,",
+              "avg_logprob": -0.4219388707595713,
+              "no_speech_prob": 0.01793992705643177,
+              "compression_ratio": 1.2358490566037736
+            },
+            {
+              "start": 7.5200000000000005,
+              "end": 10.92,
+              "text": " requesting a welfare check on a Paul Altridge of this address.",
+              "avg_logprob": -0.4219388707595713,
+              "no_speech_prob": 0.01793992705643177,
+              "compression_ratio": 1.2358490566037736
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794109442.m4a": {
+      "index": 943,
+      "epoch": 1794109442,
+      "sha256": "ced7dd268d050497acb69a717f8dfd4003c36176387d5d997a9570ff983c237f",
+      "passes": {
+        "original": {
+          "text": "He's in a psychosis, believes his dad and the FBI are going to take him to prison. R.P. is concerned about his safety. He will be subject and his father are at this residence. And then if he will cooperate, R.P. was told that the subject might possibly have one firearm, possible meth user, possibly heavy alcohol.",
+          "prompt": null,
+          "duration_seconds": 23.68,
+          "token_limit": 214,
+          "token_count": 86,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " He's in a psychosis, believes his dad and the FBI",
+              "avg_logprob": -0.21490283004748514,
+              "no_speech_prob": 0.005521605722606182,
+              "compression_ratio": 1.4516129032258065
+            },
+            {
+              "start": 5.0,
+              "end": 7.0,
+              "text": " are going to take him to prison.",
+              "avg_logprob": -0.21490283004748514,
+              "no_speech_prob": 0.005521605722606182,
+              "compression_ratio": 1.4516129032258065
+            },
+            {
+              "start": 7.0,
+              "end": 9.0,
+              "text": " R.P. is concerned about his safety.",
+              "avg_logprob": -0.21490283004748514,
+              "no_speech_prob": 0.005521605722606182,
+              "compression_ratio": 1.4516129032258065
+            },
+            {
+              "start": 9.0,
+              "end": 13.0,
+              "text": " He will be subject and his father are at this residence.",
+              "avg_logprob": -0.21490283004748514,
+              "no_speech_prob": 0.005521605722606182,
+              "compression_ratio": 1.4516129032258065
+            },
+            {
+              "start": 13.0,
+              "end": 16.0,
+              "text": " And then if he will cooperate,",
+              "avg_logprob": -0.21490283004748514,
+              "no_speech_prob": 0.005521605722606182,
+              "compression_ratio": 1.4516129032258065
+            },
+            {
+              "start": 16.0,
+              "end": 20.0,
+              "text": " R.P. was told that the subject might possibly have one firearm,",
+              "avg_logprob": -0.21490283004748514,
+              "no_speech_prob": 0.005521605722606182,
+              "compression_ratio": 1.4516129032258065
+            },
+            {
+              "start": 20.0,
+              "end": 23.4,
+              "text": " possible meth user, possibly heavy alcohol.",
+              "avg_logprob": -0.6817875125191428,
+              "no_speech_prob": 0.011211559176445007,
+              "compression_ratio": 0.9148936170212766
+            }
+          ]
+        },
+        "filtered": {
+          "text": "He's in a psychosis, believes his dad and the FBI are going to take him to prison. I hope he's concerned about his safety. He will be subject and his father are at this residence. And then if he will cooperate, I hope he was told that the subject might possibly have one firearm, possible meth use, or possibly heavy alcohol.",
+          "prompt": null,
+          "duration_seconds": 23.68,
+          "token_limit": 214,
+          "token_count": 81,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.640000000000001,
+              "text": " He's in a psychosis, believes his dad and the FBI are going to take him to prison.",
+              "avg_logprob": -0.36121351388563594,
+              "no_speech_prob": 0.027443571016192436,
+              "compression_ratio": 1.5931372549019607
+            },
+            {
+              "start": 6.640000000000001,
+              "end": 9.120000000000001,
+              "text": " I hope he's concerned about his safety.",
+              "avg_logprob": -0.36121351388563594,
+              "no_speech_prob": 0.027443571016192436,
+              "compression_ratio": 1.5931372549019607
+            },
+            {
+              "start": 9.120000000000001,
+              "end": 13.36,
+              "text": " He will be subject and his father are at this residence.",
+              "avg_logprob": -0.36121351388563594,
+              "no_speech_prob": 0.027443571016192436,
+              "compression_ratio": 1.5931372549019607
+            },
+            {
+              "start": 13.36,
+              "end": 19.2,
+              "text": " And then if he will cooperate, I hope he was told that the subject might possibly have one",
+              "avg_logprob": -0.36121351388563594,
+              "no_speech_prob": 0.027443571016192436,
+              "compression_ratio": 1.5931372549019607
+            },
+            {
+              "start": 19.2,
+              "end": 23.240000000000002,
+              "text": " firearm, possible meth use, or possibly heavy alcohol.",
+              "avg_logprob": -0.36121351388563594,
+              "no_speech_prob": 0.027443571016192436,
+              "compression_ratio": 1.5931372549019607
+            }
+          ]
+        },
+        "context": {
+          "text": "He's in a psychosis, believes his dad and the FBI are going to take him to prison, RPs concerned about his safety, will be subject and his father are at this residence, unknown if he will cooperate, or if he was told that the subject might possibly have one firearm, possible methods or possibly heavy alcohol.",
+          "prompt": "235 South Twin River Loop, 235 South Twin River Loop, RPs Anonymous, requesting a welfare check on a Paul Altridge of this address.",
+          "duration_seconds": 23.68,
+          "token_limit": 214,
+          "token_count": 73,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.68,
+              "text": " He's in a psychosis, believes his dad and the FBI are going to take him to prison, RPs concerned",
+              "avg_logprob": -0.2630254255873816,
+              "no_speech_prob": 0.007600925397127867,
+              "compression_ratio": 1.5364583333333333
+            },
+            {
+              "start": 7.68,
+              "end": 14.96,
+              "text": " about his safety, will be subject and his father are at this residence, unknown if he will cooperate,",
+              "avg_logprob": -0.2630254255873816,
+              "no_speech_prob": 0.007600925397127867,
+              "compression_ratio": 1.5364583333333333
+            },
+            {
+              "start": 14.96,
+              "end": 22.32,
+              "text": " or if he was told that the subject might possibly have one firearm, possible methods or possibly",
+              "avg_logprob": -0.2630254255873816,
+              "no_speech_prob": 0.007600925397127867,
+              "compression_ratio": 1.5364583333333333
+            },
+            {
+              "start": 22.32,
+              "end": 23.32,
+              "text": " heavy alcohol.",
+              "avg_logprob": -0.45452694098154706,
+              "no_speech_prob": 0.1919727325439453,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794109467.m4a": {
+      "index": 944,
+      "epoch": 1794109467,
+      "sha256": "00bdda5de984994854eaca21488e5908c8ff7b002dbe6a3d23ec1aba38a2a5d6",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7302462577819824,
+              "no_speech_prob": 0.11252355575561523,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6475208282470704,
+              "no_speech_prob": 0.05595226585865021,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "235 South Twin River Loop, 235 South Twin River Loop, RPs Anonymous, requesting a welfare check on a Paul Altridge of this address. He's in a psychosis, believes his dad and the FBI are going to take him to prison. R.P. is concerned about his safety. He will be subject and his father are at this residence. And then if he will cooperate, R.P. was told that the subject might possibly have one firearm, possible meth user, possibly heavy alcohol.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.4465022563934326,
+              "no_speech_prob": 0.20003961026668549,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794109476.m4a": {
+      "index": 945,
+      "epoch": 1794109476,
+      "sha256": "75630a8b2f6cc549ebd7e9654caf96873ea1ff7922991ca1cb8a1fa24a214b38",
+      "passes": {
+        "original": {
+          "text": "18J23, Obi-Wan Road",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.28,
+              "text": " 18J23, Obi-Wan Road",
+              "avg_logprob": -0.9864893826571378,
+              "no_speech_prob": 0.03347399830818176,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18-23, Obian Road.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 18-23, Obian Road.",
+              "avg_logprob": -1.063990051096136,
+              "no_speech_prob": 0.03882287070155144,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "context": {
+          "text": "18J23 O'Bann Road.",
+          "prompt": "235 South Twin River Loop, 235 South Twin River Loop, RPs Anonymous, requesting a welfare check on a Paul Altridge of this address. He's in a psychosis, believes his dad and the FBI are going to take him to prison. R.P. is concerned about his safety. He will be subject and his father are at this residence. And then if he will cooperate, R.P. was told that the subject might possibly have one firearm, possible meth user, possibly heavy alcohol. Copy.",
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 18J23 O'Bann Road.",
+              "avg_logprob": -0.969759871562322,
+              "no_speech_prob": 0.03415639325976372,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794109479.m4a": {
+      "index": 946,
+      "epoch": 1794109479,
+      "sha256": "5f1bab9e1cf05e2a680b44e2a4df8fb5b14ec6f62f77f4e34dfb529441667191",
+      "passes": {
+        "original": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.5678833723068237,
+              "no_speech_prob": 0.035339582711458206,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " Copy.",
+              "avg_logprob": -0.9310848236083984,
+              "no_speech_prob": 0.03779754787683487,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "He's in a psychosis, believes his dad and the FBI are going to take him to prison. R.P. is concerned about his safety. He will be subject and his father are at this residence. And then if he will cooperate, R.P. was told that the subject might possibly have one firearm, possible meth user, possibly heavy alcohol. Copy. 18J23, Obi-Wan Road",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.507985258102417,
+              "no_speech_prob": 0.11114489287137985,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794109531.m4a": {
+      "index": 947,
+      "epoch": 1794109531,
+      "sha256": "a147a485cc480b91c33c18904076e31656bedf5df23c153aa84a9fb8260c717a",
+      "passes": {
+        "original": {
+          "text": "18J10, will you show me the Rabbi phone for now?",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.36,
+              "text": " 18J10, will you show me the Rabbi phone for now?",
+              "avg_logprob": -0.5855073928833008,
+              "no_speech_prob": 0.07572101801633835,
+              "compression_ratio": 0.8571428571428571
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18J10, will you show me the Rev-A form for now?",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.3200000000000003,
+              "text": " 18J10, will you show me the Rev-A form for now?",
+              "avg_logprob": -0.5728631521526136,
+              "no_speech_prob": 0.06563080847263336,
+              "compression_ratio": 0.9038461538461539
+            }
+          ]
+        },
+        "context": {
+          "text": "18J10, will you show me the Rabbi phone for now?",
+          "prompt": "18J23, Obi-Wan Road copy",
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.36,
+              "text": " 18J10, will you show me the Rabbi phone for now?",
+              "avg_logprob": -0.5463392033296472,
+              "no_speech_prob": 0.0033204180654138327,
+              "compression_ratio": 0.8571428571428571
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794109535.m4a": {
+      "index": 948,
+      "epoch": 1794109535,
+      "sha256": "ba42734246314c3f1ff497c0cb2d16350e05e8e655a63605ba9bec6e7c48c96b",
+      "passes": {
+        "original": {
+          "text": "I'll be.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I'll be.",
+              "avg_logprob": -0.6912377050944737,
+              "no_speech_prob": 0.0210956409573555,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'll be.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I'll be.",
+              "avg_logprob": -0.5869005918502808,
+              "no_speech_prob": 0.016492627561092377,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "I'll be.",
+          "prompt": "18J23, Obi-Wan Road copy 18J10, will you show me the Rabbi phone for now?",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I'll be.",
+              "avg_logprob": -0.7642122847693307,
+              "no_speech_prob": 0.012562471441924572,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794109666.m4a": {
+      "index": 949,
+      "epoch": 1794109666,
+      "sha256": "23cccf089f41f8709c7cc51cc492ca7fabc4bfc036f5ee50b896114981b317f3",
+      "passes": {
+        "original": {
+          "text": "K-51.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " K-51.",
+              "avg_logprob": -0.7984233754021781,
+              "no_speech_prob": 0.1461399793624878,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I think you are",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I think you are",
+              "avg_logprob": -1.0639404569353377,
+              "no_speech_prob": 0.2168855220079422,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "context": {
+          "text": "K-51.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " K-51.",
+              "avg_logprob": -0.7984233754021781,
+              "no_speech_prob": 0.1461399793624878,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794110021.m4a": {
+      "index": 950,
+      "epoch": 1794110021,
+      "sha256": "479866224a9c236a7d7c32007e111ef001389a8d6636e48ce9774afe7292330d",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6652988910675048,
+              "no_speech_prob": 0.03759177029132843,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.78751540184021,
+              "no_speech_prob": 0.03678648918867111,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6652988910675048,
+              "no_speech_prob": 0.03759177029132843,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
