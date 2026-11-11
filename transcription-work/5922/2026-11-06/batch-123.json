@@ -1,0 +1,673 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-06",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794019392.m4a": {
+      "index": 1221,
+      "epoch": 1794019392,
+      "sha256": "a0fff448cd42a11f195d76f5331545b28be7358e29584f066c8d6ff419c7bd07",
+      "passes": {
+        "original": {
+          "text": "Fantastic.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Fantastic.",
+              "avg_logprob": -0.8742520332336425,
+              "no_speech_prob": 0.10521609336137772,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm going to do it. I'm going to do it. You",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I'm going to do it.",
+              "avg_logprob": -0.9272728588270105,
+              "no_speech_prob": 0.08738400042057037,
+              "compression_ratio": 1.5806451612903225
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " I'm going to do it.",
+              "avg_logprob": -0.9272728588270105,
+              "no_speech_prob": 0.08738400042057037,
+              "compression_ratio": 1.5806451612903225
+            },
+            {
+              "start": 2.0,
+              "end": 4.0,
+              "text": " You",
+              "avg_logprob": -0.8512870073318481,
+              "no_speech_prob": 0.8120160102844238,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "context": {
+          "text": "Fantastic.",
+          "prompt": "Go ahead 203 West Center Unit 313, info's from MCOT, they received a call from Juanita Cox at this address saying she was having a mental episode after a fight with her mom and wanted to go to the receiving center. Bye.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Fantastic.",
+              "avg_logprob": -0.6949936866760253,
+              "no_speech_prob": 0.1947278380393982,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794019395.m4a": {
+      "index": 1222,
+      "epoch": 1794019395,
+      "sha256": "88c5bb8798bf75d746cca568f790007e331a71ab7113c0dbb2daa29c0c7fcd27",
+      "passes": {
+        "original": {
+          "text": "BLEEP BLEEP BLEEP BLEEP BLEEP BLEEP",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.6,
+              "text": " BLEEP BLEEP BLEEP BLEEP BLEEP BLEEP",
+              "avg_logprob": -0.5415951070331392,
+              "no_speech_prob": 0.1279030591249466,
+              "compression_ratio": 2.0588235294117645
+            }
+          ]
+        },
+        "filtered": {
+          "text": "BLEEP BLEEP BLEEP BLEEP BLEEP",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " BLEEP BLEEP BLEEP BLEEP BLEEP",
+              "avg_logprob": -0.6210757725768619,
+              "no_speech_prob": 0.11239080131053925,
+              "compression_ratio": 1.7058823529411764
+            }
+          ]
+        },
+        "context": {
+          "text": "Thanks for watching!",
+          "prompt": "203 West Center Unit 313, info's from MCOT, they received a call from Juanita Cox at this address saying she was having a mental episode after a fight with her mom and wanted to go to the receiving center. Bye. Fantastic.",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " Thanks for watching!",
+              "avg_logprob": -1.0261292798178536,
+              "no_speech_prob": 0.3191264867782593,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794019399.m4a": {
+      "index": 1223,
+      "epoch": 1794019399,
+      "sha256": "3fadedf5c2c2b375d2ac0201d0dfa8861b45ddbce0bdc06fb7df8581e66ab8e9",
+      "passes": {
+        "original": {
+          "text": "Last unit going in row.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Last unit going in row.",
+              "avg_logprob": -0.5083808369106717,
+              "no_speech_prob": 0.026156535372138023,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Last unit going real.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Last unit going real.",
+              "avg_logprob": -0.6340503618121147,
+              "no_speech_prob": 0.014972100965678692,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "context": {
+          "text": "Last unit going in row.",
+          "prompt": "Bye. Fantastic. BLEEP BLEEP BLEEP BLEEP BLEEP BLEEP",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Last unit going in row.",
+              "avg_logprob": -0.44347169664171004,
+              "no_speech_prob": 0.009863282553851604,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794019401.m4a": {
+      "index": 1224,
+      "epoch": 1794019401,
+      "sha256": "c7c6f47ef010cd8ea1eea212158424037040a81525e082198e8f962389402e80",
+      "passes": {
+        "original": {
+          "text": "I'll try to get it ready.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'll try to get it ready.",
+              "avg_logprob": -1.1779085072604092,
+              "no_speech_prob": 0.16591210663318634,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "filtered": {
+          "text": "February.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " February.",
+              "avg_logprob": -1.0975629806518554,
+              "no_speech_prob": 0.1001899242401123,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "BLEEP BLEEP BLEEP BLEEP",
+          "prompt": "Fantastic. BLEEP BLEEP BLEEP BLEEP BLEEP BLEEP Last unit going in row.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.92,
+              "text": " BLEEP BLEEP BLEEP BLEEP",
+              "avg_logprob": -0.3534850520747049,
+              "no_speech_prob": 0.1323302984237671,
+              "compression_ratio": 1.4375
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794019404.m4a": {
+      "index": 1225,
+      "epoch": 1794019404,
+      "sha256": "881ca7a5971f9f3a9a10df95d7c34d54503ee9c7a2b35cb98866b8bd216fcb1d",
+      "passes": {
+        "original": {
+          "text": "Copy 30.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy 30.",
+              "avg_logprob": -0.814532736937205,
+              "no_speech_prob": 0.009429984726011753,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy, 30.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy, 30.",
+              "avg_logprob": -0.7324501276016235,
+              "no_speech_prob": 0.008054112084209919,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy 30.",
+          "prompt": "BLEEP BLEEP BLEEP BLEEP BLEEP BLEEP Last unit going in row. I'll try to get it ready.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy 30.",
+              "avg_logprob": -0.6200762589772543,
+              "no_speech_prob": 0.006259845104068518,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794019470.m4a": {
+      "index": 1226,
+      "epoch": 1794019470,
+      "sha256": "a55979a1aa8d80f0980d5669af35e179c65df6a2732b9d0330d8cee89cb96c2c",
+      "passes": {
+        "original": {
+          "text": "7J23 I'll be 10-8 for now.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J23 I'll be 10-8 for now.",
+              "avg_logprob": -0.6869430144627889,
+              "no_speech_prob": 0.03863377496600151,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J23OVK for now.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J23OVK for now.",
+              "avg_logprob": -0.7709790901704268,
+              "no_speech_prob": 0.04675284028053284,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "7J23 I'll be 10-8 for now.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J23 I'll be 10-8 for now.",
+              "avg_logprob": -0.6869430144627889,
+              "no_speech_prob": 0.03863377496600151,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794019473.m4a": {
+      "index": 1227,
+      "epoch": 1794019473,
+      "sha256": "4f915bf192d0e2490edc0af9bb331405c2f94cd7c3a8f9ca506ed3adb92e3f72",
+      "passes": {
+        "original": {
+          "text": "temper",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " temper",
+              "avg_logprob": -0.8778025209903717,
+              "no_speech_prob": 0.09881770610809326,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "temper",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " temper",
+              "avg_logprob": -0.947640985250473,
+              "no_speech_prob": 0.04908544197678566,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "10 for.",
+          "prompt": "7J23 I'll be 10-8 for now.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10 for.",
+              "avg_logprob": -0.8384612202644348,
+              "no_speech_prob": 0.02996199019253254,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794019484.m4a": {
+      "index": 1228,
+      "epoch": 1794019484,
+      "sha256": "3f412199499cb8f6e2e7581471414f4af6b93342611a97e0843233a016dcf0f2",
+      "passes": {
+        "original": {
+          "text": "If you want to copy that part problem",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.9,
+              "text": " If you want to copy that part problem",
+              "avg_logprob": -0.518565448847684,
+              "no_speech_prob": 0.02039608359336853,
+              "compression_ratio": 0.8604651162790697
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I just if you want to copy that heart problem",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.92,
+              "text": " I just if you want to copy that heart problem",
+              "avg_logprob": -0.5471938023200402,
+              "no_speech_prob": 0.025010736659169197,
+              "compression_ratio": 0.8490566037735849
+            }
+          ]
+        },
+        "context": {
+          "text": "G51 I copy that, part problem",
+          "prompt": "7J23 I'll be 10-8 for now. temper",
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " G51 I copy that, part problem",
+              "avg_logprob": -0.7092925093390725,
+              "no_speech_prob": 0.0652635470032692,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794019489.m4a": {
+      "index": 1229,
+      "epoch": 1794019489,
+      "sha256": "1306182ba8685e6c3315951392a5a9948c738d1ef2ab56ffd101bc73386f17da",
+      "passes": {
+        "original": {
+          "text": "Can't work.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Can't work.",
+              "avg_logprob": -1.0735932418278284,
+              "no_speech_prob": 0.10210780799388885,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Semper.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Semper.",
+              "avg_logprob": -0.924872358640035,
+              "no_speech_prob": 0.13795246183872223,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "temper",
+          "prompt": "7J23 I'll be 10-8 for now. temper If you want to copy that part problem",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 2,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.04,
+              "text": " temper",
+              "avg_logprob": -0.49814875920613605,
+              "no_speech_prob": 0.046990588307380676,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794019494.m4a": {
+      "index": 1230,
+      "epoch": 1794019494,
+      "sha256": "95ea621f5605b7f883bb9d889e8cb2faca427226ab0e44663952cd8553a48bb0",
+      "passes": {
+        "original": {
+          "text": "ATU19, 1023, 100.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " ATU19, 1023, 100.",
+              "avg_logprob": -0.964089035987854,
+              "no_speech_prob": 0.02537185326218605,
+              "compression_ratio": 0.7727272727272727
+            }
+          ]
+        },
+        "filtered": {
+          "text": "A.T.U. 19-10-23. We'll be right back.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " A.T.U.",
+              "avg_logprob": -0.6656158428925735,
+              "no_speech_prob": 0.013596362434327602,
+              "compression_ratio": 0.8222222222222222
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " 19-10-23.",
+              "avg_logprob": -0.6656158428925735,
+              "no_speech_prob": 0.013596362434327602,
+              "compression_ratio": 0.8222222222222222
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " We'll be right back.",
+              "avg_logprob": -0.6656158428925735,
+              "no_speech_prob": 0.013596362434327602,
+              "compression_ratio": 0.8222222222222222
+            }
+          ]
+        },
+        "context": {
+          "text": "18U19, 1023-1J.",
+          "prompt": "temper If you want to copy that part problem Can't work.",
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.8000000000000003,
+              "text": " 18U19, 1023-1J.",
+              "avg_logprob": -0.9226843026968149,
+              "no_speech_prob": 0.019543025642633438,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    }
+  }
+}
