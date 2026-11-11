@@ -1,0 +1,713 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-09",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794270833.m4a": {
+      "index": 1001,
+      "epoch": 1794270833,
+      "sha256": "dffbd67107b847edb65a663344e4504058203c53a2fc2acf821c373401c67c54",
+      "passes": {
+        "original": {
+          "text": "Happy Christmas.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy Christmas.",
+              "avg_logprob": -0.7663427790006002,
+              "no_speech_prob": 0.02534875087440014,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy Christmas.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy Christmas.",
+              "avg_logprob": -0.6927603979905447,
+              "no_speech_prob": 0.012245788238942623,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "5J43, she's about 10 minutes out. So I do 43 you can 22 Copy.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7245317459106445,
+              "no_speech_prob": 0.02793937735259533,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794270845.m4a": {
+      "index": 1002,
+      "epoch": 1794270845,
+      "sha256": "0c9f543e1d901dc466684647e80322952050b9d6a95982cc0bc59d079c9993a2",
+      "passes": {
+        "original": {
+          "text": "7J11, will you show me out at Central Elementary? This will be a presentation detail. Negative checks.",
+          "prompt": null,
+          "duration_seconds": 7.936,
+          "token_limit": 88,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J11, will you show me out at Central Elementary?",
+              "avg_logprob": -0.37701962356056484,
+              "no_speech_prob": 0.054120443761348724,
+              "compression_ratio": 1.0625
+            },
+            {
+              "start": 4.0,
+              "end": 8.0,
+              "text": " This will be a presentation detail. Negative checks.",
+              "avg_logprob": -0.37701962356056484,
+              "no_speech_prob": 0.054120443761348724,
+              "compression_ratio": 1.0625
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J11, will you show me out at Central Elementary? This will be a presentation in detail. Negative checks.",
+          "prompt": null,
+          "duration_seconds": 7.936,
+          "token_limit": 88,
+          "token_count": 30,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J11, will you show me out at Central Elementary?",
+              "avg_logprob": -0.3916780794820478,
+              "no_speech_prob": 0.08785946667194366,
+              "compression_ratio": 1.0396039603960396
+            },
+            {
+              "start": 4.0,
+              "end": 6.0,
+              "text": " This will be a presentation in detail.",
+              "avg_logprob": -0.3916780794820478,
+              "no_speech_prob": 0.08785946667194366,
+              "compression_ratio": 1.0396039603960396
+            },
+            {
+              "start": 6.0,
+              "end": 8.0,
+              "text": " Negative checks.",
+              "avg_logprob": -0.3916780794820478,
+              "no_speech_prob": 0.08785946667194366,
+              "compression_ratio": 1.0396039603960396
+            }
+          ]
+        },
+        "context": {
+          "text": "7J11 will you show me out at Central Elementary this will be a presentation detail. Negative checks.",
+          "prompt": "So I do 43 you can 22 Copy. Happy Christmas.",
+          "duration_seconds": 7.936,
+          "token_limit": 88,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 7J11 will you show me out at Central Elementary this will be a presentation detail. Negative checks.",
+              "avg_logprob": -0.3752811749776204,
+              "no_speech_prob": 0.018561238422989845,
+              "compression_ratio": 1.075268817204301
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794270853.m4a": {
+      "index": 1003,
+      "epoch": 1794270853,
+      "sha256": "efd11cc4573d03e8f3ca54628c313928ed795a7d488e6e61f4a47096dc281376",
+      "passes": {
+        "original": {
+          "text": "Time for it.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.84,
+              "text": " Time for it.",
+              "avg_logprob": -0.964787415095738,
+              "no_speech_prob": 0.013080727308988571,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Good boy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " Good boy.",
+              "avg_logprob": -0.6714213887850443,
+              "no_speech_prob": 0.0215768963098526,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "10-4.",
+          "prompt": "Happy Christmas. 7J11, will you show me out at Central Elementary? This will be a presentation detail. Negative checks.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.5682540791375297,
+              "no_speech_prob": 0.010246999561786652,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794270874.m4a": {
+      "index": 1004,
+      "epoch": 1794270874,
+      "sha256": "d0bb89c0e4742370a406c5346a56ce3158343abeafc950ba2a9ecdb5235abf5e",
+      "passes": {
+        "original": {
+          "text": "15G, 15, 10-42.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 15G, 15, 10-42.",
+              "avg_logprob": -0.7307694753011068,
+              "no_speech_prob": 0.011985997669398785,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Team G15, 1042.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Team G15, 1042.",
+              "avg_logprob": -0.8759668171405792,
+              "no_speech_prob": 0.01023016031831503,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "context": {
+          "text": "15J15, 1042.",
+          "prompt": "Happy Christmas. 7J11, will you show me out at Central Elementary? This will be a presentation detail. Negative checks. Time for it.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.2600000000000002,
+              "text": " 15J15, 1042.",
+              "avg_logprob": -0.6732848882675171,
+              "no_speech_prob": 0.0066123828291893005,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794270877.m4a": {
+      "index": 1005,
+      "epoch": 1794270877,
+      "sha256": "41ae14ebfd2b2449aa813e62475f8c694985889e267ce289887ad1fa77e06004",
+      "passes": {
+        "original": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Happy.",
+              "avg_logprob": -0.5223088741302491,
+              "no_speech_prob": 0.03965524584054947,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Happy.",
+              "avg_logprob": -0.7005171298980712,
+              "no_speech_prob": 0.0489242821931839,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy.",
+          "prompt": "7J11, will you show me out at Central Elementary? This will be a presentation detail. Negative checks. Time for it. 15G, 15, 10-42.",
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Happy.",
+              "avg_logprob": -0.3973583221435547,
+              "no_speech_prob": 0.03647894784808159,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794271049.m4a": {
+      "index": 1006,
+      "epoch": 1794271049,
+      "sha256": "4e50d8f966adb48f73c9cd37684d73e2648df5777a7838b25eea4d28f6f23be2",
+      "passes": {
+        "original": {
+          "text": "7J28, copy nuisance.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J28, copy nuisance.",
+              "avg_logprob": -0.5617149174213409,
+              "no_speech_prob": 0.03623068332672119,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J28, copy nuisance.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J28, copy nuisance.",
+              "avg_logprob": -0.7138226687908172,
+              "no_speech_prob": 0.025373848155140877,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "7J28, copy nuisance.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J28, copy nuisance.",
+              "avg_logprob": -0.5617149174213409,
+              "no_speech_prob": 0.03623068332672119,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794271064.m4a": {
+      "index": 1007,
+      "epoch": 1794271064,
+      "sha256": "d0f1e408f384b7608ec051234cb6006b925609f119ed496eaf276722d143d519",
+      "passes": {
+        "original": {
+          "text": "7J12, copy nuisance.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J12, copy nuisance.",
+              "avg_logprob": -0.5455229043960571,
+              "no_speech_prob": 0.05211837217211723,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J12, copy nuisance.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J12, copy nuisance.",
+              "avg_logprob": -0.5482353150844574,
+              "no_speech_prob": 0.02527821622788906,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "7J12, copy nuisance.",
+          "prompt": "7J28, copy nuisance.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J12, copy nuisance.",
+              "avg_logprob": -0.28333863615989685,
+              "no_speech_prob": 0.047174617648124695,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794271068.m4a": {
+      "index": 1008,
+      "epoch": 1794271068,
+      "sha256": "f36b9f541becb307352bd3297878d93b408a6e6a036baf1339bbafc356d7f713",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.6848444044589996,
+              "no_speech_prob": 0.1202973797917366,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Good",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Good",
+              "avg_logprob": -0.21600130945444107,
+              "no_speech_prob": 0.028092876076698303,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Go ahead.",
+          "prompt": "7J28, copy nuisance. 7J12, copy nuisance.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.72,
+              "text": " Go ahead.",
+              "avg_logprob": -0.706783284743627,
+              "no_speech_prob": 0.11375050246715546,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794271081.m4a": {
+      "index": 1009,
+      "epoch": 1794271081,
+      "sha256": "41cf513987456b75ad2c9906c7c48863268d85b3fc5b9cf2cfa176f31d2b0009",
+      "passes": {
+        "original": {
+          "text": "Then they said, sorry, it was just alarms going off upstairs. They're saying there's a female.",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.84,
+              "text": " Then they said, sorry, it was just alarms going off upstairs.",
+              "avg_logprob": -0.3390436614001239,
+              "no_speech_prob": 0.023546645417809486,
+              "compression_ratio": 1.0930232558139534
+            },
+            {
+              "start": 3.84,
+              "end": 5.0,
+              "text": " They're saying there's a female.",
+              "avg_logprob": -0.3390436614001239,
+              "no_speech_prob": 0.023546645417809486,
+              "compression_ratio": 1.0930232558139534
+            }
+          ]
+        },
+        "filtered": {
+          "text": "And they said, sorry, it was just alarms going off upstairs. They were saying, there's a female.",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2,
+              "text": " And they said, sorry, it was just alarms going off upstairs.",
+              "avg_logprob": -0.3944644810897963,
+              "no_speech_prob": 0.008497173897922039,
+              "compression_ratio": 1.0909090909090908
+            },
+            {
+              "start": 3.2,
+              "end": 5.44,
+              "text": " They were saying, there's a female.",
+              "avg_logprob": -0.3944644810897963,
+              "no_speech_prob": 0.008497173897922039,
+              "compression_ratio": 1.0909090909090908
+            }
+          ]
+        },
+        "context": {
+          "text": "Then they said sorry, it was just alarms going off upstairs. They're saying there's a female.",
+          "prompt": "7J28, copy nuisance. 7J12, copy nuisance. Go ahead.",
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Then they said sorry, it was just alarms going off upstairs. They're saying there's a female.",
+              "avg_logprob": -0.2949146752556165,
+              "no_speech_prob": 0.005926891230046749,
+              "compression_ratio": 1.0941176470588236
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794271087.m4a": {
+      "index": 1010,
+      "epoch": 1794271087,
+      "sha256": "cc36b93e0e17611e51fb00e147e00cf2ac38d460eab0ff7147fc826a639e16e5",
+      "passes": {
+        "original": {
+          "text": "Correction, a female said there's someone upstairs smoking and setting off smoke alarms. They're complaining about the apartments upstairs. It's an ongoing issue.",
+          "prompt": null,
+          "duration_seconds": 8.96,
+          "token_limit": 96,
+          "token_count": 36,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.92,
+              "text": " Correction, a female said there's someone upstairs smoking and setting off smoke alarms.",
+              "avg_logprob": -0.36553419925071096,
+              "no_speech_prob": 0.0024011668283492327,
+              "compression_ratio": 1.3170731707317074
+            },
+            {
+              "start": 4.92,
+              "end": 7.24,
+              "text": " They're complaining about the apartments upstairs.",
+              "avg_logprob": -0.36553419925071096,
+              "no_speech_prob": 0.0024011668283492327,
+              "compression_ratio": 1.3170731707317074
+            },
+            {
+              "start": 7.24,
+              "end": 8.32,
+              "text": " It's an ongoing issue.",
+              "avg_logprob": -0.36553419925071096,
+              "no_speech_prob": 0.0024011668283492327,
+              "compression_ratio": 1.3170731707317074
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Correction, a female said there's someone upstairs smoking and setting off smoke alarms. They're complaining about the apartments upstairs. It's an ongoing issue.",
+          "prompt": null,
+          "duration_seconds": 8.96,
+          "token_limit": 96,
+          "token_count": 36,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.96,
+              "text": " Correction, a female said there's someone upstairs smoking and setting off smoke alarms.",
+              "avg_logprob": -0.35439549265681086,
+              "no_speech_prob": 0.0019592158496379852,
+              "compression_ratio": 1.3170731707317074
+            },
+            {
+              "start": 4.96,
+              "end": 7.24,
+              "text": " They're complaining about the apartments upstairs.",
+              "avg_logprob": -0.35439549265681086,
+              "no_speech_prob": 0.0019592158496379852,
+              "compression_ratio": 1.3170731707317074
+            },
+            {
+              "start": 7.24,
+              "end": 8.36,
+              "text": " It's an ongoing issue.",
+              "avg_logprob": -0.35439549265681086,
+              "no_speech_prob": 0.0019592158496379852,
+              "compression_ratio": 1.3170731707317074
+            }
+          ]
+        },
+        "context": {
+          "text": "Correction, a female said there's someone upstairs smoking and setting off smoke alarms. They're complaining about the apartments upstairs. It's an ongoing issue.",
+          "prompt": "7J12, copy nuisance. Go ahead. Then they said, sorry, it was just alarms going off upstairs. They're saying there's a female.",
+          "duration_seconds": 8.96,
+          "token_limit": 96,
+          "token_count": 32,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.5,
+              "text": " Correction, a female said there's someone upstairs smoking and setting off smoke alarms. They're complaining about the apartments upstairs. It's an ongoing issue.",
+              "avg_logprob": -0.1786142551537716,
+              "no_speech_prob": 0.0005693405983038247,
+              "compression_ratio": 1.3170731707317074
+            }
+          ]
+        }
+      }
+    }
+  }
+}
