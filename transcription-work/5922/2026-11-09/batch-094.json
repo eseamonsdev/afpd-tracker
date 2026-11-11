@@ -1,0 +1,697 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-09",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794269036.m4a": {
+      "index": 931,
+      "epoch": 1794269036,
+      "sha256": "814b47fc932f6f775270af37449ea24d00120611538077b1080875d9fde4b702",
+      "passes": {
+        "original": {
+          "text": "1135 North, 100 East, 1135 North, 100 East, it's a tan 2006 Honda parked in front of the house.",
+          "prompt": null,
+          "duration_seconds": 8.576,
+          "token_limit": 93,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " 1135 North, 100 East, 1135 North, 100 East, it's a tan 2006 Honda parked in front of the house.",
+              "avg_logprob": -0.2563385844230652,
+              "no_speech_prob": 0.011086704209446907,
+              "compression_ratio": 1.1728395061728396
+            }
+          ]
+        },
+        "filtered": {
+          "text": "1135 North, 100 East, 1135 North, 100 East. It's a tan 2006 Honda parked in front of the house.",
+          "prompt": null,
+          "duration_seconds": 8.576,
+          "token_limit": 93,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " 1135 North, 100 East, 1135 North, 100 East. It's a tan 2006 Honda parked in front of the house.",
+              "avg_logprob": -0.31576644281546273,
+              "no_speech_prob": 0.009130545891821384,
+              "compression_ratio": 1.144578313253012
+            }
+          ]
+        },
+        "context": {
+          "text": "1135 North, 100 East, 1135 North, 100 East, it's a tan 2006 Honda parked in front of the house.",
+          "prompt": "7J28, copy key. 7J18 copy keys. Go ahead.",
+          "duration_seconds": 8.576,
+          "token_limit": 93,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " 1135 North, 100 East, 1135 North, 100 East, it's a tan 2006 Honda parked in front of the house.",
+              "avg_logprob": -0.21756275445222856,
+              "no_speech_prob": 0.0055513521656394005,
+              "compression_ratio": 1.1728395061728396
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794269047.m4a": {
+      "index": 932,
+      "epoch": 1794269047,
+      "sha256": "09d3b7a26d6e002e944a9b2c8726e5cc459f17c2d8853efd95bce1926267321d",
+      "passes": {
+        "original": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.767481118440628,
+              "no_speech_prob": 0.26410433650016785,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Sorry.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Sorry.",
+              "avg_logprob": -1.0682056427001954,
+              "no_speech_prob": 0.25800126791000366,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "7J18 copy keys. Go ahead. 1135 North, 100 East, 1135 North, 100 East, it's a tan 2006 Honda parked in front of the house.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6612994194030761,
+              "no_speech_prob": 0.1879241019487381,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794269109.m4a": {
+      "index": 933,
+      "epoch": 1794269109,
+      "sha256": "62289dd331f3fafc7a906c542264f9309d6b19be35ccc036963f4eaaabcb9344",
+      "passes": {
+        "original": {
+          "text": "5G-81041, I copy the follow-up.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5G-81041, I copy the follow-up.",
+              "avg_logprob": -0.5443886027616613,
+              "no_speech_prob": 0.11198560148477554,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G8, 1041, and copy the follow-up.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5G8, 1041, and copy the follow-up.",
+              "avg_logprob": -0.5864729039809283,
+              "no_speech_prob": 0.05310719087719917,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "context": {
+          "text": "5G-81041, I copy the follow-up.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5G-81041, I copy the follow-up.",
+              "avg_logprob": -0.5443886027616613,
+              "no_speech_prob": 0.11198560148477554,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794269113.m4a": {
+      "index": 934,
+      "epoch": 1794269113,
+      "sha256": "988cc9b7b008a0785acf916c40955a771cea0506f477ab0712fe6389267779d6",
+      "passes": {
+        "original": {
+          "text": "Ten more things.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Ten more things.",
+              "avg_logprob": -0.527018564088004,
+              "no_speech_prob": 0.003944139461964369,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thanks for watching. Thanks for watching. Thanks for watching.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thanks for watching.",
+              "avg_logprob": -0.5621144503355027,
+              "no_speech_prob": 0.004707677289843559,
+              "compression_ratio": 1.9375
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thanks for watching.",
+              "avg_logprob": -0.5621144503355027,
+              "no_speech_prob": 0.004707677289843559,
+              "compression_ratio": 1.9375
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Thanks for watching.",
+              "avg_logprob": -0.5621144503355027,
+              "no_speech_prob": 0.004707677289843559,
+              "compression_ratio": 1.9375
+            }
+          ]
+        },
+        "context": {
+          "text": "Ten more things.",
+          "prompt": "5G-81041, I copy the follow-up.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Ten more things.",
+              "avg_logprob": -0.5999691826956612,
+              "no_speech_prob": 0.016475684940814972,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794269192.m4a": {
+      "index": 935,
+      "epoch": 1794269192,
+      "sha256": "14fdd8cbeabae8e3de71af7267f42b9db3d9014e0f94ce077abcda7e63ef79af",
+      "passes": {
+        "original": {
+          "text": "18-6-9",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18-6-9",
+              "avg_logprob": -0.7795217633247375,
+              "no_speech_prob": 0.02975921332836151,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Agent is 6-9.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Agent is 6-9.",
+              "avg_logprob": -0.9848620096842448,
+              "no_speech_prob": 0.04803427681326866,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "18-6-9",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18-6-9",
+              "avg_logprob": -0.7795217633247375,
+              "no_speech_prob": 0.02975921332836151,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794269198.m4a": {
+      "index": 936,
+      "epoch": 1794269198,
+      "sha256": "2ff9fb24671fa8724e686a885bba0eab82f6e6268833405b60725c62fab696ea",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5302663326263428,
+              "no_speech_prob": 0.019998399540781975,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " Copy.",
+              "avg_logprob": -0.5018777847290039,
+              "no_speech_prob": 0.0264511089771986,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy",
+          "prompt": "18-6-9",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy",
+              "avg_logprob": -0.5812009423971176,
+              "no_speech_prob": 0.06145971640944481,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794269299.m4a": {
+      "index": 937,
+      "epoch": 1794269299,
+      "sha256": "5d8e731972cc3c372c66a03116c99f9e110c240fd8285273ea5d833c62ef16c4",
+      "passes": {
+        "original": {
+          "text": "18J23 arriving",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18J23 arriving",
+              "avg_logprob": -0.7876159123011998,
+              "no_speech_prob": 0.020382214337587357,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "filtered": {
+          "text": "H and J23 arriving",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " H and J23 arriving",
+              "avg_logprob": -0.9352291822433472,
+              "no_speech_prob": 0.018052345141768456,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "context": {
+          "text": "18J23 arriving",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18J23 arriving",
+              "avg_logprob": -0.7876159123011998,
+              "no_speech_prob": 0.020382214337587357,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794269302.m4a": {
+      "index": 938,
+      "epoch": 1794269302,
+      "sha256": "808f6b5716524cc9eeccd6f7e38265eb728a3360d7fdff2c47bfe6c746808b91",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.4570932388305664,
+              "no_speech_prob": 0.038074832409620285,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.58,
+              "text": " Happy.",
+              "avg_logprob": -0.6657446384429931,
+              "no_speech_prob": 0.016171706840395927,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "copy",
+          "prompt": "18J23 arriving",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " copy",
+              "avg_logprob": -0.7404691725969315,
+              "no_speech_prob": 0.060611750930547714,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794269320.m4a": {
+      "index": 939,
+      "epoch": 1794269320,
+      "sha256": "1e307bd6ec2c19a3088353523d68369050f0143c95c35a54e2d09183bd622861",
+      "passes": {
+        "original": {
+          "text": "Thank you. Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5086812939908769,
+              "no_speech_prob": 0.013970887288451195,
+              "compression_ratio": 1.7272727272727273
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5086812939908769,
+              "no_speech_prob": 0.013970887288451195,
+              "compression_ratio": 1.7272727272727273
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5086812939908769,
+              "no_speech_prob": 0.013970887288451195,
+              "compression_ratio": 1.7272727272727273
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Semper.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Semper.",
+              "avg_logprob": -0.8146500587463379,
+              "no_speech_prob": 0.01506093516945839,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you. Thank you. Thank you. Thank you.",
+          "prompt": "18J23 arriving Copy.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.4854774475097656,
+              "no_speech_prob": 0.0394243486225605,
+              "compression_ratio": 1.9545454545454546
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.4854774475097656,
+              "no_speech_prob": 0.0394243486225605,
+              "compression_ratio": 1.9545454545454546
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.4854774475097656,
+              "no_speech_prob": 0.0394243486225605,
+              "compression_ratio": 1.9545454545454546
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.4854774475097656,
+              "no_speech_prob": 0.0394243486225605,
+              "compression_ratio": 1.9545454545454546
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794269348.m4a": {
+      "index": 940,
+      "epoch": 1794269348,
+      "sha256": "de115f4cd379e562662ed1565698897a287bd54aec65889fd472112cddb5b78f",
+      "passes": {
+        "original": {
+          "text": "5J55 on duty.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J55 on duty.",
+              "avg_logprob": -0.32291428248087567,
+              "no_speech_prob": 0.03912661597132683,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J55 on duty.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J55 on duty.",
+              "avg_logprob": -0.2939663463168674,
+              "no_speech_prob": 0.02691172994673252,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "5J55 on duty.",
+          "prompt": "18J23 arriving Copy. Thank you. Thank you. Thank you.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J55 on duty.",
+              "avg_logprob": -0.31980665524800617,
+              "no_speech_prob": 0.026020463556051254,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    }
+  }
+}
