@@ -1,0 +1,665 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-10",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794319026.m4a": {
+      "index": 141,
+      "epoch": 1794319026,
+      "sha256": "7964f87cb83e47fa90f25ed97d01f568cf75e8c1b358c51773aab5f6b5ecb11e",
+      "passes": {
+        "original": {
+          "text": "Approximately 41-year-old male, other party involved appears to be code four, still getting further descriptions.",
+          "prompt": null,
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Approximately 41-year-old male, other party involved appears to be code four, still getting further descriptions.",
+              "avg_logprob": -0.48103797912597657,
+              "no_speech_prob": 0.041283026337623596,
+              "compression_ratio": 1.1414141414141414
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Approximately 41-year-old male, other party involved, but it appears to be code four, still getting further descriptions.",
+          "prompt": null,
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Approximately 41-year-old male, other party involved, but it appears to be code four,",
+              "avg_logprob": -0.5101891160011292,
+              "no_speech_prob": 0.0207221582531929,
+              "compression_ratio": 1.1523809523809523
+            },
+            {
+              "start": 5.0,
+              "end": 6.72,
+              "text": " still getting further descriptions.",
+              "avg_logprob": -0.5101891160011292,
+              "no_speech_prob": 0.0207221582531929,
+              "compression_ratio": 1.1523809523809523
+            }
+          ]
+        },
+        "context": {
+          "text": "Approximately 41-year-old male. Other party involved appears to be code four, still getting further descriptions.",
+          "prompt": "YJ54, copy accident P.I. Copy. 350 West, Maine, 350 West, Maine.",
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Approximately 41-year-old male. Other party involved appears to be code four, still getting further descriptions.",
+              "avg_logprob": -0.29797122001647947,
+              "no_speech_prob": 0.018087513744831085,
+              "compression_ratio": 1.107843137254902
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794319039.m4a": {
+      "index": 142,
+      "epoch": 1794319039,
+      "sha256": "2423e47ad9662600d483c7910bf879a62ba53f9fc0caec27fc0a513700dd56c4",
+      "passes": {
+        "original": {
+          "text": "Thank you, 42, I'm close to that.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you, 42, I'm close to that.",
+              "avg_logprob": -0.32949908290590557,
+              "no_speech_prob": 0.06272225081920624,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you. Forty-two. I'm close to that.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.375179286301136,
+              "no_speech_prob": 0.041350703686475754,
+              "compression_ratio": 0.8333333333333334
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Forty-two.",
+              "avg_logprob": -0.375179286301136,
+              "no_speech_prob": 0.041350703686475754,
+              "compression_ratio": 0.8333333333333334
+            },
+            {
+              "start": 2.0,
+              "end": 2.02,
+              "text": " I'm close to that.",
+              "avg_logprob": -0.375179286301136,
+              "no_speech_prob": 0.041350703686475754,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you, 42, I'm close to that.",
+          "prompt": "Copy. 350 West, Maine, 350 West, Maine. Approximately 41-year-old male, other party involved appears to be code four, still getting further descriptions.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you, 42, I'm close to that.",
+              "avg_logprob": -0.2834654024669102,
+              "no_speech_prob": 0.025952637195587158,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794319044.m4a": {
+      "index": 143,
+      "epoch": 1794319044,
+      "sha256": "d87463f0408bfc7eeed87e075f92dd9f2952380683deaca6c1eb548a972a6bc7",
+      "passes": {
+        "original": {
+          "text": "I just wear a coffee coat from Center Street, Maine.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.6,
+              "text": " I just wear a coffee coat from Center Street, Maine.",
+              "avg_logprob": -0.8875337759653728,
+              "no_speech_prob": 0.012057623825967312,
+              "compression_ratio": 0.896551724137931
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I just worked out the code from Center Street, Maine.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I just worked out the code from Center Street, Maine.",
+              "avg_logprob": -0.7809360980987549,
+              "no_speech_prob": 0.023624995723366737,
+              "compression_ratio": 0.8688524590163934
+            }
+          ]
+        },
+        "context": {
+          "text": "I just wrote a copy code from Center Street, Maine.",
+          "prompt": "350 West, Maine, 350 West, Maine. Approximately 41-year-old male, other party involved appears to be code four, still getting further descriptions. Thank you, 42, I'm close to that.",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I just wrote a copy code from Center Street, Maine.",
+              "avg_logprob": -0.6876625458399455,
+              "no_speech_prob": 0.028791693970561028,
+              "compression_ratio": 0.8947368421052632
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794319048.m4a": {
+      "index": 144,
+      "epoch": 1794319048,
+      "sha256": "3f7721c2a033ac0f114af1525ea9868efed4d905f4befdc10fd4b52dfb6219c6",
+      "passes": {
+        "original": {
+          "text": "Last unit code from centering me.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Last unit code from centering me.",
+              "avg_logprob": -0.6636168740012429,
+              "no_speech_prob": 0.0246619563549757,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Last unit code from centering me.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Last unit code from centering me.",
+              "avg_logprob": -0.6863093918020075,
+              "no_speech_prob": 0.0076974001713097095,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        },
+        "context": {
+          "text": "Last unit, code from Center in Maine.",
+          "prompt": "Approximately 41-year-old male, other party involved appears to be code four, still getting further descriptions. Thank you, 42, I'm close to that. I just wear a coffee coat from Center Street, Maine.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.8,
+              "text": " Last unit, code from Center in Maine.",
+              "avg_logprob": -0.530124286810557,
+              "no_speech_prob": 0.022982677444815636,
+              "compression_ratio": 0.8222222222222222
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794319051.m4a": {
+      "index": 145,
+      "epoch": 1794319051,
+      "sha256": "a0636f8604b5b2c2712cfe6a191cc8e2e833b1ce6dd126d9d64efda86ddf27cb",
+      "passes": {
+        "original": {
+          "text": "5J42.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.52,
+              "text": " 5J42.",
+              "avg_logprob": -0.6622112989425659,
+              "no_speech_prob": 0.045170024037361145,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J42",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J42",
+              "avg_logprob": -0.591057538986206,
+              "no_speech_prob": 0.194766566157341,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "5J42.",
+          "prompt": "Thank you, 42, I'm close to that. I just wear a coffee coat from Center Street, Maine. Last unit code from centering me.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.48,
+              "text": " 5J42.",
+              "avg_logprob": -0.3999253341129848,
+              "no_speech_prob": 0.029722733423113823,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794319054.m4a": {
+      "index": 146,
+      "epoch": 1794319054,
+      "sha256": "f346edaadb1e2308bba344b7fc6d53979549b041ae011b2e2f17a71d5f445840",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.5507533073425293,
+              "no_speech_prob": 0.015521762892603874,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.6452429294586182,
+              "no_speech_prob": 0.019209567457437515,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Coffee.",
+          "prompt": "I just wear a coffee coat from Center Street, Maine. Last unit code from centering me. 5J42.",
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Coffee.",
+              "avg_logprob": -0.4572305679321289,
+              "no_speech_prob": 0.002176666632294655,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794319078.m4a": {
+      "index": 147,
+      "epoch": 1794319078,
+      "sha256": "b81072b08c26cbb8f74cccfe61f2d38446abd7aa81b2df44edf634c54709b91e",
+      "passes": {
+        "original": {
+          "text": "Plan J42, we need to block all westbound on main from 300 west.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Plan J42, we need to block all westbound on main from 300 west.",
+              "avg_logprob": -0.5003278732299805,
+              "no_speech_prob": 0.05322722718119621,
+              "compression_ratio": 0.9545454545454546
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We need a block all west down on Main from 300 west.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " We need a block all west down on Main from 300 west.",
+              "avg_logprob": -0.620578620582819,
+              "no_speech_prob": 0.04872657358646393,
+              "compression_ratio": 0.9122807017543859
+            }
+          ]
+        },
+        "context": {
+          "text": "5J42, we need to block all westbound on main from 300 west.",
+          "prompt": "Last unit code from centering me. 5J42. Copy.",
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5J42, we need to block all westbound on main from 300 west.",
+              "avg_logprob": -0.40156125128269193,
+              "no_speech_prob": 0.005157141014933586,
+              "compression_ratio": 0.9516129032258065
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794319094.m4a": {
+      "index": 148,
+      "epoch": 1794319094,
+      "sha256": "8c27b85ea9f2cad0d2b5c77be49316c80644afe98a6a39e395d8944ed418fc19",
+      "passes": {
+        "original": {
+          "text": "Copy. Needing all westbound on main block at 300 west.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Copy. Needing all westbound on main block at 300 west.",
+              "avg_logprob": -0.34937499551212087,
+              "no_speech_prob": 0.011758971959352493,
+              "compression_ratio": 0.9152542372881356
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy. Needing all westbound on main block at 300 west.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Copy. Needing all westbound on main block at 300 west.",
+              "avg_logprob": -0.4048937348758473,
+              "no_speech_prob": 0.009867061860859394,
+              "compression_ratio": 0.9152542372881356
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy. Needing all westbound on main block at 300 west.",
+          "prompt": "5J42. Copy. Plan J42, we need to block all westbound on main from 300 west.",
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Copy. Needing all westbound on main block at 300 west.",
+              "avg_logprob": -0.295047311221852,
+              "no_speech_prob": 0.003422862384468317,
+              "compression_ratio": 0.9152542372881356
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794319098.m4a": {
+      "index": 149,
+      "epoch": 1794319098,
+      "sha256": "2e5ddc30a82111d25e2c8e57bf3820242cd1022f18dabcb831e127c9f977c895",
+      "passes": {
+        "original": {
+          "text": "5J35 I can block that",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J35 I can block that",
+              "avg_logprob": -0.3014971375465393,
+              "no_speech_prob": 0.043890319764614105,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J35, I can walk that out",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J35, I can walk that out",
+              "avg_logprob": -0.4668683260679245,
+              "no_speech_prob": 0.04492516070604324,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "context": {
+          "text": "Plan J35, I can block that.",
+          "prompt": "Copy. Plan J42, we need to block all westbound on main from 300 west. Copy. Needing all westbound on main block at 300 west.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Plan J35, I can block that.",
+              "avg_logprob": -0.4312926158308983,
+              "no_speech_prob": 0.003927946090698242,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794319101.m4a": {
+      "index": 150,
+      "epoch": 1794319101,
+      "sha256": "5e4ab1b76839f40127056c6329ae76f1548609a95594ac1ed9a7c4724fad1bf9",
+      "passes": {
+        "original": {
+          "text": "Copy, 30 seconds.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy, 30 seconds.",
+              "avg_logprob": -0.5657951906323433,
+              "no_speech_prob": 0.03139951452612877,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy, 30 seconds.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy, 30 seconds.",
+              "avg_logprob": -0.6828655228018761,
+              "no_speech_prob": 0.09031607955694199,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "copy 30 seconds.",
+          "prompt": "Plan J42, we need to block all westbound on main from 300 west. Copy. Needing all westbound on main block at 300 west. 5J35 I can block that",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " copy 30 seconds.",
+              "avg_logprob": -0.679841331073216,
+              "no_speech_prob": 0.03790431097149849,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    }
+  }
+}
