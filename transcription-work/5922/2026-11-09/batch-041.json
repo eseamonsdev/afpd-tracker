@@ -1,0 +1,689 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-09",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794248778.m4a": {
+      "index": 401,
+      "epoch": 1794248778,
+      "sha256": "4964bd4d1ef85df10143fa93279c6a587785d5bdad54429ed08e356ba29ecd53",
+      "passes": {
+        "original": {
+          "text": "18J21, I hope it's medical.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18J21, I hope it's medical.",
+              "avg_logprob": -0.7037801742553711,
+              "no_speech_prob": 0.02358437143266201,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hey, you can do if you want a medical.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey, you can do if you want a medical.",
+              "avg_logprob": -0.6594236748559135,
+              "no_speech_prob": 0.01726258546113968,
+              "compression_ratio": 0.9047619047619048
+            }
+          ]
+        },
+        "context": {
+          "text": "18J21, I hope it's medical.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18J21, I hope it's medical.",
+              "avg_logprob": -0.7037801742553711,
+              "no_speech_prob": 0.02358437143266201,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794248783.m4a": {
+      "index": 402,
+      "epoch": 1794248783,
+      "sha256": "f45974908e43d98ef779653c409a4a444f95a8ae620e8826be9aaf168b956da2",
+      "passes": {
+        "original": {
+          "text": "We'll be on the trail to the north of Mitchell Hollow, a female passed out in the parking a lot.",
+          "prompt": null,
+          "duration_seconds": 11.136,
+          "token_limit": 114,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 10.36,
+              "text": " We'll be on the trail to the north of Mitchell Hollow, a female passed out in the parking",
+              "avg_logprob": -0.3889646815756957,
+              "no_speech_prob": 0.024940460920333862,
+              "compression_ratio": 1.072289156626506
+            },
+            {
+              "start": 10.36,
+              "end": 12.36,
+              "text": " a lot.",
+              "avg_logprob": -0.9601254264513651,
+              "no_speech_prob": 0.5891793370246887,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy. You're responding to 6492 West, 10400 North. We'll be on the trail to the north of Mitchell Hollow, a female passed out in the parking lot.",
+          "prompt": null,
+          "duration_seconds": 11.136,
+          "token_limit": 114,
+          "token_count": 40,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.48,
+              "text": " Copy. You're responding to 6492 West, 10400 North. We'll be on the trail to the north",
+              "avg_logprob": -0.3008316202861507,
+              "no_speech_prob": 0.035989899188280106,
+              "compression_ratio": 1.16
+            },
+            {
+              "start": 7.48,
+              "end": 10.6,
+              "text": " of Mitchell Hollow, a female passed out in the parking lot.",
+              "avg_logprob": -0.3008316202861507,
+              "no_speech_prob": 0.035989899188280106,
+              "compression_ratio": 1.16
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy. You're responding to 6492 West 10400 North. We'll be on the trail to the north of Mitchell Hollow, a female passed out in the parking lot.",
+          "prompt": "18J21, I hope it's medical.",
+          "duration_seconds": 11.136,
+          "token_limit": 114,
+          "token_count": 37,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 11.0,
+              "text": " Copy. You're responding to 6492 West 10400 North. We'll be on the trail to the north of Mitchell Hollow, a female passed out in the parking lot.",
+              "avg_logprob": -0.3115762417253695,
+              "no_speech_prob": 0.055170051753520966,
+              "compression_ratio": 1.1612903225806452
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794248797.m4a": {
+      "index": 403,
+      "epoch": 1794248797,
+      "sha256": "9520c95d671cff8f9889cba5d1ca04f1a395fee8e05555f9e2106af1f4c4e77f",
+      "passes": {
+        "original": {
+          "text": "Happy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy",
+              "avg_logprob": -0.8749710023403168,
+              "no_speech_prob": 0.06451433897018433,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.8557516098022461,
+              "no_speech_prob": 0.06897643953561783,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy.",
+          "prompt": "18J21, I hope it's medical. We'll be on the trail to the north of Mitchell Hollow, a female passed out in the parking a lot.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.7487958908081055,
+              "no_speech_prob": 0.07968956977128983,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794248812.m4a": {
+      "index": 404,
+      "epoch": 1794248812,
+      "sha256": "979118558f38b03033ccdc9eca4bb6431d72e3dc7d149e3d662f6f90a8041d4d",
+      "passes": {
+        "original": {
+          "text": "Bye.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Bye.",
+              "avg_logprob": -0.9401303291320801,
+              "no_speech_prob": 0.019959716126322746,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.6042374521493912,
+              "no_speech_prob": 0.03499490022659302,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy.",
+          "prompt": "18J21, I hope it's medical. We'll be on the trail to the north of Mitchell Hollow, a female passed out in the parking a lot. Happy",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy.",
+              "avg_logprob": -0.7437889099121093,
+              "no_speech_prob": 0.11084774136543274,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794248837.m4a": {
+      "index": 405,
+      "epoch": 1794248837,
+      "sha256": "01db9921d75250be6f1b3ee63cd4c4540c0a433e3accb8974a38b0e05b87614f",
+      "passes": {
+        "original": {
+          "text": "18J21, females now conscious and breathing.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 18J21, females now conscious and breathing.",
+              "avg_logprob": -0.3534625493563138,
+              "no_speech_prob": 0.011318846605718136,
+              "compression_ratio": 0.8431372549019608
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18J21, females now conscious and breathing.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 18J21, females now conscious and breathing.",
+              "avg_logprob": -0.4209855244709895,
+              "no_speech_prob": 0.004171082749962807,
+              "compression_ratio": 0.8431372549019608
+            }
+          ]
+        },
+        "context": {
+          "text": "18J21, females now conscious and breathing.",
+          "prompt": "We'll be on the trail to the north of Mitchell Hollow, a female passed out in the parking a lot. Happy Bye.",
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 18J21, females now conscious and breathing.",
+              "avg_logprob": -0.3275868800970224,
+              "no_speech_prob": 0.06145515292882919,
+              "compression_ratio": 0.8431372549019608
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794248842.m4a": {
+      "index": 406,
+      "epoch": 1794248842,
+      "sha256": "214dbb4d367c11b17acc64aecda718a2c77646c4699c51cf98f32e66089c3e8a",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7757422447204589,
+              "no_speech_prob": 0.023749615997076035,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6144590854644776,
+              "no_speech_prob": 0.03928877413272858,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy",
+          "prompt": "Happy Bye. 18J21, females now conscious and breathing.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy",
+              "avg_logprob": -0.5587043613195419,
+              "no_speech_prob": 0.02931171841919422,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794248957.m4a": {
+      "index": 407,
+      "epoch": 1794248957,
+      "sha256": "f8134117e265667ccd1c4fe963c027c3cb3d37a74ad689f1783f523f3055cbd1",
+      "passes": {
+        "original": {
+          "text": "Thank you. Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5665568619966507,
+              "no_speech_prob": 0.031664010137319565,
+              "compression_ratio": 1.9545454545454546
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5665568619966507,
+              "no_speech_prob": 0.031664010137319565,
+              "compression_ratio": 1.9545454545454546
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5665568619966507,
+              "no_speech_prob": 0.031664010137319565,
+              "compression_ratio": 1.9545454545454546
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.6779500842094421,
+              "no_speech_prob": 0.041940148919820786,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you. Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5665568619966507,
+              "no_speech_prob": 0.031664010137319565,
+              "compression_ratio": 1.9545454545454546
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5665568619966507,
+              "no_speech_prob": 0.031664010137319565,
+              "compression_ratio": 1.9545454545454546
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5665568619966507,
+              "no_speech_prob": 0.031664010137319565,
+              "compression_ratio": 1.9545454545454546
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794248961.m4a": {
+      "index": 408,
+      "epoch": 1794248961,
+      "sha256": "27a869afda7ec877797699c7bb9caf67b183ebc9c26dc69312bf3893efcd4118",
+      "passes": {
+        "original": {
+          "text": "copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0200000000000005,
+              "text": " copy.",
+              "avg_logprob": -0.7544678688049317,
+              "no_speech_prob": 0.01472950354218483,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Coffee.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Coffee.",
+              "avg_logprob": -0.8311278343200683,
+              "no_speech_prob": 0.02698022872209549,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you. Thank you. Copy.",
+          "prompt": "Thank you. Thank you. Thank you.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you. Thank you. Copy.",
+              "avg_logprob": -0.6049981442364779,
+              "no_speech_prob": 0.04358356446027756,
+              "compression_ratio": 1.0384615384615385
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794249000.m4a": {
+      "index": 409,
+      "epoch": 1794249000,
+      "sha256": "cf3495d7c9510c164ab49c3febd67e5121c321bb076e6b500ad8990e45f42c21",
+      "passes": {
+        "original": {
+          "text": "IJ-171 Central Code 4.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " IJ-171 Central Code 4.",
+              "avg_logprob": -0.6624880704012784,
+              "no_speech_prob": 0.01771368831396103,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hi, J-171 Central Cook-4.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hi, J-171 Central Cook-4.",
+              "avg_logprob": -0.7759494781494141,
+              "no_speech_prob": 0.02266581915318966,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "context": {
+          "text": "IJ-171 Central Code 4.",
+          "prompt": "Thank you. Thank you. Thank you. copy.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.2800000000000002,
+              "text": " IJ-171 Central Code 4.",
+              "avg_logprob": -0.67425321448933,
+              "no_speech_prob": 0.04741516336798668,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794249003.m4a": {
+      "index": 410,
+      "epoch": 1794249003,
+      "sha256": "06e07b77cd2923ec6384acadde8cf479b660c502425fe3ee17c841e919a1b828",
+      "passes": {
+        "original": {
+          "text": "Go for it",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it",
+              "avg_logprob": -0.5210615197817484,
+              "no_speech_prob": 0.044289324432611465,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it",
+              "avg_logprob": -0.5228617290655772,
+              "no_speech_prob": 0.0784965306520462,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Code 4.",
+          "prompt": "Thank you. Thank you. Thank you. copy. IJ-171 Central Code 4.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Code 4.",
+              "avg_logprob": -0.43782909711201984,
+              "no_speech_prob": 0.025517335161566734,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    }
+  }
+}
