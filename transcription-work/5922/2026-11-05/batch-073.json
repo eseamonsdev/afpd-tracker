@@ -1,0 +1,697 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-05",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793909968.m4a": {
+      "index": 721,
+      "epoch": 1793909968,
+      "sha256": "9374b7c1333d5d3b5a13493c6e742d395b39da3f882b03b4c21c787f5c068df3",
+      "passes": {
+        "original": {
+          "text": "7G, 22 Central, happy suspicious.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.6,
+              "text": " 7G, 22 Central, happy suspicious.",
+              "avg_logprob": -0.7734456956386566,
+              "no_speech_prob": 0.03293796256184578,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7822 Central, happy suspicious.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " 7822 Central, happy suspicious.",
+              "avg_logprob": -0.7560162305831909,
+              "no_speech_prob": 0.013514826074242592,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "context": {
+          "text": "7G, 22 Central, happy suspicious.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.6,
+              "text": " 7G, 22 Central, happy suspicious.",
+              "avg_logprob": -0.7734456956386566,
+              "no_speech_prob": 0.03293796256184578,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793909987.m4a": {
+      "index": 722,
+      "epoch": 1793909987,
+      "sha256": "ef18e532c8929a865cbbdb4ba7f6896d1ad3419f688708cc855531a9d00591ed",
+      "passes": {
+        "original": {
+          "text": "The Chevy truck, plate 0, Sierras 3, Romeo Zulu, the white male, black sweater, blue jeans, wearing a black hat backwards, person a hat backwards, unknown race, it was a bus that seen headed south on the trail.",
+          "prompt": null,
+          "duration_seconds": 13.312,
+          "token_limit": 131,
+          "token_count": 58,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.34,
+              "text": " The Chevy truck, plate 0, Sierras 3, Romeo Zulu, the white male, black sweater, blue jeans,",
+              "avg_logprob": -0.4800202967756886,
+              "no_speech_prob": 0.04900794476270676,
+              "compression_ratio": 1.4093959731543624
+            },
+            {
+              "start": 7.34,
+              "end": 11.6,
+              "text": " wearing a black hat backwards, person a hat backwards, unknown race, it was a bus that",
+              "avg_logprob": -0.4800202967756886,
+              "no_speech_prob": 0.04900794476270676,
+              "compression_ratio": 1.4093959731543624
+            },
+            {
+              "start": 11.6,
+              "end": 12.72,
+              "text": " seen headed south on the trail.",
+              "avg_logprob": -0.4800202967756886,
+              "no_speech_prob": 0.04900794476270676,
+              "compression_ratio": 1.4093959731543624
+            }
+          ]
+        },
+        "filtered": {
+          "text": "The Chevy truck, plate 0, Sierra, 3, Romeo and Zulu, the white male, black sweater, blue jeans, wearing a black hat backwards, person a hat backwards, unknown race, it was a bus that was being headed south on the trail.",
+          "prompt": null,
+          "duration_seconds": 13.312,
+          "token_limit": 131,
+          "token_count": 55,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 13.0,
+              "text": " The Chevy truck, plate 0, Sierra, 3, Romeo and Zulu, the white male, black sweater, blue jeans, wearing a black hat backwards, person a hat backwards, unknown race, it was a bus that was being headed south on the trail.",
+              "avg_logprob": -0.4177654800670488,
+              "no_speech_prob": 0.057538047432899475,
+              "compression_ratio": 1.422077922077922
+            }
+          ]
+        },
+        "context": {
+          "text": "The Chevy truck, plate 0, Sierras 3, Romeo Zulu, the white male, black sweater, blue jeans, wearing a black hat backwards, a person a hat backwards, unknown race, it was a bus that seen headed south on the trail.",
+          "prompt": "7G, 22 Central, happy suspicious.",
+          "duration_seconds": 13.312,
+          "token_limit": 131,
+          "token_count": 59,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.28,
+              "text": " The Chevy truck, plate 0, Sierras 3, Romeo Zulu, the white male, black sweater, blue jeans,",
+              "avg_logprob": -0.48041902432839073,
+              "no_speech_prob": 0.048013243824243546,
+              "compression_ratio": 1.4133333333333333
+            },
+            {
+              "start": 7.28,
+              "end": 11.6,
+              "text": " wearing a black hat backwards, a person a hat backwards, unknown race, it was a bus that",
+              "avg_logprob": -0.48041902432839073,
+              "no_speech_prob": 0.048013243824243546,
+              "compression_ratio": 1.4133333333333333
+            },
+            {
+              "start": 11.6,
+              "end": 12.72,
+              "text": " seen headed south on the trail.",
+              "avg_logprob": -0.48041902432839073,
+              "no_speech_prob": 0.048013243824243546,
+              "compression_ratio": 1.4133333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793910001.m4a": {
+      "index": 723,
+      "epoch": 1793910001,
+      "sha256": "9f6d63737541eb57156820b653883dd8e6d2f69c21549805b79d3edc4b342bbe",
+      "passes": {
+        "original": {
+          "text": "89 you can assign me primary.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0200000000000005,
+              "text": " 89 you can assign me primary.",
+              "avg_logprob": -0.36505875885486605,
+              "no_speech_prob": 0.049449119716882706,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        },
+        "filtered": {
+          "text": "89, you can assign me primary.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 89, you can assign me primary.",
+              "avg_logprob": -0.46799453822049225,
+              "no_speech_prob": 0.029174307361245155,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "context": {
+          "text": "89, you can assign me primary.",
+          "prompt": "7G, 22 Central, happy suspicious. The Chevy truck, plate 0, Sierras 3, Romeo Zulu, the white male, black sweater, blue jeans, wearing a black hat backwards, person a hat backwards, unknown race, it was a bus that seen headed south on the trail.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.2800000000000002,
+              "text": " 89, you can assign me primary.",
+              "avg_logprob": -0.3932266343723644,
+              "no_speech_prob": 0.04128044843673706,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793910005.m4a": {
+      "index": 724,
+      "epoch": 1793910005,
+      "sha256": "6103ba92b9e68b79046305ad5f8657831bf231cd2cfc7b070c3e7ee941db983d",
+      "passes": {
+        "original": {
+          "text": "Bye-bye.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.8782110214233398,
+              "no_speech_prob": 0.025007234886288643,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you. Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.563718178692986,
+              "no_speech_prob": 0.028835609555244446,
+              "compression_ratio": 1.4545454545454546
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.563718178692986,
+              "no_speech_prob": 0.028835609555244446,
+              "compression_ratio": 1.4545454545454546
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.563718178692986,
+              "no_speech_prob": 0.028835609555244446,
+              "compression_ratio": 1.4545454545454546
+            }
+          ]
+        },
+        "context": {
+          "text": "All right, having.",
+          "prompt": "7G, 22 Central, happy suspicious. The Chevy truck, plate 0, Sierras 3, Romeo Zulu, the white male, black sweater, blue jeans, wearing a black hat backwards, person a hat backwards, unknown race, it was a bus that seen headed south on the trail. 89 you can assign me primary.",
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " All right, having.",
+              "avg_logprob": -0.9149407297372818,
+              "no_speech_prob": 0.15759781002998352,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793910007.m4a": {
+      "index": 725,
+      "epoch": 1793910007,
+      "sha256": "7ae74ca3816d65abe4140e558c52bdc6d330770d2e9ec66884ad33fffbdcb59c",
+      "passes": {
+        "original": {
+          "text": "7823, show me an error.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7823, show me an error.",
+              "avg_logprob": -0.5253777178851041,
+              "no_speech_prob": 0.04738328233361244,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7823 show me an error",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7823 show me an error",
+              "avg_logprob": -0.649382061428494,
+              "no_speech_prob": 0.12763704359531403,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "context": {
+          "text": "78, 23 show me an error.",
+          "prompt": "The Chevy truck, plate 0, Sierras 3, Romeo Zulu, the white male, black sweater, blue jeans, wearing a black hat backwards, person a hat backwards, unknown race, it was a bus that seen headed south on the trail. 89 you can assign me primary. Bye-bye.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 78, 23 show me an error.",
+              "avg_logprob": -0.4984299161217429,
+              "no_speech_prob": 0.025160236284136772,
+              "compression_ratio": 0.75
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793910009.m4a": {
+      "index": 726,
+      "epoch": 1793910009,
+      "sha256": "6f609673e6e233d18f4f6ba960e2fcb2dc707f9a5fd6576c1aba6261d080837b",
+      "passes": {
+        "original": {
+          "text": "Have a great week. Have a great week.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Have a great week.",
+              "avg_logprob": -0.5422264547909007,
+              "no_speech_prob": 0.023826437070965767,
+              "compression_ratio": 1.4
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Have a great week.",
+              "avg_logprob": -0.5422264547909007,
+              "no_speech_prob": 0.023826437070965767,
+              "compression_ratio": 1.4
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Happy.",
+              "avg_logprob": -0.9421236038208007,
+              "no_speech_prob": 0.035202570259571075,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Bye-bye.",
+          "prompt": "89 you can assign me primary. Bye-bye. 7823, show me an error.",
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.6820671047483172,
+              "no_speech_prob": 0.04129520431160927,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793910011.m4a": {
+      "index": 727,
+      "epoch": 1793910011,
+      "sha256": "c8a6957b204085861fce5f3eb7e1e2fd2e1b78361fd09dc40c692c21e6c464be",
+      "passes": {
+        "original": {
+          "text": "7J22",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J22",
+              "avg_logprob": -0.626219759384791,
+              "no_speech_prob": 0.12958846986293793,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J22",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.64,
+              "text": " 7J22",
+              "avg_logprob": -0.6753946840763092,
+              "no_speech_prob": 0.0868600457906723,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "7J22.",
+          "prompt": "Bye-bye. 7823, show me an error. Have a great week. Have a great week.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.64,
+              "text": " 7J22.",
+              "avg_logprob": -0.6108811753136771,
+              "no_speech_prob": 0.04943525046110153,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793910015.m4a": {
+      "index": 728,
+      "epoch": 1793910015,
+      "sha256": "7bab077a2c681a88ef674b8a617cfd752b11ae2b71bdd7eaf1023d89cf50fd0f",
+      "passes": {
+        "original": {
+          "text": "Go ahead",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead",
+              "avg_logprob": -0.43021578788757325,
+              "no_speech_prob": 0.043422188609838486,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go ahead",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead",
+              "avg_logprob": -0.21199543476104737,
+              "no_speech_prob": 0.03369985520839691,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Go ahead.",
+          "prompt": "7823, show me an error. Have a great week. Have a great week. 7J22",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.4883665343125661,
+              "no_speech_prob": 0.07965220510959625,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793910017.m4a": {
+      "index": 729,
+      "epoch": 1793910017,
+      "sha256": "d76375b72a71ef6d3d31fb1c005cdbfdddf6904317bbe5c8b127e19938826b07",
+      "passes": {
+        "original": {
+          "text": "Will you come sit with this car and I'm gonna hop on the trail? I followed him and he ran in hopped on there",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.76,
+              "text": " Will you come sit with this car and I'm gonna hop on the trail? I followed him and he ran in hopped on there",
+              "avg_logprob": -0.2160046388363016,
+              "no_speech_prob": 0.021214568987488747,
+              "compression_ratio": 1.1868131868131868
+            }
+          ]
+        },
+        "filtered": {
+          "text": "When you come sit with this car and I'm going to hop on the trail, I followed him and he ran in and hopped on there.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " When you come sit with this car and I'm going to hop on the trail, I followed him and he ran in and hopped on there.",
+              "avg_logprob": -0.2748012784868479,
+              "no_speech_prob": 0.015857452526688576,
+              "compression_ratio": 1.2340425531914894
+            }
+          ]
+        },
+        "context": {
+          "text": "Will you come sit with this car and I'm gonna hop on the trail? I followed him and he ran in hopped on there",
+          "prompt": "Have a great week. Have a great week. 7J22 Go ahead",
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.76,
+              "text": " Will you come sit with this car and I'm gonna hop on the trail? I followed him and he ran in hopped on there",
+              "avg_logprob": -0.17882929382653073,
+              "no_speech_prob": 0.11721796542406082,
+              "compression_ratio": 1.1868131868131868
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793910025.m4a": {
+      "index": 730,
+      "epoch": 1793910025,
+      "sha256": "770bb0e97889a4460d36e40c05c24796ad4e5b4b4d93db7dfd735091bbf27d91",
+      "passes": {
+        "original": {
+          "text": "10-4 in route. Where do you want me?",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 10-4 in route. Where do you want me?",
+              "avg_logprob": -0.35487608512242635,
+              "no_speech_prob": 0.040944527834653854,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        },
+        "filtered": {
+          "text": "10-4 in route where you want me",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 10-4 in route where you want me",
+              "avg_logprob": -0.4787638584772746,
+              "no_speech_prob": 0.03437342122197151,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "context": {
+          "text": "10-4 in route, where do you want me?",
+          "prompt": "7J22 Go ahead Will you come sit with this car and I'm gonna hop on the trail? I followed him and he ran in hopped on there",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 10-4 in route, where do you want me?",
+              "avg_logprob": -0.3969923138618469,
+              "no_speech_prob": 0.02123807556927204,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        }
+      }
+    }
+  }
+}

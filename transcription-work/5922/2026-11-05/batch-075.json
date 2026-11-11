@@ -1,0 +1,657 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-05",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793910229.m4a": {
+      "index": 741,
+      "epoch": 1793910229,
+      "sha256": "dcd7af1ff74235ee38d78533b8de325fc0eaa8e33fafad7a542dfd12b0a7c4b5",
+      "passes": {
+        "original": {
+          "text": "He left his keys in the ignition and his phone in the truck.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " He left his keys in the ignition and his phone in the truck.",
+              "avg_logprob": -0.19376698662252986,
+              "no_speech_prob": 0.01718846894800663,
+              "compression_ratio": 1.0344827586206897
+            }
+          ]
+        },
+        "filtered": {
+          "text": "He left his keys in the ignition and his phone in the truck.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " He left his keys in the ignition and his phone in the truck.",
+              "avg_logprob": -0.20401798977571375,
+              "no_speech_prob": 0.027294471859931946,
+              "compression_ratio": 1.0344827586206897
+            }
+          ]
+        },
+        "context": {
+          "text": "He left his keys in the ignition and his phone in the truck.",
+          "prompt": "450 south, 1100 east. Copy. Will you show me in that detail? I'll be in that area of search as well. Happy.",
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " He left his keys in the ignition and his phone in the truck.",
+              "avg_logprob": -0.18687783970552332,
+              "no_speech_prob": 0.018768474459648132,
+              "compression_ratio": 1.0344827586206897
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793910234.m4a": {
+      "index": 742,
+      "epoch": 1793910234,
+      "sha256": "062a2beebf97ae09078f29e71bed56dd325c1fc69038d06ce1ed99b026d9e159",
+      "passes": {
+        "original": {
+          "text": "Thank you. Bye.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5220299184322357,
+              "no_speech_prob": 0.07472420483827591,
+              "compression_ratio": 0.6521739130434783
+            },
+            {
+              "start": 1.0,
+              "end": 1.02,
+              "text": " Bye.",
+              "avg_logprob": -0.5220299184322357,
+              "no_speech_prob": 0.07472420483827591,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "You're welcome. Bye.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " You're welcome.",
+              "avg_logprob": -0.5754087729887529,
+              "no_speech_prob": 0.05189915746450424,
+              "compression_ratio": 0.7142857142857143
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Bye.",
+              "avg_logprob": -0.5754087729887529,
+              "no_speech_prob": 0.05189915746450424,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you. Bye.",
+          "prompt": "Copy. Will you show me in that detail? I'll be in that area of search as well. Happy. He left his keys in the ignition and his phone in the truck.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you. Bye.",
+              "avg_logprob": -0.5601449236273766,
+              "no_speech_prob": 0.1444435566663742,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793910238.m4a": {
+      "index": 743,
+      "epoch": 1793910238,
+      "sha256": "727937d1d28d850379d09eaa26b72db8f579d495cc62364eff68b84bcd527f55",
+      "passes": {
+        "original": {
+          "text": "11, would you forward that information, okay, please?",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 11, would you forward that information, okay, please?",
+              "avg_logprob": -0.47576022148132324,
+              "no_speech_prob": 0.01810193806886673,
+              "compression_ratio": 0.8983050847457628
+            }
+          ]
+        },
+        "filtered": {
+          "text": "11, would you forward that information, okay, please?",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 11, would you forward that information, okay, please?",
+              "avg_logprob": -0.4784844716389974,
+              "no_speech_prob": 0.025341389700770378,
+              "compression_ratio": 0.8983050847457628
+            }
+          ]
+        },
+        "context": {
+          "text": "11, would you forward that information? Okay, please.",
+          "prompt": "Happy. He left his keys in the ignition and his phone in the truck. Thank you. Bye.",
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 11, would you forward that information? Okay, please.",
+              "avg_logprob": -0.34589415391286216,
+              "no_speech_prob": 0.0362553633749485,
+              "compression_ratio": 0.8983050847457628
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793910245.m4a": {
+      "index": 744,
+      "epoch": 1793910245,
+      "sha256": "59852f29d8151293701d36fc041a1737ac1377eb6e8131ccf56ccaca7e93a136",
+      "passes": {
+        "original": {
+          "text": "Ten-four.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Ten-four.",
+              "avg_logprob": -0.5273521287100655,
+              "no_speech_prob": 0.04123887047171593,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Ten-four.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Ten-four.",
+              "avg_logprob": -0.6113203423363822,
+              "no_speech_prob": 0.008830215781927109,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "10-4.",
+          "prompt": "He left his keys in the ignition and his phone in the truck. Thank you. Bye. 11, would you forward that information, okay, please?",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.2623597128050668,
+              "no_speech_prob": 0.012055422179400921,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793910252.m4a": {
+      "index": 745,
+      "epoch": 1793910252,
+      "sha256": "97ed9f55404fab13aa1706b57354574c6e0ef8a9976f94d404523c375be76620",
+      "passes": {
+        "original": {
+          "text": "5J, 31 traffic.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.52,
+              "text": " 5J, 31 traffic.",
+              "avg_logprob": -0.6489012506273057,
+              "no_speech_prob": 0.03963073715567589,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J, 31 traffic.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.52,
+              "text": " 5J, 31 traffic.",
+              "avg_logprob": -0.6478140619066026,
+              "no_speech_prob": 0.029397888109087944,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "context": {
+          "text": "5J, 31 traffic.",
+          "prompt": "Thank you. Bye. 11, would you forward that information, okay, please? Ten-four.",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.3000000000000003,
+              "text": " 5J, 31 traffic.",
+              "avg_logprob": -0.6494585673014323,
+              "no_speech_prob": 0.019078871235251427,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793910256.m4a": {
+      "index": 746,
+      "epoch": 1793910256,
+      "sha256": "eb7af638974df97f375ab60481c855daf744428b7e8c64a53bcb0cd76421c256",
+      "passes": {
+        "original": {
+          "text": "Bye.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Bye.",
+              "avg_logprob": -0.9775029182434082,
+              "no_speech_prob": 0.07193788141012192,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.7055359582106272,
+              "no_speech_prob": 0.0804029181599617,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "All right.",
+          "prompt": "11, would you forward that information, okay, please? Ten-four. 5J, 31 traffic.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " All right.",
+              "avg_logprob": -0.934097170829773,
+              "no_speech_prob": 0.04763677716255188,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793910258.m4a": {
+      "index": 747,
+      "epoch": 1793910258,
+      "sha256": "3a4d40ebb7938757e0a04ab776bc288fe3dae152738a2a5fc216e8aacbfeab06",
+      "passes": {
+        "original": {
+          "text": "Paige Lane in North County Road Delta 1 6 4 x-ray Victor",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.04,
+              "text": " Paige Lane in North County Road Delta 1 6 4 x-ray Victor",
+              "avg_logprob": -0.5794152652516085,
+              "no_speech_prob": 0.075938880443573,
+              "compression_ratio": 0.875
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Page Lane and North County Road Delta 1-6 for X-ray Victor",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Page Lane and North County Road Delta 1-6 for X-ray Victor",
+              "avg_logprob": -0.5452944967481825,
+              "no_speech_prob": 0.06614314019680023,
+              "compression_ratio": 0.8787878787878788
+            }
+          ]
+        },
+        "context": {
+          "text": "Page Lane and North County Road, Delta one six four X-ray Victor.",
+          "prompt": "Ten-four. 5J, 31 traffic. Bye.",
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.04,
+              "text": " Page Lane and North County Road, Delta one six four X-ray Victor.",
+              "avg_logprob": -0.4867740681296901,
+              "no_speech_prob": 0.015406840480864048,
+              "compression_ratio": 0.9027777777777778
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793910268.m4a": {
+      "index": 748,
+      "epoch": 1793910268,
+      "sha256": "8f258c38fac0a716d4b50c323da06a440d62e58621c63a8f0b8d9410b6f56fb5",
+      "passes": {
+        "original": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.503981637954712,
+              "no_speech_prob": 0.0345083624124527,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.5307945251464844,
+              "no_speech_prob": 0.02518210932612419,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy.",
+          "prompt": "5J, 31 traffic. Bye. Paige Lane in North County Road Delta 1 6 4 x-ray Victor",
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.33532047271728516,
+              "no_speech_prob": 0.043119799345731735,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793910511.m4a": {
+      "index": 749,
+      "epoch": 1793910511,
+      "sha256": "0a53f39b301e8d7af1e58a82770b3fda713a67f67aa19f4f8596b5d6ceb84470",
+      "passes": {
+        "original": {
+          "text": "7J170 clear.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J170 clear.",
+              "avg_logprob": -0.5163614302873611,
+              "no_speech_prob": 0.022848302498459816,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J170 clear.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J170 clear.",
+              "avg_logprob": -0.5410357788205147,
+              "no_speech_prob": 0.01854385808110237,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "7J170 clear.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J170 clear.",
+              "avg_logprob": -0.5163614302873611,
+              "no_speech_prob": 0.022848302498459816,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793910514.m4a": {
+      "index": 750,
+      "epoch": 1793910514,
+      "sha256": "21ec602f334580c5852500b02d74c8a68bf71769ace3b4ab590c3e45befddb9e",
+      "passes": {
+        "original": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.5122383594512939,
+              "no_speech_prob": 0.03497849777340889,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.56,
+              "text": " Happy.",
+              "avg_logprob": -0.39733147621154785,
+              "no_speech_prob": 0.036848071962594986,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy.",
+          "prompt": "7J170 clear.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy.",
+              "avg_logprob": -0.6054779529571533,
+              "no_speech_prob": 0.06480132043361664,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    }
+  }
+}
