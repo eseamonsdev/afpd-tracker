@@ -9,18 +9,27 @@ const WWW_HOST =
 const CANONICAL_ORIGIN =
   "https://afpd-accountability.com";
 
+const GREENLAND_PROFILE_PATH = "/police-encounters/cody-wayne-greenland/";
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    const isOldGreenlandPath = /^\/(?:police-encounters\/)?(?:code|cody)-greenland\/?$/.test(url.pathname);
+    const pathname = isOldGreenlandPath ? GREENLAND_PROFILE_PATH : url.pathname;
 
     if (
       url.hostname === OLD_PRODUCTION_HOST ||
       url.hostname === WWW_HOST
     ) {
       return Response.redirect(
-        `${CANONICAL_ORIGIN}${url.pathname}${url.search}`,
+        `${CANONICAL_ORIGIN}${pathname}${url.search}`,
         301
       );
+    }
+
+    if (isOldGreenlandPath) {
+      url.pathname = pathname;
+      return Response.redirect(url, 301);
     }
 
     const statusKeys = new Map([
