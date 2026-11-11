@@ -1,0 +1,737 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-09",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794289794.m4a": {
+      "index": 1401,
+      "epoch": 1794289794,
+      "sha256": "7260e64aaa87d599f9876348208bb40396156811986a98b6708c4f82f5797b2d",
+      "passes": {
+        "original": {
+          "text": "AT&T 19, 1060. AT&T 19, go ahead.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " AT&T 19, 1060.",
+              "avg_logprob": -0.49716648601350333,
+              "no_speech_prob": 0.03180065378546715,
+              "compression_ratio": 0.9705882352941176
+            },
+            {
+              "start": 2.0,
+              "end": 4.0,
+              "text": " AT&T 19, go ahead.",
+              "avg_logprob": -0.49716648601350333,
+              "no_speech_prob": 0.03180065378546715,
+              "compression_ratio": 0.9705882352941176
+            }
+          ]
+        },
+        "filtered": {
+          "text": "AT&T 19, 1060. AT&T 19, go ahead.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " AT&T 19, 1060.",
+              "avg_logprob": -0.4698922236760457,
+              "no_speech_prob": 0.016816360875964165,
+              "compression_ratio": 0.9705882352941176
+            },
+            {
+              "start": 2.0,
+              "end": 4.0,
+              "text": " AT&T 19, go ahead.",
+              "avg_logprob": -0.4698922236760457,
+              "no_speech_prob": 0.016816360875964165,
+              "compression_ratio": 0.9705882352941176
+            }
+          ]
+        },
+        "context": {
+          "text": "8G19, 1060. 8G19, go ahead.",
+          "prompt": "7G29. Code for it. Go for it. Happy cosplay.",
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 8G19, 1060. 8G19, go ahead.",
+              "avg_logprob": -0.35271498736213236,
+              "no_speech_prob": 0.01584700122475624,
+              "compression_ratio": 0.8709677419354839
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794289799.m4a": {
+      "index": 1402,
+      "epoch": 1794289799,
+      "sha256": "61a9e18b0d670738fb3f49fce32f4152748b0b9aee633eac32df4eba102ad056",
+      "passes": {
+        "original": {
+          "text": "The night Avenue North County Boulevard on local hotel 224 hotel kilo and just 1014 they've stopped in the middle of the number two lane",
+          "prompt": null,
+          "duration_seconds": 10.752,
+          "token_limit": 111,
+          "token_count": 30,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.540000000000001,
+              "text": " The night Avenue North County Boulevard on local hotel 224 hotel kilo and just 1014 they've stopped in the middle of the number two lane",
+              "avg_logprob": -0.3217763093210036,
+              "no_speech_prob": 0.011797670274972916,
+              "compression_ratio": 1.1929824561403508
+            }
+          ]
+        },
+        "filtered": {
+          "text": "The night Avenue North County Boulevard on local hotel 224 hotel kilo and just 1014 They've stopped in the middle of the number two line",
+          "prompt": null,
+          "duration_seconds": 10.752,
+          "token_limit": 111,
+          "token_count": 32,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.98,
+              "text": " The night Avenue North County Boulevard on local hotel 224 hotel kilo and just 1014",
+              "avg_logprob": -0.3039516680168383,
+              "no_speech_prob": 0.025615369901061058,
+              "compression_ratio": 1.1724137931034482
+            },
+            {
+              "start": 6.98,
+              "end": 8.98,
+              "text": " They've stopped in the middle of the number two line",
+              "avg_logprob": -0.3039516680168383,
+              "no_speech_prob": 0.025615369901061058,
+              "compression_ratio": 1.1724137931034482
+            }
+          ]
+        },
+        "context": {
+          "text": "Be Knight Avenue, North County Boulevard on local Hotel 224 Hotel Kilo and just 1014, they've stopped in the middle of the number two lane, uh, North Town.",
+          "prompt": "Go for it. Happy cosplay. AT&T 19, 1060. AT&T 19, go ahead.",
+          "duration_seconds": 10.752,
+          "token_limit": 111,
+          "token_count": 38,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 10.0,
+              "text": " Be Knight Avenue, North County Boulevard on local Hotel 224 Hotel Kilo and just 1014, they've stopped in the middle of the number two lane, uh, North Town.",
+              "avg_logprob": -0.45404845628982937,
+              "no_speech_prob": 0.014133852906525135,
+              "compression_ratio": 1.2015503875968991
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794289810.m4a": {
+      "index": 1403,
+      "epoch": 1794289810,
+      "sha256": "4decf8422a5aec88b1d2febae8142cceaba8d65f9a0c164409ed0c325b75d227",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7278882980346679,
+              "no_speech_prob": 0.1062932014465332,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Talk to you.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Talk to you.",
+              "avg_logprob": -0.5859387261526925,
+              "no_speech_prob": 0.12043172866106033,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "copy.",
+          "prompt": "Happy cosplay. AT&T 19, 1060. AT&T 19, go ahead. The night Avenue North County Boulevard on local hotel 224 hotel kilo and just 1014 they've stopped in the middle of the number two lane",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.6400000000000001,
+              "text": " copy.",
+              "avg_logprob": -0.9010263442993164,
+              "no_speech_prob": 0.07951031625270844,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794289879.m4a": {
+      "index": 1404,
+      "epoch": 1794289879,
+      "sha256": "e4001be3244d753c8a1adcaf140ff23f4d6a8465bc2c2811b5b54db25fc312b8",
+      "passes": {
+        "original": {
+          "text": "7G21, copy traffic fence progress.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7G21, copy traffic fence progress.",
+              "avg_logprob": -0.5839159240325292,
+              "no_speech_prob": 0.14935506880283356,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7G21, copy traffic sense progress.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7G21, copy traffic sense progress.",
+              "avg_logprob": -0.5601196140050888,
+              "no_speech_prob": 0.06731473654508591,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "context": {
+          "text": "7G21, copy traffic fence progress.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7G21, copy traffic fence progress.",
+              "avg_logprob": -0.5839159240325292,
+              "no_speech_prob": 0.14935506880283356,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794289889.m4a": {
+      "index": 1405,
+      "epoch": 1794289889,
+      "sha256": "de64154635ecfc26aacebc2cfa8a3beb5a0ce3383b9d640c5ead9fb896fdb5f8",
+      "passes": {
+        "original": {
+          "text": "Alright.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Alright.",
+              "avg_logprob": -0.9569583892822265,
+              "no_speech_prob": 0.2113456130027771,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "All right.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " All right.",
+              "avg_logprob": -1.0433417558670044,
+              "no_speech_prob": 0.2656089663505554,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy traffic.",
+          "prompt": "7G21, copy traffic fence progress.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy traffic.",
+              "avg_logprob": -0.810951292514801,
+              "no_speech_prob": 0.22339193522930145,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794289890.m4a": {
+      "index": 1406,
+      "epoch": 1794289890,
+      "sha256": "54ffef3ae78e7a060d434e257977eb73375f3bca3e2295c9bf4f0b8f4336cf66",
+      "passes": {
+        "original": {
+          "text": "Thanks for watching!",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thanks for watching!",
+              "avg_logprob": -0.8691625254494804,
+              "no_speech_prob": 0.34537529945373535,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.902730127175649,
+              "no_speech_prob": 0.20558901131153107,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you.",
+          "prompt": "7G21, copy traffic fence progress. Alright.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.8992208043734232,
+              "no_speech_prob": 0.3984690010547638,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794289892.m4a": {
+      "index": 1407,
+      "epoch": 1794289892,
+      "sha256": "7c9e64993f9f73a6a482c7725072e69e880ba1e5bac66bc79fbe344840f66445",
+      "passes": {
+        "original": {
+          "text": "The interest pass to progress at doTERRA ops building, 1248 West San Juan, advised that they were running individual trespass from the property that stated that that was sleeping on a long board wearing all black and had a backpack, RP was unable to get a direction of travel.",
+          "prompt": null,
+          "duration_seconds": 20.352,
+          "token_limit": 187,
+          "token_count": 64,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.56,
+              "text": " The interest pass to progress at doTERRA ops building, 1248 West San Juan, advised that",
+              "avg_logprob": -0.5125062387497699,
+              "no_speech_prob": 0.005728278774768114,
+              "compression_ratio": 1.402116402116402
+            },
+            {
+              "start": 8.56,
+              "end": 13.6,
+              "text": " they were running individual trespass from the property that stated that that was sleeping",
+              "avg_logprob": -0.5125062387497699,
+              "no_speech_prob": 0.005728278774768114,
+              "compression_ratio": 1.402116402116402
+            },
+            {
+              "start": 13.6,
+              "end": 19.28,
+              "text": " on a long board wearing all black and had a backpack, RP was unable to get a direction",
+              "avg_logprob": -0.5125062387497699,
+              "no_speech_prob": 0.005728278774768114,
+              "compression_ratio": 1.402116402116402
+            },
+            {
+              "start": 19.28,
+              "end": 21.28,
+              "text": " of travel.",
+              "avg_logprob": -0.7623438040415446,
+              "no_speech_prob": 0.040482353419065475,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "The interest passed the progress that doTERRA ops building 1248 West San Mike advised that they were running an individual trespass from the property that stated that it was being on a longboard wearing all black and had a backpack. RP was unable to get a direction of travel.",
+          "prompt": null,
+          "duration_seconds": 20.352,
+          "token_limit": 187,
+          "token_count": 63,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.6,
+              "text": " The interest passed the progress that doTERRA ops building 1248 West San Mike advised that",
+              "avg_logprob": -0.5414360633263221,
+              "no_speech_prob": 0.024076228961348534,
+              "compression_ratio": 1.4450261780104712
+            },
+            {
+              "start": 8.6,
+              "end": 13.6,
+              "text": " they were running an individual trespass from the property that stated that it was being",
+              "avg_logprob": -0.5414360633263221,
+              "no_speech_prob": 0.024076228961348534,
+              "compression_ratio": 1.4450261780104712
+            },
+            {
+              "start": 13.6,
+              "end": 17.84,
+              "text": " on a longboard wearing all black and had a backpack.",
+              "avg_logprob": -0.5414360633263221,
+              "no_speech_prob": 0.024076228961348534,
+              "compression_ratio": 1.4450261780104712
+            },
+            {
+              "start": 17.84,
+              "end": 25.84,
+              "text": " RP was unable to get a direction of travel.",
+              "avg_logprob": -0.5414360633263221,
+              "no_speech_prob": 0.024076228961348534,
+              "compression_ratio": 1.4450261780104712
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm going to trespass the progress at doTERRA ops building, 1248 West Samway, advise that they were running individual trespass from the property that stated that that was sleeping on a long board, wearing all black and had a backpack. RP was unable to get a direction of cattle.",
+          "prompt": "7G21, copy traffic fence progress. Alright. Thanks for watching!",
+          "duration_seconds": 20.352,
+          "token_limit": 187,
+          "token_count": 67,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.540000000000001,
+              "text": " I'm going to trespass the progress at doTERRA ops building, 1248 West Samway, advise that",
+              "avg_logprob": -0.5308536236102764,
+              "no_speech_prob": 0.0687054693698883,
+              "compression_ratio": 1.4041450777202074
+            },
+            {
+              "start": 8.540000000000001,
+              "end": 13.6,
+              "text": " they were running individual trespass from the property that stated that that was sleeping",
+              "avg_logprob": -0.5308536236102764,
+              "no_speech_prob": 0.0687054693698883,
+              "compression_ratio": 1.4041450777202074
+            },
+            {
+              "start": 13.6,
+              "end": 19.44,
+              "text": " on a long board, wearing all black and had a backpack. RP was unable to get a direction of",
+              "avg_logprob": -0.5308536236102764,
+              "no_speech_prob": 0.0687054693698883,
+              "compression_ratio": 1.4041450777202074
+            },
+            {
+              "start": 19.44,
+              "end": 23.44,
+              "text": " cattle.",
+              "avg_logprob": -0.6328140735626221,
+              "no_speech_prob": 0.16682414710521698,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794289919.m4a": {
+      "index": 1408,
+      "epoch": 1794289919,
+      "sha256": "58ab9807055fb6a500b5bffa2ca04ec575058c88102c003c4cd8b226e3434edf",
+      "passes": {
+        "original": {
+          "text": "Ciao!",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Ciao!",
+              "avg_logprob": -0.8711481094360352,
+              "no_speech_prob": 0.14413690567016602,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Yeah.",
+              "avg_logprob": -0.8419144630432129,
+              "no_speech_prob": 0.17654608190059662,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Ciao!",
+          "prompt": "Alright. Thanks for watching! The interest pass to progress at doTERRA ops building, 1248 West San Juan, advised that they were running individual trespass from the property that stated that that was sleeping on a long board wearing all black and had a backpack, RP was unable to get a direction of travel.",
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Ciao!",
+              "avg_logprob": -0.5983400344848633,
+              "no_speech_prob": 0.21338200569152832,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794289922.m4a": {
+      "index": 1409,
+      "epoch": 1794289922,
+      "sha256": "e3319b7b7a8db017b09c32aa254e4cb15670f0423608c8198fb29a8558adcf87",
+      "passes": {
+        "original": {
+          "text": "7G20 and I'm in the area as well.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7G20 and I'm in the area as well.",
+              "avg_logprob": -0.41358848810195925,
+              "no_speech_prob": 0.06819041818380356,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm in the area as well.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.7600000000000002,
+              "text": " I'm in the area as well.",
+              "avg_logprob": -0.6618765267458829,
+              "no_speech_prob": 0.10588882863521576,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm at the area as well.",
+          "prompt": "Thanks for watching! The interest pass to progress at doTERRA ops building, 1248 West San Juan, advised that they were running individual trespass from the property that stated that that was sleeping on a long board wearing all black and had a backpack, RP was unable to get a direction of travel. Ciao!",
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.72,
+              "text": " I'm at the area as well.",
+              "avg_logprob": -0.4813493381847035,
+              "no_speech_prob": 0.09704280644655228,
+              "compression_ratio": 0.75
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794289926.m4a": {
+      "index": 1410,
+      "epoch": 1794289926,
+      "sha256": "5296169b09d73ec277adaa2d841858b4301e1f95b60d2337436b3493deed1517",
+      "passes": {
+        "original": {
+          "text": "7-2-3",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-2-3",
+              "avg_logprob": -0.45141689479351044,
+              "no_speech_prob": 0.042568355798721313,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7-2-3",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-2-3",
+              "avg_logprob": -0.6914052814245224,
+              "no_speech_prob": 0.036934901028871536,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "7G20.",
+          "prompt": "The interest pass to progress at doTERRA ops building, 1248 West San Juan, advised that they were running individual trespass from the property that stated that that was sleeping on a long board wearing all black and had a backpack, RP was unable to get a direction of travel. Ciao! 7G20 and I'm in the area as well.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.72,
+              "text": " 7G20.",
+              "avg_logprob": -0.53952613898686,
+              "no_speech_prob": 0.02365027740597725,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
