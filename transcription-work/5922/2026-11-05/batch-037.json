@@ -1,0 +1,753 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-05",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793897605.m4a": {
+      "index": 361,
+      "epoch": 1793897605,
+      "sha256": "f8fc28197e5a6ca932acae1a841003378b2e228d75e8ca85e875c5f167313d21",
+      "passes": {
+        "original": {
+          "text": "Go ahead. It's going to be at the McDonald's. Bird zero, six east, state. An older male came to the RPE's residence, seemed to be out of it. I don't know if you have special needs or are depressed.",
+          "prompt": null,
+          "duration_seconds": 10.624,
+          "token_limit": 109,
+          "token_count": 64,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.5,
+              "text": " Go ahead.",
+              "avg_logprob": -0.4673720124576773,
+              "no_speech_prob": 0.021126968786120415,
+              "compression_ratio": 1.21875
+            },
+            {
+              "start": 1.5,
+              "end": 3.1,
+              "text": " It's going to be at the McDonald's.",
+              "avg_logprob": -0.4673720124576773,
+              "no_speech_prob": 0.021126968786120415,
+              "compression_ratio": 1.21875
+            },
+            {
+              "start": 3.1,
+              "end": 5.42,
+              "text": " Bird zero, six east, state.",
+              "avg_logprob": -0.4673720124576773,
+              "no_speech_prob": 0.021126968786120415,
+              "compression_ratio": 1.21875
+            },
+            {
+              "start": 5.42,
+              "end": 7.22,
+              "text": " An older male came to the RPE's residence,",
+              "avg_logprob": -0.4673720124576773,
+              "no_speech_prob": 0.021126968786120415,
+              "compression_ratio": 1.21875
+            },
+            {
+              "start": 7.22,
+              "end": 8.26,
+              "text": " seemed to be out of it.",
+              "avg_logprob": -0.4673720124576773,
+              "no_speech_prob": 0.021126968786120415,
+              "compression_ratio": 1.21875
+            },
+            {
+              "start": 8.26,
+              "end": 10.26,
+              "text": " I don't know if you have special needs or are depressed.",
+              "avg_logprob": -0.3820678498595953,
+              "no_speech_prob": 0.016465436667203903,
+              "compression_ratio": 0.9032258064516129
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It's going to be at the McDonald's. We're at 060 East State. An older mill came to the RPS residence. It seems to be out of it. I don't know if you have any special needs or are depressed.",
+          "prompt": null,
+          "duration_seconds": 10.624,
+          "token_limit": 109,
+          "token_count": 60,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " It's going to be at the McDonald's.",
+              "avg_logprob": -0.45620501573596683,
+              "no_speech_prob": 0.03388192877173424,
+              "compression_ratio": 1.2661870503597121
+            },
+            {
+              "start": 3.0,
+              "end": 5.0,
+              "text": " We're at 060 East State.",
+              "avg_logprob": -0.45620501573596683,
+              "no_speech_prob": 0.03388192877173424,
+              "compression_ratio": 1.2661870503597121
+            },
+            {
+              "start": 5.0,
+              "end": 7.0,
+              "text": " An older mill came to the RPS residence.",
+              "avg_logprob": -0.45620501573596683,
+              "no_speech_prob": 0.03388192877173424,
+              "compression_ratio": 1.2661870503597121
+            },
+            {
+              "start": 7.0,
+              "end": 8.0,
+              "text": " It seems to be out of it.",
+              "avg_logprob": -0.45620501573596683,
+              "no_speech_prob": 0.03388192877173424,
+              "compression_ratio": 1.2661870503597121
+            },
+            {
+              "start": 8.0,
+              "end": 10.0,
+              "text": " I don't know if you have any special needs or are depressed.",
+              "avg_logprob": -0.4539179521448472,
+              "no_speech_prob": 0.028243469074368477,
+              "compression_ratio": 0.9375
+            }
+          ]
+        },
+        "context": {
+          "text": "Go ahead. It's going to be at the McDonald's. Bird 0, 6 East, state. An older male came to the RPs residence, seemed to be out of it. I don't know if he had special needs or depressed.",
+          "prompt": "10-4-3-48 North at 1350 East. You tell me. I'm J54, copy welfare.",
+          "duration_seconds": 10.624,
+          "token_limit": 109,
+          "token_count": 62,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.5,
+              "text": " Go ahead.",
+              "avg_logprob": -0.4959672178540911,
+              "no_speech_prob": 0.005527154542505741,
+              "compression_ratio": 1.2867132867132867
+            },
+            {
+              "start": 1.5,
+              "end": 3.06,
+              "text": " It's going to be at the McDonald's.",
+              "avg_logprob": -0.4959672178540911,
+              "no_speech_prob": 0.005527154542505741,
+              "compression_ratio": 1.2867132867132867
+            },
+            {
+              "start": 3.06,
+              "end": 5.4,
+              "text": " Bird 0, 6 East, state.",
+              "avg_logprob": -0.4959672178540911,
+              "no_speech_prob": 0.005527154542505741,
+              "compression_ratio": 1.2867132867132867
+            },
+            {
+              "start": 5.4,
+              "end": 7.24,
+              "text": " An older male came to the RPs residence,",
+              "avg_logprob": -0.4959672178540911,
+              "no_speech_prob": 0.005527154542505741,
+              "compression_ratio": 1.2867132867132867
+            },
+            {
+              "start": 7.24,
+              "end": 8.24,
+              "text": " seemed to be out of it.",
+              "avg_logprob": -0.4959672178540911,
+              "no_speech_prob": 0.005527154542505741,
+              "compression_ratio": 1.2867132867132867
+            },
+            {
+              "start": 8.24,
+              "end": 11.24,
+              "text": " I don't know if he had special needs or depressed.",
+              "avg_logprob": -0.4959672178540911,
+              "no_speech_prob": 0.005527154542505741,
+              "compression_ratio": 1.2867132867132867
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793897622.m4a": {
+      "index": 362,
+      "epoch": 1793897622,
+      "sha256": "185c8d8cd2dbac308515396ad2f9002af81c26913bf9697f1f6f3b8ba1302319",
+      "passes": {
+        "original": {
+          "text": "R.P. took him to the McDonald's at this location wearing a purple, vikings, beanie, purple pants, and a blue sweat shirt. His name is Roger Hale.",
+          "prompt": null,
+          "duration_seconds": 9.728,
+          "token_limit": 102,
+          "token_count": 41,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " R.P. took him to the McDonald's at this location wearing a purple, vikings, beanie, purple pants, and a blue sweat shirt. His name is Roger Hale.",
+              "avg_logprob": -0.3024891217549642,
+              "no_speech_prob": 0.005792892072349787,
+              "compression_ratio": 1.218487394957983
+            }
+          ]
+        },
+        "filtered": {
+          "text": "R.P. took him to the McDonald's at this location wearing a purple, vikings, beanie, purple pants, and a blue sweatshirt. His name is Roger Hale.",
+          "prompt": null,
+          "duration_seconds": 9.728,
+          "token_limit": 102,
+          "token_count": 41,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " R.P. took him to the McDonald's at this location wearing a purple, vikings, beanie, purple pants, and a blue sweatshirt. His name is Roger Hale.",
+              "avg_logprob": -0.3259659182457697,
+              "no_speech_prob": 0.008852924220263958,
+              "compression_ratio": 1.2100840336134453
+            }
+          ]
+        },
+        "context": {
+          "text": "RPE took him to the McDonald's at this location wearing a purple, vikings, beanie, purple pants, and a blue sweat shirt. His name is Roger Hale.",
+          "prompt": "You tell me. I'm J54, copy welfare. Go ahead. It's going to be at the McDonald's. Bird zero, six east, state. An older male came to the RPE's residence, seemed to be out of it. I don't know if you have special needs or are depressed.",
+          "duration_seconds": 9.728,
+          "token_limit": 102,
+          "token_count": 39,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " RPE took him to the McDonald's at this location wearing a purple, vikings, beanie, purple pants, and a blue sweat shirt. His name is Roger Hale.",
+              "avg_logprob": -0.2290649961680174,
+              "no_speech_prob": 0.0030712976586073637,
+              "compression_ratio": 1.2203389830508475
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793897683.m4a": {
+      "index": 363,
+      "epoch": 1793897683,
+      "sha256": "2aa05874eb5b5e00c438aa75c8e2d79dc7f3882513dc1413528fa2fe61f843c9",
+      "passes": {
+        "original": {
+          "text": "Hey, Tindia 20, you can close with a service.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.6,
+              "text": " Hey, Tindia 20, you can close with a service.",
+              "avg_logprob": -0.8394441043629366,
+              "no_speech_prob": 0.008806436322629452,
+              "compression_ratio": 0.8490566037735849
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hey, Kendra 20, you can close the service.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.6,
+              "text": " Hey, Kendra 20, you can close the service.",
+              "avg_logprob": -0.7641044378280639,
+              "no_speech_prob": 0.007829821668565273,
+              "compression_ratio": 0.84
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey, Tindia 20, you can close with a service.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.6,
+              "text": " Hey, Tindia 20, you can close with a service.",
+              "avg_logprob": -0.8394441043629366,
+              "no_speech_prob": 0.008806436322629452,
+              "compression_ratio": 0.8490566037735849
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793897686.m4a": {
+      "index": 364,
+      "epoch": 1793897686,
+      "sha256": "5a4d113b2ccfd1f63907cac7c379fdfc0cf34347fb2c7414c5c3f0788dc7d3b2",
+      "passes": {
+        "original": {
+          "text": "Ten-four.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Ten-four.",
+              "avg_logprob": -0.7704892158508301,
+              "no_speech_prob": 0.07624179124832153,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "10-part.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-part.",
+              "avg_logprob": -0.8068227767944336,
+              "no_speech_prob": 0.08200690895318985,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "10-4.",
+          "prompt": "Hey, Tindia 20, you can close with a service.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.6491526705878121,
+              "no_speech_prob": 0.06718865036964417,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793897719.m4a": {
+      "index": 365,
+      "epoch": 1793897719,
+      "sha256": "4b39bc0daaeb6ee465d694c13d34efdc1c760f8d5d34430b51c08bb656eec8e9",
+      "passes": {
+        "original": {
+          "text": "7 to 89, end time 41.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7 to 89, end time 41.",
+              "avg_logprob": -0.657854513688521,
+              "no_speech_prob": 0.07527745515108109,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7 to 89, end time 41.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7 to 89, end time 41.",
+              "avg_logprob": -0.5866745385256681,
+              "no_speech_prob": 0.09198269993066788,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "context": {
+          "text": "Seven to eighty-nine, end time forty-one.",
+          "prompt": "Hey, Tindia 20, you can close with a service. Ten-four.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Seven to eighty-nine, end time forty-one.",
+              "avg_logprob": -0.4358472307523092,
+              "no_speech_prob": 0.015478268265724182,
+              "compression_ratio": 0.8541666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793897723.m4a": {
+      "index": 366,
+      "epoch": 1793897723,
+      "sha256": "3d636cc6257657ffe512e496cb64728b8a26ca9efedb6a7657d586788565c8fb",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.9244529724121093,
+              "no_speech_prob": 0.03180745989084244,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy.",
+              "avg_logprob": -0.8582944869995117,
+              "no_speech_prob": 0.010842307470738888,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "Hey, Tindia 20, you can close with a service. Ten-four. 7 to 89, end time 41.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6484050750732422,
+              "no_speech_prob": 0.007459903135895729,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793897765.m4a": {
+      "index": 367,
+      "epoch": 1793897765,
+      "sha256": "fa719ea7dd8297874b9568ae2d6ee86ae3c59ec3c04aa4920bfe98b72c89bcd3",
+      "passes": {
+        "original": {
+          "text": "7J22",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J22",
+              "avg_logprob": -0.43761412302652997,
+              "no_speech_prob": 0.12809155881404877,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J22",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J22",
+              "avg_logprob": -0.5512927969296774,
+              "no_speech_prob": 0.07380388677120209,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "7J22.",
+          "prompt": "7 to 89, end time 41. Copy.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J22.",
+              "avg_logprob": -0.4474570410592215,
+              "no_speech_prob": 0.012239054776728153,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793897768.m4a": {
+      "index": 368,
+      "epoch": 1793897768,
+      "sha256": "16ec1aa165f2b1c1cf12253fdf6792388be0ac70287ccbc7b19a74fa85b8f6ad",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.6286146740118662,
+              "no_speech_prob": 0.05511389672756195,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.4605008165041606,
+              "no_speech_prob": 0.0810004323720932,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Go ahead.",
+          "prompt": "7 to 89, end time 41. Copy. 7J22",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.5585779746373495,
+              "no_speech_prob": 0.08456198871135712,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793897778.m4a": {
+      "index": 369,
+      "epoch": 1793897778,
+      "sha256": "fdc1489f0792a1c97e112204c3a3d954b3ca77115f65bdf8c2906d26a48d25e5",
+      "passes": {
+        "original": {
+          "text": "Pemper.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Pemper.",
+              "avg_logprob": -0.8954744338989258,
+              "no_speech_prob": 0.009943150915205479,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Temper.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Temper.",
+              "avg_logprob": -0.855128002166748,
+              "no_speech_prob": 0.03215260058641434,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Temper.",
+          "prompt": "Copy. 7J22 Go ahead.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Temper.",
+              "avg_logprob": -0.7058066368103028,
+              "no_speech_prob": 0.0029403846710920334,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793897956.m4a": {
+      "index": 370,
+      "epoch": 1793897956,
+      "sha256": "de4017f5bb5e461362d05822289da1f337daede2a5262a5a6282c997202bdc94",
+      "passes": {
+        "original": {
+          "text": "7J22, clear.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J22, clear.",
+              "avg_logprob": -0.4917140007019043,
+              "no_speech_prob": 0.03418640419840813,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7j22 clear",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7j22 clear",
+              "avg_logprob": -0.39058090107781546,
+              "no_speech_prob": 0.042029425501823425,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "7J22, clear.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J22, clear.",
+              "avg_logprob": -0.4917140007019043,
+              "no_speech_prob": 0.03418640419840813,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    }
+  }
+}
