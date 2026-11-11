@@ -1,0 +1,681 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-10",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794327245.m4a": {
+      "index": 361,
+      "epoch": 1794327245,
+      "sha256": "64dc682bb2af8289d1da28341cd83eb6fa534489576603241b0bc5a183166d2a",
+      "passes": {
+        "original": {
+          "text": "He is available at VIC-21. You get me to IMU's number.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " He is available at VIC-21. You get me to IMU's number.",
+              "avg_logprob": -0.4885725180308024,
+              "no_speech_prob": 0.003857559524476528,
+              "compression_ratio": 0.8709677419354839
+            }
+          ]
+        },
+        "filtered": {
+          "text": "He is available at VIC-21. You get me to IMU his number.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " He is available at VIC-21. You get me to IMU his number.",
+              "avg_logprob": -0.41472698960985455,
+              "no_speech_prob": 0.002432574750855565,
+              "compression_ratio": 0.8888888888888888
+            }
+          ]
+        },
+        "context": {
+          "text": "He is available at VIC-21. You get me to IMU's number.",
+          "prompt": "It's 7-8. Good",
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " He is available at VIC-21. You get me to IMU's number.",
+              "avg_logprob": -0.5055136907668341,
+              "no_speech_prob": 0.025771774351596832,
+              "compression_ratio": 0.8709677419354839
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794327250.m4a": {
+      "index": 362,
+      "epoch": 1794327250,
+      "sha256": "3c070dac23d440cf90b63c1da0319a27e580ccfb1381ccfa3b027c2be8883e7e",
+      "passes": {
+        "original": {
+          "text": "Yeah, that'd be great. Bye-bye.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, that'd be great.",
+              "avg_logprob": -0.435120714828372,
+              "no_speech_prob": 0.009974374435842037,
+              "compression_ratio": 0.7948717948717948
+            },
+            {
+              "start": 2.0,
+              "end": 3.54,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.435120714828372,
+              "no_speech_prob": 0.009974374435842037,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah, that'd be great. Bye-bye.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, that'd be great.",
+              "avg_logprob": -0.3845464624464512,
+              "no_speech_prob": 0.025168025866150856,
+              "compression_ratio": 0.7948717948717948
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.3845464624464512,
+              "no_speech_prob": 0.025168025866150856,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "context": {
+          "text": "Yeah, that'd be great.",
+          "prompt": "It's 7-8. Good He is available at VIC-21. You get me to IMU's number.",
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, that'd be great.",
+              "avg_logprob": -0.30544872879981994,
+              "no_speech_prob": 0.007760810665786266,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794327353.m4a": {
+      "index": 363,
+      "epoch": 1794327353,
+      "sha256": "1b0584d8ff9ca978d0c956738d6942bd31efc1d42627f697480492677228c5ac",
+      "passes": {
+        "original": {
+          "text": "7J18, I copied them out of closest, you can show me and wrap it up.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J18, I copied them out of closest, you can show me and wrap it up.",
+              "avg_logprob": -0.4855989165928053,
+              "no_speech_prob": 0.06862016022205353,
+              "compression_ratio": 0.9436619718309859
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J18, I copied them out of closest. You can show me in that top.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J18, I copied them out of closest. You can show me in that top.",
+              "avg_logprob": -0.5452612394636328,
+              "no_speech_prob": 0.04988343268632889,
+              "compression_ratio": 0.9014084507042254
+            }
+          ]
+        },
+        "context": {
+          "text": "7J18, I copied them out of closest, you can show me and wrap it up.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J18, I copied them out of closest, you can show me and wrap it up.",
+              "avg_logprob": -0.4855989165928053,
+              "no_speech_prob": 0.06862016022205353,
+              "compression_ratio": 0.9436619718309859
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794327359.m4a": {
+      "index": 364,
+      "epoch": 1794327359,
+      "sha256": "ac3b2d9cc69de4a67184327a6878f03bcce91d4ce72c60719023e99b71530889",
+      "passes": {
+        "original": {
+          "text": "Thank you. Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.6154590100049973,
+              "no_speech_prob": 0.0772179365158081,
+              "compression_ratio": 1.4545454545454546
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.6154590100049973,
+              "no_speech_prob": 0.0772179365158081,
+              "compression_ratio": 1.4545454545454546
+            },
+            {
+              "start": 2.0,
+              "end": 2.5,
+              "text": " Thank you.",
+              "avg_logprob": -0.6154590100049973,
+              "no_speech_prob": 0.0772179365158081,
+              "compression_ratio": 1.4545454545454546
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Good work.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Good work.",
+              "avg_logprob": -0.799540380636851,
+              "no_speech_prob": 0.06730610877275467,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you.",
+          "prompt": "7J18, I copied them out of closest, you can show me and wrap it up.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.6827070812384287,
+              "no_speech_prob": 0.11736208945512772,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794327556.m4a": {
+      "index": 365,
+      "epoch": 1794327556,
+      "sha256": "4f947648e6c286bb8d6b819a49fa371a9e00126e7aea84ccb535d3cf2b6652d0",
+      "passes": {
+        "original": {
+          "text": "BEEP BEEP BEEP BEEP BEEP BEEP BEEP B",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.64,
+              "text": " BEEP BEEP BEEP BEEP BEEP BEEP BEEP B",
+              "avg_logprob": -0.4511020884794347,
+              "no_speech_prob": 0.24602064490318298,
+              "compression_ratio": 2.25
+            }
+          ]
+        },
+        "filtered": {
+          "text": "T-T-T-T-T-T-T-T",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.64,
+              "text": " T-T-T-T-T-T-T-T",
+              "avg_logprob": -0.49409080954159007,
+              "no_speech_prob": 0.20813047885894775,
+              "compression_ratio": 1.25
+            }
+          ]
+        },
+        "context": {
+          "text": "BEEP BEEP BEEP BEEP BEEP BEEP BEEP B",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.64,
+              "text": " BEEP BEEP BEEP BEEP BEEP BEEP BEEP B",
+              "avg_logprob": -0.4511020884794347,
+              "no_speech_prob": 0.24602064490318298,
+              "compression_ratio": 2.25
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794327557.m4a": {
+      "index": 366,
+      "epoch": 1794327557,
+      "sha256": "e1e87e78e3639236104baa802b6b2b91c588484882103a2333f07bcca40a139b",
+      "passes": {
+        "original": {
+          "text": "It's 7-8-22, go for it.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " It's 7-8-22, go for it.",
+              "avg_logprob": -0.7168741623560587,
+              "no_speech_prob": 0.0028569595888257027,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It's 7-8-22. Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " It's 7-8-22.",
+              "avg_logprob": -0.6471629984238568,
+              "no_speech_prob": 0.0025049906689673662,
+              "compression_ratio": 0.7419354838709677
+            },
+            {
+              "start": 1.0,
+              "end": 1.5,
+              "text": " Go for it.",
+              "avg_logprob": -0.6471629984238568,
+              "no_speech_prob": 0.0025049906689673662,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "context": {
+          "text": "My 7-day 22, go for it.",
+          "prompt": "BEEP BEEP BEEP BEEP BEEP BEEP BEEP B",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.44,
+              "text": " My 7-day 22, go for it.",
+              "avg_logprob": -0.7984650135040283,
+              "no_speech_prob": 0.001441936707124114,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794327563.m4a": {
+      "index": 367,
+      "epoch": 1794327563,
+      "sha256": "170d393167cbd17a14213062aa64a27880fa72626742a4683dd7da1e79f00a8f",
+      "passes": {
+        "original": {
+          "text": "Code 4.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Code 4.",
+              "avg_logprob": -0.6842971841494242,
+              "no_speech_prob": 0.04090939834713936,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Code for",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Code for",
+              "avg_logprob": -0.32616500854492186,
+              "no_speech_prob": 0.010945041663944721,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Go for it.",
+          "prompt": "BEEP BEEP BEEP BEEP BEEP BEEP BEEP B It's 7-8-22, go for it.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.4325073276247297,
+              "no_speech_prob": 0.015033174306154251,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794327566.m4a": {
+      "index": 368,
+      "epoch": 1794327566,
+      "sha256": "df05af989052aed08f12c82e33030ea5f96e3b61a3735edd403eded609517c41",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.9036788940429688,
+              "no_speech_prob": 0.028567291796207428,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6154183387756348,
+              "no_speech_prob": 0.02301076240837574,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "BEEP BEEP BEEP BEEP BEEP BEEP BEEP B It's 7-8-22, go for it. Code 4.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.5265351295471191,
+              "no_speech_prob": 0.023077378049492836,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794327734.m4a": {
+      "index": 369,
+      "epoch": 1794327734,
+      "sha256": "1ce3bec1aa2d09bb095431294cfa393707df6eb361192fe31c8a31c54c68c357",
+      "passes": {
+        "original": {
+          "text": "7J14, I'll be out at 318 north, 100 east.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.76,
+              "text": " 7J14, I'll be out at 318 north, 100 east.",
+              "avg_logprob": -0.3534841106997596,
+              "no_speech_prob": 0.013030792586505413,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J14, I'll be out at 318 north, 100 east.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.64,
+              "text": " 7J14, I'll be out at 318 north, 100 east.",
+              "avg_logprob": -0.3890201979213291,
+              "no_speech_prob": 0.014038031920790672,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        },
+        "context": {
+          "text": "7J14, I'll be out at 318 north, 100 east.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.76,
+              "text": " 7J14, I'll be out at 318 north, 100 east.",
+              "avg_logprob": -0.3534841106997596,
+              "no_speech_prob": 0.013030792586505413,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794327741.m4a": {
+      "index": 370,
+      "epoch": 1794327741,
+      "sha256": "5f5eae07fe9f17a189a91888687a87081794b2ef9031febbe004091f65fd86c6",
+      "passes": {
+        "original": {
+          "text": "Thanks, Abby.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thanks, Abby.",
+              "avg_logprob": -0.8447094133922032,
+              "no_speech_prob": 0.03357204794883728,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you, please.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you, please.",
+              "avg_logprob": -0.6715689525008202,
+              "no_speech_prob": 0.14815770089626312,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "context": {
+          "text": "Thanks, Abby.",
+          "prompt": "7J14, I'll be out at 318 north, 100 east.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thanks, Abby.",
+              "avg_logprob": -0.9698985304151263,
+              "no_speech_prob": 0.0692644715309143,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    }
+  }
+}
