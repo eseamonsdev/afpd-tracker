@@ -1,0 +1,681 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-05",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793934403.m4a": {
+      "index": 1421,
+      "epoch": 1793934403,
+      "sha256": "23fcb791b60c1bf8b3e73cd6e47454bc255e31ace4d62168fba1c9079537b4bd",
+      "passes": {
+        "original": {
+          "text": "7-8-21, go ahead.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7-8-21, go ahead.",
+              "avg_logprob": -0.8649328450361887,
+              "no_speech_prob": 0.031072178855538368,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J21, go ahead.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J21, go ahead.",
+              "avg_logprob": -0.7498918890953064,
+              "no_speech_prob": 0.03129003942012787,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "context": {
+          "text": "7G 21, go ahead.",
+          "prompt": "and area of the alarm. Copy. 7G 21, copy suspicious.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7G 21, go ahead.",
+              "avg_logprob": -0.3088455319404602,
+              "no_speech_prob": 0.017359834164381027,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793934406.m4a": {
+      "index": 1422,
+      "epoch": 1793934406,
+      "sha256": "a969a032144dbeda48de967eb2c715c1b8614a4dbeb23926553cdc938ec66520",
+      "passes": {
+        "original": {
+          "text": "884 West San white lane building 9 some room suitcase hidden behind the tree in front of building 9 they're advising it looks 47",
+          "prompt": null,
+          "duration_seconds": 9.856,
+          "token_limit": 103,
+          "token_count": 30,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.36,
+              "text": " 884 West San white lane building 9 some room suitcase hidden behind the tree in",
+              "avg_logprob": -0.350864173904542,
+              "no_speech_prob": 0.04790860414505005,
+              "compression_ratio": 1.2075471698113207
+            },
+            {
+              "start": 6.36,
+              "end": 11.200000000000001,
+              "text": " front of building 9 they're advising it looks 47",
+              "avg_logprob": -0.350864173904542,
+              "no_speech_prob": 0.04790860414505005,
+              "compression_ratio": 1.2075471698113207
+            }
+          ]
+        },
+        "filtered": {
+          "text": "884 West Samwhite Lane, Building 9. Some maroon suitcase hidden behind the tree in front of Building 9. They're advising it looks 47.",
+          "prompt": null,
+          "duration_seconds": 9.856,
+          "token_limit": 103,
+          "token_count": 35,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.42,
+              "text": " 884 West Samwhite Lane, Building 9. Some maroon suitcase hidden behind the tree in front of Building 9.",
+              "avg_logprob": -0.41971243917942047,
+              "no_speech_prob": 0.03710540384054184,
+              "compression_ratio": 1.1875
+            },
+            {
+              "start": 7.42,
+              "end": 9.42,
+              "text": " They're advising it looks 47.",
+              "avg_logprob": -0.41971243917942047,
+              "no_speech_prob": 0.03710540384054184,
+              "compression_ratio": 1.1875
+            }
+          ]
+        },
+        "context": {
+          "text": "884 West San White Lane, Building 9, some room suitcase hidden behind the tree in front of Building 9. They're advising it looks 47.",
+          "prompt": "Copy. 7G 21, copy suspicious. 7-8-21, go ahead.",
+          "duration_seconds": 9.856,
+          "token_limit": 103,
+          "token_count": 34,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.4,
+              "text": " 884 West San White Lane, Building 9, some room suitcase hidden behind the tree in front of Building 9.",
+              "avg_logprob": -0.3969548123223441,
+              "no_speech_prob": 0.013213139027357101,
+              "compression_ratio": 1.1785714285714286
+            },
+            {
+              "start": 7.4,
+              "end": 9.4,
+              "text": " They're advising it looks 47.",
+              "avg_logprob": -0.3969548123223441,
+              "no_speech_prob": 0.013213139027357101,
+              "compression_ratio": 1.1785714285714286
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793934418.m4a": {
+      "index": 1423,
+      "epoch": 1793934418,
+      "sha256": "c723637e81ab1fa9e2f6c2e1cce36aac24f7d7c32fb666e04a0e2ca0808042f2",
+      "passes": {
+        "original": {
+          "text": "10-4.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.5670379400253296,
+              "no_speech_prob": 0.08718737214803696,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.7231067929949079,
+              "no_speech_prob": 0.045434292405843735,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "10-4.",
+          "prompt": "7G 21, copy suspicious. 7-8-21, go ahead. 884 West San white lane building 9 some room suitcase hidden behind the tree in front of building 9 they're advising it looks 47",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.5556268521717617,
+              "no_speech_prob": 0.06870505213737488,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793934423.m4a": {
+      "index": 1424,
+      "epoch": 1793934423,
+      "sha256": "226b953148bf589b0d04f5d764f40b4b73359359b2ab65f18a479090ab24c7f6",
+      "passes": {
+        "original": {
+          "text": "76 Aldivert and we'll respond with 21.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 76 Aldivert and we'll respond with 21.",
+              "avg_logprob": -0.7133535146713257,
+              "no_speech_prob": 0.0672353059053421,
+              "compression_ratio": 0.8837209302325582
+            }
+          ]
+        },
+        "filtered": {
+          "text": "76 all the vert and respond with 21",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.36,
+              "text": " 76 all the vert and respond with 21",
+              "avg_logprob": -0.6761797991665927,
+              "no_speech_prob": 0.03752611577510834,
+              "compression_ratio": 0.8536585365853658
+            }
+          ]
+        },
+        "context": {
+          "text": "7G6 all divert and respond with 21.",
+          "prompt": "7-8-21, go ahead. 884 West San white lane building 9 some room suitcase hidden behind the tree in front of building 9 they're advising it looks 47 10-4.",
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.36,
+              "text": " 7G6 all divert and respond with 21.",
+              "avg_logprob": -0.5856835842132568,
+              "no_speech_prob": 0.029718419536948204,
+              "compression_ratio": 0.8536585365853658
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793934428.m4a": {
+      "index": 1425,
+      "epoch": 1793934428,
+      "sha256": "3aa1a89aaf988d3d66fc6da455977c26dcb1f6fb7b7263c7043f9f5ff4040578",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7501331329345703,
+              "no_speech_prob": 0.05145903304219246,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Coffee?",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Coffee?",
+              "avg_logprob": -0.8130467414855957,
+              "no_speech_prob": 0.04925454407930374,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Coffee.",
+          "prompt": "884 West San white lane building 9 some room suitcase hidden behind the tree in front of building 9 they're advising it looks 47 10-4. 76 Aldivert and we'll respond with 21.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Coffee.",
+              "avg_logprob": -0.8300645828247071,
+              "no_speech_prob": 0.07582229375839233,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793934438.m4a": {
+      "index": 1426,
+      "epoch": 1793934438,
+      "sha256": "9d2a3d1a2a4cfe47d32023a930fc7e321a2180ba29810343cd31039f34011392",
+      "passes": {
+        "original": {
+          "text": "Coffee?",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Coffee?",
+              "avg_logprob": -0.579906415939331,
+              "no_speech_prob": 0.0459936298429966,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Coffee?",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Coffee?",
+              "avg_logprob": -0.5158157348632812,
+              "no_speech_prob": 0.022667953744530678,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Coffee?",
+          "prompt": "10-4. 76 Aldivert and we'll respond with 21. Copy.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Coffee?",
+              "avg_logprob": -0.7158504009246827,
+              "no_speech_prob": 0.05237645283341408,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793934463.m4a": {
+      "index": 1427,
+      "epoch": 1793934463,
+      "sha256": "5b7b1c8e655087c5b7ec9f7f86d751d7c64aacd35ce97eb5ff5623032ea63a42",
+      "passes": {
+        "original": {
+          "text": "7J98 Central.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J98 Central.",
+              "avg_logprob": -0.8155999109148979,
+              "no_speech_prob": 0.07814303785562515,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "1798 Central.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 1798 Central.",
+              "avg_logprob": -0.9498895577022007,
+              "no_speech_prob": 0.0614875853061676,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "7J98 Central.",
+          "prompt": "76 Aldivert and we'll respond with 21. Copy. Coffee?",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J98 Central.",
+              "avg_logprob": -0.584751732647419,
+              "no_speech_prob": 0.011822671629488468,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793934467.m4a": {
+      "index": 1428,
+      "epoch": 1793934467,
+      "sha256": "4479e8078193cd3c1eaff4f773531f580c2f1a9350adf09b09b099fa76d98765",
+      "passes": {
+        "original": {
+          "text": "Go ahead, ma'am.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead, ma'am.",
+              "avg_logprob": -0.46630611419677737,
+              "no_speech_prob": 0.07297761738300323,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go ahead, ma'am.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead, ma'am.",
+              "avg_logprob": -0.555504423379898,
+              "no_speech_prob": 0.03862559422850609,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "Go ahead, ma'am.",
+          "prompt": "Copy. Coffee? 7J98 Central.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead, ma'am.",
+              "avg_logprob": -0.3208663612604141,
+              "no_speech_prob": 0.01262334268540144,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793934469.m4a": {
+      "index": 1429,
+      "epoch": 1793934469,
+      "sha256": "ea2fe572cd8bb62faff3f61fe12bf6beb435567ca1d9995406b8db9f1fda7ab2",
+      "passes": {
+        "original": {
+          "text": "The alarm company called back and they advised Keyholder to advise us that the false alarm using 22.",
+          "prompt": null,
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.66,
+              "text": " The alarm company called back and they advised Keyholder to advise us that the false alarm",
+              "avg_logprob": -0.7156954193115235,
+              "no_speech_prob": 0.03399067744612694,
+              "compression_ratio": 1.1363636363636365
+            },
+            {
+              "start": 5.66,
+              "end": 6.72,
+              "text": " using 22.",
+              "avg_logprob": -0.7156954193115235,
+              "no_speech_prob": 0.03399067744612694,
+              "compression_ratio": 1.1363636363636365
+            }
+          ]
+        },
+        "filtered": {
+          "text": "The alarm company calls back and they advise key holders to advise us of the false alarm using 22.",
+          "prompt": null,
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.66,
+              "text": " The alarm company calls back and they advise key holders to advise us of the false alarm",
+              "avg_logprob": -0.7367844200134277,
+              "no_speech_prob": 0.026200860738754272,
+              "compression_ratio": 1.1666666666666667
+            },
+            {
+              "start": 5.66,
+              "end": 6.74,
+              "text": " using 22.",
+              "avg_logprob": -0.7367844200134277,
+              "no_speech_prob": 0.026200860738754272,
+              "compression_ratio": 1.1666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Our company called back and they advised Keyholder to advise us that the false alarm use came 22.",
+          "prompt": "Coffee? 7J98 Central. Go ahead, ma'am.",
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Our company called back and they advised Keyholder to advise us that the false alarm use came 22.",
+              "avg_logprob": -0.6755510153977767,
+              "no_speech_prob": 0.005498860497027636,
+              "compression_ratio": 1.1149425287356323
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793934478.m4a": {
+      "index": 1430,
+      "epoch": 1793934478,
+      "sha256": "ecfad89cc1d76da586794ece8876bbac7ad8af15c06acc5df8d93cc11fee99ef",
+      "passes": {
+        "original": {
+          "text": "Jennifer, we're cleared out.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Jennifer, we're cleared out.",
+              "avg_logprob": -0.7673149824142456,
+              "no_speech_prob": 0.10058411210775375,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "filtered": {
+          "text": "10-4 cleared up.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 10-4 cleared up.",
+              "avg_logprob": -0.523573186662462,
+              "no_speech_prob": 0.0479859933257103,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "Jennifer, we're cleared out.",
+          "prompt": "7J98 Central. Go ahead, ma'am. The alarm company called back and they advised Keyholder to advise us that the false alarm using 22.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Jennifer, we're cleared out.",
+              "avg_logprob": -0.7173905968666077,
+              "no_speech_prob": 0.08450061082839966,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        }
+      }
+    }
+  }
+}
