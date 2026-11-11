@@ -1,0 +1,649 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-07",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794092769.m4a": {
+      "index": 621,
+      "epoch": 1794092769,
+      "sha256": "6faca5537d5a1ff2560e010c9e8705b3c88ddf4998f2947eff24645206af1ba8",
+      "passes": {
+        "original": {
+          "text": "7J27, do we have a K9 available?",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " 7J27, do we have a K9 available?",
+              "avg_logprob": -0.3470970074335734,
+              "no_speech_prob": 0.018622687086462975,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J27, do we have a K9 available?",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.72,
+              "text": " 7J27, do we have a K9 available?",
+              "avg_logprob": -0.3330284833908081,
+              "no_speech_prob": 0.023471064865589142,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "context": {
+          "text": "7J27, do we have a K9 available?",
+          "prompt": "7 to 25.",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " 7J27, do we have a K9 available?",
+              "avg_logprob": -0.32201741139094037,
+              "no_speech_prob": 0.010671313852071762,
+              "compression_ratio": 0.8
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794092773.m4a": {
+      "index": 622,
+      "epoch": 1794092773,
+      "sha256": "b8b4092579ee5036e8f693ae978b61c75e88c580ebfe8670c5dffac365bd31e4",
+      "passes": {
+        "original": {
+          "text": "27 copy for you, because they're a K-9 on Law 2 to assist.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.52,
+              "text": " 27 copy for you, because they're a K-9 on Law 2 to assist.",
+              "avg_logprob": -0.49040340241931735,
+              "no_speech_prob": 0.0463675782084465,
+              "compression_ratio": 0.8787878787878788
+            }
+          ]
+        },
+        "filtered": {
+          "text": "27 copy. Sorry, is there a K-9 on Law 2 to assist?",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 27 copy.",
+              "avg_logprob": -0.4699803658507087,
+              "no_speech_prob": 0.13763409852981567,
+              "compression_ratio": 0.8620689655172413
+            },
+            {
+              "start": 2.0,
+              "end": 4.0,
+              "text": " Sorry, is there a K-9 on Law 2 to assist?",
+              "avg_logprob": -0.4699803658507087,
+              "no_speech_prob": 0.13763409852981567,
+              "compression_ratio": 0.8620689655172413
+            }
+          ]
+        },
+        "context": {
+          "text": "27, copy. Is there a K9 available to assist?",
+          "prompt": "7 to 25. 7J27, do we have a K9 available?",
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 27, copy. Is there a K9 available to assist?",
+              "avg_logprob": -0.43750304728746414,
+              "no_speech_prob": 0.018508823588490486,
+              "compression_ratio": 0.8461538461538461
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794092783.m4a": {
+      "index": 623,
+      "epoch": 1794092783,
+      "sha256": "54912c2e4c9f8d6f35e93d2a18eb40ae5a11c98bf93de6024b668b5cf682ff76",
+      "passes": {
+        "original": {
+          "text": "27, we'll check with surrounding agencies.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 27, we'll check with surrounding agencies.",
+              "avg_logprob": -0.4709151138861974,
+              "no_speech_prob": 0.08664451539516449,
+              "compression_ratio": 0.84
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Twenty-seven, we'll check with surrounding agencies.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Twenty-seven, we'll check with surrounding agencies.",
+              "avg_logprob": -0.41700639043535503,
+              "no_speech_prob": 0.19005316495895386,
+              "compression_ratio": 0.8666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "27, we'll check with surrounding agencies.",
+          "prompt": "7 to 25. 7J27, do we have a K9 available? 27 copy for you, because they're a K-9 on Law 2 to assist.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.14,
+              "text": " 27, we'll check with surrounding agencies.",
+              "avg_logprob": -0.3552583158016205,
+              "no_speech_prob": 0.054862480610609055,
+              "compression_ratio": 0.84
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794092786.m4a": {
+      "index": 624,
+      "epoch": 1794092786,
+      "sha256": "ab59a27ade1add675f43fbccf1c9a4eb7dbd900832e051af4a90fedb020b0da9",
+      "passes": {
+        "original": {
+          "text": "and copy things.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " and copy things.",
+              "avg_logprob": -1.0190956592559814,
+              "no_speech_prob": 0.06529104709625244,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "and captivates.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " and captivates.",
+              "avg_logprob": -1.109216183423996,
+              "no_speech_prob": 0.11324872821569443,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy, thanks.",
+          "prompt": "7J27, do we have a K9 available? 27 copy for you, because they're a K-9 on Law 2 to assist. 27, we'll check with surrounding agencies.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy, thanks.",
+              "avg_logprob": -0.5403156280517578,
+              "no_speech_prob": 0.08103571832180023,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794092949.m4a": {
+      "index": 625,
+      "epoch": 1794092949,
+      "sha256": "6c189c18382ef74d63997e9136e4bc7cdc23103dd93094bb5e6400da042dffe9",
+      "passes": {
+        "original": {
+          "text": "7J27, that's a negative on the K9 from any of our agencies or from Metro.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.72,
+              "text": " 7J27, that's a negative on the K9 from any of our agencies or from Metro.",
+              "avg_logprob": -0.2824753237267335,
+              "no_speech_prob": 0.04243322089314461,
+              "compression_ratio": 0.9733333333333334
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7 to 27, that's a negative on the K9 from any of our agencies or from Metro.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 7 to 27, that's a negative on the K9 from any of our agencies or from Metro.",
+              "avg_logprob": -0.35861274724205333,
+              "no_speech_prob": 0.16984936594963074,
+              "compression_ratio": 0.987012987012987
+            }
+          ]
+        },
+        "context": {
+          "text": "7J27, that's a negative on the K9 from any of our agencies or from Metro.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.72,
+              "text": " 7J27, that's a negative on the K9 from any of our agencies or from Metro.",
+              "avg_logprob": -0.2824753237267335,
+              "no_speech_prob": 0.04243322089314461,
+              "compression_ratio": 0.9733333333333334
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794092955.m4a": {
+      "index": 626,
+      "epoch": 1794092955,
+      "sha256": "669664aecfe1bef19bf232a33a0fe0040e04b012f145965cfa953eb3b3679873",
+      "passes": {
+        "original": {
+          "text": "Copy, thanks.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy, thanks.",
+              "avg_logprob": -0.6547939947673252,
+              "no_speech_prob": 0.060854364186525345,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy, thanks.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy, thanks.",
+              "avg_logprob": -0.6471383060727801,
+              "no_speech_prob": 0.06571191549301147,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy, thanks.",
+          "prompt": "7J27, that's a negative on the K9 from any of our agencies or from Metro.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.72,
+              "text": " Copy, thanks.",
+              "avg_logprob": -0.5062509604862758,
+              "no_speech_prob": 0.04796675220131874,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794092990.m4a": {
+      "index": 627,
+      "epoch": 1794092990,
+      "sha256": "3976cd41fdc4a29a3e042df81286ce571bbc7f0622967699e918c3016a83a76e",
+      "passes": {
+        "original": {
+          "text": "5J28, good for you.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J28, good for you.",
+              "avg_logprob": -0.5681041153994474,
+              "no_speech_prob": 0.06241680309176445,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J28, good work.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J28, good work.",
+              "avg_logprob": -0.5429435849189759,
+              "no_speech_prob": 0.17037104070186615,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "5J28, good work.",
+          "prompt": "7J27, that's a negative on the K9 from any of our agencies or from Metro. Copy, thanks.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J28, good work.",
+              "avg_logprob": -0.4511679410934448,
+              "no_speech_prob": 0.06251838058233261,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794092993.m4a": {
+      "index": 628,
+      "epoch": 1794092993,
+      "sha256": "1aec67661344aa55e303f60596e61a48682d48bdc72be64f7f1fa1d98e77a831",
+      "passes": {
+        "original": {
+          "text": "28, go for it.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.36,
+              "text": " 28, go for it.",
+              "avg_logprob": -0.8972040812174479,
+              "no_speech_prob": 0.011687522754073143,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "filtered": {
+          "text": "28, go for it.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 28, go for it.",
+              "avg_logprob": -0.6452139748467339,
+              "no_speech_prob": 0.0225681085139513,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "5J28, good for you.",
+          "prompt": "7J27, that's a negative on the K9 from any of our agencies or from Metro. Copy, thanks. 5J28, good for you.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.4000000000000001,
+              "text": " 5J28, good for you.",
+              "avg_logprob": -0.3980553692037409,
+              "no_speech_prob": 0.050893887877464294,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794093021.m4a": {
+      "index": 629,
+      "epoch": 1794093021,
+      "sha256": "6b0ff18175de9269bd9fc1eaa82fee942ed0949cad6818f7b949ca5a520bb5a2",
+      "passes": {
+        "original": {
+          "text": "5J28 clear.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J28 clear.",
+              "avg_logprob": -0.5343056097626686,
+              "no_speech_prob": 0.06314673274755478,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J28 clear.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J28 clear.",
+              "avg_logprob": -0.5197261497378349,
+              "no_speech_prob": 0.030889568850398064,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "5J28, clear.",
+          "prompt": "5J28, good for you. 28, go for it.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J28, clear.",
+              "avg_logprob": -0.3397366205851237,
+              "no_speech_prob": 0.003139674896374345,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794093024.m4a": {
+      "index": 630,
+      "epoch": 1794093024,
+      "sha256": "13d1d07cb807489138946cd336d9293c71072945e2de669ed28f8aa25d1787a4",
+      "passes": {
+        "original": {
+          "text": "10-4.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.6775206838335309,
+              "no_speech_prob": 0.09830012917518616,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "10-4",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 10-4",
+              "avg_logprob": -0.6322243809700012,
+              "no_speech_prob": 0.20100894570350647,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "10-4.",
+          "prompt": "5J28, good for you. 28, go for it. 5J28 clear.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.4857218435832432,
+              "no_speech_prob": 0.10845562070608139,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
