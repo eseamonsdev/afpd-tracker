@@ -1,0 +1,665 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-08",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794141320.m4a": {
+      "index": 201,
+      "epoch": 1794141320,
+      "sha256": "1e493bbaff3077550b45d806bc4b1d38d1a1ba4542b95686dccbc775df2df8f1",
+      "passes": {
+        "original": {
+          "text": "Copy. Showing off the evidence.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6422962958996112,
+              "no_speech_prob": 0.007641163654625416,
+              "compression_ratio": 0.7948717948717948
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Showing off the evidence.",
+              "avg_logprob": -0.6422962958996112,
+              "no_speech_prob": 0.007641163654625416,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy. Show them all the evidence.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6516175636878381,
+              "no_speech_prob": 0.011165090836584568,
+              "compression_ratio": 0.868421052631579
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Show them all the evidence.",
+              "avg_logprob": -0.6516175636878381,
+              "no_speech_prob": 0.011165090836584568,
+              "compression_ratio": 0.868421052631579
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy. Showing off the evidence.",
+          "prompt": "Good. Howdy. 24, I'll be out with him.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5954165091881385,
+              "no_speech_prob": 0.013253900222480297,
+              "compression_ratio": 0.7948717948717948
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Showing off the evidence.",
+              "avg_logprob": -0.5954165091881385,
+              "no_speech_prob": 0.013253900222480297,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794141323.m4a": {
+      "index": 202,
+      "epoch": 1794141323,
+      "sha256": "dd3db2dcbb875376316900483520ae4581367258059cb4805791f20b7d504991",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6532291412353516,
+              "no_speech_prob": 0.015173276886343956,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.3236437439918518,
+              "no_speech_prob": 0.018530847504734993,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "Howdy. 24, I'll be out with him. Copy. Showing off the evidence.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.3811688184738159,
+              "no_speech_prob": 0.006585516035556793,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794141327.m4a": {
+      "index": 203,
+      "epoch": 1794141327,
+      "sha256": "e4fc96101beb2002d1da211744d4e05163236f32b6262ff950cf3b69cb0471c2",
+      "passes": {
+        "original": {
+          "text": "I see 37 code for",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I see 37 code for",
+              "avg_logprob": -0.6405227333307266,
+              "no_speech_prob": 0.007688550278544426,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I see thirty seven code four",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I see thirty seven code four",
+              "avg_logprob": -0.5841102070278592,
+              "no_speech_prob": 0.008787764236330986,
+              "compression_ratio": 0.8235294117647058
+            }
+          ]
+        },
+        "context": {
+          "text": "5, take 37, code 4.",
+          "prompt": "24, I'll be out with him. Copy. Showing off the evidence. Copy.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5, take 37, code 4.",
+              "avg_logprob": -0.6205772269855846,
+              "no_speech_prob": 0.006570626050233841,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794141330.m4a": {
+      "index": 204,
+      "epoch": 1794141330,
+      "sha256": "c08c6cfad89ca96d56b7ccc3a3d296d92001e0077ca26ef8a005c32e4a0fd54e",
+      "passes": {
+        "original": {
+          "text": "Code for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Code for it.",
+              "avg_logprob": -0.7104755810328892,
+              "no_speech_prob": 0.03462638705968857,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.6819391761507306,
+              "no_speech_prob": 0.042806852608919144,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "code for.",
+          "prompt": "Copy. Showing off the evidence. Copy. I see 37 code for",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " code for.",
+              "avg_logprob": -0.5404242873191833,
+              "no_speech_prob": 0.04358173534274101,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794141583.m4a": {
+      "index": 205,
+      "epoch": 1794141583,
+      "sha256": "60296427d0b10c9d94ee7fd0715d568ba07a654b239ab07f65add133da3031ba",
+      "passes": {
+        "original": {
+          "text": "Thank you, everyone.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you, everyone.",
+              "avg_logprob": -0.7778811529278755,
+              "no_speech_prob": 0.05687008798122406,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you everyone.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you everyone.",
+              "avg_logprob": -0.4708986793245588,
+              "no_speech_prob": 0.02264363504946232,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you, everyone.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you, everyone.",
+              "avg_logprob": -0.7778811529278755,
+              "no_speech_prob": 0.05687008798122406,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794141587.m4a": {
+      "index": 206,
+      "epoch": 1794141587,
+      "sha256": "0d472a59cdcd251398ece3ba9a218831da6448a819ad3ce0bed9a02c8e1c96f6",
+      "passes": {
+        "original": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy.",
+              "avg_logprob": -0.8560103416442871,
+              "no_speech_prob": 0.060322511941194534,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy.",
+              "avg_logprob": -0.7971568584442139,
+              "no_speech_prob": 0.0834803581237793,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy.",
+          "prompt": "Thank you, everyone.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy.",
+              "avg_logprob": -0.5426546096801758,
+              "no_speech_prob": 0.03593037277460098,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794141650.m4a": {
+      "index": 207,
+      "epoch": 1794141650,
+      "sha256": "51005310baab027d7363dabe2f5d52f7d40fc74ab6b4ea600af68aa01f266343",
+      "passes": {
+        "original": {
+          "text": "5-2-37, go for it.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5-2-37, go for it.",
+              "avg_logprob": -0.5567532502687894,
+              "no_speech_prob": 0.03121061809360981,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I have two thirty-seven, go for it.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I have two thirty-seven, go for it.",
+              "avg_logprob": -0.6088468219552722,
+              "no_speech_prob": 0.037911973893642426,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        },
+        "context": {
+          "text": "5-2-37, go for it.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5-2-37, go for it.",
+              "avg_logprob": -0.5567532502687894,
+              "no_speech_prob": 0.03121061809360981,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794141655.m4a": {
+      "index": 208,
+      "epoch": 1794141655,
+      "sha256": "afd5cf8bfdbbbd21dc3f6578ace636375baa8c5bedc9ca402e25a0e137c90dcc",
+      "passes": {
+        "original": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy.",
+              "avg_logprob": -0.765998125076294,
+              "no_speech_prob": 0.03867927938699722,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Help me.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Help me.",
+              "avg_logprob": -0.9587427973747253,
+              "no_speech_prob": 0.02896415814757347,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy.",
+          "prompt": "5-2-37, go for it.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy.",
+              "avg_logprob": -0.6015473365783691,
+              "no_speech_prob": 0.006416777148842812,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794141835.m4a": {
+      "index": 209,
+      "epoch": 1794141835,
+      "sha256": "d1a044ae811e6302d83cebc0e12cd7699965b46baa4134a7ee45e6944bb0e08b",
+      "passes": {
+        "original": {
+          "text": "Flight J28, 1041.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Flight J28, 1041.",
+              "avg_logprob": -0.8316772699356079,
+              "no_speech_prob": 0.04875895380973816,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm glad you're 28 and 31.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm glad you're 28 and 31.",
+              "avg_logprob": -0.7437744239966074,
+              "no_speech_prob": 0.05171402171254158,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "context": {
+          "text": "Flight J28, 1041.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Flight J28, 1041.",
+              "avg_logprob": -0.8316772699356079,
+              "no_speech_prob": 0.04875895380973816,
+              "compression_ratio": 0.68
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794141838.m4a": {
+      "index": 210,
+      "epoch": 1794141838,
+      "sha256": "9ac2db7eb8bcff1d7fe2aba3ca3b626734538f7679290afcb0899c4b8885bf6b",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6613917827606202,
+              "no_speech_prob": 0.017819777131080627,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'll be.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I'll be.",
+              "avg_logprob": -0.7517474208559308,
+              "no_speech_prob": 0.024662327021360397,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "Flight J28, 1041.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.4420356750488281,
+              "no_speech_prob": 0.0034202570095658302,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
