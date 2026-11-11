@@ -1,0 +1,833 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-08",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794161377.m4a": {
+      "index": 441,
+      "epoch": 1794161377,
+      "sha256": "26e2af0e9c13c31a1c65c7c982215ec589879432ac95bd3ab6a37ab18e0f544e",
+      "passes": {
+        "original": {
+          "text": "572,600 East, 572,600 East. We have a Spanish speaking patient on the line advising of back pain. There is a parking lot and not blocking traffic. It's a silver passenger car and a brown vehicle. Patient is a 30-year-old female. She is not just a breeding.",
+          "prompt": null,
+          "duration_seconds": 18.688,
+          "token_limit": 174,
+          "token_count": 76,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 572,600 East, 572,600 East.",
+              "avg_logprob": -0.2615182755829452,
+              "no_speech_prob": 0.01934012956917286,
+              "compression_ratio": 1.3837837837837839
+            },
+            {
+              "start": 5.0,
+              "end": 9.0,
+              "text": " We have a Spanish speaking patient on the line advising of back pain.",
+              "avg_logprob": -0.2615182755829452,
+              "no_speech_prob": 0.01934012956917286,
+              "compression_ratio": 1.3837837837837839
+            },
+            {
+              "start": 9.0,
+              "end": 11.0,
+              "text": " There is a parking lot and not blocking traffic.",
+              "avg_logprob": -0.2615182755829452,
+              "no_speech_prob": 0.01934012956917286,
+              "compression_ratio": 1.3837837837837839
+            },
+            {
+              "start": 11.0,
+              "end": 15.0,
+              "text": " It's a silver passenger car and a brown vehicle.",
+              "avg_logprob": -0.2615182755829452,
+              "no_speech_prob": 0.01934012956917286,
+              "compression_ratio": 1.3837837837837839
+            },
+            {
+              "start": 15.0,
+              "end": 16.0,
+              "text": " Patient is a 30-year-old female.",
+              "avg_logprob": -0.2615182755829452,
+              "no_speech_prob": 0.01934012956917286,
+              "compression_ratio": 1.3837837837837839
+            },
+            {
+              "start": 16.0,
+              "end": 18.0,
+              "text": " She is not just a breeding.",
+              "avg_logprob": -0.2615182755829452,
+              "no_speech_prob": 0.01934012956917286,
+              "compression_ratio": 1.3837837837837839
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We have a Spanish speaking patient on the line advising of back pain through the parking lot, not blocking traffic. It's a silver passenger car and a brown vehicle. Patient is a 30-year-old female. She is not just a breeding. female, she is not just a reading.",
+          "prompt": null,
+          "duration_seconds": 18.688,
+          "token_limit": 174,
+          "token_count": 71,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 10.0,
+              "text": " We have a Spanish speaking patient on the line advising of back pain through the parking",
+              "avg_logprob": -0.40321339186160793,
+              "no_speech_prob": 0.062246065586805344,
+              "compression_ratio": 1.3803680981595092
+            },
+            {
+              "start": 10.0,
+              "end": 11.0,
+              "text": " lot, not blocking traffic.",
+              "avg_logprob": -0.40321339186160793,
+              "no_speech_prob": 0.062246065586805344,
+              "compression_ratio": 1.3803680981595092
+            },
+            {
+              "start": 11.0,
+              "end": 14.0,
+              "text": " It's a silver passenger car and a brown vehicle.",
+              "avg_logprob": -0.40321339186160793,
+              "no_speech_prob": 0.062246065586805344,
+              "compression_ratio": 1.3803680981595092
+            },
+            {
+              "start": 14.0,
+              "end": 15.0,
+              "text": " Patient is a 30-year-old female.",
+              "avg_logprob": -0.40321339186160793,
+              "no_speech_prob": 0.062246065586805344,
+              "compression_ratio": 1.3803680981595092
+            },
+            {
+              "start": 15.0,
+              "end": 16.0,
+              "text": " She is not just a breeding.",
+              "avg_logprob": -0.40321339186160793,
+              "no_speech_prob": 0.062246065586805344,
+              "compression_ratio": 1.3803680981595092
+            },
+            {
+              "start": 16.0,
+              "end": 18.0,
+              "text": " female, she is not just a reading.",
+              "avg_logprob": -0.7439765284458796,
+              "no_speech_prob": 0.05277275666594505,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "context": {
+          "text": "572,600 East, 572,600 East. We have a Spanish speaking patient on the line advising of back pain. There's a parking lot and not blocking traffic. It's a silver passenger car and a brown vehicle. Patient is a 30 year old female. She is not just a breeding.",
+          "prompt": "5, page 28, Central Cuffee and Accent with Injury. When you go ahead",
+          "duration_seconds": 18.688,
+          "token_limit": 174,
+          "token_count": 64,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 18.0,
+              "text": " 572,600 East, 572,600 East. We have a Spanish speaking patient on the line advising of back pain. There's a parking lot and not blocking traffic. It's a silver passenger car and a brown vehicle. Patient is a 30 year old female. She is not just a breeding.",
+              "avg_logprob": -0.3541660015399639,
+              "no_speech_prob": 0.06373085826635361,
+              "compression_ratio": 1.3934426229508197
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794161397.m4a": {
+      "index": 442,
+      "epoch": 1794161397,
+      "sha256": "c957677a1d19339c24fda872e0970202eb4421a23a34a5f7ad74df09b84299d1",
+      "passes": {
+        "original": {
+          "text": "Twenty-eight a copy, you said they're not blocking? Ever, not blocking traffic.",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Twenty-eight a copy, you said they're not blocking?",
+              "avg_logprob": -0.4043939809004466,
+              "no_speech_prob": 0.03665623068809509,
+              "compression_ratio": 1.0394736842105263
+            },
+            {
+              "start": 3.0,
+              "end": 6.0,
+              "text": " Ever, not blocking traffic.",
+              "avg_logprob": -0.4043939809004466,
+              "no_speech_prob": 0.03665623068809509,
+              "compression_ratio": 1.0394736842105263
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Twenty-eight a copy, you said they're not blocking? Ever, not blocking traffic.",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Twenty-eight a copy, you said they're not blocking?",
+              "avg_logprob": -0.45292211199800175,
+              "no_speech_prob": 0.046271298080682755,
+              "compression_ratio": 1.0394736842105263
+            },
+            {
+              "start": 3.0,
+              "end": 6.0,
+              "text": " Ever, not blocking traffic.",
+              "avg_logprob": -0.45292211199800175,
+              "no_speech_prob": 0.046271298080682755,
+              "compression_ratio": 1.0394736842105263
+            }
+          ]
+        },
+        "context": {
+          "text": "28, a copy you said they're not blocking? Ever, not blocking traffic.",
+          "prompt": "5, page 28, Central Cuffee and Accent with Injury. When you go ahead 572,600 East, 572,600 East. We have a Spanish speaking patient on the line advising of back pain. There is a parking lot and not blocking traffic. It's a silver passenger car and a brown vehicle. Patient is a 30-year-old female. She is not just a breeding.",
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.28,
+              "text": " 28, a copy you said they're not blocking? Ever, not blocking traffic.",
+              "avg_logprob": -0.4633682131767273,
+              "no_speech_prob": 0.00821615383028984,
+              "compression_ratio": 1.0454545454545454
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794161406.m4a": {
+      "index": 443,
+      "epoch": 1794161406,
+      "sha256": "51e3dc2cc84864970b0ade1a1a5ff713e215dea0bbdcc1feb2f41e2789b8b222",
+      "passes": {
+        "original": {
+          "text": "Brake Mach 846, Montreal 34.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Brake Mach 846, Montreal 34.",
+              "avg_logprob": -1.001171350479126,
+              "no_speech_prob": 0.03234213963150978,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Great. That's 846. That's our report. Thank you.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Great.",
+              "avg_logprob": -0.6435222874085108,
+              "no_speech_prob": 0.01963026449084282,
+              "compression_ratio": 1.0909090909090908
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " That's 846.",
+              "avg_logprob": -0.6435222874085108,
+              "no_speech_prob": 0.01963026449084282,
+              "compression_ratio": 1.0909090909090908
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " That's our report.",
+              "avg_logprob": -0.6435222874085108,
+              "no_speech_prob": 0.01963026449084282,
+              "compression_ratio": 1.0909090909090908
+            },
+            {
+              "start": 3.0,
+              "end": 3.04,
+              "text": " Thank you.",
+              "avg_logprob": -0.6435222874085108,
+              "no_speech_prob": 0.01963026449084282,
+              "compression_ratio": 1.0909090909090908
+            }
+          ]
+        },
+        "context": {
+          "text": "Brake,",
+          "prompt": "When you go ahead 572,600 East, 572,600 East. We have a Spanish speaking patient on the line advising of back pain. There is a parking lot and not blocking traffic. It's a silver passenger car and a brown vehicle. Patient is a 30-year-old female. She is not just a breeding. Twenty-eight a copy, you said they're not blocking? Ever, not blocking traffic.",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 27.18,
+              "text": " Brake,",
+              "avg_logprob": -0.8412693398339408,
+              "no_speech_prob": 0.013334863819181919,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794161414.m4a": {
+      "index": 444,
+      "epoch": 1794161414,
+      "sha256": "f33da984733b313135fbe5c213bbbf36eb64322f910f0fa1fa80e27f5ca8fb77",
+      "passes": {
+        "original": {
+          "text": "Thank you very much. Thank you very much. Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you very much.",
+              "avg_logprob": -0.5975219492728894,
+              "no_speech_prob": 0.02550477720797062,
+              "compression_ratio": 1.8529411764705883
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thank you very much.",
+              "avg_logprob": -0.5975219492728894,
+              "no_speech_prob": 0.02550477720797062,
+              "compression_ratio": 1.8529411764705883
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5975219492728894,
+              "no_speech_prob": 0.02550477720797062,
+              "compression_ratio": 1.8529411764705883
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5975219492728894,
+              "no_speech_prob": 0.02550477720797062,
+              "compression_ratio": 1.8529411764705883
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you. Thank you. Thank you. Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5998062972839062,
+              "no_speech_prob": 0.022606322541832924,
+              "compression_ratio": 2.4545454545454546
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5998062972839062,
+              "no_speech_prob": 0.022606322541832924,
+              "compression_ratio": 2.4545454545454546
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5998062972839062,
+              "no_speech_prob": 0.022606322541832924,
+              "compression_ratio": 2.4545454545454546
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5998062972839062,
+              "no_speech_prob": 0.022606322541832924,
+              "compression_ratio": 2.4545454545454546
+            },
+            {
+              "start": 4.0,
+              "end": 5.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5998062972839062,
+              "no_speech_prob": 0.022606322541832924,
+              "compression_ratio": 2.4545454545454546
+            }
+          ]
+        },
+        "context": {
+          "text": "We should talk to the phone. Don't play.",
+          "prompt": "572,600 East, 572,600 East. We have a Spanish speaking patient on the line advising of back pain. There is a parking lot and not blocking traffic. It's a silver passenger car and a brown vehicle. Patient is a 30-year-old female. She is not just a breeding. Twenty-eight a copy, you said they're not blocking? Ever, not blocking traffic. Brake Mach 846, Montreal 34.",
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " We should talk to the phone. Don't play.",
+              "avg_logprob": -0.8442143159253257,
+              "no_speech_prob": 0.06102585792541504,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794161497.m4a": {
+      "index": 445,
+      "epoch": 1794161497,
+      "sha256": "df31c36034560fb47d5e0f47b4de6e349b6fa0968984cb4dd813a8ac054fc7bc",
+      "passes": {
+        "original": {
+          "text": "7J27, 1060",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J27, 1060",
+              "avg_logprob": -0.41179365581936306,
+              "no_speech_prob": 0.009308580309152603,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7-j, 27, 10, 60",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-j, 27, 10, 60",
+              "avg_logprob": -0.7369793107112249,
+              "no_speech_prob": 0.01297732163220644,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "context": {
+          "text": "7J27, 1060",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J27, 1060",
+              "avg_logprob": -0.41179365581936306,
+              "no_speech_prob": 0.009308580309152603,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794161500.m4a": {
+      "index": 446,
+      "epoch": 1794161500,
+      "sha256": "9f46c170d024e68d58868dcbc118dcda1503beeb2df0c44ad5737caa31dc6079",
+      "passes": {
+        "original": {
+          "text": "Got it",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Got it",
+              "avg_logprob": -0.1745286226272583,
+              "no_speech_prob": 0.013993939384818077,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Got it",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Got it",
+              "avg_logprob": -0.5107131481170655,
+              "no_speech_prob": 0.046215999871492386,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Got it",
+          "prompt": "7J27, 1060",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Got it",
+              "avg_logprob": -0.2268746852874756,
+              "no_speech_prob": 0.03067598305642605,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794161502.m4a": {
+      "index": 447,
+      "epoch": 1794161502,
+      "sha256": "eab67427d8a2fd2c276915389c60504fbede32065a60f4e95c2a82d0a3ba7917",
+      "passes": {
+        "original": {
+          "text": "800 South State Street on April 3, 3 Echo X-ray Tango 8.",
+          "prompt": null,
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.6000000000000005,
+              "text": " 800 South State Street on April 3, 3 Echo X-ray Tango 8.",
+              "avg_logprob": -0.720511618256569,
+              "no_speech_prob": 0.010323633439838886,
+              "compression_ratio": 0.9032258064516129
+            }
+          ]
+        },
+        "filtered": {
+          "text": "800 South Bay Street on April 3, 3 Echo X-ray Tango 8.",
+          "prompt": null,
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.64,
+              "text": " 800 South Bay Street on April 3, 3 Echo X-ray Tango 8.",
+              "avg_logprob": -0.7023228377103805,
+              "no_speech_prob": 0.007778971455991268,
+              "compression_ratio": 0.8852459016393442
+            }
+          ]
+        },
+        "context": {
+          "text": "800 South State Street on April 3, 3 Echo X-ray Tango 8",
+          "prompt": "7J27, 1060 Got it",
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " 800 South State Street on April 3, 3 Echo X-ray Tango 8",
+              "avg_logprob": -0.7170686470834833,
+              "no_speech_prob": 0.004837452434003353,
+              "compression_ratio": 0.9016393442622951
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794161532.m4a": {
+      "index": 448,
+      "epoch": 1794161532,
+      "sha256": "b1d9af199bace7dfb3322bd21b4f71cd026f7b0874c44c9a402ba7ff36687108",
+      "passes": {
+        "original": {
+          "text": "5J53 Central Revenue Agency's best.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.6,
+              "text": " 5J53 Central Revenue Agency's best.",
+              "avg_logprob": -0.8376151969035467,
+              "no_speech_prob": 0.05147376284003258,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J53 Central Compute Agency is best.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.56,
+              "text": " 5J53 Central",
+              "avg_logprob": -1.081173833211263,
+              "no_speech_prob": 0.06154247745871544,
+              "compression_ratio": 0.8181818181818182
+            },
+            {
+              "start": 1.56,
+              "end": 3.56,
+              "text": " Compute Agency is best.",
+              "avg_logprob": -1.081173833211263,
+              "no_speech_prob": 0.06154247745871544,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        },
+        "context": {
+          "text": "5J53 Central Revenue Agency's Best.",
+          "prompt": "7J27, 1060 Got it 800 South State Street on April 3, 3 Echo X-ray Tango 8.",
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.52,
+              "text": " 5J53 Central Revenue Agency's Best.",
+              "avg_logprob": -0.766340896487236,
+              "no_speech_prob": 0.04876644164323807,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794161567.m4a": {
+      "index": 449,
+      "epoch": 1794161567,
+      "sha256": "275875627aa248727f8caaa061d3ba16a7eb3c48bd734eb0cd661e8f720c76af",
+      "passes": {
+        "original": {
+          "text": "5J46, I'll be clear.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5J46, I'll be clear.",
+              "avg_logprob": -0.40815523515144986,
+              "no_speech_prob": 0.01947481371462345,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G46, I'll be clear. 5G46.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5G46, I'll be clear.",
+              "avg_logprob": -0.5600747466087341,
+              "no_speech_prob": 0.02074432745575905,
+              "compression_ratio": 0.7878787878787878
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " 5G46.",
+              "avg_logprob": -0.5600747466087341,
+              "no_speech_prob": 0.02074432745575905,
+              "compression_ratio": 0.7878787878787878
+            }
+          ]
+        },
+        "context": {
+          "text": "5J46, I'll be clear.",
+          "prompt": "5J53 Central Revenue Agency's best.",
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J46, I'll be clear.",
+              "avg_logprob": -0.43234575539827347,
+              "no_speech_prob": 0.007807258982211351,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794161632.m4a": {
+      "index": 450,
+      "epoch": 1794161632,
+      "sha256": "c89803bdd1479dc95a8cc12671d55026c803d0a68d3d77ba01c9d4f4575c9595",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.736920166015625,
+              "no_speech_prob": 0.024437328800559044,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy?",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy?",
+              "avg_logprob": -0.7780390739440918,
+              "no_speech_prob": 0.01022607833147049,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.736920166015625,
+              "no_speech_prob": 0.024437328800559044,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
