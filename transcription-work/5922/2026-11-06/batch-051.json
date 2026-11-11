@@ -1,0 +1,689 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-06",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793990212.m4a": {
+      "index": 501,
+      "epoch": 1793990212,
+      "sha256": "1c8acf35cd5e95f1380260c7219870c9ce0bfe25967c909002b28c15cf2fc856",
+      "passes": {
+        "original": {
+          "text": "Her blood sugar is dropping from a parking lot in a black Chevy Malibu facing 500 East.",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Her blood sugar is dropping from a parking lot",
+              "avg_logprob": -0.3533457803229491,
+              "no_speech_prob": 0.014486650004982948,
+              "compression_ratio": 1.0116279069767442
+            },
+            {
+              "start": 3.0,
+              "end": 5.6000000000000005,
+              "text": " in a black Chevy Malibu facing 500 East.",
+              "avg_logprob": -0.3533457803229491,
+              "no_speech_prob": 0.014486650004982948,
+              "compression_ratio": 1.0116279069767442
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Her blood sugar is dropping from a parking lot in a black Chevy Malibu facing 500 East.",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.6000000000000005,
+              "text": " Her blood sugar is dropping from a parking lot in a black Chevy Malibu facing 500 East.",
+              "avg_logprob": -0.3369352722709829,
+              "no_speech_prob": 0.019136713817715645,
+              "compression_ratio": 1.0116279069767442
+            }
+          ]
+        },
+        "context": {
+          "text": "Her blood sugar is dropping from a parking lot in a black Chevy Malibu facing 500 E.",
+          "prompt": "IJ28, work code four, you can suspend. I'm going to be switching the service. Ten four. 5G30 435 South 500 E's as a DI. For a first party caller, she is a lone 26-year-old female.",
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Her blood sugar is dropping from a parking lot in a black Chevy Malibu facing 500 E.",
+              "avg_logprob": -0.29381241446191614,
+              "no_speech_prob": 0.004881465341895819,
+              "compression_ratio": 0.9882352941176471
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793990223.m4a": {
+      "index": 502,
+      "epoch": 1793990223,
+      "sha256": "fdf6de4d971363bcd0c52804e320a6e94311c16da773f030feb2b4b7c4075c18",
+      "passes": {
+        "original": {
+          "text": "Kevin.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Kevin.",
+              "avg_logprob": -1.0917982101440429,
+              "no_speech_prob": 0.10252811759710312,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Kevin.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Kevin.",
+              "avg_logprob": -0.8571549415588379,
+              "no_speech_prob": 0.1310226172208786,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Chevy.",
+          "prompt": "5G30 435 South 500 E's as a DI. For a first party caller, she is a lone 26-year-old female. Her blood sugar is dropping from a parking lot in a black Chevy Malibu facing 500 East.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Chevy.",
+              "avg_logprob": -0.6879324913024902,
+              "no_speech_prob": 0.25306224822998047,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793990309.m4a": {
+      "index": 503,
+      "epoch": 1793990309,
+      "sha256": "ab25e1619b3d03cf9fa35fc4991bcd9ad4797fc6bfadcb34be42b40c56790d9c",
+      "passes": {
+        "original": {
+          "text": "5J30.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J30.",
+              "avg_logprob": -0.6789119073322841,
+              "no_speech_prob": 0.019978117197752,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5, J30.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5, J30.",
+              "avg_logprob": -0.7007315754890442,
+              "no_speech_prob": 0.02496245875954628,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "5J30.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J30.",
+              "avg_logprob": -0.6789119073322841,
+              "no_speech_prob": 0.019978117197752,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793990316.m4a": {
+      "index": 504,
+      "epoch": 1793990316,
+      "sha256": "3770c8e385ddb3200b5d050b0c0e6bdced787005c72e843aedcc28ca06f1da8d",
+      "passes": {
+        "original": {
+          "text": "The caller is advising she feels like she is going to pass out. Her car doors are unlocked and the hazards are on.",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " The caller is advising she feels like she is going to pass out.",
+              "avg_logprob": -0.26768163243929544,
+              "no_speech_prob": 0.00489809550344944,
+              "compression_ratio": 1.2127659574468086
+            },
+            {
+              "start": 3.0,
+              "end": 5.24,
+              "text": " Her car doors are unlocked and the hazards are on.",
+              "avg_logprob": -0.26768163243929544,
+              "no_speech_prob": 0.00489809550344944,
+              "compression_ratio": 1.2127659574468086
+            }
+          ]
+        },
+        "filtered": {
+          "text": "The caller is advising she feels like she is going to pass out. Her car doors are unlocked and the houses are on.",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.1,
+              "text": " The caller is advising she feels like she is going to pass out.",
+              "avg_logprob": -0.2934045910835266,
+              "no_speech_prob": 0.0043091680854558945,
+              "compression_ratio": 1.2282608695652173
+            },
+            {
+              "start": 3.1,
+              "end": 5.28,
+              "text": " Her car doors are unlocked and the houses are on.",
+              "avg_logprob": -0.2934045910835266,
+              "no_speech_prob": 0.0043091680854558945,
+              "compression_ratio": 1.2282608695652173
+            }
+          ]
+        },
+        "context": {
+          "text": "The caller is advising she feels like she is going to pass out. Her car doors are unlocked and the hazards are on.",
+          "prompt": "5J30.",
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.04,
+              "text": " The caller is advising she feels like she is going to pass out.",
+              "avg_logprob": -0.28886978030204774,
+              "no_speech_prob": 0.055434998124837875,
+              "compression_ratio": 1.2127659574468086
+            },
+            {
+              "start": 3.04,
+              "end": 5.24,
+              "text": " Her car doors are unlocked and the hazards are on.",
+              "avg_logprob": -0.28886978030204774,
+              "no_speech_prob": 0.055434998124837875,
+              "compression_ratio": 1.2127659574468086
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793990325.m4a": {
+      "index": 505,
+      "epoch": 1793990325,
+      "sha256": "0d8e829378eb3ce32290593255644dee4fe7b56db82766ef07daa1b48afe614d",
+      "passes": {
+        "original": {
+          "text": "devil",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " devil",
+              "avg_logprob": -0.4898338168859482,
+              "no_speech_prob": 0.04605967178940773,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "devil",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " devil",
+              "avg_logprob": -0.49566851556301117,
+              "no_speech_prob": 0.09588418900966644,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Devil.",
+          "prompt": "5J30. The caller is advising she feels like she is going to pass out. Her car doors are unlocked and the hazards are on.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Devil.",
+              "avg_logprob": -0.6063809394836426,
+              "no_speech_prob": 0.10551226139068604,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793990443.m4a": {
+      "index": 506,
+      "epoch": 1793990443,
+      "sha256": "e63abe6875436440908b11c6269a99d6d9cbe5faa037e46a61642ae880d4d18e",
+      "passes": {
+        "original": {
+          "text": "5J11, you can show me you arrived in the medical.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J11, you can show me you arrived in the medical.",
+              "avg_logprob": -0.46277859631706686,
+              "no_speech_prob": 0.02809153124690056,
+              "compression_ratio": 0.9423076923076923
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G11, you can film me arrived in the medical.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.6,
+              "text": " 5G11, you can film me arrived in the medical.",
+              "avg_logprob": -0.524674616754055,
+              "no_speech_prob": 0.019527779892086983,
+              "compression_ratio": 0.8653846153846154
+            }
+          ]
+        },
+        "context": {
+          "text": "5J11, you can show me you arrived in the medical.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J11, you can show me you arrived in the medical.",
+              "avg_logprob": -0.46277859631706686,
+              "no_speech_prob": 0.02809153124690056,
+              "compression_ratio": 0.9423076923076923
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793990447.m4a": {
+      "index": 507,
+      "epoch": 1793990447,
+      "sha256": "2dc268f740eae4affb0a7876366ffa3346d75844ce180519103a6ad808a62711",
+      "passes": {
+        "original": {
+          "text": "And bye.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " And bye.",
+              "avg_logprob": -0.6960334877173106,
+              "no_speech_prob": 0.017422573640942574,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Stand by.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Stand by.",
+              "avg_logprob": -0.6863886614640554,
+              "no_speech_prob": 0.02514518052339554,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Stand by.",
+          "prompt": "5J11, you can show me you arrived in the medical.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Stand by.",
+              "avg_logprob": -0.7269146541754404,
+              "no_speech_prob": 0.04561764746904373,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793990475.m4a": {
+      "index": 508,
+      "epoch": 1793990475,
+      "sha256": "e8ef9906a2e9d9132ba955c9a9d0b44b8156a3ad75ebdf496c683cb144eff674",
+      "passes": {
+        "original": {
+          "text": "I'm J11 if you'll let them know we're on the west side of the parking lot next to the DI sign",
+          "prompt": null,
+          "duration_seconds": 6.784,
+          "token_limit": 79,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.78,
+              "text": " I'm J11 if you'll let them know we're on the west side of the parking lot next to the DI sign",
+              "avg_logprob": -0.22463982818382128,
+              "no_speech_prob": 0.025978395715355873,
+              "compression_ratio": 1.1071428571428572
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I have J11 if you'll let them know we're on the west side of the parking lot next to the DI sign.",
+          "prompt": null,
+          "duration_seconds": 6.784,
+          "token_limit": 79,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.84,
+              "text": " I have J11 if you'll let them know we're on the west side of the parking lot next to the DI sign.",
+              "avg_logprob": -0.30801735664236135,
+              "no_speech_prob": 0.019736269488930702,
+              "compression_ratio": 1.1022727272727273
+            }
+          ]
+        },
+        "context": {
+          "text": "5J11, if you'll let them know, we're on the west side of the parking lot next to the DI sign.",
+          "prompt": "5J11, you can show me you arrived in the medical. And bye.",
+          "duration_seconds": 6.784,
+          "token_limit": 79,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " 5J11, if you'll let them know, we're on the west side of the parking lot next to the DI sign.",
+              "avg_logprob": -0.20496683567762375,
+              "no_speech_prob": 0.006323143374174833,
+              "compression_ratio": 1.0568181818181819
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793990483.m4a": {
+      "index": 509,
+      "epoch": 1793990483,
+      "sha256": "88161adfeb3d5eae63b1a95d4f9f3680da576e9e1e6204e23ef5b13ed49a13fc",
+      "passes": {
+        "original": {
+          "text": "Thank you. Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.34633521343532364,
+              "no_speech_prob": 0.019292760640382767,
+              "compression_ratio": 1.9090909090909092
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.34633521343532364,
+              "no_speech_prob": 0.019292760640382767,
+              "compression_ratio": 1.9090909090909092
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.34633521343532364,
+              "no_speech_prob": 0.019292760640382767,
+              "compression_ratio": 1.9090909090909092
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.7766473293304443,
+              "no_speech_prob": 0.010628506541252136,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "and coffee.",
+          "prompt": "5J11, you can show me you arrived in the medical. And bye. I'm J11 if you'll let them know we're on the west side of the parking lot next to the DI sign",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " and coffee.",
+              "avg_logprob": -0.6106238067150116,
+              "no_speech_prob": 0.0793328657746315,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793990661.m4a": {
+      "index": 510,
+      "epoch": 1793990661,
+      "sha256": "1c6f31356bf8b92eb2a2e6e2850f6c3f73fdbe5015338630329bc0d70948553e",
+      "passes": {
+        "original": {
+          "text": "15 G 22 clear",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.88,
+              "text": " 15 G 22 clear",
+              "avg_logprob": -0.6830309629440308,
+              "no_speech_prob": 0.07368336617946625,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "15G, 22 clear.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 15G, 22 clear.",
+              "avg_logprob": -0.7101580301920573,
+              "no_speech_prob": 0.07337231934070587,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "15 G 22 clear",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.88,
+              "text": " 15 G 22 clear",
+              "avg_logprob": -0.6830309629440308,
+              "no_speech_prob": 0.07368336617946625,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    }
+  }
+}

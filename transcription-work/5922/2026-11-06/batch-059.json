@@ -1,0 +1,641 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-06",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793993413.m4a": {
+      "index": 581,
+      "epoch": 1793993413,
+      "sha256": "c74b98d2d7687d706ca7ce69779d9df4322faa3701ead6b16fcadf185f0d5f6a",
+      "passes": {
+        "original": {
+          "text": "Can you show me out on a follow-up at 581 South, 2220 West, apartment 202, negative checks?",
+          "prompt": null,
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Can you show me out on a follow-up at 581 South, 2220 West, apartment 202, negative checks?",
+              "avg_logprob": -0.40848567123923984,
+              "no_speech_prob": 0.006105906795710325,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Can you show me out on a follow-up at 581 South, 2220 West, apartment 202, negative 6?",
+          "prompt": null,
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Can you show me out on a follow-up at 581 South, 2220 West, apartment 202, negative 6?",
+              "avg_logprob": -0.4389812669583729,
+              "no_speech_prob": 0.0027560412418097258,
+              "compression_ratio": 0.9772727272727273
+            }
+          ]
+        },
+        "context": {
+          "text": "Can you show me out on a follow-up at 581 South, 2220 West, Department 202, negative checks?",
+          "prompt": "7G24 Go ahead.",
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Can you show me out on a follow-up at 581 South, 2220 West, Department 202, negative checks?",
+              "avg_logprob": -0.3924348918454988,
+              "no_speech_prob": 0.001771999173797667,
+              "compression_ratio": 1.0
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793993422.m4a": {
+      "index": 582,
+      "epoch": 1793993422,
+      "sha256": "4ff463c2b7c4f18f35cf7c72db812a6bc7c5ffafacb75b7b866ab902b960415a",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7799830436706543,
+              "no_speech_prob": 0.01508390624076128,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.6258758157491684,
+              "no_speech_prob": 0.016071582213044167,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "7G24 Go ahead. Can you show me out on a follow-up at 581 South, 2220 West, apartment 202, negative checks?",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.4999638557434082,
+              "no_speech_prob": 0.006930684205144644,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793993721.m4a": {
+      "index": 583,
+      "epoch": 1793993721,
+      "sha256": "159a384e6b8122a3c448c09873d5eaa2194be9a16edc32f6fe5ea136dff75d05",
+      "passes": {
+        "original": {
+          "text": "7J24 clear.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J24 clear.",
+              "avg_logprob": -0.5934919193387032,
+              "no_speech_prob": 0.03364339843392372,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J24 clear",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J24 clear",
+              "avg_logprob": -0.5173733404704502,
+              "no_speech_prob": 0.024711748585104942,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "7J24 clear.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J24 clear.",
+              "avg_logprob": -0.5934919193387032,
+              "no_speech_prob": 0.03364339843392372,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793993725.m4a": {
+      "index": 584,
+      "epoch": 1793993725,
+      "sha256": "f38025209f55008ec2e468ad0dc08bbbd87df6ca145afc8c3767f3ced50eab73",
+      "passes": {
+        "original": {
+          "text": "And for",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " And for",
+              "avg_logprob": -0.7170064449310303,
+              "no_speech_prob": 0.015278957784175873,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "And for",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " And for",
+              "avg_logprob": -0.6786658763885498,
+              "no_speech_prob": 0.022473277524113655,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Hand for hand.",
+          "prompt": "7J24 clear.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Hand for hand.",
+              "avg_logprob": -0.9086096967969622,
+              "no_speech_prob": 0.08313614875078201,
+              "compression_ratio": 0.7
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793995243.m4a": {
+      "index": 585,
+      "epoch": 1793995243,
+      "sha256": "ae67ca5ded1fb109e45a4acac531a531eaf17932109c4a83f8e6207f140d45df",
+      "passes": {
+        "original": {
+          "text": "I have J-150, can you hold that? I'll be in a vehicle for me.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I have J-150, can you hold that? I'll be in a vehicle for me.",
+              "avg_logprob": -0.4702639787093453,
+              "no_speech_prob": 0.05491635948419571,
+              "compression_ratio": 0.8840579710144928
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J-1-7-E, can you hold that? I'm in a vehicle for me.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J-1-7-E, can you hold that? I'm in a vehicle for me.",
+              "avg_logprob": -0.5607357215881348,
+              "no_speech_prob": 0.05033765360713005,
+              "compression_ratio": 0.8688524590163934
+            }
+          ]
+        },
+        "context": {
+          "text": "I have J-150, can you hold that? I'll be in a vehicle for me.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I have J-150, can you hold that? I'll be in a vehicle for me.",
+              "avg_logprob": -0.4702639787093453,
+              "no_speech_prob": 0.05491635948419571,
+              "compression_ratio": 0.8840579710144928
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793995247.m4a": {
+      "index": 586,
+      "epoch": 1793995247,
+      "sha256": "16376ffa1efae4a2452375a9299be521812e8a19f97b14ff86e0e6f772b73506",
+      "passes": {
+        "original": {
+          "text": "That's for sure.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " That's for sure.",
+              "avg_logprob": -1.0731619745492935,
+              "no_speech_prob": 0.35317564010620117,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "That's perfect.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " That's perfect.",
+              "avg_logprob": -0.8326059068952288,
+              "no_speech_prob": 0.1836509257555008,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "context": {
+          "text": "That's perfect.",
+          "prompt": "I have J-150, can you hold that? I'll be in a vehicle for me.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " That's perfect.",
+              "avg_logprob": -0.9083665098462786,
+              "no_speech_prob": 0.22546911239624023,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793995445.m4a": {
+      "index": 587,
+      "epoch": 1793995445,
+      "sha256": "4ce01f7800c65a73b4154abcf9928bea823f131c90442892081ee997caf832fe",
+      "passes": {
+        "original": {
+          "text": "5J41 traffic",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J41 traffic",
+              "avg_logprob": -0.46389734745025635,
+              "no_speech_prob": 0.0481228344142437,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J41 traffic",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J41 traffic",
+              "avg_logprob": -0.4307170425142561,
+              "no_speech_prob": 0.0369386151432991,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "5J41 traffic",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J41 traffic",
+              "avg_logprob": -0.46389734745025635,
+              "no_speech_prob": 0.0481228344142437,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793995448.m4a": {
+      "index": 588,
+      "epoch": 1793995448,
+      "sha256": "61de5bb7e9fb9b010526da5aba080ca5a6d06e972b804c7d3d4bc3bfb0402cfe",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.4682008922100067,
+              "no_speech_prob": 0.010199489071965218,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go ahead",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead",
+              "avg_logprob": -0.29285855293273927,
+              "no_speech_prob": 0.006857248023152351,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Go ahead",
+          "prompt": "5J41 traffic",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go ahead",
+              "avg_logprob": -0.41603875160217285,
+              "no_speech_prob": 0.019281240180134773,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793995451.m4a": {
+      "index": 589,
+      "epoch": 1793995451,
+      "sha256": "4bc4e85dc47e2538fb56c795622894b7eca187fc51c18292e2cf3edce222ddab",
+      "passes": {
+        "original": {
+          "text": "100 East 100 North on Fox 8 9 9 uniform Charlie",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.24,
+              "text": " 100 East 100 North on Fox 8 9 9 uniform Charlie",
+              "avg_logprob": -0.4816136956214905,
+              "no_speech_prob": 0.09714075177907944,
+              "compression_ratio": 0.9038461538461539
+            }
+          ]
+        },
+        "filtered": {
+          "text": "100 East 100 North on Fox 8 9 9 uniform",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.94,
+              "text": " 100 East 100 North on Fox 8 9 9 uniform",
+              "avg_logprob": -0.5075192818274865,
+              "no_speech_prob": 0.046496156603097916,
+              "compression_ratio": 0.8863636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "100 East, 100 North on Fox 899 Uniform Charlie",
+          "prompt": "5J41 traffic Go ahead.",
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.24,
+              "text": " 100 East, 100 North on Fox 899 Uniform Charlie",
+              "avg_logprob": -0.540982723236084,
+              "no_speech_prob": 0.026332177221775055,
+              "compression_ratio": 0.8846153846153846
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793995460.m4a": {
+      "index": 590,
+      "epoch": 1793995460,
+      "sha256": "c1f9101b943b54ecb613d54b851a0a3549d861669f1b20848262fc9d65d797ec",
+      "passes": {
+        "original": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.799325555562973,
+              "no_speech_prob": 0.022948792204260826,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Kathy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Kathy.",
+              "avg_logprob": -0.7648688316345215,
+              "no_speech_prob": 0.016703590750694275,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "5J41 traffic Go ahead. 100 East 100 North on Fox 8 9 9 uniform Charlie",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.7411836147308349,
+              "no_speech_prob": 0.014086782932281494,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
