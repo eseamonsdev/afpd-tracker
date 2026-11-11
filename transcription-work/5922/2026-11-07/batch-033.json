@@ -1,0 +1,641 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-07",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794076997.m4a": {
+      "index": 321,
+      "epoch": 1794076997,
+      "sha256": "9c133cd867b524587b99ede70a6882ae2bd47ac1134867f174f4e5f7f6e2acec",
+      "passes": {
+        "original": {
+          "text": "70 to 24, this is going to be the Sushi Restaurant, 2085 West, 450 South, on a White Ford F-150.",
+          "prompt": null,
+          "duration_seconds": 8.576,
+          "token_limit": 93,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " 70 to 24, this is going to be the Sushi Restaurant, 2085 West, 450 South, on a White Ford F-150.",
+              "avg_logprob": -0.39527799747884274,
+              "no_speech_prob": 0.036152008920907974,
+              "compression_ratio": 1.0666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "70 to 24, this is going to be the sushi restaurant, 2085 West, 450 South on a white Ford, F-150.",
+          "prompt": null,
+          "duration_seconds": 8.576,
+          "token_limit": 93,
+          "token_count": 30,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " 70 to 24, this is going to be the sushi restaurant, 2085 West, 450 South on a white Ford, F-150.",
+              "avg_logprob": -0.4373930154308196,
+              "no_speech_prob": 0.04145144298672676,
+              "compression_ratio": 1.054945054945055
+            }
+          ]
+        },
+        "context": {
+          "text": "7J24, this is going to be the sushi restaurant, 2085 West, 450 South on a white Ford F-150.",
+          "prompt": "7J27, copy keys. 24, go ahead.",
+          "duration_seconds": 8.576,
+          "token_limit": 93,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " 7J24, this is going to be the sushi restaurant, 2085 West, 450 South on a white Ford F-150.",
+              "avg_logprob": -0.27725696563720703,
+              "no_speech_prob": 0.001879013259895146,
+              "compression_ratio": 1.0224719101123596
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794077007.m4a": {
+      "index": 322,
+      "epoch": 1794077007,
+      "sha256": "e396686b8367b49daa11b9e316f381e47a7910bf6ca07ee0bcdbdedf256c902c",
+      "passes": {
+        "original": {
+          "text": "Copying room.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copying room.",
+              "avg_logprob": -0.6996792554855347,
+              "no_speech_prob": 0.05378524959087372,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copying route.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copying route.",
+              "avg_logprob": -0.9093678678785052,
+              "no_speech_prob": 0.04621945321559906,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "Copying room.",
+          "prompt": "7J27, copy keys. 24, go ahead. 70 to 24, this is going to be the Sushi Restaurant, 2085 West, 450 South, on a White Ford F-150.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copying room.",
+              "avg_logprob": -0.7690497125898089,
+              "no_speech_prob": 0.03760260343551636,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794077249.m4a": {
+      "index": 323,
+      "epoch": 1794077249,
+      "sha256": "7b213e50512d636d20022f86702c2ea910fa82171a1900f060efa0adb01e88e0",
+      "passes": {
+        "original": {
+          "text": "7830 on duty.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7830 on duty.",
+              "avg_logprob": -0.3587090037763119,
+              "no_speech_prob": 0.22030046582221985,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We'll send you a 30-hour meeting.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " We'll send you a 30-hour meeting.",
+              "avg_logprob": -0.9675081693209134,
+              "no_speech_prob": 0.05683768168091774,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        },
+        "context": {
+          "text": "7830 on duty.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7830 on duty.",
+              "avg_logprob": -0.3587090037763119,
+              "no_speech_prob": 0.22030046582221985,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794077255.m4a": {
+      "index": 324,
+      "epoch": 1794077255,
+      "sha256": "ff6fd3b9c74b73c0434c703d2d5b873054c6bfa87f8409a2ddd4917c49e945cf",
+      "passes": {
+        "original": {
+          "text": "What was that, 7J73?",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " What was that, 7J73?",
+              "avg_logprob": -0.5933108113028787,
+              "no_speech_prob": 0.09474452584981918,
+              "compression_ratio": 0.7692307692307693
+            }
+          ]
+        },
+        "filtered": {
+          "text": "What about 7J73?",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " What about 7J73?",
+              "avg_logprob": -0.503596199883355,
+              "no_speech_prob": 0.05742369219660759,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "What was that, 7J73?",
+          "prompt": "7830 on duty.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " What was that, 7J73?",
+              "avg_logprob": -0.5136598782105879,
+              "no_speech_prob": 0.006481919437646866,
+              "compression_ratio": 0.7692307692307693
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794077261.m4a": {
+      "index": 325,
+      "epoch": 1794077261,
+      "sha256": "ff3a7d8cce27890055f5ec9fad1e337726ee1381e91b7cd4c91e5a717b27e17d",
+      "passes": {
+        "original": {
+          "text": "7830.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7830.",
+              "avg_logprob": -0.5679817994435629,
+              "no_speech_prob": 0.0973026230931282,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7830.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7830.",
+              "avg_logprob": -0.569311777750651,
+              "no_speech_prob": 0.05793783441185951,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "7830.",
+          "prompt": "7830 on duty. What was that, 7J73?",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7830.",
+              "avg_logprob": -0.5375424524148306,
+              "no_speech_prob": 0.014993998222053051,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794077264.m4a": {
+      "index": 326,
+      "epoch": 1794077264,
+      "sha256": "f303281814b7b7e5848b875eb22348ad03795689f599e6bdaade093b8a5701ce",
+      "passes": {
+        "original": {
+          "text": "copy 7j30",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy 7j30",
+              "avg_logprob": -0.46353098324366976,
+              "no_speech_prob": 0.011466285213828087,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy 7j30",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy 7j30",
+              "avg_logprob": -0.4896566697529384,
+              "no_speech_prob": 0.01877446658909321,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy, 7J30.",
+          "prompt": "7830 on duty. What was that, 7J73? 7830.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy, 7J30.",
+              "avg_logprob": -0.4242288801405165,
+              "no_speech_prob": 0.0031811732333153486,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794077414.m4a": {
+      "index": 327,
+      "epoch": 1794077414,
+      "sha256": "f5bf18291f21d77bb9c549ad966a59b12ece1676d729590efc0ef62212d2967c",
+      "passes": {
+        "original": {
+          "text": "7J24 riding.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J24 riding.",
+              "avg_logprob": -0.848727285861969,
+              "no_speech_prob": 0.03228190913796425,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7-8-24, I think.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-8-24, I think.",
+              "avg_logprob": -0.9864173432191213,
+              "no_speech_prob": 0.033786144107580185,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "7J24 riding.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J24 riding.",
+              "avg_logprob": -0.848727285861969,
+              "no_speech_prob": 0.03228190913796425,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794077418.m4a": {
+      "index": 328,
+      "epoch": 1794077418,
+      "sha256": "e2f7ab665e609d5ae80bf0ba7679b746997f6aa2efee7956982a2bf469a94f64",
+      "passes": {
+        "original": {
+          "text": "7G, 24.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7G, 24.",
+              "avg_logprob": -0.5848531723022461,
+              "no_speech_prob": 0.03632911667227745,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7g 24",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7g 24",
+              "avg_logprob": -0.4397788643836975,
+              "no_speech_prob": 0.03472065553069115,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "7J24.",
+          "prompt": "7J24 riding.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 7J24.",
+              "avg_logprob": -0.3549727627209255,
+              "no_speech_prob": 0.012620562687516212,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794077523.m4a": {
+      "index": 329,
+      "epoch": 1794077523,
+      "sha256": "a00d08b35f493850642bf848ef33366282de1fedf96199e2b807c71d82e3df46",
+      "passes": {
+        "original": {
+          "text": "7J31, copy disturbance.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7J31, copy disturbance.",
+              "avg_logprob": -0.5530482172966004,
+              "no_speech_prob": 0.09835808724164963,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J31, copy disturbance.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7J31, copy disturbance.",
+              "avg_logprob": -0.6873366594314575,
+              "no_speech_prob": 0.12235730141401291,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "context": {
+          "text": "7J31, copy disturbance.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7J31, copy disturbance.",
+              "avg_logprob": -0.5530482172966004,
+              "no_speech_prob": 0.09835808724164963,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794077527.m4a": {
+      "index": 330,
+      "epoch": 1794077527,
+      "sha256": "f4781c4edf131a0a922a518469e7c6d2459c86a446bb9a3fc1acc8f716d0fcac",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.47193432847658795,
+              "no_speech_prob": 0.021885491907596588,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " Go ahead.",
+              "avg_logprob": -0.585200289885203,
+              "no_speech_prob": 0.013021018356084824,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Go ahead.",
+          "prompt": "7J31, copy disturbance.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.40423934658368427,
+              "no_speech_prob": 0.031095784157514572,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    }
+  }
+}
