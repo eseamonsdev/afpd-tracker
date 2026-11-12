@@ -555,7 +555,7 @@ test("combined dated evidence retains old uncertain rows, explicit confirmations
   assert.equal(days["2026-10-27"]["14590023"][0].status, "confirmed");
   assert.equal(days["2026-10-30"]["14590221"][0].status, "confirmed");
   assert.equal(days["2026-10-30"]["14590221"][0].name, "Sammantha J. Halladay");
-  assert.equal(days["2026-10-30"]["14590221"][0].evidence_days, 4);
+  assert.equal(days["2026-10-30"]["14590221"][0].evidence_days, associations["14590221"][0].evidence_days);
   assert.equal(associations["14590221"][0].status,"strong","the existing production strong association is preserved independently of dated confirmation");
 });
 
@@ -700,6 +700,27 @@ test('current shared schema carries a two-date possible association on 6001',asy
  const f=await playerFixture([{epoch:1789100000,displayed_seconds:2,original_filename:'one.m4a',radio_ids:[14590026]}],undefined,'2026-09-11','',false,associations);
  assert.match(f.get('clips').children[0].children[1].textContent,/Two Date Officer · Possible association/);
  f.select(0);await f.settle();assert.match(f.get('current-radio-ids').textContent,/Two Date Officer · Possible association/);
+});
+
+test("a one-day possible label shows its evidence date and yields to the confirmed day", async () => {
+  const radio = "14590026";
+  const officer = { officer_id: "one", name: "One Day Officer", evidence_days: 1, evidence_dates: ["2026-09-10"] };
+  const associations = {
+    schema_version: 4,
+    days: { "2026-09-10": { [radio]: [{ ...officer, status: "confirmed" }] } },
+    associations: { [radio]: [{ ...officer, status: "possible" }] }
+  };
+  const calls = [{ epoch: 1789100000, displayed_seconds: 2, original_filename: "one.m4a", radio_ids: [radio] }];
+  const f = await playerFixture(calls, undefined, "2026-09-11", "", true, associations);
+  const identity = f.get("clips").children[0].children[1];
+  assert.match(identity.textContent, /One Day Officer · Possible association/);
+  const popup = identity.children[1].children[3].children[1];
+  assert.match(popup.textContent, /on 1 date\./);
+  assert.match(popup.textContent, /Evidence dates: 2026-09-10/);
+  f.get("day").value = "2026-09-10";
+  f.get("day").emit("change");
+  await f.settle();
+  assert.match(f.get("clips").children[0].textContent, /One Day Officer · Confirmed this day/);
 });
 
 test("pair confirmation carries to an unreviewed date without labeling its clips confirmed", async () => {

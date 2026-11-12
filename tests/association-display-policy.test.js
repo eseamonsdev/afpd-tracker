@@ -78,6 +78,21 @@ test('one-day fallback requires a confirmation and no reviewed competing identit
   assert.deepEqual(result.labels.days['2026-10-04']['123'].map(r=>r.officer_id),['two']);
 });
 
+test('three confirmed days supply the general fallback while a competing single day keeps its own label', () => {
+  const source = input();
+  source.associations = ['2026-10-01', '2026-10-02', '2026-10-03', '2026-10-04'].map((date, index) =>
+    row(index === 0 ? 'one' : 'two', date, { status: 'confirmed', confirmed_by: 'Eric' })
+  );
+  const { labels } = compileOfficerAssociations(source);
+  assert.deepEqual(labels.associations['123'].map(entry => [entry.officer_id, entry.status, entry.evidence_days]),
+    [['two', 'possible', 3]]);
+  assert.equal(labels.profiles.one[0].status_label, 'Confirmed dates only');
+  for (const record of source.associations) {
+    assert.deepEqual(labels.days[record.date]['123'].map(entry => [entry.officer_id, entry.status]),
+      [[record.officer_id, 'confirmed']]);
+  }
+});
+
 test('all prior Eric confirmations and the Jackie correction remain, without the David/Somerville alternatives',()=>{
   const result=buildOfficerAssociations(),raw=JSON.parse(fs.readFileSync('data/officer-association-evidence.json'));
   for(const record of raw.associations.filter(r=>r.status==='confirmed' && r.confirmed_by==='Eric')) {
