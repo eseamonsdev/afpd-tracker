@@ -1,0 +1,649 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-10",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794375011.m4a": {
+      "index": 1671,
+      "epoch": 1794375011,
+      "sha256": "481ad11dcd91371c0268d5e5855ef0c42f9f11665fe4bb16010897f42c3bae42",
+      "passes": {
+        "original": {
+          "text": "Go.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.84,
+              "text": " Go.",
+              "avg_logprob": -0.9452732086181641,
+              "no_speech_prob": 0.5746588110923767,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.68,
+              "text": " Thank you.",
+              "avg_logprob": -0.9714741508165995,
+              "no_speech_prob": 0.38579225540161133,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Go.",
+          "prompt": "Eighteen days, 16th from central copy of medical assist.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Go.",
+              "avg_logprob": -0.8109292030334473,
+              "no_speech_prob": 0.5089331269264221,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794375013.m4a": {
+      "index": 1672,
+      "epoch": 1794375013,
+      "sha256": "40b2594a248e3a6898a6e6e95a9479112da071d85e377a614d1d663e68042ff9",
+      "passes": {
+        "original": {
+          "text": "496 South High Bench Road, RP's calling and sending wife needs help. Husbands unable to walk, we're still gathering.",
+          "prompt": null,
+          "duration_seconds": 8.832,
+          "token_limit": 95,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.76,
+              "text": " 496 South High Bench Road, RP's calling and sending wife needs help.",
+              "avg_logprob": -0.4924391321837902,
+              "no_speech_prob": 0.014008716680109501,
+              "compression_ratio": 1.0740740740740742
+            },
+            {
+              "start": 5.76,
+              "end": 8.120000000000001,
+              "text": " Husbands unable to walk, we're still gathering.",
+              "avg_logprob": -0.4924391321837902,
+              "no_speech_prob": 0.014008716680109501,
+              "compression_ratio": 1.0740740740740742
+            }
+          ]
+        },
+        "filtered": {
+          "text": "496 South High Bench Road, R.P.'s calling and feeding wife needs help, husbands unable to walk towards the gathering.",
+          "prompt": null,
+          "duration_seconds": 8.832,
+          "token_limit": 95,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " 496 South High Bench Road, R.P.'s calling and feeding wife needs help, husbands unable to walk towards the gathering.",
+              "avg_logprob": -0.5376656730969747,
+              "no_speech_prob": 0.032677728682756424,
+              "compression_ratio": 1.0833333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "496 South High Bench Road. RP's calling and sending wife needs help. Husbands unable to walk. We're still gathering.",
+          "prompt": "Eighteen days, 16th from central copy of medical assist. Go.",
+          "duration_seconds": 8.832,
+          "token_limit": 95,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " 496 South High Bench Road. RP's calling and sending wife needs help. Husbands unable to walk. We're still gathering.",
+              "avg_logprob": -0.4002523501714071,
+              "no_speech_prob": 0.004183252342045307,
+              "compression_ratio": 1.0740740740740742
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794375025.m4a": {
+      "index": 1673,
+      "epoch": 1794375025,
+      "sha256": "58934ba3f32f4f3f69bf15aa460ecf14933d0a93a8f71c4cec462253f04895a0",
+      "passes": {
+        "original": {
+          "text": "Helping.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Helping.",
+              "avg_logprob": -0.5623238285382589,
+              "no_speech_prob": 0.0875028669834137,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Helping.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Helping.",
+              "avg_logprob": -0.5357225239276886,
+              "no_speech_prob": 0.07322429865598679,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Helping.",
+          "prompt": "Eighteen days, 16th from central copy of medical assist. Go. 496 South High Bench Road, RP's calling and sending wife needs help. Husbands unable to walk, we're still gathering.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Helping.",
+              "avg_logprob": -0.38480666776498157,
+              "no_speech_prob": 0.05315707251429558,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794375069.m4a": {
+      "index": 1674,
+      "epoch": 1794375069,
+      "sha256": "fb4a1794314edbdc6e05dc06e24b7e74248fccb70a51e30bbaa595febf70e5e8",
+      "passes": {
+        "original": {
+          "text": "A to J-16 from Central.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " A to J-16 from Central.",
+              "avg_logprob": -0.7683717662637884,
+              "no_speech_prob": 0.022263577207922935,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "8 to 16 from Central.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 8 to 16 from Central.",
+              "avg_logprob": -0.709605852762858,
+              "no_speech_prob": 0.020054584369063377,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "context": {
+          "text": "18J16 from Central.",
+          "prompt": "Go. 496 South High Bench Road, RP's calling and sending wife needs help. Husbands unable to walk, we're still gathering. Helping.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.2,
+              "text": " 18J16 from Central.",
+              "avg_logprob": -0.8655297491285536,
+              "no_speech_prob": 0.016665561124682426,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794375073.m4a": {
+      "index": 1675,
+      "epoch": 1794375073,
+      "sha256": "3688f01c15ed4254869f1904c8bb5697488fab8adadeea70ce39b7946e73d873",
+      "passes": {
+        "original": {
+          "text": "Thanks for watching guys",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thanks for watching guys",
+              "avg_logprob": -1.0081234318869454,
+              "no_speech_prob": 0.0196295864880085,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thanks for watching",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thanks for watching",
+              "avg_logprob": -0.9024804830551147,
+              "no_speech_prob": 0.049034006893634796,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "16 guys.",
+          "prompt": "496 South High Bench Road, RP's calling and sending wife needs help. Husbands unable to walk, we're still gathering. Helping. A to J-16 from Central.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 16 guys.",
+              "avg_logprob": -0.8526573578516642,
+              "no_speech_prob": 0.012100075371563435,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794375074.m4a": {
+      "index": 1676,
+      "epoch": 1794375074,
+      "sha256": "f7fe0700cebc8f67ecd2cbeb85738bd61c87988d7091b98955cb0075d75b6fbe",
+      "passes": {
+        "original": {
+          "text": "It's going to be an 82-year-old male conscious and breathing.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " It's going to be an 82-year-old male conscious and breathing.",
+              "avg_logprob": -0.223235033060375,
+              "no_speech_prob": 0.008327703922986984,
+              "compression_ratio": 0.9104477611940298
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It's going to be an 82-year-old male conscious and breathing.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0200000000000005,
+              "text": " It's going to be an 82-year-old male conscious and breathing.",
+              "avg_logprob": -0.19314023852348328,
+              "no_speech_prob": 0.003676367225125432,
+              "compression_ratio": 0.9104477611940298
+            }
+          ]
+        },
+        "context": {
+          "text": "It's going to be an 82 year old male conscious and breathing.",
+          "prompt": "Helping. A to J-16 from Central. Thanks for watching guys",
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " It's going to be an 82 year old male conscious and breathing.",
+              "avg_logprob": -0.2525755938361673,
+              "no_speech_prob": 0.08611903339624405,
+              "compression_ratio": 0.9104477611940298
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794375082.m4a": {
+      "index": 1677,
+      "epoch": 1794375082,
+      "sha256": "733313d5467634f66e19785f8e8b119717c104eeaa054a9bb1b94e15483f4434",
+      "passes": {
+        "original": {
+          "text": "having general weakness.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " having general weakness.",
+              "avg_logprob": -0.38870948553085327,
+              "no_speech_prob": 0.003570208325982094,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "filtered": {
+          "text": "having general weakness.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " having general weakness.",
+              "avg_logprob": -0.4315321275166103,
+              "no_speech_prob": 0.004593887832015753,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "context": {
+          "text": "Having general weakness.",
+          "prompt": "A to J-16 from Central. Thanks for watching guys It's going to be an 82-year-old male conscious and breathing.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Having general weakness.",
+              "avg_logprob": -0.42782797132219585,
+              "no_speech_prob": 0.016835475340485573,
+              "compression_ratio": 0.75
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794375086.m4a": {
+      "index": 1678,
+      "epoch": 1794375086,
+      "sha256": "f6139c91df912dad227504a726ab6a199ca895d6dcc0e1124c1fbf6534db42a2",
+      "passes": {
+        "original": {
+          "text": "Copy of medical device.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy of medical device.",
+              "avg_logprob": -0.7033029794692993,
+              "no_speech_prob": 0.09154187887907028,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy of medicals, right?",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy of medicals, right?",
+              "avg_logprob": -0.6470254719257355,
+              "no_speech_prob": 0.035006843507289886,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "context": {
+          "text": "copy of medical device.",
+          "prompt": "Thanks for watching guys It's going to be an 82-year-old male conscious and breathing. having general weakness.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy of medical device.",
+              "avg_logprob": -0.6544587165117264,
+              "no_speech_prob": 0.028408033773303032,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794375088.m4a": {
+      "index": 1679,
+      "epoch": 1794375088,
+      "sha256": "6dfdbff82a0742304217d0fa4dfc164f5a7d276d616c2fefc8ccdd559a53c4d5",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.6984848022460938,
+              "no_speech_prob": 0.016909301280975342,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.5605706423521042,
+              "no_speech_prob": 0.015295680612325668,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "It's going to be an 82-year-old male conscious and breathing. having general weakness. Copy of medical device.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.4952075004577637,
+              "no_speech_prob": 0.014134061522781849,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794375097.m4a": {
+      "index": 1680,
+      "epoch": 1794375097,
+      "sha256": "e79fd966880892610b72d0285fb011d1779ae1b9be00c66a85de46162e9199e9",
+      "passes": {
+        "original": {
+          "text": "Send it to me. I am in the area of that alarm.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Send it to me. I am in the area of that alarm.",
+              "avg_logprob": -0.3798995298497817,
+              "no_speech_prob": 0.02036275900900364,
+              "compression_ratio": 0.8846153846153846
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Send it to me. I'm in the area with that alarm.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2,
+              "text": " Send it to me. I'm in the area with that alarm.",
+              "avg_logprob": -0.47992369707892923,
+              "no_speech_prob": 0.009537236765027046,
+              "compression_ratio": 0.8867924528301887
+            }
+          ]
+        },
+        "context": {
+          "text": "Send a time. I am in the area of that alarm.",
+          "prompt": "having general weakness. Copy of medical device. Copy.",
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Send a time. I am in the area of that alarm.",
+              "avg_logprob": -0.37908028811216354,
+              "no_speech_prob": 0.004698397591710091,
+              "compression_ratio": 0.88
+            }
+          ]
+        }
+      }
+    }
+  }
+}
