@@ -1,0 +1,705 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-11",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794446179.m4a": {
+      "index": 1151,
+      "epoch": 1794446179,
+      "sha256": "94ac3cb5c92b82bd2399d1f9407fd61bde5b8959e30ca113761e7123d0ea937f",
+      "passes": {
+        "original": {
+          "text": "5, 8, 29, just 10, 14. I have a medical coming in 141 North Grant. It's going to be",
+          "prompt": null,
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.08,
+              "text": " 5, 8, 29, just 10, 14. I have a medical coming in 141 North Grant. It's going to be",
+              "avg_logprob": -0.33542803649244635,
+              "no_speech_prob": 0.01727854646742344,
+              "compression_ratio": 0.9764705882352941
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5, 8, 29, just 10, 14. I have a medical coming in, 141 North Grant. It's going to be...",
+          "prompt": null,
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 30,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 5, 8, 29, just 10, 14. I have a medical coming in, 141 North Grant. It's going to be...",
+              "avg_logprob": -0.4121612445000679,
+              "no_speech_prob": 0.027072416618466377,
+              "compression_ratio": 1.0116279069767442
+            }
+          ]
+        },
+        "context": {
+          "text": "5-8-29 just 10-14. I have a medical coming in 141 North Grant. It's going to be",
+          "prompt": "Are you OIC tonight? Stand for. I do come in I am",
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.08,
+              "text": " 5-8-29 just 10-14. I have a medical coming in 141 North Grant. It's going to be",
+              "avg_logprob": -0.3142422820840563,
+              "no_speech_prob": 0.017264477908611298,
+              "compression_ratio": 0.9518072289156626
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794446186.m4a": {
+      "index": 1152,
+      "epoch": 1794446186,
+      "sha256": "5c5756e0c680beeccafdee846ee5b45657db7d60ac23ec36d0d82966537cd06f",
+      "passes": {
+        "original": {
+          "text": "That male that's sprawled out on the sidewalk part of the RFP's home and on who it is or who he is RFP doesn't feel comfortable checking on him. We do have medical started at that 50 year old male conscious of breeding status is unknown",
+          "prompt": null,
+          "duration_seconds": 12.16,
+          "token_limit": 122,
+          "token_count": 57,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.12,
+              "text": " That male that's sprawled out on the sidewalk part of the RFP's home and on who it is or who he is",
+              "avg_logprob": -0.32636939708528845,
+              "no_speech_prob": 0.03524046018719673,
+              "compression_ratio": 1.4131736526946108
+            },
+            {
+              "start": 5.68,
+              "end": 11.56,
+              "text": " RFP doesn't feel comfortable checking on him. We do have medical started at that 50 year old male conscious of breeding status is unknown",
+              "avg_logprob": -0.32636939708528845,
+              "no_speech_prob": 0.03524046018719673,
+              "compression_ratio": 1.4131736526946108
+            }
+          ]
+        },
+        "filtered": {
+          "text": "That male that's sprawled out on the sidewalk in front of the R.P.'s home and on who it is or who he is is, or if he doesn't feel comfortable checking on him, we do have medical started at that six-year-old male conscious of breathing status is unknown.",
+          "prompt": null,
+          "duration_seconds": 12.16,
+          "token_limit": 122,
+          "token_count": 68,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.12,
+              "text": " That male that's sprawled out on the sidewalk in front of the R.P.'s home and on who it is or who he is",
+              "avg_logprob": -0.28617468860841566,
+              "no_speech_prob": 0.05926087126135826,
+              "compression_ratio": 1.375796178343949
+            },
+            {
+              "start": 5.12,
+              "end": 9.32,
+              "text": " is, or if he doesn't feel comfortable checking on him, we do have medical started at that",
+              "avg_logprob": -0.40514001328694194,
+              "no_speech_prob": 0.04654059186577797,
+              "compression_ratio": 1.2844827586206897
+            },
+            {
+              "start": 9.32,
+              "end": 11.600000000000001,
+              "text": " six-year-old male conscious of breathing status is unknown.",
+              "avg_logprob": -0.40514001328694194,
+              "no_speech_prob": 0.04654059186577797,
+              "compression_ratio": 1.2844827586206897
+            }
+          ]
+        },
+        "context": {
+          "text": "that male that sprawled out on the sidewalk part of the R.P.'s home and on who it is or who he is R.P. doesn't feel comfortable checking on him We do have medical started at that 50 year old male conscious of breathing status is unknown",
+          "prompt": "Stand for. I do come in I am 5, 8, 29, just 10, 14. I have a medical coming in 141 North Grant. It's going to be",
+          "duration_seconds": 12.16,
+          "token_limit": 122,
+          "token_count": 59,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.5600000000000005,
+              "text": " that male that sprawled out on the sidewalk part of the R.P.'s home and on who it is or who he is R.P. doesn't feel comfortable checking on him",
+              "avg_logprob": -0.31437673916419345,
+              "no_speech_prob": 0.05324879661202431,
+              "compression_ratio": 1.4303030303030304
+            },
+            {
+              "start": 7.5600000000000005,
+              "end": 11.56,
+              "text": " We do have medical started at that 50 year old male conscious of breathing status is unknown",
+              "avg_logprob": -0.31437673916419345,
+              "no_speech_prob": 0.05324879661202431,
+              "compression_ratio": 1.4303030303030304
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794446200.m4a": {
+      "index": 1153,
+      "epoch": 1794446200,
+      "sha256": "d522cea8fa79ada2891e487ac4680e00b041ec25890a3b4aabb75033e1226683",
+      "passes": {
+        "original": {
+          "text": "Copy. We'll get coming in at...",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Copy. We'll get coming in at...",
+              "avg_logprob": -0.696117714047432,
+              "no_speech_prob": 0.10796096175909042,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy, we'll get coming in and out.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Copy, we'll get coming in and out.",
+              "avg_logprob": -0.568572576229389,
+              "no_speech_prob": 0.06481949985027313,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "context": {
+          "text": "copy. We'll get coming in at",
+          "prompt": "I do come in I am 5, 8, 29, just 10, 14. I have a medical coming in 141 North Grant. It's going to be That male that's sprawled out on the sidewalk part of the RFP's home and on who it is or who he is RFP doesn't feel comfortable checking on him. We do have medical started at that 50 year old male conscious of breeding status is unknown",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.81,
+              "text": " copy. We'll get coming in at",
+              "avg_logprob": -0.6058517932891846,
+              "no_speech_prob": 0.07426780462265015,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794446203.m4a": {
+      "index": 1154,
+      "epoch": 1794446203,
+      "sha256": "da4421fb49a9dadeebd8cf0d410f30e10a5013acd5e416e679f7348f27df3e24",
+      "passes": {
+        "original": {
+          "text": "10-4, thanks. I have a 10-47 holding up in Cedar Hills.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 10-4, thanks. I have a 10-47 holding up in Cedar Hills.",
+              "avg_logprob": -0.3715568213235764,
+              "no_speech_prob": 0.02851860783994198,
+              "compression_ratio": 0.8870967741935484
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thanks. I have a 1047 holding up in Peter Hills.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thanks.",
+              "avg_logprob": -0.42390818066067165,
+              "no_speech_prob": 0.022555578500032425,
+              "compression_ratio": 0.8571428571428571
+            },
+            {
+              "start": 1.0,
+              "end": 3.68,
+              "text": " I have a 1047 holding up in Peter Hills.",
+              "avg_logprob": -0.42390818066067165,
+              "no_speech_prob": 0.022555578500032425,
+              "compression_ratio": 0.8571428571428571
+            }
+          ]
+        },
+        "context": {
+          "text": "10-4, thanks. I have a 10-47 holding up in Cedar Hills.",
+          "prompt": "5, 8, 29, just 10, 14. I have a medical coming in 141 North Grant. It's going to be That male that's sprawled out on the sidewalk part of the RFP's home and on who it is or who he is RFP doesn't feel comfortable checking on him. We do have medical started at that 50 year old male conscious of breeding status is unknown Copy. We'll get coming in at...",
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 10-4, thanks. I have a 10-47 holding up in Cedar Hills.",
+              "avg_logprob": -0.382794425601051,
+              "no_speech_prob": 0.048103660345077515,
+              "compression_ratio": 0.8870967741935484
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794446238.m4a": {
+      "index": 1155,
+      "epoch": 1794446238,
+      "sha256": "b8ac325ace1d0b516919c3a57e9d953a522ba1c736094f494b6dea6a5262eebe",
+      "passes": {
+        "original": {
+          "text": "If I do 29, I'll be in route to the medical.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " If I do 29, I'll be in route to the medical.",
+              "avg_logprob": -0.46639377930585074,
+              "no_speech_prob": 0.08138538151979446,
+              "compression_ratio": 0.8461538461538461
+            }
+          ]
+        },
+        "filtered": {
+          "text": "By day 29, I'll be in route through the medical.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " By day 29, I'll be in route through the medical.",
+              "avg_logprob": -0.5444547906517982,
+              "no_speech_prob": 0.06399604678153992,
+              "compression_ratio": 0.9056603773584906
+            }
+          ]
+        },
+        "context": {
+          "text": "If I do 29, I'll be in route to the medical.",
+          "prompt": "That male that's sprawled out on the sidewalk part of the RFP's home and on who it is or who he is RFP doesn't feel comfortable checking on him. We do have medical started at that 50 year old male conscious of breeding status is unknown Copy. We'll get coming in at... 10-4, thanks. I have a 10-47 holding up in Cedar Hills.",
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " If I do 29, I'll be in route to the medical.",
+              "avg_logprob": -0.42350637211519127,
+              "no_speech_prob": 0.021407252177596092,
+              "compression_ratio": 0.8461538461538461
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794446243.m4a": {
+      "index": 1156,
+      "epoch": 1794446243,
+      "sha256": "a952f5717dea51ad8b90b0bf1c70200a75c723a92c283c5fc6db740110a94d66",
+      "passes": {
+        "original": {
+          "text": "5G29 copy.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G29 copy.",
+              "avg_logprob": -0.5666333585977554,
+              "no_speech_prob": 0.020387845113873482,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Back to you, 29 copy.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Back to you, 29 copy.",
+              "avg_logprob": -0.5187986075878144,
+              "no_speech_prob": 0.037026140838861465,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "context": {
+          "text": "5G 29, copy.",
+          "prompt": "Copy. We'll get coming in at... 10-4, thanks. I have a 10-47 holding up in Cedar Hills. If I do 29, I'll be in route to the medical.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G 29, copy.",
+              "avg_logprob": -0.533674505021837,
+              "no_speech_prob": 0.015796711668372154,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794446339.m4a": {
+      "index": 1157,
+      "epoch": 1794446339,
+      "sha256": "d0ade050bc071827e58ea58d289db95ba84e62788899d6920847942edb62c22b",
+      "passes": {
+        "original": {
+          "text": "7-j 23-tight",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-j 23-tight",
+              "avg_logprob": -0.8265583250257704,
+              "no_speech_prob": 0.016129260882735252,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7-j 23-tight",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-j 23-tight",
+              "avg_logprob": -0.8443869484795464,
+              "no_speech_prob": 0.028889808803796768,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "7-j 23-tight",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-j 23-tight",
+              "avg_logprob": -0.8265583250257704,
+              "no_speech_prob": 0.016129260882735252,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794446343.m4a": {
+      "index": 1158,
+      "epoch": 1794446343,
+      "sha256": "5a77720ac877b27ba15b1e8bccf9bb36cec2c85de47da99ca0b226b7d00dc86d",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6579684257507324,
+              "no_speech_prob": 0.03916242718696594,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7028077602386474,
+              "no_speech_prob": 0.047265615314245224,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "copy",
+          "prompt": "7-j 23-tight",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " copy",
+              "avg_logprob": -0.6693953275680542,
+              "no_speech_prob": 0.0845646858215332,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794446361.m4a": {
+      "index": 1159,
+      "epoch": 1794446361,
+      "sha256": "b0724ba52450071df01baf21643b679d359ea4af27311a49f3711b576296bb62",
+      "passes": {
+        "original": {
+          "text": "7J25, can you change this to an info and clear it out? Of course.",
+          "prompt": null,
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 7J25, can you change this to an info and clear it out?",
+              "avg_logprob": -0.3700268318255742,
+              "no_speech_prob": 0.029120219871401787,
+              "compression_ratio": 0.9420289855072463
+            },
+            {
+              "start": 5.0,
+              "end": 6.0,
+              "text": " Of course.",
+              "avg_logprob": -0.3700268318255742,
+              "no_speech_prob": 0.029120219871401787,
+              "compression_ratio": 0.9420289855072463
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J25, can you change this to an info and clear it out? Of course.",
+          "prompt": null,
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 7J25, can you change this to an info and clear it out?",
+              "avg_logprob": -0.4204161974291007,
+              "no_speech_prob": 0.022279798984527588,
+              "compression_ratio": 0.9420289855072463
+            },
+            {
+              "start": 5.0,
+              "end": 6.0,
+              "text": " Of course.",
+              "avg_logprob": -0.4204161974291007,
+              "no_speech_prob": 0.022279798984527588,
+              "compression_ratio": 0.9420289855072463
+            }
+          ]
+        },
+        "context": {
+          "text": "7-j 25, can you change this to an info and clear it out? 10-4",
+          "prompt": "7-j 23-tight Copy.",
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 7-j 25, can you change this to an info and clear it out?",
+              "avg_logprob": -0.3463428783416748,
+              "no_speech_prob": 0.004482772201299667,
+              "compression_ratio": 0.9384615384615385
+            },
+            {
+              "start": 5.0,
+              "end": 6.0,
+              "text": " 10-4",
+              "avg_logprob": -0.3463428783416748,
+              "no_speech_prob": 0.004482772201299667,
+              "compression_ratio": 0.9384615384615385
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794446382.m4a": {
+      "index": 1160,
+      "epoch": 1794446382,
+      "sha256": "b2262880df90b60b3d4bb62b2f19c81a4793657fc260c477edb18f3daf23b2b4",
+      "passes": {
+        "original": {
+          "text": "7J31, can you type your walkout?",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J31, can you type your walkout?",
+              "avg_logprob": -0.3872430899313518,
+              "no_speech_prob": 0.04904985800385475,
+              "compression_ratio": 0.8648648648648649
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J31, can you talk to me while I walk out?",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J31, can you talk to me while I walk out?",
+              "avg_logprob": -0.46362341151517983,
+              "no_speech_prob": 0.05439256876707077,
+              "compression_ratio": 0.875
+            }
+          ]
+        },
+        "context": {
+          "text": "7-j 31, can you copy? I'll walk out.",
+          "prompt": "7-j 23-tight Copy. 7J25, can you change this to an info and clear it out? Of course.",
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7-j 31, can you copy? I'll walk out.",
+              "avg_logprob": -0.4162776329938103,
+              "no_speech_prob": 0.006390423979610205,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        }
+      }
+    }
+  }
+}
