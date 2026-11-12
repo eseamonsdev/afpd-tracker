@@ -1,0 +1,649 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-04",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793804312.m4a": {
+      "index": 231,
+      "epoch": 1793804312,
+      "sha256": "4d293f5d0fd397d3e74ff62fca0b3a51429fe47d3c2b3c4e27b43ca17e19d45f",
+      "passes": {
+        "original": {
+          "text": "Can you roll medical? There's a female that's down in the bushes. It's not responding to us. She's conscious and breathing.",
+          "prompt": null,
+          "duration_seconds": 9.344,
+          "token_limit": 99,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " Can you roll medical? There's a female that's down in the bushes. It's not responding to us. She's conscious and breathing.",
+              "avg_logprob": -0.3356929598376155,
+              "no_speech_prob": 0.01770678348839283,
+              "compression_ratio": 1.1603773584905661
+            }
+          ]
+        },
+        "filtered": {
+          "text": "can you enroll medical there's a female that's down in the bushes it's not responding to us she's conscious and breathing",
+          "prompt": null,
+          "duration_seconds": 9.344,
+          "token_limit": 99,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.48,
+              "text": " can you enroll medical there's a female that's down in the bushes it's not",
+              "avg_logprob": -0.3106105695168177,
+              "no_speech_prob": 0.014911936596035957,
+              "compression_ratio": 1.3010752688172043
+            },
+            {
+              "start": 4.48,
+              "end": 9.48,
+              "text": " responding to us she's conscious and breathing",
+              "avg_logprob": -0.3106105695168177,
+              "no_speech_prob": 0.014911936596035957,
+              "compression_ratio": 1.3010752688172043
+            }
+          ]
+        },
+        "context": {
+          "text": "Can you enroll medical? There's a female that's down in the bushes. She's not responding to us. She's conscious and breathing.",
+          "prompt": "18J's 1-2 Go ahead",
+          "duration_seconds": 9.344,
+          "token_limit": 99,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " Can you enroll medical? There's a female that's down in the bushes. She's not responding to us. She's conscious and breathing.",
+              "avg_logprob": -0.2829617243260145,
+              "no_speech_prob": 0.024235112592577934,
+              "compression_ratio": 1.2
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793804329.m4a": {
+      "index": 232,
+      "epoch": 1793804329,
+      "sha256": "fbd07ee46144ee597f659992e78c0643858ba0f3c34fa054fafe52905624d43c",
+      "passes": {
+        "original": {
+          "text": "Coffee.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Coffee.",
+              "avg_logprob": -0.8316267013549805,
+              "no_speech_prob": 0.04854562506079674,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Coffee.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Coffee.",
+              "avg_logprob": -0.9117240905761719,
+              "no_speech_prob": 0.04448031634092331,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Coffee.",
+          "prompt": "18J's 1-2 Go ahead Can you roll medical? There's a female that's down in the bushes. It's not responding to us. She's conscious and breathing.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Coffee.",
+              "avg_logprob": -0.5980976104736329,
+              "no_speech_prob": 0.05310742184519768,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793804367.m4a": {
+      "index": 233,
+      "epoch": 1793804367,
+      "sha256": "a74ccf4165e71a27a5a32e3963ca115dc4680c28d04a64e7a027ab4b2fd56925",
+      "passes": {
+        "original": {
+          "text": "5J35 traffic.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J35 traffic.",
+              "avg_logprob": -0.4675803780555725,
+              "no_speech_prob": 0.08831922709941864,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J35 traffic",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J35 traffic",
+              "avg_logprob": -0.560240660394941,
+              "no_speech_prob": 0.05629667639732361,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "5J35 traffic.",
+          "prompt": "Go ahead Can you roll medical? There's a female that's down in the bushes. It's not responding to us. She's conscious and breathing. Coffee.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J35 traffic.",
+              "avg_logprob": -0.35055096074938774,
+              "no_speech_prob": 0.0252880547195673,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793804370.m4a": {
+      "index": 234,
+      "epoch": 1793804370,
+      "sha256": "d354a76a4def1aeffaf94b26606bc78708d44c7f9f481525d3e111a388c42929",
+      "passes": {
+        "original": {
+          "text": "I have two thirty-five.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I have two thirty-five.",
+              "avg_logprob": -0.824898898601532,
+              "no_speech_prob": 0.023605499416589737,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "All right, I'll take 35.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " All right, I'll take 35.",
+              "avg_logprob": -0.56550302288749,
+              "no_speech_prob": 0.026072431355714798,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "context": {
+          "text": "5J35.",
+          "prompt": "Can you roll medical? There's a female that's down in the bushes. It's not responding to us. She's conscious and breathing. Coffee. 5J35 traffic.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 5J35.",
+              "avg_logprob": -0.3236181991440909,
+              "no_speech_prob": 0.010705236345529556,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793804372.m4a": {
+      "index": 235,
+      "epoch": 1793804372,
+      "sha256": "f86525d5d9f7a273a324acf4c13876cab1746e976110b11360eae7028b56265f",
+      "passes": {
+        "original": {
+          "text": "540 West, 1120 North, local 1, Sierra 0, Gulf Fox.",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 540 West, 1120 North, local 1, Sierra 0, Gulf Fox.",
+              "avg_logprob": -0.44078926036232396,
+              "no_speech_prob": 0.017523285001516342,
+              "compression_ratio": 0.8620689655172413
+            }
+          ]
+        },
+        "filtered": {
+          "text": "540 West, 1120 North, local 1, Sierra 0, Gulf Fox.",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 540 West, 1120 North, local 1, Sierra 0, Gulf Fox.",
+              "avg_logprob": -0.6260519780610737,
+              "no_speech_prob": 0.01871965080499649,
+              "compression_ratio": 0.8620689655172413
+            }
+          ]
+        },
+        "context": {
+          "text": "540 West, 1120 North, Local 1, Sierra Zero, Gulf Fox.",
+          "prompt": "Coffee. 5J35 traffic. I have two thirty-five.",
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.72,
+              "text": " 540 West, 1120 North, Local 1, Sierra Zero, Gulf Fox.",
+              "avg_logprob": -0.4428209631066573,
+              "no_speech_prob": 0.00793908629566431,
+              "compression_ratio": 0.8688524590163934
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793804378.m4a": {
+      "index": 236,
+      "epoch": 1793804378,
+      "sha256": "fa9f3211d576b96ae411c16362a9b9fd967114cc7e937cbdff706eca8e53e45f",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.70524001121521,
+              "no_speech_prob": 0.017995864152908325,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7911487579345703,
+              "no_speech_prob": 0.01793462410569191,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "5J35 traffic. I have two thirty-five. 540 West, 1120 North, local 1, Sierra 0, Gulf Fox.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.4378398895263672,
+              "no_speech_prob": 0.013814195059239864,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793804464.m4a": {
+      "index": 237,
+      "epoch": 1793804464,
+      "sha256": "fdf3120209d78e5a1d16911a77bef84b6b92aa289320539004f921ac2c8b2628",
+      "passes": {
+        "original": {
+          "text": "7J22 arrived.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J22 arrived.",
+              "avg_logprob": -0.44646382331848145,
+              "no_speech_prob": 0.008728479966521263,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J22 arrived.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J22 arrived.",
+              "avg_logprob": -0.5907386541366577,
+              "no_speech_prob": 0.0033910826314240694,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "7J22 arrived.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J22 arrived.",
+              "avg_logprob": -0.44646382331848145,
+              "no_speech_prob": 0.008728479966521263,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793804466.m4a": {
+      "index": 238,
+      "epoch": 1793804466,
+      "sha256": "cbd4b865d07cdb3801970cae0cb19e33cedf2bcd6c4f3d199655b3515a4681d3",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6915004253387451,
+              "no_speech_prob": 0.03594484180212021,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.5409164875745773,
+              "no_speech_prob": 0.008582268841564655,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "7J22 arrived.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.616951847076416,
+              "no_speech_prob": 0.017014281824231148,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793804519.m4a": {
+      "index": 239,
+      "epoch": 1793804519,
+      "sha256": "0a8cc6a6ed275ac874b8ba047092e299a155b68932c91fc603f3f5e5956a9b6d",
+      "passes": {
+        "original": {
+          "text": "7J18 follow up.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J18 follow up.",
+              "avg_logprob": -0.5055641068352593,
+              "no_speech_prob": 0.15346655249595642,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J18 follow-up.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J18 follow-up.",
+              "avg_logprob": -0.4568765938282013,
+              "no_speech_prob": 0.11924227327108383,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "context": {
+          "text": "7J18 follow-up.",
+          "prompt": "7J22 arrived. Copy.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J18 follow-up.",
+              "avg_logprob": -0.26937897205352784,
+              "no_speech_prob": 0.031798362731933594,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793804522.m4a": {
+      "index": 240,
+      "epoch": 1793804522,
+      "sha256": "9f5145939586e28802806f37d71bab9d387500259f2ae647b1fea97c7d93f4d6",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.6353524327278137,
+              "no_speech_prob": 0.04959429055452347,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.38985975086688995,
+              "no_speech_prob": 0.05953065678477287,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Go ahead.",
+          "prompt": "7J22 arrived. Copy. 7J18 follow up.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.5011468132336935,
+              "no_speech_prob": 0.047253064811229706,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    }
+  }
+}

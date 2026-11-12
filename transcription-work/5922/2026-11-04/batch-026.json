@@ -1,0 +1,665 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-04",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793804860.m4a": {
+      "index": 251,
+      "epoch": 1793804860,
+      "sha256": "ff4bc50007a326c86d126aaf5a04a943ab04f8080aee80e5c9507d3473a5a749",
+      "passes": {
+        "original": {
+          "text": "medical can cut back like still now but she's conscious she's responding I think she's just on something",
+          "prompt": null,
+          "duration_seconds": 11.136,
+          "token_limit": 114,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.8,
+              "text": " medical can cut back like still now but she's conscious she's responding I think",
+              "avg_logprob": -0.4314772498149138,
+              "no_speech_prob": 0.011680583469569683,
+              "compression_ratio": 1.2380952380952381
+            },
+            {
+              "start": 9.8,
+              "end": 12.68,
+              "text": " she's just on something",
+              "avg_logprob": -0.4314772498149138,
+              "no_speech_prob": 0.011680583469569683,
+              "compression_ratio": 1.2380952380952381
+            }
+          ]
+        },
+        "filtered": {
+          "text": "medical thing cut back like still now but she's conscious she's responding I think she's just on something",
+          "prompt": null,
+          "duration_seconds": 11.136,
+          "token_limit": 114,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.8,
+              "text": " medical thing cut back like still now but she's conscious she's responding I",
+              "avg_logprob": -0.4723934886547235,
+              "no_speech_prob": 0.0166314709931612,
+              "compression_ratio": 1.2619047619047619
+            },
+            {
+              "start": 8.8,
+              "end": 12.68,
+              "text": " think she's just on something",
+              "avg_logprob": -0.4723934886547235,
+              "no_speech_prob": 0.0166314709931612,
+              "compression_ratio": 1.2619047619047619
+            }
+          ]
+        },
+        "context": {
+          "text": "medical can cut back like still now but she's conscious she's responding I think she's just on something",
+          "prompt": null,
+          "duration_seconds": 11.136,
+          "token_limit": 114,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.8,
+              "text": " medical can cut back like still now but she's conscious she's responding I think",
+              "avg_logprob": -0.4314772498149138,
+              "no_speech_prob": 0.011680583469569683,
+              "compression_ratio": 1.2380952380952381
+            },
+            {
+              "start": 9.8,
+              "end": 12.68,
+              "text": " she's just on something",
+              "avg_logprob": -0.4314772498149138,
+              "no_speech_prob": 0.011680583469569683,
+              "compression_ratio": 1.2380952380952381
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793804875.m4a": {
+      "index": 252,
+      "epoch": 1793804875,
+      "sha256": "a6a2d0c64eddda99bcca3abf67a40e72751ff8ffd487afcf34b06976aee8e3e9",
+      "passes": {
+        "original": {
+          "text": "Copy, I'll let him know.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy, I'll let him know.",
+              "avg_logprob": -0.4554586518894542,
+              "no_speech_prob": 0.052153632044792175,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy. I'll let him know.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy. I'll let him know.",
+              "avg_logprob": -0.5656335570595481,
+              "no_speech_prob": 0.08859698474407196,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "context": {
+          "text": "copy I'll let him know",
+          "prompt": "medical can cut back like still now but she's conscious she's responding I think she's just on something",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2600000000000002,
+              "text": " copy I'll let him know",
+              "avg_logprob": -0.33233828014797634,
+              "no_speech_prob": 0.002806056523695588,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793805126.m4a": {
+      "index": 253,
+      "epoch": 1793805126,
+      "sha256": "bfae21703530db942cec148458a0e1e2d956c64a6a8d7e267b2c7de32f768ec4",
+      "passes": {
+        "original": {
+          "text": "5J34C report.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J34C report.",
+              "avg_logprob": -0.6971694628397623,
+              "no_speech_prob": 0.020646139979362488,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5K, 41st Central Creek Park.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5K, 41st Central Creek Park.",
+              "avg_logprob": -0.7337211072444916,
+              "no_speech_prob": 0.027116959914565086,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "context": {
+          "text": "5J34C report.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J34C report.",
+              "avg_logprob": -0.6971694628397623,
+              "no_speech_prob": 0.020646139979362488,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793805130.m4a": {
+      "index": 254,
+      "epoch": 1793805130,
+      "sha256": "6005ee0594596bc239bc81d8cae987978f33ecf3838a123148311c47a50ec7d9",
+      "passes": {
+        "original": {
+          "text": "Go for just clearing",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for just clearing",
+              "avg_logprob": -0.4138712627547128,
+              "no_speech_prob": 0.005859761964529753,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for just clearing",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for just clearing",
+              "avg_logprob": -0.5046059233801705,
+              "no_speech_prob": 0.004402398131787777,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "Code for disclaring.",
+          "prompt": "5J34C report.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Code for disclaring.",
+              "avg_logprob": -0.7555743323432075,
+              "no_speech_prob": 0.020285412669181824,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793805133.m4a": {
+      "index": 255,
+      "epoch": 1793805133,
+      "sha256": "7e6911769c3caf80051272e4a27e96a9afc6d84abc45aadcaeb40f7116b5e9e5",
+      "passes": {
+        "original": {
+          "text": "Perfect.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Perfect.",
+              "avg_logprob": -0.8133971214294433,
+              "no_speech_prob": 0.03222180902957916,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Perfect.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Perfect.",
+              "avg_logprob": -0.6755125999450684,
+              "no_speech_prob": 0.028386006131768227,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Perfect.",
+          "prompt": "5J34C report. Go for just clearing",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Perfect.",
+              "avg_logprob": -0.82677001953125,
+              "no_speech_prob": 0.053617533296346664,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793805161.m4a": {
+      "index": 256,
+      "epoch": 1793805161,
+      "sha256": "1847d6ae4e6bfecb5ed5f220f5819e62fe95d8dfd7b988a3390ec16391a621b1",
+      "passes": {
+        "original": {
+          "text": "Okay, from Central Park Park.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Okay, from Central Park Park.",
+              "avg_logprob": -0.9052444696426392,
+              "no_speech_prob": 0.0347290076315403,
+              "compression_ratio": 0.8787878787878788
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I would take from Central Park Park.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.14,
+              "text": " I would take from Central Park Park.",
+              "avg_logprob": -0.7019334489648993,
+              "no_speech_prob": 0.02687200717628002,
+              "compression_ratio": 0.9
+            }
+          ]
+        },
+        "context": {
+          "text": "OK, from Central Park Park.",
+          "prompt": "5J34C report. Go for just clearing Perfect.",
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " OK, from Central Park Park.",
+              "avg_logprob": -1.148652470111847,
+              "no_speech_prob": 0.03509056568145752,
+              "compression_ratio": 0.8709677419354839
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793805165.m4a": {
+      "index": 257,
+      "epoch": 1793805165,
+      "sha256": "f387fa7fee4e3e99c35a5efa8cf586ef852ad59334d48057de2656febb5cf3d0",
+      "passes": {
+        "original": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.5225362607410976,
+              "no_speech_prob": 0.06852608919143677,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.5736447061811175,
+              "no_speech_prob": 0.05329621583223343,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Go for it.",
+          "prompt": "Go for just clearing Perfect. Okay, from Central Park Park.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.2624346102987017,
+              "no_speech_prob": 0.014156434684991837,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793805167.m4a": {
+      "index": 258,
+      "epoch": 1793805167,
+      "sha256": "f0b9adf07d7162623fdda0ce3bebc1a37fc7999b160dbcf8ac535d29c5adb7d9",
+      "passes": {
+        "original": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.7138988018035889,
+              "no_speech_prob": 0.02610223926603794,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy.",
+              "avg_logprob": -0.565429401397705,
+              "no_speech_prob": 0.020895667374134064,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy.",
+          "prompt": "Perfect. Okay, from Central Park Park. Go for it.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.5271490573883056,
+              "no_speech_prob": 0.0032211276702582836,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793805320.m4a": {
+      "index": 259,
+      "epoch": 1793805320,
+      "sha256": "12cc4b4aa0dbc51737159b3c127653e2bceee9e9312d656e68e6b9a505ccd480",
+      "passes": {
+        "original": {
+          "text": "Uh, yes, here in the world, we're attempting to locate missing person here by a leak.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Uh, yes, here in the world, we're attempting to locate missing person here by a leak.",
+              "avg_logprob": -0.8675912966330847,
+              "no_speech_prob": 0.03345145657658577,
+              "compression_ratio": 1.0759493670886076
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hi, I'm Tim Wilbur. I tend to locate this in person here in Wyoming.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Hi, I'm Tim Wilbur. I tend to locate this in person here in Wyoming.",
+              "avg_logprob": -0.819708214564757,
+              "no_speech_prob": 0.06639859080314636,
+              "compression_ratio": 0.9315068493150684
+            }
+          ]
+        },
+        "context": {
+          "text": "Uh, yes, here in the world, we're attempting to locate missing person here by a leak.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Uh, yes, here in the world, we're attempting to locate missing person here by a leak.",
+              "avg_logprob": -0.8675912966330847,
+              "no_speech_prob": 0.03345145657658577,
+              "compression_ratio": 1.0759493670886076
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793805511.m4a": {
+      "index": 260,
+      "epoch": 1793805511,
+      "sha256": "9e2bb5d82012e4ad010454c0476b189274b4dea57edf1ea556ea675a0c136cf6",
+      "passes": {
+        "original": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.7786645889282227,
+              "no_speech_prob": 0.040419984608888626,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.8740695953369141,
+              "no_speech_prob": 0.022207116708159447,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.7786645889282227,
+              "no_speech_prob": 0.040419984608888626,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    }
+  }
+}
