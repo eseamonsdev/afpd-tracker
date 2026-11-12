@@ -1,0 +1,649 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-10",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794362444.m4a": {
+      "index": 1281,
+      "epoch": 1794362444,
+      "sha256": "7b8f0880ea6f474fd620660b3ab17635ba988796e641fe4166cee7dabe47bf03",
+      "passes": {
+        "original": {
+          "text": "Copy. 50 cells.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.7317552745342255,
+              "no_speech_prob": 0.01538337767124176,
+              "compression_ratio": 0.6521739130434783
+            },
+            {
+              "start": 0.5,
+              "end": 2.44,
+              "text": " 50 cells.",
+              "avg_logprob": -0.7317552745342255,
+              "no_speech_prob": 0.01538337767124176,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy, 50 self.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.2,
+              "text": " Copy, 50 self.",
+              "avg_logprob": -0.7407713457942009,
+              "no_speech_prob": 0.029816707596182823,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "copy 50 south",
+          "prompt": "70, 29. We'll have lane one blocked, southbound. Let me please up the location to about the 50 south north time over",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.53,
+              "text": " copy 50 south",
+              "avg_logprob": -0.7022523880004883,
+              "no_speech_prob": 0.02919330634176731,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794362471.m4a": {
+      "index": 1282,
+      "epoch": 1794362471,
+      "sha256": "928c20278bf96f16be241cdf41da0a8437d7858b83dd0f22ddedf459fa6556fe",
+      "passes": {
+        "original": {
+          "text": "7j6 7j12 if you want to start blocking off right at the end of immediate that'd be helpful",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.24,
+              "text": " 7j6 7j12 if you want to start blocking off right at the end of immediate that'd be helpful",
+              "avg_logprob": -0.2116689315209022,
+              "no_speech_prob": 0.0043717967346310616,
+              "compression_ratio": 1.0843373493975903
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7j6 7j12 if you want to start blocking off right at the end of immediate not being helpful",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.24,
+              "text": " 7j6 7j12 if you want to start blocking off right at the end of immediate not being helpful",
+              "avg_logprob": -0.21857269763946532,
+              "no_speech_prob": 0.004412527196109295,
+              "compression_ratio": 1.0975609756097562
+            }
+          ]
+        },
+        "context": {
+          "text": "7J6, 7J12, if you want to start blocking off right at the end of the median, that'd be helpful.",
+          "prompt": "We'll have lane one blocked, southbound. Let me please up the location to about the 50 south north time over Copy. 50 cells.",
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 30,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.44,
+              "text": " 7J6, 7J12, if you want to start blocking off right at the end of the median, that'd be helpful.",
+              "avg_logprob": -0.2333336539806858,
+              "no_speech_prob": 0.0016382810426875949,
+              "compression_ratio": 1.043956043956044
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794362479.m4a": {
+      "index": 1283,
+      "epoch": 1794362479,
+      "sha256": "5ad80abb688569dc69b9c3135db177b8b7f6f4eb68c98ec7403f4238c325a0e2",
+      "passes": {
+        "original": {
+          "text": "Put it for me.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Put it for me.",
+              "avg_logprob": -0.9114918857812881,
+              "no_speech_prob": 0.2281639128923416,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.9920683928898403,
+              "no_speech_prob": 0.3541085124015808,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Cut it for me.",
+          "prompt": "Let me please up the location to about the 50 south north time over Copy. 50 cells. 7j6 7j12 if you want to start blocking off right at the end of immediate that'd be helpful",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Cut it for me.",
+              "avg_logprob": -0.7334456816315651,
+              "no_speech_prob": 0.15921489894390106,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794362490.m4a": {
+      "index": 1284,
+      "epoch": 1794362490,
+      "sha256": "4472c307858a1388c1ecce84b9dac7315496485ddfd8379c708c92e409473d63",
+      "passes": {
+        "original": {
+          "text": "You can do it for yourself.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You can do it for yourself.",
+              "avg_logprob": -0.7417089521884919,
+              "no_speech_prob": 0.020544415339827538,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It can be fixed for yourself.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " It can be fixed for yourself.",
+              "avg_logprob": -0.5930683314800262,
+              "no_speech_prob": 0.028007034212350845,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        },
+        "context": {
+          "text": "You can do it for yourself.",
+          "prompt": "Copy. 50 cells. 7j6 7j12 if you want to start blocking off right at the end of immediate that'd be helpful Put it for me.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You can do it for yourself.",
+              "avg_logprob": -0.6494947671890259,
+              "no_speech_prob": 0.022863849997520447,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794362493.m4a": {
+      "index": 1285,
+      "epoch": 1794362493,
+      "sha256": "ca036d2790ed57cd29e0bdd959c844f8f302daab18fb7961f275c25c1aedabff",
+      "passes": {
+        "original": {
+          "text": "8-2-2-6",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 8-2-2-6",
+              "avg_logprob": -0.46867836713790895,
+              "no_speech_prob": 0.057381171733140945,
+              "compression_ratio": 0.5384615384615384
+            }
+          ]
+        },
+        "filtered": {
+          "text": "8, 2, 3, 6.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 8, 2, 3, 6.",
+              "avg_logprob": -0.5326972224495627,
+              "no_speech_prob": 0.06199130415916443,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "8j26",
+          "prompt": "7j6 7j12 if you want to start blocking off right at the end of immediate that'd be helpful Put it for me. You can do it for yourself.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 8j26",
+              "avg_logprob": -0.691684236129125,
+              "no_speech_prob": 0.037265844643116,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794362564.m4a": {
+      "index": 1286,
+      "epoch": 1794362564,
+      "sha256": "913b9e2baf9970a3cf7932bc354e9ff12f5d7325fa6931d23a5bedeb76eeb073",
+      "passes": {
+        "original": {
+          "text": "5J48, I copy the welfare check.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J48, I copy the welfare check.",
+              "avg_logprob": -0.6841158683483417,
+              "no_speech_prob": 0.024102557450532913,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J40 and I copy the welfare check.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.2800000000000002,
+              "text": " 5J40 and I copy the welfare check.",
+              "avg_logprob": -0.589129741375263,
+              "no_speech_prob": 0.01083730161190033,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "context": {
+          "text": "5J48, I copy the welfare check.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J48, I copy the welfare check.",
+              "avg_logprob": -0.6841158683483417,
+              "no_speech_prob": 0.024102557450532913,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794362569.m4a": {
+      "index": 1287,
+      "epoch": 1794362569,
+      "sha256": "26bb76f92bf204d920f221a6532b6562685697d2dd91a396fa9e02efaea0e846",
+      "passes": {
+        "original": {
+          "text": "Five, two, forty-eight.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Five, two, forty-eight.",
+              "avg_logprob": -0.772203803062439,
+              "no_speech_prob": 0.03600127995014191,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Five, two, forty-eight.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Five, two, forty-eight.",
+              "avg_logprob": -0.6852825121446089,
+              "no_speech_prob": 0.031087512150406837,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "context": {
+          "text": "5J48.",
+          "prompt": "5J48, I copy the welfare check.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 5J48.",
+              "avg_logprob": -0.46033940996442524,
+              "no_speech_prob": 0.01546506304293871,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794362598.m4a": {
+      "index": 1288,
+      "epoch": 1794362598,
+      "sha256": "1a5286c166b4188a42f8a3c90984b7184c90c09292894b0e992992b866aa83b4",
+      "passes": {
+        "original": {
+          "text": "7 day 29 for control.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7 day 29 for control.",
+              "avg_logprob": -0.6446354654100206,
+              "no_speech_prob": 0.03530183807015419,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7-day 29 for control.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-day 29 for control.",
+              "avg_logprob": -0.5897546768188476,
+              "no_speech_prob": 0.033466365188360214,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "context": {
+          "text": "Seven, day 29 for control.",
+          "prompt": "5J48, I copy the welfare check. Five, two, forty-eight.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Seven, day 29 for control.",
+              "avg_logprob": -0.46227099895477297,
+              "no_speech_prob": 0.022636666893959045,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794362609.m4a": {
+      "index": 1289,
+      "epoch": 1794362609,
+      "sha256": "36a15d87979cb4e8f6109bf65311048e4079fa4f3db437379b8d619e0776e43a",
+      "passes": {
+        "original": {
+          "text": "Traffic 29.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Traffic 29.",
+              "avg_logprob": -0.8285380899906158,
+              "no_speech_prob": 0.04892989993095398,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Traffic 29.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Traffic 29.",
+              "avg_logprob": -0.7999859750270844,
+              "no_speech_prob": 0.06245275214314461,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "Traffic 29.",
+          "prompt": "5J48, I copy the welfare check. Five, two, forty-eight. 7 day 29 for control.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Traffic 29.",
+              "avg_logprob": -0.5066493650277456,
+              "no_speech_prob": 0.03650951758027077,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794362612.m4a": {
+      "index": 1290,
+      "epoch": 1794362612,
+      "sha256": "2e2d1c51ee04da2d5250ed1d0953892616ba85c61c7699b727cd3d3fbd782359",
+      "passes": {
+        "original": {
+          "text": "Just advising we had a second caller call in advising",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.86,
+              "text": " Just advising we had a second caller call in advising",
+              "avg_logprob": -0.3573737602967482,
+              "no_speech_prob": 0.025436537340283394,
+              "compression_ratio": 1.06
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Just advising we had a second caller call in advising",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.86,
+              "text": " Just advising we had a second caller call in advising",
+              "avg_logprob": -0.35507569863246036,
+              "no_speech_prob": 0.030872056260704994,
+              "compression_ratio": 1.06
+            }
+          ]
+        },
+        "context": {
+          "text": "Just advising. We had a second call or call in advising.",
+          "prompt": "Five, two, forty-eight. 7 day 29 for control. Traffic 29.",
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Just advising. We had a second call or call in advising.",
+              "avg_logprob": -0.35605729557573795,
+              "no_speech_prob": 0.012627078220248222,
+              "compression_ratio": 1.0980392156862746
+            }
+          ]
+        }
+      }
+    }
+  }
+}

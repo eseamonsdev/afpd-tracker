@@ -1,0 +1,649 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-10",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794361264.m4a": {
+      "index": 1231,
+      "epoch": 1794361264,
+      "sha256": "635fb2dfca1e7ab284c3809f37f8c8de8d8fb473959deb7debb0bea7856ce1f7",
+      "passes": {
+        "original": {
+          "text": "Will you update the location for this follow-up to 1137 East 450 North and show me in the area?",
+          "prompt": null,
+          "duration_seconds": 7.552,
+          "token_limit": 85,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.68,
+              "text": " Will you update the location for this follow-up to 1137 East 450 North and show me in the area?",
+              "avg_logprob": -0.28113235647861773,
+              "no_speech_prob": 0.009566222317516804,
+              "compression_ratio": 1.021505376344086
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Will you update the location for this follow-up to 1137 East 450 North and show me in the area?",
+          "prompt": null,
+          "duration_seconds": 7.552,
+          "token_limit": 85,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.72,
+              "text": " Will you update the location for this follow-up to 1137 East 450 North and show me in the area?",
+              "avg_logprob": -0.26747529896406025,
+              "no_speech_prob": 0.009542210958898067,
+              "compression_ratio": 1.021505376344086
+            }
+          ]
+        },
+        "context": {
+          "text": "Will you update the location for this follow-up to 1137 East 450 North and show me in the area?",
+          "prompt": "10-4. 5G47. 5J47.",
+          "duration_seconds": 7.552,
+          "token_limit": 85,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.08,
+              "text": " Will you update the location for this follow-up to 1137 East 450 North and show",
+              "avg_logprob": -0.24567326584032603,
+              "no_speech_prob": 0.019818386062979698,
+              "compression_ratio": 1.021505376344086
+            },
+            {
+              "start": 6.08,
+              "end": 8.56,
+              "text": " me in the area?",
+              "avg_logprob": -0.24567326584032603,
+              "no_speech_prob": 0.019818386062979698,
+              "compression_ratio": 1.021505376344086
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794361274.m4a": {
+      "index": 1232,
+      "epoch": 1794361274,
+      "sha256": "a65a8f3db61de69551fa4d95d168b6e26b9d50bfe14a4567d63632de7dd29ab3",
+      "passes": {
+        "original": {
+          "text": "Transfer.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Transfer.",
+              "avg_logprob": -0.7483661651611329,
+              "no_speech_prob": 0.11934728175401688,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Turn for...",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Turn for...",
+              "avg_logprob": -0.7967208822568258,
+              "no_speech_prob": 0.07186302542686462,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "Transfer.",
+          "prompt": "5G47. 5J47. Will you update the location for this follow-up to 1137 East 450 North and show me in the area?",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Transfer.",
+              "avg_logprob": -0.6093918323516846,
+              "no_speech_prob": 0.08577436208724976,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794361374.m4a": {
+      "index": 1233,
+      "epoch": 1794361374,
+      "sha256": "fbf1d3cdf7a24b62ebb656e22812427d7fd64f54b60e711ab026e566e869bc2f",
+      "passes": {
+        "original": {
+          "text": "7J12, we're out with FEMA.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J12, we're out with FEMA.",
+              "avg_logprob": -0.3999568407352154,
+              "no_speech_prob": 0.06600655615329742,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Send me a 12. We're out with FEMA.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Send me a 12. We're out with FEMA.",
+              "avg_logprob": -0.5192563022886004,
+              "no_speech_prob": 0.19194349646568298,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "context": {
+          "text": "7J12, we're out with FEMA.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J12, we're out with FEMA.",
+              "avg_logprob": -0.3999568407352154,
+              "no_speech_prob": 0.06600655615329742,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794361378.m4a": {
+      "index": 1234,
+      "epoch": 1794361378,
+      "sha256": "14d0960334d97faa34bccb12a4af3f20588ac6cab90a95c0cb7a729398e47d8b",
+      "passes": {
+        "original": {
+          "text": "10-4.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.77450920854296,
+              "no_speech_prob": 0.02662988379597664,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Turn for it.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Turn for it.",
+              "avg_logprob": -0.7980109793799264,
+              "no_speech_prob": 0.02326289378106594,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "10-4.",
+          "prompt": "7J12, we're out with FEMA.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.5369965859821865,
+              "no_speech_prob": 0.007250733207911253,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794361441.m4a": {
+      "index": 1235,
+      "epoch": 1794361441,
+      "sha256": "4fb22e24d3fdc083d7474f981ee83797ec7f709236f6a7469028bcf893ad8012",
+      "passes": {
+        "original": {
+          "text": "You can just hit the first button.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You can just hit the first button.",
+              "avg_logprob": -0.8140257813713767,
+              "no_speech_prob": 0.07308907806873322,
+              "compression_ratio": 0.85
+            }
+          ]
+        },
+        "filtered": {
+          "text": "You can do such a good job.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You can do such a good job.",
+              "avg_logprob": -0.7545569268139926,
+              "no_speech_prob": 0.06689516454935074,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        },
+        "context": {
+          "text": "You can just hit the first button.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You can just hit the first button.",
+              "avg_logprob": -0.8140257813713767,
+              "no_speech_prob": 0.07308907806873322,
+              "compression_ratio": 0.85
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794361446.m4a": {
+      "index": 1236,
+      "epoch": 1794361446,
+      "sha256": "757db5ee2400aae862e8446f00b46e048404508d36134289a618b28e8106c2c5",
+      "passes": {
+        "original": {
+          "text": "Can't work.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Can't work.",
+              "avg_logprob": -0.9645206247057233,
+              "no_speech_prob": 0.018538888543844223,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "And for...",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " And for...",
+              "avg_logprob": -0.9549914797147115,
+              "no_speech_prob": 0.009420419111847878,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "And press.",
+          "prompt": "You can just hit the first button.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " And press.",
+              "avg_logprob": -0.5260735253492991,
+              "no_speech_prob": 0.015607276000082493,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794361546.m4a": {
+      "index": 1237,
+      "epoch": 1794361546,
+      "sha256": "279e9c14036d90854760f7c9bb92ad971ad845e6bbbcb03ae45cb22eb969393d",
+      "passes": {
+        "original": {
+          "text": "5G40, 1042.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.2,
+              "text": " 5G40, 1042.",
+              "avg_logprob": -0.49466103315353394,
+              "no_speech_prob": 0.009877405129373074,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G40, 1042.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G40, 1042.",
+              "avg_logprob": -0.5295508325099945,
+              "no_speech_prob": 0.023227116093039513,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "5G40, 1042.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.2,
+              "text": " 5G40, 1042.",
+              "avg_logprob": -0.49466103315353394,
+              "no_speech_prob": 0.009877405129373074,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794361549.m4a": {
+      "index": 1238,
+      "epoch": 1794361549,
+      "sha256": "78e5c019137c3ed973deb3f9b95d4600b7a188c91e527c5baf149bb78eb03b32",
+      "passes": {
+        "original": {
+          "text": "Hi, Jeffrey.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hi, Jeffrey.",
+              "avg_logprob": -0.6277387312480381,
+              "no_speech_prob": 0.004370478447526693,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you, everybody.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you, everybody.",
+              "avg_logprob": -0.6288472637534142,
+              "no_speech_prob": 0.010206392034888268,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "context": {
+          "text": "Hi, JG40.",
+          "prompt": "5G40, 1042.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hi, JG40.",
+              "avg_logprob": -0.6451992458767362,
+              "no_speech_prob": 0.01213801372796297,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794361584.m4a": {
+      "index": 1239,
+      "epoch": 1794361584,
+      "sha256": "1e4e22457b56e6229a0814575058089669b62d8c59fbbfb65865beef1d5b752e",
+      "passes": {
+        "original": {
+          "text": "7J12, call 4.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J12, call 4.",
+              "avg_logprob": -0.5187169075012207,
+              "no_speech_prob": 0.03609723597764969,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J12, cut 4.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J12, cut 4.",
+              "avg_logprob": -0.6538958430290223,
+              "no_speech_prob": 0.0259432140737772,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "7J12, call 4.",
+          "prompt": "5G40, 1042. Hi, Jeffrey.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J12, call 4.",
+              "avg_logprob": -0.6466521620750427,
+              "no_speech_prob": 0.020934322848916054,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794361587.m4a": {
+      "index": 1240,
+      "epoch": 1794361587,
+      "sha256": "48b9b01a9405773e302c6154098294f182803d2d02cddbbf84d464143e6cd5be",
+      "passes": {
+        "original": {
+          "text": "Bye.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Bye.",
+              "avg_logprob": -0.6394499778747559,
+              "no_speech_prob": 0.10405516624450684,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bye.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Bye.",
+              "avg_logprob": -0.7664290428161621,
+              "no_speech_prob": 0.11703051626682281,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Hi.",
+          "prompt": "5G40, 1042. Hi, Jeffrey. 7J12, call 4.",
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Hi.",
+              "avg_logprob": -0.6561884880065918,
+              "no_speech_prob": 0.08182662725448608,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        }
+      }
+    }
+  }
+}
