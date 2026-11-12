@@ -1,0 +1,673 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-10",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794354539.m4a": {
+      "index": 1001,
+      "epoch": 1794354539,
+      "sha256": "74decd25bcf63278aadedd3e5a1fc8d2686c3a9c911dd6a5a4df3a84c84e90e2",
+      "passes": {
+        "original": {
+          "text": "The tag chain is responding on the aircraft incident. The caller is advising that the helicopter is now taking off. And there.",
+          "prompt": null,
+          "duration_seconds": 7.552,
+          "token_limit": 85,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.16,
+              "text": " The tag chain is responding on the aircraft incident.",
+              "avg_logprob": -0.5018510529489228,
+              "no_speech_prob": 0.02734304592013359,
+              "compression_ratio": 1.2727272727272727
+            },
+            {
+              "start": 2.16,
+              "end": 6.72,
+              "text": " The caller is advising that the helicopter is now taking off.",
+              "avg_logprob": -0.5018510529489228,
+              "no_speech_prob": 0.02734304592013359,
+              "compression_ratio": 1.2727272727272727
+            },
+            {
+              "start": 6.72,
+              "end": 7.24,
+              "text": " And there.",
+              "avg_logprob": -0.5018510529489228,
+              "no_speech_prob": 0.02734304592013359,
+              "compression_ratio": 1.2727272727272727
+            }
+          ]
+        },
+        "filtered": {
+          "text": "The side chain is responding in the aircraft incident, the caller is advising that the helicopter is now taking off.",
+          "prompt": null,
+          "duration_seconds": 7.552,
+          "token_limit": 85,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " The side chain is responding in the aircraft incident, the caller is advising that the helicopter is now taking off.",
+              "avg_logprob": -0.49572463989257814,
+              "no_speech_prob": 0.019951866939663887,
+              "compression_ratio": 1.288888888888889
+            }
+          ]
+        },
+        "context": {
+          "text": "Sign chain is responding on the aircraft incident. The caller is advising that the helicopter is now taking off.",
+          "prompt": "Go. Five to thirty-five, sir. Stand for.",
+          "duration_seconds": 7.552,
+          "token_limit": 85,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Sign chain is responding on the aircraft incident. The caller is advising that the helicopter is now taking off.",
+              "avg_logprob": -0.40702160944541294,
+              "no_speech_prob": 0.015388750471174717,
+              "compression_ratio": 1.2307692307692308
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794354556.m4a": {
+      "index": 1002,
+      "epoch": 1794354556,
+      "sha256": "d7c876e580a554cdfedcd7d12b7e213c3b9ea44f39ae7f1f0d54a994ebcf02ee",
+      "passes": {
+        "original": {
+          "text": "Thanks for watching!",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thanks for watching!",
+              "avg_logprob": -0.8165352855409894,
+              "no_speech_prob": 0.7803785800933838,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.9565895795822144,
+              "no_speech_prob": 0.7447107434272766,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Stand. Stand. Stand. Stand. Stand. Stand. Stand. Stand. Stand.",
+          "prompt": "Five to thirty-five, sir. Stand for. The tag chain is responding on the aircraft incident. The caller is advising that the helicopter is now taking off. And there.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.1500000000000001,
+              "text": " Stand. Stand. Stand. Stand. Stand. Stand. Stand. Stand. Stand.",
+              "avg_logprob": -0.6460164844989776,
+              "no_speech_prob": 0.769369900226593,
+              "compression_ratio": 3.4444444444444446
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794354559.m4a": {
+      "index": 1003,
+      "epoch": 1794354559,
+      "sha256": "db0597e7a46f79ae6b9374ee68a8463bb54c0cea219f07b711fb2fcb75fe3e35",
+      "passes": {
+        "original": {
+          "text": "I copy.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I copy.",
+              "avg_logprob": -0.6190564235051473,
+              "no_speech_prob": 0.09586362540721893,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I... copy.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I... copy.",
+              "avg_logprob": -0.7895189012799945,
+              "no_speech_prob": 0.12082352489233017,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "I copy.",
+          "prompt": "Stand for. The tag chain is responding on the aircraft incident. The caller is advising that the helicopter is now taking off. And there. Thanks for watching!",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I copy.",
+              "avg_logprob": -0.5511000752449036,
+              "no_speech_prob": 0.06593743711709976,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794354725.m4a": {
+      "index": 1004,
+      "epoch": 1794354725,
+      "sha256": "a78599d117458a1572a8e6de77d28832331213a34bada086d424a68f8bbf7f06",
+      "passes": {
+        "original": {
+          "text": "I do for you",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I do for you",
+              "avg_logprob": -0.8420929057257516,
+              "no_speech_prob": 0.028526052832603455,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you. Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.7393319718539715,
+              "no_speech_prob": 0.017815109342336655,
+              "compression_ratio": 1.4545454545454546
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.7393319718539715,
+              "no_speech_prob": 0.017815109342336655,
+              "compression_ratio": 1.4545454545454546
+            },
+            {
+              "start": 2.0,
+              "end": 2.02,
+              "text": " Thank you.",
+              "avg_logprob": -0.7393319718539715,
+              "no_speech_prob": 0.017815109342336655,
+              "compression_ratio": 1.4545454545454546
+            }
+          ]
+        },
+        "context": {
+          "text": "I do for you",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I do for you",
+              "avg_logprob": -0.8420929057257516,
+              "no_speech_prob": 0.028526052832603455,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794354728.m4a": {
+      "index": 1005,
+      "epoch": 1794354728,
+      "sha256": "ea34d8bb674776d2499f616eb4342c4525e61648a1835a9476ab258b333d8e00",
+      "passes": {
+        "original": {
+          "text": "Check for...",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Check for...",
+              "avg_logprob": -0.6896240015824636,
+              "no_speech_prob": 0.040429189801216125,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Check for...",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Check for...",
+              "avg_logprob": -0.7046190897623698,
+              "no_speech_prob": 0.021686015650629997,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "Check for...",
+          "prompt": "I do for you",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Check for...",
+              "avg_logprob": -0.6946943700313568,
+              "no_speech_prob": 0.02326176129281521,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794354731.m4a": {
+      "index": 1006,
+      "epoch": 1794354731,
+      "sha256": "476ff6da3b5500c714d28a6aa435f7b99e1a0bdc90a486b7b97458c72f16ec04",
+      "passes": {
+        "original": {
+          "text": "J44 is going to crash.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " J44 is going to crash.",
+              "avg_logprob": -0.9316781759262085,
+              "no_speech_prob": 0.05798701196908951,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "J44 is in traffic.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " J44 is in traffic.",
+              "avg_logprob": -0.8632585737440321,
+              "no_speech_prob": 0.04640619456768036,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "context": {
+          "text": "The J44's in traffic.",
+          "prompt": "I do for you Check for...",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " The J44's in traffic.",
+              "avg_logprob": -0.9607254266738892,
+              "no_speech_prob": 0.052875928580760956,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794354756.m4a": {
+      "index": 1007,
+      "epoch": 1794354756,
+      "sha256": "f2ac892b1646bd8574927834229da0acf8cc63e0b4f7b1ad7ca52d871b501ea0",
+      "passes": {
+        "original": {
+          "text": "beep beep beep",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.44,
+              "text": " beep beep beep",
+              "avg_logprob": -0.5934958457946777,
+              "no_speech_prob": 0.1378077119588852,
+              "compression_ratio": 0.9333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "beep beep beep",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.48,
+              "text": " beep beep beep",
+              "avg_logprob": -0.46947765350341797,
+              "no_speech_prob": 0.23087657988071442,
+              "compression_ratio": 0.9333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "BLEEP BLEEP BLEEP",
+          "prompt": "I do for you Check for... J44 is going to crash.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.48,
+              "text": " BLEEP BLEEP BLEEP",
+              "avg_logprob": -0.5345557779073715,
+              "no_speech_prob": 0.12663346529006958,
+              "compression_ratio": 1.0625
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794354776.m4a": {
+      "index": 1008,
+      "epoch": 1794354776,
+      "sha256": "3aa7a7a16e4ad39614fbfebff6e08d2b71d9a8f82b2196d97284dd59c878c8ef",
+      "passes": {
+        "original": {
+          "text": "5J42, helicopters, GOA.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J42, helicopters, GOA.",
+              "avg_logprob": -0.5848303387562434,
+              "no_speech_prob": 0.0429372563958168,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J42, helicopters, GOA.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.16,
+              "text": " 5J42, helicopters, GOA.",
+              "avg_logprob": -0.6352361390988032,
+              "no_speech_prob": 0.01995972916483879,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "context": {
+          "text": "5J42, helicopters GOA",
+          "prompt": "Check for... J44 is going to crash. beep beep beep",
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J42, helicopters GOA",
+              "avg_logprob": -0.5459642887115479,
+              "no_speech_prob": 0.0037035117857158184,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794354781.m4a": {
+      "index": 1009,
+      "epoch": 1794354781,
+      "sha256": "e2ce203d185913b44419a2224ee271fe370646bef4d7f3c044b75e5ea79da50d",
+      "passes": {
+        "original": {
+          "text": "Do you know, do we need to notify the FAA, or is there any notifications we need to make?",
+          "prompt": null,
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Do you know, do we need to notify the FAA, or is there any notifications we need to make?",
+              "avg_logprob": -0.23308486461639405,
+              "no_speech_prob": 0.02418128028512001,
+              "compression_ratio": 1.1265822784810127
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Do you know, do we need to notify the FAA, or is there any notifications we need to make?",
+          "prompt": null,
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Do you know, do we need to notify the FAA, or is there any notifications we need to make?",
+              "avg_logprob": -0.25965205192565916,
+              "no_speech_prob": 0.018033061176538467,
+              "compression_ratio": 1.1265822784810127
+            }
+          ]
+        },
+        "context": {
+          "text": "1045J42, do you know, do we need to notify the FIA or is there any notifications we need to make?",
+          "prompt": "J44 is going to crash. beep beep beep 5J42, helicopters, GOA.",
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 1045J42, do you know, do we need to notify the FIA or is there any notifications we need to make?",
+              "avg_logprob": -0.24618856249184445,
+              "no_speech_prob": 0.0166018009185791,
+              "compression_ratio": 1.1411764705882352
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794354789.m4a": {
+      "index": 1010,
+      "epoch": 1794354789,
+      "sha256": "c1d94ca65e8ccbb336461aa509f963b449291ff5e93889997a8db79438812c28",
+      "passes": {
+        "original": {
+          "text": "I'm not sure I'll contact 5G10.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I'm not sure I'll contact 5G10.",
+              "avg_logprob": -0.30806428619793486,
+              "no_speech_prob": 0.00860846322029829,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm not sure I'll contact 5G10.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I'm not sure I'll contact 5G10.",
+              "avg_logprob": -0.385147397007261,
+              "no_speech_prob": 0.008086420595645905,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm not sure I'll contact 5G10.",
+          "prompt": "beep beep beep 5J42, helicopters, GOA. Do you know, do we need to notify the FAA, or is there any notifications we need to make?",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.48,
+              "text": " I'm not sure I'll contact 5G10.",
+              "avg_logprob": -0.3451567696673529,
+              "no_speech_prob": 0.010034660808742046,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        }
+      }
+    }
+  }
+}
