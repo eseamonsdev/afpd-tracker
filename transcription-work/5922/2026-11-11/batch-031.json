@@ -1,0 +1,712 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-11",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794415781.m4a": {
+      "index": 301,
+      "epoch": 1794415781,
+      "sha256": "e673f87c3f16f19c96ce36c1df6f8c22e26b5f10a0ae31e79cbf07f19ded6689",
+      "passes": {
+        "original": {
+          "text": "Responding to 600 East Quality Drive, 600 East Quality Drive, RP's the security manager at built bars. So they had fire respond to an alarm last night, they found some equipment left behind with the name Brothers on it, hoping to get it back to the owner.",
+          "prompt": null,
+          "duration_seconds": 19.456,
+          "token_limit": 180,
+          "token_count": 63,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.88,
+              "text": " Responding to 600 East Quality Drive, 600 East Quality Drive, RP's the security manager",
+              "avg_logprob": -0.3238246953114867,
+              "no_speech_prob": 0.006716614123433828,
+              "compression_ratio": 1.4912280701754386
+            },
+            {
+              "start": 8.88,
+              "end": 9.88,
+              "text": " at built bars.",
+              "avg_logprob": -0.3238246953114867,
+              "no_speech_prob": 0.006716614123433828,
+              "compression_ratio": 1.4912280701754386
+            },
+            {
+              "start": 9.88,
+              "end": 15.36,
+              "text": " So they had fire respond to an alarm last night, they found some equipment left behind",
+              "avg_logprob": -0.3238246953114867,
+              "no_speech_prob": 0.006716614123433828,
+              "compression_ratio": 1.4912280701754386
+            },
+            {
+              "start": 15.36,
+              "end": 18.8,
+              "text": " with the name Brothers on it, hoping to get it back to the owner.",
+              "avg_logprob": -0.3238246953114867,
+              "no_speech_prob": 0.006716614123433828,
+              "compression_ratio": 1.4912280701754386
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Responding to 600 East Quality Drive, 600 East Quality Drive, RPs, the Security Manager at Built Bars. So, they had fire respond to an alarm last night. They found some equipment left behind with the name Brothers on it, hoping to get it back to the owner. You",
+          "prompt": null,
+          "duration_seconds": 19.456,
+          "token_limit": 180,
+          "token_count": 70,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.9,
+              "text": " Responding to 600 East Quality Drive, 600 East Quality Drive, RPs, the Security Manager",
+              "avg_logprob": -0.3608007068219392,
+              "no_speech_prob": 0.008792826905846596,
+              "compression_ratio": 1.4545454545454546
+            },
+            {
+              "start": 8.9,
+              "end": 9.9,
+              "text": " at Built Bars.",
+              "avg_logprob": -0.3608007068219392,
+              "no_speech_prob": 0.008792826905846596,
+              "compression_ratio": 1.4545454545454546
+            },
+            {
+              "start": 9.9,
+              "end": 13.66,
+              "text": " So, they had fire respond to an alarm last night.",
+              "avg_logprob": -0.3608007068219392,
+              "no_speech_prob": 0.008792826905846596,
+              "compression_ratio": 1.4545454545454546
+            },
+            {
+              "start": 13.66,
+              "end": 18.1,
+              "text": " They found some equipment left behind with the name Brothers on it, hoping to get it",
+              "avg_logprob": -0.3608007068219392,
+              "no_speech_prob": 0.008792826905846596,
+              "compression_ratio": 1.4545454545454546
+            },
+            {
+              "start": 18.1,
+              "end": 19.1,
+              "text": " back to the owner.",
+              "avg_logprob": -0.3608007068219392,
+              "no_speech_prob": 0.008792826905846596,
+              "compression_ratio": 1.4545454545454546
+            },
+            {
+              "start": 19.1,
+              "end": 21.1,
+              "text": " You",
+              "avg_logprob": -0.8727833926677704,
+              "no_speech_prob": 0.7790919542312622,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm responding to 600 East Quality Drive, 600 East Quality Drive. RP's the Security Manager at Built Bars. So they had fire respond to an alarm last night. They found some equipment left behind with the name Brothers on it. Hoping to get it back to the owner.",
+          "prompt": "5J37, I copy the phone property. Thanks for watching! Copy.",
+          "duration_seconds": 19.456,
+          "token_limit": 180,
+          "token_count": 63,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.88,
+              "text": " I'm responding to 600 East Quality Drive, 600 East Quality Drive. RP's the Security Manager",
+              "avg_logprob": -0.258544669020921,
+              "no_speech_prob": 0.24994102120399475,
+              "compression_ratio": 1.430939226519337
+            },
+            {
+              "start": 8.88,
+              "end": 14.76,
+              "text": " at Built Bars. So they had fire respond to an alarm last night. They found some equipment",
+              "avg_logprob": -0.258544669020921,
+              "no_speech_prob": 0.24994102120399475,
+              "compression_ratio": 1.430939226519337
+            },
+            {
+              "start": 14.76,
+              "end": 18.84,
+              "text": " left behind with the name Brothers on it. Hoping to get it back to the owner.",
+              "avg_logprob": -0.258544669020921,
+              "no_speech_prob": 0.24994102120399475,
+              "compression_ratio": 1.430939226519337
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794415802.m4a": {
+      "index": 302,
+      "epoch": 1794415802,
+      "sha256": "7863c44c0790ec65312ea0b674a56cbc81fef08eca92774a8d36bb6d74f72d18",
+      "passes": {
+        "original": {
+          "text": "Coffee.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Coffee.",
+              "avg_logprob": -0.8032033920288086,
+              "no_speech_prob": 0.01613890565931797,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Coffee.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Coffee.",
+              "avg_logprob": -0.6484684467315673,
+              "no_speech_prob": 0.02017684280872345,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "Thanks for watching! Copy. Responding to 600 East Quality Drive, 600 East Quality Drive, RP's the security manager at built bars. So they had fire respond to an alarm last night, they found some equipment left behind with the name Brothers on it, hoping to get it back to the owner.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.4972682476043701,
+              "no_speech_prob": 0.024804838001728058,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794415805.m4a": {
+      "index": 303,
+      "epoch": 1794415805,
+      "sha256": "2266da36e826e4cf883b60663d832ab7d863a25a5046b56ea0c1de27f0370dce",
+      "passes": {
+        "original": {
+          "text": "Woof.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Woof.",
+              "avg_logprob": -0.7369116942087809,
+              "no_speech_prob": 0.050936516374349594,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Whoops.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Whoops.",
+              "avg_logprob": -0.8445801337560018,
+              "no_speech_prob": 0.1372479945421219,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Woof.",
+          "prompt": "Copy. Responding to 600 East Quality Drive, 600 East Quality Drive, RP's the security manager at built bars. So they had fire respond to an alarm last night, they found some equipment left behind with the name Brothers on it, hoping to get it back to the owner. Coffee.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Woof.",
+              "avg_logprob": -0.463312566280365,
+              "no_speech_prob": 0.024104837328195572,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794415839.m4a": {
+      "index": 304,
+      "epoch": 1794415839,
+      "sha256": "c2087e67e6cc63f2e61643b20453f380fb694ce434a22ad9f1cfff8d62a26d59",
+      "passes": {
+        "original": {
+          "text": "I'm sorry, I'm sorry, I'm sorry, I'm",
+          "prompt": null,
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.38,
+              "text": " I'm sorry, I'm sorry, I'm sorry, I'm",
+              "avg_logprob": -0.8965935185551643,
+              "no_speech_prob": 0.921794056892395,
+              "compression_ratio": 1.6363636363636365
+            }
+          ]
+        },
+        "filtered": {
+          "text": "",
+          "prompt": null,
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 0,
+          "token_cap_reached": false,
+          "segments": []
+        },
+        "context": {
+          "text": "Crap.",
+          "prompt": "Responding to 600 East Quality Drive, 600 East Quality Drive, RP's the security manager at built bars. So they had fire respond to an alarm last night, they found some equipment left behind with the name Brothers on it, hoping to get it back to the owner. Coffee. Woof.",
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Crap.",
+              "avg_logprob": -0.9207383791605631,
+              "no_speech_prob": 0.8483893275260925,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794416050.m4a": {
+      "index": 305,
+      "epoch": 1794416050,
+      "sha256": "24da3b1a6a07dcfe34873c15376999f1b46d3427c6992bb6fe124ebe02114b6b",
+      "passes": {
+        "original": {
+          "text": "5J28, copy event of vehicle.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J28, copy event of vehicle.",
+              "avg_logprob": -0.43396857380867004,
+              "no_speech_prob": 0.030269814655184746,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J28, copy of your vehicle.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " 5J28, copy of your vehicle.",
+              "avg_logprob": -0.7555457105239233,
+              "no_speech_prob": 0.013450919650495052,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        },
+        "context": {
+          "text": "5J28, copy event of vehicle.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J28, copy event of vehicle.",
+              "avg_logprob": -0.43396857380867004,
+              "no_speech_prob": 0.030269814655184746,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794416054.m4a": {
+      "index": 306,
+      "epoch": 1794416054,
+      "sha256": "56c195659719b06fe4b8aae21a464de8624e5af78467c1e674b54d26813e19ab",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.7616328199704488,
+              "no_speech_prob": 0.03047703579068184,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bye.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Bye.",
+              "avg_logprob": -0.6940886020660401,
+              "no_speech_prob": 0.04153095558285713,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Go ahead.",
+          "prompt": "5J28, copy event of vehicle.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.7712054252624512,
+              "no_speech_prob": 0.014690711162984371,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794416056.m4a": {
+      "index": 307,
+      "epoch": 1794416056,
+      "sha256": "8d3a908924ce82de42b60a2acca5272804b3f3272d8d1f2d1de9ec7019f72a67",
+      "passes": {
+        "original": {
+          "text": "It's going to be 900 East and Bamberger, negative check.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " It's going to be 900 East and Bamberger, negative check.",
+              "avg_logprob": -0.5439780784977807,
+              "no_speech_prob": 0.009059436619281769,
+              "compression_ratio": 0.875
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It's going to be 900 East and Bamberger, negative check.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " It's going to be 900 East and Bamberger, negative check.",
+              "avg_logprob": -0.47404691245820785,
+              "no_speech_prob": 0.005064160097390413,
+              "compression_ratio": 0.875
+            }
+          ]
+        },
+        "context": {
+          "text": "Going to be 900 East and Bamberger, negative check.",
+          "prompt": "5J28, copy event of vehicle. Go ahead.",
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Going to be 900 East and Bamberger, negative check.",
+              "avg_logprob": -0.48126569017767906,
+              "no_speech_prob": 0.0034954645670950413,
+              "compression_ratio": 0.864406779661017
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794416064.m4a": {
+      "index": 308,
+      "epoch": 1794416064,
+      "sha256": "497469795468bde47495c832bd478ae27ffdaa5f2f43817c0f79bce8faa98cb6",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.8366810798645019,
+              "no_speech_prob": 0.04136763885617256,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Coffee.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Coffee.",
+              "avg_logprob": -0.8566367149353027,
+              "no_speech_prob": 0.016736917197704315,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "5J28, copy event of vehicle. Go ahead. It's going to be 900 East and Bamberger, negative check.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.4697141647338867,
+              "no_speech_prob": 0.011668886989355087,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794416088.m4a": {
+      "index": 309,
+      "epoch": 1794416088,
+      "sha256": "719314f295ea8925aec428b622464a2cdf12c3918b6e81319e22c99ec8938c9d",
+      "passes": {
+        "original": {
+          "text": "7J31 copy medical assist.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7J31 copy medical assist.",
+              "avg_logprob": -0.5860102593898773,
+              "no_speech_prob": 0.038363561034202576,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J31, copy medical assist.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2,
+              "text": " 7J31, copy medical assist.",
+              "avg_logprob": -0.5907041376287286,
+              "no_speech_prob": 0.0164224561303854,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "context": {
+          "text": "7J31, copy medical assist.",
+          "prompt": "Go ahead. It's going to be 900 East and Bamberger, negative check. Copy.",
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7J31, copy medical assist.",
+              "avg_logprob": -0.4594554684378884,
+              "no_speech_prob": 0.009747682139277458,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794416092.m4a": {
+      "index": 310,
+      "epoch": 1794416092,
+      "sha256": "ea4230fb0c6007609a60f493d050b35edc89c680147a4c8347e556977e3f0acd",
+      "passes": {
+        "original": {
+          "text": "I copy. Would you advise of my police assistance?",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I copy. Would you advise of my police assistance?",
+              "avg_logprob": -0.46943576846803936,
+              "no_speech_prob": 0.012109209783375263,
+              "compression_ratio": 0.8596491228070176
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I copy. Would you advise of my police assistance?",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I copy. Would you advise of my police assistance?",
+              "avg_logprob": -0.5932068186146873,
+              "no_speech_prob": 0.018007853999733925,
+              "compression_ratio": 0.8596491228070176
+            }
+          ]
+        },
+        "context": {
+          "text": "I copy. Would you advise medical needs assistance?",
+          "prompt": "It's going to be 900 East and Bamberger, negative check. Copy. 7J31 copy medical assist.",
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I copy. Would you advise medical needs assistance?",
+              "avg_logprob": -0.26635284607227033,
+              "no_speech_prob": 0.005775113124400377,
+              "compression_ratio": 0.8620689655172413
+            }
+          ]
+        }
+      }
+    }
+  }
+}
