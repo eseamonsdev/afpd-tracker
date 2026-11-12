@@ -1,0 +1,689 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-11",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794458900.m4a": {
+      "index": 1501,
+      "epoch": 1794458900,
+      "sha256": "bd1aa694e65602e84c15806c2079dcf95f16d8fe9b272b7da024e18c767e0615",
+      "passes": {
+        "original": {
+          "text": "Bye.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye.",
+              "avg_logprob": -0.5292444229125977,
+              "no_speech_prob": 0.014404987916350365,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Okay",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Okay",
+              "avg_logprob": -0.6557387262582779,
+              "no_speech_prob": 0.012228923849761486,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Bye bye.",
+          "prompt": "5J38, copy fire assist. Okay. So we need Jack and Jill Bowling, 105,700 East for something on fire in the bathroom, possibly toilet paper. It's on the floor we're still gathering.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye bye.",
+              "avg_logprob": -0.709222157796224,
+              "no_speech_prob": 0.06196275353431702,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794458943.m4a": {
+      "index": 1502,
+      "epoch": 1794458943,
+      "sha256": "81db41de3f3f233a35a401f6b5cbc211b9d2d528e35ebc1b656ebb103d1ee80f",
+      "passes": {
+        "original": {
+          "text": "5J38 Central, the RP advised. It has possibly spread to the roof as well. Everyone is currently evacuating. It'll be in the men's restroom of the building.",
+          "prompt": null,
+          "duration_seconds": 11.52,
+          "token_limit": 117,
+          "token_count": 45,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2600000000000002,
+              "text": " 5J38 Central, the RP advised.",
+              "avg_logprob": -0.22484093742526096,
+              "no_speech_prob": 0.011996339075267315,
+              "compression_ratio": 1.2109375
+            },
+            {
+              "start": 3.2600000000000002,
+              "end": 6.66,
+              "text": " It has possibly spread to the roof as well.",
+              "avg_logprob": -0.22484093742526096,
+              "no_speech_prob": 0.011996339075267315,
+              "compression_ratio": 1.2109375
+            },
+            {
+              "start": 6.66,
+              "end": 8.34,
+              "text": " Everyone is currently evacuating.",
+              "avg_logprob": -0.22484093742526096,
+              "no_speech_prob": 0.011996339075267315,
+              "compression_ratio": 1.2109375
+            },
+            {
+              "start": 8.34,
+              "end": 10.540000000000001,
+              "text": " It'll be in the men's restroom of the building.",
+              "avg_logprob": -0.22484093742526096,
+              "no_speech_prob": 0.011996339075267315,
+              "compression_ratio": 1.2109375
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J38 Central, though RP advised, it has possibly spread to the roof as well. Everyone is currently evacuating. It will be in the men's restroom of the building.",
+          "prompt": null,
+          "duration_seconds": 11.52,
+          "token_limit": 117,
+          "token_count": 43,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.38,
+              "text": " 5J38 Central, though RP advised, it has possibly spread to the roof as well.",
+              "avg_logprob": -0.3043372570113702,
+              "no_speech_prob": 0.006523629184812307,
+              "compression_ratio": 1.2030075187969924
+            },
+            {
+              "start": 6.38,
+              "end": 7.88,
+              "text": " Everyone is currently evacuating.",
+              "avg_logprob": -0.3043372570113702,
+              "no_speech_prob": 0.006523629184812307,
+              "compression_ratio": 1.2030075187969924
+            },
+            {
+              "start": 7.88,
+              "end": 10.6,
+              "text": " It will be in the men's restroom of the building.",
+              "avg_logprob": -0.3043372570113702,
+              "no_speech_prob": 0.006523629184812307,
+              "compression_ratio": 1.2030075187969924
+            }
+          ]
+        },
+        "context": {
+          "text": "5J38 Central, the RP advised. It has possibly spread to the roof as well. Everyone is currently evacuating. It'll be in the men's restroom of the building.",
+          "prompt": "Okay. So we need Jack and Jill Bowling, 105,700 East for something on fire in the bathroom, possibly toilet paper. It's on the floor we're still gathering. Bye.",
+          "duration_seconds": 11.52,
+          "token_limit": 117,
+          "token_count": 41,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.44,
+              "text": " 5J38 Central, the RP advised. It has possibly spread to the roof as well. Everyone is currently",
+              "avg_logprob": -0.2026680356689862,
+              "no_speech_prob": 0.018282290548086166,
+              "compression_ratio": 1.2109375
+            },
+            {
+              "start": 7.44,
+              "end": 10.52,
+              "text": " evacuating. It'll be in the men's restroom of the building.",
+              "avg_logprob": -0.2026680356689862,
+              "no_speech_prob": 0.018282290548086166,
+              "compression_ratio": 1.2109375
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794458957.m4a": {
+      "index": 1503,
+      "epoch": 1794458957,
+      "sha256": "c70d42ffb06a303ff7f385a3d192fd758183cd6f6abff5d986f3b9c21dceae9b",
+      "passes": {
+        "original": {
+          "text": "I copy. We shall make code from 100 and north 130s.",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.88,
+              "text": " I copy. We shall make code from 100 and north 130s.",
+              "avg_logprob": -0.6963415706858915,
+              "no_speech_prob": 0.048442624509334564,
+              "compression_ratio": 0.8793103448275862
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I copy. We show the code from 100 and north 130s.",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " I copy. We show the code from 100 and north 130s.",
+              "avg_logprob": -0.7823471742517808,
+              "no_speech_prob": 0.035674504935741425,
+              "compression_ratio": 0.875
+            }
+          ]
+        },
+        "context": {
+          "text": "I copy. We shall make call from 100 and north 130s.",
+          "prompt": "Bye. 5J38 Central, the RP advised. It has possibly spread to the roof as well. Everyone is currently evacuating. It'll be in the men's restroom of the building.",
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.4,
+              "text": " I copy. We shall make call from 100 and north 130s.",
+              "avg_logprob": -0.7014562382417566,
+              "no_speech_prob": 0.07074570655822754,
+              "compression_ratio": 0.9107142857142857
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794458962.m4a": {
+      "index": 1504,
+      "epoch": 1794458962,
+      "sha256": "cd781d3f5352b3dc23d564789760fa61b7606b56086d816d9a7aa781701de56d",
+      "passes": {
+        "original": {
+          "text": "Probably 100 north, 100 east, going south.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Probably 100 north, 100 east, going south.",
+              "avg_logprob": -0.6343679611499493,
+              "no_speech_prob": 0.04431233927607536,
+              "compression_ratio": 0.9130434782608695
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Everyone in your north, 100 east, go and vote.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Everyone in your north, 100 east, go and vote.",
+              "avg_logprob": -0.6848321517308553,
+              "no_speech_prob": 0.0453622080385685,
+              "compression_ratio": 0.8518518518518519
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy, 100 north, 100 east. Going code.",
+          "prompt": "5J38 Central, the RP advised. It has possibly spread to the roof as well. Everyone is currently evacuating. It'll be in the men's restroom of the building. I copy. We shall make code from 100 and north 130s.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy, 100 north, 100 east. Going code.",
+              "avg_logprob": -0.4557898959943226,
+              "no_speech_prob": 0.02783680148422718,
+              "compression_ratio": 0.926829268292683
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794458970.m4a": {
+      "index": 1505,
+      "epoch": 1794458970,
+      "sha256": "cebdb81d781fe4fa1ddfb18a352eea8120b73c815a37d75a4878cb4827ed75db",
+      "passes": {
+        "original": {
+          "text": "Thank you for the time, I'll be going well.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you for the time, I'll be going well.",
+              "avg_logprob": -0.4985432306925456,
+              "no_speech_prob": 0.09628903865814209,
+              "compression_ratio": 0.8431372549019608
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you for your time, I'll be coming to you all.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you for your time, I'll be coming to you all.",
+              "avg_logprob": -0.6139611075906193,
+              "no_speech_prob": 0.2238759547472,
+              "compression_ratio": 0.9622641509433962
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you for the time, I'll be going low.",
+          "prompt": "5J38 Central, the RP advised. It has possibly spread to the roof as well. Everyone is currently evacuating. It'll be in the men's restroom of the building. I copy. We shall make code from 100 and north 130s. Probably 100 north, 100 east, going south.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you for the time, I'll be going low.",
+              "avg_logprob": -0.4984182834625244,
+              "no_speech_prob": 0.032830581068992615,
+              "compression_ratio": 0.84
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794458974.m4a": {
+      "index": 1506,
+      "epoch": 1794458974,
+      "sha256": "d304d6970a67a6ab46e22a2f1c5d20812a6196ee944cbc656bd49a0bb06d8a73",
+      "passes": {
+        "original": {
+          "text": "Lashing at time.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Lashing at time.",
+              "avg_logprob": -0.6122905388474464,
+              "no_speech_prob": 0.035573504865169525,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Laughing at time.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Laughing at time.",
+              "avg_logprob": -0.7000723481178284,
+              "no_speech_prob": 0.02924123778939247,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "Last unit time.",
+          "prompt": "I copy. We shall make code from 100 and north 130s. Probably 100 north, 100 east, going south. Thank you for the time, I'll be going well.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Last unit time.",
+              "avg_logprob": -0.5474638428006854,
+              "no_speech_prob": 0.052032794803380966,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794458977.m4a": {
+      "index": 1507,
+      "epoch": 1794458977,
+      "sha256": "17930fa3ab137ef89ecdb2371e7cb4282799d203a65fa31ca64662f663386c64",
+      "passes": {
+        "original": {
+          "text": "I'm doing 45. I'll be caught as well.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0200000000000005,
+              "text": " I'm doing 45. I'll be caught as well.",
+              "avg_logprob": -0.48808610439300537,
+              "no_speech_prob": 0.010519864968955517,
+              "compression_ratio": 0.8222222222222222
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm doing 45. I'll be caught as well",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " I'm doing 45. I'll be caught as well",
+              "avg_logprob": -0.5741796238081796,
+              "no_speech_prob": 0.015069255605340004,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm doing 45, I'll be caught as well.",
+          "prompt": "Probably 100 north, 100 east, going south. Thank you for the time, I'll be going well. Lashing at time.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " I'm doing 45, I'll be caught as well.",
+              "avg_logprob": -0.5249542713165283,
+              "no_speech_prob": 0.018951451405882835,
+              "compression_ratio": 0.8222222222222222
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794458980.m4a": {
+      "index": 1508,
+      "epoch": 1794458980,
+      "sha256": "f0886f1ba5ab9b1362f99d30c0e9f314cf946aa321997df492cb34b73dd12551",
+      "passes": {
+        "original": {
+          "text": "Happy 45.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy 45.",
+              "avg_logprob": -0.5029723544915518,
+              "no_speech_prob": 0.02108531817793846,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy 45.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy 45.",
+              "avg_logprob": -0.43735196193059284,
+              "no_speech_prob": 0.01647467352449894,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy 45.",
+          "prompt": "Thank you for the time, I'll be going well. Lashing at time. I'm doing 45. I'll be caught as well.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy 45.",
+              "avg_logprob": -0.2898950129747391,
+              "no_speech_prob": 0.031642716377973557,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794458983.m4a": {
+      "index": 1509,
+      "epoch": 1794458983,
+      "sha256": "42b7b73afb722f4cc9c36eec33041c700f1c332235bff8b2fb6d05e0acbfa188",
+      "passes": {
+        "original": {
+          "text": "5J52, I'll be in round to that location.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.52,
+              "text": " 5J52, I'll be in round to that location.",
+              "avg_logprob": -0.42063365690410137,
+              "no_speech_prob": 0.009163174778223038,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J52, I'll be in route to that location.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J52, I'll be in route to that location.",
+              "avg_logprob": -0.43594032526016235,
+              "no_speech_prob": 0.022042911499738693,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        },
+        "context": {
+          "text": "5J52, I'll be in round to that location.",
+          "prompt": "Lashing at time. I'm doing 45. I'll be caught as well. Happy 45.",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.5,
+              "text": " 5J52, I'll be in round to that location.",
+              "avg_logprob": -0.38955649361014366,
+              "no_speech_prob": 0.011322826147079468,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794458986.m4a": {
+      "index": 1510,
+      "epoch": 1794458986,
+      "sha256": "dc1d838dd7e961ad5fb91dd685e342a2cd31a0fff59e059632655666e085ffc2",
+      "passes": {
+        "original": {
+          "text": "copy 52",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy 52",
+              "avg_logprob": -0.7096987247467041,
+              "no_speech_prob": 0.023270532488822937,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy 52.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy 52.",
+              "avg_logprob": -0.6929744283358256,
+              "no_speech_prob": 0.013990601524710655,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy 52.",
+          "prompt": "I'm doing 45. I'll be caught as well. Happy 45. 5J52, I'll be in round to that location.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy 52.",
+              "avg_logprob": -0.4742168386777242,
+              "no_speech_prob": 0.008697783574461937,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    }
+  }
+}
