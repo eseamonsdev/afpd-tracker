@@ -54,10 +54,10 @@ A source record with `status: "confirmed"` and `confirmed_by: "Eric"` is an owne
 
 General strength counts distinct dates with explicitly accepted evidence:
 
-- **Possible association:** two or three accepted dates.
+- **Possible association:** two or three accepted dates, or one confirmed date when there is no reviewed evidence or general confirmation for a different officer on that radio.
 - **Strong association:** four or more accepted dates.
 - **Confirmed this day:** owner confirmation for the selected date.
-- A single accepted date does not extend a name across dates.
+- A single day of supporting evidence needs a dated confirmation to qualify for the general label. Unreviewed and rejected candidates do not block it.
 
 Strong and possible identities are never mixed for one radio. When accepted strong associations exist, possible alternatives remain CSV-only unless they have a date-specific owner confirmation. Otherwise two accepted possible associations can coexist. Unreviewed additions cannot change an established strength, introduce another name, or replace a confirmed instance. `display_policy.accepted_general_pairs` retains the accepted general mappings: even newly accepted evidence for a competing general pair cannot replace those mappings until that pair is explicitly accepted too. Non-conflicting new pairs remain eligible after individual evidence review. Dated owner confirmations are independent of this general-pair guard.
 

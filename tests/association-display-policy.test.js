@@ -51,8 +51,31 @@ test('dated confirmations are not promoted to permanent pair confirmations',()=>
   const source=input();source.associations=[row('one','2026-10-01',{status:'confirmed',confirmed_by:'Eric'})];
   const result=compileOfficerAssociations(source);
   assert.equal(result.labels.days['2026-10-01']['123'][0].status,'confirmed');
-  assert.equal(result.labels.associations['123'],undefined);
+  assert.equal(result.labels.associations['123'][0].status,'possible');
+  assert.equal(result.labels.associations['123'][0].confirmed,false);
+  assert.equal(result.labels.associations['123'][0].evidence_days,1);
+  assert.equal(result.labels.profiles.one[0].status_label,'Possible association');
   assert.equal(result.labels.days['2026-10-02'],undefined);
+});
+
+test('one-day fallback requires a confirmation and no reviewed competing identity',()=>{
+  const source=input();
+  source.associations=[reviewed('one','2026-10-01')];
+  assert.equal(compileOfficerAssociations(source).labels.associations['123'],undefined);
+
+  source.associations=[row('one','2026-10-01',{status:'confirmed',confirmed_by:'Eric'}),
+    row('two','2026-10-02'),row('two','2026-10-03',{status:'rejected',association_reviewed:true})];
+  assert.equal(compileOfficerAssociations(source).labels.associations['123'][0].status,'possible');
+
+  source.associations.push(reviewed('two','2026-10-04'));
+  let result=compileOfficerAssociations(source);
+  assert.equal(result.labels.associations['123'],undefined);
+  assert.equal(result.labels.days['2026-10-01']['123'][0].status,'confirmed');
+
+  source.associations.push(row('two','2026-10-04',{status:'confirmed',confirmed_by:'Eric'}));
+  result=compileOfficerAssociations(source);
+  assert.equal(result.labels.associations['123'],undefined);
+  assert.deepEqual(result.labels.days['2026-10-04']['123'].map(r=>r.officer_id),['two']);
 });
 
 test('all prior Eric confirmations and the Jackie correction remain, without the David/Somerville alternatives',()=>{

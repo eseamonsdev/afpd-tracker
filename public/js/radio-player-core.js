@@ -59,7 +59,7 @@ function createIdentity(getDate) {
     const description = entry.status === "confirmed-association"
       ? `Eric has personally confirmed the association between this radio ID and ${entry.name}. This confirms the association, not the speaker in every recording or on ${date}.`
       : ["strong", "possible"].includes(entry.status)
-      ? `Named exchanges associate this radio ID with ${entry.name} on ${count} dates. An association has not been confirmed for ${date}. The ${entry.status} association carries from evidence on other dates; it is not a confirmation of the selected date.`
+      ? `Named exchanges associate this radio ID with ${entry.name} on ${count} ${count === 1 ? "date" : "dates"}. An association has not been confirmed for ${date}. The ${entry.status} association carries from evidence on other dates; it is not a confirmation of the selected date.`
       : `Named exchanges associate this radio ID with ${entry.name} on ${date}.` +
         (entry.status === "single-day" ? " This is the only supported date; the name is not extended to other dates." : "");
     const evidence = Array.isArray(entry.evidence) ? entry.evidence.map(row => `${row.evidence}${row.name_heard ? ` [Name heard: ${row.name_heard}]` : ""}${row.clips?.length ? ` (talkgroup ${row.talkgroup}, clips ${row.clips.join(", ")})` : ""}`).join(" ") : "";

@@ -14,7 +14,7 @@ test("thresholds count distinct confirmed dates, never clips, records or talkgro
   let result = compileOfficerAssociations({...source(rows), association_confirmations:{"one/123":{confirmed:false}}});
   assert.equal(result.labels.days["2026-10-01"]["123"][0].status, "confirmed");
   assert.equal(result.labels.days["2026-10-01"]["123"][0].evidence_days, 1);
-  assert.equal(result.labels.associations["123"], undefined);
+  assert.equal(result.labels.associations["123"][0].status, "possible");
   rows.push(record("2026-10-02"), record("2026-10-03", { status: "supporting" }));
   assert.equal(compileOfficerAssociations({...source(rows), association_confirmations:{"one/123":{confirmed:false}}}).labels.associations["123"][0].status, "possible");
   assert.equal(compileOfficerAssociations({...source(rows), association_confirmations:{"one/123":{confirmed:false}}}).labels.associations["123"][0].evidence_days, 2);
@@ -139,7 +139,7 @@ test('Sam first-name alternatives do not count as two identities and owner confi
  const compiled=compileOfficerAssociations(input);
  assert.equal(compiled.labels.profiles[halladay][0].evidence_days,1);
  assert.equal(compiled.labels.profiles[canizalez],undefined);
- assert.equal(compiled.labels.associations['123'],undefined);
+ assert.deepEqual(compiled.labels.associations['123'].map(r=>[r.officer_id,r.status]),[[halladay,'possible']]);
  assert.match(compiled.evidenceCsv,/Unresolved Sam identity; not counted/);
 });
 
