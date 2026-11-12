@@ -22,7 +22,7 @@
         {% endfor %}{% elif update.description %}<p class="latest-updates-description">{{ update.description | escape }}</p>{% endif %}{% if update.recordLinks and update.recordLinks | length %}
         <p class="latest-updates-records"><strong>Court records:</strong> {% for record in update.recordLinks %}<a href="/records/{{ record.path | escape }}" target="_blank" rel="noopener noreferrer">{{ record.label | escape }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p>{% endif %}
 {% if update.contents and update.contents | length %}<ul class="latest-updates-content">{{ renderNodes(update.contents) }}</ul>{% endif %}
-{% if update.links and update.links | length %}        <p class="latest-updates-records">{% for link in update.links %}<a href="{{ link.url | escape }}" target="_blank" rel="noopener noreferrer">{{ link.label | escape }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p>
+{% if update.links and update.links | length %}        <p class="latest-updates-records">{% for link in update.links %}<a href="{{ link.url | escape }}" target="{% if link["same-tab"] == true %}_self{% else %}_blank{% endif %}" rel="noopener noreferrer">{{ link.label | escape }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p>
 {% endif %}      </li>
     {% endfor %}
   </ul>
