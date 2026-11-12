@@ -1,0 +1,641 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-11",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1794417195.m4a": {
+      "index": 11,
+      "epoch": 1794417195,
+      "sha256": "1678aba21578c93a8d6ec5e4f1295eb7a615918bcba7b93f14eb104611e99cab",
+      "passes": {
+        "original": {
+          "text": "Is anyone have a, well I'm just kidding, I just got a cat up, but none of us do.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Is anyone have a, well I'm just kidding, I just got a cat up, but none of us do.",
+              "avg_logprob": -0.5455948070243553,
+              "no_speech_prob": 0.15030615031719208,
+              "compression_ratio": 1.0389610389610389
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm just kidding, I just got a cat up, but no it must be.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " I'm just kidding, I just got a cat up, but no it must be.",
+              "avg_logprob": -0.7220477149600074,
+              "no_speech_prob": 0.1359088122844696,
+              "compression_ratio": 0.9827586206896551
+            }
+          ]
+        },
+        "context": {
+          "text": "Is anyone have a, well I'm just kidding, I just got a cat up, but none of us do.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Is anyone have a, well I'm just kidding, I just got a cat up, but none of us do.",
+              "avg_logprob": -0.5455948070243553,
+              "no_speech_prob": 0.15030615031719208,
+              "compression_ratio": 1.0389610389610389
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794417214.m4a": {
+      "index": 12,
+      "epoch": 1794417214,
+      "sha256": "851f1991c7943902f9cbb61eaf8de9bfb64ade88c99a244f8c6db8441ede0bff",
+      "passes": {
+        "original": {
+          "text": "Do this radio. I know they're having issues with the VPN, and it's the internet at the office.",
+          "prompt": null,
+          "duration_seconds": 9.856,
+          "token_limit": 103,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " Do this radio. I know they're having issues with the VPN, and it's the internet at the office.",
+              "avg_logprob": -0.4014456214813086,
+              "no_speech_prob": 0.06355691701173782,
+              "compression_ratio": 1.0681818181818181
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Do this radio. I know they're having issues with the VPN and I'm going to list the internet at the office.",
+          "prompt": null,
+          "duration_seconds": 9.856,
+          "token_limit": 103,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " Do this radio. I know they're having issues with the VPN and I'm going to list the internet at the office.",
+              "avg_logprob": -0.44039865157433916,
+              "no_speech_prob": 0.04969200864434242,
+              "compression_ratio": 1.1521739130434783
+            }
+          ]
+        },
+        "context": {
+          "text": "Do this radio. I know they're having issues with the VPN, and it's the internet at the office.",
+          "prompt": "Is anyone have a, well I'm just kidding, I just got a cat up, but none of us do.",
+          "duration_seconds": 9.856,
+          "token_limit": 103,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " Do this radio. I know they're having issues with the VPN, and it's the internet at the office.",
+              "avg_logprob": -0.3630369615096312,
+              "no_speech_prob": 0.006376827135682106,
+              "compression_ratio": 1.0681818181818181
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794417225.m4a": {
+      "index": 13,
+      "epoch": 1794417225,
+      "sha256": "15719f428737d603f3e12d1e34e788610801e480a5dbade65efae5a7f4583366",
+      "passes": {
+        "original": {
+          "text": "It should be fixed now they told me that they think they got a fix so I'm logged in",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.24,
+              "text": " It should be fixed now they told me that they think they got a fix so I'm logged in",
+              "avg_logprob": -0.27146694712016894,
+              "no_speech_prob": 0.028902919963002205,
+              "compression_ratio": 1.1216216216216217
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It should be fixed now, they told me that they think they got it fixed, so I'm logged in.",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.44,
+              "text": " It should be fixed now, they told me that they think they got it fixed, so I'm logged in.",
+              "avg_logprob": -0.3518609759899286,
+              "no_speech_prob": 0.03996189683675766,
+              "compression_ratio": 1.1265822784810127
+            }
+          ]
+        },
+        "context": {
+          "text": "It should be fixed now. They told me that they think they got it fixed, so I'm logged in.",
+          "prompt": "Is anyone have a, well I'm just kidding, I just got a cat up, but none of us do. Do this radio. I know they're having issues with the VPN, and it's the internet at the office.",
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.5,
+              "text": " It should be fixed now. They told me that they think they got it fixed, so I'm logged in.",
+              "avg_logprob": -0.23583947465969965,
+              "no_speech_prob": 0.007393116597086191,
+              "compression_ratio": 1.0853658536585367
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794417235.m4a": {
+      "index": 14,
+      "epoch": 1794417235,
+      "sha256": "3bb8e2f5ec49ec51d326b8e2e3010fae3c3cd70fe798720603effb66d4eaa14d",
+      "passes": {
+        "original": {
+          "text": "Mine's trying to work.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.4,
+              "text": " Mine's trying to work.",
+              "avg_logprob": -0.5605976846483018,
+              "no_speech_prob": 0.0015823814319446683,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Ben's trying to work.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.4,
+              "text": " Ben's trying to work.",
+              "avg_logprob": -0.5639761288960775,
+              "no_speech_prob": 0.0031216207426041365,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "context": {
+          "text": "Mine's trying to work",
+          "prompt": "Is anyone have a, well I'm just kidding, I just got a cat up, but none of us do. Do this radio. I know they're having issues with the VPN, and it's the internet at the office. It should be fixed now they told me that they think they got a fix so I'm logged in",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.38,
+              "text": " Mine's trying to work",
+              "avg_logprob": -0.35446368902921677,
+              "no_speech_prob": 0.0028477199375629425,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794417241.m4a": {
+      "index": 15,
+      "epoch": 1794417241,
+      "sha256": "a63a1e86d4cae5ca7ccd1d7cebe7505b56c4761a670ecee50f4397de599a260e",
+      "passes": {
+        "original": {
+          "text": "just curious looking at that car was dodging you guys pretty hard",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.12,
+              "text": " just curious looking at that car was dodging you guys pretty hard",
+              "avg_logprob": -0.45917500654856364,
+              "no_speech_prob": 0.03043454699218273,
+              "compression_ratio": 1.015625
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I was just curious looking at that car. It was dodging you guys pretty hard.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " I was just curious looking at that car. It was dodging you guys pretty hard.",
+              "avg_logprob": -0.46972116082906723,
+              "no_speech_prob": 0.02511916682124138,
+              "compression_ratio": 1.027027027027027
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm just curious looking at that car was dodging you guys pretty hard.",
+          "prompt": "Do this radio. I know they're having issues with the VPN, and it's the internet at the office. It should be fixed now they told me that they think they got a fix so I'm logged in Mine's trying to work.",
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.08,
+              "text": " I'm just curious looking at that car was dodging you guys pretty hard.",
+              "avg_logprob": -0.37755151258574593,
+              "no_speech_prob": 0.03095475398004055,
+              "compression_ratio": 0.9859154929577465
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794420177.m4a": {
+      "index": 16,
+      "epoch": 1794420177,
+      "sha256": "79c936699bd5aba226299e82a57398aebec597624c1d9b6379e1c21dd064aaf5",
+      "passes": {
+        "original": {
+          "text": "I'm hungry.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.2,
+              "text": " I'm hungry.",
+              "avg_logprob": -0.5871394872665405,
+              "no_speech_prob": 0.01949887163937092,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm hungry.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm hungry.",
+              "avg_logprob": -0.5526107209069389,
+              "no_speech_prob": 0.008499880321323872,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm hungry.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.2,
+              "text": " I'm hungry.",
+              "avg_logprob": -0.5871394872665405,
+              "no_speech_prob": 0.01949887163937092,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794421626.m4a": {
+      "index": 17,
+      "epoch": 1794421626,
+      "sha256": "c622f4a7014bfeab5a648cf58958098a6a77e0b4fa1767f5506a3a5a130883cf",
+      "passes": {
+        "original": {
+          "text": "Once it's here.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Once it's here.",
+              "avg_logprob": -0.9515238851308823,
+              "no_speech_prob": 0.02628459222614765,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Once it's here...",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Once it's here...",
+              "avg_logprob": -0.8688934370875359,
+              "no_speech_prob": 0.08151132613420486,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "Once it's here.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Once it's here.",
+              "avg_logprob": -0.9515238851308823,
+              "no_speech_prob": 0.02628459222614765,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794421892.m4a": {
+      "index": 18,
+      "epoch": 1794421892,
+      "sha256": "f4bf870384207900a31b6f9038eae343429a9b3bbb62839f947617db243722ae",
+      "passes": {
+        "original": {
+          "text": "Thanks for watching!",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thanks for watching!",
+              "avg_logprob": -0.8693319388798305,
+              "no_speech_prob": 0.7242457270622253,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thanks for watching!",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thanks for watching!",
+              "avg_logprob": -0.8575800827571324,
+              "no_speech_prob": 0.6892977952957153,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "Thanks for watching!",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thanks for watching!",
+              "avg_logprob": -0.8693319388798305,
+              "no_speech_prob": 0.7242457270622253,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794424951.m4a": {
+      "index": 19,
+      "epoch": 1794424951,
+      "sha256": "1f92ee5a4b4f9255e3083a21ba225ed8372642570a0d5e6e61ee6034e90a3a47",
+      "passes": {
+        "original": {
+          "text": "You",
+          "prompt": null,
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You",
+              "avg_logprob": -0.8020823299884796,
+              "no_speech_prob": 0.8522077202796936,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "filtered": {
+          "text": "You",
+          "prompt": null,
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You",
+              "avg_logprob": -0.785450667142868,
+              "no_speech_prob": 0.8728943467140198,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "context": {
+          "text": "You",
+          "prompt": null,
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You",
+              "avg_logprob": -0.8020823299884796,
+              "no_speech_prob": 0.8522077202796936,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794425303.m4a": {
+      "index": 20,
+      "epoch": 1794425303,
+      "sha256": "1161c5d2407d806c218fa7bc34f37350d138c5617955e8c853428844b31a62ff",
+      "passes": {
+        "original": {
+          "text": "Hey Jake, you want me to take that other one too?",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey Jake, you want me to take that other one too?",
+              "avg_logprob": -0.4530368931591511,
+              "no_speech_prob": 0.009262454695999622,
+              "compression_ratio": 0.9245283018867925
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hey Jake, you want me to check that other one too?",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.36,
+              "text": " Hey Jake, you want me to check that other one too?",
+              "avg_logprob": -0.47058848664164543,
+              "no_speech_prob": 0.004274397157132626,
+              "compression_ratio": 0.8928571428571429
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey Jake, you want me to take that other one too?",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey Jake, you want me to take that other one too?",
+              "avg_logprob": -0.4530368931591511,
+              "no_speech_prob": 0.009262454695999622,
+              "compression_ratio": 0.9245283018867925
+            }
+          ]
+        }
+      }
+    }
+  }
+}
