@@ -1,0 +1,705 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-10",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794364033.m4a": {
+      "index": 1361,
+      "epoch": 1794364033,
+      "sha256": "c2535a3d990a8d34ce16f9838da9b883fbcd2132638fd9f78f8ab78a329234ec",
+      "passes": {
+        "original": {
+          "text": "Cedar Hills Drive North County Boulevard on to Sierra to whiskey Romeo",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.12,
+              "text": " Cedar Hills Drive North County Boulevard on to Sierra to whiskey Romeo",
+              "avg_logprob": -0.4706526279449463,
+              "no_speech_prob": 0.020676739513874054,
+              "compression_ratio": 0.9459459459459459
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Cedar Hills Drive, North County Bowl Garden, 2 Sierra 2, Whiskey, Romeo",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.140000000000001,
+              "text": " Cedar Hills Drive, North County Bowl Garden, 2 Sierra 2, Whiskey, Romeo",
+              "avg_logprob": -0.6740019112825394,
+              "no_speech_prob": 0.014563854783773422,
+              "compression_ratio": 0.8987341772151899
+            }
+          ]
+        },
+        "context": {
+          "text": "Cedar Hills Drive, North County Boulevard, on to Sierra 2 Whiskey Romeo.",
+          "prompt": "Thank you. Hey, Team J6, go ahead.",
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.12,
+              "text": " Cedar Hills Drive, North County Boulevard, on to Sierra 2 Whiskey Romeo.",
+              "avg_logprob": -0.40424040744179174,
+              "no_speech_prob": 0.03375612199306488,
+              "compression_ratio": 0.9113924050632911
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794364046.m4a": {
+      "index": 1362,
+      "epoch": 1794364046,
+      "sha256": "733b45fc44da1982a0ab82ce0961f8061d26d52f13d5d11a65d4b454d16124f7",
+      "passes": {
+        "original": {
+          "text": "18J6 will be pulling into the parts below the Marcos people in 24J.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.72,
+              "text": " 18J6 will be pulling into the parts below the Marcos people in 24J.",
+              "avg_logprob": -0.8072093695402145,
+              "no_speech_prob": 0.08853334188461304,
+              "compression_ratio": 0.9852941176470589
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hey, 10-0-6, we'll be pulling you into the parts. Florida Marcos, P. Flynn, 20-4-0.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 34,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Hey, 10-0-6, we'll be pulling you into the parts.",
+              "avg_logprob": -0.8228963511330741,
+              "no_speech_prob": 0.06430919468402863,
+              "compression_ratio": 0.9540229885057471
+            },
+            {
+              "start": 3.0,
+              "end": 5.0,
+              "text": " Florida Marcos, P. Flynn, 20-4-0.",
+              "avg_logprob": -0.8228963511330741,
+              "no_speech_prob": 0.06430919468402863,
+              "compression_ratio": 0.9540229885057471
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey, Team J6, we'll be pulling in to the parts below the Marcos people in 24j.",
+          "prompt": "Thank you. Hey, Team J6, go ahead. Cedar Hills Drive North County Boulevard on to Sierra to whiskey Romeo",
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.68,
+              "text": " Hey, Team J6, we'll be pulling in to the parts below the Marcos people in 24j.",
+              "avg_logprob": -0.6525684356689453,
+              "no_speech_prob": 0.03738265112042427,
+              "compression_ratio": 1.0
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794364051.m4a": {
+      "index": 1363,
+      "epoch": 1794364051,
+      "sha256": "fb70651efc70b01a6a7d36a77cf618f874c47d9f8d9b91d9ece3175feba990b7",
+      "passes": {
+        "original": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.4930080771446228,
+              "no_speech_prob": 0.015446673147380352,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.4188014566898346,
+              "no_speech_prob": 0.016865110024809837,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "Hey, Team J6, go ahead. Cedar Hills Drive North County Boulevard on to Sierra to whiskey Romeo 18J6 will be pulling into the parts below the Marcos people in 24J.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.459626293182373,
+              "no_speech_prob": 0.04919317737221718,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794364058.m4a": {
+      "index": 1364,
+      "epoch": 1794364058,
+      "sha256": "42c9375cc339e327ec955d8ae8e7753712162db9de6de9bf46495ff8a32382a1",
+      "passes": {
+        "original": {
+          "text": "5J48 from Central Code 4.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.44,
+              "text": " 5J48 from Central Code 4.",
+              "avg_logprob": -0.42238056659698486,
+              "no_speech_prob": 0.03205535188317299,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J48 from Central Code 4.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.44,
+              "text": " 5J48 from Central Code 4.",
+              "avg_logprob": -0.587008920582858,
+              "no_speech_prob": 0.031155211851000786,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "context": {
+          "text": "5J48 from Central Code for",
+          "prompt": "Cedar Hills Drive North County Boulevard on to Sierra to whiskey Romeo 18J6 will be pulling into the parts below the Marcos people in 24J. copy",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.28,
+              "text": " 5J48 from Central Code for",
+              "avg_logprob": -0.45652313232421876,
+              "no_speech_prob": 0.06458179652690887,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794364196.m4a": {
+      "index": 1365,
+      "epoch": 1794364196,
+      "sha256": "087bf8a90c1f1a6a692ebb2afa170ce21257b5e8e729277d801d4e09e0ab4e5a",
+      "passes": {
+        "original": {
+          "text": "826.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 826.",
+              "avg_logprob": -0.8471854527791342,
+              "no_speech_prob": 0.0345882885158062,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Okay. Okay. Okay. Okay. Okay.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Okay.",
+              "avg_logprob": -0.4560062714985439,
+              "no_speech_prob": 0.08295895904302597,
+              "compression_ratio": 1.7058823529411764
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Okay.",
+              "avg_logprob": -0.4560062714985439,
+              "no_speech_prob": 0.08295895904302597,
+              "compression_ratio": 1.7058823529411764
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Okay.",
+              "avg_logprob": -0.4560062714985439,
+              "no_speech_prob": 0.08295895904302597,
+              "compression_ratio": 1.7058823529411764
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " Okay.",
+              "avg_logprob": -0.4560062714985439,
+              "no_speech_prob": 0.08295895904302597,
+              "compression_ratio": 1.7058823529411764
+            },
+            {
+              "start": 4.0,
+              "end": 5.0,
+              "text": " Okay.",
+              "avg_logprob": -0.4560062714985439,
+              "no_speech_prob": 0.08295895904302597,
+              "compression_ratio": 1.7058823529411764
+            }
+          ]
+        },
+        "context": {
+          "text": "826.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 826.",
+              "avg_logprob": -0.8471854527791342,
+              "no_speech_prob": 0.0345882885158062,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794364276.m4a": {
+      "index": 1366,
+      "epoch": 1794364276,
+      "sha256": "95501a8563651a0e9390307010662c4cf50c5c44609167b0cafccf518617f31c",
+      "passes": {
+        "original": {
+          "text": "Something just ran around.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Something just ran around.",
+              "avg_logprob": -0.6801645681262016,
+              "no_speech_prob": 0.14686691761016846,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Something's just trying to get around.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Something's just trying to get around.",
+              "avg_logprob": -0.711571682583202,
+              "no_speech_prob": 0.24480268359184265,
+              "compression_ratio": 0.8636363636363636
+            }
+          ]
+        },
+        "context": {
+          "text": "Something just ran around.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Something just ran around.",
+              "avg_logprob": -0.6801645681262016,
+              "no_speech_prob": 0.14686691761016846,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794364281.m4a": {
+      "index": 1367,
+      "epoch": 1794364281,
+      "sha256": "11dc4f7964fcbc5b536494349de2b2db2d015efd573d08b7599b6a532fa04b38",
+      "passes": {
+        "original": {
+          "text": "Oh, 7-to-20.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.5,
+              "text": " Oh, 7-to-20.",
+              "avg_logprob": -0.741969184442,
+              "no_speech_prob": 0.013498423621058464,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Oh, 7 to 20.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.2,
+              "text": " Oh, 7 to 20.",
+              "avg_logprob": -0.8193763626946343,
+              "no_speech_prob": 0.043064843863248825,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "Oh, 70-20.",
+          "prompt": "Something just ran around.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.5,
+              "text": " Oh, 70-20.",
+              "avg_logprob": -0.6336666213141547,
+              "no_speech_prob": 0.024638773873448372,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794364290.m4a": {
+      "index": 1368,
+      "epoch": 1794364290,
+      "sha256": "44c7480bf87e89f310ddb23eeb8515d12b4d731be001aca5559b79f3ce0a5c6b",
+      "passes": {
+        "original": {
+          "text": "7D20, you've arrived.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " 7D20, you've arrived.",
+              "avg_logprob": -0.9106034582311456,
+              "no_speech_prob": 0.08327458798885345,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm going to do 20 in a row.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.2800000000000002,
+              "text": " I'm going to do 20 in a row.",
+              "avg_logprob": -0.7118880381950965,
+              "no_speech_prob": 0.016639772802591324,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "context": {
+          "text": "7-to-20 has arrived.",
+          "prompt": "Something just ran around. Oh, 7-to-20.",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.36,
+              "text": " 7-to-20 has arrived.",
+              "avg_logprob": -0.4931641166860407,
+              "no_speech_prob": 0.0026096676010638475,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794364295.m4a": {
+      "index": 1369,
+      "epoch": 1794364295,
+      "sha256": "cdfcd1790d43ce30ecfd57054d9cf2527d2cfdcd4b11b684e28122bab2fd7c23",
+      "passes": {
+        "original": {
+          "text": "7, 8, 20 in a copy.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7, 8, 20 in a copy.",
+              "avg_logprob": -0.7465739448865255,
+              "no_speech_prob": 0.025831827893853188,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7-320 in a copy.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-320 in a copy.",
+              "avg_logprob": -0.6501272857189179,
+              "no_speech_prob": 0.042094647884368896,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "7-to-20 in a copy.",
+          "prompt": "Something just ran around. Oh, 7-to-20. 7D20, you've arrived.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.5,
+              "text": " 7-to-20 in a copy.",
+              "avg_logprob": -0.41755937536557514,
+              "no_speech_prob": 0.007359056267887354,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794364510.m4a": {
+      "index": 1370,
+      "epoch": 1794364510,
+      "sha256": "ff6f4de87793070fe9f4db9a27f47af87ac737bb5784f5b80e43e84bbec87cbb",
+      "passes": {
+        "original": {
+          "text": "Go for it. Copy.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.5809634923934937,
+              "no_speech_prob": 0.020165156573057175,
+              "compression_ratio": 0.6666666666666666
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5809634923934937,
+              "no_speech_prob": 0.020165156573057175,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it. Copy.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.5888443101536144,
+              "no_speech_prob": 0.05047900229692459,
+              "compression_ratio": 0.6666666666666666
+            },
+            {
+              "start": 2.0,
+              "end": 4.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5888443101536144,
+              "no_speech_prob": 0.05047900229692459,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "Go for it. Copy.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.5809634923934937,
+              "no_speech_prob": 0.020165156573057175,
+              "compression_ratio": 0.6666666666666666
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5809634923934937,
+              "no_speech_prob": 0.020165156573057175,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    }
+  }
+}

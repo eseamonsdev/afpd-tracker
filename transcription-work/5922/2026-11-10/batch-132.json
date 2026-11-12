@@ -1,0 +1,641 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-10",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794362984.m4a": {
+      "index": 1311,
+      "epoch": 1794362984,
+      "sha256": "411ce9d14585d639896f99f09b003c3abc535eb0e147ddae514bb8b3bee20d33",
+      "passes": {
+        "original": {
+          "text": "7G6 from 5G8. Need more help walking southbound North County. Let me know when I can send the guy.",
+          "prompt": null,
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.5200000000000005,
+              "text": " 7G6 from 5G8. Need more help walking southbound North County. Let me know when I can send the guy.",
+              "avg_logprob": -0.4688338369131088,
+              "no_speech_prob": 0.051807232201099396,
+              "compression_ratio": 1.0208333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J6 from 5J8. If you need more help walking southbound North County, let me know and I can send them to you.",
+          "prompt": null,
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 32,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " 7J6 from 5J8. If you need more help walking southbound North County, let me know and I can send them to you.",
+              "avg_logprob": -0.48827044169108075,
+              "no_speech_prob": 0.03484730422496796,
+              "compression_ratio": 1.0693069306930694
+            }
+          ]
+        },
+        "context": {
+          "text": "7G6 from 5J8. Need more help? Walk in southbound, North County. Let me know when I can send the guy.",
+          "prompt": "7G28, 7G6, you can go to State Street on North County Boulevard and shut down southbound traffic. 5J48 in corral units. 7J28 at copy. Central, can you hold that parking problem then? It'll be in rather than the 10-50. Copy.",
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 32,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.5200000000000005,
+              "text": " 7G6 from 5J8. Need more help? Walk in southbound, North County. Let me know when I can send the guy.",
+              "avg_logprob": -0.3148810357758493,
+              "no_speech_prob": 0.0033780401572585106,
+              "compression_ratio": 1.0
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794363031.m4a": {
+      "index": 1312,
+      "epoch": 1794363031,
+      "sha256": "3390d444b183a3bff38db6d7db9f80b6e0af38d0f0bc23525916d2196b16b63c",
+      "passes": {
+        "original": {
+          "text": "Five days from Central.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Five days from Central.",
+              "avg_logprob": -0.7550268247723579,
+              "no_speech_prob": 0.030128300189971924,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Sign day from Central.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Sign day from Central.",
+              "avg_logprob": -0.8755542933940887,
+              "no_speech_prob": 0.038079436868429184,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "5G8 from Central.",
+          "prompt": "7G6 from 5G8. Need more help walking southbound North County. Let me know when I can send the guy.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G8 from Central.",
+              "avg_logprob": -0.446979734632704,
+              "no_speech_prob": 0.040814515203237534,
+              "compression_ratio": 0.68
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794363035.m4a": {
+      "index": 1313,
+      "epoch": 1794363035,
+      "sha256": "7a34a1d22dea535f68010fe39a2c1bbea404e67ff4168d99dba12f64f347b64e",
+      "passes": {
+        "original": {
+          "text": "Okay, go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Okay, go ahead.",
+              "avg_logprob": -0.7473940774798393,
+              "no_speech_prob": 0.1384602040052414,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Okay, go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.44,
+              "text": " Okay, go ahead.",
+              "avg_logprob": -0.7428776398301125,
+              "no_speech_prob": 0.1182393878698349,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "context": {
+          "text": "5G8 go ahead.",
+          "prompt": "7G6 from 5G8. Need more help walking southbound North County. Let me know when I can send the guy. Five days from Central.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2800000000000002,
+              "text": " 5G8 go ahead.",
+              "avg_logprob": -0.47217925389607746,
+              "no_speech_prob": 0.0444006510078907,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794363038.m4a": {
+      "index": 1314,
+      "epoch": 1794363038,
+      "sha256": "4ef2a574c36d0e37973d94ead569c8a8c3413ef6fe1f763d27ccfba9ca23772b",
+      "passes": {
+        "original": {
+          "text": "Which 5G unit did you want to send to that traffic accident?",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Which 5G unit did you want to send to that traffic accident?",
+              "avg_logprob": -0.2827918108771829,
+              "no_speech_prob": 0.004925244487822056,
+              "compression_ratio": 0.9375
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Which 5G unit? Did you want to send to that traffic accident?",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Which 5G unit? Did you want to send to that traffic accident?",
+              "avg_logprob": -0.30556780927711064,
+              "no_speech_prob": 0.006731449160724878,
+              "compression_ratio": 0.9384615384615385
+            }
+          ]
+        },
+        "context": {
+          "text": "Which 5G unit? Did you want to send to the traffic accident?",
+          "prompt": "7G6 from 5G8. Need more help walking southbound North County. Let me know when I can send the guy. Five days from Central. Okay, go ahead.",
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Which 5G unit? Did you want to send to the traffic accident?",
+              "avg_logprob": -0.26020781364705825,
+              "no_speech_prob": 0.004552518017590046,
+              "compression_ratio": 0.9230769230769231
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794363046.m4a": {
+      "index": 1315,
+      "epoch": 1794363046,
+      "sha256": "838f65fafa09b4f65b9edf029e74aad078bb549a15fbccd5a03698e28a1f2a97",
+      "passes": {
+        "original": {
+          "text": "copy 76 advice state and north county to block",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.68,
+              "text": " copy 76 advice state and north county to block",
+              "avg_logprob": -0.4480351308981578,
+              "no_speech_prob": 0.00456757377833128,
+              "compression_ratio": 0.8518518518518519
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy, 76 advice, state and north county to block.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.92,
+              "text": " Copy, 76 advice, state and north county to block.",
+              "avg_logprob": -0.49954425493876137,
+              "no_speech_prob": 0.015147458761930466,
+              "compression_ratio": 0.8596491228070176
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy. 76 advise state and north county to block.",
+          "prompt": "Five days from Central. Okay, go ahead. Which 5G unit did you want to send to that traffic accident?",
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Copy. 76 advise state and north county to block.",
+              "avg_logprob": -0.4272484672921045,
+              "no_speech_prob": 0.010715276002883911,
+              "compression_ratio": 0.8571428571428571
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794363054.m4a": {
+      "index": 1316,
+      "epoch": 1794363054,
+      "sha256": "ac9bc8fbb0ac1af0b9aa5ad04f8a2192e39890106cea742d27dbf6602517a9c3",
+      "passes": {
+        "original": {
+          "text": "I copy.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I copy.",
+              "avg_logprob": -0.5536523461341858,
+              "no_speech_prob": 0.07160627841949463,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I copy.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I copy.",
+              "avg_logprob": -0.5256065726280212,
+              "no_speech_prob": 0.048053398728370667,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "I copy",
+          "prompt": "Okay, go ahead. Which 5G unit did you want to send to that traffic accident? copy 76 advice state and north county to block",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I copy",
+              "avg_logprob": -0.5464277267456055,
+              "no_speech_prob": 0.026758037507534027,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794363056.m4a": {
+      "index": 1317,
+      "epoch": 1794363056,
+      "sha256": "8292de62f69e3b5ab5506e83886de4ad83801a7f9128f8ccfc5b6080fd455d9f",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.6070938587188721,
+              "no_speech_prob": 0.016063198447227478,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7336215972900391,
+              "no_speech_prob": 0.05960078909993172,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "copy",
+          "prompt": "Which 5G unit did you want to send to that traffic accident? copy 76 advice state and north county to block I copy.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 2,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.1500000000000001,
+              "text": " copy",
+              "avg_logprob": -0.48630277315775555,
+              "no_speech_prob": 0.035056691616773605,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794363066.m4a": {
+      "index": 1318,
+      "epoch": 1794363066,
+      "sha256": "d9e1a090b9ce5313ad076dd69b4dff68fb9edeb3ed936c6a56dd1aafcbd470fb",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.74874849319458,
+              "no_speech_prob": 0.045173317193984985,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.8740535736083984,
+              "no_speech_prob": 0.032344117760658264,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "copy 76 advice state and north county to block I copy. Copy.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.705868148803711,
+              "no_speech_prob": 0.04650222510099411,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794363077.m4a": {
+      "index": 1319,
+      "epoch": 1794363077,
+      "sha256": "569ce87f2d100e5df333d4d0e624b5e2f6a8b79355c56d0d57fc3eb0ad9548b6",
+      "passes": {
+        "original": {
+          "text": "5J47 we show me out on the 1050.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 5J47 we show me out on the 1050.",
+              "avg_logprob": -0.5027663324560437,
+              "no_speech_prob": 0.09065282344818115,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J47, we shall be out on the 1050.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J47, we shall be out on the 1050.",
+              "avg_logprob": -0.5041482299566269,
+              "no_speech_prob": 0.09168616682291031,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "context": {
+          "text": "5J47, we show you out on the 1050.",
+          "prompt": "I copy. Copy. Copy.",
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.5200000000000005,
+              "text": " 5J47, we show you out on the 1050.",
+              "avg_logprob": -0.4837898333867391,
+              "no_speech_prob": 0.02152215875685215,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794363081.m4a": {
+      "index": 1320,
+      "epoch": 1794363081,
+      "sha256": "91a68350916d6ce0845d92ea8365ef864daa851ee4f182eed4897bbee3c0a341",
+      "passes": {
+        "original": {
+          "text": "5 to 47.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5 to 47.",
+              "avg_logprob": -0.7420690911156791,
+              "no_speech_prob": 0.020398907363414764,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5 to 47",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5 to 47",
+              "avg_logprob": -0.5214829246203104,
+              "no_speech_prob": 0.019408823922276497,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "5J47.",
+          "prompt": "Copy. Copy. 5J47 we show me out on the 1050.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J47.",
+              "avg_logprob": -0.4900024448122297,
+              "no_speech_prob": 0.06631947308778763,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
