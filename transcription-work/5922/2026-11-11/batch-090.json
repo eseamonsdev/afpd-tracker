@@ -1,0 +1,665 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-11",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794437802.m4a": {
+      "index": 891,
+      "epoch": 1794437802,
+      "sha256": "20e2caa37a6deee694f4105ad14dd1e2855026f4aa1ab5c5355380c2a4c75073",
+      "passes": {
+        "original": {
+          "text": "What?",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " What?",
+              "avg_logprob": -1.2382766723632812,
+              "no_speech_prob": 0.04284840077161789,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Do I have it?",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Do I have it?",
+              "avg_logprob": -0.8613054901361465,
+              "no_speech_prob": 0.023690490052103996,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "Do I have to...",
+          "prompt": "7J, 24 course out.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Do I have to...",
+              "avg_logprob": -1.0536644905805588,
+              "no_speech_prob": 0.08518093824386597,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794437803.m4a": {
+      "index": 892,
+      "epoch": 1794437803,
+      "sha256": "c6ee8d6d105c37edf827353941a6ced6ca67f2365ace537d40b3a382a6c82eff",
+      "passes": {
+        "original": {
+          "text": "It's going to be a 1912 West, a 930 North, there in 7J. It's going to be a five-year-old's mouth who's conscious of breathing.",
+          "prompt": null,
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 42,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.56,
+              "text": " It's going to be a 1912 West, a 930 North, there in 7J.",
+              "avg_logprob": -0.3276023492217064,
+              "no_speech_prob": 0.02221849001944065,
+              "compression_ratio": 1.1730769230769231
+            },
+            {
+              "start": 3.56,
+              "end": 5.98,
+              "text": " It's going to be a five-year-old's mouth who's conscious of breathing.",
+              "avg_logprob": -0.27991794591600244,
+              "no_speech_prob": 0.002457257593050599,
+              "compression_ratio": 0.9459459459459459
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It's going to be at 1912 West and 930 North. It's going to be a five-year-old's mouth who's conscious of breathing.",
+          "prompt": null,
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 36,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.84,
+              "text": " It's going to be at 1912 West and 930 North.",
+              "avg_logprob": -0.35433526486158373,
+              "no_speech_prob": 0.015152493491768837,
+              "compression_ratio": 1.1372549019607843
+            },
+            {
+              "start": 2.84,
+              "end": 6.04,
+              "text": " It's going to be a five-year-old's mouth who's conscious of breathing.",
+              "avg_logprob": -0.3937881141901016,
+              "no_speech_prob": 0.032475244253873825,
+              "compression_ratio": 0.9459459459459459
+            }
+          ]
+        },
+        "context": {
+          "text": "It's going to be a 1912 West and 930 North. They're in 7J. It's going to be a 5-year-old male who's conscious of breathing.",
+          "prompt": "7J, 24 course out. What?",
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 41,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.44,
+              "text": " It's going to be a 1912 West and 930 North. They're in 7J. It's going to be a 5-year-old",
+              "avg_logprob": -0.3465522925059001,
+              "no_speech_prob": 0.025832824409008026,
+              "compression_ratio": 1.1603773584905661
+            },
+            {
+              "start": 4.44,
+              "end": 6.24,
+              "text": " male who's conscious of breathing.",
+              "avg_logprob": -0.3465522925059001,
+              "no_speech_prob": 0.025832824409008026,
+              "compression_ratio": 1.1603773584905661
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794437825.m4a": {
+      "index": 893,
+      "epoch": 1794437825,
+      "sha256": "d8993ed13c69f135b065f678f35581a01ed49231bf8c161066a81a2911d81b7c",
+      "passes": {
+        "original": {
+          "text": "I can't. We shall be real.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " I can't. We shall be real.",
+              "avg_logprob": -0.6360711107651392,
+              "no_speech_prob": 0.10037591308355331,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Like I'll be showing you",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Like I'll be showing you",
+              "avg_logprob": -0.7874161932203505,
+              "no_speech_prob": 0.0892496109008789,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "context": {
+          "text": "I can't, we shall be real.",
+          "prompt": "What? It's going to be a 1912 West, a 930 North, there in 7J. It's going to be a five-year-old's mouth who's conscious of breathing.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I can't, we shall be real.",
+              "avg_logprob": -0.7231578578551611,
+              "no_speech_prob": 0.10197065025568008,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794437828.m4a": {
+      "index": 894,
+      "epoch": 1794437828,
+      "sha256": "b34ace249a6ffe0ab2b83f4467620ae0292a41d73b9a4332bf47cbd232a0d1c7",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5835327625274658,
+              "no_speech_prob": 0.018115947023034096,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5658080577850342,
+              "no_speech_prob": 0.02255815453827381,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "What? It's going to be a 1912 West, a 930 North, there in 7J. It's going to be a five-year-old's mouth who's conscious of breathing. I can't. We shall be real.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.395219087600708,
+              "no_speech_prob": 0.009541862644255161,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794437884.m4a": {
+      "index": 895,
+      "epoch": 1794437884,
+      "sha256": "e668e148cf2ccd5420e12a13093173867a610780a3ba0fb32dba25b60d5231fe",
+      "passes": {
+        "original": {
+          "text": "I copy.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I copy.",
+              "avg_logprob": -0.7261129220326742,
+              "no_speech_prob": 0.05784882605075836,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "All right, copy.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " All right, copy.",
+              "avg_logprob": -0.8453586027026176,
+              "no_speech_prob": 0.049354176968336105,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "I copy.",
+          "prompt": "I can't. We shall be real. Copy.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I copy.",
+              "avg_logprob": -0.6315463284651438,
+              "no_speech_prob": 0.03453068807721138,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794437890.m4a": {
+      "index": 896,
+      "epoch": 1794437890,
+      "sha256": "68fc9acc76cd930f8051aa27141c6a53cf9c2e690afb6d68d8b8d5672554e3bb",
+      "passes": {
+        "original": {
+          "text": "Hey, you can just fix traffic.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey, you can just fix traffic.",
+              "avg_logprob": -0.5635307593779131,
+              "no_speech_prob": 0.023354632779955864,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hey, you can just make sure I have it.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.6,
+              "text": " Hey, you can just make sure I have it.",
+              "avg_logprob": -0.7878732212952205,
+              "no_speech_prob": 0.01688734069466591,
+              "compression_ratio": 0.8260869565217391
+            }
+          ]
+        },
+        "context": {
+          "text": "You can just fix traffic.",
+          "prompt": "I copy.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You can just fix traffic.",
+              "avg_logprob": -0.6796725591023763,
+              "no_speech_prob": 0.08446206897497177,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794437892.m4a": {
+      "index": 897,
+      "epoch": 1794437892,
+      "sha256": "e3310fc61f2935451748c96854ddeda27c1d82157b247a632e555442bb274be0",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.5356610814730326,
+              "no_speech_prob": 0.025893760845065117,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.5321239431699117,
+              "no_speech_prob": 0.012871082872152328,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Go ahead.",
+          "prompt": "I copy. Hey, you can just fix traffic.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.4303857684135437,
+              "no_speech_prob": 0.012382175773382187,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794437895.m4a": {
+      "index": 898,
+      "epoch": 1794437895,
+      "sha256": "c8c9126a97080bdd84302f249fb83fd2f4027cf0f9fe1a7cac80f2640cd230f6",
+      "passes": {
+        "original": {
+          "text": "9600 North, 6800 West on Zero Golf, Juliet, Fox 3.",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.04,
+              "text": " 9600 North, 6800 West on Zero Golf, Juliet, Fox 3.",
+              "avg_logprob": -0.6192035926015753,
+              "no_speech_prob": 0.016711922362446785,
+              "compression_ratio": 0.8928571428571429
+            }
+          ]
+        },
+        "filtered": {
+          "text": "9600 North, 6800 West, on Zero Gulf, June 8th, August 3.",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 9600 North, 6800 West, on Zero Gulf, June 8th, August 3.",
+              "avg_logprob": -0.6460681801492517,
+              "no_speech_prob": 0.03550001606345177,
+              "compression_ratio": 0.9333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "9600 North, 6800 West on Zero Golf, Juliet, Fox 3.",
+          "prompt": "I copy. Hey, you can just fix traffic. Go ahead.",
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 9600 North, 6800 West on Zero Golf, Juliet, Fox 3.",
+              "avg_logprob": -0.5508937710209897,
+              "no_speech_prob": 0.04640260711312294,
+              "compression_ratio": 0.8928571428571429
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794437901.m4a": {
+      "index": 899,
+      "epoch": 1794437901,
+      "sha256": "d582a7943c2ef045198aa2440a867ef261ffdfcc3df951aa4779a406bfd3ab79",
+      "passes": {
+        "original": {
+          "text": "Confirming 50, 100 West.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Confirming 50, 100 West.",
+              "avg_logprob": -0.4682366609573364,
+              "no_speech_prob": 0.017262892797589302,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Confirming 50, 100 West.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Confirming 50, 100 West.",
+              "avg_logprob": -0.5650197207927704,
+              "no_speech_prob": 0.015503812581300735,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "context": {
+          "text": "Confirming 5800 West.",
+          "prompt": "Hey, you can just fix traffic. Go ahead. 9600 North, 6800 West on Zero Golf, Juliet, Fox 3.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Confirming 5800 West.",
+              "avg_logprob": -0.3242596785227458,
+              "no_speech_prob": 0.018469231203198433,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794437916.m4a": {
+      "index": 900,
+      "epoch": 1794437916,
+      "sha256": "02edac488462976fedfcda242cf457a46a1fa615aa75ee11fa845e46f2b9e9a7",
+      "passes": {
+        "original": {
+          "text": "5J17 on.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J17 on.",
+              "avg_logprob": -0.6935576274991035,
+              "no_speech_prob": 0.06752344220876694,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J171",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J171",
+              "avg_logprob": -0.6821851929028829,
+              "no_speech_prob": 0.02977812848985195,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "5J17 on.",
+          "prompt": "Go ahead. 9600 North, 6800 West on Zero Golf, Juliet, Fox 3. Confirming 50, 100 West.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.36,
+              "text": " 5J17 on.",
+              "avg_logprob": -0.5893399342894554,
+              "no_speech_prob": 0.007276375778019428,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    }
+  }
+}
