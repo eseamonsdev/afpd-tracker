@@ -103,12 +103,12 @@ permalink: "{{ officerPage.url }}"
                     </tbody></table>
                   </div>
                   {%- else -%}
-                  <p>A call sign identifies an officer or unit in radio communications. The assignments below are listed in the dated AFPD directories. Call signs can change or be reassigned.</p>
-                  <div class="csv-table-scroll" tabindex="0" role="region" aria-label="Call sign assignments from AFPD directories">
+                  <p>A call sign identifies an officer or unit in radio communications. Sources include dated AFPD directories and recorded radio use. Call signs can change or be reassigned.</p>
+                  <div class="csv-table-scroll" tabindex="0" role="region" aria-label="Call sign assignments and sources">
                     <table class="csv-table">
                       <thead><tr><th scope="col">Call sign</th><th scope="col">Assignment</th><th scope="col">Source</th></tr></thead>
                       <tbody>{%- for assignment in callSignAssignments -%}
-                        <tr><th scope="row"><code>{{ assignment.call_sign | escape }}</code></th><td>{{ assignment.assignment | escape }}</td><td>{% for source in assignment.sources %}<a href="{{ source.url | escape }}">{{ source.label | escape }}</a>{% if not loop.last %}<br>{% endif %}{% endfor %}</td></tr>
+                        <tr><th scope="row"><code>{{ assignment.call_sign | escape }}</code></th><td>{{ assignment.assignment | escape }}{% if assignment.note %}<br>{{ assignment.note | escape }}{% endif %}</td><td>{% for source in assignment.sources %}<a href="{{ source.url | escape }}">{{ source.label | escape }}</a>{% if not loop.last %}<br>{% endif %}{% endfor %}</td></tr>
                       {%- endfor -%}</tbody>
                     </table>
                   </div>
