@@ -1,0 +1,681 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-11",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794422507.m4a": {
+      "index": 461,
+      "epoch": 1794422507,
+      "sha256": "58d5394a2ef98d60f38bf1bada51b8fb453956250b42424f7d4257cd1b40058a",
+      "passes": {
+        "original": {
+          "text": "Twenty-ninety-two-year-old female conscious of breathing.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Twenty-ninety-two-year-old female conscious of breathing.",
+              "avg_logprob": -0.4929520520899031,
+              "no_speech_prob": 0.06343211233615875,
+              "compression_ratio": 0.9047619047619048
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Twenty-ninety-two-year-old female conscious of reading.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Twenty-ninety-two-year-old female conscious of reading.",
+              "avg_logprob": -0.5181802213191986,
+              "no_speech_prob": 0.018330130726099014,
+              "compression_ratio": 0.9016393442622951
+            }
+          ]
+        },
+        "context": {
+          "text": "292-year-old female conscious of breathing.",
+          "prompt": "Go ahead. 502 South, 1040 East, Unit 242, 502 South, 1040 East, Unit 242, R.P.'s mother is possibly having a stroke.",
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 292-year-old female conscious of breathing.",
+              "avg_logprob": -0.35519371582911563,
+              "no_speech_prob": 0.014923310838639736,
+              "compression_ratio": 0.8431372549019608
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794422513.m4a": {
+      "index": 462,
+      "epoch": 1794422513,
+      "sha256": "4e3394bdae737d8c77027ca90dbc2553a75ba2d1cbec64d3268e4289ccbc2708",
+      "passes": {
+        "original": {
+          "text": "copy we have medical advice",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.92,
+              "text": " copy we have medical advice",
+              "avg_logprob": -0.6723970547318459,
+              "no_speech_prob": 0.08023818582296371,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy, we have medical advice.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy, we have medical advice.",
+              "avg_logprob": -0.8757855534553528,
+              "no_speech_prob": 0.10162928700447083,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        },
+        "context": {
+          "text": "copy, will you have medical advice?",
+          "prompt": "Go ahead. 502 South, 1040 East, Unit 242, 502 South, 1040 East, Unit 242, R.P.'s mother is possibly having a stroke. Twenty-ninety-two-year-old female conscious of breathing.",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy, will you have medical advice?",
+              "avg_logprob": -0.6642821702090177,
+              "no_speech_prob": 0.025732384994626045,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794422516.m4a": {
+      "index": 463,
+      "epoch": 1794422516,
+      "sha256": "d0611bb4058b2131275fd155acd03c700b91ba75730e8a5cfbb4d9f9a3e20cfc",
+      "passes": {
+        "original": {
+          "text": "Come for",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Come for",
+              "avg_logprob": -0.5661239624023438,
+              "no_speech_prob": 0.05698055401444435,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "So far",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " So far",
+              "avg_logprob": -0.6886871337890625,
+              "no_speech_prob": 0.022747298702597618,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "7-4",
+          "prompt": "502 South, 1040 East, Unit 242, 502 South, 1040 East, Unit 242, R.P.'s mother is possibly having a stroke. Twenty-ninety-two-year-old female conscious of breathing. copy we have medical advice",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 7-4",
+              "avg_logprob": -0.7344587643941244,
+              "no_speech_prob": 0.037309419363737106,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794422656.m4a": {
+      "index": 464,
+      "epoch": 1794422656,
+      "sha256": "c6c5ebb6918f93e3b727abe6dc5b9fcfdd547a5c6b3d86c2c68aeb0bce793f31",
+      "passes": {
+        "original": {
+          "text": "7G at 35 degrees.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7G at 35 degrees.",
+              "avg_logprob": -0.8695714208814833,
+              "no_speech_prob": 0.08895450085401535,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7G at 30 on duty.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7G at 30 on duty.",
+              "avg_logprob": -0.8117950201034546,
+              "no_speech_prob": 0.08473330736160278,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "7G at 35 degrees.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7G at 35 degrees.",
+              "avg_logprob": -0.8695714208814833,
+              "no_speech_prob": 0.08895450085401535,
+              "compression_ratio": 0.68
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794422660.m4a": {
+      "index": 465,
+      "epoch": 1794422660,
+      "sha256": "2590191ad38f353d9fc502fdb65387e45f2729cea8a637be572cc0b102fe9e39",
+      "passes": {
+        "original": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.678801879286766,
+              "no_speech_prob": 0.038762714713811874,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " Copy.",
+              "avg_logprob": -0.7290308952331543,
+              "no_speech_prob": 0.02627824805676937,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "7G at 35 degrees.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.4923849582672119,
+              "no_speech_prob": 0.022856496274471283,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794422664.m4a": {
+      "index": 466,
+      "epoch": 1794422664,
+      "sha256": "a09eb81b9184b925f15bb60ae59d3f4bf7b660b2ed53efaa01ea1da336d00e56",
+      "passes": {
+        "original": {
+          "text": "7J30, can I clear this repo holding 2?",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J30, can I clear this repo holding 2?",
+              "avg_logprob": -0.4563044746716817,
+              "no_speech_prob": 0.015331283211708069,
+              "compression_ratio": 0.8260869565217391
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J30, can I clear this repo holding 2?",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.72,
+              "text": " 7J30, can I clear this repo holding 2?",
+              "avg_logprob": -0.5617939551671346,
+              "no_speech_prob": 0.0058576129376888275,
+              "compression_ratio": 0.8260869565217391
+            }
+          ]
+        },
+        "context": {
+          "text": "7J30, can I clear this repo holding 2?",
+          "prompt": "7G at 35 degrees. copy",
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.6,
+              "text": " 7J30, can I clear this repo holding 2?",
+              "avg_logprob": -0.5378957668940226,
+              "no_speech_prob": 0.009993001818656921,
+              "compression_ratio": 0.8260869565217391
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794422669.m4a": {
+      "index": 467,
+      "epoch": 1794422669,
+      "sha256": "d460a243a6047fb668b0e0cd4962007c296fd9347fc2b943760a184681751017",
+      "passes": {
+        "original": {
+          "text": "Affirm.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Affirm.",
+              "avg_logprob": -0.7314062118530273,
+              "no_speech_prob": 0.16582882404327393,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Affirmative.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Affirmative.",
+              "avg_logprob": -0.6808774811880929,
+              "no_speech_prob": 0.15254084765911102,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "Affirmed.",
+          "prompt": "7G at 35 degrees. copy 7J30, can I clear this repo holding 2?",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Affirmed.",
+              "avg_logprob": -0.7822283109029134,
+              "no_speech_prob": 0.10906609892845154,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794422671.m4a": {
+      "index": 468,
+      "epoch": 1794422671,
+      "sha256": "2ebd06794f44cbc93b81f5dd7a7dbeb5b205caeabec5543788e13bf14dab630e",
+      "passes": {
+        "original": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.5826251029968261,
+              "no_speech_prob": 0.01374781969934702,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.6166638374328614,
+              "no_speech_prob": 0.006483362056314945,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "copy 7J30, can I clear this repo holding 2? Affirm.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5312801361083984,
+              "no_speech_prob": 0.0027886247262358665,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794422847.m4a": {
+      "index": 469,
+      "epoch": 1794422847,
+      "sha256": "c4696e18dd05456f724abc8b949f5e901dc175a8b6eff7d1bf26fe6ac949b903",
+      "passes": {
+        "original": {
+          "text": "Thank you. Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5380552470684051,
+              "no_speech_prob": 0.15607725083827972,
+              "compression_ratio": 1.9545454545454546
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5380552470684051,
+              "no_speech_prob": 0.15607725083827972,
+              "compression_ratio": 1.9545454545454546
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5380552470684051,
+              "no_speech_prob": 0.15607725083827972,
+              "compression_ratio": 1.9545454545454546
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.837436318397522,
+              "no_speech_prob": 0.28049349784851074,
+              "compression_ratio": 1.0
+            },
+            {
+              "start": 1.0,
+              "end": 1.5,
+              "text": " Thank you.",
+              "avg_logprob": -0.837436318397522,
+              "no_speech_prob": 0.28049349784851074,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you. Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5380552470684051,
+              "no_speech_prob": 0.15607725083827972,
+              "compression_ratio": 1.9545454545454546
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5380552470684051,
+              "no_speech_prob": 0.15607725083827972,
+              "compression_ratio": 1.9545454545454546
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5380552470684051,
+              "no_speech_prob": 0.15607725083827972,
+              "compression_ratio": 1.9545454545454546
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794422850.m4a": {
+      "index": 470,
+      "epoch": 1794422850,
+      "sha256": "a168467f6af0ffea3896f5fd2d71d222d6b056eeb1e6539ebb5d7b1018205e64",
+      "passes": {
+        "original": {
+          "text": "corresponding to 170 South Southern Grove Boulevard, Building 4, Unit 104, 170 South Southern Grove Boulevard, Building 4, Unit 104.",
+          "prompt": null,
+          "duration_seconds": 12.032,
+          "token_limit": 121,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 12.0,
+              "text": " corresponding to 170 South Southern Grove Boulevard, Building 4, Unit 104, 170 South Southern Grove Boulevard, Building 4, Unit 104.",
+              "avg_logprob": -0.3739676023351735,
+              "no_speech_prob": 0.0263136588037014,
+              "compression_ratio": 1.7142857142857142
+            }
+          ]
+        },
+        "filtered": {
+          "text": "corresponding to 170 South Southern Grove Boulevard, Building 4, Unit 104, 170 South Southern Grove Boulevard, Building 4, Unit 104.",
+          "prompt": null,
+          "duration_seconds": 12.032,
+          "token_limit": 121,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 11.5,
+              "text": " corresponding to 170 South Southern Grove Boulevard, Building 4, Unit 104, 170 South Southern Grove Boulevard, Building 4, Unit 104.",
+              "avg_logprob": -0.3622000053011138,
+              "no_speech_prob": 0.016639314591884613,
+              "compression_ratio": 1.7142857142857142
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you",
+          "prompt": "Thank you. Thank you. Thank you.",
+          "duration_seconds": 12.032,
+          "token_limit": 121,
+          "token_count": 66,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 11.77,
+              "text": " Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you",
+              "avg_logprob": -0.14487164278528583,
+              "no_speech_prob": 0.20133547484874725,
+              "compression_ratio": 10.909090909090908
+            }
+          ]
+        }
+      }
+    }
+  }
+}
