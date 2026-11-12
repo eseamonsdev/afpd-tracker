@@ -1,0 +1,657 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-04",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793833143.m4a": {
+      "index": 891,
+      "epoch": 1793833143,
+      "sha256": "2c2ec38f9f513da36046a88238bb759c99aad789b59414482d71972813b7a8c2",
+      "passes": {
+        "original": {
+          "text": "0, Alfa Romeo 239",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 0, Alfa Romeo 239",
+              "avg_logprob": -0.6661087142096626,
+              "no_speech_prob": 0.02345683053135872,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Zero, Alpha Romeo, two, three, nine.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Zero, Alpha Romeo, two, three, nine.",
+              "avg_logprob": -0.5930904788630349,
+              "no_speech_prob": 0.01632949337363243,
+              "compression_ratio": 0.9
+            }
+          ]
+        },
+        "context": {
+          "text": "0, Alfa Romeo 239",
+          "prompt": "35 will you head up to the overpass so we can block eastbound? 7J22, can you copy your plate? But...",
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 0, Alfa Romeo 239",
+              "avg_logprob": -0.5779842270745171,
+              "no_speech_prob": 0.010129576548933983,
+              "compression_ratio": 0.68
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793833155.m4a": {
+      "index": 892,
+      "epoch": 1793833155,
+      "sha256": "70184ecb4d5ff7bc4d14fd31373fa489fb700c1847618c0f3cd11a2af152b61d",
+      "passes": {
+        "original": {
+          "text": "7J31, I'm at the Boulevard in North County, I could use a couple more units here. Thanks for watching!",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 30,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.36,
+              "text": " 7J31, I'm at the Boulevard in North County, I could use a couple more units here.",
+              "avg_logprob": -0.3391965650595151,
+              "no_speech_prob": 0.05309520661830902,
+              "compression_ratio": 0.9642857142857143
+            },
+            {
+              "start": 5.36,
+              "end": 7.36,
+              "text": " Thanks for watching!",
+              "avg_logprob": -0.9394370147160122,
+              "no_speech_prob": 0.9333634972572327,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J31, I'm at the boulevard in North County, I could use a couple more units here. You",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.44,
+              "text": " 7J31, I'm at the boulevard in North County, I could use a couple more units here.",
+              "avg_logprob": -0.3656915404178478,
+              "no_speech_prob": 0.03341721370816231,
+              "compression_ratio": 0.9642857142857143
+            },
+            {
+              "start": 5.44,
+              "end": 7.44,
+              "text": " You",
+              "avg_logprob": -0.864312082529068,
+              "no_speech_prob": 0.7859974503517151,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "context": {
+          "text": "7J31, I'm at the Boulevard in North County. I could use a couple more units here.",
+          "prompt": "7J22, can you copy your plate? But... 0, Alfa Romeo 239",
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.44,
+              "text": " 7J31, I'm at the Boulevard in North County. I could use a couple more units here.",
+              "avg_logprob": -0.23319750308990478,
+              "no_speech_prob": 0.0220959335565567,
+              "compression_ratio": 0.9642857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793833202.m4a": {
+      "index": 893,
+      "epoch": 1793833202,
+      "sha256": "8ff5a3c41b85e68d9becde822ca2da076951923d0c46836f1993d4230370c4e9",
+      "passes": {
+        "original": {
+          "text": "5J 31 to 7J need any more 5J units.",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.16,
+              "text": " 5J 31 to 7J need any more 5J units.",
+              "avg_logprob": -0.3284868970513344,
+              "no_speech_prob": 0.03066229820251465,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J31 to 7J need any more 5J units.",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.2,
+              "text": " 5J31 to 7J need any more 5J units.",
+              "avg_logprob": -0.3304908983409405,
+              "no_speech_prob": 0.009103289805352688,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "context": {
+          "text": "5J31 to 7J need any more 5J units.",
+          "prompt": "0, Alfa Romeo 239 7J31, I'm at the Boulevard in North County, I could use a couple more units here. Thanks for watching!",
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.16,
+              "text": " 5J31 to 7J need any more 5J units.",
+              "avg_logprob": -0.25810101069509983,
+              "no_speech_prob": 0.08864203095436096,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793833230.m4a": {
+      "index": 894,
+      "epoch": 1793833230,
+      "sha256": "eaa7c9db0c26c46823a9f8b2b585dc72793ad88100d9121ec2d0ef450113b61a",
+      "passes": {
+        "original": {
+          "text": "5G, 42, I think we're cut for.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G, 42, I think we're cut for.",
+              "avg_logprob": -0.5467588980992635,
+              "no_speech_prob": 0.09795541316270828,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you for attending Workout 4.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you for attending Workout 4.",
+              "avg_logprob": -0.5934243852441962,
+              "no_speech_prob": 0.0625891461968422,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "context": {
+          "text": "5J 42 I think we're cut for.",
+          "prompt": "5J 31 to 7J need any more 5J units.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J 42 I think we're cut for.",
+              "avg_logprob": -0.4969836198366605,
+              "no_speech_prob": 0.025056853890419006,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793833368.m4a": {
+      "index": 895,
+      "epoch": 1793833368,
+      "sha256": "975ef263541174c2c044275897e2173bb870a5b434e05f77a4107089535e3e42",
+      "passes": {
+        "original": {
+          "text": "Okay, please correct.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Okay, please correct.",
+              "avg_logprob": -0.9757667630910873,
+              "no_speech_prob": 0.06020532548427582,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm here for you forever.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm here for you forever.",
+              "avg_logprob": -0.8092849552631378,
+              "no_speech_prob": 0.08308790624141693,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        },
+        "context": {
+          "text": "Okay, please correct.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Okay, please correct.",
+              "avg_logprob": -0.9757667630910873,
+              "no_speech_prob": 0.06020532548427582,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793833372.m4a": {
+      "index": 896,
+      "epoch": 1793833372,
+      "sha256": "883c2c0732b5630f403a625304954bd7c5d144a1d3f860396af54b784c5a9095",
+      "passes": {
+        "original": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.6908459812402725,
+              "no_speech_prob": 0.012420707382261753,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.5297871083021164,
+              "no_speech_prob": 0.00846733245998621,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "Okay, please correct.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.5533829212188721,
+              "no_speech_prob": 0.002705702790990472,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793833394.m4a": {
+      "index": 897,
+      "epoch": 1793833394,
+      "sha256": "e3ac1a1bfdf7e7be4c8c1b931199bf6b1c17f49ef2e82a9d9e1066afce29bc6a",
+      "passes": {
+        "original": {
+          "text": "5G, please return this to 170 and you'll have an agency assistance.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 5G, please return this to 170 and you'll have an agency assistance.",
+              "avg_logprob": -0.4122606641367862,
+              "no_speech_prob": 0.06131017580628395,
+              "compression_ratio": 0.9178082191780822
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G, please retain this to 170 and go ahead with agency assistance.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 5G, please retain this to 170 and go ahead with agency assistance.",
+              "avg_logprob": -0.5502352449629042,
+              "no_speech_prob": 0.06504285335540771,
+              "compression_ratio": 0.9428571428571428
+            }
+          ]
+        },
+        "context": {
+          "text": "5G, please return this to 170 and you'll have an agency assistance.",
+          "prompt": "Okay, please correct. copy",
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.64,
+              "text": " 5G, please return this to 170 and you'll have an agency assistance.",
+              "avg_logprob": -0.4674005571164583,
+              "no_speech_prob": 0.008390882052481174,
+              "compression_ratio": 0.9178082191780822
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793833403.m4a": {
+      "index": 898,
+      "epoch": 1793833403,
+      "sha256": "d70ce78b94237f5adb846fc2ceac1a1c583d90c43e1edb71df288edda6b44908",
+      "passes": {
+        "original": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.6584121227264405,
+              "no_speech_prob": 0.10392212867736816,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.6181141376495362,
+              "no_speech_prob": 0.11847423017024994,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "copy 7G, please return this to 170 and you'll have an agency assistance.",
+          "prompt": "Okay, please correct. copy 5G, please return this to 170 and you'll have an agency assistance.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " copy 7G, please return this to 170 and you'll have an agency assistance.",
+              "avg_logprob": -0.4726214349269867,
+              "no_speech_prob": 0.04932519048452377,
+              "compression_ratio": 0.9473684210526315
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793833424.m4a": {
+      "index": 899,
+      "epoch": 1793833424,
+      "sha256": "fc66e954099c1522f09a258385fa724a081e498f7e11639a3a138b16951f8df6",
+      "passes": {
+        "original": {
+          "text": "We need to locate a suspect in a fact.",
+          "prompt": null,
+          "duration_seconds": 7.936,
+          "token_limit": 88,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " We need to locate a suspect in a fact.",
+              "avg_logprob": -0.5003572060511663,
+              "no_speech_prob": 0.06231949105858803,
+              "compression_ratio": 0.8636363636363636
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We need to locate ASOSFET and ASAP.",
+          "prompt": null,
+          "duration_seconds": 7.936,
+          "token_limit": 88,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " We need to locate ASOSFET and ASAP.",
+              "avg_logprob": -0.6650324463844299,
+              "no_speech_prob": 0.0405920185148716,
+              "compression_ratio": 0.8536585365853658
+            }
+          ]
+        },
+        "context": {
+          "text": "I need to locate a suspect in a fact.",
+          "prompt": "copy 5G, please return this to 170 and you'll have an agency assistance. Happy.",
+          "duration_seconds": 7.936,
+          "token_limit": 88,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " I need to locate a suspect in a fact.",
+              "avg_logprob": -0.49224015382620007,
+              "no_speech_prob": 0.04779775068163872,
+              "compression_ratio": 0.8604651162790697
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793833432.m4a": {
+      "index": 900,
+      "epoch": 1793833432,
+      "sha256": "a75625d285b09cee75e5c7d1fd01dadde364a9fa0742590cca3d06835feecfc1",
+      "passes": {
+        "original": {
+          "text": "Out of 3J.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Out of 3J.",
+              "avg_logprob": -0.4749765545129776,
+              "no_speech_prob": 0.033459022641181946,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "out of 3J.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " out of 3J.",
+              "avg_logprob": -0.5391763299703598,
+              "no_speech_prob": 0.017703000456094742,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Out of 3J.",
+          "prompt": "5G, please return this to 170 and you'll have an agency assistance. Happy. We need to locate a suspect in a fact.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Out of 3J.",
+              "avg_logprob": -0.34544752910733223,
+              "no_speech_prob": 0.019395804032683372,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    }
+  }
+}
