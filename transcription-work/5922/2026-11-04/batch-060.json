@@ -1,0 +1,681 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-04",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793821840.m4a": {
+      "index": 591,
+      "epoch": 1793821840,
+      "sha256": "6d5e60ec13b54efab9f25463f688dcd31ff75c108445806565b98e09d326b99a",
+      "passes": {
+        "original": {
+          "text": "J44 I'm close for",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " J44 I'm close for",
+              "avg_logprob": -0.4855348798963759,
+              "no_speech_prob": 0.02295513264834881,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Okay, 44 I'm close for",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Okay, 44 I'm close for",
+              "avg_logprob": -0.5873661696910858,
+              "no_speech_prob": 0.045689817517995834,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "4J, 44. I'm closed 4.",
+          "prompt": "10-4. Kemper. 5J, 54 central report.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 4J, 44. I'm closed 4.",
+              "avg_logprob": -0.6206659720494196,
+              "no_speech_prob": 0.008888688869774342,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793821842.m4a": {
+      "index": 592,
+      "epoch": 1793821842,
+      "sha256": "b36b48b2d28e634923c34d1e3e64c19962a88c599b9f6ed297ae1249f6f7de4e",
+      "passes": {
+        "original": {
+          "text": "Alright. Copy. Thanks.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Alright. Copy. Thanks.",
+              "avg_logprob": -0.59144041273329,
+              "no_speech_prob": 0.006996233016252518,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you. Thank you. Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5387722310565767,
+              "no_speech_prob": 0.017772892490029335,
+              "compression_ratio": 1.9545454545454546
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5387722310565767,
+              "no_speech_prob": 0.017772892490029335,
+              "compression_ratio": 1.9545454545454546
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5387722310565767,
+              "no_speech_prob": 0.017772892490029335,
+              "compression_ratio": 1.9545454545454546
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5387722310565767,
+              "no_speech_prob": 0.017772892490029335,
+              "compression_ratio": 1.9545454545454546
+            }
+          ]
+        },
+        "context": {
+          "text": "5J. Alright, copy thanks.",
+          "prompt": "Kemper. 5J, 54 central report. J44 I'm close for",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0200000000000005,
+              "text": " 5J. Alright, copy thanks.",
+              "avg_logprob": -0.8488408001986417,
+              "no_speech_prob": 0.014131391420960426,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793821958.m4a": {
+      "index": 593,
+      "epoch": 1793821958,
+      "sha256": "914d7be7a5334e3234bda2c54fb2714923597d71bd493669846be50c5efbc207",
+      "passes": {
+        "original": {
+          "text": "540 West, 1120 North, Local Uniform 819 Delta Uniform.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.64,
+              "text": " 540 West, 1120 North, Local Uniform 819 Delta Uniform.",
+              "avg_logprob": -0.47089425255270567,
+              "no_speech_prob": 0.024286668747663498,
+              "compression_ratio": 0.9642857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "540 West, 1120 North, local Uniform 819 Delta Uniform.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.72,
+              "text": " 540 West, 1120 North, local Uniform 819 Delta Uniform.",
+              "avg_logprob": -0.5731691472670611,
+              "no_speech_prob": 0.02111414261162281,
+              "compression_ratio": 0.9642857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "540 West, 1120 North, Local Uniform 819 Delta Uniform.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.64,
+              "text": " 540 West, 1120 North, Local Uniform 819 Delta Uniform.",
+              "avg_logprob": -0.47089425255270567,
+              "no_speech_prob": 0.024286668747663498,
+              "compression_ratio": 0.9642857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793821966.m4a": {
+      "index": 594,
+      "epoch": 1793821966,
+      "sha256": "a7b35a2459fad8aaf90d865d5b7a0e389c86fc1df8820128221558a9587f9cb0",
+      "passes": {
+        "original": {
+          "text": "Crap me.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Crap me.",
+              "avg_logprob": -0.8355286461966378,
+              "no_speech_prob": 0.09341200441122055,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.6662825584411621,
+              "no_speech_prob": 0.019974928349256516,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Crap me.",
+          "prompt": "540 West, 1120 North, Local Uniform 819 Delta Uniform.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.72,
+              "text": " Crap me.",
+              "avg_logprob": -0.6941612107413155,
+              "no_speech_prob": 0.1761094480752945,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793822065.m4a": {
+      "index": 595,
+      "epoch": 1793822065,
+      "sha256": "c88038306bb9ac79d0cf8a2c5da5e2c32c0bad01550945e0ce9b85a70c95bdd7",
+      "passes": {
+        "original": {
+          "text": "7J89 clear.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J89 clear.",
+              "avg_logprob": -0.5677813217043877,
+              "no_speech_prob": 0.0921943336725235,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7j89 clear.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7j89 clear.",
+              "avg_logprob": -0.9424538761377335,
+              "no_speech_prob": 0.10631513595581055,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "7J89 clear.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J89 clear.",
+              "avg_logprob": -0.5677813217043877,
+              "no_speech_prob": 0.0921943336725235,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793822068.m4a": {
+      "index": 596,
+      "epoch": 1793822068,
+      "sha256": "e05f24d88737511fa384bb029b1e2c5d9a04d59893eabc459743cd98993d3a89",
+      "passes": {
+        "original": {
+          "text": "temper",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " temper",
+              "avg_logprob": -0.8686388432979584,
+              "no_speech_prob": 0.05147407576441765,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Temper.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Temper.",
+              "avg_logprob": -0.9970516204833985,
+              "no_speech_prob": 0.031499482691287994,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Temper.",
+          "prompt": "7J89 clear.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Temper.",
+              "avg_logprob": -1.1820694923400878,
+              "no_speech_prob": 0.07791872322559357,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793822141.m4a": {
+      "index": 597,
+      "epoch": 1793822141,
+      "sha256": "1ecf83ec0a1d22fae62b50786200be2a98406a243dcd7a2b8d3a73578db575cc",
+      "passes": {
+        "original": {
+          "text": "5J44 central credit card",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J44 central credit card",
+              "avg_logprob": -0.617961671617296,
+              "no_speech_prob": 0.01579001173377037,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J44 Central Creek Park.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J44 Central Creek Park.",
+              "avg_logprob": -0.6846580445766449,
+              "no_speech_prob": 0.012467891909182072,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "context": {
+          "text": "5J44 central credit card",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J44 central credit card",
+              "avg_logprob": -0.617961671617296,
+              "no_speech_prob": 0.01579001173377037,
+              "compression_ratio": 0.75
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793822154.m4a": {
+      "index": 598,
+      "epoch": 1793822154,
+      "sha256": "233d900db69baef7ddb77a5d819d85f48c272bcd8f111a66aa73c7683f341237",
+      "passes": {
+        "original": {
+          "text": "IJ-54 traffic.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " IJ-54 traffic.",
+              "avg_logprob": -0.6995257271660699,
+              "no_speech_prob": 0.18025939166545868,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "filtered": {
+          "text": "IJ-54 traffic.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " IJ-54 traffic.",
+              "avg_logprob": -0.6376338534884982,
+              "no_speech_prob": 0.24688144028186798,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "5J54 traffic",
+          "prompt": "5J44 central credit card",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J54 traffic",
+              "avg_logprob": -0.394585771220071,
+              "no_speech_prob": 0.015973497182130814,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793822166.m4a": {
+      "index": 599,
+      "epoch": 1793822166,
+      "sha256": "b2fe233aafc0b1f65f537c6d44c7076f81e4da82d6fb3fda4c68e81447d99569",
+      "passes": {
+        "original": {
+          "text": "5G54, go ahead.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G54, go ahead.",
+              "avg_logprob": -0.4294136971235275,
+              "no_speech_prob": 0.010254097171127796,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5k54. Go ahead. 5k54.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 5k54.",
+              "avg_logprob": -0.4205388250676068,
+              "no_speech_prob": 0.015417607501149178,
+              "compression_ratio": 1.1481481481481481
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.4205388250676068,
+              "no_speech_prob": 0.015417607501149178,
+              "compression_ratio": 1.1481481481481481
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " 5k54.",
+              "avg_logprob": -0.4205388250676068,
+              "no_speech_prob": 0.015417607501149178,
+              "compression_ratio": 1.1481481481481481
+            }
+          ]
+        },
+        "context": {
+          "text": "5J-54 go ahead.",
+          "prompt": "5J44 central credit card IJ-54 traffic.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.68,
+              "text": " 5J-54 go ahead.",
+              "avg_logprob": -0.45174171924591067,
+              "no_speech_prob": 0.019170965999364853,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793822170.m4a": {
+      "index": 600,
+      "epoch": 1793822170,
+      "sha256": "f1487a757a54fb950b4cf44a60a4e9866354aed5fa80a19fcce687b46410c3c4",
+      "passes": {
+        "original": {
+          "text": "Main Street and 100 West on a local 6 alpha Zulu 435.",
+          "prompt": null,
+          "duration_seconds": 8.448,
+          "token_limit": 92,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.4,
+              "text": " Main Street and 100 West on a local 6 alpha Zulu 435.",
+              "avg_logprob": -0.4107673308428596,
+              "no_speech_prob": 0.09806719422340393,
+              "compression_ratio": 0.8688524590163934
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Main Street and 100 West on a local 6 Alpha Zulu 435",
+          "prompt": null,
+          "duration_seconds": 8.448,
+          "token_limit": 92,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.44,
+              "text": " Main Street and 100 West on a local 6 Alpha Zulu 435",
+              "avg_logprob": -0.4268497880548239,
+              "no_speech_prob": 0.10110512375831604,
+              "compression_ratio": 0.8666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Main Street and 100 West on a local 6A Zulu 435.",
+          "prompt": "5J44 central credit card IJ-54 traffic. 5G54, go ahead.",
+          "duration_seconds": 8.448,
+          "token_limit": 92,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.4,
+              "text": " Main Street and 100 West on a local 6A Zulu 435.",
+              "avg_logprob": -0.3814508774701287,
+              "no_speech_prob": 0.07291976362466812,
+              "compression_ratio": 0.8571428571428571
+            }
+          ]
+        }
+      }
+    }
+  }
+}

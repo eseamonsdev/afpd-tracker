@@ -1,0 +1,673 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-04",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793820673.m4a": {
+      "index": 551,
+      "epoch": 1793820673,
+      "sha256": "3f89d0786346334694e7a8ff85450ae5983863222c25f3f22de207553e5c3164",
+      "passes": {
+        "original": {
+          "text": "It's going to be 522 South and 810 West. It was a 21 text to 911.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " It's going to be 522 South and 810 West. It was a 21 text to 911.",
+              "avg_logprob": -0.4092220577100913,
+              "no_speech_prob": 0.03006938472390175,
+              "compression_ratio": 0.9154929577464789
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It's going to be 522 South and 810 West. It was 21 touch to 911.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.3200000000000003,
+              "text": " It's going to be 522 South and 810 West.",
+              "avg_logprob": -0.4408457851409912,
+              "no_speech_prob": 0.048250049352645874,
+              "compression_ratio": 0.927536231884058
+            },
+            {
+              "start": 3.3200000000000003,
+              "end": 5.44,
+              "text": " It was 21 touch to 911.",
+              "avg_logprob": -0.4408457851409912,
+              "no_speech_prob": 0.048250049352645874,
+              "compression_ratio": 0.927536231884058
+            }
+          ]
+        },
+        "context": {
+          "text": "It's going to be 522 South and 810 West. It was 21 text to 911.",
+          "prompt": "I copy 7G89 copy 1037 Go ahead.",
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " It's going to be 522 South and 810 West. It was 21 text to 911.",
+              "avg_logprob": -0.35876298469045886,
+              "no_speech_prob": 0.014069046825170517,
+              "compression_ratio": 0.9130434782608695
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793820679.m4a": {
+      "index": 552,
+      "epoch": 1793820679,
+      "sha256": "74b4127e0f500eb92293fddad6242c23896056985f60daad15919b74e20b95ed",
+      "passes": {
+        "original": {
+          "text": "I was about 20 minutes off our BCA, so I think we were...",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I was about 20 minutes off our BCA, so I think we were...",
+              "avg_logprob": -0.6372256090766505,
+              "no_speech_prob": 0.01213345117866993,
+              "compression_ratio": 0.9047619047619048
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It has about 20 minutes or if you say it's a day, we were...",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.84,
+              "text": " It has about 20 minutes or if you say it's a day, we were...",
+              "avg_logprob": -0.6656009435653687,
+              "no_speech_prob": 0.013384168036282063,
+              "compression_ratio": 0.9230769230769231
+            }
+          ]
+        },
+        "context": {
+          "text": "It's about 20 minutes or if you say it's a day we were...",
+          "prompt": "7G89 copy 1037 Go ahead. It's going to be 522 South and 810 West. It was a 21 text to 911.",
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " It's about 20 minutes or if you say it's a day we were...",
+              "avg_logprob": -0.7209020037400095,
+              "no_speech_prob": 0.005972713232040405,
+              "compression_ratio": 0.9661016949152542
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793820684.m4a": {
+      "index": 553,
+      "epoch": 1793820684,
+      "sha256": "6c9fe1e9906b3d62f1c85927e3fd38aadc1cf24d461a27d4c54c1647b5e9444c",
+      "passes": {
+        "original": {
+          "text": "That they were marked for a robbery two people showed up knocked on the RPs door really loud took pictures of the RPs door Wiped the door with something. I know what they arrived in neighbor does have a ring doorbell possibly has video footage",
+          "prompt": null,
+          "duration_seconds": 14.336,
+          "token_limit": 139,
+          "token_count": 54,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.72,
+              "text": " That they were marked for a robbery two people showed up knocked on the RPs door really loud took pictures of the RPs door",
+              "avg_logprob": -0.2181126041845842,
+              "no_speech_prob": 0.02851276472210884,
+              "compression_ratio": 1.463855421686747
+            },
+            {
+              "start": 6.12,
+              "end": 13.64,
+              "text": " Wiped the door with something. I know what they arrived in neighbor does have a ring doorbell possibly has video footage",
+              "avg_logprob": -0.2181126041845842,
+              "no_speech_prob": 0.02851276472210884,
+              "compression_ratio": 1.463855421686747
+            }
+          ]
+        },
+        "filtered": {
+          "text": "that they were marked for a robbery, two people showed up knocked on the R.P.'s door really loud, took pictures of the R.P.'s door, wiped the door with something, I don't know what they arrived in, neighbor does have a ring doorbell, possibly has video footage.",
+          "prompt": null,
+          "duration_seconds": 14.336,
+          "token_limit": 139,
+          "token_count": 69,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " that they were marked for a robbery, two people showed up knocked on the R.P.'s door really",
+              "avg_logprob": -0.2478044820683343,
+              "no_speech_prob": 0.03689301013946533,
+              "compression_ratio": 1.4829545454545454
+            },
+            {
+              "start": 4.0,
+              "end": 9.08,
+              "text": " loud, took pictures of the R.P.'s door, wiped the door with something, I don't know what",
+              "avg_logprob": -0.2478044820683343,
+              "no_speech_prob": 0.03689301013946533,
+              "compression_ratio": 1.4829545454545454
+            },
+            {
+              "start": 9.08,
+              "end": 13.88,
+              "text": " they arrived in, neighbor does have a ring doorbell, possibly has video footage.",
+              "avg_logprob": -0.2478044820683343,
+              "no_speech_prob": 0.03689301013946533,
+              "compression_ratio": 1.4829545454545454
+            }
+          ]
+        },
+        "context": {
+          "text": "That they were marked for a robbery. Two people showed up, knocked on the R.P.'s door really loud. Took pictures of the R.P.'s door. Wiped the door with something. I don't know what they arrived in. Neighbor does have a ring doorbell. Possibly has video footage.",
+          "prompt": "Go ahead. It's going to be 522 South and 810 West. It was a 21 text to 911. I was about 20 minutes off our BCA, so I think we were...",
+          "duration_seconds": 14.336,
+          "token_limit": 139,
+          "token_count": 68,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 14.0,
+              "text": " That they were marked for a robbery. Two people showed up, knocked on the R.P.'s door really loud. Took pictures of the R.P.'s door. Wiped the door with something. I don't know what they arrived in. Neighbor does have a ring doorbell. Possibly has video footage.",
+              "avg_logprob": -0.18519609993782596,
+              "no_speech_prob": 0.37444716691970825,
+              "compression_ratio": 1.4555555555555555
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793820703.m4a": {
+      "index": 554,
+      "epoch": 1793820703,
+      "sha256": "36f0e560fb0221ebd629583f76400e9f00ebc63265f7908b105e9f7ad9bfc819",
+      "passes": {
+        "original": {
+          "text": "I'll be three",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.12,
+              "text": " I'll be three",
+              "avg_logprob": -1.235931668962751,
+              "no_speech_prob": 0.2312859445810318,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'll be three.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.3,
+              "text": " I'll be three.",
+              "avg_logprob": -1.1585912704467773,
+              "no_speech_prob": 0.17252421379089355,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "probably three",
+          "prompt": "It's going to be 522 South and 810 West. It was a 21 text to 911. I was about 20 minutes off our BCA, so I think we were... That they were marked for a robbery two people showed up knocked on the RPs door really loud took pictures of the RPs door Wiped the door with something. I know what they arrived in neighbor does have a ring doorbell possibly has video footage",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.28,
+              "text": " probably three",
+              "avg_logprob": -0.8246184289455414,
+              "no_speech_prob": 0.06950380653142929,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793820989.m4a": {
+      "index": 555,
+      "epoch": 1793820989,
+      "sha256": "58ebf487fbf539b055625ac204917a5917184918b6b90775c09708c3d61f6826",
+      "passes": {
+        "original": {
+          "text": "5J35 Code 4.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5J35 Code 4.",
+              "avg_logprob": -0.6162901984320747,
+              "no_speech_prob": 0.02892281301319599,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J35, hook for.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5J35, hook for.",
+              "avg_logprob": -0.6951245069503784,
+              "no_speech_prob": 0.042324747890233994,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "context": {
+          "text": "5J35 Code 4.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5J35 Code 4.",
+              "avg_logprob": -0.6162901984320747,
+              "no_speech_prob": 0.02892281301319599,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793820992.m4a": {
+      "index": 556,
+      "epoch": 1793820992,
+      "sha256": "91f4c06e6c34db0a34518519fe794a1f4986cd5cf86ce2c2d74b7daa2ae62277",
+      "passes": {
+        "original": {
+          "text": "Look for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Look for it.",
+              "avg_logprob": -0.9641905852726528,
+              "no_speech_prob": 0.02976001240313053,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "That's what",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " That's what",
+              "avg_logprob": -0.8709758520126343,
+              "no_speech_prob": 0.025878753513097763,
+              "compression_ratio": 0.6470588235294118
+            }
+          ]
+        },
+        "context": {
+          "text": "Code 4.",
+          "prompt": "5J35 Code 4.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Code 4.",
+              "avg_logprob": -0.5545704066753387,
+              "no_speech_prob": 0.07456646859645844,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793820994.m4a": {
+      "index": 557,
+      "epoch": 1793820994,
+      "sha256": "6181af6c0cdefe805184ed8808f3b5174ce374e09f425858a442a8bda5e1ffc8",
+      "passes": {
+        "original": {
+          "text": "Coffee.",
+          "prompt": null,
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.84,
+              "text": " Coffee.",
+              "avg_logprob": -0.8174652099609375,
+              "no_speech_prob": 0.07273069024085999,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.882515811920166,
+              "no_speech_prob": 0.0770864263176918,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "5J35 Code 4. Look for it.",
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.5562439441680909,
+              "no_speech_prob": 0.07394050061702728,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793821214.m4a": {
+      "index": 558,
+      "epoch": 1793821214,
+      "sha256": "5d84f584e65f14fbb624113ad9700176848f9a6ea5b35b94fc9dcf0ca7c22aed",
+      "passes": {
+        "original": {
+          "text": "The subject is going to be clear.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " The subject is going to be clear.",
+              "avg_logprob": -0.7510629025372592,
+              "no_speech_prob": 0.018194615840911865,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        },
+        "filtered": {
+          "text": "The subject is going to be clear.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " The subject is going to be clear.",
+              "avg_logprob": -0.766297849741849,
+              "no_speech_prob": 0.010400897823274136,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        },
+        "context": {
+          "text": "The subject is going to be clear.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " The subject is going to be clear.",
+              "avg_logprob": -0.7510629025372592,
+              "no_speech_prob": 0.018194615840911865,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793821219.m4a": {
+      "index": 559,
+      "epoch": 1793821219,
+      "sha256": "d62b1ed3634f8bd7157eeb0eaa3c8d24afc89b2b7e287f9f7309137968f9d307",
+      "passes": {
+        "original": {
+          "text": "10-4.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.8813200337546212,
+              "no_speech_prob": 0.08841580152511597,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I can't park.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I can't park.",
+              "avg_logprob": -0.7509567737579346,
+              "no_speech_prob": 0.12261634320020676,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "Stand for.",
+          "prompt": "The subject is going to be clear.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Stand for.",
+              "avg_logprob": -0.7633667687575022,
+              "no_speech_prob": 0.08059658855199814,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793821309.m4a": {
+      "index": 560,
+      "epoch": 1793821309,
+      "sha256": "bf1ae339ec942a9d29d244459d39d5310b0409aa2af712f6b8662ebe3be494a2",
+      "passes": {
+        "original": {
+          "text": "5J35, clear.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J35, clear.",
+              "avg_logprob": -0.6837067074245877,
+              "no_speech_prob": 0.04606654867529869,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J35 clear.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J35 clear.",
+              "avg_logprob": -0.7852344065904617,
+              "no_speech_prob": 0.06944078952074051,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "5J35, clear.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J35, clear.",
+              "avg_logprob": -0.6837067074245877,
+              "no_speech_prob": 0.04606654867529869,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    }
+  }
+}
