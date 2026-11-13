@@ -1,0 +1,665 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-12",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794530117.m4a": {
+      "index": 1291,
+      "epoch": 1794530117,
+      "sha256": "ec25bc56c45856b06298bb500854bef242073e2cd943d11d818cf21de8c660f8",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Go ahead.",
+              "avg_logprob": -0.6025234858194987,
+              "no_speech_prob": 0.13864530622959137,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go it",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go it",
+              "avg_logprob": -0.39633960723876954,
+              "no_speech_prob": 0.051803577691316605,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Go ahead.",
+          "prompt": "7J23 copy. Traffic events in progress.",
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Go ahead.",
+              "avg_logprob": -0.4946596423784892,
+              "no_speech_prob": 0.16031475365161896,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794530119.m4a": {
+      "index": 1292,
+      "epoch": 1794530119,
+      "sha256": "e0c3fdf2d075ac2bc3fab04c554fd8f95e7c1699027164c67a0502131c1dca4e",
+      "passes": {
+        "original": {
+          "text": "State Street in 1650 West for a dark red truck swerving, possibly on their phone pushing people out of the lanes. Going westbound, currently on the shoulder.",
+          "prompt": null,
+          "duration_seconds": 9.856,
+          "token_limit": 103,
+          "token_count": 38,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " State Street in 1650 West for a dark red truck swerving, possibly on their phone pushing people out of the lanes.",
+              "avg_logprob": -0.2826045736288413,
+              "no_speech_prob": 0.03716779500246048,
+              "compression_ratio": 1.256
+            },
+            {
+              "start": 7.0,
+              "end": 10.0,
+              "text": " Going westbound, currently on the shoulder.",
+              "avg_logprob": -0.2826045736288413,
+              "no_speech_prob": 0.03716779500246048,
+              "compression_ratio": 1.256
+            }
+          ]
+        },
+        "filtered": {
+          "text": "State Street in 1650 West spread our correct trucks swerving, possibly on their phones pushing people out of the lanes. Going westbound, currently on the shoulder.",
+          "prompt": null,
+          "duration_seconds": 9.856,
+          "token_limit": 103,
+          "token_count": 37,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " State Street in 1650 West spread our correct trucks swerving, possibly on their phones pushing people out of the lanes.",
+              "avg_logprob": -0.36783672869205475,
+              "no_speech_prob": 0.024099363014101982,
+              "compression_ratio": 1.2734375
+            },
+            {
+              "start": 7.0,
+              "end": 10.0,
+              "text": " Going westbound, currently on the shoulder.",
+              "avg_logprob": -0.36783672869205475,
+              "no_speech_prob": 0.024099363014101982,
+              "compression_ratio": 1.2734375
+            }
+          ]
+        },
+        "context": {
+          "text": "State Street in 1650 West for a dark red truck swerving, possibly on their phone pushing people out of the lanes. Going westbound, currently on the shoulder.",
+          "prompt": "7J23 copy. Traffic events in progress. Go ahead.",
+          "duration_seconds": 9.856,
+          "token_limit": 103,
+          "token_count": 38,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " State Street in 1650 West for a dark red truck swerving, possibly on their phone pushing people out of the lanes.",
+              "avg_logprob": -0.2733546419021411,
+              "no_speech_prob": 0.01391240581870079,
+              "compression_ratio": 1.256
+            },
+            {
+              "start": 7.0,
+              "end": 10.0,
+              "text": " Going westbound, currently on the shoulder.",
+              "avg_logprob": -0.2733546419021411,
+              "no_speech_prob": 0.01391240581870079,
+              "compression_ratio": 1.256
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794530130.m4a": {
+      "index": 1293,
+      "epoch": 1794530130,
+      "sha256": "9081ff6e21e66fd3d32ba2df8b06849953ea000a6319c11bf70d56f798e4f730",
+      "passes": {
+        "original": {
+          "text": "KABIAN.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " KABIAN.",
+              "avg_logprob": -1.2985075861215591,
+              "no_speech_prob": 0.11787144839763641,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "KAVEH.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " KAVEH.",
+              "avg_logprob": -1.3628604859113693,
+              "no_speech_prob": 0.19158343970775604,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "7J23 copy. Traffic events in progress. Go ahead. State Street in 1650 West for a dark red truck swerving, possibly on their phone pushing people out of the lanes. Going westbound, currently on the shoulder.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.72,
+              "text": " Copy.",
+              "avg_logprob": -0.6830528259277344,
+              "no_speech_prob": 0.13964349031448364,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794530141.m4a": {
+      "index": 1294,
+      "epoch": 1794530141,
+      "sha256": "5c89de9c087f34f83a9a46453137a77e2683e87ca4acb38149f1af9d320ed56e",
+      "passes": {
+        "original": {
+          "text": "I'll do it, I'll do it",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'll do it, I'll do it",
+              "avg_logprob": -0.9168736338615417,
+              "no_speech_prob": 0.07560688257217407,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'll do it I'll do it I'll do it",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'll do it I'll do it I'll do it",
+              "avg_logprob": -0.5873712539672852,
+              "no_speech_prob": 0.11167686432600021,
+              "compression_ratio": 1.4545454545454546
+            }
+          ]
+        },
+        "context": {
+          "text": "Andre, Andre, Andre.",
+          "prompt": "Go ahead. State Street in 1650 West for a dark red truck swerving, possibly on their phone pushing people out of the lanes. Going westbound, currently on the shoulder. KABIAN.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Andre, Andre, Andre.",
+              "avg_logprob": -0.865030500623915,
+              "no_speech_prob": 0.04909205809235573,
+              "compression_ratio": 1.1111111111111112
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794530144.m4a": {
+      "index": 1295,
+      "epoch": 1794530144,
+      "sha256": "c55049f07b96b9bc48b71ead9649d9677f503e9c7b70441064367061e450ca73",
+      "passes": {
+        "original": {
+          "text": "Ten.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Ten.",
+              "avg_logprob": -0.8419413566589355,
+              "no_speech_prob": 0.058698881417512894,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Chuck.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Chuck.",
+              "avg_logprob": -0.8751178741455078,
+              "no_speech_prob": 0.10068747401237488,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "10.",
+          "prompt": "State Street in 1650 West for a dark red truck swerving, possibly on their phone pushing people out of the lanes. Going westbound, currently on the shoulder. KABIAN. I'll do it, I'll do it",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10.",
+              "avg_logprob": -0.7295348167419433,
+              "no_speech_prob": 0.04553428664803505,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794530195.m4a": {
+      "index": 1296,
+      "epoch": 1794530195,
+      "sha256": "d50ebac3f1514efe441a8c59b3a8bf80ae9ef78e7c5148280c9ea96c36bfc769",
+      "passes": {
+        "original": {
+          "text": "7J, 94 clear.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J, 94 clear.",
+              "avg_logprob": -0.6514529652065701,
+              "no_speech_prob": 0.09011118113994598,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J94 clear.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J94 clear.",
+              "avg_logprob": -0.7352558970451355,
+              "no_speech_prob": 0.052454374730587006,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "7J, 94 clear.",
+          "prompt": "I'll do it, I'll do it Ten.",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.36,
+              "text": " 7J, 94 clear.",
+              "avg_logprob": -0.6991444163852267,
+              "no_speech_prob": 0.012390902265906334,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794530199.m4a": {
+      "index": 1297,
+      "epoch": 1794530199,
+      "sha256": "30ed8ec2d5716275d639d208c3d7a66394cf092a3707125ef287bdce697beea4",
+      "passes": {
+        "original": {
+          "text": "time",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " time",
+              "avg_logprob": -0.4860917776823044,
+              "no_speech_prob": 0.012438715435564518,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "time",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " time",
+              "avg_logprob": -0.7310509532690048,
+              "no_speech_prob": 0.010577918030321598,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Ten.",
+          "prompt": "I'll do it, I'll do it Ten. 7J, 94 clear.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Ten.",
+              "avg_logprob": -0.46410379409790037,
+              "no_speech_prob": 0.0016840944299474359,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794530209.m4a": {
+      "index": 1298,
+      "epoch": 1794530209,
+      "sha256": "490af346da8d9bf6ce1187cf529e5c6d052bdb6f4e58cc6fdb9a3f8c72200c50",
+      "passes": {
+        "original": {
+          "text": "5G3",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G3",
+              "avg_logprob": -1.0679462552070618,
+              "no_speech_prob": 0.20528991520404816,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G3",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5G3",
+              "avg_logprob": -0.8830766876538595,
+              "no_speech_prob": 0.09601888805627823,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "context": {
+          "text": "1, 2, 3",
+          "prompt": "7J, 94 clear. time",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 1, 2, 3",
+              "avg_logprob": -1.008614644408226,
+              "no_speech_prob": 0.17432497441768646,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794530212.m4a": {
+      "index": 1299,
+      "epoch": 1794530212,
+      "sha256": "7b993c250e84cba56c0e8af87014bafaf005886ba1beb2962fc61c279f49dd2d",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.4998283584912618,
+              "no_speech_prob": 0.09364111721515656,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.6185177465279897,
+              "no_speech_prob": 0.07728051394224167,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Go ahead.",
+          "prompt": "7J, 94 clear. time 5G3",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.8550577362378439,
+              "no_speech_prob": 0.11850228905677795,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794530229.m4a": {
+      "index": 1300,
+      "epoch": 1794530229,
+      "sha256": "1ccba112c42ab419e64fe8b2eedede94555f95c9ae9f4a047b417ba0e0f552ad",
+      "passes": {
+        "original": {
+          "text": "Hey KJ-20, you can show me clear in 10-6 please.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Hey KJ-20, you can show me clear in 10-6 please.",
+              "avg_logprob": -0.5753582209348679,
+              "no_speech_prob": 0.046012528240680695,
+              "compression_ratio": 0.8888888888888888
+            }
+          ]
+        },
+        "filtered": {
+          "text": "A.K. J. Klein, you can show me clear in 10.6, please.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " A.K. J. Klein, you can show me clear in 10.6, please.",
+              "avg_logprob": -0.5313527584075928,
+              "no_speech_prob": 0.1202397495508194,
+              "compression_ratio": 0.8983050847457628
+            }
+          ]
+        },
+        "context": {
+          "text": "8G820, you can show me clear in 10.6, please.",
+          "prompt": "time 5G3 Go ahead.",
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 8G820, you can show me clear in 10.6, please.",
+              "avg_logprob": -0.38987997472286223,
+              "no_speech_prob": 0.021364090964198112,
+              "compression_ratio": 0.8823529411764706
+            }
+          ]
+        }
+      }
+    }
+  }
+}
