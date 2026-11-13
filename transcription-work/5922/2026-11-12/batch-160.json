@@ -1,0 +1,657 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-12",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794543416.m4a": {
+      "index": 1591,
+      "epoch": 1794543416,
+      "sha256": "127cc4a755d2c921b87e5d175846f73db8bbaf7e7a060b1021706bcf0648ccb2",
+      "passes": {
+        "original": {
+          "text": "Bye-bye.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.8553011247089931,
+              "no_speech_prob": 0.08783742785453796,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bye-bye.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.8055527380534581,
+              "no_speech_prob": 0.02992655523121357,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Go for it.",
+          "prompt": "7 to 23 minutes before. Go for it. Kelly.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.36076148067201885,
+              "no_speech_prob": 0.04588092491030693,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794543423.m4a": {
+      "index": 1592,
+      "epoch": 1794543423,
+      "sha256": "33fb9178a44c419b0c9c6d6602b11226d360cc991dfbcc2637cdf7dbe73addca",
+      "passes": {
+        "original": {
+          "text": "Roger. Do you want copies of that criminal, mister? 30, it's work.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.56,
+              "text": " Roger. Do you want copies of that criminal, mister?",
+              "avg_logprob": -0.8533748785654703,
+              "no_speech_prob": 0.2630724012851715,
+              "compression_ratio": 0.9166666666666666
+            },
+            {
+              "start": 2.56,
+              "end": 3.56,
+              "text": " 30, it's work.",
+              "avg_logprob": -0.8533748785654703,
+              "no_speech_prob": 0.2630724012851715,
+              "compression_ratio": 0.9166666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Well, do you think you will not be so cruel, Mr. 30? It's worth it.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Well, do you think you will not be so cruel, Mr. 30?",
+              "avg_logprob": -0.8073340241725628,
+              "no_speech_prob": 0.20644040405750275,
+              "compression_ratio": 0.9571428571428572
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " It's worth it.",
+              "avg_logprob": -0.8073340241725628,
+              "no_speech_prob": 0.20644040405750275,
+              "compression_ratio": 0.9571428571428572
+            }
+          ]
+        },
+        "context": {
+          "text": "Roger. Do you want copies of that criminal, Mr. 30? It's worth it.",
+          "prompt": "Go for it. Kelly. Bye-bye.",
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Roger. Do you want copies of that criminal, Mr. 30? It's worth it.",
+              "avg_logprob": -0.7684806720776991,
+              "no_speech_prob": 0.06462546437978745,
+              "compression_ratio": 0.9295774647887324
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794543427.m4a": {
+      "index": 1593,
+      "epoch": 1794543427,
+      "sha256": "f30482850c0bd302787a55d56c10fcc8d548f05848fca62ac2d6b44af6a7f1a9",
+      "passes": {
+        "original": {
+          "text": "Yeah",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah",
+              "avg_logprob": -0.7231830954551697,
+              "no_speech_prob": 0.11628584563732147,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah",
+              "avg_logprob": -0.8116165101528168,
+              "no_speech_prob": 0.1752167046070099,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Cut.",
+          "prompt": "Kelly. Bye-bye. Roger. Do you want copies of that criminal, mister? 30, it's work.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Cut.",
+              "avg_logprob": -0.6729948997497559,
+              "no_speech_prob": 0.0229242704808712,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794543437.m4a": {
+      "index": 1594,
+      "epoch": 1794543437,
+      "sha256": "9c5bf03a4aaeaa77780e3708a608bdf671a980202c65d3b59c0282ff3743e1cf",
+      "passes": {
+        "original": {
+          "text": "7-820, you can clear now.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-820, you can clear now.",
+              "avg_logprob": -0.6702363242705663,
+              "no_speech_prob": 0.06740779429674149,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7-day 20, you can clear it out.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-day 20, you can clear it out.",
+              "avg_logprob": -0.6789158412388393,
+              "no_speech_prob": 0.10993916541337967,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "context": {
+          "text": "70-20, you can clear it out.",
+          "prompt": "Bye-bye. Roger. Do you want copies of that criminal, mister? 30, it's work. Yeah",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 70-20, you can clear it out.",
+              "avg_logprob": -0.6014421536372259,
+              "no_speech_prob": 0.034072395414114,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794543443.m4a": {
+      "index": 1595,
+      "epoch": 1794543443,
+      "sha256": "c55836fa010a726ba5268071719e9bc8e0d86e8ee431aba5ebf16020ccaa7417",
+      "passes": {
+        "original": {
+          "text": "Okay.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Okay.",
+              "avg_logprob": -0.8728996276855469,
+              "no_speech_prob": 0.06828982383012772,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "OK.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " OK.",
+              "avg_logprob": -0.7405438423156738,
+              "no_speech_prob": 0.10978768765926361,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "Roger. Do you want copies of that criminal, mister? 30, it's work. Yeah 7-820, you can clear now.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.4905979633331299,
+              "no_speech_prob": 0.031888775527477264,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794543524.m4a": {
+      "index": 1596,
+      "epoch": 1794543524,
+      "sha256": "ebc4712becd3b3f56f8513fbfd0ca0c184826337a67b5a934ab5cba6a780a401",
+      "passes": {
+        "original": {
+          "text": "5 year 21 in units code 4.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5 year 21 in units code 4.",
+              "avg_logprob": -0.6692839752544056,
+              "no_speech_prob": 0.08096271008253098,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5 year 21 in units code 4.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5 year 21 in units code 4.",
+              "avg_logprob": -0.7920902425592596,
+              "no_speech_prob": 0.05179756507277489,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "context": {
+          "text": "5 year 21 in units code 4.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5 year 21 in units code 4.",
+              "avg_logprob": -0.6692839752544056,
+              "no_speech_prob": 0.08096271008253098,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794543528.m4a": {
+      "index": 1597,
+      "epoch": 1794543528,
+      "sha256": "17e4df394d05b5a2b259d4cf22abb2f47bdad5115da8a9730651a2f7b1c781fb",
+      "passes": {
+        "original": {
+          "text": "Whoa.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Whoa.",
+              "avg_logprob": -1.002385417620341,
+              "no_speech_prob": 0.23234453797340393,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Wow",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Wow",
+              "avg_logprob": -0.915215402841568,
+              "no_speech_prob": 0.4850199818611145,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "context": {
+          "text": "Wow.",
+          "prompt": "5 year 21 in units code 4.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Wow.",
+              "avg_logprob": -0.7580801486968994,
+              "no_speech_prob": 0.1323757916688919,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794543541.m4a": {
+      "index": 1598,
+      "epoch": 1794543541,
+      "sha256": "e01e464e89e6e2f18310df595996131d691475ba7fe191fc717702be40bad355",
+      "passes": {
+        "original": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.68,
+              "text": " Thank you.",
+              "avg_logprob": -0.9090918302536011,
+              "no_speech_prob": 0.19032888114452362,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Excuse me.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Excuse me.",
+              "avg_logprob": -0.6651188135147095,
+              "no_speech_prob": 0.07090592384338379,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy.",
+          "prompt": "5 year 21 in units code 4. Whoa.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.68,
+              "text": " Happy.",
+              "avg_logprob": -0.9905994415283204,
+              "no_speech_prob": 0.17367681860923767,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794543719.m4a": {
+      "index": 1599,
+      "epoch": 1794543719,
+      "sha256": "8ad735aff5af175c46d4a954d546e7b4fa1292e94c959b02653d5186a74c5482",
+      "passes": {
+        "original": {
+          "text": "7J23, go for it.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7J23, go for it.",
+              "avg_logprob": -0.6042479926889593,
+              "no_speech_prob": 0.054637111723423004,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7-j-23, go for it.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7-j-23, go for it.",
+              "avg_logprob": -0.6593993260310247,
+              "no_speech_prob": 0.10939344763755798,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "context": {
+          "text": "7J23, go for it.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7J23, go for it.",
+              "avg_logprob": -0.6042479926889593,
+              "no_speech_prob": 0.054637111723423004,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794543723.m4a": {
+      "index": 1600,
+      "epoch": 1794543723,
+      "sha256": "7f74b96a47dc5b051febf38cf938e73c5837b6db6bceb6b0057f6083c48f4ffa",
+      "passes": {
+        "original": {
+          "text": "Go for it, just fine.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it, just fine.",
+              "avg_logprob": -0.7836945354938507,
+              "no_speech_prob": 0.17421263456344604,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it, Sisman.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it, Sisman.",
+              "avg_logprob": -0.8036131208593195,
+              "no_speech_prob": 0.13293802738189697,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "context": {
+          "text": "Go for it, just fine.",
+          "prompt": "7J23, go for it.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.12,
+              "text": " Go for it, just fine.",
+              "avg_logprob": -0.5287773907184601,
+              "no_speech_prob": 0.04429103806614876,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    }
+  }
+}
