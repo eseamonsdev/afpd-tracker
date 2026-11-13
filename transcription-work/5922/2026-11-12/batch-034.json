@@ -1,0 +1,649 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-12",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794496505.m4a": {
+      "index": 331,
+      "epoch": 1794496505,
+      "sha256": "79041ca3db482259fad776a39e436dd38810258035a072f9d64e1cff05cd2393",
+      "passes": {
+        "original": {
+          "text": "500 South, sorry, 500 East, 500 South, F250, newer model, plate of striking.",
+          "prompt": null,
+          "duration_seconds": 10.624,
+          "token_limit": 109,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 10.0,
+              "text": " 500 South, sorry, 500 East, 500 South, F250, newer model, plate of striking.",
+              "avg_logprob": -0.6056562413771948,
+              "no_speech_prob": 0.023875242099165916,
+              "compression_ratio": 1.0410958904109588
+            }
+          ]
+        },
+        "filtered": {
+          "text": "500 South, sorry, 500 East, 500 South F-250 NUR model, plate of striker",
+          "prompt": null,
+          "duration_seconds": 10.624,
+          "token_limit": 109,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " 500 South, sorry, 500 East, 500 South",
+              "avg_logprob": -0.7715028190612793,
+              "no_speech_prob": 0.025729505345225334,
+              "compression_ratio": 1.0142857142857142
+            },
+            {
+              "start": 6.0,
+              "end": 10.0,
+              "text": " F-250 NUR model, plate of striker",
+              "avg_logprob": -0.7715028190612793,
+              "no_speech_prob": 0.025729505345225334,
+              "compression_ratio": 1.0142857142857142
+            }
+          ]
+        },
+        "context": {
+          "text": "Five hundred south, sorry, five hundred east, five hundred south, F-250, newer model, plate of striking.",
+          "prompt": "Go ahead.",
+          "duration_seconds": 10.624,
+          "token_limit": 109,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 10.0,
+              "text": " Five hundred south, sorry, five hundred east, five hundred south, F-250, newer model, plate of striking.",
+              "avg_logprob": -0.5687238744327,
+              "no_speech_prob": 0.013511382043361664,
+              "compression_ratio": 1.2682926829268293
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794496517.m4a": {
+      "index": 332,
+      "epoch": 1794496517,
+      "sha256": "4d35bcd6a0e6cbc6cfbd9d8d5bc5678d1c375266acbf547f9f4fb35d19bb6793",
+      "passes": {
+        "original": {
+          "text": "10-4, good for me, 500 East, 400 South.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 10-4, good for me, 500 East, 400 South.",
+              "avg_logprob": -0.5563852646771599,
+              "no_speech_prob": 0.05184188112616539,
+              "compression_ratio": 0.8666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Ten-four, good for me. Five-hundred-eighths, four-hundred-some.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Ten-four, good for me. Five-hundred-eighths, four-hundred-some.",
+              "avg_logprob": -0.5787158409754435,
+              "no_speech_prob": 0.07391276955604553,
+              "compression_ratio": 1.0327868852459017
+            }
+          ]
+        },
+        "context": {
+          "text": "10-4, good for me. 500 East, 400 South.",
+          "prompt": "Go ahead. 500 South, sorry, 500 East, 500 South, F250, newer model, plate of striking.",
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 10-4, good for me. 500 East, 400 South.",
+              "avg_logprob": -0.37700972837560315,
+              "no_speech_prob": 0.018736887723207474,
+              "compression_ratio": 0.8666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794496523.m4a": {
+      "index": 333,
+      "epoch": 1794496523,
+      "sha256": "b2fb9eb3faad29f5aa0e1cf556eb489d705a8231c6135a8ee38c7c5488df3aa8",
+      "passes": {
+        "original": {
+          "text": "11 to the shelf.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.12,
+              "text": " 11 to the shelf.",
+              "avg_logprob": -0.8063013628125191,
+              "no_speech_prob": 0.011846075765788555,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "11.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 11.",
+              "avg_logprob": -0.9800811767578125,
+              "no_speech_prob": 0.015808546915650368,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "context": {
+          "text": "11 South.",
+          "prompt": "Go ahead. 500 South, sorry, 500 East, 500 South, F250, newer model, plate of striking. 10-4, good for me, 500 East, 400 South.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.12,
+              "text": " 11 South.",
+              "avg_logprob": -0.5244487027327219,
+              "no_speech_prob": 0.006058489438146353,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794496524.m4a": {
+      "index": 334,
+      "epoch": 1794496524,
+      "sha256": "119c7214ae044c66535fd848fd94cffd987152727db06af41059f96d0b506ff6",
+      "passes": {
+        "original": {
+          "text": "Copy, 11 herself.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy, 11 herself.",
+              "avg_logprob": -0.628083623945713,
+              "no_speech_prob": 0.0031535555608570576,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy, 11 herself.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy, 11 herself.",
+              "avg_logprob": -0.746692344546318,
+              "no_speech_prob": 0.003920580260455608,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy, 11 to the shelf.",
+          "prompt": "500 South, sorry, 500 East, 500 South, F250, newer model, plate of striking. 10-4, good for me, 500 East, 400 South. 11 to the shelf.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy, 11 to the shelf.",
+              "avg_logprob": -0.4380211740732193,
+              "no_speech_prob": 0.0020123356953263283,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794496581.m4a": {
+      "index": 335,
+      "epoch": 1794496581,
+      "sha256": "5fc5d32cc0b24afb70bae51c977c58cc7c2a7fb4a30161e82f8c2413a1eb4728",
+      "passes": {
+        "original": {
+          "text": "18-J-8 code project.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18-J-8 code project.",
+              "avg_logprob": -0.8486303958025846,
+              "no_speech_prob": 0.03742725029587746,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18-J-8 Co-Porter.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18-J-8 Co-Porter.",
+              "avg_logprob": -1.1680334164546087,
+              "no_speech_prob": 0.02508576028048992,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "18 to 8 code project.",
+          "prompt": "11 to the shelf. Copy, 11 herself.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18 to 8 code project.",
+              "avg_logprob": -0.8002735243903266,
+              "no_speech_prob": 0.0557747408747673,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794496585.m4a": {
+      "index": 336,
+      "epoch": 1794496585,
+      "sha256": "cd48eabbb5f919ab92a26428951026df1cfd894876d8b36f111bbfcd33b37a94",
+      "passes": {
+        "original": {
+          "text": "Go towards the fence.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go towards the fence.",
+              "avg_logprob": -0.7669805884361267,
+              "no_speech_prob": 0.0843159630894661,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go towards the fence.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.36,
+              "text": " Go towards the fence.",
+              "avg_logprob": -0.7710398435592651,
+              "no_speech_prob": 0.06645327061414719,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "context": {
+          "text": "Code module, friends.",
+          "prompt": "18-J-8 code project.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Code module, friends.",
+              "avg_logprob": -0.8251748755574226,
+              "no_speech_prob": 0.055773794651031494,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794496587.m4a": {
+      "index": 337,
+      "epoch": 1794496587,
+      "sha256": "016b84ff9f1c320c832ce4146c87ba32d874808e04b5c1997878af9b736cb2ed",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7228745460510254,
+              "no_speech_prob": 0.020549412816762924,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.6253558248281479,
+              "no_speech_prob": 0.011961066164076328,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "18-J-8 code project. Go towards the fence.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5422670364379882,
+              "no_speech_prob": 0.012770530767738819,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794496669.m4a": {
+      "index": 338,
+      "epoch": 1794496669,
+      "sha256": "a81e0db27375e197ef63acef6fa9f93506b2bdd58a096c26f6ce3a4b3b2e9887",
+      "passes": {
+        "original": {
+          "text": "79, can I have your case number?",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 79, can I have your case number?",
+              "avg_logprob": -0.41175634413957596,
+              "no_speech_prob": 0.026207897812128067,
+              "compression_ratio": 0.8421052631578947
+            }
+          ]
+        },
+        "filtered": {
+          "text": "79, can I have your case number?",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 79, can I have your case number?",
+              "avg_logprob": -0.29580575972795486,
+              "no_speech_prob": 0.06616038084030151,
+              "compression_ratio": 0.8421052631578947
+            }
+          ]
+        },
+        "context": {
+          "text": "79, can I have your case number?",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 79, can I have your case number?",
+              "avg_logprob": -0.41175634413957596,
+              "no_speech_prob": 0.026207897812128067,
+              "compression_ratio": 0.8421052631578947
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794496672.m4a": {
+      "index": 339,
+      "epoch": 1794496672,
+      "sha256": "2b3830192ffba2fec1b1312dd58a6ec78135563dd0ae77b6fc49f71515a3ae75",
+      "passes": {
+        "original": {
+          "text": "BLEEP BLEEP BLEEP BLEEP BLEEP",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.64,
+              "text": " BLEEP BLEEP BLEEP BLEEP BLEEP",
+              "avg_logprob": -0.5344153572531307,
+              "no_speech_prob": 0.5811877846717834,
+              "compression_ratio": 1.7058823529411764
+            }
+          ]
+        },
+        "filtered": {
+          "text": "God bless you.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " God bless you.",
+              "avg_logprob": -1.270045586994716,
+              "no_speech_prob": 0.3114300072193146,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "P-P-P-P-P-P-P-P-P-P-",
+          "prompt": "79, can I have your case number?",
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.64,
+              "text": " P-P-P-P-P-P-P-P-P-P-",
+              "avg_logprob": -0.4021184173497287,
+              "no_speech_prob": 0.48493891954421997,
+              "compression_ratio": 1.6666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794496673.m4a": {
+      "index": 340,
+      "epoch": 1794496673,
+      "sha256": "8a1520dc742818093ed3532d2ccc87e7029083d8945a3e25325860929a87edb1",
+      "passes": {
+        "original": {
+          "text": "7J9, case number 0784307843",
+          "prompt": null,
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 7J9, case number 0784307843",
+              "avg_logprob": -0.37975276368004934,
+              "no_speech_prob": 0.03076828457415104,
+              "compression_ratio": 0.8709677419354839
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J9, case number 0784307843",
+          "prompt": null,
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 7J9, case number 0784307843",
+              "avg_logprob": -0.47836282423564364,
+              "no_speech_prob": 0.02491265907883644,
+              "compression_ratio": 0.8709677419354839
+            }
+          ]
+        },
+        "context": {
+          "text": "7J9, case number 0784307843",
+          "prompt": "79, can I have your case number? BLEEP BLEEP BLEEP BLEEP BLEEP",
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 7J9, case number 0784307843",
+              "avg_logprob": -0.34439386427402496,
+              "no_speech_prob": 0.008998021483421326,
+              "compression_ratio": 0.8709677419354839
+            }
+          ]
+        }
+      }
+    }
+  }
+}

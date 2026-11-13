@@ -1,0 +1,705 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-12",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794496708.m4a": {
+      "index": 341,
+      "epoch": 1794496708,
+      "sha256": "5ab1546d30caa0c30b8653d837514fde9fae9cf8ccf81a55371f7e900ce2dbfc",
+      "passes": {
+        "original": {
+          "text": "Roger, 53, you can show me around on the P.I.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Roger, 53, you can show me around on the P.I.",
+              "avg_logprob": -0.6208954652150472,
+              "no_speech_prob": 0.10550318658351898,
+              "compression_ratio": 0.8490566037735849
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Project 53. Show me around on the P.I.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Project 53. Show me around on the P.I.",
+              "avg_logprob": -0.6281137307484944,
+              "no_speech_prob": 0.09142240136861801,
+              "compression_ratio": 0.8260869565217391
+            }
+          ]
+        },
+        "context": {
+          "text": "5J53, show me around on the P.I.",
+          "prompt": "79, can I have your case number? BLEEP BLEEP BLEEP BLEEP BLEEP 7J9, case number 0784307843",
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5J53, show me around on the P.I.",
+              "avg_logprob": -0.5008942075073719,
+              "no_speech_prob": 0.027679443359375,
+              "compression_ratio": 0.8
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794496714.m4a": {
+      "index": 342,
+      "epoch": 1794496714,
+      "sha256": "18f132a8724b1384554cd61b306baba54e14829ec3acdc981229aae0c0ca5e3d",
+      "passes": {
+        "original": {
+          "text": "Thanks for watching!",
+          "prompt": null,
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thanks for watching!",
+              "avg_logprob": -0.9720220225197929,
+              "no_speech_prob": 0.9497508406639099,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you very much. Thank you.",
+          "prompt": null,
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you very much.",
+              "avg_logprob": -0.9134373114659236,
+              "no_speech_prob": 0.815210223197937,
+              "compression_ratio": 0.9393939393939394
+            },
+            {
+              "start": 1.0,
+              "end": 1.02,
+              "text": " Thank you.",
+              "avg_logprob": -0.9134373114659236,
+              "no_speech_prob": 0.815210223197937,
+              "compression_ratio": 0.9393939393939394
+            }
+          ]
+        },
+        "context": {
+          "text": "BLEEP BLEEP",
+          "prompt": "BLEEP BLEEP BLEEP BLEEP BLEEP 7J9, case number 0784307843 Roger, 53, you can show me around on the P.I.",
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.38,
+              "text": " BLEEP BLEEP",
+              "avg_logprob": -0.4432201012969017,
+              "no_speech_prob": 0.7308712005615234,
+              "compression_ratio": 0.6875
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794496715.m4a": {
+      "index": 343,
+      "epoch": 1794496715,
+      "sha256": "906bf28035eb6a0bac00cb6ecd78d8e9cb48cc5df2fcd9ed8b8298e28d8b96ff",
+      "passes": {
+        "original": {
+          "text": "10-4.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.5080194813864571,
+              "no_speech_prob": 0.12998650968074799,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "10-4.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.5110433271953038,
+              "no_speech_prob": 0.06058964505791664,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "10-4",
+          "prompt": "7J9, case number 0784307843 Roger, 53, you can show me around on the P.I. Thanks for watching!",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 10-4",
+              "avg_logprob": -0.5248545606931051,
+              "no_speech_prob": 0.19870823621749878,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794496717.m4a": {
+      "index": 344,
+      "epoch": 1794496717,
+      "sha256": "8b1a552fd484870cd2227f538abdba711d608def0a676cd68f435e52635704a6",
+      "passes": {
+        "original": {
+          "text": "Just be wise the original RP is not on scene. He's en route to this location got a call from his wife dating She was rear-ended Unknown injuries. However, the kids were crying in the background Wife is driving a cray Tesla parking lot of maverick 1078 East State Street will send medical at the precaution",
+          "prompt": null,
+          "duration_seconds": 20.992,
+          "token_limit": 192,
+          "token_count": 74,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.84,
+              "text": " Just be wise the original RP is not on scene. He's en route to this location got a call from his wife dating",
+              "avg_logprob": -0.2788669188817342,
+              "no_speech_prob": 0.0007515201577916741,
+              "compression_ratio": 1.431924882629108
+            },
+            {
+              "start": 6.84,
+              "end": 8.36,
+              "text": " She was rear-ended",
+              "avg_logprob": -0.2788669188817342,
+              "no_speech_prob": 0.0007515201577916741,
+              "compression_ratio": 1.431924882629108
+            },
+            {
+              "start": 8.36,
+              "end": 11.52,
+              "text": " Unknown injuries. However, the kids were crying in the background",
+              "avg_logprob": -0.2788669188817342,
+              "no_speech_prob": 0.0007515201577916741,
+              "compression_ratio": 1.431924882629108
+            },
+            {
+              "start": 12.68,
+              "end": 20.080000000000002,
+              "text": " Wife is driving a cray Tesla parking lot of maverick 1078 East State Street will send medical at the precaution",
+              "avg_logprob": -0.2788669188817342,
+              "no_speech_prob": 0.0007515201577916741,
+              "compression_ratio": 1.431924882629108
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Just be by the original RP is not on scene. He's in route to this location, got a call from his wife stating she was rear-ended. Unknown injuries, however, the kids were crying in the background. Wife is driving a cray Tesla parking lot of Maverick, 1078 East State Street. We'll send medical as a precaution.",
+          "prompt": null,
+          "duration_seconds": 20.992,
+          "token_limit": 192,
+          "token_count": 78,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " Just be by the original RP is not on scene. He's in route to this location, got a call from his wife stating she was rear-ended.",
+              "avg_logprob": -0.2558907459053812,
+              "no_speech_prob": 0.0031848717480897903,
+              "compression_ratio": 1.4045454545454545
+            },
+            {
+              "start": 8.0,
+              "end": 12.0,
+              "text": " Unknown injuries, however, the kids were crying in the background.",
+              "avg_logprob": -0.2558907459053812,
+              "no_speech_prob": 0.0031848717480897903,
+              "compression_ratio": 1.4045454545454545
+            },
+            {
+              "start": 12.0,
+              "end": 20.0,
+              "text": " Wife is driving a cray Tesla parking lot of Maverick, 1078 East State Street. We'll send medical as a precaution.",
+              "avg_logprob": -0.2558907459053812,
+              "no_speech_prob": 0.0031848717480897903,
+              "compression_ratio": 1.4045454545454545
+            }
+          ]
+        },
+        "context": {
+          "text": "Just be wise, the original R.P. is not on scene. He's en route to this location, got a call from his wife stating she was rear-ended. Unknown injuries, however, the kids were crying in the background. Wife is driving a cray tesla, parking lot of Maverick, 1078 East State Street. We'll send medical at the precaution.",
+          "prompt": "Roger, 53, you can show me around on the P.I. Thanks for watching! 10-4.",
+          "duration_seconds": 20.992,
+          "token_limit": 192,
+          "token_count": 85,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " Just be wise, the original R.P. is not on scene. He's en route to this location, got a call from his wife stating she was rear-ended.",
+              "avg_logprob": -0.22072625281505806,
+              "no_speech_prob": 0.04350064694881439,
+              "compression_ratio": 1.4088888888888889
+            },
+            {
+              "start": 8.0,
+              "end": 12.0,
+              "text": " Unknown injuries, however, the kids were crying in the background.",
+              "avg_logprob": -0.22072625281505806,
+              "no_speech_prob": 0.04350064694881439,
+              "compression_ratio": 1.4088888888888889
+            },
+            {
+              "start": 12.0,
+              "end": 20.0,
+              "text": " Wife is driving a cray tesla, parking lot of Maverick, 1078 East State Street. We'll send medical at the precaution.",
+              "avg_logprob": -0.22072625281505806,
+              "no_speech_prob": 0.04350064694881439,
+              "compression_ratio": 1.4088888888888889
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794496740.m4a": {
+      "index": 345,
+      "epoch": 1794496740,
+      "sha256": "2d93b2985a7d6946747d929827b0eda839a67a982e244fd5ee377a244f726413",
+      "passes": {
+        "original": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.6845262527465821,
+              "no_speech_prob": 0.10043477267026901,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.6814997673034668,
+              "no_speech_prob": 0.08164668083190918,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy!",
+          "prompt": "Thanks for watching! 10-4. Just be wise the original RP is not on scene. He's en route to this location got a call from his wife dating She was rear-ended Unknown injuries. However, the kids were crying in the background Wife is driving a cray Tesla parking lot of maverick 1078 East State Street will send medical at the precaution",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy!",
+              "avg_logprob": -0.770326042175293,
+              "no_speech_prob": 0.13080544769763947,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794496770.m4a": {
+      "index": 346,
+      "epoch": 1794496770,
+      "sha256": "cff5a65b66366e8d950c4776400b3ea79d1756cf7dd8ff2e2b9527235ab398ec",
+      "passes": {
+        "original": {
+          "text": "Thanks for watching!",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thanks for watching!",
+              "avg_logprob": -0.9113077436174665,
+              "no_speech_prob": 0.6499741673469543,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.9782708684603373,
+              "no_speech_prob": 0.2598690390586853,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Yeah, yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah.",
+          "prompt": "10-4. Just be wise the original RP is not on scene. He's en route to this location got a call from his wife dating She was rear-ended Unknown injuries. However, the kids were crying in the background Wife is driving a cray Tesla parking lot of maverick 1078 East State Street will send medical at the precaution Happy.",
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 33,
+          "token_cap_reached": true,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.64,
+              "text": " Yeah, yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah.",
+              "avg_logprob": -0.3484892485772862,
+              "no_speech_prob": 0.6316956877708435,
+              "compression_ratio": 4.523809523809524
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794496782.m4a": {
+      "index": 347,
+      "epoch": 1794496782,
+      "sha256": "332117b1e6c3e6a9b7b13ece7727bd26a6054671badac1d4e4ce35c0daa5f971",
+      "passes": {
+        "original": {
+          "text": "5J37, I copy the property damage.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J37, I copy the property damage.",
+              "avg_logprob": -0.41552449189699614,
+              "no_speech_prob": 0.039804935455322266,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J37, I copy the property damage.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J37, I copy the property damage.",
+              "avg_logprob": -0.3533870348563561,
+              "no_speech_prob": 0.031960029155015945,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        },
+        "context": {
+          "text": "5J37, I copy the property damage.",
+          "prompt": "Happy. Thanks for watching!",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.5,
+              "text": " 5J37, I copy the property damage.",
+              "avg_logprob": -0.4251860838669997,
+              "no_speech_prob": 0.015504080802202225,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794496787.m4a": {
+      "index": 348,
+      "epoch": 1794496787,
+      "sha256": "65d11f446fe767d7382962a0c7b9452eafce8a58f340908afd98ddb199fdc4c7",
+      "passes": {
+        "original": {
+          "text": "5-0-0-0-0-0-0-0-0-0",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.6600000000000001,
+              "text": " 5-0-0-0-0-0-0-0-0-0",
+              "avg_logprob": -0.6076661745707194,
+              "no_speech_prob": 0.06177910417318344,
+              "compression_ratio": 1.5833333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G, 57, 10-4.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G, 57, 10-4.",
+              "avg_logprob": -1.0086561540762584,
+              "no_speech_prob": 0.04365362972021103,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "5J37, 10-4.",
+          "prompt": "Happy. Thanks for watching! 5J37, I copy the property damage.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J37, 10-4.",
+              "avg_logprob": -0.4696217992089011,
+              "no_speech_prob": 0.04388496279716492,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794496796.m4a": {
+      "index": 349,
+      "epoch": 1794496796,
+      "sha256": "aaf9c216f0c7fa91c85e24681b1b796ad2d6b701a88b4694908f8c7cb0f14946",
+      "passes": {
+        "original": {
+          "text": "7G90, you can clear off.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7G90, you can clear off.",
+              "avg_logprob": -0.538738285501798,
+              "no_speech_prob": 0.031395237892866135,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "filtered": {
+          "text": "709, you can clear off.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 709, you can clear off.",
+              "avg_logprob": -0.5450972643765536,
+              "no_speech_prob": 0.027995608747005463,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "context": {
+          "text": "7-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0",
+          "prompt": "Thanks for watching! 5J37, I copy the property damage. 5-0-0-0-0-0-0-0-0-0",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 38,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.92,
+              "text": " 7-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0",
+              "avg_logprob": -0.0966974003956868,
+              "no_speech_prob": 0.12183283269405365,
+              "compression_ratio": 3.0833333333333335
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794496798.m4a": {
+      "index": 350,
+      "epoch": 1794496798,
+      "sha256": "2c865c1205f6b36fe2622ac1f899253f96b04e940a793ff7990adc5d41c4b2f9",
+      "passes": {
+        "original": {
+          "text": "Seventy-nine, ten-four.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Seventy-nine, ten-four.",
+              "avg_logprob": -0.7224635233481725,
+              "no_speech_prob": 0.05986839160323143,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Seventy-nine, ten-four.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Seventy-nine, ten-four.",
+              "avg_logprob": -0.6299084275960922,
+              "no_speech_prob": 0.0517892986536026,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "context": {
+          "text": "7G90, 4-0-0-0-0-0-0-0-0-0-0-0",
+          "prompt": "5J37, I copy the property damage. 5-0-0-0-0-0-0-0-0-0 7G90, you can clear off.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.53,
+              "text": " 7G90, 4-0-0-0-0-0-0-0-0-0-0-0",
+              "avg_logprob": -0.32939640817971066,
+              "no_speech_prob": 0.015476752072572708,
+              "compression_ratio": 1.6111111111111112
+            }
+          ]
+        }
+      }
+    }
+  }
+}
