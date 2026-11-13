@@ -1,0 +1,689 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-04",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793849047.m4a": {
+      "index": 1421,
+      "epoch": 1793849047,
+      "sha256": "871b7ee432f4910ebfeda5302f06cb9350dc0984cd9999420a4869df097ad15e",
+      "passes": {
+        "original": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.8471434315045675,
+              "no_speech_prob": 0.6705805659294128,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.934987465540568,
+              "no_speech_prob": 0.6562801003456116,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "1, 2, 3.",
+          "prompt": "Last unit, I cannot copy your traffic. 5J48, 82, 1, PML. Coming.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 1, 2, 3.",
+              "avg_logprob": -0.8239856296115451,
+              "no_speech_prob": 0.5551617741584778,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793849056.m4a": {
+      "index": 1422,
+      "epoch": 1793849056,
+      "sha256": "72acf13207ff5d133e04e0d5d31ad13524af07438139a303508452dcd9ce551c",
+      "passes": {
+        "original": {
+          "text": "7J11, shouldn't be 1042. Have a good night. Probably YouTube.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J11, shouldn't be 1042. Have a good night.",
+              "avg_logprob": -0.5970565236133077,
+              "no_speech_prob": 0.11633884161710739,
+              "compression_ratio": 0.8840579710144928
+            },
+            {
+              "start": 4.0,
+              "end": 5.0,
+              "text": " Probably YouTube.",
+              "avg_logprob": -0.5970565236133077,
+              "no_speech_prob": 0.11633884161710739,
+              "compression_ratio": 0.8840579710144928
+            }
+          ]
+        },
+        "filtered": {
+          "text": "That was January 11th, January 10th, 42, have a good night. Copy, YouTube.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " That was January 11th, January 10th, 42, have a good night.",
+              "avg_logprob": -0.77891366986128,
+              "no_speech_prob": 0.09740030020475388,
+              "compression_ratio": 1.0422535211267605
+            },
+            {
+              "start": 4.0,
+              "end": 5.0,
+              "text": " Copy, YouTube.",
+              "avg_logprob": -0.77891366986128,
+              "no_speech_prob": 0.09740030020475388,
+              "compression_ratio": 1.0422535211267605
+            }
+          ]
+        },
+        "context": {
+          "text": "7J11, shouldn't be 10.42. Have a good night. Probably you too.",
+          "prompt": "5J48, 82, 1, PML. Coming. Thank you.",
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J11, shouldn't be 10.42. Have a good night.",
+              "avg_logprob": -0.44639800071716307,
+              "no_speech_prob": 0.017136339098215103,
+              "compression_ratio": 0.8857142857142857
+            },
+            {
+              "start": 4.0,
+              "end": 5.0,
+              "text": " Probably you too.",
+              "avg_logprob": -0.44639800071716307,
+              "no_speech_prob": 0.017136339098215103,
+              "compression_ratio": 0.8857142857142857
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793849072.m4a": {
+      "index": 1423,
+      "epoch": 1793849072,
+      "sha256": "38002e70edc97a0dcdbf982b50b8231dc32eecc560040dd7284386f06f6914ac",
+      "passes": {
+        "original": {
+          "text": "You",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You",
+              "avg_logprob": -0.7672747671604156,
+              "no_speech_prob": 0.8958317637443542,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "filtered": {
+          "text": "You",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You",
+              "avg_logprob": -0.6360975354909897,
+              "no_speech_prob": 0.8823762536048889,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "context": {
+          "text": "Thanks for watching.",
+          "prompt": "Coming. Thank you. 7J11, shouldn't be 1042. Have a good night. Probably YouTube.",
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thanks for watching.",
+              "avg_logprob": -0.9459045614515033,
+              "no_speech_prob": 0.8321865200996399,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793849076.m4a": {
+      "index": 1424,
+      "epoch": 1793849076,
+      "sha256": "0a4103e744ee4a6d92b27cb7237b401d1ae94ccb08a2964b0e49b1df7b37e08e",
+      "passes": {
+        "original": {
+          "text": "7-8-21, clear stop in route to DB.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7-8-21, clear stop in route to DB.",
+              "avg_logprob": -0.628479290753603,
+              "no_speech_prob": 0.031238656491041183,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7 to 821, Claire's popping her out to DB.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7 to 821, Claire's popping her out to DB.",
+              "avg_logprob": -0.6966247223317623,
+              "no_speech_prob": 0.03937067463994026,
+              "compression_ratio": 0.8723404255319149
+            }
+          ]
+        },
+        "context": {
+          "text": "7J21, clear stop en route to DB.",
+          "prompt": "Thank you. 7J11, shouldn't be 1042. Have a good night. Probably YouTube. You",
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7J21, clear stop en route to DB.",
+              "avg_logprob": -0.5386572011879512,
+              "no_speech_prob": 0.013824794441461563,
+              "compression_ratio": 0.8
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793849081.m4a": {
+      "index": 1425,
+      "epoch": 1793849081,
+      "sha256": "dd74444e5bcdd42a94e94fef68d619530482652b054b36ad4c7f304ad2139428",
+      "passes": {
+        "original": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy.",
+              "avg_logprob": -0.9603708267211915,
+              "no_speech_prob": 0.04236753284931183,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.9746945381164551,
+              "no_speech_prob": 0.06837406009435654,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Probably.",
+          "prompt": "7J11, shouldn't be 1042. Have a good night. Probably YouTube. You 7-8-21, clear stop in route to DB.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Probably.",
+              "avg_logprob": -0.670462703704834,
+              "no_speech_prob": 0.09215536713600159,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793849084.m4a": {
+      "index": 1426,
+      "epoch": 1793849084,
+      "sha256": "52b8cfa705faa8077170f38f18d2be53984a3839df13c169534544d2d45dd292",
+      "passes": {
+        "original": {
+          "text": "93 in route to the DB.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0200000000000005,
+              "text": " 93 in route to the DB.",
+              "avg_logprob": -0.7773900032043457,
+              "no_speech_prob": 0.1379469484090805,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "93 in route this evening.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 93 in route this evening.",
+              "avg_logprob": -0.5235167609320747,
+              "no_speech_prob": 0.09667902439832687,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "context": {
+          "text": "93 in route to DB.",
+          "prompt": "You 7-8-21, clear stop in route to DB. Happy.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 93 in route to DB.",
+              "avg_logprob": -0.30324000782436794,
+              "no_speech_prob": 0.07089671492576599,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793849087.m4a": {
+      "index": 1427,
+      "epoch": 1793849087,
+      "sha256": "497103217a7d23de3d42364c3cd913f596a089eeb00ae759442d65e900e661a3",
+      "passes": {
+        "original": {
+          "text": "Turn 4.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Turn 4.",
+              "avg_logprob": -0.7496317227681478,
+              "no_speech_prob": 0.0829649567604065,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Turn 4.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Turn 4.",
+              "avg_logprob": -0.8034740388393402,
+              "no_speech_prob": 0.08740289509296417,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Turn 4.",
+          "prompt": "7-8-21, clear stop in route to DB. Happy. 93 in route to the DB.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Turn 4.",
+              "avg_logprob": -0.6132447719573975,
+              "no_speech_prob": 0.17083381116390228,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793849108.m4a": {
+      "index": 1428,
+      "epoch": 1793849108,
+      "sha256": "b8db69fc88d67786fd9ca0ce3d12a7cc09b33ee2a20bd9970cf8e05416640d16",
+      "passes": {
+        "original": {
+          "text": "5J34",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5J34",
+              "avg_logprob": -0.31719719370206195,
+              "no_speech_prob": 0.06486749649047852,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G34.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G34.",
+              "avg_logprob": -0.650762711252485,
+              "no_speech_prob": 0.048213716596364975,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "5J34.",
+          "prompt": "Happy. 93 in route to the DB. Turn 4.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J34.",
+              "avg_logprob": -0.33154553174972534,
+              "no_speech_prob": 0.03194306418299675,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793849112.m4a": {
+      "index": 1429,
+      "epoch": 1793849112,
+      "sha256": "76c9220784e44fe74bb104fea6f8f4604e9499651f027d1614ed9f048071da3b",
+      "passes": {
+        "original": {
+          "text": "Can you admit it's all under location? 7-year-old female with 30 benzels.",
+          "prompt": null,
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Can you admit it's all under location?",
+              "avg_logprob": -0.601234115087069,
+              "no_speech_prob": 0.00479106092825532,
+              "compression_ratio": 0.948051948051948
+            },
+            {
+              "start": 3.0,
+              "end": 6.0,
+              "text": " 7-year-old female with 30 benzels.",
+              "avg_logprob": -0.601234115087069,
+              "no_speech_prob": 0.00479106092825532,
+              "compression_ratio": 0.948051948051948
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Can you admit it's all under location? I have a 10-year-old female with 30 benzos.",
+          "prompt": null,
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Can you admit it's all under location?",
+              "avg_logprob": -0.820541975753648,
+              "no_speech_prob": 0.006527264602482319,
+              "compression_ratio": 0.9761904761904762
+            },
+            {
+              "start": 2.0,
+              "end": 6.0,
+              "text": " I have a 10-year-old female with 30 benzos.",
+              "avg_logprob": -0.820541975753648,
+              "no_speech_prob": 0.006527264602482319,
+              "compression_ratio": 0.9761904761904762
+            }
+          ]
+        },
+        "context": {
+          "text": "Can you have medical under location? 7-year-old female with 30 benzels.",
+          "prompt": "93 in route to the DB. Turn 4. 5J34",
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Can you have medical under location?",
+              "avg_logprob": -0.615750456849734,
+              "no_speech_prob": 0.05860534682869911,
+              "compression_ratio": 0.9342105263157895
+            },
+            {
+              "start": 3.0,
+              "end": 6.0,
+              "text": " 7-year-old female with 30 benzels.",
+              "avg_logprob": -0.615750456849734,
+              "no_speech_prob": 0.05860534682869911,
+              "compression_ratio": 0.9342105263157895
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793849123.m4a": {
+      "index": 1430,
+      "epoch": 1793849123,
+      "sha256": "b022b2c721ae3540f943fb288ac0d3b4ad628c8d41c9aa8b5fbfa5e41950bc66",
+      "passes": {
+        "original": {
+          "text": "7G27, we're out.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.56,
+              "text": " 7G27, we're out.",
+              "avg_logprob": -1.053687659176913,
+              "no_speech_prob": 0.006249226629734039,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "That was a 27 yard",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " That was a 27 yard",
+              "avg_logprob": -0.7587670534849167,
+              "no_speech_prob": 0.018910979852080345,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "context": {
+          "text": "7J27 red.",
+          "prompt": "Turn 4. 5J34 Can you admit it's all under location? 7-year-old female with 30 benzels.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.56,
+              "text": " 7J27 red.",
+              "avg_logprob": -0.6562241315841675,
+              "no_speech_prob": 0.0050094276666641235,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    }
+  }
+}
