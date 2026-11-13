@@ -57,7 +57,7 @@ class Element {
 }
 
 
-async function fixture(withTranscription = true) {
+async function fixture(withTranscription = true, associations = null) {
   const elements = new Map(["audio", "play", "seek", "autoplay", "show-current", "current", "player-message", "elapsed", "duration"].map(name => [name, new Element()]));
   if (withTranscription) {
     elements.set("transcription-toggle", new Element());
@@ -75,7 +75,8 @@ async function fixture(withTranscription = true) {
   const buttons = excerpt.sections.flatMap(s => s.ranges.flatMap(r => r.calls)).map(call => {
     const button = new Element();
     button.dataset = { source: call.source, seconds: String(call.seconds), label: `Clip ${call.number}`,
-      transcript: call.transcript, validated: String(call.validated), note: call.note, radioIds: call.radioIds };
+      transcript: call.transcript, validated: String(call.validated), note: call.note, radioIds: call.radioIds,
+      archiveDate: call.archiveDate, originalFilename: call.originalFilename };
     return button;
   });
   const root = { querySelector: id => elements.get(id.replace("#excerpt-", "")), querySelectorAll: () => buttons };
@@ -85,7 +86,7 @@ async function fixture(withTranscription = true) {
     document: { createElementNS: (_, tag) => new Element(tag), getElementById: id => id === "radio-excerpt" ? root : null, createElement: tag => new Element(tag) },
     window: { addEventListener() {} }, AbortController,
     URL: { createObjectURL(blob) { const url = `blob:${++serial}`; objectSources.set(url, blob.source); return url; }, revokeObjectURL(url) { revoked.push(url); } },
-    fetch: async url => ({ ok: !failed.has(url), blob: async () => ({ source: url }) })
+    fetch: async url => ({ ok: !failed.has(url), blob: async () => ({ source: url }), json: async () => associations })
   });
   const get = name => elements.get(name), audio = get("audio");
   return { get, audio, buttons, failed, revoked,
@@ -253,4 +254,23 @@ test("stale playback failures cannot overwrite a new selection", async () => {
   f.select(0); f.audio.play = Element.prototype.play; f.select(1);
   reject(new Error("old request")); await f.settle();
   assert.equal(f.get("player-message").textContent,"");
+});
+
+test("excerpt clips apply filename overrides before dated exclusions", async () => {
+  const excerpt = buildRadioExcerpt(entity);
+  const call = excerpt.sections.flatMap(section => section.ranges.flatMap(range => range.calls))
+    .find(item => item.radioIds.match(/[1-9]\d*/));
+  const id = call.radioIds.match(/[1-9]\d*/)[0];
+  const associations = {
+    schema_version: 4, days: {}, associations: {},
+    association_exclusions: { [call.archiveDate]: { [id]: { associations: [] } } },
+    clip_overrides: { [call.originalFilename]: {
+      [id]: { officer_id: "one", name: "Clip Officer", status: "confirmed-clip" }
+    } }
+  };
+  const f = await fixture(true, associations);
+  const index = f.buttons.findIndex(button => button.dataset.originalFilename === call.originalFilename);
+  await f.settle();
+  f.select(index);
+  assert.match(f.get("current-radio-ids").textContent, /Clip Officer · Confirmed for this clip/);
 });

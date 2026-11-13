@@ -22,29 +22,34 @@ const playbackSource = (call, fallback) => unavailableAudio(call) ? placeholderA
 function createIdentity(getDate) {
   let afpdIds = new Set(), agencyIds = {}, datedAgencyIds = {};
   const agencyId = id => datedAgencyIds[getDate()]?.[id] || agencyIds[id];
-  let officerDays = {}, strongAssociations = {}, withheldDates = {}, informationNumber = 0, closeInformation = null, activeInformation = null;
+  let officerDays = {}, strongAssociations = {}, withheldDates = {}, associationExclusions = {}, clipOverrides = {}, informationNumber = 0, closeInformation = null, activeInformation = null;
   document.addEventListener?.("pointerdown", event => {
     if (activeInformation && !activeInformation.contains(event.target)) closeInformation?.();
   });
   const associationLabels = {
     confirmed: "Confirmed this day",
+    "confirmed-clip": "Confirmed for this clip",
     "confirmed-association": "Personally confirmed association",
     observed: "Association this day",
     strong: "Strong association",
     possible: "Possible association",
     "single-day": "Single-day association"
   };
-  const officerAssociation = (id) => {
+  const officerAssociation = (id, call) => {
     if (isDispatchId(id) || agencyId(id)) return [];
     const date = getDate();
     const asEntries = value => (Array.isArray(value) ? value : value ? [value] : [])
       .filter(entry => entry?.display_eligible !== false && typeof entry?.name === "string" && associationLabels[entry.status]);
+    const override = asEntries(clipOverrides[call?.original_filename]?.[id]);
+    if (override.length) return override;
     const dated = asEntries(officerDays[date]?.[id]);
     // A dated owner identification replaces every usual identity for this ID,
     // including another person's strong association. It applies only this day.
     const confirmed = dated.filter(entry => ["confirmed", "single-day"].includes(entry.status));
     if (confirmed.length) return confirmed;
     if (withheldDates[date]?.includes(id)) return [];
+    const exclusion = associationExclusions[date]?.[id];
+    if (exclusion) return asEntries(exclusion.associations);
     const general = asEntries(strongAssociations[id]);
     // Support older, reviewed dated strength entries without displaying raw
     // observed/transcript candidates as a competing identity.
@@ -56,6 +61,7 @@ function createIdentity(getDate) {
     const date = dateFormat.format(dateObject(getDate()));
     const count = Number(entry.evidence_days) || 1;
     const dates = Array.isArray(entry.evidence_dates) ? entry.evidence_dates.join(", ") : "";
+    if (entry.status === "confirmed-clip") return `This clip has an explicit identification of ${entry.name}.`;
     const description = entry.status === "confirmed-association"
       ? `Eric has personally confirmed the association between this radio ID and ${entry.name}. This confirms the association, not the speaker in every recording or on ${date}.`
       : ["strong", "possible"].includes(entry.status)
@@ -71,7 +77,7 @@ function createIdentity(getDate) {
     return ids.length ? `Radio ID${ids.length > 1 ? "s" : ""}: ${ids.map(id => {
       if (isDispatchId(id)) return `${id} · Dispatch`;
       if (agencyId(id)) return `${id} · ${agencyId(id)}`;
-      const entries = officerAssociation(id);
+      const entries = officerAssociation(id, call);
       return entries.length ? `${id} · ${entries.map(entry => `${entry.name} · ${associationLabels[entry.status]}`).join("; ")}` : afpdIds.has(id) ? `${id} · AFPD` : id;
     }).join(", ")}` : "";
   };
@@ -159,7 +165,7 @@ function createIdentity(getDate) {
       const number = document.createElement("strong");
       number.textContent = id;
       item.append(number);
-      const entries = officerAssociation(id);
+      const entries = officerAssociation(id, call);
       const roleLabel = isDispatchId(id) ? "Dispatch" : agencyId(id) || (!entries.length && afpdIds.has(id) ? "AFPD" : "");
       if (roleLabel) {
         const role = document.createElement("span");
@@ -192,6 +198,8 @@ function createIdentity(getDate) {
       if ([2, 3, 4].includes(data?.schema_version) && data.days && typeof data.days === "object") {
         officerDays = data.days;
         withheldDates = data.withheld_dates ?? {};
+        associationExclusions = data.association_exclusions ?? {};
+        clipOverrides = data.clip_overrides ?? {};
         // Thresholds and conflict decisions are generated once at build time.
         strongAssociations = [3, 4].includes(data.schema_version) ? data.associations ?? {} : {};
       }
@@ -675,6 +683,7 @@ function excerpt() {
   const buttons = Array.from(root.querySelectorAll("[data-excerpt-clip]"));
   const calls = buttons.map(button => ({
     get source() { return button.dataset.source; },
+    get original_filename() { return button.dataset.originalFilename; },
     get audio_status() { return button.dataset.audioStatus; },
     get displayed_seconds() { return Number(button.dataset.seconds); },
     get transcript() { return button.dataset.transcript || ""; },

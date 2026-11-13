@@ -121,3 +121,58 @@ test('added evidence cannot replace a retained general pair; a new confirmed day
  result=compileOfficerAssociations(source);
  assert.deepEqual(result.labels.associations['123'].map(r=>[r.officer_id,r.status]),[['two','strong']]);
 });
+
+test('date exclusions recompute the fallback tier, including a sole confirmed day', () => {
+  const source = input();
+  source.officers.three = { name: 'Three' };
+  const date = '2026-10-10';
+  source.association_exclusions = { [date]: { '123': { excluded_officer_ids: ['one'] } } };
+  source.display_policy = { accepted_general_pairs: ['one/123'] };
+  source.associations = [1, 2, 3, 4].map(n => reviewed('one', `2026-10-0${n}`));
+  source.associations.push(row('two', '2026-10-05', { status: 'confirmed', confirmed_by: 'Eric' }));
+  const fallback = labels => labels.association_exclusions[date]['123'].associations
+    .map(entry => [entry.officer_id, entry.status, entry.evidence_days]);
+
+  let { labels } = compileOfficerAssociations(source);
+  assert.deepEqual(labels.associations['123'].map(entry => entry.officer_id), ['one']);
+  assert.deepEqual(fallback(labels), [['two', 'possible', 1]]);
+  assert.equal(labels.days['2026-10-05']['123'][0].status, 'confirmed');
+
+  source.associations.push(reviewed('three', '2026-10-06'));
+  assert.deepEqual(fallback(compileOfficerAssociations(source).labels), []);
+  source.associations.push(reviewed('two', '2026-10-06'));
+  assert.deepEqual(fallback(compileOfficerAssociations(source).labels), [['two', 'possible', 2]]);
+  source.association_exclusions[date]['123'].excluded_officer_ids.push('two');
+  assert.deepEqual(fallback(compileOfficerAssociations(source).labels), []);
+});
+
+test('empty exclusions do nothing, invalid inputs fail, and day confirmation conflicts are reported', () => {
+  const source = input(), date = '2026-10-05';
+  source.associations = [row('one', date, { status: 'confirmed', confirmed_by: 'Eric' })];
+  const unchanged = compileOfficerAssociations(source).labels;
+  const exclusion = { excluded_officer_ids: [] };
+  source.association_exclusions = { [date]: { '123': exclusion } };
+  assert.deepEqual(compileOfficerAssociations(source).labels, unchanged);
+
+  exclusion.excluded_officer_ids = ['one'];
+  const { labels } = compileOfficerAssociations(source);
+  assert.deepEqual(labels.association_exclusion_conflicts, [{ date, radio_id: '123', officer_id: 'one' }]);
+  assert.equal(labels.days[date]['123'][0].officer_id, 'one');
+  assert.deepEqual(labels.association_exclusions[date]['123'].associations, []);
+
+  exclusion.excluded_officer_ids = ['missing'];
+  assert.throws(() => compileOfficerAssociations(source), /Invalid association exclusion/);
+  source.association_exclusions = { '2026-02-30': {} };
+  assert.throws(() => compileOfficerAssociations(source), /Invalid association exclusion date/);
+});
+
+test('clip overrides use the canonical officer name and stable filename', () => {
+  const source = input();
+  const filename = 'dcfems-6001-1794500000.m4a';
+  source.clip_overrides = { [filename]: { '123': { officer_id: 'two' } } };
+  assert.deepEqual(compileOfficerAssociations(source).labels.clip_overrides, {
+    [filename]: { '123': { officer_id: 'two', name: 'Two', status: 'confirmed-clip' } }
+  });
+  source.clip_overrides = { 'clip-1': source.clip_overrides[filename] };
+  assert.throws(() => compileOfficerAssociations(source), /Invalid association clip override/);
+});

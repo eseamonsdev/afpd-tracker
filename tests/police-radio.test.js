@@ -777,3 +777,42 @@ test("known unavailable audio uses placeholder, labels persist and autoplay retu
   assert.equal(f.get("transcript-text").textContent, "Normal transcript.");
   assert.equal(row.children.at(-1).textContent, "Original audio unavailable");
 });
+
+test("date exclusions show the compiled fallback or just the radio ID, while clip and day confirmations win", async () => {
+  const date = "2026-09-11", id = "14590104", empty = "14590221", confirmed = "14590067", held = "14590081";
+  const clip = "dcfems-6001-1789100000.m4a", ordinary = "dcfems-6001-1789100010.m4a";
+  const strong = { officer_id: "usual", name: "Usual Officer", status: "strong" };
+  const associations = {
+    schema_version: 4,
+    days: { [date]: { [confirmed]: [{ officer_id: "usual", name: "Usual Officer", status: "confirmed" }] } },
+    withheld_dates: { [date]: [confirmed, held] },
+    associations: { [id]: [strong], [empty]: [strong], [confirmed]: [strong] },
+    association_exclusions: { [date]: {
+      [id]: { excluded_officer_ids: ["usual"], associations: [{ officer_id: "other", name: "Fallback Officer", status: "possible", evidence_days: 1 }] },
+      [empty]: { excluded_officer_ids: ["usual"], associations: [] },
+      [confirmed]: { excluded_officer_ids: ["usual"], associations: [] },
+      [held]: { excluded_officer_ids: ["usual"], associations: [{ officer_id: "other", name: "Held Fallback", status: "possible" }] }
+    } },
+    clip_overrides: { [clip]: {
+      [id]: { officer_id: "usual", name: "Usual Officer", status: "confirmed-clip" },
+      [confirmed]: { officer_id: "other", name: "Override Officer", status: "confirmed-clip" }
+    } }
+  };
+  const calls = [clip, ordinary].map((original_filename, index) => ({
+    epoch: 1789100000 + index * 10, displayed_seconds: 5, original_filename, radio_ids: [id, empty, confirmed, held]
+  }));
+  const f = await playerFixture(calls, undefined, date, "", true, associations);
+  const [first, second] = f.get("clips").children;
+  assert.match(first.textContent, /14590104 · Usual Officer · Confirmed for this clip/);
+  assert.match(first.textContent, /14590067 · Override Officer · Confirmed for this clip/);
+  assert.match(second.textContent, /14590104 · Fallback Officer · Possible association/);
+  assert.match(second.textContent, /14590221,/);
+  assert.match(second.textContent, /14590067 · Usual Officer · Confirmed this day/);
+  assert.match(second.textContent, /14590081/);
+  assert.doesNotMatch(second.textContent, /Held Fallback/);
+  f.get("day").value = "2026-09-10";
+  f.get("day").emit("change");
+  await f.settle();
+  assert.match(f.get("clips").children[1].textContent, /14590104 · Usual Officer · Strong association/);
+  assert.doesNotMatch(f.get("clips").children[1].textContent, /Fallback Officer/);
+});

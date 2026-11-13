@@ -59,11 +59,37 @@ General strength counts distinct dates with explicitly accepted evidence:
 - **Confirmed this day:** owner confirmation for the selected date.
 - A single day of supporting evidence needs a dated confirmation to qualify for the general label. Unreviewed and rejected candidates do not block it.
 
-Strong and possible identities are never mixed for one radio. When accepted strong associations exist, possible alternatives remain CSV-only unless they have a date-specific owner confirmation. Otherwise two accepted possible associations can coexist. Unreviewed additions cannot change an established strength, introduce another name, or replace a confirmed instance. `display_policy.accepted_general_pairs` retains the accepted general mappings: even newly accepted evidence for a competing general pair cannot replace those mappings until that pair is explicitly accepted too. Non-conflicting new pairs remain eligible after individual evidence review. Dated owner confirmations are independent of this general-pair guard.
+The player displays a single confidence tier for each radio ID. With no dated exclusion, accepted strong associations take priority over possible alternatives. Otherwise two accepted possible associations can coexist. Unreviewed additions cannot change an established strength, introduce another name, or replace a confirmed instance. `display_policy.accepted_general_pairs` retains the accepted general mappings: even newly accepted evidence for a competing general pair cannot replace those mappings until that pair is explicitly accepted too. Non-conflicting new pairs remain eligible after individual evidence review. Dated owner confirmations are independent of this general-pair guard.
 
 `association_confirmations["officer-id/radio-id"].confirmed` is reserved for a separately explicit general pair approval. Existing day confirmations are not used to seed that general approval. A general approval, if explicitly supplied, still yields to the selected date's confirmed identity.
 
 Generated schema 4 stores owner-confirmed date entries in `days`, selected general strengths in `associations`, and eligible mappings in `profiles`. The player applies the same date-first, strong-before-possible precedence. Production’s `withheld_dates` is retained. Older holds that production did not apply cannot hide the protected labels; dated confirmations still take priority over general associations.
+
+### Officer-specific date exclusions and clip overrides
+
+Use a Mountain Time date string and the radio ID as keys in `association_exclusions`. List the officer IDs you want to exclude from that date's general labels. You can also record supporting clips and a reason in the source file:
+
+```json
+{
+  "association_exclusions": {
+    "2026-11-12": {
+      "14590221": {
+        "excluded_officer_ids": ["sammantha-j-halladay"],
+        "evidence": [{ "talkgroup": 6001, "clips": [12], "reason": "Example reason for a date-wide exclusion." }]
+      }
+    }
+  },
+  "clip_overrides": {
+    "dcfems-6001-1794500000.m4a": {
+      "14590221": { "officer_id": "sammantha-j-halladay" }
+    }
+  }
+}
+```
+
+Clip overrides use the archive's original filename and apply to that recording only. They take precedence over day confirmations and holds. An explicit day confirmation still applies when it conflicts with a date exclusion. The build reports that conflict by date, radio ID, and officer ID.
+
+For general labels, the compiler removes the excluded pairs first, then applies the existing evidence and confidence rules to the remaining candidates. One confirmed day can supply a possible label if no competing reviewed or confirmed association remains. If no candidate qualifies, the player shows the radio ID. An empty exclusion list has no effect. Use `withheld_dates` to hide all general officer labels for a radio on a date.
 
 The evidence CSV includes Evidence accepted and Acceptance basis, separately from personal confirmation and display eligibility. The importer for personal evidence selections marks only the selected records accepted; AI report imports do not.
 
