@@ -1,4 +1,4 @@
-.PHONY: promote-staging build manual-deploy prod-manual-deploy
+.PHONY: promote-staging build manual-deploy prod-manual-deploy collect-openmhz
 
 promote-staging:
 	@test "$$(git branch --show-current)" = "staging" || \
@@ -14,6 +14,11 @@ promote-staging:
 
 build:
 	npm run build
+
+collect-openmhz:
+	@test -n "$${DATE}" && test -n "$${TALKGROUP}" || \
+		{ echo "Usage: make collect-openmhz DATE=YYYY-MM-DD TALKGROUP=6001" >&2; exit 1; }
+	cd scripts/openmhz-browser-test && npm run collect -- --date="$${DATE}" --talkgroup="$${TALKGROUP}"
 
 manual-deploy:
 	git switch staging
