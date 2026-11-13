@@ -1,0 +1,649 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-12",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794519408.m4a": {
+      "index": 921,
+      "epoch": 1794519408,
+      "sha256": "5b955bfdfe1092f0391f3ca3fbf948b2783ee42c681b02273d8784cb568d53bb",
+      "passes": {
+        "original": {
+          "text": "Are you good",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Are you good",
+              "avg_logprob": -0.41320959726969403,
+              "no_speech_prob": 0.052283432334661484,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "When you go",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " When you go",
+              "avg_logprob": -0.47564635674158734,
+              "no_speech_prob": 0.017671825364232063,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "What are you doing?",
+          "prompt": "Agent J and Alpha heading that way. Time for... 5228 copy access.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " What are you doing?",
+              "avg_logprob": -0.4411767050623894,
+              "no_speech_prob": 0.015469714067876339,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794519410.m4a": {
+      "index": 922,
+      "epoch": 1794519410,
+      "sha256": "53a1bc4eb13e951533d11d78651f40129ad3ad94898676b2e7e05d4558ff8c7c",
+      "passes": {
+        "original": {
+          "text": "Four twenty south, eleven forty west. First over Toyota RAV4 and a silver Hyundai. Negative injuries, not blocking.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Four twenty south, eleven forty west. First over Toyota RAV4 and a silver Hyundai. Negative injuries, not blocking.",
+              "avg_logprob": -0.46754380421979086,
+              "no_speech_prob": 0.03261293098330498,
+              "compression_ratio": 1.0849056603773586
+            }
+          ]
+        },
+        "filtered": {
+          "text": "420 south, 1140 west, first over Toyota RAV4 and a silver Hyundai, negative injuries, not blocking.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 420 south, 1140 west, first over Toyota RAV4 and a silver Hyundai, negative injuries, not",
+              "avg_logprob": -0.4639913583623952,
+              "no_speech_prob": 0.027907226234674454,
+              "compression_ratio": 1.0206185567010309
+            },
+            {
+              "start": 5.0,
+              "end": 5.5,
+              "text": " blocking.",
+              "avg_logprob": -0.4639913583623952,
+              "no_speech_prob": 0.027907226234674454,
+              "compression_ratio": 1.0206185567010309
+            }
+          ]
+        },
+        "context": {
+          "text": "428 south 1140 west for a silver Toyota RAV4 and a silver Hyundai negative injuries not blocking",
+          "prompt": "Time for... 5228 copy access. Are you good",
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.36,
+              "text": " 428 south 1140 west for a silver Toyota RAV4 and a silver Hyundai negative injuries not blocking",
+              "avg_logprob": -0.47818009927868843,
+              "no_speech_prob": 0.027941526845097542,
+              "compression_ratio": 1.0786516853932584
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794519417.m4a": {
+      "index": 923,
+      "epoch": 1794519417,
+      "sha256": "cf35a17397a56b7dfbcdbc76ab783f346916d560db8b57474facfc5a8bc16424",
+      "passes": {
+        "original": {
+          "text": "Dabi.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Dabi.",
+              "avg_logprob": -1.0891048113505046,
+              "no_speech_prob": 0.07200014591217041,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7295015811920166,
+              "no_speech_prob": 0.039947234094142914,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "5228 copy access. Are you good Four twenty south, eleven forty west. First over Toyota RAV4 and a silver Hyundai. Negative injuries, not blocking.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.46702237129211427,
+              "no_speech_prob": 0.08829475194215775,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794519427.m4a": {
+      "index": 924,
+      "epoch": 1794519427,
+      "sha256": "b6b998b1115824f906c4e5c0c7af336d3a935466ef7cdacd50cd726218cee409",
+      "passes": {
+        "original": {
+          "text": "18J10 clear.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.4,
+              "text": " 18J10 clear.",
+              "avg_logprob": -0.6053839325904846,
+              "no_speech_prob": 0.013721799477934837,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18J10 clear.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.4,
+              "text": " 18J10 clear.",
+              "avg_logprob": -0.8050615563988686,
+              "no_speech_prob": 0.009094396606087685,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "Eighteen J10 clear.",
+          "prompt": "Are you good Four twenty south, eleven forty west. First over Toyota RAV4 and a silver Hyundai. Negative injuries, not blocking. Dabi.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.4,
+              "text": " Eighteen J10 clear.",
+              "avg_logprob": -0.5659861034817166,
+              "no_speech_prob": 0.010556033812463284,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794519430.m4a": {
+      "index": 925,
+      "epoch": 1794519430,
+      "sha256": "7f3fead3c397c3b8e39b670fea612fd24f91fdb6b7fac35ea06840cc4e107c83",
+      "passes": {
+        "original": {
+          "text": "7-4, 18J East copy",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7-4, 18J East copy",
+              "avg_logprob": -0.7619598778811368,
+              "no_speech_prob": 0.09405994415283203,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7-4, 18J, use copy.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7-4, 18J, use copy.",
+              "avg_logprob": -0.781359287408682,
+              "no_speech_prob": 0.03212449327111244,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "Seven four, 18J8 copy.",
+          "prompt": "Four twenty south, eleven forty west. First over Toyota RAV4 and a silver Hyundai. Negative injuries, not blocking. Dabi. 18J10 clear.",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Seven four, 18J8 copy.",
+              "avg_logprob": -0.5526127056642012,
+              "no_speech_prob": 0.005430550314486027,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794519434.m4a": {
+      "index": 926,
+      "epoch": 1794519434,
+      "sha256": "f370a4c02159f2ce911d2fa1b7b5141d82a91149a52c64470d9e1a05333c364e",
+      "passes": {
+        "original": {
+          "text": "Aye, copy, I'll be done aye.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Aye, copy, I'll be done aye.",
+              "avg_logprob": -0.8470406373341878,
+              "no_speech_prob": 0.11663790047168732,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Eh, copy, I'll be denied.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Eh, copy, I'll be denied.",
+              "avg_logprob": -0.8697523176670074,
+              "no_speech_prob": 0.0999959409236908,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "context": {
+          "text": "8 copy, happy 10-8",
+          "prompt": "Dabi. 18J10 clear. 7-4, 18J East copy",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.68,
+              "text": " 8 copy, happy 10-8",
+              "avg_logprob": -0.7598712623119355,
+              "no_speech_prob": 0.021925034001469612,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794519436.m4a": {
+      "index": 927,
+      "epoch": 1794519436,
+      "sha256": "c85f9f4734e3d73fa8b0b7f0bafe253d080424cc49e7eabf12ef2c170b978a97",
+      "passes": {
+        "original": {
+          "text": "Time for...",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Time for...",
+              "avg_logprob": -0.5517236391703287,
+              "no_speech_prob": 0.05843504145741463,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Time for...",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Time for...",
+              "avg_logprob": -0.5457730094591776,
+              "no_speech_prob": 0.01969796232879162,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "10-4.",
+          "prompt": "18J10 clear. 7-4, 18J East copy Aye, copy, I'll be done aye.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.5996494122913906,
+              "no_speech_prob": 0.01704275608062744,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794519889.m4a": {
+      "index": 928,
+      "epoch": 1794519889,
+      "sha256": "f985b094e3814f7be592cc908544d5e904e3a3bb9ac06e3bc59908bd61759dbe",
+      "passes": {
+        "original": {
+          "text": "Denver.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Denver.",
+              "avg_logprob": -0.9651371002197265,
+              "no_speech_prob": 0.07077992707490921,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Never.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Never.",
+              "avg_logprob": -1.161759090423584,
+              "no_speech_prob": 0.0803825855255127,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Denver.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Denver.",
+              "avg_logprob": -0.9651371002197265,
+              "no_speech_prob": 0.07077992707490921,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794520027.m4a": {
+      "index": 929,
+      "epoch": 1794520027,
+      "sha256": "8e018bd7e1401197ad46ff8ca481c9c796f91f082260001e7f9eafcf56f00e0d",
+      "passes": {
+        "original": {
+          "text": "So if you're at 30, can you show me out on the follow-up, it's going to be 1300 West O'Tara Drive.",
+          "prompt": null,
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 33,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " So if you're at 30, can you show me out on the follow-up, it's going to be 1300 West O'Tara Drive.",
+              "avg_logprob": -0.5995253342039445,
+              "no_speech_prob": 0.11750243604183197,
+              "compression_ratio": 1.0208333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "So if you guys are ready, please show me out on the follow-up in the 1300 West Oak aircraft.",
+          "prompt": null,
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.5600000000000005,
+              "text": " So if you guys are ready, please show me out on the follow-up in the 1300 West Oak aircraft.",
+              "avg_logprob": -0.5390017078473017,
+              "no_speech_prob": 0.07232808321714401,
+              "compression_ratio": 1.0574712643678161
+            }
+          ]
+        },
+        "context": {
+          "text": "So if you're at 30, can you show me out on the follow-up, it's going to be 1300 West O'Tara Drive.",
+          "prompt": null,
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 33,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " So if you're at 30, can you show me out on the follow-up, it's going to be 1300 West O'Tara Drive.",
+              "avg_logprob": -0.5995253342039445,
+              "no_speech_prob": 0.11750243604183197,
+              "compression_ratio": 1.0208333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794520034.m4a": {
+      "index": 930,
+      "epoch": 1794520034,
+      "sha256": "54418cf2af16a4b2a0b95223ecb04be586d42e41d92476084c57a417e607e484",
+      "passes": {
+        "original": {
+          "text": "Time for...",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Time for...",
+              "avg_logprob": -0.6636067231496176,
+              "no_speech_prob": 0.14934131503105164,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Time for...",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Time for...",
+              "avg_logprob": -0.8249624570210775,
+              "no_speech_prob": 0.15093541145324707,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "Time for...",
+          "prompt": "So if you're at 30, can you show me out on the follow-up, it's going to be 1300 West O'Tara Drive.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Time for...",
+              "avg_logprob": -0.6389684975147247,
+              "no_speech_prob": 0.09233379364013672,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    }
+  }
+}
