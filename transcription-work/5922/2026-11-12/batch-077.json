@@ -1,0 +1,665 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-12",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794510753.m4a": {
+      "index": 761,
+      "epoch": 1794510753,
+      "sha256": "76d0105e5bef7660dcec3a69fca126281f78288b02563254cb5773cf5d786c4b",
+      "passes": {
+        "original": {
+          "text": "5J46, 10 floor. Medical is responding on a transport from AFER.",
+          "prompt": null,
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 5J46, 10 floor. Medical is responding on a transport from AFER.",
+              "avg_logprob": -0.4229463666677475,
+              "no_speech_prob": 0.023577844724059105,
+              "compression_ratio": 0.9
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G46, 10 floor. Medical is responding on a transport from AFER.",
+          "prompt": null,
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 5G46, 10 floor. Medical is responding on a transport from AFER.",
+              "avg_logprob": -0.47372331768274306,
+              "no_speech_prob": 0.012141657993197441,
+              "compression_ratio": 0.9
+            }
+          ]
+        },
+        "context": {
+          "text": "5J46, 10th floor. Medical is responding on a transport from AFER.",
+          "prompt": "5J32, copy medical assist. 46th grade",
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 5J46, 10th floor. Medical is responding on a transport from AFER.",
+              "avg_logprob": -0.29388754140763057,
+              "no_speech_prob": 0.014899119734764099,
+              "compression_ratio": 0.9027777777777778
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794510761.m4a": {
+      "index": 762,
+      "epoch": 1794510761,
+      "sha256": "352caf77bfad72371f13a4483dcc1f9073d28aaeaef5759100211ed1dac9da75",
+      "passes": {
+        "original": {
+          "text": "For an intentional overdose, however, they're stating the patient may not be cooperative during the transfer, requesting LEO to respond.",
+          "prompt": null,
+          "duration_seconds": 12.928,
+          "token_limit": 128,
+          "token_count": 30,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.56,
+              "text": " For an intentional overdose, however, they're stating the patient may not be cooperative",
+              "avg_logprob": -0.3954585521451889,
+              "no_speech_prob": 0.0030395728535950184,
+              "compression_ratio": 1.2252252252252251
+            },
+            {
+              "start": 9.56,
+              "end": 12.040000000000001,
+              "text": " during the transfer, requesting LEO to respond.",
+              "avg_logprob": -0.3954585521451889,
+              "no_speech_prob": 0.0030395728535950184,
+              "compression_ratio": 1.2252252252252251
+            }
+          ]
+        },
+        "filtered": {
+          "text": "For an intentional overdose, however, they're stating the patient may not be cooperative the transfer, requesting LEO to respond.",
+          "prompt": null,
+          "duration_seconds": 12.928,
+          "token_limit": 128,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.64,
+              "text": " For an intentional overdose, however, they're stating the patient may not be cooperative",
+              "avg_logprob": -0.2986731931567192,
+              "no_speech_prob": 0.004470045678317547,
+              "compression_ratio": 1.1139240506329113
+            },
+            {
+              "start": 9.64,
+              "end": 12.52,
+              "text": " the transfer, requesting LEO to respond.",
+              "avg_logprob": -0.557110995054245,
+              "no_speech_prob": 0.014256770722568035,
+              "compression_ratio": 0.851063829787234
+            }
+          ]
+        },
+        "context": {
+          "text": "For intentional overdose, however, they're stating the patient may not be cooperative during the to transfer, requesting LEO to respond.",
+          "prompt": "5J32, copy medical assist. 46th grade 5J46, 10 floor. Medical is responding on a transport from AFER.",
+          "duration_seconds": 12.928,
+          "token_limit": 128,
+          "token_count": 30,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.76,
+              "text": " For intentional overdose, however, they're stating the patient may not be cooperative during the",
+              "avg_logprob": -0.28664148989177884,
+              "no_speech_prob": 0.018360434100031853,
+              "compression_ratio": 1.1428571428571428
+            },
+            {
+              "start": 9.76,
+              "end": 12.02,
+              "text": " to transfer, requesting LEO to respond.",
+              "avg_logprob": -0.522581567366918,
+              "no_speech_prob": 0.009291823953390121,
+              "compression_ratio": 0.8478260869565217
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794510780.m4a": {
+      "index": 763,
+      "epoch": 1794510780,
+      "sha256": "6c4dcd59518669009f5032528326c0d7afa8a516973f3491d13e1b513f98f0c9",
+      "passes": {
+        "original": {
+          "text": "Okay.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Okay.",
+              "avg_logprob": -0.7749298095703125,
+              "no_speech_prob": 0.05551420897245407,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Okay.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Okay.",
+              "avg_logprob": -0.8025609970092773,
+              "no_speech_prob": 0.050545044243335724,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Okay.",
+          "prompt": "46th grade 5J46, 10 floor. Medical is responding on a transport from AFER. For an intentional overdose, however, they're stating the patient may not be cooperative during the transfer, requesting LEO to respond.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Okay.",
+              "avg_logprob": -0.5913045406341553,
+              "no_speech_prob": 0.12006787210702896,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794511259.m4a": {
+      "index": 764,
+      "epoch": 1794511259,
+      "sha256": "44397860253f0168c3648e1a779aca2bc6cede131f47934a93d89ae5bc3d24af",
+      "passes": {
+        "original": {
+          "text": "All units, check mobile for a cancel ATL.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2800000000000002,
+              "text": " All units, check mobile for a cancel ATL.",
+              "avg_logprob": -0.6098976986748832,
+              "no_speech_prob": 0.02073090150952339,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        },
+        "filtered": {
+          "text": "All units, check mobile for a cancel ATL.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.3200000000000003,
+              "text": " All units, check mobile for a cancel ATL.",
+              "avg_logprob": -0.5474660907472882,
+              "no_speech_prob": 0.005421297624707222,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        },
+        "context": {
+          "text": "All units, check mobile for a cancel ATL.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2800000000000002,
+              "text": " All units, check mobile for a cancel ATL.",
+              "avg_logprob": -0.6098976986748832,
+              "no_speech_prob": 0.02073090150952339,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794511384.m4a": {
+      "index": 765,
+      "epoch": 1794511384,
+      "sha256": "afd88182076ebadd45f48c288443fc0137606160867dee2056b09bf6f444ff7c",
+      "passes": {
+        "original": {
+          "text": "APJ18, can you change my call to a vehicle bird and close it out?",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " APJ18, can you change my call to a vehicle bird and close it out?",
+              "avg_logprob": -0.2731944265819731,
+              "no_speech_prob": 0.024095788598060608,
+              "compression_ratio": 0.9027777777777778
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18J, team, can you change my call to a vehicle bird and close it out?",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 18J, team, can you change my call to a vehicle bird and close it out?",
+              "avg_logprob": -0.43367920274084265,
+              "no_speech_prob": 0.026732325553894043,
+              "compression_ratio": 0.9452054794520548
+            }
+          ]
+        },
+        "context": {
+          "text": "APJ18, can you change my call to a vehicle bird and close it out?",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " APJ18, can you change my call to a vehicle bird and close it out?",
+              "avg_logprob": -0.2731944265819731,
+              "no_speech_prob": 0.024095788598060608,
+              "compression_ratio": 0.9027777777777778
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794511390.m4a": {
+      "index": 766,
+      "epoch": 1794511390,
+      "sha256": "bc3d73e3c51ea1092d68e6a7d18f8e8b3fc23be68fea85e13137ed7a77c79a13",
+      "passes": {
+        "original": {
+          "text": "10-4",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 10-4",
+              "avg_logprob": -0.7619322339693705,
+              "no_speech_prob": 0.0305936336517334,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Stand for.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Stand for.",
+              "avg_logprob": -0.6701665123303732,
+              "no_speech_prob": 0.04213816672563553,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Stand for.",
+          "prompt": "APJ18, can you change my call to a vehicle bird and close it out?",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Stand for.",
+              "avg_logprob": -0.8092080553372701,
+              "no_speech_prob": 0.009683537296950817,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794511395.m4a": {
+      "index": 767,
+      "epoch": 1794511395,
+      "sha256": "966d73d2dc4648080a121b90242b226efa23d9d361d4f665be9aec38bc8e8c6c",
+      "passes": {
+        "original": {
+          "text": "I'm J53R.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm J53R.",
+              "avg_logprob": -0.8011036978827583,
+              "no_speech_prob": 0.048917848616838455,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm J53, right?",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm J53, right?",
+              "avg_logprob": -0.8202898979187012,
+              "no_speech_prob": 0.10113127529621124,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm JP, can you rewrite?",
+          "prompt": "APJ18, can you change my call to a vehicle bird and close it out? 10-4",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm JP, can you rewrite?",
+              "avg_logprob": -0.6626161662015048,
+              "no_speech_prob": 0.007908506318926811,
+              "compression_ratio": 0.75
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794511399.m4a": {
+      "index": 768,
+      "epoch": 1794511399,
+      "sha256": "6d2e4324b7cacde52e1b256e166f4e9d205bdc72096f85a5cea58bd9d97d5ff4",
+      "passes": {
+        "original": {
+          "text": "10-4.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.6908916745867048,
+              "no_speech_prob": 0.027793418616056442,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "10-4.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.7471734625952584,
+              "no_speech_prob": 0.012256253510713577,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "10-4",
+          "prompt": "APJ18, can you change my call to a vehicle bird and close it out? 10-4 I'm J53R.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.76,
+              "text": " 10-4",
+              "avg_logprob": -0.4019914150238037,
+              "no_speech_prob": 0.013707218691706657,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794511518.m4a": {
+      "index": 769,
+      "epoch": 1794511518,
+      "sha256": "01d9a33dce786233851df1adc2a6049307d2d5f192e1935aa4f749b7bf34b07f",
+      "passes": {
+        "original": {
+          "text": "5G46 Claro",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G46 Claro",
+              "avg_logprob": -0.7112248167395592,
+              "no_speech_prob": 0.009437574073672295,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I do for six girl",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I do for six girl",
+              "avg_logprob": -0.6313925385475159,
+              "no_speech_prob": 0.0071985963732004166,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "5G46 Claro",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G46 Claro",
+              "avg_logprob": -0.7112248167395592,
+              "no_speech_prob": 0.009437574073672295,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794511521.m4a": {
+      "index": 770,
+      "epoch": 1794511521,
+      "sha256": "2460f7f6d5c115bee5b87dfab02d495209d31ee1a3a742d784f7841411d46863",
+      "passes": {
+        "original": {
+          "text": "10-4.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.6588284458432879,
+              "no_speech_prob": 0.06851384043693542,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Time for it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Time for it.",
+              "avg_logprob": -0.5965205771582467,
+              "no_speech_prob": 0.057599280029535294,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "10-4",
+          "prompt": "5G46 Claro",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-4",
+              "avg_logprob": -0.4293365776538849,
+              "no_speech_prob": 0.03146056830883026,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    }
+  }
+}
