@@ -1,0 +1,641 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-12",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1794466835.m4a": {
+      "index": 1,
+      "epoch": 1794466835,
+      "sha256": "0e78c9a1ec9d7bc7edd275c3e39b0d1aa3f69034a86549ae46d28558cf7e9367",
+      "passes": {
+        "original": {
+          "text": "I'll target you and you want another one.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I'll target you and you want another one.",
+              "avg_logprob": -0.6229782287891095,
+              "no_speech_prob": 0.06324222683906555,
+              "compression_ratio": 0.9318181818181818
+            }
+          ]
+        },
+        "filtered": {
+          "text": "target you and you want another one",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.64,
+              "text": " target you and you want another one",
+              "avg_logprob": -0.5977452993392944,
+              "no_speech_prob": 0.028445804491639137,
+              "compression_ratio": 0.9210526315789473
+            }
+          ]
+        },
+        "context": {
+          "text": "I'll target you and you want another one.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I'll target you and you want another one.",
+              "avg_logprob": -0.6229782287891095,
+              "no_speech_prob": 0.06324222683906555,
+              "compression_ratio": 0.9318181818181818
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794466847.m4a": {
+      "index": 2,
+      "epoch": 1794466847,
+      "sha256": "d02c88cedd595000943cfdcdedcb9b833fd82affaefa78aeaf335ba74bdde9ad",
+      "passes": {
+        "original": {
+          "text": "No, it should be good.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " No, it should be good.",
+              "avg_logprob": -0.4350351244211197,
+              "no_speech_prob": 0.06554248183965683,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "No, I should be good.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.1,
+              "text": " No, I should be good.",
+              "avg_logprob": -0.43054524064064026,
+              "no_speech_prob": 0.028808441013097763,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "context": {
+          "text": "No, I should be good.",
+          "prompt": "I'll target you and you want another one.",
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.12,
+              "text": " No, I should be good.",
+              "avg_logprob": -0.42417813241481783,
+              "no_speech_prob": 0.062143828719854355,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794466852.m4a": {
+      "index": 3,
+      "epoch": 1794466852,
+      "sha256": "dd8a604d7876e62daddaf2eef0174d556d603440f9818c5aea24f80c336438ad",
+      "passes": {
+        "original": {
+          "text": "Copy. We getting food?",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy. We getting food?",
+              "avg_logprob": -0.6500657399495443,
+              "no_speech_prob": 0.02429068833589554,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy. We're getting food?",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy. We're getting food?",
+              "avg_logprob": -0.679155170917511,
+              "no_speech_prob": 0.023293105885386467,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy. We getting food?",
+          "prompt": "I'll target you and you want another one. No, it should be good.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy. We getting food?",
+              "avg_logprob": -0.4726666344536675,
+              "no_speech_prob": 0.006386389955878258,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794466864.m4a": {
+      "index": 4,
+      "epoch": 1794466864,
+      "sha256": "5cb58513fa677c1509a76376fd3fb6017d04c0f043ddf7d908d9dabe6891926c",
+      "passes": {
+        "original": {
+          "text": "after eating the Pollo Loco that's in the kitchen I don't feel that great",
+          "prompt": null,
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.92,
+              "text": " after eating the Pollo Loco that's in the kitchen I don't feel that great",
+              "avg_logprob": -0.27628867399124873,
+              "no_speech_prob": 0.014954102225601673,
+              "compression_ratio": 1.042857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "After eating the Pollo Loco that's in the kitchen, I don't feel that great.",
+          "prompt": null,
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " After eating the Pollo Loco that's in the kitchen, I don't feel that great.",
+              "avg_logprob": -0.28595666522565094,
+              "no_speech_prob": 0.015663525089621544,
+              "compression_ratio": 1.0135135135135136
+            }
+          ]
+        },
+        "context": {
+          "text": "After eating the Pollo Loco that's in the kitchen, I don't feel that great.",
+          "prompt": "I'll target you and you want another one. No, it should be good. Copy. We getting food?",
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.94,
+              "text": " After eating the Pollo Loco that's in the kitchen, I don't feel that great.",
+              "avg_logprob": -0.2161118932392286,
+              "no_speech_prob": 0.006842900067567825,
+              "compression_ratio": 1.0135135135135136
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794466875.m4a": {
+      "index": 5,
+      "epoch": 1794466875,
+      "sha256": "a37e3ccd064d63a2bddba22ffe552f245388b36aa0872f4236ac0b41c4c0b07e",
+      "passes": {
+        "original": {
+          "text": "Well, I'm sorry.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Well, I'm sorry.",
+              "avg_logprob": -0.3935344484117296,
+              "no_speech_prob": 0.011335005052387714,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Well, I'm sorry.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.48,
+              "text": " Well, I'm sorry.",
+              "avg_logprob": -0.4922719531589084,
+              "no_speech_prob": 0.01267385482788086,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "well I'm sorry",
+          "prompt": "No, it should be good. Copy. We getting food? after eating the Pollo Loco that's in the kitchen I don't feel that great",
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.16,
+              "text": " well I'm sorry",
+              "avg_logprob": -0.45461669989994596,
+              "no_speech_prob": 0.012389094568789005,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794466880.m4a": {
+      "index": 6,
+      "epoch": 1794466880,
+      "sha256": "5f87f2bc71d584d633c1f6075dde15b72efed7c29beafd9839f8f1c54e7c0968",
+      "passes": {
+        "original": {
+          "text": "Or I said I'm not doing it",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Or I said I'm not doing it",
+              "avg_logprob": -0.18549363721500745,
+              "no_speech_prob": 0.03303602710366249,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Or I said I'm not doing it",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Or I said I'm not doing it",
+              "avg_logprob": -0.19888249310580167,
+              "no_speech_prob": 0.03003346547484398,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "context": {
+          "text": "Or I said I'm not doing it",
+          "prompt": "Copy. We getting food? after eating the Pollo Loco that's in the kitchen I don't feel that great Well, I'm sorry.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Or I said I'm not doing it",
+              "avg_logprob": -0.29930643059990625,
+              "no_speech_prob": 0.006440761964768171,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794466888.m4a": {
+      "index": 7,
+      "epoch": 1794466888,
+      "sha256": "7ccf41de37136cfd93c4c9ac88c3bc1efd6acc9b1bacae31fa2f32cbba551c8f",
+      "passes": {
+        "original": {
+          "text": "smarter man than me",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.84,
+              "text": " smarter man than me",
+              "avg_logprob": -0.48884904384613037,
+              "no_speech_prob": 0.08902362734079361,
+              "compression_ratio": 0.76
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Smarter man than me.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Smarter man than me.",
+              "avg_logprob": -0.4894207848442925,
+              "no_speech_prob": 0.04897340387105942,
+              "compression_ratio": 0.7692307692307693
+            }
+          ]
+        },
+        "context": {
+          "text": "Smarter man than me",
+          "prompt": "after eating the Pollo Loco that's in the kitchen I don't feel that great Well, I'm sorry. Or I said I'm not doing it",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Smarter man than me",
+              "avg_logprob": -0.4170372486114502,
+              "no_speech_prob": 0.014614162966609001,
+              "compression_ratio": 0.76
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794466913.m4a": {
+      "index": 8,
+      "epoch": 1794466913,
+      "sha256": "e82c689c3860d0fb909a60039527cf531f62437230cb746ce72965f88b131f57",
+      "passes": {
+        "original": {
+          "text": "He chose to follow his clothes.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " He chose to follow his clothes.",
+              "avg_logprob": -0.5903381109237671,
+              "no_speech_prob": 0.1126696765422821,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "filtered": {
+          "text": "He chose to follow his clothes.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " He chose to follow his clothes.",
+              "avg_logprob": -0.6331731498241424,
+              "no_speech_prob": 0.07952709496021271,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "context": {
+          "text": "He chose to follow his close",
+          "prompt": "Well, I'm sorry. Or I said I'm not doing it smarter man than me",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " He chose to follow his close",
+              "avg_logprob": -0.5067031118604872,
+              "no_speech_prob": 0.010479938238859177,
+              "compression_ratio": 0.8
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794466917.m4a": {
+      "index": 9,
+      "epoch": 1794466917,
+      "sha256": "b9a8f9d48f994bb5d0902033ba0d34a3318f1f8b9e523bdd775d24515d0a13fa",
+      "passes": {
+        "original": {
+          "text": "I'd literally just drove to the window and the lady was cleaning. She's like, yeah, we're close",
+          "prompt": null,
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.94,
+              "text": " I'd literally just drove to the window and the lady was cleaning. She's like, yeah, we're close",
+              "avg_logprob": -0.2651801762672571,
+              "no_speech_prob": 0.010053583420813084,
+              "compression_ratio": 1.0674157303370786
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I literally just drove to the window and the lady was cleaning and she's like, yeah, we're close",
+          "prompt": null,
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " I literally just drove to the window and the lady was cleaning and she's like, yeah, we're close",
+              "avg_logprob": -0.32501309394836425,
+              "no_speech_prob": 0.012754600495100021,
+              "compression_ratio": 1.1294117647058823
+            }
+          ]
+        },
+        "context": {
+          "text": "I'd literally just drove to the window and the lady was cleaning and she's like, yeah, we're close",
+          "prompt": "Or I said I'm not doing it smarter man than me He chose to follow his clothes.",
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.96,
+              "text": " I'd literally just drove to the window and the lady was cleaning and she's like, yeah, we're close",
+              "avg_logprob": -0.2598872838112024,
+              "no_speech_prob": 0.0004640741099137813,
+              "compression_ratio": 1.1395348837209303
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794466930.m4a": {
+      "index": 10,
+      "epoch": 1794466930,
+      "sha256": "6c1c42656957fab77840caccc22fe1a6cbf327df404a4f1c7bc17ad3691b1d57",
+      "passes": {
+        "original": {
+          "text": "Is Jack in the Box still open? I actually forget about that.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Is Jack in the Box still open? I actually forget about that.",
+              "avg_logprob": -0.4233862932990579,
+              "no_speech_prob": 0.04711148887872696,
+              "compression_ratio": 0.8955223880597015
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Is Jack in the Box still open? I actually forget about that.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Is Jack in the Box still open? I actually forget about that.",
+              "avg_logprob": -0.45692138110890107,
+              "no_speech_prob": 0.04186929762363434,
+              "compression_ratio": 0.8955223880597015
+            }
+          ]
+        },
+        "context": {
+          "text": "Is Jack in the Box still open? I actually forget about that",
+          "prompt": "smarter man than me He chose to follow his clothes. I'd literally just drove to the window and the lady was cleaning. She's like, yeah, we're close",
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Is Jack in the Box still open? I actually forget about that",
+              "avg_logprob": -0.4103058110922575,
+              "no_speech_prob": 0.005861632991582155,
+              "compression_ratio": 0.8939393939393939
+            }
+          ]
+        }
+      }
+    }
+  }
+}
