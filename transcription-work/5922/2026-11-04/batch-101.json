@@ -1,0 +1,704 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-04",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1793836858.m4a": {
+      "index": 1001,
+      "epoch": 1793836858,
+      "sha256": "ff4ab3c90dc720a8338e311d206eba2d5827c9a8eef525bddd17d43b4f0a2f3e",
+      "passes": {
+        "original": {
+          "text": "Hey, G-19, you can hold my envelope and play it for a copy of the 1050.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Hey, G-19, you can hold my envelope and play it for a copy of the 1050.",
+              "avg_logprob": -0.6005043735106786,
+              "no_speech_prob": 0.034569937735795975,
+              "compression_ratio": 0.9594594594594594
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Page 19, you can hold my envelope and play it for the copy of the 1050.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Page 19, you can hold my envelope and play it for the copy of the 1050.",
+              "avg_logprob": -0.6225652921767462,
+              "no_speech_prob": 0.025603488087654114,
+              "compression_ratio": 0.9466666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey, G-19, you can hold my envelope and play it for a copy of the 1050.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Hey, G-19, you can hold my envelope and play it for a copy of the 1050.",
+              "avg_logprob": -0.6005043735106786,
+              "no_speech_prob": 0.034569937735795975,
+              "compression_ratio": 0.9594594594594594
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793836863.m4a": {
+      "index": 1002,
+      "epoch": 1793836863,
+      "sha256": "4a0b2bcf41a37ef75765563058f5d3a55ab546b483abbd6208a8fb55203a38b1",
+      "passes": {
+        "original": {
+          "text": "Copy, 4994 West Northwood Lane, 4994 West Northwood Lane, behind the address to the North on Canal Boulevard, heard a loud shriek and a horn. Looks like a Jeep versus a tree, single vehicle. Two people possibly look okay. A teenager was driving.",
+          "prompt": null,
+          "duration_seconds": 20.48,
+          "token_limit": 188,
+          "token_count": 65,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 11.0,
+              "text": " Copy, 4994 West Northwood Lane, 4994 West Northwood Lane, behind the address to the North on Canal Boulevard, heard a loud shriek and a horn.",
+              "avg_logprob": -0.29296248350570453,
+              "no_speech_prob": 0.0036469590850174427,
+              "compression_ratio": 1.467065868263473
+            },
+            {
+              "start": 11.0,
+              "end": 16.0,
+              "text": " Looks like a Jeep versus a tree, single vehicle.",
+              "avg_logprob": -0.29296248350570453,
+              "no_speech_prob": 0.0036469590850174427,
+              "compression_ratio": 1.467065868263473
+            },
+            {
+              "start": 16.0,
+              "end": 18.0,
+              "text": " Two people possibly look okay.",
+              "avg_logprob": -0.29296248350570453,
+              "no_speech_prob": 0.0036469590850174427,
+              "compression_ratio": 1.467065868263473
+            },
+            {
+              "start": 18.0,
+              "end": 20.0,
+              "text": " A teenager was driving.",
+              "avg_logprob": -0.29296248350570453,
+              "no_speech_prob": 0.0036469590850174427,
+              "compression_ratio": 1.467065868263473
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy, 4994 West, Northwood Lane. 4994 West, Northwood Lane. Behind the address to the north of Canal Boulevard, heard a loud shriek and a horn. Looks like a Jeep versus a tree, single vehicle. Two people possibly look okay. Teenager was driving.",
+          "prompt": null,
+          "duration_seconds": 20.48,
+          "token_limit": 188,
+          "token_count": 69,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.5600000000000005,
+              "text": " Copy, 4994 West, Northwood Lane. 4994 West, Northwood Lane.",
+              "avg_logprob": -0.39601350341524394,
+              "no_speech_prob": 0.008465643972158432,
+              "compression_ratio": 1.4411764705882353
+            },
+            {
+              "start": 5.5600000000000005,
+              "end": 10.26,
+              "text": " Behind the address to the north of Canal Boulevard, heard a loud shriek and a horn.",
+              "avg_logprob": -0.39601350341524394,
+              "no_speech_prob": 0.008465643972158432,
+              "compression_ratio": 1.4411764705882353
+            },
+            {
+              "start": 10.26,
+              "end": 14.46,
+              "text": " Looks like a Jeep versus a tree, single vehicle.",
+              "avg_logprob": -0.39601350341524394,
+              "no_speech_prob": 0.008465643972158432,
+              "compression_ratio": 1.4411764705882353
+            },
+            {
+              "start": 14.46,
+              "end": 18.18,
+              "text": " Two people possibly look okay.",
+              "avg_logprob": -0.39601350341524394,
+              "no_speech_prob": 0.008465643972158432,
+              "compression_ratio": 1.4411764705882353
+            },
+            {
+              "start": 18.18,
+              "end": 20.18,
+              "text": " Teenager was driving.",
+              "avg_logprob": -0.39601350341524394,
+              "no_speech_prob": 0.008465643972158432,
+              "compression_ratio": 1.4411764705882353
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy, 4994 West, Northwood Lane. 4994 West, Northwood Lane. Behind the address to the North on Canal Boulevard. Heard a loud shriek and a horn. Looks like a Jeep versus a tree, single vehicle. Two people possibly look okay. A teenager was driving.",
+          "prompt": "Hey, G-19, you can hold my envelope and play it for a copy of the 1050.",
+          "duration_seconds": 20.48,
+          "token_limit": 188,
+          "token_count": 65,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 11.0,
+              "text": " Copy, 4994 West, Northwood Lane. 4994 West, Northwood Lane. Behind the address to the North on Canal Boulevard. Heard a loud shriek and a horn.",
+              "avg_logprob": -0.2833385584932385,
+              "no_speech_prob": 0.00828242301940918,
+              "compression_ratio": 1.436046511627907
+            },
+            {
+              "start": 11.0,
+              "end": 15.0,
+              "text": " Looks like a Jeep versus a tree, single vehicle.",
+              "avg_logprob": -0.2833385584932385,
+              "no_speech_prob": 0.00828242301940918,
+              "compression_ratio": 1.436046511627907
+            },
+            {
+              "start": 15.0,
+              "end": 20.0,
+              "text": " Two people possibly look okay. A teenager was driving.",
+              "avg_logprob": -0.2833385584932385,
+              "no_speech_prob": 0.00828242301940918,
+              "compression_ratio": 1.436046511627907
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793836899.m4a": {
+      "index": 1003,
+      "epoch": 1793836899,
+      "sha256": "e73bd5adc8bddad753f98be574d93a1fe6dd23ee82f54265a4492749345f7669",
+      "passes": {
+        "original": {
+          "text": "Okay, it's engine 19. I'll make that until we hear further.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Okay, it's engine 19. I'll make that until we hear further.",
+              "avg_logprob": -0.5562621417798495,
+              "no_speech_prob": 0.02386404015123844,
+              "compression_ratio": 0.8805970149253731
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hey, it's engine 19, I'll make that until we hear further.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Hey, it's engine 19, I'll make that until we hear further.",
+              "avg_logprob": -0.5783137961437828,
+              "no_speech_prob": 0.02092958427965641,
+              "compression_ratio": 0.8787878787878788
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey, it's G-19. I'll make that until we hear further.",
+          "prompt": "Hey, G-19, you can hold my envelope and play it for a copy of the 1050. Copy, 4994 West Northwood Lane, 4994 West Northwood Lane, behind the address to the North on Canal Boulevard, heard a loud shriek and a horn. Looks like a Jeep versus a tree, single vehicle. Two people possibly look okay. A teenager was driving.",
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Hey, it's G-19. I'll make that until we hear further.",
+              "avg_logprob": -0.4905610680580139,
+              "no_speech_prob": 0.022185802459716797,
+              "compression_ratio": 0.8688524590163934
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793836905.m4a": {
+      "index": 1004,
+      "epoch": 1793836905,
+      "sha256": "c60508af4ed71fd1edbd379eacf499d9df099872f11b08b7ec5e5753bfc2ccb1",
+      "passes": {
+        "original": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.3871833086013794,
+              "no_speech_prob": 0.014024506323039532,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.48723484575748444,
+              "no_speech_prob": 0.025115029886364937,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "Hey, G-19, you can hold my envelope and play it for a copy of the 1050. Copy, 4994 West Northwood Lane, 4994 West Northwood Lane, behind the address to the North on Canal Boulevard, heard a loud shriek and a horn. Looks like a Jeep versus a tree, single vehicle. Two people possibly look okay. A teenager was driving. Okay, it's engine 19. I'll make that until we hear further.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.45377063751220703,
+              "no_speech_prob": 0.007917884737253189,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793836918.m4a": {
+      "index": 1005,
+      "epoch": 1793836918,
+      "sha256": "3ec34da622497bd9c09f972453c60dae04aceda858f820ad6c7cfba12d1b094e",
+      "passes": {
+        "original": {
+          "text": "Agent J-19, they're not blocking.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " Agent J-19, they're not blocking.",
+              "avg_logprob": -0.637456435423631,
+              "no_speech_prob": 0.042311038821935654,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        },
+        "filtered": {
+          "text": "The H2J-19, they are not blocking.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " The H2J-19, they are not blocking.",
+              "avg_logprob": -0.6028765598932903,
+              "no_speech_prob": 0.026617497205734253,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "context": {
+          "text": "Agent J-19, they're not blocking.",
+          "prompt": "Copy, 4994 West Northwood Lane, 4994 West Northwood Lane, behind the address to the North on Canal Boulevard, heard a loud shriek and a horn. Looks like a Jeep versus a tree, single vehicle. Two people possibly look okay. A teenager was driving. Okay, it's engine 19. I'll make that until we hear further. copy",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " Agent J-19, they're not blocking.",
+              "avg_logprob": -0.6610912909874549,
+              "no_speech_prob": 0.02839777246117592,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793836940.m4a": {
+      "index": 1006,
+      "epoch": 1793836940,
+      "sha256": "0d9aac3e84ccd32bd79260222a8ff2f9af24ccac67ea4eea7ab5e853a573027a",
+      "passes": {
+        "original": {
+          "text": "Thanks for watching!",
+          "prompt": null,
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thanks for watching!",
+              "avg_logprob": -0.9871772697993687,
+              "no_speech_prob": 0.8021460771560669,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm going to",
+          "prompt": null,
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm going to",
+              "avg_logprob": -1.5340186868395125,
+              "no_speech_prob": 0.40878793597221375,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "",
+          "prompt": "Okay, it's engine 19. I'll make that until we hear further. copy Agent J-19, they're not blocking.",
+          "duration_seconds": 0.64,
+          "token_limit": 30,
+          "token_count": 0,
+          "token_cap_reached": false,
+          "segments": []
+        }
+      }
+    },
+    "dcfems-5922-1793836942.m4a": {
+      "index": 1007,
+      "epoch": 1793836942,
+      "sha256": "ff824a74ca723c7dd0b1ed43a6728a1fec01e773d722da1de73b78062c7f225d",
+      "passes": {
+        "original": {
+          "text": "5G, 1-7-8, 4-4.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G, 1-7-8, 4-4.",
+              "avg_logprob": -0.6401047110557556,
+              "no_speech_prob": 0.012385498732328415,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5-3-1-7-EQ-4.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5-3-1-7-EQ-4.",
+              "avg_logprob": -0.6932605616748333,
+              "no_speech_prob": 0.016697272658348083,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "5G-17E, go for it.",
+          "prompt": "copy Agent J-19, they're not blocking. Thanks for watching!",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.6,
+              "text": " 5G-17E, go for it.",
+              "avg_logprob": -0.6828318192408636,
+              "no_speech_prob": 0.012373603880405426,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793836945.m4a": {
+      "index": 1008,
+      "epoch": 1793836945,
+      "sha256": "91d690a40248c2c4953f7b65f426dbaf913d9732ec04f567338e7b0548381cf0",
+      "passes": {
+        "original": {
+          "text": "Cardboard, you can just manage it.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Cardboard, you can just manage it.",
+              "avg_logprob": -1.0144017338752747,
+              "no_speech_prob": 0.07969146966934204,
+              "compression_ratio": 0.85
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Cover, you can suspend checks.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Cover, you can suspend checks.",
+              "avg_logprob": -0.8998186826705933,
+              "no_speech_prob": 0.04758942872285843,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "context": {
+          "text": "God worry, it's just manjax.",
+          "prompt": "Agent J-19, they're not blocking. Thanks for watching! 5G, 1-7-8, 4-4.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " God worry, it's just manjax.",
+              "avg_logprob": -1.0317539801964393,
+              "no_speech_prob": 0.03537898138165474,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793836948.m4a": {
+      "index": 1009,
+      "epoch": 1793836948,
+      "sha256": "062ae8721660198aa9855f38331460e158ce5b473632480739e5c1a3bf7d0639",
+      "passes": {
+        "original": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Happy.",
+              "avg_logprob": -0.559129285812378,
+              "no_speech_prob": 0.023295588791370392,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.7206613540649414,
+              "no_speech_prob": 0.06672333925962448,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy.",
+          "prompt": "Thanks for watching! 5G, 1-7-8, 4-4. Cardboard, you can just manage it.",
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Happy.",
+              "avg_logprob": -0.49869441986083984,
+              "no_speech_prob": 0.011569352820515633,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1793837027.m4a": {
+      "index": 1010,
+      "epoch": 1793837027,
+      "sha256": "7d2d7c11589c108e1e51afc249fc445471d59b90f1c6f194d36a70e8e2e201b3",
+      "passes": {
+        "original": {
+          "text": "80 to 19, we're over.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 80 to 19, we're over.",
+              "avg_logprob": -0.9788849137046121,
+              "no_speech_prob": 0.07155581563711166,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Okay, did you get 19 in your oven?",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Okay, did you get 19 in your oven?",
+              "avg_logprob": -0.9090323814978967,
+              "no_speech_prob": 0.06209322437644005,
+              "compression_ratio": 0.8717948717948718
+            }
+          ]
+        },
+        "context": {
+          "text": "80 to 19, we're over.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 80 to 19, we're over.",
+              "avg_logprob": -0.9788849137046121,
+              "no_speech_prob": 0.07155581563711166,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    }
+  }
+}
