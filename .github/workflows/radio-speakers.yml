@@ -1,4 +1,4 @@
-name: Embed 6001 voice clips
+name: Embed radio voice clips
 'on':
   workflow_dispatch:
     inputs:
@@ -35,6 +35,7 @@ jobs:
       has_work: ${{ steps.plan.outputs.has_work }}
       min_speech: ${{ steps.plan.outputs.min_speech }}
       source_sha: ${{ steps.plan.outputs.source_sha }}
+      model_revision: ${{ steps.plan.outputs.model_revision }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -62,6 +63,7 @@ jobs:
           from pathlib import Path
           sys.path.insert(0, 'scripts')
           from group_radio_voices import select_days, positive
+          from radio_config import valid_day
           root = Path.cwd()
           sha = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
           request_path = 'records-pending-review/radio-speaker-request.json'
@@ -82,16 +84,32 @@ jobs:
           else:
               request = {'days': os.environ['INPUT_DAYS'],
                          'min_speech': os.environ['INPUT_MIN_SPEECH'] or '2'}
-          selection = request['days']
-          if isinstance(selection, list):
-              selection = ','.join(selection)
-          days = select_days(root, selection)
-          if len(days) > 256:
-              raise ValueError('At most 256 dates per run; split the selection')
           minimum = positive(request.get('min_speech', 2))
+          revision = request.get('model_revision', '')
+          if 'jobs' in request:
+              import re
+              if not re.fullmatch(r'[0-9a-f]{40}', revision):
+                  raise ValueError('Backfill requires an exact model revision')
+              jobs = request['jobs']
+              keys = set()
+              for job in jobs:
+                  if job['talkgroup'] not in (6001, 5922) or not re.fullmatch(r'[1-9]\d*(?:,[1-9]\d*)*', job['clips']):
+                      raise ValueError('Invalid backfill selection')
+                  key = job['talkgroup'], valid_day(job['day'])
+                  if key in keys:
+                      raise ValueError('Duplicate backfill job')
+                  keys.add(key)
+          else:
+              selection = request['days']
+              if isinstance(selection, list):
+                  selection = ','.join(selection)
+              jobs = [{'day': day, 'talkgroup': 6001, 'clips': ''}
+                      for day in select_days(root, selection)]
+          if len(jobs) > 256:
+              raise ValueError('At most 256 jobs per run; split the selection')
           with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
-              f.write('matrix=' + json.dumps({'day': days}) + '\n')
-              f.write(f'has_work=true\nmin_speech={minimum}\nsource_sha={sha}\n')
+              f.write('matrix=' + json.dumps({'include': jobs or [{}]}) + '\n')
+              f.write(f'has_work={str(bool(jobs)).lower()}\nmin_speech={minimum}\nsource_sha={sha}\nmodel_revision={revision}\n')
           PY
   embed:
     needs: plan
@@ -100,11 +118,11 @@ jobs:
       fail-fast: false
       max-parallel: 15
       matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
-    name: 6001 / ${{ matrix.day }}
+    name: ${{ matrix.talkgroup }} / ${{ matrix.day }}
     runs-on: ubuntu-latest
     timeout-minutes: 350
     concurrency:
-      group: radio-speakers-6001-${{ matrix.day }}
+      group: radio-speakers-${{ matrix.talkgroup }}-${{ matrix.day }}
       cancel-in-progress: false
     env:
       R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
@@ -112,6 +130,9 @@ jobs:
       R2_BUCKET_NAME: ${{ vars.R2_BUCKET_NAME }}
       R2_ENDPOINT: ${{ vars.R2_ENDPOINT }}
       DAY: ${{ matrix.day }}
+      TALKGROUP: ${{ matrix.talkgroup }}
+      EVIDENCE_CLIPS: ${{ matrix.clips }}
+      MODEL_REVISION: ${{ needs.plan.outputs.model_revision }}
       MIN_SPEECH: ${{ needs.plan.outputs.min_speech }}
       PYTHONUNBUFFERED: '1'
     steps:
@@ -135,18 +156,22 @@ jobs:
           key: radio-speakers-${{ runner.os }}-${{ hashFiles('scripts/requirements-radio-speakers.txt') }}
       - name: Embed voices and save original clip numbers
         run: |
-          python -u scripts/group_radio_voices.py run --day "$DAY" --min-speech "$MIN_SPEECH" --model-dir "$RUNNER_TEMP/radio-speaker-models" --output voice-recognition/6001 --publish
+          options=()
+          if [[ -n "$EVIDENCE_CLIPS" ]]; then
+            options+=(--evidence-clips "$EVIDENCE_CLIPS" --model-revision "$MODEL_REVISION")
+          fi
+          python -u scripts/group_radio_voices.py run --day "$DAY" --talkgroup "$TALKGROUP" --min-speech "$MIN_SPEECH" --model-dir "$RUNNER_TEMP/radio-speaker-models" --output "voice-recognition/$TALKGROUP" --publish "${options[@]}"
       - name: Upload reports and embeddings (including partial results)
-        if: always()
+        if: always() && matrix.clips == ''
         uses: actions/upload-artifact@v4
         with:
-          name: radio-embeddings-6001-${{ matrix.day }}
-          path: voice-recognition/6001/${{ matrix.day }}/
+          name: radio-embeddings-${{ matrix.talkgroup }}-${{ matrix.day }}
+          path: voice-recognition/${{ matrix.talkgroup }}/${{ matrix.day }}/
           if-no-files-found: warn
           retention-days: 90
       - name: Show daily embedding summary
         if: always()
         run: |
-          if [ -f "voice-recognition/6001/$DAY/report.md" ]; then
-            cat "voice-recognition/6001/$DAY/report.md" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f "voice-recognition/$TALKGROUP/$DAY/report.md" ]; then
+            cat "voice-recognition/$TALKGROUP/$DAY/report.md" >> "$GITHUB_STEP_SUMMARY"
           fi

@@ -21,7 +21,8 @@ def encode(data):
 def embedding_result(data, *, allow_subset=False):
     from radio_config import valid_day
     day = valid_day(data['date'])
-    if data.get('talkgroup') != 6001 or data.get('status') not in ('complete', 'partial_error'):
+    talkgroup = data.get('talkgroup')
+    if talkgroup not in (6001, 5922) or data.get('status') not in ('complete', 'partial_error'):
         raise ValueError('Unexpected voice archive identity or status')
     model, revision = data['model'], data['model_revision']
     if (not re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+', model)
@@ -30,7 +31,7 @@ def embedding_result(data, *, allow_subset=False):
     if not re.fullmatch(r'[0-9a-f]{40,64}', revision):
         raise ValueError('Exact model revision is required')
     model_folder = model.replace('/', '--') + '--' + revision
-    root = f'voice-recognition/{model_folder}/6001'
+    root = f'voice-recognition/{model_folder}/{talkgroup}'
     embedding_key = f'{root}/embeddings/{day}/embeddings.json'
     embeddings = {k: copy.deepcopy(v) for k, v in data.items()
                   if k not in ('clips', 'groups', 'similarity_threshold', 'clustering', 'selected_clip_numbers', 'run_counts')}
@@ -51,6 +52,8 @@ def embedding_result(data, *, allow_subset=False):
 
 
 def split_result(data):
+    if data.get('talkgroup') != 6001:
+        raise ValueError('Comparisons currently support only 6001')
     objects = embedding_result(data)
     embedding_key, embedding_bytes = next(iter(objects.items()))
     day = data['date']

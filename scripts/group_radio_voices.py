@@ -112,11 +112,11 @@ def publish_result(path, *, embeddings_only=False):
     from r2_audio import client_and_bucket
     from reorganize_voice_storage import embedding_result, split_result, write_layout
     relative = path.resolve().relative_to(ROOT).as_posix()
-    match = re.fullmatch(r'voice-recognition/6001/(\d{4}-\d{2}-\d{2})/(?:voices|embeddings)\.json', relative)
+    match = re.fullmatch(r'voice-recognition/(6001|5922)/(\d{4}-\d{2}-\d{2})/(?:voices|embeddings)\.json', relative)
     if not match:
         raise ValueError('Unexpected voice output path')
     data = json.loads(path.read_bytes())
-    if data.get('date') != valid_day(match[1]) or data.get('talkgroup') != 6001:
+    if data.get('date') != valid_day(match[2]) or data.get('talkgroup') != int(match[1]):
         raise ValueError('Voice result identity mismatch')
     client, bucket = client_and_bucket()
     objects = embedding_result(data) if embeddings_only else split_result(data)
@@ -132,15 +132,15 @@ PREPROCESSING = {'decoder': 'ffmpeg-mono-f32le', 'sample_rate': 16000,
                  'speech_input': 'concatenated-detected-regions', 'normalization': 'l2'}
 
 
-def load_existing_embeddings(client, bucket, day, revision, calls):
+def load_existing_embeddings(client, bucket, day, revision, calls, talkgroup=6001):
     from reorganize_voice_storage import read_optional
-    key = (f"voice-recognition/{MODEL.replace('/', '--')}--{revision}/6001/"
+    key = (f"voice-recognition/{MODEL.replace('/', '--')}--{revision}/{talkgroup}/"
            f'embeddings/{day}/embeddings.json')
     content = read_optional(client, bucket, key)
     if content is None:
         return {}, None
     previous = json.loads(content)
-    if (previous.get('date') != day or previous.get('talkgroup') != 6001
+    if (previous.get('date') != day or previous.get('talkgroup') != talkgroup
             or previous.get('model') != MODEL or previous.get('model_revision') != revision):
         raise ValueError('Existing embeddings identity mismatch')
     if previous.get('preprocessing', PREPROCESSING) != PREPROCESSING:
@@ -195,29 +195,32 @@ def run_day(args):
     from transcribe_afpd_radio import load_archive
 
     minimum = positive(args.min_speech)
-    folder, data = load_archive(args.day, 6001, require_complete=False)
-    selected = getattr(args, 'clip_numbers', None)
+    talkgroup = args.talkgroup
+    folder, data = load_archive(args.day, talkgroup, require_complete=False)
+    selected = args.evidence_clips or args.clip_numbers
     if selected:
         selected = {int(n) for n in selected.split(',')}
         if not selected or min(selected) < 1 or max(selected) > len(data['calls']):
             raise ValueError('Selected clip numbers are outside the archive')
-        if args.publish:
+        if args.publish and not args.evidence_clips:
             raise ValueError('Subset experiments cannot overwrite daily R2 results')
     torch.set_num_threads(2)
     torch.manual_seed(0)
-    revision = HfApi().model_info(MODEL).sha
+    revision = args.model_revision or HfApi().model_info(MODEL).sha
+    if not re.fullmatch(r'[0-9a-f]{40}', revision):
+        raise ValueError('Expected an exact model revision SHA')
     encoder = vad = None
     client, bucket = client_and_bucket()
-    cached, previous = load_existing_embeddings(client, bucket, args.day, revision, data['calls'])
-    if previous is not None:
+    cached, previous = load_existing_embeddings(client, bucket, args.day, revision, data['calls'], talkgroup)
+    if previous is not None and not args.evidence_clips:
         minimum = min(minimum, positive(previous['min_speech_seconds']))
-    result = {'schema_version': 1, 'date': args.day, 'talkgroup': 6001,
+    result = {'schema_version': 1, 'date': args.day, 'talkgroup': talkgroup,
               'archive_coverage': data.get('coverage'),
               'source_metadata_sha256': hashlib.sha256((folder / 'calls.json').read_bytes()).hexdigest(),
-              'model': MODEL, 'model_revision': revision, 'min_speech_seconds': minimum,
+              'model': MODEL, 'model_revision': revision, 'min_speech_seconds': min(minimum, positive(previous['min_speech_seconds'])) if previous else minimum,
               'human_verified': False, 'status': 'running', 'clips': [],
               'preprocessing': PREPROCESSING}
-    if selected:
+    if args.clip_numbers:
         result['selected_clip_numbers'] = sorted(selected)
     output = Path(args.output) / args.day
     vectors = []
@@ -287,7 +290,11 @@ def run_day(args):
             output.mkdir(parents=True, exist_ok=True)
             (output / 'progress.json').write_text(json.dumps(result, indent=2) + '\n')
     errors = sum(c['status'] == 'error' for c in result['clips'])
-    result['status'] = 'partial_error' if errors else 'complete'
+    if args.evidence_clips:
+        result['clips'] += [clip for number, clip in cached.items() if number not in selected]
+        result['clips'].sort(key=lambda clip: clip['clip_number'])
+        vectors = [clip['embedding'] for clip in result['clips'] if clip['status'] == 'embedded']
+    result['status'] = 'partial_error' if any(c['status'] == 'error' for c in result['clips']) else 'complete'
     result['run_counts'] = {'reused_embeddings': reused, 'new_embeddings': created,
                             'reused_short_speech_skips': skipped_cached, 'errors': errors}
     print('Incremental extraction: ' + json.dumps(result['run_counts']), flush=True)
@@ -310,7 +317,7 @@ def write_embedding_reports(output, result, vectors):
                         embeddings=np.asarray(vectors, dtype=np.float32))
     counts = result['run_counts']
     (output / 'report.md').write_text(
-        f"# Voice embeddings — {result['date']} / 6001\n\n"
+        f"# Voice embeddings — {result['date']} / {result['talkgroup']}\n\n"
         f"Minimum detected speech: {result['min_speech_seconds']} seconds.\n\n"
         f"Reused: {counts['reused_embeddings']}. New: {counts['new_embeddings']}. "
         f"Errors: {counts['errors']}.\n\nNo voice comparisons or groups were generated.\n")
@@ -359,7 +366,11 @@ def main():
     run = sub.add_parser('run')
     run.add_argument('--day', required=True, type=valid_day)
     run.add_argument('--min-speech', type=positive, default=2.0)
-    run.add_argument('--clip-numbers', help='Comma-separated original clip numbers for an artifact-only experiment')
+    run.add_argument('--model-revision', help='Exact model revision for backfills')
+    run.add_argument('--talkgroup', type=int, choices=(6001, 5922), default=6001)
+    selection = run.add_mutually_exclusive_group()
+    selection.add_argument('--evidence-clips', help='Archive-validated evidence clip numbers to add incrementally')
+    selection.add_argument('--clip-numbers', help='Comma-separated original clip numbers for an artifact-only experiment')
     run.add_argument('--model-dir', default='.cache/radio-speakers')
     run.add_argument('--output', default='voice-recognition/6001')
     run.add_argument('--publish', action='store_true', help='Save reusable embeddings only to the configured R2 bucket')
