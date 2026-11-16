@@ -1,0 +1,649 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-15",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794777169.m4a": {
+      "index": 511,
+      "epoch": 1794777169,
+      "sha256": "6ba8b125675881c69c902ded882282297ab5467cce82b10e5e3b9c27e08d5a0d",
+      "passes": {
+        "original": {
+          "text": "Home appears secure. No signs break in. Tense of contact with RPE. Negative. Close up.",
+          "prompt": null,
+          "duration_seconds": 9.856,
+          "token_limit": 103,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 10.0,
+              "text": " Home appears secure. No signs break in. Tense of contact with RPE. Negative. Close up.",
+              "avg_logprob": -0.4956082534790039,
+              "no_speech_prob": 0.10728257149457932,
+              "compression_ratio": 1.011764705882353
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Home appears secure. No signs break in. Tense of contact with RPE. Negative. You can close up.",
+          "prompt": null,
+          "duration_seconds": 9.856,
+          "token_limit": 103,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.5,
+              "text": " Home appears secure. No signs break in. Tense of contact with RPE. Negative. You can close up.",
+              "avg_logprob": -0.45137729468169036,
+              "no_speech_prob": 0.06262071430683136,
+              "compression_ratio": 1.0561797752808988
+            }
+          ]
+        },
+        "context": {
+          "text": "Home appears secure. No signs break in. Tense of contact with RPE. Negative. Close up.",
+          "prompt": "7J29 Seven days for the end.",
+          "duration_seconds": 9.856,
+          "token_limit": 103,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 10.0,
+              "text": " Home appears secure. No signs break in. Tense of contact with RPE. Negative. Close up.",
+              "avg_logprob": -0.49368484497070314,
+              "no_speech_prob": 0.10365883260965347,
+              "compression_ratio": 1.011764705882353
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794777179.m4a": {
+      "index": 512,
+      "epoch": 1794777179,
+      "sha256": "bcee6bcad8370ab0020878e3fccc7efded08adbeb27c78dd3b983d0e24cf1726",
+      "passes": {
+        "original": {
+          "text": "Fantastic. Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Fantastic.",
+              "avg_logprob": -0.9478132459852431,
+              "no_speech_prob": 0.2091449648141861,
+              "compression_ratio": 0.6666666666666666
+            },
+            {
+              "start": 0.5,
+              "end": 2.04,
+              "text": " Copy.",
+              "avg_logprob": -0.9478132459852431,
+              "no_speech_prob": 0.2091449648141861,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Sorry",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Sorry",
+              "avg_logprob": -0.8793415725231171,
+              "no_speech_prob": 0.15254707634449005,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "7J29 Seven days for the end. Home appears secure. No signs break in. Tense of contact with RPE. Negative. Close up.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.8569337844848632,
+              "no_speech_prob": 0.09514949470758438,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794777208.m4a": {
+      "index": 513,
+      "epoch": 1794777208,
+      "sha256": "15028c8109dc12935bbdc3490e5fb7923e9a884d24019b2a83c630452670cb4b",
+      "passes": {
+        "original": {
+          "text": "I was at 35, I'll be in right on the burger.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " I was at 35, I'll be in right on the burger.",
+              "avg_logprob": -0.6066895653219784,
+              "no_speech_prob": 0.05255470424890518,
+              "compression_ratio": 0.8461538461538461
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'll be in right on the burger.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.4,
+              "text": " I'll be in right on the burger.",
+              "avg_logprob": -0.6704104542732239,
+              "no_speech_prob": 0.03440931439399719,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "context": {
+          "text": "I was at 35. I'll be en route on a burger.",
+          "prompt": "Seven days for the end. Home appears secure. No signs break in. Tense of contact with RPE. Negative. Close up. Fantastic. Copy.",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " I was at 35. I'll be en route on a burger.",
+              "avg_logprob": -0.5350438286276424,
+              "no_speech_prob": 0.01719258911907673,
+              "compression_ratio": 0.84
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794777225.m4a": {
+      "index": 514,
+      "epoch": 1794777225,
+      "sha256": "c703449bdd92ad5f1ac92c407f72ab866bc6df70f3b4ec47e12ad02fc1533d1b",
+      "passes": {
+        "original": {
+          "text": "Pick up.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Pick up.",
+              "avg_logprob": -0.8126286665598551,
+              "no_speech_prob": 0.056854378432035446,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Pick up",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Pick up",
+              "avg_logprob": -0.29422061443328856,
+              "no_speech_prob": 0.02994374744594097,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "I copy.",
+          "prompt": "Home appears secure. No signs break in. Tense of contact with RPE. Negative. Close up. Fantastic. Copy. I was at 35, I'll be in right on the burger.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I copy.",
+              "avg_logprob": -0.6541497011979421,
+              "no_speech_prob": 0.03436659276485443,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794777230.m4a": {
+      "index": 515,
+      "epoch": 1794777230,
+      "sha256": "d750f492e44cf75b914eba56b89e4e84678fe88565d576223b26e8aa1481ef69",
+      "passes": {
+        "original": {
+          "text": "5G42, I come back.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G42, I come back.",
+              "avg_logprob": -0.44323972680351953,
+              "no_speech_prob": 0.01995803602039814,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G42, I come back.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G42, I come back.",
+              "avg_logprob": -0.6416391242634166,
+              "no_speech_prob": 0.041508421301841736,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "context": {
+          "text": "5G42, I came back.",
+          "prompt": "Fantastic. Copy. I was at 35, I'll be in right on the burger. Pick up.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G42, I came back.",
+              "avg_logprob": -0.3678169304674322,
+              "no_speech_prob": 0.0134153813123703,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794777232.m4a": {
+      "index": 516,
+      "epoch": 1794777232,
+      "sha256": "1c37c9dbc314e297c8c0e734de890927bf4d98cf6023def3f6a12bbc04e6b9be",
+      "passes": {
+        "original": {
+          "text": "Part of day 42.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Part of day 42.",
+              "avg_logprob": -0.7209673523902893,
+              "no_speech_prob": 0.012598715722560883,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Apparently, it's 42.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Apparently, it's 42.",
+              "avg_logprob": -1.033525784810384,
+              "no_speech_prob": 0.03898587450385094,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "5G42.",
+          "prompt": "I was at 35, I'll be in right on the burger. Pick up. 5G42, I come back.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 5G42.",
+              "avg_logprob": -0.36913549048560007,
+              "no_speech_prob": 0.017392175272107124,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794777286.m4a": {
+      "index": 517,
+      "epoch": 1794777286,
+      "sha256": "50b7db9ace960580ae5a5b44bedf914f4610938899a8265e8fe27d53459a7475",
+      "passes": {
+        "original": {
+          "text": "Sorry, G35. Just be advised. The child hung out. We're trying to call back.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Sorry, G35. Just be advised. The child hung out. We're trying to call back.",
+              "avg_logprob": -0.4082767888903618,
+              "no_speech_prob": 0.008989608846604824,
+              "compression_ratio": 0.9146341463414634
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5 do 35 just be wise the child hung out. We're trying to call back",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.74,
+              "text": " 5 do 35 just be wise the child hung out. We're trying to call back",
+              "avg_logprob": -0.4292765513062477,
+              "no_speech_prob": 0.009131007827818394,
+              "compression_ratio": 0.9295774647887324
+            }
+          ]
+        },
+        "context": {
+          "text": "5G35, just be advised, the child hung up. We're trying to call back.",
+          "prompt": "5G42, I come back. Part of day 42.",
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 5G35, just be advised, the child hung up. We're trying to call back.",
+              "avg_logprob": -0.29460304975509644,
+              "no_speech_prob": 0.00675170635804534,
+              "compression_ratio": 0.9066666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794777291.m4a": {
+      "index": 518,
+      "epoch": 1794777291,
+      "sha256": "f70730f8e4e6fb0cf325a5a68878b97ab996d3e9f74b2628c564bf60ad103602",
+      "passes": {
+        "original": {
+          "text": "Bye.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye.",
+              "avg_logprob": -0.8734571456909179,
+              "no_speech_prob": 0.09961365908384323,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bye.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye.",
+              "avg_logprob": -0.9979557991027832,
+              "no_speech_prob": 0.18480710685253143,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Bye.",
+          "prompt": "Part of day 42. Sorry, G35. Just be advised. The child hung out. We're trying to call back.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye.",
+              "avg_logprob": -0.6486936092376709,
+              "no_speech_prob": 0.09929794073104858,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794777378.m4a": {
+      "index": 519,
+      "epoch": 1794777378,
+      "sha256": "6232ffcd22e7a8e52b22c582d4f4a1186edb4d571608a4a5fa57065e67eddf9c",
+      "passes": {
+        "original": {
+          "text": "5G42 running.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G42 running.",
+              "avg_logprob": -0.8181384578347206,
+              "no_speech_prob": 0.0257413350045681,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G42 running.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G42 running.",
+              "avg_logprob": -0.5972834154963493,
+              "no_speech_prob": 0.044480789452791214,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "5G42 running.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G42 running.",
+              "avg_logprob": -0.8181384578347206,
+              "no_speech_prob": 0.0257413350045681,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794777381.m4a": {
+      "index": 520,
+      "epoch": 1794777381,
+      "sha256": "3e90d7560f9c601f50b6818fe43ba66bbc171ef535fceb402942e82878b3162f",
+      "passes": {
+        "original": {
+          "text": "Thank you for watching",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you for watching",
+              "avg_logprob": -0.6958302089146206,
+              "no_speech_prob": 0.09019497781991959,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you for",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you for",
+              "avg_logprob": -0.4421443243821462,
+              "no_speech_prob": 0.02968992292881012,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "5G42.",
+          "prompt": "5G42 running.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 5G42.",
+              "avg_logprob": -0.5587765319006783,
+              "no_speech_prob": 0.05920745059847832,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
