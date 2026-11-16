@@ -823,7 +823,10 @@ test("shared radio use shows participants, one status and evidence instead of a 
   const entry = { name: "Test Officer", status: "strong" };
   const associations = {
     schema_version: 4,
-    shared_radio_use: { [date]: { [shared]: [{ name: "First Officer" }, { name: "Second Officer" }] } },
+    shared_radio_use: { [date]: { [shared]: [
+      { name: "First Officer", talkgroup: 5922, clips: [1275, 1302], evidence: "Uses their own call sign.", source_url: "https://openmhz.com/system/dcfems?clip=1275" },
+      { name: "Second Officer", talkgroup: 6001, clips: [240], evidence: "Answers a question addressed to them.", source_url: "https://openmhz.com/system/dcfems?clip=240" }
+    ] } },
     days: { [date]: { [shared]: [{ ...entry, status: "confirmed" }], [other]: [{ ...entry, status: "confirmed" }] } },
     associations: { [shared]: [entry], [other]: [entry] },
     clip_overrides: { [filename]: { [shared]: { name: "Override Officer", status: "confirmed-clip" } } }
@@ -842,10 +845,15 @@ test("shared radio use shows participants, one status and evidence instead of a 
     const [button, popup] = info.children;
     assert.equal(button.className, "radio-info-button");
     assert.equal(popup.hidden, true);
+    info.emit("mouseenter");
+    assert.equal(popup.hidden, false);
     button.click();
     assert.equal(popup.hidden, false);
     assert.match(popup.textContent, /leaves the speaker in this clip unspecified/);
-    assert.equal(popup.children[1].href, `/police-radio-resources/#shared-radio-${date}-${shared}`);
+    assert.match(popup.children[1].textContent, /First Officer · Law 2 clips 1275, 1302. Uses their own call sign/);
+    assert.match(popup.children[2].textContent, /Second Officer · Car-to-Car clip 240. Answers a question/);
+    assert.equal(popup.children[2].children[2].href, "https://openmhz.com/system/dcfems?clip=240");
+    assert.equal(popup.children[3].href, `/police-radio-resources/#shared-radio-${date}-${shared}`);
     button.click();
     assert.equal(popup.hidden, true);
     assert.match(row.textContent, /14590043 · Test Officer · Confirmed this day/);

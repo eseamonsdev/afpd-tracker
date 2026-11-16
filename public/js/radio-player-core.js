@@ -41,7 +41,9 @@ function createIdentity(getDate) {
     if (isDispatchId(id) || agencyId(id)) return [];
     const date = getDate();
     const shared = sharedRadioUse[date]?.[id];
-    if (shared?.length) return [{ name: shared.map(entry => entry.name).join(" · "), status: "shared-use" }];
+    if (shared?.length) {
+      return [{ name: [...new Set(shared.map(entry => entry.name))].join(" · "), status: "shared-use", evidence: shared }];
+    }
     const asEntries = value => (Array.isArray(value) ? value : value ? [value] : [])
       .filter(entry => entry?.display_eligible !== false && typeof entry?.name === "string" && associationLabels[entry.status]);
     const override = asEntries(clipOverrides[call?.original_filename]?.[id]);
@@ -119,12 +121,31 @@ function createIdentity(getDate) {
     button.setAttribute("aria-describedby", popup.id);
     const note = document.createElement("span");
     note.textContent = associationNote(entry);
+    popup.append(note);
+    if (shared) {
+      const talkgroups = { 5922: "Law 2", 6001: "Car-to-Car", 6036: "Talkgroup 6036" };
+      for (const record of entry.evidence) {
+        const evidence = document.createElement("span");
+        evidence.className = "radio-shared-evidence";
+        const officer = document.createElement("strong");
+        officer.textContent = record.name;
+        const details = document.createElement("span");
+        const clips = `${talkgroups[record.talkgroup]} ${record.clips.length === 1 ? "clip" : "clips"} ${record.clips.join(", ")}`;
+        details.textContent = ` · ${clips}. ${record.evidence}`;
+        const recording = document.createElement("a");
+        recording.href = record.source_url;
+        recording.textContent = "Listen on OpenMHz";
+        recording.setAttribute("aria-label", `Listen to ${record.name} evidence on OpenMHz`);
+        evidence.append(officer, details, recording);
+        popup.append(evidence);
+      }
+    }
     const link = document.createElement("a");
     link.href = shared
       ? `/police-radio-resources/#shared-radio-${getDate()}-${id}`
       : `/police-radio-resources/#radio-id-${encodeURIComponent(id)}${entry.officer_id ? `-${encodeURIComponent(entry.officer_id)}` : ""}`;
     link.textContent = "View evidence";
-    popup.append(note, link);
+    popup.append(link);
     let pinned = false, suppressFocus = false;
     const hide = () => {
       popup.hidden = true;

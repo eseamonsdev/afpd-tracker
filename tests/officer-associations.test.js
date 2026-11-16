@@ -45,7 +45,9 @@ test("build exports CSV and labels from the same records with repeatable output"
   const table = readCsv("openmhz/afpd-radio-officer-ids.csv");
   const input = filterAssociationContext(withProductionAssociationBaseline(loadAssociationEvidence(process.cwd())));
   for (const row of table.rows) {
-    const entry = input.associations.filter(e => e.radio_id === row[2] && input.officers[e.officer_id].name === row[1] && (e.production_baseline || isDatedConfirmation(e) || !input.owner_evidence_reviews?.[e.officer_id] || input.owner_evidence_reviews[e.officer_id].active_record_ids.includes(e.record_id)));
+    const entry = input.associations.filter(e => e.radio_id === row[2] && input.officers[e.officer_id].name === row[1] &&
+      !input.shared_radio_use?.[e.date]?.[e.radio_id] &&
+      (e.production_baseline || isDatedConfirmation(e) || !input.owner_evidence_reviews?.[e.officer_id] || input.owner_evidence_reviews[e.officer_id].active_record_ids.includes(e.record_id)));
     const dates = new Set(entry.filter(e => e.status !== "rejected" && (e.association_reviewed === true || e.status === "confirmed" && e.confirmed_by === "Eric")).map(e => e.date));
     assert.equal(Number(row[3]), dates.size);
   }

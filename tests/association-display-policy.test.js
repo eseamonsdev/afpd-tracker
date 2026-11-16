@@ -121,11 +121,19 @@ test('three confirmed days supply the general fallback while a competing single 
   }
 });
 
-test('all prior Eric confirmations and the Jackie correction remain, without the David/Somerville alternatives',()=>{
+test('prior Eric confirmations remain unless marked shared, and the Jackie correction remains',()=>{
   const result=buildOfficerAssociations(),raw=JSON.parse(fs.readFileSync('data/officer-association-evidence.json'));
   for(const record of raw.associations.filter(r=>r.status==='confirmed' && r.confirmed_by==='Eric')) {
+    if (raw.shared_radio_use?.[record.date]?.[record.radio_id]) {
+      assert.equal(result.labels.days[record.date]?.[record.radio_id], undefined, record.record_id);
+      continue;
+    }
     assert.ok(result.labels.days[record.date]?.[record.radio_id]?.some(r=>r.officer_id===record.officer_id),record.record_id);
   }
+  const radio = '14590207';
+  assert.deepEqual(result.labels.days['2026-09-26'][radio].map(r => r.officer_id), ['ronald-j-bibeau']);
+  assert.deepEqual(result.labels.days['2026-10-06'][radio].map(r => r.officer_id), ['kolten-d-fraughton']);
+  assert.deepEqual(result.labels.shared_radio_use['2026-10-09'][radio].map(r => r.officer_id), ['kolten-d-fraughton', 'ronald-j-bibeau']);
   for(const date of ['2026-10-03','2026-10-04','2026-10-26']) assert.deepEqual(result.labels.days[date]['14590104'].map(r=>r.officer_id),['jaclyn-g-strong']);
   for(const [radio,id] of [['14590104','jaclyn-g-strong'],['14590073','j-tayler-somerville']]) assert.deepEqual(result.labels.associations[radio].map(r=>r.officer_id),[id]);
   for(const id of ['legacy-review-031','legacy-review-035','legacy-review-062','legacy-review-063']) {
