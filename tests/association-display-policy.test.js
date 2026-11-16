@@ -209,6 +209,10 @@ test('clip overrides use the canonical officer name and stable filename', () => 
   assert.deepEqual(compileOfficerAssociations(source).labels.clip_overrides, {
     [filename]: { '123': { officer_id: 'two', name: 'Two', status: 'confirmed-clip' } }
   });
+  source.clip_overrides[filename]['123'].note = ' Identified by call sign. ';
+  assert.equal(compileOfficerAssociations(source).labels.clip_overrides[filename]['123'].note, 'Identified by call sign.');
+  source.clip_overrides[filename]['123'].note = ' ';
+  assert.throws(() => compileOfficerAssociations(source), /Invalid association clip override note/);
   source.clip_overrides = { 'clip-1': source.clip_overrides[filename] };
   assert.throws(() => compileOfficerAssociations(source), /Invalid association clip override/);
 });

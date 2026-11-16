@@ -40,14 +40,14 @@ function createIdentity(getDate) {
   const officerAssociation = (id, call) => {
     if (isDispatchId(id) || agencyId(id)) return [];
     const date = getDate();
-    const shared = sharedRadioUse[date]?.[id];
-    if (shared?.length) {
-      return [{ name: [...new Set(shared.map(entry => entry.name))].join(" · "), status: "shared-use", evidence: shared }];
-    }
     const asEntries = value => (Array.isArray(value) ? value : value ? [value] : [])
       .filter(entry => entry?.display_eligible !== false && typeof entry?.name === "string" && associationLabels[entry.status]);
     const override = asEntries(clipOverrides[call?.original_filename]?.[id]);
     if (override.length) return override;
+    const shared = sharedRadioUse[date]?.[id];
+    if (shared?.length) {
+      return [{ name: [...new Set(shared.map(entry => entry.name))].join(" · "), status: "shared-use" }];
+    }
     const dated = asEntries(officerDays[date]?.[id]);
     // A dated owner identification replaces every usual identity for this ID,
     // including another person's strong association. It applies only this day.
@@ -63,12 +63,15 @@ function createIdentity(getDate) {
     const tier = ["confirmed-association", "strong", "possible"].find(status => general.some(entry => entry.status === status));
     return general.filter(entry => entry.status === tier);
   };
-  const associationNote = (entry) => {
+  const associationNote = (entry, sharedEvidence) => {
     const date = dateFormat.format(dateObject(getDate()));
     if (entry.status === "shared-use") return `The listed officers used this radio on ${date}. The label leaves the speaker in this clip unspecified.`;
+    if (entry.status === "confirmed-clip") {
+      const note = entry.note ?? `This clip has an explicit identification of ${entry.name}.`;
+      return sharedEvidence?.length ? `${note} The evidence below documents separate instances of the listed officers using this radio on ${date}.` : note;
+    }
     const count = Number(entry.evidence_days) || 1;
     const dates = Array.isArray(entry.evidence_dates) ? entry.evidence_dates.join(", ") : "";
-    if (entry.status === "confirmed-clip") return `This clip has an explicit identification of ${entry.name}.`;
     const description = entry.status === "confirmed-association"
       ? `Eric has personally confirmed the association between this radio ID and ${entry.name}. This confirms the association, not the speaker in every recording or on ${date}.`
       : ["strong", "possible"].includes(entry.status)
@@ -109,8 +112,8 @@ function createIdentity(getDate) {
     mark.setAttribute("d", "M12 11v6M12 7h.01");
     svg.append(circle, mark);
     button.append(svg);
-    const shared = entry.status === "shared-use";
-    button.setAttribute("aria-label", shared ? `Shared-use information for radio ${id}` : `Association information for ${entry.name}`);
+    const sharedEvidence = sharedRadioUse[getDate()]?.[id];
+    button.setAttribute("aria-label", entry.status === "shared-use" ? `Shared-use information for radio ${id}` : `Association information for ${entry.name}`);
     button.setAttribute("aria-expanded", "false");
     const popup = document.createElement("span");
     popup.id = `radio-association-info-${++informationNumber}`;
@@ -120,11 +123,11 @@ function createIdentity(getDate) {
     button.setAttribute("aria-controls", popup.id);
     button.setAttribute("aria-describedby", popup.id);
     const note = document.createElement("span");
-    note.textContent = associationNote(entry);
+    note.textContent = associationNote(entry, sharedEvidence);
     popup.append(note);
-    if (shared) {
+    if (sharedEvidence?.length) {
       const talkgroups = { 5922: "Law 2", 6001: "Car-to-Car", 6036: "Talkgroup 6036" };
-      for (const record of entry.evidence) {
+      for (const record of sharedEvidence) {
         const evidence = document.createElement("span");
         evidence.className = "radio-shared-evidence";
         const officer = document.createElement("strong");
@@ -141,7 +144,7 @@ function createIdentity(getDate) {
       }
     }
     const link = document.createElement("a");
-    link.href = shared
+    link.href = sharedEvidence?.length
       ? `/police-radio-resources/#shared-radio-${getDate()}-${id}`
       : `/police-radio-resources/#radio-id-${encodeURIComponent(id)}${entry.officer_id ? `-${encodeURIComponent(entry.officer_id)}` : ""}`;
     link.textContent = "View evidence";
