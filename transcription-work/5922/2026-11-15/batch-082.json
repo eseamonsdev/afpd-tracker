@@ -1,0 +1,769 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-15",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794794748.m4a": {
+      "index": 811,
+      "epoch": 1794794748,
+      "sha256": "02965c07d81ac04de2552ab037fe1654e93f8c5679f1a37fb45d59c185b3dfb1",
+      "passes": {
+        "original": {
+          "text": "CO alarm in the hallway, nobody's feeling sick, nobody's currently on site, they are requesting dispatches from an alarm company.",
+          "prompt": null,
+          "duration_seconds": 9.984,
+          "token_limit": 104,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.68,
+              "text": " CO alarm in the hallway, nobody's feeling sick, nobody's currently on site, they are",
+              "avg_logprob": -0.3173188492655754,
+              "no_speech_prob": 0.05043819546699524,
+              "compression_ratio": 1.205607476635514
+            },
+            {
+              "start": 7.68,
+              "end": 9.56,
+              "text": " requesting dispatches from an alarm company.",
+              "avg_logprob": -0.3173188492655754,
+              "no_speech_prob": 0.05043819546699524,
+              "compression_ratio": 1.205607476635514
+            }
+          ]
+        },
+        "filtered": {
+          "text": "CO alarm in the hallway. Nobody's feeling sick. Nobody's currently on site. They are requesting dispatches from an alarm company.",
+          "prompt": null,
+          "duration_seconds": 9.984,
+          "token_limit": 104,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.72,
+              "text": " CO alarm in the hallway. Nobody's feeling sick. Nobody's currently on site. They are",
+              "avg_logprob": -0.3933381550014019,
+              "no_speech_prob": 0.05178463086485863,
+              "compression_ratio": 1.205607476635514
+            },
+            {
+              "start": 7.72,
+              "end": 9.56,
+              "text": " requesting dispatches from an alarm company.",
+              "avg_logprob": -0.3933381550014019,
+              "no_speech_prob": 0.05178463086485863,
+              "compression_ratio": 1.205607476635514
+            }
+          ]
+        },
+        "context": {
+          "text": "CO alarm in the hallway. Nobody's feeling sick. Nobody's currently on site. They are requesting dispatches from an alarm company.",
+          "prompt": "18J16, copy the fire assist. Go ahead 521 West, Lupine Drive, 521 West, Lupine Drive",
+          "duration_seconds": 9.984,
+          "token_limit": 104,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.120000000000001,
+              "text": " CO alarm in the hallway. Nobody's feeling sick. Nobody's currently on site. They are requesting",
+              "avg_logprob": -0.33731984067708254,
+              "no_speech_prob": 0.15383532643318176,
+              "compression_ratio": 1.205607476635514
+            },
+            {
+              "start": 8.120000000000001,
+              "end": 9.56,
+              "text": " dispatches from an alarm company.",
+              "avg_logprob": -0.33731984067708254,
+              "no_speech_prob": 0.15383532643318176,
+              "compression_ratio": 1.205607476635514
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794794761.m4a": {
+      "index": 812,
+      "epoch": 1794794761,
+      "sha256": "46ba865964aa876c79d893e0c478328f5d5eabe4f3e6b90a737b6a3167557f75",
+      "passes": {
+        "original": {
+          "text": "I have a copy, I have a copy, I have a copy, I have a copy",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.6600000000000001,
+              "text": " I have a copy, I have a copy, I have a copy, I have a copy",
+              "avg_logprob": -0.49281216803051175,
+              "no_speech_prob": 0.10896208882331848,
+              "compression_ratio": 2.230769230769231
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'll be out of fire, guys.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.48,
+              "text": " I'll be out of fire, guys.",
+              "avg_logprob": -0.7870983183383942,
+              "no_speech_prob": 0.06693185865879059,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy, I have a fire device.",
+          "prompt": "Go ahead 521 West, Lupine Drive, 521 West, Lupine Drive CO alarm in the hallway, nobody's feeling sick, nobody's currently on site, they are requesting dispatches from an alarm company.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy, I have a fire device.",
+              "avg_logprob": -0.6622524694962935,
+              "no_speech_prob": 0.10191918164491653,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794794763.m4a": {
+      "index": 813,
+      "epoch": 1794794763,
+      "sha256": "d30d2eb85cd386bf7f0a35e19eefcdd782d2f98269b3372567b8ddcfeeb657b9",
+      "passes": {
+        "original": {
+          "text": "Thanks, Abby.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.56,
+              "text": " Thanks, Abby.",
+              "avg_logprob": -0.7880939585821969,
+              "no_speech_prob": 0.022802989929914474,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thanks, Abby.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " Thanks, Abby.",
+              "avg_logprob": -0.6434009926659721,
+              "no_speech_prob": 0.026578575372695923,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "I have a copy.",
+          "prompt": "521 West, Lupine Drive, 521 West, Lupine Drive CO alarm in the hallway, nobody's feeling sick, nobody's currently on site, they are requesting dispatches from an alarm company. I have a copy, I have a copy, I have a copy, I have a copy",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I have a copy.",
+              "avg_logprob": -0.3742653615772724,
+              "no_speech_prob": 0.07314548641443253,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794794809.m4a": {
+      "index": 814,
+      "epoch": 1794794809,
+      "sha256": "186bbb1d18bcae457667f6b319efcc79de66b79345d18acd6580448906730799",
+      "passes": {
+        "original": {
+          "text": "7-j-20, copy disturbance.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-j-20, copy disturbance.",
+              "avg_logprob": -0.8250741759936014,
+              "no_speech_prob": 0.08768010884523392,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7-8, 28 copy disturbance.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.08,
+              "text": " 7-8, 28 copy disturbance.",
+              "avg_logprob": -0.9278220480138605,
+              "no_speech_prob": 0.22224247455596924,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "context": {
+          "text": "I have a copy, I have a copy, I have a copy, I have a copy.",
+          "prompt": "I have a copy, I have a copy, I have a copy, I have a copy Thanks, Abby.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I have a copy, I have a copy, I have a copy, I have a copy.",
+              "avg_logprob": -0.4109217680018881,
+              "no_speech_prob": 0.06093396246433258,
+              "compression_ratio": 2.185185185185185
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794794813.m4a": {
+      "index": 815,
+      "epoch": 1794794813,
+      "sha256": "d3b9403f105e4b5553a649f19ad83926dc228ee721a6e472a8b57d98112177d1",
+      "passes": {
+        "original": {
+          "text": "All right.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " All right.",
+              "avg_logprob": -0.5983567237854004,
+              "no_speech_prob": 0.171042338013649,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "All right.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " All right.",
+              "avg_logprob": -0.6867016355196635,
+              "no_speech_prob": 0.1683335155248642,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "All right.",
+          "prompt": "I have a copy, I have a copy, I have a copy, I have a copy Thanks, Abby. 7-j-20, copy disturbance.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " All right.",
+              "avg_logprob": -0.5789889891942342,
+              "no_speech_prob": 0.12672069668769836,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794794815.m4a": {
+      "index": 816,
+      "epoch": 1794794815,
+      "sha256": "7e4284e431bb2a78e28f8da6f8fb18abaf1b8605d92e85893d5c145ebca39c8a",
+      "passes": {
+        "original": {
+          "text": "210E, 700 South of the Smiths.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 210E, 700 South of the Smiths.",
+              "avg_logprob": -0.7547751023219182,
+              "no_speech_prob": 0.1877903938293457,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "filtered": {
+          "text": "210E7, it's off at the Smiths.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 210E7, it's off at the Smiths.",
+              "avg_logprob": -0.7109749396642049,
+              "no_speech_prob": 0.07688755542039871,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "context": {
+          "text": "210E700, south of the Smiths.",
+          "prompt": "Thanks, Abby. 7-j-20, copy disturbance. All right.",
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 210E700, south of the Smiths.",
+              "avg_logprob": -0.6024883527022141,
+              "no_speech_prob": 0.028255878016352654,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794794820.m4a": {
+      "index": 817,
+      "epoch": 1794794820,
+      "sha256": "64ce2ff6f6c2f7587c672cec031eaccb9c73871121aafe532a597053e7acb342",
+      "passes": {
+        "original": {
+          "text": "Advise there's a male in the parking lot who's being disorderly. He's currently in his vehicle driving erratically around the parking lot Silver vehicle with a black front bumper. They are trying to get the plate They're driving around the parking lot and revving their engine antagonizing people almost hit the cart clerk. They're still gathering. It's a transfer from Metro",
+          "prompt": null,
+          "duration_seconds": 20.608,
+          "token_limit": 189,
+          "token_count": 83,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.68,
+              "text": " Advise there's a male in the parking lot who's being disorderly. He's currently in his vehicle driving erratically around the parking lot",
+              "avg_logprob": -0.271104823975336,
+              "no_speech_prob": 0.017607904970645905,
+              "compression_ratio": 1.7045454545454546
+            },
+            {
+              "start": 6.0,
+              "end": 10.040000000000001,
+              "text": " Silver vehicle with a black front bumper. They are trying to get the plate",
+              "avg_logprob": -0.271104823975336,
+              "no_speech_prob": 0.017607904970645905,
+              "compression_ratio": 1.7045454545454546
+            },
+            {
+              "start": 10.36,
+              "end": 12.88,
+              "text": " They're driving around the parking lot and revving their engine",
+              "avg_logprob": -0.271104823975336,
+              "no_speech_prob": 0.017607904970645905,
+              "compression_ratio": 1.7045454545454546
+            },
+            {
+              "start": 13.36,
+              "end": 20.080000000000002,
+              "text": " antagonizing people almost hit the cart clerk. They're still gathering. It's a transfer from Metro",
+              "avg_logprob": -0.271104823975336,
+              "no_speech_prob": 0.017607904970645905,
+              "compression_ratio": 1.7045454545454546
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Advise there's a male in the parking lot who's being disorderly. He's currently in his vehicle driving radically around the parking lot Silver vehicle with a black front bumper. They are trying to get the plate They're driving around the parking lot and revving their engine antagonizing people almost hit the car clerks are still gathering it the transfer from Metro",
+          "prompt": null,
+          "duration_seconds": 20.608,
+          "token_limit": 189,
+          "token_count": 78,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.72,
+              "text": " Advise there's a male in the parking lot who's being disorderly. He's currently in his vehicle driving radically around the parking lot",
+              "avg_logprob": -0.30118011900141267,
+              "no_speech_prob": 0.04066496342420578,
+              "compression_ratio": 1.7149532710280373
+            },
+            {
+              "start": 6.0,
+              "end": 10.08,
+              "text": " Silver vehicle with a black front bumper. They are trying to get the plate",
+              "avg_logprob": -0.30118011900141267,
+              "no_speech_prob": 0.04066496342420578,
+              "compression_ratio": 1.7149532710280373
+            },
+            {
+              "start": 10.4,
+              "end": 12.9,
+              "text": " They're driving around the parking lot and revving their engine",
+              "avg_logprob": -0.30118011900141267,
+              "no_speech_prob": 0.04066496342420578,
+              "compression_ratio": 1.7149532710280373
+            },
+            {
+              "start": 13.4,
+              "end": 20.1,
+              "text": " antagonizing people almost hit the car clerks are still gathering it the transfer from Metro",
+              "avg_logprob": -0.30118011900141267,
+              "no_speech_prob": 0.04066496342420578,
+              "compression_ratio": 1.7149532710280373
+            }
+          ]
+        },
+        "context": {
+          "text": "Advised there's a male in the parking lot who's being disorderly. He's currently in his vehicle driving radically around the parking lot. Silver vehicle with a black front bumper. They are trying to get the plate. They're driving around the parking lot and revving their engine, antagonizing people. Almost hit the cart clerk. They're still gathering. It's a transfer from Metro.",
+          "prompt": "7-j-20, copy disturbance. All right. 210E, 700 South of the Smiths.",
+          "duration_seconds": 20.608,
+          "token_limit": 189,
+          "token_count": 95,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " Advised there's a male in the parking lot who's being disorderly.",
+              "avg_logprob": -0.25676077386985224,
+              "no_speech_prob": 0.18302951753139496,
+              "compression_ratio": 1.6919642857142858
+            },
+            {
+              "start": 2.64,
+              "end": 6.08,
+              "text": " He's currently in his vehicle driving radically around the parking lot.",
+              "avg_logprob": -0.25676077386985224,
+              "no_speech_prob": 0.18302951753139496,
+              "compression_ratio": 1.6919642857142858
+            },
+            {
+              "start": 6.08,
+              "end": 8.96,
+              "text": " Silver vehicle with a black front bumper.",
+              "avg_logprob": -0.25676077386985224,
+              "no_speech_prob": 0.18302951753139496,
+              "compression_ratio": 1.6919642857142858
+            },
+            {
+              "start": 8.96,
+              "end": 10.64,
+              "text": " They are trying to get the plate.",
+              "avg_logprob": -0.25676077386985224,
+              "no_speech_prob": 0.18302951753139496,
+              "compression_ratio": 1.6919642857142858
+            },
+            {
+              "start": 10.64,
+              "end": 14.64,
+              "text": " They're driving around the parking lot and revving their engine, antagonizing people.",
+              "avg_logprob": -0.25676077386985224,
+              "no_speech_prob": 0.18302951753139496,
+              "compression_ratio": 1.6919642857142858
+            },
+            {
+              "start": 14.64,
+              "end": 16.8,
+              "text": " Almost hit the cart clerk.",
+              "avg_logprob": -0.25676077386985224,
+              "no_speech_prob": 0.18302951753139496,
+              "compression_ratio": 1.6919642857142858
+            },
+            {
+              "start": 16.8,
+              "end": 17.76,
+              "text": " They're still gathering.",
+              "avg_logprob": -0.25676077386985224,
+              "no_speech_prob": 0.18302951753139496,
+              "compression_ratio": 1.6919642857142858
+            },
+            {
+              "start": 17.76,
+              "end": 20.240000000000002,
+              "text": " It's a transfer from Metro.",
+              "avg_logprob": -0.25676077386985224,
+              "no_speech_prob": 0.18302951753139496,
+              "compression_ratio": 1.6919642857142858
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794794851.m4a": {
+      "index": 818,
+      "epoch": 1794794851,
+      "sha256": "b790f857cce4c6a787445e6cbd2c23b10c755dad0a12fbc9dd5e944e76487e8f",
+      "passes": {
+        "original": {
+          "text": "76, I'll be around in about 12.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.48,
+              "text": " 76, I'll be around in about 12.",
+              "avg_logprob": -0.6429888835320106,
+              "no_speech_prob": 0.05893635004758835,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "filtered": {
+          "text": "76, I'll be around in about 12.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.44,
+              "text": " 76, I'll be around in about 12.",
+              "avg_logprob": -0.6282552755795993,
+              "no_speech_prob": 0.05176285654306412,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "context": {
+          "text": "It's 76, I'll be around in about 12",
+          "prompt": "All right. 210E, 700 South of the Smiths. Advise there's a male in the parking lot who's being disorderly. He's currently in his vehicle driving erratically around the parking lot Silver vehicle with a black front bumper. They are trying to get the plate They're driving around the parking lot and revving their engine antagonizing people almost hit the cart clerk. They're still gathering. It's a transfer from Metro",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.56,
+              "text": " It's 76, I'll be around in about 12",
+              "avg_logprob": -0.6147761161510761,
+              "no_speech_prob": 0.00796445645391941,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794794853.m4a": {
+      "index": 819,
+      "epoch": 1794794853,
+      "sha256": "ffba3224d89aaa6d01436b6e624f2da8504501e577a83b3c2dd0dcb4db6f1a1d",
+      "passes": {
+        "original": {
+          "text": "Seventy-six.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Seventy-six.",
+              "avg_logprob": -0.7915849462151527,
+              "no_speech_prob": 0.07195024937391281,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Seventy-six.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Seventy-six.",
+              "avg_logprob": -0.6687871068716049,
+              "no_speech_prob": 0.08036573231220245,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "726.",
+          "prompt": "210E, 700 South of the Smiths. Advise there's a male in the parking lot who's being disorderly. He's currently in his vehicle driving erratically around the parking lot Silver vehicle with a black front bumper. They are trying to get the plate They're driving around the parking lot and revving their engine antagonizing people almost hit the cart clerk. They're still gathering. It's a transfer from Metro 76, I'll be around in about 12.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 726.",
+              "avg_logprob": -0.7819301386674246,
+              "no_speech_prob": 0.10270816832780838,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794794861.m4a": {
+      "index": 820,
+      "epoch": 1794794861,
+      "sha256": "93983724000414df129b0cbc86ae8533baa9c207b7248fc3ff257de6a0dc89f0",
+      "passes": {
+        "original": {
+          "text": "21",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 21",
+              "avg_logprob": -0.5634856671094894,
+              "no_speech_prob": 0.030159009620547295,
+              "compression_ratio": 0.2
+            }
+          ]
+        },
+        "filtered": {
+          "text": "21",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 21",
+              "avg_logprob": -0.5821816474199295,
+              "no_speech_prob": 0.08038365840911865,
+              "compression_ratio": 0.2
+            }
+          ]
+        },
+        "context": {
+          "text": "Twenty-one.",
+          "prompt": "Advise there's a male in the parking lot who's being disorderly. He's currently in his vehicle driving erratically around the parking lot Silver vehicle with a black front bumper. They are trying to get the plate They're driving around the parking lot and revving their engine antagonizing people almost hit the cart clerk. They're still gathering. It's a transfer from Metro 76, I'll be around in about 12. Seventy-six.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Twenty-one.",
+              "avg_logprob": -0.4438208341598511,
+              "no_speech_prob": 0.009104203432798386,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    }
+  }
+}
