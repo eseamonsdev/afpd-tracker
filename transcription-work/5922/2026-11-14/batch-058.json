@@ -1,0 +1,665 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-14",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794685121.m4a": {
+      "index": 571,
+      "epoch": 1794685121,
+      "sha256": "7c154fd2a865180a1003b056605b8aa7e250e7dcae1e2b464949b9a6ffbf17f4",
+      "passes": {
+        "original": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.2,
+              "text": " Thank you.",
+              "avg_logprob": -0.8139130969842275,
+              "no_speech_prob": 0.1846623718738556,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.8090933886441317,
+              "no_speech_prob": 0.49640706181526184,
+              "compression_ratio": 1.0
+            },
+            {
+              "start": 1.0,
+              "end": 1.2,
+              "text": " Thank you.",
+              "avg_logprob": -0.8090933886441317,
+              "no_speech_prob": 0.49640706181526184,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you.",
+          "prompt": "I'm J-22 with the unit number. They said Diaz and Delta, see if they can confirm that. I copy, I believe that's correct.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.70717121164004,
+              "no_speech_prob": 0.25337478518486023,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794685128.m4a": {
+      "index": 572,
+      "epoch": 1794685128,
+      "sha256": "5f34ab3c15618e43d73716d26ae9a9f6376e80c155bd975e3d6608b4616d054c",
+      "passes": {
+        "original": {
+          "text": "Let's have a J22. Just 10.14. She is still unconscious, still breathing. He believes that she took cold medicine, but still unknown if it was intentional.",
+          "prompt": null,
+          "duration_seconds": 11.52,
+          "token_limit": 117,
+          "token_count": 38,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 11.0,
+              "text": " Let's have a J22. Just 10.14. She is still unconscious, still breathing. He believes that she took cold medicine, but still unknown if it was intentional.",
+              "avg_logprob": -0.2781710853943458,
+              "no_speech_prob": 0.009833543561398983,
+              "compression_ratio": 1.2419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Let's have a J-22. Just 10-14. She is still unconscious, still breathing. He believes that she took cold medicine, but still unknown if it was intentional.",
+          "prompt": null,
+          "duration_seconds": 11.52,
+          "token_limit": 117,
+          "token_count": 41,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.72,
+              "text": " Let's have a J-22. Just 10-14. She is still unconscious, still breathing. He believes",
+              "avg_logprob": -0.33997707068920135,
+              "no_speech_prob": 0.013529494404792786,
+              "compression_ratio": 1.24
+            },
+            {
+              "start": 6.72,
+              "end": 11.040000000000001,
+              "text": " that she took cold medicine, but still unknown if it was intentional.",
+              "avg_logprob": -0.33997707068920135,
+              "no_speech_prob": 0.013529494404792786,
+              "compression_ratio": 1.24
+            }
+          ]
+        },
+        "context": {
+          "text": "Let's have a J-22. Just 10-14. She is still unconscious, still breathing. He believes that she took cold medicine, but still unknown if it was intentional.",
+          "prompt": "They said Diaz and Delta, see if they can confirm that. I copy, I believe that's correct. Thank you.",
+          "duration_seconds": 11.52,
+          "token_limit": 117,
+          "token_count": 39,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 11.0,
+              "text": " Let's have a J-22. Just 10-14. She is still unconscious, still breathing. He believes that she took cold medicine, but still unknown if it was intentional.",
+              "avg_logprob": -0.22974219024181367,
+              "no_speech_prob": 0.009014776907861233,
+              "compression_ratio": 1.24
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794685143.m4a": {
+      "index": 573,
+      "epoch": 1794685143,
+      "sha256": "cb3653d2b7fb7f132f01a3d27be3f31873fe687dbfd9fe9f71b3a15b5648c057",
+      "passes": {
+        "original": {
+          "text": "I copy. I'm ready. Go for it.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I copy. I'm ready.",
+              "avg_logprob": -0.5359233543276787,
+              "no_speech_prob": 0.062356866896152496,
+              "compression_ratio": 0.8285714285714286
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.5359233543276787,
+              "no_speech_prob": 0.062356866896152496,
+              "compression_ratio": 0.8285714285714286
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I copy, I'm ready.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I copy, I'm ready.",
+              "avg_logprob": -0.669101232290268,
+              "no_speech_prob": 0.11421986669301987,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "context": {
+          "text": "I copy, I'm ready.",
+          "prompt": "I copy, I believe that's correct. Thank you. Let's have a J22. Just 10.14. She is still unconscious, still breathing. He believes that she took cold medicine, but still unknown if it was intentional.",
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I copy, I'm ready.",
+              "avg_logprob": -0.4726466417312622,
+              "no_speech_prob": 0.04488858953118324,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794685148.m4a": {
+      "index": 574,
+      "epoch": 1794685148,
+      "sha256": "e0d251300c72441d69c1a15455544cc1139b9475c1b5d5fefa7e34b3eb953e30",
+      "passes": {
+        "original": {
+          "text": "We'll do a J8 arrive.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " We'll do a J8 arrive.",
+              "avg_logprob": -0.8391440998424183,
+              "no_speech_prob": 0.10158334672451019,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We did it, right?",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " We did it, right?",
+              "avg_logprob": -0.7897089852227105,
+              "no_speech_prob": 0.0843493640422821,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "Do a J8 arrive.",
+          "prompt": "Thank you. Let's have a J22. Just 10.14. She is still unconscious, still breathing. He believes that she took cold medicine, but still unknown if it was intentional. I copy. I'm ready. Go for it.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Do a J8 arrive.",
+              "avg_logprob": -0.5932201279534234,
+              "no_speech_prob": 0.034463729709386826,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794685151.m4a": {
+      "index": 575,
+      "epoch": 1794685151,
+      "sha256": "9549865b0ff30c5f339ad55a0b41ec709134ed0652b0a02efec6628971f2ec67",
+      "passes": {
+        "original": {
+          "text": "7-j-8.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-j-8.",
+              "avg_logprob": -0.7373464902242025,
+              "no_speech_prob": 0.04407358169555664,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7-j-8.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 7-j-8.",
+              "avg_logprob": -0.7341801855299208,
+              "no_speech_prob": 0.041239865124225616,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "7J8.",
+          "prompt": "Let's have a J22. Just 10.14. She is still unconscious, still breathing. He believes that she took cold medicine, but still unknown if it was intentional. I copy. I'm ready. Go for it. We'll do a J8 arrive.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 7J8.",
+              "avg_logprob": -0.5857520954949516,
+              "no_speech_prob": 0.04498291015625,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794685211.m4a": {
+      "index": 576,
+      "epoch": 1794685211,
+      "sha256": "0b3ce1ef4a7147582511610c13f2ee47403b951517071d4ea12dccd10d25e879",
+      "passes": {
+        "original": {
+          "text": "7J22, the patient is conscious and breathing 85, alpha.",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 7J22, the patient is conscious and breathing 85, alpha.",
+              "avg_logprob": -0.4841585159301758,
+              "no_speech_prob": 0.02129388600587845,
+              "compression_ratio": 0.873015873015873
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J22, the patient is conscious and breathing 85 alpha.",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.68,
+              "text": " 7J22, the patient is conscious and breathing 85 alpha.",
+              "avg_logprob": -0.404923427850008,
+              "no_speech_prob": 0.01372381579130888,
+              "compression_ratio": 0.8709677419354839
+            }
+          ]
+        },
+        "context": {
+          "text": "7-j-22. The patient is conscious and breathing 85-alpha.",
+          "prompt": "7-j-8.",
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " 7-j-22. The patient is conscious and breathing 85-alpha.",
+              "avg_logprob": -0.36176415493613795,
+              "no_speech_prob": 0.01886584796011448,
+              "compression_ratio": 0.875
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794685413.m4a": {
+      "index": 577,
+      "epoch": 1794685413,
+      "sha256": "cc42fa292dc73b699228b44931ceba480fa731bdc8320c8fc66b06e0c6c6b238",
+      "passes": {
+        "original": {
+          "text": "7 to 8 tonight.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7 to 8 tonight.",
+              "avg_logprob": -0.7236780598759651,
+              "no_speech_prob": 0.15327465534210205,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7 to 8 tonight.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7 to 8 tonight.",
+              "avg_logprob": -0.7536908984184265,
+              "no_speech_prob": 0.09830064326524734,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "7 to 8 tonight.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7 to 8 tonight.",
+              "avg_logprob": -0.7236780598759651,
+              "no_speech_prob": 0.15327465534210205,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794685417.m4a": {
+      "index": 578,
+      "epoch": 1794685417,
+      "sha256": "654f8d3f0f4fe1487350b666bbc415d9f0d282a52a2b0bcd0f08d75e1038811d",
+      "passes": {
+        "original": {
+          "text": "That's it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " That's it.",
+              "avg_logprob": -0.8787223270961216,
+              "no_speech_prob": 0.2489084154367447,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "That's right.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " That's right.",
+              "avg_logprob": -0.78436165196555,
+              "no_speech_prob": 0.1270221620798111,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "That's fine.",
+          "prompt": "7 to 8 tonight.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " That's fine.",
+              "avg_logprob": -0.9559693336486816,
+              "no_speech_prob": 0.27319851517677307,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794685525.m4a": {
+      "index": 579,
+      "epoch": 1794685525,
+      "sha256": "c0977a8f07054754ea9dce043667b64099d5d1f8a5458b4e4f1cdd9c6a515d1b",
+      "passes": {
+        "original": {
+          "text": "78, I can call on 491.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.24,
+              "text": " 78, I can call on 491.",
+              "avg_logprob": -0.40686313807964325,
+              "no_speech_prob": 0.12618741393089294,
+              "compression_ratio": 0.7857142857142857
+            }
+          ]
+        },
+        "filtered": {
+          "text": "78 I can call on 491",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.94,
+              "text": " 78 I can call on 491",
+              "avg_logprob": -0.4595134735107422,
+              "no_speech_prob": 0.04580044373869896,
+              "compression_ratio": 0.7692307692307693
+            }
+          ]
+        },
+        "context": {
+          "text": "78, I can call on 491.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.24,
+              "text": " 78, I can call on 491.",
+              "avg_logprob": -0.40686313807964325,
+              "no_speech_prob": 0.12618741393089294,
+              "compression_ratio": 0.7857142857142857
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794685538.m4a": {
+      "index": 580,
+      "epoch": 1794685538,
+      "sha256": "d6d87a6eba95dcbb18e4926440f96517df6f5aa3015fc4bd69f1b2bba4b62b06",
+      "passes": {
+        "original": {
+          "text": "7J22, clear.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J22, clear.",
+              "avg_logprob": -0.46532132890489364,
+              "no_speech_prob": 0.049622613936662674,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J22, clear.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J22, clear.",
+              "avg_logprob": -0.5995425118340386,
+              "no_speech_prob": 0.016232484951615334,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "7J22, clear.",
+          "prompt": "78, I can call on 491.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J22, clear.",
+              "avg_logprob": -0.47470808029174805,
+              "no_speech_prob": 0.023032166063785553,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    }
+  }
+}

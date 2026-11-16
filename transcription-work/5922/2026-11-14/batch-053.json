@@ -1,0 +1,689 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-14",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794682454.m4a": {
+      "index": 521,
+      "epoch": 1794682454,
+      "sha256": "0e93950116d5f49b5181dec1adb3f34eb3ddcb52b35d68eda6cb35512af42c12",
+      "passes": {
+        "original": {
+          "text": "Sorry about that. It is 7J.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0200000000000005,
+              "text": " Sorry about that. It is 7J.",
+              "avg_logprob": -0.26859350750843686,
+              "no_speech_prob": 0.017153413966298103,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Sorry about that. It is 7-J.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Sorry about that.",
+              "avg_logprob": -0.46683878898620607,
+              "no_speech_prob": 0.00896109826862812,
+              "compression_ratio": 0.7777777777777778
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " It is 7-J.",
+              "avg_logprob": -0.46683878898620607,
+              "no_speech_prob": 0.00896109826862812,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "context": {
+          "text": "Sorry about that. It is 7J.",
+          "prompt": "7J18 clear. Copy. 5J35 just confirmed. Is this going to be a 5J call or is this going to be a subject?",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Sorry about that. It is 7J.",
+              "avg_logprob": -0.21938737109303474,
+              "no_speech_prob": 0.0016360373701900244,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794682461.m4a": {
+      "index": 522,
+      "epoch": 1794682461,
+      "sha256": "ab589e3cafc732215c678195153cbf11a9b59a1e0608bf4a04b066f5adada542",
+      "passes": {
+        "original": {
+          "text": "7J22, can you copy the residential alarm?",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.5,
+              "text": " 7J22, can you copy the residential alarm?",
+              "avg_logprob": -0.3939061143568584,
+              "no_speech_prob": 0.003519359976053238,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J22, can you copy the residential alarm?",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.5,
+              "text": " 7J22, can you copy the residential alarm?",
+              "avg_logprob": -0.37930970958300997,
+              "no_speech_prob": 0.0021397487726062536,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        },
+        "context": {
+          "text": "7J22, can you copy the residential alarm?",
+          "prompt": "Copy. 5J35 just confirmed. Is this going to be a 5J call or is this going to be a subject? Sorry about that. It is 7J.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.48,
+              "text": " 7J22, can you copy the residential alarm?",
+              "avg_logprob": -0.2880686819553375,
+              "no_speech_prob": 0.0017697436269372702,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794682464.m4a": {
+      "index": 523,
+      "epoch": 1794682464,
+      "sha256": "81a58bfb00659678033a6a9610d2cf72117309bd45a9a85111946215ebcf8825",
+      "passes": {
+        "original": {
+          "text": "Affirm.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Affirm.",
+              "avg_logprob": -0.781260480483373,
+              "no_speech_prob": 0.048258520662784576,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "All right. All right. All right. All right.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " All right.",
+              "avg_logprob": -0.6099506786891392,
+              "no_speech_prob": 0.048177510499954224,
+              "compression_ratio": 1.9545454545454546
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " All right.",
+              "avg_logprob": -0.6099506786891392,
+              "no_speech_prob": 0.048177510499954224,
+              "compression_ratio": 1.9545454545454546
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " All right.",
+              "avg_logprob": -0.6099506786891392,
+              "no_speech_prob": 0.048177510499954224,
+              "compression_ratio": 1.9545454545454546
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " All right.",
+              "avg_logprob": -0.6099506786891392,
+              "no_speech_prob": 0.048177510499954224,
+              "compression_ratio": 1.9545454545454546
+            }
+          ]
+        },
+        "context": {
+          "text": "Affirm.",
+          "prompt": "5J35 just confirmed. Is this going to be a 5J call or is this going to be a subject? Sorry about that. It is 7J. 7J22, can you copy the residential alarm?",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Affirm.",
+              "avg_logprob": -0.5920154352982839,
+              "no_speech_prob": 0.025924568995833397,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794682468.m4a": {
+      "index": 524,
+      "epoch": 1794682468,
+      "sha256": "3748ffb14620124395d42912b53795e594dbd4165bb77c1e9a58700e1efda5b1",
+      "passes": {
+        "original": {
+          "text": "Have a great day. Bye.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Have a great day.",
+              "avg_logprob": -0.855930099884669,
+              "no_speech_prob": 0.36353790760040283,
+              "compression_ratio": 0.7333333333333333
+            },
+            {
+              "start": 1.0,
+              "end": 1.02,
+              "text": " Bye.",
+              "avg_logprob": -0.855930099884669,
+              "no_speech_prob": 0.36353790760040283,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.7661909406835382,
+              "no_speech_prob": 0.41794726252555847,
+              "compression_ratio": 1.0
+            },
+            {
+              "start": 1.0,
+              "end": 1.02,
+              "text": " Thank you.",
+              "avg_logprob": -0.7661909406835382,
+              "no_speech_prob": 0.41794726252555847,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "Affirm.",
+          "prompt": "Sorry about that. It is 7J. 7J22, can you copy the residential alarm? Affirm.",
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Affirm.",
+              "avg_logprob": -0.41900570193926495,
+              "no_speech_prob": 0.19116757810115814,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794682627.m4a": {
+      "index": 525,
+      "epoch": 1794682627,
+      "sha256": "e7e68bb744b849f860ae44c091c7e70cba49d774577c98fa1fd5c4dd51578516",
+      "passes": {
+        "original": {
+          "text": "Hey, GJ-20 Traveler.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey, GJ-20 Traveler.",
+              "avg_logprob": -0.9199356337388357,
+              "no_speech_prob": 0.016621768474578857,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18K20 traffic.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0200000000000005,
+              "text": " 18K20 traffic.",
+              "avg_logprob": -0.7594236731529236,
+              "no_speech_prob": 0.02550024911761284,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey, GJ-20 Traveler.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey, GJ-20 Traveler.",
+              "avg_logprob": -0.9199356337388357,
+              "no_speech_prob": 0.016621768474578857,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794682630.m4a": {
+      "index": 526,
+      "epoch": 1794682630,
+      "sha256": "a7d74cdb75a4cffb5af151a7d649fbc2513b6b5151d4a73892db61b84bdd108f",
+      "passes": {
+        "original": {
+          "text": "Come on.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Come on.",
+              "avg_logprob": -0.8485862612724304,
+              "no_speech_prob": 0.11060657352209091,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.6437958776950836,
+              "no_speech_prob": 0.07551810890436172,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Come on in.",
+          "prompt": "Hey, GJ-20 Traveler.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Come on in.",
+              "avg_logprob": -0.6097172498703003,
+              "no_speech_prob": 0.03212600201368332,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794682632.m4a": {
+      "index": 527,
+      "epoch": 1794682632,
+      "sha256": "2aa80e045392e97913decbe407e44831a557a9f3e3e859a7fe615c1bfdda1ee7",
+      "passes": {
+        "original": {
+          "text": "Park drive and tip my way on vocal victory four two seven seven mama papa.",
+          "prompt": null,
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.8,
+              "text": " Park drive and tip my way on vocal victory four two seven seven mama papa.",
+              "avg_logprob": -0.7946466831933885,
+              "no_speech_prob": 0.06859783083200455,
+              "compression_ratio": 1.0422535211267605
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Park Drive and tip my way on Vocal X-ray 427-7 ring my papa.",
+          "prompt": null,
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Park Drive and tip my way on Vocal X-ray 427-7 ring my papa.",
+              "avg_logprob": -0.8032990434895391,
+              "no_speech_prob": 0.1003870740532875,
+              "compression_ratio": 0.9375
+            }
+          ]
+        },
+        "context": {
+          "text": "Park drive and tip my way on local Victory 427.",
+          "prompt": "Hey, GJ-20 Traveler. Come on.",
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Park drive and tip my way on local Victory 427.",
+              "avg_logprob": -0.8141399366515023,
+              "no_speech_prob": 0.01844704896211624,
+              "compression_ratio": 0.8545454545454545
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794682640.m4a": {
+      "index": 528,
+      "epoch": 1794682640,
+      "sha256": "23e3c6efc2a508154a923e28bb6113cc576a0e9311b8f283786a49e1b38022fa",
+      "passes": {
+        "original": {
+          "text": "Happy 1157.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy 1157.",
+              "avg_logprob": -0.4696529081889561,
+              "no_speech_prob": 0.009711750783026218,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy 1157.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy 1157.",
+              "avg_logprob": -0.42988908290863037,
+              "no_speech_prob": 0.011630060151219368,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy 1157.",
+          "prompt": "Hey, GJ-20 Traveler. Come on. Park drive and tip my way on vocal victory four two seven seven mama papa.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.72,
+              "text": " Happy 1157.",
+              "avg_logprob": -0.40442521231515066,
+              "no_speech_prob": 0.004376955330371857,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794682779.m4a": {
+      "index": 529,
+      "epoch": 1794682779,
+      "sha256": "fd2a07b203a69b4839be68b9a24367be4221552d76550b90a5836bf9a749906c",
+      "passes": {
+        "original": {
+          "text": "78, I'll be out on the alarm.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.36,
+              "text": " 78, I'll be out on the alarm.",
+              "avg_logprob": -0.4655465896313007,
+              "no_speech_prob": 0.061243511736392975,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        },
+        "filtered": {
+          "text": "78, I'll be out on the other one.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.36,
+              "text": " 78, I'll be out on the other one.",
+              "avg_logprob": -0.5780300157410758,
+              "no_speech_prob": 0.06349063664674759,
+              "compression_ratio": 0.8918918918918919
+            }
+          ]
+        },
+        "context": {
+          "text": "78, I'll be out on the alarm.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.36,
+              "text": " 78, I'll be out on the alarm.",
+              "avg_logprob": -0.4655465896313007,
+              "no_speech_prob": 0.061243511736392975,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794682783.m4a": {
+      "index": 530,
+      "epoch": 1794682783,
+      "sha256": "bc5dc6977ff9678a8dbb44f7cac1829f0a459376fb66d9afdd35f66913288bf5",
+      "passes": {
+        "original": {
+          "text": "Coming.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Coming.",
+              "avg_logprob": -0.9683746337890625,
+              "no_speech_prob": 0.020587343722581863,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Coming.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Coming.",
+              "avg_logprob": -0.6567348003387451,
+              "no_speech_prob": 0.04507502540946007,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "78, I'll be out on the alarm.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7700360298156739,
+              "no_speech_prob": 0.017965467646718025,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
