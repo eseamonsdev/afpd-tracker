@@ -1,0 +1,665 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-14",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1794708654.m4a": {
+      "index": 181,
+      "epoch": 1794708654,
+      "sha256": "3ed89c57abdd119018cd8bc9b5b60067ab2c4269c75f7b2f2692c77d79aac5e0",
+      "passes": {
+        "original": {
+          "text": "Like that guy, you know, so you'll become worse. Thank you.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Like that guy, you know, so you'll become worse.",
+              "avg_logprob": -0.7921093418484643,
+              "no_speech_prob": 0.04070637747645378,
+              "compression_ratio": 0.9516129032258065
+            },
+            {
+              "start": 4.0,
+              "end": 5.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.7921093418484643,
+              "no_speech_prob": 0.04070637747645378,
+              "compression_ratio": 0.9516129032258065
+            }
+          ]
+        },
+        "filtered": {
+          "text": "My best guy, he was trying to become worse. Thank you.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " My best guy, he was trying to become worse. Thank you.",
+              "avg_logprob": -0.700340607587029,
+              "no_speech_prob": 0.029149629175662994,
+              "compression_ratio": 0.9152542372881356
+            }
+          ]
+        },
+        "context": {
+          "text": "Like that guy, you know, trying to become worse. Thank you.",
+          "prompt": "Anybody finding Walmart areas? I could be there in a couple minutes just finishing up on the stuff.",
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.74,
+              "text": " Like that guy, you know, trying to become worse. Thank you.",
+              "avg_logprob": -0.7300959759288363,
+              "no_speech_prob": 0.02208227664232254,
+              "compression_ratio": 0.9076923076923077
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794708665.m4a": {
+      "index": 182,
+      "epoch": 1794708665,
+      "sha256": "608272e413df1eae6ea76576e7d43e84eadbff229a35dfe39a82819b98710dd5",
+      "passes": {
+        "original": {
+          "text": "Sorry, what did you mean?",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Sorry, what did you mean?",
+              "avg_logprob": -0.4154905378818512,
+              "no_speech_prob": 0.18298661708831787,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Sorry. What did you mean?",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Sorry. What did you mean?",
+              "avg_logprob": -0.4121163457632065,
+              "no_speech_prob": 0.08117688447237015,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "context": {
+          "text": "Sorry, what did you mean?",
+          "prompt": "Anybody finding Walmart areas? I could be there in a couple minutes just finishing up on the stuff. Like that guy, you know, so you'll become worse. Thank you.",
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Sorry, what did you mean?",
+              "avg_logprob": -0.3742059230804443,
+              "no_speech_prob": 0.05570752173662186,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794708685.m4a": {
+      "index": 183,
+      "epoch": 1794708685,
+      "sha256": "3bda8f85656eada7d42e52ec3fd1730d75642ac5219312bc66ca3a3d85ce5ef4",
+      "passes": {
+        "original": {
+          "text": "I'll have that one.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'll have that one.",
+              "avg_logprob": -0.7500525580512153,
+              "no_speech_prob": 0.12888646125793457,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'll head that way.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'll head that way.",
+              "avg_logprob": -0.5834896829393175,
+              "no_speech_prob": 0.14340339601039886,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "I'll have that one.",
+          "prompt": "I could be there in a couple minutes just finishing up on the stuff. Like that guy, you know, so you'll become worse. Thank you. Sorry, what did you mean?",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'll have that one.",
+              "avg_logprob": -0.6019075181749132,
+              "no_speech_prob": 0.06174178794026375,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794708690.m4a": {
+      "index": 184,
+      "epoch": 1794708690,
+      "sha256": "a6d6d175aeeef11fb55bcd03ce841d0b37ee4f71bf6c183634749602fdacbbe6",
+      "passes": {
+        "original": {
+          "text": "I can come to the area too, but I'm coming from North County, 700 north.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.38,
+              "text": " I can come to the area too, but I'm coming from North County, 700 north.",
+              "avg_logprob": -0.453654019670053,
+              "no_speech_prob": 0.019595693796873093,
+              "compression_ratio": 0.972972972972973
+            }
+          ]
+        },
+        "filtered": {
+          "text": "That can come to the area, too, but I'm coming from North County, 700-",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " That can come to the area, too, but I'm coming from North County, 700-",
+              "avg_logprob": -0.44976417042992334,
+              "no_speech_prob": 0.018996139988303185,
+              "compression_ratio": 0.9459459459459459
+            }
+          ]
+        },
+        "context": {
+          "text": "That can come to the area, too, but I'm coming from North County, 700 North.",
+          "prompt": "Like that guy, you know, so you'll become worse. Thank you. Sorry, what did you mean? I'll have that one.",
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.4,
+              "text": " That can come to the area, too, but I'm coming from North County, 700 North.",
+              "avg_logprob": -0.3896547840989154,
+              "no_speech_prob": 0.013613763265311718,
+              "compression_ratio": 1.0
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794708697.m4a": {
+      "index": 185,
+      "epoch": 1794708697,
+      "sha256": "44e87d4e0d572788b190ccf998391d0d76eaa5249c65c745f6ffaaab9c35c7c2",
+      "passes": {
+        "original": {
+          "text": "Okay, he moved from his original parking spot, so I thought he was going mobile. So I moved, but then he re-parted again. So I think he's trying to bait me out.",
+          "prompt": null,
+          "duration_seconds": 11.776,
+          "token_limit": 119,
+          "token_count": 46,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Okay, he moved from his original parking spot, so I thought he was going mobile.",
+              "avg_logprob": -0.2580810569702311,
+              "no_speech_prob": 0.025777116417884827,
+              "compression_ratio": 1.3008130081300813
+            },
+            {
+              "start": 6.0,
+              "end": 12.0,
+              "text": " So I moved, but then he re-parted again. So I think he's trying to bait me out.",
+              "avg_logprob": -0.2580810569702311,
+              "no_speech_prob": 0.025777116417884827,
+              "compression_ratio": 1.3008130081300813
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Okay, he moved from his original parking spot, so I thought he was going mobile, so I moved, but then he re-parted again, so I think he's trying to bait me out.",
+          "prompt": null,
+          "duration_seconds": 11.776,
+          "token_limit": 119,
+          "token_count": 46,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.76,
+              "text": " Okay, he moved from his original parking spot, so I thought he was going mobile, so I moved,",
+              "avg_logprob": -0.2787152757035925,
+              "no_speech_prob": 0.037777140736579895,
+              "compression_ratio": 1.3333333333333333
+            },
+            {
+              "start": 7.76,
+              "end": 11.1,
+              "text": " but then he re-parted again, so I think he's trying to bait me out.",
+              "avg_logprob": -0.2787152757035925,
+              "no_speech_prob": 0.037777140736579895,
+              "compression_ratio": 1.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Okay, he moved from his original parking spot, so I thought he was going mobile. So I moved, but then he re-parked again. So I think he's trying to bait me out.",
+          "prompt": "Sorry, what did you mean? I'll have that one. I can come to the area too, but I'm coming from North County, 700 north.",
+          "duration_seconds": 11.776,
+          "token_limit": 119,
+          "token_count": 44,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 11.0,
+              "text": " Okay, he moved from his original parking spot, so I thought he was going mobile. So I moved, but then he re-parked again. So I think he's trying to bait me out.",
+              "avg_logprob": -0.2117093006769816,
+              "no_speech_prob": 0.0396420881152153,
+              "compression_ratio": 1.3114754098360655
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794709062.m4a": {
+      "index": 186,
+      "epoch": 1794709062,
+      "sha256": "76b4ed8e7edbd7d0dff7c33726b1b5a8bdda3f915e1d12478874245bfb54ee82",
+      "passes": {
+        "original": {
+          "text": "Ah, I can tell those are bypass marks, but I'll break that.",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Ah, I can tell those are bypass marks, but I'll break that.",
+              "avg_logprob": -0.4481135826361807,
+              "no_speech_prob": 0.10743165761232376,
+              "compression_ratio": 0.9076923076923077
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hawkins, those are my pets Mark, but I'll break set.",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Hawkins, those are my pets Mark, but I'll break set.",
+              "avg_logprob": -0.49792104608872356,
+              "no_speech_prob": 0.05656355991959572,
+              "compression_ratio": 0.8666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Ah, I can tell those are bypass marks, but I'll break that.",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Ah, I can tell those are bypass marks, but I'll break that.",
+              "avg_logprob": -0.4481135826361807,
+              "no_speech_prob": 0.10743165761232376,
+              "compression_ratio": 0.9076923076923077
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794709074.m4a": {
+      "index": 187,
+      "epoch": 1794709074,
+      "sha256": "6cde7c877a1c8af7b25c4ca36221850e630f9735999b9ab99e65e079fa2bf99a",
+      "passes": {
+        "original": {
+          "text": "Got mail, can we bring that?",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Got mail, can we bring that?",
+              "avg_logprob": -0.8062164891849865,
+              "no_speech_prob": 0.121676504611969,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy. I'll come to you for then.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy. I'll come to you for then.",
+              "avg_logprob": -0.6648414868574876,
+              "no_speech_prob": 0.06594270467758179,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "context": {
+          "text": "Got mail, can we bring that?",
+          "prompt": "Ah, I can tell those are bypass marks, but I'll break that.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Got mail, can we bring that?",
+              "avg_logprob": -0.5907760425047441,
+              "no_speech_prob": 0.02472660318017006,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794709077.m4a": {
+      "index": 188,
+      "epoch": 1794709077,
+      "sha256": "996d420d54c387d832875bf789e4c73dd98b0aed49b01515f38de13a4af5f572",
+      "passes": {
+        "original": {
+          "text": "If you guys like another",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " If you guys like another",
+              "avg_logprob": -0.34076644107699394,
+              "no_speech_prob": 0.02354130707681179,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Do you guys like another?",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Do you guys like another?",
+              "avg_logprob": -0.33388439814249676,
+              "no_speech_prob": 0.032503217458724976,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "context": {
+          "text": "Would you guys like another?",
+          "prompt": "Ah, I can tell those are bypass marks, but I'll break that. Got mail, can we bring that?",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Would you guys like another?",
+              "avg_logprob": -0.35054288970099556,
+              "no_speech_prob": 0.0019354684045538306,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794709082.m4a": {
+      "index": 189,
+      "epoch": 1794709082,
+      "sha256": "f90003fd504def232ff442c98a9cd728022be7a25914ad161652e945ca75500a",
+      "passes": {
+        "original": {
+          "text": "I'm watching them on the CCTV.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.16,
+              "text": " I'm watching them on the CCTV.",
+              "avg_logprob": -0.4778546094894409,
+              "no_speech_prob": 0.049442581832408905,
+              "compression_ratio": 0.8571428571428571
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm watching them on the CCTV.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2,
+              "text": " I'm watching them on the CCTV.",
+              "avg_logprob": -0.3575629266825589,
+              "no_speech_prob": 0.05302278697490692,
+              "compression_ratio": 0.8571428571428571
+            }
+          ]
+        },
+        "context": {
+          "text": "video, I'm watching them on the CCTV.",
+          "prompt": "Ah, I can tell those are bypass marks, but I'll break that. Got mail, can we bring that? If you guys like another",
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.16,
+              "text": " video, I'm watching them on the CCTV.",
+              "avg_logprob": -0.5739220289083627,
+              "no_speech_prob": 0.030676979571580887,
+              "compression_ratio": 0.8809523809523809
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794709091.m4a": {
+      "index": 190,
+      "epoch": 1794709091,
+      "sha256": "30e2397b5ec9be523dd8c6b30ab775625e654b85b0124bf24125128ed7eac794",
+      "passes": {
+        "original": {
+          "text": "Okay, I'll just keep hanging out in your test mark.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Okay, I'll just keep hanging out in your test mark.",
+              "avg_logprob": -0.4663700144737959,
+              "no_speech_prob": 0.008157968521118164,
+              "compression_ratio": 0.8793103448275862
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Okay, I'll just keep hanging out in your test mark.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Okay, I'll just keep hanging out in your test mark.",
+              "avg_logprob": -0.43305812403559685,
+              "no_speech_prob": 0.004492389969527721,
+              "compression_ratio": 0.8793103448275862
+            }
+          ]
+        },
+        "context": {
+          "text": "Okay, I'll just keep hanging out in your test mark.",
+          "prompt": "Got mail, can we bring that? If you guys like another I'm watching them on the CCTV.",
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Okay, I'll just keep hanging out in your test mark.",
+              "avg_logprob": -0.534930881112814,
+              "no_speech_prob": 0.021491331979632378,
+              "compression_ratio": 0.8793103448275862
+            }
+          ]
+        }
+      }
+    }
+  }
+}
