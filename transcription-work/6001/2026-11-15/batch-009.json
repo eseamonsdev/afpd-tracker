@@ -1,0 +1,689 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-15",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1794793239.m4a": {
+      "index": 81,
+      "epoch": 1794793239,
+      "sha256": "e0ef1f5a2783db934dcd943875849bf17c9acd44d1cd9fc8ab6e329d6d5ca973",
+      "passes": {
+        "original": {
+          "text": "I can smell it.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I can smell it.",
+              "avg_logprob": -0.41532907262444496,
+              "no_speech_prob": 0.01860937289893627,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I can smell it.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I can smell it.",
+              "avg_logprob": -0.47949669510126114,
+              "no_speech_prob": 0.02824524976313114,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "context": {
+          "text": "I can smell it",
+          "prompt": "I was just gonna ask you the same thing I don't see anything",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I can smell it",
+              "avg_logprob": -0.25963681084769114,
+              "no_speech_prob": 0.003238857723772526,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794793245.m4a": {
+      "index": 82,
+      "epoch": 1794793245,
+      "sha256": "61330cf79e0c3f3f2fb59289bcf41f87e98ffc195c30c70a4e16f733b124581f",
+      "passes": {
+        "original": {
+          "text": "Two houses south of the location, side yard of white building. I can't see flames in the southern eye period, I can't see anyone.",
+          "prompt": null,
+          "duration_seconds": 10.624,
+          "token_limit": 109,
+          "token_count": 34,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Two houses south of the location, side yard of white building.",
+              "avg_logprob": -0.5298230716160366,
+              "no_speech_prob": 0.1313120722770691,
+              "compression_ratio": 1.2524271844660195
+            },
+            {
+              "start": 7.0,
+              "end": 10.0,
+              "text": " I can't see flames in the southern eye period, I can't see anyone.",
+              "avg_logprob": -0.5298230716160366,
+              "no_speech_prob": 0.1313120722770691,
+              "compression_ratio": 1.2524271844660195
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Two houses south of the location, um, side yard of White Building. I can't see flames, so then I appear to see anyone.",
+          "prompt": null,
+          "duration_seconds": 10.624,
+          "token_limit": 109,
+          "token_count": 33,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Two houses south of the location, um, side yard of White Building.",
+              "avg_logprob": -0.5901132892159855,
+              "no_speech_prob": 0.04792360961437225,
+              "compression_ratio": 1.145631067961165
+            },
+            {
+              "start": 7.0,
+              "end": 10.0,
+              "text": " I can't see flames, so then I appear to see anyone.",
+              "avg_logprob": -0.5901132892159855,
+              "no_speech_prob": 0.04792360961437225,
+              "compression_ratio": 1.145631067961165
+            }
+          ]
+        },
+        "context": {
+          "text": "Two houses south of the location, side yard of White Building. I can't see flames other than up here it is.",
+          "prompt": "I was just gonna ask you the same thing I don't see anything I can smell it.",
+          "duration_seconds": 10.624,
+          "token_limit": 109,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.68,
+              "text": " Two houses south of the location, side yard of White Building. I can't see flames",
+              "avg_logprob": -0.519547172387441,
+              "no_speech_prob": 0.04045971482992172,
+              "compression_ratio": 1.1145833333333333
+            },
+            {
+              "start": 7.68,
+              "end": 10.64,
+              "text": " other than up here it is.",
+              "avg_logprob": -0.519547172387441,
+              "no_speech_prob": 0.04045971482992172,
+              "compression_ratio": 1.1145833333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794793268.m4a": {
+      "index": 83,
+      "epoch": 1794793268,
+      "sha256": "bf1aee66564e095ecd3aa0fa2f30d201758dc76d8de41d594c305ab41864cb39",
+      "passes": {
+        "original": {
+          "text": "I'm just gonna get out of fires away for now, but I don't even you don't see smoke or fire or anything",
+          "prompt": null,
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.32,
+              "text": " I'm just gonna get out of fires away for now, but I don't even you don't see smoke or fire or anything",
+              "avg_logprob": -0.21954530271990547,
+              "no_speech_prob": 0.009369413368403912,
+              "compression_ratio": 1.1590909090909092
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm just gonna get out of fires away for now, but I don't even you don't see smoke or fire anything",
+          "prompt": null,
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.5200000000000005,
+              "text": " I'm just gonna get out of fires away for now, but I don't even you don't see smoke or fire anything",
+              "avg_logprob": -0.2275716598544802,
+              "no_speech_prob": 0.0152563052251935,
+              "compression_ratio": 1.1379310344827587
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm just gonna get out of fire's way for now, but I don't even, I don't see smoke or fire or anything.",
+          "prompt": "I was just gonna ask you the same thing I don't see anything I can smell it. Two houses south of the location, side yard of white building. I can't see flames in the southern eye period, I can't see anyone.",
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.48,
+              "text": " I'm just gonna get out of fire's way for now, but I don't even, I don't see smoke or fire or anything.",
+              "avg_logprob": -0.23175640776753426,
+              "no_speech_prob": 0.0007278400007635355,
+              "compression_ratio": 1.1590909090909092
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794793368.m4a": {
+      "index": 84,
+      "epoch": 1794793368,
+      "sha256": "95a7935caf9e3678cb1470a42755c2cff2e0058b2fb1980453204065205e6c2a",
+      "passes": {
+        "original": {
+          "text": "I'm gonna go just a bit south of that location",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm gonna go just a bit south of that location",
+              "avg_logprob": -0.2583360714571817,
+              "no_speech_prob": 0.020516876131296158,
+              "compression_ratio": 0.8846153846153846
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm going to go just a bit south of that location.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I'm going to go just a bit south of that location.",
+              "avg_logprob": -0.37755679339170456,
+              "no_speech_prob": 0.024341363459825516,
+              "compression_ratio": 0.8928571428571429
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm gonna go just a bit south of that location",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm gonna go just a bit south of that location",
+              "avg_logprob": -0.2583360714571817,
+              "no_speech_prob": 0.020516876131296158,
+              "compression_ratio": 0.8846153846153846
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794793417.m4a": {
+      "index": 85,
+      "epoch": 1794793417,
+      "sha256": "8882f43d7c6dd830a7ff872dc55572f6280203dd9fe0c5fd3f016b8846fb1800",
+      "passes": {
+        "original": {
+          "text": "I think they're mostly just blocking because they have nowhere to park.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.6,
+              "text": " I think they're mostly just blocking because they have nowhere to park.",
+              "avg_logprob": -0.2547305331510656,
+              "no_speech_prob": 0.0033195374999195337,
+              "compression_ratio": 0.9726027397260274
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I think they're mostly just blocking because they have nowhere to park.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.52,
+              "text": " I think they're mostly just blocking because they have nowhere to park.",
+              "avg_logprob": -0.45935863607070027,
+              "no_speech_prob": 0.003283014288172126,
+              "compression_ratio": 0.9726027397260274
+            }
+          ]
+        },
+        "context": {
+          "text": "I think they're mostly just blocking because they have nowhere to park",
+          "prompt": "I'm gonna go just a bit south of that location",
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.2,
+              "text": " I think they're mostly just blocking because they have nowhere to park",
+              "avg_logprob": -0.24120538495481014,
+              "no_speech_prob": 0.00010230906627839431,
+              "compression_ratio": 0.9859154929577465
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794793501.m4a": {
+      "index": 86,
+      "epoch": 1794793501,
+      "sha256": "68e8eb6ab15f7501ce456669f26affeb0327639e315ae032d3ff1def65a22537",
+      "passes": {
+        "original": {
+          "text": "Is someone on the other side of Maine by the Lone Peak Tower? Is that traffic going to get hit or something?",
+          "prompt": null,
+          "duration_seconds": 9.728,
+          "token_limit": 102,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Is someone on the other side of Maine by the Lone Peak Tower?",
+              "avg_logprob": -0.3920190950919842,
+              "no_speech_prob": 0.02927871234714985,
+              "compression_ratio": 1.173913043478261
+            },
+            {
+              "start": 6.0,
+              "end": 10.0,
+              "text": " Is that traffic going to get hit or something?",
+              "avg_logprob": -0.3920190950919842,
+              "no_speech_prob": 0.02927871234714985,
+              "compression_ratio": 1.173913043478261
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Is someone on the other side of Maine by the Little Peep Tower? Is that traffic going to get hit or something?",
+          "prompt": null,
+          "duration_seconds": 9.728,
+          "token_limit": 102,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Is someone on the other side of Maine by the Little Peep Tower?",
+              "avg_logprob": -0.47789193491141,
+              "no_speech_prob": 0.039175502955913544,
+              "compression_ratio": 1.1702127659574468
+            },
+            {
+              "start": 6.0,
+              "end": 10.0,
+              "text": " Is that traffic going to get hit or something?",
+              "avg_logprob": -0.47789193491141,
+              "no_speech_prob": 0.039175502955913544,
+              "compression_ratio": 1.1702127659574468
+            }
+          ]
+        },
+        "context": {
+          "text": "Is someone on the other side of Maine by the Lone Peak Tower? Is that traffic going to get hit or something?",
+          "prompt": null,
+          "duration_seconds": 9.728,
+          "token_limit": 102,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Is someone on the other side of Maine by the Lone Peak Tower?",
+              "avg_logprob": -0.3920190950919842,
+              "no_speech_prob": 0.02927871234714985,
+              "compression_ratio": 1.173913043478261
+            },
+            {
+              "start": 6.0,
+              "end": 10.0,
+              "text": " Is that traffic going to get hit or something?",
+              "avg_logprob": -0.3920190950919842,
+              "no_speech_prob": 0.02927871234714985,
+              "compression_ratio": 1.173913043478261
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794793603.m4a": {
+      "index": 87,
+      "epoch": 1794793603,
+      "sha256": "3dc844d4d396310b5a7e24dc9a8be37dc570b1866f0d84ac2202661efd8181ee",
+      "passes": {
+        "original": {
+          "text": "I think fire is saying it might be 300 south and 500 east.",
+          "prompt": null,
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.64,
+              "text": " I think fire is saying it might be 300 south and 500 east.",
+              "avg_logprob": -0.4322764172273524,
+              "no_speech_prob": 0.05726618692278862,
+              "compression_ratio": 0.90625
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I think fire is saying it might be 300 south and 500 east.",
+          "prompt": null,
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.68,
+              "text": " I think fire is saying it might be 300 south and 500 east.",
+              "avg_logprob": -0.3495025354273179,
+              "no_speech_prob": 0.06749031692743301,
+              "compression_ratio": 0.90625
+            }
+          ]
+        },
+        "context": {
+          "text": "I think fire is saying it might be 300 south and 500 east.",
+          "prompt": null,
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.64,
+              "text": " I think fire is saying it might be 300 south and 500 east.",
+              "avg_logprob": -0.4322764172273524,
+              "no_speech_prob": 0.05726618692278862,
+              "compression_ratio": 0.90625
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794793621.m4a": {
+      "index": 88,
+      "epoch": 1794793621,
+      "sha256": "f42fc53a04b4ddc3495cee9db77d3cd652d1c19a6eea00c40dbc018cd028b265",
+      "passes": {
+        "original": {
+          "text": "how does 385 west main get confused with 300 south 500 east",
+          "prompt": null,
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.24,
+              "text": " how does 385 west main get confused with 300 south 500 east",
+              "avg_logprob": -0.4002289533615112,
+              "no_speech_prob": 0.01496853120625019,
+              "compression_ratio": 0.9365079365079365
+            }
+          ]
+        },
+        "filtered": {
+          "text": "How does 385 West Main get confused with 300 South, 500 East?",
+          "prompt": null,
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " How does 385 West Main get confused with 300 South, 500 East?",
+              "avg_logprob": -0.3483675788430607,
+              "no_speech_prob": 0.01596056856215,
+              "compression_ratio": 0.9104477611940298
+            }
+          ]
+        },
+        "context": {
+          "text": "How does 385 west main get confused with 300 south 500 east?",
+          "prompt": "I think fire is saying it might be 300 south and 500 east.",
+          "duration_seconds": 7.168,
+          "token_limit": 82,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " How does 385 west main get confused with 300 south 500 east?",
+              "avg_logprob": -0.34077742137014866,
+              "no_speech_prob": 0.007574306335300207,
+              "compression_ratio": 0.9230769230769231
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794793629.m4a": {
+      "index": 89,
+      "epoch": 1794793629,
+      "sha256": "9164eb9df095e300759ae2a1d801de0c861947ad741b5bf8fb49c3d7081d8120",
+      "passes": {
+        "original": {
+          "text": "I think you'll probably want to walk all into traffic.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2,
+              "text": " I think you'll probably want to walk all into traffic.",
+              "avg_logprob": -0.5459541956583659,
+              "no_speech_prob": 0.00975648034363985,
+              "compression_ratio": 0.9310344827586207
+            }
+          ]
+        },
+        "filtered": {
+          "text": "You'll probably want to walk all in the traffic.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2,
+              "text": " You'll probably want to walk all in the traffic.",
+              "avg_logprob": -0.4668961082186018,
+              "no_speech_prob": 0.006654797587543726,
+              "compression_ratio": 0.9056603773584906
+            }
+          ]
+        },
+        "context": {
+          "text": "I think you'll probably want to walk all into traffic",
+          "prompt": "I think fire is saying it might be 300 south and 500 east. how does 385 west main get confused with 300 south 500 east",
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " I think you'll probably want to walk all into traffic",
+              "avg_logprob": -0.4046232913221632,
+              "no_speech_prob": 0.015702474862337112,
+              "compression_ratio": 0.9298245614035088
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794793656.m4a": {
+      "index": 90,
+      "epoch": 1794793656,
+      "sha256": "447bf358c148817d8034c6bba94d2284f45a3dfd8261ffa6a541e9b5077e2ce9",
+      "passes": {
+        "original": {
+          "text": "Stop working, you're gone.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Stop working, you're gone.",
+              "avg_logprob": -0.6822707176208496,
+              "no_speech_prob": 0.0837172195315361,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Stop working, you're gone.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Stop working, you're gone.",
+              "avg_logprob": -0.6937466561794281,
+              "no_speech_prob": 0.06129720062017441,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "context": {
+          "text": "stop walking, you're gone.",
+          "prompt": "I think fire is saying it might be 300 south and 500 east. how does 385 west main get confused with 300 south 500 east I think you'll probably want to walk all into traffic.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " stop walking, you're gone.",
+              "avg_logprob": -0.6772758543491364,
+              "no_speech_prob": 0.01633620634675026,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        }
+      }
+    }
+  }
+}

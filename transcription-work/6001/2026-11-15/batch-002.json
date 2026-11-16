@@ -1,0 +1,665 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-15",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1794741606.m4a": {
+      "index": 11,
+      "epoch": 1794741606,
+      "sha256": "4732052649bab8f60917dba5d49c961c0dc07b267b6cc7559be89345a74d36d1",
+      "passes": {
+        "original": {
+          "text": "McCallen, can you confirm if president lives downstairs?",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.38,
+              "text": " McCallen, can you confirm if president lives downstairs?",
+              "avg_logprob": -0.5160486936569214,
+              "no_speech_prob": 0.02393477037549019,
+              "compression_ratio": 0.875
+            }
+          ]
+        },
+        "filtered": {
+          "text": "McCallen, can you confirm if present was known, sirs?",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " McCallen, can you confirm if present was known, sirs?",
+              "avg_logprob": -0.4956553677717845,
+              "no_speech_prob": 0.024688148871064186,
+              "compression_ratio": 0.8833333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "McCallen, can you confirm if Preston lives downstairs?",
+          "prompt": "Yeah, not hit. What about this 1-0-0-6-9, Echo Victor? Well, then I think I luck.",
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.36,
+              "text": " McCallen, can you confirm if Preston lives downstairs?",
+              "avg_logprob": -0.4460293451944987,
+              "no_speech_prob": 0.011942234821617603,
+              "compression_ratio": 0.8709677419354839
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794741614.m4a": {
+      "index": 12,
+      "epoch": 1794741614,
+      "sha256": "841ec93497ecff58ea9ca3c4d5cffdd247881c5cb20705983735190a0816351c",
+      "passes": {
+        "original": {
+          "text": "Hey, Fermitas.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey, Fermitas.",
+              "avg_logprob": -0.6528889867994521,
+              "no_speech_prob": 0.10270276665687561,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hey, Fermitas. Hello. Hello. Hello.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Hey, Fermitas.",
+              "avg_logprob": -0.6179315556179393,
+              "no_speech_prob": 0.03970462456345558,
+              "compression_ratio": 1.206896551724138
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Hello.",
+              "avg_logprob": -0.6179315556179393,
+              "no_speech_prob": 0.03970462456345558,
+              "compression_ratio": 1.206896551724138
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Hello.",
+              "avg_logprob": -0.6179315556179393,
+              "no_speech_prob": 0.03970462456345558,
+              "compression_ratio": 1.206896551724138
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " Hello.",
+              "avg_logprob": -0.6179315556179393,
+              "no_speech_prob": 0.03970462456345558,
+              "compression_ratio": 1.206896551724138
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey, Fermitas.",
+          "prompt": "What about this 1-0-0-6-9, Echo Victor? Well, then I think I luck. McCallen, can you confirm if president lives downstairs?",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey, Fermitas.",
+              "avg_logprob": -0.693953726026747,
+              "no_speech_prob": 0.020128684118390083,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794742474.m4a": {
+      "index": 13,
+      "epoch": 1794742474,
+      "sha256": "57e05536a01a2e6d7e781bf51952ad0ab58c4adb8eb63433b97aa31fca68187a",
+      "passes": {
+        "original": {
+          "text": "Hey Mason, you on here?",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Hey Mason, you on here?",
+              "avg_logprob": -0.41956972181797025,
+              "no_speech_prob": 0.03963222727179527,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hey Mason, you on here?",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.92,
+              "text": " Hey Mason, you on here?",
+              "avg_logprob": -0.556474095582962,
+              "no_speech_prob": 0.03436383232474327,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey Mason, you on here?",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Hey Mason, you on here?",
+              "avg_logprob": -0.41956972181797025,
+              "no_speech_prob": 0.03963222727179527,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794742481.m4a": {
+      "index": 14,
+      "epoch": 1794742481,
+      "sha256": "1073f7b03f9c9706b52eda4fda50d78c04eaa429acabd3372632916b360e534c",
+      "passes": {
+        "original": {
+          "text": "Yeah, what's that?",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, what's that?",
+              "avg_logprob": -0.561351458231608,
+              "no_speech_prob": 0.017596865072846413,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah, what's this?",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, what's this?",
+              "avg_logprob": -0.42431219418843585,
+              "no_speech_prob": 0.0573778972029686,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "context": {
+          "text": "Yeah, what's up?",
+          "prompt": "Hey Mason, you on here?",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Yeah, what's up?",
+              "avg_logprob": -0.4013827641805013,
+              "no_speech_prob": 0.007158889435231686,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794742489.m4a": {
+      "index": 15,
+      "epoch": 1794742489,
+      "sha256": "fc4b36234b16546371b3a0e2f72dff2671ef83e6e533b80e810a031f0f87f682",
+      "passes": {
+        "original": {
+          "text": "Yeah, thanks for asking. I'm watching the sky go back and forth from the meadows.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.16,
+              "text": " Yeah, thanks for asking. I'm watching the sky go back and forth from the meadows.",
+              "avg_logprob": -0.252260218495908,
+              "no_speech_prob": 0.012646136805415154,
+              "compression_ratio": 1.0253164556962024
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah. Thanks for asking. I'm watching this guy go back and forth from the Meadows.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.16,
+              "text": " Yeah. Thanks for asking. I'm watching this guy go back and forth from the Meadows.",
+              "avg_logprob": -0.35692172429778357,
+              "no_speech_prob": 0.009007280692458153,
+              "compression_ratio": 0.9879518072289156
+            }
+          ]
+        },
+        "context": {
+          "text": "Yeah, thanks for asking. I'm watching the sky go back and forth from the meadows.",
+          "prompt": "Hey Mason, you on here? Yeah, what's that?",
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Yeah, thanks for asking. I'm watching the sky go back and forth from the meadows.",
+              "avg_logprob": -0.22094871686852496,
+              "no_speech_prob": 0.002178735798224807,
+              "compression_ratio": 1.0253164556962024
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794742496.m4a": {
+      "index": 16,
+      "epoch": 1794742496,
+      "sha256": "acb5064cea315062fe456a2f3e559bd52060c8ad105f87612847acf5af7dfa35",
+      "passes": {
+        "original": {
+          "text": "being really shady",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " being really shady",
+              "avg_logprob": -0.4060436536868413,
+              "no_speech_prob": 0.0020030115265399218,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It's getting really shady.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.6,
+              "text": " It's getting really shady.",
+              "avg_logprob": -0.5754479302300347,
+              "no_speech_prob": 0.0014838470378890634,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "context": {
+          "text": "Being really shady.",
+          "prompt": "Hey Mason, you on here? Yeah, what's that? Yeah, thanks for asking. I'm watching the sky go back and forth from the meadows.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Being really shady.",
+              "avg_logprob": -0.49208184650966097,
+              "no_speech_prob": 0.005994528066366911,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794742500.m4a": {
+      "index": 17,
+      "epoch": 1794742500,
+      "sha256": "afbd6b9e547fca8ba0cc1a3fb26e3945762886197a6d58233d9679a6536934df",
+      "passes": {
+        "original": {
+          "text": "We live at the meadows, so that's his first problem.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " We live at the meadows, so that's his first problem.",
+              "avg_logprob": -0.3651188121122472,
+              "no_speech_prob": 0.013973015360534191,
+              "compression_ratio": 0.896551724137931
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We live in the meadows, so that's its first problem.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " We live in the meadows, so that's its first problem.",
+              "avg_logprob": -0.4642970702227424,
+              "no_speech_prob": 0.022092482075095177,
+              "compression_ratio": 0.896551724137931
+            }
+          ]
+        },
+        "context": {
+          "text": "We live at the meadows, so that's his first problem.",
+          "prompt": "Yeah, what's that? Yeah, thanks for asking. I'm watching the sky go back and forth from the meadows. being really shady",
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " We live at the meadows, so that's his first problem.",
+              "avg_logprob": -0.32632115307976217,
+              "no_speech_prob": 0.03448167070746422,
+              "compression_ratio": 0.896551724137931
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794742521.m4a": {
+      "index": 18,
+      "epoch": 1794742521,
+      "sha256": "31fb743c4f6122e094c8dac4e3cbe04b2ae8b378e17fa2bb8cf3a90a09547a74",
+      "passes": {
+        "original": {
+          "text": "Should be piecing enough.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Should be piecing enough.",
+              "avg_logprob": -0.6095865037706163,
+              "no_speech_prob": 0.03558338060975075,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It should be piecing up.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " It should be piecing up.",
+              "avg_logprob": -0.5946599006652832,
+              "no_speech_prob": 0.020887775346636772,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "context": {
+          "text": "Should be piecing up.",
+          "prompt": "Yeah, thanks for asking. I'm watching the sky go back and forth from the meadows. being really shady We live at the meadows, so that's his first problem.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Should be piecing up.",
+              "avg_logprob": -0.4698336919148763,
+              "no_speech_prob": 0.007611697074025869,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794742527.m4a": {
+      "index": 19,
+      "epoch": 1794742527,
+      "sha256": "d2d0ad7a3402df151edeaf3a598791618552b9ba8ccfdf3088f6e426e52290ec",
+      "passes": {
+        "original": {
+          "text": "Yeah, I was driving behind him in this whole car smelly weed.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.88,
+              "text": " Yeah, I was driving behind him in this whole car smelly weed.",
+              "avg_logprob": -0.5440448986159431,
+              "no_speech_prob": 0.003638311754912138,
+              "compression_ratio": 0.9242424242424242
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah, it was just behind him, his whole car smelled like weed.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.84,
+              "text": " Yeah, it was just behind him, his whole car smelled like weed.",
+              "avg_logprob": -0.5985788967874315,
+              "no_speech_prob": 0.004425005055963993,
+              "compression_ratio": 0.9538461538461539
+            }
+          ]
+        },
+        "context": {
+          "text": "Yeah, I was driving behind him in this whole car smelly weed.",
+          "prompt": "being really shady We live at the meadows, so that's his first problem. Should be piecing enough.",
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Yeah, I was driving behind him in this whole car smelly weed.",
+              "avg_logprob": -0.5230204297436608,
+              "no_speech_prob": 0.0050689950585365295,
+              "compression_ratio": 0.9242424242424242
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794742532.m4a": {
+      "index": 20,
+      "epoch": 1794742532,
+      "sha256": "8244458d466ad924ebdca8842aff080812db3027de3734f7eb057cff7a6a1ae0",
+      "passes": {
+        "original": {
+          "text": "I'm just sitting here watching them",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm just sitting here watching them",
+              "avg_logprob": -0.38271517753601075,
+              "no_speech_prob": 0.006495210342109203,
+              "compression_ratio": 0.875
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm just in here watching them.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm just in here watching them.",
+              "avg_logprob": -0.3623140941966664,
+              "no_speech_prob": 0.009813710115849972,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm just sitting here watching him.",
+          "prompt": "We live at the meadows, so that's his first problem. Should be piecing enough. Yeah, I was driving behind him in this whole car smelly weed.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.68,
+              "text": " I'm just sitting here watching him.",
+              "avg_logprob": -0.33708732236515393,
+              "no_speech_prob": 0.008227173238992691,
+              "compression_ratio": 0.8974358974358975
+            }
+          ]
+        }
+      }
+    }
+  }
+}
