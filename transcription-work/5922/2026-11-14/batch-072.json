@@ -1,0 +1,737 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-14",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794690435.m4a": {
+      "index": 711,
+      "epoch": 1794690435,
+      "sha256": "ef36d7dbda0347b405fcd97c403e9b14cba36dbcee352bfea405e08b87487a38",
+      "passes": {
+        "original": {
+          "text": "It's going to be a quick quick car wash at 352 in the northwest state street race silver Honda CRB. They're parked by the raccoons.",
+          "prompt": null,
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 34,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " It's going to be a quick quick car wash at 352 in the northwest state street race silver Honda CRB. They're parked by the raccoons.",
+              "avg_logprob": -0.6346768890108381,
+              "no_speech_prob": 0.038080692291259766,
+              "compression_ratio": 1.1491228070175439
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It's giving you a quick quick car wash at 352 Northwest State Street for a silver Honda CRV. They're powered by the vacuum cleaner.",
+          "prompt": null,
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " It's giving you a quick quick car wash at 352 Northwest State Street for a silver Honda CRV. They're powered by the vacuum cleaner.",
+              "avg_logprob": -0.565372820943594,
+              "no_speech_prob": 0.023631855845451355,
+              "compression_ratio": 1.1293103448275863
+            }
+          ]
+        },
+        "context": {
+          "text": "It's going to be a quick quick car wash at 352 in the northwest state street race. Silver Honda CRV, they're parked by the raccoons.",
+          "prompt": "Sorry about that, do we have an ETA for MCOT? negative on an ETA, they should be in someone out there as soon as they can. Go ahead.",
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 35,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " It's going to be a quick quick car wash at 352 in the northwest state street race. Silver Honda CRV, they're parked by the raccoons.",
+              "avg_logprob": -0.5700405024819903,
+              "no_speech_prob": 0.036087196320295334,
+              "compression_ratio": 1.1578947368421053
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794690444.m4a": {
+      "index": 712,
+      "epoch": 1794690444,
+      "sha256": "6ee5e01231229672642f218de9ecf5821bb2a4310b1b413a14c8830f47a1b732",
+      "passes": {
+        "original": {
+          "text": "Thanks for watching!",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thanks for watching!",
+              "avg_logprob": -0.8428052493504116,
+              "no_speech_prob": 0.8147829174995422,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.878871480623881,
+              "no_speech_prob": 0.7536860704421997,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Thanks for watching!",
+          "prompt": "negative on an ETA, they should be in someone out there as soon as they can. Go ahead. It's going to be a quick quick car wash at 352 in the northwest state street race silver Honda CRB. They're parked by the raccoons.",
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thanks for watching!",
+              "avg_logprob": -0.94288740839277,
+              "no_speech_prob": 0.6879382133483887,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794690445.m4a": {
+      "index": 713,
+      "epoch": 1794690445,
+      "sha256": "7851f8c7e5ce2e48b509c257f5372364f5d5f1e57f57a20378735e79fc4600e8",
+      "passes": {
+        "original": {
+          "text": "YJ43 24.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " YJ43 24.",
+              "avg_logprob": -0.6109553426504135,
+              "no_speech_prob": 0.01539203617721796,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J43, 24.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.56,
+              "text": " 5J43, 24.",
+              "avg_logprob": -0.742715040842692,
+              "no_speech_prob": 0.007371729239821434,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "YJ43 24.",
+          "prompt": "Go ahead. It's going to be a quick quick car wash at 352 in the northwest state street race silver Honda CRB. They're parked by the raccoons. Thanks for watching!",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " YJ43 24.",
+              "avg_logprob": -0.7281630486249924,
+              "no_speech_prob": 0.05091105028986931,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794690453.m4a": {
+      "index": 714,
+      "epoch": 1794690453,
+      "sha256": "9d73703f4956ae2791576890ef30c0dcfc7c8cd345de51a57d94236c50d3b69a",
+      "passes": {
+        "original": {
+          "text": "I have J42, that'll be me on the traffic stop at 900 West 200 South. Go for it.",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " I have J42, that'll be me on the traffic stop at 900 West 200 South. Go for it.",
+              "avg_logprob": -0.5660570011689112,
+              "no_speech_prob": 0.0626693069934845,
+              "compression_ratio": 0.9634146341463414
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I have J42. That will be me on the traffic stop, and I will always turn it south. Go for it.",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " I have J42. That will be me on the traffic stop, and I will always turn it south. Go for it.",
+              "avg_logprob": -0.5728873466623241,
+              "no_speech_prob": 0.02340153232216835,
+              "compression_ratio": 1.0337078651685394
+            }
+          ]
+        },
+        "context": {
+          "text": "IJ42 that'll be me on the traffic stop at 900 West 200 South. Go for it!",
+          "prompt": "It's going to be a quick quick car wash at 352 in the northwest state street race silver Honda CRB. They're parked by the raccoons. Thanks for watching! YJ43 24.",
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.36,
+              "text": " IJ42 that'll be me on the traffic stop at 900 West 200 South. Go for it!",
+              "avg_logprob": -0.558162602285544,
+              "no_speech_prob": 0.08128239214420319,
+              "compression_ratio": 0.935064935064935
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794690458.m4a": {
+      "index": 715,
+      "epoch": 1794690458,
+      "sha256": "d9262c46b1c4961fe512939e86eecdaa7de135cd9cc41b98bcfcc610ec223550",
+      "passes": {
+        "original": {
+          "text": "I copy.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I copy.",
+              "avg_logprob": -0.7139636079470316,
+              "no_speech_prob": 0.05499470606446266,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Okay, copy.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Okay, copy.",
+              "avg_logprob": -0.8758574213300433,
+              "no_speech_prob": 0.04474114999175072,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "I copy.",
+          "prompt": "Thanks for watching! YJ43 24. I have J42, that'll be me on the traffic stop at 900 West 200 South. Go for it.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I copy.",
+              "avg_logprob": -0.5971881747245789,
+              "no_speech_prob": 0.09957478940486908,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794690633.m4a": {
+      "index": 716,
+      "epoch": 1794690633,
+      "sha256": "0bd0c1b19216a69896e36e26a4b1790fce265a3184e1ca84f9bd1632ba9a57b6",
+      "passes": {
+        "original": {
+          "text": "5J31, I copy agency assist. Go ahead with the details.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 5J31, I copy agency assist. Go ahead with the details.",
+              "avg_logprob": -0.4920053680737813,
+              "no_speech_prob": 0.03649074211716652,
+              "compression_ratio": 0.9
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G831, I copy agency assist. Go ahead with the details.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 5G831, I copy agency assist. Go ahead with the details.",
+              "avg_logprob": -0.45507803716157613,
+              "no_speech_prob": 0.020915305241942406,
+              "compression_ratio": 0.9016393442622951
+            }
+          ]
+        },
+        "context": {
+          "text": "5J31, I copy agency assist. Go ahead with the details.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 5J31, I copy agency assist. Go ahead with the details.",
+              "avg_logprob": -0.4920053680737813,
+              "no_speech_prob": 0.03649074211716652,
+              "compression_ratio": 0.9
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794690639.m4a": {
+      "index": 717,
+      "epoch": 1794690639,
+      "sha256": "724052dd63124d6898501d3b2db13d30204b770167b795e33e1007463508076a",
+      "passes": {
+        "original": {
+          "text": "5G31, I copy. Advising highway is requesting a unit for, I apologize, they pulled into the gas station. There's a black older model said Dan corrections the Honda with a temp tag and the paper plate. UHP went 1080 on the vehicle, received about four to five reckless calls. POC has eyes on him currently at the gas station. We'll try to confirm which gas station it is.",
+          "prompt": null,
+          "duration_seconds": 33.92,
+          "token_limit": 220,
+          "token_count": 97,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 11.84,
+              "text": " 5G31, I copy. Advising highway is requesting a unit for, I apologize, they",
+              "avg_logprob": -0.26208104078586286,
+              "no_speech_prob": 0.07054999470710754,
+              "compression_ratio": 1.3627906976744186
+            },
+            {
+              "start": 11.84,
+              "end": 18.72,
+              "text": " pulled into the gas station. There's a black older model said Dan",
+              "avg_logprob": -0.26208104078586286,
+              "no_speech_prob": 0.07054999470710754,
+              "compression_ratio": 1.3627906976744186
+            },
+            {
+              "start": 18.72,
+              "end": 24.48,
+              "text": " corrections the Honda with a temp tag and the paper plate. UHP went 1080 on the",
+              "avg_logprob": -0.26208104078586286,
+              "no_speech_prob": 0.07054999470710754,
+              "compression_ratio": 1.3627906976744186
+            },
+            {
+              "start": 24.48,
+              "end": 29.240000000000002,
+              "text": " vehicle, received about four to five reckless calls. POC has eyes on him",
+              "avg_logprob": -0.26208104078586286,
+              "no_speech_prob": 0.07054999470710754,
+              "compression_ratio": 1.3627906976744186
+            },
+            {
+              "start": 29.240000000000002,
+              "end": 31.400000000000002,
+              "text": " currently at the gas station.",
+              "avg_logprob": -0.3004808615554463,
+              "no_speech_prob": 0.02596960961818695,
+              "compression_ratio": 1.0869565217391304
+            },
+            {
+              "start": 31.400000000000002,
+              "end": 33.24,
+              "text": " We'll try to confirm which gas station it is.",
+              "avg_logprob": -0.3004808615554463,
+              "no_speech_prob": 0.02596960961818695,
+              "compression_ratio": 1.0869565217391304
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G31, a copy, advising highways requesting a unit for, I apologize, they've pulled into the gas station. There's a black older model sedan, correction of the Honda with a temp tag and the paper plate. UHP went 1080 on the vehicle, received about four to five request calls. TOC has eyes on him, print me at the gas station, we'll try to confirm which gas station it is.",
+          "prompt": null,
+          "duration_seconds": 33.92,
+          "token_limit": 220,
+          "token_count": 95,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 14.0,
+              "text": " 5G31, a copy, advising highways requesting a unit for, I apologize, they've pulled into the gas station.",
+              "avg_logprob": -0.3768063055617469,
+              "no_speech_prob": 0.07932806760072708,
+              "compression_ratio": 1.3514851485148516
+            },
+            {
+              "start": 14.0,
+              "end": 22.0,
+              "text": " There's a black older model sedan, correction of the Honda with a temp tag and the paper plate.",
+              "avg_logprob": -0.3768063055617469,
+              "no_speech_prob": 0.07932806760072708,
+              "compression_ratio": 1.3514851485148516
+            },
+            {
+              "start": 22.0,
+              "end": 28.0,
+              "text": " UHP went 1080 on the vehicle, received about four to five request calls.",
+              "avg_logprob": -0.3768063055617469,
+              "no_speech_prob": 0.07932806760072708,
+              "compression_ratio": 1.3514851485148516
+            },
+            {
+              "start": 28.0,
+              "end": 33.44,
+              "text": " TOC has eyes on him, print me at the gas station, we'll try to confirm which gas station it is.",
+              "avg_logprob": -0.38977729209831785,
+              "no_speech_prob": 0.02417910099029541,
+              "compression_ratio": 1.130952380952381
+            }
+          ]
+        },
+        "context": {
+          "text": "5J31, I copy. Advising highway is requesting a unit for...I apologize. I pulled into the gas station. There's a black older model said Dan corrects the Honda with a temp tag and the paper plate. UHP went 1080 on the vehicle, received about four to five reckless calls. TOC has eyes on him, currently at the gas station. We'll try to confirm which gas station it is.",
+          "prompt": "5J31, I copy agency assist. Go ahead with the details.",
+          "duration_seconds": 33.92,
+          "token_limit": 220,
+          "token_count": 97,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 12.58,
+              "text": " 5J31, I copy. Advising highway is requesting a unit for...I apologize. I pulled into the",
+              "avg_logprob": -0.31828652805006,
+              "no_speech_prob": 0.033894412219524384,
+              "compression_ratio": 1.3267326732673268
+            },
+            {
+              "start": 12.58,
+              "end": 21.14,
+              "text": " gas station. There's a black older model said Dan corrects the Honda with a temp tag and",
+              "avg_logprob": -0.31828652805006,
+              "no_speech_prob": 0.033894412219524384,
+              "compression_ratio": 1.3267326732673268
+            },
+            {
+              "start": 21.14,
+              "end": 27.740000000000002,
+              "text": " the paper plate. UHP went 1080 on the vehicle, received about four to five reckless calls.",
+              "avg_logprob": -0.31828652805006,
+              "no_speech_prob": 0.033894412219524384,
+              "compression_ratio": 1.3267326732673268
+            },
+            {
+              "start": 27.740000000000002,
+              "end": 30.740000000000002,
+              "text": " TOC has eyes on him, currently at the gas station.",
+              "avg_logprob": -0.31702485988880025,
+              "no_speech_prob": 0.02218814752995968,
+              "compression_ratio": 1.1294117647058823
+            },
+            {
+              "start": 30.740000000000002,
+              "end": 33.24,
+              "text": " We'll try to confirm which gas station it is.",
+              "avg_logprob": -0.31702485988880025,
+              "no_speech_prob": 0.02218814752995968,
+              "compression_ratio": 1.1294117647058823
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794690674.m4a": {
+      "index": 718,
+      "epoch": 1794690674,
+      "sha256": "a9ad37868d3b8a786bdda68fe30f4559519f6cc295f8b145d5b0db166c2c6da3",
+      "passes": {
+        "original": {
+          "text": "I object 42 clear. Attach me to that.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.2800000000000002,
+              "text": " I object 42 clear. Attach me to that.",
+              "avg_logprob": -0.5768753630774361,
+              "no_speech_prob": 0.04135201871395111,
+              "compression_ratio": 0.8222222222222222
+            }
+          ]
+        },
+        "filtered": {
+          "text": "J-42 clear. Attach me to that.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " J-42 clear. Attach me to that.",
+              "avg_logprob": -0.6748753317764827,
+              "no_speech_prob": 0.029298819601535797,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "context": {
+          "text": "5J42, clear. Attach me to that.",
+          "prompt": "5J31, I copy agency assist. Go ahead with the details. 5G31, I copy. Advising highway is requesting a unit for, I apologize, they pulled into the gas station. There's a black older model said Dan corrections the Honda with a temp tag and the paper plate. UHP went 1080 on the vehicle, received about four to five reckless calls. POC has eyes on him currently at the gas station. We'll try to confirm which gas station it is.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.2,
+              "text": " 5J42, clear. Attach me to that.",
+              "avg_logprob": -0.4114103118578593,
+              "no_speech_prob": 0.04077119380235672,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794690677.m4a": {
+      "index": 719,
+      "epoch": 1794690677,
+      "sha256": "aaaea971416c4564ff7d9f9303631f85afaaaf4397c38cfb0bc006e6f304ec56",
+      "passes": {
+        "original": {
+          "text": "Forty-two.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Forty-two.",
+              "avg_logprob": -0.7657123804092407,
+              "no_speech_prob": 0.041622359305620193,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "42.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " 42.",
+              "avg_logprob": -0.6069440841674805,
+              "no_speech_prob": 0.11088411509990692,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "context": {
+          "text": "42.",
+          "prompt": "5J31, I copy agency assist. Go ahead with the details. 5G31, I copy. Advising highway is requesting a unit for, I apologize, they pulled into the gas station. There's a black older model said Dan corrections the Honda with a temp tag and the paper plate. UHP went 1080 on the vehicle, received about four to five reckless calls. POC has eyes on him currently at the gas station. We'll try to confirm which gas station it is. I object 42 clear. Attach me to that.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 42.",
+              "avg_logprob": -0.5710849285125732,
+              "no_speech_prob": 0.07341837882995605,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794690686.m4a": {
+      "index": 720,
+      "epoch": 1794690686,
+      "sha256": "abbf243c8fa206d669fb5b8e2aa2b8ecd20baa4f38a6c664cf728643feeb975d",
+      "passes": {
+        "original": {
+          "text": "18J23, show me how we're 21. Copy.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0200000000000005,
+              "text": " 18J23, show me how we're 21. Copy.",
+              "avg_logprob": -0.6420704908668995,
+              "no_speech_prob": 0.07265069335699081,
+              "compression_ratio": 0.8717948717948718
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18 J train for the show man with 21 copy",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.76,
+              "text": " 18 J train for the show man with 21 copy",
+              "avg_logprob": -0.9683752793532151,
+              "no_speech_prob": 0.21419060230255127,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        },
+        "context": {
+          "text": "Eighteen J23, show me how it's going to work. Copy.",
+          "prompt": "5G31, I copy. Advising highway is requesting a unit for, I apologize, they pulled into the gas station. There's a black older model said Dan corrections the Honda with a temp tag and the paper plate. UHP went 1080 on the vehicle, received about four to five reckless calls. POC has eyes on him currently at the gas station. We'll try to confirm which gas station it is. I object 42 clear. Attach me to that. Forty-two.",
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Eighteen J23, show me how it's going to work. Copy.",
+              "avg_logprob": -0.5644973704689428,
+              "no_speech_prob": 0.023671308532357216,
+              "compression_ratio": 0.9107142857142857
+            }
+          ]
+        }
+      }
+    }
+  }
+}
