@@ -42,6 +42,8 @@ export default function (eleventyConfig) {
   eleventyConfig.on("eleventy.before", () => validateRadioExcerptIdentities());
   eleventyConfig.addFilter("customTemplatePath", customTemplatePath);
   eleventyConfig.addGlobalData("documentSitemapPaths", () => documentSitemapPaths());
+  eleventyConfig.addGlobalData("sharedRadioUse", () =>
+    JSON.parse(fs.readFileSync("public/records/openmhz/officer-associations.json", "utf8")).shared_radio_use ?? {});
   eleventyConfig.addWatchTarget("./public/records/**/*.pdf");
   // Include generated HTML pages; templates may opt out with sitemap: false.
   eleventyConfig.addFilter("sitemapPages", (pages) => {

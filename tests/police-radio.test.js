@@ -816,3 +816,32 @@ test("date exclusions show the compiled fallback or just the radio ID, while cli
   assert.match(f.get("clips").children[1].textContent, /14590104 · Usual Officer · Strong association/);
   assert.doesNotMatch(f.get("clips").children[1].textContent, /Fallback Officer/);
 });
+
+test("shared radio use suppresses all officer labels on its date only", async () => {
+  const date = "2026-09-11", shared = "14590343", other = "14590043";
+  const filename = "dcfems-6001-1789100000.m4a";
+  const entry = { name: "Test Officer", status: "strong" };
+  const associations = {
+    schema_version: 4,
+    shared_radio_use: { [date]: { [shared]: [{ name: "First Officer" }, { name: "Second Officer" }] } },
+    days: { [date]: { [shared]: [{ ...entry, status: "confirmed" }], [other]: [{ ...entry, status: "confirmed" }] } },
+    associations: { [shared]: [entry], [other]: [entry] },
+    clip_overrides: { [filename]: { [shared]: { name: "Override Officer", status: "confirmed-clip" } } }
+  };
+  const calls = [filename, "ordinary.m4a"].map((original_filename, index) => ({
+    epoch: 1789100000 + index * 10, displayed_seconds: 5, original_filename, radio_ids: [shared, other]
+  }));
+  const f = await playerFixture(calls, undefined, date, "", true, associations);
+  for (const row of f.get("clips").children) {
+    assert.match(row.textContent, /14590343 · Shared use, 14590043 · Test Officer · Confirmed this day/);
+    assert.doesNotMatch(row.textContent, /First Officer|Second Officer|Override Officer/);
+    assert.match(row.children[0].getAttribute("aria-label"), /14590343 · Shared use/);
+  }
+  f.select(0);
+  assert.match(f.get("current-radio-ids").textContent, /14590343 · Shared use/);
+  f.get("day").value = "2026-09-10";
+  f.get("day").emit("change");
+  await f.settle();
+  assert.match(f.get("clips").children[0].textContent, /14590343 · Override Officer · Confirmed for this clip/);
+  assert.match(f.get("clips").children[1].textContent, /14590343 · Test Officer · Strong association/);
+});

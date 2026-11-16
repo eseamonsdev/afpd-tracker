@@ -7,6 +7,34 @@ const input = () => ({schema_version:1,officers:{one:{name:'One'},two:{name:'Two
 const row = (officer_id,date='2026-10-01',extra={}) => ({officer_id,radio_id:'123',date,talkgroup:6001,clips:[1,2],evidence:'Named exchange',status:'supporting',confirmed_by:null,...extra});
 const reviewed = (officer,date) => row(officer,date,{association_reviewed:true});
 
+test('shared use preserves evidence without counting or confirming the date for any officer', () => {
+  const source = input();
+  const date = '2026-10-02';
+  source.shared_radio_use = { [date]: { '123': ['one', 'two'].map((officer_id, index) => ({
+    officer_id, talkgroup: 5922, clips: [index + 1], evidence: 'Verified shared transmission',
+    source_url: 'https://openmhz.com/system/dcfems?filter-code=5922'
+  })) } };
+  source.associations = [
+    row('one', '2026-10-01', { status: 'confirmed', confirmed_by: 'Eric' }),
+    row('one', date, { status: 'confirmed', confirmed_by: 'Eric' }),
+    reviewed('two', date)
+  ];
+
+  const { labels, evidenceCsv } = compileOfficerAssociations(source);
+  assert.deepEqual(labels.shared_radio_use[date]['123'].map(entry => entry.name), ['One', 'Two']);
+  assert.equal(labels.days[date], undefined);
+  assert.equal(labels.days['2026-10-01']['123'][0].officer_id, 'one');
+  assert.deepEqual(labels.associations['123'].map(entry => [entry.officer_id, entry.status, entry.evidence_days]),
+    [['one', 'possible', 1]]);
+  assert.deepEqual(labels.profiles.one[0].evidence_dates, ['2026-10-01']);
+  assert.equal(labels.profiles.two, undefined);
+  assert.match(evidenceCsv, /"one","123","2026-10-02","5922","1","Verified shared transmission","Shared use"/);
+  assert.match(evidenceCsv, /"two","123","2026-10-02","5922","2","Verified shared transmission","Shared use"/);
+  assert.match(evidenceCsv, /"Archived evidence for shared date"/);
+  source.shared_radio_use[date]['123'].pop();
+  assert.throws(() => compileOfficerAssociations(source), /Invalid shared radio use/);
+});
+
 test('include-all is rejected; repeated transcript candidates cannot create or strengthen any label',()=>{
   const source=input();source.associations=Array.from({length:20},(_,n)=>row('one',`2026-10-${String(n+1).padStart(2,'0')}`));
   const result=compileOfficerAssociations(source);

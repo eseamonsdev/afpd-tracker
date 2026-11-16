@@ -56,6 +56,22 @@ permalink: /police-radio-resources/
     <p>Two or three accepted evidence dates support a possible association; four or more support a strong association. Strong and possible names are not mixed for the same radio. Two accepted possible associations may coexist. A confirmation for one day does not establish a permanent association or verify every transcript.</p>
     <p><a href="https://media.afpd-accountability.com/officer-association-review.html">Listen, edit transcripts, confirm associations, and export your review</a>. New AI search leads are available there for verification and do not count toward association thresholds.</p>
     <p>Law 2 call signs and the directories used to identify an officer are retained with their dates in the evidence below. A call sign applies to its dated assignment; a radio may be used by different officers on different dates.</p>
+    {%- if sharedRadioUse | length %}
+    <h3>Shared radio use</h3>
+    <p>Shared-use dates show who was heard using the radio. These dates add zero to the officers’ evidence-day counts.</p>
+    {%- for date, radios in sharedRadioUse | dictsort %}
+      {%- for radioId, records in radios | dictsort %}
+    <details id="shared-radio-{{ date | escape }}-{{ radioId | escape }}">
+      <summary>{{ date | escape }} · Radio {{ radioId | escape }} · {{ records | join(" and ", "name") | escape }}</summary>
+      <ul>
+        {%- for record in records %}
+        <li><strong>{{ record.name | escape }}</strong> {{ record.evidence | escape }} <a href="{{ record.source_url | escape }}">Listen on OpenMHz</a></li>
+        {%- endfor %}
+      </ul>
+    </details>
+      {%- endfor %}
+    {%- endfor %}
+    {%- endif %}
     <p><a href="/afpd-resources/#afpd-directories">View official AFPD directories and call sign assignments</a>.</p>
     <p>{{ resources.idExplanation | escape }}</p>
     <p class="radio-resources-attribution">{{ resources.attributionNote | escape }}</p>
