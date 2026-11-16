@@ -817,7 +817,7 @@ test("date exclusions show the compiled fallback or just the radio ID, while cli
   assert.doesNotMatch(f.get("clips").children[1].textContent, /Fallback Officer/);
 });
 
-test("shared radio use suppresses all officer labels on its date only", async () => {
+test("shared radio use shows participants, one status and evidence instead of a single-speaker attribution", async () => {
   const date = "2026-09-11", shared = "14590343", other = "14590043";
   const filename = "dcfems-6001-1789100000.m4a";
   const entry = { name: "Test Officer", status: "strong" };
@@ -833,12 +833,27 @@ test("shared radio use suppresses all officer labels on its date only", async ()
   }));
   const f = await playerFixture(calls, undefined, date, "", true, associations);
   for (const row of f.get("clips").children) {
-    assert.match(row.textContent, /14590343 · Shared use, 14590043 · Test Officer · Confirmed this day/);
-    assert.doesNotMatch(row.textContent, /First Officer|Second Officer|Override Officer/);
-    assert.match(row.children[0].getAttribute("aria-label"), /14590343 · Shared use/);
+    const sharedId = row.children[1].children[1];
+    const [, names, status, info] = sharedId.children;
+    assert.equal(names.className, "radio-officer-name");
+    assert.equal(names.textContent, " · First Officer · Second Officer");
+    assert.equal(status.className, "radio-association-status");
+    assert.equal(status.textContent, " · Shared Use");
+    const [button, popup] = info.children;
+    assert.equal(button.className, "radio-info-button");
+    assert.equal(popup.hidden, true);
+    button.click();
+    assert.equal(popup.hidden, false);
+    assert.match(popup.textContent, /leaves the speaker in this clip unspecified/);
+    assert.equal(popup.children[1].href, `/police-radio-resources/#shared-radio-${date}-${shared}`);
+    button.click();
+    assert.equal(popup.hidden, true);
+    assert.match(row.textContent, /14590043 · Test Officer · Confirmed this day/);
+    assert.doesNotMatch(row.textContent, /Override Officer/);
+    assert.match(row.children[0].getAttribute("aria-label"), /14590343 · First Officer · Second Officer · Shared Use, 14590043/);
   }
   f.select(0);
-  assert.match(f.get("current-radio-ids").textContent, /14590343 · Shared use/);
+  assert.match(f.get("current-radio-ids").textContent, /14590343 · First Officer · Second Officer · Shared Use/);
   f.get("day").value = "2026-09-10";
   f.get("day").emit("change");
   await f.settle();

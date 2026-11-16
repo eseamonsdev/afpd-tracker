@@ -23,7 +23,6 @@ function createIdentity(getDate) {
   let afpdIds = new Set(), agencyIds = {}, datedAgencyIds = {};
   const agencyId = id => datedAgencyIds[getDate()]?.[id] || agencyIds[id];
   let sharedRadioUse = {};
-  const sharedRadio = id => !isDispatchId(id) && !agencyId(id) && sharedRadioUse[getDate()]?.[id];
   let officerDays = {}, strongAssociations = {}, withheldDates = {}, associationExclusions = {}, clipOverrides = {}, informationNumber = 0, closeInformation = null, activeInformation = null;
   document.addEventListener?.("pointerdown", event => {
     if (activeInformation && !activeInformation.contains(event.target)) closeInformation?.();
@@ -35,11 +34,14 @@ function createIdentity(getDate) {
     observed: "Association this day",
     strong: "Strong association",
     possible: "Possible association",
+    "shared-use": "Shared Use",
     "single-day": "Single-day association"
   };
   const officerAssociation = (id, call) => {
-    if (isDispatchId(id) || agencyId(id) || sharedRadio(id)) return [];
+    if (isDispatchId(id) || agencyId(id)) return [];
     const date = getDate();
+    const shared = sharedRadioUse[date]?.[id];
+    if (shared?.length) return [{ name: shared.map(entry => entry.name).join(" · "), status: "shared-use" }];
     const asEntries = value => (Array.isArray(value) ? value : value ? [value] : [])
       .filter(entry => entry?.display_eligible !== false && typeof entry?.name === "string" && associationLabels[entry.status]);
     const override = asEntries(clipOverrides[call?.original_filename]?.[id]);
@@ -61,6 +63,7 @@ function createIdentity(getDate) {
   };
   const associationNote = (entry) => {
     const date = dateFormat.format(dateObject(getDate()));
+    if (entry.status === "shared-use") return `The listed officers used this radio on ${date}. The label leaves the speaker in this clip unspecified.`;
     const count = Number(entry.evidence_days) || 1;
     const dates = Array.isArray(entry.evidence_dates) ? entry.evidence_dates.join(", ") : "";
     if (entry.status === "confirmed-clip") return `This clip has an explicit identification of ${entry.name}.`;
@@ -79,7 +82,6 @@ function createIdentity(getDate) {
     return ids.length ? `Radio ID${ids.length > 1 ? "s" : ""}: ${ids.map(id => {
       if (isDispatchId(id)) return `${id} · Dispatch`;
       if (agencyId(id)) return `${id} · ${agencyId(id)}`;
-      if (sharedRadio(id)) return `${id} · Shared use`;
       const entries = officerAssociation(id, call);
       return entries.length ? `${id} · ${entries.map(entry => `${entry.name} · ${associationLabels[entry.status]}`).join("; ")}` : afpdIds.has(id) ? `${id} · AFPD` : id;
     }).join(", ")}` : "";
@@ -105,7 +107,8 @@ function createIdentity(getDate) {
     mark.setAttribute("d", "M12 11v6M12 7h.01");
     svg.append(circle, mark);
     button.append(svg);
-    button.setAttribute("aria-label", `Association information for ${entry.name}`);
+    const shared = entry.status === "shared-use";
+    button.setAttribute("aria-label", shared ? `Shared-use information for radio ${id}` : `Association information for ${entry.name}`);
     button.setAttribute("aria-expanded", "false");
     const popup = document.createElement("span");
     popup.id = `radio-association-info-${++informationNumber}`;
@@ -117,7 +120,9 @@ function createIdentity(getDate) {
     const note = document.createElement("span");
     note.textContent = associationNote(entry);
     const link = document.createElement("a");
-    link.href = `/police-radio-resources/#radio-id-${encodeURIComponent(id)}${entry.officer_id ? `-${encodeURIComponent(entry.officer_id)}` : ""}`;
+    link.href = shared
+      ? `/police-radio-resources/#shared-radio-${getDate()}-${id}`
+      : `/police-radio-resources/#radio-id-${encodeURIComponent(id)}${entry.officer_id ? `-${encodeURIComponent(entry.officer_id)}` : ""}`;
     link.textContent = "View evidence";
     popup.append(note, link);
     let pinned = false, suppressFocus = false;
@@ -170,17 +175,7 @@ function createIdentity(getDate) {
       item.append(number);
       const entries = officerAssociation(id, call);
       const roleLabel = isDispatchId(id) ? "Dispatch" : agencyId(id) || (!entries.length && afpdIds.has(id) ? "AFPD" : "");
-      if (sharedRadio(id)) {
-        const role = document.createElement("span");
-        role.className = "radio-role-label";
-        role.textContent = " · ";
-        const link = document.createElement("a");
-        link.href = `/police-radio-resources/#shared-radio-${getDate()}-${id}`;
-        link.textContent = "Shared use";
-        link.setAttribute("aria-label", `Shared-use evidence for radio ${id}`);
-        role.append(link);
-        item.append(role);
-      } else if (roleLabel) {
+      if (roleLabel) {
         const role = document.createElement("span");
         role.className = "radio-role-label";
         role.textContent = ` · ${roleLabel}`;
