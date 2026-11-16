@@ -1,0 +1,673 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-13",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1794628977.m4a": {
+      "index": 151,
+      "epoch": 1794628977,
+      "sha256": "9bf6a486c6e296af4f8db9f04222ad9c33aa57d3bc43320c6f794890c5d3cd52",
+      "passes": {
+        "original": {
+          "text": "Well, maybe not. Oh, he's just parking on the street.",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Well, maybe not. Oh, he's just parking on the street.",
+              "avg_logprob": -0.40484795305464005,
+              "no_speech_prob": 0.009118454530835152,
+              "compression_ratio": 0.8688524590163934
+            }
+          ]
+        },
+        "filtered": {
+          "text": "No, maybe not. Oh, he's just parking on the street.",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " No, maybe not.",
+              "avg_logprob": -0.36867716163396835,
+              "no_speech_prob": 0.014674955047667027,
+              "compression_ratio": 0.864406779661017
+            },
+            {
+              "start": 2.0,
+              "end": 5.0,
+              "text": " Oh, he's just parking on the street.",
+              "avg_logprob": -0.36867716163396835,
+              "no_speech_prob": 0.014674955047667027,
+              "compression_ratio": 0.864406779661017
+            }
+          ]
+        },
+        "context": {
+          "text": "Well, maybe not. Oh, he's just parking on the street.",
+          "prompt": "Okay, get ready, here we go. I'm going to go your direction Somerville. and immediately pulled over.",
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Well, maybe not. Oh, he's just parking on the street.",
+              "avg_logprob": -0.3643537511428197,
+              "no_speech_prob": 0.0006647984264418483,
+              "compression_ratio": 0.8688524590163934
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794628986.m4a": {
+      "index": 152,
+      "epoch": 1794628986,
+      "sha256": "16c9eb16193c08396efd2adf9ce337455ca61a82a39b2c80a0b74af4d3c17d81",
+      "passes": {
+        "original": {
+          "text": "Mason, any luck? If not, if you don't mind just driving by Harvey Park.",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Mason, any luck? If not, if you don't mind just driving by Harvey Park.",
+              "avg_logprob": -0.29121687737378205,
+              "no_speech_prob": 0.022614575922489166,
+              "compression_ratio": 0.922077922077922
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Mason any luck if not if you don't mind just driving by Harvey Park",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.5600000000000005,
+              "text": " Mason any luck if not if you don't mind just driving by Harvey Park",
+              "avg_logprob": -0.37415125800503624,
+              "no_speech_prob": 0.024339400231838226,
+              "compression_ratio": 0.9571428571428572
+            }
+          ]
+        },
+        "context": {
+          "text": "Mason, any luck? If not, if you don't mind just driving by Harvey Park.",
+          "prompt": "I'm going to go your direction Somerville. and immediately pulled over. Well, maybe not. Oh, he's just parking on the street.",
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Mason, any luck? If not, if you don't mind just driving by Harvey Park.",
+              "avg_logprob": -0.2550398883494464,
+              "no_speech_prob": 0.013682267628610134,
+              "compression_ratio": 0.922077922077922
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794628999.m4a": {
+      "index": 153,
+      "epoch": 1794628999,
+      "sha256": "b795c12437c02573d041818889eb53933aa3a75d8ecbe6bc90411d581d66697e",
+      "passes": {
+        "original": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.6339542071024576,
+              "no_speech_prob": 0.38150498270988464,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.6337190171082815,
+              "no_speech_prob": 0.3911780118942261,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you.",
+          "prompt": "and immediately pulled over. Well, maybe not. Oh, he's just parking on the street. Mason, any luck? If not, if you don't mind just driving by Harvey Park.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5860536297162374,
+              "no_speech_prob": 0.39651867747306824,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794629004.m4a": {
+      "index": 154,
+      "epoch": 1794629004,
+      "sha256": "0e251a283c7939921db4cc19045190fa13e5fab819ec1c4a9af30ff8807c3ce2",
+      "passes": {
+        "original": {
+          "text": "If he's paying attention, he can definitely see me right now.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " If he's paying attention, he can definitely see me right now.",
+              "avg_logprob": -0.19310184086070342,
+              "no_speech_prob": 0.04398928955197334,
+              "compression_ratio": 0.9104477611940298
+            }
+          ]
+        },
+        "filtered": {
+          "text": "If he's paying attention, he can definitely see me right now.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.28,
+              "text": " If he's paying attention, he can definitely see me right now.",
+              "avg_logprob": -0.3002304750330308,
+              "no_speech_prob": 0.08109705150127411,
+              "compression_ratio": 0.9104477611940298
+            }
+          ]
+        },
+        "context": {
+          "text": "If he's paying attention, he can definitely see me right now.",
+          "prompt": "Well, maybe not. Oh, he's just parking on the street. Mason, any luck? If not, if you don't mind just driving by Harvey Park. Thank you.",
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " If he's paying attention, he can definitely see me right now.",
+              "avg_logprob": -0.13819214876960306,
+              "no_speech_prob": 0.013745946809649467,
+              "compression_ratio": 0.9104477611940298
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794629213.m4a": {
+      "index": 155,
+      "epoch": 1794629213,
+      "sha256": "ff60ce13565a9c41f7acfa2343436890d5d10ba227c88714ae6340eba42dde0e",
+      "passes": {
+        "original": {
+          "text": "Yeah, I think that's for him, the silver hound off.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Yeah, I think that's for him, the silver hound off.",
+              "avg_logprob": -0.41185742285516524,
+              "no_speech_prob": 0.04872678220272064,
+              "compression_ratio": 0.9272727272727272
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah, I think that's for him, the silver hound off.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2800000000000002,
+              "text": " Yeah, I think that's for him, the silver hound off.",
+              "avg_logprob": -0.3997870749897427,
+              "no_speech_prob": 0.0382472425699234,
+              "compression_ratio": 0.9272727272727272
+            }
+          ]
+        },
+        "context": {
+          "text": "Yeah, I think that's for him, the silver hound off.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Yeah, I think that's for him, the silver hound off.",
+              "avg_logprob": -0.41185742285516524,
+              "no_speech_prob": 0.04872678220272064,
+              "compression_ratio": 0.9272727272727272
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794629342.m4a": {
+      "index": 156,
+      "epoch": 1794629342,
+      "sha256": "65b241f0da65f916029c4ce8056e143b4c75635e9b646c9075514a2233ccbc1a",
+      "passes": {
+        "original": {
+          "text": "You still see her coming here?",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You still see her coming here?",
+              "avg_logprob": -0.5139698266983033,
+              "no_speech_prob": 0.033928897231817245,
+              "compression_ratio": 0.8571428571428571
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Do you still see it in front of you?",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Do you still see it in front of you?",
+              "avg_logprob": -0.5682561580951397,
+              "no_speech_prob": 0.023055631667375565,
+              "compression_ratio": 0.8571428571428571
+            }
+          ]
+        },
+        "context": {
+          "text": "You still see her coming here?",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You still see her coming here?",
+              "avg_logprob": -0.5139698266983033,
+              "no_speech_prob": 0.033928897231817245,
+              "compression_ratio": 0.8571428571428571
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794629351.m4a": {
+      "index": 157,
+      "epoch": 1794629351,
+      "sha256": "36d5945402cb9f56943aa5e12f0e8209acc89b183020f1cd3134274c193c786c",
+      "passes": {
+        "original": {
+          "text": "10-9, left of your eyes.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 10-9, left of your eyes.",
+              "avg_logprob": -0.7268226196368536,
+              "no_speech_prob": 0.10408437997102737,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "filtered": {
+          "text": "10-9, I still got eyes.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 10-9, I still got eyes.",
+              "avg_logprob": -0.6640956600507101,
+              "no_speech_prob": 0.05274849385023117,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "context": {
+          "text": "10-9, left of your eyes",
+          "prompt": "You still see her coming here?",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 10-9, left of your eyes",
+              "avg_logprob": -0.6413223526694558,
+              "no_speech_prob": 0.007032429333776236,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794629355.m4a": {
+      "index": 158,
+      "epoch": 1794629355,
+      "sha256": "7fecf32474d1857960cfc6e6ec2b0f85a234c69a906dfa785ee1cf07fcb517a1",
+      "passes": {
+        "original": {
+          "text": "What did the car do that was backing up?",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " What did the car do that was backing up?",
+              "avg_logprob": -0.312166874225323,
+              "no_speech_prob": 0.049413230270147324,
+              "compression_ratio": 0.8888888888888888
+            }
+          ]
+        },
+        "filtered": {
+          "text": "What did the car do that was backing up?",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " What did the car do that was backing up?",
+              "avg_logprob": -0.34692060030423677,
+              "no_speech_prob": 0.03425345569849014,
+              "compression_ratio": 0.8888888888888888
+            }
+          ]
+        },
+        "context": {
+          "text": "What did the car do that was backing up?",
+          "prompt": "You still see her coming here? 10-9, left of your eyes.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " What did the car do that was backing up?",
+              "avg_logprob": -0.24370430066035345,
+              "no_speech_prob": 0.005754807963967323,
+              "compression_ratio": 0.8888888888888888
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794629360.m4a": {
+      "index": 159,
+      "epoch": 1794629360,
+      "sha256": "82d8c7802dd21150afd4fccbef602685a3237c2eec0e40abcf4ac50709ceba58",
+      "passes": {
+        "original": {
+          "text": "It's hard to tell because he was hitting me hard with the LED headlights, but I'm pretty sure he just parked and then one or two people got out and went inside.",
+          "prompt": null,
+          "duration_seconds": 10.624,
+          "token_limit": 109,
+          "token_count": 40,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.76,
+              "text": " It's hard to tell because he was hitting me hard with the LED headlights, but I'm pretty",
+              "avg_logprob": -0.20096697458406773,
+              "no_speech_prob": 0.02680109068751335,
+              "compression_ratio": 1.3008130081300813
+            },
+            {
+              "start": 5.76,
+              "end": 10.16,
+              "text": " sure he just parked and then one or two people got out and went inside.",
+              "avg_logprob": -0.20096697458406773,
+              "no_speech_prob": 0.02680109068751335,
+              "compression_ratio": 1.3008130081300813
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It's hard to tell because he was kind of hitting me hard with the LED headlights but I'm pretty sure he just parked and then one or two people got out and went inside.",
+          "prompt": null,
+          "duration_seconds": 10.624,
+          "token_limit": 109,
+          "token_count": 41,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.78,
+              "text": " It's hard to tell because he was kind of hitting me hard with the LED headlights but I'm pretty",
+              "avg_logprob": -0.2340089643285388,
+              "no_speech_prob": 0.0322367288172245,
+              "compression_ratio": 1.31496062992126
+            },
+            {
+              "start": 5.78,
+              "end": 10.16,
+              "text": " sure he just parked and then one or two people got out and went inside.",
+              "avg_logprob": -0.2340089643285388,
+              "no_speech_prob": 0.0322367288172245,
+              "compression_ratio": 1.31496062992126
+            }
+          ]
+        },
+        "context": {
+          "text": "It's hard to tell because he was hitting me hard with the LED headlights, but I'm pretty sure he just parked and then one or two people got out and went inside.",
+          "prompt": "You still see her coming here? 10-9, left of your eyes. What did the car do that was backing up?",
+          "duration_seconds": 10.624,
+          "token_limit": 109,
+          "token_count": 38,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 10.0,
+              "text": " It's hard to tell because he was hitting me hard with the LED headlights, but I'm pretty sure he just parked and then one or two people got out and went inside.",
+              "avg_logprob": -0.14887738457092872,
+              "no_speech_prob": 0.03940920904278755,
+              "compression_ratio": 1.3008130081300813
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794629374.m4a": {
+      "index": 160,
+      "epoch": 1794629374,
+      "sha256": "b041652122b5a77d5f89afc75dcb3f15329d7ad7b82ba46a7513b66e1030b5f3",
+      "passes": {
+        "original": {
+          "text": "All right, thank you.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.3200000000000003,
+              "text": " All right, thank you.",
+              "avg_logprob": -0.6134771770901151,
+              "no_speech_prob": 0.020854126662015915,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Alright. Thank you.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Alright.",
+              "avg_logprob": -0.43625802397727964,
+              "no_speech_prob": 0.00886018481105566,
+              "compression_ratio": 0.7037037037037037
+            },
+            {
+              "start": 1.0,
+              "end": 1.4000000000000001,
+              "text": " Thank you.",
+              "avg_logprob": -0.43625802397727964,
+              "no_speech_prob": 0.00886018481105566,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "All right, thank you.",
+          "prompt": "10-9, left of your eyes. What did the car do that was backing up? It's hard to tell because he was hitting me hard with the LED headlights, but I'm pretty sure he just parked and then one or two people got out and went inside.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.3000000000000003,
+              "text": " All right, thank you.",
+              "avg_logprob": -0.41676579581366646,
+              "no_speech_prob": 0.025204330682754517,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    }
+  }
+}
