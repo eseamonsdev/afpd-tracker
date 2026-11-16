@@ -1,0 +1,661 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-13",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1794633915.m4a": {
+      "index": 221,
+      "epoch": 1794633915,
+      "sha256": "274f573d169204996646e177625b2911cdcb71075ab09143a178640132bdc79a",
+      "passes": {
+        "original": {
+          "text": "I'm glad AT&J was asking for a K9. They said C now. Definitely different.",
+          "prompt": null,
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " I'm glad AT&J was asking for a K9. They said C now.",
+              "avg_logprob": -0.555691524193837,
+              "no_speech_prob": 0.022592805325984955,
+              "compression_ratio": 0.9240506329113924
+            },
+            {
+              "start": 4.0200000000000005,
+              "end": 8.02,
+              "text": " Definitely different.",
+              "avg_logprob": -0.555691524193837,
+              "no_speech_prob": 0.022592805325984955,
+              "compression_ratio": 0.9240506329113924
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm glad AT&J was asking for a K-9, a K-15, but it definitely did work.",
+          "prompt": null,
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " I'm glad AT&J was asking for a K-9, a K-15, but it definitely did work.",
+              "avg_logprob": -0.5501976077045713,
+              "no_speech_prob": 0.0215781107544899,
+              "compression_ratio": 0.9466666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm glad AT&J was asking for a K9. They said it's the email. Definitely different.",
+          "prompt": "I have a feeling dispatch is confused.",
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " I'm glad AT&J was asking for a K9. They said it's the email. Definitely different.",
+              "avg_logprob": -0.5578551727991837,
+              "no_speech_prob": 0.003379792906343937,
+              "compression_ratio": 0.9879518072289156
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794633922.m4a": {
+      "index": 222,
+      "epoch": 1794633922,
+      "sha256": "2ca38f67f4d9bda976ae1f857e4ef4803a8a08ed6133a6747ceb9407e5b1a76e",
+      "passes": {
+        "original": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.8840016523996989,
+              "no_speech_prob": 0.7283445596694946,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 0,
+          "token_cap_reached": false,
+          "segments": []
+        },
+        "context": {
+          "text": "Thank you.",
+          "prompt": "I have a feeling dispatch is confused. I'm glad AT&J was asking for a K9. They said C now. Definitely different.",
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.9364221493403116,
+              "no_speech_prob": 0.6032662391662598,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794633965.m4a": {
+      "index": 223,
+      "epoch": 1794633965,
+      "sha256": "ee9080ed64dbb73748bb113503c84839289d09da8e4c30623816a1f3c1389191",
+      "passes": {
+        "original": {
+          "text": "Hey Summerville, I'm good.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey Summerville, I'm good.",
+              "avg_logprob": -0.3147203813899647,
+              "no_speech_prob": 0.004716889932751656,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hey Summerville, I'm good.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey Summerville, I'm good.",
+              "avg_logprob": -0.33131656321612274,
+              "no_speech_prob": 0.0080410186201334,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey Summerville, I'm good.",
+          "prompt": "I'm glad AT&J was asking for a K9. They said C now. Definitely different. Thank you.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey Summerville, I'm good.",
+              "avg_logprob": -0.23716108365492386,
+              "no_speech_prob": 0.0018310314044356346,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794633972.m4a": {
+      "index": 224,
+      "epoch": 1794633972,
+      "sha256": "02141df12e8de832573cbedfd8aaaa51503dfb92b108a0eab6daf9fe69e289c7",
+      "passes": {
+        "original": {
+          "text": "Don't mind.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Don't mind.",
+              "avg_logprob": -0.639391269002642,
+              "no_speech_prob": 0.05069616436958313,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Don't mind.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Don't mind.",
+              "avg_logprob": -0.6336542027337211,
+              "no_speech_prob": 0.045121755450963974,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "Don't mind.",
+          "prompt": "I'm glad AT&J was asking for a K9. They said C now. Definitely different. Thank you. Hey Summerville, I'm good.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Don't mind.",
+              "avg_logprob": -0.5198803118297032,
+              "no_speech_prob": 0.03213205561041832,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794633975.m4a": {
+      "index": 225,
+      "epoch": 1794633975,
+      "sha256": "82d5a8ff185b953edb3bd0e08186949cfef842bdfcb3046aded41f96156762a9",
+      "passes": {
+        "original": {
+          "text": "I'm good. I found the kids, but they're fine.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I'm good. I found the kids, but they're fine.",
+              "avg_logprob": -0.293637051301844,
+              "no_speech_prob": 0.034727342426776886,
+              "compression_ratio": 0.9
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm good. I found the kids, but they're fine.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I'm good. I found the kids, but they're fine.",
+              "avg_logprob": -0.2738182965446921,
+              "no_speech_prob": 0.0446719229221344,
+              "compression_ratio": 0.9
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm good. I found the kids, but they're fine.",
+          "prompt": "Thank you. Hey Summerville, I'm good. Don't mind.",
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I'm good. I found the kids, but they're fine.",
+              "avg_logprob": -0.24348612392649932,
+              "no_speech_prob": 0.010121230967342854,
+              "compression_ratio": 0.9
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794633983.m4a": {
+      "index": 226,
+      "epoch": 1794633983,
+      "sha256": "2d476ba6c8d98dc67d8c912c6f5cae9ce01508dd53dc16075bc6c655a6877851",
+      "passes": {
+        "original": {
+          "text": "All right, I'm just leaving the area",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " All right, I'm just leaving the area",
+              "avg_logprob": -0.3807401681939761,
+              "no_speech_prob": 0.020196957513689995,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        },
+        "filtered": {
+          "text": "All right, I'm just leaving the area",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " All right, I'm just leaving the area",
+              "avg_logprob": -0.3626946285367012,
+              "no_speech_prob": 0.014030994847416878,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        },
+        "context": {
+          "text": "Alright, I'm just leaving the area.",
+          "prompt": "Hey Summerville, I'm good. Don't mind. I'm good. I found the kids, but they're fine.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Alright, I'm just leaving the area.",
+              "avg_logprob": -0.232549416522185,
+              "no_speech_prob": 0.006601205561310053,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794634384.m4a": {
+      "index": 227,
+      "epoch": 1794634384,
+      "sha256": "9cda6935acf0eb46d062b346c0be9a90a6952fade2058baf487d7924f01adc4e",
+      "passes": {
+        "original": {
+          "text": "",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 0,
+          "token_cap_reached": false,
+          "segments": []
+        },
+        "filtered": {
+          "text": "",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 0,
+          "token_cap_reached": false,
+          "segments": []
+        },
+        "context": {
+          "text": "",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 0,
+          "token_cap_reached": false,
+          "segments": []
+        }
+      }
+    },
+    "dcfems-6001-1794634391.m4a": {
+      "index": 228,
+      "epoch": 1794634391,
+      "sha256": "e9d8436450fed43cbabd5995c5378dcff3235dbb7aec729b689401f849620a06",
+      "passes": {
+        "original": {
+          "text": "I mean, if everybody who's inside already has their food, it might not be bad, but Rancheritos has notoriously slow wait times anyways, so it concerns me.",
+          "prompt": null,
+          "duration_seconds": 8.96,
+          "token_limit": 96,
+          "token_count": 43,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.68,
+              "text": " I mean, if everybody who's inside already has their food,",
+              "avg_logprob": -0.22897822071205487,
+              "no_speech_prob": 0.010185573250055313,
+              "compression_ratio": 1.2727272727272727
+            },
+            {
+              "start": 2.68,
+              "end": 4.2,
+              "text": " it might not be bad, but Rancheritos",
+              "avg_logprob": -0.22897822071205487,
+              "no_speech_prob": 0.010185573250055313,
+              "compression_ratio": 1.2727272727272727
+            },
+            {
+              "start": 4.2,
+              "end": 9.120000000000001,
+              "text": " has notoriously slow wait times anyways, so it concerns me.",
+              "avg_logprob": -0.22897822071205487,
+              "no_speech_prob": 0.010185573250055313,
+              "compression_ratio": 1.2727272727272727
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I mean, if everybody who's inside already has their food, it might not be bad, but Rancheritos has notoriously slow wait times anyways, so it concerns me.",
+          "prompt": null,
+          "duration_seconds": 8.96,
+          "token_limit": 96,
+          "token_count": 43,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " I mean, if everybody who's inside already has their food,",
+              "avg_logprob": -0.226596917279742,
+              "no_speech_prob": 0.0062618739902973175,
+              "compression_ratio": 1.2727272727272727
+            },
+            {
+              "start": 2.64,
+              "end": 4.2,
+              "text": " it might not be bad, but Rancheritos",
+              "avg_logprob": -0.226596917279742,
+              "no_speech_prob": 0.0062618739902973175,
+              "compression_ratio": 1.2727272727272727
+            },
+            {
+              "start": 4.2,
+              "end": 9.120000000000001,
+              "text": " has notoriously slow wait times anyways, so it concerns me.",
+              "avg_logprob": -0.226596917279742,
+              "no_speech_prob": 0.0062618739902973175,
+              "compression_ratio": 1.2727272727272727
+            }
+          ]
+        },
+        "context": {
+          "text": "I mean, if everybody who's inside already has their food, it might not be bad, but Rancheritos has notoriously slow wait times anyways, so it concerns me.",
+          "prompt": null,
+          "duration_seconds": 8.96,
+          "token_limit": 96,
+          "token_count": 43,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.68,
+              "text": " I mean, if everybody who's inside already has their food,",
+              "avg_logprob": -0.22897822071205487,
+              "no_speech_prob": 0.010185573250055313,
+              "compression_ratio": 1.2727272727272727
+            },
+            {
+              "start": 2.68,
+              "end": 4.2,
+              "text": " it might not be bad, but Rancheritos",
+              "avg_logprob": -0.22897822071205487,
+              "no_speech_prob": 0.010185573250055313,
+              "compression_ratio": 1.2727272727272727
+            },
+            {
+              "start": 4.2,
+              "end": 9.120000000000001,
+              "text": " has notoriously slow wait times anyways, so it concerns me.",
+              "avg_logprob": -0.22897822071205487,
+              "no_speech_prob": 0.010185573250055313,
+              "compression_ratio": 1.2727272727272727
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794634480.m4a": {
+      "index": 229,
+      "epoch": 1794634480,
+      "sha256": "175eaedffbd6817df79d8a7b51816180e7920b082b4e787b8ddcd6fb68ce9076",
+      "passes": {
+        "original": {
+          "text": "You saw nothing?",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You saw nothing?",
+              "avg_logprob": -0.6573937450136457,
+              "no_speech_prob": 0.07411246001720428,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "You saw nothing.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You saw nothing.",
+              "avg_logprob": -0.5865596192223685,
+              "no_speech_prob": 0.04385891184210777,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "You saw nothing?",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You saw nothing?",
+              "avg_logprob": -0.6573937450136457,
+              "no_speech_prob": 0.07411246001720428,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794634513.m4a": {
+      "index": 230,
+      "epoch": 1794634513,
+      "sha256": "d90aa73ff85f8c8a31f5f23b7f666dddc4140e36fd9794cd850c7adac9cc2b70",
+      "passes": {
+        "original": {
+          "text": "So, I was going to look at this cash.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " So, I was going to look at this cash.",
+              "avg_logprob": -0.6979424825736454,
+              "no_speech_prob": 0.019268976524472237,
+              "compression_ratio": 0.8222222222222222
+            }
+          ]
+        },
+        "filtered": {
+          "text": "So I was going to look at this cat.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " So I was going to look at this cat.",
+              "avg_logprob": -0.5730247130760779,
+              "no_speech_prob": 0.041609104722738266,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        },
+        "context": {
+          "text": "So I was going to look at this cash.",
+          "prompt": "You saw nothing?",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " So I was going to look at this cash.",
+              "avg_logprob": -0.6643726642315204,
+              "no_speech_prob": 0.010673980228602886,
+              "compression_ratio": 0.8181818181818182
+            }
+          ]
+        }
+      }
+    }
+  }
+}
