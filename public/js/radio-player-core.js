@@ -217,8 +217,8 @@ function createIdentity(getDate) {
           const photo = document.createElement("img");
           photo.className = "radio-officer-thumbnail";
           photo.alt = "";
-          photo.width = 32;
-          photo.height = 32;
+          photo.width = 40;
+          photo.height = 40;
           photo.loading = "lazy";
           photo.decoding = "async";
           photo.addEventListener("error", () => { photo.hidden = true; });
