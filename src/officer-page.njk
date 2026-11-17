@@ -9,6 +9,7 @@ permalink: "{{ officerPage.url }}"
 {% extends "site-page-layout.njk" %}
 {% from "document-tree.njk" import renderNodes -%}
 {% from "profile-names.njk" import renderAlternateNames -%}
+{% from "profile-photo.njk" import renderProfilePhoto -%}
 {% set alternateNames = officerPage | profileAlternateNames -%}
 {% set observedOfficerIds = officerPage.observed_officer_ids or [] -%}
 {% set siteUrl = "https://afpd-accountability.com" -%}
@@ -22,6 +23,9 @@ permalink: "{{ officerPage.url }}"
 {% block pageAssets %}  <link rel="stylesheet" href="/css/document-tree.css">
   <link rel="stylesheet" href="/css/officer-page.css">
   <link rel="stylesheet" href="/css/csv-table.css">
+  {%- if officerPage.photo %}
+  <link rel="stylesheet" href="/css/profile-photo.css">
+  {%- endif %}
 
   {% if sections | length %}
     <script src="/js/officer-tabs.js" defer></script>{% if sectionsById["observed-agency-ids"] %}
@@ -34,9 +38,17 @@ permalink: "{{ officerPage.url }}"
       ← All officers
     </a>
 
-    <div class="page-heading">
+    <div class="page-heading{% if officerPage.photo %} profile-heading{% endif %}">
+      {%- if officerPage.photo %}
+      {{- renderProfilePhoto(officerPage.photo, officerPage.name, true) | trim }}
+      <div class="profile-heading-text">
+        <p class="officer-category-label">OFFICER RECORDS</p>
+        <h1>{{ officerPage.name | escape }}</h1>
+      </div>
+      {%- else %}
       <p class="officer-category-label">OFFICER RECORDS</p>
       <h1>{{ officerPage.name | escape }}</h1>
+      {%- endif %}
     </div>
 
     {% if sections | length %}
