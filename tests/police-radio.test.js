@@ -808,6 +808,17 @@ test("date exclusions show the compiled fallback or just the radio ID, while cli
   assert.match(second.textContent, /14590104 · Fallback Officer · Possible association/);
   assert.match(second.textContent, /14590221,/);
   assert.match(second.textContent, /14590067 · Usual Officer · Confirmed this day/);
+  const images = node => node.children.flatMap(child => child.tag === "img" ? [child] : images(child));
+  assert.deepEqual(images(first).map(image => image.src), [
+    "https://media.afpd-accountability.com/officer-photos/thumbnails/usual-thumbnail.webp",
+    "https://media.afpd-accountability.com/officer-photos/thumbnails/other-thumbnail.webp"
+  ]);
+  assert.deepEqual(images(second).map(image => image.src), [
+    "https://media.afpd-accountability.com/officer-photos/thumbnails/usual-thumbnail.webp"
+  ]);
+  assert.equal(images(first)[0].loading, "lazy");
+  images(first)[0].emit("error");
+  assert.equal(images(first)[0].hidden, true);
   assert.match(second.textContent, /14590081/);
   assert.doesNotMatch(second.textContent, /Held Fallback/);
   f.get("day").value = "2026-09-10";

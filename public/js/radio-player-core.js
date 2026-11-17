@@ -211,7 +211,21 @@ function createIdentity(getDate) {
         const status = document.createElement("span");
         status.className = "radio-association-status";
         status.textContent = ` · ${associationLabels[entry.status]}`;
-        item.append(officer, status, informationControl(entry, id));
+        item.append(officer, status);
+        if (["confirmed", "confirmed-clip"].includes(entry.status) &&
+            /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(entry.officer_id ?? "")) {
+          const photo = document.createElement("img");
+          photo.className = "radio-officer-thumbnail";
+          photo.alt = "";
+          photo.width = 32;
+          photo.height = 32;
+          photo.loading = "lazy";
+          photo.decoding = "async";
+          photo.addEventListener("error", () => { photo.hidden = true; });
+          photo.src = `https://media.afpd-accountability.com/officer-photos/thumbnails/${entry.officer_id}-thumbnail.webp`;
+          item.append(photo);
+        }
+        item.append(informationControl(entry, id));
       }
       element.append(item);
       if (index < ids.length - 1) {
