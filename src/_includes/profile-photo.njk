@@ -1,9 +1,10 @@
 {# Shared portrait component. Leave photo unset for profiles without a photo. #}
 {% macro renderProfilePhoto(photo, name, hideOnError = false) -%}
   {%- if photo and photo.src -%}
-    <a class="profile-photo" href="{{ photo.src | escape }}" aria-label="View full photo of {{ name | escape }}">
+    {% set photoUrl = photo.src | siteOfficerPhotoUrl %}
+    <a class="profile-photo" href="{{ photoUrl | escape }}" aria-label="View full photo of {{ name | escape }}">
       <img
-        src="{{ photo.src | escape }}"
+        src="{{ photoUrl | escape }}"
         alt="{{ (photo.alt or ('Portrait of ' ~ name)) | escape }}"
         {% if photo.width and photo.height %}width="{{ photo.width | escape }}" height="{{ photo.height | escape }}"{% endif %}
         style="object-position: {{ (photo.position or 'center top') | escape }};"

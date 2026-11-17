@@ -28,6 +28,8 @@ const currencyFormatter = new Intl.NumberFormat("en-US", {
 });
 
 export default function (eleventyConfig) {
+  eleventyConfig.addFilter("siteOfficerPhotoUrl", value =>
+    typeof value === "string" ? value.replace(/^https:\/\/media\.afpd-accountability\.com(?=\/officer-photos\/)/, "") : value);
   validateOriginalTranscripts();
   buildOfficerAssociations();
   eleventyConfig.addWatchTarget("./data/officer-association-evidence.json");

@@ -1,5 +1,5 @@
 import { r2RadioAudio } from "./r2-radio-audio.js";
-import { r2OfficerThumbnail } from "./r2-officer-thumbnails.js";
+import { r2OfficerPhoto } from "./r2-officer-photos.js";
 
 const OLD_PRODUCTION_HOST =
   "afpd-tracker.ericseamonsdeveloper.workers.dev";
@@ -51,7 +51,7 @@ export default {
     let response = await env.ASSETS.fetch(request);
     if (response.status === 404) {
       const object = await r2RadioAudio(request, env.RADIO_AUDIO) ??
-        await r2OfficerThumbnail(request, env.RADIO_AUDIO);
+        await r2OfficerPhoto(request, env.RADIO_AUDIO);
       if (object) response = object;
     }
 
