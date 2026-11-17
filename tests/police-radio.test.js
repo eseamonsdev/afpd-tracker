@@ -810,11 +810,11 @@ test("date exclusions show the compiled fallback or just the radio ID, while cli
   assert.match(second.textContent, /14590067 · Usual Officer · Confirmed this day/);
   const images = node => node.children.flatMap(child => child.tag === "img" ? [child] : images(child));
   assert.deepEqual(images(first).map(image => image.src), [
-    "https://media.afpd-accountability.com/officer-photos/thumbnails/usual-thumbnail.webp",
-    "https://media.afpd-accountability.com/officer-photos/thumbnails/other-thumbnail.webp"
+    "/officer-photos/thumbnails/usual-thumbnail.webp",
+    "/officer-photos/thumbnails/other-thumbnail.webp"
   ]);
   assert.deepEqual(images(second).map(image => image.src), [
-    "https://media.afpd-accountability.com/officer-photos/thumbnails/usual-thumbnail.webp"
+    "/officer-photos/thumbnails/usual-thumbnail.webp"
   ]);
   assert.equal(images(first)[0].loading, "lazy");
   images(first)[0].emit("error");

@@ -222,7 +222,7 @@ function createIdentity(getDate) {
           photo.loading = "lazy";
           photo.decoding = "async";
           photo.addEventListener("error", () => { photo.hidden = true; });
-          photo.src = `https://media.afpd-accountability.com/officer-photos/thumbnails/${entry.officer_id}-thumbnail.webp`;
+          photo.src = `/officer-photos/thumbnails/${entry.officer_id}-thumbnail.webp`;
           item.append(photo);
         }
         item.append(informationControl(entry, id));

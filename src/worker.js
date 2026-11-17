@@ -1,4 +1,5 @@
 import { r2RadioAudio } from "./r2-radio-audio.js";
+import { r2OfficerThumbnail } from "./r2-officer-thumbnails.js";
 
 const OLD_PRODUCTION_HOST =
   "afpd-tracker.ericseamonsdeveloper.workers.dev";
@@ -49,8 +50,9 @@ export default {
     }
     let response = await env.ASSETS.fetch(request);
     if (response.status === 404) {
-      const audio = await r2RadioAudio(request, env.RADIO_AUDIO);
-      if (audio) response = audio;
+      const object = await r2RadioAudio(request, env.RADIO_AUDIO) ??
+        await r2OfficerThumbnail(request, env.RADIO_AUDIO);
+      if (object) response = object;
     }
 
     // Raw Law 2 recordings/transcripts remain accessible without search indexing.
