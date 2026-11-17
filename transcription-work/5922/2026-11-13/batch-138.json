@@ -1,0 +1,657 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-13",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794631594.m4a": {
+      "index": 1371,
+      "epoch": 1794631594,
+      "sha256": "7610a19e7c30e54d312efa5318b10c843277a91d7594af89932458f007f977f4",
+      "passes": {
+        "original": {
+          "text": "I'm going to be out at Highland Elementary on Local 4, Charlie 5, Romeo, Romeo.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.86,
+              "text": " I'm going to be out at Highland Elementary on Local 4,",
+              "avg_logprob": -0.39417869567871094,
+              "no_speech_prob": 0.002848763484507799,
+              "compression_ratio": 0.9753086419753086
+            },
+            {
+              "start": 2.86,
+              "end": 4.0200000000000005,
+              "text": " Charlie 5, Romeo, Romeo.",
+              "avg_logprob": -0.39417869567871094,
+              "no_speech_prob": 0.002848763484507799,
+              "compression_ratio": 0.9753086419753086
+            }
+          ]
+        },
+        "filtered": {
+          "text": "And be out at Highland Elementary on Local 4, Charlie 5, Romeo, Romeo.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.32,
+              "text": " And be out at Highland Elementary on Local 4, Charlie 5, Romeo, Romeo.",
+              "avg_logprob": -0.5195996522903442,
+              "no_speech_prob": 0.005135040730237961,
+              "compression_ratio": 0.9859154929577465
+            }
+          ]
+        },
+        "context": {
+          "text": "I'll be out at Highland Elementary on Local 4, Charlie 5, Romeo Romeo.",
+          "prompt": "I copy. 18, you're 19, copy citizen contact. 18th and 19th.",
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.24,
+              "text": " I'll be out at Highland Elementary on Local 4, Charlie 5, Romeo Romeo.",
+              "avg_logprob": -0.40006950944662095,
+              "no_speech_prob": 0.0076543535105884075,
+              "compression_ratio": 0.958904109589041
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794631600.m4a": {
+      "index": 1372,
+      "epoch": 1794631600,
+      "sha256": "c185b5836bf3d24ff4f596565fbd941d4d1eb0e83b3ac4c06225de11483013b8",
+      "passes": {
+        "original": {
+          "text": "Crappie.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Crappie.",
+              "avg_logprob": -0.985616786139352,
+              "no_speech_prob": 0.036991529166698456,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.9368452072143555,
+              "no_speech_prob": 0.04551487788558006,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "18, you're 19, copy citizen contact. 18th and 19th. I'm going to be out at Highland Elementary on Local 4, Charlie 5, Romeo, Romeo.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5322504043579102,
+              "no_speech_prob": 0.012184849008917809,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794631688.m4a": {
+      "index": 1373,
+      "epoch": 1794631688,
+      "sha256": "b2b5d1a84b1c121480f9f102b59d3f3ee84c97dcd096550b5c5ee1da21729bfa",
+      "passes": {
+        "original": {
+          "text": "18 and 19, I think.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18 and 19, I think.",
+              "avg_logprob": -0.8909532308578492,
+              "no_speech_prob": 0.09953244030475616,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you very much. Thank you.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you very much.",
+              "avg_logprob": -0.9916768807631272,
+              "no_speech_prob": 0.013810618780553341,
+              "compression_ratio": 0.9393939393939394
+            },
+            {
+              "start": 1.0,
+              "end": 1.5,
+              "text": " Thank you.",
+              "avg_logprob": -0.9916768807631272,
+              "no_speech_prob": 0.013810618780553341,
+              "compression_ratio": 0.9393939393939394
+            }
+          ]
+        },
+        "context": {
+          "text": "18 and 19, I think.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18 and 19, I think.",
+              "avg_logprob": -0.8909532308578492,
+              "no_speech_prob": 0.09953244030475616,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794631692.m4a": {
+      "index": 1374,
+      "epoch": 1794631692,
+      "sha256": "a46cfdd1fe3dd3bc19aa845cc9a4b26017bada45a833b530cf20cb8d4cd8e8b7",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7086077213287354,
+              "no_speech_prob": 0.023290948942303658,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " Copy.",
+              "avg_logprob": -0.5086915016174316,
+              "no_speech_prob": 0.03910771757364273,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "18 and 19, I think.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5648148536682129,
+              "no_speech_prob": 0.03201136738061905,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794631812.m4a": {
+      "index": 1375,
+      "epoch": 1794631812,
+      "sha256": "f83b4cdd01303ea305e86abb4d153c760948b7d6ca9653f9d746658ae2193ec4",
+      "passes": {
+        "original": {
+          "text": "Five, two, sixteen, go for it.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Five, two, sixteen, go for it.",
+              "avg_logprob": -0.7331151228684646,
+              "no_speech_prob": 0.0637635812163353,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5-6-5-6-5-6-5-6-5-6",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.53,
+              "text": " 5-6-5-6-5-6-5-6-5-6",
+              "avg_logprob": -0.6370189076378232,
+              "no_speech_prob": 0.057232581079006195,
+              "compression_ratio": 1.3571428571428572
+            }
+          ]
+        },
+        "context": {
+          "text": "Five, two, sixteen, go for it.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Five, two, sixteen, go for it.",
+              "avg_logprob": -0.7331151228684646,
+              "no_speech_prob": 0.0637635812163353,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794631822.m4a": {
+      "index": 1376,
+      "epoch": 1794631822,
+      "sha256": "1672c0d5ef79a2d3827e7d9ef2e595bf397bcbdaefe1abe4feed86182af85869",
+      "passes": {
+        "original": {
+          "text": "5-6-8, Code 4 Check.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5-6-8, Code 4 Check.",
+              "avg_logprob": -0.8072300874269925,
+              "no_speech_prob": 0.01962200365960598,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5-8-16 Code for Trek.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5-8-16 Code for Trek.",
+              "avg_logprob": -0.7336043467124304,
+              "no_speech_prob": 0.01023322343826294,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "context": {
+          "text": "Five, two, sixteen, code four, check.",
+          "prompt": "Five, two, sixteen, go for it.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Five, two, sixteen, code four, check.",
+              "avg_logprob": -0.4754644589764731,
+              "no_speech_prob": 0.016379594802856445,
+              "compression_ratio": 0.8604651162790697
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794631829.m4a": {
+      "index": 1377,
+      "epoch": 1794631829,
+      "sha256": "66b17acf74bb74a35a615fee4b855d4c442f0650912f23ffb0cbc7cb06d0890b",
+      "passes": {
+        "original": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.7147418260574341,
+              "no_speech_prob": 0.0547918863594532,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.6468550137111119,
+              "no_speech_prob": 0.07201535999774933,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Code 4.",
+          "prompt": "Five, two, sixteen, go for it. 5-6-8, Code 4 Check.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Code 4.",
+              "avg_logprob": -0.45944814880688983,
+              "no_speech_prob": 0.016881266608834267,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794631846.m4a": {
+      "index": 1378,
+      "epoch": 1794631846,
+      "sha256": "25e768551a8f5924ec2fcc29d0074c31b4ae8fa2bc0f3b542157462997c0b31b",
+      "passes": {
+        "original": {
+          "text": "5G47 traffic.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G47 traffic.",
+              "avg_logprob": -0.4979182928800583,
+              "no_speech_prob": 0.04464906454086304,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J47 traffic.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J47 traffic.",
+              "avg_logprob": -0.5348020121455193,
+              "no_speech_prob": 0.058631494641304016,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "5G47 traffic.",
+          "prompt": "Five, two, sixteen, go for it. 5-6-8, Code 4 Check. Go for it.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G47 traffic.",
+              "avg_logprob": -0.4836895689368248,
+              "no_speech_prob": 0.003139289328828454,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794631849.m4a": {
+      "index": 1379,
+      "epoch": 1794631849,
+      "sha256": "18947977960b7d4e91fbefa26488dc7c4e0c1892399ff9cdd07ea2f14cee0d3a",
+      "passes": {
+        "original": {
+          "text": "5G47.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G47.",
+              "avg_logprob": -0.8355926104954311,
+              "no_speech_prob": 0.01995946653187275,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G47.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G47.",
+              "avg_logprob": -0.657755970954895,
+              "no_speech_prob": 0.019379818812012672,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "5G47.",
+          "prompt": "5-6-8, Code 4 Check. Go for it. 5G47 traffic.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 5G47.",
+              "avg_logprob": -0.4042536275727408,
+              "no_speech_prob": 0.012260904535651207,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794631860.m4a": {
+      "index": 1380,
+      "epoch": 1794631860,
+      "sha256": "e0d1434128ed6350f4e9c1e24ef0f0f2ac6a627b0784938ca7b1607d2b97f52e",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6668359756469726,
+              "no_speech_prob": 0.03593685105443001,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " Copy.",
+              "avg_logprob": -0.6583002090454102,
+              "no_speech_prob": 0.03804175928235054,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "Go for it. 5G47 traffic. 5G47.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.3858364105224609,
+              "no_speech_prob": 0.03176901862025261,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
