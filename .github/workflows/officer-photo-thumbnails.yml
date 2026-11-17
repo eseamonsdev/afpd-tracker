@@ -1,0 +1,36 @@
+name: Generate officer photo thumbnails
+
+on:
+  push:
+    branches: [staging, main]
+    paths:
+      - .github/workflows/officer-photo-thumbnails.yml
+      - scripts/generate_officer_thumbnails.py
+  workflow_dispatch:
+  schedule:
+    - cron: '17 9 * * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: officer-photo-thumbnails
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'boto3>=1.40,<2' 'Pillow>=11,<14'
+      - name: Generate and verify R2 thumbnails
+        env:
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ vars.R2_BUCKET_NAME }}
+          R2_ENDPOINT: ${{ vars.R2_ENDPOINT }}
+        run: python scripts/generate_officer_thumbnails.py
