@@ -35,7 +35,7 @@ def name_parts(name, kind):
     if kind != 'personal_name' or '(' in name or ')' in name:
         return (None, None, None)
     words = name.split()
-    if not 2 <= len(words) <= 3 or words[0].endswith('.'):
+    if not 2 <= len(words) <= 3:
         return (None, None, None)
     return (words[0], words[1] if len(words) == 3 else None, words[-1])
 
