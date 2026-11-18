@@ -1,0 +1,649 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-17",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794971925.m4a": {
+      "index": 1221,
+      "epoch": 1794971925,
+      "sha256": "f4075e164a0db812dc803598e3c6c03d341ff9c503f27b6f7ce820037e96d074",
+      "passes": {
+        "original": {
+          "text": "This has happened before unknown who lives there.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " This has happened before unknown who lives there.",
+              "avg_logprob": -0.40732550869385403,
+              "no_speech_prob": 0.01861724816262722,
+              "compression_ratio": 0.9074074074074074
+            }
+          ]
+        },
+        "filtered": {
+          "text": "This has happened before unknown who lives there.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.92,
+              "text": " This has happened before unknown who lives there.",
+              "avg_logprob": -0.38200721393028897,
+              "no_speech_prob": 0.007778182625770569,
+              "compression_ratio": 0.9074074074074074
+            }
+          ]
+        },
+        "context": {
+          "text": "This has happened before, unknown who lives there.",
+          "prompt": "Hello there, are you in your car? 7J30, copy PB in progress. 203 W. Sunner Street, Building 4, Unit 147, therapy. You can hear a woman scream and stop it, stop it, and running around from Apartment 247.",
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.9,
+              "text": " This has happened before, unknown who lives there.",
+              "avg_logprob": -0.3024760668094342,
+              "no_speech_prob": 0.010079124011099339,
+              "compression_ratio": 0.9090909090909091
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794971928.m4a": {
+      "index": 1222,
+      "epoch": 1794971928,
+      "sha256": "1dbd891a5f164b092d1dd800623f1741790ef3387c09bca24033630302c77eea",
+      "passes": {
+        "original": {
+          "text": "Unknown if there's any codes in the apartment, went on for about 3-4 minutes, unknown weapons, unknown alcohol, unknown drugs.",
+          "prompt": null,
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 30,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Unknown if there's any codes in the apartment, went on for about 3-4 minutes, unknown weapons, unknown alcohol, unknown drugs.",
+              "avg_logprob": -0.26450488836534564,
+              "no_speech_prob": 0.005418416578322649,
+              "compression_ratio": 1.2352941176470589
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Unknown if there's any codes in the apartment, went on for about 3-4 minutes. Unknown weapons, unknown alcohol, unknown drugs.",
+          "prompt": null,
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 32,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.24,
+              "text": " Unknown if there's any codes in the apartment, went on for about 3-4 minutes.",
+              "avg_logprob": -0.33293039148504083,
+              "no_speech_prob": 0.0043945652432739735,
+              "compression_ratio": 1.2233009708737863
+            },
+            {
+              "start": 4.24,
+              "end": 6.640000000000001,
+              "text": " Unknown weapons, unknown alcohol, unknown drugs.",
+              "avg_logprob": -0.33293039148504083,
+              "no_speech_prob": 0.0043945652432739735,
+              "compression_ratio": 1.2233009708737863
+            }
+          ]
+        },
+        "context": {
+          "text": "Unknown if there's any codes in the apartment, went on for about 3-4 minutes. Unknown weapons, unknown alcohol, unknown drugs.",
+          "prompt": "7J30, copy PB in progress. 203 W. Sunner Street, Building 4, Unit 147, therapy. You can hear a woman scream and stop it, stop it, and running around from Apartment 247. This has happened before unknown who lives there.",
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 30,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Unknown if there's any codes in the apartment, went on for about 3-4 minutes. Unknown weapons, unknown alcohol, unknown drugs.",
+              "avg_logprob": -0.2351540663549977,
+              "no_speech_prob": 0.0004719931457657367,
+              "compression_ratio": 1.2233009708737863
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794971936.m4a": {
+      "index": 1223,
+      "epoch": 1794971936,
+      "sha256": "d13451fbea548ef8df20a0330222aba9f10322deb9fc1f075ba60e5281f7b29a",
+      "passes": {
+        "original": {
+          "text": "Gosh.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.7,
+              "text": " Gosh.",
+              "avg_logprob": -1.0957595705986023,
+              "no_speech_prob": 0.1829756498336792,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Got it.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Got it.",
+              "avg_logprob": -0.8529594540596008,
+              "no_speech_prob": 0.20491519570350647,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Got it.",
+          "prompt": "203 W. Sunner Street, Building 4, Unit 147, therapy. You can hear a woman scream and stop it, stop it, and running around from Apartment 247. This has happened before unknown who lives there. Unknown if there's any codes in the apartment, went on for about 3-4 minutes, unknown weapons, unknown alcohol, unknown drugs.",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.7,
+              "text": " Got it.",
+              "avg_logprob": -1.0473805665969849,
+              "no_speech_prob": 0.3641695976257324,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794971940.m4a": {
+      "index": 1224,
+      "epoch": 1794971940,
+      "sha256": "3ef7027715e442e1f93064ae769c312f327144a826cca36fa24e4fbcc3ab42a3",
+      "passes": {
+        "original": {
+          "text": "You're in the box.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You're in the box.",
+              "avg_logprob": -0.9426106346978081,
+              "no_speech_prob": 0.05046985298395157,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "filtered": {
+          "text": "You're welcome.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " You're welcome.",
+              "avg_logprob": -0.9172699110848563,
+              "no_speech_prob": 0.031932514160871506,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "context": {
+          "text": "You're in the box.",
+          "prompt": "This has happened before unknown who lives there. Unknown if there's any codes in the apartment, went on for about 3-4 minutes, unknown weapons, unknown alcohol, unknown drugs. Gosh.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " You're in the box.",
+              "avg_logprob": -0.785332997639974,
+              "no_speech_prob": 0.06330069154500961,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794971942.m4a": {
+      "index": 1225,
+      "epoch": 1794971942,
+      "sha256": "91f1bec454c48baffcda7d7103fdfb479bbf8c018df2d2fb9589afbf1883fd59",
+      "passes": {
+        "original": {
+          "text": "They're going to want to try to be real.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " They're going to want to try to be real.",
+              "avg_logprob": -0.683601588010788,
+              "no_speech_prob": 0.03492926433682442,
+              "compression_ratio": 0.9302325581395349
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm starting to watch how we roll.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm starting to watch how we roll.",
+              "avg_logprob": -0.7344198127587637,
+              "no_speech_prob": 0.0903225988149643,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "context": {
+          "text": "They're going to watch. Are we real?",
+          "prompt": "Unknown if there's any codes in the apartment, went on for about 3-4 minutes, unknown weapons, unknown alcohol, unknown drugs. Gosh. You're in the box.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.4000000000000001,
+              "text": " They're going to watch. Are we real?",
+              "avg_logprob": -0.590668146426861,
+              "no_speech_prob": 0.07117315381765366,
+              "compression_ratio": 0.8372093023255814
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794971944.m4a": {
+      "index": 1226,
+      "epoch": 1794971944,
+      "sha256": "9ffdec657fd7c656d56e20032b833bb16fc7c0727546f9c459c71e72781b34ed",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7121178150177002,
+              "no_speech_prob": 0.012327073141932487,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Copy.",
+              "avg_logprob": -0.7368884563446045,
+              "no_speech_prob": 0.01585155911743641,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "Gosh. You're in the box. They're going to want to try to be real.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.3742009162902832,
+              "no_speech_prob": 0.020984813570976257,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794971946.m4a": {
+      "index": 1227,
+      "epoch": 1794971946,
+      "sha256": "886ae33c19479599a39269c21149c6a805a57125367138a22bf90ad303431415",
+      "passes": {
+        "original": {
+          "text": "7 day 10 en route.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7 day 10 en route.",
+              "avg_logprob": -0.7034633954366049,
+              "no_speech_prob": 0.01078631728887558,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7 day 10 in route.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.48,
+              "text": " 7 day 10 in route.",
+              "avg_logprob": -0.8618064456515842,
+              "no_speech_prob": 0.015636809170246124,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "context": {
+          "text": "Seven day ten, en route.",
+          "prompt": "You're in the box. They're going to want to try to be real. Copy.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Seven day ten, en route.",
+              "avg_logprob": -0.5564646542072296,
+              "no_speech_prob": 0.009819910861551762,
+              "compression_ratio": 0.8
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794971954.m4a": {
+      "index": 1228,
+      "epoch": 1794971954,
+      "sha256": "03931da5853feb0c8cd23e67a0f40699d47ea0d52a083820493273730bba67b7",
+      "passes": {
+        "original": {
+          "text": "5J52 arrived",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J52 arrived",
+              "avg_logprob": -0.5911200387137276,
+              "no_speech_prob": 0.06290450692176819,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J52 arrived.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J52 arrived.",
+              "avg_logprob": -0.5045742467045784,
+              "no_speech_prob": 0.04732302948832512,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "5J52 arrived.",
+          "prompt": "They're going to want to try to be real. Copy. 7 day 10 en route.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J52 arrived.",
+              "avg_logprob": -0.4667537361383438,
+              "no_speech_prob": 0.009351128712296486,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794971956.m4a": {
+      "index": 1229,
+      "epoch": 1794971956,
+      "sha256": "0a5abc6afef6188583e7f8313088d5511098ae24f10e70dbacc0d36891079d2d",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6000391006469726,
+              "no_speech_prob": 0.006311147473752499,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " Copy.",
+              "avg_logprob": -0.525836992263794,
+              "no_speech_prob": 0.013271158561110497,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "Copy. 7 day 10 en route. 5J52 arrived",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.4507277011871338,
+              "no_speech_prob": 0.0192031878978014,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794971970.m4a": {
+      "index": 1230,
+      "epoch": 1794971970,
+      "sha256": "f2b9529d38f3dcb45cf54479f4b0e3897a829a2bad1f54b24ec865f850babeba",
+      "passes": {
+        "original": {
+          "text": "These are flares on the north-south side.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " These are flares on the north-south side.",
+              "avg_logprob": -0.3240793760006244,
+              "no_speech_prob": 0.034099679440259933,
+              "compression_ratio": 0.8723404255319149
+            }
+          ]
+        },
+        "filtered": {
+          "text": "These are flares on the north-south side.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " These are flares on the north-south side.",
+              "avg_logprob": -0.3815706968307495,
+              "no_speech_prob": 0.04977092891931534,
+              "compression_ratio": 0.8723404255319149
+            }
+          ]
+        },
+        "context": {
+          "text": "These are flares on the north-south side.",
+          "prompt": "7 day 10 en route. 5J52 arrived Copy.",
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " These are flares on the north-south side.",
+              "avg_logprob": -0.3542912556574895,
+              "no_speech_prob": 0.05883431062102318,
+              "compression_ratio": 0.8723404255319149
+            }
+          ]
+        }
+      }
+    }
+  }
+}
