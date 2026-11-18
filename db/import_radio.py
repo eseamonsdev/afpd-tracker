@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ARCHIVES = ROOT / 'public/records/openmhz'
 TALKGROUP_NAMES = {5922: 'Law 2 Northeast', 6001: 'American Fork PD Car to Car',
                    6036: 'American Fork Police'}
+INVALID_RADIO_IDS = {'-1', '0', '1'}
 
 
 def flag(value):
@@ -58,6 +59,8 @@ def import_radio(connection):
             positions = {str(src['src']): src.get('pos') for src in (call.get('srcList') or [])
                          if isinstance(src, dict) and src.get('src') is not None}
             for radio_id in dict.fromkeys(str(value) for value in (call.get('radio_ids') or [])):
+                if radio_id in INVALID_RADIO_IDS:
+                    continue
                 connection.execute('INSERT OR IGNORE INTO radio_ids(id) VALUES (?)', (radio_id,))
                 connection.execute('INSERT INTO radio_clip_sources VALUES (?, ?, ?)',
                                    (call['id'], radio_id, positions.get(radio_id)))
