@@ -9,10 +9,12 @@ import json
 from pathlib import Path
 import re
 import sqlite3
+from import_radio import import_radio
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / 'data/entities/people/officers'
 SCHEMA = Path(__file__).resolve().parent / 'migrations/0001_officer_names.sql'
+RADIO_SCHEMA = Path(__file__).resolve().parent / 'migrations/0002_radio.sql'
 DEFAULT_OUTPUT = Path(__file__).resolve().parent / 'local/officer-names.sqlite'
 
 # These aliases have explicit officer identification in the radio evidence.
@@ -122,11 +124,15 @@ def main():
     try:
         connection.execute('PRAGMA foreign_keys = ON')
         connection.executescript(SCHEMA.read_text(encoding='utf-8'))
+        connection.executescript(RADIO_SCHEMA.read_text(encoding='utf-8'))
         officers, names = import_data(connection)
+        with connection:
+            archives, clips, sources = import_radio(connection)
         violations = connection.execute('PRAGMA foreign_key_check').fetchall()
         if violations:
             raise ValueError(f'Foreign key violations: {violations}')
-        print(f'Created {output}: {officers} officers, {names} name forms')
+        print(f'Created {output}: {officers} officers, {names} name forms; '
+              f'{archives} radio days, {clips} clips, {sources} clip sources')
     except Exception:
         connection.close()
         output.unlink(missing_ok=True)

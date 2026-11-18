@@ -1,0 +1,65 @@
+"""Import archived OpenMHz calls into the local SQLite preview.
+
+Use the archive's R2 storage reference; expiring OpenMHz media URLs are not copied.
+"""
+
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+ARCHIVES = ROOT / 'public/records/openmhz'
+TALKGROUP_NAMES = {5922: 'Law 2 Northeast', 6001: 'American Fork PD Car to Car',
+                   6036: 'American Fork Police'}
+
+
+def flag(value):
+    return None if value is None else int(bool(value))
+
+
+def import_radio(connection):
+    files = sorted(ARCHIVES.glob('*/calls.json'))
+    if not files:
+        raise ValueError(f'No calls.json archives found in {ARCHIVES}')
+    clips = sources = 0
+    for file in files:
+        archive = json.loads(file.read_text(encoding='utf-8'))
+        system, group, day = archive['system'], archive['talkgroup'], archive['date']
+        name = archive.get('talkgroup_name') or TALKGROUP_NAMES.get(group)
+        if not name:
+            name = next((c.get('talkgroup_name') for c in archive['calls']
+                         if c.get('talkgroup_name')), str(group))
+        connection.execute('INSERT OR IGNORE INTO radio_talkgroups VALUES (?, ?, ?)',
+                           (system, group, name))
+        path = file.relative_to(ROOT).as_posix()
+        for number, call in enumerate(archive['calls'], start=1):
+            if call['talkgroup'] != group:
+                raise ValueError(f'Talkgroup mismatch in {path} clip {number}')
+            storage = call.get('audio_storage') or {}
+            connection.execute('''INSERT INTO radio_clips
+                (id, system, talkgroup_number, archive_date, clip_number, timestamp_utc,
+                 original_filename, displayed_seconds, audio_duration_seconds,
+                 frequency_hz, emergency, transcript, original_transcript,
+                 transcript_validated, needs_review, audio_provider, audio_bucket, audio_key,
+                 audio_sha256, audio_size_bytes, audio_verified, audio_downloaded,
+                 source_duration_matches, archive_path)
+                VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',
+                (call['id'], system, group, day, number, call['timestamp_utc'],
+                 call.get('original_filename'),
+                 call.get('displayed_seconds'), call.get('audio_duration_seconds'),
+                 call.get('frequency_hz', call.get('freq')),
+                 flag(call.get('emergency')),
+                 call.get('transcript'), call.get('original_transcript'),
+                 flag(call.get('validated')), flag(call.get('needs_review')),
+                 storage.get('provider'), storage.get('bucket'), storage.get('key'),
+                 storage.get('sha256'), storage.get('size_bytes'),
+                 flag(storage.get('verified')), flag(call.get('audio_downloaded')),
+                 flag(call.get('source_duration_matches')), path))
+            clips += 1
+            positions = {str(src['src']): src.get('pos') for src in (call.get('srcList') or [])
+                         if isinstance(src, dict) and src.get('src') is not None}
+            for radio_id in dict.fromkeys(str(value) for value in (call.get('radio_ids') or [])):
+                connection.execute('INSERT OR IGNORE INTO radio_ids(id) VALUES (?)', (radio_id,))
+                connection.execute('INSERT INTO radio_clip_sources VALUES (?, ?, ?)',
+                                   (call['id'], radio_id, positions.get(radio_id)))
+                sources += 1
+    return len(files), clips, sources

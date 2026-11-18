@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Officer database viewer</title>
+  <title>Database viewer</title>
   <style>
     :root { color-scheme: light; font-family: system-ui, sans-serif; background: #f3f6fa; color: #172840; }
     * { box-sizing: border-box; }
@@ -33,10 +33,12 @@
 </head>
 <body>
   <main>
-    <h1>Officer database viewer</h1>
-    <p>Read-only snapshot of the officer database. This page cannot modify the database or the public website.</p>
+    <h1>Database viewer</h1>
+    <p>Read-only snapshot of the officer and radio tables. This page cannot modify the database or the public website.</p>
     <div class="controls">
-      <label>Table <select id="table"><option value="officers">officers</option><option value="officer_names">officer_names</option></select></label>
+      <label>Table <select id="table"><option value="officers">officers</option><option value="officer_names">officer_names</option><option value="radio_talkgroups">radio_talkgroups</option><option value="radio_ids">radio_ids</option><option value="radio_clips">radio_clips</option><option value="radio_clip_sources">radio_clip_sources</option></select></label>
+      <label id="month-control" hidden>Archive month <select id="month"></select></label>
+      <label id="talkgroup-control" hidden>Talkgroup <select id="talkgroup"><option value="">All talkgroups</option></select></label>
       <label>Search <input id="search" type="search" placeholder="Name, slug, or ID" autocomplete="off"></label>
       <button id="clear-filter" type="button" hidden>Show all names</button>
     </div>
@@ -45,8 +47,11 @@
     <div class="pages"><button id="previous" type="button">Previous</button><span id="page"></span><button id="next" type="button">Next</button></div>
   </main>
   <script>
-    const state = { table: 'officers', search: '', offset: 0, limit: 25, officerId: null };
+    const state = { table: 'officers', search: '', offset: 0, limit: 25, officerId: null, month: '', talkgroup: '' };
     const tableSelect = document.getElementById('table');
+    const monthSelect = document.getElementById('month');
+    const talkgroupSelect = document.getElementById('talkgroup');
+    const radioTables = new Set(['radio_clips', 'radio_clip_sources']);
     const searchInput = document.getElementById('search');
     const summary = document.getElementById('summary');
     const clearFilter = document.getElementById('clear-filter');
@@ -60,18 +65,70 @@
     // the read-only SQLite API when there is no snapshot file.
     const snapshotPromise = fetch('/db/snapshot.json', { cache: 'no-store' })
       .then(response => response.ok ? response.json() : null).catch(() => null);
+    const chunkCache = new Map();
+
+    async function initializePeriods() {
+      const snapshot = await snapshotPromise;
+      const periods = snapshot ? snapshot._radio_chunks :
+        (await (await fetch('/db/api/radio-periods')).json()).periods;
+      const months = [...new Set(periods.map(period => period.month))];
+      for (const month of months) monthSelect.add(new Option(month, month));
+      for (const group of [...new Set(periods.map(period => period.talkgroup))].sort((a, b) => a - b)) {
+        talkgroupSelect.add(new Option(String(group), String(group)));
+      }
+      state.month = months[0] || '';
+    }
+
+    async function radioRows(snapshot) {
+      const chunks = snapshot._radio_chunks.filter(item => item.month === state.month &&
+        (!state.talkgroup || String(item.talkgroup) === state.talkgroup));
+      const parts = await Promise.all(chunks.map(async item => {
+        if (!chunkCache.has(item.file)) {
+          chunkCache.set(item.file, fetch(`/db/${item.file}`).then(async response => {
+            if (!response.ok) throw new Error(`Could not load ${item.file}`);
+            const stream = response.body.pipeThrough(new DecompressionStream('gzip'));
+            return JSON.parse(await new Response(stream).text());
+          }));
+        }
+        return chunkCache.get(item.file);
+      }));
+      const columns = parts[0]?.[state.table].columns ||
+        (state.table === 'radio_clips' ? ['id', 'system', 'talkgroup_number', 'archive_date', 'clip_number',
+          'timestamp_utc', 'original_filename', 'displayed_seconds', 'audio_duration_seconds',
+          'frequency_hz', 'emergency', 'transcript',
+          'original_transcript', 'transcript_validated', 'needs_review', 'audio_provider',
+          'audio_bucket', 'audio_key', 'audio_sha256', 'audio_size_bytes', 'audio_verified',
+          'audio_downloaded', 'source_duration_matches', 'archive_path'] :
+          ['clip_id', 'radio_id', 'source_position', 'archive_date', 'talkgroup_number', 'clip_number']);
+      const unpack = table => table.rows.map(values => Object.fromEntries(
+        table.columns.map((column, index) => [column, values[index]])));
+      const rows = parts.flatMap(part => unpack(part[state.table]));
+      const sources = new Map();
+      if (state.table === 'radio_clips') for (const part of parts) {
+        for (const source of unpack(part.radio_clip_sources)) {
+          if (!sources.has(source.clip_id)) sources.set(source.clip_id, []);
+          sources.get(source.clip_id).push(source.radio_id);
+        }
+      }
+      return { columns, rows, sources };
+    }
 
     async function getRows() {
       const snapshot = await snapshotPromise;
       if (!snapshot) {
         const params = new URLSearchParams({ q: state.search, offset: state.offset, limit: state.limit });
         if (state.officerId !== null) params.set('officer_id', state.officerId);
+        if (radioTables.has(state.table)) {
+          if (state.month) params.set('month', state.month);
+          if (state.talkgroup) params.set('talkgroup', state.talkgroup);
+        }
         const response = await fetch(`/db/api/table/${state.table}?${params}`);
         const result = await response.json();
         if (!response.ok) throw new Error(result.error || 'Could not load table');
         return result;
       }
-      const table = snapshot[state.table];
+      const radio = radioTables.has(state.table) ? await radioRows(snapshot) : null;
+      const table = radio || snapshot[state.table];
       if (!table) throw new Error('Unknown table');
       const query = state.search.trim().toLocaleLowerCase();
       const officers = new Map(snapshot.officers.rows.map(officer => [officer.id, officer]));
@@ -88,8 +145,19 @@
             row.legacy_entity_id.toLocaleLowerCase().includes(query) ||
             (names.get(row.id) || []).some(name => name.includes(query));
         }
-        return String(row.id) === query || row.name_text.toLocaleLowerCase().includes(query) ||
+        if (state.table === 'officer_names') return String(row.id) === query ||
+          row.name_text.toLocaleLowerCase().includes(query) ||
           officers.get(row.officer_id)?.url_slug.toLocaleLowerCase().includes(query);
+        if (state.table === 'radio_talkgroups') return String(row.number).includes(query) ||
+          row.name.toLocaleLowerCase().includes(query) || row.system.toLocaleLowerCase().includes(query);
+        if (state.table === 'radio_ids') return row.id.includes(query);
+        if (state.table === 'radio_clips') return row.id.includes(query) ||
+          row.archive_date.includes(query) ||
+          String(row.clip_number) === query || (row.transcript || '').toLocaleLowerCase().includes(query) ||
+          (row.original_transcript || '').toLocaleLowerCase().includes(query) ||
+          (radio.sources.get(row.id) || []).some(id => id.includes(query));
+        return row.radio_id.includes(query) || row.clip_id.includes(query) ||
+          row.archive_date.includes(query) || String(row.clip_number) === query;
       });
       return { table: state.table, columns: table.columns, total: rows.length,
         offset: state.offset, limit: state.limit,
@@ -135,7 +203,8 @@
         }
         const first = result.total ? result.offset + 1 : 0;
         summary.textContent = `${state.table}: ${first}–${result.offset + result.rows.length} of ${result.total}` +
-          (state.officerId === null ? '' : ` · officer #${state.officerId}`);
+          (state.officerId === null ? '' : ` · officer #${state.officerId}`) +
+          (radioTables.has(state.table) ? ` · ${state.month}${state.talkgroup ? ` · ${state.talkgroup}` : ''}` : '');
         clearFilter.hidden = state.officerId === null;
         page.textContent = `Page ${Math.floor(result.offset / result.limit) + 1}`;
         previous.disabled = result.offset === 0;
@@ -146,8 +215,13 @@
     }
 
     tableSelect.addEventListener('change', () => {
-      state.table = tableSelect.value; state.officerId = null; state.offset = 0; load();
+      state.table = tableSelect.value; state.officerId = null; state.offset = 0;
+      document.getElementById('month-control').hidden = !radioTables.has(state.table);
+      document.getElementById('talkgroup-control').hidden = !radioTables.has(state.table);
+      load();
     });
+    monthSelect.addEventListener('change', () => { state.month = monthSelect.value; state.offset = 0; load(); });
+    talkgroupSelect.addEventListener('change', () => { state.talkgroup = talkgroupSelect.value; state.offset = 0; load(); });
     let debounce;
     searchInput.addEventListener('input', () => {
       clearTimeout(debounce);
@@ -156,7 +230,9 @@
     clearFilter.addEventListener('click', () => { state.officerId = null; state.offset = 0; load(); });
     previous.addEventListener('click', () => { state.offset -= state.limit; load(); });
     next.addEventListener('click', () => { state.offset += state.limit; load(); });
-    load();
+    initializePeriods().then(load).catch(error => {
+      summary.textContent = error.message; summary.classList.add('error');
+    });
   </script>
 </body>
 </html>

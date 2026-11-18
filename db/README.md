@@ -1,8 +1,8 @@
-# Officer names preview
+# Officer and radio database preview
 
-This is the local first phase of the D1 migration. The public 11ty build still
-reads the existing JSON. Only the two-table schema and repeatable import script
-are tracked; the generated SQLite file is ignored.
+This is a local preview for a possible D1 migration. The public 11ty build still
+reads the existing JSON. The schema and repeatable importer are tracked; the
+generated SQLite file is ignored.
 
 ```sh
 python3 db/import_officer_names.py
@@ -28,7 +28,9 @@ python3 db/import_officer_names.py --replace
 python3 db/export_static.py
 ```
 
-Commit the resulting `public/db/index.html` and `public/db/snapshot.json` to
+The exporter also writes compressed `public/db/radio/*.bin` in small date ranges. The
+viewer loads radio rows by archive month and optionally talkgroup, so opening
+the page does not download every clip at once. Commit all of `public/db/` to
 staging. This page is deliberately committed for the temporary staging review.
 Remove and commit the removal of `public/db/` before promoting to production;
 `make promote-staging` blocks promotion while those tracked files are present.
@@ -53,3 +55,15 @@ was imported; they are not citations to the underlying original record.
 The initial IDs are reproducible because source filenames and insertion order
 are sorted. Once a remote database exists, its numeric IDs must be preserved
 by incremental migrations rather than rebuilding from scratch.
+
+The same import also loads all tracked `public/records/openmhz/*/calls.json`
+archives into `radio_talkgroups`, `radio_ids`, `radio_clips`, and
+`radio_clip_sources`. `radio_clips.id` is the OpenMHz call ID and
+`(system, talkgroup_number, archive_date, clip_number)` identifies a clip in
+the day archive. The audio reference is the R2 key and its recorded checks;
+the audio bytes remain in R2. Expiring OpenMHz media and call URLs are not
+imported. A clip may have zero or several identified radio sources, and a
+radio ID does not imply a permanent officer assignment. The current and
+original transcript, review flags, timestamps, and audio metadata are
+available in the read-only viewer. Officer association decisions and callsign
+assignments remain in their existing JSON for now.
