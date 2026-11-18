@@ -44,7 +44,8 @@ when the text has a simple, unambiguous form; `name_text` is always the exact
 form to display or search. `kind = search_term` marks a query such as
 "Officer Nye", not a personal name. `kind = radio_alias` stores specifically
 confirmed standalone aliases. Unresolved radio cues are not assigned to an
-officer.
+officer. Attested shortened given names such as Tavo are personal names,
+with the given-name part populated even when used alone.
 
 `source_path` and `source_fields` indicate *which existing repository field*
 was imported; they are not citations to the underlying original record.

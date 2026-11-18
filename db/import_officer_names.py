@@ -19,6 +19,9 @@ DEFAULT_OUTPUT = Path(__file__).resolve().parent / 'local/officer-names.sqlite'
 # Do not infer aliases from unresolved radio search cues.
 RADIO_ALIASES = {
     'tanner-m-ballamis': ('T-Ball', 'G-Ball'),
+}
+# Tavo is an attested shortened given name for David Octavio Guerra, not a radio alias.
+CONFIRMED_SHORT_NAMES = {
     'david-o-guerra': ('Tavo',),
 }
 RADIO_EVIDENCE = 'data/officer-association-evidence.json'
@@ -35,6 +38,8 @@ def name_parts(name, kind):
     if kind != 'personal_name' or '(' in name or ')' in name:
         return (None, None, None)
     words = name.split()
+    if len(words) == 1:
+        return (words[0], None, None)
     if not 2 <= len(words) <= 3:
         return (None, None, None)
     return (words[0], words[1] if len(words) == 3 else None, words[-1])
@@ -79,6 +84,8 @@ def import_data(connection):
                     include(text, field, 'search_term' if text.startswith('Officer ') else 'personal_name')
             for alias in RADIO_ALIASES.get(slug, ()):
                 include(alias, 'confirmed_radio_alias', 'radio_alias', RADIO_EVIDENCE)
+            for short_name in CONFIRMED_SHORT_NAMES.get(slug, ()):
+                include(short_name, 'confirmed_short_name', 'personal_name', RADIO_EVIDENCE)
 
             selected = None
             for form in forms.values():
