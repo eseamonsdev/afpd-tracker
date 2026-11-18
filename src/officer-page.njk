@@ -107,7 +107,7 @@ permalink: "{{ officerPage.url }}"
                     {%- for radio in officerPage.radio_identifiers -%}
                       <tr><th scope="row"><code>{{ radio.radio_id | escape }}</code></th><td>{{ radio.evidence_days }}</td><td>{% for date in radio.evidence_dates %}<time datetime="{{ date | escape }}">{{ date | escape }}</time>{% if not loop.last %}; {% endif %}{% else %}No counted evidence dates{% endfor %}</td><td>{{ radio.status_label | escape }}</td><td><details><summary>View dated evidence and supporting clips</summary>
                         {%- for day in radio.evidence -%}
-                          <p><strong>{{ day.date | escape }} · {{ day.talkgroup }}</strong>{% if day.url %} · <a href="{{ day.url | escape }}">Listen in day archive</a>{% endif %}{% if day.clips | length %}{% if day.review_url %} · <a href="{{ day.review_url | escape }}">Review clips {{ day.clips | join(", ") | escape }}</a>{% else %} · Clips {{ day.clips | join(", ") | escape }}{% endif %}{% endif %}</p>
+                          <p><strong>{{ day.date | escape }} · {{ day.talkgroup }}</strong>{% if day.url %} · <a href="{{ day.url | escape }}">Listen in day archive</a>{% endif %}{% if day.clips | length %} · Clips {{ day.clips | join(", ") | escape }}{% endif %}</p>
                           <ul>{%- for record in day.records -%}<li>{{ record.evidence | escape }}{% if record.source_url %} <a href="{{ record.source_url | escape }}">{{ record.source_label | default("Source", true) | escape }}</a>{% endif %}</li>{%- endfor -%}</ul>
                         {%- endfor -%}
                       </details></td></tr>

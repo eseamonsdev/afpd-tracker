@@ -41,7 +41,7 @@ test('compiler profiles apply the same excluded evidence, dates and source notes
  assert.equal(result.labels.days['2026-10-02'],undefined);assert.equal(result.labels.days['2026-10-03'],undefined);
 });
 
-test('every built profile table matches shared summary rows and supports archive and clip review links',()=>{
+test('every built profile table matches shared summary rows and supports archive links',()=>{
  const shared=JSON.parse(fs.readFileSync('public/records/openmhz/officer-associations.json'));
  const csv=readCsv('openmhz/afpd-radio-officer-ids.csv');let checked=0;
  for(const file of fs.readdirSync('data/entities/pages/officer-pages')) {
@@ -61,7 +61,8 @@ test('every built profile table matches shared summary rows and supports archive
  }
  assert.ok(checked>0);
  const mason=fs.readFileSync('public/officers/brandon-k-mason/index.html','utf8');
- assert.ok(mason.includes('Observed Officer IDs'));assert.ok(mason.includes('officer-association-review.html#brandon-k-mason-2026-10-28-6001'));
+ assert.ok(mason.includes('Observed Officer IDs'));assert.ok(mason.includes('/police-radio/?date=2026-10-28'));
+ assert.ok(!mason.includes('officer-association-review.html'));
  assert.ok(!mason.includes('<time datetime="2026-10-23">'));
 });
 

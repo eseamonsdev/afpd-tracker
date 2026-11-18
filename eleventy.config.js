@@ -1,4 +1,3 @@
-import { buildAssociationReview } from "./lib/build-association-review.js";
 import { validateOriginalTranscripts } from "./lib/radio-transcript-schema.js";
 import { withProfileRadioIdentifiers } from "./lib/profile-radio-identifiers.js";
 import { buildOfficerAssociations } from "./lib/build-officer-associations.js";
@@ -35,7 +34,11 @@ export default function (eleventyConfig) {
   eleventyConfig.addWatchTarget("./data/officer-association-evidence.json");
   eleventyConfig.addWatchTarget("./data/officer-call-sign-assignments.json");
   eleventyConfig.addWatchTarget("./data/production-officer-association-baseline.json");
-  eleventyConfig.on("eleventy.before", () => { buildOfficerAssociations(); buildAssociationReview(); });
+  eleventyConfig.on("eleventy.before", () => {
+    // Remove the former generated review page from existing local build directories.
+    fs.rmSync("public/officer-association-review.html", { force: true });
+    buildOfficerAssociations();
+  });
   eleventyConfig.addFilter("sortUpdates", sortUpdates);
   eleventyConfig.addFilter("profileAlternateNames", profileAlternateNames);
   eleventyConfig.on("eleventy.after", cleanRadioExcerpts);
