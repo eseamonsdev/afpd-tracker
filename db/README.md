@@ -41,8 +41,9 @@ officer's `officer_names` rows. Every explicitly listed canonical, alternate,
 and search name is imported once per officer. There is no automatic generation
 of middle-initial or shortened forms. The optional name parts are filled only
 when the text has a simple, unambiguous form; `name_text` is always the exact
-form to display or search. `kind = search_term` marks a query such as
-"Officer Nye", not a personal name. `kind = radio_alias` stores specifically
+form to display or search. Generic search phrases such as "Officer Nye" are
+excluded; the surname is searchable through the personal name forms.
+`kind = radio_alias` stores specifically
 confirmed standalone aliases. Unresolved radio cues are not assigned to an
 officer. Attested shortened given names such as Tavo are personal names,
 with the given-name part populated even when used alone.

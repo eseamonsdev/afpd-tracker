@@ -73,15 +73,15 @@ def import_data(connection):
                 key = text.casefold()
                 if key not in forms:
                     forms[key] = {'name': text, 'kind': kind, 'source': source, 'fields': set()}
-                elif forms[key]['kind'] == 'search_term' and kind == 'personal_name':
-                    forms[key]['kind'] = kind
                 forms[key]['fields'].add(field)
 
             include(display, 'display_name' if entity.get('display_name') else 'name')
             include(forward_name(entity['name']), 'name')
             for field in ('alternate_names', 'search_names'):
                 for text in entity.get(field, []):
-                    include(text, field, 'search_term' if text.startswith('Officer ') else 'personal_name')
+                    if text.startswith('Officer '):
+                        continue  # Search phrasing is not a distinct name form.
+                    include(text, field)
             for alias in RADIO_ALIASES.get(slug, ()):
                 include(alias, 'confirmed_radio_alias', 'radio_alias', RADIO_EVIDENCE)
             for short_name in CONFIRMED_SHORT_NAMES.get(slug, ()):
