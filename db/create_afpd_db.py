@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / 'data/entities/people/officers'
 SCHEMA = Path(__file__).resolve().parent / 'migrations/0001_officer_names.sql'
 RADIO_SCHEMA = Path(__file__).resolve().parent / 'migrations/0002_radio.sql'
-DEFAULT_OUTPUT = Path(__file__).resolve().parent / 'local/officer-names.sqlite'
+DEFAULT_OUTPUT = Path(__file__).resolve().parent / 'local/afpd.sqlite'
 
 # These aliases have explicit officer identification in the radio evidence.
 # Do not infer aliases from unresolved radio search cues.

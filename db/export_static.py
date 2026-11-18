@@ -13,7 +13,7 @@ OUTPUT = HERE.parent / 'public/db'
 
 def main():
     if not DEFAULT_DB.is_file():
-        raise SystemExit('Create the local database first: python3 db/import_officer_names.py --replace')
+        raise SystemExit('Create the local database first: python3 db/create_afpd_db.py --replace')
     OUTPUT.mkdir(parents=True, exist_ok=True)
     snapshot = {}
     for table in TABLES:

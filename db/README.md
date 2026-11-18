@@ -5,8 +5,8 @@ reads the existing JSON. The schema and repeatable importer are tracked; the
 generated SQLite file is ignored.
 
 ```sh
-python3 db/import_officer_names.py
-python3 db/import_officer_names.py --replace
+python3 db/create_afpd_db.py
+python3 db/create_afpd_db.py --replace
 ```
 
 To inspect the two tables in a browser, start the read-only local viewer:
@@ -25,7 +25,7 @@ same local tables. This generated directory is ignored by Git and is not
 committed to staging or main. To generate it after editing officer JSON:
 
 ```sh
-python3 db/import_officer_names.py --replace
+python3 db/create_afpd_db.py --replace
 python3 db/export_static.py
 ```
 

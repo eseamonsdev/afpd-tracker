@@ -8,7 +8,7 @@ import sqlite3
 from urllib.parse import parse_qs, urlsplit
 
 HERE = Path(__file__).resolve().parent
-DEFAULT_DB = HERE / 'local/officer-names.sqlite'
+DEFAULT_DB = HERE / 'local/afpd.sqlite'
 TABLES = ('officers', 'officer_names', 'radio_talkgroups', 'radio_ids',
           'radio_clips', 'radio_clip_sources')
 RADIO_EVENTS = ('radio_clips', 'radio_clip_sources')
@@ -164,7 +164,7 @@ def main():
     args = parser.parse_args()
     database = args.database.resolve()
     if not database.is_file():
-        parser.error(f'{database} does not exist; run python3 db/import_officer_names.py first')
+        parser.error(f'{database} does not exist; run python3 db/create_afpd_db.py first')
     with ThreadingHTTPServer(('127.0.0.1', args.port), handler_for(database)) as server:
         print(f'Officer database viewer: http://127.0.0.1:{server.server_port}/db/', flush=True)
         server.serve_forever()
