@@ -9,6 +9,18 @@ python3 db/import_officer_names.py
 python3 db/import_officer_names.py --replace
 ```
 
+To inspect the two tables in a browser, start the read-only local viewer:
+
+```sh
+python3 db/serve.py
+```
+
+Open `http://127.0.0.1:8765/db/`. The viewer runs only on your computer
+and can search, paginate, and open an officer's associated names. Stop it
+with Ctrl+C. After changing the source JSON, rerun the import with
+`--replace` and refresh the viewer. This is not a route on the public site;
+the database has not been moved to D1 yet.
+
 `officers.id` is a stable numeric identity within this import, `url_slug` keeps
 the existing profile address, and `display_name_id` selects one of that
 officer's `officer_names` rows. Every explicitly listed canonical, alternate,
