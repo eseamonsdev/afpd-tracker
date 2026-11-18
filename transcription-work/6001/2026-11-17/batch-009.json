@@ -1,0 +1,697 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-17",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1794964440.m4a": {
+      "index": 81,
+      "epoch": 1794964440,
+      "sha256": "ec53033c073f31c303b376e0e9d5b7cd04244a46bffe0d8a7a19902fce7b2c00",
+      "passes": {
+        "original": {
+          "text": "Yeah.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Yeah.",
+              "avg_logprob": -0.7396486282348633,
+              "no_speech_prob": 0.3071346879005432,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Yeah.",
+              "avg_logprob": -0.6775464057922364,
+              "no_speech_prob": 0.13603879511356354,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you so much for watching this video",
+          "prompt": "Hey Sam",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you so much for watching this video",
+              "avg_logprob": -1.0254545645280317,
+              "no_speech_prob": 0.19746831059455872,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794964442.m4a": {
+      "index": 82,
+      "epoch": 1794964442,
+      "sha256": "4ea9c139b582731b172040eaff2b6205657fd866254804be16df9f97dc277bdd",
+      "passes": {
+        "original": {
+          "text": "I'm heading to 300 North P&M Boulevard to help with the traffic control, and I'll need you to replace me. I need to get gas.",
+          "prompt": null,
+          "duration_seconds": 8.192,
+          "token_limit": 90,
+          "token_count": 34,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " I'm heading to 300 North P&M Boulevard to help with the traffic control, and I'll need you to replace me. I need to get gas.",
+              "avg_logprob": -0.32999096938541955,
+              "no_speech_prob": 0.04840345308184624,
+              "compression_ratio": 1.117117117117117
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm heading to 300 North PMM boulevard to help with the traffic control, and I'll need you to replace me. I need to get gas.",
+          "prompt": null,
+          "duration_seconds": 8.192,
+          "token_limit": 90,
+          "token_count": 34,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " I'm heading to 300 North PMM boulevard to help with the traffic control, and I'll need you to replace me. I need to get gas.",
+              "avg_logprob": -0.38401159218379427,
+              "no_speech_prob": 0.11082828789949417,
+              "compression_ratio": 1.1376146788990826
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm heading to 300 North P&M Boulevard to help with the traffic control. I'll need you to replace me. I need to get gas.",
+          "prompt": "Hey Sam Yeah.",
+          "duration_seconds": 8.192,
+          "token_limit": 90,
+          "token_count": 35,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " I'm heading to 300 North P&M Boulevard to help with the traffic control.",
+              "avg_logprob": -0.3186650698383649,
+              "no_speech_prob": 0.02355816215276718,
+              "compression_ratio": 1.1214953271028036
+            },
+            {
+              "start": 5.0,
+              "end": 8.0,
+              "text": " I'll need you to replace me. I need to get gas.",
+              "avg_logprob": -0.3186650698383649,
+              "no_speech_prob": 0.02355816215276718,
+              "compression_ratio": 1.1214953271028036
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794964451.m4a": {
+      "index": 83,
+      "epoch": 1794964451,
+      "sha256": "c4baf2715d25a14cd12294caaec0d999fdb3f034512b4336ea6155d5c1b3c898",
+      "passes": {
+        "original": {
+          "text": "I'll be right over there.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.32,
+              "text": " I'll be right over there.",
+              "avg_logprob": -0.5655822873115539,
+              "no_speech_prob": 0.14611540734767914,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Probably I'll be right over there.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.36,
+              "text": " Probably I'll be right over there.",
+              "avg_logprob": -0.4656458984721791,
+              "no_speech_prob": 0.09439582377672195,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "context": {
+          "text": "Probably I'll be right over there.",
+          "prompt": "Hey Sam Yeah. I'm heading to 300 North P&M Boulevard to help with the traffic control, and I'll need you to replace me. I need to get gas.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Probably I'll be right over there.",
+              "avg_logprob": -0.4674448750235818,
+              "no_speech_prob": 0.05821157991886139,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794964754.m4a": {
+      "index": 84,
+      "epoch": 1794964754,
+      "sha256": "91fc6ac0513b25ac5e81dfe3467d24b0e6d70c975e5d3ea8e7060807f01d9776",
+      "passes": {
+        "original": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.8659119407335917,
+              "no_speech_prob": 0.6703506708145142,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.8691157897313436,
+              "no_speech_prob": 0.4644874334335327,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.8659119407335917,
+              "no_speech_prob": 0.6703506708145142,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794964775.m4a": {
+      "index": 85,
+      "epoch": 1794964775,
+      "sha256": "e26363f4af5a5b765208d436eba0a9df909f6c1181c9405ae04e5c96d796d106",
+      "passes": {
+        "original": {
+          "text": "I'm just fitting my bestie here.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " I'm just fitting my bestie here.",
+              "avg_logprob": -0.5451324135065079,
+              "no_speech_prob": 0.04314778372645378,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm just getting my best ego.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " I'm just getting my best ego.",
+              "avg_logprob": -0.5233534899624911,
+              "no_speech_prob": 0.0414084829390049,
+              "compression_ratio": 0.8285714285714286
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm just getting my bestie here.",
+          "prompt": "Thank you.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm just getting my bestie here.",
+              "avg_logprob": -0.575388307372729,
+              "no_speech_prob": 0.0324513241648674,
+              "compression_ratio": 0.8
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794965050.m4a": {
+      "index": 86,
+      "epoch": 1794965050,
+      "sha256": "62567ac58db40d055d835b1fdf867d7e7e45025ce2bf736728d7d43bcc10c65c",
+      "passes": {
+        "original": {
+          "text": "Hey, Makai, you're valid is. Can I get one of you to come here and help? Just park your car and make Your you know make it known that we got traffic issues here at the center section to help holiday, please",
+          "prompt": null,
+          "duration_seconds": 13.696,
+          "token_limit": 134,
+          "token_count": 55,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.28,
+              "text": " Hey, Makai, you're valid is. Can I get one of you to come here and help?",
+              "avg_logprob": -0.29015183448791504,
+              "no_speech_prob": 0.02369893342256546,
+              "compression_ratio": 1.3642384105960266
+            },
+            {
+              "start": 5.6000000000000005,
+              "end": 7.6000000000000005,
+              "text": " Just park your car and make",
+              "avg_logprob": -0.29015183448791504,
+              "no_speech_prob": 0.02369893342256546,
+              "compression_ratio": 1.3642384105960266
+            },
+            {
+              "start": 8.16,
+              "end": 13.0,
+              "text": " Your you know make it known that we got traffic issues here at the center section to help holiday, please",
+              "avg_logprob": -0.29015183448791504,
+              "no_speech_prob": 0.02369893342256546,
+              "compression_ratio": 1.3642384105960266
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hey Makai your valid is can I get one of you to come here and help? Just park your car and make Your you know make it known that we got traffic issues here at the center section to help holiday, please",
+          "prompt": null,
+          "duration_seconds": 13.696,
+          "token_limit": 134,
+          "token_count": 51,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.28,
+              "text": " Hey Makai your valid is can I get one of you to come here and help?",
+              "avg_logprob": -0.26025467022107196,
+              "no_speech_prob": 0.03766622394323349,
+              "compression_ratio": 1.4154929577464788
+            },
+            {
+              "start": 5.6000000000000005,
+              "end": 7.6000000000000005,
+              "text": " Just park your car and make",
+              "avg_logprob": -0.26025467022107196,
+              "no_speech_prob": 0.03766622394323349,
+              "compression_ratio": 1.4154929577464788
+            },
+            {
+              "start": 8.2,
+              "end": 13.040000000000001,
+              "text": " Your you know make it known that we got traffic issues here at the center section to help holiday, please",
+              "avg_logprob": -0.26025467022107196,
+              "no_speech_prob": 0.03766622394323349,
+              "compression_ratio": 1.4154929577464788
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey, Makai, you're valid is. Can I get one of you to come here and help? Just park your car and make Your you know make it known that we got traffic issues here at the center section to help holiday, please",
+          "prompt": null,
+          "duration_seconds": 13.696,
+          "token_limit": 134,
+          "token_count": 55,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.28,
+              "text": " Hey, Makai, you're valid is. Can I get one of you to come here and help?",
+              "avg_logprob": -0.29015183448791504,
+              "no_speech_prob": 0.02369893342256546,
+              "compression_ratio": 1.3642384105960266
+            },
+            {
+              "start": 5.6000000000000005,
+              "end": 7.6000000000000005,
+              "text": " Just park your car and make",
+              "avg_logprob": -0.29015183448791504,
+              "no_speech_prob": 0.02369893342256546,
+              "compression_ratio": 1.3642384105960266
+            },
+            {
+              "start": 8.16,
+              "end": 13.0,
+              "text": " Your you know make it known that we got traffic issues here at the center section to help holiday, please",
+              "avg_logprob": -0.29015183448791504,
+              "no_speech_prob": 0.02369893342256546,
+              "compression_ratio": 1.3642384105960266
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794965070.m4a": {
+      "index": 87,
+      "epoch": 1794965070,
+      "sha256": "3672e92540bef7f41414d3632d36faa54ebc21cc3d149dfb99d19c848077c44a",
+      "passes": {
+        "original": {
+          "text": "Yeah, that way as well",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, that way as well",
+              "avg_logprob": -0.5257774458991157,
+              "no_speech_prob": 0.05309152603149414,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Okay, that way as well",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Okay, that way as well",
+              "avg_logprob": -0.5732288360595703,
+              "no_speech_prob": 0.09299139678478241,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Yeah, that way as well",
+          "prompt": "Hey, Makai, you're valid is. Can I get one of you to come here and help? Just park your car and make Your you know make it known that we got traffic issues here at the center section to help holiday, please",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, that way as well",
+              "avg_logprob": -0.3442453013526069,
+              "no_speech_prob": 0.01747528277337551,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794965086.m4a": {
+      "index": 88,
+      "epoch": 1794965086,
+      "sha256": "9ee9b28ea0e1f3953d8f745ffc011785f0dd037429f920bca8b294e7f87b9904",
+      "passes": {
+        "original": {
+          "text": "Copy, I'm almost there.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy, I'm almost there.",
+              "avg_logprob": -0.42777070999145506,
+              "no_speech_prob": 0.03853346034884453,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy, I'm almost there.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy, I'm almost there.",
+              "avg_logprob": -0.42805805504322053,
+              "no_speech_prob": 0.031473882496356964,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy I'm almost there",
+          "prompt": "Hey, Makai, you're valid is. Can I get one of you to come here and help? Just park your car and make Your you know make it known that we got traffic issues here at the center section to help holiday, please Yeah, that way as well",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy I'm almost there",
+              "avg_logprob": -0.30515337735414505,
+              "no_speech_prob": 0.003626634366810322,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794965207.m4a": {
+      "index": 89,
+      "epoch": 1794965207,
+      "sha256": "4f096c47bd8aadde03c0d319834938b7b860b9b72e96e543d437e3ea462eb2f9",
+      "passes": {
+        "original": {
+          "text": "Hey, I'm facing west on the east side of the intersection.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Hey, I'm facing west on the east side of the intersection.",
+              "avg_logprob": -0.22501608904670267,
+              "no_speech_prob": 0.024996895343065262,
+              "compression_ratio": 0.9508196721311475
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hey, I'm facing west on the east side of the intersection.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Hey, I'm facing west on the east side of the intersection.",
+              "avg_logprob": -0.24349602530984318,
+              "no_speech_prob": 0.022583680227398872,
+              "compression_ratio": 0.9508196721311475
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey, I'm facing west on the east side of the intersection.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Hey, I'm facing west on the east side of the intersection.",
+              "avg_logprob": -0.22501608904670267,
+              "no_speech_prob": 0.024996895343065262,
+              "compression_ratio": 0.9508196721311475
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1794965214.m4a": {
+      "index": 90,
+      "epoch": 1794965214,
+      "sha256": "74751da6c0cdb203a91db32941fe9045f3cfe8f57b5596d69bea9efa87119059",
+      "passes": {
+        "original": {
+          "text": "Yep, you're right. I just got my corrections turned around. Sorry.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Yep, you're right. I just got my corrections turned around. Sorry.",
+              "avg_logprob": -0.3059303321336445,
+              "no_speech_prob": 0.01929754577577114,
+              "compression_ratio": 0.9166666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yep, you're right, I just got my directions turned around, sorry.",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.64,
+              "text": " Yep, you're right, I just got my directions turned around, sorry.",
+              "avg_logprob": -0.36718628281041193,
+              "no_speech_prob": 0.017261534929275513,
+              "compression_ratio": 0.9420289855072463
+            }
+          ]
+        },
+        "context": {
+          "text": "Yep, you're right. I just got my corrections turned around, sorry.",
+          "prompt": "Hey, I'm facing west on the east side of the intersection.",
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Yep, you're right. I just got my corrections turned around, sorry.",
+              "avg_logprob": -0.30003732129147176,
+              "no_speech_prob": 0.02997463569045067,
+              "compression_ratio": 0.9295774647887324
+            }
+          ]
+        }
+      }
+    }
+  }
+}
