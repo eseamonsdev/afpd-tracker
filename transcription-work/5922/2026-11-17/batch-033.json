@@ -1,0 +1,673 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-17",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794939320.m4a": {
+      "index": 321,
+      "epoch": 1794939320,
+      "sha256": "228607f07837e0b157e722836f06377a8cb83659ab0bfa20c7190c91b7805730",
+      "passes": {
+        "original": {
+          "text": "It's a 2016 Corolla gray and color bus and headed southbound on state into your area.",
+          "prompt": null,
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.24,
+              "text": " It's a 2016 Corolla gray and color bus and headed southbound on state into your area.",
+              "avg_logprob": -0.5426216332808785,
+              "no_speech_prob": 0.0018564262427389622,
+              "compression_ratio": 1.0365853658536586
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It's a 2016 Corolla gray and color bus and headed southbound on state in the area.",
+          "prompt": null,
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " It's a 2016 Corolla gray and color bus and headed southbound on state in the area.",
+              "avg_logprob": -0.6377174387807432,
+              "no_speech_prob": 0.002134058391675353,
+              "compression_ratio": 1.025
+            }
+          ]
+        },
+        "context": {
+          "text": "It's a 2016 Corolla, grey in colour, biocene headed southbound on state into your area.",
+          "prompt": "13J16 on Law 2. Go ahead, 13-J. Do we have any better description on the dark grey Toyota or is that it?",
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.3,
+              "text": " It's a 2016 Corolla, grey in colour, biocene headed southbound on state into your area.",
+              "avg_logprob": -0.5928539085388184,
+              "no_speech_prob": 0.01131500955671072,
+              "compression_ratio": 1.0235294117647058
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794939328.m4a": {
+      "index": 322,
+      "epoch": 1794939328,
+      "sha256": "8da4490261a15b75cee97e673375eadf14b9ecdb016b53995815ce09ea279393",
+      "passes": {
+        "original": {
+          "text": "I copy, I don't know if our dispatch related, but I'm gonna go check the Walmart parking lot",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.08,
+              "text": " I copy, I don't know if our dispatch related, but I'm gonna go check the Walmart parking lot",
+              "avg_logprob": -0.3741594314575195,
+              "no_speech_prob": 0.011562181636691093,
+              "compression_ratio": 1.0823529411764705
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I copy. I don't know our dispatch related, but I'm gonna go check the Walmart parking lot",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.08,
+              "text": " I copy. I don't know our dispatch related, but I'm gonna go check the Walmart parking lot",
+              "avg_logprob": -0.3140725555519263,
+              "no_speech_prob": 0.005953711457550526,
+              "compression_ratio": 1.0595238095238095
+            }
+          ]
+        },
+        "context": {
+          "text": "I copy, I don't know if our dispatch related, but I'm going to go check the Walmart parking lot.",
+          "prompt": "Go ahead, 13-J. Do we have any better description on the dark grey Toyota or is that it? It's a 2016 Corolla gray and color bus and headed southbound on state into your area.",
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.32,
+              "text": " I copy, I don't know if our dispatch related, but I'm going to go check the Walmart parking lot.",
+              "avg_logprob": -0.379230159300345,
+              "no_speech_prob": 0.08350788801908493,
+              "compression_ratio": 1.0786516853932584
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794939333.m4a": {
+      "index": 323,
+      "epoch": 1794939333,
+      "sha256": "286ea0db2511db26e24e1c14c830f9272c1856a7e5747d9d9127c8bfd4bfdea8",
+      "passes": {
+        "original": {
+          "text": "Copy, I copy their notes, I appreciate it.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.44,
+              "text": " Copy, I copy their notes, I appreciate it.",
+              "avg_logprob": -0.4900065405028207,
+              "no_speech_prob": 0.012109100818634033,
+              "compression_ratio": 0.9130434782608695
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy. I copy their notes. I appreciate it.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Copy. I copy their notes. I appreciate it.",
+              "avg_logprob": -0.42210790514945984,
+              "no_speech_prob": 0.011919387616217136,
+              "compression_ratio": 0.9130434782608695
+            }
+          ]
+        },
+        "context": {
+          "text": "copy, I copy their notes, I appreciate it.",
+          "prompt": "Do we have any better description on the dark grey Toyota or is that it? It's a 2016 Corolla gray and color bus and headed southbound on state into your area. I copy, I don't know if our dispatch related, but I'm gonna go check the Walmart parking lot",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.4,
+              "text": " copy, I copy their notes, I appreciate it.",
+              "avg_logprob": -0.4257690097604479,
+              "no_speech_prob": 0.02660280093550682,
+              "compression_ratio": 0.9130434782608695
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794939338.m4a": {
+      "index": 324,
+      "epoch": 1794939338,
+      "sha256": "cc2abbd14d09b189169eadc5918e39636045e2d534278667a615a84acbeb4374",
+      "passes": {
+        "original": {
+          "text": "So Janine do we have a description of the driver?",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.88,
+              "text": " So Janine do we have a description of the driver?",
+              "avg_logprob": -0.4765952984491984,
+              "no_speech_prob": 0.005610315594822168,
+              "compression_ratio": 0.875
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Instead of G9, do we have a description of the driver?",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2,
+              "text": " Instead of G9, do we have a description of the driver?",
+              "avg_logprob": -0.4655119391048656,
+              "no_speech_prob": 0.003047898644581437,
+              "compression_ratio": 0.9
+            }
+          ]
+        },
+        "context": {
+          "text": "So Janine, do we have a description of the driver?",
+          "prompt": "It's a 2016 Corolla gray and color bus and headed southbound on state into your area. I copy, I don't know if our dispatch related, but I'm gonna go check the Walmart parking lot Copy, I copy their notes, I appreciate it.",
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2,
+              "text": " So Janine, do we have a description of the driver?",
+              "avg_logprob": -0.5033055692911148,
+              "no_speech_prob": 0.003826244967058301,
+              "compression_ratio": 0.8620689655172413
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794939342.m4a": {
+      "index": 325,
+      "epoch": 1794939342,
+      "sha256": "08bb08cad8b2820d92b890aa89281220908373dc33a71d918c0ca773a4063e8a",
+      "passes": {
+        "original": {
+          "text": "Negative. All I had was a 2016 Toyota Corolla Gray and Color. It does return to a Brian or Blake Walker out of 7J off of Faraday Lane.",
+          "prompt": null,
+          "duration_seconds": 10.624,
+          "token_limit": 109,
+          "token_count": 36,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 10.0,
+              "text": " Negative. All I had was a 2016 Toyota Corolla Gray and Color. It does return to a Brian or Blake Walker out of 7J off of Faraday Lane.",
+              "avg_logprob": -0.34959094588821,
+              "no_speech_prob": 0.0027699205093085766,
+              "compression_ratio": 1.1355932203389831
+            }
+          ]
+        },
+        "filtered": {
+          "text": "All I had was a 2016 Toyota Corolla great color. It does return to a Brian or Blake Walker out of 7J off of Vera Daley.",
+          "prompt": null,
+          "duration_seconds": 10.624,
+          "token_limit": 109,
+          "token_count": 35,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.96,
+              "text": " All I had was a 2016 Toyota Corolla great color.",
+              "avg_logprob": -0.3424352986945046,
+              "no_speech_prob": 0.004852977115660906,
+              "compression_ratio": 1.1226415094339623
+            },
+            {
+              "start": 3.96,
+              "end": 10.120000000000001,
+              "text": " It does return to a Brian or Blake Walker out of 7J off of Vera Daley.",
+              "avg_logprob": -0.3424352986945046,
+              "no_speech_prob": 0.004852977115660906,
+              "compression_ratio": 1.1226415094339623
+            }
+          ]
+        },
+        "context": {
+          "text": "Negative, all I had was a 2016 Toyota Corolla gray and color. It does return to a Brian or Blake Walker out of 7J off of Faraday Lane",
+          "prompt": "I copy, I don't know if our dispatch related, but I'm gonna go check the Walmart parking lot Copy, I copy their notes, I appreciate it. So Janine do we have a description of the driver?",
+          "duration_seconds": 10.624,
+          "token_limit": 109,
+          "token_count": 35,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 10.0,
+              "text": " Negative, all I had was a 2016 Toyota Corolla gray and color. It does return to a Brian or Blake Walker out of 7J off of Faraday Lane",
+              "avg_logprob": -0.29932159102625316,
+              "no_speech_prob": 0.003424086607992649,
+              "compression_ratio": 1.146551724137931
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794939369.m4a": {
+      "index": 326,
+      "epoch": 1794939369,
+      "sha256": "5fef987608333151cc6626306b2a2e33acd3350f2cfacc283235f477577a5f59",
+      "passes": {
+        "original": {
+          "text": "IG-171",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " IG-171",
+              "avg_logprob": -0.5891787509123484,
+              "no_speech_prob": 0.05108432099223137,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G-171",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G-171",
+              "avg_logprob": -0.9072678770337786,
+              "no_speech_prob": 0.06647001951932907,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "IG-171.",
+          "prompt": "Copy, I copy their notes, I appreciate it. So Janine do we have a description of the driver? Negative. All I had was a 2016 Toyota Corolla Gray and Color. It does return to a Brian or Blake Walker out of 7J off of Faraday Lane.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.3000000000000003,
+              "text": " IG-171.",
+              "avg_logprob": -0.6392322267804827,
+              "no_speech_prob": 0.03268854692578316,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794939371.m4a": {
+      "index": 327,
+      "epoch": 1794939371,
+      "sha256": "101f204c3d7dbef8a6eba46f317cafa953711f0edd0a907248a2e22a8253fdf7",
+      "passes": {
+        "original": {
+          "text": "5K171, go ahead.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5K171, go ahead.",
+              "avg_logprob": -0.5115146934986115,
+              "no_speech_prob": 0.028257764875888824,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5K171, go ahead.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5K171, go ahead.",
+              "avg_logprob": -0.5544128179550171,
+              "no_speech_prob": 0.02729303576052189,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "5K171, go ahead.",
+          "prompt": "So Janine do we have a description of the driver? Negative. All I had was a 2016 Toyota Corolla Gray and Color. It does return to a Brian or Blake Walker out of 7J off of Faraday Lane. IG-171",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5K171, go ahead.",
+              "avg_logprob": -0.4674926698207855,
+              "no_speech_prob": 0.10717831552028656,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794939373.m4a": {
+      "index": 328,
+      "epoch": 1794939373,
+      "sha256": "783c027773246aaefb45ee3beea56b368a3c883ea186423a49ff3dab4ed6d768",
+      "passes": {
+        "original": {
+          "text": "You change my call to an abandoned vehicle and update the address to 344 West Washington Avenue.",
+          "prompt": null,
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " You change my call to an abandoned vehicle and update the address to 344 West Washington Avenue.",
+              "avg_logprob": -0.338338954108102,
+              "no_speech_prob": 0.006070585921406746,
+              "compression_ratio": 1.0666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "You change my call to an abandoned vehicle and update the address to 344 West Washington Avenue.",
+          "prompt": null,
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " You change my call to an abandoned vehicle and update the address to 344 West Washington",
+              "avg_logprob": -0.365625086038009,
+              "no_speech_prob": 0.0037563203368335962,
+              "compression_ratio": 1.0666666666666667
+            },
+            {
+              "start": 6.0,
+              "end": 6.4,
+              "text": " Avenue.",
+              "avg_logprob": -0.365625086038009,
+              "no_speech_prob": 0.0037563203368335962,
+              "compression_ratio": 1.0666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "You change my call to an abandoned vehicle and update the address to 344 West Washington Avenue.",
+          "prompt": "Negative. All I had was a 2016 Toyota Corolla Gray and Color. It does return to a Brian or Blake Walker out of 7J off of Faraday Lane. IG-171 5K171, go ahead.",
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " You change my call to an abandoned vehicle and update the address to 344 West Washington Avenue.",
+              "avg_logprob": -0.2600087722142537,
+              "no_speech_prob": 0.00232352945022285,
+              "compression_ratio": 1.0666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794939384.m4a": {
+      "index": 329,
+      "epoch": 1794939384,
+      "sha256": "3298f4a591f5f51c73609b176191cb5d50b90147d371fb8de7eac7e0dad70c1f",
+      "passes": {
+        "original": {
+          "text": "temper",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " temper",
+              "avg_logprob": -0.8835622072219849,
+              "no_speech_prob": 0.04393372684717178,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "temper",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " temper",
+              "avg_logprob": -0.5264706462621689,
+              "no_speech_prob": 0.012273263186216354,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Temper.",
+          "prompt": "IG-171 5K171, go ahead. You change my call to an abandoned vehicle and update the address to 344 West Washington Avenue.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.72,
+              "text": " Temper.",
+              "avg_logprob": -0.9798311233520508,
+              "no_speech_prob": 0.012867921032011509,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794939394.m4a": {
+      "index": 330,
+      "epoch": 1794939394,
+      "sha256": "9ae365563f8cc59fcdf609ca8661f56654564873b800e4175f9c13e5d197f69a",
+      "passes": {
+        "original": {
+          "text": "7J24, you can clear out that hint road. 7J24, I copy.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7J24, you can clear out that hint road.",
+              "avg_logprob": -0.366194690267245,
+              "no_speech_prob": 0.022384973242878914,
+              "compression_ratio": 0.9137931034482759
+            },
+            {
+              "start": 3.0,
+              "end": 5.0,
+              "text": " 7J24, I copy.",
+              "avg_logprob": -0.366194690267245,
+              "no_speech_prob": 0.022384973242878914,
+              "compression_ratio": 0.9137931034482759
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J24, you can clear outside hit room. 7J24, I copy.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7J24, you can clear outside hit room.",
+              "avg_logprob": -0.35005454135977704,
+              "no_speech_prob": 0.02596844546496868,
+              "compression_ratio": 0.9107142857142857
+            },
+            {
+              "start": 3.0,
+              "end": 5.0,
+              "text": " 7J24, I copy.",
+              "avg_logprob": -0.35005454135977704,
+              "no_speech_prob": 0.02596844546496868,
+              "compression_ratio": 0.9107142857142857
+            }
+          ]
+        },
+        "context": {
+          "text": "7J24, you can clear out that hint road. 7J24, I copy.",
+          "prompt": "5K171, go ahead. You change my call to an abandoned vehicle and update the address to 344 West Washington Avenue. temper",
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 7J24, you can clear out that hint road. 7J24, I copy.",
+              "avg_logprob": -0.35808893225409766,
+              "no_speech_prob": 0.029569290578365326,
+              "compression_ratio": 0.9137931034482759
+            }
+          ]
+        }
+      }
+    }
+  }
+}
