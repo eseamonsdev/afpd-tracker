@@ -1,0 +1,737 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-17",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1794980833.m4a": {
+      "index": 1401,
+      "epoch": 1794980833,
+      "sha256": "7fdb2b4718c71caaca73b0ffabb9c862f50d2f1178643e1a090b8646c59aaf37",
+      "passes": {
+        "original": {
+          "text": "It was Susan. She's had a play with her husband. It was physical, refusing medical. The husband is currently in the garage, requesting an officer come to the front door. 316 West, 1420 North.",
+          "prompt": null,
+          "duration_seconds": 13.056,
+          "token_limit": 129,
+          "token_count": 54,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " It was Susan. She's had a play with her husband.",
+              "avg_logprob": -0.21680975285443393,
+              "no_speech_prob": 0.012359748594462872,
+              "compression_ratio": 1.2818791946308725
+            },
+            {
+              "start": 3.0,
+              "end": 6.0,
+              "text": " It was physical, refusing medical.",
+              "avg_logprob": -0.21680975285443393,
+              "no_speech_prob": 0.012359748594462872,
+              "compression_ratio": 1.2818791946308725
+            },
+            {
+              "start": 6.0,
+              "end": 8.0,
+              "text": " The husband is currently in the garage,",
+              "avg_logprob": -0.21680975285443393,
+              "no_speech_prob": 0.012359748594462872,
+              "compression_ratio": 1.2818791946308725
+            },
+            {
+              "start": 8.0,
+              "end": 10.0,
+              "text": " requesting an officer come to the front door.",
+              "avg_logprob": -0.21680975285443393,
+              "no_speech_prob": 0.012359748594462872,
+              "compression_ratio": 1.2818791946308725
+            },
+            {
+              "start": 10.0,
+              "end": 12.0,
+              "text": " 316 West, 1420 North.",
+              "avg_logprob": -0.21680975285443393,
+              "no_speech_prob": 0.012359748594462872,
+              "compression_ratio": 1.2818791946308725
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It was Susan. She's had a play with her husband. It was physical, refusing medical. Husband is currently in the garage, requesting an officer come to the front door. 316 West, 1420 North.",
+          "prompt": null,
+          "duration_seconds": 13.056,
+          "token_limit": 129,
+          "token_count": 54,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " It was Susan. She's had a play with her husband.",
+              "avg_logprob": -0.2507363807071339,
+              "no_speech_prob": 0.017001738771796227,
+              "compression_ratio": 1.272108843537415
+            },
+            {
+              "start": 3.0,
+              "end": 6.0,
+              "text": " It was physical, refusing medical.",
+              "avg_logprob": -0.2507363807071339,
+              "no_speech_prob": 0.017001738771796227,
+              "compression_ratio": 1.272108843537415
+            },
+            {
+              "start": 6.0,
+              "end": 8.0,
+              "text": " Husband is currently in the garage,",
+              "avg_logprob": -0.2507363807071339,
+              "no_speech_prob": 0.017001738771796227,
+              "compression_ratio": 1.272108843537415
+            },
+            {
+              "start": 8.0,
+              "end": 10.0,
+              "text": " requesting an officer come to the front door.",
+              "avg_logprob": -0.2507363807071339,
+              "no_speech_prob": 0.017001738771796227,
+              "compression_ratio": 1.272108843537415
+            },
+            {
+              "start": 10.0,
+              "end": 12.0,
+              "text": " 316 West, 1420 North.",
+              "avg_logprob": -0.2507363807071339,
+              "no_speech_prob": 0.017001738771796227,
+              "compression_ratio": 1.272108843537415
+            }
+          ]
+        },
+        "context": {
+          "text": "It was Susan. She's had a play with her husband. It was physical, refusing medical. The husband is currently in the garage, requesting an officer come to the front door. 316 West, 1420 North.",
+          "prompt": "Go ahead. 316 West, 1420 North.",
+          "duration_seconds": 13.056,
+          "token_limit": 129,
+          "token_count": 50,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " It was Susan. She's had a play with her husband. It was physical, refusing medical.",
+              "avg_logprob": -0.20986463801533567,
+              "no_speech_prob": 0.012616023421287537,
+              "compression_ratio": 1.2818791946308725
+            },
+            {
+              "start": 6.0,
+              "end": 10.0,
+              "text": " The husband is currently in the garage, requesting an officer come to the front door.",
+              "avg_logprob": -0.20986463801533567,
+              "no_speech_prob": 0.012616023421287537,
+              "compression_ratio": 1.2818791946308725
+            },
+            {
+              "start": 10.0,
+              "end": 13.0,
+              "text": " 316 West, 1420 North.",
+              "avg_logprob": -0.20986463801533567,
+              "no_speech_prob": 0.012616023421287537,
+              "compression_ratio": 1.2818791946308725
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794980847.m4a": {
+      "index": 1402,
+      "epoch": 1794980847,
+      "sha256": "254d01f12ac421a5fc72b98ff5e7f79d88c1230e483a1fc49e6bb3ab6fe7a9cf",
+      "passes": {
+        "original": {
+          "text": "We'll talk to you later. Bye-bye.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " We'll talk to you later.",
+              "avg_logprob": -0.8937448064486185,
+              "no_speech_prob": 0.22909678518772125,
+              "compression_ratio": 0.9024390243902439
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.8937448064486185,
+              "no_speech_prob": 0.22909678518772125,
+              "compression_ratio": 0.9024390243902439
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.9868704188953746,
+              "no_speech_prob": 0.24334247410297394,
+              "compression_ratio": 1.0
+            },
+            {
+              "start": 1.0,
+              "end": 1.02,
+              "text": " Thank you.",
+              "avg_logprob": -0.9868704188953746,
+              "no_speech_prob": 0.24334247410297394,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "No, no, no, no.",
+          "prompt": "Go ahead. 316 West, 1420 North. It was Susan. She's had a play with her husband. It was physical, refusing medical. The husband is currently in the garage, requesting an officer come to the front door. 316 West, 1420 North.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " No, no, no, no.",
+              "avg_logprob": -0.9777693314985796,
+              "no_speech_prob": 0.28969523310661316,
+              "compression_ratio": 1.0
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794980850.m4a": {
+      "index": 1403,
+      "epoch": 1794980850,
+      "sha256": "79c4a0f34141a704db3874c6cab4a68b4938679f1fec1d86068f6ce307fc7867",
+      "passes": {
+        "original": {
+          "text": "Copy 23",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy 23",
+              "avg_logprob": -0.6184012413024902,
+              "no_speech_prob": 0.021426670253276825,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy 23.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy 23.",
+              "avg_logprob": -0.6146203974882761,
+              "no_speech_prob": 0.021039266139268875,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy 23.",
+          "prompt": "316 West, 1420 North. It was Susan. She's had a play with her husband. It was physical, refusing medical. The husband is currently in the garage, requesting an officer come to the front door. 316 West, 1420 North. We'll talk to you later. Bye-bye.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy 23.",
+              "avg_logprob": -0.5648808677991232,
+              "no_speech_prob": 0.00845234002918005,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794980852.m4a": {
+      "index": 1404,
+      "epoch": 1794980852,
+      "sha256": "6914bd9c525a982f49028b2538512794571a7f53b6a074c2228a597122f95edf",
+      "passes": {
+        "original": {
+          "text": "Twenty-five percent traffic.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Twenty-five percent traffic.",
+              "avg_logprob": -0.6894892586602105,
+              "no_speech_prob": 0.021379368379712105,
+              "compression_ratio": 0.8235294117647058
+            }
+          ]
+        },
+        "filtered": {
+          "text": "25 in traffic.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 25 in traffic.",
+              "avg_logprob": -0.7132849012102399,
+              "no_speech_prob": 0.034688062965869904,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "25 in traffic.",
+          "prompt": "It was Susan. She's had a play with her husband. It was physical, refusing medical. The husband is currently in the garage, requesting an officer come to the front door. 316 West, 1420 North. We'll talk to you later. Bye-bye. Copy 23",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 25 in traffic.",
+              "avg_logprob": -0.5801892450877598,
+              "no_speech_prob": 0.01983516290783882,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794980854.m4a": {
+      "index": 1405,
+      "epoch": 1794980854,
+      "sha256": "9b8ec9b6e43eb8a0b1363d30613423301e200fdf1e3ed3c95c912c1e80ff8226",
+      "passes": {
+        "original": {
+          "text": "Yeah, it worked.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, it worked.",
+              "avg_logprob": -0.7870856672525406,
+              "no_speech_prob": 0.12010324746370316,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah, we're.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Yeah, we're.",
+              "avg_logprob": -0.9009507149457932,
+              "no_speech_prob": 0.1387540102005005,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "Never.",
+          "prompt": "We'll talk to you later. Bye-bye. Copy 23 Twenty-five percent traffic.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Never.",
+              "avg_logprob": -0.5575138092041015,
+              "no_speech_prob": 0.058336757123470306,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794980896.m4a": {
+      "index": 1406,
+      "epoch": 1794980896,
+      "sha256": "af3688e4a6064e614ad31b6e83165d3e8a578ff3fc5b66c3a9e739a8ce0efb21",
+      "passes": {
+        "original": {
+          "text": "7 day 10, fill me in route as well.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7 day 10, fill me in route as well.",
+              "avg_logprob": -0.49269347957202364,
+              "no_speech_prob": 0.014643733389675617,
+              "compression_ratio": 0.813953488372093
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7 day 10 show me in route as well",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7 day 10 show me in route as well",
+              "avg_logprob": -0.5177913804848989,
+              "no_speech_prob": 0.028371546417474747,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        },
+        "context": {
+          "text": "Seven day ten, fill me in route as well.",
+          "prompt": "Copy 23 Twenty-five percent traffic. Yeah, it worked.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Seven day ten, fill me in route as well.",
+              "avg_logprob": -0.43030122348240446,
+              "no_speech_prob": 0.004452453460544348,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794980899.m4a": {
+      "index": 1407,
+      "epoch": 1794980899,
+      "sha256": "6376be771cad0c2e2b193acf623506190da0d77c38cd08c80349bcf72e74e0f1",
+      "passes": {
+        "original": {
+          "text": "Copy 7G10.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy 7G10.",
+              "avg_logprob": -0.6178220510482788,
+              "no_speech_prob": 0.03823484107851982,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy 7G10.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy 7G10.",
+              "avg_logprob": -0.7835632339119911,
+              "no_speech_prob": 0.018770869821310043,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy, 7 day 10.",
+          "prompt": "Twenty-five percent traffic. Yeah, it worked. 7 day 10, fill me in route as well.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy, 7 day 10.",
+              "avg_logprob": -0.4957077768113878,
+              "no_speech_prob": 0.011475056409835815,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794981058.m4a": {
+      "index": 1408,
+      "epoch": 1794981058,
+      "sha256": "3f04d14bf61b26b6c1d65c6e35e8b7eaccd45691eaa5431c3ba8aa726241f6c8",
+      "passes": {
+        "original": {
+          "text": "5J52K showing off 5J6",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.84,
+              "text": " 5J52K showing off 5J6",
+              "avg_logprob": -0.6608871767918268,
+              "no_speech_prob": 0.050041843205690384,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J52, can you show me how it's 5J6?",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J52, can you show me how it's 5J6?",
+              "avg_logprob": -0.6732065545188056,
+              "no_speech_prob": 0.056820642203092575,
+              "compression_ratio": 0.875
+            }
+          ]
+        },
+        "context": {
+          "text": "5J52K showing off 5J6",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.84,
+              "text": " 5J52K showing off 5J6",
+              "avg_logprob": -0.6608871767918268,
+              "no_speech_prob": 0.050041843205690384,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794981063.m4a": {
+      "index": 1409,
+      "epoch": 1794981063,
+      "sha256": "ae86acdb9464dc0400b66098886887a243233ee47b256f04e3b72e2c551c735f",
+      "passes": {
+        "original": {
+          "text": "Never.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Never.",
+              "avg_logprob": -0.7404621601104736,
+              "no_speech_prob": 0.014930283650755882,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Never.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Never.",
+              "avg_logprob": -0.6591938018798829,
+              "no_speech_prob": 0.0068931132555007935,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "That works.",
+          "prompt": "5J52K showing off 5J6",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " That works.",
+              "avg_logprob": -1.054259439309438,
+              "no_speech_prob": 0.09054829925298691,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1794981102.m4a": {
+      "index": 1410,
+      "epoch": 1794981102,
+      "sha256": "4dda09aec4741bf3b657031203303fc463172d4b90d877d2bb24dc79c03cae4a",
+      "passes": {
+        "original": {
+          "text": "Sunday, 10 a.m. right.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Sunday, 10 a.m. right.",
+              "avg_logprob": -0.8171461522579193,
+              "no_speech_prob": 0.01501759048551321,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Sunday, 10 a.m. right?",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Sunday, 10 a.m. right?",
+              "avg_logprob": -0.7255484163761139,
+              "no_speech_prob": 0.020140523090958595,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "7J10 all right.",
+          "prompt": "5J52K showing off 5J6 Never.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J10 all right.",
+              "avg_logprob": -0.7321323288811578,
+              "no_speech_prob": 0.023915035650134087,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    }
+  }
+}
