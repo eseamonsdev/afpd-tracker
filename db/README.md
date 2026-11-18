@@ -20,8 +20,9 @@ and can search, paginate, and open an officer's associated names. Stop it
 with Ctrl+C. After changing the source JSON, rerun the import with
 `--replace` and refresh the viewer.
 
-The staging branch also contains a static snapshot at `public/db/`, exported
-from these same local tables. To refresh it after editing officer JSON:
+An optional local static snapshot can be exported to `public/db/` from these
+same local tables. This generated directory is ignored by Git and is not
+committed to staging or main. To generate it after editing officer JSON:
 
 ```sh
 python3 db/import_officer_names.py --replace
@@ -30,10 +31,9 @@ python3 db/export_static.py
 
 The exporter also writes compressed `public/db/radio/*.bin` in small date ranges. The
 viewer loads radio rows by archive month and optionally talkgroup, so opening
-the page does not download every clip at once. Commit all of `public/db/` to
-staging. This page is deliberately committed for the temporary staging review.
-Remove and commit the removal of `public/db/` before promoting to production;
-`make promote-staging` blocks promotion while those tracked files are present.
+the page does not download every clip at once. Keep this export local.
+Remove `public/db/` before a manual deployment if you have generated it locally;
+`make promote-staging` also blocks promotion if those files become tracked.
 The live site still reads its existing JSON; the database has not been moved
 to D1 yet.
 
