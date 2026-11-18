@@ -7,6 +7,7 @@
   <style>
     :root { color-scheme: light; font-family: system-ui, sans-serif; background: #f3f6fa; color: #172840; }
     * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
     body { max-width: 1500px; margin: 0 auto; padding: 2rem clamp(1rem, 3vw, 3rem); }
     h1 { margin: 0 0 .35rem; font-size: clamp(1.5rem, 3vw, 2.2rem); }
     p { color: #526278; line-height: 1.5; }
@@ -164,7 +165,14 @@
         rows: rows.slice(state.offset, state.offset + state.limit) };
     }
 
+    function syncRadioControls() {
+      const visible = radioTables.has(state.table);
+      document.getElementById('month-control').hidden = !visible;
+      document.getElementById('talkgroup-control').hidden = !visible;
+    }
+
     async function load() {
+      syncRadioControls();
       const current = ++request;
       summary.classList.remove('error');
       summary.textContent = 'Loading…';
@@ -216,8 +224,6 @@
 
     tableSelect.addEventListener('change', () => {
       state.table = tableSelect.value; state.officerId = null; state.offset = 0;
-      document.getElementById('month-control').hidden = !radioTables.has(state.table);
-      document.getElementById('talkgroup-control').hidden = !radioTables.has(state.table);
       load();
     });
     monthSelect.addEventListener('change', () => { state.month = monthSelect.value; state.offset = 0; load(); });
