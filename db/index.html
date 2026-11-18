@@ -34,7 +34,7 @@
 <body>
   <main>
     <h1>Officer database viewer</h1>
-    <p>Read-only view of the local SQLite preview. Changes here cannot modify the database or the public website.</p>
+    <p>Read-only snapshot of the officer database. This page cannot modify the database or the public website.</p>
     <div class="controls">
       <label>Table <select id="table"><option value="officers">officers</option><option value="officer_names">officer_names</option></select></label>
       <label>Search <input id="search" type="search" placeholder="Name, slug, or ID" autocomplete="off"></label>
@@ -56,17 +56,52 @@
     const previous = document.getElementById('previous');
     const next = document.getElementById('next');
     let request = 0;
+    // On staging, the snapshot is bundled with the page. The local viewer uses
+    // the read-only SQLite API when there is no snapshot file.
+    const snapshotPromise = fetch('/db/snapshot.json', { cache: 'no-store' })
+      .then(response => response.ok ? response.json() : null).catch(() => null);
 
-    async function load() {
-      const current = ++request;
-      const params = new URLSearchParams({ q: state.search, offset: state.offset, limit: state.limit });
-      if (state.officerId !== null) params.set('officer_id', state.officerId);
-      summary.classList.remove('error');
-      summary.textContent = 'Loading…';
-      try {
+    async function getRows() {
+      const snapshot = await snapshotPromise;
+      if (!snapshot) {
+        const params = new URLSearchParams({ q: state.search, offset: state.offset, limit: state.limit });
+        if (state.officerId !== null) params.set('officer_id', state.officerId);
         const response = await fetch(`/db/api/table/${state.table}?${params}`);
         const result = await response.json();
         if (!response.ok) throw new Error(result.error || 'Could not load table');
+        return result;
+      }
+      const table = snapshot[state.table];
+      if (!table) throw new Error('Unknown table');
+      const query = state.search.trim().toLocaleLowerCase();
+      const officers = new Map(snapshot.officers.rows.map(officer => [officer.id, officer]));
+      const names = new Map();
+      for (const name of snapshot.officer_names.rows) {
+        if (!names.has(name.officer_id)) names.set(name.officer_id, []);
+        names.get(name.officer_id).push(name.name_text.toLocaleLowerCase());
+      }
+      const rows = table.rows.filter(row => {
+        if (state.officerId !== null && row.officer_id !== state.officerId) return false;
+        if (!query) return true;
+        if (state.table === 'officers') {
+          return String(row.id) === query || row.url_slug.toLocaleLowerCase().includes(query) ||
+            row.legacy_entity_id.toLocaleLowerCase().includes(query) ||
+            (names.get(row.id) || []).some(name => name.includes(query));
+        }
+        return String(row.id) === query || row.name_text.toLocaleLowerCase().includes(query) ||
+          officers.get(row.officer_id)?.url_slug.toLocaleLowerCase().includes(query);
+      });
+      return { table: state.table, columns: table.columns, total: rows.length,
+        offset: state.offset, limit: state.limit,
+        rows: rows.slice(state.offset, state.offset + state.limit) };
+    }
+
+    async function load() {
+      const current = ++request;
+      summary.classList.remove('error');
+      summary.textContent = 'Loading…';
+      try {
+        const result = await getRows();
         if (current !== request) return;
         head.replaceChildren(); body.replaceChildren();
         const header = document.createElement('tr');

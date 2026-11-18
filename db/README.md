@@ -18,8 +18,22 @@ python3 db/serve.py
 Open `http://127.0.0.1:8765/db/`. The viewer runs only on your computer
 and can search, paginate, and open an officer's associated names. Stop it
 with Ctrl+C. After changing the source JSON, rerun the import with
-`--replace` and refresh the viewer. This is not a route on the public site;
-the database has not been moved to D1 yet.
+`--replace` and refresh the viewer.
+
+The staging branch also contains a static snapshot at `public/db/`, exported
+from these same local tables. To refresh it after editing officer JSON:
+
+```sh
+python3 db/import_officer_names.py --replace
+python3 db/export_static.py
+```
+
+Commit the resulting `public/db/index.html` and `public/db/snapshot.json` to
+staging. This page is deliberately committed for the temporary staging review.
+Remove and commit the removal of `public/db/` before promoting to production;
+`make promote-staging` blocks promotion while those tracked files are present.
+The live site still reads its existing JSON; the database has not been moved
+to D1 yet.
 
 `officers.id` is a stable numeric identity within this import, `url_slug` keeps
 the existing profile address, and `display_name_id` selects one of that
