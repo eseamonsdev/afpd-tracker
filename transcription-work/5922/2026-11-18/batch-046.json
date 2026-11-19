@@ -1,0 +1,657 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-18",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1795027468.m4a": {
+      "index": 451,
+      "epoch": 1795027468,
+      "sha256": "e3eeecc8932afad71a61486b3ea4da889142abe520594876a37579b0886288a9",
+      "passes": {
+        "original": {
+          "text": "APG-20, can you show me how it looks? APG-5 and both units are ready.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " APG-20, can you show me how it looks?",
+              "avg_logprob": -0.5716806075402668,
+              "no_speech_prob": 0.011068785563111305,
+              "compression_ratio": 0.9452054794520548
+            },
+            {
+              "start": 2.0,
+              "end": 4.0,
+              "text": " APG-5 and both units are ready.",
+              "avg_logprob": -0.5716806075402668,
+              "no_speech_prob": 0.011068785563111305,
+              "compression_ratio": 0.9452054794520548
+            }
+          ]
+        },
+        "filtered": {
+          "text": "AT&T 20 in Shamal. It's AT&T 5 in both units already.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.84,
+              "text": " AT&T 20 in Shamal. It's AT&T 5 in both units already.",
+              "avg_logprob": -0.8695732273838737,
+              "no_speech_prob": 0.012271449901163578,
+              "compression_ratio": 0.9464285714285714
+            }
+          ]
+        },
+        "context": {
+          "text": "APG-20, can you show me how it looks? APG-5 and both units are ready.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " APG-20, can you show me how it looks?",
+              "avg_logprob": -0.5716806075402668,
+              "no_speech_prob": 0.011068785563111305,
+              "compression_ratio": 0.9452054794520548
+            },
+            {
+              "start": 2.0,
+              "end": 4.0,
+              "text": " APG-5 and both units are ready.",
+              "avg_logprob": -0.5716806075402668,
+              "no_speech_prob": 0.011068785563111305,
+              "compression_ratio": 0.9452054794520548
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795027473.m4a": {
+      "index": 452,
+      "epoch": 1795027473,
+      "sha256": "c9c2dd0b891bc3750ae536a51ca59bf3b60d977f07060f91df13987641a4487e",
+      "passes": {
+        "original": {
+          "text": "Coffee?",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Coffee?",
+              "avg_logprob": -0.6073558330535889,
+              "no_speech_prob": 0.06009835749864578,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.86,
+              "text": " Copy.",
+              "avg_logprob": -0.7987166404724121,
+              "no_speech_prob": 0.06653541326522827,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "APG-20, can you show me how it looks? APG-5 and both units are ready.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6310068607330322,
+              "no_speech_prob": 0.03942994400858879,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795027543.m4a": {
+      "index": 453,
+      "epoch": 1795027543,
+      "sha256": "270faa4a264b371a42b9b448e2ca0d7c1761b69d9b0555cce39e72f6ef39b26a",
+      "passes": {
+        "original": {
+          "text": "Edging Jay, Edder, Robin.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Edging Jay, Edder, Robin.",
+              "avg_logprob": -1.2050133844216664,
+              "no_speech_prob": 0.014280220493674278,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "filtered": {
+          "text": "1828 arriving.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.12,
+              "text": " 1828 arriving.",
+              "avg_logprob": -1.0218315124511719,
+              "no_speech_prob": 0.0065004401840269566,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "Edging Jay, Edder, Robin.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Edging Jay, Edder, Robin.",
+              "avg_logprob": -1.2050133844216664,
+              "no_speech_prob": 0.014280220493674278,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795027546.m4a": {
+      "index": 454,
+      "epoch": 1795027546,
+      "sha256": "947767edfee38f9dc7e19801ecd8af5aaf3413b48ce6ff883ef2e9f6dd607390",
+      "passes": {
+        "original": {
+          "text": "Copy 1145.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.36,
+              "text": " Copy 1145.",
+              "avg_logprob": -0.6067724909101214,
+              "no_speech_prob": 0.007818469777703285,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy, 1145.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.44,
+              "text": " Copy, 1145.",
+              "avg_logprob": -0.6421077474951744,
+              "no_speech_prob": 0.017284968867897987,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy, 1145.",
+          "prompt": "Edging Jay, Edder, Robin.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.36,
+              "text": " Copy, 1145.",
+              "avg_logprob": -0.5940563306212425,
+              "no_speech_prob": 0.0038604482542723417,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795027593.m4a": {
+      "index": 455,
+      "epoch": 1795027593,
+      "sha256": "509cdeee3e62b6a3ed25c7aafcc3c6fc9ccff094e652e62be3741c2250c123d2",
+      "passes": {
+        "original": {
+          "text": "You",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You",
+              "avg_logprob": -0.7815284729003906,
+              "no_speech_prob": 0.8737070560455322,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "filtered": {
+          "text": "You",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You",
+              "avg_logprob": -0.6360975354909897,
+              "no_speech_prob": 0.8823762536048889,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy 1245.",
+          "prompt": "Edging Jay, Edder, Robin. Copy 1145.",
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy 1245.",
+              "avg_logprob": -0.9313114030020577,
+              "no_speech_prob": 0.7162410020828247,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795027618.m4a": {
+      "index": 456,
+      "epoch": 1795027618,
+      "sha256": "f7d482d8c63826dc32309bac4bb35883511da1e8b03e74f1ecee33697891f27b",
+      "passes": {
+        "original": {
+          "text": "to win",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " to win",
+              "avg_logprob": -1.0883726119995116,
+              "no_speech_prob": 0.44174104928970337,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "of being with",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " of being with",
+              "avg_logprob": -1.174580454826355,
+              "no_speech_prob": 0.5200432538986206,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "You",
+          "prompt": "You",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You",
+              "avg_logprob": -0.6965222507715225,
+              "no_speech_prob": 0.27258574962615967,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795027621.m4a": {
+      "index": 457,
+      "epoch": 1795027621,
+      "sha256": "ec83e4398bbd8f1faaf3e85efac3f8ddbd0e03e1aed9644608bcac6713fc0c51",
+      "passes": {
+        "original": {
+          "text": "Hey GJ, we have one resistant and then",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " Hey GJ, we have one resistant and then",
+              "avg_logprob": -0.8132270116072434,
+              "no_speech_prob": 0.005620060954242945,
+              "compression_ratio": 0.8260869565217391
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18J, we have one resistance and then it is good.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.6,
+              "text": " 18J, we have one resistance and then it is good.",
+              "avg_logprob": -0.9768254309892654,
+              "no_speech_prob": 0.016691621392965317,
+              "compression_ratio": 0.8571428571428571
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey GJ, we have one resistance and then any good",
+          "prompt": "You to win",
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Hey GJ, we have one resistance and then any good",
+              "avg_logprob": -0.9217503468195597,
+              "no_speech_prob": 0.007184708025306463,
+              "compression_ratio": 0.8888888888888888
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795027626.m4a": {
+      "index": 458,
+      "epoch": 1795027626,
+      "sha256": "fa22cc80f8c3b81484cb13a0098f6c206f14ee42f676008b573b92186ab98d06",
+      "passes": {
+        "original": {
+          "text": "Copy resisting 10-82-11-47.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Copy resisting 10-82-11-47.",
+              "avg_logprob": -0.6260531682234544,
+              "no_speech_prob": 0.04950209707021713,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy resisting, Kennedy, to 1147.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Copy resisting, Kennedy, to 1147.",
+              "avg_logprob": -0.5832218080759048,
+              "no_speech_prob": 0.02047049254179001,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        },
+        "context": {
+          "text": "copy resisting ten eighty two eleven forty seven",
+          "prompt": "You to win Hey GJ, we have one resistant and then",
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.1,
+              "text": " copy resisting ten eighty two eleven forty seven",
+              "avg_logprob": -0.7221841270273383,
+              "no_speech_prob": 0.024408726021647453,
+              "compression_ratio": 0.9411764705882353
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795027638.m4a": {
+      "index": 459,
+      "epoch": 1795027638,
+      "sha256": "11cdb2b1b1fe65f255f9629842e9ff7bf872ce493f40acc26780366ee02d3e50",
+      "passes": {
+        "original": {
+          "text": "Engine 15, do you want to know?",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Engine 15, do you want to know?",
+              "avg_logprob": -1.037690132856369,
+              "no_speech_prob": 0.05024553835391998,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "filtered": {
+          "text": "15, did they want another one?",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.4,
+              "text": " 15, did they want another one?",
+              "avg_logprob": -1.0485182025215842,
+              "no_speech_prob": 0.024470003321766853,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey GJ, 15-82-1 and 1.",
+          "prompt": "to win Hey GJ, we have one resistant and then Copy resisting 10-82-11-47.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.4,
+              "text": " Hey GJ, 15-82-1 and 1.",
+              "avg_logprob": -0.8532512823740641,
+              "no_speech_prob": 0.029812511056661606,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795027644.m4a": {
+      "index": 460,
+      "epoch": 1795027644,
+      "sha256": "dfa1c41f0705ff5614d7427ef7e76dbb00398cdf199ad0f6c231f32bc18a5f43",
+      "passes": {
+        "original": {
+          "text": "I have 5, 8, and 20 on scene.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.5,
+              "text": " I have 5, 8, and 20 on scene.",
+              "avg_logprob": -0.4164727053471974,
+              "no_speech_prob": 0.024766717106103897,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I have 5, 8, and 20 on scene.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I have 5, 8, and 20 on scene.",
+              "avg_logprob": -0.41506461799144745,
+              "no_speech_prob": 0.015330584719777107,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        },
+        "context": {
+          "text": "I have 5.8 and 20 on scene.",
+          "prompt": "Hey GJ, we have one resistant and then Copy resisting 10-82-11-47. Engine 15, do you want to know?",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.5,
+              "text": " I have 5.8 and 20 on scene.",
+              "avg_logprob": -0.39923492761758655,
+              "no_speech_prob": 0.008185306563973427,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        }
+      }
+    }
+  }
+}
