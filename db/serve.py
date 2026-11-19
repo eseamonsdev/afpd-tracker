@@ -10,8 +10,8 @@ from urllib.parse import parse_qs, urlsplit
 HERE = Path(__file__).resolve().parent
 DEFAULT_DB = HERE / 'local/afpd.sqlite'
 TABLES = ('officers', 'officer_names', 'radio_talkgroups', 'radio_ids',
-          'radio_clips', 'radio_clip_sources')
-RADIO_EVENTS = ('radio_clips', 'radio_clip_sources')
+          'radio_clips', 'radio_clip_radio_ids')
+RADIO_EVENTS = ('radio_clips', 'radio_clip_radio_ids')
 
 
 def query_database(database, table, search='', offset=0, limit=25, officer_id=None,
@@ -50,12 +50,12 @@ def query_database(database, table, search='', offset=0, limit=25, officer_id=No
                 where.append('(t.name LIKE ? OR CAST(t.number AS TEXT) LIKE ? OR t.system LIKE ?)')
                 values.extend((text, text, text))
             elif table == 'radio_ids':
-                where.append('r.id LIKE ?')
+                where.append('r.radio_id LIKE ?')
                 values.append(text)
             elif table == 'radio_clips':
                 where.append('''(c.id LIKE ? OR c.archive_date LIKE ? OR c.transcript LIKE ? OR
                     c.original_transcript LIKE ? OR CAST(c.clip_number AS TEXT) = ? OR
-                    EXISTS (SELECT 1 FROM radio_clip_sources s
+                    EXISTS (SELECT 1 FROM radio_clip_radio_ids s
                             WHERE s.clip_id = c.id AND s.radio_id LIKE ?))''')
                 values.extend((text, text, text, text, search, text))
             else:
@@ -82,12 +82,12 @@ def query_database(database, table, search='', offset=0, limit=25, officer_id=No
         elif table == 'radio_talkgroups':
             from_sql, select, order = 'FROM radio_talkgroups t', 't.*', 't.system, t.number'
         elif table == 'radio_ids':
-            from_sql, select, order = 'FROM radio_ids r', 'r.*', 'r.id'
+            from_sql, select, order = 'FROM radio_ids r', 'r.*', 'r.radio_id'
         elif table == 'radio_clips':
             from_sql, select, order = ('FROM radio_clips c', 'c.*',
                                        'c.archive_date, c.talkgroup_number, c.clip_number')
         else:
-            from_sql = 'FROM radio_clip_sources s JOIN radio_clips c ON c.id = s.clip_id'
+            from_sql = 'FROM radio_clip_radio_ids s JOIN radio_clips c ON c.id = s.clip_id'
             select = 's.*, c.archive_date, c.talkgroup_number, c.clip_number'
             order = 'c.archive_date, c.talkgroup_number, c.clip_number, s.radio_id'
         condition = (' WHERE ' + ' AND '.join(where)) if where else ''
@@ -101,7 +101,7 @@ def query_database(database, table, search='', offset=0, limit=25, officer_id=No
                 [row['name'] for row in connection.execute(f'PRAGMA table_info({table})')] +
                 (['selected_display_name'] if table == 'officers' else
                  ['is_primary'] if table == 'officer_names' else
-                 ['archive_date', 'talkgroup_number', 'clip_number'] if table == 'radio_clip_sources' else []),
+                 ['archive_date', 'talkgroup_number', 'clip_number'] if table == 'radio_clip_radio_ids' else []),
                 'rows': [dict(row) for row in rows]}
     finally:
         connection.close()

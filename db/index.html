@@ -37,7 +37,7 @@
     <h1>Database viewer</h1>
     <p>Read-only snapshot of the officer and radio tables. This page cannot modify the database or the public website.</p>
     <div class="controls">
-      <label>Table <select id="table"><option value="officers">officers</option><option value="officer_names">officer_names</option><option value="radio_talkgroups">radio_talkgroups</option><option value="radio_ids">radio_ids</option><option value="radio_clips">radio_clips</option><option value="radio_clip_sources">radio_clip_sources</option></select></label>
+      <label>Table <select id="table"><option value="officers">officers</option><option value="officer_names">officer_names</option><option value="radio_talkgroups">radio_talkgroups</option><option value="radio_ids">radio_ids</option><option value="radio_clips">radio_clips</option><option value="radio_clip_radio_ids">radio_clip_radio_ids</option></select></label>
       <label id="month-control" hidden>Archive month <select id="month"></select></label>
       <label id="talkgroup-control" hidden>Talkgroup <select id="talkgroup"><option value="">All talkgroups</option></select></label>
       <label>Search <input id="search" type="search" placeholder="Name, slug, or ID" autocomplete="off"></label>
@@ -52,7 +52,7 @@
     const tableSelect = document.getElementById('table');
     const monthSelect = document.getElementById('month');
     const talkgroupSelect = document.getElementById('talkgroup');
-    const radioTables = new Set(['radio_clips', 'radio_clip_sources']);
+    const radioTables = new Set(['radio_clips', 'radio_clip_radio_ids']);
     const searchInput = document.getElementById('search');
     const summary = document.getElementById('summary');
     const clearFilter = document.getElementById('clear-filter');
@@ -106,7 +106,7 @@
       const rows = parts.flatMap(part => unpack(part[state.table]));
       const sources = new Map();
       if (state.table === 'radio_clips') for (const part of parts) {
-        for (const source of unpack(part.radio_clip_sources)) {
+        for (const source of unpack(part.radio_clip_radio_ids)) {
           if (!sources.has(source.clip_id)) sources.set(source.clip_id, []);
           sources.get(source.clip_id).push(source.radio_id);
         }

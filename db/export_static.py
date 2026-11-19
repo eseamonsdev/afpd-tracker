@@ -44,8 +44,8 @@ def main():
                 for table, sql in (
                     ('radio_clips', '''SELECT * FROM radio_clips WHERE archive_date BETWEEN ? AND ?
                         AND talkgroup_number = ? ORDER BY archive_date, clip_number'''),
-                    ('radio_clip_sources', '''SELECT s.*, c.archive_date, c.talkgroup_number,
-                        c.clip_number FROM radio_clip_sources s JOIN radio_clips c ON c.id = s.clip_id
+                    ('radio_clip_radio_ids', '''SELECT s.*, c.archive_date, c.talkgroup_number,
+                        c.clip_number FROM radio_clip_radio_ids s JOIN radio_clips c ON c.id = s.clip_id
                         WHERE c.archive_date BETWEEN ? AND ? AND c.talkgroup_number = ?
                         ORDER BY c.archive_date, c.clip_number, s.radio_id'''),
                 ):
@@ -60,7 +60,7 @@ def main():
                 (OUTPUT / filename).write_bytes(gzip.compress(data, compresslevel=9, mtime=0))
                 snapshot['_radio_chunks'].append({'month': month, 'talkgroup': talkgroup,
                     'file': filename, 'clips': len(contents['radio_clips']['rows']),
-                    'sources': len(contents['radio_clip_sources']['rows'])})
+                    'sources': len(contents['radio_clip_radio_ids']['rows'])})
     (OUTPUT / 'snapshot.json').write_text(json.dumps(snapshot, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     shutil.copyfile(HERE / 'index.html', OUTPUT / 'index.html')
     print(f'Exported {OUTPUT}: {len(snapshot["officers"]["rows"])} officers, '

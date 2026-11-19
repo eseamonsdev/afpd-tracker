@@ -50,7 +50,7 @@ def import_radio(connection):
                  call.get('frequency_hz', call.get('freq')),
                  flag(call.get('emergency')),
                  call.get('transcript'), call.get('original_transcript'),
-                 flag(call.get('validated')), flag(call.get('needs_review')),
+                 int(call.get('validated') is True), flag(call.get('needs_review')),
                  storage.get('provider'), storage.get('bucket'), storage.get('key'),
                  storage.get('sha256'), storage.get('size_bytes'),
                  flag(storage.get('verified')), flag(call.get('audio_downloaded')),
@@ -61,8 +61,8 @@ def import_radio(connection):
             for radio_id in dict.fromkeys(str(value) for value in (call.get('radio_ids') or [])):
                 if radio_id in INVALID_RADIO_IDS:
                     continue
-                connection.execute('INSERT OR IGNORE INTO radio_ids(id) VALUES (?)', (radio_id,))
-                connection.execute('INSERT INTO radio_clip_sources VALUES (?, ?, ?)',
+                connection.execute('INSERT OR IGNORE INTO radio_ids(radio_id) VALUES (?)', (radio_id,))
+                connection.execute('INSERT INTO radio_clip_radio_ids VALUES (?, ?, ?)',
                                    (call['id'], radio_id, positions.get(radio_id)))
                 sources += 1
     return len(files), clips, sources

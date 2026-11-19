@@ -58,7 +58,7 @@ by incremental migrations rather than rebuilding from scratch.
 
 The same import also loads all tracked `public/records/openmhz/*/calls.json`
 archives into `radio_talkgroups`, `radio_ids`, `radio_clips`, and
-`radio_clip_sources`. `radio_clips.id` is the OpenMHz call ID and
+`radio_clip_radio_ids`. `radio_clips.id` is the OpenMHz call ID and
 `(system, talkgroup_number, archive_date, clip_number)` identifies a clip in
 the day archive. The audio reference is the R2 key and its recorded checks;
 the audio bytes remain in R2. Expiring OpenMHz media and call URLs are not
