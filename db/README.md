@@ -1,41 +1,15 @@
-# Officer and radio database preview
+# Officer and radio database builder
 
-This is a local preview for a possible D1 migration. The public 11ty build still
-reads the existing JSON. The schema and repeatable importer are tracked; the
-generated SQLite file is ignored.
+The public 11ty build still reads the existing JSON. The schema and repeatable
+importer are tracked; the generated SQLite file is ignored.
 
 ```sh
 python3 db/create_afpd_db.py
 python3 db/create_afpd_db.py --replace
 ```
 
-To inspect the two tables in a browser, start the read-only local viewer:
-
-```sh
-python3 db/serve.py
-```
-
-Open `http://127.0.0.1:8765/db/`. The viewer runs only on your computer
-and can search, paginate, and open an officer's associated names. Stop it
-with Ctrl+C. After changing the source JSON, rerun the import with
-`--replace` and refresh the viewer.
-
-An optional local static snapshot can be exported to `public/db/` from these
-same local tables. This generated directory is ignored by Git and is not
-committed to staging or main. To generate it after editing officer JSON:
-
-```sh
-python3 db/create_afpd_db.py --replace
-python3 db/export_static.py
-```
-
-The exporter also writes compressed `public/db/radio/*.bin` in small date ranges. The
-viewer loads radio rows by archive month and optionally talkgroup, so opening
-the page does not download every clip at once. Keep this export local.
-Remove `public/db/` before a manual deployment if you have generated it locally;
-`make promote-staging` also blocks promotion if those files become tracked.
-The live site still reads its existing JSON; the database has not been moved
-to D1 yet.
+After changing the source JSON, rerun the import with `--replace` to rebuild
+the local SQLite file. The live site still reads its existing JSON.
 
 `officers.id` is a stable numeric identity within this import, `url_slug` keeps
 the existing profile address, and `display_name_id` selects one of that
@@ -65,5 +39,5 @@ the audio bytes remain in R2. Expiring OpenMHz media and call URLs are not
 imported. A clip may have zero or several identified radio sources, and a
 radio ID does not imply a permanent officer assignment. The current and
 original transcript, review flags, timestamps, and audio metadata are
-available in the read-only viewer. Officer association decisions and callsign
-assignments remain in their existing JSON for now.
+stored in the database. Officer association decisions and callsign assignments
+remain in their existing JSON for now.
