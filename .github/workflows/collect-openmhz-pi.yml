@@ -1,0 +1,146 @@
+name: Collect OpenMHz metadata on Pi
+run-name: Collect ${{ inputs.day }} / TG ${{ inputs.talkgroup }}
+
+'on':
+  workflow_dispatch:
+    inputs:
+      day:
+        description: Finished America/Denver date (YYYY-MM-DD)
+        required: true
+        type: string
+      talkgroup:
+        description: OpenMHz talkgroup
+        required: true
+        default: '6001'
+        type: choice
+        options:
+          - '6001'
+          - '5922'
+          - '6036'
+
+permissions:
+  contents: write
+
+# One collector at a time shares the Pi's Chromium session.
+concurrency:
+  group: openmhz-pi-collection
+  cancel-in-progress: false
+  queue: max
+
+jobs:
+  collect:
+    runs-on: [self-hosted, Linux, ARM64, openmhz]
+    timeout-minutes: 120
+    defaults:
+      run:
+        shell: bash
+    env:
+      DATE: ${{ inputs.day }}
+      TALKGROUP: ${{ inputs.talkgroup }}
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+    steps:
+      - name: Check out only collector dependencies from staging
+        uses: actions/checkout@v4
+        with:
+          ref: staging
+          path: openmhz-collector
+          fetch-depth: 1
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /Makefile
+            /.gitignore
+            /scripts/openmhz-browser-test/package.json
+            /scripts/openmhz-browser-test/package-lock.json
+            /scripts/openmhz-browser-test/collect-openmhz.cjs
+            /scripts/openmhz-browser-test/browser-session.cjs
+            /scripts/openmhz-browser-test/run-diagnostics.cjs
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install collector dependencies only
+        working-directory: openmhz-collector/scripts/openmhz-browser-test
+        run: npm ci --no-audit --no-fund
+
+      - name: Validate inputs and select metadata destination
+        working-directory: openmhz-collector
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const { validateDate, midnight, nextDate } = require('./scripts/openmhz-browser-test/collect-openmhz.cjs');
+          const day = validateDate(process.env.DATE);
+          if (midnight(nextDate(day)) > Date.now()) throw Error('Choose a finished America/Denver calendar day');
+          if (!['6001', '5922', '6036'].includes(process.env.TALKGROUP)) throw Error('Unsupported talkgroup');
+          NODE
+          case "$TALKGROUP" in
+            6001) channel=car-to-car ;;
+            5922) channel=law-2 ;;
+            6036) channel=6036 ;;
+          esac
+          destination="records-pending-review/openmhz-metadata/$channel/$DATE"
+          echo "METADATA_DESTINATION=$destination" >> "$GITHUB_ENV"
+          # Include only this day's existing handoff, so updates are tracked correctly.
+          git sparse-checkout add "/$destination/calls.json"
+
+      - name: Collect using the Pi's existing Chromium on localhost port 9222
+        working-directory: openmhz-collector
+        run: make collect-openmhz DATE="$DATE" TALKGROUP="$TALKGROUP"
+
+      - name: Preserve completed metadata in its channel and date folder
+        working-directory: openmhz-collector
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs = require('node:fs');
+          const root = 'scripts/openmhz-browser-test/openmhz-results/' + process.env.DATE;
+          const summary = JSON.parse(fs.readFileSync(root + '/summary.json', 'utf8'));
+          const data = JSON.parse(fs.readFileSync(root + '/calls.json', 'utf8'));
+          if (summary.status !== 'complete' || !summary.olderBoundaryReached || !summary.newerBoundaryReached)
+            throw Error('Incomplete collection; metadata will not be published');
+          if (data.date !== process.env.DATE || data.talkgroup !== Number(process.env.TALKGROUP) ||
+              data.system !== 'dcfems' || data.timezone !== 'America/Denver' || data.calls.length !== summary.count)
+            throw Error('Collection identity/count mismatch');
+          fs.mkdirSync(process.env.METADATA_DESTINATION, { recursive: true });
+          fs.copyFileSync(root + '/calls.json', process.env.METADATA_DESTINATION + '/calls.json');
+          NODE
+
+      - name: Commit collected metadata and push to staging
+        working-directory: openmhz-collector
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- "$METADATA_DESTINATION/calls.json"
+          if git diff --cached --quiet; then
+            echo "Metadata already matches staging."
+            exit 0
+          fi
+          git commit -m "Collect OpenMHz TG $TALKGROUP metadata for $DATE"
+          # Save recovery material before rebasing; never repeat collection on a push failure.
+          git diff --binary HEAD^ HEAD > "$RUNNER_TEMP/openmhz-collection.patch"
+          for attempt in 1 2 3; do
+            git fetch origin staging
+            if ! git rebase origin/staging; then
+              git rebase --abort
+              echo "Conflicting staging changes; recover metadata from the run artifact." >&2
+              exit 1
+            fi
+            if git push origin HEAD:staging; then
+              exit 0
+            fi
+          done
+          echo "Could not push; recover metadata from the run artifact." >&2
+          exit 1
+
+      - name: Keep collection results and publication recovery patch
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: openmhz-${{ inputs.talkgroup }}-${{ inputs.day }}-${{ github.run_id }}
+          path: |
+            openmhz-collector/scripts/openmhz-browser-test/openmhz-results/
+            ${{ runner.temp }}/openmhz-collection.patch
+          if-no-files-found: ignore
+          retention-days: 7
