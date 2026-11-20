@@ -5,12 +5,16 @@ The generated SQL and the pre-upload D1 backup stay in ignored db/local/.
 """
 
 import argparse
+from contextlib import ExitStack
 from datetime import datetime, timezone
 import json
 from pathlib import Path
+import re
+import shutil
 import sqlite3
 import subprocess
 import sys
+import tempfile
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
@@ -43,24 +47,49 @@ def counts(database):
 
 
 def write_import(database, output):
-    """SQLite dump without transaction statements, as required by D1 import."""
+    """Generate an import whose every statement preserves foreign keys.
+
+    D1 may apply a large import in multiple transactions. Deferred constraints
+    cannot protect a dump that inserts child rows before their parent rows.
+    """
     with sqlite3.connect(f'file:{database}?mode=ro', uri=True) as connection, \
-            output.open('w', encoding='utf-8') as stream:
-        stream.write('PRAGMA defer_foreign_keys = ON;\n')
+            output.open('w', encoding='utf-8') as stream, ExitStack() as stack:
+        inserts = {table: stack.enter_context(tempfile.TemporaryFile(mode='w+t', encoding='utf-8'))
+                   for table in TABLES if table != 'officers'}
+        # Break the circular officers <-> officer_names reference in the old
+        # schema before dropping either table. This command targets an already
+        # created afpd-data database, which always has officers.
+        stream.write('UPDATE officers SET display_name_id = NULL;\n')
         for table in DROP_ORDER:
             stream.write(f'DROP TABLE IF EXISTS {table};\n')
-        # Create every table before importing rows: the local dump sorts names
-        # alphabetically, which would insert officer_names before officers.
         for schema in SCHEMA_FILES:
             stream.write(schema.read_text(encoding='utf-8') + '\n')
         for statement in connection.iterdump():
             if statement in ('BEGIN TRANSACTION;', 'COMMIT;'):
                 continue
-            if not statement.startswith('INSERT INTO '):
-                if statement.startswith(('CREATE TABLE ', 'CREATE INDEX ')):
-                    continue
+            if statement.startswith(('CREATE TABLE ', 'CREATE INDEX ')):
+                continue
+            match = re.match(r'^INSERT INTO "([^"]+)" ', statement)
+            if not match or match.group(1) not in TABLES:
                 raise ValueError(f'Unexpected SQLite dump statement: {statement[:100]}')
-            stream.write(statement + '\n')
+            if match.group(1) != 'officers':
+                inserts[match.group(1)].write(statement + '\n')
+
+        # Officers are inserted without their display-name reference. Restore
+        # that reference only after the name rows exist.
+        for officer_id, legacy, slug, _ in connection.execute(
+                'SELECT id, legacy_entity_id, url_slug, display_name_id FROM officers ORDER BY id'):
+            quoted = [connection.execute('SELECT quote(?)', (value,)).fetchone()[0]
+                      for value in (legacy, slug)]
+            stream.write(f'INSERT INTO officers VALUES({officer_id},{quoted[0]},{quoted[1]},NULL);\n')
+        for table in TABLES[1:]:
+            inserts[table].seek(0)
+            shutil.copyfileobj(inserts[table], stream)
+            if table == 'officer_names':
+                for officer_id, name_id in connection.execute(
+                        'SELECT id, display_name_id FROM officers ORDER BY id'):
+                    stream.write(f'UPDATE officers SET display_name_id={name_id} '
+                                 f'WHERE id={officer_id};\n')
 
 
 def result_rows(output):
