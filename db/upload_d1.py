@@ -23,12 +23,14 @@ SQLITE = LOCAL / 'afpd.sqlite'
 IMPORT = LOCAL / 'afpd-d1-import.sql'
 WRANGLER = ROOT / 'node_modules/.bin/wrangler'
 
-TABLES = ('officers', 'officer_names', 'radio_talkgroups', 'radio_ids',
+TABLES = ('officers', 'officer_names', 'radio_talkgroups', 'radio_ids', 'radio_archive_days',
           'radio_clips', 'radio_clip_radio_ids', 'sources')
 SCHEMA_FILES = (HERE / 'migrations/0001_officer_names.sql',
-                HERE / 'migrations/0002_radio.sql', HERE / 'migrations/0003_sources.sql')
+                HERE / 'migrations/0002_radio.sql', HERE / 'migrations/0003_sources.sql',
+                HERE / 'migrations/0004_radio_archive_days.sql')
 # This also removes the pre-rename table if it exists in the remote database.
 DROP_ORDER = ('sources', 'radio_clip_radio_ids', 'radio_clip_sources', 'radio_clips',
+              'radio_archive_days',
               'radio_ids', 'radio_talkgroups', 'officer_names', 'officers')
 
 

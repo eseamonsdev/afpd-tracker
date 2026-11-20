@@ -17,10 +17,30 @@ def flag(value):
     return None if value is None else int(bool(value))
 
 
+def day_indexes():
+    indexes = {}
+    for group, filename in ((5922, 'law-2-index.json'), (6001, 'index.json')):
+        data = json.loads((ARCHIVES / filename).read_text(encoding='utf-8'))
+        days = {}
+        for entry in data['days']:
+            if entry['date'] in days:
+                raise ValueError(f'Duplicate {filename} date: {entry["date"]}')
+            days[entry['date']] = entry
+        indexes[group] = days
+    return indexes
+
+
+DAY_FIELDS = {'date', 'timezone', 'system', 'talkgroup', 'talkgroup_name',
+              'start_utc', 'end_utc_exclusive', 'count', 'source_call_count',
+              'coverage', 'coverage_note', 'collected_through_utc',
+              'download_failure_count', 'enableTranscription', 'calls'}
+
+
 def import_radio(connection):
     files = sorted(ARCHIVES.glob('*/calls.json'))
     if not files:
         raise ValueError(f'No calls.json archives found in {ARCHIVES}')
+    indexes = day_indexes()
     clips = sources = 0
     for file in files:
         archive = json.loads(file.read_text(encoding='utf-8'))
@@ -32,6 +52,34 @@ def import_radio(connection):
         connection.execute('INSERT OR IGNORE INTO radio_talkgroups VALUES (?, ?, ?)',
                            (system, group, name))
         path = file.relative_to(ROOT).as_posix()
+        entry = indexes.get(group, {}).get(day)
+        if entry and (entry['folder'] != file.parent.name or entry['count'] != len(archive['calls'])):
+            raise ValueError(f'Index does not match archive {path}')
+        if archive['count'] != len(archive['calls']):
+            raise ValueError(f'Archive count does not match calls in {path}')
+        for source, value in (('archive', archive.get('enableTranscription')),
+                              ('index', entry.get('enableTranscription') if entry else None),
+                              ('index day', entry.get('enableDay') if entry else None)):
+            if value is not None and not isinstance(value, bool):
+                raise ValueError(f'Invalid {source} flag in {path}')
+        player_enabled = int(entry is not None and (group != 5922 or entry.get('enableDay') is True))
+        transcripts_enabled = int((entry.get('enableTranscription') if group == 5922 and entry
+                                   else archive.get('enableTranscription')) is True)
+        extras = {key: value for key, value in archive.items() if key not in DAY_FIELDS}
+        connection.execute('''INSERT INTO radio_archive_days
+            (system, talkgroup_number, archive_date, archive_path, timezone,
+             start_utc, end_utc_exclusive, clip_count, source_call_count,
+             coverage, coverage_note, collected_through_utc, download_failure_count,
+             player_enabled, transcripts_enabled, extra_json)
+            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',
+            (system, group, day, path, archive['timezone'], archive.get('start_utc'),
+             archive.get('end_utc_exclusive'), len(archive['calls']),
+             archive.get('source_call_count'), archive.get('coverage'),
+             (entry.get('coverageNote') if entry and 'coverageNote' in entry
+              else archive.get('coverage_note')),
+             archive.get('collected_through_utc'), archive.get('download_failure_count'),
+             player_enabled, transcripts_enabled,
+             json.dumps(extras, ensure_ascii=False, sort_keys=True) if extras else None))
         for number, call in enumerate(archive['calls'], start=1):
             if call['talkgroup'] != group:
                 raise ValueError(f'Talkgroup mismatch in {path} clip {number}')

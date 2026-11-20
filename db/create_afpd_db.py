@@ -17,6 +17,7 @@ SOURCE = ROOT / 'data/entities/people/officers'
 SCHEMA = Path(__file__).resolve().parent / 'migrations/0001_officer_names.sql'
 RADIO_SCHEMA = Path(__file__).resolve().parent / 'migrations/0002_radio.sql'
 SOURCES_SCHEMA = Path(__file__).resolve().parent / 'migrations/0003_sources.sql'
+RADIO_DAYS_SCHEMA = Path(__file__).resolve().parent / 'migrations/0004_radio_archive_days.sql'
 DEFAULT_OUTPUT = Path(__file__).resolve().parent / 'local/afpd.sqlite'
 
 # These aliases have explicit officer identification in the radio evidence.
@@ -128,6 +129,7 @@ def main():
         connection.executescript(SCHEMA.read_text(encoding='utf-8'))
         connection.executescript(RADIO_SCHEMA.read_text(encoding='utf-8'))
         connection.executescript(SOURCES_SCHEMA.read_text(encoding='utf-8'))
+        connection.executescript(RADIO_DAYS_SCHEMA.read_text(encoding='utf-8'))
         officers, names = import_data(connection)
         with connection:
             archives, clips, radio_sources = import_radio(connection)

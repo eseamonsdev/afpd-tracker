@@ -19,7 +19,7 @@ make wrangler-login
 ```
 
 To rebuild the SQLite database from tracked JSON, back up the existing remote
-`afpd-data` D1 database, and replace the seven managed tables in D1:
+`afpd-data` D1 database, and replace the eight managed tables in D1:
 
 ```sh
 make db-upload
@@ -28,7 +28,7 @@ make db-upload
 The SQL import and a timestamped pre-upload D1 export are saved under ignored
 `db/local/`. The command verifies the row count of each imported table. It
 does not modify the repository or deploy the website. Any direct edits to
-these seven D1 tables are overwritten by the rebuilt local data. The existing
+these eight D1 tables are overwritten by the rebuilt local data. The existing
 database and its name are retained; a D1 binding is not added to `wrangler.jsonc`.
 To prepare the SQLite database and SQL import without contacting Cloudflare,
 run `python3 db/upload_d1.py --prepare-only`.
@@ -53,8 +53,15 @@ are sorted. Once a remote database exists, its numeric IDs must be preserved
 by incremental migrations rather than rebuilding from scratch.
 
 The same import also loads all tracked `public/records/openmhz/*/calls.json`
-archives into `radio_talkgroups`, `radio_ids`, `radio_clips`, and
-`radio_clip_radio_ids`. `radio_clips.id` is the OpenMHz call ID and
+archives into `radio_talkgroups`, `radio_ids`, `radio_archive_days`,
+`radio_clips`, and `radio_clip_radio_ids`. Each `radio_archive_days` row
+holds a talkgroup/date archive, its coverage and collection metadata, and its
+effective display settings. `player_enabled` indicates whether the day appears
+in the site's radio player index; it does not indicate whether audio exists in
+R2. `transcripts_enabled` records the day's transcript display setting (from
+the Law 2 index or the other daily manifests). Rare archive metadata stays in
+`extra_json`. A day can exist in the database even if the player does not list
+it. `radio_clips.id` is the OpenMHz call ID and
 `(system, talkgroup_number, archive_date, clip_number)` identifies a clip in
 the day archive. The audio reference is the R2 key and its recorded checks;
 the audio bytes remain in R2. Expiring OpenMHz media and call URLs are not

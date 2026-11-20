@@ -36,7 +36,9 @@ CREATE TABLE radio_clips (
   source_duration_matches INTEGER CHECK (source_duration_matches IN (0, 1)),
   archive_path TEXT NOT NULL,
   UNIQUE (system, talkgroup_number, archive_date, clip_number),
-  FOREIGN KEY (system, talkgroup_number) REFERENCES radio_talkgroups(system, number)
+  FOREIGN KEY (system, talkgroup_number) REFERENCES radio_talkgroups(system, number),
+  FOREIGN KEY (system, talkgroup_number, archive_date)
+    REFERENCES radio_archive_days(system, talkgroup_number, archive_date)
 );
 
 CREATE TABLE radio_clip_radio_ids (
