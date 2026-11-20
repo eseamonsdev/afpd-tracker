@@ -21,14 +21,13 @@ run-name: Collect ${{ inputs.day }} / TG ${{ inputs.talkgroup }}
 permissions:
   contents: write
 
-# One collector at a time shares the Pi's Chromium session.
-concurrency:
-  group: openmhz-pi-collection
-  cancel-in-progress: false
-  queue: max
-
 jobs:
   collect:
+    # Serialize browser use, but release the Pi while hosted audio downloads run.
+    concurrency:
+      group: openmhz-pi-collection
+      cancel-in-progress: false
+      queue: max
     runs-on: [self-hosted, Linux, ARM64, openmhz]
     timeout-minutes: 120
     defaults:
@@ -135,3 +134,15 @@ jobs:
             ${{ runner.temp }}/openmhz-collection.patch
           if-no-files-found: ignore
           retention-days: 7
+
+  download_audio:
+    name: Download collected audio to R2
+    needs: collect
+    uses: ./.github/workflows/radio-audio.yml
+    with:
+      day: ${{ inputs.day }}
+      talkgroup: ${{ inputs.talkgroup }}
+      target_branch: staging
+      mode: download
+      pause_ms: 1000
+    secrets: inherit
