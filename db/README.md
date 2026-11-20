@@ -19,7 +19,7 @@ make wrangler-login
 ```
 
 To rebuild the SQLite database from tracked JSON, back up the existing remote
-`afpd-data` D1 database, and replace the six managed tables in D1:
+`afpd-data` D1 database, and replace the seven managed tables in D1:
 
 ```sh
 make db-upload
@@ -28,7 +28,7 @@ make db-upload
 The SQL import and a timestamped pre-upload D1 export are saved under ignored
 `db/local/`. The command verifies the row count of each imported table. It
 does not modify the repository or deploy the website. Any direct edits to
-these six D1 tables are overwritten by the rebuilt local data. The existing
+these seven D1 tables are overwritten by the rebuilt local data. The existing
 database and its name are retained; a D1 binding is not added to `wrangler.jsonc`.
 To prepare the SQLite database and SQL import without contacting Cloudflare,
 run `python3 db/upload_d1.py --prepare-only`.
@@ -63,3 +63,11 @@ radio ID does not imply a permanent officer assignment. The current and
 original transcript, review flags, timestamps, and audio metadata are
 stored in the database. Officer association decisions and callsign assignments
 remain in their existing JSON for now.
+
+`sources` imports each individual record from `data/sources/**/*.json` under
+its existing `id` as `source_id`. The explicit `source_type` is `file`,
+`external`, `youtube`, `news`, or `audio`. Common fields have their own columns:
+label, URL or file path, publisher, channel, published date, description, and
+duration. `source_file_path` records the JSON file used for this import. Rare
+fields (such as `agency`, `providedBy`, and nested YouTube content) are retained
+without loss in `extra_json`. No entity-to-source links are imported yet.

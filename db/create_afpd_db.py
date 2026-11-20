@@ -10,11 +10,13 @@ from pathlib import Path
 import re
 import sqlite3
 from import_radio import import_radio
+from import_sources import import_sources
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / 'data/entities/people/officers'
 SCHEMA = Path(__file__).resolve().parent / 'migrations/0001_officer_names.sql'
 RADIO_SCHEMA = Path(__file__).resolve().parent / 'migrations/0002_radio.sql'
+SOURCES_SCHEMA = Path(__file__).resolve().parent / 'migrations/0003_sources.sql'
 DEFAULT_OUTPUT = Path(__file__).resolve().parent / 'local/afpd.sqlite'
 
 # These aliases have explicit officer identification in the radio evidence.
@@ -125,14 +127,17 @@ def main():
         connection.execute('PRAGMA foreign_keys = ON')
         connection.executescript(SCHEMA.read_text(encoding='utf-8'))
         connection.executescript(RADIO_SCHEMA.read_text(encoding='utf-8'))
+        connection.executescript(SOURCES_SCHEMA.read_text(encoding='utf-8'))
         officers, names = import_data(connection)
         with connection:
-            archives, clips, sources = import_radio(connection)
+            archives, clips, radio_sources = import_radio(connection)
+            sources = import_sources(connection)
         violations = connection.execute('PRAGMA foreign_key_check').fetchall()
         if violations:
             raise ValueError(f'Foreign key violations: {violations}')
         print(f'Created {output}: {officers} officers, {names} name forms; '
-              f'{archives} radio days, {clips} clips, {sources} clip sources')
+              f'{archives} radio days, {clips} clips, {radio_sources} clip radio IDs; '
+              f'{sources} sources')
     except Exception:
         connection.close()
         output.unlink(missing_ok=True)
