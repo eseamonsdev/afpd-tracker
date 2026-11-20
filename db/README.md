@@ -19,7 +19,7 @@ make wrangler-login
 ```
 
 To rebuild the SQLite database from tracked JSON, back up the existing remote
-`afpd-data` D1 database, and replace the ten managed tables in D1:
+`afpd-data` D1 database, and replace the eleven managed tables in D1:
 
 ```sh
 make db-upload
@@ -28,7 +28,7 @@ make db-upload
 The SQL import and a timestamped pre-upload D1 export are saved under ignored
 `db/local/`. The command verifies the row count of each imported table. It
 does not modify the repository or deploy the website. Any direct edits to
-these ten D1 tables are overwritten by the rebuilt local data. The existing
+these eleven D1 tables are overwritten by the rebuilt local data. The existing
 database and its name are retained; a D1 binding is not added to `wrangler.jsonc`.
 To prepare the SQLite database and SQL import without contacting Cloudflare,
 run `python3 db/upload_d1.py --prepare-only`.
@@ -85,4 +85,13 @@ its existing `id` as `source_id`. The explicit `source_type` is `file`,
 label, URL or file path, publisher, channel, published date, description, and
 duration. `source_file_path` records the JSON file used for this import. Rare
 fields (such as `agency`, `providedBy`, and nested YouTube content) are retained
-without loss in `extra_json`. No entity-to-source links are imported yet.
+without loss in `extra_json`.
+
+`entity_source_links` imports references from entity JSON that point to a
+`sources.source_id`. It records the stable entity ID and type, JSON file, and
+JSON pointer of each reference. `field_name` names the top-level entity field,
+and `reference_json` preserves the complete reference, including any
+`$override` or `$path`. Multiple references to the same source remain separate
+rows when they appear in different places. References between entities are
+excluded; entity IDs cannot yet have a foreign key until entity records have
+their own table.
