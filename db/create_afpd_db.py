@@ -10,6 +10,7 @@ from pathlib import Path
 import re
 import sqlite3
 from import_radio import import_radio
+from import_radio_excerpts import import_radio_excerpts
 from import_sources import import_sources
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -18,6 +19,7 @@ SCHEMA = Path(__file__).resolve().parent / 'migrations/0001_officer_names.sql'
 RADIO_SCHEMA = Path(__file__).resolve().parent / 'migrations/0002_radio.sql'
 SOURCES_SCHEMA = Path(__file__).resolve().parent / 'migrations/0003_sources.sql'
 RADIO_DAYS_SCHEMA = Path(__file__).resolve().parent / 'migrations/0004_radio_archive_days.sql'
+RADIO_EXCERPTS_SCHEMA = Path(__file__).resolve().parent / 'migrations/0005_radio_excerpts.sql'
 DEFAULT_OUTPUT = Path(__file__).resolve().parent / 'local/afpd.sqlite'
 
 # These aliases have explicit officer identification in the radio evidence.
@@ -130,15 +132,18 @@ def main():
         connection.executescript(RADIO_SCHEMA.read_text(encoding='utf-8'))
         connection.executescript(SOURCES_SCHEMA.read_text(encoding='utf-8'))
         connection.executescript(RADIO_DAYS_SCHEMA.read_text(encoding='utf-8'))
+        connection.executescript(RADIO_EXCERPTS_SCHEMA.read_text(encoding='utf-8'))
         officers, names = import_data(connection)
         with connection:
             archives, clips, radio_sources = import_radio(connection)
+            excerpts, excerpt_clips = import_radio_excerpts(connection)
             sources = import_sources(connection)
         violations = connection.execute('PRAGMA foreign_key_check').fetchall()
         if violations:
             raise ValueError(f'Foreign key violations: {violations}')
         print(f'Created {output}: {officers} officers, {names} name forms; '
               f'{archives} radio days, {clips} clips, {radio_sources} clip radio IDs; '
+              f'{excerpts} excerpts, {excerpt_clips} excerpt clips; '
               f'{sources} sources')
     except Exception:
         connection.close()
