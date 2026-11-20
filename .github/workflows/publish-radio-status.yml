@@ -64,22 +64,3 @@ jobs:
           page_args=()
           if [ "$STATUS_BRANCH" = staging ]; then page_args+=(--publish-page); fi
           python3 scripts/publish_radio_status.py --root .radio-status-source --branch "$STATUS_BRANCH" --state idle "${page_args[@]}"
-
-  dispatch_pi_collection:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/staging'
-    runs-on: ubuntu-latest
-    permissions:
-      actions: write
-    steps:
-      - name: Trigger November 19 Car-to-Car metadata collection
-        env:
-          GH_TOKEN: ${{ github.token }}
-          GH_REPO: ${{ github.repository }}
-        run: |
-          curl --fail-with-body --silent --show-error \
-            -X POST \
-            -H "Authorization: Bearer $GH_TOKEN" \
-            -H "Accept: application/vnd.github+json" \
-            -H "Content-Type: application/json" \
-            "https://api.github.com/repos/$GH_REPO/actions/workflows/collect-openmhz-pi.yml/dispatches" \
-            --data '{"ref":"staging","inputs":{"day":"2026-11-19","talkgroup":"6001"}}'
