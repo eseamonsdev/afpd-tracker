@@ -1,4 +1,4 @@
-"""Rebuild SQLite and replace this project's tables in an existing remote D1 DB.
+"""Refresh JSON-backed tables and add new radio rows to an existing remote D1 DB.
 
 Run `make wrangler-login` separately when Wrangler authentication expires.
 The generated SQL and the pre-upload D1 backup stay in ignored db/local/.
@@ -26,16 +26,16 @@ WRANGLER = ROOT / 'node_modules/.bin/wrangler'
 TABLES = ('officers', 'officer_names', 'radio_talkgroups', 'radio_ids', 'radio_archive_days',
           'radio_clips', 'radio_clip_radio_ids', 'radio_excerpts', 'radio_excerpt_clips',
           'sources', 'entity_source_links')
-SCHEMA_FILES = (HERE / 'migrations/0001_officer_names.sql',
-                HERE / 'migrations/0002_radio.sql', HERE / 'migrations/0003_sources.sql',
-                HERE / 'migrations/0004_radio_archive_days.sql',
-                HERE / 'migrations/0005_radio_excerpts.sql',
-                HERE / 'migrations/0006_entity_source_links.sql')
-# This also removes the pre-rename table if it exists in the remote database.
-DROP_ORDER = ('entity_source_links', 'sources', 'radio_excerpt_clips', 'radio_excerpts',
-              'radio_clip_radio_ids', 'radio_clip_sources', 'radio_clips',
-              'radio_archive_days',
-              'radio_ids', 'radio_talkgroups', 'officer_names', 'officers')
+RADIO_TABLES = ('radio_talkgroups', 'radio_ids', 'radio_archive_days', 'radio_clips',
+                'radio_clip_radio_ids', 'radio_excerpts', 'radio_excerpt_clips')
+REBUILT_TABLES = ('officers', 'officer_names', 'sources', 'entity_source_links')
+RADIO_SCHEMAS = (HERE / 'migrations/0002_radio.sql',
+                 HERE / 'migrations/0004_radio_archive_days.sql',
+                 HERE / 'migrations/0005_radio_excerpts.sql')
+REBUILT_SCHEMAS = (HERE / 'migrations/0001_officer_names.sql',
+                   HERE / 'migrations/0003_sources.sql',
+                   HERE / 'migrations/0006_entity_source_links.sql')
+DROP_ORDER = ('entity_source_links', 'sources', 'officer_names', 'officers')
 
 
 def run(*args, capture=False):
@@ -53,7 +53,7 @@ def counts(database):
 
 
 def write_import(database, output):
-    """Generate an import whose every statement preserves foreign keys.
+    """Rebuild JSON tables and insert only missing radio rows, preserving edits.
 
     D1 may apply a large import in multiple transactions. Deferred constraints
     cannot protect a dump that inserts child rows before their parent rows.
@@ -68,8 +68,13 @@ def write_import(database, output):
         stream.write('UPDATE officers SET display_name_id = NULL;\n')
         for table in DROP_ORDER:
             stream.write(f'DROP TABLE IF EXISTS {table};\n')
-        for schema in SCHEMA_FILES:
+        for schema in REBUILT_SCHEMAS:
             stream.write(schema.read_text(encoding='utf-8') + '\n')
+        for schema in RADIO_SCHEMAS:
+            sql = schema.read_text(encoding='utf-8')
+            sql = re.sub(r'\bCREATE TABLE\s+', 'CREATE TABLE IF NOT EXISTS ', sql)
+            sql = re.sub(r'\bCREATE INDEX\s+', 'CREATE INDEX IF NOT EXISTS ', sql)
+            stream.write(sql + '\n')
         for statement in connection.iterdump():
             if statement in ('BEGIN TRANSACTION;', 'COMMIT;'):
                 continue
@@ -79,6 +84,8 @@ def write_import(database, output):
             if not match or match.group(1) not in TABLES:
                 raise ValueError(f'Unexpected SQLite dump statement: {statement[:100]}')
             if match.group(1) != 'officers':
+                if match.group(1) in RADIO_TABLES:
+                    statement = statement.replace('INSERT INTO ', 'INSERT OR IGNORE INTO ', 1)
                 inserts[match.group(1)].write(statement + '\n')
 
         # Officers are inserted without their display-name reference. Restore
@@ -115,9 +122,13 @@ def verify_remote(database, expected):
         response = run(str(WRANGLER), 'd1', 'execute', database, '--remote',
                        '--command', query, '--json', capture=True)
         rows = result_rows(response.stdout)
-        if len(rows) != 1 or rows[0].get('count') != count:
-            raise ValueError(f'{table}: expected {count} rows; D1 returned {rows}')
-    print('Verified D1 rows: ' + ', '.join(f'{table}={n}' for table, n in expected.items()))
+        actual = rows[0].get('count') if len(rows) == 1 else None
+        if not isinstance(actual, int) or (actual < count if table in RADIO_TABLES
+                                           else actual != count):
+            comparison = 'at least' if table in RADIO_TABLES else 'exactly'
+            raise ValueError(f'{table}: expected {comparison} {count} rows; D1 returned {rows}')
+    print('Verified D1 rows (radio counts are minimums): ' +
+          ', '.join(f'{table}={n}' for table, n in expected.items()))
 
 
 def main():
@@ -142,7 +153,7 @@ def main():
         f'--output={backup}', '--skip-confirmation')
     if not backup.is_file() or not backup.stat().st_size:
         raise ValueError('D1 export did not produce a backup; upload cancelled')
-    print(f'Replacing managed tables in remote {args.database}', flush=True)
+    print(f'Refreshing JSON tables and adding missing radio rows in remote {args.database}', flush=True)
     run(str(WRANGLER), 'd1', 'execute', args.database, '--remote',
         f'--file={IMPORT}', '--yes')
     verify_remote(args.database, expected)

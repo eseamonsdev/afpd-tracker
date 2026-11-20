@@ -18,18 +18,25 @@ npm ci
 make wrangler-login
 ```
 
-To rebuild the SQLite database from tracked JSON, back up the existing remote
-`afpd-data` D1 database, and replace the eleven managed tables in D1:
+To rebuild a local SQLite snapshot from tracked JSON, back up the remote
+`afpd-data` D1 database, refresh the four JSON-backed tables, and add missing
+radio rows without replacing existing ones:
 
 ```sh
 make db-upload
 ```
 
 The SQL import and a timestamped pre-upload D1 export are saved under ignored
-`db/local/`. The command verifies the row count of each imported table. It
-does not modify the repository or deploy the website. Any direct edits to
-these eleven D1 tables are overwritten by the rebuilt local data. The existing
-database and its name are retained; a D1 binding is not added to `wrangler.jsonc`.
+`db/local/`. The command verifies exact counts for `officers`, `officer_names`,
+`sources`, and `entity_source_links`, and minimum counts for the seven radio
+tables, which can contain additional D1-only rows. It does not modify the
+repository or deploy the website. Direct edits to the four JSON-backed tables
+are overwritten; existing radio rows, including corrected transcripts and
+validation flags, are retained. New radio rows are inserted from JSON, but
+changes to existing JSON radio rows do not update their D1 counterparts. The
+local SQLite snapshot is still recreated from JSON each run and is not a copy
+of D1. The existing database and its name are retained; a D1 binding is not
+added to `wrangler.jsonc`.
 To prepare the SQLite database and SQL import without contacting Cloudflare,
 run `python3 db/upload_d1.py --prepare-only`.
 
