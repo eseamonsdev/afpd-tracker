@@ -22,7 +22,7 @@ GitHub requires the workflow file on the default branch (`main`) before it appea
 
 Open Actions → Collect OpenMHz metadata on Pi → Run workflow. Enter a finished America/Denver calendar date and select 6001 (Car-to-Car), 5922 (Law 2), or 6036.
 
-The workflow checks out seven individual files from staging, installs only the collector's Node dependencies, and calls `make collect-openmhz`. It then adds just the selected day's metadata path. No website build dependencies, site archive, audio files, or full Git history are checked out.
+The workflow checks out eight individual files from staging, installs only the collector's Node dependencies, and calls `make collect-openmhz`. It then adds just the selected day's metadata path. No website build dependencies, site archive, audio files, or full Git history are checked out.
 
 Completed metadata is committed to staging at:
 
@@ -35,3 +35,7 @@ Completed metadata is committed to staging at:
 Incomplete collection fails without publishing the handoff. Raw calls, browser batches, summary and diagnostics are kept in the run artifact for seven days, including on failure. A publication recovery patch is included when a commit was created. Push retries reuse the completed collection and never force-push staging. Concurrent changes to the same metadata file stop publication for manual review.
 
 This workflow preserves source metadata only. It does not download audio, enable transcripts, create audio requests, or deploy the site. No additional secret is required: commits use the workflow's repository token with `contents: write` permission.
+
+## Audio-ready handoff
+
+After collection, `scripts/openmhz-browser-test/prepare-metadata.cjs` checks the completed summary and converts raw browser fields into the downloader's metadata schema. It includes call IDs, epochs, exact source media URLs, original filenames, durations, source radio IDs, counts and Mountain date coverage. The normalized `calls.json` is committed at the channel/date destination above; raw browser results remain in the artifact. Run **Download radio audio** for the same date and talkgroup on staging; it prepares/resumes the download manifest from this file automatically. Collection does not itself start downloads.

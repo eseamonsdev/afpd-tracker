@@ -54,6 +54,7 @@ jobs:
             /scripts/openmhz-browser-test/collect-openmhz.cjs
             /scripts/openmhz-browser-test/browser-session.cjs
             /scripts/openmhz-browser-test/run-diagnostics.cjs
+            /scripts/openmhz-browser-test/prepare-metadata.cjs
 
       - name: Set up Node
         uses: actions/setup-node@v4
@@ -88,23 +89,13 @@ jobs:
         working-directory: openmhz-collector
         run: make collect-openmhz DATE="$DATE" TALKGROUP="$TALKGROUP"
 
-      - name: Preserve completed metadata in its channel and date folder
+      - name: Prepare validated audio-download metadata
         working-directory: openmhz-collector
         run: |
-          set -euo pipefail
-          node <<'NODE'
-          const fs = require('node:fs');
-          const root = 'scripts/openmhz-browser-test/openmhz-results/' + process.env.DATE;
-          const summary = JSON.parse(fs.readFileSync(root + '/summary.json', 'utf8'));
-          const data = JSON.parse(fs.readFileSync(root + '/calls.json', 'utf8'));
-          if (summary.status !== 'complete' || !summary.olderBoundaryReached || !summary.newerBoundaryReached)
-            throw Error('Incomplete collection; metadata will not be published');
-          if (data.date !== process.env.DATE || data.talkgroup !== Number(process.env.TALKGROUP) ||
-              data.system !== 'dcfems' || data.timezone !== 'America/Denver' || data.calls.length !== summary.count)
-            throw Error('Collection identity/count mismatch');
-          fs.mkdirSync(process.env.METADATA_DESTINATION, { recursive: true });
-          fs.copyFileSync(root + '/calls.json', process.env.METADATA_DESTINATION + '/calls.json');
-          NODE
+          node scripts/openmhz-browser-test/prepare-metadata.cjs \
+            "scripts/openmhz-browser-test/openmhz-results/$DATE/calls.json" \
+            "scripts/openmhz-browser-test/openmhz-results/$DATE/summary.json" \
+            "$METADATA_DESTINATION/calls.json"
 
       - name: Commit collected metadata and push to staging
         working-directory: openmhz-collector
