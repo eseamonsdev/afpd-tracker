@@ -11,6 +11,28 @@ python3 db/create_afpd_db.py --replace
 After changing the source JSON, rerun the import with `--replace` to rebuild
 the local SQLite file. The live site still reads its existing JSON.
 
+To install the repository's Wrangler version and authenticate separately:
+
+```sh
+npm ci
+make wrangler-login
+```
+
+To rebuild the SQLite database from tracked JSON, back up the existing remote
+`afpd-data` D1 database, and replace the six managed tables in D1:
+
+```sh
+make db-upload
+```
+
+The SQL import and a timestamped pre-upload D1 export are saved under ignored
+`db/local/`. The command verifies the row count of each imported table. It
+does not modify the repository or deploy the website. Any direct edits to
+these six D1 tables are overwritten by the rebuilt local data. The existing
+database and its name are retained; a D1 binding is not added to `wrangler.jsonc`.
+To prepare the SQLite database and SQL import without contacting Cloudflare,
+run `python3 db/upload_d1.py --prepare-only`.
+
 `officers.id` is a stable numeric identity within this import, `url_slug` keeps
 the existing profile address, and `display_name_id` selects one of that
 officer's `officer_names` rows. Every explicitly listed canonical, alternate,

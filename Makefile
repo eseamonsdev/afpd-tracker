@@ -1,4 +1,13 @@
-.PHONY: promote-staging build manual-deploy prod-manual-deploy collect-openmhz
+.PHONY: promote-staging build manual-deploy prod-manual-deploy collect-openmhz wrangler-login db-upload
+
+D1_DATABASE ?= afpd-data
+
+wrangler-login:
+	@test -x node_modules/.bin/wrangler || { echo "Run npm ci first to install Wrangler." >&2; exit 1; }
+	./node_modules/.bin/wrangler login
+
+db-upload:
+	@python3 db/upload_d1.py --database "$(D1_DATABASE)"
 
 promote-staging:
 	@test "$$(git branch --show-current)" = "staging" || \
