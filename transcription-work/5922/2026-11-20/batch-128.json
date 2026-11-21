@@ -1,0 +1,673 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1795241103.m4a": {
+      "index": 1271,
+      "epoch": 1795241103,
+      "sha256": "64a95b2ce374f68d866c218c427e329d6ec49bf12ce4d021e4e3a6a632180246",
+      "passes": {
+        "original": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Happy.",
+              "avg_logprob": -0.4773736476898193,
+              "no_speech_prob": 0.01326611079275608,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Happy.",
+              "avg_logprob": -0.5475847244262695,
+              "no_speech_prob": 0.008907834067940712,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy.",
+          "prompt": "K-217 clear as well and I'll be switching back to low-end. Happy. 5k21, I'm out at the lifesaver.",
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Happy.",
+              "avg_logprob": -0.41717166900634767,
+              "no_speech_prob": 0.037612736225128174,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795241112.m4a": {
+      "index": 1272,
+      "epoch": 1795241112,
+      "sha256": "f017da96892c6f9b5646f1ed4056582d2c01d6f41ad0e6fec928b39e784493ef",
+      "passes": {
+        "original": {
+          "text": "We do not have a name, just that she's a white female, 30 to 40, is wearing a green shirt and green pants.",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 32,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.72,
+              "text": " We do not have a name, just that she's a white female,",
+              "avg_logprob": -0.27461222446326056,
+              "no_speech_prob": 0.0018833497306331992,
+              "compression_ratio": 1.1521739130434783
+            },
+            {
+              "start": 2.72,
+              "end": 5.2,
+              "text": " 30 to 40, is wearing a green shirt and green pants.",
+              "avg_logprob": -0.27461222446326056,
+              "no_speech_prob": 0.0018833497306331992,
+              "compression_ratio": 1.1521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We do not have a name, just that she's a white female, 30 to 40, is wearing a green shirt and green pants.",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 32,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.14,
+              "text": " We do not have a name, just that she's a white female, 30 to 40, is wearing a green",
+              "avg_logprob": -0.28031409870494495,
+              "no_speech_prob": 0.0010722849983721972,
+              "compression_ratio": 1.1521739130434783
+            },
+            {
+              "start": 4.14,
+              "end": 5.24,
+              "text": " shirt and green pants.",
+              "avg_logprob": -0.28031409870494495,
+              "no_speech_prob": 0.0010722849983721972,
+              "compression_ratio": 1.1521739130434783
+            }
+          ]
+        },
+        "context": {
+          "text": "We didn't have a name, just that she's a white female, 30-40s, wearing a green shirt and green pants.",
+          "prompt": "Happy. 5k21, I'm out at the lifesaver. Happy.",
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 30,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.5,
+              "text": " We didn't have a name, just that she's a white female, 30-40s, wearing a green shirt and green pants.",
+              "avg_logprob": -0.25713518742592106,
+              "no_speech_prob": 0.02687801793217659,
+              "compression_ratio": 1.1477272727272727
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795241121.m4a": {
+      "index": 1273,
+      "epoch": 1795241121,
+      "sha256": "df8f83b6dd6bc9a9457f1f360e3ebc58603f8c20c4682da4b26d61e6c263d5e9",
+      "passes": {
+        "original": {
+          "text": "Jump.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.72,
+              "text": " Jump.",
+              "avg_logprob": -0.9268962860107421,
+              "no_speech_prob": 0.1812223196029663,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "John.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " John.",
+              "avg_logprob": -1.2573396682739257,
+              "no_speech_prob": 0.2370711863040924,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Jump.",
+          "prompt": "5k21, I'm out at the lifesaver. Happy. We do not have a name, just that she's a white female, 30 to 40, is wearing a green shirt and green pants.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Jump.",
+              "avg_logprob": -0.6053379058837891,
+              "no_speech_prob": 0.21522822976112366,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795241140.m4a": {
+      "index": 1274,
+      "epoch": 1795241140,
+      "sha256": "cada62001b4fa781f7e139491d37fa19fc9b5764ddd4f83567397f7150973a2e",
+      "passes": {
+        "original": {
+          "text": "5 to 6.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5 to 6.",
+              "avg_logprob": -0.6662754842213222,
+              "no_speech_prob": 0.14280080795288086,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5 to 6.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5 to 6.",
+              "avg_logprob": -0.6390703746250698,
+              "no_speech_prob": 0.09150180220603943,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "5 to 6.",
+          "prompt": "Happy. We do not have a name, just that she's a white female, 30 to 40, is wearing a green shirt and green pants. Jump.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 5 to 6.",
+              "avg_logprob": -0.6509335551943097,
+              "no_speech_prob": 0.03956913948059082,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795241142.m4a": {
+      "index": 1275,
+      "epoch": 1795241142,
+      "sha256": "54de1eec22a3de1835a4c46a2bcda57a1787e68b93c435c44ccc015ac079fde0",
+      "passes": {
+        "original": {
+          "text": "Five, six, seven, eight, nine, eight, nine, eight, nine",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.1500000000000001,
+              "text": " Five, six, seven, eight, nine, eight, nine, eight, nine",
+              "avg_logprob": -0.6767479871448717,
+              "no_speech_prob": 0.019076135009527206,
+              "compression_ratio": 1.4864864864864864
+            }
+          ]
+        },
+        "filtered": {
+          "text": "OK. Thanks.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " OK.",
+              "avg_logprob": -0.6153250800238715,
+              "no_speech_prob": 0.01948019117116928,
+              "compression_ratio": 0.5789473684210527
+            },
+            {
+              "start": 0.5,
+              "end": 2.04,
+              "text": " Thanks.",
+              "avg_logprob": -0.6153250800238715,
+              "no_speech_prob": 0.01948019117116928,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "5 to 6.",
+          "prompt": "We do not have a name, just that she's a white female, 30 to 40, is wearing a green shirt and green pants. Jump. 5 to 6.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 5 to 6.",
+              "avg_logprob": -0.26158238308770315,
+              "no_speech_prob": 0.027744822204113007,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795241144.m4a": {
+      "index": 1276,
+      "epoch": 1795241144,
+      "sha256": "657b9d3362ce8d51bd7fcc03f34877af6f962f3238659d8bd6f378577129eb3d",
+      "passes": {
+        "original": {
+          "text": "Have it confirmed if that's the suspect vehicle and the result?",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Have it confirmed if that's the suspect vehicle and the result?",
+              "avg_logprob": -0.47873882576823235,
+              "no_speech_prob": 0.033566664904356,
+              "compression_ratio": 0.9545454545454546
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Have they confirmed if that's the suspect vehicle and the assault?",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Have they confirmed if that's the suspect vehicle and the assault?",
+              "avg_logprob": -0.514569841325283,
+              "no_speech_prob": 0.01611616462469101,
+              "compression_ratio": 0.9850746268656716
+            }
+          ]
+        },
+        "context": {
+          "text": "Have it confirmed if that's the suspect vehicle and the result?",
+          "prompt": "Jump. 5 to 6. Five, six, seven, eight, nine, eight, nine, eight, nine",
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Have it confirmed if that's the suspect vehicle and the result?",
+              "avg_logprob": -0.5193783715367317,
+              "no_speech_prob": 0.025980506092309952,
+              "compression_ratio": 0.9545454545454546
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795241153.m4a": {
+      "index": 1277,
+      "epoch": 1795241153,
+      "sha256": "6a7933d486a99a2518d1d40c54031acf789bdfbef3feb24ae161f3c07dbb8006",
+      "passes": {
+        "original": {
+          "text": "seven to eight twenty",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " seven to eight twenty",
+              "avg_logprob": -0.5604793003627232,
+              "no_speech_prob": 0.018149424344301224,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J20.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 7J20.",
+              "avg_logprob": -0.6216768366949899,
+              "no_speech_prob": 0.011931894347071648,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Seven to eight, twenty.",
+          "prompt": "5 to 6. Five, six, seven, eight, nine, eight, nine, eight, nine Have it confirmed if that's the suspect vehicle and the result?",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Seven to eight, twenty.",
+              "avg_logprob": -0.3425668610466851,
+              "no_speech_prob": 0.0053271143697202206,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795241158.m4a": {
+      "index": 1278,
+      "epoch": 1795241158,
+      "sha256": "bf006c2f3bb9c42e80cd123d1084a62f4ac72a2db6045d53370d2b1d37d3c321",
+      "passes": {
+        "original": {
+          "text": "Thanks for watching!",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thanks for watching!",
+              "avg_logprob": -0.9723480769566127,
+              "no_speech_prob": 0.5957123637199402,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thanks for watching!",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thanks for watching!",
+              "avg_logprob": -0.9827601569039481,
+              "no_speech_prob": 0.27773624658584595,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "seven to eight, nine, eight, nine, eight, nine, eight, nine, eight, nine, eight, nine, eight, nine, eight,",
+          "prompt": "Five, six, seven, eight, nine, eight, nine, eight, nine Have it confirmed if that's the suspect vehicle and the result? seven to eight twenty",
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 33,
+          "token_cap_reached": true,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.64,
+              "text": " seven to eight, nine, eight, nine, eight, nine, eight, nine, eight, nine, eight, nine, eight, nine, eight,",
+              "avg_logprob": -0.3547962553360883,
+              "no_speech_prob": 0.6259710788726807,
+              "compression_ratio": 3.4193548387096775
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795241159.m4a": {
+      "index": 1279,
+      "epoch": 1795241159,
+      "sha256": "cea614df0c8c86da8963997f942c28f5f179173aa39a2266be23defb745cc5f9",
+      "passes": {
+        "original": {
+          "text": "Do you have a description of a female or able to confirm if she's possibly related to ASL?",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.6400000000000001,
+              "text": " Do you have a description of a female",
+              "avg_logprob": -0.2590746260606326,
+              "no_speech_prob": 0.0014137118123471737,
+              "compression_ratio": 1.0344827586206897
+            },
+            {
+              "start": 1.6400000000000001,
+              "end": 4.44,
+              "text": " or able to confirm if she's possibly related to ASL?",
+              "avg_logprob": -0.2590746260606326,
+              "no_speech_prob": 0.0014137118123471737,
+              "compression_ratio": 1.0344827586206897
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Do you have a description of if a female are able to confirm if she's possibly related to ASL?",
+          "prompt": null,
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.64,
+              "text": " Do you have a description of if a female are able to confirm if she's possibly related to ASL?",
+              "avg_logprob": -0.3199533748626709,
+              "no_speech_prob": 0.0021183921489864588,
+              "compression_ratio": 1.0681818181818181
+            }
+          ]
+        },
+        "context": {
+          "text": "Do you have a description of if a female are able to confirm if she's possibly related to ASL?",
+          "prompt": "Have it confirmed if that's the suspect vehicle and the result? seven to eight twenty Thanks for watching!",
+          "duration_seconds": 4.992,
+          "token_limit": 64,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.64,
+              "text": " Do you have a description of if a female are able to confirm if she's possibly related to ASL?",
+              "avg_logprob": -0.2578235149383545,
+              "no_speech_prob": 0.005870301742106676,
+              "compression_ratio": 1.0681818181818181
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795241169.m4a": {
+      "index": 1280,
+      "epoch": 1795241169,
+      "sha256": "c0806e0e6fe9a0741d389a3ea259c2617c3b4add4a7fa7046e86a769d594c9c3",
+      "passes": {
+        "original": {
+          "text": "That way.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " That way.",
+              "avg_logprob": -0.7128389676411947,
+              "no_speech_prob": 0.04933060333132744,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Certainly.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Certainly.",
+              "avg_logprob": -0.7468256950378418,
+              "no_speech_prob": 0.060224298387765884,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "That way.",
+          "prompt": "seven to eight twenty Thanks for watching! Do you have a description of a female or able to confirm if she's possibly related to ASL?",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " That way.",
+              "avg_logprob": -0.8554808298746744,
+              "no_speech_prob": 0.030982740223407745,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    }
+  }
+}
