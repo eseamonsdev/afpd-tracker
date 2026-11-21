@@ -1,0 +1,665 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1795231336.m4a": {
+      "index": 991,
+      "epoch": 1795231336,
+      "sha256": "fcf7a58e98fc9071623eaf9782558400f7b2e9e2e6720764ec17b95161a7acd4",
+      "passes": {
+        "original": {
+          "text": "Code 4, you can suspend. Thank you.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Code 4, you can suspend. Thank you.",
+              "avg_logprob": -0.5434789840991681,
+              "no_speech_prob": 0.06071476265788078,
+              "compression_ratio": 0.8536585365853658
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it. Thank you.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.8064888169368108,
+              "no_speech_prob": 0.029598617926239967,
+              "compression_ratio": 0.7241379310344828
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.8064888169368108,
+              "no_speech_prob": 0.029598617926239967,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "context": {
+          "text": "Go for it, you can spin. Thank you.",
+          "prompt": "I have J-51 cover. Go for it. 5J6, go for it.",
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Go for it, you can spin. Thank you.",
+              "avg_logprob": -0.4007995767252786,
+              "no_speech_prob": 0.013391179032623768,
+              "compression_ratio": 0.8536585365853658
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795231340.m4a": {
+      "index": 992,
+      "epoch": 1795231340,
+      "sha256": "47abb24b28df7785f2cf54fd5981ce51355203ad5aa311d795681dce64ab4d70",
+      "passes": {
+        "original": {
+          "text": "I copy. This has been...",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I copy. This has been...",
+              "avg_logprob": -0.6063761651515961,
+              "no_speech_prob": 0.021025704219937325,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I copy. This is Ben.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " I copy.",
+              "avg_logprob": -0.6383136014143626,
+              "no_speech_prob": 0.012475185096263885,
+              "compression_ratio": 0.7692307692307693
+            },
+            {
+              "start": 0.5,
+              "end": 2.04,
+              "text": " This is Ben.",
+              "avg_logprob": -0.6383136014143626,
+              "no_speech_prob": 0.012475185096263885,
+              "compression_ratio": 0.7692307692307693
+            }
+          ]
+        },
+        "context": {
+          "text": "I copy, suspend.",
+          "prompt": "Go for it. 5J6, go for it. Code 4, you can suspend. Thank you.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.36,
+              "text": " I copy, suspend.",
+              "avg_logprob": -0.6396200507879257,
+              "no_speech_prob": 0.012971190735697746,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795231440.m4a": {
+      "index": 993,
+      "epoch": 1795231440,
+      "sha256": "789a91559c66620ea15e697673e2f28168f0f8f62737178862560ff24a1a38a5",
+      "passes": {
+        "original": {
+          "text": "7J23 traffic.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J23 traffic.",
+              "avg_logprob": -0.4417343884706497,
+              "no_speech_prob": 0.006559071596711874,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J23 traffic.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J23 traffic.",
+              "avg_logprob": -0.49708810448646545,
+              "no_speech_prob": 0.04971518740057945,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "context": {
+          "text": "7J23 traffic.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J23 traffic.",
+              "avg_logprob": -0.4417343884706497,
+              "no_speech_prob": 0.006559071596711874,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795231444.m4a": {
+      "index": 994,
+      "epoch": 1795231444,
+      "sha256": "d7601f16f8fa27a8ee9971109598cffba98f9a86b806a1446741c5cedbad3988",
+      "passes": {
+        "original": {
+          "text": "7J23",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J23",
+              "avg_logprob": -0.5044618745644888,
+              "no_speech_prob": 0.010260801762342453,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7j23",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7j23",
+              "avg_logprob": -0.2932945390542348,
+              "no_speech_prob": 0.004631770774722099,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "7J23.",
+          "prompt": "7J23 traffic.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 7J23.",
+              "avg_logprob": -0.4076463920729501,
+              "no_speech_prob": 0.024887459352612495,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795231446.m4a": {
+      "index": 995,
+      "epoch": 1795231446,
+      "sha256": "6f7244bef1398db0af527fc88c266340d241be30dec2ec89047a16b85a170e72",
+      "passes": {
+        "original": {
+          "text": "If you're pulling into the Walgreens, don't walk or play uniform 497 Bravo Fox.",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.72,
+              "text": " If you're pulling into the Walgreens,",
+              "avg_logprob": -0.6472423099554502,
+              "no_speech_prob": 0.013958515599370003,
+              "compression_ratio": 0.9404761904761905
+            },
+            {
+              "start": 1.72,
+              "end": 4.44,
+              "text": " don't walk or play uniform 497 Bravo Fox.",
+              "avg_logprob": -0.6472423099554502,
+              "no_speech_prob": 0.013958515599370003,
+              "compression_ratio": 0.9404761904761905
+            }
+          ]
+        },
+        "filtered": {
+          "text": "You're calling in the Walgreens, don't want to play uniform 497. Bravo Fox.",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.4,
+              "text": " You're calling in the Walgreens, don't want to play uniform 497. Bravo Fox.",
+              "avg_logprob": -0.6161790365974108,
+              "no_speech_prob": 0.026768282055854797,
+              "compression_ratio": 0.9259259259259259
+            }
+          ]
+        },
+        "context": {
+          "text": "You're pulling in the Walgreens on local play uniform 497 Bravo Fox.",
+          "prompt": "7J23 traffic. 7J23",
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.5,
+              "text": " You're pulling in the Walgreens on local play uniform 497 Bravo Fox.",
+              "avg_logprob": -0.6339126765727997,
+              "no_speech_prob": 0.05004951357841492,
+              "compression_ratio": 0.9066666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795231452.m4a": {
+      "index": 996,
+      "epoch": 1795231452,
+      "sha256": "8b3c44a8f7bec130e077effc5d054a0bf5721bdc7e7874607046bfc80e28c1e6",
+      "passes": {
+        "original": {
+          "text": "I copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I copy.",
+              "avg_logprob": -0.5523977677027384,
+              "no_speech_prob": 0.01956162042915821,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.750361967086792,
+              "no_speech_prob": 0.017603324726223946,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "I copy.",
+          "prompt": "7J23 traffic. 7J23 If you're pulling into the Walgreens, don't walk or play uniform 497 Bravo Fox.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I copy.",
+              "avg_logprob": -0.5047211050987244,
+              "no_speech_prob": 0.06090253219008446,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795231465.m4a": {
+      "index": 997,
+      "epoch": 1795231465,
+      "sha256": "46f3a71a1edbd568c4409b4196229837a56f9c66197e42adb52a1e6b1f3ec94f",
+      "passes": {
+        "original": {
+          "text": "Roger, if you'd like, I'd be the follow-up off the card. You can hold after me.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Roger, if you'd like, I'd be the follow-up off the card. You can hold after me.",
+              "avg_logprob": -0.6397602028316922,
+              "no_speech_prob": 0.0820450708270073,
+              "compression_ratio": 1.0128205128205128
+            }
+          ]
+        },
+        "filtered": {
+          "text": "If you'd like, I'd like to follow up on the cards, you can hold after me.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2800000000000002,
+              "text": " If you'd like, I'd like to follow up on the cards, you can hold after me.",
+              "avg_logprob": -0.6703528761863708,
+              "no_speech_prob": 0.047476284205913544,
+              "compression_ratio": 1.0138888888888888
+            }
+          ]
+        },
+        "context": {
+          "text": "I copy. I copy. I copy. I copy. I copy. I copy. I copy. I copy. I copy.",
+          "prompt": "7J23 If you're pulling into the Walgreens, don't walk or play uniform 497 Bravo Fox. I copy.",
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.71,
+              "text": " I copy. I copy. I copy. I copy. I copy. I copy. I copy. I copy. I copy.",
+              "avg_logprob": -0.4821713587333416,
+              "no_speech_prob": 0.048249971121549606,
+              "compression_ratio": 3.736842105263158
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795231469.m4a": {
+      "index": 998,
+      "epoch": 1795231469,
+      "sha256": "88e9054f0c17a3a4b1474efbbe146b57c6fd1f078859bfaa83d7fe98bc36ca75",
+      "passes": {
+        "original": {
+          "text": "Happy, thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy, thank you.",
+              "avg_logprob": -0.5017652288079262,
+              "no_speech_prob": 0.0033435721416026354,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy. Thank you.",
+              "avg_logprob": -0.5351761132478714,
+              "no_speech_prob": 0.004318260122090578,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy, thank you.",
+          "prompt": "If you're pulling into the Walgreens, don't walk or play uniform 497 Bravo Fox. I copy. Roger, if you'd like, I'd be the follow-up off the card. You can hold after me.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy, thank you.",
+              "avg_logprob": -0.479790635406971,
+              "no_speech_prob": 0.004107617307454348,
+              "compression_ratio": 0.68
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795231569.m4a": {
+      "index": 999,
+      "epoch": 1795231569,
+      "sha256": "cbe313f75e9a66c6db68b7e3fc078ee8f781ca5f204941cb759c77a4e4ed3010",
+      "passes": {
+        "original": {
+          "text": "7-j 2310-8",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-j 2310-8",
+              "avg_logprob": -0.5517850577831268,
+              "no_speech_prob": 0.05271138623356819,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J2310-8",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J2310-8",
+              "avg_logprob": -0.6475089920891656,
+              "no_speech_prob": 0.031173620373010635,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "7-j 2310-8",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-j 2310-8",
+              "avg_logprob": -0.5517850577831268,
+              "no_speech_prob": 0.05271138623356819,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795231572.m4a": {
+      "index": 1000,
+      "epoch": 1795231572,
+      "sha256": "7cc77b2666a3145be588b5227d31ec1be452ad65b6f0ba6f270d38369eba5159",
+      "passes": {
+        "original": {
+          "text": "7k23",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7k23",
+              "avg_logprob": -0.4818768302599589,
+              "no_speech_prob": 0.007335750851780176,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7k23",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7k23",
+              "avg_logprob": -0.3192659467458725,
+              "no_speech_prob": 0.0031793853268027306,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "7-j 2310-8",
+          "prompt": "7-j 2310-8",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-j 2310-8",
+              "avg_logprob": -0.31739072799682616,
+              "no_speech_prob": 0.012909629382193089,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    }
+  }
+}
