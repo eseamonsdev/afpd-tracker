@@ -1,0 +1,33 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "afpd-tracker",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-07-24",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "workers_dev": true,
+  "preview_urls": true,
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": true
+  },
+  "d1_databases": [
+    {
+      "binding": "AFPD_DB",
+      "database_name": "afpd-data-staging",
+      "database_id": "6ddb5b58-69b9-4e66-bbb9-c6eafa0a7dbc"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "RADIO_AUDIO",
+      "bucket_name": "afpd-public-media"
+    }
+  ]
+}
