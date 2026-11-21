@@ -68,8 +68,7 @@
         <summary class="is-current-section">Police Radio <span class="nav-chevron" aria-hidden="true"></span></summary>
         <div class="personnel-links">
           <a href="/police-radio-excerpts/">Radio Excerpts</a>
-  <a href="/police-radio/" aria-current="page">AFPD Car-to-Car</a>
-  <a href="/law-2-radio/">Law 2 Dispatch</a>
+  <a href="/police-radio/" aria-current="page">Police Radio</a>
   <a href="/police-radio-resources/">Radio Resources</a>
         </div>
       </details>
@@ -84,14 +83,19 @@
   <main>
     <nav class="radio-section-nav" aria-label="Police radio navigation">
   <a href="/police-radio-excerpts/">Radio Excerpts</a>
-  <a href="/police-radio/" aria-current="page">AFPD Car-to-Car</a>
-  <a href="/law-2-radio/">Law 2 Dispatch</a>
+  <a href="/police-radio/" aria-current="page">Police Radio</a>
   <a href="/police-radio-resources/">Radio Resources</a>
 </nav>
     <div class="page-heading">
       <h1>Police Radio</h1>
-      <p>Audio from a car-to-car radio talkgroup used by the American Fork Police Department (AFPD).</p>
-      <p><a href="/law-2-radio/">Law 2 Dispatch</a> provides recordings from the regional law enforcement talkgroup.</p>
+      <label class="radio-talkgroup-selector" for="radio-talkgroup">Talkgroup
+        <select id="radio-talkgroup">
+          <option value="6001">AFPD Car to Car (6001)</option>
+          <option value="5922">Law 2 Northeast (5922)</option>
+        </select>
+      </label>
+      <p id="radio-talkgroup-description">Audio from a car-to-car radio talkgroup used by the American Fork Police Department (AFPD).</p>
+      <p id="radio-talkgroup-note" class="radio-source-note" hidden>Recordings may contain only part of a day or selected calls. AFPD marks radio IDs also observed on the Car-to-Car talkgroup; it does not independently identify the speaker.</p>
       <p><a href="/police-radio-excerpts/">Browse radio excerpts</a> for selected discussions, or explore the full archive below.</p>
       <p><a href="/police-radio-resources/">Police Radio Resources</a> explains agency call signs and provides radio-ID references.</p>
       <p>Times shown in Mountain Time. Officer names show confirmed associations for the selected date or strong associations across other dates. Single-day associations stay on their supported date. Select <span class="radio-info-example" role="img" aria-label="the information icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6M12 7h.01"></path></svg></span> for the evidence and limits; names do not independently verify the speaker in every clip.</p>
@@ -154,9 +158,10 @@
 
       <p class="radio-source-note">
         Recordings sourced from <a href="https://openmhz.com/" target="_blank" rel="noopener noreferrer">OpenMHz</a>
-        and hosted independently. This archive covers only American Fork PD’s Car-to-Car talkgroup.
+        and hosted independently.
         This site is not affiliated with or endorsed by OpenMHz.
       </p>
+      <p id="radio-coverage" class="radio-source-note" hidden></p>
       <p id="radio-status" role="status">Loading available dates…</p>
       <p id="radio-transcript-availability" class="radio-transcript-note" hidden>Transcripts are not yet available for this day.</p>
       <section aria-label="Recorded clips" aria-busy="true" id="radio-clips-section">

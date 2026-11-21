@@ -132,8 +132,8 @@ test("leap days are available only when supplied; empty indexes render a clear e
   assert.equal(empty.container.textContent, "No recordings are available yet.");
 });
 
-test("both archives use the shared calendar; excerpts retain their fixed dates", () => {
-  for (const [file, prefix] of [["police-radio", "radio"], ["law-2-radio", "law2-radio"]]) {
+test("the unified archive uses the shared calendar; excerpts retain their fixed dates", () => {
+  for (const [file, prefix] of [["police-radio", "radio"]]) {
     const source = readFileSync(`src/${file}.njk`, "utf8");
     assert.ok(source.includes(`datePicker("${prefix}")`));
     assert.ok(source.indexOf("/js/radio-date-picker.js") < source.indexOf(`/js/${file}.js`));

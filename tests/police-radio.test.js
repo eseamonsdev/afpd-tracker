@@ -58,17 +58,23 @@ class Element {
   add(option) { this.options.push(option); if (this.options.length === 1) this.value = option.value; }
 }
 
-async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11", search = "", transcriptEnabled = true, associations = null) {
+async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11", search = "", transcriptEnabled = true, associations = null, unified = false) {
   const elements = new Map(["archive", "month", "day", "audio", "play", "seek", "autoplay",
     "clips", "clips-section", "status", "current", "current-radio-ids", "player-message", "elapsed", "duration",
     "transcript-toggle", "transcript-download", "transcript", "transcript-status", "transcript-text", "transcript-availability", "verification-count", "transcription-count", "review-progress", "progress-date"]
     .map(name => [`radio-${name}`, new Element(name === "audio" ? "audio" : "div")]));
   elements.get("radio-autoplay").setAttribute("aria-pressed", "false");
+  if (unified) {
+    for (const name of ["talkgroup", "talkgroup-description", "talkgroup-note", "coverage", "calendar"]) elements.set(`radio-${name}`, new Element());
+    elements.delete("radio-month"); elements.delete("radio-day");
+  }
   const players = [elements.get("radio-audio")];
   const dates = [fixtureDate, "2026-09-10"];
   const fetchedAudio = [], revokedUrls = [], objectSources = new Map(), failedAudio = new Set();
   let objectNumber = 0;
   const window = { location: new URL(`https://${hostname ?? "localhost"}/police-radio/${search}`) };
+  if (unified) window.RadioDatePicker = { create(container, options) { container.picker = options; return {value:options.value}; } };
+  const metadataRequests = [];
   const replacements = [];
   window.history = {
     state: { preserved: true },
@@ -109,9 +115,18 @@ async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11",
         if (failedAudio.has(url)) return { ok: false };
         return { ok: true, blob: async () => ({ source: url }) };
       }
+      metadataRequests.push(url);
+      if (unified && url.endsWith("index.json")) {
+        const law2 = url.endsWith("law-2-index.json");
+        const values = law2 ? [fixtureDate, "2026-09-08", "2026-12-01"] : dates;
+        return {ok:true,json:async()=>({afpdRadioIds:["14590090"], days:values.map(date=>({
+          date, folder:`openmhz-afpd-${law2?"law-2":"car-to-car"}-${date}`, count:fixtureCalls?.length??4,
+          enableDay:date!=="2026-12-01", enableTranscription:true, coverageNote:law2?"Partial day":""
+        }))})};
+      }
       return { ok: true, json: async () => url.endsWith("index.json")
         ? { days: dates.map(date => ({ date, folder: date, count: fixtureCalls?.length ?? 4 })) }
-        : { date: dates.find(date => url.includes(date)), enableTranscription: typeof transcriptEnabled === "function" ? transcriptEnabled(dates.find(date => url.includes(date))) : transcriptEnabled, calls: fixtureCalls ?? Array.from({ length: 4 }, (_, i) => ({
+        : { date: unified ? url.match(/\d{4}-\d{2}-\d{2}/)?.[0] : dates.find(date => url.includes(date)), enableTranscription: typeof transcriptEnabled === "function" ? transcriptEnabled(dates.find(date => url.includes(date))) : transcriptEnabled, calls: fixtureCalls ?? Array.from({ length: 4 }, (_, i) => ({
           epoch: 1789100000 + i * 10, displayed_seconds: 5, original_filename: `call-${i}.m4a`
         })) } };
     }
@@ -121,10 +136,47 @@ async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11",
   const select = i => get("clips").children[i].children[0].click();
   const active = () => players.find(player => !player.paused);
   const finish = player => { player.ended = true; player.paused = true; player.emit("ended"); };
-  return { get, select, players, active, finish, fetchedAudio, revokedUrls, failedAudio, window, replacements,
+  return { get, select, players, active, finish, fetchedAudio, revokedUrls, failedAudio, window, replacements, metadataRequests,
     settle: () => new Promise(resolve => setImmediate(resolve)),
     sourceFor: player => objectSources.get(player.src) ?? player.src };
 }
+
+test("unified talkgroup selector preserves available dates, falls back for missing dates, and clears playback", async () => {
+  const calls=[{epoch:1789100000,displayed_seconds:5,original_filename:"test.m4a",radio_ids:["14590090"],transcript:"Test"}];
+  const f=await playerFixture(calls,"localhost","2026-09-11","?talkgroup=5922&date=2026-09-08&keep=1#clips",true,null,true);
+  assert.equal(f.get("talkgroup").value,"5922");
+  assert.equal(f.get("calendar").picker.value,"2026-09-08");
+  assert.equal(f.get("calendar").picker.days.some(day=>day.date==="2026-12-01"),false);
+  assert.match(f.get("talkgroup-description").textContent,/Law 2 Northeast/);
+  assert.equal(f.get("coverage").textContent,"Partial day");
+  assert.match(f.get("transcript-download").getAttribute("href"),/law-2-transcript-2026-09-08/);
+  f.select(0); await f.settle();
+  f.get("talkgroup").value="6001"; f.get("talkgroup").emit("change"); await f.settle();
+  assert.equal(f.get("calendar").picker.value,"2026-09-11");
+  assert.match(f.get("talkgroup-description").textContent,/car-to-car/);
+  assert.equal(f.get("talkgroup-note").hidden,true);
+  assert.equal(f.get("coverage").hidden,true);
+  assert.equal(f.get("current").textContent,"Choose a clip to listen");
+  assert.equal(f.active(),undefined);
+  assert.equal(f.window.location.searchParams.get("talkgroup"),"6001");
+  assert.equal(f.window.location.searchParams.get("keep"),"1");
+  assert.equal(f.window.location.hash,"#clips");
+  f.get("talkgroup").value="5922"; f.get("talkgroup").emit("change"); await f.settle();
+  assert.equal(f.get("calendar").picker.value,"2026-09-11","shared date survives a talkgroup change");
+  assert.match(f.get("transcript-download").getAttribute("href"),/law-2-transcript-2026-09-11/);
+});
+
+test("rapid talkgroup changes leave only the last requested talkgroup and its calendar", async () => {
+  const f=await playerFixture(undefined,"localhost","2026-09-11","?talkgroup=invalid",true,null,true);
+  assert.equal(f.get("talkgroup").value,"6001");
+  f.get("talkgroup").value="5922";f.get("talkgroup").emit("change");
+  f.get("talkgroup").value="6001";f.get("talkgroup").emit("change");
+  await f.settle();
+  assert.equal(f.window.location.searchParams.get("talkgroup"),"6001");
+  assert.ok(f.get("calendar").picker.days.every(day=>day.folder.includes("car-to-car")));
+  assert.match(f.get("talkgroup-description").textContent,/car-to-car/);
+  assert.equal(f.get("clips-section").getAttribute("aria-busy"),"false");
+});
 
 test("transcript panel follows manual selection, autoplay, day resets and visibility", async () => {
   const calls = [

@@ -41,7 +41,7 @@ test("whole-row playback selects once and leaves info buttons, popup text and li
 
 test("all player pages load the same core before their adapters and render one shared controls template", () => {
   const env = new nunjucks.Environment(new nunjucks.FileSystemLoader("src/_includes"));
-  for (const [file, prefix] of [["police-radio", "radio"], ["law-2-radio", "law2-radio"], ["police-radio-excerpt", "excerpt"]]) {
+  for (const [file, prefix] of [["police-radio", "radio"], ["police-radio-excerpt", "excerpt"]]) {
     const source = readFileSync(`src/${file}.njk`, "utf8");
     assert.ok(source.indexOf('/js/radio-player-core.js') < source.indexOf(`/js/${file}.js`));
     assert.match(source, /from "radio-player.njk" import player/);

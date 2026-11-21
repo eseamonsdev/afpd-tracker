@@ -25,7 +25,7 @@
         </div>
       </details>
       <details class="personnel-nav radio-nav">
-        <summary{% if page.url and (page.url.indexOf("/police-radio") == 0 or page.url == "/law-2-radio/") %} class="is-current-section"{% endif %}>Police Radio <span class="nav-chevron" aria-hidden="true"></span></summary>
+        <summary{% if page.url and page.url.indexOf("/police-radio") == 0 %} class="is-current-section"{% endif %}>Police Radio <span class="nav-chevron" aria-hidden="true"></span></summary>
         <div class="personnel-links">
           {{ radioLinks(page.url, page.url and page.url.indexOf("/police-radio/excerpts/") == 0) }}
         </div>

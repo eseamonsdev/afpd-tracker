@@ -35,7 +35,7 @@ test('compiler profiles apply the same excluded evidence, dates and source notes
  const source={schema_version:1,officers:{one:{name:'One'}},associations:[row('a','2026-10-01'),row('b','2026-10-01',{clips:[2,3],talkgroup:5922}),row('excluded','2026-10-02',{confirmed_by:null}),row('old','2026-10-03',{confirmed_by:null})],context_review_exclusions:{records:{excluded:{reason:'Wrong person'}}},owner_evidence_reviews:{one:{active_record_ids:['a','b','excluded']}}};
  const result=compileOfficerAssociations(source),profile=result.labels.profiles.one[0];
  assert.equal(profile.evidence_days,1);assert.deepEqual(profile.evidence_dates,['2026-10-01']);
- assert.equal(profile.evidence.length,2);assert.equal(profile.evidence.find(d=>d.talkgroup===5922).url,'/law-2-radio/?date=2026-10-01');
+ assert.equal(profile.evidence.length,2);assert.equal(profile.evidence.find(d=>d.talkgroup===5922).url,'/police-radio/?talkgroup=5922&date=2026-10-01');
  assert.ok(profile.evidence.every(d=>d.records.every(r=>!['excluded','old'].includes(r.record_id))));
  assert.equal(result.labels.days['2026-10-01']['123'][0].evidence_days,profile.evidence_days);
  assert.equal(result.labels.days['2026-10-02'],undefined);assert.equal(result.labels.days['2026-10-03'],undefined);

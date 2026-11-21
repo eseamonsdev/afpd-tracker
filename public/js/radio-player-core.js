@@ -575,8 +575,14 @@ function playbackEngine({ get, getCalls, getButtons, clipSource, label, singlePl
   return { choose: chooseClip, reset: resetPlayer, get selected() { return selected; } };
 }
 function archive(config) {
+  config = { ...config };
   const root = document.getElementById(config.rootId); if (!root) return;
   const get = name => document.getElementById(`${config.prefix}-${name}`);
+  const talkgroup = get("talkgroup");
+  if (talkgroup) {
+    config.law2 = new URL(window.location.href).searchParams.get("talkgroup") === "5922";
+    talkgroup.value = config.law2 ? "5922" : "6001";
+  }
   const month = get("month"), day = get("day"), reviewProgress = get("review-progress"), progressDate = get("progress-date"), transcriptionCount = get("transcription-count"), verificationCount = get("verification-count");
   const calendar = get("calendar");
   let calendarDate = "";
@@ -586,12 +592,13 @@ function archive(config) {
   const currentRadioIds = get("current-radio-ids"), transcriptDownload = get("transcript-download"), transcriptAvailability = get("transcript-availability");
   const base = "/records/openmhz/";
   let days = [], calls = [], buttons = [], folder = "", request = 0, controller, transcriptAvailable = false;
+  let indexRequest = 0;
   const identity = createIdentity(selectedDate);
   const transcript = transcriptUI(get);
   function updateRadioIds(call) { if (currentRadioIds) { identity.render(currentRadioIds, call); currentRadioIds.hidden = !radioIds(call).length; } }
   const player = playbackEngine({
     get, getCalls: () => calls, getButtons: () => buttons,
-    singlePlayer: config.law2 || /(^|-)afpd-tracker\.ericseamonsdeveloper\.workers\.dev$/.test(window.location.hostname) || /(^|\.)afpd-accountability\.com$/.test(window.location.hostname),
+    singlePlayer: !!talkgroup || config.law2 || /(^|-)afpd-tracker\.ericseamonsdeveloper\.workers\.dev$/.test(window.location.hostname) || /(^|\.)afpd-accountability\.com$/.test(window.location.hostname),
     clipSource: index => playbackSource(calls[index], `${base}${encodeURIComponent(folder)}/${encodeURIComponent(calls[index].original_filename)}`),
     label: index => `${dateFormat.format(dateObject(selectedDate()))} · ${timeFormat.format(new Date(calls[index].epoch * 1000))} · Clip ${index + 1}`,
     onSelect(call) { identity.close(); updateRadioIds(call); updateTranscript(); },
@@ -621,8 +628,9 @@ function archive(config) {
     if (config.law2 && get("coverage")) get("coverage").hidden = true;
     if (!entry || (config.law2 && entry.enableDay !== true)) { status.textContent = "This date is not enabled."; section.setAttribute("aria-busy", "false"); return; }
     const url = new URL(window.location.href);
-    if (url.searchParams.get("date") !== entry.date || url.searchParams.getAll("date").length !== 1) {
-      url.searchParams.set("date", entry.date);
+    url.searchParams.set("date", entry.date);
+    if (talkgroup) url.searchParams.set("talkgroup", config.law2 ? "5922" : "6001");
+    if (url.href !== window.location.href) {
       window.history.replaceState(window.history.state, "", url.href);
     }
     folder = entry.folder;
@@ -691,13 +699,24 @@ function archive(config) {
   }
   month?.addEventListener("change", () => populateDays());
   day?.addEventListener("change", loadDay);
-  async function initialize() {
+  async function initialize(preferredDate = "") {
+    const indexToken = ++indexRequest;
+    const law2 = config.law2;
+    if (talkgroup) {
+      get("talkgroup-description").textContent = law2
+        ? "Recordings from Law 2 Northeast (talkgroup 5922), a dispatch channel that includes American Fork police traffic."
+        : "Audio from a car-to-car radio talkgroup used by the American Fork Police Department (AFPD).";
+      get("talkgroup-note").hidden = !law2;
+    }
     try {
-      const [response] = await Promise.all([fetch(`${base}${config.law2 ? "law-2-index.json" : "index.json"}`, { cache: "no-cache" }), identity.load()]);
+      const [response] = await Promise.all([fetch(`${base}${law2 ? "law-2-index.json" : "index.json"}`, { cache: "no-cache" }), identity.load()]);
+      if (indexToken !== indexRequest) return;
       if (!response.ok) throw new Error("Unable to load dates");
       const index = await response.json();
+      if (indexToken !== indexRequest) return;
       if (!Array.isArray(index.days)) throw new Error("Invalid index");
       if (config.law2) identity.setAfpdRadioIds(index.afpdRadioIds, index.agencyRadioIds, Object.fromEntries(index.days.filter(entry => entry.agencyRadioIds).map(entry => [entry.date, entry.agencyRadioIds])));
+      else identity.setAfpdRadioIds([]);
       days = index.days.filter((entry) => (!config.law2 || (entry.enableDay === true && /^openmhz-afpd-law-2-\d{4}-\d{2}-\d{2}$/.test(entry.folder))) && /^\d{4}-\d{2}-\d{2}$/.test(entry.date) && /^[\w.-]+$/.test(entry.folder))
         .sort((a, b) => b.date.localeCompare(a.date));
       month?.replaceChildren(); day?.replaceChildren();
@@ -709,7 +728,7 @@ function archive(config) {
         section.setAttribute("aria-busy", "false");
         return;
       }
-      const requestedDate = new URL(window.location.href).searchParams.get("date");
+      const requestedDate = preferredDate || new URL(window.location.href).searchParams.get("date");
       const initialDay = days.find((entry) => entry.date === requestedDate) ?? days[0];
       if (calendar) {
         calendarDate = initialDay.date;
@@ -728,6 +747,7 @@ function archive(config) {
         populateDays(initialDay.date);
       }
     } catch (error) {
+      if (indexToken !== indexRequest) return;
       if (calendar) calendar.textContent = "Unable to load available dates. Reload the page to try again.";
       month?.replaceChildren(new Option("Unavailable", ""));
       day?.replaceChildren(new Option("Unavailable", ""));
@@ -735,6 +755,22 @@ function archive(config) {
       section.setAttribute("aria-busy", "false");
     }
   }
+  talkgroup?.addEventListener("change", () => {
+    const previousDate = selectedDate();
+    config.law2 = talkgroup.value === "5922";
+    ++request; controller?.abort(); identity.close(); resetPlayer();
+    days = []; calls = []; buttons = []; list.replaceChildren();
+    identity.setAfpdRadioIds([]);
+    if (get("coverage")) get("coverage").hidden = true;
+    if (calendar) calendar.textContent = "Loading available dates…";
+    status.textContent = "Loading available dates…";
+    section.setAttribute("aria-busy", "true");
+    const url = new URL(window.location.href);
+    url.searchParams.set("talkgroup", config.law2 ? "5922" : "6001");
+    url.searchParams.delete("date");
+    window.history.replaceState(window.history.state, "", url.href);
+    initialize(previousDate);
+  });
   initialize();
 }
 

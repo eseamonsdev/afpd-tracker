@@ -54,7 +54,7 @@
       evidence.replaceChildren(...data.evidence.map(entry => {
         const row = makeRow([entry.radioId, entry.agencyId, entry.date, entry.talkgroup, entry.basis]);
         const link = document.createElement('a');
-        link.href = '/law-2-radio/?date=' + entry.date;
+        link.href = '/police-radio/?talkgroup=5922&date=' + entry.date;
         link.textContent = entry.date;
         row.children[2].replaceChildren(link);
         return row;

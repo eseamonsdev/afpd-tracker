@@ -1,6 +1,6 @@
 # Shared radio player
 
-The car-to-car archive, every excerpt, and Law 2 use:
+The unified Car-to-Car/Law 2 archive and every excerpt use:
 
 - `src/_includes/radio-player.njk` for controls, transcript status and notes.
 - `src/_includes/radio-row.njk` for every clip row: a macro for excerpts and
@@ -10,7 +10,7 @@ The car-to-car archive, every excerpt, and Law 2 use:
   controls/transcript toggles, row selection and association information.
 
 Load the core before the page adapter, using deferred scripts in that order.
-The three original script paths remain small configuration adapters.
+The archive and excerpt script paths remain small configuration adapters.
 `police-radio-excerpt.css` contains only excerpt headings and range layout.
 The old Law 2 stylesheet forwards to the shared stylesheet.
 
@@ -33,7 +33,7 @@ for 6001 and `law-2-transcript-YYYY-MM-DD.txt` for 5922. Excerpt downloads use
 `afpd-car-to-car-transcript-<excerpt-slug>.txt`.
 Page content and recording data remain separate.
 
-The `/police-radio/` and `/law-2-radio/` archives share the reusable recording-date calendar:
+The `/police-radio/` archive uses the reusable recording-date calendar for both talkgroups:
 
 - `src/_includes/radio-date-picker.njk` supplies `datePicker(prefix)` markup.
 - `public/js/radio-date-picker.js` exposes
@@ -54,6 +54,13 @@ Law 2 supplies only its enabled days; dates from the other talkgroup do not
 become selectable. Excerpts have fixed dates and do not need a picker.
 Focused calendar coverage lives in
 `tests/radio-date-picker.test.js`.
+
+The talkgroup selector offers AFPD Car to Car (6001) and Law 2 Northeast (5922).
+Links use `/police-radio/?talkgroup=5922&date=YYYY-MM-DD` for Law 2, and
+`talkgroup=6001` for Car-to-Car (the default when no valid group is specified).
+Switching groups stops playback, cancels stale loads, updates the description,
+and preserves the date if available, otherwise selecting that group's newest
+enabled date. The separate Law 2 HTML page has been removed without a redirect.
 
 Playback controls use one persistent audio element on the deployed sites. The
 existing alternate-host handoff/recovery path remains supported by the shared
