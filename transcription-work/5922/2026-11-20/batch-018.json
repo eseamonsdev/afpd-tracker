@@ -1,0 +1,713 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1795186745.m4a": {
+      "index": 171,
+      "epoch": 1795186745,
+      "sha256": "52efd2fe7817c4712ef9e2f462957ab3c939943459782faac9a5d6c8cd8a8af4",
+      "passes": {
+        "original": {
+          "text": "The third party report negative injuries partially blocking",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2800000000000002,
+              "text": " The third party report negative injuries partially blocking",
+              "avg_logprob": -0.3769619356502186,
+              "no_speech_prob": 0.04370933026075363,
+              "compression_ratio": 0.9365079365079365
+            }
+          ]
+        },
+        "filtered": {
+          "text": "The third-party report negative injuries partially blocking...",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.3200000000000003,
+              "text": " The third-party report negative injuries partially blocking...",
+              "avg_logprob": -0.5722985084240253,
+              "no_speech_prob": 0.00465313671156764,
+              "compression_ratio": 0.9253731343283582
+            }
+          ]
+        },
+        "context": {
+          "text": "The 3rd party report negative injuries partially blocking...",
+          "prompt": "18G, 20 copy, 10-50. But This will be in the one peak, hi.",
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " The 3rd party report negative injuries partially blocking...",
+              "avg_logprob": -0.6309046378502479,
+              "no_speech_prob": 0.13049514591693878,
+              "compression_ratio": 0.9230769230769231
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795186749.m4a": {
+      "index": 172,
+      "epoch": 1795186749,
+      "sha256": "9b2c2ea228ef3066a671cfe888cf6f03e7e6ec6265cdb694fec1d4d19b2cba60",
+      "passes": {
+        "original": {
+          "text": "Grey Toyota Prius versus a black suburban. The first party is Spanish and Portuguese speaking.",
+          "prompt": null,
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Grey Toyota Prius versus a black suburban.",
+              "avg_logprob": -0.4431032046027806,
+              "no_speech_prob": 0.035682953894138336,
+              "compression_ratio": 1.0804597701149425
+            },
+            {
+              "start": 3.0,
+              "end": 6.0,
+              "text": " The first party is Spanish and Portuguese speaking.",
+              "avg_logprob": -0.4431032046027806,
+              "no_speech_prob": 0.035682953894138336,
+              "compression_ratio": 1.0804597701149425
+            }
+          ]
+        },
+        "filtered": {
+          "text": "gray Toyota Prius versus a black suburban. The first party is Spanish and Portuguese-speaking.",
+          "prompt": null,
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " gray Toyota Prius versus a black suburban. The first party is Spanish and Portuguese-speaking.",
+              "avg_logprob": -0.5411684160882776,
+              "no_speech_prob": 0.014246821403503418,
+              "compression_ratio": 1.0930232558139534
+            }
+          ]
+        },
+        "context": {
+          "text": "gray Toyota Prius versus a black suburban the first party is Spanish and Portuguese speaking",
+          "prompt": "But This will be in the one peak, hi. The third party report negative injuries partially blocking",
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.6000000000000005,
+              "text": " gray Toyota Prius versus a black suburban the first party is Spanish and Portuguese speaking",
+              "avg_logprob": -0.5539268694425884,
+              "no_speech_prob": 0.018396003171801567,
+              "compression_ratio": 1.1219512195121952
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795186756.m4a": {
+      "index": 173,
+      "epoch": 1795186756,
+      "sha256": "e3df74ad2e0f7d5bd16bf443119c738f07a2ce428dfaf29e47fede600c761ef7",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6347506999969482,
+              "no_speech_prob": 0.041361067444086075,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6295859336853027,
+              "no_speech_prob": 0.08742500841617584,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "This will be in the one peak, hi. The third party report negative injuries partially blocking Grey Toyota Prius versus a black suburban. The first party is Spanish and Portuguese speaking.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5080318450927734,
+              "no_speech_prob": 0.07416552305221558,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795186772.m4a": {
+      "index": 174,
+      "epoch": 1795186772,
+      "sha256": "0eaca5c2dc86bd59666a1f4a47dc432e61c2f277a6a4963232c45314c9a5f3a6",
+      "passes": {
+        "original": {
+          "text": "I think Jay just confirmed that they're at the high school.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.52,
+              "text": " I think Jay just confirmed that they're at the high school.",
+              "avg_logprob": -0.5740839242935181,
+              "no_speech_prob": 0.009106037206947803,
+              "compression_ratio": 0.9833333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hey dingy, I just confirmed that you're at the high school.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.54,
+              "text": " Hey dingy, I just confirmed that you're at the high school.",
+              "avg_logprob": -0.6737545132637024,
+              "no_speech_prob": 0.006785696838051081,
+              "compression_ratio": 0.9076923076923077
+            }
+          ]
+        },
+        "context": {
+          "text": "I think Jay just confirmed that they're at the high school.",
+          "prompt": "The third party report negative injuries partially blocking Grey Toyota Prius versus a black suburban. The first party is Spanish and Portuguese speaking. Copy.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.5,
+              "text": " I think Jay just confirmed that they're at the high school.",
+              "avg_logprob": -0.5839688144624233,
+              "no_speech_prob": 0.016599690541625023,
+              "compression_ratio": 0.9833333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795186777.m4a": {
+      "index": 175,
+      "epoch": 1795186777,
+      "sha256": "8ad5a18b9a3d828b54739594c36298ec4679ce554adc8018e91eee35221846c8",
+      "passes": {
+        "original": {
+          "text": "Thank you. Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.4851483106613159,
+              "no_speech_prob": 0.010573325678706169,
+              "compression_ratio": 1.9090909090909092
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.4851483106613159,
+              "no_speech_prob": 0.010573325678706169,
+              "compression_ratio": 1.9090909090909092
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.4851483106613159,
+              "no_speech_prob": 0.010573325678706169,
+              "compression_ratio": 1.9090909090909092
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.72,
+              "text": " Thank you.",
+              "avg_logprob": -1.0546197493871052,
+              "no_speech_prob": 0.00940566137433052,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you.",
+          "prompt": "Grey Toyota Prius versus a black suburban. The first party is Spanish and Portuguese speaking. Copy. I think Jay just confirmed that they're at the high school.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.7584525148073832,
+              "no_speech_prob": 0.022408340126276016,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795187139.m4a": {
+      "index": 176,
+      "epoch": 1795187139,
+      "sha256": "7c8b458ba973ff738e1c91110fb1cb19c1d039ea3a9ac37148c5a00cd361a5bb",
+      "passes": {
+        "original": {
+          "text": "18GA8 in the area. Can you log? Nobody can.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " 18GA8 in the area. Can you log? Nobody can.",
+              "avg_logprob": -0.504029442282284,
+              "no_speech_prob": 0.04339272901415825,
+              "compression_ratio": 0.8431372549019608
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18J8 in the area. Can you log know what it can?",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 18J8 in the area. Can you log know what it can?",
+              "avg_logprob": -0.6687189671728346,
+              "no_speech_prob": 0.040935929864645004,
+              "compression_ratio": 0.8545454545454545
+            }
+          ]
+        },
+        "context": {
+          "text": "18GA8 in the area. Can you log? Nobody can.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " 18GA8 in the area. Can you log? Nobody can.",
+              "avg_logprob": -0.504029442282284,
+              "no_speech_prob": 0.04339272901415825,
+              "compression_ratio": 0.8431372549019608
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795187174.m4a": {
+      "index": 177,
+      "epoch": 1795187174,
+      "sha256": "9800b22017ee9d848c3a89923f1dcd7e8eb654cdeca24169b212a1a8ce2927b6",
+      "passes": {
+        "original": {
+          "text": "ATGA 8, can you call the RV back and get a better location? I'm checking the parking lot. I don't see anyone.",
+          "prompt": null,
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " ATGA 8, can you call the RV back and get a better location? I'm checking the parking lot. I don't see anyone.",
+              "avg_logprob": -0.3314299834892154,
+              "no_speech_prob": 0.019109951332211494,
+              "compression_ratio": 1.1122448979591837
+            }
+          ]
+        },
+        "filtered": {
+          "text": "ACJ, can you call the RV back and get a better location? I'm checking the parking lot. I don't see anyone.",
+          "prompt": null,
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 34,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.64,
+              "text": " ACJ, can you call the RV back and get a better location?",
+              "avg_logprob": -0.48173780270985195,
+              "no_speech_prob": 0.03415084257721901,
+              "compression_ratio": 1.1041666666666667
+            },
+            {
+              "start": 4.64,
+              "end": 5.64,
+              "text": " I'm checking the parking lot.",
+              "avg_logprob": -0.48173780270985195,
+              "no_speech_prob": 0.03415084257721901,
+              "compression_ratio": 1.1041666666666667
+            },
+            {
+              "start": 5.64,
+              "end": 6.140000000000001,
+              "text": " I don't see anyone.",
+              "avg_logprob": -0.48173780270985195,
+              "no_speech_prob": 0.03415084257721901,
+              "compression_ratio": 1.1041666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "18GA8, can you call the RV back and get a better location? I'm checking the parking lot. I don't see anyone.",
+          "prompt": "18GA8 in the area. Can you log? Nobody can.",
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 18GA8, can you call the RV back and get a better location? I'm checking the parking lot. I don't see anyone.",
+              "avg_logprob": -0.17452621879056096,
+              "no_speech_prob": 0.006555626634508371,
+              "compression_ratio": 1.0909090909090908
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795187183.m4a": {
+      "index": 178,
+      "epoch": 1795187183,
+      "sha256": "842b84eb4ae534eefe122f788d523957a002b37b29944875c5cf7486f5fbc23a",
+      "passes": {
+        "original": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.8810968200365702,
+              "no_speech_prob": 0.012166237458586693,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Acre.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Acre.",
+              "avg_logprob": -0.7658872505029043,
+              "no_speech_prob": 0.007655417080968618,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Okay. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank",
+          "prompt": "18GA8 in the area. Can you log? Nobody can. ATGA 8, can you call the RV back and get a better location? I'm checking the parking lot. I don't see anyone.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 37,
+          "token_cap_reached": true,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.1500000000000001,
+              "text": " Okay. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank you. Thank",
+              "avg_logprob": -0.24705187819505992,
+              "no_speech_prob": 0.021316662430763245,
+              "compression_ratio": 5.28
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795187630.m4a": {
+      "index": 179,
+      "epoch": 1795187630,
+      "sha256": "7af0a912411441e79768d9d188d21774fa208a73925a501c73ddbdc05e2558b9",
+      "passes": {
+        "original": {
+          "text": "18J, age is 10-14, we're moving to the parking lot and setting area building.",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " 18J, age is 10-14, we're moving to the parking lot and setting area building.",
+              "avg_logprob": -0.6405137752493223,
+              "no_speech_prob": 0.01263184193521738,
+              "compression_ratio": 0.9871794871794872
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18J, age is 10-14, we're moving to the parking lot is 7-8, goes in.",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " 18J, age is 10-14, we're moving to the parking lot is 7-8, goes in.",
+              "avg_logprob": -0.6937141904124507,
+              "no_speech_prob": 0.031092530116438866,
+              "compression_ratio": 0.9571428571428572
+            }
+          ]
+        },
+        "context": {
+          "text": "18J, age is 10-14, we're moving to the parking lot and setting area building.",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " 18J, age is 10-14, we're moving to the parking lot and setting area building.",
+              "avg_logprob": -0.6405137752493223,
+              "no_speech_prob": 0.01263184193521738,
+              "compression_ratio": 0.9871794871794872
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795187637.m4a": {
+      "index": 180,
+      "epoch": 1795187637,
+      "sha256": "4a509adc9f814d80ab06b8e08faab0a7669f6e2eadd4cb94b758afbb470d4c87",
+      "passes": {
+        "original": {
+          "text": "Thank you. Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5084402184737357,
+              "no_speech_prob": 0.04936350882053375,
+              "compression_ratio": 1.9090909090909092
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5084402184737357,
+              "no_speech_prob": 0.04936350882053375,
+              "compression_ratio": 1.9090909090909092
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5084402184737357,
+              "no_speech_prob": 0.04936350882053375,
+              "compression_ratio": 1.9090909090909092
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you. Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.4846273974368447,
+              "no_speech_prob": 0.007620837073773146,
+              "compression_ratio": 1.9090909090909092
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.4846273974368447,
+              "no_speech_prob": 0.007620837073773146,
+              "compression_ratio": 1.9090909090909092
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.4846273974368447,
+              "no_speech_prob": 0.007620837073773146,
+              "compression_ratio": 1.9090909090909092
+            }
+          ]
+        },
+        "context": {
+          "text": "Hello, hello, hello, hello, hello, hello, hello, hello, hello, hello, hello, hello, hello, hello,",
+          "prompt": "18J, age is 10-14, we're moving to the parking lot and setting area building.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 29,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.1500000000000001,
+              "text": " Hello, hello, hello, hello, hello, hello, hello, hello, hello, hello, hello, hello, hello, hello,",
+              "avg_logprob": -0.358074547847112,
+              "no_speech_prob": 0.11179275065660477,
+              "compression_ratio": 5.388888888888889
+            }
+          ]
+        }
+      }
+    }
+  }
+}
