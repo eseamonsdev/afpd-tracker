@@ -1,0 +1,657 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-19",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1795125865.m4a": {
+      "index": 641,
+      "epoch": 1795125865,
+      "sha256": "5cd2986504a0d3fa902673d25510fa3f7a10a98e82c48c854ee628e7f2461349",
+      "passes": {
+        "original": {
+          "text": "43, code 4, will you show me in the rest of the hospital? Happy.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 43, code 4, will you show me in the rest of the hospital?",
+              "avg_logprob": -0.4696695882341136,
+              "no_speech_prob": 0.013058282434940338,
+              "compression_ratio": 0.9411764705882353
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " Happy.",
+              "avg_logprob": -0.4696695882341136,
+              "no_speech_prob": 0.013058282434940338,
+              "compression_ratio": 0.9411764705882353
+            }
+          ]
+        },
+        "filtered": {
+          "text": "43, code 4. Will you show me in the rest of the hospital? Happy.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 43, code 4. Will you show me in the rest of the hospital?",
+              "avg_logprob": -0.4415909025980079,
+              "no_speech_prob": 0.013052625581622124,
+              "compression_ratio": 0.9411764705882353
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " Happy.",
+              "avg_logprob": -0.4415909025980079,
+              "no_speech_prob": 0.013052625581622124,
+              "compression_ratio": 0.9411764705882353
+            }
+          ]
+        },
+        "context": {
+          "text": "Forty-three, code four. Will you show me in the rest of the hospital? Happy.",
+          "prompt": "Bye. Can you change that to a follow-up? After.",
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.08,
+              "text": " Forty-three, code four. Will you show me in the rest of the hospital? Happy.",
+              "avg_logprob": -0.43523239830265875,
+              "no_speech_prob": 0.0026347539387643337,
+              "compression_ratio": 0.9743589743589743
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795125888.m4a": {
+      "index": 642,
+      "epoch": 1795125888,
+      "sha256": "dd996e7dd2a88c3a321db30755ba59e363e0f94ebcb075faa340280b64c56d46",
+      "passes": {
+        "original": {
+          "text": "5J42 Central Code 4.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0200000000000005,
+              "text": " 5J42 Central Code 4.",
+              "avg_logprob": -0.4822449803352356,
+              "no_speech_prob": 0.03463876619935036,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J 42 Central Coast Park.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0200000000000005,
+              "text": " 5J 42 Central Coast Park.",
+              "avg_logprob": -0.4923394203186035,
+              "no_speech_prob": 0.028735315427184105,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "context": {
+          "text": "5J, 42 Central, code 4.",
+          "prompt": "Can you change that to a follow-up? After. 43, code 4, will you show me in the rest of the hospital? Happy.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.2800000000000002,
+              "text": " 5J, 42 Central, code 4.",
+              "avg_logprob": -0.5494113564491272,
+              "no_speech_prob": 0.017306173220276833,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795125891.m4a": {
+      "index": 643,
+      "epoch": 1795125891,
+      "sha256": "287e7e296fe7feba753b94c19dc21f7a784bd5e7672456e219f1efd63a46f06f",
+      "passes": {
+        "original": {
+          "text": "To respect",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " To respect",
+              "avg_logprob": -1.0711308479309083,
+              "no_speech_prob": 0.10770970582962036,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "So it's been",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " So it's been",
+              "avg_logprob": -0.9197876112801688,
+              "no_speech_prob": 0.07853041589260101,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "First one.",
+          "prompt": "After. 43, code 4, will you show me in the rest of the hospital? Happy. 5J42 Central Code 4.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " First one.",
+              "avg_logprob": -0.9740322828292847,
+              "no_speech_prob": 0.06142081320285797,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795125893.m4a": {
+      "index": 644,
+      "epoch": 1795125893,
+      "sha256": "ca8aa661f4df733e32d00b95d8ed2170e5b7e637595af206f1164ba6d09afe43",
+      "passes": {
+        "original": {
+          "text": "So far.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " So far.",
+              "avg_logprob": -0.7736136019229889,
+              "no_speech_prob": 0.02693714015185833,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bye-bye.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.7355931145804269,
+              "no_speech_prob": 0.022666694596409798,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "code 4.",
+          "prompt": "43, code 4, will you show me in the rest of the hospital? Happy. 5J42 Central Code 4. To respect",
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " code 4.",
+              "avg_logprob": -0.5843439698219299,
+              "no_speech_prob": 0.03867735341191292,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795126173.m4a": {
+      "index": 645,
+      "epoch": 1795126173,
+      "sha256": "1c6030562f3d498370ca2b83cae69eeb7c945204a1dab8fc0f9d69315d9ec768",
+      "passes": {
+        "original": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " Happy.",
+              "avg_logprob": -0.6080140590667724,
+              "no_speech_prob": 0.019433002918958664,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.56,
+              "text": " Happy.",
+              "avg_logprob": -0.41179733276367186,
+              "no_speech_prob": 0.017861394211649895,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.54,
+              "text": " Happy.",
+              "avg_logprob": -0.6080140590667724,
+              "no_speech_prob": 0.019433002918958664,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795126179.m4a": {
+      "index": 646,
+      "epoch": 1795126179,
+      "sha256": "bfcec8e46b03d6ba8fbfc37c85506ffb41d8c79081ee30c7585ee1c1802945c7",
+      "passes": {
+        "original": {
+          "text": "5,843 arrive. Negative checks.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5,843 arrive. Negative checks.",
+              "avg_logprob": -0.6756358295679092,
+              "no_speech_prob": 0.013341916725039482,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5k 43 to rise, negative 6.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5k 43 to rise, negative 6.",
+              "avg_logprob": -0.8451645274957021,
+              "no_speech_prob": 0.020821088925004005,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "context": {
+          "text": "5,843 arrive. Negative checks.",
+          "prompt": "Happy.",
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5,843 arrive. Negative checks.",
+              "avg_logprob": -0.6753030866384506,
+              "no_speech_prob": 0.02365712821483612,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795126182.m4a": {
+      "index": 647,
+      "epoch": 1795126182,
+      "sha256": "30165c7a4f5e1f05d77a5ae0c126cdeacd0bf44f1300d7e3fad141970d0a9448",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7547101974487305,
+              "no_speech_prob": 0.02916654944419861,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.6538332462310791,
+              "no_speech_prob": 0.018519023433327675,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy.",
+          "prompt": "Happy. 5,843 arrive. Negative checks.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.45462403297424314,
+              "no_speech_prob": 0.009341534227132797,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795126406.m4a": {
+      "index": 648,
+      "epoch": 1795126406,
+      "sha256": "e48f34ac23d87c3e8f130b8a501ab7438193341a63c2d0356e56e94ace2d7c60",
+      "passes": {
+        "original": {
+          "text": "5G, 170 traffic",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5G, 170 traffic",
+              "avg_logprob": -0.37232139706611633,
+              "no_speech_prob": 0.0644281655550003,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G, 170 traffic.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5G, 170 traffic.",
+              "avg_logprob": -0.3325479295518663,
+              "no_speech_prob": 0.04573749005794525,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "5G, 170 traffic",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5G, 170 traffic",
+              "avg_logprob": -0.37232139706611633,
+              "no_speech_prob": 0.0644281655550003,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795126409.m4a": {
+      "index": 649,
+      "epoch": 1795126409,
+      "sha256": "5696dfb595a960af105c6df6738fbfea3942e71db3d2a0b969a110cd7ff12fd5",
+      "passes": {
+        "original": {
+          "text": "Bye.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Bye.",
+              "avg_logprob": -0.7164867401123047,
+              "no_speech_prob": 0.024929681792855263,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bye.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye.",
+              "avg_logprob": -0.7398398399353028,
+              "no_speech_prob": 0.03241000324487686,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Bye",
+          "prompt": "5G, 170 traffic",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Bye",
+              "avg_logprob": -0.8652181327342987,
+              "no_speech_prob": 0.011355461552739143,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795126412.m4a": {
+      "index": 650,
+      "epoch": 1795126412,
+      "sha256": "d857de9619b6b2bad8d25006ade38e0b3db821c07578d5fc793bee0380266f61",
+      "passes": {
+        "original": {
+          "text": "620 south 860 east on 1 Lima 2. Juliet",
+          "prompt": null,
+          "duration_seconds": 8.192,
+          "token_limit": 90,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.48,
+              "text": " 620 south 860 east on 1 Lima 2. Juliet",
+              "avg_logprob": -0.5262931968484607,
+              "no_speech_prob": 0.14635424315929413,
+              "compression_ratio": 0.8260869565217391
+            }
+          ]
+        },
+        "filtered": {
+          "text": "620 south, 860 east on 1, Lima 2, Fox, Julia.",
+          "prompt": null,
+          "duration_seconds": 8.192,
+          "token_limit": 90,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.5200000000000005,
+              "text": " 620 south, 860 east on 1, Lima 2, Fox, Julia.",
+              "avg_logprob": -0.5906028308366474,
+              "no_speech_prob": 0.06049451231956482,
+              "compression_ratio": 0.8490566037735849
+            }
+          ]
+        },
+        "context": {
+          "text": "620 south, 860 east on 1 Lima 2, Juliet.",
+          "prompt": "5G, 170 traffic Bye.",
+          "duration_seconds": 8.192,
+          "token_limit": 90,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.48,
+              "text": " 620 south, 860 east on 1 Lima 2, Juliet.",
+              "avg_logprob": -0.5571266077458858,
+              "no_speech_prob": 0.02360551990568638,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        }
+      }
+    }
+  }
+}
