@@ -46,7 +46,7 @@ manual-deploy: ## Build and upload a staging preview.
 	git pull --ff-only
 	git status --short
 	npm run build
-	npx wrangler versions upload --preview-alias staging --message "staging $$(git rev-parse --short HEAD)"
+	npx wrangler versions upload --config wrangler.staging.jsonc --preview-alias staging --message "staging $$(git rev-parse --short HEAD)"
 
 # Promote staging to main, then deploy the same commit to the live Worker.
 prod-manual-deploy: ## Promote staging to main, build, and deploy production.
