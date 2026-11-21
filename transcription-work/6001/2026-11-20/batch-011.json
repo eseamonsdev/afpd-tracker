@@ -1,0 +1,705 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1795241037.m4a": {
+      "index": 101,
+      "epoch": 1795241037,
+      "sha256": "dcf729977b5b5518769680e9394ca87de3ea87e21dfc9f402512fda00209ab71",
+      "passes": {
+        "original": {
+          "text": "The truck is eastbound, right? I'm sitting still on Main Street at the overpass.",
+          "prompt": null,
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " The truck is eastbound, right? I'm sitting still on Main Street at the overpass.",
+              "avg_logprob": -0.23113126340119736,
+              "no_speech_prob": 0.04835283383727074,
+              "compression_ratio": 0.9876543209876543
+            }
+          ]
+        },
+        "filtered": {
+          "text": "The truck is eastbound, right? I'm sitting still on Main Street at the overpass.",
+          "prompt": null,
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " The truck is eastbound, right?",
+              "avg_logprob": -0.31297107696533205,
+              "no_speech_prob": 0.03455263376235962,
+              "compression_ratio": 0.9876543209876543
+            },
+            {
+              "start": 2.0,
+              "end": 6.0,
+              "text": " I'm sitting still on Main Street at the overpass.",
+              "avg_logprob": -0.31297107696533205,
+              "no_speech_prob": 0.03455263376235962,
+              "compression_ratio": 0.9876543209876543
+            }
+          ]
+        },
+        "context": {
+          "text": "The truck is eastbound, right? I'm sitting still on Main Street at the overpass.",
+          "prompt": "Okay, your cruise lights are on. Hey, Colleppi or Halliday or Valadez, did either of you guys have a white truck behind you on Main Street a second ago?",
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " The truck is eastbound, right? I'm sitting still on Main Street at the overpass.",
+              "avg_logprob": -0.142499636048856,
+              "no_speech_prob": 0.002310588024556637,
+              "compression_ratio": 0.9876543209876543
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795241048.m4a": {
+      "index": 102,
+      "epoch": 1795241048,
+      "sha256": "a85a5c01331d0cc4552a9a70665cac06ba46993d8c1578a32624f155c0ba9437",
+      "passes": {
+        "original": {
+          "text": "Yeah, I believe they said it was last seen going eastbound at center of Maine",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.84,
+              "text": " Yeah, I believe they said it was last seen going eastbound at center of Maine",
+              "avg_logprob": -0.27443126291036607,
+              "no_speech_prob": 0.0023455917835235596,
+              "compression_ratio": 1.0266666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah, I believe they said it was last seen going eastbound at center of Maine.",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.86,
+              "text": " Yeah, I believe they said it was last seen going eastbound at center of Maine.",
+              "avg_logprob": -0.34299830595652264,
+              "no_speech_prob": 0.001151567092165351,
+              "compression_ratio": 1.0129870129870129
+            }
+          ]
+        },
+        "context": {
+          "text": "Yeah, I believe they said it was last seen going eastbound at center of Main Street.",
+          "prompt": "Hey, Colleppi or Halliday or Valadez, did either of you guys have a white truck behind you on Main Street a second ago? The truck is eastbound, right? I'm sitting still on Main Street at the overpass.",
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Yeah, I believe they said it was last seen going eastbound at center of Main Street.",
+              "avg_logprob": -0.2718172154643319,
+              "no_speech_prob": 0.0006531900144182146,
+              "compression_ratio": 1.037037037037037
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795241106.m4a": {
+      "index": 103,
+      "epoch": 1795241106,
+      "sha256": "bebfc60036fecb9ffda23c41ed745024ac743668c9d4bcb362567aecae361ccf",
+      "passes": {
+        "original": {
+          "text": "Manus, are you with the potential suspect?",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Manus, are you with the potential suspect?",
+              "avg_logprob": -0.5429420471191406,
+              "no_speech_prob": 0.017470112070441246,
+              "compression_ratio": 0.84
+            }
+          ]
+        },
+        "filtered": {
+          "text": "are you with the, uh, potential suspect?",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.16,
+              "text": " are you with the, uh, potential suspect?",
+              "avg_logprob": -0.688961230791532,
+              "no_speech_prob": 0.008897879160940647,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        },
+        "context": {
+          "text": "Maine, are you with the potential suspect?",
+          "prompt": "Yeah, I believe they said it was last seen going eastbound at center of Maine",
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.88,
+              "text": " Maine, are you with the potential suspect?",
+              "avg_logprob": -0.5242857138315836,
+              "no_speech_prob": 0.004392650909721851,
+              "compression_ratio": 0.84
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795241272.m4a": {
+      "index": 104,
+      "epoch": 1795241272,
+      "sha256": "78a89350b18ece0b97ada5738654986b8463da22f5a64fae16a802bd3f92eaa9",
+      "passes": {
+        "original": {
+          "text": "Hey, Howdy.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey, Howdy.",
+              "avg_logprob": -0.9038693606853485,
+              "no_speech_prob": 0.0797913521528244,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hey, Halliday.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey, Halliday.",
+              "avg_logprob": -0.6617740020155907,
+              "no_speech_prob": 0.05770539492368698,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey, Howdy.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey, Howdy.",
+              "avg_logprob": -0.9038693606853485,
+              "no_speech_prob": 0.0797913521528244,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795241275.m4a": {
+      "index": 105,
+      "epoch": 1795241275,
+      "sha256": "14866715aadd2c9a9a32b76f4a7a1f7a24dd6e4eb2be9d3f4be284efc20073c1",
+      "passes": {
+        "original": {
+          "text": "Got it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Got it.",
+              "avg_logprob": -0.7053850591182709,
+              "no_speech_prob": 0.06452271342277527,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Got it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Got it.",
+              "avg_logprob": -0.5839288731416067,
+              "no_speech_prob": 0.060371339321136475,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Got it.",
+          "prompt": "Hey, Howdy.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Got it.",
+              "avg_logprob": -0.5952846010526022,
+              "no_speech_prob": 0.020358776673674583,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795241291.m4a": {
+      "index": 106,
+      "epoch": 1795241291,
+      "sha256": "497ecbce44ac56296a53ae93c03a6a02968e2456289cf679f0a70c9d29981b0d",
+      "passes": {
+        "original": {
+          "text": "That's where I thought they were going.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " That's where I thought they were going.",
+              "avg_logprob": -0.25891705354054767,
+              "no_speech_prob": 0.060782793909311295,
+              "compression_ratio": 0.9069767441860465
+            }
+          ]
+        },
+        "filtered": {
+          "text": "That's where I thought they were going.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " That's where I thought they were going.",
+              "avg_logprob": -0.2610131974021594,
+              "no_speech_prob": 0.031103655695915222,
+              "compression_ratio": 0.9069767441860465
+            }
+          ]
+        },
+        "context": {
+          "text": "That's where I thought they were going.",
+          "prompt": "Hey, Howdy. Got it.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " That's where I thought they were going.",
+              "avg_logprob": -0.1940645140906175,
+              "no_speech_prob": 0.0073697008192539215,
+              "compression_ratio": 0.9069767441860465
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795241305.m4a": {
+      "index": 107,
+      "epoch": 1795241305,
+      "sha256": "d07806f928a7b6d9a221bc895b26371def3d2f7dc7e0f41c80b694ba3da9355b",
+      "passes": {
+        "original": {
+          "text": "You can check the service where they're at.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.64,
+              "text": " You can check the service where they're at.",
+              "avg_logprob": -0.5813604684976431,
+              "no_speech_prob": 0.01648460142314434,
+              "compression_ratio": 0.9148936170212766
+            }
+          ]
+        },
+        "filtered": {
+          "text": "You can check the service and see where they're at.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " You can check the service and see where they're at.",
+              "avg_logprob": -0.47645405133565266,
+              "no_speech_prob": 0.006111892871558666,
+              "compression_ratio": 0.9444444444444444
+            }
+          ]
+        },
+        "context": {
+          "text": "You can check the service. This is where they're at.",
+          "prompt": "Hey, Howdy. Got it. That's where I thought they were going.",
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " You can check the service. This is where they're at.",
+              "avg_logprob": -0.47280382364988327,
+              "no_speech_prob": 0.024890495464205742,
+              "compression_ratio": 0.9454545454545454
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795241323.m4a": {
+      "index": 108,
+      "epoch": 1795241323,
+      "sha256": "e5005547765f9632b8bac4556a87669e37b2e872763abae2406f1c82da39128e",
+      "passes": {
+        "original": {
+          "text": "However, I don't know if you copied the last notes, but the officer in charge of the agency assistance on another call and will call us back shortly.",
+          "prompt": null,
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 36,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.76,
+              "text": " However, I don't know if you copied the last notes, but the officer in charge of the agency",
+              "avg_logprob": -0.26485575856389226,
+              "no_speech_prob": 0.004446979146450758,
+              "compression_ratio": 1.2844827586206897
+            },
+            {
+              "start": 4.76,
+              "end": 7.36,
+              "text": " assistance on another call and will call us back shortly.",
+              "avg_logprob": -0.26485575856389226,
+              "no_speech_prob": 0.004446979146450758,
+              "compression_ratio": 1.2844827586206897
+            }
+          ]
+        },
+        "filtered": {
+          "text": "However, I don't know if you copied the last notes, but the officer in charge of the agency use this to zone another call and we'll call it back shortly.",
+          "prompt": null,
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 39,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.8,
+              "text": " However, I don't know if you copied the last notes, but the officer in charge of the agency",
+              "avg_logprob": -0.22605594635009765,
+              "no_speech_prob": 0.0067673190496861935,
+              "compression_ratio": 1.1097560975609757
+            },
+            {
+              "start": 4.8,
+              "end": 7.199999999999999,
+              "text": " use this to zone another call and we'll call it back shortly.",
+              "avg_logprob": -0.6100803824032054,
+              "no_speech_prob": 0.018457278609275818,
+              "compression_ratio": 0.9682539682539683
+            }
+          ]
+        },
+        "context": {
+          "text": "However, I don't know if you copied the last notes, but the officer in charge of the agency assistance on another call and will call us back shortly.",
+          "prompt": "Got it. That's where I thought they were going. You can check the service where they're at.",
+          "duration_seconds": 7.68,
+          "token_limit": 86,
+          "token_count": 36,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.76,
+              "text": " However, I don't know if you copied the last notes, but the officer in charge of the agency",
+              "avg_logprob": -0.22825169563293457,
+              "no_speech_prob": 0.027700355276465416,
+              "compression_ratio": 1.2844827586206897
+            },
+            {
+              "start": 4.76,
+              "end": 7.36,
+              "text": " assistance on another call and will call us back shortly.",
+              "avg_logprob": -0.22825169563293457,
+              "no_speech_prob": 0.027700355276465416,
+              "compression_ratio": 1.2844827586206897
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795241349.m4a": {
+      "index": 109,
+      "epoch": 1795241349,
+      "sha256": "dd3f2ed46e150be14d0cccedde2ef02c3906ff42ae65af3f1aa5f832797410dd",
+      "passes": {
+        "original": {
+          "text": "I got contact with MCOD. I'm awaiting a phone call back, but they are familiar with the patient. I'm good to go 10a and help somebody or I can go to the hospital.",
+          "prompt": null,
+          "duration_seconds": 12.928,
+          "token_limit": 128,
+          "token_count": 45,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.88,
+              "text": " I got contact with MCOD. I'm awaiting a phone call back, but they are familiar",
+              "avg_logprob": -0.2785269980845244,
+              "no_speech_prob": 0.0040466682985424995,
+              "compression_ratio": 1.2461538461538462
+            },
+            {
+              "start": 6.88,
+              "end": 14.16,
+              "text": " with the patient. I'm good to go 10a and help somebody or I can go to the hospital.",
+              "avg_logprob": -0.2785269980845244,
+              "no_speech_prob": 0.0040466682985424995,
+              "compression_ratio": 1.2461538461538462
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I got contact with MCOD. I'm awaiting a phone call back but they are familiar with the patient. I'm good to go 10-8 and help somebody or I can go to the hospital.",
+          "prompt": null,
+          "duration_seconds": 12.928,
+          "token_limit": 128,
+          "token_count": 47,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.9,
+              "text": " I got contact with MCOD. I'm awaiting a phone call back but they are familiar",
+              "avg_logprob": -0.29167010448873043,
+              "no_speech_prob": 0.0023779270704835653,
+              "compression_ratio": 1.2461538461538462
+            },
+            {
+              "start": 6.9,
+              "end": 11.8,
+              "text": " with the patient. I'm good to go 10-8 and help somebody or I can go to the",
+              "avg_logprob": -0.29167010448873043,
+              "no_speech_prob": 0.0023779270704835653,
+              "compression_ratio": 1.2461538461538462
+            },
+            {
+              "start": 11.8,
+              "end": 14.18,
+              "text": " hospital.",
+              "avg_logprob": -0.29167010448873043,
+              "no_speech_prob": 0.0023779270704835653,
+              "compression_ratio": 1.2461538461538462
+            }
+          ]
+        },
+        "context": {
+          "text": "I got contact with MCOD. I'm awaiting a phone call back, but they are familiar with the patient. I'm good to go 10-A and help somebody or I can go to the hospital.",
+          "prompt": "That's where I thought they were going. You can check the service where they're at. However, I don't know if you copied the last notes, but the officer in charge of the agency assistance on another call and will call us back shortly.",
+          "duration_seconds": 12.928,
+          "token_limit": 128,
+          "token_count": 46,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " I got contact with MCOD. I'm awaiting a phone call back, but they are familiar with the patient.",
+              "avg_logprob": -0.23728693799769623,
+              "no_speech_prob": 0.002308346563950181,
+              "compression_ratio": 1.2348484848484849
+            },
+            {
+              "start": 8.0,
+              "end": 12.0,
+              "text": " I'm good to go 10-A and help somebody or I can go to the hospital.",
+              "avg_logprob": -0.23728693799769623,
+              "no_speech_prob": 0.002308346563950181,
+              "compression_ratio": 1.2348484848484849
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795241364.m4a": {
+      "index": 110,
+      "epoch": 1795241364,
+      "sha256": "db1e8ce5ff28fac4b21b49068e114eaaef520fcf4fec0d4ba7b65265350520aa",
+      "passes": {
+        "original": {
+          "text": "Thanks for doing that. Did you give him a holiday phone number?",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Thanks for doing that. Did you give him a holiday phone number?",
+              "avg_logprob": -0.4120458715102252,
+              "no_speech_prob": 0.04104014113545418,
+              "compression_ratio": 0.9130434782608695
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thanks for doing that. Did you give him Halliday phone number?",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Thanks for doing that. Did you give him Halliday phone number?",
+              "avg_logprob": -0.40630531311035156,
+              "no_speech_prob": 0.031877100467681885,
+              "compression_ratio": 0.8857142857142857
+            }
+          ]
+        },
+        "context": {
+          "text": "Thanks for doing that. Did you give him a holiday phone number?",
+          "prompt": "You can check the service where they're at. However, I don't know if you copied the last notes, but the officer in charge of the agency assistance on another call and will call us back shortly. I got contact with MCOD. I'm awaiting a phone call back, but they are familiar with the patient. I'm good to go 10a and help somebody or I can go to the hospital.",
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Thanks for doing that. Did you give him a holiday phone number?",
+              "avg_logprob": -0.3577421973733341,
+              "no_speech_prob": 0.024861468002200127,
+              "compression_ratio": 0.9130434782608695
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1795242464.m4a": {
+      "index": 121,
+      "epoch": 1795242464,
+      "sha256": "4c627055f156f60ad2d7e54a330ad35c2147c49af02d2d0ec39cdea9e2262f6a",
+      "passes": {
+        "original": {
+          "text": "Oh, it looks like it's an Uber picking someone up, Diego. Just your heart.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Oh, it looks like it's an Uber picking someone up, Diego. Just your heart.",
+              "avg_logprob": -0.5055914169008081,
+              "no_speech_prob": 0.06473008543252945,
+              "compression_ratio": 0.9487179487179487
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Oh, it looks like it's an Uber picking someone up, Diego. Yes, you're heard.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Oh, it looks like it's an Uber picking someone up, Diego.",
+              "avg_logprob": -0.4787519287604552,
+              "no_speech_prob": 0.027917319908738136,
+              "compression_ratio": 0.9743589743589743
+            },
+            {
+              "start": 4.0,
+              "end": 6.0,
+              "text": " Yes, you're heard.",
+              "avg_logprob": -0.4787519287604552,
+              "no_speech_prob": 0.027917319908738136,
+              "compression_ratio": 0.9743589743589743
+            }
+          ]
+        },
+        "context": {
+          "text": "Oh, it looks like it's an Uber picking someone up, Diego. Just your heart.",
+          "prompt": "It makes me wonder if it's an Uber or something, bringing a suspect back to their car.",
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Oh, it looks like it's an Uber picking someone up, Diego. Just your heart.",
+              "avg_logprob": -0.39890602095560596,
+              "no_speech_prob": 0.01825936883687973,
+              "compression_ratio": 0.9487179487179487
+            }
+          ]
+        }
+      }
+    }
+  }
+}

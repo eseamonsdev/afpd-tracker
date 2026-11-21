@@ -1,0 +1,673 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1795169704.m4a": {
+      "index": 1,
+      "epoch": 1795169704,
+      "sha256": "364e3fbea86c962b062d35fdc77f8f0354da218addf1122768c85e2412b44001",
+      "passes": {
+        "original": {
+          "text": "Since you guys are ahead of me, I'm going to break north on 300 West. Actually, really south.",
+          "prompt": null,
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Since you guys are ahead of me, I'm going to break north on 300 West. Actually,",
+              "avg_logprob": -0.40437036752700806,
+              "no_speech_prob": 0.1316564828157425,
+              "compression_ratio": 1.021978021978022
+            },
+            {
+              "start": 5.04,
+              "end": 9.040000000000001,
+              "text": " really south.",
+              "avg_logprob": -0.40437036752700806,
+              "no_speech_prob": 0.1316564828157425,
+              "compression_ratio": 1.021978021978022
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Since you guys are ahead of me, I'm going to break north on 300 west, and actually north-south.",
+          "prompt": null,
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Since you guys are ahead of me, I'm going to break north on 300 west, and actually north-south.",
+              "avg_logprob": -0.4138312913753368,
+              "no_speech_prob": 0.03807951137423515,
+              "compression_ratio": 1.0674157303370786
+            }
+          ]
+        },
+        "context": {
+          "text": "Since you guys are ahead of me, I'm going to break north on 300 West. Actually, really south.",
+          "prompt": null,
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Since you guys are ahead of me, I'm going to break north on 300 West. Actually,",
+              "avg_logprob": -0.40437036752700806,
+              "no_speech_prob": 0.1316564828157425,
+              "compression_ratio": 1.021978021978022
+            },
+            {
+              "start": 5.04,
+              "end": 9.040000000000001,
+              "text": " really south.",
+              "avg_logprob": -0.40437036752700806,
+              "no_speech_prob": 0.1316564828157425,
+              "compression_ratio": 1.021978021978022
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795169712.m4a": {
+      "index": 2,
+      "epoch": 1795169712,
+      "sha256": "3349f0f18a337914b862c6eefdf84d29eb11aa75b80bff833fa3b618e3ba09f2",
+      "passes": {
+        "original": {
+          "text": "I was going to say I'm already like three, excuse me, four hundred east and then",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.36,
+              "text": " I was going to say I'm already like three, excuse me, four hundred east and then",
+              "avg_logprob": -0.5067132223736156,
+              "no_speech_prob": 0.05253085494041443,
+              "compression_ratio": 1.0389610389610389
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I was gonna say I'm already like three, excuse me, four hundred East and then",
+          "prompt": null,
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.4,
+              "text": " I was gonna say I'm already like three, excuse me, four hundred East and then",
+              "avg_logprob": -0.48864234061468215,
+              "no_speech_prob": 0.029895780608057976,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "I was going to say I'm already like three, excuse me, four hundred east of me.",
+          "prompt": "Since you guys are ahead of me, I'm going to break north on 300 West. Actually, really south.",
+          "duration_seconds": 5.888,
+          "token_limit": 72,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.4,
+              "text": " I was going to say I'm already like three, excuse me, four hundred east of me.",
+              "avg_logprob": -0.44064970120139746,
+              "no_speech_prob": 0.0048529040068387985,
+              "compression_ratio": 1.0129870129870129
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795169722.m4a": {
+      "index": 3,
+      "epoch": 1795169722,
+      "sha256": "a82ad4943e980b6b9aecf2e43fa9e90edd9f14a70d3437e414eba20a97621b5e",
+      "passes": {
+        "original": {
+          "text": "I'm feeling north.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I'm feeling north.",
+              "avg_logprob": -0.6728717610239983,
+              "no_speech_prob": 0.04244322329759598,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm feeling north.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I'm feeling north.",
+              "avg_logprob": -0.6241158470511436,
+              "no_speech_prob": 0.05514579266309738,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "context": {
+          "text": "feeling north.",
+          "prompt": "Since you guys are ahead of me, I'm going to break north on 300 West. Actually, really south. I was going to say I'm already like three, excuse me, four hundred east and then",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " feeling north.",
+              "avg_logprob": -0.472491333882014,
+              "no_speech_prob": 0.020878951996564865,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795169800.m4a": {
+      "index": 4,
+      "epoch": 1795169800,
+      "sha256": "dd7e27f6aad12298fce00217ba67e38239403bfa13167190be6948535e2941de",
+      "passes": {
+        "original": {
+          "text": "Two in the south is pretty empty unless he turned into one of the neighborhoods or somewhere.",
+          "prompt": null,
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Two in the south is pretty empty unless he turned into one of the neighborhoods or somewhere.",
+              "avg_logprob": -0.34173309803009033,
+              "no_speech_prob": 0.03727593645453453,
+              "compression_ratio": 1.1481481481481481
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Two in the south is pretty empty unless he turned into one of the neighborhoods or somewhere.",
+          "prompt": null,
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Two in the south is pretty empty unless he turned into one of the neighborhoods or somewhere.",
+              "avg_logprob": -0.4248476879937308,
+              "no_speech_prob": 0.02967524342238903,
+              "compression_ratio": 1.1481481481481481
+            }
+          ]
+        },
+        "context": {
+          "text": "Two in the south is pretty empty unless he turned into one of the neighborhoods or somewhere.",
+          "prompt": null,
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Two in the south is pretty empty unless he turned into one of the neighborhoods or somewhere.",
+              "avg_logprob": -0.34173309803009033,
+              "no_speech_prob": 0.03727593645453453,
+              "compression_ratio": 1.1481481481481481
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795169814.m4a": {
+      "index": 5,
+      "epoch": 1795169814,
+      "sha256": "87aa7402845607b9ae2d8e750bc6af2c37bee452a26d4ac372b49527aa953e81",
+      "passes": {
+        "original": {
+          "text": "Same as 108",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Same as 108",
+              "avg_logprob": -0.5727473894755045,
+              "no_speech_prob": 0.02020127885043621,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Same as 180.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Same as 180.",
+              "avg_logprob": -0.5592231580189296,
+              "no_speech_prob": 0.019354810938239098,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "Same as 108.",
+          "prompt": "Two in the south is pretty empty unless he turned into one of the neighborhoods or somewhere.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Same as 108.",
+              "avg_logprob": -0.5145986080169678,
+              "no_speech_prob": 0.016101891174912453,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795169835.m4a": {
+      "index": 6,
+      "epoch": 1795169835,
+      "sha256": "a1b0cc064c58076f4aae673eebba81bbb18a3728c30994c091ecc5500e6ffdf8",
+      "passes": {
+        "original": {
+          "text": "Well, the license they provided comes back to the BMW, because I mean BMW, Volkswagen, same thing, but I'll go look at their video footage and see what I can see.",
+          "prompt": null,
+          "duration_seconds": 9.984,
+          "token_limit": 104,
+          "token_count": 42,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Well, the license they provided comes back to the BMW, because I mean BMW, Volkswagen,",
+              "avg_logprob": -0.27971422949502633,
+              "no_speech_prob": 0.046247150748968124,
+              "compression_ratio": 1.2755905511811023
+            },
+            {
+              "start": 5.0,
+              "end": 10.0,
+              "text": " same thing, but I'll go look at their video footage and see what I can see.",
+              "avg_logprob": -0.27971422949502633,
+              "no_speech_prob": 0.046247150748968124,
+              "compression_ratio": 1.2755905511811023
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Well, the license they provided comes back to the BMW, because I mean BMW, Volkswagen, same thing, but I'll go look at their video footage and see what I can see.",
+          "prompt": null,
+          "duration_seconds": 9.984,
+          "token_limit": 104,
+          "token_count": 42,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Well, the license they provided comes back to the BMW, because I mean BMW, Volkswagen,",
+              "avg_logprob": -0.3260752433954283,
+              "no_speech_prob": 0.06344198435544968,
+              "compression_ratio": 1.2755905511811023
+            },
+            {
+              "start": 5.0,
+              "end": 9.0,
+              "text": " same thing, but I'll go look at their video footage and see what I can see.",
+              "avg_logprob": -0.3260752433954283,
+              "no_speech_prob": 0.06344198435544968,
+              "compression_ratio": 1.2755905511811023
+            }
+          ]
+        },
+        "context": {
+          "text": "Well, the license they provided comes back to the BMW because I mean BMW, Volkswagen, same thing, but I'll go look at their video footage and see what I can see.",
+          "prompt": "Two in the south is pretty empty unless he turned into one of the neighborhoods or somewhere. Same as 108",
+          "duration_seconds": 9.984,
+          "token_limit": 104,
+          "token_count": 39,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 10.0,
+              "text": " Well, the license they provided comes back to the BMW because I mean BMW, Volkswagen, same thing, but I'll go look at their video footage and see what I can see.",
+              "avg_logprob": -0.2854005374014378,
+              "no_speech_prob": 0.05933292210102081,
+              "compression_ratio": 1.2677165354330708
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795169848.m4a": {
+      "index": 7,
+      "epoch": 1795169848,
+      "sha256": "36b1f493e9b1f8c3abc7ec3ef201726ebefaeeb602df3edbe681b560846e9892",
+      "passes": {
+        "original": {
+          "text": "What model BMW?",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " What model BMW?",
+              "avg_logprob": -0.4918473958969116,
+              "no_speech_prob": 0.12089928984642029,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "We'll model BMW.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " We'll model BMW.",
+              "avg_logprob": -0.5721084922552109,
+              "no_speech_prob": 0.06454838812351227,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "What model BMW?",
+          "prompt": "Two in the south is pretty empty unless he turned into one of the neighborhoods or somewhere. Same as 108 Well, the license they provided comes back to the BMW, because I mean BMW, Volkswagen, same thing, but I'll go look at their video footage and see what I can see.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " What model BMW?",
+              "avg_logprob": -0.524344835962568,
+              "no_speech_prob": 0.09398509562015533,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795169858.m4a": {
+      "index": 8,
+      "epoch": 1795169858,
+      "sha256": "c575bb9d126e5c2702a114aed04b7d6a90be9203e6573058b2f8c497c7e12121",
+      "passes": {
+        "original": {
+          "text": "This does not say, this is a BMW.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " This does not say, this is a BMW.",
+              "avg_logprob": -0.5996669439169077,
+              "no_speech_prob": 0.02190156653523445,
+              "compression_ratio": 0.8918918918918919
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It does not say, it just says it's BMW.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " It does not say, it just says it's BMW.",
+              "avg_logprob": -0.7045532306035359,
+              "no_speech_prob": 0.028667567297816277,
+              "compression_ratio": 0.9285714285714286
+            }
+          ]
+        },
+        "context": {
+          "text": "It does not say, it just says a BMW.",
+          "prompt": "Same as 108 Well, the license they provided comes back to the BMW, because I mean BMW, Volkswagen, same thing, but I'll go look at their video footage and see what I can see. What model BMW?",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.5,
+              "text": " It does not say, it just says a BMW.",
+              "avg_logprob": -0.5018808330808368,
+              "no_speech_prob": 0.01330985315144062,
+              "compression_ratio": 0.9
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795169862.m4a": {
+      "index": 9,
+      "epoch": 1795169862,
+      "sha256": "d0b84242c317faa1ed2d7120028bf9f6618ca76b7fede2018bc3d91840ceac80",
+      "passes": {
+        "original": {
+          "text": "2022.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.5,
+              "text": " 2022.",
+              "avg_logprob": -0.9226139068603516,
+              "no_speech_prob": 0.029039742425084114,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "2022",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 2022",
+              "avg_logprob": -0.938277930021286,
+              "no_speech_prob": 0.01880662515759468,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "2022.",
+          "prompt": "Well, the license they provided comes back to the BMW, because I mean BMW, Volkswagen, same thing, but I'll go look at their video footage and see what I can see. What model BMW? This does not say, this is a BMW.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.5,
+              "text": " 2022.",
+              "avg_logprob": -0.6741430282592773,
+              "no_speech_prob": 0.013110578060150146,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795178845.m4a": {
+      "index": 10,
+      "epoch": 1795178845,
+      "sha256": "d45b1450157646650141e4ded2d926d2794d1d9f3a704df8f935e8ad544950d8",
+      "passes": {
+        "original": {
+          "text": "printer where'd you go",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.84,
+              "text": " printer where'd you go",
+              "avg_logprob": -0.5300667360424995,
+              "no_speech_prob": 0.02697070501744747,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Rinter, where'd you go?",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Rinter, where'd you go?",
+              "avg_logprob": -0.6417544321580366,
+              "no_speech_prob": 0.022160561755299568,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        },
+        "context": {
+          "text": "printer where'd you go",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.84,
+              "text": " printer where'd you go",
+              "avg_logprob": -0.5300667360424995,
+              "no_speech_prob": 0.02697070501744747,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    }
+  }
+}
