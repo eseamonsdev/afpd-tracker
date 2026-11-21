@@ -13,8 +13,43 @@ const CANONICAL_ORIGIN =
 const GREENLAND_PROFILE_PATH = "/police-encounters/cody-wayne-greenland/";
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
+    if (url.pathname === "/admin" || url.pathname.startsWith("/admin/")) {
+      // Enforce sign-in here as well as in Access so alternate hostnames cannot bypass it.
+      if (!ctx.access) return new Response("Access required", { status: 403 });
+      const identity = await ctx.access.getIdentity();
+      if (identity?.email?.toLowerCase() !== "ericseamonsdeveloper@gmail.com") {
+        return new Response("Forbidden", { status: 403 });
+      }
+      if (url.pathname === "/admin" || url.pathname === "/admin/") {
+        return Response.redirect(new URL("/admin/radio-ids/", url), 302);
+      }
+      if (url.pathname === "/admin/api/radio-ids") {
+        if (request.method !== "GET") return new Response(null, { status: 405, headers: { Allow: "GET" } });
+        if (!env.AFPD_DB) return new Response("D1 binding unavailable", { status: 503 });
+        try {
+          const { results } = await env.AFPD_DB.prepare(
+            "SELECT radio_id FROM radio_ids ORDER BY radio_id"
+          ).all();
+          return Response.json({ radio_ids: results.map(row => row.radio_id) }, {
+            headers: { "Cache-Control": "no-store", "X-Content-Type-Options": "nosniff" }
+          });
+        } catch (error) {
+          console.error("Unable to read radio IDs from D1", error);
+          return new Response("Database unavailable", { status: 503 });
+        }
+      }
+      if (request.method !== "GET" && request.method !== "HEAD") {
+        return new Response(null, { status: 405, headers: { Allow: "GET, HEAD" } });
+      }
+      const adminResponse = await env.ASSETS.fetch(request);
+      const protectedResponse = new Response(adminResponse.body, adminResponse);
+      protectedResponse.headers.set("Cache-Control", "no-store");
+      protectedResponse.headers.set("X-Robots-Tag", "noindex, nofollow");
+      return protectedResponse;
+    }
+
     const isOldGreenlandPath = /^\/(?:police-encounters\/)?(?:code|cody)-greenland\/?$/.test(url.pathname);
     const pathname = isOldGreenlandPath ? GREENLAND_PROFILE_PATH : url.pathname;
 
