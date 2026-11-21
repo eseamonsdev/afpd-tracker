@@ -3,6 +3,8 @@
   const dateObject = value => new Date(`${value}T12:00:00Z`);
   const monthFormat = new Intl.DateTimeFormat("en-US", { month: "long", timeZone: "UTC" });
   const dateFormat = new Intl.DateTimeFormat("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
+  const buttonFormat = new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
+  let pickerNumber = 0;
   const validDate = value => /^\d{4}-\d{2}-\d{2}$/.test(value) &&
     Number.isFinite(dateObject(value).getTime()) && dateObject(value).toISOString().slice(0, 10) === value;
 
@@ -27,6 +29,24 @@
       if (text !== undefined) node.textContent = text;
       return node;
     };
+    const trigger = make("button", "radio-calendar-trigger");
+    trigger.type = "button";
+    trigger.setAttribute("aria-expanded", "false");
+    const panel = make("div", "radio-calendar-panel");
+    panel.id = `${container.id || `radio-date-picker-${++pickerNumber}`}-panel`;
+    panel.hidden = true;
+    trigger.setAttribute("aria-controls", panel.id);
+    const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    icon.setAttribute("viewBox", "0 0 24 24");
+    icon.setAttribute("aria-hidden", "true");
+    icon.setAttribute("focusable", "false");
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", "M5 4h14a1 1 0 0 1 1 1v15H4V5a1 1 0 0 1 1-1Zm3-2v5m8-5v5M4 10h16");
+    icon.append(path);
+    const triggerText = make("span");
+    const chevron = make("span", "radio-calendar-chevron");
+    chevron.setAttribute("aria-hidden", "true");
+    trigger.append(icon, triggerText, chevron);
     const intro = make("p", "radio-calendar-help", "Choose a recording date. Only months with recordings are listed; unavailable days are disabled.");
     const availability = make("p", "radio-calendar-availability", `Available years: ${years.join(", ")}`);
     const controls = make("div", "radio-calendar-controls");
@@ -61,10 +81,34 @@
     table.append(caption, head, body);
     const summary = make("p", "radio-calendar-selected");
     summary.setAttribute("role", "status");
-    container.append(intro, availability, controls, heading, table, summary);
+    panel.append(intro, availability, controls, heading, table, summary);
+    container.append(trigger, panel);
     const buttons = new Map();
 
+    function setOpen(open, restoreFocus = false) {
+      panel.hidden = !open;
+      trigger.setAttribute("aria-expanded", String(open));
+      if (open) {
+        viewed = selected.slice(0, 7); focusDate = selected;
+        render(); buttons.get(selected)?.focus();
+      } else if (restoreFocus) trigger.focus();
+    }
+    trigger.addEventListener("click", () => setOpen(panel.hidden));
+    container.addEventListener("keydown", event => {
+      if (event.key === "Escape" && !panel.hidden) {
+        event.preventDefault(); event.stopPropagation(); setOpen(false, true);
+      }
+    });
+    document.addEventListener("pointerdown", event => {
+      if (!panel.hidden && !container.contains(event.target)) setOpen(false);
+    });
+    document.addEventListener("focusin", event => {
+      if (!panel.hidden && !container.contains(event.target)) setOpen(false);
+    });
+
     function render() {
+      triggerText.textContent = buttonFormat.format(dateObject(selected));
+      trigger.setAttribute("aria-label", `Choose recording date: ${triggerText.textContent}`);
       year.value = viewed.slice(0, 4);
       month.replaceChildren();
       for (const value of months.filter(value => value.startsWith(`${year.value}-`))) {
@@ -103,10 +147,11 @@
           for (const [key, node] of buttons) node.tabIndex = key === date ? 0 : -1;
         });
         button.addEventListener("click", () => {
-          if (!entry || date === selected) return;
+          if (!entry) return;
+          const changed = date !== selected;
           selected = date; focusDate = date;
-          render(); buttons.get(date)?.focus();
-          onChange?.(date);
+          render(); setOpen(false, true);
+          if (changed) onChange?.(date);
         });
         button.addEventListener("keydown", event => moveFocus(event, date));
         buttons.set(date, button); cell.append(button);

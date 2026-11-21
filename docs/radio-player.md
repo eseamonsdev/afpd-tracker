@@ -43,6 +43,10 @@ The `/police-radio/` archive trials the reusable recording-date calendar:
 The archive passes its own filtered date index, not a global date range. Only
 years and months containing recordings are offered; individual missing days
 are disabled. Browsing months does not select a day or interrupt playback.
+The selected date is a compact button; activating it expands the calendar
+directly below. Selecting a date (including the already selected date) closes
+the calendar and returns focus to the button. Escape also closes and restores
+focus; clicking or tabbing outside closes without moving focus back.
 Selecting an available day uses the existing manifest loader and date URL.
 Arrow keys move among available dates, Home/End move within a week, and
 Page Up/Down browse available months. Enter/Space select the focused date.
