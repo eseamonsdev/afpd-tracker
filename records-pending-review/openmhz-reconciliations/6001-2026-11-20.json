@@ -1,0 +1,1854 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "talkgroup": 6001,
+  "method": "Editorial comparison of original, filtered and context-assisted small.en ASR passes and adjacent-call context; these are not independent models. No audio listening verification; preserve uncertainty in brackets. Suspected hallucinations/context echoes are marked as unclear.",
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": [
+    {
+      "index": 1,
+      "original_filename": "dcfems-6001-1795169704.m4a",
+      "epoch": 1795169704,
+      "sha256": "364e3fbea86c962b062d35fdc77f8f0354da218addf1122768c85e2412b44001",
+      "passes": {
+        "original": "Since you guys are ahead of me, I'm going to break north on 300 West. Actually, really south.",
+        "filtered": "Since you guys are ahead of me, I'm going to break north on 300 west, and actually north-south.",
+        "context": "Since you guys are ahead of me, I'm going to break north on 300 West. Actually, really south."
+      },
+      "transcript": "Since you guys are ahead of me, I'm going to break north on 300 West. Actually, [really south?].",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 2,
+      "original_filename": "dcfems-6001-1795169712.m4a",
+      "epoch": 1795169712,
+      "sha256": "3349f0f18a337914b862c6eefdf84d29eb11aa75b80bff833fa3b618e3ba09f2",
+      "passes": {
+        "original": "I was going to say I'm already like three, excuse me, four hundred east and then",
+        "filtered": "I was gonna say I'm already like three, excuse me, four hundred East and then",
+        "context": "I was going to say I'm already like three, excuse me, four hundred east of me."
+      },
+      "transcript": "I was going to say I'm already like three—excuse me—400 East [unclear ending].",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 3,
+      "original_filename": "dcfems-6001-1795169722.m4a",
+      "epoch": 1795169722,
+      "sha256": "a82ad4943e980b6b9aecf2e43fa9e90edd9f14a70d3437e414eba20a97621b5e",
+      "passes": {
+        "original": "I'm feeling north.",
+        "filtered": "I'm feeling north.",
+        "context": "feeling north."
+      },
+      "transcript": "I'm [feeling?] north.",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 4,
+      "original_filename": "dcfems-6001-1795169800.m4a",
+      "epoch": 1795169800,
+      "sha256": "dd7e27f6aad12298fce00217ba67e38239403bfa13167190be6948535e2941de",
+      "passes": {
+        "original": "Two in the south is pretty empty unless he turned into one of the neighborhoods or somewhere.",
+        "filtered": "Two in the south is pretty empty unless he turned into one of the neighborhoods or somewhere.",
+        "context": "Two in the south is pretty empty unless he turned into one of the neighborhoods or somewhere."
+      },
+      "transcript": "[Two in the south?] is pretty empty unless he turned into one of the neighborhoods or somewhere.",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 5,
+      "original_filename": "dcfems-6001-1795169814.m4a",
+      "epoch": 1795169814,
+      "sha256": "87aa7402845607b9ae2d8e750bc6af2c37bee452a26d4ac372b49527aa953e81",
+      "passes": {
+        "original": "Same as 108",
+        "filtered": "Same as 180.",
+        "context": "Same as 108."
+      },
+      "transcript": "Same as [108 / 180?].",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 6,
+      "original_filename": "dcfems-6001-1795169835.m4a",
+      "epoch": 1795169835,
+      "sha256": "a1b0cc064c58076f4aae673eebba81bbb18a3728c30994c091ecc5500e6ffdf8",
+      "passes": {
+        "original": "Well, the license they provided comes back to the BMW, because I mean BMW, Volkswagen, same thing, but I'll go look at their video footage and see what I can see.",
+        "filtered": "Well, the license they provided comes back to the BMW, because I mean BMW, Volkswagen, same thing, but I'll go look at their video footage and see what I can see.",
+        "context": "Well, the license they provided comes back to the BMW because I mean BMW, Volkswagen, same thing, but I'll go look at their video footage and see what I can see."
+      },
+      "transcript": "Well, the license they provided comes back to the BMW, because I mean BMW, Volkswagen, same thing, but I'll go look at their video footage and see what I can see.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 7,
+      "original_filename": "dcfems-6001-1795169848.m4a",
+      "epoch": 1795169848,
+      "sha256": "36b1f493e9b1f8c3abc7ec3ef201726ebefaeeb602df3edbe681b560846e9892",
+      "passes": {
+        "original": "What model BMW?",
+        "filtered": "We'll model BMW.",
+        "context": "What model BMW?"
+      },
+      "transcript": "What model BMW?",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 8,
+      "original_filename": "dcfems-6001-1795169858.m4a",
+      "epoch": 1795169858,
+      "sha256": "c575bb9d126e5c2702a114aed04b7d6a90be9203e6573058b2f8c497c7e12121",
+      "passes": {
+        "original": "This does not say, this is a BMW.",
+        "filtered": "It does not say, it just says it's BMW.",
+        "context": "It does not say, it just says a BMW."
+      },
+      "transcript": "It does not say. It just says a BMW.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 9,
+      "original_filename": "dcfems-6001-1795169862.m4a",
+      "epoch": 1795169862,
+      "sha256": "d0b84242c317faa1ed2d7120028bf9f6618ca76b7fede2018bc3d91840ceac80",
+      "passes": {
+        "original": "2022.",
+        "filtered": "2022",
+        "context": "2022."
+      },
+      "transcript": "2022.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 10,
+      "original_filename": "dcfems-6001-1795178845.m4a",
+      "epoch": 1795178845,
+      "sha256": "d45b1450157646650141e4ded2d926d2794d1d9f3a704df8f935e8ad544950d8",
+      "passes": {
+        "original": "printer where'd you go",
+        "filtered": "Rinter, where'd you go?",
+        "context": "printer where'd you go"
+      },
+      "transcript": "[Renter?], where'd you go?",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 11,
+      "original_filename": "dcfems-6001-1795183496.m4a",
+      "epoch": 1795183496,
+      "sha256": "f6c0175a0b2e716c0e119b371f30456e31e0c5e284eae5596b174e2ba3b0002b",
+      "passes": {
+        "original": "It's not where I'm at. It's not me.",
+        "filtered": "It's not where I'm at. It's not me.",
+        "context": "It's not where I'm at. It's not me."
+      },
+      "transcript": "It's not where I'm at. It's not me.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 12,
+      "original_filename": "dcfems-6001-1795183521.m4a",
+      "epoch": 1795183521,
+      "sha256": "1dbdaf44a21731f02aed2c1dfc23a371ee266e24c6beeb540b384c9459fc3d95",
+      "passes": {
+        "original": "This is just the recording party to use further westbound.",
+        "filtered": "This is just the recording party to use further west-south.",
+        "context": "This is just the recording party. She's further westbound."
+      },
+      "transcript": "This is just the [reporting party?]. [Unclear] further westbound.",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 13,
+      "original_filename": "dcfems-6001-1795183569.m4a",
+      "epoch": 1795183569,
+      "sha256": "e17d64a649d61623740bafc74867eef1f00b994a76b6763aa0f3c306e59fa6c0",
+      "passes": {
+        "original": "Perfect! State Fire!",
+        "filtered": "Perfect, great fire.",
+        "context": "Perfect. State fire."
+      },
+      "transcript": "Perfect. [Unclear ending; ASR reads \"State fire\" / \"great fire\".]",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 14,
+      "original_filename": "dcfems-6001-1795184155.m4a",
+      "epoch": 1795184155,
+      "sha256": "d774ae89b5ce719d1e3423031c9c6bb036700312bbbbc9116c8ca49213b51baa",
+      "passes": {
+        "original": "Copy",
+        "filtered": "Poppy.",
+        "context": "Copy"
+      },
+      "transcript": "Copy",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 15,
+      "original_filename": "dcfems-6001-1795184205.m4a",
+      "epoch": 1795184205,
+      "sha256": "1518eaf9458d69caca790615d4ba6740a4522f0b75586033617e54f755e789df",
+      "passes": {
+        "original": "Okay, he's good.",
+        "filtered": "Okay, he's good.",
+        "context": "Okay, he's good"
+      },
+      "transcript": "Okay, he's good.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 16,
+      "original_filename": "dcfems-6001-1795184288.m4a",
+      "epoch": 1795184288,
+      "sha256": "fed4ff9e0efb61ad9cfc19233f9a32609d15c3dd8d01520d0734aa2644fa0792",
+      "passes": {
+        "original": "Is that a no on the veal, or...",
+        "filtered": "Is that an O on the veal, or...",
+        "context": "Is that a no on the veal, or..."
+      },
+      "transcript": "Is that a no on the [veal?], or...",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 17,
+      "original_filename": "dcfems-6001-1795184299.m4a",
+      "epoch": 1795184299,
+      "sha256": "25105171607974b36af4beaccfb20aa118ec633e63e8fcbe26452e6236802364",
+      "passes": {
+        "original": "If you want to drag that yourself, sure.",
+        "filtered": "If you want to drag that yourself, sure.",
+        "context": "If you want to drag that yourself, sure."
+      },
+      "transcript": "If you want to drag that yourself, sure.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 18,
+      "original_filename": "dcfems-6001-1795184501.m4a",
+      "epoch": 1795184501,
+      "sha256": "46806d27adc74bb08cd813f0992a7cd123b3ea7abc06011b112cbaae806f2703",
+      "passes": {
+        "original": "Thank you all for your help.",
+        "filtered": "Thank you all for your help.",
+        "context": "Thank you all for your help."
+      },
+      "transcript": "Thank you all for your help.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 19,
+      "original_filename": "dcfems-6001-1795184516.m4a",
+      "epoch": 1795184516,
+      "sha256": "d38a4d38d1d00108f02c52ef9e86e2ba90ebe7eac0c15f33f977d0171fc65468",
+      "passes": {
+        "original": "Anytime. Does anyone need any study?",
+        "filtered": "Anytime. Does anyone need any veggies?",
+        "context": "Anytime. Does anyone need any help?"
+      },
+      "transcript": "Anytime. Does anyone need any [unclear]?",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 20,
+      "original_filename": "dcfems-6001-1795184523.m4a",
+      "epoch": 1795184523,
+      "sha256": "1e54076d48130d0c316c21b402b5fa46b1872fee5a1c7fe28408b3677f76aa91",
+      "passes": {
+        "original": "Yes.",
+        "filtered": "Yes.",
+        "context": "Yes."
+      },
+      "transcript": "Yes.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 21,
+      "original_filename": "dcfems-6001-1795184536.m4a",
+      "epoch": 1795184536,
+      "sha256": "450b5ded92cf4d2b9643e511ca2548f52ee59aeca7583b1aad1f4721c65902b3",
+      "passes": {
+        "original": "Should we go for two and a half?",
+        "filtered": "Do we go for two and a half?",
+        "context": "Should we go for two and a half?"
+      },
+      "transcript": "Should we go for two and a half?",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 22,
+      "original_filename": "dcfems-6001-1795184543.m4a",
+      "epoch": 1795184543,
+      "sha256": "a0bbb2e9222a9bb89a108bec1a64b738c66f8a5a96b7afbe1b32ccd0d047d105",
+      "passes": {
+        "original": "I'm kind of pushing it now.",
+        "filtered": "Let's try to push it around.",
+        "context": "I'm kind of pushing it now."
+      },
+      "transcript": "I'm kind of pushing it now.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 23,
+      "original_filename": "dcfems-6001-1795184550.m4a",
+      "epoch": 1795184550,
+      "sha256": "6ea5dbb1753a3e45d3f8c9edc864f8d571de8a677562ed9308a72f7b61c5964c",
+      "passes": {
+        "original": "Two minutes, 25 seconds.",
+        "filtered": "Two minutes twenty-five seconds.",
+        "context": "Two minutes, 25 seconds."
+      },
+      "transcript": "Two minutes, 25 seconds.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 24,
+      "original_filename": "dcfems-6001-1795184556.m4a",
+      "epoch": 1795184556,
+      "sha256": "95489fb44e80a5181de7fbfad7539919da4a2a602671c0a28a427cb3378eaf83",
+      "passes": {
+        "original": "Deal.",
+        "filtered": "Deal.",
+        "context": "Deal."
+      },
+      "transcript": "Deal.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 25,
+      "original_filename": "dcfems-6001-1795205884.m4a",
+      "epoch": 1795205884,
+      "sha256": "93a25d27fd0237f0d3bea229c588aed96615eb9d27cbb77e7b18234d39520a42",
+      "passes": {
+        "original": "Jacqueline, I have a reason to go to the hospital.",
+        "filtered": "Jacqueline, I have a reason to go to the hospital.",
+        "context": "Jacqueline, I have a reason to go to the hospital."
+      },
+      "transcript": "[Jacqueline?], I have a reason to go to the hospital.",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 26,
+      "original_filename": "dcfems-6001-1795207451.m4a",
+      "epoch": 1795207451,
+      "sha256": "26341b301b67cab82cb4904735c8bf7eb4769d8a02413aa3e2c9195db6ea2eaf",
+      "passes": {
+        "original": "You",
+        "filtered": "You",
+        "context": "You"
+      },
+      "transcript": "[Unclear transmission; all ASR passes return only \"You\".]",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 27,
+      "original_filename": "dcfems-6001-1795207456.m4a",
+      "epoch": 1795207456,
+      "sha256": "16bd13f0e792cbd77ea6b4a40f7b131f9449aa0383249606697f23f607113e8c",
+      "passes": {
+        "original": "Hey guys, I'm on Audemars right now. I'm not seeing the vehicle yet.",
+        "filtered": "hey guys I'm on autumn all right now I'm not seeing the vehicle yet",
+        "context": "hey guys I'm on autumnal right now I'm not seeing the vehicle yet"
+      },
+      "transcript": "Hey guys, I'm on [Autumnal?] right now. I'm not seeing the vehicle yet.",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 28,
+      "original_filename": "dcfems-6001-1795207580.m4a",
+      "epoch": 1795207580,
+      "sha256": "4ea3ac9a0c9eecd386b42179c6a7bfb8fefb1c9e1ef33b8b7c4af9ab613e150a",
+      "passes": {
+        "original": "car sparked over here kind of by where that car store used to be",
+        "filtered": "car parked over here kind of by where that car store used to be",
+        "context": "car sparked over here kind of by where that car store used to be"
+      },
+      "transcript": "Car's parked over here, kind of by where that car store used to be.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 29,
+      "original_filename": "dcfems-6001-1795208130.m4a",
+      "epoch": 1795208130,
+      "sha256": "6eb92261df0502d0ac3b462ef120f286fa223ea4796a83883fdce1aeea9512ae",
+      "passes": {
+        "original": "That's what I got right now",
+        "filtered": "They got my...",
+        "context": "That's what I got right now"
+      },
+      "transcript": "That's what I got right now.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 30,
+      "original_filename": "dcfems-6001-1795208134.m4a",
+      "epoch": 1795208134,
+      "sha256": "a930894b5706b48619be9eb797c1d51bc5245b6d7fc4d3231afbcecb172c54d6",
+      "passes": {
+        "original": "I found the green bottle, one of the RPs friends found it",
+        "filtered": "I found the green bottle, one of the RFPs friends found it",
+        "context": "I found the green bottle one of the RPs friends found it"
+      },
+      "transcript": "I found the green bottle. One of the RP's friends found it.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 31,
+      "original_filename": "dcfems-6001-1795208147.m4a",
+      "epoch": 1795208147,
+      "sha256": "ad3567c0542d17b5cd4c2dda1001bd3490ce5847b04d28a42a761def1bb7f4c3",
+      "passes": {
+        "original": "Hey, I'm not super worried about this.",
+        "filtered": "Hey, I'm not super worried about this.",
+        "context": "Hey, I'm not super worried about this"
+      },
+      "transcript": "Hey, I'm not super worried about this.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 32,
+      "original_filename": "dcfems-6001-1795208151.m4a",
+      "epoch": 1795208151,
+      "sha256": "d33ab5ca60cb2a4a5ea14f8323a693732d0316b8757dc5a814262bc34e2bc787",
+      "passes": {
+        "original": "This guy's just geocaching",
+        "filtered": "This guy's just geocaching.",
+        "context": "This guy's just geocaching."
+      },
+      "transcript": "This guy's just geocaching",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 33,
+      "original_filename": "dcfems-6001-1795208157.m4a",
+      "epoch": 1795208157,
+      "sha256": "94787c04e64c638519867feb608863ad94e27c68950f84cf7cb7f7fb2f560069",
+      "passes": {
+        "original": "Yeah, the green bottle is like a notepad with a ton of just names and numbers and stuff in there",
+        "filtered": "Yeah, the green bottle is like a notepad with a ton of just names and numbers and stuff in there",
+        "context": "Yeah, the green bottle is like a notepad with a ton of just names and numbers and stuff in there"
+      },
+      "transcript": "Yeah, the green bottle is like a notepad with a ton of just names and numbers and stuff in there",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 34,
+      "original_filename": "dcfems-6001-1795208167.m4a",
+      "epoch": 1795208167,
+      "sha256": "c42e0efa52cb3e479a9f888a11a75a2ba0595c69d9cdb41d0d02517374c7be78",
+      "passes": {
+        "original": "Yeah, not what I was hoping it would be.",
+        "filtered": "Yeah, not when I was hoping it would be.",
+        "context": "Yeah, not what I was hoping it would be"
+      },
+      "transcript": "Yeah, not what I was hoping it would be.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 35,
+      "original_filename": "dcfems-6001-1795209588.m4a",
+      "epoch": 1795209588,
+      "sha256": "008bef0f2b5989608de5162314ec0dbead4c38672eeebbbf3c6d7649d29e913f",
+      "passes": {
+        "original": "Hey David, you want another over there?",
+        "filtered": "Hey David, you want another over there?",
+        "context": "Hey David, you want another over there?"
+      },
+      "transcript": "Hey David, you want another over there?",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 36,
+      "original_filename": "dcfems-6001-1795209596.m4a",
+      "epoch": 1795209596,
+      "sha256": "8031d03a0a26966b7f3cd52cadbfda35cb52b56f3c0a5c65f21d590527cb769f",
+      "passes": {
+        "original": "Sure, I'm just passing all of the gardens.",
+        "filtered": "Sir, I'm just passing on a current.",
+        "context": "Sure, I'm just passing all of the gardens."
+      },
+      "transcript": "Sure, I'm just passing [Olive Garden?].",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 37,
+      "original_filename": "dcfems-6001-1795209607.m4a",
+      "epoch": 1795209607,
+      "sha256": "e754d446d7bbe0cc899ab76593e6e24b97b4e62ea6eb4c6abfb2894e5959c7d1",
+      "passes": {
+        "original": "Are you going to make contact by phone first?",
+        "filtered": "Or are you going to make contact by phone first?",
+        "context": "Are you going to make contact by phone first?"
+      },
+      "transcript": "Are you going to make contact by phone first?",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 38,
+      "original_filename": "dcfems-6001-1795209615.m4a",
+      "epoch": 1795209615,
+      "sha256": "83ebf1b812fde92a1fb5231ee9e6212df92e8daf46676f54e5111cc0b9afcd77",
+      "passes": {
+        "original": "I'm going to move the contract to Christ in line.",
+        "filtered": "I'm probably going to contact the crisis line.",
+        "context": "For a moment of contact with Christ in mind."
+      },
+      "transcript": "[I'm probably going to contact the crisis line?]",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 39,
+      "original_filename": "dcfems-6001-1795209620.m4a",
+      "epoch": 1795209620,
+      "sha256": "be4800f652983aaa1550747fffd2eef2cfc8fc3311de9e8839c08d3d5547513c",
+      "passes": {
+        "original": "Yeah, it was him being a vet. Okay, so you'd be very cautious.",
+        "filtered": "Yeah, it was him being a vet, so he'd be very cautious.",
+        "context": "Yeah, it was him being a vet. Okay, so you'd be very cautious."
+      },
+      "transcript": "Yeah, [with?] him being a vet, [unclear], be very cautious.",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 40,
+      "original_filename": "dcfems-6001-1795209726.m4a",
+      "epoch": 1795209726,
+      "sha256": "d80a5e5bd76dcb902a6930f687425fa1263e3028efc33087f90dd032592e357f",
+      "passes": {
+        "original": "Hey, I'm gonna go park on the run gas station.",
+        "filtered": "Hey Pia, I'm gonna go park on the run gas station.",
+        "context": "Hey, I'm gonna go park on the run gas station."
+      },
+      "transcript": "Hey, I'm going to go park [at On the Run?] gas station.",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 41,
+      "original_filename": "dcfems-6001-1795209732.m4a",
+      "epoch": 1795209732,
+      "sha256": "0a207d3e47b9d3d4ef894fa5576909332f7471c61ce422f6f6d16a64b84a5069",
+      "passes": {
+        "original": "copy I'll meet you over there here in just a few",
+        "filtered": "copy I'll meet you over there here in just a few",
+        "context": "Copy, I'll meet you over there here in just a few."
+      },
+      "transcript": "copy I'll meet you over there here in just a few",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 42,
+      "original_filename": "dcfems-6001-1795210556.m4a",
+      "epoch": 1795210556,
+      "sha256": "a697318e692624d0bed68c29e5945efc1c079cb504025805cc0cb4ec0daedd28",
+      "passes": {
+        "original": "I'll be there in a bit. I just had to grab my body cam from Arkville.",
+        "filtered": "I'll be there in a bit. I just had to grab my body cam for a mark fill.",
+        "context": "I'll be there in a bit. I just had to grab my body cam from Arkville."
+      },
+      "transcript": "I'll be there in a bit. I just had to grab my body cam [unclear ending].",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 43,
+      "original_filename": "dcfems-6001-1795210562.m4a",
+      "epoch": 1795210562,
+      "sha256": "ba1959bd0003e022853182666c473f0dce58a5f6b0e364e6bb27702faa8f526a",
+      "passes": {
+        "original": "You're good. I can take this from you if you want",
+        "filtered": "You're good. I can take this from you if you want.",
+        "context": "You're good. I can take this from you if you want."
+      },
+      "transcript": "You're good. I can take this from you if you want",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 44,
+      "original_filename": "dcfems-6001-1795210575.m4a",
+      "epoch": 1795210575,
+      "sha256": "c992949039b79f8378897fc1f99a6baaae9f8ccb8702b904ef08cac56cfce3cc",
+      "passes": {
+        "original": "Thank you.",
+        "filtered": "Okay.",
+        "context": "I'll be there in a minute. Okay."
+      },
+      "transcript": "[Unclear acknowledgment; ASR reads \"Thank you\" / \"Okay\".]",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 45,
+      "original_filename": "dcfems-6001-1795213280.m4a",
+      "epoch": 1795213280,
+      "sha256": "4a1262cd4d3ddbd7c9b02f0db8ddd1eb672dbfebdc36e7d50410c692d38522d3",
+      "passes": {
+        "original": "Therefore focus",
+        "filtered": "I have to focus",
+        "context": "Therefore focus"
+      },
+      "transcript": "[Unclear transmission; ASR reads \"Therefore focus\" / \"I have to focus\".]",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 46,
+      "original_filename": "dcfems-6001-1795213338.m4a",
+      "epoch": 1795213338,
+      "sha256": "8ed45787c4e1f24f7e0a23be782fe53aa71eb0a1b57984a862d3aeaaa96b7aa3",
+      "passes": {
+        "original": "Negative on the tabernacle.",
+        "filtered": "Negative on the tabernacle.",
+        "context": "Negative on the tabernacle"
+      },
+      "transcript": "Negative on the tabernacle.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 47,
+      "original_filename": "dcfems-6001-1795213367.m4a",
+      "epoch": 1795213367,
+      "sha256": "0bb32c6fef038aa869f16453ecef2cb6790f103da5e6665f4ffb79a15a60229d",
+      "passes": {
+        "original": "Coffee.",
+        "filtered": "Coughing.",
+        "context": "Coffee."
+      },
+      "transcript": "[Copy?]",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 48,
+      "original_filename": "dcfems-6001-1795213711.m4a",
+      "epoch": 1795213711,
+      "sha256": "02dcbf9dd417211f9a576bbd39c556b6b499b64a09c6d8b99fb692e667e3f640",
+      "passes": {
+        "original": "I'm just about to get to 1500 south about 100 east",
+        "filtered": "I'm just about to get to 1500 so about 100 East.",
+        "context": "I'm just about to get to 1500 south about 100 east"
+      },
+      "transcript": "I'm just about to get to 1500 South, about 100 East.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 49,
+      "original_filename": "dcfems-6001-1795221342.m4a",
+      "epoch": 1795221342,
+      "sha256": "1e8ec1d6060f1040499425fe76caab87de33db09a016ede5da8825a2c045b567",
+      "passes": {
+        "original": "Diego's the best.",
+        "filtered": "Diego's the best.",
+        "context": "Diego's the best."
+      },
+      "transcript": "Diego's the best.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 50,
+      "original_filename": "dcfems-6001-1795221503.m4a",
+      "epoch": 1795221503,
+      "sha256": "77006abd253c6fac8182c4080fdcc6e5d0f8da65f6779864f03fd9480058c8a6",
+      "passes": {
+        "original": "Oh, hey there.",
+        "filtered": "Oh, wait, wait.",
+        "context": "Oh, hey there."
+      },
+      "transcript": "[Oh, hey there / Oh, wait, wait?]",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 51,
+      "original_filename": "dcfems-6001-1795226739.m4a",
+      "epoch": 1795226739,
+      "sha256": "579b851f2adf122da5a872392007e6cfc4daba8cf9cc1d4c5d61e1a1da8f4101",
+      "passes": {
+        "original": "I came to CHI with a holiday hair. I think we'll be close for it. I'm just going to fight and release. I'm not in contact.",
+        "filtered": "I came to CHI with Halida here. I think we'll be for four. I'm just going to site and release. I'm not in town here.",
+        "context": "I came to CHI with a holiday hair. I think we'll be close for it. I'm just going to fight and release. I'm not in contact."
+      },
+      "transcript": "[Unclear beginning] with [Halladay?] here. I think [unclear]. I'm just going to [cite and release?]. I'm not [unclear ending].",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 52,
+      "original_filename": "dcfems-6001-1795226751.m4a",
+      "epoch": 1795226751,
+      "sha256": "11b9a6833ce317c985a2781fe92e109e10ec202b7989a8fbe36b0dd02f02c45a",
+      "passes": {
+        "original": "Copy.",
+        "filtered": "Copy.",
+        "context": "Copy."
+      },
+      "transcript": "Copy.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 53,
+      "original_filename": "dcfems-6001-1795226777.m4a",
+      "epoch": 1795226777,
+      "sha256": "6aa2e9defa55f97a5833e78e2b6963e2404d9fc6535c62ff6d5c50c5bf291dfd",
+      "passes": {
+        "original": "Hey Sam, will you verify a good phone number?",
+        "filtered": "Hey Sam, will you verify a good phone number?",
+        "context": "Hey Sam, will you verify a good phone number?"
+      },
+      "transcript": "Hey Sam, will you verify a good phone number?",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 54,
+      "original_filename": "dcfems-6001-1795226783.m4a",
+      "epoch": 1795226783,
+      "sha256": "606e04e414275374680acb0e5624e7a343306b49431c75b3febb368c063c70e5",
+      "passes": {
+        "original": "We got cut off by this one.",
+        "filtered": "We got cut off by this one.",
+        "context": "We got kind of off on a good phone number."
+      },
+      "transcript": "We got cut off [by this one?].",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 55,
+      "original_filename": "dcfems-6001-1795227570.m4a",
+      "epoch": 1795227570,
+      "sha256": "29910b905e10c66fb01b675686be33570fd258f08b71a67b7f4bd690b66ece33",
+      "passes": {
+        "original": "I'm going to take off for you.",
+        "filtered": "I'm going to take it off for you.",
+        "context": "I'm going to take off for you."
+      },
+      "transcript": "I'm going to take [it?] off for you.",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 56,
+      "original_filename": "dcfems-6001-1795228007.m4a",
+      "epoch": 1795228007,
+      "sha256": "fafd031c65eaa86a28bdbd2960e7d69a27feaeccbde42b9103aae4b6bea5a1d3",
+      "passes": {
+        "original": "Am I still on the cat?",
+        "filtered": "I still am a cad.",
+        "context": "Am I still on the cat?"
+      },
+      "transcript": "Am I still on the [CAD?]?",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 57,
+      "original_filename": "dcfems-6001-1795228016.m4a",
+      "epoch": 1795228016,
+      "sha256": "a60781e64c2f054bb315a7d161a26473e7e4d58b79ed42a55981e6f5b9ba90b0",
+      "passes": {
+        "original": "Yes, you are.",
+        "filtered": "Yes, you are.",
+        "context": "Yes, you are."
+      },
+      "transcript": "Yes, you are.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 58,
+      "original_filename": "dcfems-6001-1795228824.m4a",
+      "epoch": 1795228824,
+      "sha256": "ab9a32e6f7811ba78c77f90cdd05f04bd9226c33083a2b0606c62830b027c3b7",
+      "passes": {
+        "original": "I'm still at the PD, I probably won't head over there unless they need me.",
+        "filtered": "I'm still in PD, I probably won't head over there unless they need me.",
+        "context": "I'm still at the PD, I probably won't head over there unless they need me."
+      },
+      "transcript": "I'm still at the PD, I probably won't head over there unless they need me.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 59,
+      "original_filename": "dcfems-6001-1795228831.m4a",
+      "epoch": 1795228831,
+      "sha256": "7105eb16a6c94c53156cc8c2f9f322ed84ce6a59e3062a838888c6b0cf2fa33b",
+      "passes": {
+        "original": "Copy. Just letting you know.",
+        "filtered": "Copy. Just letting you know.",
+        "context": "Copy, just letting you know."
+      },
+      "transcript": "Copy. Just letting you know.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 60,
+      "original_filename": "dcfems-6001-1795229343.m4a",
+      "epoch": 1795229343,
+      "sha256": "9b17d2b0e333947dc0fc8a89d330f5a789b08a8abc014f4488625faea9a6ec26",
+      "passes": {
+        "original": "Hey Sam, I'm at about 490 east in state. I'll keep an eye out for it.",
+        "filtered": "I see sand on that. About 490 east in state. I'll keep an eye out for it.",
+        "context": "Hey Sam, I'm at about 490 east in state. I'll keep an eye out for it."
+      },
+      "transcript": "Hey Sam, I'm at about 490 East and State. I'll keep an eye out for it.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 61,
+      "original_filename": "dcfems-6001-1795229502.m4a",
+      "epoch": 1795229502,
+      "sha256": "e13817856c06a680571ab96e18b68bb9e83303dd2eb144bb4bfa6abdb33a280c",
+      "passes": {
+        "original": "Is it Morgan",
+        "filtered": "Is it Morgan",
+        "context": "Is it Morgan"
+      },
+      "transcript": "Is it Morgan?",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 62,
+      "original_filename": "dcfems-6001-1795231821.m4a",
+      "epoch": 1795231821,
+      "sha256": "251d5dc0b444dcca4f2483fdf105735fcfaca9ded0ea9f980bfe497a1e20c6e0",
+      "passes": {
+        "original": "What did you say Sam?",
+        "filtered": "What did you say, Sam?",
+        "context": "What did you say Sam?"
+      },
+      "transcript": "What did you say Sam?",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 63,
+      "original_filename": "dcfems-6001-1795231824.m4a",
+      "epoch": 1795231824,
+      "sha256": "69a66788475911c55a26147fdfe52d7fbd29c002eb0e0572a2c2ef47f9059401",
+      "passes": {
+        "original": "Anyone interested in taking early tonight?",
+        "filtered": "Anyone interested in speaking early tonight?",
+        "context": "Anyone interested in eating early tonight?"
+      },
+      "transcript": "Anyone interested in [eating?] early tonight?",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 64,
+      "original_filename": "dcfems-6001-1795231830.m4a",
+      "epoch": 1795231830,
+      "sha256": "8306e56f41afcadefad8c5b258f1b8d7b879192f54ef25d6a7dd464eedc7d821",
+      "passes": {
+        "original": "Absolutely.",
+        "filtered": "Absolutely.",
+        "context": "Absolutely."
+      },
+      "transcript": "Absolutely.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 65,
+      "original_filename": "dcfems-6001-1795231836.m4a",
+      "epoch": 1795231836,
+      "sha256": "8b3daa601eeb6666e5335ac47a08f11c3e05a75f4ef8b02c4db7453ad773ce57",
+      "passes": {
+        "original": "Just tell me when and where.",
+        "filtered": "Just tell me when and where.",
+        "context": "Just tell me when and where."
+      },
+      "transcript": "Just tell me when and where.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 66,
+      "original_filename": "dcfems-6001-1795231849.m4a",
+      "epoch": 1795231849,
+      "sha256": "6a1055677e102f9df8b83ab119dbebc16d3027b6f164e56ac9b8506757a3b9c5",
+      "passes": {
+        "original": "Sam, what time are you thinking?",
+        "filtered": "Sam, what time are you thinking?",
+        "context": "Sam, what time are you thinking?"
+      },
+      "transcript": "Sam, what time are you thinking?",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 67,
+      "original_filename": "dcfems-6001-1795231854.m4a",
+      "epoch": 1795231854,
+      "sha256": "95ead48e7c1abe76d8d96af9299ff7ec3290059cffdc6b8cebe88fd62e6c4cda",
+      "passes": {
+        "original": "Uh, and it is pretty fun, okay?",
+        "filtered": "Uh, China 1030 sound OK?",
+        "context": "Uh, China 1030, Sam, OK?"
+      },
+      "transcript": "[Unclear beginning] 10:30 sound okay?",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 68,
+      "original_filename": "dcfems-6001-1795231862.m4a",
+      "epoch": 1795231862,
+      "sha256": "cf242502d3302c03fc499c11a56bf28c4d1cdc121b383165eebd92803fb58763",
+      "passes": {
+        "original": "Yeah, I was thinking like, 9.30.",
+        "filtered": "Yeah, I was thinking like, 9.30.",
+        "context": "Yeah, I was thinking like, 9.30."
+      },
+      "transcript": "Yeah, I was thinking like 9:30.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 69,
+      "original_filename": "dcfems-6001-1795231881.m4a",
+      "epoch": 1795231881,
+      "sha256": "18c77f21ac045172f043fad6f4f467666f90df70d214db4e8352bdc01098038f",
+      "passes": {
+        "original": "Let's just say 10.",
+        "filtered": "Let's just say 10.",
+        "context": "Let's just say 10."
+      },
+      "transcript": "Let's just say 10.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 70,
+      "original_filename": "dcfems-6001-1795231887.m4a",
+      "epoch": 1795231887,
+      "sha256": "0efee0addb608f610777c7e51bc68d0524ea323f5b42b734063f14179728926b",
+      "passes": {
+        "original": "Yeah, that sounds good. I gotta pick up. So if anyone has an option, let me know.",
+        "filtered": "Yeah, that sounds good. I gotta pick up. So if anyone has an option, let me know.",
+        "context": "Yeah, that sounds good. I gotta pick up. So if anyone has an option, let me know."
+      },
+      "transcript": "Yeah, that sounds good. I gotta pick up. So if anyone has an option, let me know.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 71,
+      "original_filename": "dcfems-6001-1795235781.m4a",
+      "epoch": 1795235781,
+      "sha256": "fc62ab07f0aa6e5d855fe97612aab826cf90c21a484c4456fbf6df7d3427104d",
+      "passes": {
+        "original": "Yes, sir.",
+        "filtered": "Yes, sir.",
+        "context": "Yes, sir."
+      },
+      "transcript": "Yes, sir.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 72,
+      "original_filename": "dcfems-6001-1795236040.m4a",
+      "epoch": 1795236040,
+      "sha256": "02e7c2d6a1555a963ff1c264aca336039de48e28950b8da73d0c86f9660917e9",
+      "passes": {
+        "original": "I think I'm going to go get coaster.",
+        "filtered": "I think I'm going to go get Costa.",
+        "context": "I think I'm going to go get coaster."
+      },
+      "transcript": "I think I'm going to go get [Costa?].",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 73,
+      "original_filename": "dcfems-6001-1795237531.m4a",
+      "epoch": 1795237531,
+      "sha256": "3071ffab1ae5cb9171dfa7f907215f0c33a681bd2d1d1da446a22be32ddcbfe5",
+      "passes": {
+        "original": "Yeah, sounds good.",
+        "filtered": "Yeah, sounds good.",
+        "context": "Yeah, sounds good."
+      },
+      "transcript": "Yeah, sounds good.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 74,
+      "original_filename": "dcfems-6001-1795237640.m4a",
+      "epoch": 1795237640,
+      "sha256": "9dea64eb7cd33cc9a4d7a289bd29cee3fbd630b39ce3214211ca50a577e50a09",
+      "passes": {
+        "original": "What do you guys need me for?",
+        "filtered": "What do you guys need, man?",
+        "context": "What do you guys need me for?"
+      },
+      "transcript": "What do you guys need [me for?]",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 75,
+      "original_filename": "dcfems-6001-1795237651.m4a",
+      "epoch": 1795237651,
+      "sha256": "89f7f0185f64540e4099730b600df5dd9d4067280db2e2e24292c109e9b797d3",
+      "passes": {
+        "original": "Hey Sam, there's a lady that's walking westbound towards extended stay right now.",
+        "filtered": "Okay, Sam, there's a lady that's walking westbound towards extended stay right now.",
+        "context": "Hey Sam, there's a lady that's walking westbound towards extended stay right now."
+      },
+      "transcript": "Hey Sam, there's a lady that's walking westbound towards extended stay right now.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 76,
+      "original_filename": "dcfems-6001-1795237661.m4a",
+      "epoch": 1795237661,
+      "sha256": "ecab739dce1bdb284c4d8ccb06ab10200b542c9252ee6b29e4e3894cc546b56e",
+      "passes": {
+        "original": "Coffee, I got a flood of my five-pioneer.",
+        "filtered": "Coffee I got off blood as my five-pioneer.",
+        "context": "Coffee, I got a flood of my five-pioneer."
+      },
+      "transcript": "[Copy?], I got [unclear] by Pioneer.",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 77,
+      "original_filename": "dcfems-6001-1795237688.m4a",
+      "epoch": 1795237688,
+      "sha256": "0f712280d2fce755a5a3734586cda32c386f49843708c770d788d9a788383b4f",
+      "passes": {
+        "original": "Sam, why don't you stay on the west side of the overpass and check those two bridges, and then I'll check the east side.",
+        "filtered": "Sam, why don't you stay on the west side of the overcast and check those two bridges and then I'll check the east side.",
+        "context": "Sam, why don't you stay on the west side of the overpass and check those two bridges and then I'll check the east side."
+      },
+      "transcript": "Sam, why don't you stay on the west side of the overpass and check those two bridges, and then I'll check the east side.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 78,
+      "original_filename": "dcfems-6001-1795237700.m4a",
+      "epoch": 1795237700,
+      "sha256": "275636ae2c0b7e59ca795fcee0c35d377edbbe56b7d3902a0b7f56ac3473d407",
+      "passes": {
+        "original": "Copy. Did you hear? Okay, traffic.",
+        "filtered": "Copy. Did you hear? Did you hear traffic?",
+        "context": "Coffee, did you hear? Okay, traffic."
+      },
+      "transcript": "Copy. Did you hear [unclear] traffic?",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 79,
+      "original_filename": "dcfems-6001-1795237715.m4a",
+      "epoch": 1795237715,
+      "sha256": "d4a580a329c648af699bacc4ef3b0d7f11984cd8323395d6dcc7287b060a448b",
+      "passes": {
+        "original": "Yeah, she's walking west down on the sidewalk area towards, like, the parking right. She's cleared the intersection, or sorry, the overpass area.",
+        "filtered": "Yeah, she's walking west down on the sidewalk area, towards like the park and right. She's cleared the intersection, sorry, the overpass area.",
+        "context": "Yeah, she's walking west down on the sidewalk area towards, like, the parking right. She's cleared the intersection, or sorry, the overpass area."
+      },
+      "transcript": "Yeah, she's walking westbound on the sidewalk area towards, like, the [park and ride?]. She's cleared the intersection—or sorry, the overpass area.",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 80,
+      "original_filename": "dcfems-6001-1795237730.m4a",
+      "epoch": 1795237730,
+      "sha256": "e3943f1721c114cae38c0da2e1de2f8ecb92ff9b99a6601792deba65831585de",
+      "passes": {
+        "original": "Is anyone close to her to make contact?",
+        "filtered": "Is anyone close to her to make contact?",
+        "context": "Is anyone close to her to make contact?"
+      },
+      "transcript": "Is anyone close to her to make contact?",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 81,
+      "original_filename": "dcfems-6001-1795237739.m4a",
+      "epoch": 1795237739,
+      "sha256": "905c3171c5ddd5d927831af115c9dd5e92ac6c8c3b82d1b50696fa4f3f530cda",
+      "passes": {
+        "original": "Okay, I'm at the light behind you.",
+        "filtered": "Okay, I'm about to light my thing.",
+        "context": "Okay, I'm at the light behind you."
+      },
+      "transcript": "Okay, I'm at the light behind you.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 82,
+      "original_filename": "dcfems-6001-1795237789.m4a",
+      "epoch": 1795237789,
+      "sha256": "9d6c3599a7a6399e24cb7b6ea18c50cd9b8aec6fa668cdbd1d39f40bc72d0cad",
+      "passes": {
+        "original": "You",
+        "filtered": "You",
+        "context": "Is anyone close to her?"
+      },
+      "transcript": "[Unclear transmission; original and filtered passes return only \"You\"; context appears to repeat an earlier call.]",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 83,
+      "original_filename": "dcfems-6001-1795237811.m4a",
+      "epoch": 1795237811,
+      "sha256": "82f2586a348d642e4264408cfbe077bc94bbd8ad092b8f2f52563ad9ca9c0aae",
+      "passes": {
+        "original": "Thank you.",
+        "filtered": "Okay. Okay. Okay. Okay. Okay.",
+        "context": "You"
+      },
+      "transcript": "[Unclear transmission; conflicting ASR readings and repetition.]",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 84,
+      "original_filename": "dcfems-6001-1795237880.m4a",
+      "epoch": 1795237880,
+      "sha256": "13ff24a428f8812d3bbf52394ae4af3efe49c0a3721f7f3d0cdf133359d570b0",
+      "passes": {
+        "original": "They overpass in the eastbound direction is all clear.",
+        "filtered": "They overpass in the eastbound direction, is all clear.",
+        "context": "They overpass in the eastbound direction is all clear."
+      },
+      "transcript": "The overpass in the eastbound direction is all clear.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 85,
+      "original_filename": "dcfems-6001-1795237902.m4a",
+      "epoch": 1795237902,
+      "sha256": "58096019dff76bc13620f85c748d49b51a789e2cf250d9bacd5916ee93d45ce0",
+      "passes": {
+        "original": "I was able to find one of Pitt's reports. It's not the same female.",
+        "filtered": "I was able to find one of Pitt's reports. It's not the same female.",
+        "context": "I was able to find one of Pitt's reports. It's not the same female."
+      },
+      "transcript": "I was able to find one of Pitt's reports. It's not the same female.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 86,
+      "original_filename": "dcfems-6001-1795237911.m4a",
+      "epoch": 1795237911,
+      "sha256": "f1efefcf5dda4827119644b70d8111efaf26c5d34826553f0c2981887284784c",
+      "passes": {
+        "original": "Copy, thanks.",
+        "filtered": "Copy, thanks.",
+        "context": "Copy, thanks."
+      },
+      "transcript": "Copy, thanks.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 87,
+      "original_filename": "dcfems-6001-1795237995.m4a",
+      "epoch": 1795237995,
+      "sha256": "7fede7c91306b15da3ed71f3e1d7e21d87f35a924b43fbd95bff3c0dc97060b7",
+      "passes": {
+        "original": "You guys have it in the know.",
+        "filtered": "You guys copy and then I'll...",
+        "context": "You guys have it in the know."
+      },
+      "transcript": "[Unclear transmission; ASR reads \"You guys have it in the know\" / \"You guys copy and then I'll\".]",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 88,
+      "original_filename": "dcfems-6001-1795238003.m4a",
+      "epoch": 1795238003,
+      "sha256": "592497617cc1afd1114ad3cf6caf729c65abe7667498195561090a2f5db7e5b8",
+      "passes": {
+        "original": "Negative, I'm on full, what does it say?",
+        "filtered": "Negative, I'm on full, what does it say?",
+        "context": "Negative. I'm on full. What does it say?"
+      },
+      "transcript": "Negative, I'm on [unclear]. What does it say?",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 89,
+      "original_filename": "dcfems-6001-1795238030.m4a",
+      "epoch": 1795238030,
+      "sha256": "a55db67b907449b8f86c718cceaf24629d4fe02a9e096395fe051dd607a7c0d6",
+      "passes": {
+        "original": "Yeah, it's a big area.",
+        "filtered": "Yeah, it's a big area.",
+        "context": "Yeah, it's a big area."
+      },
+      "transcript": "Yeah, it's a big area.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 90,
+      "original_filename": "dcfems-6001-1795238033.m4a",
+      "epoch": 1795238033,
+      "sha256": "c50d86262a97b88473c0a5996bc938738d0415b9cba3c6aea1eff509e0cf07e6",
+      "passes": {
+        "original": "Yeah.",
+        "filtered": "Yeah.",
+        "context": "Yeah."
+      },
+      "transcript": "Yeah.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 91,
+      "original_filename": "dcfems-6001-1795238064.m4a",
+      "epoch": 1795238064,
+      "sha256": "52e08a4ca343960312a680c867cf038b3438a5f96bf5f76984928c61501291b9",
+      "passes": {
+        "original": "Okay, six. I think I located her under the overpass. Can I get units in my location, please?",
+        "filtered": "Okay, I think I located her under the overcast. Can I get units in my location, please?",
+        "context": "Okay, I think I located her under the overpass. Can I get units in my location, please?"
+      },
+      "transcript": "[Unclear opening] I think I located her under the overpass. Can I get units in my location, please?",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 92,
+      "original_filename": "dcfems-6001-1795238154.m4a",
+      "epoch": 1795238154,
+      "sha256": "4fa0e7912875c05de3842dc807055ce046ab0ecda8980db490d8c66d644c31c8",
+      "passes": {
+        "original": "Negative, let's just wait for UHP.",
+        "filtered": "Negative. Let's just wait for UHP.",
+        "context": "Negative, let's just wait for UHP."
+      },
+      "transcript": "Negative, let's just wait for UHP.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 93,
+      "original_filename": "dcfems-6001-1795238160.m4a",
+      "epoch": 1795238160,
+      "sha256": "8ab1503e14ccb26d2ee152a42938839f0b4a5343d4f2462be4d7ae8b987320a8",
+      "passes": {
+        "original": "Copy. I'll head you away then.",
+        "filtered": "Copy. I'll head you away then.",
+        "context": "Copy. I'll head you away then."
+      },
+      "transcript": "Copy. I'll head [your way?] then.",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 94,
+      "original_filename": "dcfems-6001-1795238219.m4a",
+      "epoch": 1795238219,
+      "sha256": "8b34c1bf6c7700eec158e10d00dc3bb413749848d06f062f47acd0de6a34eb6d",
+      "passes": {
+        "original": "Dave, are you on the side closest to In-N-Out, on the eastbound?",
+        "filtered": "David are you on the side closest to in and out on the eastbound?",
+        "context": "David, are you on the side closest to In-N-Out, on the eastbound?"
+      },
+      "transcript": "[Dave / David?], are you on the side closest to In-N-Out, on the eastbound?",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 95,
+      "original_filename": "dcfems-6001-1795238282.m4a",
+      "epoch": 1795238282,
+      "sha256": "fb34fb7fc2b7cc026e7e76fca9c99174fa2ac3aa1925018e8dcbf777338884a2",
+      "passes": {
+        "original": "There you go, I parked around in your vehicle, I'm just on foot.",
+        "filtered": "Yeah, you know, I park around in your vehicle, I'm just on foot.",
+        "context": "There you go, I parked around in your vehicle, I'm just on foot."
+      },
+      "transcript": "[Unclear beginning] I parked [unclear] your vehicle. I'm just on foot.",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 96,
+      "original_filename": "dcfems-6001-1795238795.m4a",
+      "epoch": 1795238795,
+      "sha256": "6f56f7f3f016d3f4041a29ede62082b4e6a7b6784d064b75b11fc72c9f050060",
+      "passes": {
+        "original": "Charles, I need to reach you by 21, can you answer the phone?",
+        "filtered": "Charles, I need to reach you by 21, can you answer the phone?",
+        "context": "Charles, I need to reach you by 21, can you answer the phone?"
+      },
+      "transcript": "[Charles?], I need to reach you by 21. Can you answer the phone?",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 97,
+      "original_filename": "dcfems-6001-1795240912.m4a",
+      "epoch": 1795240912,
+      "sha256": "ec2153eceb16e4cd72965522b6e13185a40442c0653f271b9e38bcc29fc3abd5",
+      "passes": {
+        "original": "Does anyone have eyes on them? Because I have a white forward right now that I'm following.",
+        "filtered": "Does anyone have eyes on them because I have a white forward right now that I'm following?",
+        "context": "Does anyone have eyes on them? Because I have a white forward right now that I'm following."
+      },
+      "transcript": "Does anyone have eyes on them? Because I have a white [Ford?] right now that I'm following.",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 98,
+      "original_filename": "dcfems-6001-1795240972.m4a",
+      "epoch": 1795240972,
+      "sha256": "2cd4b1c831888a3069016c31d604bb6fd3e819b2b569ef94fadede60f9feb4d9",
+      "passes": {
+        "original": "There you go, soft run.",
+        "filtered": "Here you go, soft run.",
+        "context": "There you go, soft run."
+      },
+      "transcript": "[Unclear transmission; ASR reads \"There you go, soft run\" / \"Here you go, soft run\".]",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 99,
+      "original_filename": "dcfems-6001-1795240980.m4a",
+      "epoch": 1795240980,
+      "sha256": "df52be10d0bb2a4b8f64813ffb41357205ebceed51e4b7cdc80f59a085595364",
+      "passes": {
+        "original": "Okay, your cruise lights are on.",
+        "filtered": "Okay, your cruise lights are on.",
+        "context": "Okay, your cruise lights are on."
+      },
+      "transcript": "Okay, your cruise lights are on.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 100,
+      "original_filename": "dcfems-6001-1795241008.m4a",
+      "epoch": 1795241008,
+      "sha256": "80adc51b2db6d2666a3a404b8de230dee79870f66eb8d250ab15e392d870f3b5",
+      "passes": {
+        "original": "Hey, Colleppi or Halliday or Valadez, did either of you guys have a white truck behind you on Main Street a second ago?",
+        "filtered": "Hey, Colleppi or Halliday or Valada, did either of you guys have a white truck behind you on Main Street a second ago?",
+        "context": "Hey, Colleppi or Halliday or Valadez, did either of you guys have a white truck behind you on Main Street a second ago?"
+      },
+      "transcript": "Hey, [Kelepi?] or Halladay or [Valadez?], did either of you guys have a white truck behind you on Main Street a second ago?",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 101,
+      "original_filename": "dcfems-6001-1795241037.m4a",
+      "epoch": 1795241037,
+      "sha256": "dcf729977b5b5518769680e9394ca87de3ea87e21dfc9f402512fda00209ab71",
+      "passes": {
+        "original": "The truck is eastbound, right? I'm sitting still on Main Street at the overpass.",
+        "filtered": "The truck is eastbound, right? I'm sitting still on Main Street at the overpass.",
+        "context": "The truck is eastbound, right? I'm sitting still on Main Street at the overpass."
+      },
+      "transcript": "The truck is eastbound, right? I'm sitting still on Main Street at the overpass.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 102,
+      "original_filename": "dcfems-6001-1795241048.m4a",
+      "epoch": 1795241048,
+      "sha256": "a85a5c01331d0cc4552a9a70665cac06ba46993d8c1578a32624f155c0ba9437",
+      "passes": {
+        "original": "Yeah, I believe they said it was last seen going eastbound at center of Maine",
+        "filtered": "Yeah, I believe they said it was last seen going eastbound at center of Maine.",
+        "context": "Yeah, I believe they said it was last seen going eastbound at center of Main Street."
+      },
+      "transcript": "Yeah, I believe they said it was last seen going eastbound at [Center and Main?].",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 103,
+      "original_filename": "dcfems-6001-1795241106.m4a",
+      "epoch": 1795241106,
+      "sha256": "bebfc60036fecb9ffda23c41ed745024ac743668c9d4bcb362567aecae361ccf",
+      "passes": {
+        "original": "Manus, are you with the potential suspect?",
+        "filtered": "are you with the, uh, potential suspect?",
+        "context": "Maine, are you with the potential suspect?"
+      },
+      "transcript": "[Unclear name], are you with the potential suspect?",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 104,
+      "original_filename": "dcfems-6001-1795241272.m4a",
+      "epoch": 1795241272,
+      "sha256": "78a89350b18ece0b97ada5738654986b8463da22f5a64fae16a802bd3f92eaa9",
+      "passes": {
+        "original": "Hey, Howdy.",
+        "filtered": "Hey, Halliday.",
+        "context": "Hey, Howdy."
+      },
+      "transcript": "Hey, [Halladay?].",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 105,
+      "original_filename": "dcfems-6001-1795241275.m4a",
+      "epoch": 1795241275,
+      "sha256": "14866715aadd2c9a9a32b76f4a7a1f7a24dd6e4eb2be9d3f4be284efc20073c1",
+      "passes": {
+        "original": "Got it.",
+        "filtered": "Got it.",
+        "context": "Got it."
+      },
+      "transcript": "Got it.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 106,
+      "original_filename": "dcfems-6001-1795241291.m4a",
+      "epoch": 1795241291,
+      "sha256": "497ecbce44ac56296a53ae93c03a6a02968e2456289cf679f0a70c9d29981b0d",
+      "passes": {
+        "original": "That's where I thought they were going.",
+        "filtered": "That's where I thought they were going.",
+        "context": "That's where I thought they were going."
+      },
+      "transcript": "That's where I thought they were going.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 107,
+      "original_filename": "dcfems-6001-1795241305.m4a",
+      "epoch": 1795241305,
+      "sha256": "d07806f928a7b6d9a221bc895b26371def3d2f7dc7e0f41c80b694ba3da9355b",
+      "passes": {
+        "original": "You can check the service where they're at.",
+        "filtered": "You can check the service and see where they're at.",
+        "context": "You can check the service. This is where they're at."
+      },
+      "transcript": "You can check the [service?] and see where they're at.",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 108,
+      "original_filename": "dcfems-6001-1795241323.m4a",
+      "epoch": 1795241323,
+      "sha256": "e5005547765f9632b8bac4556a87669e37b2e872763abae2406f1c82da39128e",
+      "passes": {
+        "original": "However, I don't know if you copied the last notes, but the officer in charge of the agency assistance on another call and will call us back shortly.",
+        "filtered": "However, I don't know if you copied the last notes, but the officer in charge of the agency use this to zone another call and we'll call it back shortly.",
+        "context": "However, I don't know if you copied the last notes, but the officer in charge of the agency assistance on another call and will call us back shortly."
+      },
+      "transcript": "[Unclear opening], I don't know if you copied the last notes, but the officer in charge of the [agency assist?] is on another call and will call us back shortly.",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 109,
+      "original_filename": "dcfems-6001-1795241349.m4a",
+      "epoch": 1795241349,
+      "sha256": "dd3f2ed46e150be14d0cccedde2ef02c3906ff42ae65af3f1aa5f832797410dd",
+      "passes": {
+        "original": "I got contact with MCOD. I'm awaiting a phone call back, but they are familiar with the patient. I'm good to go 10a and help somebody or I can go to the hospital.",
+        "filtered": "I got contact with MCOD. I'm awaiting a phone call back but they are familiar with the patient. I'm good to go 10-8 and help somebody or I can go to the hospital.",
+        "context": "I got contact with MCOD. I'm awaiting a phone call back, but they are familiar with the patient. I'm good to go 10-A and help somebody or I can go to the hospital."
+      },
+      "transcript": "I got contact with [MCOT?]. I'm awaiting a phone call back, but they are familiar with the patient. I'm good to go 10-8 and help somebody, or I can go to the hospital.",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 110,
+      "original_filename": "dcfems-6001-1795241364.m4a",
+      "epoch": 1795241364,
+      "sha256": "db1e8ce5ff28fac4b21b49068e114eaaef520fcf4fec0d4ba7b65265350520aa",
+      "passes": {
+        "original": "Thanks for doing that. Did you give him a holiday phone number?",
+        "filtered": "Thanks for doing that. Did you give him Halliday phone number?",
+        "context": "Thanks for doing that. Did you give him a holiday phone number?"
+      },
+      "transcript": "Thanks for doing that. Did you give [them?] Halladay's phone number?",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 111,
+      "original_filename": "dcfems-6001-1795241369.m4a",
+      "epoch": 1795241369,
+      "sha256": "88a5064f266930c9d6ff0be4726030ea656e8dc30e1a65fe4e69093dd01790ad",
+      "passes": {
+        "original": "Negative, I gave them my cell phone.",
+        "filtered": "Negative, I gave them my cell phone.",
+        "context": "Negative, I gave him my cell phone."
+      },
+      "transcript": "Negative, I gave them my cell phone.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 112,
+      "original_filename": "dcfems-6001-1795241374.m4a",
+      "epoch": 1795241374,
+      "sha256": "2e4abf8270a4741bc591f49cbbedc41a2a760b39a90745f82029533cfa7f40dd",
+      "passes": {
+        "original": "That works.",
+        "filtered": "That works.",
+        "context": "That works. You can go 10a."
+      },
+      "transcript": "That works.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 113,
+      "original_filename": "dcfems-6001-1795241377.m4a",
+      "epoch": 1795241377,
+      "sha256": "4470eff86056a473e2d8078ae7cd8757b64a02b71720d5ec3cccaf9b09a21f88",
+      "passes": {
+        "original": "Bye-bye.",
+        "filtered": "Okay.",
+        "context": "Bye-bye."
+      },
+      "transcript": "[Unclear acknowledgment; ASR reads \"Bye-bye\" / \"Okay\".]",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 114,
+      "original_filename": "dcfems-6001-1795241706.m4a",
+      "epoch": 1795241706,
+      "sha256": "e3999ee479110d218c0882b1a08c8c3c382fc6a3587a6f5232b6b5c57d7b8d75",
+      "passes": {
+        "original": "Anybody still on the mental patient, if you look at your locals and look under the comments, there's a phone number to contact.",
+        "filtered": "Hey, anybody still on the mental patient, if you look at her locals and look under the comments, there's a phone number to contact.",
+        "context": "Anybody still on the mental patient, if you look at your locals and look under the comments, there's a phone number to contact."
+      },
+      "transcript": "Anybody still on the mental patient, if you look at [her / your?] locals and look under the comments, there's a phone number to contact.",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 115,
+      "original_filename": "dcfems-6001-1795241920.m4a",
+      "epoch": 1795241920,
+      "sha256": "55254deb7885582fdfabf67ee53dbba08aa4fadc128ffd787671855e7b81e073",
+      "passes": {
+        "original": "Okay, one of the employees is confirmed saying that she was a non-flood.",
+        "filtered": "Okay, one of the employees is confirmed saying that she didn't split enough",
+        "context": "Okay, one of the employees is confirmed saying that she was a non-flood."
+      },
+      "transcript": "Okay, one of the employees [confirmed?] saying that she [unclear ending].",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 116,
+      "original_filename": "dcfems-6001-1795242362.m4a",
+      "epoch": 1795242362,
+      "sha256": "c3a0b5d79a5a68e25bf9534a0eb38f88461e9b32cd84d9d0c901bc8f9b79e2e7",
+      "passes": {
+        "original": "Hey, there's a gray Toyota Corolla that just came pulling up toward this vehicle and then they saw me and now they're leaving. I don't know if anyone's able to get behind them and follow them. They're northbound on Center Street, might be the suspect.",
+        "filtered": "Hey there's a gray Toyota Corolla that just came pulling up toward this vehicle and then they saw me and now they're leaving. I don't know if anyone's able to get behind them and follow them. They're northbound on Center Street might be the suspect.",
+        "context": "Hey, there's a gray Toyota Corolla that just came pulling up toward this vehicle and then they saw me and now they're leaving. I don't know if anyone's able to get behind them and follow them. They're northbound on Center Street, might be the suspect."
+      },
+      "transcript": "Hey, there's a gray Toyota Corolla that just came pulling up toward this vehicle and then they saw me and now they're leaving. I don't know if anyone's able to get behind them and follow them. They're northbound on Center Street, might be the suspect.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 117,
+      "original_filename": "dcfems-6001-1795242379.m4a",
+      "epoch": 1795242379,
+      "sha256": "25c1893ebdcd3c956b857ca49cb712cdfebe2e94fc4f79b1d5a14b781941c9c0",
+      "passes": {
+        "original": "I'm right here",
+        "filtered": "I'm right here",
+        "context": "I'm right here."
+      },
+      "transcript": "I'm right here",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 118,
+      "original_filename": "dcfems-6001-1795242390.m4a",
+      "epoch": 1795242390,
+      "sha256": "d37419af39e8be048752e5c4871f2938daac1e6f6b615c3be0d280efbbff1039",
+      "passes": {
+        "original": "That one straight ahead of you with the turn signal on, I'm not sure if that's a suspect. They just kind of pulled up and then when they saw me they kept driving.",
+        "filtered": "So that one straight ahead of you with the turn signal on, I'm not sure if that's a suspect. They just kind of pulled up and then when they saw me they kept driving.",
+        "context": "That one straight ahead of you with the turn signal on, I'm not sure if that's a suspect. They just kind of pulled up and then when they saw me they kept driving."
+      },
+      "transcript": "That one straight ahead of you with the turn signal on, I'm not sure if that's a suspect. They just kind of pulled up and then when they saw me they kept driving.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 119,
+      "original_filename": "dcfems-6001-1795242400.m4a",
+      "epoch": 1795242400,
+      "sha256": "6751ebfcd7e479fe515b0d36d84773bc4d0841037c2102f0b9301aa592adc427",
+      "passes": {
+        "original": "Copy, I keep an eye on it.",
+        "filtered": "Copy, I keep an eye on it.",
+        "context": "Copy, I keep an eye on it."
+      },
+      "transcript": "Copy, [I'll?] keep an eye on it.",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 120,
+      "original_filename": "dcfems-6001-1795242427.m4a",
+      "epoch": 1795242427,
+      "sha256": "587df6d6e1d1f4bb5430da17b87ee1f9a90163abdf4330a7553f7c51610454c4",
+      "passes": {
+        "original": "It makes me wonder if it's an Uber or something, bringing a suspect back to their car.",
+        "filtered": "It makes me wonder if it's an Uber or something, bringing a suspect back to their car.",
+        "context": "Makes me wonder if it's an Uber or something, bringing a suspect back to their car."
+      },
+      "transcript": "It makes me wonder if it's an Uber or something, bringing a suspect back to their car.",
+      "needs_review": false,
+      "human_verified": false,
+      "preserved_existing": false
+    },
+    {
+      "index": 121,
+      "original_filename": "dcfems-6001-1795242464.m4a",
+      "epoch": 1795242464,
+      "sha256": "4c627055f156f60ad2d7e54a330ad35c2147c49af02d2d0ec39cdea9e2262f6a",
+      "passes": {
+        "original": "Oh, it looks like it's an Uber picking someone up, Diego. Just your heart.",
+        "filtered": "Oh, it looks like it's an Uber picking someone up, Diego. Yes, you're heard.",
+        "context": "Oh, it looks like it's an Uber picking someone up, Diego. Just your heart."
+      },
+      "transcript": "Oh, it looks like it's an Uber picking someone up, Diego. [Unclear ending.]",
+      "needs_review": true,
+      "human_verified": false,
+      "preserved_existing": false
+    }
+  ],
+  "summary": {
+    "total_clips": 121,
+    "reconciled_clips": 121,
+    "needs_review": 57,
+    "human_verified": 0,
+    "preserved_existing": 0
+  }
+}
