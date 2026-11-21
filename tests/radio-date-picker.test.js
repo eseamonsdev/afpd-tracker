@@ -132,12 +132,13 @@ test("leap days are available only when supplied; empty indexes render a clear e
   assert.equal(empty.container.textContent, "No recordings are available yet.");
 });
 
-test("calendar assets and reusable markup are enabled only on the police-radio trial page", () => {
-  const police = readFileSync("src/police-radio.njk", "utf8");
-  assert.match(police, /datePicker\("radio"\)/);
-  assert.ok(police.indexOf("/js/radio-date-picker.js") < police.indexOf("/js/police-radio.js"));
-  assert.doesNotMatch(police, /id="radio-(month|day)"/);
-  for (const file of ["law-2-radio", "police-radio-excerpt"]) {
-    assert.doesNotMatch(readFileSync(`src/${file}.njk`, "utf8"), /radio-date-picker/);
+test("both archives use the shared calendar; excerpts retain their fixed dates", () => {
+  for (const [file, prefix] of [["police-radio", "radio"], ["law-2-radio", "law2-radio"]]) {
+    const source = readFileSync(`src/${file}.njk`, "utf8");
+    assert.ok(source.includes(`datePicker("${prefix}")`));
+    assert.ok(source.indexOf("/js/radio-date-picker.js") < source.indexOf(`/js/${file}.js`));
+    assert.match(source, /\/css\/radio-date-picker.css/);
+    assert.doesNotMatch(source, /radio-date-selectors/);
   }
+  assert.doesNotMatch(readFileSync("src/police-radio-excerpt.njk", "utf8"), /radio-date-picker/);
 });

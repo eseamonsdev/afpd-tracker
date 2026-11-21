@@ -33,7 +33,7 @@ for 6001 and `law-2-transcript-YYYY-MM-DD.txt` for 5922. Excerpt downloads use
 `afpd-car-to-car-transcript-<excerpt-slug>.txt`.
 Page content and recording data remain separate.
 
-The `/police-radio/` archive trials the reusable recording-date calendar:
+The `/police-radio/` and `/law-2-radio/` archives share the reusable recording-date calendar:
 
 - `src/_includes/radio-date-picker.njk` supplies `datePicker(prefix)` markup.
 - `public/js/radio-date-picker.js` exposes
@@ -50,8 +50,9 @@ focus; clicking or tabbing outside closes without moving focus back.
 Selecting an available day uses the existing manifest loader and date URL.
 Arrow keys move among available dates, Home/End move within a week, and
 Page Up/Down browse available months. Enter/Space select the focused date.
-Other archives retain their existing selectors until separately opted in by
-including the macro and calendar assets. Focused calendar coverage lives in
+Law 2 supplies only its enabled days; dates from the other talkgroup do not
+become selectable. Excerpts have fixed dates and do not need a picker.
+Focused calendar coverage lives in
 `tests/radio-date-picker.test.js`.
 
 Playback controls use one persistent audio element on the deployed sites. The

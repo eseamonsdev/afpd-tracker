@@ -4,12 +4,15 @@ permalink: /law-2-radio/
 {% extends "site-page-layout.njk" %}
 {% from "radio-navigation.njk" import radioNavigation %}
 {% from "radio-player.njk" import player %}
+{% from "radio-date-picker.njk" import datePicker %}
 {% set pageTitle = "Law 2 Dispatch | AFPD Accountability Project" -%}
 {% set pageDescription = "Listen to archived Law 2 Northeast recordings by date." -%}
 {% set canonicalUrl = "https://afpd-accountability.com/law-2-radio/" -%}
 
 {% block pageAssets %}
   <link rel="stylesheet" href="/css/police-radio.css">
+  <link rel="stylesheet" href="/css/radio-date-picker.css">
+  <script src="/js/radio-date-picker.js" defer></script>
   <script src="/js/radio-player-core.js" defer></script>
   <script src="/js/law-2-radio.js" defer></script>
 {% endblock %}
@@ -29,14 +32,7 @@ permalink: /law-2-radio/
       </div>
     </div>
     <div class="radio-archive" id="law2-radio-archive">
-      <div class="radio-date-selectors">
-        <label for="law2-radio-month">Month
-          <select id="law2-radio-month" disabled><option>Loading…</option></select>
-        </label>
-        <label for="law2-radio-day">Day
-          <select id="law2-radio-day" disabled><option>Loading…</option></select>
-        </label>
-      </div>
+      {{ datePicker("law2-radio") }}
       {{ player("law2-radio") }}
       <p class="radio-source-note">
         Recordings sourced from <a href="https://openmhz.com/" target="_blank" rel="noopener noreferrer">OpenMHz</a>
