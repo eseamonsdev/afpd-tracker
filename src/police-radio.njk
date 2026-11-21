@@ -4,12 +4,15 @@ permalink: /police-radio/
 {% extends "site-page-layout.njk" %}
 {% from "radio-navigation.njk" import radioNavigation %}
 {% from "radio-player.njk" import player %}
+{% from "radio-date-picker.njk" import datePicker %}
 {% set pageTitle = "Police Radio | AFPD Accountability Project" -%}
 {% set pageDescription = "Browse recorded police radio calls by date and listen to individual clips." -%}
 {% set canonicalUrl = "https://afpd-accountability.com/police-radio/" -%}
 
 {% block pageAssets %}
   <link rel="stylesheet" href="/css/police-radio.css">
+  <link rel="stylesheet" href="/css/radio-date-picker.css">
+  <script src="/js/radio-date-picker.js" defer></script>
   <script src="/js/radio-player-core.js" defer></script>
   <script src="/js/police-radio.js" defer></script>
 {% endblock %}
@@ -31,14 +34,7 @@ permalink: /police-radio/
       </div>
     </div>
     <div class="radio-archive" id="radio-archive">
-      <div class="radio-date-selectors">
-        <label for="radio-month">Month
-          <select id="radio-month" disabled><option>Loading…</option></select>
-        </label>
-        <label for="radio-day">Day
-          <select id="radio-day" disabled><option>Loading…</option></select>
-        </label>
-      </div>
+      {{ datePicker("radio") }}
       {{ player("radio") }}
       <p class="radio-source-note">
         Recordings sourced from <a href="https://openmhz.com/" target="_blank" rel="noopener noreferrer">OpenMHz</a>

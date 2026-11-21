@@ -33,6 +33,23 @@ for 6001 and `law-2-transcript-YYYY-MM-DD.txt` for 5922. Excerpt downloads use
 `afpd-car-to-car-transcript-<excerpt-slug>.txt`.
 Page content and recording data remain separate.
 
+The `/police-radio/` archive trials the reusable recording-date calendar:
+
+- `src/_includes/radio-date-picker.njk` supplies `datePicker(prefix)` markup.
+- `public/js/radio-date-picker.js` exposes
+  `RadioDatePicker.create(container, { days, value, onChange })`.
+- `public/css/radio-date-picker.css` scopes styles to that component.
+
+The archive passes its own filtered date index, not a global date range. Only
+years and months containing recordings are offered; individual missing days
+are disabled. Browsing months does not select a day or interrupt playback.
+Selecting an available day uses the existing manifest loader and date URL.
+Arrow keys move among available dates, Home/End move within a week, and
+Page Up/Down browse available months. Enter/Space select the focused date.
+Other archives retain their existing selectors until separately opted in by
+including the macro and calendar assets. Focused calendar coverage lives in
+`tests/radio-date-picker.test.js`.
+
 Playback controls use one persistent audio element on the deployed sites. The
 existing alternate-host handoff/recovery path remains supported by the shared
 engine. Playback, error recovery and cleanup must be changed in the core rather

@@ -1,0 +1,94 @@
+import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import test from "node:test";
+import vm from "node:vm";
+
+const source = readFileSync("public/js/radio-date-picker.js", "utf8");
+class Element {
+  constructor(tag) { Object.assign(this, { tag, children: [], dataset: {}, attrs: {}, events: {}, value: "", textContent: "" }); }
+  append(...children) { this.children.push(...children); }
+  replaceChildren(...children) { this.children = children; this.value = ""; }
+  add(option) { this.children.push(option); if (this.children.length === 1) this.value = option.value; }
+  setAttribute(key, value) { this.attrs[key] = value; }
+  addEventListener(type, fn) { this.events[type] = fn; }
+  focus() { this.focused = true; this.events.focus?.(); }
+  click() { if (!this.disabled) this.events.click?.(); }
+}
+function fixture(days, value) {
+  const window = {}, changes = [], container = new Element("section");
+  vm.runInNewContext(source, { window, Intl, Date, document: { createElement: tag => new Element(tag) },
+    Option: class extends Element { constructor(text, value) { super("option"); this.textContent = text; this.value = value; } } });
+  const picker = window.RadioDatePicker.create(container, { days, value, onChange: date => changes.push(date) });
+  const all = (node = container) => [node, ...node.children.flatMap(child => all(child))];
+  return { container, picker, changes, all,
+    selects: () => all().filter(node => node.tag === "select"),
+    day: date => all().find(node => node.dataset.date === date),
+    next: () => all().find(node => node.className === "radio-calendar-nav" && node.textContent === "›"),
+    previous: () => all().find(node => node.className === "radio-calendar-nav" && node.textContent === "‹") };
+}
+const days = ["2025-12-31", "2026-02-02", "2026-02-04", "2026-11-19"].map(date => ({ date, count: 12 }));
+
+test("only available years/months are offered; missing days and month boundaries cannot be selected", () => {
+  const f = fixture(days, "2026-02-02");
+  const [year, month] = f.selects();
+  assert.deepEqual(year.children.map(node => node.value), ["2025", "2026"]);
+  assert.deepEqual(month.children.map(node => node.value), ["2026-02", "2026-11"]);
+  assert.equal(f.day("2026-02-03").disabled, true);
+  f.day("2026-02-03").click(); assert.deepEqual(f.changes, []);
+  f.day("2026-02-04").click();
+  assert.deepEqual(f.changes, ["2026-02-04"]);
+  assert.equal(f.picker.value, "2026-02-04");
+  assert.equal(f.day("2026-02-04").attrs["aria-pressed"], "true");
+  assert.match(f.day("2026-02-04").attrs["aria-label"], /12 clips/);
+  f.day("2026-02-04").click(); assert.equal(f.changes.length, 1);
+  f.previous().click(); assert.equal(f.previous().disabled, true);
+  assert.equal(month.value, "2025-12");
+  f.next().click(); assert.equal(month.value, "2026-02");
+  f.next().click(); assert.equal(month.value, "2026-11");
+  assert.equal(f.next().disabled, true);
+  assert.equal(f.changes.length, 1, "browsing months never selects or loads a day");
+});
+
+test("year changes restrict months; invalid initial dates fall back to the latest available day", () => {
+  const f = fixture([...days, { date: "2026-02-30" }, { date: "invalid" }], "2026-02-03");
+  assert.equal(f.picker.value, "2026-11-19");
+  const [year, month] = f.selects();
+  year.value = "2025"; year.events.change();
+  assert.deepEqual(month.children.map(node => node.value), ["2025-12"]);
+  assert.equal(f.picker.value, "2026-11-19");
+  assert.match(f.all().find(node => node.className === "radio-calendar-selected").textContent, /November 19, 2026/);
+  assert.deepEqual(f.changes, []);
+});
+
+test("keyboard navigation skips unavailable dates without changing selection", () => {
+  const f = fixture(days, "2026-02-02");
+  let prevented = false;
+  f.day("2026-02-02").events.keydown({ key: "ArrowRight", preventDefault() { prevented = true; } });
+  assert.equal(prevented, true);
+  assert.equal(f.day("2026-02-04").focused, true);
+  assert.equal(f.picker.value, "2026-02-02");
+  assert.deepEqual(f.changes, []);
+  f.day("2026-02-04").events.keydown({ key: "PageDown", preventDefault() {} });
+  assert.equal(f.day("2026-11-19").focused, true);
+  f.day("2026-11-19").click();
+  assert.deepEqual(f.changes, ["2026-11-19"]);
+});
+
+test("leap days are available only when supplied; empty indexes render a clear empty state", () => {
+  const leap = fixture([{ date: "2024-02-29", count: 1 }], "2024-02-29");
+  assert.equal(leap.day("2024-02-29").disabled, false);
+  assert.equal(leap.day("2024-02-28").disabled, true);
+  const empty = fixture([], "");
+  assert.equal(empty.picker, null);
+  assert.equal(empty.container.textContent, "No recordings are available yet.");
+});
+
+test("calendar assets and reusable markup are enabled only on the police-radio trial page", () => {
+  const police = readFileSync("src/police-radio.njk", "utf8");
+  assert.match(police, /datePicker\("radio"\)/);
+  assert.ok(police.indexOf("/js/radio-date-picker.js") < police.indexOf("/js/police-radio.js"));
+  assert.doesNotMatch(police, /id="radio-(month|day)"/);
+  for (const file of ["law-2-radio", "police-radio-excerpt"]) {
+    assert.doesNotMatch(readFileSync(`src/${file}.njk`, "utf8"), /radio-date-picker/);
+  }
+});

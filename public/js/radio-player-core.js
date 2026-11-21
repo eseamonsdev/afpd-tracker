@@ -578,19 +578,22 @@ function archive(config) {
   const root = document.getElementById(config.rootId); if (!root) return;
   const get = name => document.getElementById(`${config.prefix}-${name}`);
   const month = get("month"), day = get("day"), reviewProgress = get("review-progress"), progressDate = get("progress-date"), transcriptionCount = get("transcription-count"), verificationCount = get("verification-count");
+  const calendar = get("calendar");
+  let calendarDate = "";
+  const selectedDate = () => calendar ? calendarDate : day.value;
 
   const list = get("clips"), section = get("clips-section"), status = get("status");
   const currentRadioIds = get("current-radio-ids"), transcriptDownload = get("transcript-download"), transcriptAvailability = get("transcript-availability");
   const base = "/records/openmhz/";
   let days = [], calls = [], buttons = [], folder = "", request = 0, controller, transcriptAvailable = false;
-  const identity = createIdentity(() => day.value);
+  const identity = createIdentity(selectedDate);
   const transcript = transcriptUI(get);
   function updateRadioIds(call) { if (currentRadioIds) { identity.render(currentRadioIds, call); currentRadioIds.hidden = !radioIds(call).length; } }
   const player = playbackEngine({
     get, getCalls: () => calls, getButtons: () => buttons,
     singlePlayer: config.law2 || /(^|-)afpd-tracker\.ericseamonsdeveloper\.workers\.dev$/.test(window.location.hostname) || /(^|\.)afpd-accountability\.com$/.test(window.location.hostname),
     clipSource: index => playbackSource(calls[index], `${base}${encodeURIComponent(folder)}/${encodeURIComponent(calls[index].original_filename)}`),
-    label: index => `${dateFormat.format(dateObject(day.value))} · ${timeFormat.format(new Date(calls[index].epoch * 1000))} · Clip ${index + 1}`,
+    label: index => `${dateFormat.format(dateObject(selectedDate()))} · ${timeFormat.format(new Date(calls[index].epoch * 1000))} · Clip ${index + 1}`,
     onSelect(call) { identity.close(); updateRadioIds(call); updateTranscript(); },
     onReset() { updateRadioIds(); updateTranscript(); }
   });
@@ -614,7 +617,7 @@ function archive(config) {
     calls = []; buttons = []; list.replaceChildren();
     section.setAttribute("aria-busy", "true");
     status.textContent = "Loading clips…";
-    const entry = days.find((entry) => entry.date === day.value);
+    const entry = days.find((entry) => entry.date === selectedDate());
     if (config.law2 && get("coverage")) get("coverage").hidden = true;
     if (!entry || (config.law2 && entry.enableDay !== true)) { status.textContent = "This date is not enabled."; section.setAttribute("aria-busy", "false"); return; }
     const url = new URL(window.location.href);
@@ -686,8 +689,8 @@ function archive(config) {
     day.disabled = !day.options.length;
     loadDay();
   }
-  month.addEventListener("change", () => populateDays());
-  day.addEventListener("change", loadDay);
+  month?.addEventListener("change", () => populateDays());
+  day?.addEventListener("change", loadDay);
   async function initialize() {
     try {
       const [response] = await Promise.all([fetch(`${base}${config.law2 ? "law-2-index.json" : "index.json"}`, { cache: "no-cache" }), identity.load()]);
@@ -697,25 +700,37 @@ function archive(config) {
       if (config.law2) identity.setAfpdRadioIds(index.afpdRadioIds, index.agencyRadioIds, Object.fromEntries(index.days.filter(entry => entry.agencyRadioIds).map(entry => [entry.date, entry.agencyRadioIds])));
       days = index.days.filter((entry) => (!config.law2 || (entry.enableDay === true && /^openmhz-afpd-law-2-\d{4}-\d{2}-\d{2}$/.test(entry.folder))) && /^\d{4}-\d{2}-\d{2}$/.test(entry.date) && /^[\w.-]+$/.test(entry.folder))
         .sort((a, b) => b.date.localeCompare(a.date));
-      month.replaceChildren(); day.replaceChildren();
+      month?.replaceChildren(); day?.replaceChildren();
       if (!days.length) {
-        month.add(new Option("No months available", ""));
-        day.add(new Option("No days available", ""));
+        if (calendar) calendar.textContent = "No recordings are available yet.";
+        month?.add(new Option("No months available", ""));
+        day?.add(new Option("No days available", ""));
         status.textContent = "No recordings are available yet.";
         section.setAttribute("aria-busy", "false");
         return;
       }
-      for (const value of new Set(days.map((entry) => entry.date.slice(0, 7)))) {
-        month.add(new Option(monthFormat.format(dateObject(`${value}-01`)), value));
-      }
       const requestedDate = new URL(window.location.href).searchParams.get("date");
       const initialDay = days.find((entry) => entry.date === requestedDate) ?? days[0];
-      month.value = initialDay.date.slice(0, 7);
-      month.disabled = false;
-      populateDays(initialDay.date);
+      if (calendar) {
+        calendarDate = initialDay.date;
+        const picker = window.RadioDatePicker.create(calendar, {
+          days, value: calendarDate,
+          onChange(date) { calendarDate = date; loadDay(); }
+        });
+        if (!picker) throw new Error("No valid recording dates");
+        loadDay();
+      } else {
+        for (const value of new Set(days.map((entry) => entry.date.slice(0, 7)))) {
+          month.add(new Option(monthFormat.format(dateObject(`${value}-01`)), value));
+        }
+        month.value = initialDay.date.slice(0, 7);
+        month.disabled = false;
+        populateDays(initialDay.date);
+      }
     } catch (error) {
-      month.replaceChildren(new Option("Unavailable", ""));
-      day.replaceChildren(new Option("Unavailable", ""));
+      if (calendar) calendar.textContent = "Unable to load available dates. Reload the page to try again.";
+      month?.replaceChildren(new Option("Unavailable", ""));
+      day?.replaceChildren(new Option("Unavailable", ""));
       status.textContent = "Unable to load available dates. Reload the page to try again.";
       section.setAttribute("aria-busy", "false");
     }

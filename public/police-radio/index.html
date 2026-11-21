@@ -36,6 +36,8 @@
   <link rel="stylesheet" href="/css/header.css">
 
   <link rel="stylesheet" href="/css/police-radio.css">
+  <link rel="stylesheet" href="/css/radio-date-picker.css">
+  <script src="/js/radio-date-picker.js" defer></script>
   <script src="/js/radio-player-core.js" defer></script>
   <script src="/js/police-radio.js" defer></script>
 </head>
@@ -101,14 +103,9 @@
       </div>
     </div>
     <div class="radio-archive" id="radio-archive">
-      <div class="radio-date-selectors">
-        <label for="radio-month">Month
-          <select id="radio-month" disabled><option>Loading…</option></select>
-        </label>
-        <label for="radio-day">Day
-          <select id="radio-day" disabled><option>Loading…</option></select>
-        </label>
-      </div>
+      <section id="radio-calendar" class="radio-calendar" aria-label="Choose recording date">
+        <p role="status">Loading available dates…</p>
+      </section>
       
       <template id="radio-clip-row-template"><li class="radio-clip-row">
   <button type="button" class="radio-clip"  disabled>
