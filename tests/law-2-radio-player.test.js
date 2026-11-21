@@ -202,7 +202,7 @@ test("query dates outside the enabled index cannot load an unlisted day", async 
   f.get("day").emit("change");
   await f.settle();
   assert.equal(f.get("clips").children.length, 0);
-  assert.equal(f.get("status").textContent, "This date is not enabled.");
+  assert.equal(f.get("status").textContent, "No Law 2 Northeast recordings are available for October 31, 2026. Choose another date.");
 });
 
 test("Law 2 uses the same dated names, strength labels and SVG evidence controls as 6001", async () => {

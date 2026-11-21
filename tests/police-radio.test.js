@@ -60,7 +60,7 @@ class Element {
 
 async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11", search = "", transcriptEnabled = true, associations = null, unified = false) {
   const elements = new Map(["archive", "month", "day", "audio", "play", "seek", "autoplay",
-    "clips", "clips-section", "status", "current", "current-radio-ids", "player-message", "elapsed", "duration",
+    "clips", "clips-section", "status", "current", "current-radio-ids", "player-message", "player-panel", "elapsed", "duration",
     "transcript-toggle", "transcript-download", "transcript", "transcript-status", "transcript-text", "transcript-availability", "verification-count", "transcription-count", "review-progress", "progress-date"]
     .map(name => [`radio-${name}`, new Element(name === "audio" ? "audio" : "div")]));
   elements.get("radio-autoplay").setAttribute("aria-pressed", "false");
@@ -141,7 +141,7 @@ async function playerFixture(fixtureCalls, hostname, fixtureDate = "2026-09-11",
     sourceFor: player => objectSources.get(player.src) ?? player.src };
 }
 
-test("unified talkgroup selector preserves available dates, falls back for missing dates, and clears playback", async () => {
+test("unified talkgroup selector preserves missing dates, hides audio, and restores playback controls after choosing an available date", async () => {
   const calls=[{epoch:1789100000,displayed_seconds:5,original_filename:"test.m4a",radio_ids:["14590090"],transcript:"Test"}];
   const f=await playerFixture(calls,"localhost","2026-09-11","?talkgroup=5922&date=2026-09-08&keep=1#clips",true,null,true);
   assert.equal(f.get("talkgroup").value,"5922");
@@ -152,7 +152,12 @@ test("unified talkgroup selector preserves available dates, falls back for missi
   assert.match(f.get("transcript-download").getAttribute("href"),/law-2-transcript-2026-09-08/);
   f.select(0); await f.settle();
   f.get("talkgroup").value="6001"; f.get("talkgroup").emit("change"); await f.settle();
-  assert.equal(f.get("calendar").picker.value,"2026-09-11");
+  assert.equal(f.get("calendar").picker.value,"2026-09-08");
+  assert.match(f.get("status").textContent,/No AFPD Car to Car recordings are available for September 8, 2026/);
+  assert.equal(f.get("player-panel").hidden,true);
+  assert.equal(f.get("clips-section").hidden,true);
+  assert.equal(f.get("clips").children.length,0);
+  assert.equal(f.window.location.searchParams.get("date"),"2026-09-08");
   assert.match(f.get("talkgroup-description").textContent,/car-to-car/);
   assert.equal(f.get("talkgroup-note").hidden,true);
   assert.equal(f.get("coverage").hidden,true);
@@ -161,9 +166,35 @@ test("unified talkgroup selector preserves available dates, falls back for missi
   assert.equal(f.window.location.searchParams.get("talkgroup"),"6001");
   assert.equal(f.window.location.searchParams.get("keep"),"1");
   assert.equal(f.window.location.hash,"#clips");
+  f.get("calendar").picker.onChange("2026-09-11");await f.settle();
+  assert.equal(f.get("player-panel").hidden,false);
+  assert.equal(f.get("clips-section").hidden,false);
   f.get("talkgroup").value="5922"; f.get("talkgroup").emit("change"); await f.settle();
   assert.equal(f.get("calendar").picker.value,"2026-09-11","shared date survives a talkgroup change");
   assert.match(f.get("transcript-download").getAttribute("href"),/law-2-transcript-2026-09-11/);
+});
+
+test("unavailable dates in shared URLs stay selected and do not fetch any other day's recordings", async () => {
+  const f=await playerFixture(undefined,"localhost","2026-09-11","?talkgroup=5922&date=2030-01-01",true,null,true);
+  assert.equal(f.get("calendar").picker.value,"2030-01-01");
+  assert.equal(f.get("calendar").picker.allowUnavailable,true);
+  assert.equal(f.window.location.searchParams.get("date"),"2030-01-01");
+  assert.match(f.get("status").textContent,/No Law 2 Northeast recordings are available for January 1, 2030/);
+  assert.equal(f.get("player-panel").hidden,true);
+  assert.equal(f.metadataRequests.some(url=>url.endsWith("calls.json")),false);
+  f.get("talkgroup").value="6001";f.get("talkgroup").emit("change");await f.settle();
+  assert.equal(f.get("calendar").picker.value,"2030-01-01");
+  const invalid=await playerFixture(undefined,"localhost","2026-09-11","?talkgroup=5922&date=2026-02-30",true,null,true);
+  assert.equal(invalid.get("calendar").picker.value,"2026-09-11");
+});
+
+test("days with no playable audio keep the player and clip section hidden", async () => {
+  for(const calls of [[],[{epoch:1789100000,displayed_seconds:0,original_filename:"missing.m4a",audio_status:"unavailable",playback_url:"/records/openmhz/place-holder-audio.m4a"}]]) {
+    const f=await playerFixture(calls,"localhost","2026-09-11","",true,null,true);
+    assert.equal(f.get("player-panel").hidden,true);
+    assert.equal(f.get("clips-section").hidden,true);
+    assert.equal(f.get("transcript-download").hidden,true);
+  }
 });
 
 test("rapid talkgroup changes leave only the last requested talkgroup and its calendar", async () => {

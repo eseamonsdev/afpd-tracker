@@ -15,14 +15,14 @@ class Element {
   focus() { this.focused = true; this.events.focus?.(); }
   click() { if (!this.disabled) this.events.click?.(); }
 }
-function fixture(days, value) {
+function fixture(days, value, allowUnavailable = false) {
   const window = {}, changes = [], container = new Element("section"), events = {};
   vm.runInNewContext(source, { window, Intl, Date, document: {
     createElement: tag => new Element(tag), createElementNS: (_, tag) => new Element(tag),
     addEventListener: (type, fn) => { events[type] = fn; }
   },
     Option: class extends Element { constructor(text, value) { super("option"); this.textContent = text; this.value = value; } } });
-  const picker = window.RadioDatePicker.create(container, { days, value, onChange: date => changes.push(date) });
+  const picker = window.RadioDatePicker.create(container, { days, value, allowUnavailable, onChange: date => changes.push(date) });
   const all = (node = container) => [node, ...node.children.flatMap(child => all(child))];
   return { container, picker, changes, all, events,
     trigger: () => all().find(node => node.className === "radio-calendar-trigger"),
@@ -33,6 +33,22 @@ function fixture(days, value) {
     previous: () => all().find(node => node.className === "radio-calendar-nav" && node.textContent === "‹") };
 }
 const days = ["2025-12-31", "2026-02-02", "2026-02-04", "2026-11-19"].map(date => ({ date, count: 12 }));
+
+test("an unavailable requested date stays visible but cannot be chosen in the calendar", () => {
+  const f=fixture(days,"2026-02-03",true);
+  assert.equal(f.picker.value,"2026-02-03");
+  f.trigger().click();
+  assert.equal(f.day("2026-02-03").disabled,true);
+  assert.equal(f.day("2026-02-03").attrs["aria-pressed"],"false");
+  assert.match(f.all().find(node=>node.className==="radio-calendar-selected").textContent,/no recordings for this talkgroup/);
+  f.day("2026-02-03").click();assert.deepEqual(f.changes,[]);
+  f.day("2026-02-04").click();assert.deepEqual(f.changes,["2026-02-04"]);
+  const future=fixture(days,"2030-01-01",true);
+  future.trigger().click();
+  assert.equal(future.selects()[1].value,"2026-11");
+  assert.equal(future.picker.value,"2030-01-01");
+  assert.match(future.trigger().attrs["aria-label"],/January 1, 2030/);
+});
 
 test("date button starts collapsed, opens on the selected month, and selection closes with focus restored", () => {
   const f = fixture(days, "2026-02-02");

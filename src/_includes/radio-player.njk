@@ -1,7 +1,7 @@
 {% from "radio-row.njk" import rowTemplate %}
-{% macro player(prefix, transcripts=true, hiddenToggle=true, toggleName="transcript-toggle", transcriptName="transcript") %}
+{% macro player(prefix, transcripts=true, hiddenToggle=true, toggleName="transcript-toggle", transcriptName="transcript", initiallyHidden=false) %}
       {{ rowTemplate() }}
-      <section class="radio-player" aria-label="Audio player">
+      <section id="{{ prefix }}-player-panel" class="radio-player" aria-label="Audio player"{% if initiallyHidden %} hidden{% endif %}>
         <div class="radio-player-heading">
           <div>
             <p id="{{ prefix }}-current">Choose a clip to listen</p>

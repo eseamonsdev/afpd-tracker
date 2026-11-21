@@ -59,8 +59,13 @@ The talkgroup selector offers AFPD Car to Car (6001) and Law 2 Northeast (5922).
 Links use `/police-radio/?talkgroup=5922&date=YYYY-MM-DD` for Law 2, and
 `talkgroup=6001` for Car-to-Car (the default when no valid group is specified).
 Switching groups stops playback, cancels stale loads, updates the description,
-and preserves the date if available, otherwise selecting that group's newest
-enabled date. The separate Law 2 HTML page has been removed without a redirect.
+and preserves the requested date even if the other group has no recordings.
+Missing dates show an explicit empty-state message and no player or clip list;
+the calendar still permits selecting only that group's available dates. The
+same behavior applies to valid unavailable dates in shared URLs. With no valid
+requested date, the group's newest enabled day is selected. Player controls
+remain hidden while loading, after errors, and on days without playable audio.
+The separate Law 2 HTML page has been removed without a redirect.
 
 Playback controls use one persistent audio element on the deployed sites. The
 existing alternate-host handoff/recovery path remains supported by the shared

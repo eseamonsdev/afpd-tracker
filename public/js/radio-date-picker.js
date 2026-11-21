@@ -10,7 +10,7 @@
 
   // The caller supplies its talkgroup's available days. Browsing never selects
   // a date or loads recordings; only activating an available day calls onChange.
-  function create(container, { days, value, onChange }) {
+  function create(container, { days, value, onChange, allowUnavailable = false }) {
     const entries = new Map(days.filter(entry => validDate(entry.date)).map(entry => [entry.date, entry]));
     const dates = [...entries.keys()].sort();
     container.replaceChildren();
@@ -20,8 +20,9 @@
     }
     const months = [...new Set(dates.map(date => date.slice(0, 7)))];
     const years = [...new Set(dates.map(date => date.slice(0, 4)))];
-    let selected = entries.has(value) ? value : dates.at(-1);
-    let viewed = selected.slice(0, 7);
+    let selected = entries.has(value) || (allowUnavailable && validDate(value)) ? value : dates.at(-1);
+    const selectedMonth = () => months.includes(selected.slice(0, 7)) ? selected.slice(0, 7) : months.at(-1);
+    let viewed = selectedMonth();
     let focusDate = selected;
     const make = (tag, className, text) => {
       const node = document.createElement(tag);
@@ -89,8 +90,8 @@
       panel.hidden = !open;
       trigger.setAttribute("aria-expanded", String(open));
       if (open) {
-        viewed = selected.slice(0, 7); focusDate = selected;
-        render(); buttons.get(selected)?.focus();
+        viewed = selectedMonth(); focusDate = selected;
+        render(); buttons.get(focusDate)?.focus();
       } else if (restoreFocus) trigger.focus();
     }
     trigger.addEventListener("click", () => setOpen(panel.hidden));
@@ -139,7 +140,7 @@
         button.type = "button"; button.disabled = !entry;
         button.dataset.date = date;
         button.tabIndex = date === focusDate ? 0 : -1;
-        button.setAttribute("aria-pressed", String(date === selected));
+        button.setAttribute("aria-pressed", String(!!entry && date === selected));
         const count = Number.isInteger(entry?.count) ? `, ${entry.count} clips` : "";
         button.setAttribute("aria-label", `${dateFormat.format(dateObject(date))}${entry ? count : ", no recordings"}`);
         button.addEventListener("focus", () => {
@@ -156,7 +157,7 @@
         button.addEventListener("keydown", event => moveFocus(event, date));
         buttons.set(date, button); cell.append(button);
       }
-      summary.textContent = `Selected: ${dateFormat.format(dateObject(selected))}`;
+      summary.textContent = `Selected: ${dateFormat.format(dateObject(selected))}${entries.has(selected) ? "" : " — no recordings for this talkgroup"}`;
     }
     function browse(value, focus = false) {
       if (!months.includes(value)) return;

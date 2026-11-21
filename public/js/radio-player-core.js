@@ -589,6 +589,9 @@ function archive(config) {
   const selectedDate = () => calendar ? calendarDate : day.value;
 
   const list = get("clips"), section = get("clips-section"), status = get("status");
+  const playerPanel = get("player-panel");
+  if (playerPanel) playerPanel.hidden = true;
+  section.hidden = true;
   const currentRadioIds = get("current-radio-ids"), transcriptDownload = get("transcript-download"), transcriptAvailability = get("transcript-availability");
   const base = "/records/openmhz/";
   let days = [], calls = [], buttons = [], folder = "", request = 0, controller, transcriptAvailable = false;
@@ -606,6 +609,7 @@ function archive(config) {
   });
   function updateTranscript() { transcript.update(calls[player.selected], transcriptAvailable); }
   function resetPlayer() {
+    if (playerPanel) playerPanel.hidden = true;
     transcriptAvailable = false;
     if (reviewProgress) reviewProgress.hidden = true;
     if (progressDate) progressDate.textContent = "";
@@ -622,16 +626,24 @@ function archive(config) {
     identity.close();
     resetPlayer();
     calls = []; buttons = []; list.replaceChildren();
+    section.hidden = true;
     section.setAttribute("aria-busy", "true");
     status.textContent = "Loading clips…";
     const entry = days.find((entry) => entry.date === selectedDate());
     if (config.law2 && get("coverage")) get("coverage").hidden = true;
-    if (!entry || (config.law2 && entry.enableDay !== true)) { status.textContent = "This date is not enabled."; section.setAttribute("aria-busy", "false"); return; }
     const url = new URL(window.location.href);
-    url.searchParams.set("date", entry.date);
+    url.searchParams.set("date", selectedDate());
     if (talkgroup) url.searchParams.set("talkgroup", config.law2 ? "5922" : "6001");
     if (url.href !== window.location.href) {
       window.history.replaceState(window.history.state, "", url.href);
+    }
+    if (!entry || (config.law2 && entry.enableDay !== true)) {
+      const groupName = config.law2 ? "Law 2 Northeast" : "AFPD Car to Car";
+      const selected = dateObject(selectedDate());
+      const description = Number.isFinite(selected.getTime()) ? dateFormat.format(selected) : "the selected date";
+      status.textContent = `No ${groupName} recordings are available for ${description}. Choose another date.`;
+      section.setAttribute("aria-busy", "false");
+      return;
     }
     folder = entry.folder;
     try {
@@ -646,11 +658,14 @@ function archive(config) {
         }
         return call;
       }).sort((a, b) => a.epoch - b.epoch);
+      const hasAudio = calls.some(call => !unavailableAudio(call));
+      if (playerPanel) playerPanel.hidden = !hasAudio;
+      section.hidden = !hasAudio;
       // The enabled-date index owns any explicit setting; older indexes fall
       // back to the manifest. Both archives use the same transcript controls.
       const transcriptEnabled = typeof entry.enableTranscription === "boolean"
         ? entry.enableTranscription : data.enableTranscription;
-      transcriptAvailable = transcriptEnabled === true && (!config.law2 || calls.some(call => typeof call.transcript === "string" && call.transcript.trim()));
+      transcriptAvailable = hasAudio && transcriptEnabled === true && (!config.law2 || calls.some(call => typeof call.transcript === "string" && call.transcript.trim()));
       if (config.law2 && get("coverage")) { get("coverage").textContent = entry.coverageNote || ""; get("coverage").hidden = !entry.coverageNote; }
       if (transcriptDownload && transcriptAvailable) {
         const filename = `${config.law2 ? "law-2" : "afpd-car-to-car"}-transcript-${entry.date}.txt`;
@@ -678,10 +693,12 @@ function archive(config) {
         }
         reviewProgress.hidden = false;
       }
-      status.textContent = calls.length ? `${dateFormat.format(dateObject(entry.date))} · ${calls.length} clips` : "No clips available for this day.";
+      status.textContent = !hasAudio && calls.length ? "No audio recordings are available for this day." : calls.length ? `${dateFormat.format(dateObject(entry.date))} · ${calls.length} clips` : "No clips available for this day.";
     } catch (error) {
       if (token !== request || error.name === "AbortError") return;
       calls = []; buttons = []; list.replaceChildren();
+      if (playerPanel) playerPanel.hidden = true;
+      section.hidden = true;
       status.textContent = "Unable to load this day. Select another day or reload the page to try again.";
     } finally {
       if (token === request) section.setAttribute("aria-busy", "false");
@@ -719,21 +736,26 @@ function archive(config) {
       else identity.setAfpdRadioIds([]);
       days = index.days.filter((entry) => (!config.law2 || (entry.enableDay === true && /^openmhz-afpd-law-2-\d{4}-\d{2}-\d{2}$/.test(entry.folder))) && /^\d{4}-\d{2}-\d{2}$/.test(entry.date) && /^[\w.-]+$/.test(entry.folder))
         .sort((a, b) => b.date.localeCompare(a.date));
+      const requestedDate = preferredDate || new URL(window.location.href).searchParams.get("date");
+      const keepRequested = talkgroup && /^\d{4}-\d{2}-\d{2}$/.test(requestedDate || "") &&
+        Number.isFinite(dateObject(requestedDate).getTime()) && dateObject(requestedDate).toISOString().slice(0, 10) === requestedDate;
       month?.replaceChildren(); day?.replaceChildren();
       if (!days.length) {
-        if (calendar) calendar.textContent = "No recordings are available yet.";
+        if (calendar) calendar.textContent = keepRequested ? `${dateFormat.format(dateObject(requestedDate))} — no recordings are available for this talkgroup.` : "No recordings are available yet.";
+        if (keepRequested) calendarDate = requestedDate;
+        if (playerPanel) playerPanel.hidden = true;
+        section.hidden = true;
         month?.add(new Option("No months available", ""));
         day?.add(new Option("No days available", ""));
         status.textContent = "No recordings are available yet.";
         section.setAttribute("aria-busy", "false");
         return;
       }
-      const requestedDate = preferredDate || new URL(window.location.href).searchParams.get("date");
       const initialDay = days.find((entry) => entry.date === requestedDate) ?? days[0];
       if (calendar) {
-        calendarDate = initialDay.date;
+        calendarDate = keepRequested ? requestedDate : initialDay.date;
         const picker = window.RadioDatePicker.create(calendar, {
-          days, value: calendarDate,
+          days, value: calendarDate, allowUnavailable: !!talkgroup,
           onChange(date) { calendarDate = date; loadDay(); }
         });
         if (!picker) throw new Error("No valid recording dates");
@@ -760,6 +782,7 @@ function archive(config) {
     config.law2 = talkgroup.value === "5922";
     ++request; controller?.abort(); identity.close(); resetPlayer();
     days = []; calls = []; buttons = []; list.replaceChildren();
+    section.hidden = true;
     identity.setAfpdRadioIds([]);
     if (get("coverage")) get("coverage").hidden = true;
     if (calendar) calendar.textContent = "Loading available dates…";
@@ -767,7 +790,7 @@ function archive(config) {
     section.setAttribute("aria-busy", "true");
     const url = new URL(window.location.href);
     url.searchParams.set("talkgroup", config.law2 ? "5922" : "6001");
-    url.searchParams.delete("date");
+    if (previousDate) url.searchParams.set("date", previousDate);
     window.history.replaceState(window.history.state, "", url.href);
     initialize(previousDate);
   });
