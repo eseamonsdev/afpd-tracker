@@ -27,9 +27,11 @@ export default {
       }
       if (url.pathname === "/admin/api/radio-ids") {
         if (request.method !== "GET") return new Response(null, { status: 405, headers: { Allow: "GET" } });
-        if (!env.AFPD_DB) return new Response("D1 binding unavailable", { status: 503 });
+        const isVersionPreview = url.hostname.endsWith("-afpd-tracker.ericseamonsdeveloper.workers.dev");
+        const database = isVersionPreview ? env.AFPD_DB_STAGING : env.AFPD_DB;
+        if (!database) return new Response("D1 binding unavailable", { status: 503 });
         try {
-          const { results } = await env.AFPD_DB.prepare(
+          const { results } = await database.prepare(
             "SELECT radio_id FROM radio_ids ORDER BY radio_id"
           ).all();
           return Response.json({ radio_ids: results.map(row => row.radio_id) }, {
