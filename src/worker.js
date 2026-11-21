@@ -1,5 +1,6 @@
 import { r2RadioAudio } from "./r2-radio-audio.js";
 import { r2OfficerPhoto } from "./r2-officer-photos.js";
+import { authenticatedAdminEmail } from "./admin-access.js";
 
 const OLD_PRODUCTION_HOST =
   "afpd-tracker.ericseamonsdeveloper.workers.dev";
@@ -13,14 +14,13 @@ const CANONICAL_ORIGIN =
 const GREENLAND_PROFILE_PATH = "/police-encounters/cody-wayne-greenland/";
 
 export default {
-  async fetch(request, env, ctx) {
+  async fetch(request, env) {
     const url = new URL(request.url);
     if (url.pathname === "/admin" || url.pathname.startsWith("/admin/")) {
-      // Enforce sign-in here as well as in Access so alternate hostnames cannot bypass it.
-      if (!ctx.access) return new Response("Access required", { status: 403 });
-      const identity = await ctx.access.getIdentity();
-      if (identity?.email?.toLowerCase() !== "ericseamonsdeveloper@gmail.com") {
-        return new Response("Forbidden", { status: 403 });
+      // Static Assets' router does not forward ctx.access to this Worker.
+      // Validate Access's signed token, including its audience for this hostname.
+      if (await authenticatedAdminEmail(request, url) !== "ericseamonsdeveloper@gmail.com") {
+        return new Response("Access required", { status: 403 });
       }
       if (url.pathname === "/admin" || url.pathname === "/admin/") {
         return Response.redirect(new URL("/admin/radio-ids/", url), 302);
