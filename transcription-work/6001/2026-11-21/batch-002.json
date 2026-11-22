@@ -1,0 +1,641 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-21",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1795250338.m4a": {
+      "index": 11,
+      "epoch": 1795250338,
+      "sha256": "b51443abb264b51bbc798edf29477cab814f963b32aa48c1f6cedc9020d7cc7c",
+      "passes": {
+        "original": {
+          "text": "This guy hates me.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " This guy hates me.",
+              "avg_logprob": -0.5436579808592796,
+              "no_speech_prob": 0.014447693713009357,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "filtered": {
+          "text": "This guy is",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " This guy is",
+              "avg_logprob": -0.6423896054426829,
+              "no_speech_prob": 0.06111437454819679,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "This guy hates me.",
+          "prompt": "It's going pretty hard up here by Morgan Boulevard. don't tell me that",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " This guy hates me.",
+              "avg_logprob": -0.39929091557860374,
+              "no_speech_prob": 0.005838684272021055,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795250342.m4a": {
+      "index": 12,
+      "epoch": 1795250342,
+      "sha256": "16088578dfdc75e3dceff09ebe28f482f3711f6de7f71789207919cfce824734",
+      "passes": {
+        "original": {
+          "text": "Which way do you think it's headed, south or west?",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Which way do you think it's headed, south or west?",
+              "avg_logprob": -0.3510286007076502,
+              "no_speech_prob": 0.007220766041427851,
+              "compression_ratio": 0.8620689655172413
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Which way do you think it's headed? South or West?",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.38,
+              "text": " Which way do you think it's headed? South or West?",
+              "avg_logprob": -0.3067943640053272,
+              "no_speech_prob": 0.00448240339756012,
+              "compression_ratio": 0.8620689655172413
+            }
+          ]
+        },
+        "context": {
+          "text": "Which way do you think it's headed? South or West?",
+          "prompt": "It's going pretty hard up here by Morgan Boulevard. don't tell me that This guy hates me.",
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.28,
+              "text": " Which way do you think it's headed? South or West?",
+              "avg_logprob": -0.2969974000006914,
+              "no_speech_prob": 0.0037392324302345514,
+              "compression_ratio": 0.8620689655172413
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795257014.m4a": {
+      "index": 13,
+      "epoch": 1795257014,
+      "sha256": "c4b7e3bd0f637eafc12d867edc8a26ceecf309f300e4d7d6e0452cea88613eec",
+      "passes": {
+        "original": {
+          "text": "Yeah, Chuck, let me know if you see anything at the house or come over.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Yeah, Chuck, let me know if you see anything at the house or come over.",
+              "avg_logprob": -0.4401651450565883,
+              "no_speech_prob": 0.04877322539687157,
+              "compression_ratio": 0.9726027397260274
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah, Chuck, let me know if you see anything at the house. I'll come over.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Yeah, Chuck, let me know if you see anything at the house. I'll come over.",
+              "avg_logprob": -0.4094138845153477,
+              "no_speech_prob": 0.030833765864372253,
+              "compression_ratio": 0.961038961038961
+            }
+          ]
+        },
+        "context": {
+          "text": "Yeah, Chuck, let me know if you see anything at the house or come over.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Yeah, Chuck, let me know if you see anything at the house or come over.",
+              "avg_logprob": -0.4401651450565883,
+              "no_speech_prob": 0.04877322539687157,
+              "compression_ratio": 0.9726027397260274
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795257022.m4a": {
+      "index": 14,
+      "epoch": 1795257022,
+      "sha256": "ad5e4f0bd815e8393b4457578956e2005d8506c189833bc8a788f22490e4db97",
+      "passes": {
+        "original": {
+          "text": "Oh, baby.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Oh, baby.",
+              "avg_logprob": -0.9131734371185303,
+              "no_speech_prob": 0.07211226224899292,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.8699437141418457,
+              "no_speech_prob": 0.20141179859638214,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Oh, baby.",
+          "prompt": "Yeah, Chuck, let me know if you see anything at the house or come over.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Oh, baby.",
+              "avg_logprob": -0.6062815700258527,
+              "no_speech_prob": 0.03727941960096359,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795257067.m4a": {
+      "index": 15,
+      "epoch": 1795257067,
+      "sha256": "12b4e4ac123d083bab1e4e2b8870357f1e3b8e695dc558e19eaafbc39527ee52",
+      "passes": {
+        "original": {
+          "text": "Valetizer you're gonna be good",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Valetizer you're gonna be good",
+              "avg_logprob": -0.79337017102675,
+              "no_speech_prob": 0.020360901951789856,
+              "compression_ratio": 0.8571428571428571
+            }
+          ]
+        },
+        "filtered": {
+          "text": "The ballad heads are going to be good.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " The ballad heads are going to be good.",
+              "avg_logprob": -0.7922433889829196,
+              "no_speech_prob": 0.01208652462810278,
+              "compression_ratio": 0.8837209302325582
+            }
+          ]
+        },
+        "context": {
+          "text": "The ballot says you're going to be good.",
+          "prompt": "Yeah, Chuck, let me know if you see anything at the house or come over. Oh, baby.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " The ballot says you're going to be good.",
+              "avg_logprob": -0.6755006680121789,
+              "no_speech_prob": 0.01136302575469017,
+              "compression_ratio": 0.8888888888888888
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795257076.m4a": {
+      "index": 16,
+      "epoch": 1795257076,
+      "sha256": "d7abd95ae14197b593c1998e77c902dce8ae2ca370202c9613e64f25eca6aaf8",
+      "passes": {
+        "original": {
+          "text": "Cough.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Cough.",
+              "avg_logprob": -1.2737660606702168,
+              "no_speech_prob": 0.27576932311058044,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Cut.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Cut.",
+              "avg_logprob": -1.3075236320495605,
+              "no_speech_prob": 0.06955738365650177,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Oh",
+          "prompt": "Oh, baby. Valetizer you're gonna be good",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Oh",
+              "avg_logprob": -0.7489677518606186,
+              "no_speech_prob": 0.17541204392910004,
+              "compression_ratio": 0.2
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795257538.m4a": {
+      "index": 17,
+      "epoch": 1795257538,
+      "sha256": "8a586f06c683e4576122adb61e6d3475b51e001a0379eab5837840a712e0d5a0",
+      "passes": {
+        "original": {
+          "text": "Hey look how you're on air",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey look how you're on air",
+              "avg_logprob": -0.38475440740585326,
+              "no_speech_prob": 0.026687340810894966,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hey look how you're on air",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey look how you're on air",
+              "avg_logprob": -0.4173772305250168,
+              "no_speech_prob": 0.007606990169733763,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey look how you're on air",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey look how you're on air",
+              "avg_logprob": -0.38475440740585326,
+              "no_speech_prob": 0.026687340810894966,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795257542.m4a": {
+      "index": 18,
+      "epoch": 1795257542,
+      "sha256": "15b1ff7308a12276d571fc2dd6ad9817f01ba9332c8c49b20542be1c740921a7",
+      "passes": {
+        "original": {
+          "text": "Yeah, what's up",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, what's up",
+              "avg_logprob": -0.4240405224263668,
+              "no_speech_prob": 0.011213012039661407,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "the other",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " the other",
+              "avg_logprob": -0.6552947044372559,
+              "no_speech_prob": 0.04222220554947853,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Yo, it's up",
+          "prompt": "Hey look how you're on air",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yo, it's up",
+              "avg_logprob": -0.38252998143434525,
+              "no_speech_prob": 0.01035287231206894,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795257545.m4a": {
+      "index": 19,
+      "epoch": 1795257545,
+      "sha256": "b78ae807756e7983f0c458b9270e0484e36ea3f0e9f9df691e92a6408ff23e64",
+      "passes": {
+        "original": {
+          "text": "Shoot me at 21 real quick.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Shoot me at 21 real quick.",
+              "avg_logprob": -0.39691441655159,
+              "no_speech_prob": 0.050439659506082535,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I should be at 21 real quick.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I should be at 21 real quick.",
+              "avg_logprob": -0.507482344453985,
+              "no_speech_prob": 0.033778317272663116,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        },
+        "context": {
+          "text": "Shoot me at 21 real quick",
+          "prompt": "Hey look how you're on air Yeah, what's up",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Shoot me at 21 real quick",
+              "avg_logprob": -0.3096335199144151,
+              "no_speech_prob": 0.0012851993087679148,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795257749.m4a": {
+      "index": 20,
+      "epoch": 1795257749,
+      "sha256": "ac4f7c6c2bc5be02b6d971c68201f8777cbcfe9012c8277f0355410f113980ff",
+      "passes": {
+        "original": {
+          "text": "Not over at a contingency.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Not over at a contingency.",
+              "avg_logprob": -0.9154374864366319,
+              "no_speech_prob": 0.10256154090166092,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Not over at extended pay.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Not over at extended pay.",
+              "avg_logprob": -0.7939468489752876,
+              "no_speech_prob": 0.062320295721292496,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "context": {
+          "text": "Not over at a contingency.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Not over at a contingency.",
+              "avg_logprob": -0.9154374864366319,
+              "no_speech_prob": 0.10256154090166092,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        }
+      }
+    }
+  }
+}

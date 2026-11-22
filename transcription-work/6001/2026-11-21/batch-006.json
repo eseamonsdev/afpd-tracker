@@ -1,0 +1,641 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-21",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1795276238.m4a": {
+      "index": 51,
+      "epoch": 1795276238,
+      "sha256": "f4859dd8b17bdde4139bdf2b320c635c82685495cdc6eaa47703aaa2d09528aa",
+      "passes": {
+        "original": {
+          "text": "I think that fit in mine.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I think that fit in mine.",
+              "avg_logprob": -0.785968029499054,
+              "no_speech_prob": 0.06555724143981934,
+              "compression_ratio": 0.8064516129032258
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Is that better, Ryan?",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Is that better, Ryan?",
+              "avg_logprob": -0.8743818071153429,
+              "no_speech_prob": 0.03077075257897377,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "context": {
+          "text": "Nothing in mind.",
+          "prompt": "So, like, I am in the stand-up going. I've looked around this entire area, and I don't believe that's interested in this either. Nice. Okay. So, let's say they're going to be at Jakes or Gonzalez. We start rolling over to Gonzalez and I'll go to Jakes.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Nothing in mind.",
+              "avg_logprob": -0.5965171541486468,
+              "no_speech_prob": 0.06046555936336517,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795276241.m4a": {
+      "index": 52,
+      "epoch": 1795276241,
+      "sha256": "2853a365673a58be3f91686c5a58a9832ba028aa7b2a202c8ac7277b3a55fa34",
+      "passes": {
+        "original": {
+          "text": "Yeah, Subaru is pulling into the driveway, had my address, looks like it might be parents.",
+          "prompt": null,
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Yeah, Subaru is pulling into the driveway, had my address, looks like it might be parents.",
+              "avg_logprob": -0.43358357833779376,
+              "no_speech_prob": 0.002242429181933403,
+              "compression_ratio": 1.0843373493975903
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah, Subaru is pulling into the driveway. I have a address. It might be parents.",
+          "prompt": null,
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Yeah, Subaru is pulling into the driveway. I have a address. It might be parents.",
+              "avg_logprob": -0.5617377324537798,
+              "no_speech_prob": 0.0016620000824332237,
+              "compression_ratio": 1.0125
+            }
+          ]
+        },
+        "context": {
+          "text": "Yeah, Subaru is pulling into the driveway. I have my address. Looks like it might be parents.",
+          "prompt": "I've looked around this entire area, and I don't believe that's interested in this either. Nice. Okay. So, let's say they're going to be at Jakes or Gonzalez. We start rolling over to Gonzalez and I'll go to Jakes. I think that fit in mine.",
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Yeah, Subaru is pulling into the driveway. I have my address. Looks like it might be parents.",
+              "avg_logprob": -0.3645581416785717,
+              "no_speech_prob": 0.001209686161018908,
+              "compression_ratio": 1.0689655172413792
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795276251.m4a": {
+      "index": 53,
+      "epoch": 1795276251,
+      "sha256": "e08839b67df26d547af4c7078a8b2086f4dc97bfa79d257400490a86e3009985",
+      "passes": {
+        "original": {
+          "text": "Okay, then let's go to Ken's office then.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Okay, then let's go to Ken's office then.",
+              "avg_logprob": -0.7775304794311524,
+              "no_speech_prob": 0.052579570561647415,
+              "compression_ratio": 0.9318181818181818
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Okay, and let's all go to Ken's Allison.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Okay, and let's all go to Ken's Allison.",
+              "avg_logprob": -0.7879611810048421,
+              "no_speech_prob": 0.025579262524843216,
+              "compression_ratio": 0.8695652173913043
+            }
+          ]
+        },
+        "context": {
+          "text": "Okay, then let's roll over to Gonzalez.",
+          "prompt": "Nice. Okay. So, let's say they're going to be at Jakes or Gonzalez. We start rolling over to Gonzalez and I'll go to Jakes. I think that fit in mine. Yeah, Subaru is pulling into the driveway, had my address, looks like it might be parents.",
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Okay, then let's roll over to Gonzalez.",
+              "avg_logprob": -0.4735677975874681,
+              "no_speech_prob": 0.040461357682943344,
+              "compression_ratio": 0.8297872340425532
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795276277.m4a": {
+      "index": 54,
+      "epoch": 1795276277,
+      "sha256": "d78ec2d51dd14ad573e6d8029837afd71095d3f22b7e0ae9a65e16540e08eb86",
+      "passes": {
+        "original": {
+          "text": "The elderly couple",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " The elderly couple",
+              "avg_logprob": -0.3384749839703242,
+              "no_speech_prob": 0.031863633543252945,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "filtered": {
+          "text": "The elderly couple.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " The elderly couple.",
+              "avg_logprob": -0.5708654778344291,
+              "no_speech_prob": 0.04139640927314758,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "It's an elderly couple.",
+          "prompt": "I think that fit in mine. Yeah, Subaru is pulling into the driveway, had my address, looks like it might be parents. Okay, then let's go to Ken's office then.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " It's an elderly couple.",
+              "avg_logprob": -0.4308842553032769,
+              "no_speech_prob": 0.017485303804278374,
+              "compression_ratio": 0.7419354838709677
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795276281.m4a": {
+      "index": 55,
+      "epoch": 1795276281,
+      "sha256": "6794b2d5ec551c16541686f1f096054d371893721cc506266ce2939e2446831b",
+      "passes": {
+        "original": {
+          "text": "Okay, we'll see you in a second.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0200000000000005,
+              "text": " Okay, we'll see you in a second.",
+              "avg_logprob": -0.46919081761286807,
+              "no_speech_prob": 0.06770098209381104,
+              "compression_ratio": 0.8421052631578947
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Okay, we'll see you in a second.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Okay, we'll see you in a second.",
+              "avg_logprob": -0.5002279098217304,
+              "no_speech_prob": 0.07700328528881073,
+              "compression_ratio": 0.8421052631578947
+            }
+          ]
+        },
+        "context": {
+          "text": "Okay, we'll see you in a second.",
+          "prompt": "Yeah, Subaru is pulling into the driveway, had my address, looks like it might be parents. Okay, then let's go to Ken's office then. The elderly couple",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Okay, we'll see you in a second.",
+              "avg_logprob": -0.5979211697211633,
+              "no_speech_prob": 0.08178715407848358,
+              "compression_ratio": 0.8421052631578947
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795276285.m4a": {
+      "index": 56,
+      "epoch": 1795276285,
+      "sha256": "89d4c91fa115994c715921d1c25aab6786e22efd27814d7e051bd9dd946de648",
+      "passes": {
+        "original": {
+          "text": "Does that second address return at all to an E7J address?",
+          "prompt": null,
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Does that second address return at all to an E7J address?",
+              "avg_logprob": -0.3711516436408548,
+              "no_speech_prob": 0.022989360615611076,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Does that second address return at all to an E7J address?",
+          "prompt": null,
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Does that second address return at all to an E7J address?",
+              "avg_logprob": -0.4989045648013844,
+              "no_speech_prob": 0.021621033549308777,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "Does that second address return at all to an E7J address, please?",
+          "prompt": "Okay, then let's go to Ken's office then. The elderly couple Okay, we'll see you in a second.",
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Does that second address return at all to an E7J address, please?",
+              "avg_logprob": -0.3069286785627666,
+              "no_speech_prob": 0.02535582333803177,
+              "compression_ratio": 1.0
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795276295.m4a": {
+      "index": 57,
+      "epoch": 1795276295,
+      "sha256": "62c17d274c74b1876317c28d7cd13c45486d50dc0904ca512590ce6e909f470d",
+      "passes": {
+        "original": {
+          "text": "I think it might.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I think it might.",
+              "avg_logprob": -0.3846520259976387,
+              "no_speech_prob": 0.04869406297802925,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I think it might.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " I think it might.",
+              "avg_logprob": -0.4423057362437248,
+              "no_speech_prob": 0.017512641847133636,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "I think it might.",
+          "prompt": "The elderly couple Okay, we'll see you in a second. Does that second address return at all to an E7J address?",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I think it might.",
+              "avg_logprob": -0.3346715085208416,
+              "no_speech_prob": 0.01707758568227291,
+              "compression_ratio": 0.68
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795276358.m4a": {
+      "index": 58,
+      "epoch": 1795276358,
+      "sha256": "54d0b4eee693144777a9901d3100820cd07dc6a185eeace1d9950817a18bc5ac",
+      "passes": {
+        "original": {
+          "text": "McCombie, you did not live in this address.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " McCombie, you did not live in this address.",
+              "avg_logprob": -0.6757850732122149,
+              "no_speech_prob": 0.04008223116397858,
+              "compression_ratio": 0.8431372549019608
+            }
+          ]
+        },
+        "filtered": {
+          "text": "He might call me. He did not live in this address.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " He might call me. He did not live in this address.",
+              "avg_logprob": -0.5343171022832394,
+              "no_speech_prob": 0.027124932035803795,
+              "compression_ratio": 0.8928571428571429
+            }
+          ]
+        },
+        "context": {
+          "text": "McCombie, you did not live in this address.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " McCombie, you did not live in this address.",
+              "avg_logprob": -0.6757850732122149,
+              "no_speech_prob": 0.04008223116397858,
+              "compression_ratio": 0.8431372549019608
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795276365.m4a": {
+      "index": 59,
+      "epoch": 1795276365,
+      "sha256": "b8c5d381816a870cda61db96ef19a69ede1e6768083bbf66e034d811417da1c3",
+      "passes": {
+        "original": {
+          "text": "Got it.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Got it.",
+              "avg_logprob": -0.5591064194838206,
+              "no_speech_prob": 0.17293521761894226,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Got it.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Got it.",
+              "avg_logprob": -0.7054670651753744,
+              "no_speech_prob": 0.17461614310741425,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Got it?",
+          "prompt": "McCombie, you did not live in this address.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Got it?",
+              "avg_logprob": -0.622309148311615,
+              "no_speech_prob": 0.1054098829627037,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795276369.m4a": {
+      "index": 60,
+      "epoch": 1795276369,
+      "sha256": "90514e2eaa7b06cfad38e4d45e78ccdfd68182437894b032d0c8ea87fd203a3b",
+      "passes": {
+        "original": {
+          "text": "Family units here are the clerks.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Family units here are the clerks.",
+              "avg_logprob": -0.6562525391578674,
+              "no_speech_prob": 0.008973493240773678,
+              "compression_ratio": 0.8461538461538461
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm the only one who lives here in the courts.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I'm the only one who lives here in the courts.",
+              "avg_logprob": -0.8147258122762044,
+              "no_speech_prob": 0.004911976400762796,
+              "compression_ratio": 0.9387755102040817
+            }
+          ]
+        },
+        "context": {
+          "text": "Family units here are the clerks.",
+          "prompt": "McCombie, you did not live in this address. Got it.",
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Family units here are the clerks.",
+              "avg_logprob": -0.5485855042934418,
+              "no_speech_prob": 0.0019118764903396368,
+              "compression_ratio": 0.8461538461538461
+            }
+          ]
+        }
+      }
+    }
+  }
+}
