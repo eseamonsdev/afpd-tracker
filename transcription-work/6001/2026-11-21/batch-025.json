@@ -1,0 +1,673 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-21",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1795328774.m4a": {
+      "index": 241,
+      "epoch": 1795328774,
+      "sha256": "9dac36d07befe2b33d7844e4a122fd10805c2bbf83c8a5bc85f3c04bb3804335",
+      "passes": {
+        "original": {
+          "text": "When everybody's getting ready to eat lunch, I'm never hungry. When I get hungry again, they're at like 2 a.m.",
+          "prompt": null,
+          "duration_seconds": 7.936,
+          "token_limit": 88,
+          "token_count": 33,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " When everybody's getting ready to eat lunch, I'm never hungry.",
+              "avg_logprob": -0.3261736719047322,
+              "no_speech_prob": 0.10037305951118469,
+              "compression_ratio": 1.1702127659574468
+            },
+            {
+              "start": 4.0,
+              "end": 8.0,
+              "text": " When I get hungry again, they're at like 2 a.m.",
+              "avg_logprob": -0.3261736719047322,
+              "no_speech_prob": 0.10037305951118469,
+              "compression_ratio": 1.1702127659574468
+            }
+          ]
+        },
+        "filtered": {
+          "text": "When everybody's getting ready to eat lunch, I'm never hungry. Gonna get hungry again or at like 2 a.m.",
+          "prompt": null,
+          "duration_seconds": 7.936,
+          "token_limit": 88,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " When everybody's getting ready to eat lunch, I'm never hungry.",
+              "avg_logprob": -0.3125048987567425,
+              "no_speech_prob": 0.06669893860816956,
+              "compression_ratio": 1.1195652173913044
+            },
+            {
+              "start": 4.0,
+              "end": 8.0,
+              "text": " Gonna get hungry again or at like 2 a.m.",
+              "avg_logprob": -0.3125048987567425,
+              "no_speech_prob": 0.06669893860816956,
+              "compression_ratio": 1.1195652173913044
+            }
+          ]
+        },
+        "context": {
+          "text": "When everybody's getting ready to eat lunch, I'm never hungry. When I get hungry again, we're at like 2 a.m.",
+          "prompt": "Tom, you said the bad thing about using the beginning of the shooting as well.",
+          "duration_seconds": 7.936,
+          "token_limit": 88,
+          "token_count": 33,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " When everybody's getting ready to eat lunch, I'm never hungry.",
+              "avg_logprob": -0.27113183982232036,
+              "no_speech_prob": 0.07476799935102463,
+              "compression_ratio": 1.1612903225806452
+            },
+            {
+              "start": 4.0,
+              "end": 8.0,
+              "text": " When I get hungry again, we're at like 2 a.m.",
+              "avg_logprob": -0.27113183982232036,
+              "no_speech_prob": 0.07476799935102463,
+              "compression_ratio": 1.1612903225806452
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795328786.m4a": {
+      "index": 242,
+      "epoch": 1795328786,
+      "sha256": "45ea5e05742342f828a31d9607f60d27960d554b6df8d62b4e826c8ed28d0312",
+      "passes": {
+        "original": {
+          "text": "Are you hungry now?",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Are you hungry now?",
+              "avg_logprob": -0.2800374664366245,
+              "no_speech_prob": 0.05421357974410057,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Are you hungry now?",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Are you hungry now?",
+              "avg_logprob": -0.3279118724167347,
+              "no_speech_prob": 0.0334705226123333,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "Are you hungry now? Mm-hmm.",
+          "prompt": "Tom, you said the bad thing about using the beginning of the shooting as well. When everybody's getting ready to eat lunch, I'm never hungry. When I get hungry again, they're at like 2 a.m.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Are you hungry now? Mm-hmm.",
+              "avg_logprob": -0.2776268294879368,
+              "no_speech_prob": 0.03772741183638573,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795328791.m4a": {
+      "index": 243,
+      "epoch": 1795328791,
+      "sha256": "6db53561a5e827fbad87b55c2a395b43d9dccb92653b44ba326c128892163e15",
+      "passes": {
+        "original": {
+          "text": "Sadly, no.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Sadly, no.",
+              "avg_logprob": -0.4986413036073957,
+              "no_speech_prob": 0.0680789202451706,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Sadly, no.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Sadly, no.",
+              "avg_logprob": -0.6977371317999703,
+              "no_speech_prob": 0.01844451203942299,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Sadly, no.",
+          "prompt": "Tom, you said the bad thing about using the beginning of the shooting as well. When everybody's getting ready to eat lunch, I'm never hungry. When I get hungry again, they're at like 2 a.m. Are you hungry now?",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Sadly, no.",
+              "avg_logprob": -0.3443521090916225,
+              "no_speech_prob": 0.014044538140296936,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795328798.m4a": {
+      "index": 244,
+      "epoch": 1795328798,
+      "sha256": "d6fd7c8f7dd7089fa0d423cc24061de2757f112d9258b57b263cb52497c3842b",
+      "passes": {
+        "original": {
+          "text": "What's that? It's me. We're going to TV right now. We're not eating.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " What's that? It's me. We're going to TV right now. We're not eating.",
+              "avg_logprob": -0.4923449655373891,
+              "no_speech_prob": 0.07395851612091064,
+              "compression_ratio": 1.0461538461538462
+            }
+          ]
+        },
+        "filtered": {
+          "text": "What's that? It's me. We're going to TV right now. It's not easy.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " What's that? It's me. We're going to TV right now.",
+              "avg_logprob": -0.4718194500758098,
+              "no_speech_prob": 0.0788140594959259,
+              "compression_ratio": 1.0
+            },
+            {
+              "start": 3.0,
+              "end": 5.0,
+              "text": " It's not easy.",
+              "avg_logprob": -0.4718194500758098,
+              "no_speech_prob": 0.0788140594959259,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "What's that? It's eating. We're going to the TV right now. It's not eating.",
+          "prompt": "When everybody's getting ready to eat lunch, I'm never hungry. When I get hungry again, they're at like 2 a.m. Are you hungry now? Sadly, no.",
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " What's that? It's eating. We're going to the TV right now. It's not eating.",
+              "avg_logprob": -0.2979815769195557,
+              "no_speech_prob": 0.0011750999838113785,
+              "compression_ratio": 1.1194029850746268
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795328806.m4a": {
+      "index": 245,
+      "epoch": 1795328806,
+      "sha256": "82c51d6121a8bb9eb0ef4336173d900f6e527841c970804c82d625ac0ce93929",
+      "passes": {
+        "original": {
+          "text": "Here I can eat.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Here I can eat.",
+              "avg_logprob": -0.8002864345908165,
+              "no_speech_prob": 0.1407920867204666,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Y'all can eat.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Y'all can eat.",
+              "avg_logprob": -0.7980132632785373,
+              "no_speech_prob": 0.10825318098068237,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "Here I can eat.",
+          "prompt": "Are you hungry now? Sadly, no. What's that? It's me. We're going to TV right now. We're not eating.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Here I can eat.",
+              "avg_logprob": -0.5092276930809021,
+              "no_speech_prob": 0.03201591596007347,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795328887.m4a": {
+      "index": 246,
+      "epoch": 1795328887,
+      "sha256": "aa114ecb95115f5ed2eef6a8f2163db9a4e80a16f17ac4bd7489ddfca2855f4d",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.84,
+              "text": " Copy.",
+              "avg_logprob": -0.7590379238128662,
+              "no_speech_prob": 0.077175572514534,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5896679878234863,
+              "no_speech_prob": 0.0540819987654686,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.84,
+              "text": " Copy.",
+              "avg_logprob": -0.7590379238128662,
+              "no_speech_prob": 0.077175572514534,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795328964.m4a": {
+      "index": 247,
+      "epoch": 1795328964,
+      "sha256": "b2113b6718ff50bcbbfbd0011ea1ad146be0c874f077a8b002b992b407627baa",
+      "passes": {
+        "original": {
+          "text": "Looks like everyone's 20.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Looks like everyone's 20.",
+              "avg_logprob": -0.7237348556518555,
+              "no_speech_prob": 0.05665191262960434,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Not everyone's 20.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Not everyone's 20.",
+              "avg_logprob": -0.9113792330026627,
+              "no_speech_prob": 0.04022245109081268,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "context": {
+          "text": "Looks like everyone's 20.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Looks like everyone's 20.",
+              "avg_logprob": -0.7237348556518555,
+              "no_speech_prob": 0.05665191262960434,
+              "compression_ratio": 0.7575757575757576
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795328968.m4a": {
+      "index": 248,
+      "epoch": 1795328968,
+      "sha256": "66e417a363105c73c4ac9d605eaa73713cb897064c1f3523378c30e7eac86ca9",
+      "passes": {
+        "original": {
+          "text": "800 north, 390 east.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.36,
+              "text": " 800 north, 390 east.",
+              "avg_logprob": -0.6507976849873861,
+              "no_speech_prob": 0.04859743267297745,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "800 north, 390 east.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.5,
+              "text": " 800 north, 390 east.",
+              "avg_logprob": -0.6893561681111654,
+              "no_speech_prob": 0.024210534989833832,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "context": {
+          "text": "800 north, 390 east.",
+          "prompt": "Looks like everyone's 20.",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.36,
+              "text": " 800 north, 390 east.",
+              "avg_logprob": -0.5420839521620009,
+              "no_speech_prob": 0.014750195667147636,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795328973.m4a": {
+      "index": 249,
+      "epoch": 1795328973,
+      "sha256": "8b098b6643aae54997d6e83a4b3a7fa007142055eeec48a120c126c365b7c8eb",
+      "passes": {
+        "original": {
+          "text": "The antongler is still here station.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " The antongler is still here station.",
+              "avg_logprob": -0.7868325610955557,
+              "no_speech_prob": 0.04178376868367195,
+              "compression_ratio": 0.8571428571428571
+            }
+          ]
+        },
+        "filtered": {
+          "text": "The end tower is still at your station.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " The end tower is still at your station.",
+              "avg_logprob": -0.7666403651237488,
+              "no_speech_prob": 0.0157349593937397,
+              "compression_ratio": 0.8666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "The antongar is still here station.",
+          "prompt": "Looks like everyone's 20. 800 north, 390 east.",
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " The antongar is still here station.",
+              "avg_logprob": -0.6665263772010803,
+              "no_speech_prob": 0.007077918387949467,
+              "compression_ratio": 0.8536585365853658
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795328980.m4a": {
+      "index": 250,
+      "epoch": 1795328980,
+      "sha256": "2fe66751a9864b56bcf97f120082488bc46641e5d68a399ad5cdf8cbc8d173e8",
+      "passes": {
+        "original": {
+          "text": "I'm in the neighborhood. It's 800 north and 290 east.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.8,
+              "text": " I'm in the neighborhood. It's 800 north and 290 east.",
+              "avg_logprob": -0.41187917484956627,
+              "no_speech_prob": 0.0418696254491806,
+              "compression_ratio": 0.8688524590163934
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm in the neighborhood to be 100 North and 290 East.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " I'm in the neighborhood to be 100 North and 290 East.",
+              "avg_logprob": -0.40382777340710163,
+              "no_speech_prob": 0.0200249832123518,
+              "compression_ratio": 0.8688524590163934
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm in the neighborhood. 800 north and 290 east.",
+          "prompt": "Looks like everyone's 20. 800 north, 390 east. The antongler is still here station.",
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.8,
+              "text": " I'm in the neighborhood. 800 north and 290 east.",
+              "avg_logprob": -0.2556368867556254,
+              "no_speech_prob": 0.006820150651037693,
+              "compression_ratio": 0.8571428571428571
+            }
+          ]
+        }
+      }
+    }
+  }
+}

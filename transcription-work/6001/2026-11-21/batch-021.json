@@ -1,0 +1,649 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-21",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1795321723.m4a": {
+      "index": 201,
+      "epoch": 1795321723,
+      "sha256": "bf59b19caca6e48723e1464463eef3599144d20f8fa5fe84be2b7ccee058551f",
+      "passes": {
+        "original": {
+          "text": "Copy, I'll head your way. I'm on Main Street right now.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.4,
+              "text": " Copy, I'll head your way. I'm on Main Street right now.",
+              "avg_logprob": -0.3774749824875279,
+              "no_speech_prob": 0.012648151256144047,
+              "compression_ratio": 0.8870967741935484
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy. I'll head your way. I'm on Main Street right now.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Copy. I'll head your way. I'm on Main Street right now.",
+              "avg_logprob": -0.3750908092448586,
+              "no_speech_prob": 0.008986711502075195,
+              "compression_ratio": 0.9166666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy, I'll head your way. I'm on Main Street right now.",
+          "prompt": "Do we have a description, like, holding? Well, yesterday she was wearing a, like, pink puffer coat. She has a teal backpack, and I can't remember if the sweats were gray or black. I might have her here at Target, sitting out front.",
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.12,
+              "text": " Copy, I'll head your way. I'm on Main Street right now.",
+              "avg_logprob": -0.2669941437871833,
+              "no_speech_prob": 0.008638850413262844,
+              "compression_ratio": 0.8870967741935484
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795321728.m4a": {
+      "index": 202,
+      "epoch": 1795321728,
+      "sha256": "e4bcecc59f032366ea2d280b57df06619e5ad6456b5cea8d2fef989f3c560d25",
+      "passes": {
+        "original": {
+          "text": "Not that big.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Not that big.",
+              "avg_logprob": -0.6775939975466047,
+              "no_speech_prob": 0.155632883310318,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "That's it.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " That's it.",
+              "avg_logprob": -0.7708343778337751,
+              "no_speech_prob": 0.16187962889671326,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Not that big.",
+          "prompt": "Well, yesterday she was wearing a, like, pink puffer coat. She has a teal backpack, and I can't remember if the sweats were gray or black. I might have her here at Target, sitting out front. Copy, I'll head your way. I'm on Main Street right now.",
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Not that big.",
+              "avg_logprob": -0.46959078311920166,
+              "no_speech_prob": 0.05540822073817253,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795321733.m4a": {
+      "index": 203,
+      "epoch": 1795321733,
+      "sha256": "7f2f35e74f7f926f2bdad420bfc547ff288c703e7d2dcfce5e232cf6f16530b8",
+      "passes": {
+        "original": {
+          "text": "Yeah, take a picture, send it out.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, take a picture, send it out.",
+              "avg_logprob": -0.3741475527103131,
+              "no_speech_prob": 0.004983910359442234,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah, take a picture, send it out.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, take a picture, send it out.",
+              "avg_logprob": -0.3706311354270348,
+              "no_speech_prob": 0.003604648634791374,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "context": {
+          "text": "Yeah, take a picture, send it out.",
+          "prompt": "I might have her here at Target, sitting out front. Copy, I'll head your way. I'm on Main Street right now. Not that big.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, take a picture, send it out.",
+              "avg_logprob": -0.24104715310610259,
+              "no_speech_prob": 0.0054077995009720325,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795321738.m4a": {
+      "index": 204,
+      "epoch": 1795321738,
+      "sha256": "00bf607ba32369e13537a972f532eaa2046a7af44573e2b7ac9473e19c1fa7e7",
+      "passes": {
+        "original": {
+          "text": "It is to note though that she has some extra clothes on her backpack.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " It is to note though that she has some extra clothes on her backpack.",
+              "avg_logprob": -0.4129551135831409,
+              "no_speech_prob": 0.04902631416916847,
+              "compression_ratio": 1.0298507462686568
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It is to not go that she has some extra clothes in her backpack.",
+          "prompt": null,
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " It is to not go that she has some extra clothes in her backpack.",
+              "avg_logprob": -0.5367490086290572,
+              "no_speech_prob": 0.027982689440250397,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "It is to note though that she has some extra clothes on her backpack.",
+          "prompt": "Copy, I'll head your way. I'm on Main Street right now. Not that big. Yeah, take a picture, send it out.",
+          "duration_seconds": 5.76,
+          "token_limit": 71,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " It is to note though that she has some extra clothes on her backpack.",
+              "avg_logprob": -0.389068356818623,
+              "no_speech_prob": 0.028355492278933525,
+              "compression_ratio": 1.0298507462686568
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795321748.m4a": {
+      "index": 205,
+      "epoch": 1795321748,
+      "sha256": "f4f7d3143c8a8490eb585ff0027cba519ae9d9401ab6ece1af3f3174bd246d83",
+      "passes": {
+        "original": {
+          "text": "She had a black beanie that she really wanted us to keep track of.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " She had a black beanie that she really wanted us to keep track of.",
+              "avg_logprob": -0.23444632793727674,
+              "no_speech_prob": 0.008686327375471592,
+              "compression_ratio": 0.9850746268656716
+            }
+          ]
+        },
+        "filtered": {
+          "text": "She had a black beanie that she really wanted us to keep track of.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.4,
+              "text": " She had a black beanie that she really wanted us to keep track of.",
+              "avg_logprob": -0.26138657645175334,
+              "no_speech_prob": 0.0026073020417243242,
+              "compression_ratio": 0.9850746268656716
+            }
+          ]
+        },
+        "context": {
+          "text": "She had a black beanie that she really wanted us to keep track of.",
+          "prompt": "Not that big. Yeah, take a picture, send it out. It is to note though that she has some extra clothes on her backpack.",
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.16,
+              "text": " She had a black beanie that she really wanted us to keep track of.",
+              "avg_logprob": -0.18581423633976987,
+              "no_speech_prob": 0.0019811957608908415,
+              "compression_ratio": 0.9850746268656716
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795321769.m4a": {
+      "index": 206,
+      "epoch": 1795321769,
+      "sha256": "3e79361e4cecbfca1c75f1d1c28a3ee637575e0f749fa5e9ded168048e49a25f",
+      "passes": {
+        "original": {
+          "text": "That looks very much like her, but can you get closer?",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " That looks very much like her, but can you get closer?",
+              "avg_logprob": -0.3560463432222605,
+              "no_speech_prob": 0.019131004810333252,
+              "compression_ratio": 0.9
+            }
+          ]
+        },
+        "filtered": {
+          "text": "That looks very much like her. Can you get closer?",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " That looks very much like her.",
+              "avg_logprob": -0.43539125779095816,
+              "no_speech_prob": 0.003342232434079051,
+              "compression_ratio": 0.8620689655172413
+            },
+            {
+              "start": 3.0,
+              "end": 5.0,
+              "text": " Can you get closer?",
+              "avg_logprob": -0.43539125779095816,
+              "no_speech_prob": 0.003342232434079051,
+              "compression_ratio": 0.8620689655172413
+            }
+          ]
+        },
+        "context": {
+          "text": "That looks very much like her. But can you get closer?",
+          "prompt": "Yeah, take a picture, send it out. It is to note though that she has some extra clothes on her backpack. She had a black beanie that she really wanted us to keep track of.",
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " That looks very much like her. But can you get closer?",
+              "avg_logprob": -0.2719149459153414,
+              "no_speech_prob": 0.003984625916928053,
+              "compression_ratio": 0.9
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795321782.m4a": {
+      "index": 207,
+      "epoch": 1795321782,
+      "sha256": "9152c3c137d090d26dea4887f0ac5377ac8e32902a2bb6ff4ff4af3d8bb0e4d3",
+      "passes": {
+        "original": {
+          "text": "How far out of the nearest?",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " How far out of the nearest?",
+              "avg_logprob": -0.48425116539001467,
+              "no_speech_prob": 0.03821470960974693,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        },
+        "filtered": {
+          "text": "How far out of the nearest?",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.24,
+              "text": " How far out of the nearest?",
+              "avg_logprob": -0.6457351684570313,
+              "no_speech_prob": 0.018391279503703117,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        },
+        "context": {
+          "text": "How far out of the nearest?",
+          "prompt": "It is to note though that she has some extra clothes on her backpack. She had a black beanie that she really wanted us to keep track of. That looks very much like her, but can you get closer?",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.12,
+              "text": " How far out of the nearest?",
+              "avg_logprob": -0.45040318965911863,
+              "no_speech_prob": 0.023925956338644028,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795321786.m4a": {
+      "index": 208,
+      "epoch": 1795321786,
+      "sha256": "dd5accb1dd48cccfb12a3286fd7bfb7d338a604461c0a568d5a538540ea9d056",
+      "passes": {
+        "original": {
+          "text": "I'm on Kawakami Drive right now so like one minute",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.68,
+              "text": " I'm on Kawakami Drive right now so like one minute",
+              "avg_logprob": -0.3867566864937544,
+              "no_speech_prob": 0.01785568706691265,
+              "compression_ratio": 0.8771929824561403
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm on Kawakami Drive right now so like one minute",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.68,
+              "text": " I'm on Kawakami Drive right now so like one minute",
+              "avg_logprob": -0.3374938666820526,
+              "no_speech_prob": 0.010948204435408115,
+              "compression_ratio": 0.8771929824561403
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm on Kawakami Drive right now, so like one minute.",
+          "prompt": "She had a black beanie that she really wanted us to keep track of. That looks very much like her, but can you get closer? How far out of the nearest?",
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.640000000000001,
+              "text": " I'm on Kawakami Drive right now, so like one minute.",
+              "avg_logprob": -0.3057785431543986,
+              "no_speech_prob": 0.007745702750980854,
+              "compression_ratio": 0.8813559322033898
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795321796.m4a": {
+      "index": 209,
+      "epoch": 1795321796,
+      "sha256": "6f2e126bda298fb2eb3e7fdcfb9efd4a9c86d148a187eb0067b02cf21ea5141e",
+      "passes": {
+        "original": {
+          "text": "I'm right behind her.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm right behind her.",
+              "avg_logprob": -0.5629205173916287,
+              "no_speech_prob": 0.24202807247638702,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm right, I think that's it.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm right, I think that's it.",
+              "avg_logprob": -0.7995692583230826,
+              "no_speech_prob": 0.08153892308473587,
+              "compression_ratio": 0.8285714285714286
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm right behind her",
+          "prompt": "That looks very much like her, but can you get closer? How far out of the nearest? I'm on Kawakami Drive right now so like one minute",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm right behind her",
+              "avg_logprob": -0.44462059438228607,
+              "no_speech_prob": 0.11234653741121292,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795321813.m4a": {
+      "index": 210,
+      "epoch": 1795321813,
+      "sha256": "09e4a03b8b540d687791024247f745a9a51df5729ebad8c29a51b976d5e74ffd",
+      "passes": {
+        "original": {
+          "text": "I'm just confirming you guys said you were at Target parking lot, right?",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.3200000000000003,
+              "text": " I'm just confirming you guys said you were at Target parking lot, right?",
+              "avg_logprob": -0.36885554853238556,
+              "no_speech_prob": 0.04974452778697014,
+              "compression_ratio": 0.972972972972973
+            }
+          ]
+        },
+        "filtered": {
+          "text": "You can just confirm you guys said you were at Target parking lot, right?",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " You can just confirm you guys said you were at Target parking lot, right?",
+              "avg_logprob": -0.4184666181865491,
+              "no_speech_prob": 0.02919439971446991,
+              "compression_ratio": 0.9733333333333334
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm just confirming you guys said you were at Target parking lot right?",
+          "prompt": "How far out of the nearest? I'm on Kawakami Drive right now so like one minute I'm right behind her.",
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.16,
+              "text": " I'm just confirming you guys said you were at Target parking lot right?",
+              "avg_logprob": -0.2526460505194134,
+              "no_speech_prob": 0.012708528898656368,
+              "compression_ratio": 0.9726027397260274
+            }
+          ]
+        }
+      }
+    }
+  }
+}
