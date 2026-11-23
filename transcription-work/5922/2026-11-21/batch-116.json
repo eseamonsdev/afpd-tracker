@@ -1,0 +1,681 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-21",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1795321810.m4a": {
+      "index": 1151,
+      "epoch": 1795321810,
+      "sha256": "93da3dec2ed5cd4030bbfa0e45a2530f3399c6354496a667c96ad75b56bf4a89",
+      "passes": {
+        "original": {
+          "text": "6,000 West, 10,800 North on local 6 Zulu 1 Charlie Alpha",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.88,
+              "text": " 6,000 West, 10,800 North on local 6 Zulu 1 Charlie Alpha",
+              "avg_logprob": -0.5535718649625778,
+              "no_speech_prob": 0.03024662658572197,
+              "compression_ratio": 0.9032258064516129
+            }
+          ]
+        },
+        "filtered": {
+          "text": "6,000 West, 10,800 North on local 601 Charlie Alpha.",
+          "prompt": null,
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.92,
+              "text": " 6,000 West, 10,800 North on local 601 Charlie Alpha.",
+              "avg_logprob": -0.5243780173753437,
+              "no_speech_prob": 0.024936314672231674,
+              "compression_ratio": 0.896551724137931
+            }
+          ]
+        },
+        "context": {
+          "text": "6,000 West, 10,800 North on local 6Z1 Charlie Alpha.",
+          "prompt": "Thank you. Copy. HEDR 16 traffic. Bye.",
+          "duration_seconds": 5.504,
+          "token_limit": 69,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.88,
+              "text": " 6,000 West, 10,800 North on local 6Z1 Charlie Alpha.",
+              "avg_logprob": -0.5010938882827759,
+              "no_speech_prob": 0.03122561052441597,
+              "compression_ratio": 0.896551724137931
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795321817.m4a": {
+      "index": 1152,
+      "epoch": 1795321817,
+      "sha256": "b2891f57ef37b62f48299f2bb36ddbede28add5a31e4d3dbeab4dcd5f1cac96b",
+      "passes": {
+        "original": {
+          "text": "6,000 West.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 6,000 West.",
+              "avg_logprob": -0.5445664525032043,
+              "no_speech_prob": 0.06988120824098587,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "6,000 West.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 6,000 West.",
+              "avg_logprob": -0.4750946834683418,
+              "no_speech_prob": 0.04350871592760086,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "6,000 West",
+          "prompt": "HEDR 16 traffic. Bye. 6,000 West, 10,800 North on local 6 Zulu 1 Charlie Alpha",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 6,000 West",
+              "avg_logprob": -0.31417401347841534,
+              "no_speech_prob": 0.014589732512831688,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795321822.m4a": {
+      "index": 1153,
+      "epoch": 1795321822,
+      "sha256": "699623e2f638cc23ade16706756af1cc28c14cb0a761458194dbee92ef6f57ec",
+      "passes": {
+        "original": {
+          "text": "First, Debbie.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " First, Debbie.",
+              "avg_logprob": -0.9073686259133475,
+              "no_speech_prob": 0.030726611614227295,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "filtered": {
+          "text": "First. Debbie?",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " First.",
+              "avg_logprob": -0.8431673049926758,
+              "no_speech_prob": 0.039579760283231735,
+              "compression_ratio": 0.6363636363636364
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Debbie?",
+              "avg_logprob": -0.8431673049926758,
+              "no_speech_prob": 0.039579760283231735,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "First. Copy.",
+          "prompt": "Bye. 6,000 West, 10,800 North on local 6 Zulu 1 Charlie Alpha 6,000 West.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " First.",
+              "avg_logprob": -0.7597145504421658,
+              "no_speech_prob": 0.007080181501805782,
+              "compression_ratio": 0.6
+            },
+            {
+              "start": 1.0,
+              "end": 1.5,
+              "text": " Copy.",
+              "avg_logprob": -0.7597145504421658,
+              "no_speech_prob": 0.007080181501805782,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795321862.m4a": {
+      "index": 1154,
+      "epoch": 1795321862,
+      "sha256": "50fe55a8687a4c80b805f87ed235b554f33db0b84d893601da355115e3200303",
+      "passes": {
+        "original": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.3200000000000003,
+              "text": " Thank you.",
+              "avg_logprob": -0.6577674051125845,
+              "no_speech_prob": 0.1976161003112793,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.4,
+              "text": " Thank you.",
+              "avg_logprob": -0.6940588851769766,
+              "no_speech_prob": 0.1709394007921219,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you.",
+          "prompt": "6,000 West, 10,800 North on local 6 Zulu 1 Charlie Alpha 6,000 West. First, Debbie.",
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.3200000000000003,
+              "text": " Thank you.",
+              "avg_logprob": -0.756664921840032,
+              "no_speech_prob": 0.13931237161159515,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795321873.m4a": {
+      "index": 1155,
+      "epoch": 1795321873,
+      "sha256": "d4101e31956f6529ab430541650d3bd289c154ff481d48fef1358c5044e5eeb0",
+      "passes": {
+        "original": {
+          "text": "5G, 29. Contact with the female at target.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 5G, 29.",
+              "avg_logprob": -0.572195894577924,
+              "no_speech_prob": 0.013384444639086723,
+              "compression_ratio": 0.84
+            },
+            {
+              "start": 1.0,
+              "end": 3.0,
+              "text": " Contact with the female at target.",
+              "avg_logprob": -0.572195894577924,
+              "no_speech_prob": 0.013384444639086723,
+              "compression_ratio": 0.84
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G, 29. Contact with the female at target.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 5G, 29.",
+              "avg_logprob": -0.5931433509377873,
+              "no_speech_prob": 0.022946268320083618,
+              "compression_ratio": 0.84
+            },
+            {
+              "start": 1.0,
+              "end": 2.72,
+              "text": " Contact with the female at target.",
+              "avg_logprob": -0.5931433509377873,
+              "no_speech_prob": 0.022946268320083618,
+              "compression_ratio": 0.84
+            }
+          ]
+        },
+        "context": {
+          "text": "5G-29. Contact with the female at target.",
+          "prompt": "6,000 West. First, Debbie. Thank you.",
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5G-29. Contact with the female at target.",
+              "avg_logprob": -0.4421414335568746,
+              "no_speech_prob": 0.015802083536982536,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795321877.m4a": {
+      "index": 1156,
+      "epoch": 1795321877,
+      "sha256": "3f079149d891c13257db6488ee294cf554ae1aadf2d0f80e978318877760d5d9",
+      "passes": {
+        "original": {
+          "text": "Copy and target.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy and target.",
+              "avg_logprob": -0.7284774950572422,
+              "no_speech_prob": 0.015357156284153461,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy and target.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy and target.",
+              "avg_logprob": -0.5977520942687988,
+              "no_speech_prob": 0.008273626677691936,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy at target.",
+          "prompt": "First, Debbie. Thank you. 5G, 29. Contact with the female at target.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy at target.",
+              "avg_logprob": -0.3800623757498605,
+              "no_speech_prob": 0.017300570383667946,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795322102.m4a": {
+      "index": 1157,
+      "epoch": 1795322102,
+      "sha256": "2526b6441e28b7ab89584b5da407fc6c427d4dbe15f4bbf70704249100bca9af",
+      "passes": {
+        "original": {
+          "text": "7J31.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 7J31.",
+              "avg_logprob": -0.720607944897243,
+              "no_speech_prob": 0.015174273401498795,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "1731.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 1731.",
+              "avg_logprob": -0.6849615772565206,
+              "no_speech_prob": 0.028480295091867447,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "7J31.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 7J31.",
+              "avg_logprob": -0.720607944897243,
+              "no_speech_prob": 0.015174273401498795,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795322106.m4a": {
+      "index": 1158,
+      "epoch": 1795322106,
+      "sha256": "fd60d93846d7545a8d00079ee89a9aeacade66e125241bfcb831a8e934078d50",
+      "passes": {
+        "original": {
+          "text": "Pleasant Grove Boulevard, 2200 South on a local 255 November ashtray tariff.",
+          "prompt": null,
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Pleasant Grove Boulevard, 2200 South on a local 255 November ashtray tariff.",
+              "avg_logprob": -0.5822970896959305,
+              "no_speech_prob": 0.0225636325776577,
+              "compression_ratio": 0.926829268292683
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Pleasant Grove Boulevard, 2200 South on a local 255 in November Ashrae Sheriff.",
+          "prompt": null,
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Pleasant Grove Boulevard, 2200 South on a local 255 in November Ashrae Sheriff.",
+              "avg_logprob": -0.6842803955078125,
+              "no_speech_prob": 0.017974400892853737,
+              "compression_ratio": 0.9404761904761905
+            }
+          ]
+        },
+        "context": {
+          "text": "Pleasant Grove Boulevard, 2200 South on a local 255 November ashtray tariff.",
+          "prompt": "7J31.",
+          "duration_seconds": 7.296,
+          "token_limit": 83,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Pleasant Grove Boulevard, 2200 South on a local 255 November ashtray tariff.",
+              "avg_logprob": -0.5450132548809051,
+              "no_speech_prob": 0.015121380798518658,
+              "compression_ratio": 0.926829268292683
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795322115.m4a": {
+      "index": 1159,
+      "epoch": 1795322115,
+      "sha256": "4d7e14c0537ccc4875dfc6a6a0eca5b3c2623162e07705ec981d4fba47e905c9",
+      "passes": {
+        "original": {
+          "text": "Scrubby.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Scrubby.",
+              "avg_logprob": -0.7970037971224103,
+              "no_speech_prob": 0.027609746903181076,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Got you.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Got you.",
+              "avg_logprob": -0.7224991420904795,
+              "no_speech_prob": 0.03230588883161545,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Scrubby.",
+          "prompt": "7J31. Pleasant Grove Boulevard, 2200 South on a local 255 November ashtray tariff.",
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Scrubby.",
+              "avg_logprob": -0.6742835896355766,
+              "no_speech_prob": 0.08417724072933197,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795322148.m4a": {
+      "index": 1160,
+      "epoch": 1795322148,
+      "sha256": "132d647ae28ab031684f4b5e9237c833f3c084bc44e84698595bb8aaf46fc50e",
+      "passes": {
+        "original": {
+          "text": "18 to 16, go for it.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18 to 16, go for it.",
+              "avg_logprob": -0.5234715613451871,
+              "no_speech_prob": 0.03432724252343178,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18-16. Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 18-16.",
+              "avg_logprob": -0.493825600697444,
+              "no_speech_prob": 0.02603325992822647,
+              "compression_ratio": 0.68
+            },
+            {
+              "start": 1.0,
+              "end": 1.5,
+              "text": " Go for it.",
+              "avg_logprob": -0.493825600697444,
+              "no_speech_prob": 0.02603325992822647,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "18-16, go for it.",
+          "prompt": "7J31. Pleasant Grove Boulevard, 2200 South on a local 255 November ashtray tariff. Scrubby.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18-16, go for it.",
+              "avg_logprob": -0.5785591493953358,
+              "no_speech_prob": 0.023834042251110077,
+              "compression_ratio": 0.68
+            }
+          ]
+        }
+      }
+    }
+  }
+}
