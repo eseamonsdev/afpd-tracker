@@ -1,0 +1,753 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-22",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1795390951.m4a": {
+      "index": 51,
+      "epoch": 1795390951,
+      "sha256": "d2f9824ce329ea5bf49c22650187e2d3e8dae668d127280ec7d5d921aba6d367",
+      "passes": {
+        "original": {
+          "text": "Jack, have you shut the house?",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Jack, have you shut the house?",
+              "avg_logprob": -0.45271575450897217,
+              "no_speech_prob": 0.1115947961807251,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Jack, can you shut the house?",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Jack, can you shut the house?",
+              "avg_logprob": -0.7778914950110696,
+              "no_speech_prob": 0.1837739795446396,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        },
+        "context": {
+          "text": "Jack, have you shut the house?",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Jack, have you shut the house?",
+              "avg_logprob": -0.45271575450897217,
+              "no_speech_prob": 0.1115947961807251,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795390956.m4a": {
+      "index": 52,
+      "epoch": 1795390956,
+      "sha256": "43826cae6b0d1f797d63c1b30daa8597290a83b637b575476384242e0006ee21",
+      "passes": {
+        "original": {
+          "text": "Yeah.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Yeah.",
+              "avg_logprob": -0.5493200778961181,
+              "no_speech_prob": 0.044695109128952026,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Yeah.",
+              "avg_logprob": -0.6283348560333252,
+              "no_speech_prob": 0.07770512998104095,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Yeah.",
+          "prompt": "Jack, have you shut the house?",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Yeah.",
+              "avg_logprob": -0.4614302635192871,
+              "no_speech_prob": 0.014420690014958382,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795392971.m4a": {
+      "index": 53,
+      "epoch": 1795392971,
+      "sha256": "6938748fd0f4148c8c72f4903d9a71b4954c977d2749bc31d592579f442d6ff1",
+      "passes": {
+        "original": {
+          "text": "Hey Jake, you on here?",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey Jake, you on here?",
+              "avg_logprob": -0.3929810643196106,
+              "no_speech_prob": 0.029032260179519653,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hey Jake, you on here?",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey Jake, you on here?",
+              "avg_logprob": -0.5061202883720398,
+              "no_speech_prob": 0.03314433619379997,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey Jake, you on here?",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hey Jake, you on here?",
+              "avg_logprob": -0.3929810643196106,
+              "no_speech_prob": 0.029032260179519653,
+              "compression_ratio": 0.7333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795392975.m4a": {
+      "index": 54,
+      "epoch": 1795392975,
+      "sha256": "27f2d2066ca102160c01f480c5c6ea96e6b4d699cab133f3ceee6b3bed2b8193",
+      "passes": {
+        "original": {
+          "text": "Yeah, go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Yeah, go ahead.",
+              "avg_logprob": -0.7337289825081825,
+              "no_speech_prob": 0.16505347192287445,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah, go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Yeah, go ahead.",
+              "avg_logprob": -0.584025539457798,
+              "no_speech_prob": 0.12379778176546097,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "context": {
+          "text": "Yeah, go ahead.",
+          "prompt": "Hey Jake, you on here?",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Yeah, go ahead.",
+              "avg_logprob": -0.6348300129175186,
+              "no_speech_prob": 0.07526618242263794,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795392977.m4a": {
+      "index": 55,
+      "epoch": 1795392977,
+      "sha256": "fdf7ba0ffcdd45c4828771458c0fa3c2dca36bdaadb7d635a066ec3c8de9a645",
+      "passes": {
+        "original": {
+          "text": "Oh, I was just going to offer you to take that animal complaint, but a new note says you can 10-22.",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Oh, I was just going to offer you to take that animal complaint, but a new note says you can 10-22.",
+              "avg_logprob": -0.24166671160993905,
+              "no_speech_prob": 0.1035076305270195,
+              "compression_ratio": 1.076086956521739
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Oh, I was just going to offer to take that animal complaint, but a new note says you can 10-22.",
+          "prompt": null,
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Oh, I was just going to offer to take that animal complaint, but a new note says you can 10-22.",
+              "avg_logprob": -0.274479156093938,
+              "no_speech_prob": 0.12976078689098358,
+              "compression_ratio": 1.0795454545454546
+            }
+          ]
+        },
+        "context": {
+          "text": "Oh, I was just going to offer you to take that animal complaint, but a new note says you can 10-22.",
+          "prompt": "Hey Jake, you on here? Yeah, go ahead.",
+          "duration_seconds": 6.4,
+          "token_limit": 76,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Oh, I was just going to offer you to take that animal complaint, but a new note says you can 10-22.",
+              "avg_logprob": -0.2144837687755453,
+              "no_speech_prob": 0.00768352672457695,
+              "compression_ratio": 1.076086956521739
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795392995.m4a": {
+      "index": 56,
+      "epoch": 1795392995,
+      "sha256": "f1b0e85eee65bc968806ca9a6bf9b6afbc5c18ccb98e16d1f3bfef293858d2aa",
+      "passes": {
+        "original": {
+          "text": "Very nice.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Very nice.",
+              "avg_logprob": -0.4925784468650818,
+              "no_speech_prob": 0.04829509183764458,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Very nice.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Very nice.",
+              "avg_logprob": -0.49425651629765827,
+              "no_speech_prob": 0.03200239688158035,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Very nice.",
+          "prompt": "Hey Jake, you on here? Yeah, go ahead. Oh, I was just going to offer you to take that animal complaint, but a new note says you can 10-22.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Very nice.",
+              "avg_logprob": -0.4734685520331065,
+              "no_speech_prob": 0.04011638090014458,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795395677.m4a": {
+      "index": 57,
+      "epoch": 1795395677,
+      "sha256": "e5a1122618f1fb1b38faf08563b2609f48db8a471468704918d8c394f3b90f28",
+      "passes": {
+        "original": {
+          "text": "Hey, 10-14, I've walked around the whole building. The only door open is on the west side, the southwest side, south of the base, and Tonga's over there. But I'm just in the process of getting a hold of the key holder.",
+          "prompt": null,
+          "duration_seconds": 17.792,
+          "token_limit": 167,
+          "token_count": 60,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 12.0,
+              "text": " Hey, 10-14, I've walked around the whole building. The only door open is on the west side, the southwest side, south of the base, and Tonga's over there.",
+              "avg_logprob": -0.2361544038428635,
+              "no_speech_prob": 0.08739262819290161,
+              "compression_ratio": 1.4155844155844155
+            },
+            {
+              "start": 12.0,
+              "end": 17.0,
+              "text": " But I'm just in the process of getting a hold of the key holder.",
+              "avg_logprob": -0.2361544038428635,
+              "no_speech_prob": 0.08739262819290161,
+              "compression_ratio": 1.4155844155844155
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hey, 10-14, I've walked around the whole building, the only door open is on the west side, the southwest side, south of the base, and Tonga's over there. But I'm just in the process of getting a hold of the key holder.",
+          "prompt": null,
+          "duration_seconds": 17.792,
+          "token_limit": 167,
+          "token_count": 60,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 12.0,
+              "text": " Hey, 10-14, I've walked around the whole building, the only door open is on the west side, the southwest side, south of the base, and Tonga's over there.",
+              "avg_logprob": -0.2813934498145932,
+              "no_speech_prob": 0.0331265814602375,
+              "compression_ratio": 1.4248366013071896
+            },
+            {
+              "start": 12.0,
+              "end": 17.0,
+              "text": " But I'm just in the process of getting a hold of the key holder.",
+              "avg_logprob": -0.2813934498145932,
+              "no_speech_prob": 0.0331265814602375,
+              "compression_ratio": 1.4248366013071896
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey, 10-14, I've walked around the whole building. The only door open is on the west side, the southwest side, south of the base, and Tonga's over there. But I'm just in the process of getting a hold of the key holder.",
+          "prompt": null,
+          "duration_seconds": 17.792,
+          "token_limit": 167,
+          "token_count": 60,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 12.0,
+              "text": " Hey, 10-14, I've walked around the whole building. The only door open is on the west side, the southwest side, south of the base, and Tonga's over there.",
+              "avg_logprob": -0.2361544038428635,
+              "no_speech_prob": 0.08739262819290161,
+              "compression_ratio": 1.4155844155844155
+            },
+            {
+              "start": 12.0,
+              "end": 17.0,
+              "text": " But I'm just in the process of getting a hold of the key holder.",
+              "avg_logprob": -0.2361544038428635,
+              "no_speech_prob": 0.08739262819290161,
+              "compression_ratio": 1.4155844155844155
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795395868.m4a": {
+      "index": 58,
+      "epoch": 1795395868,
+      "sha256": "afe428371b262aa5ca26d3a460afde1cc34f05e4e24458a22142ef717effd535",
+      "passes": {
+        "original": {
+          "text": "hey guys I'm on the phone with the key holder he doesn't want us to search it he's checked the interior cameras several times over an hour span so we're good",
+          "prompt": null,
+          "duration_seconds": 12.032,
+          "token_limit": 121,
+          "token_count": 41,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.24,
+              "text": " hey guys I'm on the phone with the key holder he doesn't want us to search it",
+              "avg_logprob": -0.19296658039093018,
+              "no_speech_prob": 0.02611769363284111,
+              "compression_ratio": 1.3652173913043477
+            },
+            {
+              "start": 4.24,
+              "end": 11.120000000000001,
+              "text": " he's checked the interior cameras several times over an hour span so we're",
+              "avg_logprob": -0.19296658039093018,
+              "no_speech_prob": 0.02611769363284111,
+              "compression_ratio": 1.3652173913043477
+            },
+            {
+              "start": 11.120000000000001,
+              "end": 13.32,
+              "text": " good",
+              "avg_logprob": -0.19296658039093018,
+              "no_speech_prob": 0.02611769363284111,
+              "compression_ratio": 1.3652173913043477
+            }
+          ]
+        },
+        "filtered": {
+          "text": "hey guys I'm on the phone with the key holder he doesn't want us to search it he's checked the interior cameras several times over an hour span so we're good",
+          "prompt": null,
+          "duration_seconds": 12.032,
+          "token_limit": 121,
+          "token_count": 39,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.28,
+              "text": " hey guys I'm on the phone with the key holder he doesn't want us to search it",
+              "avg_logprob": -0.24943630322813987,
+              "no_speech_prob": 0.02568647265434265,
+              "compression_ratio": 1.3652173913043477
+            },
+            {
+              "start": 4.28,
+              "end": 13.36,
+              "text": " he's checked the interior cameras several times over an hour span so we're good",
+              "avg_logprob": -0.24943630322813987,
+              "no_speech_prob": 0.02568647265434265,
+              "compression_ratio": 1.3652173913043477
+            }
+          ]
+        },
+        "context": {
+          "text": "hey guys I'm on the phone with the key holder he doesn't want us to search it he's checked the interior cameras several times over an hour span so we're good",
+          "prompt": null,
+          "duration_seconds": 12.032,
+          "token_limit": 121,
+          "token_count": 41,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.24,
+              "text": " hey guys I'm on the phone with the key holder he doesn't want us to search it",
+              "avg_logprob": -0.19296658039093018,
+              "no_speech_prob": 0.02611769363284111,
+              "compression_ratio": 1.3652173913043477
+            },
+            {
+              "start": 4.24,
+              "end": 11.120000000000001,
+              "text": " he's checked the interior cameras several times over an hour span so we're",
+              "avg_logprob": -0.19296658039093018,
+              "no_speech_prob": 0.02611769363284111,
+              "compression_ratio": 1.3652173913043477
+            },
+            {
+              "start": 11.120000000000001,
+              "end": 13.32,
+              "text": " good",
+              "avg_logprob": -0.19296658039093018,
+              "no_speech_prob": 0.02611769363284111,
+              "compression_ratio": 1.3652173913043477
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795400557.m4a": {
+      "index": 59,
+      "epoch": 1795400557,
+      "sha256": "9dd261f0888dc52c1064f6d4e0736d6ad7a6d2e3edefad7193f7c15fae963204",
+      "passes": {
+        "original": {
+          "text": "Was anybody trying to get a hold of a Alison Carey by chance?",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.16,
+              "text": " Was anybody trying to get a hold of a Alison Carey by chance?",
+              "avg_logprob": -0.41240854824290557,
+              "no_speech_prob": 0.01618751883506775,
+              "compression_ratio": 0.9242424242424242
+            }
+          ]
+        },
+        "filtered": {
+          "text": "was anybody trying to get a hold of a Alison Carey by chance",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.2,
+              "text": " was anybody trying to get a hold of a Alison Carey by chance",
+              "avg_logprob": -0.46756938099861145,
+              "no_speech_prob": 0.010847663506865501,
+              "compression_ratio": 0.9523809523809523
+            }
+          ]
+        },
+        "context": {
+          "text": "Was anybody trying to get a hold of a Alison Carey by chance?",
+          "prompt": null,
+          "duration_seconds": 4.864,
+          "token_limit": 63,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.16,
+              "text": " Was anybody trying to get a hold of a Alison Carey by chance?",
+              "avg_logprob": -0.41240854824290557,
+              "no_speech_prob": 0.01618751883506775,
+              "compression_ratio": 0.9242424242424242
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795400580.m4a": {
+      "index": 60,
+      "epoch": 1795400580,
+      "sha256": "c17ebe3ae8bba41e171046ac68373fcbbff4cbe6c5e1756b7dbea1474a5085c3",
+      "passes": {
+        "original": {
+          "text": "Yeah, the person left a voicemail and said that they were officer children with American Fort Police Department and I think it was fake. She doesn't even live in the state, so just weird.",
+          "prompt": null,
+          "duration_seconds": 12.416,
+          "token_limit": 124,
+          "token_count": 46,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.38,
+              "text": " Yeah, the person left a voicemail and said that they were officer children with",
+              "avg_logprob": -0.22593741911522885,
+              "no_speech_prob": 0.017525868490338326,
+              "compression_ratio": 1.2986111111111112
+            },
+            {
+              "start": 4.38,
+              "end": 9.94,
+              "text": " American Fort Police Department and I think it was fake. She doesn't even live",
+              "avg_logprob": -0.22593741911522885,
+              "no_speech_prob": 0.017525868490338326,
+              "compression_ratio": 1.2986111111111112
+            },
+            {
+              "start": 9.94,
+              "end": 13.64,
+              "text": " in the state, so just weird.",
+              "avg_logprob": -0.22593741911522885,
+              "no_speech_prob": 0.017525868490338326,
+              "compression_ratio": 1.2986111111111112
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah, the person left a voicemail and said that they were officer children with American 4th Police Department, and I think it was fake, and she doesn't even live in the state, so just weird.",
+          "prompt": null,
+          "duration_seconds": 12.416,
+          "token_limit": 124,
+          "token_count": 49,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.8,
+              "text": " Yeah, the person left a voicemail and said that they were officer children with American",
+              "avg_logprob": -0.3154573953151703,
+              "no_speech_prob": 0.020830437541007996,
+              "compression_ratio": 1.3172413793103448
+            },
+            {
+              "start": 4.8,
+              "end": 10.76,
+              "text": " 4th Police Department, and I think it was fake, and she doesn't even live in the state,",
+              "avg_logprob": -0.3154573953151703,
+              "no_speech_prob": 0.020830437541007996,
+              "compression_ratio": 1.3172413793103448
+            },
+            {
+              "start": 10.76,
+              "end": 11.72,
+              "text": " so just weird.",
+              "avg_logprob": -0.3154573953151703,
+              "no_speech_prob": 0.020830437541007996,
+              "compression_ratio": 1.3172413793103448
+            }
+          ]
+        },
+        "context": {
+          "text": "Yeah, the person left a voicemail and said that they were officer children with American Fort Police Department and I think it was fake. She doesn't even live in the state, so just weird.",
+          "prompt": "Was anybody trying to get a hold of a Alison Carey by chance?",
+          "duration_seconds": 12.416,
+          "token_limit": 124,
+          "token_count": 46,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.38,
+              "text": " Yeah, the person left a voicemail and said that they were officer children with",
+              "avg_logprob": -0.1957671433053118,
+              "no_speech_prob": 0.04373135790228844,
+              "compression_ratio": 1.2986111111111112
+            },
+            {
+              "start": 4.38,
+              "end": 9.94,
+              "text": " American Fort Police Department and I think it was fake. She doesn't even live",
+              "avg_logprob": -0.1957671433053118,
+              "no_speech_prob": 0.04373135790228844,
+              "compression_ratio": 1.2986111111111112
+            },
+            {
+              "start": 9.94,
+              "end": 13.64,
+              "text": " in the state, so just weird.",
+              "avg_logprob": -0.1957671433053118,
+              "no_speech_prob": 0.04373135790228844,
+              "compression_ratio": 1.2986111111111112
+            }
+          ]
+        }
+      }
+    }
+  }
+}
