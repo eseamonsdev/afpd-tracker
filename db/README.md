@@ -25,14 +25,19 @@ To rebuild a local SQLite snapshot from tracked JSON, back up the remote
 make db-upload
 ```
 
+To back up D1 and fully recreate every table from JSON, replacing any edits
+saved only in D1, use `make db-reset D1_DATABASE=afpd-data-staging` for staging
+or `make db-reset` for production. This keeps the Cloudflare database and its
+binding IDs; it replaces the tables and rows inside it. An empty database can
+also be initialized with either command.
+
 `db/table-import-policy.json` specifies `recreate` or `insert_only` for **every**
-table. All tables currently use `recreate`: a remote upload drops and recreates
-each one from tracked JSON. This also replaces direct D1 edits to transcripts,
-validation flags, and any other radio fields. Set a table to `insert_only` when
-its remote rows should become permanent: rows with existing keys stay as they
-are, and only missing rows are inserted from JSON. Existing-row changes in JSON
-do not update an `insert_only` table. The importer rejects a policy that
-recreates a parent while leaving dependent child rows in place; `officers` and
+table. The radio talkgroup, archive-day, and clip tables use `insert_only`,
+preserving D1 transcript and verification edits in existing clips while adding
+new rows from tracked JSON. Other tables currently use `recreate`, which drops
+and rebuilds their rows from JSON. Existing-row changes in JSON do not update
+an `insert_only` table, including day display settings. The importer rejects a
+policy that recreates a parent while leaving dependent child rows in place; `officers` and
 `officer_names` must always share a mode because they refer to each other.
 For tables with generated numeric IDs, switching to `insert_only` also requires
 preserving those IDs when source records are added. Inspect the prepared SQL

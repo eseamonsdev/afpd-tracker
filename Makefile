@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-.PHONY: help openmhz-browser promote-staging build manual-deploy prod-manual-deploy collect-openmhz wrangler-login db-upload calls-from-db
+.PHONY: help openmhz-browser promote-staging build manual-deploy prod-manual-deploy collect-openmhz wrangler-login db-upload db-reset calls-from-db
 
 D1_DATABASE ?= afpd-data
 
@@ -20,6 +20,9 @@ wrangler-login: ## Sign in to Cloudflare with Wrangler.
 
 db-upload: ## Upload database updates to D1 (D1_DATABASE=afpd-data).
 	@python3 db/upload_d1.py --database "$(D1_DATABASE)"
+
+db-reset: ## Back up D1 and recreate all tables from JSON (replaces saved D1 edits).
+	@python3 db/upload_d1.py --database "$(D1_DATABASE)" --recreate-all
 
 calls-from-db: ## Copy saved D1 transcripts and verified flags to calls.json (D1_DATABASE=afpd-data).
 	@python3 db/calls_from_db.py --database "$(D1_DATABASE)"

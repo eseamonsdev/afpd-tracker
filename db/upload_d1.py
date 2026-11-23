@@ -87,7 +87,11 @@ def write_import(database, output, modes):
                    for table in TABLES if table != 'officers'}
         stream.write('-- Generated from db/table-import-policy.json\n')
         if modes['officers'] == 'recreate':
-            # Break the circular reference before dropping either table.
+            # A fresh or partially initialized D1 may have no officers table.
+            # This temporary empty shell is dropped below; an existing table is
+            # untouched. Break the circular reference before dropping either.
+            stream.write('CREATE TABLE IF NOT EXISTS officers '
+                         '(id INTEGER PRIMARY KEY, display_name_id INTEGER);\n')
             stream.write('UPDATE officers SET display_name_id = NULL;\n')
         for table in DROP_ORDER:
             if modes[table] == 'recreate':
@@ -160,8 +164,10 @@ def main():
     parser.add_argument('--database', default='afpd-data', help='Existing remote D1 database name')
     parser.add_argument('--prepare-only', action='store_true',
                         help='Rebuild SQLite and SQL without contacting Cloudflare')
+    parser.add_argument('--recreate-all', action='store_true',
+                        help='Back up D1 and rebuild every table from JSON, replacing D1-only edits')
     args = parser.parse_args()
-    modes = load_policy()
+    modes = {table: 'recreate' for table in TABLES} if args.recreate_all else load_policy()
     if not args.prepare_only and not WRANGLER.is_file():
         parser.error('Wrangler is not installed; run npm ci first')
     LOCAL.mkdir(parents=True, exist_ok=True)
