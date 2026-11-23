@@ -14,29 +14,32 @@ function fixture(t) {
   const folder = "openmhz-afpd-law-2-2026-10-01";
   fs.mkdirSync(path.join(directory, folder));
   const settingsFile = path.join(directory, "settings.json");
-  const setting = { date: "2026-10-01", enableDay: true, enableTranscription: true };
+  const setting = { date: "2026-10-01", enableTranscription: true };
   const call = { original_filename: "one.m4a", epoch: 1790834427, displayed_seconds: 2, transcript: "5J47, go ahead." };
   const data = { date: setting.date, talkgroup: 5922, calls: [call] };
+  const settings = [setting];
   const write = () => {
-    fs.writeFileSync(settingsFile, JSON.stringify({ days: [setting] }));
+    fs.writeFileSync(settingsFile, JSON.stringify({ days: settings }));
     fs.writeFileSync(path.join(directory, folder, "calls.json"), JSON.stringify(data));
   };
   const build = () => { write(); return buildLaw2RadioIndex(directory, settingsFile); };
   const audio = path.join(directory, folder, call.original_filename);
   const transcript = path.join(directory, folder, "law-2-transcript-2026-10-01.txt");
-  return { directory, folder, setting, call, data, audio, transcript, build };
+  return { directory, folder, setting, settings, call, data, audio, transcript, build };
 }
 
-test("explicit date opt-in and all listed audio are required", t => {
+test("dates are discovered automatically but all listed audio is required", t => {
   const f = fixture(t);
   assert.equal(f.build().days.length, 0);
   fs.writeFileSync(f.audio, "audio");
   assert.equal(f.build().days.length, 1);
-  delete f.setting.enableDay;
-  assert.equal(f.build().days.length, 0);
-  f.setting.enableDay = false;
-  assert.equal(f.build().days.length, 0);
-  f.setting.enableDay = true;
+  f.setting.enableDay = false; // Legacy flag no longer controls audio visibility.
+  assert.equal(f.build().days.length, 1);
+  f.settings.length = 0;
+  const day = f.build().days[0];
+  assert.equal(day.date, f.data.date);
+  assert.equal(day.enableTranscription, false);
+  assert.equal(fs.existsSync(f.transcript), false);
   f.data.calls.push({ ...f.call, original_filename: "missing.m4a" });
   assert.equal(f.build().days.length, 0, "one missing clip suppresses the whole date");
 });

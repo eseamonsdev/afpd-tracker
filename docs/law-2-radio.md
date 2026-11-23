@@ -7,22 +7,22 @@ in `docs/radio-player.md`. Law 2 uses the same date-specific officer-name associ
 radio IDs in the dcfems system, including strength labels and evidence popups.
 IDs without a supported association for the selected date stay numeric.
 
-## Enable dates and transcripts
+## Automatic audio discovery and transcript settings
 
-Edit `data/law-2-radio-days.json` and build with `npm run build`:
+Audio dates are discovered automatically at build time. To opt in to transcripts or set dated agency identifiers, edit `data/law-2-radio-days.json` and build with `npm run build`:
 
 ```json
 {
   "date": "2026-10-01",
-  "enableDay": true,
   "enableTranscription": true
 }
 ```
 
-`enableDay` must be explicitly `true`. Missing entries, omitted flags and `false`
-stay hidden. Enabled dates also require a nonempty manifest and audio for every
-listed clip: either a nonempty local file or matching verified R2 storage
-metadata. Missing audio suppresses the date rather than exposing broken clips.
+No date setting is required for audio; legacy `enableDay` settings are ignored.
+Discovered dates require a nonempty manifest and playable audio for every
+listed clip: a nonempty local file, matching verified R2 storage metadata, or
+an explicitly unavailable recording using the existing shared placeholder.
+Missing audio suppresses the date rather than exposing broken clips.
 This checks archived verification records, not live R2 availability on each build.
 
 `enableTranscription` is independent of the recording manifest's flag. It is
@@ -33,12 +33,11 @@ clips. Downloads are generated from current manifest text with Law 2 headings.
 The initial settings enable 27 dates with archived audio and transcripts on
 September 10 and October 1–3, 2026. September 10 is a selected 110-clip trial.
 Coverage notes preserve the distinction between archived calls and full reception.
-New downloads are not automatically opted in.
+New downloads become visible on the next successful build once playable.
 
 `lib/build-law-2-radio-index.js` generates
 `public/records/openmhz/law-2-index.json`; do not edit that output directly.
-Disabling a date removes it from the player; it does not delete or restrict its
-underlying recording files.
+Transcript visibility remains explicitly configured.
 
 ## Sitemap and search exclusions
 
