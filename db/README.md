@@ -19,24 +19,32 @@ make wrangler-login
 ```
 
 To rebuild a local SQLite snapshot from tracked JSON, back up the remote
-`afpd-data` D1 database, refresh the four JSON-backed tables, and add missing
-radio rows without replacing existing ones:
+`afpd-data` D1 database, and apply the per-table policy to the remote database:
 
 ```sh
 make db-upload
 ```
 
+`db/table-import-policy.json` specifies `recreate` or `insert_only` for **every**
+table. All tables currently use `recreate`: a remote upload drops and recreates
+each one from tracked JSON. This also replaces direct D1 edits to transcripts,
+validation flags, and any other radio fields. Set a table to `insert_only` when
+its remote rows should become permanent: rows with existing keys stay as they
+are, and only missing rows are inserted from JSON. Existing-row changes in JSON
+do not update an `insert_only` table. The importer rejects a policy that
+recreates a parent while leaving dependent child rows in place; `officers` and
+`officer_names` must always share a mode because they refer to each other.
+For tables with generated numeric IDs, switching to `insert_only` also requires
+preserving those IDs when source records are added. Inspect the prepared SQL
+and identity mapping before making that switch.
+
 The SQL import and a timestamped pre-upload D1 export are saved under ignored
-`db/local/`. The command verifies exact counts for `officers`, `officer_names`,
-`sources`, and `entity_source_links`, and minimum counts for the seven radio
-tables, which can contain additional D1-only rows. It does not modify the
-repository or deploy the website. Direct edits to the four JSON-backed tables
-are overwritten; existing radio rows, including corrected transcripts and
-validation flags, are retained. New radio rows are inserted from JSON, but
-changes to existing JSON radio rows do not update their D1 counterparts. The
-local SQLite snapshot is still recreated from JSON each run and is not a copy
-of D1. The existing database and its name are retained; a D1 binding is not
-added to `wrangler.jsonc`.
+`db/local/`. The command verifies exact row counts for `recreate` tables and
+minimum counts for `insert_only` tables, which may contain additional D1-only
+rows. It does not modify the repository or deploy the website. The local SQLite
+snapshot is always recreated from JSON and is not a copy of D1. The existing
+database and its name are retained; a D1 binding is not added to
+`wrangler.jsonc`.
 To prepare the SQLite database and SQL import without contacting Cloudflare,
 run `python3 db/upload_d1.py --prepare-only`.
 

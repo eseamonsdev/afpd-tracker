@@ -1,4 +1,4 @@
-"""Refresh JSON-backed tables and add new radio rows to an existing remote D1 DB.
+"""Import JSON-backed data into an existing remote D1 DB using table policies.
 
 Run `make wrangler-login` separately when Wrangler authentication expires.
 The generated SQL and the pre-upload D1 backup stay in ignored db/local/.
@@ -22,20 +22,43 @@ LOCAL = HERE / 'local'
 SQLITE = LOCAL / 'afpd.sqlite'
 IMPORT = LOCAL / 'afpd-d1-import.sql'
 WRANGLER = ROOT / 'node_modules/.bin/wrangler'
+POLICY = HERE / 'table-import-policy.json'
 
 TABLES = ('officers', 'officer_names', 'radio_talkgroups', 'radio_ids', 'radio_archive_days',
           'radio_clips', 'radio_clip_radio_ids', 'radio_excerpts', 'radio_excerpt_clips',
           'sources', 'entity_source_links')
-RADIO_TABLES = ('radio_talkgroups', 'radio_ids', 'radio_archive_days', 'radio_clips',
-                'radio_clip_radio_ids', 'radio_excerpts', 'radio_excerpt_clips')
-REBUILT_TABLES = ('officers', 'officer_names', 'sources', 'entity_source_links')
-RADIO_SCHEMAS = (HERE / 'migrations/0002_radio.sql',
-                 HERE / 'migrations/0004_radio_archive_days.sql',
-                 HERE / 'migrations/0005_radio_excerpts.sql')
-REBUILT_SCHEMAS = (HERE / 'migrations/0001_officer_names.sql',
-                   HERE / 'migrations/0003_sources.sql',
-                   HERE / 'migrations/0006_entity_source_links.sql')
-DROP_ORDER = ('entity_source_links', 'sources', 'officer_names', 'officers')
+SCHEMAS = tuple(HERE / f'migrations/{name}' for name in (
+    '0001_officer_names.sql', '0002_radio.sql', '0003_sources.sql',
+    '0004_radio_archive_days.sql', '0005_radio_excerpts.sql',
+    '0006_entity_source_links.sql'))
+DROP_ORDER = ('entity_source_links', 'radio_excerpt_clips', 'radio_excerpts',
+              'radio_clip_radio_ids', 'radio_clips', 'radio_archive_days',
+              'radio_ids', 'radio_talkgroups', 'sources', 'officer_names', 'officers')
+# A parent cannot be recreated while a dependent table keeps its old rows.
+DEPENDENCIES = {
+    'entity_source_links': ('sources',),
+    'radio_archive_days': ('radio_talkgroups',),
+    'radio_clips': ('radio_talkgroups', 'radio_archive_days'),
+    'radio_clip_radio_ids': ('radio_clips', 'radio_ids'),
+    'radio_excerpt_clips': ('radio_excerpts', 'radio_clips'),
+}
+
+
+def load_policy(path=POLICY):
+    data = json.loads(path.read_text(encoding='utf-8'))
+    if not isinstance(data, dict) or data.get('schema_version') != 1 or set(data) != {'schema_version', 'tables'}:
+        raise ValueError(f'{path}: expected schema_version 1 and tables')
+    modes = data['tables']
+    if not isinstance(modes, dict) or set(modes) != set(TABLES) or any(
+            mode not in ('recreate', 'insert_only') for mode in modes.values()):
+        raise ValueError(f'{path}: specify recreate or insert_only for every table in {TABLES}')
+    if modes['officers'] != modes['officer_names']:
+        raise ValueError('officers and officer_names must have the same mode (circular references)')
+    for child, parents in DEPENDENCIES.items():
+        for parent in parents:
+            if modes[parent] == 'recreate' and modes[child] == 'insert_only':
+                raise ValueError(f'{child} must be recreated when {parent} is recreated')
+    return modes
 
 
 def run(*args, capture=False):
@@ -52,8 +75,8 @@ def counts(database):
                 for table in TABLES}
 
 
-def write_import(database, output):
-    """Rebuild JSON tables and insert only missing radio rows, preserving edits.
+def write_import(database, output, modes):
+    """Recreate selected tables and insert only missing rows in the others.
 
     D1 may apply a large import in multiple transactions. Deferred constraints
     cannot protect a dump that inserts child rows before their parent rows.
@@ -62,15 +85,14 @@ def write_import(database, output):
             output.open('w', encoding='utf-8') as stream, ExitStack() as stack:
         inserts = {table: stack.enter_context(tempfile.TemporaryFile(mode='w+t', encoding='utf-8'))
                    for table in TABLES if table != 'officers'}
-        # Break the circular officers <-> officer_names reference in the old
-        # schema before dropping either table. This command targets an already
-        # created afpd-data database, which always has officers.
-        stream.write('UPDATE officers SET display_name_id = NULL;\n')
+        stream.write('-- Generated from db/table-import-policy.json\n')
+        if modes['officers'] == 'recreate':
+            # Break the circular reference before dropping either table.
+            stream.write('UPDATE officers SET display_name_id = NULL;\n')
         for table in DROP_ORDER:
-            stream.write(f'DROP TABLE IF EXISTS {table};\n')
-        for schema in REBUILT_SCHEMAS:
-            stream.write(schema.read_text(encoding='utf-8') + '\n')
-        for schema in RADIO_SCHEMAS:
+            if modes[table] == 'recreate':
+                stream.write(f'DROP TABLE IF EXISTS {table};\n')
+        for schema in SCHEMAS:
             sql = schema.read_text(encoding='utf-8')
             sql = re.sub(r'\bCREATE TABLE\s+', 'CREATE TABLE IF NOT EXISTS ', sql)
             sql = re.sub(r'\bCREATE INDEX\s+', 'CREATE INDEX IF NOT EXISTS ', sql)
@@ -84,7 +106,7 @@ def write_import(database, output):
             if not match or match.group(1) not in TABLES:
                 raise ValueError(f'Unexpected SQLite dump statement: {statement[:100]}')
             if match.group(1) != 'officers':
-                if match.group(1) in RADIO_TABLES:
+                if modes[match.group(1)] == 'insert_only':
                     statement = statement.replace('INSERT INTO ', 'INSERT OR IGNORE INTO ', 1)
                 inserts[match.group(1)].write(statement + '\n')
 
@@ -94,15 +116,17 @@ def write_import(database, output):
                 'SELECT id, legacy_entity_id, url_slug, display_name_id FROM officers ORDER BY id'):
             quoted = [connection.execute('SELECT quote(?)', (value,)).fetchone()[0]
                       for value in (legacy, slug)]
-            stream.write(f'INSERT INTO officers VALUES({officer_id},{quoted[0]},{quoted[1]},NULL);\n')
+            insert = 'INSERT OR IGNORE' if modes['officers'] == 'insert_only' else 'INSERT'
+            stream.write(f'{insert} INTO officers VALUES({officer_id},{quoted[0]},{quoted[1]},NULL);\n')
         for table in TABLES[1:]:
             inserts[table].seek(0)
             shutil.copyfileobj(inserts[table], stream)
             if table == 'officer_names':
                 for officer_id, name_id in connection.execute(
                         'SELECT id, display_name_id FROM officers ORDER BY id'):
+                    condition = ' AND display_name_id IS NULL' if modes['officers'] == 'insert_only' else ''
                     stream.write(f'UPDATE officers SET display_name_id={name_id} '
-                                 f'WHERE id={officer_id};\n')
+                                 f'WHERE id={officer_id}{condition};\n')
 
 
 def result_rows(output):
@@ -116,18 +140,18 @@ def result_rows(output):
     return payload['results']
 
 
-def verify_remote(database, expected):
+def verify_remote(database, expected, modes):
     for table, count in expected.items():
         query = f'SELECT COUNT(*) AS count FROM {table}'
         response = run(str(WRANGLER), 'd1', 'execute', database, '--remote',
                        '--command', query, '--json', capture=True)
         rows = result_rows(response.stdout)
         actual = rows[0].get('count') if len(rows) == 1 else None
-        if not isinstance(actual, int) or (actual < count if table in RADIO_TABLES
+        if not isinstance(actual, int) or (actual < count if modes[table] == 'insert_only'
                                            else actual != count):
-            comparison = 'at least' if table in RADIO_TABLES else 'exactly'
+            comparison = 'at least' if modes[table] == 'insert_only' else 'exactly'
             raise ValueError(f'{table}: expected {comparison} {count} rows; D1 returned {rows}')
-    print('Verified D1 rows (radio counts are minimums): ' +
+    print('Verified D1 rows (insert_only counts are minimums): ' +
           ', '.join(f'{table}={n}' for table, n in expected.items()))
 
 
@@ -137,12 +161,13 @@ def main():
     parser.add_argument('--prepare-only', action='store_true',
                         help='Rebuild SQLite and SQL without contacting Cloudflare')
     args = parser.parse_args()
+    modes = load_policy()
     if not args.prepare_only and not WRANGLER.is_file():
         parser.error('Wrangler is not installed; run npm ci first')
     LOCAL.mkdir(parents=True, exist_ok=True)
     run(sys.executable, str(HERE / 'create_afpd_db.py'), '--output', str(SQLITE), '--replace')
     expected = counts(SQLITE)
-    write_import(SQLITE, IMPORT)
+    write_import(SQLITE, IMPORT, modes)
     print(f'Prepared {IMPORT} ({IMPORT.stat().st_size:,} bytes)', flush=True)
     if args.prepare_only:
         return
@@ -153,10 +178,10 @@ def main():
         f'--output={backup}', '--skip-confirmation')
     if not backup.is_file() or not backup.stat().st_size:
         raise ValueError('D1 export did not produce a backup; upload cancelled')
-    print(f'Refreshing JSON tables and adding missing radio rows in remote {args.database}', flush=True)
+    print(f'Applying table import policy to remote {args.database}', flush=True)
     run(str(WRANGLER), 'd1', 'execute', args.database, '--remote',
         f'--file={IMPORT}', '--yes')
-    verify_remote(args.database, expected)
+    verify_remote(args.database, expected, modes)
     print(f'D1 upload complete. Pre-upload backup: {backup}', flush=True)
 
 

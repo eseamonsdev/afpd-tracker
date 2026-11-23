@@ -11,10 +11,11 @@ permalink: "{{ officerPage.url }}"
 {% from "profile-names.njk" import renderAlternateNames -%}
 {% from "profile-photo.njk" import renderProfilePhoto -%}
 {% set alternateNames = officerPage | profileAlternateNames -%}
+{% set profileName = officerPage | profileDisplayName -%}
 {% set observedOfficerIds = officerPage.observed_officer_ids or [] -%}
 {% set siteUrl = "https://afpd-accountability.com" -%}
-{% set pageTitle = officerPage.name ~ " — Officer Records | AFPD Accountability Project" -%}
-{% set defaultDescription = "Explore records related to " ~ officerPage.name ~ "’s service with the American Fork Police Department." -%}
+{% set pageTitle = profileName ~ " — Officer Records | AFPD Accountability Project" -%}
+{% set defaultDescription = "Explore records related to " ~ profileName ~ "’s service with the American Fork Police Department." -%}
 {% set pageDescription = officerPage.seo_description or defaultDescription -%}
 {% set canonicalUrl = siteUrl ~ officerPage.url -%}
 {% set sections = officerPage.sections | publishedSections -%}
@@ -40,14 +41,14 @@ permalink: "{{ officerPage.url }}"
 
     <div class="page-heading{% if officerPage.photo %} profile-heading{% endif %}">
       {%- if officerPage.photo %}
-      {{- renderProfilePhoto(officerPage.photo, officerPage.name, true) | trim }}
+      {{- renderProfilePhoto(officerPage.photo, profileName, true) | trim }}
       <div class="profile-heading-text">
         <p class="officer-category-label">OFFICER RECORDS</p>
-        <h1>{{ officerPage.name | escape }}</h1>
+        <h1>{{ profileName | escape }}</h1>
       </div>
       {%- else %}
       <p class="officer-category-label">OFFICER RECORDS</p>
-      <h1>{{ officerPage.name | escape }}</h1>
+      <h1>{{ profileName | escape }}</h1>
       {%- endif %}
     </div>
 

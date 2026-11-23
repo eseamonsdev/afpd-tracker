@@ -4,7 +4,7 @@ import { buildOfficerAssociations } from "./lib/build-officer-associations.js";
 import fs from "node:fs";
 import { validateProfileTabs } from "./lib/profile-tabs.js";
 import { sortUpdates } from "./lib/sort-updates.js";
-import { profileAlternateNames } from "./lib/profile-alternate-names.js";
+import { profileAlternateNames, profileDisplayName } from "./lib/profile-alternate-names.js";
 import { cleanRadioExcerpts } from "./lib/clean-radio-excerpts.js";
 import { buildRadioExcerpt } from "./lib/build-radio-excerpt.js";
 import { excerptUrl, validateRadioExcerptIdentities } from "./lib/radio-excerpt-identity.js";
@@ -43,6 +43,7 @@ export default function (eleventyConfig) {
   });
   eleventyConfig.addFilter("sortUpdates", sortUpdates);
   eleventyConfig.addFilter("profileAlternateNames", profileAlternateNames);
+  eleventyConfig.addFilter("profileDisplayName", profileDisplayName);
   eleventyConfig.on("eleventy.after", cleanRadioExcerpts);
   eleventyConfig.addFilter("radioExcerpt", buildRadioExcerpt);
   eleventyConfig.addFilter("excerptUrl", excerptUrl);

@@ -11,9 +11,10 @@ permalink: "{{ cityOfficialPage.url }}"
 {% from "profile-names.njk" import renderAlternateNames -%}
 {% from "profile-photo.njk" import renderProfilePhoto -%}
 {% set alternateNames = cityOfficialPage | profileAlternateNames -%}
+{% set profileName = cityOfficialPage | profileDisplayName -%}
 {% set siteUrl = "https://afpd-accountability.com" -%}
-{% set pageTitle = cityOfficialPage.name ~ " — City Official Records | AFPD Accountability Project" -%}
-{% set defaultDescription = "Explore available employment, compensation, and other records related to " ~ cityOfficialPage.name ~ " and American Fork City." -%}
+{% set pageTitle = profileName ~ " — City Official Records | AFPD Accountability Project" -%}
+{% set defaultDescription = "Explore available employment, compensation, and other records related to " ~ profileName ~ " and American Fork City." -%}
 {% set pageDescription = cityOfficialPage.seo_description or defaultDescription -%}
 {% set canonicalUrl = siteUrl ~ cityOfficialPage.url -%}
 {% set sections = cityOfficialPage.sections | publishedSections -%}
@@ -34,10 +35,10 @@ permalink: "{{ cityOfficialPage.url }}"
     </a>
 
     <div class="page-heading{% if cityOfficialPage.photo %} profile-heading{% endif %}">
-      {{- renderProfilePhoto(cityOfficialPage.photo, cityOfficialPage.name) | trim }}
+      {{- renderProfilePhoto(cityOfficialPage.photo, profileName) | trim }}
       <div class="profile-heading-text">
         <p class="officer-category-label">CITY OFFICIAL RECORDS</p>
-        <h1>{{ cityOfficialPage.name | escape }}</h1>
+        <h1>{{ profileName | escape }}</h1>
       </div>
     </div>
 
