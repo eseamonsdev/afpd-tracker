@@ -77,3 +77,16 @@ test("archive templates and excerpt rows share one escaped row macro", () => {
   assert.equal((player.match(/id="radio-clip-row-template"/g) || []).length, 1);
   assert.match(readFileSync('src/police-radio-excerpt.njk', 'utf8'), /clipRow\(call, excerpt.enableTranscription\)/);
 });
+
+test("the shared player renders one editor inside the transcript only for admin", () => {
+  const env = new nunjucks.Environment(new nunjucks.FileSystemLoader("src/_includes"));
+  const render = options => env.renderString(`{% from "radio-player.njk" import player %}{{ player("radio"${options}) }}`);
+  const publicPlayer = render("");
+  const adminPlayer = render(", adminEditor=true");
+  assert.doesNotMatch(publicPlayer, /radio-edit-transcript|radio-verified/);
+  assert.equal((adminPlayer.match(/id="radio-edit-transcript"/g) || []).length, 1);
+  assert.equal((adminPlayer.match(/id="radio-verified"/g) || []).length, 1);
+  assert.ok(adminPlayer.indexOf('id="radio-transcript"') < adminPlayer.indexOf('id="radio-edit-transcript"'));
+  assert.ok(adminPlayer.indexOf('id="radio-verified"') < adminPlayer.indexOf('id="radio-call-note"'));
+  assert.match(readFileSync("src/admin-police-radio.njk", "utf8"), /adminEditor=true/);
+});

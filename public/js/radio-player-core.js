@@ -264,11 +264,12 @@ function createIdentity(getDate) {
   };
 }
 
-function transcriptUI(get) {
+function transcriptUI(get, initiallyOpen = false) {
   const toggle = get("transcript-toggle"), panel = get("transcript");
   const status = get("transcript-status"), text = get("transcript-text");
   const note = get("call-note"), noteText = get("call-note-text");
-  let on = false, call, available = false;
+  let on = initiallyOpen, call, available = false;
+  if (toggle && on) { toggle.setAttribute("aria-pressed", "true"); toggle.textContent = "Transcript: On"; }
   function render() {
     if (!panel || !status || !text) return;
     if (toggle) { toggle.hidden = !available; toggle.disabled = !available; }
@@ -597,15 +598,15 @@ function archive(config) {
   let days = [], calls = [], buttons = [], folder = "", request = 0, controller, transcriptAvailable = false;
   let indexRequest = 0;
   const identity = createIdentity(selectedDate);
-  const transcript = transcriptUI(get);
+  const transcript = transcriptUI(get, !!config.adminTranscripts);
   function updateRadioIds(call) { if (currentRadioIds) { identity.render(currentRadioIds, call); currentRadioIds.hidden = !radioIds(call).length; } }
   const player = playbackEngine({
     get, getCalls: () => calls, getButtons: () => buttons,
     singlePlayer: !!talkgroup || config.law2 || /(^|-)afpd-tracker\.ericseamonsdeveloper\.workers\.dev$/.test(window.location.hostname) || /(^|\.)afpd-accountability\.com$/.test(window.location.hostname),
     clipSource: index => playbackSource(calls[index], `${base}${encodeURIComponent(folder)}/${encodeURIComponent(calls[index].original_filename)}`),
     label: index => `${dateFormat.format(dateObject(selectedDate()))} · ${timeFormat.format(new Date(calls[index].epoch * 1000))} · Clip ${index + 1}`,
-    onSelect(call) { identity.close(); updateRadioIds(call); updateTranscript(); },
-    onReset() { updateRadioIds(); updateTranscript(); }
+    onSelect(call, index) { identity.close(); updateRadioIds(call); updateTranscript(); config.onClipSelected?.(call, index); },
+    onReset() { updateRadioIds(); updateTranscript(); config.onClipSelected?.(null); }
   });
   function updateTranscript() { transcript.update(calls[player.selected], transcriptAvailable); }
   function resetPlayer() {

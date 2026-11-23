@@ -2,10 +2,16 @@
   const pending = new Map();
   const save = document.getElementById("admin-save");
   const status = document.getElementById("admin-save-status");
+  const pencil = document.getElementById("radio-edit-transcript");
+  const editor = document.getElementById("radio-transcript-editor");
+  const textarea = document.getElementById("radio-transcript-input");
+  const checkbox = document.getElementById("radio-verified");
+  const transcriptText = document.getElementById("radio-transcript-text");
   const exportCommand = location.hostname.startsWith("staging-")
     ? "make calls-from-db D1_DATABASE=afpd-data-staging" : "make calls-from-db";
   let saving = false;
   let currentCalls = [];
+  let selected = null;
   let updateCurrent = () => {};
 
   function refreshStatus(message) {
@@ -21,7 +27,6 @@
       pending.set(call.id, { id: call.id, transcript: call.transcript, validated: call.validated,
         expected_transcript: original.transcript, expected_validated: original.validated });
     }
-    updateCurrent();
     const eligible = currentCalls.filter(item => item.audio_status !== "unavailable");
     document.getElementById("radio-transcription-count").textContent = `${eligible.filter(item => item.transcript?.trim()).length} / ${eligible.length}`;
     document.getElementById("radio-verification-count").textContent = `${eligible.filter(item => item.validated).length} / ${eligible.length}`;
@@ -54,43 +59,38 @@
   function onDayRendered(calls, list, entry, updateTranscript) {
     currentCalls = calls;
     updateCurrent = updateTranscript;
-    for (const [index, call] of calls.entries()) {
-      const row = list.children[index];
-      const controls = document.createElement("div");
-      controls.className = "admin-radio-controls";
-      controls.addEventListener("click", event => event.stopPropagation());
-      const pencil = document.createElement("button");
-      pencil.type = "button";
-      pencil.className = "admin-radio-pencil";
-      pencil.textContent = "✎ Edit transcript";
-      pencil.setAttribute("aria-expanded", "false");
-      const editor = document.createElement("div");
-      editor.className = "admin-radio-editor";
-      editor.hidden = true;
-      const label = document.createElement("label");
-      label.textContent = `Clip ${index + 1} transcript`;
-      const textarea = document.createElement("textarea");
-      textarea.value = call.transcript || "";
-      textarea.rows = 5;
-      label.append(textarea);
-      const verifyLabel = document.createElement("label");
-      verifyLabel.className = "admin-radio-verify";
-      const checkbox = document.createElement("input");
-      checkbox.type = "checkbox";
-      checkbox.checked = call.validated === true;
-      verifyLabel.append(checkbox, " Verified against audio");
-      editor.append(label, verifyLabel);
-      pencil.addEventListener("click", () => {
-        editor.hidden = !editor.hidden;
-        pencil.setAttribute("aria-expanded", String(!editor.hidden));
-        if (!editor.hidden) textarea.focus();
-      });
-      textarea.addEventListener("input", () => { call.transcript = textarea.value; stage(call, call._original); });
-      checkbox.addEventListener("change", () => { call.validated = checkbox.checked; stage(call, call._original); });
-      controls.append(pencil, editor);
-      row.append(controls);
-    }
   }
+  function onClipSelected(call) {
+    selected = call;
+    editor.hidden = true;
+    transcriptText.hidden = false;
+    pencil.setAttribute("aria-expanded", "false");
+    pencil.textContent = "✎ Edit transcript";
+    pencil.disabled = !call;
+    textarea.value = call?.transcript || "";
+    checkbox.disabled = !call;
+    checkbox.checked = call?.validated === true;
+  }
+  pencil.addEventListener("click", () => {
+    if (!selected) return;
+    editor.hidden = !editor.hidden;
+    transcriptText.hidden = !editor.hidden;
+    pencil.setAttribute("aria-expanded", String(!editor.hidden));
+    pencil.textContent = editor.hidden ? "✎ Edit transcript" : "Done editing";
+    if (editor.hidden) updateCurrent();
+    else textarea.focus();
+  });
+  textarea.addEventListener("input", () => {
+    if (!selected) return;
+    selected.transcript = textarea.value;
+    stage(selected, selected._original);
+  });
+  checkbox.addEventListener("change", () => {
+    if (!selected) return;
+    selected.validated = checkbox.checked;
+    stage(selected, selected._original);
+    if (editor.hidden) updateCurrent();
+  });
   save.addEventListener("click", async () => {
     if (!pending.size || saving) return;
     saving = true;
@@ -131,5 +131,5 @@
     if (pending.size) { event.preventDefault(); event.returnValue = ""; }
   });
   RadioPlayer.archive({ rootId: "radio-archive", prefix: "radio", law2: false, adminTranscripts: true,
-    enrichCalls, onDayRendered });
+    enrichCalls, onDayRendered, onClipSelected });
 })();

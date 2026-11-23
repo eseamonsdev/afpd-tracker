@@ -19,7 +19,7 @@ sitemap: false
   <p><a href="/admin/">← Admin</a></p>
   <div class="page-heading">
     <h1>Edit Police Radio</h1>
-    <p>Edit a clip with its pencil, mark it verified after listening, then save changes to the database. To copy edits into the site JSON, run <code>make calls-from-db D1_DATABASE=afpd-data-staging</code> for staging, or <code>make calls-from-db</code> for production, then build and deploy.</p>
+    <p>Select a clip, edit its transcript or mark it verified in the player, then save changes to the database. To copy edits into the site JSON, run <code>make calls-from-db D1_DATABASE=afpd-data-staging</code> for staging, or <code>make calls-from-db</code> for production, then build and deploy.</p>
     <div class="admin-radio-toolbar"><button type="button" id="admin-save" disabled>Save Changes</button><span id="admin-save-status" role="status" aria-live="polite">No unsaved changes.</span></div>
     <label class="radio-talkgroup-selector" for="radio-talkgroup">Talkgroup
       <select id="radio-talkgroup"><option value="6001">AFPD Car to Car (6001)</option><option value="5922">Law 2 Northeast (5922)</option></select>
@@ -34,7 +34,7 @@ sitemap: false
   </div>
   <div class="radio-archive" id="radio-archive">
     {{ datePicker("radio") }}
-    {{ player("radio", initiallyHidden=true) }}
+    {{ player("radio", initiallyHidden=true, adminEditor=true) }}
     <p id="radio-coverage" class="radio-source-note" hidden></p>
     <p id="radio-status" role="status">Loading available dates…</p>
     <p id="radio-transcript-availability" class="radio-transcript-note" hidden>Transcripts are not yet available for this day.</p>

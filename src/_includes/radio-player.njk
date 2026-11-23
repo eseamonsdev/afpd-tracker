@@ -1,5 +1,5 @@
 {% from "radio-row.njk" import rowTemplate %}
-{% macro player(prefix, transcripts=true, hiddenToggle=true, toggleName="transcript-toggle", transcriptName="transcript", initiallyHidden=false) %}
+{% macro player(prefix, transcripts=true, hiddenToggle=true, toggleName="transcript-toggle", transcriptName="transcript", initiallyHidden=false, adminEditor=false) %}
       {{ rowTemplate() }}
       <section id="{{ prefix }}-player-panel" class="radio-player" aria-label="Audio player"{% if initiallyHidden %} hidden{% endif %}>
         <div class="radio-player-heading">
@@ -29,7 +29,15 @@
         {% if transcripts %}<div id="{{ prefix }}-{{ transcriptName }}" class="radio-transcript" role="region" aria-label="Current clip transcript" aria-live="polite" aria-atomic="true" hidden>
           <span id="{{ prefix }}-transcript-status" class="radio-transcript-status" hidden></span>
           <p class="radio-transcript-label"><strong>Transcript:</strong></p>
-          <p id="{{ prefix }}-transcript-text" class="radio-transcript-text"></p>
+          <p id="{{ prefix }}-transcript-text" class="radio-transcript-text"></p>{% if adminEditor %}
+          <div class="admin-radio-controls">
+            <button id="{{ prefix }}-edit-transcript" type="button" aria-expanded="false" aria-controls="{{ prefix }}-transcript-editor" disabled>✎ Edit transcript</button>
+            <div id="{{ prefix }}-transcript-editor" class="admin-radio-editor" hidden>
+              <label for="{{ prefix }}-transcript-input">Transcript for the selected clip</label>
+              <textarea id="{{ prefix }}-transcript-input" rows="5"></textarea>
+            </div>
+            <label class="admin-radio-verify"><input id="{{ prefix }}-verified" type="checkbox" disabled> Verified against audio</label>
+          </div>{% endif %}
           <details id="{{ prefix }}-call-note" class="radio-call-note" hidden>
             <summary><span class="radio-notes-view">View Notes</span><span class="radio-notes-hide">Hide Notes</span></summary>
             <p id="{{ prefix }}-call-note-text" class="radio-call-note-text"></p>
