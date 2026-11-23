@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-21",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1795330746.m4a": {
+      "index": 1381,
+      "epoch": 1795330746,
+      "sha256": "50b21067614f1a8e253a4605295e062d783a2ba42562804f30e442755fa695fb",
+      "passes": {
+        "original": {
+          "text": "Copy, thank you.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy, thank you.",
+              "avg_logprob": -0.5604362040758133,
+              "no_speech_prob": 0.029580356553196907,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy thank you",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " copy thank you",
+              "avg_logprob": -0.6008997062842051,
+              "no_speech_prob": 0.012497607618570328,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy, thank you.",
+          "prompt": "Alright. Sorry, I was on a car to car. Is there any calls pending or anything? Native.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy, thank you.",
+              "avg_logprob": -0.3325272984802723,
+              "no_speech_prob": 0.0025731089990586042,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795330751.m4a": {
+      "index": 1382,
+      "epoch": 1795330751,
+      "sha256": "1df5527b96f7a4af2c4d4c65a81a2dc9cb1e56efbf56862e13a25c73fd48280e",
+      "passes": {
+        "original": {
+          "text": "5G38 clear. 5G38.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G38 clear.",
+              "avg_logprob": -0.559803307056427,
+              "no_speech_prob": 0.13779427111148834,
+              "compression_ratio": 0.7391304347826086
+            },
+            {
+              "start": 2.0,
+              "end": 4.0,
+              "text": " 5G38.",
+              "avg_logprob": -0.559803307056427,
+              "no_speech_prob": 0.13779427111148834,
+              "compression_ratio": 0.7391304347826086
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G30",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5G30",
+              "avg_logprob": -0.5924629668394724,
+              "no_speech_prob": 0.1553768366575241,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "5G38, clear. 5G38.",
+          "prompt": "Sorry, I was on a car to car. Is there any calls pending or anything? Native. Copy, thank you.",
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5G38, clear. 5G38.",
+              "avg_logprob": -0.32770874867072475,
+              "no_speech_prob": 0.045868437737226486,
+              "compression_ratio": 0.75
+            }
+          ]
+        }
+      }
+    }
+  }
+}
