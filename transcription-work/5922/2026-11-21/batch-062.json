@@ -1,0 +1,665 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-21",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1795296923.m4a": {
+      "index": 611,
+      "epoch": 1795296923,
+      "sha256": "68687f06233c0f31c9375ea1faf3d2d9be367b50371fcca5a658a7869f308a71",
+      "passes": {
+        "original": {
+          "text": "Hi, I'm Jane Thirteen. Cut me a lock out.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Hi, I'm Jane Thirteen. Cut me a lock out.",
+              "avg_logprob": -0.5664923050824333,
+              "no_speech_prob": 0.04099351912736893,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5, 8, 13, cut the lock out.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5, 8, 13, cut the lock out.",
+              "avg_logprob": -0.7060707126344953,
+              "no_speech_prob": 0.0370965376496315,
+              "compression_ratio": 0.7714285714285715
+            }
+          ]
+        },
+        "context": {
+          "text": "Hi, I'm Jane Thirteen. Cut me a lock out.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Hi, I'm Jane Thirteen. Cut me a lock out.",
+              "avg_logprob": -0.5664923050824333,
+              "no_speech_prob": 0.04099351912736893,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795296929.m4a": {
+      "index": 612,
+      "epoch": 1795296929,
+      "sha256": "2abf5d2cb68eb08cc668e1505dde9e37605fccb3e5693d1d722826f74783c64a",
+      "passes": {
+        "original": {
+          "text": "37, I copy.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 37, I copy.",
+              "avg_logprob": -0.4887428805232048,
+              "no_speech_prob": 0.022658491507172585,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "37, I copy.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 37, I copy.",
+              "avg_logprob": -0.5777772217988968,
+              "no_speech_prob": 0.024735940620303154,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "37, I copy.",
+          "prompt": "Hi, I'm Jane Thirteen. Cut me a lock out.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 37, I copy.",
+              "avg_logprob": -0.35464179515838623,
+              "no_speech_prob": 0.009844246320426464,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795296931.m4a": {
+      "index": 613,
+      "epoch": 1795296931,
+      "sha256": "00512f6776f3c94f617bdf3bb5ba7d715db9814365cf1001803d3c7a562d8cc6",
+      "passes": {
+        "original": {
+          "text": "Have a great week. Have a great week.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Have a great week.",
+              "avg_logprob": -0.47545157968997953,
+              "no_speech_prob": 0.020669464021921158,
+              "compression_ratio": 1.8333333333333333
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Have a great week.",
+              "avg_logprob": -0.47545157968997953,
+              "no_speech_prob": 0.020669464021921158,
+              "compression_ratio": 1.8333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you. Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5783681944012642,
+              "no_speech_prob": 0.026745373383164406,
+              "compression_ratio": 1.4545454545454546
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.5783681944012642,
+              "no_speech_prob": 0.026745373383164406,
+              "compression_ratio": 1.4545454545454546
+            },
+            {
+              "start": 2.0,
+              "end": 2.02,
+              "text": " Thank you.",
+              "avg_logprob": -0.5783681944012642,
+              "no_speech_prob": 0.026745373383164406,
+              "compression_ratio": 1.4545454545454546
+            }
+          ]
+        },
+        "context": {
+          "text": "Have a great day.",
+          "prompt": "Hi, I'm Jane Thirteen. Cut me a lock out. 37, I copy.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Have a great day.",
+              "avg_logprob": -0.8439077287912369,
+              "no_speech_prob": 0.023079967126250267,
+              "compression_ratio": 0.68
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795297086.m4a": {
+      "index": 614,
+      "epoch": 1795297086,
+      "sha256": "10587842e02018bb0760303dbe07ca2c4ceb4f8195412acea5f573bcc020f897",
+      "passes": {
+        "original": {
+          "text": "7J24, I'll be out with 25.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J24, I'll be out with 25.",
+              "avg_logprob": -0.45619556307792664,
+              "no_speech_prob": 0.011372140608727932,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J24, I'll be out with 25.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J24, I'll be out with 25.",
+              "avg_logprob": -0.5123372418539864,
+              "no_speech_prob": 0.019132228568196297,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "context": {
+          "text": "7J24, I'll be out with 25.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J24, I'll be out with 25.",
+              "avg_logprob": -0.45619556307792664,
+              "no_speech_prob": 0.011372140608727932,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795297089.m4a": {
+      "index": 615,
+      "epoch": 1795297089,
+      "sha256": "03c899da64a332380990a4e9fc46e44aa2ee1f1a74b9f5cae71aa270ec756b2c",
+      "passes": {
+        "original": {
+          "text": "Bye, Gobby.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Bye, Gobby.",
+              "avg_logprob": -0.7880879640579224,
+              "no_speech_prob": 0.017894534394145012,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bye, Bobby.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bye, Bobby.",
+              "avg_logprob": -0.6810070957456317,
+              "no_speech_prob": 0.02058287337422371,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "context": {
+          "text": "Bye, Gavi.",
+          "prompt": "7J24, I'll be out with 25.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Bye, Gavi.",
+              "avg_logprob": -0.7478140741586685,
+              "no_speech_prob": 0.008507887832820415,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795297662.m4a": {
+      "index": 616,
+      "epoch": 1795297662,
+      "sha256": "ca7d0bf17f4b194055bb9189fe1f45c723a9c5ec9e8d9308075d178b2e3ef11c",
+      "passes": {
+        "original": {
+          "text": "7J90 EMS is on scene.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7J90 EMS is on scene.",
+              "avg_logprob": -0.5413089015267112,
+              "no_speech_prob": 0.18619093298912048,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J90 EMS is on scene.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7J90 EMS is on scene.",
+              "avg_logprob": -0.8617621118372137,
+              "no_speech_prob": 0.16448789834976196,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "context": {
+          "text": "7J90 EMS is on scene.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7J90 EMS is on scene.",
+              "avg_logprob": -0.5413089015267112,
+              "no_speech_prob": 0.18619093298912048,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795297667.m4a": {
+      "index": 617,
+      "epoch": 1795297667,
+      "sha256": "769079e0a1630488b882f9ae68d9c74e3e527b0e11e82ac0cf2c37792f2c5116",
+      "passes": {
+        "original": {
+          "text": "Copy. If they're not requesting me, you can show me close.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Copy. If they're not requesting me, you can show me close.",
+              "avg_logprob": -0.4038068652153015,
+              "no_speech_prob": 0.0538330152630806,
+              "compression_ratio": 0.8923076923076924
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy. If they're not requesting me, you can tell me.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Copy. If they're not requesting me, you can tell me.",
+              "avg_logprob": -0.45104655097512636,
+              "no_speech_prob": 0.04430054873228073,
+              "compression_ratio": 0.8813559322033898
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy. If they're not requesting me, you can show me close.",
+          "prompt": "7J90 EMS is on scene.",
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Copy. If they're not requesting me, you can show me close.",
+              "avg_logprob": -0.3564318236377504,
+              "no_speech_prob": 0.16668593883514404,
+              "compression_ratio": 0.8923076923076924
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795297670.m4a": {
+      "index": 618,
+      "epoch": 1795297670,
+      "sha256": "0208f9e28bbc0aaf520026dbf208c09c70dc63a825773314b59b3d31b07742f3",
+      "passes": {
+        "original": {
+          "text": "Yeah, of course.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah, of course.",
+              "avg_logprob": -0.87620809674263,
+              "no_speech_prob": 0.051649145781993866,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah",
+              "avg_logprob": -0.4586851894855499,
+              "no_speech_prob": 0.02845686301589012,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Yeah, of course.",
+          "prompt": "7J90 EMS is on scene. Copy. If they're not requesting me, you can show me close.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Yeah, of course.",
+              "avg_logprob": -0.7146907672286034,
+              "no_speech_prob": 0.01727294735610485,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795297704.m4a": {
+      "index": 619,
+      "epoch": 1795297704,
+      "sha256": "f36b1db3a34a073f46163a8b904a295efb423ec78775ca2be78afd7164a771df",
+      "passes": {
+        "original": {
+          "text": "7 day 25 means a prayer stop.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7 day 25 means a prayer stop.",
+              "avg_logprob": -0.7679124311967329,
+              "no_speech_prob": 0.05002389848232269,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7 days, 25 evenings per stop.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7 days, 25 evenings per stop.",
+              "avg_logprob": -0.7194116440686312,
+              "no_speech_prob": 0.05356080085039139,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        },
+        "context": {
+          "text": "7J25 EMS is a prayer stop.",
+          "prompt": "7J90 EMS is on scene. Copy. If they're not requesting me, you can show me close. Yeah, of course.",
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J25 EMS is a prayer stop.",
+              "avg_logprob": -0.7249806771675745,
+              "no_speech_prob": 0.002562986919656396,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795297707.m4a": {
+      "index": 620,
+      "epoch": 1795297707,
+      "sha256": "ad8907dd853232bc9d9d0d87ecd8e20c4e2246048eb71262bede7d06d5a2dfb9",
+      "passes": {
+        "original": {
+          "text": "Bye and copy.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Bye and copy.",
+              "avg_logprob": -0.9984574658530099,
+              "no_speech_prob": 0.011319532059133053,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Dye and coffee.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Dye and coffee.",
+              "avg_logprob": -0.9318305104970932,
+              "no_speech_prob": 0.0070683928206563,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "context": {
+          "text": "So I'll copy.",
+          "prompt": "Copy. If they're not requesting me, you can show me close. Yeah, of course. 7 day 25 means a prayer stop.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " So I'll copy.",
+              "avg_logprob": -0.7209230735898018,
+              "no_speech_prob": 0.036316726356744766,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    }
+  }
+}

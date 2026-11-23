@@ -1,0 +1,673 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-21",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1795301305.m4a": {
+      "index": 711,
+      "epoch": 1795301305,
+      "sha256": "0c42b852a77f57d16c9ae3e3b2d422f6c43b89d42a71fcb6449769e83c1e4312",
+      "passes": {
+        "original": {
+          "text": "It'll be 1226L 630 East 1226L 630 East It'll be a great ford hybrid.",
+          "prompt": null,
+          "duration_seconds": 8.832,
+          "token_limit": 95,
+          "token_count": 26,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " It'll be 1226L 630 East 1226L 630 East",
+              "avg_logprob": -0.43152301841311985,
+              "no_speech_prob": 0.011301637627184391,
+              "compression_ratio": 1.2142857142857142
+            },
+            {
+              "start": 5.0,
+              "end": 8.0,
+              "text": " It'll be a great ford hybrid.",
+              "avg_logprob": -0.43152301841311985,
+              "no_speech_prob": 0.011301637627184391,
+              "compression_ratio": 1.2142857142857142
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It will be 1226 sal 630 east, 1226 sal 630 east, it will be a great ford hybrid.",
+          "prompt": null,
+          "duration_seconds": 8.832,
+          "token_limit": 95,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " It will be 1226 sal 630 east, 1226 sal 630 east, it will be a great ford hybrid.",
+              "avg_logprob": -0.44957260838870344,
+              "no_speech_prob": 0.006520991213619709,
+              "compression_ratio": 1.2903225806451613
+            }
+          ]
+        },
+        "context": {
+          "text": "It'll be 1226L 630E 1226L 630E, it'll be a great forward hybrid.",
+          "prompt": "Good All right, Bobby. 5G13, copy your lockout.",
+          "duration_seconds": 8.832,
+          "token_limit": 95,
+          "token_count": 25,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": " It'll be 1226L 630E 1226L 630E, it'll be a great forward hybrid.",
+              "avg_logprob": -0.4282566217275766,
+              "no_speech_prob": 0.009251403622329235,
+              "compression_ratio": 1.1428571428571428
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795301320.m4a": {
+      "index": 712,
+      "epoch": 1795301320,
+      "sha256": "b6f82fd50e43b8a456c62bbff8c953593c0a1bb8557d36557406925126fd8b02",
+      "passes": {
+        "original": {
+          "text": "company",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " company",
+              "avg_logprob": -1.0096160173416138,
+              "no_speech_prob": 0.06328143179416656,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " copy",
+              "avg_logprob": -0.957204669713974,
+              "no_speech_prob": 0.02542814426124096,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "All right, Bobby. 5G13, copy your lockout. It'll be 1226L 630 East 1226L 630 East It'll be a great ford hybrid.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6380314826965332,
+              "no_speech_prob": 0.047684259712696075,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795301340.m4a": {
+      "index": 713,
+      "epoch": 1795301340,
+      "sha256": "9788e3d61d014a7c0346b333cfaae42d8141633a22b4e7f4acf8c1321da66e83",
+      "passes": {
+        "original": {
+          "text": "7k, 30 parts.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7k, 30 parts.",
+              "avg_logprob": -1.079503271314833,
+              "no_speech_prob": 0.15433980524539948,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7k, 30 per cent.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.68,
+              "text": " 7k, 30 per cent.",
+              "avg_logprob": -1.1932003140449523,
+              "no_speech_prob": 0.030079621821641922,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "7G13, copy your lockout.",
+          "prompt": "5G13, copy your lockout. It'll be 1226L 630 East 1226L 630 East It'll be a great ford hybrid. company",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7G13, copy your lockout.",
+              "avg_logprob": -0.9248103878714822,
+              "no_speech_prob": 0.17375265061855316,
+              "compression_ratio": 0.75
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795301342.m4a": {
+      "index": 714,
+      "epoch": 1795301342,
+      "sha256": "d071462671aaf087f6842de859306695dc6c7073afe32c7b72a097a52cb3dce9",
+      "passes": {
+        "original": {
+          "text": "Definite.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Definite.",
+              "avg_logprob": -0.8224223554134369,
+              "no_speech_prob": 0.04790019989013672,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Definite.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Definite.",
+              "avg_logprob": -0.7636213302612305,
+              "no_speech_prob": 0.0889291763305664,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Deferent.",
+          "prompt": "It'll be 1226L 630 East 1226L 630 East It'll be a great ford hybrid. company 7k, 30 parts.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Deferent.",
+              "avg_logprob": -0.7796632250150045,
+              "no_speech_prob": 0.09033207595348358,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795301425.m4a": {
+      "index": 715,
+      "epoch": 1795301425,
+      "sha256": "67a29721efbd856eb9da6889a7dd2bd5e9181646703c96236d947a17cdda7a48",
+      "passes": {
+        "original": {
+          "text": "7-j31 should be 10-5-3 place.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " 7-j31 should be 10-5-3 place.",
+              "avg_logprob": -0.98161730915308,
+              "no_speech_prob": 0.0266098715364933,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7-year 31 from the 10-23 place.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " 7-year 31 from the 10-23 place.",
+              "avg_logprob": -0.848424630505698,
+              "no_speech_prob": 0.04965236410498619,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "context": {
+          "text": "7-j31 should be 10-5-3 place.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.64,
+              "text": " 7-j31 should be 10-5-3 place.",
+              "avg_logprob": -0.98161730915308,
+              "no_speech_prob": 0.0266098715364933,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795301429.m4a": {
+      "index": 716,
+      "epoch": 1795301429,
+      "sha256": "5bb6ba44cad17d38952a41a5a4633944036f09ac222d53e050b676f332583fcc",
+      "passes": {
+        "original": {
+          "text": "Thank you. Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.41433404833078386,
+              "no_speech_prob": 0.08233316242694855,
+              "compression_ratio": 1.9545454545454546
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.41433404833078386,
+              "no_speech_prob": 0.08233316242694855,
+              "compression_ratio": 1.9545454545454546
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.41433404833078386,
+              "no_speech_prob": 0.08233316242694855,
+              "compression_ratio": 1.9545454545454546
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.8051103353500366,
+              "no_speech_prob": 0.2487814724445343,
+              "compression_ratio": 1.0
+            },
+            {
+              "start": 1.0,
+              "end": 1.5,
+              "text": " Thank you.",
+              "avg_logprob": -0.8051103353500366,
+              "no_speech_prob": 0.2487814724445343,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "Never.",
+          "prompt": "7-j31 should be 10-5-3 place.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Never.",
+              "avg_logprob": -0.8262537002563477,
+              "no_speech_prob": 0.12622161209583282,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795301443.m4a": {
+      "index": 717,
+      "epoch": 1795301443,
+      "sha256": "c2eacce89a66d035cd0fa4cb853294ae7eaa1200877f622e3e2c9720cb07a488",
+      "passes": {
+        "original": {
+          "text": "5G53, vote for it.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G53, vote for it.",
+              "avg_logprob": -0.5459236014973033,
+              "no_speech_prob": 0.0390339121222496,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G53, vote for it.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G53, vote for it.",
+              "avg_logprob": -0.5381590669805353,
+              "no_speech_prob": 0.054561786353588104,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "context": {
+          "text": "5-j53, vote for it.",
+          "prompt": "7-j31 should be 10-5-3 place. Thank you. Thank you. Thank you.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.2600000000000002,
+              "text": " 5-j53, vote for it.",
+              "avg_logprob": -0.49572238326072693,
+              "no_speech_prob": 0.08521150797605515,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795301448.m4a": {
+      "index": 718,
+      "epoch": 1795301448,
+      "sha256": "c2dca43a5dc2484e5b92d11141d2471eb57d4b25a1fae1c733c5ad366d717594",
+      "passes": {
+        "original": {
+          "text": "Don't worry.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Don't worry.",
+              "avg_logprob": -0.7782837152481079,
+              "no_speech_prob": 0.029299648478627205,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Don't worry.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Don't worry.",
+              "avg_logprob": -0.9049154009137835,
+              "no_speech_prob": 0.09596146643161774,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "Vote for it.",
+          "prompt": "7-j31 should be 10-5-3 place. Thank you. Thank you. Thank you. 5G53, vote for it.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Vote for it.",
+              "avg_logprob": -0.49055237429482595,
+              "no_speech_prob": 0.01423933357000351,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795301450.m4a": {
+      "index": 719,
+      "epoch": 1795301450,
+      "sha256": "62c3a7c562e0e64e44fb0a31f6757ebc6c3ff5f84f024161f74122607b5d6eed",
+      "passes": {
+        "original": {
+          "text": "Can for.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Can for.",
+              "avg_logprob": -1.0260561108589172,
+              "no_speech_prob": 0.05942115560173988,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Stand for.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Stand for.",
+              "avg_logprob": -0.7380799452463785,
+              "no_speech_prob": 0.08298734575510025,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you. Thank you.",
+          "prompt": "Thank you. Thank you. Thank you. 5G53, vote for it. Don't worry.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.1500000000000001,
+              "text": " Thank you. Thank you.",
+              "avg_logprob": -0.7288214936852455,
+              "no_speech_prob": 0.08448324352502823,
+              "compression_ratio": 1.0
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795301531.m4a": {
+      "index": 720,
+      "epoch": 1795301531,
+      "sha256": "5bedf77fb4029c6013af3e422ab86af05eba73e9093cfcc25b0f7b90ff5941bf",
+      "passes": {
+        "original": {
+          "text": "7J31 heading my way to 025",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7J31 heading my way to 025",
+              "avg_logprob": -0.5030585726102194,
+              "no_speech_prob": 0.01579257659614086,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J31, heavy mile which is 025.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7J31, heavy mile which is 025.",
+              "avg_logprob": -0.688040873834065,
+              "no_speech_prob": 0.030678099021315575,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "context": {
+          "text": "7J31 heading my way to 025",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7J31 heading my way to 025",
+              "avg_logprob": -0.5030585726102194,
+              "no_speech_prob": 0.01579257659614086,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        }
+      }
+    }
+  }
+}

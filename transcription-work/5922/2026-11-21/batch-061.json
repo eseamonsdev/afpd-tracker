@@ -1,0 +1,713 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-21",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1795296348.m4a": {
+      "index": 601,
+      "epoch": 1795296348,
+      "sha256": "d4b382e14af84be99e046834dc6514b655af87d099d3189bc1282f26b6710bcc",
+      "passes": {
+        "original": {
+          "text": "I'm going to be pulling into the Holiday Inn 13J on Golf 446 Papa Tio.",
+          "prompt": null,
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.6000000000000005,
+              "text": " I'm going to be pulling into the Holiday Inn 13J on Golf 446 Papa Tio.",
+              "avg_logprob": -0.4893128094465836,
+              "no_speech_prob": 0.0022536416072398424,
+              "compression_ratio": 0.9459459459459459
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm going to be pulling into the holiday in 13-J on golf 4-4-6 top of teal.",
+          "prompt": null,
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 27,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.5,
+              "text": " I'm going to be pulling into the holiday in 13-J on golf 4-4-6 top of teal.",
+              "avg_logprob": -0.5737653736557279,
+              "no_speech_prob": 0.002241769339889288,
+              "compression_ratio": 0.9868421052631579
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm going to be pulling into the Holiday Inn 13J on Golf 446 Papa Tio.",
+          "prompt": "7 to 25 traffic. Okay.",
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.6000000000000005,
+              "text": " I'm going to be pulling into the Holiday Inn 13J on Golf 446 Papa Tio.",
+              "avg_logprob": -0.47662653093752655,
+              "no_speech_prob": 0.001969547476619482,
+              "compression_ratio": 0.9459459459459459
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795296355.m4a": {
+      "index": 602,
+      "epoch": 1795296355,
+      "sha256": "2b55ad19b3247fe7ce4ed28906400633ba4547028a9366665011e1045a65c3d5",
+      "passes": {
+        "original": {
+          "text": "Ten-four.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Ten-four.",
+              "avg_logprob": -0.828013709613255,
+              "no_speech_prob": 0.1189364418387413,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bye for now. Bye for now. Bye for now.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Bye for now.",
+              "avg_logprob": -0.5446440546136153,
+              "no_speech_prob": 0.06666553020477295,
+              "compression_ratio": 1.5833333333333333
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Bye for now.",
+              "avg_logprob": -0.5446440546136153,
+              "no_speech_prob": 0.06666553020477295,
+              "compression_ratio": 1.5833333333333333
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Bye for now.",
+              "avg_logprob": -0.5446440546136153,
+              "no_speech_prob": 0.06666553020477295,
+              "compression_ratio": 1.5833333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "10-4.",
+          "prompt": "7 to 25 traffic. Okay. I'm going to be pulling into the Holiday Inn 13J on Golf 446 Papa Tio.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 10-4.",
+              "avg_logprob": -0.46228199345724924,
+              "no_speech_prob": 0.1832215040922165,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795296423.m4a": {
+      "index": 603,
+      "epoch": 1795296423,
+      "sha256": "207acb2635af9ac051892d10d20d9b80310cfcdbfceb44524ae1c99eb4bc8ed7",
+      "passes": {
+        "original": {
+          "text": "5J13, I copy the info. You can clear it when there's...",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.5,
+              "text": " 5J13, I copy the info. You can clear it when there's...",
+              "avg_logprob": -0.5229688614606858,
+              "no_speech_prob": 0.08316363394260406,
+              "compression_ratio": 0.9016393442622951
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J13, I copy the info, you can clear it when ready.",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.6,
+              "text": " 5J13, I copy the info, you can clear it when ready.",
+              "avg_logprob": -0.4832180236515246,
+              "no_speech_prob": 0.056821007281541824,
+              "compression_ratio": 0.864406779661017
+            }
+          ]
+        },
+        "context": {
+          "text": "5J13, I copy the info. You can clear it when there's...",
+          "prompt": null,
+          "duration_seconds": 4.096,
+          "token_limit": 57,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.5,
+              "text": " 5J13, I copy the info. You can clear it when there's...",
+              "avg_logprob": -0.5229688614606858,
+              "no_speech_prob": 0.08316363394260406,
+              "compression_ratio": 0.9016393442622951
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795296429.m4a": {
+      "index": 604,
+      "epoch": 1795296429,
+      "sha256": "1a61b864fcd824cc66607574ab41de3801458f74cc2a591114fd26ac4c25b65a",
+      "passes": {
+        "original": {
+          "text": "Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.882243351502852,
+              "no_speech_prob": 0.10636602342128754,
+              "compression_ratio": 1.0
+            },
+            {
+              "start": 1.0,
+              "end": 1.5,
+              "text": " Thank you.",
+              "avg_logprob": -0.882243351502852,
+              "no_speech_prob": 0.10636602342128754,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.9031070362437855,
+              "no_speech_prob": 0.2104620784521103,
+              "compression_ratio": 1.0
+            },
+            {
+              "start": 1.0,
+              "end": 1.5,
+              "text": " Thank you.",
+              "avg_logprob": -0.9031070362437855,
+              "no_speech_prob": 0.2104620784521103,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you. Thank you.",
+          "prompt": "5J13, I copy the info. You can clear it when there's...",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.9415498646822843,
+              "no_speech_prob": 0.16876539587974548,
+              "compression_ratio": 1.0
+            },
+            {
+              "start": 1.0,
+              "end": 1.5,
+              "text": " Thank you.",
+              "avg_logprob": -0.9415498646822843,
+              "no_speech_prob": 0.16876539587974548,
+              "compression_ratio": 1.0
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795296540.m4a": {
+      "index": 605,
+      "epoch": 1795296540,
+      "sha256": "bcedd896ea2d8bdf0727a9e0f5971815c5e1b473e1953966c31bab3cdb9d2250",
+      "passes": {
+        "original": {
+          "text": "5J32 off duty.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J32 off duty.",
+              "avg_logprob": -0.39684367179870605,
+              "no_speech_prob": 0.04195912182331085,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J32 off duty.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J32 off duty.",
+              "avg_logprob": -0.5570990774366591,
+              "no_speech_prob": 0.036737050861120224,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "5J32 off duty.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5J32 off duty.",
+              "avg_logprob": -0.39684367179870605,
+              "no_speech_prob": 0.04195912182331085,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795296544.m4a": {
+      "index": 606,
+      "epoch": 1795296544,
+      "sha256": "0da19bf535b816fdf0a22c2551e193a5f2c25400d0625d22565627e7e5f79ea7",
+      "passes": {
+        "original": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.6988411148389181,
+              "no_speech_prob": 0.2113543301820755,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.8229401210943857,
+              "no_speech_prob": 0.48213183879852295,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you.",
+          "prompt": "5J32 off duty.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.6620132426420847,
+              "no_speech_prob": 0.17226171493530273,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795296549.m4a": {
+      "index": 607,
+      "epoch": 1795296549,
+      "sha256": "23885095f20faf102bc27ebad99331bc864ef0a91b5637b9dd3a1b52947e2c49",
+      "passes": {
+        "original": {
+          "text": "70, 25, 10, 8.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 70, 25, 10, 8.",
+              "avg_logprob": -0.806117220358415,
+              "no_speech_prob": 0.03701714798808098,
+              "compression_ratio": 0.7
+            }
+          ]
+        },
+        "filtered": {
+          "text": "70, 25, tonight.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 70, 25, tonight.",
+              "avg_logprob": -0.725819640689426,
+              "no_speech_prob": 0.055168475955724716,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "7J25 to 8.",
+          "prompt": "5J32 off duty. Thank you.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.04,
+              "text": " 7J25 to 8.",
+              "avg_logprob": -0.5165891647338867,
+              "no_speech_prob": 0.027767006307840347,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795296552.m4a": {
+      "index": 608,
+      "epoch": 1795296552,
+      "sha256": "d7f5ef9254c613360f1dea81e7918a133a3fce374701e1acf6e3dd9a28f14a2c",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.766358757019043,
+              "no_speech_prob": 0.04396968334913254,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " copy",
+              "avg_logprob": -0.8704333305358887,
+              "no_speech_prob": 0.040795352309942245,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "5J32 off duty. Thank you. 70, 25, 10, 8.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7541599273681641,
+              "no_speech_prob": 0.03977350518107414,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795296626.m4a": {
+      "index": 609,
+      "epoch": 1795296626,
+      "sha256": "798efbc5e78db7bd10d788a636aea9a3acffb33e6104d563fc770479bae1244b",
+      "passes": {
+        "original": {
+          "text": "5J53, happy to follow up by phone.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J53, happy to follow up by phone.",
+              "avg_logprob": -0.4943414969103677,
+              "no_speech_prob": 0.005556694231927395,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5J53, happy to follow it by song.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J53, happy to follow it by song.",
+              "avg_logprob": -0.6660304665565491,
+              "no_speech_prob": 0.00904664397239685,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        },
+        "context": {
+          "text": "5J53, happy to follow up by phone.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 5J53, happy to follow up by phone.",
+              "avg_logprob": -0.4943414969103677,
+              "no_speech_prob": 0.005556694231927395,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795296630.m4a": {
+      "index": 610,
+      "epoch": 1795296630,
+      "sha256": "d32f3d4ee272be0e57ded3e00b99e7f8173ac166214dd8b9cddaac0199b65818",
+      "passes": {
+        "original": {
+          "text": "Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.863362117247148,
+              "no_speech_prob": 0.024715546518564224,
+              "compression_ratio": 1.0
+            },
+            {
+              "start": 2.0,
+              "end": 4.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.863362117247148,
+              "no_speech_prob": 0.024715546518564224,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you. Thank you.",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.7512302290309559,
+              "no_speech_prob": 0.04423397034406662,
+              "compression_ratio": 1.0
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.7512302290309559,
+              "no_speech_prob": 0.04423397034406662,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you. Thank you. Thanks.",
+          "prompt": "5J53, happy to follow up by phone.",
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.6445967515309652,
+              "no_speech_prob": 0.048766911029815674,
+              "compression_ratio": 1.2083333333333333
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.6445967515309652,
+              "no_speech_prob": 0.048766911029815674,
+              "compression_ratio": 1.2083333333333333
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Thanks.",
+              "avg_logprob": -0.6445967515309652,
+              "no_speech_prob": 0.048766911029815674,
+              "compression_ratio": 1.2083333333333333
+            }
+          ]
+        }
+      }
+    }
+  }
+}
