@@ -1,0 +1,689 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-22",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1795332825.m4a": {
+      "index": 41,
+      "epoch": 1795332825,
+      "sha256": "ed6c058ef4046ee9951a13193d3b22550468fd7b379babb2bb09821402408911",
+      "passes": {
+        "original": {
+          "text": "Bye-bye. Bye-bye. Bye-bye.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.5150478226797921,
+              "no_speech_prob": 0.02939503826200962,
+              "compression_ratio": 1.5
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.5150478226797921,
+              "no_speech_prob": 0.02939503826200962,
+              "compression_ratio": 1.5
+            },
+            {
+              "start": 2.0,
+              "end": 3.0,
+              "text": " Bye-bye.",
+              "avg_logprob": -0.5150478226797921,
+              "no_speech_prob": 0.02939503826200962,
+              "compression_ratio": 1.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Bad day, 29th.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Bad day, 29th.",
+              "avg_logprob": -0.9881674448649088,
+              "no_speech_prob": 0.03189188241958618,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        },
+        "context": {
+          "text": "Roger, 29.",
+          "prompt": "Thank you, 29. Okay, then, go ahead. Or we could afford to send a hit to Bryce.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Roger, 29.",
+              "avg_logprob": -0.66114342212677,
+              "no_speech_prob": 0.03509083017706871,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795332829.m4a": {
+      "index": 42,
+      "epoch": 1795332829,
+      "sha256": "f7c80a77d75cfd78200db140951128538d84133054cc9259734d6e6501d0f211",
+      "passes": {
+        "original": {
+          "text": "Okay, then go ahead",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Okay, then go ahead",
+              "avg_logprob": -0.40838757529854774,
+              "no_speech_prob": 0.07012204080820084,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "filtered": {
+          "text": "You then go ahead",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " You then go ahead",
+              "avg_logprob": -0.46515486921582905,
+              "no_speech_prob": 0.05775022134184837,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "Okay, then, go ahead.",
+          "prompt": "Okay, then, go ahead. Or we could afford to send a hit to Bryce. Bye-bye. Bye-bye. Bye-bye.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Okay, then, go ahead.",
+              "avg_logprob": -0.24555081725120545,
+              "no_speech_prob": 0.014775648713111877,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795332831.m4a": {
+      "index": 43,
+      "epoch": 1795332831,
+      "sha256": "7c1bdc32097f652ca26bfd070f3909efb8199e484277888584b5c36a9ae64831",
+      "passes": {
+        "original": {
+          "text": "Sorry, just confirm it's code 4 to send a hit.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Sorry, just confirm it's code 4 to send a hit.",
+              "avg_logprob": -0.5225799791514874,
+              "no_speech_prob": 0.002546978648751974,
+              "compression_ratio": 0.8846153846153846
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Sorry, just confirm it's code 4 to send the hit.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.36,
+              "text": " Sorry, just confirm it's code 4 to send the hit.",
+              "avg_logprob": -0.4917406104505062,
+              "no_speech_prob": 0.0028154118917882442,
+              "compression_ratio": 0.8888888888888888
+            }
+          ]
+        },
+        "context": {
+          "text": "Sorry, just confirm it's code four to send the hit",
+          "prompt": "Or we could afford to send a hit to Bryce. Bye-bye. Bye-bye. Bye-bye. Okay, then go ahead",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.2800000000000002,
+              "text": " Sorry, just confirm it's code four to send the hit",
+              "avg_logprob": -0.3765065868695577,
+              "no_speech_prob": 0.013078962452709675,
+              "compression_ratio": 0.8928571428571429
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795332838.m4a": {
+      "index": 44,
+      "epoch": 1795332838,
+      "sha256": "2cb83297ae6c2bf3bfa80093117c49ad5b74ce586341e1eb91a6b1740d775aab",
+      "passes": {
+        "original": {
+          "text": "Sorry, 10.9, I'm quick for though.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.44,
+              "text": " Sorry, 10.9, I'm quick for though.",
+              "avg_logprob": -0.8150367339452108,
+              "no_speech_prob": 0.1414370983839035,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Sorry, 10.9, I'm good for them.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.44,
+              "text": " Sorry, 10.9, I'm good for them.",
+              "avg_logprob": -0.8893833955128988,
+              "no_speech_prob": 0.15423250198364258,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "context": {
+          "text": "Sorry, I'm code 9. I'm code 4 though.",
+          "prompt": "Bye-bye. Bye-bye. Bye-bye. Okay, then go ahead Sorry, just confirm it's code 4 to send a hit.",
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.5,
+              "text": " Sorry, I'm code 9. I'm code 4 though.",
+              "avg_logprob": -0.5812697298824787,
+              "no_speech_prob": 0.021170344203710556,
+              "compression_ratio": 1.0277777777777777
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795332848.m4a": {
+      "index": 45,
+      "epoch": 1795332848,
+      "sha256": "ee146e5e51c0917bfaa19ddc19c84a3f1879777f9fb0d0f932be52f435db4dbb",
+      "passes": {
+        "original": {
+          "text": "That's right. Copy.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " That's right. Copy.",
+              "avg_logprob": -0.6698323355780708,
+              "no_speech_prob": 0.053740713745355606,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "filtered": {
+          "text": "That's it. Copy.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " That's it.",
+              "avg_logprob": -0.7920110767537897,
+              "no_speech_prob": 0.0824601799249649,
+              "compression_ratio": 0.6666666666666666
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7920110767537897,
+              "no_speech_prob": 0.0824601799249649,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm from copy.",
+          "prompt": "Okay, then go ahead Sorry, just confirm it's code 4 to send a hit. Sorry, 10.9, I'm quick for though.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm from copy.",
+              "avg_logprob": -0.7002317830920219,
+              "no_speech_prob": 0.028154607862234116,
+              "compression_ratio": 0.6363636363636364
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795332998.m4a": {
+      "index": 46,
+      "epoch": 1795332998,
+      "sha256": "7a926466717a88715628a6bec6ec968bf7e790b9411394a9a54966d5f3a74c34",
+      "passes": {
+        "original": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.9648595253626505,
+              "no_speech_prob": 0.7371005415916443,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.9192672371864319,
+              "no_speech_prob": 0.5529220104217529,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.9648595253626505,
+              "no_speech_prob": 0.7371005415916443,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795333108.m4a": {
+      "index": 47,
+      "epoch": 1795333108,
+      "sha256": "da0409aa98f4196540758d21880640058d9f2bd5a17057346fe73d15020d7ace",
+      "passes": {
+        "original": {
+          "text": "Object, if you want to be in route to 1J with one MEL.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Object, if you want to be in route to 1J with one MEL.",
+              "avg_logprob": -0.6248959183692933,
+              "no_speech_prob": 0.02745542861521244,
+              "compression_ratio": 0.9152542372881356
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'll just if you want me in route to 1j with one Mel",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.8000000000000003,
+              "text": " I'll just if you want me in route to 1j with one Mel",
+              "avg_logprob": -0.5802851584222581,
+              "no_speech_prob": 0.012224273756146431,
+              "compression_ratio": 0.8666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Object, if you want to be in route to 1J with one MEL.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Object, if you want to be in route to 1J with one MEL.",
+              "avg_logprob": -0.6248959183692933,
+              "no_speech_prob": 0.02745542861521244,
+              "compression_ratio": 0.9152542372881356
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795333125.m4a": {
+      "index": 48,
+      "epoch": 1795333125,
+      "sha256": "c31358da11dc884dce3c3ee836a874d519035f31e9e54e7c3e683b38b4cc16a2",
+      "passes": {
+        "original": {
+          "text": "7 to 25, I want to be dispatching one deer. Copy.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7 to 25, I want to be dispatching one deer.",
+              "avg_logprob": -0.3889912262558937,
+              "no_speech_prob": 0.0059135593473911285,
+              "compression_ratio": 0.9245283018867925
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " Copy.",
+              "avg_logprob": -0.3889912262558937,
+              "no_speech_prob": 0.0059135593473911285,
+              "compression_ratio": 0.9245283018867925
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7 to 25, I want to be dispatching one deer. Copy.",
+          "prompt": null,
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7 to 25, I want to be dispatching one deer.",
+              "avg_logprob": -0.37653892338275907,
+              "no_speech_prob": 0.014669372700154781,
+              "compression_ratio": 0.9245283018867925
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " Copy.",
+              "avg_logprob": -0.37653892338275907,
+              "no_speech_prob": 0.014669372700154781,
+              "compression_ratio": 0.9245283018867925
+            }
+          ]
+        },
+        "context": {
+          "text": "7 to 25, I want to be dispatching one deer. Copy.",
+          "prompt": "Object, if you want to be in route to 1J with one MEL.",
+          "duration_seconds": 4.224,
+          "token_limit": 58,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7 to 25, I want to be dispatching one deer.",
+              "avg_logprob": -0.33044475466012957,
+              "no_speech_prob": 0.0030422944109886885,
+              "compression_ratio": 0.9245283018867925
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " Copy.",
+              "avg_logprob": -0.33044475466012957,
+              "no_speech_prob": 0.0030422944109886885,
+              "compression_ratio": 0.9245283018867925
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795333133.m4a": {
+      "index": 49,
+      "epoch": 1795333133,
+      "sha256": "6c8c790451bc785605394e6fcab7f6caaa8d39bc4f5cd71ac2c9a4e733bf04d7",
+      "passes": {
+        "original": {
+          "text": "the",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " the",
+              "avg_logprob": -1.3456660509109497,
+              "no_speech_prob": 0.4362969398498535,
+              "compression_ratio": 0.2727272727272727
+            }
+          ]
+        },
+        "filtered": {
+          "text": "BLEEP BLEEP BLEEP",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.2,
+              "text": " BLEEP BLEEP BLEEP",
+              "avg_logprob": -1.0335276226202648,
+              "no_speech_prob": 0.5640398263931274,
+              "compression_ratio": 1.0625
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "Object, if you want to be in route to 1J with one MEL. 7 to 25, I want to be dispatching one deer. Copy.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -1.0159524917602538,
+              "no_speech_prob": 0.38247042894363403,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795333141.m4a": {
+      "index": 50,
+      "epoch": 1795333141,
+      "sha256": "7bd9ab3dfedd030b546db616a69a6721069188af062b17c59911ac2103cf4bd6",
+      "passes": {
+        "original": {
+          "text": "Last unit repeat you cut out.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Last unit repeat you cut out.",
+              "avg_logprob": -0.47029375433921816,
+              "no_speech_prob": 0.004748552106320858,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Last unit repeat you cut out",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Last unit repeat you cut out",
+              "avg_logprob": -0.4407967726389567,
+              "no_speech_prob": 0.005684433039277792,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "context": {
+          "text": "Last unit repeat you cut out.",
+          "prompt": "Object, if you want to be in route to 1J with one MEL. 7 to 25, I want to be dispatching one deer. Copy. the",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Last unit repeat you cut out.",
+              "avg_logprob": -0.5845593452453614,
+              "no_speech_prob": 0.034259144216775894,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        }
+      }
+    }
+  }
+}
