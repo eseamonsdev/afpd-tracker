@@ -7,12 +7,30 @@
   const textarea = document.getElementById("radio-transcript-input");
   const checkbox = document.getElementById("radio-verified");
   const transcriptText = document.getElementById("radio-transcript-text");
+  const highlightToggle = document.getElementById("admin-highlight-unverified");
+  const clipList = document.getElementById("radio-clips");
   const exportCommand = location.hostname.startsWith("staging-")
     ? "make calls-from-db D1_DATABASE=afpd-data-staging" : "make calls-from-db";
   let saving = false;
   let currentCalls = [];
   let selected = null;
+  let highlightUnverified = false;
   let updateCurrent = () => {};
+
+  function refreshHighlights() {
+    const unverified = currentCalls.filter(call => call.validated !== true).length;
+    highlightToggle.hidden = unverified === 0;
+    highlightToggle.textContent = `Highlight unverified: ${highlightUnverified ? "On" : "Off"}`;
+    highlightToggle.setAttribute("aria-pressed", String(highlightUnverified));
+    clipList.classList.toggle("admin-highlight-unverified", highlightUnverified && unverified > 0);
+    currentCalls.forEach((call, index) => {
+      clipList.children[index]?.classList.toggle("admin-unverified", call.validated !== true);
+    });
+  }
+  highlightToggle.addEventListener("click", () => {
+    highlightUnverified = !highlightUnverified;
+    refreshHighlights();
+  });
 
   function refreshStatus(message) {
     save.disabled = saving || !pending.size;
@@ -30,6 +48,7 @@
     const eligible = currentCalls.filter(item => item.audio_status !== "unavailable");
     document.getElementById("radio-transcription-count").textContent = `${eligible.filter(item => item.transcript?.trim()).length} / ${eligible.length}`;
     document.getElementById("radio-verification-count").textContent = `${eligible.filter(item => item.validated).length} / ${eligible.length}`;
+    refreshHighlights();
     refreshStatus();
   }
   async function enrichCalls(calls, entry, signal) {
@@ -59,9 +78,21 @@
   function onDayRendered(calls, list, entry, updateTranscript) {
     currentCalls = calls;
     updateCurrent = updateTranscript;
+    for (const row of list.children) {
+      const badge = document.createElement("span");
+      badge.className = "admin-unverified-badge";
+      badge.textContent = "Unverified";
+      row.append(badge);
+    }
+    refreshHighlights();
   }
   function onClipSelected(call) {
     selected = call;
+    if (!call) {
+      currentCalls = [];
+      highlightToggle.hidden = true;
+      clipList.classList.remove("admin-highlight-unverified");
+    }
     editor.hidden = true;
     transcriptText.hidden = false;
     pencil.setAttribute("aria-expanded", "false");

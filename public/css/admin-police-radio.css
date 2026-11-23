@@ -10,3 +10,10 @@
 .admin-radio-editor textarea { display:block;box-sizing:border-box;width:100%;margin:.4rem 0 1rem;padding:.7rem;font:inherit;line-height:1.5;border:1px solid var(--line);border-radius:5px;background:var(--surface);color:var(--ink) }
 .admin-radio-verify { display:flex;align-items:center;gap:.4rem;margin-top:.75rem;font-weight:400 }
 .admin-radio-verify input { width:1.2rem;height:1.2rem }
+.admin-radio-highlight-controls { display:flex;justify-content:flex-end;margin:.4rem 0 }
+.admin-radio-highlight-controls button { padding:.5rem .8rem;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--navy);cursor:pointer }
+.admin-radio-highlight-controls button[hidden] { display:none }
+.radio-clips .admin-unverified-badge { display:none;padding:0 1rem .7rem;color:#7c390d;font-size:.85rem;font-weight:700 }
+.radio-clips.admin-highlight-unverified .admin-unverified { background:#fff2d6;box-shadow:inset 4px 0 #b45309 }
+.radio-clips.admin-highlight-unverified .admin-unverified:has(.radio-clip[aria-current="true"]) { background:#ffe7b0;box-shadow:inset 4px 0 #92400e }
+.radio-clips.admin-highlight-unverified .admin-unverified .admin-unverified-badge { display:block }
