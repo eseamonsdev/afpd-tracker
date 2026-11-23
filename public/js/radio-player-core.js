@@ -658,6 +658,8 @@ function archive(config) {
         }
         return call;
       }).sort((a, b) => a.epoch - b.epoch);
+      if (config.enrichCalls) await config.enrichCalls(calls, entry, controller.signal);
+      if (token !== request) return;
       const hasAudio = calls.some(call => !unavailableAudio(call));
       if (playerPanel) playerPanel.hidden = !hasAudio;
       section.hidden = !hasAudio;
@@ -665,9 +667,9 @@ function archive(config) {
       // back to the manifest. Both archives use the same transcript controls.
       const transcriptEnabled = typeof entry.enableTranscription === "boolean"
         ? entry.enableTranscription : data.enableTranscription;
-      transcriptAvailable = hasAudio && transcriptEnabled === true && (!config.law2 || calls.some(call => typeof call.transcript === "string" && call.transcript.trim()));
+      transcriptAvailable = hasAudio && (config.adminTranscripts || (transcriptEnabled === true && (!config.law2 || calls.some(call => typeof call.transcript === "string" && call.transcript.trim()))));
       if (config.law2 && get("coverage")) { get("coverage").textContent = entry.coverageNote || ""; get("coverage").hidden = !entry.coverageNote; }
-      if (transcriptDownload && transcriptAvailable) {
+      if (transcriptDownload && transcriptAvailable && !config.adminTranscripts) {
         const filename = `${config.law2 ? "law-2" : "afpd-car-to-car"}-transcript-${entry.date}.txt`;
         transcriptDownload.setAttribute("href", `${base}${encodeURIComponent(folder)}/${filename}`);
         transcriptDownload.setAttribute("download", filename);
@@ -681,6 +683,7 @@ function archive(config) {
         fragment.append(row); return button;
       });
       list.append(fragment);
+      config.onDayRendered?.(calls, list, entry, updateTranscript);
       if (reviewProgress && transcriptionCount && verificationCount) {
         const eligible = calls.filter(call => !unavailableAudio(call));
         const transcribed = eligible.filter(call => typeof call.transcript === "string" && call.transcript.trim()).length;
@@ -699,7 +702,7 @@ function archive(config) {
       calls = []; buttons = []; list.replaceChildren();
       if (playerPanel) playerPanel.hidden = true;
       section.hidden = true;
-      status.textContent = "Unable to load this day. Select another day or reload the page to try again.";
+      status.textContent = config.adminTranscripts ? `Unable to load this day from the database: ${error.message}. Run make db-upload if this archive is new.` : "Unable to load this day. Select another day or reload the page to try again.";
     } finally {
       if (token === request) section.setAttribute("aria-busy", "false");
     }

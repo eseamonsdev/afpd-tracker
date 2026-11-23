@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Edit Police Radio | AFPD admin</title>
+  <meta name="description" content="">
+  <link rel="canonical" href="">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AFPD Accountability Project">
+  <meta property="og:title" content="Edit Police Radio | AFPD admin">
+  <meta property="og:description" content="">
+  <meta property="og:url" content="">
+
+  <meta property="og:image" content="https://afpd-accountability.com/images/afpd-accountability-share.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="American Fork Police Department Accountability Project. Public records. Transparency. Accountability. afpd-accountability.com">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Edit Police Radio | AFPD admin">
+  <meta name="twitter:description" content="">
+
+  <meta name="twitter:image" content="https://afpd-accountability.com/images/afpd-accountability-share.png">
+  <meta name="twitter:image:alt" content="American Fork Police Department Accountability Project. Public records. Transparency. Accountability. afpd-accountability.com">
+
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png">
+
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/header.css">
+
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/header.css">
+
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/css/police-radio.css">
+  <link rel="stylesheet" href="/css/radio-date-picker.css">
+  <link rel="stylesheet" href="/css/admin-police-radio.css">
+  <script src="/js/radio-date-picker.js" defer></script>
+  <script src="/js/radio-player-core.js" defer></script>
+  <script src="/js/admin-police-radio.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-title" href="/">
+      American Fork Police Department<br>
+      Accountability Project
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="true" aria-controls="main-navigation" hidden>
+      <span aria-hidden="true">☰</span> Menu
+    </button>
+    <nav id="main-navigation" class="site-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/police-encounters/">Police Encounters</a>
+      <a href="/lawsuits/">Lawsuits</a>
+      <details class="personnel-nav">
+        <summary>Officers &amp; Personnel <span class="nav-chevron" aria-hidden="true"></span></summary>
+        <div class="personnel-links">
+          <a href="/officers/">Officers</a>
+          <a href="/civilian-employees/">Civilian Employees</a>
+          <a href="/city-officials/">City Officials</a>
+        </div>
+      </details>
+      <details class="personnel-nav radio-nav">
+        <summary>Police Radio <span class="nav-chevron" aria-hidden="true"></span></summary>
+        <div class="personnel-links">
+          <a href="/police-radio-excerpts/">Radio Excerpts</a>
+  <a href="/police-radio/">Police Radio</a>
+  <a href="/police-radio-resources/">Radio Resources</a>
+        </div>
+      </details>
+      <a href="/afpd-resources/">AFPD Resources</a>
+      <a href="/city-oversight/">City Oversight</a>
+    </nav>
+  </div>
+</header>
+<script src="/js/header.js" defer></script>
+
+
+  <main>
+  <p><a href="/admin/">← Admin</a></p>
+  <div class="page-heading">
+    <h1>Edit Police Radio</h1>
+    <p>Edit a clip with its pencil, mark it verified after listening, then save changes to the database. To copy edits into the site JSON, run <code>make calls-from-db D1_DATABASE=afpd-data-staging</code> for staging, or <code>make calls-from-db</code> for production, then build and deploy.</p>
+    <div class="admin-radio-toolbar"><button type="button" id="admin-save" disabled>Save Changes</button><span id="admin-save-status" role="status" aria-live="polite">No unsaved changes.</span></div>
+    <label class="radio-talkgroup-selector" for="radio-talkgroup">Talkgroup
+      <select id="radio-talkgroup"><option value="6001">AFPD Car to Car (6001)</option><option value="5922">Law 2 Northeast (5922)</option></select>
+    </label>
+    <p id="radio-talkgroup-description">Audio from a car-to-car radio talkgroup used by the American Fork Police Department (AFPD).</p>
+    <p id="radio-talkgroup-note" class="radio-source-note" hidden>Law 2 Northeast includes other agencies.</p>
+    <div id="radio-review-progress" class="radio-review-progress" role="status" hidden>
+      <span class="radio-progress-stat"><strong id="radio-transcription-count"></strong> clips transcribed</span>
+      <span class="radio-progress-stat"><strong id="radio-verification-count"></strong> clips verified</span>
+      <span id="radio-progress-date" class="radio-progress-stat"></span>
+    </div>
+  </div>
+  <div class="radio-archive" id="radio-archive">
+    <section id="radio-calendar" class="radio-calendar" aria-label="Choose recording date">
+        <p role="status">Loading available dates…</p>
+      </section>
+
+      <template id="radio-clip-row-template"><li class="radio-clip-row">
+  <button type="button" class="radio-clip"  disabled>
+    <span><time data-radio-time></time> <span class="radio-clip-number" data-radio-number></span></span>
+    <span data-radio-duration></span>
+  </button>
+
+  <span class="radio-ids" hidden></span>
+</li></template>
+      <section id="radio-player-panel" class="radio-player" aria-label="Audio player" hidden>
+        <div class="radio-player-heading">
+          <div>
+            <p id="radio-current">Choose a clip to listen</p>
+            <p id="radio-current-radio-ids" class="radio-ids" hidden></p>
+          </div>
+          <div class="radio-player-actions">
+            <button id="radio-show-current" class="radio-show-current" type="button" aria-controls="radio-clips" disabled>Show Current Clip</button>
+            <button id="radio-controls-toggle" class="radio-controls-toggle" type="button" aria-expanded="true" aria-controls="radio-extra-controls" hidden>Hide Controls</button>
+            <div id="radio-extra-controls" class="radio-extra-controls">
+              <button id="radio-autoplay" type="button" aria-pressed="false">Autoplay: Off</button>
+              <button id="radio-transcript-toggle" type="button" aria-pressed="false" aria-controls="radio-transcript" hidden disabled>Transcript: Off</button>
+              <a id="radio-transcript-download" class="radio-transcript-download" download hidden>Download transcript (.txt)</a>
+            </div>
+          </div>
+        </div>
+        <div class="radio-playback">
+          <button id="radio-play" class="radio-play-button" type="button" aria-label="Play selected clip" disabled>Play</button>
+          <div class="radio-progress">
+            <label class="radio-sr-only" for="radio-seek">Position in clip</label>
+            <input id="radio-seek" class="radio-seek" type="range" min="0" max="0" step="0.1" value="0" disabled>
+            <div class="radio-times"><span id="radio-elapsed">0:00</span><span id="radio-duration">0:00</span></div>
+          </div>
+        </div>
+        <p id="radio-player-message" class="radio-player-message" role="status"></p>
+        <div id="radio-transcript" class="radio-transcript" role="region" aria-label="Current clip transcript" aria-live="polite" aria-atomic="true" hidden>
+          <span id="radio-transcript-status" class="radio-transcript-status" hidden></span>
+          <p class="radio-transcript-label"><strong>Transcript:</strong></p>
+          <p id="radio-transcript-text" class="radio-transcript-text"></p>
+          <details id="radio-call-note" class="radio-call-note" hidden>
+            <summary><span class="radio-notes-view">View Notes</span><span class="radio-notes-hide">Hide Notes</span></summary>
+            <p id="radio-call-note-text" class="radio-call-note-text"></p>
+          </details>
+        </div>
+        <audio id="radio-audio" preload="metadata"></audio>
+      </section>
+
+    <p id="radio-coverage" class="radio-source-note" hidden></p>
+    <p id="radio-status" role="status">Loading available dates…</p>
+    <p id="radio-transcript-availability" class="radio-transcript-note" hidden>Transcripts are not yet available for this day.</p>
+    <section aria-label="Recorded clips" aria-busy="true" id="radio-clips-section">
+      <div class="radio-list-heading" aria-hidden="true"><span>Time · archive clip</span><span>Duration</span></div>
+      <ol id="radio-clips" class="radio-clips"></ol>
+    </section>
+  </div>
+  </main>
+</body>
+</html>

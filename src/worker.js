@@ -1,6 +1,7 @@
 import { r2RadioAudio } from "./r2-radio-audio.js";
 import { r2OfficerPhoto } from "./r2-officer-photos.js";
 import { authenticatedAdminEmail } from "./admin-access.js";
+import { radioTranscripts } from "./admin-radio-transcripts.js";
 
 const OLD_PRODUCTION_HOST =
   "afpd-tracker.ericseamonsdeveloper.workers.dev";
@@ -22,13 +23,16 @@ export default {
       if (await authenticatedAdminEmail(request, url) !== "ericseamonsdeveloper@gmail.com") {
         return new Response("Access required", { status: 403 });
       }
-      if (url.pathname === "/admin" || url.pathname === "/admin/") {
-        return Response.redirect(new URL("/admin/radio-ids/", url), 302);
+      if (url.pathname === "/admin") {
+        return Response.redirect(new URL("/admin/", url), 302);
+      }
+      const isVersionPreview = url.hostname.endsWith("-afpd-tracker.ericseamonsdeveloper.workers.dev");
+      const database = isVersionPreview ? env.AFPD_DB_STAGING : env.AFPD_DB;
+      if (url.pathname === "/admin/api/radio-transcripts") {
+        return radioTranscripts(request, url, database);
       }
       if (url.pathname === "/admin/api/radio-ids") {
         if (request.method !== "GET") return new Response(null, { status: 405, headers: { Allow: "GET" } });
-        const isVersionPreview = url.hostname.endsWith("-afpd-tracker.ericseamonsdeveloper.workers.dev");
-        const database = isVersionPreview ? env.AFPD_DB_STAGING : env.AFPD_DB;
         if (!database) return new Response("D1 binding unavailable", { status: 503 });
         try {
           const { results } = await database.prepare(

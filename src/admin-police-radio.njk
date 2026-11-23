@@ -1,0 +1,46 @@
+---
+permalink: /admin/police-radio/index.html
+sitemap: false
+---
+{% extends "site-page-layout.njk" %}
+{% from "radio-player.njk" import player %}
+{% from "radio-date-picker.njk" import datePicker %}
+{% set pageTitle = "Edit Police Radio | AFPD admin" -%}
+{% block pageAssets %}
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/css/police-radio.css">
+  <link rel="stylesheet" href="/css/radio-date-picker.css">
+  <link rel="stylesheet" href="/css/admin-police-radio.css">
+  <script src="/js/radio-date-picker.js" defer></script>
+  <script src="/js/radio-player-core.js" defer></script>
+  <script src="/js/admin-police-radio.js" defer></script>
+{% endblock %}
+{% block content %}
+  <p><a href="/admin/">← Admin</a></p>
+  <div class="page-heading">
+    <h1>Edit Police Radio</h1>
+    <p>Edit a clip with its pencil, mark it verified after listening, then save changes to the database. To copy edits into the site JSON, run <code>make calls-from-db D1_DATABASE=afpd-data-staging</code> for staging, or <code>make calls-from-db</code> for production, then build and deploy.</p>
+    <div class="admin-radio-toolbar"><button type="button" id="admin-save" disabled>Save Changes</button><span id="admin-save-status" role="status" aria-live="polite">No unsaved changes.</span></div>
+    <label class="radio-talkgroup-selector" for="radio-talkgroup">Talkgroup
+      <select id="radio-talkgroup"><option value="6001">AFPD Car to Car (6001)</option><option value="5922">Law 2 Northeast (5922)</option></select>
+    </label>
+    <p id="radio-talkgroup-description">Audio from a car-to-car radio talkgroup used by the American Fork Police Department (AFPD).</p>
+    <p id="radio-talkgroup-note" class="radio-source-note" hidden>Law 2 Northeast includes other agencies.</p>
+    <div id="radio-review-progress" class="radio-review-progress" role="status" hidden>
+      <span class="radio-progress-stat"><strong id="radio-transcription-count"></strong> clips transcribed</span>
+      <span class="radio-progress-stat"><strong id="radio-verification-count"></strong> clips verified</span>
+      <span id="radio-progress-date" class="radio-progress-stat"></span>
+    </div>
+  </div>
+  <div class="radio-archive" id="radio-archive">
+    {{ datePicker("radio") }}
+    {{ player("radio", initiallyHidden=true) }}
+    <p id="radio-coverage" class="radio-source-note" hidden></p>
+    <p id="radio-status" role="status">Loading available dates…</p>
+    <p id="radio-transcript-availability" class="radio-transcript-note" hidden>Transcripts are not yet available for this day.</p>
+    <section aria-label="Recorded clips" aria-busy="true" id="radio-clips-section">
+      <div class="radio-list-heading" aria-hidden="true"><span>Time · archive clip</span><span>Duration</span></div>
+      <ol id="radio-clips" class="radio-clips"></ol>
+    </section>
+  </div>
+{% endblock %}

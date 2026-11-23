@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-.PHONY: help openmhz-browser promote-staging build manual-deploy prod-manual-deploy collect-openmhz wrangler-login db-upload
+.PHONY: help openmhz-browser promote-staging build manual-deploy prod-manual-deploy collect-openmhz wrangler-login db-upload calls-from-db
 
 D1_DATABASE ?= afpd-data
 
@@ -20,6 +20,9 @@ wrangler-login: ## Sign in to Cloudflare with Wrangler.
 
 db-upload: ## Upload database updates to D1 (D1_DATABASE=afpd-data).
 	@python3 db/upload_d1.py --database "$(D1_DATABASE)"
+
+calls-from-db: ## Copy saved D1 transcripts and verified flags to calls.json (D1_DATABASE=afpd-data).
+	@python3 db/calls_from_db.py --database "$(D1_DATABASE)"
 
 promote-staging: ## Promote staging to main using force-with-lease; does not deploy.
 	@test "$$(git branch --show-current)" = "staging" || \
