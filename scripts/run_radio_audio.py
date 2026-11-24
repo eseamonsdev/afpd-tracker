@@ -8,8 +8,8 @@ import subprocess
 import sys
 
 from prepare_radio_day import prepare
-from download_openmhz_manifest import DEFAULT_BATCH_SIZE, RATE_LIMIT_EXIT_CODE
-from radio_config import DEFAULT_PAUSE_MS, valid_branch, valid_day, valid_talkgroup, valid_pause_ms
+from download_openmhz_manifest import DEFAULT_BATCH_SIZE, RATE_LIMIT_EXIT_CODE, validate_manifest, write_json
+from radio_config import DEFAULT_PAUSE_MS, TALKGROUPS, valid_branch, valid_day, valid_talkgroup, valid_pause_ms
 
 
 def run(day, talkgroup, branch, mode='download', proof='', pause_ms=DEFAULT_PAUSE_MS):
@@ -27,6 +27,34 @@ def run(day, talkgroup, branch, mode='download', proof='', pause_ms=DEFAULT_PAUS
     result = prepare(Path.cwd(), day, talkgroup, fetch=True)
     print(json.dumps(result), flush=True)
     manifest = Path('records-pending-review/openmhz-manifests') / result['manifest']
+    processed = download_queue(manifest, pause_ms)
+    # Retry the remaining failed downloads once, after the normal queue drains.
+    # Keep the failure manifest intact until the importer validates each recovery.
+    channel = TALKGROUPS[talkgroup][0]
+    failure = Path('records-pending-review/openmhz-failures') / f'{day}-{channel}.json'
+    if failure.exists():
+        retry = json.loads(failure.read_text())
+        validate_manifest(retry)
+        if retry['date'] != day or retry['talkgroup'] != talkgroup:
+            raise ValueError('Failure manifest identity mismatch')
+        retry['calls'] = [c for c in retry['calls'] if c.get('audio_status') != 'unavailable']
+        retry['count'] = len(retry['calls'])
+        if retry['count']:
+            for call in retry['calls']:
+                call.pop('download_error', None)
+            retry.pop('retry_note', None)
+            validate_manifest(retry)
+            manifest.parent.mkdir(parents=True, exist_ok=True)
+            write_json(manifest, retry)
+            print(f'Retrying {retry["count"]} failed calls once', flush=True)
+            download_queue(manifest, pause_ms)
+            processed = True
+    if not processed:
+        publish()
+    print(f'{day} talkgroup {talkgroup}: finished on {branch}; any remaining failures are recorded separately.', flush=True)
+
+
+def download_queue(manifest, pause_ms):
     processed = False
     while manifest.exists():
         processed = True
@@ -50,10 +78,7 @@ def run(day, talkgroup, branch, mode='download', proof='', pause_ms=DEFAULT_PAUS
                 output.write(Path(summary).read_text() + '\n')
         # Save each checkpoint, but regenerate the site only on the last batch.
         publish(build=not manifest.exists())
-    # Also persist metadata fetched from staging on a no-op run.
-    if not processed:
-        publish()
-    print(f'{day} talkgroup {talkgroup}: finished on {branch}; known failures remain separate.', flush=True)
+    return processed
 
 
 def publish(build=True):
