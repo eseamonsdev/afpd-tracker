@@ -112,9 +112,19 @@ jobs:
           git diff --binary HEAD^ HEAD > "$RUNNER_TEMP/openmhz-collection.patch"
           for attempt in 1 2 3; do
             git fetch origin staging
-            if ! git rebase origin/staging; then
-              git rebase --abort
-              echo "Conflicting staging changes; recover metadata from the run artifact." >&2
+            git status --short
+            git diff --stat
+            if ! git rebase --autostash origin/staging; then
+              if test -d "$(git rev-parse --git-path rebase-merge)" || test -d "$(git rev-parse --git-path rebase-apply)"; then
+                git rebase --abort
+              fi
+              echo "Rebase failed; recover metadata from the run artifact." >&2
+              exit 1
+            fi
+            # Autostash application can conflict even if the rebase succeeds.
+            if test -n "$(git ls-files -u)"; then
+              git status --short
+              echo "Autostash conflicts; recover metadata from the run artifact." >&2
               exit 1
             fi
             if git push origin HEAD:staging; then
