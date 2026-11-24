@@ -19,7 +19,7 @@ def run(day, talkgroup, branch, mode='download', proof='', pause_ms=DEFAULT_PAUS
     os.environ['OPENMHZ_AUDIO_STORAGE'] = 'r2'
     if mode == 'recover':
         if not proof:
-            raise ValueError('Recovery requires browser-verified proof; normal downloads never retry failures')
+            raise ValueError('Explicit recovery requires browser-verified proof')
         from recover_verified_openmhz_audio import recover
         recover(Path.cwd(), day, talkgroup, Path(proof), pause_ms=pause_ms)
         publish()
