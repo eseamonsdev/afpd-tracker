@@ -1,0 +1,657 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-22",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1795402999.m4a": {
+      "index": 971,
+      "epoch": 1795402999,
+      "sha256": "cd8273232f82149102f75dfdfa60b209f3133498f4c4f8d976933c56eb42c99c",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Go ahead.",
+              "avg_logprob": -0.5685914059480032,
+              "no_speech_prob": 0.11089009791612625,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Go ahead.",
+              "avg_logprob": -0.5860348045825958,
+              "no_speech_prob": 0.09678409993648529,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Go ahead.",
+          "prompt": "5J21 returning. 7J20 Central, copy medical.",
+          "duration_seconds": 0.896,
+          "token_limit": 32,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Go ahead.",
+              "avg_logprob": -0.5034539103507996,
+              "no_speech_prob": 0.15782395005226135,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795403002.m4a": {
+      "index": 972,
+      "epoch": 1795403002,
+      "sha256": "2c86b7fa7c9939594995e53a0eb6efafc4aceb6a9d37e792168b0a7a606e9544",
+      "passes": {
+        "original": {
+          "text": "170 South Pleasant Grove Boulevard, 170 South Pleasant Grove Boulevard, Unit 6101, 68-year-old female conscious breathing has fallen.",
+          "prompt": null,
+          "duration_seconds": 11.136,
+          "token_limit": 114,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.72,
+              "text": " 170 South Pleasant Grove Boulevard, 170 South Pleasant Grove Boulevard, Unit 6101, 68-year-old",
+              "avg_logprob": -0.4710815502330661,
+              "no_speech_prob": 0.03771372139453888,
+              "compression_ratio": 1.33
+            },
+            {
+              "start": 8.72,
+              "end": 10.8,
+              "text": " female conscious breathing has fallen.",
+              "avg_logprob": -0.4710815502330661,
+              "no_speech_prob": 0.03771372139453888,
+              "compression_ratio": 1.33
+            }
+          ]
+        },
+        "filtered": {
+          "text": "170 South Pleasant Grove Boulevard, 170 South Pleasant Grove Boulevard, unit 6101, 68-year-old female conscious breathing has fallen.",
+          "prompt": null,
+          "duration_seconds": 11.136,
+          "token_limit": 114,
+          "token_count": 31,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.72,
+              "text": " 170 South Pleasant Grove Boulevard, 170 South Pleasant Grove Boulevard, unit 6101, 68-year-old",
+              "avg_logprob": -0.4870678558945656,
+              "no_speech_prob": 0.04130583629012108,
+              "compression_ratio": 1.33
+            },
+            {
+              "start": 8.72,
+              "end": 10.8,
+              "text": " female conscious breathing has fallen.",
+              "avg_logprob": -0.4870678558945656,
+              "no_speech_prob": 0.04130583629012108,
+              "compression_ratio": 1.33
+            }
+          ]
+        },
+        "context": {
+          "text": "170 South Pleasant Grove Boulevard, 170 South Pleasant Grove Boulevard, unit 6101, 68 year old female conscious breathing, have fallen.",
+          "prompt": "5J21 returning. 7J20 Central, copy medical. Go ahead.",
+          "duration_seconds": 11.136,
+          "token_limit": 114,
+          "token_count": 28,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 11.0,
+              "text": " 170 South Pleasant Grove Boulevard, 170 South Pleasant Grove Boulevard, unit 6101, 68 year old female conscious breathing, have fallen.",
+              "avg_logprob": -0.4019525379970156,
+              "no_speech_prob": 0.02071414887905121,
+              "compression_ratio": 1.3366336633663367
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795403015.m4a": {
+      "index": 973,
+      "epoch": 1795403015,
+      "sha256": "3219b2ebb50a66d8a4d7e731526b2e8e8eb6054ca29b2db6b4676f3056862d67",
+      "passes": {
+        "original": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.7407151659329733,
+              "no_speech_prob": 0.1718280166387558,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.8052042126655579,
+              "no_speech_prob": 0.21540367603302002,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you.",
+          "prompt": "7J20 Central, copy medical. Go ahead. 170 South Pleasant Grove Boulevard, 170 South Pleasant Grove Boulevard, Unit 6101, 68-year-old female conscious breathing has fallen.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Thank you.",
+              "avg_logprob": -0.6478958825270335,
+              "no_speech_prob": 0.166269451379776,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795403024.m4a": {
+      "index": 974,
+      "epoch": 1795403024,
+      "sha256": "eb0b6b667bb787aacce5dc20a6d3bc21d712f50b9b1044c2c2367011f4eb244b",
+      "passes": {
+        "original": {
+          "text": "5G6 traffic.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G6 traffic.",
+              "avg_logprob": -0.589701883494854,
+              "no_speech_prob": 0.030987976118922234,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5G6 traffic.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.6,
+              "text": " 5G6 traffic.",
+              "avg_logprob": -0.551644541323185,
+              "no_speech_prob": 0.015450546517968178,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "5G6 traffic.",
+          "prompt": "Go ahead. 170 South Pleasant Grove Boulevard, 170 South Pleasant Grove Boulevard, Unit 6101, 68-year-old female conscious breathing has fallen. Thank you.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G6 traffic.",
+              "avg_logprob": -0.45766860246658325,
+              "no_speech_prob": 0.010945858433842659,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795403031.m4a": {
+      "index": 975,
+      "epoch": 1795403031,
+      "sha256": "c42a4e718286064b061604aee410ebcb92301c2aa6195baf40f48b7f20df5088",
+      "passes": {
+        "original": {
+          "text": "Auto mode drive 1100 south, one echo 6, Zulu Sierra",
+          "prompt": null,
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.44,
+              "text": " Auto mode drive 1100 south, one echo 6, Zulu Sierra",
+              "avg_logprob": -0.7390521839261055,
+              "no_speech_prob": 0.029404031112790108,
+              "compression_ratio": 0.864406779661017
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Auto Mall Drive 1100 South, 1106 Zulusia",
+          "prompt": null,
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.44,
+              "text": " Auto Mall Drive 1100 South, 1106 Zulusia",
+              "avg_logprob": -0.6847300614629473,
+              "no_speech_prob": 0.01270663645118475,
+              "compression_ratio": 0.8888888888888888
+            }
+          ]
+        },
+        "context": {
+          "text": "Automall Drive, 1100 South, 1 Echo 6, Zulusi Air.",
+          "prompt": "170 South Pleasant Grove Boulevard, 170 South Pleasant Grove Boulevard, Unit 6101, 68-year-old female conscious breathing has fallen. Thank you. 5G6 traffic.",
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.44,
+              "text": " Automall Drive, 1100 South, 1 Echo 6, Zulusi Air.",
+              "avg_logprob": -0.6090986665926481,
+              "no_speech_prob": 0.003496499266475439,
+              "compression_ratio": 0.8909090909090909
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795403039.m4a": {
+      "index": 976,
+      "epoch": 1795403039,
+      "sha256": "1fd11915a23eae2ae7f2d7314bb40d2805cf0a8db272b8bb5761a69830f543ec",
+      "passes": {
+        "original": {
+          "text": "Happy?",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy?",
+              "avg_logprob": -0.7121532440185547,
+              "no_speech_prob": 0.015620755963027477,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy?",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy?",
+              "avg_logprob": -0.5855533599853515,
+              "no_speech_prob": 0.01949690282344818,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy?",
+          "prompt": "Thank you. 5G6 traffic. Auto mode drive 1100 south, one echo 6, Zulu Sierra",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy?",
+              "avg_logprob": -0.5040786743164063,
+              "no_speech_prob": 0.017865562811493874,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795403261.m4a": {
+      "index": 977,
+      "epoch": 1795403261,
+      "sha256": "4d6a038272a091b57e2337cb6d96ab0141027d4a41be6b1ae2271903fc6053eb",
+      "passes": {
+        "original": {
+          "text": "5G21 clear.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G21 clear.",
+              "avg_logprob": -0.6813706830143929,
+              "no_speech_prob": 0.08353219926357269,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Okay, 21, quick.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Okay, 21, quick.",
+              "avg_logprob": -0.9050787819756402,
+              "no_speech_prob": 0.05405877158045769,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "5G21 clear.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5G21 clear.",
+              "avg_logprob": -0.6813706830143929,
+              "no_speech_prob": 0.08353219926357269,
+              "compression_ratio": 0.5789473684210527
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795403265.m4a": {
+      "index": 978,
+      "epoch": 1795403265,
+      "sha256": "0ee0f923ec641d4f77c5779dd7269140fbd9ec2fd02139243a56b3ec812922de",
+      "passes": {
+        "original": {
+          "text": "5, 2021.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5, 2021.",
+              "avg_logprob": -0.9142235347202846,
+              "no_speech_prob": 0.021014032885432243,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "5,821.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 5,821.",
+              "avg_logprob": -0.8772516995668411,
+              "no_speech_prob": 0.016452020034193993,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "5G21.",
+          "prompt": "5G21 clear.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 5G21.",
+              "avg_logprob": -0.34565441097532,
+              "no_speech_prob": 0.04281493276357651,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795403354.m4a": {
+      "index": 979,
+      "epoch": 1795403354,
+      "sha256": "fd10b6292c1024fe45b2fc064b30cdbdf480f6a6e1ffcd45158e568d80c77cf6",
+      "passes": {
+        "original": {
+          "text": "7J31, would you assign this to 25, please?",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7J31, would you assign this to 25, please?",
+              "avg_logprob": -0.3524378780275583,
+              "no_speech_prob": 0.027785127982497215,
+              "compression_ratio": 0.84
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7, J31, would you assign this to 25, please?",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7, J31, would you assign this to 25, please?",
+              "avg_logprob": -0.5312409120447495,
+              "no_speech_prob": 0.029323237016797066,
+              "compression_ratio": 0.8461538461538461
+            }
+          ]
+        },
+        "context": {
+          "text": "7J31, would you assign this to 25, please?",
+          "prompt": null,
+          "duration_seconds": 3.328,
+          "token_limit": 51,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7J31, would you assign this to 25, please?",
+              "avg_logprob": -0.3524378780275583,
+              "no_speech_prob": 0.027785127982497215,
+              "compression_ratio": 0.84
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795403359.m4a": {
+      "index": 980,
+      "epoch": 1795403359,
+      "sha256": "1c0472af623798bd99bf30388eb7b253d06f0bd653ef9deeb680afde9632dbb1",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.9188357353210449,
+              "no_speech_prob": 0.022569259628653526,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.767641544342041,
+              "no_speech_prob": 0.05404066666960716,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "7J31, would you assign this to 25, please?",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5705557823181152,
+              "no_speech_prob": 0.007849004119634628,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
