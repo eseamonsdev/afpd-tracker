@@ -1,0 +1,24 @@
+name: Schedule daily OpenMHz collection
+
+'on':
+  schedule:
+    - cron: '40 8 * * *'
+      timezone: America/Denver
+
+permissions:
+  actions: write
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch yesterday's collections on staging
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          TZ: America/Denver
+        run: |
+          set -euo pipefail
+          day=$(date -d yesterday +%F)
+          gh workflow run collect-openmhz-pi.yml --ref staging -f day="$day" -f talkgroup=6001
+          gh workflow run collect-openmhz-pi.yml --ref staging -f day="$day" -f talkgroup=5922
