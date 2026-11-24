@@ -1,0 +1,673 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-23",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1795493619.m4a": {
+      "index": 951,
+      "epoch": 1795493619,
+      "sha256": "2e418f10c6cd50a86bc5a69b1ae04f11f7ad4b4de06b52e50a354dd7fb803307",
+      "passes": {
+        "original": {
+          "text": "18-0, 10-3, 12-4, 10-8, 10-7, 8.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 18-0, 10-3, 12-4, 10-8, 10-7, 8.",
+              "avg_logprob": -0.6273607063293457,
+              "no_speech_prob": 0.04677537828683853,
+              "compression_ratio": 1.0
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18-0-10-3-4-4, Connecticut 10-78.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 18-0-10-3-4-4, Connecticut 10-78.",
+              "avg_logprob": -0.677198925614357,
+              "no_speech_prob": 0.045163098722696304,
+              "compression_ratio": 0.825
+            }
+          ]
+        },
+        "context": {
+          "text": "18 0 10 3 4 4. Can I get a 10-78?",
+          "prompt": "Go ahead. 4800 West and Seminoles Hallway, Local 8 Hotel Whiskey, Bravo 9. copy",
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.84,
+              "text": " 18 0 10 3 4 4. Can I get a 10-78?",
+              "avg_logprob": -0.8142576316992441,
+              "no_speech_prob": 0.02583029679954052,
+              "compression_ratio": 0.825
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795493623.m4a": {
+      "index": 952,
+      "epoch": 1795493623,
+      "sha256": "1ef6e08062cd4f73f4dcf8b3fdfb9ceb8006d7d21ded901a9868b6ce9db11d3b",
+      "passes": {
+        "original": {
+          "text": "Unit close to 4800 West and 10th. Copy 16.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Unit close to 4800 West and 10th. Copy 16.",
+              "avg_logprob": -0.6440342590212822,
+              "no_speech_prob": 0.014611432328820229,
+              "compression_ratio": 0.84
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Unit close to 4800 West and 10th. Happy 16th.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Unit close to 4800 West and 10th.",
+              "avg_logprob": -0.5527439870332417,
+              "no_speech_prob": 0.010358216241002083,
+              "compression_ratio": 0.8823529411764706
+            },
+            {
+              "start": 2.0,
+              "end": 4.0,
+              "text": " Happy 16th.",
+              "avg_logprob": -0.5527439870332417,
+              "no_speech_prob": 0.010358216241002083,
+              "compression_ratio": 0.8823529411764706
+            }
+          ]
+        },
+        "context": {
+          "text": "Unit close to 4800 West and 10th, copy 16.",
+          "prompt": "4800 West and Seminoles Hallway, Local 8 Hotel Whiskey, Bravo 9. copy 18-0, 10-3, 12-4, 10-8, 10-7, 8.",
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2,
+              "text": " Unit close to 4800 West and 10th, copy 16.",
+              "avg_logprob": -0.4251527599990368,
+              "no_speech_prob": 0.009729478508234024,
+              "compression_ratio": 0.84
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795493637.m4a": {
+      "index": 953,
+      "epoch": 1795493637,
+      "sha256": "927871732addacf19f19a3b81a5cf263caa01decfb5ad78f9066503efc7d5cd0",
+      "passes": {
+        "original": {
+          "text": "18 years, it's a close one, get it out.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.58,
+              "text": " 18 years, it's a close one, get it out.",
+              "avg_logprob": -0.9075707942247391,
+              "no_speech_prob": 0.13130667805671692,
+              "compression_ratio": 0.8478260869565217
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18 years, if I'm close I guess that way.",
+          "prompt": null,
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.6,
+              "text": " 18 years, if I'm close I guess that way.",
+              "avg_logprob": -0.9020109097162883,
+              "no_speech_prob": 0.15115471184253693,
+              "compression_ratio": 0.8333333333333334
+            }
+          ]
+        },
+        "context": {
+          "text": "18-0, take some closer and get it open.",
+          "prompt": "18-0, 10-3, 12-4, 10-8, 10-7, 8. Unit close to 4800 West and 10th. Copy 16.",
+          "duration_seconds": 3.072,
+          "token_limit": 49,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.6,
+              "text": " 18-0, take some closer and get it open.",
+              "avg_logprob": -0.6063583930333455,
+              "no_speech_prob": 0.007753944024443626,
+              "compression_ratio": 0.8297872340425532
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795493644.m4a": {
+      "index": 954,
+      "epoch": 1795493644,
+      "sha256": "0fda987b628981f908ae9a13fe271bab18448b9198bc823bfc4db67dc1bd2bb2",
+      "passes": {
+        "original": {
+          "text": "I'm James Fortin, I drive a...",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm James Fortin, I drive a...",
+              "avg_logprob": -1.032894758077768,
+              "no_speech_prob": 0.15314613282680511,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Okay, we're gonna drive it",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Okay, we're gonna drive it",
+              "avg_logprob": -0.7635560274124146,
+              "no_speech_prob": 0.16539263725280762,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm doing 4900.",
+          "prompt": "18-0, 10-3, 12-4, 10-8, 10-7, 8. Unit close to 4800 West and 10th. Copy 16. 18 years, it's a close one, get it out.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.28,
+              "text": " I'm doing 4900.",
+              "avg_logprob": -1.1478275722927518,
+              "no_speech_prob": 0.042158015072345734,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795493647.m4a": {
+      "index": 955,
+      "epoch": 1795493647,
+      "sha256": "e0bc65c6663c667e05bb26dee5939083ed15b791826a0a46d00cc34d31e0fa62",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.4614881177743276,
+              "no_speech_prob": 0.006927227135747671,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.41271641850471497,
+              "no_speech_prob": 0.006999924313277006,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Go ahead.",
+          "prompt": "Unit close to 4800 West and 10th. Copy 16. 18 years, it's a close one, get it out. I'm James Fortin, I drive a...",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.36262981593608856,
+              "no_speech_prob": 0.0008174828253686428,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795493650.m4a": {
+      "index": 956,
+      "epoch": 1795493650,
+      "sha256": "4695c3b1ab36674d5107c4766f30b7b222614cf18948153618456a073fdd2ef2",
+      "passes": {
+        "original": {
+          "text": "Three in the north, one in the east, one in the local, six in the south, one in the north, one in the east, one in the local, six",
+          "prompt": null,
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 37,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.76,
+              "text": " Three in the north, one in the east, one in the local, six in the south, one in the north, one in the east, one in the local, six",
+              "avg_logprob": -0.4463994738302733,
+              "no_speech_prob": 0.07238906621932983,
+              "compression_ratio": 2.263157894736842
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Three in the north, one in the east, and the local six in the south, probably two.",
+          "prompt": null,
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 23,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.6000000000000005,
+              "text": " Three in the north, one in the east, and the local six in the south, probably two.",
+              "avg_logprob": -0.5229348664482435,
+              "no_speech_prob": 0.023809760808944702,
+              "compression_ratio": 1.1549295774647887
+            }
+          ]
+        },
+        "context": {
+          "text": "Three in the north, one over the east, one of the locals. Six, Lima Alpha Bravo Two.",
+          "prompt": "18 years, it's a close one, get it out. I'm James Fortin, I drive a... Go ahead.",
+          "duration_seconds": 6.016,
+          "token_limit": 73,
+          "token_count": 24,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " Three in the north, one over the east, one of the locals. Six, Lima Alpha Bravo Two.",
+              "avg_logprob": -0.5729476547241211,
+              "no_speech_prob": 0.009733838960528374,
+              "compression_ratio": 1.0769230769230769
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795493658.m4a": {
+      "index": 957,
+      "epoch": 1795493658,
+      "sha256": "b90011dda912365d6b5e0d3692104f2b3c4a601e5060ad8bd1a28a9b7d941b58",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.7012312412261963,
+              "no_speech_prob": 0.04947632551193237,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6938674926757813,
+              "no_speech_prob": 0.051129698753356934,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "I'm James Fortin, I drive a... Go ahead. Three in the north, one in the east, one in the local, six in the south, one in the north, one in the east, one in the local, six",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.48169307708740233,
+              "no_speech_prob": 0.03347903490066528,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795493680.m4a": {
+      "index": 958,
+      "epoch": 1795493680,
+      "sha256": "dc8d5fe65d1ebb0e3ab907a11c4a581a73b116f0fa939fd633331fc4639d934c",
+      "passes": {
+        "original": {
+          "text": "18-16 arriving.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18-16 arriving.",
+              "avg_logprob": -0.7800155058503151,
+              "no_speech_prob": 0.011203841306269169,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18 to 16 arriving.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 18 to 16 arriving.",
+              "avg_logprob": -0.7169956117868423,
+              "no_speech_prob": 0.01388831902295351,
+              "compression_ratio": 0.6923076923076923
+            }
+          ]
+        },
+        "context": {
+          "text": "Eight changes to 16 arriving.",
+          "prompt": "Go ahead. Three in the north, one in the east, one in the local, six in the south, one in the north, one in the east, one in the local, six Copy.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Eight changes to 16 arriving.",
+              "avg_logprob": -0.7809121343824599,
+              "no_speech_prob": 0.011634735390543938,
+              "compression_ratio": 0.7837837837837838
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795493683.m4a": {
+      "index": 959,
+      "epoch": 1795493683,
+      "sha256": "b7026fa81c0d600201c233e43f9ba6aeac6a3712645d2dfd96ffaad932090563",
+      "passes": {
+        "original": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6472402572631836,
+              "no_speech_prob": 0.07130513340234756,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.6287109851837158,
+              "no_speech_prob": 0.05087091773748398,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "Three in the north, one in the east, one in the local, six in the south, one in the north, one in the east, one in the local, six Copy. 18-16 arriving.",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5606800079345703,
+              "no_speech_prob": 0.03301253169775009,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795493781.m4a": {
+      "index": 960,
+      "epoch": 1795493781,
+      "sha256": "aea45ce2a09af44260d2cfcbb930c720eb92fa9bdfa620c271f4c641adb40c13",
+      "passes": {
+        "original": {
+          "text": "18J6, arrived. Copy.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 18J6, arrived.",
+              "avg_logprob": -0.5683512320885291,
+              "no_speech_prob": 0.04366784170269966,
+              "compression_ratio": 0.7142857142857143
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5683512320885291,
+              "no_speech_prob": 0.04366784170269966,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        },
+        "filtered": {
+          "text": "18J6 arrived. Copy.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 18J6 arrived.",
+              "avg_logprob": -0.5985427896181742,
+              "no_speech_prob": 0.051771923899650574,
+              "compression_ratio": 0.7037037037037037
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5985427896181742,
+              "no_speech_prob": 0.051771923899650574,
+              "compression_ratio": 0.7037037037037037
+            }
+          ]
+        },
+        "context": {
+          "text": "18J6, arrived. Copy.",
+          "prompt": null,
+          "duration_seconds": 4.48,
+          "token_limit": 60,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 18J6, arrived.",
+              "avg_logprob": -0.5683512320885291,
+              "no_speech_prob": 0.04366784170269966,
+              "compression_ratio": 0.7142857142857143
+            },
+            {
+              "start": 3.0,
+              "end": 4.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5683512320885291,
+              "no_speech_prob": 0.04366784170269966,
+              "compression_ratio": 0.7142857142857143
+            }
+          ]
+        }
+      }
+    }
+  }
+}
