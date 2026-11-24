@@ -1,0 +1,641 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-23",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1795417929.m4a": {
+      "index": 1,
+      "epoch": 1795417929,
+      "sha256": "185fa5cc52ddd3381003efa516817e00f24f9107bcbd9210e3eebd598be95081",
+      "passes": {
+        "original": {
+          "text": "I just crashed on some kid writing poetry.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I just crashed on some kid writing poetry.",
+              "avg_logprob": -0.39527281125386554,
+              "no_speech_prob": 0.011594555340707302,
+              "compression_ratio": 0.84
+            }
+          ]
+        },
+        "filtered": {
+          "text": "And just crashed on some kid writing poetry",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.58,
+              "text": " And just crashed on some kid writing poetry",
+              "avg_logprob": -0.38847375999797473,
+              "no_speech_prob": 0.007631225977092981,
+              "compression_ratio": 0.8431372549019608
+            }
+          ]
+        },
+        "context": {
+          "text": "I just crashed on some kid writing poetry.",
+          "prompt": null,
+          "duration_seconds": 3.712,
+          "token_limit": 54,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " I just crashed on some kid writing poetry.",
+              "avg_logprob": -0.39527281125386554,
+              "no_speech_prob": 0.011594555340707302,
+              "compression_ratio": 0.84
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795417944.m4a": {
+      "index": 2,
+      "epoch": 1795417944,
+      "sha256": "2a9fa147758b7db4e8f7ffa0a1eb8903572ae4488d78ffefd6c3c7ed7093146e",
+      "passes": {
+        "original": {
+          "text": "It wasn't the lamest.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " It wasn't the lamest.",
+              "avg_logprob": -0.5163292586803436,
+              "no_speech_prob": 0.0383794791996479,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It wasn't the lamest.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " It wasn't the lamest.",
+              "avg_logprob": -0.4687867283821106,
+              "no_speech_prob": 0.03410698100924492,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        },
+        "context": {
+          "text": "It wasn't the lamest.",
+          "prompt": "I just crashed on some kid writing poetry.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " It wasn't the lamest.",
+              "avg_logprob": -0.4384970247745514,
+              "no_speech_prob": 0.020264804363250732,
+              "compression_ratio": 0.7241379310344828
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795417948.m4a": {
+      "index": 3,
+      "epoch": 1795417948,
+      "sha256": "874ca010640b8ffeec18cd7bb3030f28dc91b1cd2ab7d56dfbdd9df4048b0955",
+      "passes": {
+        "original": {
+          "text": "Surprisingly no.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Surprisingly no.",
+              "avg_logprob": -0.600262979666392,
+              "no_speech_prob": 0.048805974423885345,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Surprisingly, no",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Surprisingly, no",
+              "avg_logprob": -0.5582072834173838,
+              "no_speech_prob": 0.008183806203305721,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "Surprisingly no.",
+          "prompt": "I just crashed on some kid writing poetry. It wasn't the lamest.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Surprisingly no.",
+              "avg_logprob": -0.4512966175874074,
+              "no_speech_prob": 0.01836220920085907,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795422443.m4a": {
+      "index": 4,
+      "epoch": 1795422443,
+      "sha256": "80aa229e282bd79bef388dfa1765b7d9ae2c09fb6e3bfe69220147affd2df462",
+      "passes": {
+        "original": {
+          "text": "Hello, did you have the cat up?",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hello, did you have the cat up?",
+              "avg_logprob": -0.5953522274891535,
+              "no_speech_prob": 0.016474232077598572,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Holidays, you have the cat up.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Holidays, you have the cat up.",
+              "avg_logprob": -0.5703262984752655,
+              "no_speech_prob": 0.009355220943689346,
+              "compression_ratio": 0.7894736842105263
+            }
+          ]
+        },
+        "context": {
+          "text": "Hello, did you have the cat up?",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Hello, did you have the cat up?",
+              "avg_logprob": -0.5953522274891535,
+              "no_speech_prob": 0.016474232077598572,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795422450.m4a": {
+      "index": 5,
+      "epoch": 1795422450,
+      "sha256": "e574fd69e74069e3db87d47dcd79cb223962a21c07495873864dfa27ed27a362",
+      "passes": {
+        "original": {
+          "text": "Yeah.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah.",
+              "avg_logprob": -0.7801454067230225,
+              "no_speech_prob": 0.15827323496341705,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah.",
+              "avg_logprob": -0.8025006294250489,
+              "no_speech_prob": 0.1968335658311844,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        },
+        "context": {
+          "text": "Yeah.",
+          "prompt": "Hello, did you have the cat up?",
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Yeah.",
+              "avg_logprob": -0.6043383598327636,
+              "no_speech_prob": 0.15163499116897583,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795422453.m4a": {
+      "index": 6,
+      "epoch": 1795422453,
+      "sha256": "6665c6d27528ef0af44fd588dc585a2271c4f922cb053928e33d2eeffa3d0832",
+      "passes": {
+        "original": {
+          "text": "Let us know when medical clears off that.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Let us know when medical clears off that.",
+              "avg_logprob": -0.2597121944030126,
+              "no_speech_prob": 0.00473941583186388,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Let us know when medical clears off that.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Let us know when medical clears off that.",
+              "avg_logprob": -0.2964329992731412,
+              "no_speech_prob": 0.0023807550314813852,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        },
+        "context": {
+          "text": "Let us know when medical clears off that.",
+          "prompt": "Hello, did you have the cat up? Yeah.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Let us know when medical clears off that.",
+              "avg_logprob": -0.2133644645412763,
+              "no_speech_prob": 0.00747924717143178,
+              "compression_ratio": 0.8367346938775511
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795422458.m4a": {
+      "index": 7,
+      "epoch": 1795422458,
+      "sha256": "01a9d4a207f20f9e3fee757f303bd0de5b6879f6ec3bbc58a6d23e1457a6156e",
+      "passes": {
+        "original": {
+          "text": "Happy?",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy?",
+              "avg_logprob": -0.6309641361236572,
+              "no_speech_prob": 0.1922932267189026,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy?",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy?",
+              "avg_logprob": -0.7203771591186523,
+              "no_speech_prob": 0.1578790247440338,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy?",
+          "prompt": "Hello, did you have the cat up? Yeah. Let us know when medical clears off that.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy?",
+              "avg_logprob": -0.5270895004272461,
+              "no_speech_prob": 0.08187717944383621,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795422977.m4a": {
+      "index": 8,
+      "epoch": 1795422977,
+      "sha256": "6fb879029cf093a087f9b20932b1e540e8dcc9a036860b34cdb1778dfe185c7d",
+      "passes": {
+        "original": {
+          "text": "Okay, Tonga, they cleared.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Okay, Tonga, they cleared.",
+              "avg_logprob": -0.5934956940737638,
+              "no_speech_prob": 0.11284510046243668,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Okay, Tonga, are they clear?",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Okay, Tonga, are they clear?",
+              "avg_logprob": -0.780396526058515,
+              "no_speech_prob": 0.03859544172883034,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "context": {
+          "text": "Okay, Tonga, they cleared.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Okay, Tonga, they cleared.",
+              "avg_logprob": -0.5934956940737638,
+              "no_speech_prob": 0.11284510046243668,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795422981.m4a": {
+      "index": 9,
+      "epoch": 1795422981,
+      "sha256": "0954cd1ed9903da9c14dd0f9da75db149c14426bb21b485f8fabf1b4119a9544",
+      "passes": {
+        "original": {
+          "text": "Yeah, we just got started.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Yeah, we just got started.",
+              "avg_logprob": -0.7668788015842438,
+              "no_speech_prob": 0.28494107723236084,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah, we just got stuck.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Yeah, we just got stuck.",
+              "avg_logprob": -0.865556412935257,
+              "no_speech_prob": 0.18944621086120605,
+              "compression_ratio": 0.75
+            }
+          ]
+        },
+        "context": {
+          "text": "Yeah, we just got started.",
+          "prompt": "Okay, Tonga, they cleared.",
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Yeah, we just got started.",
+              "avg_logprob": -0.631577879190445,
+              "no_speech_prob": 0.12174862623214722,
+              "compression_ratio": 0.7647058823529411
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795422990.m4a": {
+      "index": 10,
+      "epoch": 1795422990,
+      "sha256": "56c032cb8f3bf0390603b8c3743fc366555393404b937adfc797781e63c50301",
+      "passes": {
+        "original": {
+          "text": "I don't see him on the street yet.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I don't see him on the street yet.",
+              "avg_logprob": -0.294895731485807,
+              "no_speech_prob": 0.09189878404140472,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I don't see him on the street yet.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I don't see him on the street yet.",
+              "avg_logprob": -0.3309153776902419,
+              "no_speech_prob": 0.04438703507184982,
+              "compression_ratio": 0.8095238095238095
+            }
+          ]
+        },
+        "context": {
+          "text": "I don't see them on the street yet.",
+          "prompt": "Okay, Tonga, they cleared. Yeah, we just got started.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I don't see them on the street yet.",
+              "avg_logprob": -0.2220187783241272,
+              "no_speech_prob": 0.0224546380341053,
+              "compression_ratio": 0.875
+            }
+          ]
+        }
+      }
+    }
+  }
+}
