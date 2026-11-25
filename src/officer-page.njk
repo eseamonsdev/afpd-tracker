@@ -8,6 +8,7 @@ permalink: "{{ officerPage.url }}"
 ---
 {% extends "site-page-layout.njk" %}
 {% from "document-tree.njk" import renderNodes -%}
+{% from "radio-evidence-links.njk" import evidenceLinks -%}
 {% from "profile-names.njk" import renderAlternateNames -%}
 {% from "profile-photo.njk" import renderProfilePhoto -%}
 {% set alternateNames = officerPage | profileAlternateNames -%}
@@ -24,6 +25,7 @@ permalink: "{{ officerPage.url }}"
 {% block pageAssets %}  <link rel="stylesheet" href="/css/document-tree.css">
   <link rel="stylesheet" href="/css/officer-page.css">
   <link rel="stylesheet" href="/css/csv-table.css">
+  <link rel="stylesheet" href="/css/radio-evidence.css">
   {%- if officerPage.photo %}
   <link rel="stylesheet" href="/css/profile-photo.css">
   {%- endif %}
@@ -106,12 +108,7 @@ permalink: "{{ officerPage.url }}"
                   <div class="csv-table-scroll" tabindex="0" role="region" aria-label="Radio ID observations and supporting evidence">
                     <table class="csv-table"><thead><tr><th scope="col">Radio ID</th><th scope="col">Evidence days</th><th scope="col">Evidence dates</th><th scope="col">Association</th><th scope="col">Supporting evidence</th></tr></thead><tbody>
                     {%- for radio in officerPage.radio_identifiers -%}
-                      <tr><th scope="row"><code>{{ radio.radio_id | escape }}</code></th><td>{{ radio.evidence_days }}</td><td>{% for date in radio.evidence_dates %}<time datetime="{{ date | escape }}">{{ date | escape }}</time>{% if not loop.last %}; {% endif %}{% else %}No counted evidence dates{% endfor %}</td><td>{{ radio.status_label | escape }}</td><td><details><summary>View dated evidence and supporting clips</summary>
-                        {%- for day in radio.evidence -%}
-                          <p><strong>{{ day.date | escape }} · {{ day.talkgroup }}</strong>{% if day.url %} · <a href="{{ day.url | escape }}">Listen in day archive</a>{% endif %}{% if day.clips | length %} · Clips {{ day.clips | join(", ") | escape }}{% endif %}</p>
-                          <ul>{%- for record in day.records -%}<li>{{ record.evidence | escape }}{% if record.source_url %} <a href="{{ record.source_url | escape }}">{{ record.source_label | default("Source", true) | escape }}</a>{% endif %}</li>{%- endfor -%}</ul>
-                        {%- endfor -%}
-                      </details></td></tr>
+                      <tr><th scope="row"><code>{{ radio.radio_id | escape }}</code></th><td>{{ radio.evidence_days }}</td><td>{% for date in radio.evidence_dates %}<time datetime="{{ date | escape }}">{{ date | escape }}</time>{% if not loop.last %}; {% endif %}{% else %}No counted evidence dates{% endfor %}</td><td>{{ radio.status_label | escape }}</td><td>{{ evidenceLinks(radio.evidence) }}</td></tr>
                     {%- endfor -%}
                     </tbody></table>
                   </div>

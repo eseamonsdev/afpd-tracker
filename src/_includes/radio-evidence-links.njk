@@ -1,0 +1,15 @@
+{% macro evidenceLinks(days) -%}
+<ul class="radio-evidence-links">
+{%- for day in days -%}
+  {%- if day.clips | length -%}
+    {%- set clipUrl = "" -%}
+    {%- if day.talkgroup == 6001 or day.talkgroup == 5922 -%}
+      {%- set clipUrl = "/police-radio/?date=" ~ day.date ~ "&talkgroup=" ~ day.talkgroup ~ "&clips=" ~ (day.clips | join(",")) -%}
+    {%- elif day.records[0].source_url -%}
+      {%- set clipUrl = day.records[0].source_url -%}
+    {%- endif -%}
+    <li>{% if clipUrl %}<a href="{{ clipUrl | escape }}">{% endif %}<time datetime="{{ day.date | escape }}">{{ day.date | formatArticleDate | escape }}</time> · {% if day.talkgroup == 6001 %}Car-to-Car{% elif day.talkgroup == 5922 %}Law 2 Northeast{% else %}Talkgroup{% endif %} ({{ day.talkgroup }}) · {% if day.clips | length == 1 %}Clip{% else %}Clips{% endif %} {{ day.clips | join(", ") | escape }}{% if clipUrl %}</a>{% endif %}</li>
+  {%- endif -%}
+{%- endfor -%}
+</ul>
+{%- endmacro %}

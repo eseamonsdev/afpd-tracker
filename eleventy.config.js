@@ -52,6 +52,8 @@ export default function (eleventyConfig) {
   eleventyConfig.on("eleventy.before", () => validateRadioExcerptIdentities());
   eleventyConfig.addFilter("customTemplatePath", customTemplatePath);
   eleventyConfig.addGlobalData("documentSitemapPaths", () => documentSitemapPaths());
+  eleventyConfig.addGlobalData("officerRadioProfiles", () =>
+    JSON.parse(fs.readFileSync("public/records/openmhz/officer-associations.json", "utf8")).profiles);
   eleventyConfig.addGlobalData("sharedRadioUse", () =>
     JSON.parse(fs.readFileSync("public/records/openmhz/officer-associations.json", "utf8")).shared_radio_use ?? {});
   eleventyConfig.addWatchTarget("./public/records/**/*.pdf");
