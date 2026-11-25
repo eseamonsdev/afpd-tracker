@@ -11,10 +11,14 @@ test('dashboard and navigation link to the protected evidence workspace',()=>{
 });
 test('evidence workspace has separate reviewed state, notes, speaker confirmation and transcript editing',()=>{
   const html=env.render('admin-evidence-excerpt.njk',{adminTools});
-  for(const id of ['evidence-reviewed','evidence-notes','evidence-save','evidence-clips','evidence-transcript-input','evidence-verified'])
+  for(const id of ['evidence-reviewed','evidence-notes','evidence-save','evidence-clips','evidence-transcript-input','evidence-verified','evidence-speaker-confirmed'])
     assert.equal(html.split(`id="${id}"`).length-1,1);
   assert.ok(html.indexOf('/js/radio-player-core.js')<html.indexOf('/js/admin-evidence-excerpt.js'));
   assert.doesNotMatch(html,/radio-date-picker|make associations-from-db/);
+  assert.ok(html.indexOf('id="evidence-verified"')<html.indexOf('id="evidence-speaker-confirmed"'));
+  assert.ok(html.indexOf('id="evidence-speaker-confirmed"')<html.indexOf('id="evidence-clips"'));
+  const regularAdmin=env.render('admin-police-radio.njk',{adminTools});
+  assert.doesNotMatch(regularAdmin,/speaker-confirmed/);
   const list=env.render('admin-association-evidence.njk',{adminTools});
   for(const status of ['all','reviewed','unreviewed'])assert.ok(list.includes(`value="${status}"`));
 });

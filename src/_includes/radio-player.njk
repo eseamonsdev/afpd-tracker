@@ -1,5 +1,5 @@
 {% from "radio-row.njk" import rowTemplate %}
-{% macro player(prefix, transcripts=true, hiddenToggle=true, toggleName="transcript-toggle", transcriptName="transcript", initiallyHidden=false, adminEditor=false) %}
+{% macro player(prefix, transcripts=true, hiddenToggle=true, toggleName="transcript-toggle", transcriptName="transcript", initiallyHidden=false, adminEditor=false, speakerConfirmation=false) %}
       {{ rowTemplate() }}
       <section id="{{ prefix }}-player-panel" class="radio-player" aria-label="Audio player"{% if initiallyHidden %} hidden{% endif %}>
         <div class="radio-player-heading">
@@ -37,6 +37,7 @@
               <textarea id="{{ prefix }}-transcript-input" rows="5"></textarea>
             </div>
             <label class="admin-radio-verify"><input id="{{ prefix }}-verified" type="checkbox" disabled> Verified against audio</label>
+            {% if speakerConfirmation %}<label class="admin-radio-verify"><input id="{{ prefix }}-speaker-confirmed" type="checkbox" disabled> <span id="{{ prefix }}-speaker-confirmed-label">Confirms the officer is speaking</span></label>{% endif %}
           </div>{% endif %}
           <details id="{{ prefix }}-call-note" class="radio-call-note" hidden>
             <summary><span class="radio-notes-view">View Notes</span><span class="radio-notes-hide">Hide Notes</span></summary>

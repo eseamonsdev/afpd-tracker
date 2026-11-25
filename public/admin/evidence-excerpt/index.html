@@ -45,7 +45,7 @@
   <textarea id="evidence-notes" rows="3" maxlength="20000" placeholder="Clips that belong elsewhere, uncertain identities, or other corrections…" disabled></textarea>
 </div>
 <section id="evidence-workspace" hidden>
-  <p>Check <strong>Confirms this officer</strong> on the response clips that identify the speaker. Transcript verification is separate. Removing a clip affects this evidence group only.</p>
+  <p>Select a response clip, then confirm the named officer in the sticky player. Transcript verification is separate. Removing a clip affects this evidence group only.</p>
   <form id="evidence-add" class="evidence-filters"><label class="evidence-search">Add clips from this date and talkgroup<input id="evidence-add-numbers" placeholder="Clips 12, 13, 14"></label><button type="submit">Add clips</button></form>
   <p id="evidence-action-status" role="status" aria-live="polite"></p>
   <div id="evidence-selection-status" class="evidence-selection-status"></div>
@@ -94,6 +94,7 @@
               <textarea id="evidence-transcript-input" rows="5"></textarea>
             </div>
             <label class="admin-radio-verify"><input id="evidence-verified" type="checkbox" disabled> Verified against audio</label>
+            <label class="admin-radio-verify"><input id="evidence-speaker-confirmed" type="checkbox" disabled> <span id="evidence-speaker-confirmed-label">Confirms the officer is speaking</span></label>
           </div>
           <details id="evidence-call-note" class="radio-call-note" hidden>
             <summary><span class="radio-notes-view">View Notes</span><span class="radio-notes-hide">Hide Notes</span></summary>

@@ -4,6 +4,7 @@
   const reviewed=$('evidence-reviewed'),notes=$('evidence-notes');
   const pencil=$('evidence-edit-transcript'),editor=$('evidence-transcript-editor');
   const textarea=$('evidence-transcript-input'),verified=$('evidence-verified'),text=$('evidence-transcript-text');
+  const speakerConfirmed=$('evidence-speaker-confirmed'),speakerLabel=$('evidence-speaker-confirmed-label');
   let group=null,clips=[],removed=new Set(),originalMembers='',transcripts=new Map(),selected=null,player=null,saving=false,adding=false;
   const memberState=()=>JSON.stringify(clips.filter(c=>!removed.has(c.id)).map(c=>({id:c.id,speaker_confirmed:c.speaker_confirmed})));
   const dirty=()=>group && (reviewed.checked!==group.reviewed||notes.value!==group.correction_notes||memberState()!==originalMembers||transcripts.size>0);
@@ -11,6 +12,12 @@
     save.disabled=saving||adding||!dirty();
     status.textContent=message||(dirty()?'Unsaved changes.':'No unsaved changes.');
     if(group)$('evidence-selection-status').textContent=`${clips.length-removed.size} evidence clips · ${clips.filter(c=>!removed.has(c.id)&&c.speaker_confirmed).length} confirmed speaker clips`;
+    syncSpeakerConfirmation();
+  }
+  function syncSpeakerConfirmation(){
+    speakerConfirmed.checked=selected?.speaker_confirmed===true;
+    speakerConfirmed.disabled=!selected||removed.has(selected.id)||saving;
+    speakerLabel.textContent=group?`Confirms ${group.officer_name} is speaking`:'Confirms the officer is speaking';
   }
   function stageTranscript(){
     if(!selected||saving)return;
@@ -23,18 +30,16 @@
   function select(call){
     selected=call;editor.hidden=true;text.hidden=false;pencil.setAttribute('aria-expanded','false');pencil.textContent='✎ Edit transcript';
     pencil.disabled=verified.disabled=!call;textarea.value=call?.transcript||'';verified.checked=call?.validated===true;
+    syncSpeakerConfirmation();
   }
   function decorate(call,row){
     const controls=document.createElement('div');controls.className='evidence-clip-controls';
     controls.addEventListener('click',event=>event.stopPropagation());
-    const label=document.createElement('label'),checkbox=document.createElement('input');checkbox.type='checkbox';checkbox.checked=call.speaker_confirmed;
-    label.append(checkbox,document.createTextNode('Confirms this officer'));controls.append(label);
     const remove=document.createElement('button');remove.type='button';remove.textContent='Remove from evidence group';controls.append(remove);
     const refreshRow=()=>{
-      const isRemoved=removed.has(call.id);row.classList.toggle('evidence-clip-removed',isRemoved);checkbox.disabled=isRemoved||saving;
+      const isRemoved=removed.has(call.id);row.classList.toggle('evidence-clip-removed',isRemoved);
       remove.textContent=isRemoved?'Undo removal':'Remove from evidence group';remove.classList.toggle('evidence-undo',isRemoved);
     };
-    checkbox.addEventListener('change',()=>{if(saving)return;call.speaker_confirmed=checkbox.checked;refresh();});
     remove.addEventListener('click',()=>{if(saving)return;if(removed.has(call.id))removed.delete(call.id);else removed.add(call.id);refreshRow();refresh();});
     row.append(controls);refreshRow();
   }
@@ -66,6 +71,10 @@
   reviewed.addEventListener('change',()=>refresh());notes.addEventListener('input',()=>refresh());
   pencil.addEventListener('click',()=>{if(!selected||saving)return;editor.hidden=!editor.hidden;text.hidden=!editor.hidden;pencil.setAttribute('aria-expanded',String(!editor.hidden));pencil.textContent=editor.hidden?'✎ Edit transcript':'Done editing';if(!editor.hidden)textarea.focus();});
   textarea.addEventListener('input',stageTranscript);verified.addEventListener('change',stageTranscript);
+  speakerConfirmed.addEventListener('change',()=>{
+    if(!selected||saving||removed.has(selected.id))return;
+    selected.speaker_confirmed=speakerConfirmed.checked;refresh();
+  });
   $('evidence-add').addEventListener('submit',async event=>{
     event.preventDefault();if(!group||saving||adding)return;
     const numbers=$('evidence-add-numbers').value.trim().replace(/^clips?\s*/i,'').replace(/\s/g,'');
@@ -96,7 +105,7 @@
       for(const c of clips)c._original={transcript:c.transcript,validated:c.validated};transcripts.clear();
       saving=false;player.render(clips);refresh('Changes saved.');
     }catch(error){refresh(error.message+' Your unsaved edits are still here.');}
-    finally{saving=false;controls.forEach((c,i)=>c.disabled=disabled[i]);pencil.disabled=verified.disabled=!selected;save.disabled=!dirty();}
+    finally{saving=false;controls.forEach((c,i)=>c.disabled=disabled[i]);pencil.disabled=verified.disabled=!selected;syncSpeakerConfirmation();save.disabled=!dirty();}
   });
   window.addEventListener('beforeunload',event=>{if(dirty()){event.preventDefault();event.returnValue='';}});
   if(!id){status.textContent='Choose an evidence group from the association evidence page.';return;}
