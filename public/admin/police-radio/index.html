@@ -11,8 +11,10 @@
   <link rel="stylesheet" href="/css/police-radio.css">
   <link rel="stylesheet" href="/css/radio-date-picker.css">
   <link rel="stylesheet" href="/css/admin-police-radio.css">
+  <link rel="stylesheet" href="/css/admin-radio-evidence.css">
   <script src="/js/radio-date-picker.js" defer></script>
   <script src="/js/radio-player-core.js" defer></script>
+  <script src="/js/admin-radio-evidence.js" defer></script>
   <script src="/js/admin-police-radio.js" defer></script>
 
   <link rel="stylesheet" href="/css/admin.css">
@@ -38,6 +40,7 @@
     <h1>Edit Police Radio</h1>
     <p>Select a clip, edit its transcript or mark it verified in the player, then save changes to the database. Run <code>make calls-from-db</code> to copy staging edits into the site JSON, then build and deploy. Database Make commands use staging; <code>make promote-db</code> copies the staging database to production.</p>
     <div class="admin-radio-toolbar"><button type="button" id="admin-save" disabled>Save Changes</button><span id="admin-save-status" role="status" aria-live="polite">No unsaved changes.</span></div>
+    <div id="admin-evidence-feedback" class="admin-evidence-feedback" role="status" aria-live="polite" hidden></div>
     <label class="radio-talkgroup-selector" for="radio-talkgroup">Talkgroup
       <select id="radio-talkgroup"><option value="6001">AFPD Car to Car (6001)</option><option value="5922">Law 2 Northeast (5922)</option></select>
     </label>
@@ -117,6 +120,25 @@
       <ol id="radio-clips" class="radio-clips"></ol>
     </section>
   </div>
+  <dialog id="admin-evidence-dialog" aria-labelledby="admin-evidence-title">
+    <form id="admin-evidence-form">
+      <h2 id="admin-evidence-title">Add association evidence</h2>
+      <p id="admin-evidence-day"></p>
+      <label for="admin-evidence-officer">Officer</label>
+      <select id="admin-evidence-officer" required><option value="">Choose an officer</option></select>
+      <label for="admin-evidence-radio">Radio ID associated with this officer</label>
+      <input id="admin-evidence-radio" list="admin-evidence-radios" inputmode="numeric" pattern="[1-9][0-9]{0,19}" required>
+      <datalist id="admin-evidence-radios"></datalist>
+      <label for="admin-evidence-numbers">Clips to include</label>
+      <input id="admin-evidence-numbers" placeholder="12, 13, 14" required aria-describedby="admin-evidence-help">
+      <p id="admin-evidence-help">Include the surrounding exchange when needed. Clips are appended to the matching officer, radio, date and talkgroup group. Existing notes and confirmations are preserved.</p>
+      <p id="admin-evidence-selection-error" role="status"></p>
+      <ul id="admin-evidence-preview"></ul>
+      <p>This saves evidence only. Transcript edits use the main Save Changes button.</p>
+      <div class="admin-evidence-actions"><button id="admin-evidence-add" type="submit">Add clips to evidence</button><button id="admin-evidence-cancel" type="button">Cancel</button></div>
+      <p id="admin-evidence-result" role="status" aria-live="polite"></p>
+    </form>
+  </dialog>
 </main>
 </body>
 </html>

@@ -84,6 +84,9 @@
       row.append(badge);
     }
     refreshHighlights();
+    document.getElementById("radio-archive").dispatchEvent(new CustomEvent("admin-radio-day-ready", {
+      detail: { calls, list, entry, talkgroup: Number(document.getElementById("radio-talkgroup").value) }
+    }));
   }
   function onClipSelected(call) {
     selected = call;
@@ -100,6 +103,7 @@
     textarea.value = call?.transcript || "";
     checkbox.disabled = !call;
     checkbox.checked = call?.validated === true;
+    document.getElementById("radio-archive").dispatchEvent(new CustomEvent("admin-radio-clip-selected", { detail: { call } }));
   }
   pencil.addEventListener("click", () => {
     if (!selected) return;

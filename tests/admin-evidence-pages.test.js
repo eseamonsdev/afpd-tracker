@@ -9,6 +9,16 @@ test('dashboard and navigation link to the protected evidence workspace',()=>{
   assert.match(html,/href="\/admin\/association-evidence\/"/);
   assert.match(html,/Association Evidence/);
 });
+test('full-day evidence controls are admin-only and evidence groups link back to their full day',()=>{
+  const html=env.render('admin-police-radio.njk',{adminTools});
+  for(const id of ['admin-evidence-dialog','admin-evidence-officer','admin-evidence-radio','admin-evidence-numbers','admin-evidence-add'])
+    assert.equal(html.split(`id="${id}"`).length-1,1);
+  assert.ok(html.indexOf('/js/admin-radio-evidence.js')<html.indexOf('/js/admin-police-radio.js'));
+  for(const page of ['police-radio','police-radio-excerpt'])
+    assert.doesNotMatch(fs.readFileSync(`src/${page}.njk`,'utf8'),/admin-radio-evidence/);
+  const evidence=env.render('admin-evidence-excerpt.njk',{adminTools});
+  assert.match(evidence,/id="evidence-full-day"[^>]*>Open full day in admin/);
+});
 test('evidence workspace has separate reviewed state, notes, speaker confirmation and transcript editing',()=>{
   const html=env.render('admin-evidence-excerpt.njk',{adminTools});
   for(const id of ['evidence-reviewed','evidence-notes','evidence-save','evidence-clips','evidence-transcript-input','evidence-verified','evidence-speaker-confirmed','evidence-talkgroup'])

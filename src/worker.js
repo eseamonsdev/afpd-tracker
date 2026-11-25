@@ -3,6 +3,7 @@ import { r2OfficerPhoto } from "./r2-officer-photos.js";
 import { authenticatedAdminEmail } from "./admin-access.js";
 import { radioTranscripts } from "./admin-radio-transcripts.js";
 import { associationEvidence } from "./admin-association-evidence.js";
+import { radioEvidence } from "./admin-radio-evidence.js";
 
 const OLD_PRODUCTION_HOST =
   "afpd-tracker.ericseamonsdeveloper.workers.dev";
@@ -30,6 +31,9 @@ export default {
       }
       const isVersionPreview = url.hostname.endsWith("-afpd-tracker.ericseamonsdeveloper.workers.dev");
       const database = isVersionPreview ? env.AFPD_DB_STAGING : env.AFPD_DB;
+      if (url.pathname === "/admin/api/radio-evidence") {
+        return radioEvidence(request, url, database, adminEmail);
+      }
       if (url.pathname === "/admin/api/association-evidence") {
         return associationEvidence(request, url, database, adminEmail);
       }

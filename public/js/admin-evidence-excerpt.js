@@ -18,6 +18,8 @@
       talkgroup.disabled=saving||adding||clips.some(c=>!removed.has(c.id))||group.missing_clip_ids.length>0;
       reviewed.disabled=saving||Number(talkgroup.value)!==group.talkgroup_number;
       const name={5922:'Law 2 Northeast',6001:'Car-to-Car',6036:'AFPD historical'}[talkgroup.value]||'Talkgroup';
+      const fullDay=new URL('/admin/police-radio/',location.origin);fullDay.searchParams.set('date',group.archive_date);fullDay.searchParams.set('talkgroup',talkgroup.value);
+      $('evidence-full-day').href=fullDay.pathname+fullDay.search;$('evidence-full-day').hidden=false;
       $('evidence-context').textContent=`${group.archive_date} · ${name} (${talkgroup.value}) · ${group.source_status}`;
       $('evidence-talkgroup-help').textContent=clips.some(c=>!removed.has(c.id))?'Remove the selected evidence clips before choosing a different talkgroup. Existing recordings and transcripts are retained.':'Choose the correct talkgroup, then add clips or save. Changing talkgroup resets the group to Unreviewed.';
     }
@@ -52,7 +54,9 @@
     row.append(controls);refreshRow();
   }
   const back=params.get('return');
-  if(back){try{const url=new URL(back,location.origin);if(url.origin===location.origin&&url.pathname==='/admin/association-evidence/')$('evidence-back').href=url.href;}catch{}}
+  if(back){try{const url=new URL(back,location.origin);if(url.origin===location.origin&&['/admin/association-evidence/','/admin/police-radio/'].includes(url.pathname)){
+    $('evidence-back').href=url.href;if(url.pathname==='/admin/police-radio/')$('evidence-back').textContent='Back to police radio';
+  }}catch{}}
   function showSources(records){
     const fragment=document.createDocumentFragment();
     for(const record of records){
@@ -131,6 +135,7 @@
     finally{saving=false;controls.forEach((c,i)=>c.disabled=disabled[i]);pencil.disabled=verified.disabled=!selected;syncSpeakerConfirmation();talkgroup.disabled=adding||clips.some(c=>!removed.has(c.id))||group.missing_clip_ids.length>0;reviewed.disabled=Number(talkgroup.value)!==group.talkgroup_number;save.disabled=!dirty();}
   });
   window.addEventListener('beforeunload',event=>{if(dirty()){event.preventDefault();event.returnValue='';}});
+  window.addEventListener('pageshow',event=>{if(event.persisted&&id&&!dirty()&&!saving)load().catch(error=>{status.textContent=error.message;});});
   if(!id){status.textContent='Choose an evidence group from the association evidence page.';return;}
   load().catch(error=>{status.textContent=error.message;});
 })();

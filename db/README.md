@@ -148,6 +148,14 @@ so legacy JSON table recreation cannot cascade-delete these reviews. The API
 validates every selected recording against its group date and talkgroup;
 missing archive references are reported rather than silently discarded.
 
+The full-day admin radio player can append clips to association evidence.
+The officer, radio ID, date and talkgroup identify the group; adding clips to
+an existing group preserves its notes and speaker confirmations. A selection
+containing only existing clips makes no changes. New clips start unconfirmed
+and reset the group to Unreviewed. Each included clip links to its evidence
+groups, and each evidence group links to its full admin day. This integration
+uses the existing evidence tables and does not change public associations.
+
 These four tables are outside the legacy upload/reset policy and are retained
 by those operations. Transcript edits still update the existing `radio_clips`
 table and follow that table's configured import policy. Apply the new schema
