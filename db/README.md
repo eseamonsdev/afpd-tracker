@@ -91,6 +91,33 @@ original transcript, review flags, timestamps, and audio metadata are
 stored in the database. Officer association decisions and callsign assignments
 remain in their existing JSON for now.
 
+## Association evidence review
+
+The isolated admin evidence workspace uses migration
+`migrations/0007_association_evidence.sql` and four additional tables:
+`radio_associations`, `radio_association_evidence`,
+`radio_association_evidence_clips`, and `radio_association_assignments`.
+The existing public association builders continue reading JSON.
+
+`prepare_association_evidence.mjs` prepares an additive SQL import under
+`db/local/`. It preserves the original evidence, exclusions, production
+baseline, shared-use records and clip exceptions. Existing review edits are
+never overwritten. It does not contact D1, change public JSON, or deploy.
+No Make command is added for this pipeline.
+
+Groups have an independent `reviewed` flag, correction notes and optimistic
+revision. Speaker confirmation belongs to a group's clip membership and is
+separate from `radio_clips.transcript_validated`. Removal deletes only that
+membership. The OpenMHz clip ID and officer key are stable external identities,
+so legacy JSON table recreation cannot cascade-delete these reviews. The API
+validates every selected recording against its group date and talkgroup;
+missing archive references are reported rather than silently discarded.
+
+These four tables are outside the legacy upload/reset policy and are retained
+by those operations. Transcript edits still update the existing `radio_clips`
+table and follow that table's configured import policy. Apply the new schema
+and additive seed to staging separately before using the new admin pages.
+
 `radio_excerpts` imports the identity, page text, and transcript display
 setting for each curated excerpt. `radio_excerpt_clips` links each excerpt to
 its selected `radio_clips` in playback order. Each clip link also carries the

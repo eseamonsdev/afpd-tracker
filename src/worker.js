@@ -2,6 +2,7 @@ import { r2RadioAudio } from "./r2-radio-audio.js";
 import { r2OfficerPhoto } from "./r2-officer-photos.js";
 import { authenticatedAdminEmail } from "./admin-access.js";
 import { radioTranscripts } from "./admin-radio-transcripts.js";
+import { associationEvidence } from "./admin-association-evidence.js";
 
 const OLD_PRODUCTION_HOST =
   "afpd-tracker.ericseamonsdeveloper.workers.dev";
@@ -20,7 +21,8 @@ export default {
     if (url.pathname === "/admin" || url.pathname.startsWith("/admin/")) {
       // Static Assets' router does not forward ctx.access to this Worker.
       // Validate Access's signed token, including its audience for this hostname.
-      if (await authenticatedAdminEmail(request, url) !== "ericseamonsdeveloper@gmail.com") {
+      const adminEmail = await authenticatedAdminEmail(request, url);
+      if (adminEmail !== "ericseamonsdeveloper@gmail.com") {
         return new Response("Access required", { status: 403 });
       }
       if (url.pathname === "/admin") {
@@ -28,6 +30,9 @@ export default {
       }
       const isVersionPreview = url.hostname.endsWith("-afpd-tracker.ericseamonsdeveloper.workers.dev");
       const database = isVersionPreview ? env.AFPD_DB_STAGING : env.AFPD_DB;
+      if (url.pathname === "/admin/api/association-evidence") {
+        return associationEvidence(request, url, database, adminEmail);
+      }
       if (url.pathname === "/admin/api/radio-transcripts") {
         return radioTranscripts(request, url, database);
       }

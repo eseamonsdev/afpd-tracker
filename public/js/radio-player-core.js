@@ -918,6 +918,37 @@ function excerpt() {
     });
   }
 }
-globalThis.RadioPlayer = { archive, excerpt, bindRow, playbackSource };
+// Explicit admin evidence mode: its saved membership comes from D1, never from
+// the public archive's clips query parameter or its enabled-day index.
+function evidence(config) {
+  const get = name => document.getElementById(`evidence-${name}`);
+  let calls=[],buttons=[];
+  const list=get('clips'), identity=createIdentity(()=>config.date);
+  const transcript=transcriptUI(get,true);
+  function updateTranscript(){transcript.update(calls[player.selected],true);}
+  const player=playbackEngine({get,getCalls:()=>calls,getButtons:()=>buttons,
+    singlePlayer:true,clipSource:index=>playbackSource(calls[index],calls[index].source),
+    label:index=>`${dateFormat.format(dateObject(config.date))} · ${timeFormat.format(new Date(calls[index].epoch*1000))} · Clip ${calls[index].clip_number}`,
+    endMessage:'End of evidence group.',
+    onSelect(call,index){
+      identity.close();const line=get('current-radio-ids');identity.render(line,call);line.hidden=!radioIds(call).length;
+      updateTranscript();config.onClipSelected?.(call,index);
+    },
+    onReset(){updateTranscript();config.onClipSelected?.(null);}
+  });
+  function render(next){
+    player.reset();identity.close();calls=next;buttons=[];list.replaceChildren();
+    get('player-panel').hidden=calls.length===0;
+    const fragment=document.createDocumentFragment();
+    calls.forEach((call,index)=>{
+      const {row,button}=clipRow(call,call.clip_number-1,identity,()=>player.choose(index));
+      config.decorateRow?.(call,row);buttons.push(button);fragment.append(row);
+    });
+    list.append(fragment);updateTranscript();
+  }
+  identity.load().then(()=>{if(calls.length)render(calls);}).catch(()=>{});
+  return {render,updateTranscript};
+}
+globalThis.RadioPlayer = { archive, excerpt, evidence, bindRow, playbackSource };
 })();
 

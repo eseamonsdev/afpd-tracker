@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Association Evidence | AFPD Admin</title>
+  <link rel="icon" href="/favicon.png">
+  
+<link rel="stylesheet" href="/css/admin-association-evidence.css">
+<script src="/js/admin-association-evidence.js" defer></script>
+
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <a class="admin-skip" href="#admin-main">Skip to content</a>
+  <header class="admin-header">
+    <div class="admin-header-inner">
+      <a class="admin-brand" href="/admin/">AFPD <span>Admin</span></a>
+      <nav aria-label="Admin navigation">
+        <a href="/admin/">Dashboard</a>
+        
+        <a href="/admin/police-radio/">Police Radio</a>
+        
+        <a href="/admin/association-evidence/" aria-current="page">Association Evidence</a>
+        
+        <a class="admin-public-link" href="/">View public site</a>
+      </nav>
+    </div>
+  </header>
+  <main id="admin-main" class="admin-main" tabindex="-1">
+<div class="admin-page-heading">
+  <h1>Association evidence</h1>
+  <p>Open a group to listen, confirm the speaker, and record corrections. Review changes stay in this evidence workspace.</p>
+  <p id="evidence-progress" class="evidence-progress" role="status">Loading review progress…</p>
+</div>
+<form id="evidence-filters" class="evidence-filters">
+  <label>Review status<select id="evidence-filter"><option value="unreviewed">Unreviewed</option><option value="all">All</option><option value="reviewed">Reviewed</option></select></label>
+  <label>Evidence scope<select id="evidence-scope"><option value="website">Affects website associations</option><option value="all">All imported candidates</option></select></label>
+  <label class="evidence-search">Officer or radio ID<input id="evidence-search" type="search" placeholder="Name, officer ID, or radio ID"></label>
+  <button type="submit">Search</button>
+</form>
+<p id="evidence-list-status" role="status" aria-live="polite"></p>
+<div class="evidence-table-scroll"><table class="evidence-table">
+  <thead><tr><th>Radio ID</th><th>Officer</th><th>Evidence group</th><th>Speaker clips</th><th>Review</th><th>Correction notes</th></tr></thead>
+  <tbody id="evidence-groups"></tbody>
+</table></div>
+<nav class="evidence-pagination" aria-label="Evidence list pages"><button id="evidence-previous" type="button" disabled>Previous</button><span id="evidence-page"></span><button id="evidence-next" type="button" disabled>Next</button></nav>
+</main>
+</body>
+</html>

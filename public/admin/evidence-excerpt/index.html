@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Review Evidence Group | AFPD Admin</title>
+  <link rel="icon" href="/favicon.png">
+  
+<link rel="stylesheet" href="/css/police-radio.css">
+<link rel="stylesheet" href="/css/admin-police-radio.css">
+<link rel="stylesheet" href="/css/admin-association-evidence.css">
+<script src="/js/radio-player-core.js" defer></script>
+<script src="/js/admin-evidence-excerpt.js" defer></script>
+
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <a class="admin-skip" href="#admin-main">Skip to content</a>
+  <header class="admin-header">
+    <div class="admin-header-inner">
+      <a class="admin-brand" href="/admin/">AFPD <span>Admin</span></a>
+      <nav aria-label="Admin navigation">
+        <a href="/admin/">Dashboard</a>
+        
+        <a href="/admin/police-radio/">Police Radio</a>
+        
+        <a href="/admin/association-evidence/" aria-current="page">Association Evidence</a>
+        
+        <a class="admin-public-link" href="/">View public site</a>
+      </nav>
+    </div>
+  </header>
+  <main id="admin-main" class="admin-main" tabindex="-1">
+<div class="admin-page-heading">
+  <a id="evidence-back" href="/admin/association-evidence/">Back to association evidence</a>
+  <h1 id="evidence-heading">Review evidence group</h1>
+  <p id="evidence-context"></p>
+  <div class="evidence-review-toolbar">
+    <label class="evidence-reviewed"><input id="evidence-reviewed" type="checkbox" disabled> Reviewed</label>
+    <button id="evidence-save" type="button" disabled>Save changes</button>
+    <span id="evidence-save-status" role="status" aria-live="polite">Loading evidence…</span>
+  </div>
+  <label class="evidence-notes" for="evidence-notes">Correction notes for this group</label>
+  <textarea id="evidence-notes" rows="3" maxlength="20000" placeholder="Clips that belong elsewhere, uncertain identities, or other corrections…" disabled></textarea>
+</div>
+<section id="evidence-workspace" hidden>
+  <p>Check <strong>Confirms this officer</strong> on the response clips that identify the speaker. Transcript verification is separate. Removing a clip affects this evidence group only.</p>
+  <form id="evidence-add" class="evidence-filters"><label class="evidence-search">Add clips from this date and talkgroup<input id="evidence-add-numbers" placeholder="Clips 12, 13, 14"></label><button type="submit">Add clips</button></form>
+  <p id="evidence-action-status" role="status" aria-live="polite"></p>
+  <div id="evidence-selection-status" class="evidence-selection-status"></div>
+  
+      <template id="radio-clip-row-template"><li class="radio-clip-row">
+  <button type="button" class="radio-clip"  disabled>
+    <span><time data-radio-time></time> <span class="radio-clip-number" data-radio-number></span></span>
+    <span data-radio-duration></span>
+  </button>
+  
+  <span class="radio-ids" hidden></span>
+</li></template>
+      <section id="evidence-player-panel" class="radio-player" aria-label="Audio player" hidden>
+        <div class="radio-player-heading">
+          <div>
+            <p id="evidence-current">Choose a clip to listen</p>
+            <p id="evidence-current-radio-ids" class="radio-ids" hidden></p>
+          </div>
+          <div class="radio-player-actions">
+            <button id="evidence-show-current" class="radio-show-current" type="button" aria-controls="evidence-clips" disabled>Show Current Clip</button>
+            <button id="evidence-controls-toggle" class="radio-controls-toggle" type="button" aria-expanded="true" aria-controls="evidence-extra-controls" hidden>Hide Controls</button>
+            <div id="evidence-extra-controls" class="radio-extra-controls">
+              <button id="evidence-autoplay" type="button" aria-pressed="false">Autoplay: Off</button>
+              <button id="evidence-transcript-toggle" type="button" aria-pressed="false" aria-controls="evidence-transcript" hidden disabled>Transcript: Off</button>
+              <a id="evidence-transcript-download" class="radio-transcript-download" download hidden>Download transcript (.txt)</a>
+            </div>
+          </div>
+        </div>
+        <div class="radio-playback">
+          <button id="evidence-play" class="radio-play-button" type="button" aria-label="Play selected clip" disabled>Play</button>
+          <div class="radio-progress">
+            <label class="radio-sr-only" for="evidence-seek">Position in clip</label>
+            <input id="evidence-seek" class="radio-seek" type="range" min="0" max="0" step="0.1" value="0" disabled>
+            <div class="radio-times"><span id="evidence-elapsed">0:00</span><span id="evidence-duration">0:00</span></div>
+          </div>
+        </div>
+        <p id="evidence-player-message" class="radio-player-message" role="status"></p>
+        <div id="evidence-transcript" class="radio-transcript" role="region" aria-label="Current clip transcript" aria-live="polite" aria-atomic="true" hidden>
+          <span id="evidence-transcript-status" class="radio-transcript-status" hidden></span>
+          <p class="radio-transcript-label"><strong>Transcript:</strong></p>
+          <p id="evidence-transcript-text" class="radio-transcript-text"></p>
+          <div class="admin-radio-controls">
+            <button id="evidence-edit-transcript" type="button" aria-expanded="false" aria-controls="evidence-transcript-editor" disabled>✎ Edit transcript</button>
+            <div id="evidence-transcript-editor" class="admin-radio-editor" hidden>
+              <label for="evidence-transcript-input">Transcript for the selected clip</label>
+              <textarea id="evidence-transcript-input" rows="5"></textarea>
+            </div>
+            <label class="admin-radio-verify"><input id="evidence-verified" type="checkbox" disabled> Verified against audio</label>
+          </div>
+          <details id="evidence-call-note" class="radio-call-note" hidden>
+            <summary><span class="radio-notes-view">View Notes</span><span class="radio-notes-hide">Hide Notes</span></summary>
+            <p id="evidence-call-note-text" class="radio-call-note-text"></p>
+          </details>
+        </div>
+        <audio id="evidence-audio" preload="metadata"></audio>
+      </section>
+
+  <section aria-label="Evidence clips"><ol id="evidence-clips" class="radio-clips"></ol></section>
+  <details class="evidence-source"><summary>Original evidence and attribution</summary><div id="evidence-source-records"></div></details>
+</section>
+</main>
+</body>
+</html>

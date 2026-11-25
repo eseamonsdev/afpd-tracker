@@ -1,0 +1,38 @@
+---
+permalink: /admin/evidence-excerpt/index.html
+sitemap: false
+---
+{% extends "admin-layout.njk" %}
+{% from "radio-player.njk" import player %}
+{% set pageTitle = "Review Evidence Group | AFPD Admin" %}
+{% set adminSection = "association-evidence" %}
+{% block pageAssets %}
+<link rel="stylesheet" href="/css/police-radio.css">
+<link rel="stylesheet" href="/css/admin-police-radio.css">
+<link rel="stylesheet" href="/css/admin-association-evidence.css">
+<script src="/js/radio-player-core.js" defer></script>
+<script src="/js/admin-evidence-excerpt.js" defer></script>
+{% endblock %}
+{% block content %}
+<div class="admin-page-heading">
+  <a id="evidence-back" href="/admin/association-evidence/">Back to association evidence</a>
+  <h1 id="evidence-heading">Review evidence group</h1>
+  <p id="evidence-context"></p>
+  <div class="evidence-review-toolbar">
+    <label class="evidence-reviewed"><input id="evidence-reviewed" type="checkbox" disabled> Reviewed</label>
+    <button id="evidence-save" type="button" disabled>Save changes</button>
+    <span id="evidence-save-status" role="status" aria-live="polite">Loading evidence…</span>
+  </div>
+  <label class="evidence-notes" for="evidence-notes">Correction notes for this group</label>
+  <textarea id="evidence-notes" rows="3" maxlength="20000" placeholder="Clips that belong elsewhere, uncertain identities, or other corrections…" disabled></textarea>
+</div>
+<section id="evidence-workspace" hidden>
+  <p>Check <strong>Confirms this officer</strong> on the response clips that identify the speaker. Transcript verification is separate. Removing a clip affects this evidence group only.</p>
+  <form id="evidence-add" class="evidence-filters"><label class="evidence-search">Add clips from this date and talkgroup<input id="evidence-add-numbers" placeholder="Clips 12, 13, 14"></label><button type="submit">Add clips</button></form>
+  <p id="evidence-action-status" role="status" aria-live="polite"></p>
+  <div id="evidence-selection-status" class="evidence-selection-status"></div>
+  {{ player("evidence", initiallyHidden=true, adminEditor=true) }}
+  <section aria-label="Evidence clips"><ol id="evidence-clips" class="radio-clips"></ol></section>
+  <details class="evidence-source"><summary>Original evidence and attribution</summary><div id="evidence-source-records"></div></details>
+</section>
+{% endblock %}
