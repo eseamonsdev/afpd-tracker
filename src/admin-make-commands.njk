@@ -18,18 +18,18 @@ sitemap: false
 {% endblock %}
 {% block content %}
 <div class="admin-page-heading">
-  <p class="commands-eyebrow">Workflow reference</p>
+  <p class="commands-eyebrow">Admin database sync</p>
   <h1>Make Commands</h1>
-  <p>Choose what you want to do, then work through its numbered panels. Copy each panel with the button in its upper-right corner.</p>
+  <p>Keep the admin database, source JSON and Git in sync. Choose your task, then work through its numbered panels. Copy each panel with the button in its upper-right corner.</p>
 </div>
 <aside class="commands-intro" aria-label="Before running commands">
   <h2>Before you start</h2>
   <p>Run these commands in your local <code>afpd-tracker</code> repository. Start with a clean working tree and save browser edits first. Pause when a step says to edit or review files. The <code>&amp;&amp;</code> between commands stops a copied panel if a command fails; stop the workflow and resolve that failure before continuing.</p>
-  <p>Working database commands always use <strong>staging</strong> and accept no database parameter. <code>calls-from-db</code> saves transcripts; <code>evidence-from-db</code> saves evidence reviews. A Git push, a database upload, and a website deployment each do a different job.</p>
+  <p>Working database commands always use <strong>staging</strong> and accept no database parameter. <code>calls-from-db</code> saves transcripts; <code>evidence-from-db</code> saves evidence reviews. Download saved admin edits before uploading JSON to the database. A Git push saves files in the repository; it does not upload them to the admin database.</p>
 </aside>
 <nav class="command-task-nav" aria-label="Choose a task">
   {% for workflow in commandWorkflows %}<a href="#{{ workflow.id }}"{% if workflow.production %} class="command-production-link"{% endif %}>{{ workflow.title }}</a>{% endfor %}
-  <a href="#command-reference">All Make commands</a>
+  <a href="#command-reference">Database Make commands</a>
 </nav>
 <div class="command-workflows">
 {% for workflow in commandWorkflows %}
@@ -48,8 +48,8 @@ sitemap: false
 {% endfor %}
 </div>
 <section id="command-reference" class="command-reference" aria-labelledby="command-reference-heading">
-  <h2 id="command-reference-heading">All Make commands</h2>
-  <p>These descriptions come directly from the Makefile, matching <code>make help</code>. Use the workflows above for the full sequence and any required arguments.</p>
+  <h2 id="command-reference-heading">Database Make commands</h2>
+  <p>Only the admin database commands are listed here. Their descriptions come directly from the Makefile. Use the workflows above for the full download, upload and Git sequence.</p>
   <div class="command-table-scroll"><table><thead><tr><th scope="col">Command</th><th scope="col">What it does</th></tr></thead><tbody>
   {% for command in makeCommands %}<tr><th scope="row"><code>make {{ command.name }}</code></th><td>{{ command.description }}</td></tr>{% endfor %}
   </tbody></table></div>
