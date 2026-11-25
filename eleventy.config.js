@@ -37,6 +37,8 @@ export default function (eleventyConfig) {
   eleventyConfig.on("eleventy.before", () => {
     // Remove the former generated review page from existing local build directories.
     fs.rmSync("public/officer-association-review.html", { force: true });
+    // Remove the retired admin radio IDs page from incremental builds.
+    fs.rmSync("public/admin/radio-ids", { recursive: true, force: true });
     // Both radio talkgroups now live on /police-radio/.
     fs.rmSync("public/law-2-radio", { recursive: true, force: true });
     buildOfficerAssociations();

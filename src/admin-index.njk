@@ -2,10 +2,21 @@
 permalink: /admin/index.html
 sitemap: false
 ---
-<!doctype html>
-<html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Admin | AFPD Accountability Project</title></head>
-<body style="font:1rem/1.5 system-ui,sans-serif;max-width:48rem;margin:2rem auto;padding:0 1rem;color:#172338">
-  <main><h1>Admin</h1><nav aria-label="Admin pages"><ul><li><a href="/admin/police-radio/">Police Radio — edit transcripts and verification</a></li></ul></nav></main>
-</body>
-</html>
+{% extends "admin-layout.njk" %}
+{% set pageTitle = "Dashboard | AFPD Admin" %}
+{% set adminSection = "dashboard" %}
+{% block content %}
+  <div class="admin-page-heading">
+    <h1>Dashboard</h1>
+    <p>Manage the AFPD Accountability Project.</p>
+  </div>
+  <nav class="admin-tool-grid" aria-label="Admin tools">
+    {% for tool in adminTools %}
+    <a class="admin-tool-card" href="{{ tool.url }}">
+      <h2>{{ tool.title }}</h2>
+      <p>{{ tool.description }}</p>
+      <span class="admin-tool-action">{{ tool.action }} <span aria-hidden="true">→</span></span>
+    </a>
+    {% endfor %}
+  </nav>
+{% endblock %}

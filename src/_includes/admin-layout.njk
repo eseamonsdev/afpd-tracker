@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>{{ pageTitle | escape }}</title>
+  <link rel="icon" href="/favicon.png">
+  {% block pageAssets %}{% endblock %}
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <a class="admin-skip" href="#admin-main">Skip to content</a>
+  <header class="admin-header">
+    <div class="admin-header-inner">
+      <a class="admin-brand" href="/admin/">AFPD <span>Admin</span></a>
+      <nav aria-label="Admin navigation">
+        <a href="/admin/"{% if adminSection == "dashboard" %} aria-current="page"{% endif %}>Dashboard</a>
+        {% for tool in adminTools %}
+        <a href="{{ tool.url }}"{% if adminSection == tool.id %} aria-current="page"{% endif %}>{{ tool.title }}</a>
+        {% endfor %}
+        <a class="admin-public-link" href="/">View public site</a>
+      </nav>
+    </div>
+  </header>
+  <main id="admin-main" class="admin-main" tabindex="-1">{% block content %}{% endblock %}</main>
+</body>
+</html>

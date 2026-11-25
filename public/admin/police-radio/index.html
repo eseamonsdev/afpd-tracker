@@ -3,37 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <meta name="robots" content="noindex, nofollow">
   <title>Edit Police Radio | AFPD admin</title>
-  <meta name="description" content="">
-  <link rel="canonical" href="">
-
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="AFPD Accountability Project">
-  <meta property="og:title" content="Edit Police Radio | AFPD admin">
-  <meta property="og:description" content="">
-  <meta property="og:url" content="">
-
-  <meta property="og:image" content="https://afpd-accountability.com/images/afpd-accountability-share.png">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="American Fork Police Department Accountability Project. Public records. Transparency. Accountability. afpd-accountability.com">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Edit Police Radio | AFPD admin">
-  <meta name="twitter:description" content="">
-
-  <meta name="twitter:image" content="https://afpd-accountability.com/images/afpd-accountability-share.png">
-  <meta name="twitter:image:alt" content="American Fork Police Department Accountability Project. Public records. Transparency. Accountability. afpd-accountability.com">
-
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png">
-
-  <link rel="stylesheet" href="/css/site.css">
-  <link rel="stylesheet" href="/css/header.css">
-
-  <link rel="stylesheet" href="/css/site.css">
-  <link rel="stylesheet" href="/css/header.css">
+  <link rel="icon" href="/favicon.png">
 
   <meta name="robots" content="noindex, nofollow">
   <link rel="stylesheet" href="/css/police-radio.css">
@@ -42,49 +14,25 @@
   <script src="/js/radio-date-picker.js" defer></script>
   <script src="/js/radio-player-core.js" defer></script>
   <script src="/js/admin-police-radio.js" defer></script>
+
+  <link rel="stylesheet" href="/css/admin.css">
 </head>
 <body>
-  <header class="site-header">
-  <div class="site-header-inner">
-    <a class="site-title" href="/">
-      American Fork Police Department<br>
-      Accountability Project
-    </a>
+  <a class="admin-skip" href="#admin-main">Skip to content</a>
+  <header class="admin-header">
+    <div class="admin-header-inner">
+      <a class="admin-brand" href="/admin/">AFPD <span>Admin</span></a>
+      <nav aria-label="Admin navigation">
+        <a href="/admin/">Dashboard</a>
 
-    <button class="nav-toggle" type="button" aria-expanded="true" aria-controls="main-navigation" hidden>
-      <span aria-hidden="true">☰</span> Menu
-    </button>
-    <nav id="main-navigation" class="site-nav" aria-label="Main navigation">
-      <a href="/">Home</a>
-      <a href="/police-encounters/">Police Encounters</a>
-      <a href="/lawsuits/">Lawsuits</a>
-      <details class="personnel-nav">
-        <summary>Officers &amp; Personnel <span class="nav-chevron" aria-hidden="true"></span></summary>
-        <div class="personnel-links">
-          <a href="/officers/">Officers</a>
-          <a href="/civilian-employees/">Civilian Employees</a>
-          <a href="/city-officials/">City Officials</a>
-        </div>
-      </details>
-      <details class="personnel-nav radio-nav">
-        <summary>Police Radio <span class="nav-chevron" aria-hidden="true"></span></summary>
-        <div class="personnel-links">
-          <a href="/police-radio-excerpts/">Radio Excerpts</a>
-  <a href="/police-radio/">Police Radio</a>
-  <a href="/police-radio-resources/">Radio Resources</a>
-        </div>
-      </details>
-      <a href="/afpd-resources/">AFPD Resources</a>
-      <a href="/city-oversight/">City Oversight</a>
-    </nav>
-  </div>
-</header>
-<script src="/js/header.js" defer></script>
+        <a href="/admin/police-radio/" aria-current="page">Police Radio</a>
 
-
-  <main>
-  <p><a href="/admin/">← Admin</a></p>
-  <div class="page-heading">
+        <a class="admin-public-link" href="/">View public site</a>
+      </nav>
+    </div>
+  </header>
+  <main id="admin-main" class="admin-main" tabindex="-1">
+  <div class="page-heading admin-page-heading">
     <h1>Edit Police Radio</h1>
     <p>Select a clip, edit its transcript or mark it verified in the player, then save changes to the database. To copy edits into the site JSON, run <code>make calls-from-db D1_DATABASE=afpd-data-staging</code> for staging, or <code>make calls-from-db</code> for production, then build and deploy.</p>
     <div class="admin-radio-toolbar"><button type="button" id="admin-save" disabled>Save Changes</button><span id="admin-save-status" role="status" aria-live="polite">No unsaved changes.</span></div>
@@ -103,13 +51,13 @@
     <section id="radio-calendar" class="radio-calendar" aria-label="Choose recording date">
         <p role="status">Loading available dates…</p>
       </section>
-    
+
       <template id="radio-clip-row-template"><li class="radio-clip-row">
   <button type="button" class="radio-clip"  disabled>
     <span><time data-radio-time></time> <span class="radio-clip-number" data-radio-number></span></span>
     <span data-radio-duration></span>
   </button>
-  
+
   <span class="radio-ids" hidden></span>
 </li></template>
       <section id="radio-player-panel" class="radio-player" aria-label="Audio player" hidden>
@@ -166,6 +114,6 @@
       <ol id="radio-clips" class="radio-clips"></ol>
     </section>
   </div>
-  </main>
+</main>
 </body>
 </html>

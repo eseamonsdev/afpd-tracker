@@ -31,21 +31,6 @@ export default {
       if (url.pathname === "/admin/api/radio-transcripts") {
         return radioTranscripts(request, url, database);
       }
-      if (url.pathname === "/admin/api/radio-ids") {
-        if (request.method !== "GET") return new Response(null, { status: 405, headers: { Allow: "GET" } });
-        if (!database) return new Response("D1 binding unavailable", { status: 503 });
-        try {
-          const { results } = await database.prepare(
-            "SELECT radio_id FROM radio_ids ORDER BY radio_id"
-          ).all();
-          return Response.json({ radio_ids: results.map(row => row.radio_id) }, {
-            headers: { "Cache-Control": "no-store", "X-Content-Type-Options": "nosniff" }
-          });
-        } catch (error) {
-          console.error("Unable to read radio IDs from D1", error);
-          return new Response("Database unavailable", { status: 503 });
-        }
-      }
       if (request.method !== "GET" && request.method !== "HEAD") {
         return new Response(null, { status: 405, headers: { Allow: "GET, HEAD" } });
       }

@@ -2,10 +2,11 @@
 permalink: /admin/police-radio/index.html
 sitemap: false
 ---
-{% extends "site-page-layout.njk" %}
+{% extends "admin-layout.njk" %}
 {% from "radio-player.njk" import player %}
 {% from "radio-date-picker.njk" import datePicker %}
 {% set pageTitle = "Edit Police Radio | AFPD admin" -%}
+{% set adminSection = "police-radio" %}
 {% block pageAssets %}
   <meta name="robots" content="noindex, nofollow">
   <link rel="stylesheet" href="/css/police-radio.css">
@@ -16,8 +17,7 @@ sitemap: false
   <script src="/js/admin-police-radio.js" defer></script>
 {% endblock %}
 {% block content %}
-  <p><a href="/admin/">← Admin</a></p>
-  <div class="page-heading">
+  <div class="page-heading admin-page-heading">
     <h1>Edit Police Radio</h1>
     <p>Select a clip, edit its transcript or mark it verified in the player, then save changes to the database. To copy edits into the site JSON, run <code>make calls-from-db D1_DATABASE=afpd-data-staging</code> for staging, or <code>make calls-from-db</code> for production, then build and deploy.</p>
     <div class="admin-radio-toolbar"><button type="button" id="admin-save" disabled>Save Changes</button><span id="admin-save-status" role="status" aria-live="polite">No unsaved changes.</span></div>
