@@ -1,7 +1,7 @@
 OpenMHz American Fork PD Car to Car Private (6036), 2026-10-28, America/Denver.
 Metadata schema: 1.
-Coverage: partial; collected through 2026-10-29T03:44:58.903070Z.
-22 unique audio files; 22 source call entries.
+Coverage: complete; collected through 2026-10-29T06:00:00Z.
+41 unique audio files; 41 source call entries.
 Source: OpenMHz (https://openmhz.com/). Original audio bytes and filenames retained.
 calls.json: chronological call metadata, original source IDs/labels, timestamps and audio checks.
 rows.json: source labels in chronological unique-audio order.
