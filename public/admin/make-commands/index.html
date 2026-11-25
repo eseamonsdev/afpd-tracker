@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Make Commands | AFPD Admin</title>
+  <link rel="icon" href="/favicon.png">
+  
+<link rel="stylesheet" href="/css/admin-make-commands.css">
+<script src="/js/admin-make-commands.js" defer></script>
+
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <a class="admin-skip" href="#admin-main">Skip to content</a>
+  <header class="admin-header">
+    <div class="admin-header-inner">
+      <a class="admin-brand" href="/admin/">AFPD <span>Admin</span></a>
+      <nav aria-label="Admin navigation">
+        <a href="/admin/">Dashboard</a>
+        
+        <a href="/admin/police-radio/">Police Radio</a>
+        
+        <a href="/admin/association-evidence/">Association Evidence</a>
+        
+        <a href="/admin/make-commands/" aria-current="page">Make Commands</a>
+        
+        <a class="admin-public-link" href="/">View public site</a>
+      </nav>
+    </div>
+  </header>
+  <main id="admin-main" class="admin-main" tabindex="-1">
+<div class="admin-page-heading">
+  <p class="commands-eyebrow">Workflow reference</p>
+  <h1>Make Commands</h1>
+  <p>Choose what you want to do, then work through its numbered panels. Copy each panel with the button in its upper-right corner.</p>
+</div>
+<aside class="commands-intro" aria-label="Before running commands">
+  <h2>Before you start</h2>
+  <p>Run these commands in your local <code>afpd-tracker</code> repository. Start with a clean working tree and save browser edits first. Pause when a step says to edit or review files. The <code>&amp;&amp;</code> between commands stops a copied panel if a command fails; stop the workflow and resolve that failure before continuing.</p>
+  <p>Working database commands always use <strong>staging</strong> and accept no database parameter. <code>calls-from-db</code> saves transcripts; <code>evidence-from-db</code> saves evidence reviews. A Git push, a database upload, and a website deployment each do a different job.</p>
+</aside>
+<nav class="command-task-nav" aria-label="Choose a task">
+  <a href="#save-admin-edits">Save admin transcript edits and evidence reviews</a><a href="#upload-json">Upload changed source JSON to the staging database</a><a href="#save-evidence">Save only the evidence review data</a><a href="#restore-evidence">Edit or restore the evidence snapshot to staging</a><a href="#deploy-staging">Publish already committed changes to staging</a><a href="#reset-staging">Recreate the JSON-managed staging tables</a><a href="#setup">Install dependencies or reconnect Wrangler</a><a href="#collect">Collect an OpenMHz day</a><a href="#production-db" class="command-production-link">Promote the staging database to production</a><a href="#production-site" class="command-production-link">Publish the staging website to production</a>
+  <a href="#command-reference">All Make commands</a>
+</nav>
+<div class="command-workflows">
+
+  <details id="save-admin-edits" class="command-workflow" open>
+    <summary><span>Save admin transcript edits and evidence reviews</span></summary>
+    <div class="command-workflow-body">
+      <p class="command-summary">Download your saved staging edits, keep a Git copy, and publish the updated staging site.</p>
+      <ol class="command-steps">
+      
+        <li><h2>Get the latest staging branch</h2><p>Start with a clean working tree. If git status shows your own unfinished changes, commit them before switching or pulling. Stop if any command fails.</p>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Get the latest staging branch</span><button type="button" class="command-copy" data-copy-target="save-admin-edits-step-1" aria-label="Copy commands: Get the latest staging branch" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Get the latest staging branch commands"><code id="save-admin-edits-step-1">git status --short &amp;&amp;
+git switch staging &amp;&amp;
+git pull --ff-only origin staging</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+        <li><h2>Download both kinds of admin edits and build</h2><p>Save changes in the browser first. calls-from-db downloads transcripts and verified flags; evidence-from-db downloads all evidence groups, notes, confirmations and deletion history. The build refreshes generated pages and transcript text files.</p>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Download both kinds of admin edits and build</span><button type="button" class="command-copy" data-copy-target="save-admin-edits-step-2" aria-label="Copy commands: Download both kinds of admin edits and build" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Download both kinds of admin edits and build commands"><code id="save-admin-edits-step-2">make calls-from-db &amp;&amp;
+make evidence-from-db &amp;&amp;
+make build</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+        <li><h2>Review the files, then commit and push</h2><p>Review the status and diff summary before copying the next panel. If there are no changes, skip the commit and push.</p>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Review the files, then commit and push</span><button type="button" class="command-copy" data-copy-target="save-admin-edits-step-3" aria-label="Copy commands: Review the files, then commit and push" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Review the files, then commit and push commands"><code id="save-admin-edits-step-3">git status --short &amp;&amp;
+git diff --stat</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+        <li><h2>Commit the reviewed data and generated files</h2>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Commit the reviewed data and generated files</span><button type="button" class="command-copy" data-copy-target="save-admin-edits-step-4" aria-label="Copy commands: Commit the reviewed data and generated files" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Commit the reviewed data and generated files commands"><code id="save-admin-edits-step-4">git add -- data public &amp;&amp;
+git commit -m &quot;Save staging radio edits and evidence reviews&quot; &amp;&amp;
+git push origin staging</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+        <li><h2>Publish the staging site</h2><p>This builds and uploads the staging preview. Exporting evidence does not change public officer association labels.</p>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Publish the staging site</span><button type="button" class="command-copy" data-copy-target="save-admin-edits-step-5" aria-label="Copy commands: Publish the staging site" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Publish the staging site commands"><code id="save-admin-edits-step-5">make manual-deploy</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+      </ol>
+    </div>
+  </details>
+
+  <details id="upload-json" class="command-workflow">
+    <summary><span>Upload changed source JSON to the staging database</span></summary>
+    <div class="command-workflow-body">
+      <p class="command-summary">Use after changing roster data, archive settings or other JSON-managed data. Download admin edits before editing the files.</p>
+      <ol class="command-steps">
+      
+        <li><h2>Get the latest staging branch</h2><p>Start with a clean working tree; preserve unfinished local changes first.</p>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Get the latest staging branch</span><button type="button" class="command-copy" data-copy-target="upload-json-step-1" aria-label="Copy commands: Get the latest staging branch" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Get the latest staging branch commands"><code id="upload-json-step-1">git status --short &amp;&amp;
+git switch staging &amp;&amp;
+git pull --ff-only origin staging</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+        <li><h2>Preserve the current admin edits</h2><p>Do this before editing the source JSON. calls-from-db replaces local transcript values with the database values. If you already edited transcripts locally, reconcile those edits before downloading.</p>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Preserve the current admin edits</span><button type="button" class="command-copy" data-copy-target="upload-json-step-2" aria-label="Copy commands: Preserve the current admin edits" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Preserve the current admin edits commands"><code id="upload-json-step-2">make calls-from-db &amp;&amp;
+make evidence-from-db</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+        <li><h2>Edit the JSON, then upload and build</h2><p>Pause here to make your intended JSON changes. db-upload currently recreates the JSON-managed database tables, including transcripts. It preserves the separate evidence tables and does not import the evidence snapshot.</p>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Edit the JSON, then upload and build</span><button type="button" class="command-copy" data-copy-target="upload-json-step-3" aria-label="Copy commands: Edit the JSON, then upload and build" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Edit the JSON, then upload and build commands"><code id="upload-json-step-3">make db-upload &amp;&amp;
+make build</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+        <li><h2>Review the changes</h2><p>Check the edited source files and generated output before continuing. If there are no Git changes, skip the commit and push.</p>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Review the changes</span><button type="button" class="command-copy" data-copy-target="upload-json-step-4" aria-label="Copy commands: Review the changes" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Review the changes commands"><code id="upload-json-step-4">git status --short &amp;&amp;
+git diff --stat</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+        <li><h2>Commit and push the reviewed files</h2>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Commit and push the reviewed files</span><button type="button" class="command-copy" data-copy-target="upload-json-step-5" aria-label="Copy commands: Commit and push the reviewed files" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Commit and push the reviewed files commands"><code id="upload-json-step-5">git add -- data public &amp;&amp;
+git commit -m &quot;Update staging source data&quot; &amp;&amp;
+git push origin staging</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+        <li><h2>Publish staging</h2>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Publish staging</span><button type="button" class="command-copy" data-copy-target="upload-json-step-6" aria-label="Copy commands: Publish staging" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Publish staging commands"><code id="upload-json-step-6">make manual-deploy</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+      </ol>
+    </div>
+  </details>
+
+  <details id="save-evidence" class="command-workflow">
+    <summary><span>Save only the evidence review data</span></summary>
+    <div class="command-workflow-body">
+      <p class="command-summary">Download reviewed and unreviewed groups without exporting transcripts, uploading the database or deploying the site.</p>
+      <ol class="command-steps">
+      
+        <li><h2>Get the latest staging branch</h2><p>Start with a clean working tree and save your browser edits first.</p>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Get the latest staging branch</span><button type="button" class="command-copy" data-copy-target="save-evidence-step-1" aria-label="Copy commands: Get the latest staging branch" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Get the latest staging branch commands"><code id="save-evidence-step-1">git status --short &amp;&amp;
+git switch staging &amp;&amp;
+git pull --ff-only origin staging</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+        <li><h2>Download every evidence group</h2><p>Writes data/db-evidenence-associations.json, including empty groups, notes, speaker confirmations, original sources and deletion records. Identical data produces identical JSON.</p>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Download every evidence group</span><button type="button" class="command-copy" data-copy-target="save-evidence-step-2" aria-label="Copy commands: Download every evidence group" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Download every evidence group commands"><code id="save-evidence-step-2">make evidence-from-db</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+        <li><h2>Review the exported file</h2><p>This snapshot includes correction notes and will be public when pushed to this repository. If there are no changes, skip the next panel.</p>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Review the exported file</span><button type="button" class="command-copy" data-copy-target="save-evidence-step-3" aria-label="Copy commands: Review the exported file" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Review the exported file commands"><code id="save-evidence-step-3">git status --short &amp;&amp;
+git diff --stat -- data/db-evidenence-associations.json</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+        <li><h2>Commit and push the snapshot</h2>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Commit and push the snapshot</span><button type="button" class="command-copy" data-copy-target="save-evidence-step-4" aria-label="Copy commands: Commit and push the snapshot" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Commit and push the snapshot commands"><code id="save-evidence-step-4">git add -- data/db-evidenence-associations.json &amp;&amp;
+git commit -m &quot;Save staging evidence review snapshot&quot; &amp;&amp;
+git push origin staging</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+      </ol>
+    </div>
+  </details>
+
+  <details id="restore-evidence" class="command-workflow">
+    <summary><span>Edit or restore the evidence snapshot to staging</span></summary>
+    <div class="command-workflow-body">
+      <p class="command-summary">An explicit evidence upload. Represented groups receive the file’s notes, clip selections and confirmation flags.</p>
+      <ol class="command-steps">
+      
+        <li><h2>Get the latest staging branch</h2><p>Start with a clean working tree. Keep any intended restore file separately so the next download does not replace your only copy.</p>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Get the latest staging branch</span><button type="button" class="command-copy" data-copy-target="restore-evidence-step-1" aria-label="Copy commands: Get the latest staging branch" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Get the latest staging branch commands"><code id="restore-evidence-step-1">git status --short &amp;&amp;
+git switch staging &amp;&amp;
+git pull --ff-only origin staging</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+        <li><h2>Download the current evidence before editing</h2><p>Then edit data/db-evidenence-associations.json, or replace it with the snapshot you intentionally want to restore. Keep stable IDs intact. Do not download again until you have uploaded those intended edits.</p>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Download the current evidence before editing</span><button type="button" class="command-copy" data-copy-target="restore-evidence-step-2" aria-label="Copy commands: Download the current evidence before editing" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Download the current evidence before editing commands"><code id="restore-evidence-step-2">make evidence-from-db</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+        <li><h2>Upload the intended file, then download the saved result</h2><p>evidence-to-db backs up staging evidence under db/local/ and rehearses the upload first. Existing group revisions advance. Unrepresented groups remain unless a deletion record explicitly removes them. Recordings and transcripts are preserved.</p>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Upload the intended file, then download the saved result</span><button type="button" class="command-copy" data-copy-target="restore-evidence-step-3" aria-label="Copy commands: Upload the intended file, then download the saved result" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Upload the intended file, then download the saved result commands"><code id="restore-evidence-step-3">make evidence-to-db &amp;&amp;
+make evidence-from-db</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+        <li><h2>Review the saved result</h2><p>If there are no Git changes, skip the next panel. The admin page reads the database directly, so this action needs no website deployment.</p>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Review the saved result</span><button type="button" class="command-copy" data-copy-target="restore-evidence-step-4" aria-label="Copy commands: Review the saved result" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Review the saved result commands"><code id="restore-evidence-step-4">git status --short &amp;&amp;
+git diff --stat -- data/db-evidenence-associations.json</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+        <li><h2>Commit and push the saved snapshot</h2>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Commit and push the saved snapshot</span><button type="button" class="command-copy" data-copy-target="restore-evidence-step-5" aria-label="Copy commands: Commit and push the saved snapshot" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Commit and push the saved snapshot commands"><code id="restore-evidence-step-5">git add -- data/db-evidenence-associations.json &amp;&amp;
+git commit -m &quot;Update staging evidence review snapshot&quot; &amp;&amp;
+git push origin staging</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+      </ol>
+    </div>
+  </details>
+
+  <details id="deploy-staging" class="command-workflow">
+    <summary><span>Publish already committed changes to staging</span></summary>
+    <div class="command-workflow-body">
+      <p class="command-summary">Use when the desired source changes are already committed. This uploads the site, not the database.</p>
+      <ol class="command-steps">
+      
+        <li><h2>Check the branch and send your commits</h2><p>Start with a clean working tree. If the pull reports divergent branches, resolve that before continuing; do not force-push.</p>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Check the branch and send your commits</span><button type="button" class="command-copy" data-copy-target="deploy-staging-step-1" aria-label="Copy commands: Check the branch and send your commits" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Check the branch and send your commits commands"><code id="deploy-staging-step-1">git status --short &amp;&amp;
+git switch staging &amp;&amp;
+git pull --ff-only origin staging &amp;&amp;
+git push origin staging</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+        <li><h2>Build and upload the staging preview</h2><p>manual-deploy pulls staging, builds it, and uploads a Worker preview using the staging configuration. It does not run db-upload, evidence-to-db or promote-db.</p>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Build and upload the staging preview</span><button type="button" class="command-copy" data-copy-target="deploy-staging-step-2" aria-label="Copy commands: Build and upload the staging preview" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Build and upload the staging preview commands"><code id="deploy-staging-step-2">make manual-deploy</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+      </ol>
+    </div>
+  </details>
+
+  <details id="reset-staging" class="command-workflow">
+    <summary><span>Recreate the JSON-managed staging tables</span></summary>
+    <div class="command-workflow-body">
+      <p class="command-summary">A repair workflow for staging. Downloads admin edits first; the separate evidence tables are retained.</p>
+      <ol class="command-steps">
+      
+        <li><h2>Get the latest staging branch</h2><p>Start with a clean working tree.</p>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Get the latest staging branch</span><button type="button" class="command-copy" data-copy-target="reset-staging-step-1" aria-label="Copy commands: Get the latest staging branch" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Get the latest staging branch commands"><code id="reset-staging-step-1">git status --short &amp;&amp;
+git switch staging &amp;&amp;
+git pull --ff-only origin staging</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+        <li><h2>Preserve edits, reset and rebuild</h2><p>db-reset creates a staging backup and recreates JSON-managed rows from the local source files. It retains evidence reviews. The current db-upload policy also recreates all JSON-managed tables.</p>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Preserve edits, reset and rebuild</span><button type="button" class="command-copy" data-copy-target="reset-staging-step-2" aria-label="Copy commands: Preserve edits, reset and rebuild" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Preserve edits, reset and rebuild commands"><code id="reset-staging-step-2">make calls-from-db &amp;&amp;
+make evidence-from-db &amp;&amp;
+make db-reset &amp;&amp;
+make build</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+        <li><h2>Review the preserved files</h2><p>If there are no Git changes, skip the commit and push.</p>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Review the preserved files</span><button type="button" class="command-copy" data-copy-target="reset-staging-step-3" aria-label="Copy commands: Review the preserved files" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Review the preserved files commands"><code id="reset-staging-step-3">git status --short &amp;&amp;
+git diff --stat</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+        <li><h2>Commit and push the reviewed files</h2>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Commit and push the reviewed files</span><button type="button" class="command-copy" data-copy-target="reset-staging-step-4" aria-label="Copy commands: Commit and push the reviewed files" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Commit and push the reviewed files commands"><code id="reset-staging-step-4">git add -- data public &amp;&amp;
+git commit -m &quot;Preserve staging data before database reset&quot; &amp;&amp;
+git push origin staging</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+        <li><h2>Publish staging</h2>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Publish staging</span><button type="button" class="command-copy" data-copy-target="reset-staging-step-5" aria-label="Copy commands: Publish staging" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Publish staging commands"><code id="reset-staging-step-5">make manual-deploy</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+      </ol>
+    </div>
+  </details>
+
+  <details id="setup" class="command-workflow">
+    <summary><span>Install dependencies or reconnect Wrangler</span></summary>
+    <div class="command-workflow-body">
+      <p class="command-summary">Run in the repository directory on your own computer. Authentication opens a browser.</p>
+      <ol class="command-steps">
+      
+        <li><h2>Install the locked dependencies</h2><p>Use after cloning the repository or when the dependency lockfile changes.</p>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Install the locked dependencies</span><button type="button" class="command-copy" data-copy-target="setup-step-1" aria-label="Copy commands: Install the locked dependencies" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Install the locked dependencies commands"><code id="setup-step-1">npm ci</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+        <li><h2>Sign in to Cloudflare</h2><p>Use when a database or deployment command reports expired or missing authentication.</p>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Sign in to Cloudflare</span><button type="button" class="command-copy" data-copy-target="setup-step-2" aria-label="Copy commands: Sign in to Cloudflare" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Sign in to Cloudflare commands"><code id="setup-step-2">make wrangler-login</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+        <li><h2>List the current Make commands</h2>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>List the current Make commands</span><button type="button" class="command-copy" data-copy-target="setup-step-3" aria-label="Copy commands: List the current Make commands" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="List the current Make commands commands"><code id="setup-step-3">make help</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+      </ol>
+    </div>
+  </details>
+
+  <details id="collect" class="command-workflow">
+    <summary><span>Collect an OpenMHz day</span></summary>
+    <div class="command-workflow-body">
+      <p class="command-summary">Collector setup for the Pi. This collects metadata; it does not itself download audio, transcribe, upload the database or deploy the site.</p>
+      <ol class="command-steps">
+      
+        <li><h2>Open the collector browser on the Pi desktop</h2><p>Leave the browser open. Use 5922 instead of 6001 for Law 2 Northeast.</p>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Open the collector browser on the Pi desktop</span><button type="button" class="command-copy" data-copy-target="collect-step-1" aria-label="Copy commands: Open the collector browser on the Pi desktop" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Open the collector browser on the Pi desktop commands"><code id="collect-step-1">make openmhz-browser TALKGROUP=6001</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+        <li><h2>Collect the selected day in another terminal</h2><p>Replace YYYY-MM-DD with the archive date and choose 6001 or 5922. Run from the repository directory. The collection pipeline has additional audio/transcription workflow steps; do not assume this command publishes a day.</p>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Collect the selected day in another terminal</span><button type="button" class="command-copy" data-copy-target="collect-step-2" aria-label="Copy commands: Collect the selected day in another terminal" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Collect the selected day in another terminal commands"><code id="collect-step-2">make collect-openmhz DATE=YYYY-MM-DD TALKGROUP=6001</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+      </ol>
+    </div>
+  </details>
+
+  <details id="production-db" class="command-workflow command-production">
+    <summary><span class="command-production-badge">Production</span><span>Promote the staging database to production</span></summary>
+    <div class="command-workflow-body">
+      <p class="command-summary">Production database action. Copies the entire staging database, including evidence reviews, to production. It does not back up production or deploy the website.</p>
+      <ol class="command-steps">
+      
+        <li><h2>Get the latest staging code</h2><p>Start with a clean working tree and finish saving admin edits in the browser. The promotion copies a snapshot of the live staging database; it does not upload the local JSON first.</p>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Get the latest staging code</span><button type="button" class="command-copy" data-copy-target="production-db-step-1" aria-label="Copy commands: Get the latest staging code" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Get the latest staging code commands"><code id="production-db-step-1">git status --short &amp;&amp;
+git switch staging &amp;&amp;
+git pull --ff-only origin staging</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+        <li><h2>Replace the production database with staging</h2><p>This is the only database Make command that writes to production. It retains a staging snapshot under db/local/ and does not back up the previous production database. No source or target database argument is accepted.</p>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Replace the production database with staging</span><button type="button" class="command-copy" data-copy-target="production-db-step-2" aria-label="Copy commands: Replace the production database with staging" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Replace the production database with staging commands"><code id="production-db-step-2">make promote-db</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+      </ol>
+    </div>
+  </details>
+
+  <details id="production-site" class="command-workflow command-production">
+    <summary><span class="command-production-badge">Production</span><span>Publish the staging website to production</span></summary>
+    <div class="command-workflow-body">
+      <p class="command-summary">Production website action. Promotes the staging branch to main and deploys the site. It does not promote the database.</p>
+      <ol class="command-steps">
+      
+        <li><h2>Check and push the intended staging commit</h2><p>Use a clean working tree with all intended changes committed. Review the staging site first. Resolve pull or push failures before continuing.</p>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Check and push the intended staging commit</span><button type="button" class="command-copy" data-copy-target="production-site-step-1" aria-label="Copy commands: Check and push the intended staging commit" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Check and push the intended staging commit commands"><code id="production-site-step-1">git status --short &amp;&amp;
+git switch staging &amp;&amp;
+git pull --ff-only origin staging &amp;&amp;
+git push origin staging</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+        <li><h2>Promote the branch and deploy production</h2><p>prod-manual-deploy runs promote-staging, which replaces main with staging using force-with-lease, then builds and deploys production. Use promote-staging alone only when you want the branch promotion without deployment. Run the separate production database workflow only if that copy is also intended.</p>
+        
+<div class="command-panel">
+  <div class="command-panel-heading"><span>Promote the branch and deploy production</span><button type="button" class="command-copy" data-copy-target="production-site-step-2" aria-label="Copy commands: Promote the branch and deploy production" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Promote the branch and deploy production commands"><code id="production-site-step-2">make prod-manual-deploy</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+</li>
+      
+      </ol>
+    </div>
+  </details>
+
+</div>
+<section id="command-reference" class="command-reference" aria-labelledby="command-reference-heading">
+  <h2 id="command-reference-heading">All Make commands</h2>
+  <p>These descriptions come directly from the Makefile, matching <code>make help</code>. Use the workflows above for the full sequence and any required arguments.</p>
+  <div class="command-table-scroll"><table><thead><tr><th scope="col">Command</th><th scope="col">What it does</th></tr></thead><tbody>
+  <tr><th scope="row"><code>make help</code></th><td>List available make commands (also the default for plain make).</td></tr><tr><th scope="row"><code>make openmhz-browser</code></th><td>Open collector Chromium on port 9222; run in the Pi desktop terminal (TALKGROUP defaults to 6001).</td></tr><tr><th scope="row"><code>make wrangler-login</code></th><td>Sign in to Cloudflare with Wrangler.</td></tr><tr><th scope="row"><code>make db-upload</code></th><td>Upload JSON to staging only (afpd-data-staging); no database parameter.</td></tr><tr><th scope="row"><code>make db-reset</code></th><td>Back up staging, then recreate its JSON-managed tables; no database parameter.</td></tr><tr><th scope="row"><code>make calls-from-db</code></th><td>Copy staging transcripts and verified flags to calls.json; no database parameter.</td></tr><tr><th scope="row"><code>make evidence-from-db</code></th><td>Save all staging evidence reviews to data/db-evidenence-associations.json; no database parameter.</td></tr><tr><th scope="row"><code>make evidence-to-db</code></th><td>Back up staging, then reupload the evidence JSON; separate from db-upload, no database parameter.</td></tr><tr><th scope="row"><code>make promote-db</code></th><td>Replace production DB with a staging snapshot, including evidence reviews; no production backup.</td></tr><tr><th scope="row"><code>make promote-staging</code></th><td>Promote staging to main using force-with-lease; does not deploy.</td></tr><tr><th scope="row"><code>make build</code></th><td>Build the website.</td></tr><tr><th scope="row"><code>make collect-openmhz</code></th><td>Collect metadata (DATE=YYYY-MM-DD TALKGROUP=6001); does not start downloads locally.</td></tr><tr><th scope="row"><code>make manual-deploy</code></th><td>Build and upload a staging preview.</td></tr><tr><th scope="row"><code>make prod-manual-deploy</code></th><td>Promote staging to main, build, and deploy production.</td></tr>
+  </tbody></table></div>
+</section>
+</main>
+</body>
+</html>

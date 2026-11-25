@@ -1,0 +1,8 @@
+import fs from 'node:fs';
+
+// Read the same descriptions shown by `make help` so the reference stays current.
+export default function () {
+  const makefile=fs.readFileSync(new URL('../../Makefile',import.meta.url),'utf8');
+  return [...makefile.matchAll(/^([a-zA-Z0-9_-]+):.*##\s*(.+)$/gm)]
+    .map(([,name,description])=>({name,description}));
+}

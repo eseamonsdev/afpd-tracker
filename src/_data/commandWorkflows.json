@@ -1,0 +1,111 @@
+[
+  {
+    "id": "save-admin-edits",
+    "title": "Save admin transcript edits and evidence reviews",
+    "summary": "Download your saved staging edits, keep a Git copy, and publish the updated staging site.",
+    "open": true,
+    "steps": [
+      {"title":"Get the latest staging branch","note":"Start with a clean working tree. If git status shows your own unfinished changes, commit them before switching or pulling. Stop if any command fails.","commands":"git status --short &&\ngit switch staging &&\ngit pull --ff-only origin staging"},
+      {"title":"Download both kinds of admin edits and build","note":"Save changes in the browser first. calls-from-db downloads transcripts and verified flags; evidence-from-db downloads all evidence groups, notes, confirmations and deletion history. The build refreshes generated pages and transcript text files.","commands":"make calls-from-db &&\nmake evidence-from-db &&\nmake build"},
+      {"title":"Review the files, then commit and push","note":"Review the status and diff summary before copying the next panel. If there are no changes, skip the commit and push.","commands":"git status --short &&\ngit diff --stat"},
+      {"title":"Commit the reviewed data and generated files","commands":"git add -- data public &&\ngit commit -m \"Save staging radio edits and evidence reviews\" &&\ngit push origin staging"},
+      {"title":"Publish the staging site","note":"This builds and uploads the staging preview. Exporting evidence does not change public officer association labels.","commands":"make manual-deploy"}
+    ]
+  },
+  {
+    "id": "upload-json",
+    "title": "Upload changed source JSON to the staging database",
+    "summary": "Use after changing roster data, archive settings or other JSON-managed data. Download admin edits before editing the files.",
+    "steps": [
+      {"title":"Get the latest staging branch","note":"Start with a clean working tree; preserve unfinished local changes first.","commands":"git status --short &&\ngit switch staging &&\ngit pull --ff-only origin staging"},
+      {"title":"Preserve the current admin edits","note":"Do this before editing the source JSON. calls-from-db replaces local transcript values with the database values. If you already edited transcripts locally, reconcile those edits before downloading.","commands":"make calls-from-db &&\nmake evidence-from-db"},
+      {"title":"Edit the JSON, then upload and build","note":"Pause here to make your intended JSON changes. db-upload currently recreates the JSON-managed database tables, including transcripts. It preserves the separate evidence tables and does not import the evidence snapshot.","commands":"make db-upload &&\nmake build"},
+      {"title":"Review the changes","note":"Check the edited source files and generated output before continuing. If there are no Git changes, skip the commit and push.","commands":"git status --short &&\ngit diff --stat"},
+      {"title":"Commit and push the reviewed files","commands":"git add -- data public &&\ngit commit -m \"Update staging source data\" &&\ngit push origin staging"},
+      {"title":"Publish staging","commands":"make manual-deploy"}
+    ]
+  },
+  {
+    "id": "save-evidence",
+    "title": "Save only the evidence review data",
+    "summary": "Download reviewed and unreviewed groups without exporting transcripts, uploading the database or deploying the site.",
+    "steps": [
+      {"title":"Get the latest staging branch","note":"Start with a clean working tree and save your browser edits first.","commands":"git status --short &&\ngit switch staging &&\ngit pull --ff-only origin staging"},
+      {"title":"Download every evidence group","note":"Writes data/db-evidenence-associations.json, including empty groups, notes, speaker confirmations, original sources and deletion records. Identical data produces identical JSON.","commands":"make evidence-from-db"},
+      {"title":"Review the exported file","note":"This snapshot includes correction notes and will be public when pushed to this repository. If there are no changes, skip the next panel.","commands":"git status --short &&\ngit diff --stat -- data/db-evidenence-associations.json"},
+      {"title":"Commit and push the snapshot","commands":"git add -- data/db-evidenence-associations.json &&\ngit commit -m \"Save staging evidence review snapshot\" &&\ngit push origin staging"}
+    ]
+  },
+  {
+    "id": "restore-evidence",
+    "title": "Edit or restore the evidence snapshot to staging",
+    "summary": "An explicit evidence upload. Represented groups receive the file’s notes, clip selections and confirmation flags.",
+    "steps": [
+      {"title":"Get the latest staging branch","note":"Start with a clean working tree. Keep any intended restore file separately so the next download does not replace your only copy.","commands":"git status --short &&\ngit switch staging &&\ngit pull --ff-only origin staging"},
+      {"title":"Download the current evidence before editing","note":"Then edit data/db-evidenence-associations.json, or replace it with the snapshot you intentionally want to restore. Keep stable IDs intact. Do not download again until you have uploaded those intended edits.","commands":"make evidence-from-db"},
+      {"title":"Upload the intended file, then download the saved result","note":"evidence-to-db backs up staging evidence under db/local/ and rehearses the upload first. Existing group revisions advance. Unrepresented groups remain unless a deletion record explicitly removes them. Recordings and transcripts are preserved.","commands":"make evidence-to-db &&\nmake evidence-from-db"},
+      {"title":"Review the saved result","note":"If there are no Git changes, skip the next panel. The admin page reads the database directly, so this action needs no website deployment.","commands":"git status --short &&\ngit diff --stat -- data/db-evidenence-associations.json"},
+      {"title":"Commit and push the saved snapshot","commands":"git add -- data/db-evidenence-associations.json &&\ngit commit -m \"Update staging evidence review snapshot\" &&\ngit push origin staging"}
+    ]
+  },
+  {
+    "id": "deploy-staging",
+    "title": "Publish already committed changes to staging",
+    "summary": "Use when the desired source changes are already committed. This uploads the site, not the database.",
+    "steps": [
+      {"title":"Check the branch and send your commits","note":"Start with a clean working tree. If the pull reports divergent branches, resolve that before continuing; do not force-push.","commands":"git status --short &&\ngit switch staging &&\ngit pull --ff-only origin staging &&\ngit push origin staging"},
+      {"title":"Build and upload the staging preview","note":"manual-deploy pulls staging, builds it, and uploads a Worker preview using the staging configuration. It does not run db-upload, evidence-to-db or promote-db.","commands":"make manual-deploy"}
+    ]
+  },
+  {
+    "id": "reset-staging",
+    "title": "Recreate the JSON-managed staging tables",
+    "summary": "A repair workflow for staging. Downloads admin edits first; the separate evidence tables are retained.",
+    "steps": [
+      {"title":"Get the latest staging branch","note":"Start with a clean working tree.","commands":"git status --short &&\ngit switch staging &&\ngit pull --ff-only origin staging"},
+      {"title":"Preserve edits, reset and rebuild","note":"db-reset creates a staging backup and recreates JSON-managed rows from the local source files. It retains evidence reviews. The current db-upload policy also recreates all JSON-managed tables.","commands":"make calls-from-db &&\nmake evidence-from-db &&\nmake db-reset &&\nmake build"},
+      {"title":"Review the preserved files","note":"If there are no Git changes, skip the commit and push.","commands":"git status --short &&\ngit diff --stat"},
+      {"title":"Commit and push the reviewed files","commands":"git add -- data public &&\ngit commit -m \"Preserve staging data before database reset\" &&\ngit push origin staging"},
+      {"title":"Publish staging","commands":"make manual-deploy"}
+    ]
+  },
+  {
+    "id": "setup",
+    "title": "Install dependencies or reconnect Wrangler",
+    "summary": "Run in the repository directory on your own computer. Authentication opens a browser.",
+    "steps": [
+      {"title":"Install the locked dependencies","note":"Use after cloning the repository or when the dependency lockfile changes.","commands":"npm ci"},
+      {"title":"Sign in to Cloudflare","note":"Use when a database or deployment command reports expired or missing authentication.","commands":"make wrangler-login"},
+      {"title":"List the current Make commands","commands":"make help"}
+    ]
+  },
+  {
+    "id": "collect",
+    "title": "Collect an OpenMHz day",
+    "summary": "Collector setup for the Pi. This collects metadata; it does not itself download audio, transcribe, upload the database or deploy the site.",
+    "steps": [
+      {"title":"Open the collector browser on the Pi desktop","note":"Leave the browser open. Use 5922 instead of 6001 for Law 2 Northeast.","commands":"make openmhz-browser TALKGROUP=6001"},
+      {"title":"Collect the selected day in another terminal","note":"Replace YYYY-MM-DD with the archive date and choose 6001 or 5922. Run from the repository directory. The collection pipeline has additional audio/transcription workflow steps; do not assume this command publishes a day.","commands":"make collect-openmhz DATE=YYYY-MM-DD TALKGROUP=6001"}
+    ]
+  },
+  {
+    "id": "production-db",
+    "title": "Promote the staging database to production",
+    "summary": "Production database action. Copies the entire staging database, including evidence reviews, to production. It does not back up production or deploy the website.",
+    "production": true,
+    "steps": [
+      {"title":"Get the latest staging code","note":"Start with a clean working tree and finish saving admin edits in the browser. The promotion copies a snapshot of the live staging database; it does not upload the local JSON first.","commands":"git status --short &&\ngit switch staging &&\ngit pull --ff-only origin staging"},
+      {"title":"Replace the production database with staging","note":"This is the only database Make command that writes to production. It retains a staging snapshot under db/local/ and does not back up the previous production database. No source or target database argument is accepted.","commands":"make promote-db"}
+    ]
+  },
+  {
+    "id": "production-site",
+    "title": "Publish the staging website to production",
+    "summary": "Production website action. Promotes the staging branch to main and deploys the site. It does not promote the database.",
+    "production": true,
+    "steps": [
+      {"title":"Check and push the intended staging commit","note":"Use a clean working tree with all intended changes committed. Review the staging site first. Resolve pull or push failures before continuing.","commands":"git status --short &&\ngit switch staging &&\ngit pull --ff-only origin staging &&\ngit push origin staging"},
+      {"title":"Promote the branch and deploy production","note":"prod-manual-deploy runs promote-staging, which replaces main with staging using force-with-lease, then builds and deploys production. Use promote-staging alone only when you want the branch promotion without deployment. Run the separate production database workflow only if that copy is also intended.","commands":"make prod-manual-deploy"}
+    ]
+  }
+]

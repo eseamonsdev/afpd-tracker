@@ -1,0 +1,57 @@
+---
+permalink: /admin/make-commands/index.html
+sitemap: false
+---
+{% extends "admin-layout.njk" %}
+{% set pageTitle = "Make Commands | AFPD Admin" %}
+{% set adminSection = "make-commands" %}
+{% macro panel(id, title, commands) %}
+<div class="command-panel">
+  <div class="command-panel-heading"><span>{{ title }}</span><button type="button" class="command-copy" data-copy-target="{{ id }}" aria-label="Copy commands: {{ title }}" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="{{ title }} commands"><code id="{{ id }}">{{ commands }}</code></pre>
+  <p class="command-copy-status" role="status" aria-live="polite"></p>
+</div>
+{% endmacro %}
+{% block pageAssets %}
+<link rel="stylesheet" href="/css/admin-make-commands.css">
+<script src="/js/admin-make-commands.js" defer></script>
+{% endblock %}
+{% block content %}
+<div class="admin-page-heading">
+  <p class="commands-eyebrow">Workflow reference</p>
+  <h1>Make Commands</h1>
+  <p>Choose what you want to do, then work through its numbered panels. Copy each panel with the button in its upper-right corner.</p>
+</div>
+<aside class="commands-intro" aria-label="Before running commands">
+  <h2>Before you start</h2>
+  <p>Run these commands in your local <code>afpd-tracker</code> repository. Start with a clean working tree and save browser edits first. Pause when a step says to edit or review files. The <code>&amp;&amp;</code> between commands stops a copied panel if a command fails; stop the workflow and resolve that failure before continuing.</p>
+  <p>Working database commands always use <strong>staging</strong> and accept no database parameter. <code>calls-from-db</code> saves transcripts; <code>evidence-from-db</code> saves evidence reviews. A Git push, a database upload, and a website deployment each do a different job.</p>
+</aside>
+<nav class="command-task-nav" aria-label="Choose a task">
+  {% for workflow in commandWorkflows %}<a href="#{{ workflow.id }}"{% if workflow.production %} class="command-production-link"{% endif %}>{{ workflow.title }}</a>{% endfor %}
+  <a href="#command-reference">All Make commands</a>
+</nav>
+<div class="command-workflows">
+{% for workflow in commandWorkflows %}
+  <details id="{{ workflow.id }}" class="command-workflow{% if workflow.production %} command-production{% endif %}"{% if workflow.open %} open{% endif %}>
+    <summary>{% if workflow.production %}<span class="command-production-badge">Production</span>{% endif %}<span>{{ workflow.title }}</span></summary>
+    <div class="command-workflow-body">
+      <p class="command-summary">{{ workflow.summary }}</p>
+      <ol class="command-steps">
+      {% for step in workflow.steps %}
+        <li><h2>{{ step.title }}</h2>{% if step.note %}<p>{{ step.note }}</p>{% endif %}
+        {{ panel(workflow.id ~ "-step-" ~ loop.index, step.title, step.commands) }}</li>
+      {% endfor %}
+      </ol>
+    </div>
+  </details>
+{% endfor %}
+</div>
+<section id="command-reference" class="command-reference" aria-labelledby="command-reference-heading">
+  <h2 id="command-reference-heading">All Make commands</h2>
+  <p>These descriptions come directly from the Makefile, matching <code>make help</code>. Use the workflows above for the full sequence and any required arguments.</p>
+  <div class="command-table-scroll"><table><thead><tr><th scope="col">Command</th><th scope="col">What it does</th></tr></thead><tbody>
+  {% for command in makeCommands %}<tr><th scope="row"><code>make {{ command.name }}</code></th><td>{{ command.description }}</td></tr>{% endfor %}
+  </tbody></table></div>
+</section>
+{% endblock %}
