@@ -21,7 +21,7 @@ test('full-day evidence controls are admin-only and evidence groups link back to
 });
 test('evidence workspace has separate reviewed state, notes, speaker confirmation and transcript editing',()=>{
   const html=env.render('admin-evidence-excerpt.njk',{adminTools});
-  for(const id of ['evidence-reviewed','evidence-notes','evidence-save','evidence-clips','evidence-transcript-input','evidence-verified','evidence-speaker-confirmed','evidence-talkgroup'])
+  for(const id of ['evidence-reviewed','evidence-notes','evidence-save','evidence-delete','evidence-clips','evidence-transcript-input','evidence-verified','evidence-speaker-confirmed','evidence-talkgroup'])
     assert.equal(html.split(`id="${id}"`).length-1,1);
   assert.ok(html.indexOf('/js/radio-player-core.js')<html.indexOf('/js/admin-evidence-excerpt.js'));
   assert.doesNotMatch(html,/radio-date-picker|make associations-from-db/);

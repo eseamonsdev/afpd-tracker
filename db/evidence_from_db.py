@@ -177,6 +177,23 @@ def restore_sql(document):
                     updates[columns[1:].index('revision')] = f'revision=MAX({table}.revision,excluded.revision)+1'
                 sql += ' ON CONFLICT(id) DO UPDATE SET ' + ','.join(updates)
             statements.append(sql + ';')
+    # Deletion records travel with the snapshot. Explicitly represented groups
+    # win, allowing an administrator to deliberately recreate a deleted group.
+    present = {row['id'] for row in rows['radio_association_evidence']}
+    associations = {row['id'] for row in rows['radio_associations']}
+    for assignment in document['assignments']:
+        if assignment['kind'] != 'deleted-evidence-group':
+            continue
+        archived = assignment['source']
+        group_id = text(archived['group']['id'])
+        association_id = text(archived['association']['id'])
+        if group_id in present:
+            continue
+        statements.append(f'DELETE FROM radio_association_evidence_clips WHERE evidence_id={quote(group_id)};')
+        statements.append(f'DELETE FROM radio_association_evidence WHERE id={quote(group_id)};')
+        if association_id not in associations:
+            statements.append(f'DELETE FROM radio_associations WHERE id={quote(association_id)} AND NOT EXISTS '
+                              f'(SELECT 1 FROM radio_association_evidence WHERE association_id={quote(association_id)});')
     return '\n'.join(statements) + '\n'
 
 

@@ -42,6 +42,34 @@ async function evidenceDetail(db,id) {
     missing_clip_ids:membership.results.filter(m=>!results.some(c=>c.id===m.clip_id)).map(m=>m.clip_id) };
 }
 
+async function deleteEvidenceGroup(db,body,adminEmail){
+  if(!validId(body.id)||!Number.isSafeInteger(body.revision)||body.revision<0)
+    return json({error:'Invalid evidence group deletion'},400);
+  const current=await db.prepare(`${groupSelect} WHERE e.id=?`).bind(body.id).first();
+  if(!current)return json({error:'Evidence group not found'},404);
+  if(current.revision!==body.revision)return json({error:'This group changed. Reload before deleting it.'},409);
+  const membership=await db.prepare('SELECT clip_id,position,speaker_confirmed FROM radio_association_evidence_clips WHERE evidence_id=? ORDER BY position,clip_id').bind(body.id).all();
+  const association=await db.prepare('SELECT * FROM radio_associations WHERE id=?').bind(current.association_id).first();
+  const {officer_key,officer_name,radio_id,source_status,...group}=current;
+  const archive={deleted_at:new Date().toISOString(),deleted_by:adminEmail,association,group,clips:membership.results};
+  try{
+    const results=await db.batch([
+      db.prepare('UPDATE radio_association_evidence SET revision=CASE WHEN revision=? THEN revision+1 ELSE -1 END WHERE id=?').bind(body.revision,body.id),
+      db.prepare(`INSERT INTO radio_association_assignments (id,kind,source_json)
+        SELECT ?,'deleted-evidence-group',? WHERE EXISTS (SELECT 1 FROM radio_association_evidence WHERE id=? AND revision=?)
+        ON CONFLICT(id) DO UPDATE SET source_json=excluded.source_json`).bind('deleted-evidence-'+body.id,JSON.stringify(archive),body.id,body.revision+1),
+      db.prepare('DELETE FROM radio_association_evidence_clips WHERE evidence_id=?').bind(body.id),
+      db.prepare('DELETE FROM radio_association_evidence WHERE id=?').bind(body.id),
+      db.prepare('DELETE FROM radio_associations WHERE id=? AND NOT EXISTS (SELECT 1 FROM radio_association_evidence WHERE association_id=?)').bind(current.association_id,current.association_id)
+    ]);
+    if(results[0].meta?.changes!==1)return json({error:'Evidence group no longer exists'},404);
+  }catch(error){
+    if(/CHECK constraint failed|revision/i.test(String(error)))return json({error:'This group changed while deleting it. Reload before continuing; nothing was deleted.'},409);
+    throw error;
+  }
+  return json({deleted:true,id:body.id});
+}
+
 export async function associationEvidence(request,url,db,adminEmail) {
   if (!db) return json({error:'Database unavailable'},503);
   try {
@@ -96,6 +124,8 @@ export async function associationEvidence(request,url,db,adminEmail) {
     if(Number(request.headers.get('Content-Length')||0)>500000)return json({error:'Request too large'},413);
     const text=await request.text();if(text.length>500000)return json({error:'Request too large'},413);
     const body=JSON.parse(text);
+    if(body.action==='delete')return await deleteEvidenceGroup(db,body,adminEmail);
+    if(body.action!==undefined)return json({error:'Unknown evidence action'},400);
     if(!validId(body.id) || !Number.isSafeInteger(body.revision) || body.revision<0 ||
        (body.talkgroup_number!==undefined && !validTalkgroup(body.talkgroup_number)) ||
        typeof body.reviewed!=='boolean' || typeof body.correction_notes!=='string' || body.correction_notes.length>20000 ||

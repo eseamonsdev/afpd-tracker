@@ -142,3 +142,41 @@ test('additive import preserves saved notes, group review, clip removals and tra
   assert.equal(db.sqlite.prepare('SELECT COUNT(*) AS n FROM radio_associations').get().n,result.associations);
   assert.ok(result.websiteGroups>400);
 });
+
+test('deleting a mistaken group preserves recordings, other groups and an exportable deletion record',async()=>{
+  const db=database();await save(db,change());
+  const before=db.sqlite.prepare('SELECT * FROM radio_clips ORDER BY id').all();
+  assert.equal((await save(db,{action:'delete',id:'group1',revision:1})).status,200);
+  assert.equal((await read(db)).status,404);
+  assert.deepEqual(db.sqlite.prepare('SELECT * FROM radio_clips ORDER BY id').all(),before);
+  assert.equal(db.sqlite.prepare("SELECT COUNT(*) AS n FROM radio_association_evidence_clips WHERE evidence_id='group1'").get().n,0);
+  assert.equal(db.sqlite.prepare("SELECT COUNT(*) AS n FROM radio_association_evidence_clips WHERE evidence_id='group2'").get().n,1);
+  assert.equal(db.sqlite.prepare("SELECT COUNT(*) AS n FROM radio_associations WHERE id='a1'").get().n,1);
+  const record=db.sqlite.prepare("SELECT * FROM radio_association_assignments WHERE kind='deleted-evidence-group'").get();
+  const archived=JSON.parse(record.source_json);
+  assert.equal(archived.group.reviewed,1);assert.equal(archived.group.correction_notes,change().correction_notes);
+  assert.equal(archived.clips[0].speaker_confirmed,1);assert.equal(archived.association.officer_key,'anthony-s-neil');
+  assert.equal(archived.deleted_by,'Eric');assert.ok(archived.deleted_at);
+  assert.equal((await (await read(db,'status=all')).json()).groups.length,0);
+  assert.equal((await save(db,{action:'delete',id:'group2',revision:0})).status,200);
+  assert.equal(db.sqlite.prepare('SELECT COUNT(*) AS n FROM radio_associations').get().n,0);
+});
+test('deletion rejects stale, invalid and cross-origin requests, including a racing edit',async()=>{
+  const db=database(),remove={action:'delete',id:'group1',revision:0};
+  assert.equal((await save(db,remove,'https://evil.example')).status,403);
+  assert.equal((await save(db,{...remove,revision:-1})).status,400);
+  assert.equal((await save(db,{...remove,id:'missing'})).status,404);
+  assert.equal((await save(db,{...remove,revision:1})).status,409);
+  const batch=db.batch.bind(db);
+  db.batch=async statements=>{db.sqlite.exec("UPDATE radio_association_evidence SET revision=1,correction_notes='Concurrent note' WHERE id='group1'");return batch(statements);};
+  assert.equal((await save(db,remove)).status,409);
+  const {group}=await (await read(db)).json();assert.equal(group.correction_notes,'Concurrent note');assert.equal(group.clips.length,2);
+  assert.equal(db.sqlite.prepare("SELECT COUNT(*) AS n FROM radio_association_assignments WHERE kind='deleted-evidence-group'").get().n,0);
+});
+test('deletion records prevent the additive legacy seed from recreating removed groups',async()=>{
+  const db=database(),seed=prepareAssociationEvidence();db.sqlite.exec(seed.sql);
+  const first=db.sqlite.prepare("SELECT id FROM radio_association_evidence WHERE id NOT IN ('group1','group2') LIMIT 1").get();
+  assert.equal((await save(db,{action:'delete',id:first.id,revision:0})).status,200);
+  db.sqlite.exec(seed.sql);
+  assert.equal((await read(db,'evidence='+first.id)).status,404);
+});

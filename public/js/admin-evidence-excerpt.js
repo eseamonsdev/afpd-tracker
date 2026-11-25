@@ -1,6 +1,7 @@
 (() => {
   const $=id=>document.getElementById(id),params=new URL(location.href).searchParams;
   const id=params.get('evidence'),save=$('evidence-save'),status=$('evidence-save-status');
+  const deleteGroup=$('evidence-delete');
   const reviewed=$('evidence-reviewed'),notes=$('evidence-notes');
   const talkgroup=$('evidence-talkgroup');
   const pencil=$('evidence-edit-transcript'),editor=$('evidence-transcript-editor');
@@ -11,6 +12,7 @@
   const dirty=()=>group && (Number(talkgroup.value)!==group.talkgroup_number||reviewed.checked!==group.reviewed||notes.value!==group.correction_notes||memberState()!==originalMembers||transcripts.size>0);
   function refresh(message){
     save.disabled=saving||adding||!dirty();
+    deleteGroup.disabled=!group||saving||adding;
     status.textContent=message||(dirty()?'Unsaved changes.':'No unsaved changes.');
     if(group)$('evidence-selection-status').textContent=`${clips.length-removed.size} evidence clips · ${clips.filter(c=>!removed.has(c.id)&&c.speaker_confirmed).length} confirmed speaker clips`;
     syncSpeakerConfirmation();
@@ -133,6 +135,28 @@
       saving=false;player.render(clips);refresh('Changes saved.');
     }catch(error){refresh(error.message+' Your unsaved edits are still here.');}
     finally{saving=false;controls.forEach((c,i)=>c.disabled=disabled[i]);pencil.disabled=verified.disabled=!selected;syncSpeakerConfirmation();talkgroup.disabled=adding||clips.some(c=>!removed.has(c.id))||group.missing_clip_ids.length>0;reviewed.disabled=Number(talkgroup.value)!==group.talkgroup_number;save.disabled=!dirty();}
+  });
+  deleteGroup.addEventListener('click',async()=>{
+    if(!group||saving||adding)return;
+    const description=`${group.officer_name} · Radio ${group.radio_id}\n${group.archive_date} · Talkgroup ${group.talkgroup_number}`;
+    if(!window.confirm(`Delete this evidence group?\n\n${description}\n\nThe recordings and transcripts will remain. A deletion record will be retained.${dirty()?' Unsaved edits on this page will be discarded.':''}`))return;
+    saving=true;refresh('Deleting evidence group…');
+    const controls=Array.from(document.querySelectorAll('input,textarea,button,select')),disabled=controls.map(c=>c.disabled);
+    controls.forEach(c=>c.disabled=true);
+    try{
+      const response=await fetch('/admin/api/association-evidence',{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({action:'delete',id:group.id,revision:group.revision})});
+      const data=await response.json();if(!response.ok)throw new Error(data.error||'Unable to delete evidence group');
+      group=null;transcripts.clear();removed.clear();clips=[];player.render([]);
+      $('evidence-workspace').hidden=true;$('evidence-full-day').hidden=true;
+      $('evidence-heading').textContent='Evidence group deleted';
+      $('evidence-context').textContent=description;
+      status.textContent='Evidence group deleted. Recordings and transcripts were preserved.';
+    }catch(error){status.textContent=error.message;}
+    finally{
+      saving=false;
+      if(group){controls.forEach((c,i)=>c.disabled=disabled[i]);refresh(status.textContent);}
+    }
   });
   window.addEventListener('beforeunload',event=>{if(dirty()){event.preventDefault();event.returnValue='';}});
   window.addEventListener('pageshow',event=>{if(event.persisted&&id&&!dirty()&&!saving)load().catch(error=>{status.textContent=error.message;});});

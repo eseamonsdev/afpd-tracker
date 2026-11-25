@@ -189,6 +189,16 @@ and reset the group to Unreviewed. Each included clip links to its evidence
 groups, and each evidence group links to its full admin day. This integration
 uses the existing evidence tables and does not change public associations.
 
+The evidence editor also offers **Delete evidence group**, with a confirmation
+that names the officer, radio, date and talkgroup. It removes only that group's
+clip membership and removes the officer/radio row only when no groups remain.
+Recordings, transcripts and other groups are retained. A revision check prevents
+deleting a group that has changed in another tab. Its saved notes, source records,
+membership and deletion attribution are archived in `radio_association_assignments`
+as `deleted-evidence-group`. These records are included in evidence downloads;
+reuploads honor deletions unless the file explicitly includes a recreated group.
+The additive legacy seed also honors the deletion record.
+
 These four tables are outside the legacy upload/reset policy and are retained
 by those operations. Transcript edits still update the existing `radio_clips`
 table and follow that table's configured import policy. Apply the new schema

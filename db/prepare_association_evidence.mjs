@@ -69,7 +69,11 @@ export function prepareAssociationEvidence(directory = root) {
   for (const entry of groups.values()) {
     sql.push(`INSERT OR IGNORE INTO radio_association_evidence (id,association_id,archive_date,talkgroup_number,website_visible,source_json)
       SELECT ${quote(entry.id)},a.id,${[entry.date,entry.talkgroup,Number(entry.visible),JSON.stringify(entry.records)].map(quote).join(',')}
-      FROM radio_associations a WHERE a.officer_key=${quote(entry.pair.officer)} AND a.radio_id=${quote(entry.pair.radio)};`);
+      FROM radio_associations a WHERE a.officer_key=${quote(entry.pair.officer)} AND a.radio_id=${quote(entry.pair.radio)}
+      AND NOT EXISTS (SELECT 1 FROM radio_association_assignments d WHERE d.kind='deleted-evidence-group' AND
+        (json_extract(d.source_json,'$.group.id')=${quote(entry.id)} OR
+        (json_extract(d.source_json,'$.association.officer_key')=a.officer_key AND json_extract(d.source_json,'$.association.radio_id')=a.radio_id
+        AND json_extract(d.source_json,'$.group.archive_date')=${quote(entry.date)} AND json_extract(d.source_json,'$.group.talkgroup_number')=${entry.talkgroup})));`);
     const clips = [...(entry.websiteClips ?? entry.clips)];
     if (clips.length) sql.push(`INSERT OR IGNORE INTO radio_association_evidence_clips (evidence_id,clip_id,position)
       SELECT ${quote(entry.id)},c.id,c.clip_number FROM radio_clips c

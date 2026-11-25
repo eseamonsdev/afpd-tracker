@@ -47,6 +47,25 @@ def logical_rows(db):
 
 
 class EvidenceSnapshotTests(unittest.TestCase):
+    def test_deletion_records_round_trip_without_resurrecting_groups(self):
+        source, target = fixture(), fixture()
+        group = dict(zip(TABLES['radio_association_evidence'], source.execute("SELECT * FROM radio_association_evidence WHERE id='empty'").fetchone()))
+        association = dict(zip(TABLES['radio_associations'], source.execute("SELECT * FROM radio_associations WHERE id='a2'").fetchone()))
+        archived = {'group': group, 'association': association, 'clips': [], 'deleted_by': 'editor', 'deleted_at': '2026-11-25T19:00:00Z'}
+        source.execute('INSERT INTO radio_association_assignments VALUES (?,?,?)', ('deleted-evidence-empty', 'deleted-evidence-group', json.dumps(archived)))
+        source.execute("DELETE FROM radio_association_evidence WHERE id='empty'")
+        source.execute("DELETE FROM radio_associations WHERE id='a2'")
+        document = snapshot_from_rows(rows_from_db(source))
+        target.executescript(restore_sql(document))
+        self.assertIsNone(target.execute("SELECT id FROM radio_association_evidence WHERE id='empty'").fetchone())
+        self.assertIsNone(target.execute("SELECT id FROM radio_associations WHERE id='a2'").fetchone())
+        self.assertEqual(target.execute('SELECT COUNT(*) FROM radio_clips').fetchone(), (1,))
+        # An explicit group in the file wins over its historical deletion record.
+        restored = snapshot_from_rows(rows_from_db(fixture()))
+        restored['assignments'].append(document['assignments'][0] if document['assignments'][0]['kind']=='deleted-evidence-group' else document['assignments'][1])
+        target.executescript(restore_sql(restored))
+        self.assertIsNotNone(target.execute("SELECT id FROM radio_association_evidence WHERE id='empty'").fetchone())
+
     def test_round_trip_includes_reviewed_unreviewed_hidden_empty_disputed_and_shared_clips(self):
         source, target = fixture(), sqlite3.connect(':memory:')
         target.execute('PRAGMA foreign_keys=ON')
