@@ -20,5 +20,7 @@ test('evidence workspace has separate reviewed state, notes, speaker confirmatio
   const regularAdmin=env.render('admin-police-radio.njk',{adminTools});
   assert.doesNotMatch(regularAdmin,/speaker-confirmed/);
   const list=env.render('admin-association-evidence.njk',{adminTools});
+  assert.equal(list.split('id="evidence-officer"').length-1,1);
+  assert.match(list,/<option value="">All officers<\/option>/);
   for(const status of ['all','reviewed','unreviewed'])assert.ok(list.includes(`value="${status}"`));
 });

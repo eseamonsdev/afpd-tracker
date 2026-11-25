@@ -72,6 +72,25 @@ test('empty groups can be saved and clips added by archive numbers without publi
   assert.equal(lookup.clips.length,2);assert.deepEqual(lookup.missing,[99]);
   assert.equal((await save(db,{...body,revision:1,clips:[{id:'clip3',speaker_confirmed:true}]})).status,200);
 });
+test('officer filter matches exact identities, combines review filters and scopes progress to that officer',async()=>{
+  const db=database();
+  db.sqlite.exec(`INSERT INTO radio_associations VALUES ('a2','anthony-s-neilson','Another Officer','14590028','Candidate',1,'{}');
+    INSERT INTO radio_association_evidence (id,association_id,archive_date,talkgroup_number,website_visible,source_json)
+    VALUES ('group3','a2','2026-11-01',6001,1,'[]');`);
+  assert.equal((await save(db,change())).status,200);
+  const data=await (await read(db,'officer=anthony-s-neil&status=all&scope=all')).json();
+  assert.equal(data.groups.length,2);
+  assert.ok(data.groups.every(group=>group.officer_key==='anthony-s-neil'));
+  assert.deepEqual(data.counts,{total:2,reviewed:1,unreviewed:1});
+  assert.deepEqual(data.officers.map(officer=>officer.officer_key),['anthony-s-neilson','anthony-s-neil']);
+  const unreviewed=await (await read(db,'officer=anthony-s-neil&status=unreviewed&scope=all')).json();
+  assert.equal(unreviewed.groups.length,1);assert.equal(unreviewed.groups[0].id,'group2');
+  const website=await (await read(db,'officer=anthony-s-neil&status=all')).json();
+  assert.equal(website.groups.length,1);assert.deepEqual(website.counts,{total:1,reviewed:1,unreviewed:0});
+  const searched=await (await read(db,'officer=anthony-s-neil&status=all&q=14590028')).json();
+  assert.equal(searched.groups.length,0);
+  assert.equal((await read(db,'officer=bad%2Fid')).status,400);
+});
 test('additive import preserves saved notes, group review, clip removals and transcript edits on rerun',()=>{
   const db=database();const result=prepareAssociationEvidence();
   db.sqlite.exec(result.sql);

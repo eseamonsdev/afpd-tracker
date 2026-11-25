@@ -62,11 +62,13 @@ export async function associationEvidence(request,url,db,adminEmail) {
       }
       const status=url.searchParams.get('status')||'unreviewed';
       const scope=url.searchParams.get('scope')||'website';
+      const officer=url.searchParams.get('officer')||'';
       const query=(url.searchParams.get('q')||'').trim();
       const offset=Number(url.searchParams.get('offset')||0);
       if (!['all','reviewed','unreviewed'].includes(status) || !['website','all'].includes(scope) ||
-          query.length>150 || !Number.isSafeInteger(offset) || offset<0) return json({error:'Invalid filter'},400);
+          (officer && !validId(officer)) || query.length>150 || !Number.isSafeInteger(offset) || offset<0) return json({error:'Invalid filter'},400);
       const filters=[],values=[];
+      if(officer){filters.push('a.officer_key=?');values.push(officer);}
       if(scope==='website')filters.push('e.website_visible=1');
       if(query){filters.push('(a.officer_name LIKE ? OR a.officer_key LIKE ? OR a.radio_id LIKE ?)');values.push(...Array(3).fill(`%${query}%`));}
       const base=filters.length?filters.join(' AND '):'1=1';
@@ -80,7 +82,10 @@ export async function associationEvidence(request,url,db,adminEmail) {
         (SELECT COUNT(*) FROM radio_association_evidence_clips m WHERE m.evidence_id=e.id AND m.speaker_confirmed=1) AS confirmed_clips
         FROM radio_association_evidence e JOIN radio_associations a ON a.id=e.association_id
         WHERE ${where} ORDER BY a.radio_id,a.officer_name,e.archive_date,e.talkgroup_number,e.id LIMIT 101 OFFSET ?`).bind(...values,offset).all();
-      return json({groups:results.slice(0,100),has_more:results.length>100,offset,
+      const officers=await db.prepare(`SELECT a.officer_key,MIN(a.officer_name) AS officer_name
+        FROM radio_associations a WHERE EXISTS (SELECT 1 FROM radio_association_evidence e WHERE e.association_id=a.id)
+        GROUP BY a.officer_key ORDER BY officer_name COLLATE NOCASE,a.officer_key`).bind().all();
+      return json({groups:results.slice(0,100),has_more:results.length>100,offset,officers:officers.results,
         counts:{...stats,unreviewed:stats.total-stats.reviewed}});
     }
     if (request.method!=='POST')return new Response(null,{status:405,headers:{...headers,Allow:'GET, POST'}});

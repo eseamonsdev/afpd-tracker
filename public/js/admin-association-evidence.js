@@ -1,6 +1,7 @@
 (() => {
   const $=id=>document.getElementById(id), params=new URL(location.href).searchParams;
-  const filter=$('evidence-filter'),scope=$('evidence-scope'),search=$('evidence-search');
+  const filter=$('evidence-filter'),scope=$('evidence-scope'),search=$('evidence-search'),officer=$('evidence-officer');
+  let selectedOfficer=params.get('officer')||'';
   filter.value=['all','reviewed','unreviewed'].includes(params.get('status'))?params.get('status'):'unreviewed';
   scope.value=params.get('scope')==='all'?'all':'website';search.value=params.get('q')||'';
   const requestedOffset=Number(params.get('offset')||0);
@@ -10,10 +11,14 @@
     const token=++request;$('evidence-list-status').textContent='Loading evidence…';
     $('evidence-previous').disabled=$('evidence-next').disabled=true;
     const query=new URLSearchParams({status:filter.value,scope:scope.value,q:search.value.trim(),offset:String(offset)});
+    if(selectedOfficer)query.set('officer',selectedOfficer);
     const state=new URL(location.href);state.search=query.toString();history.replaceState(null,'',state);
     try{
       const response=await fetch('/admin/api/association-evidence?'+query,{cache:'no-store'});const data=await response.json();
       if(token!==request)return;if(!response.ok)throw new Error(data.error||'Unable to load evidence');
+      const options=[new Option('All officers',''),...data.officers.map(person=>new Option(person.officer_name,person.officer_key))];
+      if(selectedOfficer&&!data.officers.some(person=>person.officer_key===selectedOfficer))options.push(new Option(selectedOfficer,selectedOfficer));
+      officer.replaceChildren(...options);officer.value=selectedOfficer;officer.disabled=false;
       const fragment=document.createDocumentFragment();
       for(const group of data.groups){
         const row=document.createElement('tr');if(group.reviewed)row.className='is-reviewed';
@@ -35,6 +40,7 @@
   }
   $('evidence-filters').addEventListener('submit',event=>{event.preventDefault();offset=0;load();});
   for(const control of [filter,scope])control.addEventListener('change',()=>{offset=0;load();});
+  officer.addEventListener('change',()=>{selectedOfficer=officer.value;offset=0;load();});
   $('evidence-previous').addEventListener('click',()=>{offset=Math.max(0,offset-100);load();});
   $('evidence-next').addEventListener('click',()=>{if(more){offset+=100;load();}});
   window.addEventListener('pageshow',event=>{if(event.persisted)load();});load();
