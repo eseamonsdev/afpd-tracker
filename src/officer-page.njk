@@ -106,9 +106,9 @@ permalink: "{{ officerPage.url }}"
                   <h3 id="identifier-heading-{{ identifierType }}">{{ identifierTitle | escape }}</h3>
                   {%- if identifierType == "radio-id" -%}
                   <div class="csv-table-scroll" tabindex="0" role="region" aria-label="Radio ID observations and supporting evidence">
-                    <table class="csv-table"><thead><tr><th scope="col">Radio ID</th><th scope="col">Evidence days</th><th scope="col">Evidence dates</th><th scope="col">Association</th><th scope="col">Supporting evidence</th></tr></thead><tbody>
+                    <table class="csv-table"><thead><tr><th scope="col">Radio ID</th><th scope="col">Evidence days</th><th scope="col">Association</th><th scope="col">Supporting evidence</th></tr></thead><tbody>
                     {%- for radio in officerPage.radio_identifiers -%}
-                      <tr><th scope="row"><code>{{ radio.radio_id | escape }}</code></th><td>{{ radio.evidence_days }}</td><td>{% for date in radio.evidence_dates %}<time datetime="{{ date | escape }}">{{ date | escape }}</time>{% if not loop.last %}; {% endif %}{% else %}No counted evidence dates{% endfor %}</td><td>{{ radio.status_label | escape }}</td><td>{{ evidenceLinks(radio.evidence) }}</td></tr>
+                      <tr><th scope="row"><code>{{ radio.radio_id | escape }}</code></th><td>{{ radio.evidence_days }}</td><td>{{ radio.status_label | escape }}</td><td>{{ evidenceLinks(radio.evidence) }}</td></tr>
                     {%- endfor -%}
                     </tbody></table>
                   </div>
