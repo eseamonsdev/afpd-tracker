@@ -24,7 +24,8 @@ db-upload: ## Upload database updates to D1 (D1_DATABASE=afpd-data).
 db-reset: ## Back up D1 and recreate all tables from JSON (replaces saved D1 edits).
 	@python3 db/upload_d1.py --database "$(D1_DATABASE)" --recreate-all
 
-calls-from-db: ## Copy saved D1 transcripts and verified flags to calls.json (D1_DATABASE=afpd-data).
+calls-from-db: D1_DATABASE = afpd-data-staging
+calls-from-db: ## Copy saved D1 transcripts and verified flags to calls.json (D1_DATABASE=afpd-data-staging).
 	@python3 db/calls_from_db.py --database "$(D1_DATABASE)"
 
 promote-staging: ## Promote staging to main using force-with-lease; does not deploy.
