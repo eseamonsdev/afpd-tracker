@@ -56,13 +56,18 @@ class SyncTests(unittest.TestCase):
         git(self.peer, 'config', 'user.name', 'Peer')
         git(self.peer, 'config', 'user.email', 'peer@example.org')
         self.exports = 0
+        self.imports = 0
 
     def exporter(self, path):
         self.exports += 1
         path.write_text('\n'.join(self.db.iterdump()), encoding='utf-8')
 
-    def sync(self, exporter=None):
-        synchronize(self.root, exporter or self.exporter)
+    def importer(self, path):
+        self.imports += 1
+        self.db.executescript(path.read_text(encoding='utf-8'))
+
+    def sync(self, exporter=None, importer=None):
+        synchronize(self.root, exporter or self.exporter, importer or self.importer)
 
     def edit_local_transcript(self, value):
         path = self.root / ARCHIVE
@@ -104,51 +109,74 @@ class SyncTests(unittest.TestCase):
             self.assertEqual(path.read_text(), 'Unfinished work')
             self.assertEqual(git(self.root, 'stash', 'list'), '')
 
-    def test_first_sync_flags_ambiguous_saved_differences_without_exporting_json(self):
-        before = (self.root / ARCHIVE).read_bytes()
-        self.db.execute("UPDATE radio_clips SET transcript='Different saved value'")
-        with self.assertRaisesRegex(ReconcileRequired, 'reconciliation first'):
-            self.sync()
-        self.assertEqual(self.conflicts()[0]['reason'], 'no-baseline')
-        self.assertEqual((self.root / ARCHIVE).read_bytes(), before)
-        self.assertFalse((self.root / STATE).exists())
-        self.assertEqual(git(self.root, 'status', '--porcelain'), '')
+    def test_first_sync_accepts_database_differences_without_a_baseline(self):
+        self.db.execute("UPDATE radio_clips SET transcript='Saved database edit',transcript_validated=1")
+        self.db.execute("UPDATE radio_association_evidence SET correction_notes='Admin note',reviewed=1,revision=5")
+        self.sync()
+        self.assertEqual(json.loads((self.root / ARCHIVE).read_text())['calls'][0]['transcript'], 'Saved database edit')
+        self.assertTrue((self.root / STATE).exists())
+        self.assertFalse((self.root / REPORT).exists())
+        self.assertEqual(self.imports, 0)
 
-    def test_saved_semantic_conflicts_are_detected_without_git_merge_conflicts(self):
+    def test_nonblank_database_transcript_wins_over_committed_json_edits(self):
         self.sync()
         self.edit_local_transcript('Committed local edit')
-        self.db.execute("UPDATE radio_clips SET transcript='Different admin edit'")
-        commit = git(self.root, 'rev-parse', 'HEAD')
-        with self.assertRaisesRegex(ReconcileRequired, 'reconciliation first'):
-            self.sync()
-        issue = self.conflicts()[0]
-        self.assertEqual(issue['reason'], 'both-changed')
-        self.assertEqual(issue['baseline'], 'Original transcript')
-        self.assertEqual(issue['json'], 'Committed local edit')
-        self.assertEqual(issue['database'], 'Different admin edit')
-        self.assertEqual(git(self.root, 'rev-parse', 'HEAD'), commit)
-        self.assertEqual(git(self.root, 'status', '--porcelain'), '')
+        self.db.execute("UPDATE radio_clips SET transcript='Latest saved admin edit'")
+        self.sync()
+        self.assertEqual(json.loads((self.root / ARCHIVE).read_text())['calls'][0]['transcript'], 'Latest saved admin edit')
+        self.assertEqual(self.db.execute('SELECT transcript FROM radio_clips').fetchone(), ('Latest saved admin edit',))
+        self.assertEqual(self.imports, 0)
+        self.assertFalse((self.root / REPORT).exists())
 
-    def test_json_only_edits_and_evidence_note_conflicts_require_explicit_reconciliation(self):
+    def test_json_only_and_evidence_edits_are_replaced_by_authoritative_database_values(self):
         self.sync()
         self.edit_local_transcript('JSON only')
-        with self.assertRaises(ReconcileRequired):
-            self.sync()
-        self.assertEqual(self.conflicts()[0]['reason'], 'json-only')
-        # Resolve the transcript on both sides, then establish its new baseline.
-        self.db.execute("UPDATE radio_clips SET transcript='JSON only'")
-        self.sync()
         path = self.root / EVIDENCE
         document = json.loads(path.read_text())
         document['radio_ids']['14590001']['associations'][0]['evidence'][0]['correction_notes'] = 'Local note'
         path.write_text(json.dumps(document, indent=2) + '\n')
-        git(self.root, 'add', EVIDENCE)
-        git(self.root, 'commit', '-m', 'Local evidence change')
+        git(self.root, 'add', EVIDENCE); git(self.root, 'commit', '-m', 'Local evidence change')
         self.db.execute("UPDATE radio_association_evidence SET correction_notes='Admin note',revision=1")
-        with self.assertRaises(ReconcileRequired):
-            self.sync()
-        self.assertTrue(any(c['kind'] == 'evidence' and c['reason'] == 'both-changed' for c in self.conflicts()))
-        self.assertIn('Local note', path.read_text())
+        self.sync()
+        self.assertEqual(json.loads((self.root / ARCHIVE).read_text())['calls'][0]['transcript'], 'Original transcript')
+        self.assertIn('Admin note', path.read_text())
+        self.assertNotIn('Local note', path.read_text())
+        self.assertEqual(self.imports, 0)
+
+    def test_blank_database_receives_first_time_json_transcripts_including_verification(self):
+        self.db.execute('UPDATE radio_clips SET transcript=NULL')
+        path = self.root / ARCHIVE
+        document = json.loads(path.read_text())
+        document['calls'][0]['transcript'] = "First transcript: O'Brien.\nSecond line."
+        document['calls'][0]['validated'] = True
+        path.write_text(json.dumps(document, indent=2) + '\n')
+        git(self.root, 'add', ARCHIVE); git(self.root, 'commit', '-m', 'First transcription')
+        self.sync()
+        self.assertEqual(self.imports, 1)
+        self.assertEqual(self.exports, 2)
+        self.assertEqual(self.db.execute('SELECT transcript,transcript_validated FROM radio_clips').fetchone(), ("First transcript: O'Brien.\nSecond line.", 1))
+        self.assertEqual(json.loads(path.read_text())['calls'][0]['transcript'], "First transcript: O'Brien.\nSecond line.")
+        # No baseline is required, and a later run does not re-import it.
+        self.sync()
+        self.assertEqual(self.imports, 1)
+
+    def test_concurrent_admin_save_wins_over_a_pending_first_transcript_import(self):
+        self.db.execute("UPDATE radio_clips SET transcript='   '")
+        def concurrent_import(path):
+            self.db.execute("UPDATE radio_clips SET transcript='Just saved in admin',transcript_validated=1")
+            self.importer(path)
+        self.sync(importer=concurrent_import)
+        self.assertEqual(self.db.execute('SELECT transcript,transcript_validated FROM radio_clips').fetchone(), ('Just saved in admin', 1))
+        self.assertEqual(json.loads((self.root / ARCHIVE).read_text())['calls'][0]['transcript'], 'Just saved in admin')
+
+    def test_old_baseline_or_report_does_not_block_database_authority(self):
+        state = self.root / STATE; state.parent.mkdir(parents=True)
+        state.write_text('{"old": "invalid baseline"}')
+        (self.root / REPORT).write_text('{"conflicts": ["old first-run differences"]}')
+        self.db.execute("UPDATE radio_clips SET transcript='Current saved edit'")
+        self.sync()
+        self.assertFalse((self.root / REPORT).exists())
+        self.assertEqual(json.loads((self.root / ARCHIVE).read_text())['calls'][0]['transcript'], 'Current saved edit')
 
     def test_git_divergence_stops_before_database_read(self):
         (self.root / 'local.txt').write_text('Local commit')
@@ -188,7 +216,7 @@ class SyncTests(unittest.TestCase):
     def test_archive_mismatch_stops_before_evidence_or_json_writes(self):
         before = (self.root / EVIDENCE).read_bytes()
         self.db.execute('INSERT INTO radio_clips VALUES (?,?,?,?)', ('missing', ARCHIVE, 'Missing clip', 0))
-        with self.assertRaisesRegex(ReconcileRequired, 'missing'):
+        with self.assertRaisesRegex(ValueError, 'clip IDs differ'):
             self.sync()
         self.assertEqual((self.root / EVIDENCE).read_bytes(), before)
         self.assertEqual(git(self.root, 'status', '--porcelain'), '')

@@ -24,7 +24,7 @@ wrangler-login: ## Sign in to Cloudflare with Wrangler.
 	./node_modules/.bin/wrangler login
 
 # Working database commands always use staging; no database override is supported.
-db-sync: ## Pull staging, check for data conflicts, download admin edits, commit and push; stops for reconciliation.
+db-sync: ## Pull staging, fill first-time transcripts, export authoritative admin data, commit and push.
 	@python3 db/sync_db.py
 
 db-upload: ## Upload JSON to staging only (afpd-data-staging); no database parameter.

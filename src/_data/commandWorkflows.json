@@ -2,12 +2,12 @@
   {
     "id": "save-admin-edits",
     "title": "Routine sync: save admin edits and push to Git",
-    "summary": "One staging command pulls the latest branch, checks for conflicting saved data, downloads transcripts and evidence, then commits and pushes the JSON.",
+    "summary": "One staging command pulls the latest branch, fills blank database transcripts from first-time JSON text, exports authoritative admin data, then commits and pushes the JSON.",
     "open": true,
     "steps": [
       {
         "title": "Sync saved admin edits",
-        "note": "Save browser edits first and run from the staging branch. Local changes, unfinished Git operations, divergent branches and conflicting saved data stop the sync for reconciliation. Nothing is auto-stashed. A successful sync saves a local baseline for later comparisons. On the first run, differing database/JSON values are flagged because there is no trusted baseline. The command reports conflicts under db/local/db-sync-conflicts.json. It downloads saved admin data; it does not upload or reset the database.",
+        "note": "Save browser edits first and run from a clean staging checkout. Saved database transcripts, verification flags and evidence reviews are authoritative. If a database transcript is blank but calls.json has completed text, the command conditionally imports that first transcript and downloads the confirmed result. Ordinary saved-data differences do not require reconciliation. Git conflicts, unfinished local work and missing clip IDs still stop the sync. Nothing is auto-stashed.",
         "commands": "make db-sync"
       }
     ]
@@ -24,7 +24,7 @@
       },
       {
         "title": "Preserve the current admin edits",
-        "note": "Do this before editing the source JSON. calls-from-db replaces local transcript values with the database values. If you already edited transcripts locally, reconcile those edits before downloading.",
+        "note": "Do this before editing source JSON. Saved database values replace local values, except completed JSON transcripts are preserved when the database transcript is blank. Use db-sync to import first-time text into those blank database fields.",
         "commands": "make calls-from-db &&\nmake evidence-from-db"
       },
       {

@@ -1,6 +1,7 @@
-"""Save staging admin edits to JSON and Git, stopping for reconciliation.
+"""Sync authoritative staging admin data to JSON and Git.
 
-No database writes, deployment, auto-stash, rebase or force-push.
+Only blank database transcripts can receive first-time JSON text. No reset,
+deployment, auto-stash, rebase or force-push.
 """
 
 import argparse
@@ -14,7 +15,7 @@ import tempfile
 
 from calls_from_db import reconcile
 from evidence_from_db import (DATABASE, ROOT, WRANGLER, rows_from_db,
-                              snapshot_from_rows, rows_from_snapshot, write_snapshot)
+                              snapshot_from_rows, rows_from_snapshot, write_snapshot, quote)
 
 EVIDENCE = 'data/db-evidenence-associations.json'
 STATE = 'db/local/db-sync-state.json'
@@ -33,82 +34,30 @@ def git(root, *args, check=True):
     return result
 
 
-def git_json(root, commit, path):
-    if not commit:
-        return None
-    result = git(root, 'show', f'{commit}:{path}', check=False)
-    if result.returncode:
-        # A file absent at a valid baseline is a newly introduced archive/file.
-        return None
-    return json.loads(result.stdout)
-
-
-def transcript_conflicts(connection, root, baseline):
-    local, original, issues = {}, {}, []
+def first_transcript_sql(connection, root):
+    """Only fill blank database transcripts; a saved nonblank value always wins."""
+    archives, statements = {}, []
     for clip_id, path, transcript, validated in connection.execute(
             'SELECT id,archive_path,transcript,transcript_validated FROM radio_clips ORDER BY archive_path,id'):
-        file = (root / path).resolve()
-        archives = (root / 'public/records/openmhz').resolve()
-        if not file.is_relative_to(archives) or file.name != 'calls.json' or not file.is_file():
-            raise ReconcileRequired(f'Missing or invalid archive: {path}. Reconcile the archive first.')
-        if path not in local:
-            data = json.loads(file.read_text(encoding='utf-8'))
-            if len({c['id'] for c in data['calls']}) != len(data['calls']):
-                raise ReconcileRequired(f'Duplicate clip IDs in {path}. Reconcile first.')
-            local[path] = {c['id']: {'transcript': c.get('transcript'), 'validated': c.get('validated', False)} for c in data['calls']}
-            old = git_json(root, baseline, path)
-            original[path] = {c['id']: {'transcript': c.get('transcript'), 'validated': c.get('validated', False)} for c in old['calls']} if old else {}
-        if clip_id not in local[path]:
-            raise ReconcileRequired(f'Database clip {clip_id} is missing from {path}. Reconcile the archive first.')
-        call, base = local[path][clip_id], original[path].get(clip_id)
-        for field, database_value in [('transcript', transcript), ('validated', validated == 1)]:
-            local_value = call.get(field, False if field == 'validated' else None)
-            if local_value == database_value:
-                continue
-            base_value = base.get(field, False if field == 'validated' else None) if base else None
-            if base is not None and local_value == base_value:
-                continue  # Only the saved database field changed.
-            reason = 'no-baseline' if base is None else 'json-only' if database_value == base_value else 'both-changed'
-            issues.append({'kind': 'clip', 'path': path, 'clip_id': clip_id, 'field': field,
-                           'reason': reason, 'baseline': base_value, 'json': local_value, 'database': database_value})
-    return issues
-
-
-def evidence_records(document):
-    if document is None:
-        return {}
-    rows_from_snapshot(document)
-    records = {}
-    for radio_id, radio in document['radio_ids'].items():
-        for association in radio['associations']:
-            records['association:' + association['id']] = {
-                **{key: value for key, value in association.items() if key != 'evidence'}, 'radio_id': radio_id}
-            for group in association['evidence']:
-                records['group:' + group['id']] = {**group, 'association_id': association['id']}
-    for record in document['assignments']:
-        records['assignment:' + record['id']] = record
-    return records
-
-
-def evidence_conflicts(database, local, baseline):
-    # No existing local file means this is the first evidence download.
-    if local is None:
-        return []
-    remote, current, original = map(evidence_records, (database, local, baseline))
-    issues = []
-    missing = object()
-    for key in sorted(remote.keys() | current.keys() | original.keys()):
-        db_value, local_value, base_value = (records.get(key, missing) for records in (remote, current, original))
-        if local_value == db_value:
+        if isinstance(transcript, str) and transcript.strip():
             continue
-        if baseline is not None and local_value == base_value:
+        if path not in archives:
+            data = json.loads((root / path).read_text(encoding='utf-8'))
+            archives[path] = {c['id']: c for c in data['calls']}
+        call = archives[path][clip_id]
+        local = call.get('transcript')
+        if not isinstance(local, str) or not local.strip():
             continue
-        reason = 'no-baseline' if baseline is None else 'json-only' if db_value == base_value else 'both-changed'
-        issues.append({'kind': 'evidence', 'record': key, 'reason': reason,
-                       'baseline': None if base_value is missing else base_value,
-                       'json': None if local_value is missing else local_value,
-                       'database': None if db_value is missing else db_value})
-    return issues
+        if '\0' in local or len(local) > 30000 or type(call.get('validated', False)) is not bool:
+            raise ValueError(f'Invalid first-time transcript for {clip_id} in {path}')
+        statements.append(f"UPDATE radio_clips SET transcript={quote(local)},transcript_validated={int(call.get('validated', False))} "
+                          f"WHERE id={quote(clip_id)} AND transcript IS {quote(transcript)} AND transcript_validated={int(validated)};")
+    return '\n'.join(statements) + ('\n' if statements else '')
+
+
+def import_first_transcripts(path):
+    subprocess.run([str(WRANGLER), 'd1', 'execute', DATABASE, '--remote',
+                    f'--file={path}', '--yes'], cwd=ROOT, check=True)
 
 
 def export_staging(path):
@@ -129,7 +78,7 @@ def sync_lock(root):
         yield
 
 
-def synchronize(root=ROOT, exporter=export_staging):
+def synchronize(root=ROOT, exporter=export_staging, importer=import_first_transcripts):
     root = Path(root).resolve()
     with sync_lock(root):
         if git(root, 'branch', '--show-current').stdout.strip() != 'staging':
@@ -150,39 +99,32 @@ def synchronize(root=ROOT, exporter=export_staging):
         git(root, 'pull', '--ff-only', 'origin', 'staging')
         start = git(root, 'rev-parse', 'HEAD').stdout.strip()
         state_file = root / STATE
-        state = json.loads(state_file.read_text()) if state_file.is_file() else None
-        baseline = state.get('commit') if state else None
-        if state and (state.get('schema_version') != 1 or state.get('database') != DATABASE or
-                      not isinstance(baseline, str) or git(root, 'cat-file', '-e', f'{baseline}^{{commit}}', check=False).returncode):
-            raise ReconcileRequired('The previous sync baseline is unavailable or invalid. Reconcile the local sync state first.')
-        if baseline and git(root, 'merge-base', '--is-ancestor', baseline, start, check=False).returncode:
-            raise ReconcileRequired('Staging no longer descends from the last sync baseline. Reconcile the local sync state first.')
         with tempfile.TemporaryDirectory(prefix='afpd-db-sync-') as directory:
             dump = Path(directory) / 'staging.sql'
-            exporter(dump)
-            with sqlite3.connect(':memory:') as connection:
-                connection.executescript(dump.read_text(encoding='utf-8'))
-                snapshot = snapshot_from_rows(rows_from_db(connection))
-                rows_from_snapshot(snapshot)
-                local_file = root / EVIDENCE
-                local_snapshot = json.loads(local_file.read_text(encoding='utf-8')) if local_file.is_file() else None
-                issues = transcript_conflicts(connection, root, baseline)
-                issues += evidence_conflicts(snapshot, local_snapshot, git_json(root, baseline, EVIDENCE))
-                if issues:
-                    report = root / REPORT
-                    report.parent.mkdir(parents=True, exist_ok=True)
-                    report.write_text(json.dumps({'schema_version': 1, 'database': DATABASE, 'head': start,
-                                                  'baseline_commit': baseline, 'conflicts': issues}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-                    raise ReconcileRequired(f'{len(issues)} saved data differences require reconciliation first.\n'
-                                            f'Report: {report}\nNo JSON was exported, committed or pushed. '
-                                            'Review the listed clip fields/evidence records and reconcile the database and JSON. '
-                                            'For the first sync, differences are flagged because there is no trusted baseline. '
-                                            'Use the explicit download/upload commands only after deciding which values to keep, then rerun make db-sync.')
-                if git(root, 'rev-parse', 'HEAD').stdout.strip() != start or git(root, 'status', '--porcelain', '--untracked-files=all').stdout:
-                    raise ReconcileRequired('The checkout changed during the download. Reconcile first; no exported JSON was written.')
-                # The archive reconciler validates every matching ID before writing.
-                reconcile(connection, root / 'public/records/openmhz', root=root)
-                write_snapshot(snapshot, root / EVIDENCE)
+            sql_file = Path(directory) / 'first-transcripts.sql'
+            for attempt in range(4):
+                dump.unlink(missing_ok=True)
+                exporter(dump)
+                with sqlite3.connect(':memory:') as connection:
+                    connection.executescript(dump.read_text(encoding='utf-8'))
+                    snapshot = snapshot_from_rows(rows_from_db(connection))
+                    rows_from_snapshot(snapshot)
+                    # Validate every archive ID before any database or JSON write.
+                    reconcile(connection, root / 'public/records/openmhz', root=root, write=False)
+                    sql = first_transcript_sql(connection, root)
+                    if git(root, 'rev-parse', 'HEAD').stdout.strip() != start or git(root, 'status', '--porcelain', '--untracked-files=all').stdout:
+                        raise ReconcileRequired('The checkout changed during the download. Stop and resolve the Git changes first.')
+                    if sql:
+                        if attempt == 3:
+                            raise ReconcileRequired('First-time transcript import changed concurrently. Retry make db-sync; saved database text was not overwritten.')
+                        sql_file.write_text(sql, encoding='utf-8')
+                        importer(sql_file)
+                        # Re-export to include concurrent admin saves and confirm the
+                        # conditional imports. Never export from a guessed local DB.
+                        continue
+                    reconcile(connection, root / 'public/records/openmhz', root=root)
+                    write_snapshot(snapshot, root / EVIDENCE)
+                    break
 
         changed = git(root, 'diff', '--name-only', '-z').stdout.split('\0')
         if (git(root, 'rev-parse', 'HEAD').stdout.strip() != start or
@@ -203,7 +145,7 @@ def synchronize(root=ROOT, exporter=export_staging):
         temporary.write_text(json.dumps({'schema_version': 1, 'database': DATABASE, 'commit': commit}, indent=2) + '\n')
         temporary.replace(state_file)
         (root / REPORT).unlink(missing_ok=True)
-        print(f'Staging admin data synced and pushed ({commit[:12]}). No database upload or deployment was performed.')
+        print(f'Staging admin data synced and pushed ({commit[:12]}). Saved database values are authoritative; only blank transcripts can be filled from JSON.')
 
 
 def main():

@@ -12,6 +12,19 @@ spec.loader.exec_module(module)
 
 
 class ReconcileTests(unittest.TestCase):
+    def test_blank_database_transcripts_never_erase_completed_json_text(self):
+        for blank in [None, '', '   ', '\n\t']:
+            with self.subTest(blank=blank), tempfile.TemporaryDirectory(dir=module.ROOT) as directory:
+                archives = Path(directory)
+                path = archives / 'calls.json'
+                data = {'calls': [{'id': 'one', 'transcript': 'Completed transcription', 'validated': True}]}
+                path.write_text(json.dumps(data))
+                with sqlite3.connect(':memory:') as connection:
+                    connection.execute('CREATE TABLE radio_clips (id TEXT, archive_path TEXT, transcript TEXT, transcript_validated INTEGER)')
+                    connection.execute('INSERT INTO radio_clips VALUES (?, ?, ?, ?)', ('one', path.relative_to(module.ROOT).as_posix(), blank, 0))
+                    module.reconcile(connection, archives)
+                self.assertEqual(json.loads(path.read_text()), data)
+
     def test_updates_only_transcript_fields_and_rejects_missing_clip_before_writing(self):
         with tempfile.TemporaryDirectory(dir=module.ROOT) as directory:
             archives = Path(directory)

@@ -13,7 +13,7 @@ WRANGLER = ROOT / 'node_modules/.bin/wrangler'
 DATABASE = 'afpd-data-staging'
 
 
-def reconcile(connection, archives=ARCHIVES, root=ROOT):
+def reconcile(connection, archives=ARCHIVES, root=ROOT, write=True):
     """Validate all matching IDs before writing any archive."""
     rows = connection.execute('SELECT id, archive_path, transcript, transcript_validated FROM radio_clips').fetchall()
     by_path = {}
@@ -22,6 +22,7 @@ def reconcile(connection, archives=ARCHIVES, root=ROOT):
     if not rows:
         raise ValueError('No radio clips found in the D1 export')
     prepared = []
+    preserved = 0
     for relative, clips in sorted(by_path.items()):
         path = root / relative
         if not path.is_relative_to(archives) or path.name != 'calls.json' or not path.is_file():
@@ -34,6 +35,11 @@ def reconcile(connection, archives=ARCHIVES, root=ROOT):
         changes = 0
         for call in data['calls']:
             transcript, verified = clips[call['id']]
+            # A newly transcribed JSON clip may precede its first DB import.
+            # Empty database fields must never erase that completed text.
+            if not (isinstance(transcript, str) and transcript.strip()) and isinstance(call.get('transcript'), str) and call['transcript'].strip():
+                preserved += 1
+                continue
             if call.get('transcript') != transcript or call.get('validated', False) is not verified:
                 if call.get('transcript') != transcript:
                     call['transcript'] = transcript
@@ -43,9 +49,13 @@ def reconcile(connection, archives=ARCHIVES, root=ROOT):
         if changes:
             indent = 4 if '\n    "' in raw[:200] else 2
             prepared.append((path, json.dumps(data, ensure_ascii=False, indent=indent) + '\n', changes))
-    for path, content, _ in prepared:
-        path.write_text(content, encoding='utf-8')
-    print(f'Updated {sum(item[2] for item in prepared)} clips in {len(prepared)} calls.json files.')
+    if write:
+        for path, content, _ in prepared:
+            path.write_text(content, encoding='utf-8')
+        print(f'Updated {sum(item[2] for item in prepared)} clips in {len(prepared)} calls.json files.')
+        if preserved:
+            print(f'Preserved {preserved} completed JSON transcripts because their database values are blank. Run make db-sync to import those first-time transcripts.')
+    return prepared
 
 
 def main():

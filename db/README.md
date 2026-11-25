@@ -31,38 +31,41 @@ only Make command that writes to production.
 make db-sync
 ```
 
-Save browser edits first and run from a clean `staging` checkout. The command
-fetches and pulls staging with fast-forward-only Git operations, exports one
-consistent staging D1 snapshot, checks for conflicts, downloads transcripts and
-verified flags plus all association evidence, commits only the changed
-`calls.json` files and evidence snapshot, and pushes staging. It skips an empty
-commit when nothing changed. Existing local staging commits are also pushed.
-It performs no database upload, reset, production promotion or deployment.
+Save browser edits first and run from a clean `staging` checkout. The staging
+admin database is authoritative for saved transcripts, verification flags and
+all association evidence. Ordinary database/JSON differences are expected and
+do not require reconciliation, including on the first run. No baseline is
+required. The old baseline file is no longer used to decide which values win.
 
-It stops for reconciliation when local files are modified/staged/untracked,
-a Git operation is unfinished, staging diverges, an archive does not match D1,
-or saved data requires a decision. Nothing is automatically stashed, rebased or
-force-pushed. If a remote commit arrives during the download, a rejected push
-retains the local sync commit so it can be reconciled normally.
+The command pulls staging with fast-forward-only Git operations, exports D1,
+validates all archive clip IDs, and imports first-time JSON transcripts only
+where the database transcript is null, empty or whitespace. Each conditional
+update matches the original database transcript and verification flag; a new
+nonblank admin save cannot be overwritten by that import. It then downloads
+a fresh, consistent D1 snapshot to confirm the result. Existing nonblank
+admin transcripts always win over differing JSON text. First-time imports
+carry the JSON verification flag with the text; otherwise database flags win.
+Empty database fields cannot be used to erase completed JSON transcripts.
 
-After a successful push, ignored `db/local/db-sync-state.json` records the Git
-commit used as this checkout's last successful baseline. Per clip, each
-transcript and verification field is compared across that baseline, current
-JSON and the database. Database-only changes download automatically. Matching
-changes on both sides are accepted. JSON-only changes and differing changes
-on both sides stop rather than being silently overwritten or uploaded.
-Evidence associations, groups and source/deletion records use the same
-three-way check, including notes, confirmations and removed memberships.
+It writes the saved transcripts to `calls.json`, exports every evidence group
+to `data/db-evidenence-associations.json`, commits only those changed files,
+and pushes staging. An unchanged snapshot produces no empty commit. Existing
+local staging commits are also pushed. Evidence notes, confirmations and
+deletion history stay in Git for recovery. The last successful commit is
+recorded under ignored `db/local/` for information, and old conflict reports
+are removed after a successful sync.
 
-On a first run (or a new checkout), differing saved values are ambiguous and
-require reconciliation because there is no trusted baseline. The command
-cannot determine whether JSON is stale or independently edited. Conflicts are
-written to ignored `db/local/db-sync-conflicts.json`, including clip IDs,
-fields and baseline/JSON/database values. Review that report and decide which
-values to retain before using the explicit download/upload commands. Reconcile
-the saved values, then rerun `make db-sync`. It cannot detect text that has
-not been saved in an open browser tab. A conflict report never commits or
-pushes exported JSON; a preceding successful Git pull may update the checkout.
+The command still stops for actual Git problems, unfinished local changes,
+invalid data or missing archive clip IDs. It does not auto-stash, rebase,
+force-push, reset the database, import the evidence JSON or deploy the site.
+If a remote commit arrives during a download, a rejected push retains the
+local sync commit. Browser edits must be saved first: the command cannot see
+text still unsaved in an open tab. This is not a general JSON-to-database
+upload; its only automatic database writes fill blank transcript fields.
+
+`make calls-from-db` also protects completed JSON text against empty database
+values, but only downloads data. Use `make db-sync` to import that protected
+first-time text into the database and push the resulting snapshots.
 
 To rebuild a local SQLite snapshot from tracked JSON, back up staging, and apply
 the per-table policy to the staging database:
