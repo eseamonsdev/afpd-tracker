@@ -580,9 +580,26 @@ function archive(config) {
   const root = document.getElementById(config.rootId); if (!root) return;
   const get = name => document.getElementById(`${config.prefix}-${name}`);
   const talkgroup = get("talkgroup");
+  const params = new URL(window.location.href).searchParams;
+  const clipsOnly = !!talkgroup && !config.adminTranscripts && params.has("clips");
+  const clipTokens = clipsOnly ? params.get("clips").split(",").map(value => value.trim()) : [];
+  const validClips = clipTokens.length > 0 && clipTokens.every(value => /^[1-9]\d*$/.test(value) && Number.isSafeInteger(Number(value)));
+  const requestedClips = new Set(validClips ? clipTokens.map(Number) : []);
+  let archiveNumbers = [], transcriptUrl;
   if (talkgroup) {
     config.law2 = new URL(window.location.href).searchParams.get("talkgroup") === "5922";
     talkgroup.value = config.law2 ? "5922" : "6001";
+  }
+  if (clipsOnly) {
+    for (const element of document.querySelectorAll?.("[data-radio-full-day]") ?? []) element.hidden = true;
+    if (get("heading")) get("heading").textContent = config.law2 ? "Law 2 Northeast (5922)" : "AFPD Car to Car (6001)";
+    const fullDay = get("full-day");
+    if (fullDay) {
+      const url = new URL(window.location.href);
+      url.searchParams.delete("clips");
+      fullDay.href = url.href;
+      fullDay.hidden = false;
+    }
   }
   const month = get("month"), day = get("day"), reviewProgress = get("review-progress"), progressDate = get("progress-date"), transcriptionCount = get("transcription-count"), verificationCount = get("verification-count");
   const calendar = get("calendar");
@@ -604,12 +621,13 @@ function archive(config) {
     get, getCalls: () => calls, getButtons: () => buttons,
     singlePlayer: !!talkgroup || config.law2 || /(^|-)afpd-tracker\.ericseamonsdeveloper\.workers\.dev$/.test(window.location.hostname) || /(^|\.)afpd-accountability\.com$/.test(window.location.hostname),
     clipSource: index => playbackSource(calls[index], `${base}${encodeURIComponent(folder)}/${encodeURIComponent(calls[index].original_filename)}`),
-    label: index => `${dateFormat.format(dateObject(selectedDate()))} · ${timeFormat.format(new Date(calls[index].epoch * 1000))} · Clip ${index + 1}`,
+    label: index => `${dateFormat.format(dateObject(selectedDate()))} · ${timeFormat.format(new Date(calls[index].epoch * 1000))} · Clip ${archiveNumbers[index]}`,
     onSelect(call, index) { identity.close(); updateRadioIds(call); updateTranscript(); config.onClipSelected?.(call, index); },
     onReset() { updateRadioIds(); updateTranscript(); config.onClipSelected?.(null); }
   });
   function updateTranscript() { transcript.update(calls[player.selected], transcriptAvailable); }
   function resetPlayer() {
+    if (transcriptUrl) { URL.revokeObjectURL(transcriptUrl); transcriptUrl = null; }
     if (playerPanel) playerPanel.hidden = true;
     transcriptAvailable = false;
     if (reviewProgress) reviewProgress.hidden = true;
@@ -659,6 +677,11 @@ function archive(config) {
         }
         return call;
       }).sort((a, b) => a.epoch - b.epoch);
+      archiveNumbers = calls.map((_, index) => index + 1);
+      if (clipsOnly) {
+        archiveNumbers = archiveNumbers.filter(number => requestedClips.has(number));
+        calls = calls.filter((_, index) => requestedClips.has(index + 1));
+      }
       if (config.enrichCalls) await config.enrichCalls(calls, entry, controller.signal);
       if (token !== request) return;
       const hasAudio = calls.some(call => !unavailableAudio(call));
@@ -669,10 +692,20 @@ function archive(config) {
       const transcriptEnabled = typeof entry.enableTranscription === "boolean"
         ? entry.enableTranscription : data.enableTranscription;
       transcriptAvailable = hasAudio && (config.adminTranscripts || (transcriptEnabled === true && (!config.law2 || calls.some(call => typeof call.transcript === "string" && call.transcript.trim()))));
-      if (config.law2 && get("coverage")) { get("coverage").textContent = entry.coverageNote || ""; get("coverage").hidden = !entry.coverageNote; }
+      if (config.law2 && get("coverage")) { get("coverage").textContent = entry.coverageNote || ""; get("coverage").hidden = clipsOnly || !entry.coverageNote; }
       if (transcriptDownload && transcriptAvailable && !config.adminTranscripts) {
-        const filename = `${config.law2 ? "law-2" : "afpd-car-to-car"}-transcript-${entry.date}.txt`;
-        transcriptDownload.setAttribute("href", `${base}${encodeURIComponent(folder)}/${filename}`);
+        const filename = `${config.law2 ? "law-2" : "afpd-car-to-car"}-transcript-${entry.date}${clipsOnly ? "-selected-clips" : ""}.txt`;
+        let href = `${base}${encodeURIComponent(folder)}/${filename}`;
+        if (clipsOnly) {
+          const text = calls.map((call, index) => {
+            const transcript = typeof call.transcript === "string" ? call.transcript.trim() : "";
+            const note = typeof call.note === "string" ? call.note.trim() : "";
+            return `Clip ${archiveNumbers[index]} · ${dateFormat.format(dateObject(entry.date))} · ${timeFormat.format(new Date(call.epoch * 1000))}\n${identity.text(call)}\nVerified: ${call.validated === true ? "Yes" : "No"}\n\n${unavailableAudio(call) ? "[original audio unavailable]" : transcript || "[no transcript available]"}${note ? `\n\nNote: ${note}` : ""}`;
+          }).join("\n\n\n") + "\n";
+          transcriptUrl = URL.createObjectURL(new Blob([text], { type: "text/plain;charset=utf-8" }));
+          href = transcriptUrl;
+        }
+        transcriptDownload.setAttribute("href", href);
         transcriptDownload.setAttribute("download", filename);
         transcriptDownload.hidden = false;
       }
@@ -680,7 +713,7 @@ function archive(config) {
       updateTranscript();
       const fragment = document.createDocumentFragment();
       buttons = calls.map((call, index) => {
-        const { row, button } = clipRow(call, index, identity, () => player.choose(index));
+        const { row, button } = clipRow(call, archiveNumbers[index] - 1, identity, () => player.choose(index));
         fragment.append(row); return button;
       });
       list.append(fragment);
@@ -695,9 +728,15 @@ function archive(config) {
           const [year, month, day] = entry.date.split("-");
           progressDate.textContent = `for ${month}/${day}/${year}`;
         }
-        reviewProgress.hidden = false;
+        reviewProgress.hidden = clipsOnly;
       }
       status.textContent = !hasAudio && calls.length ? "No audio recordings are available for this day." : calls.length ? `${dateFormat.format(dateObject(entry.date))} · ${calls.length} clips` : "No clips available for this day.";
+      if (clipsOnly) {
+        const missing = [...requestedClips].filter(number => !archiveNumbers.includes(number));
+        status.textContent = `${dateFormat.format(dateObject(entry.date))} · ${calls.length} selected clip${calls.length === 1 ? "" : "s"}` +
+          (missing.length ? `. Requested clips not available: ${missing.join(", ")}.` : "") +
+          (!hasAudio && calls.length ? ". No audio recordings are available for these clips." : "");
+      }
     } catch (error) {
       if (token !== request || error.name === "AbortError") return;
       calls = []; buttons = []; list.replaceChildren();
@@ -729,6 +768,16 @@ function archive(config) {
         : "Audio from a car-to-car radio talkgroup used by the American Fork Police Department (AFPD).";
       get("talkgroup-note").hidden = !law2;
     }
+    if (clipsOnly) {
+      const date = params.get("date");
+      if (!validClips || !/^\d{4}-\d{2}-\d{2}$/.test(date || "") ||
+          !Number.isFinite(dateObject(date).getTime()) || dateObject(date).toISOString().slice(0, 10) !== date ||
+          (params.has("talkgroup") && !["6001", "5922"].includes(params.get("talkgroup")))) {
+        status.textContent = "This clip link is invalid. Use a valid date, talkgroup (6001 or 5922), and comma-separated clip numbers.";
+        section.setAttribute("aria-busy", "false");
+        return;
+      }
+    }
     try {
       const [response] = await Promise.all([fetch(`${base}${law2 ? "law-2-index.json" : "index.json"}`, { cache: "no-cache" }), identity.load()]);
       if (indexToken !== indexRequest) return;
@@ -758,6 +807,7 @@ function archive(config) {
       const initialDay = days.find((entry) => entry.date === requestedDate) ?? days[0];
       if (calendar) {
         calendarDate = keepRequested ? requestedDate : initialDay.date;
+        if (clipsOnly) { loadDay(); return; }
         const picker = window.RadioDatePicker.create(calendar, {
           days, value: calendarDate, allowUnavailable: !!talkgroup,
           onChange(date) { calendarDate = date; loadDay(); }

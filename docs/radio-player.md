@@ -67,6 +67,15 @@ requested date, the group's newest enabled day is selected. Player controls
 remain hidden while loading, after errors, and on days without playable audio.
 The separate Law 2 HTML page has been removed without a redirect.
 
+Add `&clips=50,51,52` to a dated talkgroup URL to show only those archive
+clip numbers, in chronological order. Clip numbers keep their full-day values.
+This view uses the talkgroup name as its heading and hides the descriptions,
+date picker, talkgroup selector and progress summary. A "View full day" link
+removes only the clips parameter. Playback, autoplay and transcript downloads
+are limited to the selection. Invalid clip lists or dates show an error;
+unavailable dates and clip numbers never fall back to another day's recordings.
+The admin player continues to show the full day.
+
 Playback controls use one persistent audio element on the deployed sites. The
 existing alternate-host handoff/recovery path remains supported by the shared
 engine. Playback, error recovery and cleanup must be changed in the core rather

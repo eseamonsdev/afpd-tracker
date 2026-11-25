@@ -18,15 +18,17 @@ permalink: /police-radio/
 {% endblock %}
 
 {% block content %}
-    {{ radioNavigation(page.url) }}
+    <div data-radio-full-day>{{ radioNavigation(page.url) }}</div>
     <div class="page-heading">
-      <h1>Police Radio</h1>
-      <label class="radio-talkgroup-selector" for="radio-talkgroup">Talkgroup
+      <h1 id="radio-heading">Police Radio</h1>
+      <p><a id="radio-full-day" href="/police-radio/" hidden>View full day</a></p>
+      <label class="radio-talkgroup-selector" for="radio-talkgroup" data-radio-full-day>Talkgroup
         <select id="radio-talkgroup">
           <option value="6001">AFPD Car to Car (6001)</option>
           <option value="5922">Law 2 Northeast (5922)</option>
         </select>
       </label>
+      <div data-radio-full-day>
       <p id="radio-talkgroup-description">Audio from a car-to-car radio talkgroup used by the American Fork Police Department (AFPD).</p>
       <p id="radio-talkgroup-note" class="radio-source-note" hidden>Recordings may contain only part of a day or selected calls. AFPD marks radio IDs also observed on the Car-to-Car talkgroup; it does not independently identify the speaker.</p>
       <p>Times shown in Mountain Time. Officer names show confirmed associations for the selected date or strong associations across other dates. Single-day associations stay on their supported date. Select <span class="radio-info-example" role="img" aria-label="the information icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6M12 7h.01"></path></svg></span> for the evidence and limits; names do not independently verify the speaker in every clip.</p>
@@ -36,16 +38,17 @@ permalink: /police-radio/
         <span class="radio-progress-stat"><strong id="radio-verification-count"></strong> <span>clips verified</span></span>
         <span id="radio-progress-date" class="radio-progress-stat"></span>
       </div>
+      </div>
     </div>
     <div class="radio-archive" id="radio-archive">
-      {{ datePicker("radio") }}
+      <div data-radio-full-day>{{ datePicker("radio") }}</div>
       {{ player("radio", initiallyHidden=true) }}
-      <p class="radio-source-note">
+      <p class="radio-source-note" data-radio-full-day>
         Recordings sourced from <a href="https://openmhz.com/" target="_blank" rel="noopener noreferrer">OpenMHz</a>
         and hosted independently.
         This site is not affiliated with or endorsed by OpenMHz.
       </p>
-      <p id="radio-coverage" class="radio-source-note" hidden></p>
+      <p id="radio-coverage" class="radio-source-note" data-radio-full-day hidden></p>
       <p id="radio-status" role="status">Loading available dates…</p>
       <p id="radio-transcript-availability" class="radio-transcript-note" hidden>Transcripts are not yet available for this day.</p>
       <section aria-label="Recorded clips" aria-busy="true" id="radio-clips-section">
