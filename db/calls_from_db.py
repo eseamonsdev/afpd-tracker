@@ -1,4 +1,4 @@
-"""Copy authoritative D1 transcript/verification values into tracked calls.json files."""
+"""Copy staging D1 transcript/verification values into tracked calls.json files."""
 
 import argparse
 import json
@@ -10,6 +10,7 @@ import tempfile
 ROOT = Path(__file__).resolve().parents[1]
 ARCHIVES = ROOT / 'public/records/openmhz'
 WRANGLER = ROOT / 'node_modules/.bin/wrangler'
+DATABASE = 'afpd-data-staging'
 
 
 def reconcile(connection, archives=ARCHIVES):
@@ -49,13 +50,12 @@ def reconcile(connection, archives=ARCHIVES):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--database', default='afpd-data', help='Remote D1 name, e.g. afpd-data-staging')
-    args = parser.parse_args()
+    parser.parse_args()
     if not WRANGLER.is_file():
         parser.error('Wrangler is not installed; run npm ci first')
     with tempfile.TemporaryDirectory() as directory:
         dump = Path(directory) / 'radio-export.sql'
-        subprocess.run([str(WRANGLER), 'd1', 'export', args.database, '--remote',
+        subprocess.run([str(WRANGLER), 'd1', 'export', DATABASE, '--remote',
                         f'--output={dump}', '--skip-confirmation'], cwd=ROOT, check=True)
         with sqlite3.connect(':memory:') as connection:
             connection.executescript(dump.read_text(encoding='utf-8'))

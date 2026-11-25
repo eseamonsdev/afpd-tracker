@@ -18,24 +18,58 @@ npm ci
 make wrangler-login
 ```
 
-To rebuild a local SQLite snapshot from tracked JSON, back up the remote
-`afpd-data` D1 database, and apply the per-table policy to the remote database:
+All database Make commands have fixed targets and take no database parameter.
+`db-upload`, `db-reset`, and `calls-from-db` always use **afpd-data-staging**.
+The old `D1_DATABASE` argument has been removed: passing it on the command line
+or in the environment fails before any database operation. `promote-db` is the
+only Make command that writes to production.
+
+To rebuild a local SQLite snapshot from tracked JSON, back up staging, and apply
+the per-table policy to the staging database:
 
 ```sh
 make db-upload
 ```
 
-To back up D1 and fully recreate every table from JSON, replacing any edits
-saved only in D1, use `make db-reset D1_DATABASE=afpd-data-staging` for staging
-or `make db-reset` for production. This keeps the Cloudflare database and its
-binding IDs; it replaces the tables and rows inside it. An empty database can
-also be initialized with either command.
+To back up staging and recreate its JSON-managed tables, replacing edits saved
+only in those tables, use `make db-reset`. This retains database/binding IDs and
+the separate association review tables. An empty staging database can also be
+initialized with either upload command.
+
+Before either upload, run `make calls-from-db` to save staging transcript and
+verification edits into JSON. It does not export association review data.
+
+### Promote the database
+
+```sh
+make promote-db
+```
+
+This replaces **afpd-data** with a snapshot of **afpd-data-staging**, including
+all association evidence groups, speaker confirmations, reviewed flags,
+correction notes, clip selections, and transcripts. The direction is fixed;
+there are no source/target or database overrides. It does **not** back up
+production, modify staging, export to site JSON, or deploy the website.
+
+The command exports staging to timestamped files under ignored `db/local/`,
+checks its integrity, and rehearses the complete replacement locally. The
+rehearsal compares all table data, including review notes and transcripts,
+before production is changed. It then replaces production and verifies table
+names, row counts and foreign keys. Staging snapshot/import files are retained
+for retry or recovery if the import fails. A large D1 import can span multiple
+transactions; production can be temporarily unavailable or incomplete during
+promotion, so avoid using its admin editor during the copy. Staging edits made
+after the snapshot are included in the next promotion.
+
+This copies the current staging state into production as a separate copy. It
+does not create a versioned archive of previous production states.
 
 `db/table-import-policy.json` specifies `recreate` or `insert_only` for **every**
-table. The radio talkgroup, archive-day, and clip tables use `insert_only`,
-preserving D1 transcript and verification edits in existing clips while adding
-new rows from tracked JSON. Other tables currently use `recreate`, which drops
-and rebuilds their rows from JSON. Existing-row changes in JSON do not update
+table. The checked-in policy currently uses `recreate` for every JSON-managed
+table, which drops and rebuilds those rows from JSON. Export staging transcript
+and verification edits with `make calls-from-db` before an upload. The separate
+association review tables are outside this policy. If a table is configured as
+`insert_only`, existing-row changes in JSON do not update
 an `insert_only` table, including day display settings. The importer rejects a
 policy that recreates a parent while leaving dependent child rows in place; `officers` and
 `officer_names` must always share a mode because they refer to each other.
@@ -103,7 +137,8 @@ The existing public association builders continue reading JSON.
 `db/local/`. It preserves the original evidence, exclusions, production
 baseline, shared-use records and clip exceptions. Existing review edits are
 never overwritten. It does not contact D1, change public JSON, or deploy.
-No Make command is added for this pipeline.
+There is no evidence-to-JSON export command yet. `make promote-db` copies these
+tables along with the rest of the staging database into production.
 
 Groups have an independent `reviewed` flag, correction notes and optimistic
 revision. Speaker confirmation belongs to a group's clip membership and is

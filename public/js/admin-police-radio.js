@@ -9,8 +9,7 @@
   const transcriptText = document.getElementById("radio-transcript-text");
   const highlightToggle = document.getElementById("admin-highlight-unverified");
   const clipList = document.getElementById("radio-clips");
-  const exportCommand = location.hostname.startsWith("staging-")
-    ? "make calls-from-db D1_DATABASE=afpd-data-staging" : "make calls-from-db";
+  const exportCommand = "make calls-from-db";
   let saving = false;
   let currentCalls = [];
   let selected = null;

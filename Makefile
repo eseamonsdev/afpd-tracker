@@ -1,8 +1,13 @@
 .DEFAULT_GOAL := help
 
-.PHONY: help openmhz-browser promote-staging build manual-deploy prod-manual-deploy collect-openmhz wrangler-login db-upload db-reset calls-from-db
+.PHONY: help openmhz-browser promote-staging build manual-deploy prod-manual-deploy collect-openmhz wrangler-login db-upload db-reset calls-from-db promote-db
 
-D1_DATABASE ?= afpd-data
+# Reject the removed database selector instead of silently accepting an old command.
+ifneq ($(filter db-upload db-reset calls-from-db promote-db,$(MAKECMDGOALS)),)
+ifneq ($(origin D1_DATABASE),undefined)
+$(error D1_DATABASE is no longer supported. Working DB commands use staging; promote-db copies staging to production)
+endif
+endif
 
 # Keep command descriptions beside each target so help stays current.
 help: ## List available make commands (also the default for plain make).
@@ -18,15 +23,19 @@ wrangler-login: ## Sign in to Cloudflare with Wrangler.
 	@test -x node_modules/.bin/wrangler || { echo "Run npm ci first to install Wrangler." >&2; exit 1; }
 	./node_modules/.bin/wrangler login
 
-db-upload: ## Upload database updates to D1 (D1_DATABASE=afpd-data).
-	@python3 db/upload_d1.py --database "$(D1_DATABASE)"
+# Working database commands always use staging; no database override is supported.
+db-upload: ## Upload JSON to staging only (afpd-data-staging); no database parameter.
+	@python3 db/upload_d1.py
 
-db-reset: ## Back up D1 and recreate all tables from JSON (replaces saved D1 edits).
-	@python3 db/upload_d1.py --database "$(D1_DATABASE)" --recreate-all
+db-reset: ## Back up staging, then recreate its JSON-managed tables; no database parameter.
+	@python3 db/upload_d1.py --recreate-all
 
-calls-from-db: D1_DATABASE = afpd-data-staging
-calls-from-db: ## Copy saved D1 transcripts and verified flags to calls.json (D1_DATABASE=afpd-data-staging).
-	@python3 db/calls_from_db.py --database "$(D1_DATABASE)"
+calls-from-db: ## Copy staging transcripts and verified flags to calls.json; no database parameter.
+	@python3 db/calls_from_db.py
+
+# This is the only Make command that changes the production database.
+promote-db: ## Replace production DB with a staging snapshot, including evidence reviews; no production backup.
+	@python3 db/promote_db.py
 
 promote-staging: ## Promote staging to main using force-with-lease; does not deploy.
 	@test "$$(git branch --show-current)" = "staging" || \

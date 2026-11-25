@@ -19,7 +19,7 @@ sitemap: false
 {% block content %}
   <div class="page-heading admin-page-heading">
     <h1>Edit Police Radio</h1>
-    <p>Select a clip, edit its transcript or mark it verified in the player, then save changes to the database. To copy edits into the site JSON, run <code>make calls-from-db D1_DATABASE=afpd-data-staging</code> for staging, or <code>make calls-from-db</code> for production, then build and deploy.</p>
+    <p>Select a clip, edit its transcript or mark it verified in the player, then save changes to the database. Run <code>make calls-from-db</code> to copy staging edits into the site JSON, then build and deploy. Database Make commands use staging; <code>make promote-db</code> copies the staging database to production.</p>
     <div class="admin-radio-toolbar"><button type="button" id="admin-save" disabled>Save Changes</button><span id="admin-save-status" role="status" aria-live="polite">No unsaved changes.</span></div>
     <label class="radio-talkgroup-selector" for="radio-talkgroup">Talkgroup
       <select id="radio-talkgroup"><option value="6001">AFPD Car to Car (6001)</option><option value="5922">Law 2 Northeast (5922)</option></select>

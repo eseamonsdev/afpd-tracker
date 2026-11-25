@@ -1,4 +1,4 @@
-"""Import JSON-backed data into an existing remote D1 DB using table policies.
+"""Import JSON-backed data into staging D1 using table policies.
 
 Run `make wrangler-login` separately when Wrangler authentication expires.
 The generated SQL and the pre-upload D1 backup stay in ignored db/local/.
@@ -23,6 +23,7 @@ SQLITE = LOCAL / 'afpd.sqlite'
 IMPORT = LOCAL / 'afpd-d1-import.sql'
 WRANGLER = ROOT / 'node_modules/.bin/wrangler'
 POLICY = HERE / 'table-import-policy.json'
+DATABASE = 'afpd-data-staging'
 
 TABLES = ('officers', 'officer_names', 'radio_talkgroups', 'radio_ids', 'radio_archive_days',
           'radio_clips', 'radio_clip_radio_ids', 'radio_excerpts', 'radio_excerpt_clips',
@@ -161,11 +162,10 @@ def verify_remote(database, expected, modes):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--database', default='afpd-data', help='Existing remote D1 database name')
     parser.add_argument('--prepare-only', action='store_true',
                         help='Rebuild SQLite and SQL without contacting Cloudflare')
     parser.add_argument('--recreate-all', action='store_true',
-                        help='Back up D1 and rebuild every table from JSON, replacing D1-only edits')
+                        help='Back up staging and recreate its JSON-managed tables, replacing DB-only edits')
     args = parser.parse_args()
     modes = {table: 'recreate' for table in TABLES} if args.recreate_all else load_policy()
     if not args.prepare_only and not WRANGLER.is_file():
@@ -178,16 +178,16 @@ def main():
     if args.prepare_only:
         return
     stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
-    backup = LOCAL / f'{args.database}-before-upload-{stamp}.sql'
-    print(f'Backing up remote {args.database} to {backup}', flush=True)
-    run(str(WRANGLER), 'd1', 'export', args.database, '--remote',
+    backup = LOCAL / f'{DATABASE}-before-upload-{stamp}.sql'
+    print(f'Backing up remote {DATABASE} to {backup}', flush=True)
+    run(str(WRANGLER), 'd1', 'export', DATABASE, '--remote',
         f'--output={backup}', '--skip-confirmation')
     if not backup.is_file() or not backup.stat().st_size:
         raise ValueError('D1 export did not produce a backup; upload cancelled')
-    print(f'Applying table import policy to remote {args.database}', flush=True)
-    run(str(WRANGLER), 'd1', 'execute', args.database, '--remote',
+    print(f'Applying table import policy to remote {DATABASE}', flush=True)
+    run(str(WRANGLER), 'd1', 'execute', DATABASE, '--remote',
         f'--file={IMPORT}', '--yes')
-    verify_remote(args.database, expected, modes)
+    verify_remote(DATABASE, expected, modes)
     print(f'D1 upload complete. Pre-upload backup: {backup}', flush=True)
 
 
