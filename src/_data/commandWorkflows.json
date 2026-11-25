@@ -1,29 +1,14 @@
 [
   {
     "id": "save-admin-edits",
-    "title": "Save admin transcript edits and evidence reviews",
-    "summary": "Download your saved staging transcripts and evidence reviews, then commit and push their JSON files to Git.",
+    "title": "Routine sync: save admin edits and push to Git",
+    "summary": "One staging command pulls the latest branch, checks for conflicting saved data, downloads transcripts and evidence, then commits and pushes the JSON.",
     "open": true,
     "steps": [
       {
-        "title": "Get the latest staging branch",
-        "note": "Start with a clean working tree. If git status shows your own unfinished changes, commit them before switching or pulling. Stop if any command fails.",
-        "commands": "git status --short &&\ngit switch staging &&\ngit pull --ff-only origin staging"
-      },
-      {
-        "title": "Download both kinds of admin edits",
-        "note": "Save changes in the browser first. calls-from-db downloads transcripts and verified flags; evidence-from-db downloads all evidence groups, notes, confirmations and deletion history.",
-        "commands": "make calls-from-db &&\nmake evidence-from-db"
-      },
-      {
-        "title": "Review the downloaded JSON",
-        "note": "Review the status and diff summary before copying the next panel. If there are no changes, skip the commit and push.",
-        "commands": "git status --short &&\ngit diff --stat"
-      },
-      {
-        "title": "Commit the reviewed JSON files",
-        "commands": "git add -- data public/records/openmhz &&\ngit commit -m \"Save staging radio edits and evidence reviews\" &&\ngit push origin staging",
-        "note": ""
+        "title": "Sync saved admin edits",
+        "note": "Save browser edits first and run from the staging branch. Local changes, unfinished Git operations, divergent branches and conflicting saved data stop the sync for reconciliation. Nothing is auto-stashed. A successful sync saves a local baseline for later comparisons. On the first run, differing database/JSON values are flagged because there is no trusted baseline. The command reports conflicts under db/local/db-sync-conflicts.json. It downloads saved admin data; it does not upload or reset the database.",
+        "commands": "make db-sync"
       }
     ]
   },

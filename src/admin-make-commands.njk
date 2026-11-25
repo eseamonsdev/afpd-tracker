@@ -24,7 +24,8 @@ sitemap: false
 </div>
 <aside class="commands-intro" aria-label="Before running commands">
   <h2>Before you start</h2>
-  <p>Run these commands in your local <code>afpd-tracker</code> repository. Start with a clean working tree and save browser edits first. Pause when a step says to edit or review files. The <code>&amp;&amp;</code> between commands stops a copied panel if a command fails; stop the workflow and resolve that failure before continuing.</p>
+  <p>For routine sync, save browser edits and run <code>make db-sync</code> from your local staging checkout. It pulls, checks for conflicting saved data, downloads admin edits, commits and pushes. It stops for reconciliation instead of auto-stashing or guessing which edit to keep. Unsaved text in an open browser is not visible to the command.</p>
+  <p>Start with a clean working tree. Use the individual workflows below for deliberate JSON uploads, restores and resets. Pause when a step says to edit or review files. The <code>&amp;&amp;</code> between commands stops a copied panel if a command fails; resolve that failure before continuing.</p>
   <p>Working database commands always use <strong>staging</strong> and accept no database parameter. <code>calls-from-db</code> saves transcripts; <code>evidence-from-db</code> saves evidence reviews. Download saved admin edits before uploading JSON to the database. A Git push saves files in the repository; it does not upload them to the admin database.</p>
 </aside>
 <nav class="command-task-nav" aria-label="Choose a task">

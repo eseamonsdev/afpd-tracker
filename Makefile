@@ -1,9 +1,9 @@
 .DEFAULT_GOAL := help
 
-.PHONY: help openmhz-browser promote-staging build manual-deploy prod-manual-deploy collect-openmhz wrangler-login db-upload db-reset calls-from-db evidence-from-db evidence-to-db promote-db
+.PHONY: help openmhz-browser promote-staging build manual-deploy prod-manual-deploy collect-openmhz wrangler-login db-upload db-reset calls-from-db evidence-from-db evidence-to-db db-sync promote-db
 
 # Reject the removed database selector instead of silently accepting an old command.
-ifneq ($(filter db-upload db-reset calls-from-db evidence-from-db evidence-to-db promote-db,$(MAKECMDGOALS)),)
+ifneq ($(filter db-upload db-reset calls-from-db evidence-from-db evidence-to-db db-sync promote-db,$(MAKECMDGOALS)),)
 ifneq ($(origin D1_DATABASE),undefined)
 $(error D1_DATABASE is no longer supported. Working DB commands use staging; promote-db copies staging to production)
 endif
@@ -24,6 +24,9 @@ wrangler-login: ## Sign in to Cloudflare with Wrangler.
 	./node_modules/.bin/wrangler login
 
 # Working database commands always use staging; no database override is supported.
+db-sync: ## Pull staging, check for data conflicts, download admin edits, commit and push; stops for reconciliation.
+	@python3 db/sync_db.py
+
 db-upload: ## Upload JSON to staging only (afpd-data-staging); no database parameter.
 	@python3 db/upload_d1.py
 

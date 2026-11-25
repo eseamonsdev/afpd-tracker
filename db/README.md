@@ -19,11 +19,50 @@ make wrangler-login
 ```
 
 All database Make commands have fixed targets and take no database parameter.
-`db-upload`, `db-reset`, `calls-from-db`, `evidence-from-db` and
+`db-sync`, `db-upload`, `db-reset`, `calls-from-db`, `evidence-from-db` and
 `evidence-to-db` always use **afpd-data-staging**.
 The old `D1_DATABASE` argument has been removed: passing it on the command line
 or in the environment fails before any database operation. `promote-db` is the
 only Make command that writes to production.
+
+### Routine admin sync
+
+```sh
+make db-sync
+```
+
+Save browser edits first and run from a clean `staging` checkout. The command
+fetches and pulls staging with fast-forward-only Git operations, exports one
+consistent staging D1 snapshot, checks for conflicts, downloads transcripts and
+verified flags plus all association evidence, commits only the changed
+`calls.json` files and evidence snapshot, and pushes staging. It skips an empty
+commit when nothing changed. Existing local staging commits are also pushed.
+It performs no database upload, reset, production promotion or deployment.
+
+It stops for reconciliation when local files are modified/staged/untracked,
+a Git operation is unfinished, staging diverges, an archive does not match D1,
+or saved data requires a decision. Nothing is automatically stashed, rebased or
+force-pushed. If a remote commit arrives during the download, a rejected push
+retains the local sync commit so it can be reconciled normally.
+
+After a successful push, ignored `db/local/db-sync-state.json` records the Git
+commit used as this checkout's last successful baseline. Per clip, each
+transcript and verification field is compared across that baseline, current
+JSON and the database. Database-only changes download automatically. Matching
+changes on both sides are accepted. JSON-only changes and differing changes
+on both sides stop rather than being silently overwritten or uploaded.
+Evidence associations, groups and source/deletion records use the same
+three-way check, including notes, confirmations and removed memberships.
+
+On a first run (or a new checkout), differing saved values are ambiguous and
+require reconciliation because there is no trusted baseline. The command
+cannot determine whether JSON is stale or independently edited. Conflicts are
+written to ignored `db/local/db-sync-conflicts.json`, including clip IDs,
+fields and baseline/JSON/database values. Review that report and decide which
+values to retain before using the explicit download/upload commands. Reconcile
+the saved values, then rerun `make db-sync`. It cannot detect text that has
+not been saved in an open browser tab. A conflict report never commits or
+pushes exported JSON; a preceding successful Git pull may update the checkout.
 
 To rebuild a local SQLite snapshot from tracked JSON, back up staging, and apply
 the per-table policy to the staging database:

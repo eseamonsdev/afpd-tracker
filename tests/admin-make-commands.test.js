@@ -21,13 +21,14 @@ test('command guide renders ordered workflows, unique copy panels, dashboard acc
   assert.match(env.render('admin-index.njk',{adminTools}),/href="\/admin\/make-commands\/"/);
   assert.match(html,/href="\/admin\/make-commands\/" aria-current="page"/);
   const targets=new Set(commands.map(c=>c.name));
-  assert.deepEqual([...targets].sort(),['calls-from-db','db-reset','db-upload','evidence-from-db','evidence-to-db','promote-db']);
+  assert.deepEqual([...targets].sort(),['calls-from-db','db-reset','db-sync','db-upload','evidence-from-db','evidence-to-db','promote-db']);
   assert.doesNotMatch(html,/make (?:build|manual-deploy|prod-manual-deploy|promote-staging|collect-openmhz|openmhz-browser|wrangler-login|help)(?:\s|<)/);
   for(const workflow of workflows)for(const step of workflow.steps){
     for(const [,target] of step.commands.matchAll(/(?:^|\n)make ([\w-]+)/g))assert.ok(targets.has(target),target);
     assert.doesNotMatch(step.commands,/D1_DATABASE|--database|git push --force/);
   }
-  const save=workflows.find(w=>w.id==='save-admin-edits').steps.map(s=>s.commands).join('\n');
+  assert.deepEqual(workflows.find(w=>w.id==='save-admin-edits').steps.map(s=>s.commands),['make db-sync']);
+  const save=workflows.find(w=>w.id==='upload-json').steps.map(s=>s.commands).join('\n');
   for(const [before,after] of [['git pull','make calls-from-db'],['make calls-from-db','git commit'],['make evidence-from-db','git commit'],['git commit','git push']])
     assert.ok(save.indexOf(before)<save.indexOf(after));
   for(const workflow of workflows.filter(w=>!w.production))assert.doesNotMatch(workflow.steps.map(s=>s.commands).join('\n'),/make (?:promote-db|prod-manual-deploy|promote-staging)(?:\s|$)/);

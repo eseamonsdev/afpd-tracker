@@ -38,59 +38,27 @@
 </div>
 <aside class="commands-intro" aria-label="Before running commands">
   <h2>Before you start</h2>
-  <p>Run these commands in your local <code>afpd-tracker</code> repository. Start with a clean working tree and save browser edits first. Pause when a step says to edit or review files. The <code>&amp;&amp;</code> between commands stops a copied panel if a command fails; stop the workflow and resolve that failure before continuing.</p>
+  <p>For routine sync, save browser edits and run <code>make db-sync</code> from your local staging checkout. It pulls, checks for conflicting saved data, downloads admin edits, commits and pushes. It stops for reconciliation instead of auto-stashing or guessing which edit to keep. Unsaved text in an open browser is not visible to the command.</p>
+  <p>Start with a clean working tree. Use the individual workflows below for deliberate JSON uploads, restores and resets. Pause when a step says to edit or review files. The <code>&amp;&amp;</code> between commands stops a copied panel if a command fails; resolve that failure before continuing.</p>
   <p>Working database commands always use <strong>staging</strong> and accept no database parameter. <code>calls-from-db</code> saves transcripts; <code>evidence-from-db</code> saves evidence reviews. Download saved admin edits before uploading JSON to the database. A Git push saves files in the repository; it does not upload them to the admin database.</p>
 </aside>
 <nav class="command-task-nav" aria-label="Choose a task">
-  <a href="#save-admin-edits">Save admin transcript edits and evidence reviews</a><a href="#upload-json">Upload changed source JSON to the staging database</a><a href="#save-evidence">Save only the evidence review data</a><a href="#restore-evidence">Edit or restore the evidence snapshot to staging</a><a href="#reset-staging">Recreate the JSON-managed staging tables</a><a href="#production-db" class="command-production-link">Promote the staging database to production</a>
+  <a href="#save-admin-edits">Routine sync: save admin edits and push to Git</a><a href="#upload-json">Upload changed source JSON to the staging database</a><a href="#save-evidence">Save only the evidence review data</a><a href="#restore-evidence">Edit or restore the evidence snapshot to staging</a><a href="#reset-staging">Recreate the JSON-managed staging tables</a><a href="#production-db" class="command-production-link">Promote the staging database to production</a>
   <a href="#command-reference">Database Make commands</a>
 </nav>
 <div class="command-workflows">
 
   <details id="save-admin-edits" class="command-workflow" open>
-    <summary><span>Save admin transcript edits and evidence reviews</span></summary>
+    <summary><span>Routine sync: save admin edits and push to Git</span></summary>
     <div class="command-workflow-body">
-      <p class="command-summary">Download your saved staging transcripts and evidence reviews, then commit and push their JSON files to Git.</p>
+      <p class="command-summary">One staging command pulls the latest branch, checks for conflicting saved data, downloads transcripts and evidence, then commits and pushes the JSON.</p>
       <ol class="command-steps">
       
-        <li><h2>Get the latest staging branch</h2><p>Start with a clean working tree. If git status shows your own unfinished changes, commit them before switching or pulling. Stop if any command fails.</p>
+        <li><h2>Sync saved admin edits</h2><p>Save browser edits first and run from the staging branch. Local changes, unfinished Git operations, divergent branches and conflicting saved data stop the sync for reconciliation. Nothing is auto-stashed. A successful sync saves a local baseline for later comparisons. On the first run, differing database/JSON values are flagged because there is no trusted baseline. The command reports conflicts under db/local/db-sync-conflicts.json. It downloads saved admin data; it does not upload or reset the database.</p>
         
 <div class="command-panel">
-  <div class="command-panel-heading"><span>Get the latest staging branch</span><button type="button" class="command-copy" data-copy-target="save-admin-edits-step-1" aria-label="Copy commands: Get the latest staging branch" hidden>Copy</button></div>
-  <pre tabindex="0" aria-label="Get the latest staging branch commands"><code id="save-admin-edits-step-1">git status --short &amp;&amp;
-git switch staging &amp;&amp;
-git pull --ff-only origin staging</code></pre>
-  <p class="command-copy-status" role="status" aria-live="polite"></p>
-</div>
-</li>
-      
-        <li><h2>Download both kinds of admin edits</h2><p>Save changes in the browser first. calls-from-db downloads transcripts and verified flags; evidence-from-db downloads all evidence groups, notes, confirmations and deletion history.</p>
-        
-<div class="command-panel">
-  <div class="command-panel-heading"><span>Download both kinds of admin edits</span><button type="button" class="command-copy" data-copy-target="save-admin-edits-step-2" aria-label="Copy commands: Download both kinds of admin edits" hidden>Copy</button></div>
-  <pre tabindex="0" aria-label="Download both kinds of admin edits commands"><code id="save-admin-edits-step-2">make calls-from-db &amp;&amp;
-make evidence-from-db</code></pre>
-  <p class="command-copy-status" role="status" aria-live="polite"></p>
-</div>
-</li>
-      
-        <li><h2>Review the downloaded JSON</h2><p>Review the status and diff summary before copying the next panel. If there are no changes, skip the commit and push.</p>
-        
-<div class="command-panel">
-  <div class="command-panel-heading"><span>Review the downloaded JSON</span><button type="button" class="command-copy" data-copy-target="save-admin-edits-step-3" aria-label="Copy commands: Review the downloaded JSON" hidden>Copy</button></div>
-  <pre tabindex="0" aria-label="Review the downloaded JSON commands"><code id="save-admin-edits-step-3">git status --short &amp;&amp;
-git diff --stat</code></pre>
-  <p class="command-copy-status" role="status" aria-live="polite"></p>
-</div>
-</li>
-      
-        <li><h2>Commit the reviewed JSON files</h2>
-        
-<div class="command-panel">
-  <div class="command-panel-heading"><span>Commit the reviewed JSON files</span><button type="button" class="command-copy" data-copy-target="save-admin-edits-step-4" aria-label="Copy commands: Commit the reviewed JSON files" hidden>Copy</button></div>
-  <pre tabindex="0" aria-label="Commit the reviewed JSON files commands"><code id="save-admin-edits-step-4">git add -- data public/records/openmhz &amp;&amp;
-git commit -m &quot;Save staging radio edits and evidence reviews&quot; &amp;&amp;
-git push origin staging</code></pre>
+  <div class="command-panel-heading"><span>Sync saved admin edits</span><button type="button" class="command-copy" data-copy-target="save-admin-edits-step-1" aria-label="Copy commands: Sync saved admin edits" hidden>Copy</button></div>
+  <pre tabindex="0" aria-label="Sync saved admin edits commands"><code id="save-admin-edits-step-1">make db-sync</code></pre>
   <p class="command-copy-status" role="status" aria-live="polite"></p>
 </div>
 </li>
@@ -360,7 +328,7 @@ git pull --ff-only origin staging</code></pre>
   <h2 id="command-reference-heading">Database Make commands</h2>
   <p>Only the admin database commands are listed here. Their descriptions come directly from the Makefile. Use the workflows above for the full download, upload and Git sequence.</p>
   <div class="command-table-scroll"><table><thead><tr><th scope="col">Command</th><th scope="col">What it does</th></tr></thead><tbody>
-  <tr><th scope="row"><code>make db-upload</code></th><td>Upload JSON to staging only (afpd-data-staging); no database parameter.</td></tr><tr><th scope="row"><code>make db-reset</code></th><td>Back up staging, then recreate its JSON-managed tables; no database parameter.</td></tr><tr><th scope="row"><code>make calls-from-db</code></th><td>Copy staging transcripts and verified flags to calls.json; no database parameter.</td></tr><tr><th scope="row"><code>make evidence-from-db</code></th><td>Save all staging evidence reviews to data/db-evidenence-associations.json; no database parameter.</td></tr><tr><th scope="row"><code>make evidence-to-db</code></th><td>Back up staging, then reupload the evidence JSON; separate from db-upload, no database parameter.</td></tr><tr><th scope="row"><code>make promote-db</code></th><td>Replace production DB with a staging snapshot, including evidence reviews; no production backup.</td></tr>
+  <tr><th scope="row"><code>make db-sync</code></th><td>Pull staging, check for data conflicts, download admin edits, commit and push; stops for reconciliation.</td></tr><tr><th scope="row"><code>make db-upload</code></th><td>Upload JSON to staging only (afpd-data-staging); no database parameter.</td></tr><tr><th scope="row"><code>make db-reset</code></th><td>Back up staging, then recreate its JSON-managed tables; no database parameter.</td></tr><tr><th scope="row"><code>make calls-from-db</code></th><td>Copy staging transcripts and verified flags to calls.json; no database parameter.</td></tr><tr><th scope="row"><code>make evidence-from-db</code></th><td>Save all staging evidence reviews to data/db-evidenence-associations.json; no database parameter.</td></tr><tr><th scope="row"><code>make evidence-to-db</code></th><td>Back up staging, then reupload the evidence JSON; separate from db-upload, no database parameter.</td></tr><tr><th scope="row"><code>make promote-db</code></th><td>Replace production DB with a staging snapshot, including evidence reviews; no production backup.</td></tr>
   </tbody></table></div>
 </section>
 </main>

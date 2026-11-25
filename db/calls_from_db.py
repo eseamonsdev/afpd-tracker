@@ -13,7 +13,7 @@ WRANGLER = ROOT / 'node_modules/.bin/wrangler'
 DATABASE = 'afpd-data-staging'
 
 
-def reconcile(connection, archives=ARCHIVES):
+def reconcile(connection, archives=ARCHIVES, root=ROOT):
     """Validate all matching IDs before writing any archive."""
     rows = connection.execute('SELECT id, archive_path, transcript, transcript_validated FROM radio_clips').fetchall()
     by_path = {}
@@ -23,7 +23,7 @@ def reconcile(connection, archives=ARCHIVES):
         raise ValueError('No radio clips found in the D1 export')
     prepared = []
     for relative, clips in sorted(by_path.items()):
-        path = ROOT / relative
+        path = root / relative
         if not path.is_relative_to(archives) or path.name != 'calls.json' or not path.is_file():
             raise ValueError(f'Missing or invalid archive path in D1: {relative}')
         raw = path.read_text(encoding='utf-8')
