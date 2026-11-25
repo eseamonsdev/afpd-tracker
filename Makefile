@@ -1,9 +1,9 @@
 .DEFAULT_GOAL := help
 
-.PHONY: help openmhz-browser promote-staging build manual-deploy prod-manual-deploy collect-openmhz wrangler-login db-upload db-reset calls-from-db promote-db
+.PHONY: help openmhz-browser promote-staging build manual-deploy prod-manual-deploy collect-openmhz wrangler-login db-upload db-reset calls-from-db evidence-from-db evidence-to-db promote-db
 
 # Reject the removed database selector instead of silently accepting an old command.
-ifneq ($(filter db-upload db-reset calls-from-db promote-db,$(MAKECMDGOALS)),)
+ifneq ($(filter db-upload db-reset calls-from-db evidence-from-db evidence-to-db promote-db,$(MAKECMDGOALS)),)
 ifneq ($(origin D1_DATABASE),undefined)
 $(error D1_DATABASE is no longer supported. Working DB commands use staging; promote-db copies staging to production)
 endif
@@ -32,6 +32,12 @@ db-reset: ## Back up staging, then recreate its JSON-managed tables; no database
 
 calls-from-db: ## Copy staging transcripts and verified flags to calls.json; no database parameter.
 	@python3 db/calls_from_db.py
+
+evidence-from-db: ## Save all staging evidence reviews to data/db-evidenence-associations.json; no database parameter.
+	@python3 db/evidence_from_db.py
+
+evidence-to-db: ## Back up staging, then reupload the evidence JSON; separate from db-upload, no database parameter.
+	@python3 db/evidence_from_db.py --upload
 
 # This is the only Make command that changes the production database.
 promote-db: ## Replace production DB with a staging snapshot, including evidence reviews; no production backup.

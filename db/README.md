@@ -19,7 +19,8 @@ make wrangler-login
 ```
 
 All database Make commands have fixed targets and take no database parameter.
-`db-upload`, `db-reset`, and `calls-from-db` always use **afpd-data-staging**.
+`db-upload`, `db-reset`, `calls-from-db`, `evidence-from-db` and
+`evidence-to-db` always use **afpd-data-staging**.
 The old `D1_DATABASE` argument has been removed: passing it on the command line
 or in the environment fails before any database operation. `promote-db` is the
 only Make command that writes to production.
@@ -137,8 +138,40 @@ The existing public association builders continue reading JSON.
 `db/local/`. It preserves the original evidence, exclusions, production
 baseline, shared-use records and clip exceptions. Existing review edits are
 never overwritten. It does not contact D1, change public JSON, or deploy.
-There is no evidence-to-JSON export command yet. `make promote-db` copies these
-tables along with the rest of the staging database into production.
+`make evidence-from-db` saves every staging evidence group, including reviewed,
+unreviewed, hidden and empty groups, to `data/db-evidenence-associations.json`.
+It performs a consistent D1 export, validates the result and atomically replaces
+the JSON. With no changing export timestamp, identical data produces identical
+JSON. This file is independent of the public association builders.
+
+The versioned JSON is keyed by radio ID under `radio_ids`, with an
+`associations` list for the officers using each radio. Each association contains
+its stable ID, officer key/name, status, visibility, original source metadata
+and dated talkgroup evidence groups. Groups preserve stable IDs, review flags,
+correction notes, revisions, edit attribution, original source records and clip
+memberships. Each clip carries its stable OpenMHz ID, playback position and
+speaker-confirmed flag. Empty groups remain explicit empty clip lists. The
+top-level `assignments` retains exclusions, disputed data and original rules.
+`officer_id` is the stable officer slug, not the numeric roster row ID. Date
+ranges can be added in a later schema version without conflating this review
+file with the public association format.
+
+`make evidence-to-db` explicitly reuploads this file to **staging only**. It
+first validates the entire file, exports staging evidence and retains the pre-upload
+snapshot and generated SQL under ignored `db/local/evidence-upload-*/`. It
+rehearses the import on that snapshot before uploading. Represented groups
+receive exactly the file's clip membership (including saved removals), notes
+and confirmation flags. Groups and assignment records absent from the file
+remain in staging. Existing group revisions advance to invalidate old browser
+edit sessions. A natural-key collision with a different stable ID fails the
+rehearsal rather than guessing which group to overwrite.
+
+Neither command accepts a database parameter. Ordinary `db-upload` and
+`db-reset` continue to retain evidence tables and do not read this file.
+Transcripts, transcript verification and audio are not embedded in the evidence
+snapshot: use `make calls-from-db` for transcript edits. Neither evidence
+command changes public associations or promotes production. `make promote-db`
+copies these tables along with the rest of staging into production.
 
 Groups have an independent `reviewed` flag, correction notes and optimistic
 revision. Speaker confirmation belongs to a group's clip membership and is
