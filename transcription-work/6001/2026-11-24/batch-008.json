@@ -1,0 +1,745 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-24",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1795576157.m4a": {
+      "index": 71,
+      "epoch": 1795576157,
+      "sha256": "437cf4fc13ab6dea60f80021745e8d8e8ab4e0f96ec408eac37105015b23ce2a",
+      "passes": {
+        "original": {
+          "text": "I'm gonna go further west kind of by the underpass. I was over on 1120 about 20 minutes ago and I think I might have seen one of these kids he was just walking down the sidewalk at the time but he was further west so I'm gonna park over here and check out this site.",
+          "prompt": null,
+          "duration_seconds": 20.096,
+          "token_limit": 185,
+          "token_count": 70,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 10.32,
+              "text": " I'm gonna go further west kind of by the underpass. I was over on 1120 about 20",
+              "avg_logprob": -0.177132141002467,
+              "no_speech_prob": 0.018336951732635498,
+              "compression_ratio": 1.5375722543352601
+            },
+            {
+              "start": 10.32,
+              "end": 13.96,
+              "text": " minutes ago and I think I might have seen one of these kids he was just",
+              "avg_logprob": -0.177132141002467,
+              "no_speech_prob": 0.018336951732635498,
+              "compression_ratio": 1.5375722543352601
+            },
+            {
+              "start": 13.96,
+              "end": 17.84,
+              "text": " walking down the sidewalk at the time but he was further west so I'm gonna",
+              "avg_logprob": -0.177132141002467,
+              "no_speech_prob": 0.018336951732635498,
+              "compression_ratio": 1.5375722543352601
+            },
+            {
+              "start": 17.84,
+              "end": 21.48,
+              "text": " park over here and check out this site.",
+              "avg_logprob": -0.177132141002467,
+              "no_speech_prob": 0.018336951732635498,
+              "compression_ratio": 1.5375722543352601
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy I'm gonna go further west kind of by the underpass I was over on 1120 about 20 minutes ago and I think I might have seen one of these kids he was just walking down the sidewalk at the time but he was further west so I'm gonna park over here and check out this site",
+          "prompt": null,
+          "duration_seconds": 20.096,
+          "token_limit": 185,
+          "token_count": 69,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.28,
+              "text": " copy I'm gonna go further west kind of by the underpass I was over on 1120",
+              "avg_logprob": -0.1661172458103725,
+              "no_speech_prob": 0.05097484961152077,
+              "compression_ratio": 1.5730994152046784
+            },
+            {
+              "start": 8.28,
+              "end": 13.96,
+              "text": " about 20 minutes ago and I think I might have seen one of these kids he was just",
+              "avg_logprob": -0.1661172458103725,
+              "no_speech_prob": 0.05097484961152077,
+              "compression_ratio": 1.5730994152046784
+            },
+            {
+              "start": 13.96,
+              "end": 17.8,
+              "text": " walking down the sidewalk at the time but he was further west so I'm gonna",
+              "avg_logprob": -0.1661172458103725,
+              "no_speech_prob": 0.05097484961152077,
+              "compression_ratio": 1.5730994152046784
+            },
+            {
+              "start": 17.8,
+              "end": 21.46,
+              "text": " park over here and check out this site",
+              "avg_logprob": -0.1661172458103725,
+              "no_speech_prob": 0.05097484961152077,
+              "compression_ratio": 1.5730994152046784
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm gonna go further west kind of by the underpass. I was over on 1120 about 20 minutes ago and I think I might have seen one of these kids he was just walking down the sidewalk at the time but he was further west so I'm gonna park over here and check out this site.",
+          "prompt": "nope Where you guys at? We're at the back of the park, just northbound.",
+          "duration_seconds": 20.096,
+          "token_limit": 185,
+          "token_count": 70,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 10.32,
+              "text": " I'm gonna go further west kind of by the underpass. I was over on 1120 about 20",
+              "avg_logprob": -0.1865048580606219,
+              "no_speech_prob": 0.0439094603061676,
+              "compression_ratio": 1.5375722543352601
+            },
+            {
+              "start": 10.32,
+              "end": 14.32,
+              "text": " minutes ago and I think I might have seen one of these kids he was just walking",
+              "avg_logprob": -0.1865048580606219,
+              "no_speech_prob": 0.0439094603061676,
+              "compression_ratio": 1.5375722543352601
+            },
+            {
+              "start": 14.32,
+              "end": 18.400000000000002,
+              "text": " down the sidewalk at the time but he was further west so I'm gonna park over here",
+              "avg_logprob": -0.1865048580606219,
+              "no_speech_prob": 0.0439094603061676,
+              "compression_ratio": 1.5375722543352601
+            },
+            {
+              "start": 18.400000000000002,
+              "end": 21.48,
+              "text": " and check out this site.",
+              "avg_logprob": -0.1865048580606219,
+              "no_speech_prob": 0.0439094603061676,
+              "compression_ratio": 1.5375722543352601
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795576178.m4a": {
+      "index": 72,
+      "epoch": 1795576178,
+      "sha256": "dbfa7a12465de85aff773b279d131ad641b5e0f803de3926da70add634c464b5",
+      "passes": {
+        "original": {
+          "text": "Sounds good. I'm on the west side, like the trail area. I'm not seeing anything. No fireworks were even lit. I just thought they saw fireworks.",
+          "prompt": null,
+          "duration_seconds": 9.344,
+          "token_limit": 99,
+          "token_count": 38,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Sounds good. I'm on the west side, like the trail area. I'm not seeing anything.",
+              "avg_logprob": -0.2621331933217171,
+              "no_speech_prob": 0.021168142557144165,
+              "compression_ratio": 1.2654867256637168
+            },
+            {
+              "start": 5.0,
+              "end": 9.0,
+              "text": " No fireworks were even lit. I just thought they saw fireworks.",
+              "avg_logprob": -0.2621331933217171,
+              "no_speech_prob": 0.021168142557144165,
+              "compression_ratio": 1.2654867256637168
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Sounds good. I'm on the west side of the trail area. I'm not seeing anything. No fireworks were even lit. I just thought they saw fireworks.",
+          "prompt": null,
+          "duration_seconds": 9.344,
+          "token_limit": 99,
+          "token_count": 35,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " Sounds good. I'm on the west side of the trail area. I'm not seeing anything. No fireworks were even lit. I just thought they saw fireworks.",
+              "avg_logprob": -0.2841964777972963,
+              "no_speech_prob": 0.02259591594338417,
+              "compression_ratio": 1.2727272727272727
+            }
+          ]
+        },
+        "context": {
+          "text": "Sounds good. I'm on the west side, like the trail area. I'm not seeing anything. No fireworks were even lit. I just thought they saw fireworks.",
+          "prompt": "Where you guys at? We're at the back of the park, just northbound. I'm gonna go further west kind of by the underpass. I was over on 1120 about 20 minutes ago and I think I might have seen one of these kids he was just walking down the sidewalk at the time but he was further west so I'm gonna park over here and check out this site.",
+          "duration_seconds": 9.344,
+          "token_limit": 99,
+          "token_count": 38,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.34,
+              "text": " Sounds good. I'm on the west side, like the trail area. I'm not seeing anything. No fireworks",
+              "avg_logprob": -0.23474448766463843,
+              "no_speech_prob": 0.0005397014319896698,
+              "compression_ratio": 1.2654867256637168
+            },
+            {
+              "start": 6.34,
+              "end": 10.5,
+              "text": " were even lit. I just thought they saw fireworks.",
+              "avg_logprob": -0.23474448766463843,
+              "no_speech_prob": 0.0005397014319896698,
+              "compression_ratio": 1.2654867256637168
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795576190.m4a": {
+      "index": 73,
+      "epoch": 1795576190,
+      "sha256": "09ac5972f3deea7806ed59179987ba98f98cf05950157b3097f87b32d5e62608",
+      "passes": {
+        "original": {
+          "text": "Gotcha.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Gotcha.",
+              "avg_logprob": -0.5317481358846029,
+              "no_speech_prob": 0.05418490618467331,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Gotcha.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.74,
+              "text": " Gotcha.",
+              "avg_logprob": -0.7191100219885508,
+              "no_speech_prob": 0.07062609493732452,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Gotcha.",
+          "prompt": "We're at the back of the park, just northbound. I'm gonna go further west kind of by the underpass. I was over on 1120 about 20 minutes ago and I think I might have seen one of these kids he was just walking down the sidewalk at the time but he was further west so I'm gonna park over here and check out this site. Sounds good. I'm on the west side, like the trail area. I'm not seeing anything. No fireworks were even lit. I just thought they saw fireworks.",
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Gotcha.",
+              "avg_logprob": -0.3956051170825958,
+              "no_speech_prob": 0.032657768577337265,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795576495.m4a": {
+      "index": 74,
+      "epoch": 1795576495,
+      "sha256": "f2666e281845c8dfe02f3c2740a4a6515b6ed61c37ebffc1c76bab71acfd075c",
+      "passes": {
+        "original": {
+          "text": "negative I'm back why what's up",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.04,
+              "text": " negative I'm back why what's up",
+              "avg_logprob": -0.5529340288855813,
+              "no_speech_prob": 0.019739745184779167,
+              "compression_ratio": 0.8378378378378378
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Negative. I'm back. Why? What's up?",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Negative. I'm back. Why? What's up?",
+              "avg_logprob": -0.5654831806818644,
+              "no_speech_prob": 0.018715186044573784,
+              "compression_ratio": 0.8536585365853658
+            }
+          ]
+        },
+        "context": {
+          "text": "negative I'm back why what's up",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.04,
+              "text": " negative I'm back why what's up",
+              "avg_logprob": -0.5529340288855813,
+              "no_speech_prob": 0.019739745184779167,
+              "compression_ratio": 0.8378378378378378
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795576500.m4a": {
+      "index": 75,
+      "epoch": 1795576500,
+      "sha256": "d9113a88942815a76fb09a523f8571fcbbdde89b7fdecb51e49dd23e1cbd328c",
+      "passes": {
+        "original": {
+          "text": "Nothing, just checking, I'm going to head back to you.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.44,
+              "text": " Nothing, just checking, I'm going to head back to you.",
+              "avg_logprob": -0.5845716139849495,
+              "no_speech_prob": 0.027798376977443695,
+              "compression_ratio": 0.9818181818181818
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I've been just checking, I'm going to head back too.",
+          "prompt": null,
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.48,
+              "text": " I've been just checking, I'm going to head back too.",
+              "avg_logprob": -0.5783079371732824,
+              "no_speech_prob": 0.022219670936465263,
+              "compression_ratio": 0.9122807017543859
+            }
+          ]
+        },
+        "context": {
+          "text": "Nothing just checking. I'm gonna head back to",
+          "prompt": "negative I'm back why what's up",
+          "duration_seconds": 2.816,
+          "token_limit": 47,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.16,
+              "text": " Nothing just checking. I'm gonna head back to",
+              "avg_logprob": -0.4094467988381019,
+              "no_speech_prob": 0.0032648066990077496,
+              "compression_ratio": 0.8823529411764706
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795576507.m4a": {
+      "index": 76,
+      "epoch": 1795576507,
+      "sha256": "1c286d27691d51355faa2a9c0ac0eb6fb412b020bc684f43250453831c7e6515",
+      "passes": {
+        "original": {
+          "text": "Copy. I didn't see anything on this reel.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy. I didn't see anything on this reel.",
+              "avg_logprob": -0.42756342036383493,
+              "no_speech_prob": 0.004798606038093567,
+              "compression_ratio": 0.8723404255319149
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy. I didn't see anything on this reel.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy. I didn't see anything on this reel.",
+              "avg_logprob": -0.4264035927397864,
+              "no_speech_prob": 0.010895567946135998,
+              "compression_ratio": 0.8723404255319149
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy, I didn't see anything on this reel.",
+          "prompt": "negative I'm back why what's up Nothing, just checking, I'm going to head back to you.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Copy, I didn't see anything on this reel.",
+              "avg_logprob": -0.4223357971225466,
+              "no_speech_prob": 0.0006148756365291774,
+              "compression_ratio": 0.8723404255319149
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795576512.m4a": {
+      "index": 77,
+      "epoch": 1795576512,
+      "sha256": "ea42b80a9413b6d11daeed4f4da43f61c92072b6f9364dc3542b1c5a8b134016",
+      "passes": {
+        "original": {
+          "text": "Hey, Nela.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Hey, Nela.",
+              "avg_logprob": -0.983898937702179,
+              "no_speech_prob": 0.08452386409044266,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Hey, Naylor.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Hey, Naylor.",
+              "avg_logprob": -0.9706821590662003,
+              "no_speech_prob": 0.10140319168567657,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "context": {
+          "text": "Hey, Nela.",
+          "prompt": "negative I'm back why what's up Nothing, just checking, I'm going to head back to you. Copy. I didn't see anything on this reel.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Hey, Nela.",
+              "avg_logprob": -0.9818201810121536,
+              "no_speech_prob": 0.04347315803170204,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795577163.m4a": {
+      "index": 78,
+      "epoch": 1795577163,
+      "sha256": "8afbb81f8d725d35197ed974d43a8957aaa123b533a7cbc34229ad86600b8e88",
+      "passes": {
+        "original": {
+          "text": "Question, question.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Question, question.",
+              "avg_logprob": -1.1563011237553187,
+              "no_speech_prob": 0.4270787537097931,
+              "compression_ratio": 0.9047619047619048
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm fine, I'm fine.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm fine, I'm fine.",
+              "avg_logprob": -1.1657573960044167,
+              "no_speech_prob": 0.4457590579986572,
+              "compression_ratio": 0.9047619047619048
+            }
+          ]
+        },
+        "context": {
+          "text": "Question, question.",
+          "prompt": null,
+          "duration_seconds": 1.92,
+          "token_limit": 40,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Question, question.",
+              "avg_logprob": -1.1563011237553187,
+              "no_speech_prob": 0.4270787537097931,
+              "compression_ratio": 0.9047619047619048
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795577459.m4a": {
+      "index": 79,
+      "epoch": 1795577459,
+      "sha256": "86466c1bcb1c0a48571b12eba84d7a0d654822775ee3eaa2eceb64567a5c08d2",
+      "passes": {
+        "original": {
+          "text": "Are you guys expecting someone in a white Toyota Grand Ford Center parking lot?",
+          "prompt": null,
+          "duration_seconds": 7.552,
+          "token_limit": 85,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Are you guys expecting someone in a white Toyota",
+              "avg_logprob": -0.4838429778814316,
+              "no_speech_prob": 0.041513364762067795,
+              "compression_ratio": 1.0128205128205128
+            },
+            {
+              "start": 5.0,
+              "end": 7.0,
+              "text": " Grand Ford Center parking lot?",
+              "avg_logprob": -0.4838429778814316,
+              "no_speech_prob": 0.041513364762067795,
+              "compression_ratio": 1.0128205128205128
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Are you guys expecting someone in a light Toyota brand 4 and 7 parking lot?",
+          "prompt": null,
+          "duration_seconds": 7.552,
+          "token_limit": 85,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Are you guys expecting someone in a light Toyota brand 4 and 7 parking lot?",
+              "avg_logprob": -0.4515360248716254,
+              "no_speech_prob": 0.06178757920861244,
+              "compression_ratio": 0.9868421052631579
+            }
+          ]
+        },
+        "context": {
+          "text": "Are you guys expecting someone in a white Toyota Grand Ford Center parking lot?",
+          "prompt": null,
+          "duration_seconds": 7.552,
+          "token_limit": 85,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Are you guys expecting someone in a white Toyota",
+              "avg_logprob": -0.4838429778814316,
+              "no_speech_prob": 0.041513364762067795,
+              "compression_ratio": 1.0128205128205128
+            },
+            {
+              "start": 5.0,
+              "end": 7.0,
+              "text": " Grand Ford Center parking lot?",
+              "avg_logprob": -0.4838429778814316,
+              "no_speech_prob": 0.041513364762067795,
+              "compression_ratio": 1.0128205128205128
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795577474.m4a": {
+      "index": 80,
+      "epoch": 1795577474,
+      "sha256": "a3bc67b85bc6a27772b5c2da1afb01d831077b311afc6770364031098308b066",
+      "passes": {
+        "original": {
+          "text": "If you're wearing a mask, it's like a reflective mask.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " If you're wearing a mask, it's like a reflective mask.",
+              "avg_logprob": -0.5710193409639246,
+              "no_speech_prob": 0.058780115097761154,
+              "compression_ratio": 0.9473684210526315
+            }
+          ]
+        },
+        "filtered": {
+          "text": "If you're wearing a mask, it's like a reflective mask.",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " If you're wearing a mask, it's like a reflective mask.",
+              "avg_logprob": -0.6066136640660903,
+              "no_speech_prob": 0.06906791031360626,
+              "compression_ratio": 0.9473684210526315
+            }
+          ]
+        },
+        "context": {
+          "text": "If you're wearing a vest, like a reflective vest...",
+          "prompt": "Are you guys expecting someone in a white Toyota Grand Ford Center parking lot?",
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " If you're wearing a vest, like a reflective vest...",
+              "avg_logprob": -0.6496640682220459,
+              "no_speech_prob": 0.014784676022827625,
+              "compression_ratio": 0.9444444444444444
+            }
+          ]
+        }
+      }
+    }
+  }
+}
