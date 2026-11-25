@@ -1,0 +1,641 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-24",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1795537033.m4a": {
+      "index": 391,
+      "epoch": 1795537033,
+      "sha256": "aa1a8d6fdd14410c0c358bfabfa7b41e831ad73cfe1d8ab02581cba45c3fda6c",
+      "passes": {
+        "original": {
+          "text": "600, or it's 100 East on Zulu 810 Hotel, Zulu.",
+          "prompt": null,
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.28,
+              "text": " 600, or it's 100 East on Zulu 810 Hotel, Zulu.",
+              "avg_logprob": -0.42526377737522125,
+              "no_speech_prob": 0.06423944234848022,
+              "compression_ratio": 0.92
+            }
+          ]
+        },
+        "filtered": {
+          "text": "600 North, 100 East, on Zulu 810 Hotel, Zulu.",
+          "prompt": null,
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.28,
+              "text": " 600 North, 100 East, on Zulu 810 Hotel, Zulu.",
+              "avg_logprob": -0.5329387815375077,
+              "no_speech_prob": 0.07932896912097931,
+              "compression_ratio": 0.9375
+            }
+          ]
+        },
+        "context": {
+          "text": "600, or it's 100 East on Zulu 810 Hotel, Zulu.",
+          "prompt": "7 to 8, 10-60. Happy?",
+          "duration_seconds": 6.656,
+          "token_limit": 78,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.28,
+              "text": " 600, or it's 100 East on Zulu 810 Hotel, Zulu.",
+              "avg_logprob": -0.34021889269351957,
+              "no_speech_prob": 0.023907877504825592,
+              "compression_ratio": 0.92
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795537041.m4a": {
+      "index": 392,
+      "epoch": 1795537041,
+      "sha256": "2b09ffb48163703e8855660759a79058c352ffd0655dfd2a45b7b7475ce256a6",
+      "passes": {
+        "original": {
+          "text": "Sorry, I thought you said 10-6, not 10-60.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Sorry, I thought you said 10-6, not 10-60.",
+              "avg_logprob": -0.41949740548928577,
+              "no_speech_prob": 0.016587652266025543,
+              "compression_ratio": 0.9130434782608695
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Copy. Sorry, I thought you said 10-6. 10-60.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Copy. Sorry, I thought you said 10-6. 10-60.",
+              "avg_logprob": -0.4956774209675036,
+              "no_speech_prob": 0.043774671852588654,
+              "compression_ratio": 0.9166666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy. Sorry, I thought you said 10-60.",
+          "prompt": "7 to 8, 10-60. Happy? 600, or it's 100 East on Zulu 810 Hotel, Zulu.",
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.92,
+              "text": " Copy. Sorry, I thought you said 10-60.",
+              "avg_logprob": -0.28801073630650836,
+              "no_speech_prob": 0.007134574465453625,
+              "compression_ratio": 0.8260869565217391
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795537141.m4a": {
+      "index": 393,
+      "epoch": 1795537141,
+      "sha256": "10f82f6a5714a29be6bf0d35bcefac4365fda792340720e5e005a8ac80bfbb1b",
+      "passes": {
+        "original": {
+          "text": "788 in my face.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 788 in my face.",
+              "avg_logprob": -0.8603479597303603,
+              "no_speech_prob": 0.023529404774308205,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J88 in my face.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.8,
+              "text": " 7J88 in my face.",
+              "avg_logprob": -0.8729891896247863,
+              "no_speech_prob": 0.03559473901987076,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "788 in my face.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 788 in my face.",
+              "avg_logprob": -0.8603479597303603,
+              "no_speech_prob": 0.023529404774308205,
+              "compression_ratio": 0.6521739130434783
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795537145.m4a": {
+      "index": 394,
+      "epoch": 1795537145,
+      "sha256": "83480fe7b7bab6a42d3a2763b21256c1c208003c3af01f41deee1b64f3b2fa0a",
+      "passes": {
+        "original": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy.",
+              "avg_logprob": -0.5543792724609375,
+              "no_speech_prob": 0.013291390612721443,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Happy.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Happy.",
+              "avg_logprob": -0.6224508285522461,
+              "no_speech_prob": 0.014477799646556377,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "context": {
+          "text": "Happy.",
+          "prompt": "788 in my face.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Happy.",
+              "avg_logprob": -0.5041332244873047,
+              "no_speech_prob": 0.009616797789931297,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795537297.m4a": {
+      "index": 395,
+      "epoch": 1795537297,
+      "sha256": "19a9e80a19a3a3193422527223bbcee3783930ce7b7854e08404a7951cc62879",
+      "passes": {
+        "original": {
+          "text": "Try gate 35, copy medical assist.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Try gate 35, copy medical assist.",
+              "avg_logprob": -0.7994793219999834,
+              "no_speech_prob": 0.026396935805678368,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Try a K-35. Copy medical assist.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 12,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Try a K-35. Copy medical assist.",
+              "avg_logprob": -0.710347267297598,
+              "no_speech_prob": 0.0193254966288805,
+              "compression_ratio": 0.8
+            }
+          ]
+        },
+        "context": {
+          "text": "Try gate 35, copy medical assist.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 10,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Try gate 35, copy medical assist.",
+              "avg_logprob": -0.7994793219999834,
+              "no_speech_prob": 0.026396935805678368,
+              "compression_ratio": 0.8048780487804879
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795537312.m4a": {
+      "index": 396,
+      "epoch": 1795537312,
+      "sha256": "1c6d72f6074e05c14804c966352d7086a7313094bd1ce5fcde223b8a8118043a",
+      "passes": {
+        "original": {
+          "text": "43, got away.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 43, got away.",
+              "avg_logprob": -0.8372351378202438,
+              "no_speech_prob": 0.14990822970867157,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        },
+        "filtered": {
+          "text": "43 highway",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 43 highway",
+              "avg_logprob": -0.9142720222473144,
+              "no_speech_prob": 0.12400835007429123,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "43, got away.",
+          "prompt": "Try gate 35, copy medical assist.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 43, got away.",
+              "avg_logprob": -0.6963872984051704,
+              "no_speech_prob": 0.015000098384916782,
+              "compression_ratio": 0.6190476190476191
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795537334.m4a": {
+      "index": 397,
+      "epoch": 1795537334,
+      "sha256": "7c8dac2bc16502782b7adb43c4262f6fb6c146dbb3e53d537bf3701b86869c19",
+      "passes": {
+        "original": {
+          "text": "I copy. You can clear and last your question.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I copy. You can clear and last your question.",
+              "avg_logprob": -0.5871280942644391,
+              "no_speech_prob": 0.0043185679242014885,
+              "compression_ratio": 0.8490566037735849
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I copy. You can clear and left your question.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I copy. You can clear and left your question.",
+              "avg_logprob": -0.5990602799824306,
+              "no_speech_prob": 0.012446518987417221,
+              "compression_ratio": 0.8490566037735849
+            }
+          ]
+        },
+        "context": {
+          "text": "I copy. You can clear and left your question.",
+          "prompt": "Try gate 35, copy medical assist. 43, got away.",
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I copy. You can clear and left your question.",
+              "avg_logprob": -0.5537095282758985,
+              "no_speech_prob": 0.00288781919516623,
+              "compression_ratio": 0.8490566037735849
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795537338.m4a": {
+      "index": 398,
+      "epoch": 1795537338,
+      "sha256": "52ccde9853571501bb53802342968278bfb9da65a960d4a81db79467b947c1e6",
+      "passes": {
+        "original": {
+          "text": "Comfort.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Comfort.",
+              "avg_logprob": -0.8971970558166504,
+              "no_speech_prob": 0.057694096118211746,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Comfort.",
+          "prompt": null,
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Comfort.",
+              "avg_logprob": -0.8717253684997559,
+              "no_speech_prob": 0.04642949998378754,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "Comfort.",
+          "prompt": "Try gate 35, copy medical assist. 43, got away. I copy. You can clear and last your question.",
+          "duration_seconds": 1.024,
+          "token_limit": 33,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Comfort.",
+              "avg_logprob": -0.7781575202941895,
+              "no_speech_prob": 0.0176215972751379,
+              "compression_ratio": 0.5
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795537365.m4a": {
+      "index": 399,
+      "epoch": 1795537365,
+      "sha256": "8570b3e6c3734baef45e8cf068fe4e9154d6409d44afabb3a6733980e260e34d",
+      "passes": {
+        "original": {
+          "text": "7G, 18, I'll be out on that.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7G, 18, I'll be out on that.",
+              "avg_logprob": -0.46753501097361244,
+              "no_speech_prob": 0.07004714757204056,
+              "compression_ratio": 0.7777777777777778
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7G, you can all be out on that.",
+          "prompt": null,
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 13,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7G, you can all be out on that.",
+              "avg_logprob": -0.4963856892926352,
+              "no_speech_prob": 0.07929195463657379,
+              "compression_ratio": 0.7948717948717948
+            }
+          ]
+        },
+        "context": {
+          "text": "7G, 18, I'll be out on that. Just a quick head.",
+          "prompt": "43, got away. I copy. You can clear and last your question. Comfort.",
+          "duration_seconds": 3.2,
+          "token_limit": 50,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " 7G, 18, I'll be out on that. Just a quick head.",
+              "avg_logprob": -0.42108200788497924,
+              "no_speech_prob": 0.027673624455928802,
+              "compression_ratio": 0.8545454545454545
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795537376.m4a": {
+      "index": 400,
+      "epoch": 1795537376,
+      "sha256": "bd96407d412b789aa7f5ff1c1ec4a06c5b0dab6232e4ed65910b9d05c8a3ccab",
+      "passes": {
+        "original": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.6352502256631851,
+              "no_speech_prob": 0.014877654612064362,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "copy",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 3,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " copy",
+              "avg_logprob": -0.6411020904779434,
+              "no_speech_prob": 0.017774511128664017,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "Copy.",
+          "prompt": "I copy. You can clear and last your question. Comfort. 7G, 18, I'll be out on that.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 4,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5375598907470703,
+              "no_speech_prob": 0.0067665912210941315,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    }
+  }
+}
