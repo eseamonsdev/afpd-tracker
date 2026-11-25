@@ -91,6 +91,42 @@ test('officer filter matches exact identities, combines review filters and scope
   assert.equal(searched.groups.length,0);
   assert.equal((await read(db,'officer=bad%2Fid')).status,400);
 });
+test('empty evidence groups can change talkgroup, retain notes and keep correction history',async()=>{
+  const db=database();
+  db.sqlite.exec("DELETE FROM radio_association_evidence_clips WHERE evidence_id='group1'; UPDATE radio_association_evidence SET reviewed=1 WHERE id='group1';");
+  const body={...change(),talkgroup_number:5922,clips:[],transcripts:[]};
+  assert.equal((await save(db,body)).status,200);
+  const {group}=await (await read(db)).json();
+  assert.equal(group.talkgroup_number,5922);assert.equal(group.reviewed,false);
+  assert.equal(group.correction_notes,body.correction_notes);assert.equal(group.clips.length,0);
+  assert.equal(group.source_records[0].source,'admin-talkgroup-correction');
+  assert.equal(group.source_records[0].previous_talkgroup,6001);
+  assert.equal(group.source_records[0].previous_reviewed,true);
+  assert.equal(db.sqlite.prepare('SELECT COUNT(*) AS n FROM radio_clips').get().n,3);
+});
+test('corrected talkgroup previews and saves replacement clips without reusing old clip numbers or confirmations',async()=>{
+  const db=database();
+  db.sqlite.exec(`INSERT INTO radio_clips SELECT 'law1',system,5922,archive_date,1,timestamp_utc,
+    'dcfems-5922-999.m4a','public/records/openmhz/openmhz-afpd-law-2-2026-11-01/calls.json',
+    displayed_seconds,audio_duration_seconds,audio_key,'Law 2 response',1 FROM radio_clips WHERE id='clip1';`);
+  const preview=await (await read(db,'evidence=group1&clips=1&talkgroup=5922')).json();
+  assert.equal(preview.clips[0].id,'law1');assert.equal(preview.clips[0].validated,true);assert.equal(preview.clips[0].speaker_confirmed,false);
+  assert.equal((await save(db,{...change(),talkgroup_number:5922})).status,400);
+  assert.equal((await save(db,{...change(),talkgroup_number:5922,clips:[{id:'law1',speaker_confirmed:false}],transcripts:[]})).status,200);
+  const {group}=await (await read(db)).json();assert.equal(group.clips[0].id,'law1');assert.equal(group.reviewed,false);
+  assert.equal(group.source_records[0].previous_clips.length,2);
+  assert.equal(db.sqlite.prepare("SELECT transcript_validated FROM radio_clips WHERE id='law1'").get().transcript_validated,1);
+  assert.equal((await read(db,'evidence=group1&clips=1&talkgroup=999')).status,400);
+});
+test('a talkgroup correction never overwrites an existing group for the same officer, radio and date',async()=>{
+  const db=database();
+  db.sqlite.exec(`INSERT INTO radio_association_evidence (id,association_id,archive_date,talkgroup_number,website_visible,source_json,correction_notes)
+    VALUES ('law-group','a1','2026-11-01',5922,1,'[]','Keep these notes');`);
+  const response=await save(db,{...change(),talkgroup_number:5922,clips:[],transcripts:[]});
+  assert.equal(response.status,409);assert.equal((await response.json()).conflict_evidence_id,'law-group');
+  const {group}=await (await read(db)).json();assert.equal(group.talkgroup_number,6001);assert.equal(group.revision,0);assert.equal(group.clips.length,2);
+  assert.equal(db.sqlite.prepare("SELECT correction_notes FROM radio_association_evidence WHERE id='law-group'").get().correction_notes,'Keep these notes');
+});
 test('additive import preserves saved notes, group review, clip removals and transcript edits on rerun',()=>{
   const db=database();const result=prepareAssociationEvidence();
   db.sqlite.exec(result.sql);
