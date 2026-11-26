@@ -348,7 +348,7 @@ function playbackEngine({ get, getCalls, getButtons, clipSource, label, singlePl
       const expanded = controlsToggle.getAttribute("aria-expanded") !== "true";
       extraControls.hidden = !expanded;
       controlsToggle.setAttribute("aria-expanded", String(expanded));
-      controlsToggle.textContent = expanded ? "Hide Controls" : "Show Controls";
+      if (!controlsToggle.hasAttribute("data-icon-only")) controlsToggle.textContent = expanded ? "Hide Controls" : "Show Controls";
     });
   }
 

@@ -1,21 +1,21 @@
 {% from "radio-row.njk" import rowTemplate %}
-{% macro player(prefix, transcripts=true, hiddenToggle=true, toggleName="transcript-toggle", transcriptName="transcript", initiallyHidden=false, adminEditor=false, speakerConfirmation=false) %}
+{% macro player(prefix, transcripts=true, hiddenToggle=true, toggleName="transcript-toggle", transcriptName="transcript", initiallyHidden=false, adminEditor=false, speakerConfirmation=false, compactControls=false) %}
       {{ rowTemplate() }}
       {% if transcripts %}<a id="{{ prefix }}-transcript-download" class="radio-transcript-download" download hidden>Download transcript (.txt)</a>{% endif %}
-      <section id="{{ prefix }}-player-panel" class="radio-player" aria-label="Audio player"{% if initiallyHidden %} hidden{% endif %}>
+      <section id="{{ prefix }}-player-panel" class="radio-player{% if compactControls %} radio-player-compact{% endif %}" aria-label="Audio player"{% if initiallyHidden %} hidden{% endif %}>
         <div class="radio-player-heading">
           <div>
             <p id="{{ prefix }}-current">Choose a clip to listen</p>
             <p id="{{ prefix }}-current-radio-ids" class="radio-ids" hidden></p>
           </div>
-          <div class="radio-player-actions">
+{% if not compactControls %}          <div class="radio-player-actions">
             <button id="{{ prefix }}-show-current" class="radio-show-current" type="button" aria-pressed="false" aria-controls="{{ prefix }}-clips" disabled>Follow clip</button>
             <button id="{{ prefix }}-controls-toggle" class="radio-controls-toggle" type="button" aria-expanded="true" aria-controls="{{ prefix }}-extra-controls" hidden>Hide Controls</button>
             <div id="{{ prefix }}-extra-controls" class="radio-extra-controls">
               <button id="{{ prefix }}-autoplay" type="button" aria-pressed="false">Autoplay: Off</button>
               {% if transcripts %}<button id="{{ prefix }}-{{ toggleName }}" type="button" aria-pressed="false" aria-controls="{{ prefix }}-{{ transcriptName }}" {% if hiddenToggle %}hidden {% endif %}disabled>Transcript: Off</button>{% endif %}
             </div>
-          </div>
+          </div>{% endif %}
         </div>
         <div class="radio-playback">
           <button id="{{ prefix }}-play" class="radio-play-button" type="button" aria-label="Play selected clip" title="Play selected clip" data-playing="false" disabled><svg class="radio-play-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m8 5 11 7-11 7Z"></path></svg><svg class="radio-pause-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 5h4v14H6zM14 5h4v14h-4z"></path></svg></button>
@@ -23,8 +23,12 @@
             <label class="radio-sr-only" for="{{ prefix }}-seek">Position in clip</label>
             <input id="{{ prefix }}-seek" class="radio-seek" type="range" min="0" max="0" step="0.1" value="0" disabled>
             <div class="radio-times"><span id="{{ prefix }}-elapsed">0:00</span><span id="{{ prefix }}-duration">0:00</span></div>
-          </div>
-        </div>
+          </div>{% if compactControls %}<button id="{{ prefix }}-show-current" class="radio-show-current radio-icon-button" type="button" aria-label="Follow clip" title="Follow clip" aria-pressed="false" aria-controls="{{ prefix }}-clips" disabled><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 3H3v5M16 3h5v5M21 16v5h-5M8 21H3v-5"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
+          <button id="{{ prefix }}-controls-toggle" class="radio-controls-toggle radio-icon-button" type="button" data-icon-only aria-label="Playback settings" title="Playback settings" aria-expanded="false" aria-controls="{{ prefix }}-extra-controls" hidden><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h2m6 0h8M4 17h8m6 0h2"></path><circle cx="9" cy="7" r="3"></circle><circle cx="15" cy="17" r="3"></circle></svg></button>{% endif %}
+        </div>{% if compactControls %}<div id="{{ prefix }}-extra-controls" class="radio-extra-controls" hidden>
+          <button id="{{ prefix }}-autoplay" type="button" aria-pressed="false">Autoplay: Off</button>
+          {% if transcripts %}<button id="{{ prefix }}-{{ toggleName }}" type="button" aria-pressed="false" aria-controls="{{ prefix }}-{{ transcriptName }}" {% if hiddenToggle %}hidden {% endif %}disabled>Transcript: Off</button>{% endif %}
+        </div>{% endif %}
         <p id="{{ prefix }}-player-message" class="radio-player-message" role="status"></p>
         {% if transcripts %}<div id="{{ prefix }}-{{ transcriptName }}" class="radio-transcript" role="region" aria-label="Current clip transcript" aria-live="polite" aria-atomic="true" hidden>
           <span id="{{ prefix }}-transcript-status" class="radio-transcript-status" hidden></span>
