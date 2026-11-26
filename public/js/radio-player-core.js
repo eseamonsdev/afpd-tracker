@@ -353,6 +353,37 @@ function playbackEngine({ get, getCalls, getButtons, clipSource, label, singlePl
   }
 
   let selected = -1, auto = false, playbackRequest = 0;
+  let following = false, followedPosition = null;
+  function setFollowing(enabled) {
+    following = enabled;
+    showCurrent?.setAttribute("aria-pressed", String(enabled));
+  }
+  function followClip() {
+    if (!following) return;
+    const clip = getButtons()[selected];
+    if (!clip) return;
+    const panel = showCurrent.closest(".radio-player");
+    const clearance = Math.max(0, panel.getBoundingClientRect().bottom) + 16;
+    const bounds = clip.getBoundingClientRect();
+    if (bounds.top >= clearance && bounds.bottom <= window.innerHeight - 16) return;
+    clip.style.scrollMarginTop = `${panel.offsetHeight + 32}px`;
+    clip.style.scrollMarginBottom = "16px";
+    // Instant positioning cannot keep animating after the listener starts browsing.
+    clip.scrollIntoView({ behavior: "instant", block: "nearest", inline: "nearest" });
+    followedPosition = [window.scrollX, window.scrollY];
+  }
+  const stopFollowing = () => setFollowing(false);
+  window.addEventListener?.("wheel", stopFollowing, { passive: true });
+  window.addEventListener?.("touchmove", stopFollowing, { passive: true });
+  window.addEventListener?.("keydown", event => {
+    if (event.defaultPrevented || event.ctrlKey || event.metaKey || event.altKey) return;
+    if (event.target?.closest?.("input, textarea, select, button, a, [contenteditable]")) return;
+    if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "PageUp", "PageDown", "Home", "End", " "].includes(event.key)) stopFollowing();
+  });
+  window.addEventListener?.("scroll", () => {
+    // Ignore our own positioning; scrollbar drags and other page scrolling opt out.
+    if (following && (!followedPosition || window.scrollX !== followedPosition[0] || window.scrollY !== followedPosition[1])) stopFollowing();
+  }, { passive: true });
   let lastPlayingAudio = null, keepPlaybackPlayer = false;
   let prefetchedClip = null, prefetchController = null, activeObjectUrl = null;
   function clearAudio(player) {
@@ -426,6 +457,8 @@ function playbackEngine({ get, getCalls, getButtons, clipSource, label, singlePl
   }
 
   function resetPlayer() {
+    setFollowing(false);
+    followedPosition = null;
     clearPrefetchedClip();
     clearActiveObjectUrl();
     selected = -1;
@@ -510,18 +543,14 @@ function playbackEngine({ get, getCalls, getButtons, clipSource, label, singlePl
     // A preloaded player may have fired loadedmetadata while it was inactive.
     updateDuration();
     startPlayback();
+    followClip();
   }
 
   showCurrent?.addEventListener("click", () => {
-    const clip = getButtons()[selected];
-    if (!clip) return;
-    // Center in the space below the sticky player, leaving a little clearance.
-    clip.style.scrollMarginTop = `${showCurrent.closest(".radio-player").offsetHeight + 32}px`;
-    clip.scrollIntoView({
-      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
-      block: "center",
-      inline: "nearest"
-    });
+    if (!getButtons()[selected]) return;
+    setFollowing(!following);
+    followedPosition = [window.scrollX, window.scrollY];
+    followClip();
   });
   autoplay.addEventListener("click", () => {
     auto = !auto;
