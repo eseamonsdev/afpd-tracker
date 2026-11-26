@@ -21,7 +21,10 @@
 .radio-player button[aria-pressed="true"] { background: var(--navy); color: white; border-color: var(--navy); }
 .radio-player button:disabled { cursor: default; opacity: .5; }
 .radio-playback { display: flex; align-items: center; gap: 1rem; }
-.radio-play-button { min-width: 78px; }
+.radio-player .radio-play-button { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 44px; width: 44px; min-width: 44px; height: 44px; padding: 0; }
+.radio-play-button svg { width: 20px; height: 20px; fill: currentColor; }
+.radio-play-button .radio-pause-icon, .radio-play-button[data-playing="true"] .radio-play-icon { display: none; }
+.radio-play-button[data-playing="true"] .radio-pause-icon { display: block; }
 .radio-progress { flex: 1; min-width: 0; }
 .radio-seek { width: 100%; margin: 0; accent-color: var(--blue); cursor: pointer; height: 24px; }
 .radio-seek:disabled { cursor: default; }

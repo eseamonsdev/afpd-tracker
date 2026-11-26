@@ -317,17 +317,17 @@ test("autoplay hands off a prepared clip without reloading it and immediately pr
   first.emit("pause");
   first.emit("error");
   first.emit("ended");
-  assert.equal(f.get("play").textContent, "Pause");
+  assert.equal(f.get("play").getAttribute("aria-label"), "Pause selected clip");
   assert.equal(f.get("player-message").textContent, "");
   assert.equal(f.active(), second, "late standby events must not advance playback");
   f.finish(second);
   assert.equal(f.active(), first);
   assert.match(first.src, /call-2\.m4a$/);
   first.emit("pause");
-  assert.equal(f.get("play").textContent, "Pause", "a queued pause from an earlier clip must not change the playing state");
+  assert.equal(f.get("play").getAttribute("aria-label"), "Pause selected clip", "a queued pause from an earlier clip must not change the playing state");
   f.get("play").click();
   first.emit("play");
-  assert.equal(f.get("play").textContent, "Play", "a queued play must not change the paused state");
+  assert.equal(f.get("play").getAttribute("aria-label"), "Play selected clip", "a queued play must not change the paused state");
   f.get("seek").value = 3;
   f.get("seek").emit("input");
   // Metadata for this active clip arrives after its preload was cleared.

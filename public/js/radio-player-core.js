@@ -333,6 +333,13 @@ function playbackEngine({ get, getCalls, getButtons, clipSource, label, singlePl
   if (nextAudio) { nextAudio.preload = "auto"; nextAudio.hidden = true; audio.after(nextAudio); }
   const players = nextAudio ? [audio, nextAudio] : [audio];
   const play = get("play"), seek = get("seek"), autoplay = get("autoplay"), showCurrent = get("show-current");
+  function setPlayState(playing) {
+    const label = playing ? "Pause selected clip" : "Play selected clip";
+    play.setAttribute("data-playing", String(playing));
+    play.setAttribute("aria-label", label);
+    play.setAttribute("title", label);
+  }
+  setPlayState(false);
   const current = get("current"), message = get("player-message");
   const controlsToggle = get("controls-toggle"), extraControls = get("extra-controls");
   if (controlsToggle && extraControls) {
@@ -429,8 +436,7 @@ function playbackEngine({ get, getCalls, getButtons, clipSource, label, singlePl
     seek.disabled = true;
     seek.value = 0;
     seek.max = 0;
-    play.textContent = "Play";
-    play.setAttribute("aria-label", "Play selected clip");
+    setPlayState(false);
     get("elapsed").textContent = "0:00";
     get("duration").textContent = "0:00";
     current.textContent = "Choose a clip to listen";
@@ -553,15 +559,15 @@ function playbackEngine({ get, getCalls, getButtons, clipSource, label, singlePl
     });
     onActive("play", () => {
       if (audio.paused) return;
-      play.textContent = "Pause"; play.setAttribute("aria-label", "Pause selected clip");
+      setPlayState(true);
     });
     onActive("pause", () => {
       if (!audio.paused) return;
-      play.textContent = "Play"; play.setAttribute("aria-label", "Play selected clip");
+      setPlayState(false);
     });
     onActive("ended", () => {
       if (!audio.ended) return;
-      play.textContent = "Play"; play.setAttribute("aria-label", "Play selected clip");
+      setPlayState(false);
       if (auto && selected >= 0 && selected + 1 < getCalls().length) {
         chooseClip(selected + 1);
       } else if (selected === getCalls().length - 1 && endMessage) message.textContent = endMessage;
