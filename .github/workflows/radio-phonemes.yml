@@ -1,0 +1,120 @@
+name: Decode radio phonemes
+'on':
+  push:
+    branches: [staging]
+    paths:
+      - records-pending-review/radio-phoneme-request.json
+      - .github/workflows/radio-phonemes.yml
+      - scripts/radio_phonemes.py
+      - scripts/requirements-radio-phonemes.txt
+      - tests/test_radio_phonemes.py
+  workflow_dispatch:
+    inputs:
+      days:
+        description: Dates separated by commas, or all
+        default: all
+        type: string
+      talkgroups:
+        description: Talkgroups separated by commas, or all
+        default: all
+        type: string
+      batch_index:
+        description: Zero-based batch of up to 256 talkgroup/day jobs
+        default: '0'
+        type: string
+permissions:
+  contents: read
+jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+      has_work: ${{ steps.plan.outputs.has_work }}
+      source_sha: ${{ steps.plan.outputs.source_sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'push' && github.sha || 'staging' }}
+          fetch-depth: 0
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /scripts/
+            /tests/test_radio_phonemes.py
+            /records-pending-review/radio-phoneme-request.json
+            /public/records/openmhz/**/calls.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test checkpoints, model isolation, archive selection and timestamps
+        run: python -m unittest discover -s tests -p test_radio_phonemes.py
+      - name: Resolve every selected talkgroup and day
+        id: plan
+        env:
+          INPUT_DAYS: ${{ inputs.days }}
+          INPUT_TALKGROUPS: ${{ inputs.talkgroups }}
+          INPUT_BATCH_INDEX: ${{ inputs.batch_index }}
+        run: python scripts/radio_phonemes.py workflow-plan
+  decode:
+    needs: plan
+    if: needs.plan.outputs.has_work == 'true'
+    name: ${{ matrix.talkgroup }} / ${{ matrix.day }}
+    strategy:
+      fail-fast: false
+      max-parallel: 15
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 350
+    concurrency:
+      group: radio-phonemes-uni2005-${{ matrix.talkgroup }}-${{ matrix.day }}
+      cancel-in-progress: false
+    env:
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_BUCKET_NAME: ${{ vars.R2_BUCKET_NAME }}
+      R2_ENDPOINT: ${{ vars.R2_ENDPOINT }}
+      DAY: ${{ matrix.day }}
+      TALKGROUP: ${{ matrix.talkgroup }}
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.plan.outputs.source_sha }}
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /scripts/
+            /public/records/openmhz/**/calls.json
+            /public/records/openmhz/**/*.m4a
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: scripts/requirements-radio-phonemes.txt
+      - name: Install CPU phonetic recognition dependencies
+        run: |
+          set -euo pipefail
+          if ! command -v ffmpeg >/dev/null; then
+            sudo apt-get update -qq
+            sudo apt-get install -y ffmpeg
+          fi
+          python -m pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install -r scripts/requirements-radio-phonemes.txt
+          python -m pip check
+      - uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/radio-phoneme-models
+          key: radio-phonemes-uni2005-92d783125d0eb8173066058bc61ff805389430cf811b149250a4a62b6efc9a2b
+      - name: Decode clips and checkpoint each result to R2
+        run: >-
+          python -u scripts/radio_phonemes.py run
+          --day "$DAY" --talkgroup "$TALKGROUP"
+          --model-dir "$RUNNER_TEMP/radio-phoneme-models"
+          --output "$RUNNER_TEMP/radio-phonemes/$TALKGROUP/$DAY"
+          --publish
+      - name: Preserve daily progress, including failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: radio-phonemes-${{ matrix.talkgroup }}-${{ matrix.day }}
+          path: ${{ runner.temp }}/radio-phonemes/${{ matrix.talkgroup }}/${{ matrix.day }}/
+          if-no-files-found: warn
+          retention-days: 90
