@@ -183,7 +183,7 @@ function createIdentity(getDate) {
     return wrapper;
   }
 
-  function renderRadioIds(element, call) {
+  function renderRadioIds(element, call, { showAssociationDetails = true } = {}) {
     element.replaceChildren();
     const ids = radioIds(call);
     if (!ids.length) return;
@@ -208,10 +208,12 @@ function createIdentity(getDate) {
         const officer = document.createElement("span");
         officer.className = "radio-officer-name";
         officer.textContent = ` · ${entry.name}`;
+        item.append(officer);
+        if (!showAssociationDetails) continue;
         const status = document.createElement("span");
         status.className = "radio-association-status";
         status.textContent = ` · ${associationLabels[entry.status]}`;
-        item.append(officer, status);
+        item.append(status);
         if (["confirmed", "confirmed-clip"].includes(entry.status) &&
             /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(entry.officer_id ?? "")) {
           const photo = document.createElement("img");
@@ -966,7 +968,7 @@ function evidence(config) {
     label:index=>`${dateFormat.format(dateObject(config.date))} · ${timeFormat.format(new Date(calls[index].epoch*1000))} · Clip ${calls[index].clip_number}`,
     endMessage:'End of evidence group.',
     onSelect(call,index){
-      identity.close();const line=get('current-radio-ids');identity.render(line,call);line.hidden=!radioIds(call).length;
+      identity.close();const line=get('current-radio-ids');identity.render(line,call,{showAssociationDetails:false});line.hidden=!radioIds(call).length;
       updateTranscript();config.onClipSelected?.(call,index);
     },
     onReset(){updateTranscript();config.onClipSelected?.(null);}
