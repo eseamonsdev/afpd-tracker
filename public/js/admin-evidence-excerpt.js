@@ -40,7 +40,7 @@
     player.updateTranscript();refresh();
   }
   function select(call){
-    selected=call;editor.hidden=true;text.hidden=false;pencil.setAttribute('aria-expanded','false');pencil.textContent='✎ Edit transcript';
+    selected=call;editor.hidden=true;text.hidden=false;pencil.setAttribute('aria-expanded','false');pencil.setAttribute('aria-label','Edit transcript');pencil.title='Edit transcript';
     pencil.disabled=verified.disabled=!call;textarea.value=call?.transcript||'';verified.checked=call?.validated===true;
     syncSpeakerConfirmation();
   }
@@ -91,7 +91,7 @@
     $('evidence-add-numbers').value='';$('evidence-action-status').textContent='Choose clips from the selected talkgroup, or save the corrected empty group.';
     refresh();
   });
-  pencil.addEventListener('click',()=>{if(!selected||saving)return;editor.hidden=!editor.hidden;text.hidden=!editor.hidden;pencil.setAttribute('aria-expanded',String(!editor.hidden));pencil.textContent=editor.hidden?'✎ Edit transcript':'Done editing';if(!editor.hidden)textarea.focus();});
+  pencil.addEventListener('click',()=>{if(!selected||saving)return;editor.hidden=!editor.hidden;text.hidden=!editor.hidden;pencil.setAttribute('aria-expanded',String(!editor.hidden));pencil.setAttribute('aria-label',editor.hidden?'Edit transcript':'Done editing');pencil.title=editor.hidden?'Edit transcript':'Done editing';if(!editor.hidden)textarea.focus();});
   textarea.addEventListener('input',stageTranscript);verified.addEventListener('change',stageTranscript);
   speakerConfirmed.addEventListener('change',()=>{
     if(!selected||saving||removed.has(selected.id))return;

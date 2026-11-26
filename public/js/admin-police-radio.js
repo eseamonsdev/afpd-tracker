@@ -98,7 +98,8 @@
     editor.hidden = true;
     transcriptText.hidden = false;
     pencil.setAttribute("aria-expanded", "false");
-    pencil.textContent = "✎ Edit transcript";
+    pencil.setAttribute("aria-label", "Edit transcript");
+    pencil.title = "Edit transcript";
     pencil.disabled = !call;
     textarea.value = call?.transcript || "";
     checkbox.disabled = !call;
@@ -110,7 +111,8 @@
     editor.hidden = !editor.hidden;
     transcriptText.hidden = !editor.hidden;
     pencil.setAttribute("aria-expanded", String(!editor.hidden));
-    pencil.textContent = editor.hidden ? "✎ Edit transcript" : "Done editing";
+    pencil.setAttribute("aria-label", editor.hidden ? "Edit transcript" : "Done editing");
+    pencil.title = editor.hidden ? "Edit transcript" : "Done editing";
     if (editor.hidden) updateCurrent();
     else textarea.focus();
   });
