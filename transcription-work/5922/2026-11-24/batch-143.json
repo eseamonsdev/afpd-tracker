@@ -1,0 +1,729 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-24",
+  "talkgroup": 5922,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-5922-1795581574.m4a": {
+      "index": 1421,
+      "epoch": 1795581574,
+      "sha256": "08f899b2c582f890323b58fd15bca6abf16f7b99fadadb2af171dd8bee25e059",
+      "passes": {
+        "original": {
+          "text": "7G28, 350 East, 500 South, time lapse is 15 minutes. White passenger car allowed exhaust. Pulled up alongside the RP's 13-year-old son. Passenger got out of the vehicle and chased RP's son.",
+          "prompt": null,
+          "duration_seconds": 14.72,
+          "token_limit": 142,
+          "token_count": 56,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 7G28, 350 East, 500 South, time lapse is 15 minutes.",
+              "avg_logprob": -0.3026749000214694,
+              "no_speech_prob": 0.030306264758110046,
+              "compression_ratio": 1.2516556291390728
+            },
+            {
+              "start": 5.0,
+              "end": 8.0,
+              "text": " White passenger car allowed exhaust.",
+              "avg_logprob": -0.3026749000214694,
+              "no_speech_prob": 0.030306264758110046,
+              "compression_ratio": 1.2516556291390728
+            },
+            {
+              "start": 8.0,
+              "end": 11.0,
+              "text": " Pulled up alongside the RP's 13-year-old son.",
+              "avg_logprob": -0.3026749000214694,
+              "no_speech_prob": 0.030306264758110046,
+              "compression_ratio": 1.2516556291390728
+            },
+            {
+              "start": 11.0,
+              "end": 15.0,
+              "text": " Passenger got out of the vehicle and chased RP's son.",
+              "avg_logprob": -0.3026749000214694,
+              "no_speech_prob": 0.030306264758110046,
+              "compression_ratio": 1.2516556291390728
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7G28, 350 East, 500 South, time lapse is 15 minutes. A white passenger car allowed exhaust pulled up alongside the RP's 13-year-old son. The passenger got out of the vehicle and chased RP's son.",
+          "prompt": null,
+          "duration_seconds": 14.72,
+          "token_limit": 142,
+          "token_count": 54,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 7G28, 350 East, 500 South, time lapse is 15 minutes.",
+              "avg_logprob": -0.3878750161691146,
+              "no_speech_prob": 0.029231475666165352,
+              "compression_ratio": 1.2679738562091503
+            },
+            {
+              "start": 5.0,
+              "end": 11.0,
+              "text": " A white passenger car allowed exhaust pulled up alongside the RP's 13-year-old son.",
+              "avg_logprob": -0.3878750161691146,
+              "no_speech_prob": 0.029231475666165352,
+              "compression_ratio": 1.2679738562091503
+            },
+            {
+              "start": 11.0,
+              "end": 15.0,
+              "text": " The passenger got out of the vehicle and chased RP's son.",
+              "avg_logprob": -0.3878750161691146,
+              "no_speech_prob": 0.029231475666165352,
+              "compression_ratio": 1.2679738562091503
+            }
+          ]
+        },
+        "context": {
+          "text": "7J28, 350 East, 500 South, time lapse is 15 minutes. White passenger car allowed exhaust. Pulled up alongside the RP's 13-year-old son. Passenger got out of the vehicle and chased RP's son.",
+          "prompt": "7J28, copy suspicious. So, I'm just going to...",
+          "duration_seconds": 14.72,
+          "token_limit": 142,
+          "token_count": 56,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " 7J28, 350 East, 500 South, time lapse is 15 minutes.",
+              "avg_logprob": -0.2715588996284886,
+              "no_speech_prob": 0.009929409250617027,
+              "compression_ratio": 1.243421052631579
+            },
+            {
+              "start": 5.0,
+              "end": 8.0,
+              "text": " White passenger car allowed exhaust.",
+              "avg_logprob": -0.2715588996284886,
+              "no_speech_prob": 0.009929409250617027,
+              "compression_ratio": 1.243421052631579
+            },
+            {
+              "start": 8.0,
+              "end": 11.0,
+              "text": " Pulled up alongside the RP's 13-year-old son.",
+              "avg_logprob": -0.2715588996284886,
+              "no_speech_prob": 0.009929409250617027,
+              "compression_ratio": 1.243421052631579
+            },
+            {
+              "start": 11.0,
+              "end": 15.0,
+              "text": " Passenger got out of the vehicle and chased RP's son.",
+              "avg_logprob": -0.2715588996284886,
+              "no_speech_prob": 0.009929409250617027,
+              "compression_ratio": 1.243421052631579
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795581666.m4a": {
+      "index": 1422,
+      "epoch": 1795581666,
+      "sha256": "cabb817b403cde99d1649098b0ec8091ecaa6a1d77d4f3fbc61674ca180c3385",
+      "passes": {
+        "original": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.6144005060195923,
+              "no_speech_prob": 0.0199452955275774,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 0.5,
+              "text": " Go ahead.",
+              "avg_logprob": -0.5090528229872385,
+              "no_speech_prob": 0.010513842105865479,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "Go ahead.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go ahead.",
+              "avg_logprob": -0.6144005060195923,
+              "no_speech_prob": 0.0199452955275774,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795581669.m4a": {
+      "index": 1423,
+      "epoch": 1795581669,
+      "sha256": "97195079e8a0e3bac1c7a0c09d851ccf06a8ce36f408781cd998e2601f69fa48",
+      "passes": {
+        "original": {
+          "text": "1300 West, 300 North, uniform 979, Mike Echo.",
+          "prompt": null,
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.84,
+              "text": " 1300 West, 300 North, uniform 979, Mike Echo.",
+              "avg_logprob": -0.5347316153347492,
+              "no_speech_prob": 0.0144246406853199,
+              "compression_ratio": 0.9
+            }
+          ]
+        },
+        "filtered": {
+          "text": "1300 West 300 North uniform 979 Mike Echo",
+          "prompt": null,
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 11,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.640000000000001,
+              "text": " 1300 West 300 North uniform 979 Mike Echo",
+              "avg_logprob": -0.4171052823464076,
+              "no_speech_prob": 0.005575649440288544,
+              "compression_ratio": 0.8913043478260869
+            }
+          ]
+        },
+        "context": {
+          "text": "1300 West, 300 North, uniform 979, Mike Echo.",
+          "prompt": "Go ahead.",
+          "duration_seconds": 6.272,
+          "token_limit": 75,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.0,
+              "text": " 1300 West, 300 North, uniform 979, Mike Echo.",
+              "avg_logprob": -0.44815611094236374,
+              "no_speech_prob": 0.003447542665526271,
+              "compression_ratio": 0.9
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795581941.m4a": {
+      "index": 1424,
+      "epoch": 1795581941,
+      "sha256": "fbf1b144c0daa9080a3c3f8fffe4f00287357fbfa831c882aef8cccaf6b4fb48",
+      "passes": {
+        "original": {
+          "text": "7G28 area.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7G28 area.",
+              "avg_logprob": -0.6151054501533508,
+              "no_speech_prob": 0.05445614457130432,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "That's 7G20 area.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " That's 7G20 area.",
+              "avg_logprob": -0.7771237134933472,
+              "no_speech_prob": 0.0190203208476305,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "7G28 area.",
+          "prompt": null,
+          "duration_seconds": 2.688,
+          "token_limit": 46,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7G28 area.",
+              "avg_logprob": -0.6151054501533508,
+              "no_speech_prob": 0.05445614457130432,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795581943.m4a": {
+      "index": 1425,
+      "epoch": 1795581943,
+      "sha256": "ae538ad3777900c0f3e9309d43cb02bd619dd8cee756209a48ed3b5bb9e866c5",
+      "passes": {
+        "original": {
+          "text": "7-28",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-28",
+              "avg_logprob": -0.7800154884656271,
+              "no_speech_prob": 0.04463253170251846,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7 to 28.",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7 to 28.",
+              "avg_logprob": -0.7467103855950492,
+              "no_speech_prob": 0.025464968755841255,
+              "compression_ratio": 0.5
+            }
+          ]
+        },
+        "context": {
+          "text": "7G28.",
+          "prompt": "7G28 area.",
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 7G28.",
+              "avg_logprob": -0.4880432571683611,
+              "no_speech_prob": 0.08084820955991745,
+              "compression_ratio": 0.38461538461538464
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795582026.m4a": {
+      "index": 1426,
+      "epoch": 1795582026,
+      "sha256": "c8d6a332f54f0294a133bf8a36942e5e474d8913f17af6f07f88380ae8d14be5",
+      "passes": {
+        "original": {
+          "text": "7J21, put 4.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J21, put 4.",
+              "avg_logprob": -0.7195601284503936,
+              "no_speech_prob": 0.028178252279758453,
+              "compression_ratio": 0.6
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J21, quick work.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J21, quick work.",
+              "avg_logprob": -0.8739880442619323,
+              "no_speech_prob": 0.02344340644776821,
+              "compression_ratio": 0.68
+            }
+          ]
+        },
+        "context": {
+          "text": "7J21, put 4.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 9,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7J21, put 4.",
+              "avg_logprob": -0.7195601284503936,
+              "no_speech_prob": 0.028178252279758453,
+              "compression_ratio": 0.6
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795582030.m4a": {
+      "index": 1427,
+      "epoch": 1795582030,
+      "sha256": "d7852027b32b2faa8f140044b5009c4c0d419eefbffd2d7fbc0b81878af50a15",
+      "passes": {
+        "original": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.4065780554498945,
+              "no_speech_prob": 0.014541592448949814,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Go for it.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.4530679668698992,
+              "no_speech_prob": 0.01178559847176075,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "context": {
+          "text": "Go for it.",
+          "prompt": "7J21, put 4.",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 6,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Go for it.",
+              "avg_logprob": -0.43261747700827463,
+              "no_speech_prob": 0.02072506956756115,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795582145.m4a": {
+      "index": 1428,
+      "epoch": 1795582145,
+      "sha256": "18bb13cf41013ed0de7655c0f7add12799042e923d4891e33348ec0086e1310f",
+      "passes": {
+        "original": {
+          "text": "7J21, clear stop and route to lockout. Copy.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J21, clear stop and route to lockout.",
+              "avg_logprob": -0.49491088920169407,
+              "no_speech_prob": 0.023084385320544243,
+              "compression_ratio": 0.88
+            },
+            {
+              "start": 4.0200000000000005,
+              "end": 8.02,
+              "text": " Copy.",
+              "avg_logprob": -0.49491088920169407,
+              "no_speech_prob": 0.023084385320544243,
+              "compression_ratio": 0.88
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7J21, clear stop. 10 routes to lockout. Copy.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J21, clear stop. 10 routes to lockout.",
+              "avg_logprob": -0.5960720526544672,
+              "no_speech_prob": 0.027300041168928146,
+              "compression_ratio": 0.8823529411764706
+            },
+            {
+              "start": 4.0,
+              "end": 8.0,
+              "text": " Copy.",
+              "avg_logprob": -0.5960720526544672,
+              "no_speech_prob": 0.027300041168928146,
+              "compression_ratio": 0.8823529411764706
+            }
+          ]
+        },
+        "context": {
+          "text": "7J21, clear stop and route to lockout. Copy.",
+          "prompt": null,
+          "duration_seconds": 5.376,
+          "token_limit": 68,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " 7J21, clear stop and route to lockout.",
+              "avg_logprob": -0.49491088920169407,
+              "no_speech_prob": 0.023084385320544243,
+              "compression_ratio": 0.88
+            },
+            {
+              "start": 4.0200000000000005,
+              "end": 8.02,
+              "text": " Copy.",
+              "avg_logprob": -0.49491088920169407,
+              "no_speech_prob": 0.023084385320544243,
+              "compression_ratio": 0.88
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795582216.m4a": {
+      "index": 1429,
+      "epoch": 1795582216,
+      "sha256": "c435a952b1bfc06457c07e7d5c5012cca4506a5705ca43623aaf5f30483d1eda",
+      "passes": {
+        "original": {
+          "text": "7G21",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7G21",
+              "avg_logprob": -0.6029362976551056,
+              "no_speech_prob": 0.04349405691027641,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7G21",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7G21",
+              "avg_logprob": -0.6492881973584493,
+              "no_speech_prob": 0.017746690660715103,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        },
+        "context": {
+          "text": "7G21",
+          "prompt": null,
+          "duration_seconds": 1.792,
+          "token_limit": 39,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7G21",
+              "avg_logprob": -0.6029362976551056,
+              "no_speech_prob": 0.04349405691027641,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-5922-1795582218.m4a": {
+      "index": 1430,
+      "epoch": 1795582218,
+      "sha256": "002af49667e70f7cb963200b46a6bcd3fa96ecc5bf70407476c75b5ac15683b9",
+      "passes": {
+        "original": {
+          "text": "7-3-21",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7-3-21",
+              "avg_logprob": -0.9280301481485367,
+              "no_speech_prob": 0.0738571509718895,
+              "compression_ratio": 0.42857142857142855
+            }
+          ]
+        },
+        "filtered": {
+          "text": "7, 3, 21.",
+          "prompt": null,
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 8,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " 7, 3, 21.",
+              "avg_logprob": -0.7583260536193848,
+              "no_speech_prob": 0.028828497976064682,
+              "compression_ratio": 0.5294117647058824
+            }
+          ]
+        },
+        "context": {
+          "text": "7G21",
+          "prompt": "7G21",
+          "duration_seconds": 1.536,
+          "token_limit": 37,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " 7G21",
+              "avg_logprob": -0.3869590659936269,
+              "no_speech_prob": 0.1301841288805008,
+              "compression_ratio": 0.3333333333333333
+            }
+          ]
+        }
+      }
+    }
+  }
+}
