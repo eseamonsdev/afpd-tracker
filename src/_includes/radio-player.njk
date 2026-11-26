@@ -1,6 +1,7 @@
 {% from "radio-row.njk" import rowTemplate %}
 {% macro player(prefix, transcripts=true, hiddenToggle=true, toggleName="transcript-toggle", transcriptName="transcript", initiallyHidden=false, adminEditor=false, speakerConfirmation=false) %}
       {{ rowTemplate() }}
+      {% if transcripts %}<a id="{{ prefix }}-transcript-download" class="radio-transcript-download" download hidden>Download transcript (.txt)</a>{% endif %}
       <section id="{{ prefix }}-player-panel" class="radio-player" aria-label="Audio player"{% if initiallyHidden %} hidden{% endif %}>
         <div class="radio-player-heading">
           <div>
@@ -12,8 +13,7 @@
             <button id="{{ prefix }}-controls-toggle" class="radio-controls-toggle" type="button" aria-expanded="true" aria-controls="{{ prefix }}-extra-controls" hidden>Hide Controls</button>
             <div id="{{ prefix }}-extra-controls" class="radio-extra-controls">
               <button id="{{ prefix }}-autoplay" type="button" aria-pressed="false">Autoplay: Off</button>
-              {% if transcripts %}<button id="{{ prefix }}-{{ toggleName }}" type="button" aria-pressed="false" aria-controls="{{ prefix }}-{{ transcriptName }}" {% if hiddenToggle %}hidden {% endif %}disabled>Transcript: Off</button>
-              <a id="{{ prefix }}-transcript-download" class="radio-transcript-download" download hidden>Download transcript (.txt)</a>{% endif %}
+              {% if transcripts %}<button id="{{ prefix }}-{{ toggleName }}" type="button" aria-pressed="false" aria-controls="{{ prefix }}-{{ transcriptName }}" {% if hiddenToggle %}hidden {% endif %}disabled>Transcript: Off</button>{% endif %}
             </div>
           </div>
         </div>
