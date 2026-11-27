@@ -1,0 +1,665 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-25",
+  "talkgroup": 6001,
+  "settings_sha256": "3906253b04d3c268a711cc65c94a797cbaa52dac418217965a4ce21b8f390813",
+  "settings": {
+    "version": 1,
+    "engine": "faster-whisper",
+    "engine_version": "1.2.1",
+    "model": "small.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "filter": "highpass=f=200,lowpass=f=3400,afftdn=nf=-25",
+    "sample_rate": 16000,
+    "context_calls": 3,
+    "context_seconds": 60,
+    "context_max_characters": 600,
+    "token_limit_base": 24,
+    "token_limit_per_second": 8,
+    "token_limit_max": 220,
+    "provenance": "Standardized 2026-10-16. Recovered historical choices: small.en, beam_size=5, temperature=0, condition_on_previous_text=false, original/filtered/original-with-preceding-text passes, up to three preceding calls. Exact historical filter, time gap, compute precision and token cap were not recovered; their values here are explicit new defaults."
+  },
+  "clips": {
+    "dcfems-6001-1795666484.m4a": {
+      "index": 151,
+      "epoch": 1795666484,
+      "sha256": "6a659fa212345d1d24e782cd84aebe07a6b6f5546f474ca7130d5c2516dc5fdd",
+      "passes": {
+        "original": {
+          "text": "Anybody in the area of 500 East, 700 North?",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Anybody in the area of 500 East, 700 North?",
+              "avg_logprob": -0.40754846334457395,
+              "no_speech_prob": 0.11890746653079987,
+              "compression_ratio": 0.8775510204081632
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Anybody in the area of 500 East, 700 North?",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.6000000000000005,
+              "text": " Anybody in the area of 500 East, 700 North?",
+              "avg_logprob": -0.3965264598528544,
+              "no_speech_prob": 0.06236524507403374,
+              "compression_ratio": 0.8775510204081632
+            }
+          ]
+        },
+        "context": {
+          "text": "Anybody in the area of 500 East, 700 North?",
+          "prompt": null,
+          "duration_seconds": 5.12,
+          "token_limit": 65,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " Anybody in the area of 500 East, 700 North?",
+              "avg_logprob": -0.40754846334457395,
+              "no_speech_prob": 0.11890746653079987,
+              "compression_ratio": 0.8775510204081632
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795666490.m4a": {
+      "index": 152,
+      "epoch": 1795666490,
+      "sha256": "19711022b4a62ab0c93ba09bde8bf17b41328b60025f68a4d3ac09dacf9af869",
+      "passes": {
+        "original": {
+          "text": "I'm on 500 East, 1100 South right now, I can head up to you.",
+          "prompt": null,
+          "duration_seconds": 7.936,
+          "token_limit": 88,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.44,
+              "text": " I'm on 500 East, 1100 South right now, I can head up to you.",
+              "avg_logprob": -0.31064311663309735,
+              "no_speech_prob": 0.114912249147892,
+              "compression_ratio": 0.9090909090909091
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm on 500 East, 1100 South right now. I can head up to you.",
+          "prompt": null,
+          "duration_seconds": 7.936,
+          "token_limit": 88,
+          "token_count": 22,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 6.44,
+              "text": " I'm on 500 East, 1100 South right now.",
+              "avg_logprob": -0.3878350957580235,
+              "no_speech_prob": 0.0587921179831028,
+              "compression_ratio": 0.9090909090909091
+            },
+            {
+              "start": 6.44,
+              "end": 7.28,
+              "text": " I can head up to you.",
+              "avg_logprob": -0.3878350957580235,
+              "no_speech_prob": 0.0587921179831028,
+              "compression_ratio": 0.9090909090909091
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm on 500 East, 1100 South right now, I can head up to you.",
+          "prompt": "Anybody in the area of 500 East, 700 North?",
+          "duration_seconds": 7.936,
+          "token_limit": 88,
+          "token_count": 20,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.44,
+              "text": " I'm on 500 East, 1100 South right now, I can head up to you.",
+              "avg_logprob": -0.24189983095441545,
+              "no_speech_prob": 0.06427573412656784,
+              "compression_ratio": 0.9090909090909091
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795666500.m4a": {
+      "index": 153,
+      "epoch": 1795666500,
+      "sha256": "732733e55ef5d4290690ba54d3f8051da44ff7b4540913eeddb223120a4c1b66",
+      "passes": {
+        "original": {
+          "text": "It's all good. Carl will be gone by then, so we're good.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " It's all good.",
+              "avg_logprob": -0.25903465260158887,
+              "no_speech_prob": 0.06912708282470703,
+              "compression_ratio": 0.9824561403508771
+            },
+            {
+              "start": 2.0,
+              "end": 4.0,
+              "text": " Carl will be gone by then, so we're good.",
+              "avg_logprob": -0.25903465260158887,
+              "no_speech_prob": 0.06912708282470703,
+              "compression_ratio": 0.9824561403508771
+            }
+          ]
+        },
+        "filtered": {
+          "text": "It's all good. Carl will be gone by then, so we're good.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 21,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " It's all good.",
+              "avg_logprob": -0.3242786756970666,
+              "no_speech_prob": 0.04246825724840164,
+              "compression_ratio": 0.9824561403508771
+            },
+            {
+              "start": 2.0,
+              "end": 4.0,
+              "text": " Carl will be gone by then, so we're good.",
+              "avg_logprob": -0.3242786756970666,
+              "no_speech_prob": 0.04246825724840164,
+              "compression_ratio": 0.9824561403508771
+            }
+          ]
+        },
+        "context": {
+          "text": "It's all good. Carl will be gone by then, so we're good.",
+          "prompt": "Anybody in the area of 500 East, 700 North? I'm on 500 East, 1100 South right now, I can head up to you.",
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.0,
+              "text": " It's all good. Carl will be gone by then, so we're good.",
+              "avg_logprob": -0.2919377192854881,
+              "no_speech_prob": 0.05806795880198479,
+              "compression_ratio": 0.9824561403508771
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795666685.m4a": {
+      "index": 154,
+      "epoch": 1795666685,
+      "sha256": "8f3f81aa13589359a2f269cf2bdab11c7999759184f8d0428b09dc9abee0bffb",
+      "passes": {
+        "original": {
+          "text": "Alright, by anyone else in the area, 200 east, 700 north.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Alright, by anyone else in the area, 200 east, 700 north.",
+              "avg_logprob": -0.4063015861643685,
+              "no_speech_prob": 0.0943952277302742,
+              "compression_ratio": 0.9193548387096774
+            }
+          ]
+        },
+        "filtered": {
+          "text": "All right, by anyone else in the area, 200 east, 700 north.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 4.28,
+              "text": " All right, by anyone else in the area, 200 east, 700 north.",
+              "avg_logprob": -0.3938395067265159,
+              "no_speech_prob": 0.02608257532119751,
+              "compression_ratio": 0.921875
+            }
+          ]
+        },
+        "context": {
+          "text": "Alright, by anyone else in the area, 200 east, 700 north.",
+          "prompt": null,
+          "duration_seconds": 4.608,
+          "token_limit": 61,
+          "token_count": 17,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Alright, by anyone else in the area, 200 east, 700 north.",
+              "avg_logprob": -0.4063015861643685,
+              "no_speech_prob": 0.0943952277302742,
+              "compression_ratio": 0.9193548387096774
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795666703.m4a": {
+      "index": 155,
+      "epoch": 1795666703,
+      "sha256": "e1fa961a89bb9a48203ad9ca57cb0b75ef14544a114a1bb9ccc968ad0d9d3a94",
+      "passes": {
+        "original": {
+          "text": "I'm just at the PDA, I can roll that way.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm just at the PDA, I can roll that way.",
+              "avg_logprob": -0.26608893450568705,
+              "no_speech_prob": 0.008910431526601315,
+              "compression_ratio": 0.8913043478260869
+            }
+          ]
+        },
+        "filtered": {
+          "text": "I'm just at the PD, I can roll that way.",
+          "prompt": null,
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm just at the PD, I can roll that way.",
+              "avg_logprob": -0.3146624844521284,
+              "no_speech_prob": 0.018268730491399765,
+              "compression_ratio": 0.8888888888888888
+            }
+          ]
+        },
+        "context": {
+          "text": "I'm just at the PDA, I can roll that way.",
+          "prompt": "Alright, by anyone else in the area, 200 east, 700 north.",
+          "duration_seconds": 2.304,
+          "token_limit": 43,
+          "token_count": 16,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " I'm just at the PDA, I can roll that way.",
+              "avg_logprob": -0.19297292653252096,
+              "no_speech_prob": 0.01718306913971901,
+              "compression_ratio": 0.8913043478260869
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795666710.m4a": {
+      "index": 156,
+      "epoch": 1795666710,
+      "sha256": "9ad74af0e031851d9516bbbc00960aa7d4197a9792a7e78cbb10deb4688e2e52",
+      "passes": {
+        "original": {
+          "text": "Oh, if you're in the middle of something, man, you're good.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2,
+              "text": " Oh, if you're in the middle of something, man, you're good.",
+              "avg_logprob": -0.36467013508081436,
+              "no_speech_prob": 0.07212544232606888,
+              "compression_ratio": 0.9672131147540983
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Oh, if you're in the middle of something, man, you're good.",
+          "prompt": null,
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.24,
+              "text": " Oh, if you're in the middle of something, man, you're good.",
+              "avg_logprob": -0.3595561012625694,
+              "no_speech_prob": 0.024598577991127968,
+              "compression_ratio": 0.9672131147540983
+            }
+          ]
+        },
+        "context": {
+          "text": "Oh, if you're in the middle of something, man, you're good.",
+          "prompt": "Alright, by anyone else in the area, 200 east, 700 north. I'm just at the PDA, I can roll that way.",
+          "duration_seconds": 3.968,
+          "token_limit": 56,
+          "token_count": 19,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.2,
+              "text": " Oh, if you're in the middle of something, man, you're good.",
+              "avg_logprob": -0.32916705310344696,
+              "no_speech_prob": 0.03633632883429527,
+              "compression_ratio": 0.9672131147540983
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795666750.m4a": {
+      "index": 157,
+      "epoch": 1795666750,
+      "sha256": "00ac88ed5285a7e10f22ec306f6dfef987a65f34f439c38578e067aa1a744878",
+      "passes": {
+        "original": {
+          "text": "Got it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Got it.",
+              "avg_logprob": -0.6578819453716278,
+              "no_speech_prob": 0.053639981895685196,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Got it.",
+          "prompt": null,
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Got it.",
+              "avg_logprob": -0.7483365635077158,
+              "no_speech_prob": 0.0464673675596714,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        },
+        "context": {
+          "text": "Got it.",
+          "prompt": "I'm just at the PDA, I can roll that way. Oh, if you're in the middle of something, man, you're good.",
+          "duration_seconds": 1.408,
+          "token_limit": 36,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.0,
+              "text": " Got it.",
+              "avg_logprob": -0.4968000451723735,
+              "no_speech_prob": 0.05098678171634674,
+              "compression_ratio": 0.4666666666666667
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795666911.m4a": {
+      "index": 158,
+      "epoch": 1795666911,
+      "sha256": "2297324feb1ae8bfd3e31fcd38a354cbce32cc3396eeebd6c5bd31fa2a5eca37",
+      "passes": {
+        "original": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.68,
+              "text": " Thank you.",
+              "avg_logprob": -0.8935364087422689,
+              "no_speech_prob": 0.6622775197029114,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Okay, thank you.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 7,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Okay, thank you.",
+              "avg_logprob": -0.8209096118807793,
+              "no_speech_prob": 0.5302838087081909,
+              "compression_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        "context": {
+          "text": "Thank you.",
+          "prompt": null,
+          "duration_seconds": 2.176,
+          "token_limit": 42,
+          "token_count": 5,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.68,
+              "text": " Thank you.",
+              "avg_logprob": -0.8935364087422689,
+              "no_speech_prob": 0.6622775197029114,
+              "compression_ratio": 0.5555555555555556
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795667689.m4a": {
+      "index": 159,
+      "epoch": 1795667689,
+      "sha256": "92027bba7ac574c1d17d327be9ec7a34e359e1b7c406d8b7f3a3e8e3c7c339ea",
+      "passes": {
+        "original": {
+          "text": "Yeah, I had the same thing happen to me as well today, too.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Yeah, I had the same thing happen to me as well today, too.",
+              "avg_logprob": -0.348344413857711,
+              "no_speech_prob": 0.06483276933431625,
+              "compression_ratio": 0.9672131147540983
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Yeah, I had the same thing happen to me as well today, too.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Yeah, I had the same thing happen to me as well today, too.",
+              "avg_logprob": -0.3781279450968692,
+              "no_speech_prob": 0.04034607112407684,
+              "compression_ratio": 0.9672131147540983
+            }
+          ]
+        },
+        "context": {
+          "text": "Yeah, I had the same thing happen to me as well today, too.",
+          "prompt": null,
+          "duration_seconds": 3.584,
+          "token_limit": 53,
+          "token_count": 18,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 3.0,
+              "text": " Yeah, I had the same thing happen to me as well today, too.",
+              "avg_logprob": -0.348344413857711,
+              "no_speech_prob": 0.06483276933431625,
+              "compression_ratio": 0.9672131147540983
+            }
+          ]
+        }
+      }
+    },
+    "dcfems-6001-1795671049.m4a": {
+      "index": 160,
+      "epoch": 1795671049,
+      "sha256": "a46238e83db554e85b6fb31146b661d1ca4879a48ab8bd61ba5522168857e9a2",
+      "passes": {
+        "original": {
+          "text": "Thanks, bro. Just let me know if you need more.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thanks, bro. Just let me know if you need more.",
+              "avg_logprob": -0.2893876377493143,
+              "no_speech_prob": 0.013579797931015491,
+              "compression_ratio": 0.8545454545454545
+            }
+          ]
+        },
+        "filtered": {
+          "text": "Thanks bro, just let me know if you need more.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 14,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 1.8800000000000001,
+              "text": " Thanks bro, just let me know if you need more.",
+              "avg_logprob": -0.4260193188985189,
+              "no_speech_prob": 0.0037047353107482195,
+              "compression_ratio": 0.8518518518518519
+            }
+          ]
+        },
+        "context": {
+          "text": "Thanks, bro. Just let me know if you need more.",
+          "prompt": null,
+          "duration_seconds": 2.432,
+          "token_limit": 44,
+          "token_count": 15,
+          "token_cap_reached": false,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " Thanks, bro. Just let me know if you need more.",
+              "avg_logprob": -0.2893876377493143,
+              "no_speech_prob": 0.013579797931015491,
+              "compression_ratio": 0.8545454545454545
+            }
+          ]
+        }
+      }
+    }
+  }
+}
